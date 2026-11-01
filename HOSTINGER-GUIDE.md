@@ -174,13 +174,17 @@ so there is nothing to break under HTTPS.
 
 ## 9. Verify the deployment (10 minutes, do not skip)
 
+Run this **after** Step 6 (import + installer). A file-only install answers most of
+it too, but with 3 831 calculators instead of 4 041 and without the CMS pages,
+because those rows come from `install/database.sql`.
+
 | # | URL | Expected |
 |---|---|---|
-| 1 | `https://mcqsgenerator.com/tool/` | Home page, counter reads **4 041 calculators** |
+| 1 | `https://mcqsgenerator.com/tool/` | Home page, counter reads **4 041 calculators** (before the database import it reads **3 831** — the 210 panel-authored calculators live in MySQL, so this number is your proof the import worked) |
 | 2 | `/tool/calculators` | Full catalogue, paginated |
 | 3 | `/tool/math/percentage` | Put **25** in *What is: %*, **200** in *Of*, press Calculate → **Y = 50** |
 | 4 | `/tool/biology/dog-age` | Biology calculator renders and calculates |
-| 5 | `/tool/biology/cephalic-index` | Article image loads from `/tool/uploads/biology/…` |
+| 5 | `/tool/biology/cephalic-index` | A **database-authored** calculator: the page and its figure come from the CMS rows you imported. If it 404s, the import did not run. The image must load from `/tool/uploads/biology/…` |
 | 6 | `/tool/about` · `/tool/contact` · `/tool/privacy` · `/tool/terms` | CMS pages; the contact form posts and shows the success note |
 | 7 | `/tool/blog` | Blog index with the imported post |
 | 8 | `/tool/search?q=bmi` | Results with live suggestions |
