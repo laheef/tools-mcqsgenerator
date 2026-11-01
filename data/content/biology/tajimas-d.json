@@ -1,0 +1,64 @@
+{
+  "path": "/biology/tajimas-d",
+  "slug": "tajimas-d",
+  "cat": "biology",
+  "name": "Tajima's D Calculator",
+  "seoTitle": "Tajima's D Calculator — Formula & Results",
+  "seoDesc": "Tajima's D compares two estimates of genetic diversity — the number of segregating sites and the average pairwise difference. Free tajima's d calculator: ente",
+  "h1": "Tajima's D Calculator",
+  "summary": "Tajima's D compares two estimates of genetic diversity — the number of segregating sites and the average pairwise difference. It returns a₁, a₂, watterson's θ and nucleotide diversity θπ, and the panel shows all of them at once.\n\nWhen they disagree, the population is not evolving neutrally: a negative D suggests a selective sweep or recent expansion, a positive D suggests balancing selection or structure. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Tajima's D",
+      "html": "<p>D = (θπ − S ÷ a₁) ÷ √(e₁S + e₂S(S−1)), with a₁ = Σ 1/i for i = 1 … n−1.  θπ is the average pairwise difference; S ÷ a₁ is Watterson's estimate</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/tajimas-d.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Tajima's D Calculator — Tajima's D across a genomic region\" title=\"Tajima's D Calculator\"><figcaption>Tajima's D across a genomic region</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>number of segregating (variable) sites</td><td>—</td></tr><tr><td><code>θπ</code></td><td>average pairwise nucleotide differences</td><td>per bp</td></tr><tr><td><code>a₁</code></td><td>1 + 1/2 + … + 1/(n−1), the harmonic number of the sample size</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Tajima's D?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Count the segregating sites and the sequences in your alignment.</li><li>Enter the average pairwise differences per site and the length analysed.</li><li>A D outside ±2 is a signal worth investigating, ideally with a simulation-based test.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: segregating sites (s) of <strong>12</strong>, sample size (chromosomes) of <strong>20</strong>, nucleotide diversity (π) of <strong>0.004</strong>, sequence length of <strong>1,000</strong> bp.</p>\n<p>Substituting them into the formula gives a₁ of <strong>3.55</strong>, a₂ of <strong>1.59</strong>, watterson's θ of <strong>0.0034</strong> per bp, nucleotide diversity θπ of <strong>0.004</strong> per bp, s ÷ a₁ of <strong>3.38</strong>, tajima's d of <strong>0.656</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>D below −2</td><td><strong>Significant negative</strong></td><td>recent sweep or population expansion</td></tr><tr><td>D −2 to 2</td><td><strong>Neutral</strong></td><td>consistent with a constant-size, neutrally evolving population</td></tr><tr><td>D above 2</td><td><strong>Significant positive</strong></td><td>balancing selection, structure or a bottleneck</td></tr></tbody></table>\n<ul><li><p>The statistic is a difference of two estimates of the same quantity: under neutrality they should agree, which is why D is expected to be about zero.</p></li><li><p>The harmonic sums a₁ and a₂ are evaluated here from their asymptotic expansions, which match the exact values to about 0.1% for sample sizes between 10 and 200; the coefficients e₁ and e₂ follow Tajima's original definitions.</p></li><li><p>Significance is judged against a coalescent simulation or a standardised critical value, not against a normal distribution — D is skewed for small samples.</p></li><li><p>Window size matters: calculated across a whole chromosome, a local sweep disappears into the average.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Feeding in the number of variable sites without the sequence length, which loses the per-base scaling.</li><li>Comparing D values from windows with very different numbers of segregating sites.</li><li>Treating a significant D as proof of selection — demography produces the same signature.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/fixation-index-fst\">Fixation index (Fst)</a>. <a href=\"/biology/linkage-disequilibrium\">Linkage disequilibrium</a>. <a href=\"/biology/hardy-weinberg-equilibrium\">Hardy–Weinberg equilibrium</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does a negative Tajima's D mean?",
+      "a": "Fewer rare variants than expected: a selective sweep or a recent expansion has removed them."
+    },
+    {
+      "q": "Is Tajima's D a p-value?",
+      "a": "No. It is a test statistic; you need a simulation or a critical-value table to call significance."
+    },
+    {
+      "q": "Why do the two estimates differ?",
+      "a": "They weight rare variants differently — π includes them, S does not."
+    },
+    {
+      "q": "What does the Tajima's D actually calculate?",
+      "a": "It returns a₁, a₂, watterson's θ and nucleotide diversity θπ. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 729
+}

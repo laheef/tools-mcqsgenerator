@@ -1,0 +1,64 @@
+{
+  "path": "/biology/cfu-g-calculator",
+  "slug": "cfu-g-calculator",
+  "cat": "biology",
+  "name": "CFU/g Calculator",
+  "seoTitle": "CFU/g Calculator — Formula & Results",
+  "seoDesc": "Food, soil and tissue microbiology counts per gram, not per millilitre, and getting from a plate count to CFU/g needs the dilution and the wet weight. Free cf",
+  "h1": "CFU/g Calculator",
+  "summary": "Food, soil and tissue microbiology counts per gram, not per millilitre, and getting from a plate count to CFU/g needs the dilution and the wet weight. It returns CFU per gram, log₁₀(CFU/g) and CFU per kg, and the panel shows all of them at once.\n\nThis calculator does it, and converts to log CFU/g, the scale used in food safety limits. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the CFU/g",
+      "html": "<p>CFU/g = colonies ÷ volume plated × dilution factor ÷ sample weight</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/cfu-g-calculator.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: CFU/g Calculator — Plate count, dilution and sample weight give CFU/g.\" title=\"CFU/g Calculator\"><figcaption>Plate count, dilution and sample weight give CFU/g.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>colonies</code></td><td>colonies on the countable plate</td><td>CFU</td></tr><tr><td><code>volume</code></td><td>volume plated</td><td>mL</td></tr><tr><td><code>dilution</code></td><td>total dilution</td><td>×</td></tr><tr><td><code>weight</code></td><td>mass of sample in the first dilution</td><td>g</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the CFU/g?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: colonies counted of <strong>126</strong> CFU, volume plated of <strong>0.1</strong> mL, dilution factor of <strong>10,000</strong> ×, sample weight of <strong>1</strong> g.</p>\n<p>Substituting them into the formula gives cfu per gram of <strong>12,600,000</strong> CFU/g, log₁₀(cfu/g) of <strong>7.1</strong>, cfu per kg of <strong>12,600,000,000</strong> CFU/kg.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 4 log CFU/g</td><td><strong>Low</strong></td><td>below most spoilage thresholds</td></tr><tr><td>4 – 6 log</td><td><strong>Moderate</strong></td><td>typical of raw foods</td></tr><tr><td>above 6 log</td><td><strong>High</strong></td><td>spoilage or a process failure</td></tr></tbody></table>\n<ul><li><p>Log CFU/g is the industry language: 6 log CFU/g is a million per gram.</p></li><li><p>If the sample was frozen or dried, report whether the weight was taken before or after.</p></li><li><p>Homogenisation must be included in the first dilution volume, not after it.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Dividing by the weight twice.</li><li>Treating a 25 g sample in 225 mL as a dilution factor of 225 instead of 10.</li><li>Reporting CFU/mL from a solid sample without stating the weight used.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/cfu-ml-calculator\">CFU/mL</a>. <a href=\"/biology/serial-dilution-planner\">Serial dilution planner</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I convert CFU/g to log CFU/g?",
+      "a": "Take the base-10 logarithm: 1 × 10⁶ CFU/g is 6 log CFU/g."
+    },
+    {
+      "q": "Does this work for swabs?",
+      "a": "Use CFU per swab or per cm² instead; a swab has no meaningful gram weight."
+    },
+    {
+      "q": "What does the CFU/g actually calculate?",
+      "a": "It returns CFU per gram, log₁₀(CFU/g) and CFU per kg. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 671
+}

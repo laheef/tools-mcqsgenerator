@@ -1,0 +1,64 @@
+{
+  "path": "/biology/fold-change",
+  "slug": "fold-change",
+  "cat": "biology",
+  "name": "Fold Change Calculator",
+  "seoTitle": "Fold Change Calculator — Formula & Results",
+  "seoDesc": "Fold change compares a treated value with a control: 2 means doubled, 0.5 means halved. Free fold change calculator: enter your values and get fold change, lo",
+  "h1": "Fold Change Calculator",
+  "summary": "Fold change compares a treated value with a control: 2 means doubled, 0.5 means halved. It returns fold change, log₂ fold change, percent change and reciprocal fold change, and the panel shows all of them at once.\n\nThis calculator handles the direction properly, works with averages and replicates, and warns when the two conventions (treated/control versus control/treated) give different answers. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Fold Change",
+      "html": "<p>Fold change = treated ÷ control;  log₂ fold change = log₂(treated/control)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/fold-change.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Fold Change Calculator — Control and treated, and the ratio between them.\" title=\"Fold Change Calculator\"><figcaption>Control and treated, and the ratio between them.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>treated</code></td><td>mean of the treated group</td><td>any</td></tr><tr><td><code>control</code></td><td>mean of the control group</td><td>any</td></tr><tr><td><code>log₂ FC</code></td><td>symmetric measure: 1 is up twofold, −1 is down twofold</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Fold Change?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: treated value of <strong>240</strong>, control value of <strong>100</strong>.</p>\n<p>Substituting them into the formula gives fold change of <strong>2.4</strong> ×, log₂ fold change of <strong>1.26</strong>, percent change of <strong>140</strong>%, reciprocal fold change of <strong>0.4167</strong> ×.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>2 and above</td><td><strong>Upregulated</strong></td><td>at least doubled</td></tr><tr><td>0.5 – 2</td><td><strong>Unchanged</strong></td><td>within the usual biological noise</td></tr><tr><td>0.5 and below</td><td><strong>Downregulated</strong></td><td>at least halved</td></tr></tbody></table>\n<ul><li><p>Fold change on a linear scale is asymmetric: up twofold is 2, down twofold is 0.5. log₂ makes the two symmetric, which is why it is used in expression analysis.</p></li><li><p>A fold change without a measure of variance is nearly meaningless — a 3× change from n=2 can be noise.</p></li><li><p>With qPCR, fold change is usually computed as 2^−ΔΔCt, which is the same thing expressed through cycle thresholds.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Comparing a treated sample with a different baseline than the one the graph uses.</li><li>Averaging fold changes across replicates instead of computing them from the means, or the reverse.</li><li>Going from a negative control value close to zero, where small absolute differences become enormous ratios.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/percent-inhibition\">Percent inhibition</a>. <a href=\"/biology/cfu-ml-calculator\">CFU/mL</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is a 2-fold change significant?",
+      "a": "Not by itself. Significance needs the variance of the replicates; fold change is an effect size."
+    },
+    {
+      "q": "Why do some papers report log₂ fold change?",
+      "a": "Because it is symmetric and averages sensibly across genes and conditions."
+    },
+    {
+      "q": "What does the Fold Change actually calculate?",
+      "a": "It returns fold change, log₂ fold change, percent change and reciprocal fold change. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 673
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/codon-adaptation-index",
+  "slug": "codon-adaptation-index",
+  "cat": "biology",
+  "name": "Codon Adaptation Index Calculator",
+  "seoTitle": "Codon Adaptation Index Calculator — Formula & Results",
+  "seoDesc": "The codon adaptation index scores how well a coding sequence uses the codons its host prefers. Free codon adaptation index calculator: enter your values and g",
+  "h1": "Codon Adaptation Index Calculator",
+  "summary": "The codon adaptation index scores how well a coding sequence uses the codons its host prefers. It returns codon adaptation index, codons scored, rare codons (w ≤ 0.2) and gc at third position, and the panel shows all of them at once.\n\nEvery codon is weighted by how often that host uses it within its amino-acid family, the weights are averaged geometrically, and the result runs from 0 to 1 — above about 0.8 means the gene is already tuned for that host, below 0.5 means it is poorly adapted and is a candidate for resynthesis. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Codon Adaptation Index",
+      "html": "<p>CAI = exp( (1/L) · Σ ln w_i ),   w_i = f(codon) ÷ f(most used codon of the same amino acid)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/codon-adaptation-index.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Codon Adaptation Index Calculator — The same gene read against three hosts\" title=\"Codon Adaptation Index Calculator\"><figcaption>The same gene read against three hosts</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>w_i</code></td><td>relative adaptiveness of codon i in the host</td><td>0 – 1</td></tr><tr><td><code>L</code></td><td>codons scored (Met, Trp and stop codons left out)</td><td>codons</td></tr><tr><td><code>f</code></td><td>usage frequency within the amino-acid family</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Codon Adaptation Index?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Paste the coding sequence — DNA, no spaces needed, FASTA headers are ignored.</li><li>Pick the host you intend to express in; the weights change with the reference set.</li><li>Read the CAI and then look at the rare-codon list: a single cluster of w < 0.2 codons is what stalls a ribosome, and a good average can hide it.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.80 – 1.00</td><td><strong>Well adapted</strong></td><td>codon-optimised or a highly expressed native gene</td></tr><tr><td>0.60 – 0.80</td><td><strong>Moderately adapted</strong></td><td>typical of a native gene expressed at a low level</td></tr><tr><td>0.40 – 0.60</td><td><strong>Poorly adapted</strong></td><td>heterologous expression usually benefits from resynthesis</td></tr><tr><td>below 0.40</td><td><strong>Very poorly adapted</strong></td><td>expect low yield; check for rare-codon clusters</td></tr></tbody></table>\n<ul><li><p>CAI is a geometric mean, so one codon with a very low weight pulls the score down much harder than an arithmetic average would — that is deliberate, because translation is limited by the slowest step.</p></li><li><p>The weights are relative adaptiveness values: the most-used codon of each amino acid is 1.00 and the others are scaled against it. They are tabulated to two decimals here, which is enough for a two-decimal CAI.</p></li><li><p>CAI says nothing about mRNA structure, GC content or internal ribosome entry — a gene can score 0.9 and still fold badly at the start. Check the 5′ end separately.</p></li><li><p>Met, Trp and the three stop codons are excluded because they have no synonymous choice; including them would push every score toward 1.0.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Feeding in a genomic sequence with introns: the frame is lost after the first intron and every downstream codon is misread.</li><li>Comparing a CAI computed against E. coli with one computed against human — the scales are not comparable.</li><li>Reading only the average: a 0.75 CAI with five consecutive rare Arg codons will express worse than a 0.68 gene with the same codons spread out.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/codon-usage-calculator\">Codon usage</a>. <a href=\"/biology/multi-reverse-translate\">Multi reverse translate</a>. <a href=\"/biology/gc-content-calculator\">GC content</a>. <a href=\"/biology/dna-to-protein\">DNA to protein</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a good codon adaptation index?",
+      "a": "Above 0.8 is well adapted for the host; 0.6–0.8 is typical of a native gene at modest expression; below 0.5 usually justifies codon optimisation before you try expression."
+    },
+    {
+      "q": "Does a high CAI guarantee high protein yield?",
+      "a": "No. CAI only measures codon choice. mRNA secondary structure, GC content at the 5′ end, rare-codon clusters and the tRNA pool under the growth condition all matter as much."
+    },
+    {
+      "q": "Why is my CAI different from a supplier's optimisation report?",
+      "a": "Because the weight tables differ. Suppliers use their own proprietary usage sets; this page uses the standard published relative adaptiveness values, so expect the same shape and a slightly different number."
+    },
+    {
+      "q": "Can I use CAI for a bacterial gene expressed in human cells?",
+      "a": "Yes — that is exactly the heterologous case it is for. Read the score against the human table, not the bacterial one."
+    },
+    {
+      "q": "What does the Codon Adaptation Index actually calculate?",
+      "a": "It returns codon adaptation index, codons scored, rare codons (w ≤ 0.2) and gc at third position. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    }
+  ],
+  "related": [],
+  "words": 804
+}

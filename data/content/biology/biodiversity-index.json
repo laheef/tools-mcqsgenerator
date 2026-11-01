@@ -1,0 +1,64 @@
+{
+  "path": "/biology/biodiversity-index",
+  "slug": "biodiversity-index",
+  "cat": "biology",
+  "name": "Biodiversity Index Calculator (Simpson)",
+  "seoTitle": "Biodiversity Index (Simpson) Calculator — Formula & Results",
+  "seoDesc": "The Simpson index is the probability that two individuals drawn at random belong to the same species. Free biodiversity index (simpson) calculator: enter your",
+  "h1": "Biodiversity Index Calculator (Simpson)",
+  "summary": "The Simpson index is the probability that two individuals drawn at random belong to the same species. It returns total individuals, simpson dominance D, simpson diversity 1 − D and inverse Simpson 1 ÷ D, and the panel shows all of them at once.\n\nSubtract it from one and you have Simpson's diversity, the probability that they belong to different species — the most intuitive diversity number there is. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Biodiversity Index (Simpson)",
+      "html": "<p>D = Σ nᵢ(nᵢ − 1) ÷ [N(N − 1)];  diversity = 1 − D;  inverse = 1 ÷ D</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/biodiversity-index.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Biodiversity Index Calculator (Simpson) — Dominance against diversity for the same counts.\" title=\"Biodiversity Index Calculator (Simpson)\"><figcaption>Dominance against diversity for the same counts.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>nᵢ</code></td><td>individuals of species i</td><td>individuals</td></tr><tr><td><code>N</code></td><td>all individuals</td><td>individuals</td></tr><tr><td><code>D</code></td><td>probability two draws are the same species</td><td>0–1</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Biodiversity Index (Simpson)?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: species 1 count of <strong>40</strong> individuals, species 2 count of <strong>25</strong> individuals, species 3 count of <strong>15</strong> individuals, species 4 count of <strong>10</strong> individuals, species 5 count of <strong>6</strong> individuals.</p>\n<p>Substituting them into the formula gives total individuals of <strong>96</strong>, simpson dominance d of <strong>0.273</strong>, simpson diversity 1 − d of <strong>0.727</strong>, inverse simpson 1 ÷ d of <strong>3.66</strong>.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 − D below 0.5</td><td><strong>Low diversity</strong></td><td>one or two species dominate</td></tr><tr><td>0.5 – 0.8</td><td><strong>Moderate</strong></td><td>mixed community with clear dominants</td></tr><tr><td>above 0.8</td><td><strong>High diversity</strong></td><td>even, species-rich community</td></tr></tbody></table>\n<ul><li><p>The n(n − 1) form is the unbiased estimator for sampling without replacement; the simpler Σ p² is the population version and is slightly smaller.</p></li><li><p>Inverse Simpson, 1/D, is read as 'the effective number of equally common species' and is usually easier to explain than the index itself.</p></li><li><p>Simpson is less sensitive to rare species than Shannon, so it is the index to use when sampling is incomplete.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Using the biased Σ p² formula and calling it the unbiased Simpson index.</li><li>Averaging index values from replicate quadrats instead of computing from pooled counts.</li><li>Reporting D (dominance) when you mean 1 − D (diversity).</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/shannon-wiener-index\">Shannon–Wiener index</a>. <a href=\"/biology/species-richness\">Species richness</a>. <a href=\"/biology/berger-parker-index\">Berger–Parker index</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is a higher Simpson index more diverse?",
+      "a": "It depends which one: D (dominance) rises with uniformity of a single species being drawn twice, so higher D means lower diversity. 1 − D and 1/D rise with diversity."
+    },
+    {
+      "q": "Why does Simpson need the n − 1 terms?",
+      "a": "Because the second draw cannot be the same individual as the first."
+    },
+    {
+      "q": "What does the Biodiversity Index (Simpson) actually calculate?",
+      "a": "It returns total individuals, simpson dominance D, simpson diversity 1 − D and inverse Simpson 1 ÷ D. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 717
+}

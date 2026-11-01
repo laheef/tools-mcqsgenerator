@@ -1,0 +1,64 @@
+{
+  "path": "/biology/fruit-tree-spacing",
+  "slug": "fruit-tree-spacing",
+  "cat": "biology",
+  "name": "Fruit Tree Spacing Calculator",
+  "seoTitle": "Fruit Tree Spacing Calculator — Formula & Results",
+  "seoDesc": "How many fruit trees fit an orchard, and how far apart they should stand. Free fruit tree spacing calculator: enter your values and get space per tree, trees",
+  "h1": "Fruit Tree Spacing Calculator",
+  "summary": "How many fruit trees fit an orchard, and how far apart they should stand. It returns space per tree, trees per hectare, trees to plant and trees of the main variety, and the panel shows all of them at once.\n\nSpacing depends on the rootstock far more than on the variety: a dwarf apple on M9 wants 3 m between trees, the same variety on a seedling rootstock wants 8 m. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Fruit Tree Spacing",
+      "html": "<p>Trees per hectare = 10 000 ÷ (row spacing × in-row spacing).  Trees to order = area in ha × trees per hectare</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/fruit-tree-spacing.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Fruit Tree Spacing Calculator — Trees per hectare by rootstock vigour\" title=\"Fruit Tree Spacing Calculator\"><figcaption>Trees per hectare by rootstock vigour</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>rootstock</code></td><td>the root system a variety is grafted onto; it sets the tree's vigour</td><td>—</td></tr><tr><td><code>in-row spacing</code></td><td>distance between trees in the same row</td><td>m</td></tr><tr><td><code>hedge ratio</code></td><td>row spacing divided by tree spacing</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Fruit Tree Spacing?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the area you have available in hectares.</li><li>Choose the rootstock vigour — it sets the in-row spacing — and the row spacing your machinery needs.</li><li>The number of trees and the planting density follow.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: orchard area of <strong>1</strong> ha, between rows of <strong>4</strong> m, between trees in the row of <strong>3</strong> m, pollinator rows of <strong>20</strong>%.</p>\n<p>Substituting them into the formula gives space per tree of <strong>12</strong> m², trees per hectare of <strong>833.33</strong> /ha, trees to plant of <strong>833.33</strong>, trees of the main variety of <strong>666.67</strong>, row spacing ÷ tree spacing of <strong>1.33</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 000 – 1 500/ha</td><td><strong>Modern intensive</strong></td><td>dwarf trees on a trellis, 3 × 3.5 m</td></tr><tr><td>400 – 800/ha</td><td><strong>Semi-intensive</strong></td><td>M26 or MM106 at 4.5 × 5 m</td></tr><tr><td>100 – 250/ha</td><td><strong>Traditional standard</strong></td><td>seedling rootstock at 7 × 8 m</td></tr></tbody></table>\n<ul><li><p>Dwarf trees crop earlier and are picked from the ground; standard trees need ladders but live far longer. The choice is about labour, not just yield.</p></li><li><p>Pollination needs two different varieties that flower at the same time, and spacing must leave room for pollinator rows — often every fourth row.</p></li><li><p>The hedge ratio matters for light: keep the row spacing at roughly 1.25 times the tree height that the mature canopy will reach.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using the variety's suggested spacing instead of the rootstock's, which is what actually determines vigour.</li><li>Planting too close for the machinery, then having to remove every third tree in year eight.</li><li>Forgetting that a windbreak costs the first and last rows some yield.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/plants-per-hectare\">Plants per hectare</a>. <a href=\"/biology/compost-application-rate\">Compost application</a>. <a href=\"/biology/crop-coefficient\">Crop coefficient</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many apple trees per hectare?",
+      "a": "About 1 100 for dwarf trees at 3 × 3 m, or 250 for standards at 7 × 6 m."
+    },
+    {
+      "q": "What spacing do dwarf trees need?",
+      "a": "3 m in the row and 3.5–4 m between rows, on a trellis."
+    },
+    {
+      "q": "Why keep pollinator rows?",
+      "a": "Most apple varieties are self-incompatible, so a different variety must flower at the same time within a bee's flight distance."
+    },
+    {
+      "q": "Why does row spacing exceed tree spacing?",
+      "a": "So light reaches the lower canopy and machinery can pass; the ratio is roughly 1.25."
+    },
+    {
+      "q": "What does the Fruit Tree Spacing actually calculate?",
+      "a": "It returns space per tree, trees per hectare, trees to plant and trees of the main variety. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    }
+  ],
+  "related": [],
+  "words": 650
+}

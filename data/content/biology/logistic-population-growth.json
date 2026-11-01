@@ -1,0 +1,64 @@
+{
+  "path": "/biology/logistic-population-growth",
+  "slug": "logistic-population-growth",
+  "cat": "biology",
+  "name": "Logistic Population Growth Calculator",
+  "seoTitle": "Logistic Population Growth Calculator — Formula & Results",
+  "seoDesc": "Logistic growth starts exponential and slows as a population approaches its carrying capacity. Free logistic population growth calculator: enter your values a",
+  "h1": "Logistic Population Growth Calculator",
+  "summary": "Logistic growth starts exponential and slows as a population approaches its carrying capacity. It returns population after that time, growth rate at the start, population at half of K and time to reach K/2, and the panel shows all of them at once.\n\nThis calculator projects the population size forward, gives the growth rate at the current size, and shows when the population reaches half of K — the point of fastest growth. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Logistic Population Growth",
+      "html": "<p>N(t) = K ÷ [1 + ((K − N₀) ÷ N₀) e^(−rt)]</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/logistic-population-growth.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Logistic Population Growth Calculator — The S-shaped curve, from exponential to a plateau at K.\" title=\"Logistic Population Growth Calculator\"><figcaption>The S-shaped curve, from exponential to a plateau at K.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N₀</code></td><td>starting population</td><td>individuals</td></tr><tr><td><code>K</code></td><td>carrying capacity</td><td>individuals</td></tr><tr><td><code>r</code></td><td>intrinsic rate of increase</td><td>per time</td></tr><tr><td><code>t</code></td><td>time elapsed</td><td>time units</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Logistic Population Growth?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: starting population of <strong>50</strong> individuals, carrying capacity of <strong>1,000</strong> individuals, intrinsic growth rate of <strong>0.4</strong> per unit time, time of <strong>10</strong>.</p>\n<p>Substituting them into the formula gives population after that time of <strong>741.84</strong> individuals, growth rate at the start of <strong>19</strong> individuals/time, population at half of k of <strong>500</strong> individuals, time to reach k/2 of <strong>0</strong> time units.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The inflection point is at N = K/2, where growth is fastest; after it the curve flattens toward K without ever crossing it.</p></li><li><p>r sets the speed and K sets the ceiling: a large r with a small K produces a sharp rise and an early plateau.</p></li><li><p>The model assumes a closed population with no age structure, and it ignores the lag that produces overshoot and collapse in real populations.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using a per-generation r with a time step in years.</li><li>Starting above K, where the formula predicts decline — which is correct, but often unexpected.</li><li>Mixing a percentage growth rate with the exponential r: for small rates they coincide, for large ones they do not.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/exponential-population-growth\">Exponential growth</a>. <a href=\"/biology/logistic-population-growth\">Logistic growth</a>. <a href=\"/biology/maximum-sustainable-yield\">Maximum sustainable yield</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between exponential and logistic growth?",
+      "a": "Exponential growth has no ceiling; logistic growth slows as the population approaches K."
+    },
+    {
+      "q": "When is growth fastest?",
+      "a": "At half the carrying capacity, which is the inflection point of the sigmoid curve."
+    },
+    {
+      "q": "What does the Logistic Population Growth actually calculate?",
+      "a": "It returns population after that time, growth rate at the start, population at half of K and time to reach K/2. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 708
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/protein-extinction-coefficient",
+  "slug": "protein-extinction-coefficient",
+  "cat": "biology",
+  "name": "Protein Extinction Coefficient (ε280) Calculator",
+  "seoTitle": "Protein Extinction Coefficient (ε280) Calculator",
+  "seoDesc": "A protein's extinction coefficient at 280 nm can be calculated from its amino acid composition: tryptophans and tyrosines do the absorbing, and cystines add a",
+  "h1": "Protein Extinction Coefficient (ε280) Calculator",
+  "summary": "A protein's extinction coefficient at 280 nm can be calculated from its amino acid composition: tryptophans and tyrosines do the absorbing, and cystines add a small amount. It returns extinction coefficient and A280 of a 1 mg/mL solution, and the panel shows all of them at once.\n\nEnter the counts and this returns ε in M⁻¹cm⁻¹ and the A280 of a 1 mg/mL solution. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Protein Extinction Coefficient (ε280)",
+      "html": "<p>ε₂₈₀ = 5500 × Trp + 1490 × Tyr + 125 × cystines</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/protein-extinction-coefficient.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Protein Extinction Coefficient (ε280) Calculator — Trp, Tyr and disulfides add up to the extinction coefficient.\" title=\"Protein Extinction Coefficient (ε280) Calculator\"><figcaption>Trp, Tyr and disulfides add up to the extinction coefficient.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Trp</code></td><td>number of tryptophan residues</td><td>—</td></tr><tr><td><code>Tyr</code></td><td>number of tyrosine residues</td><td>—</td></tr><tr><td><code>cystine</code></td><td>number of disulfide bonds</td><td>—</td></tr><tr><td><code>ε</code></td><td>molar extinction coefficient</td><td>M⁻¹cm⁻¹</td></tr></tbody></table>\n<p><strong>Where the relationship comes from.</strong> Pace et al. (1995), Protein Science 4:2411–2423.</p>"
+    },
+    {
+      "title": "How do I use the Protein Extinction Coefficient (ε280)?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: tryptophan residues of <strong>8</strong>, tyrosine residues of <strong>12</strong>, cystine (disulfide) bonds of <strong>4</strong>, molecular weight of <strong>55,000</strong> Da.</p>\n<p>Substituting them into the formula gives extinction coefficient of <strong>62,380</strong> M⁻¹cm⁻¹, a280 of a 1 mg/ml solution of <strong>1.13</strong> AU.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The coefficients come from Pace et al. (1995) and are what ExPASy ProtParam uses.</p></li><li><p>Count disulfide bonds, not free cysteines: reduced cysteines contribute nothing at 280 nm.</p></li><li><p>The A280 of a 1 mg/mL solution is the practical number for Beer–Lambert work, because it lets you skip the molecular weight.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Counting every cysteine residue instead of disulfide pairs.</li><li>Using the reduced-protein coefficient for a protein that is folded and disulfide-bonded.</li><li>Assuming the value holds in 6 M guanidine, where the spectrum shifts.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/beer-lambert-a280-protein-concentration\">A280 concentration</a>. <a href=\"/biology/protein-molar-conversions\">Protein molar conversions</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What if my protein has no Trp or Tyr?",
+      "a": "Then ε₂₈₀ is very small and A280 is useless. Use a colorimetric assay or measure at 205 nm, where the peptide backbone absorbs."
+    },
+    {
+      "q": "Does a His-tag change the coefficient?",
+      "a": "Only slightly — histidine contributes about 20 M⁻¹cm⁻¹ at 280 nm, which is negligible against a whole protein."
+    },
+    {
+      "q": "What does the Protein Extinction Coefficient (ε280) actually calculate?",
+      "a": "It returns extinction coefficient and A280 of a 1 mg/mL solution. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 644
+}

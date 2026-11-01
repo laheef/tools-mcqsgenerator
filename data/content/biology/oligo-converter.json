@@ -1,0 +1,64 @@
+{
+  "path": "/biology/oligo-converter",
+  "slug": "oligo-converter",
+  "cat": "biology",
+  "name": "Oligo pmol/µL to µg/mL Converter",
+  "seoTitle": "Oligo pmol/µL to µg/mL Converter Calculator — Formula & Result",
+  "seoDesc": "An oligo arrives from the synthesiser in nanomoles of dry powder and is used in micromolar stocks. Free oligo pmol/µl to µg/ml converter calculator: enter you",
+  "h1": "Oligo pmol/µL to µg/mL Converter",
+  "summary": "An oligo arrives from the synthesiser in nanomoles of dry powder and is used in micromolar stocks. It returns concentration, concentration, concentration and amount in the tube, and the panel shows all of them at once.\n\nThis converter moves between pmol/µL, µg/mL and µM for a single-stranded oligo of known length, so a resuspended primer can be diluted correctly the first time. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Oligo pmol/µL to µg/mL Converter",
+      "html": "<p>µg/mL = pmol/µL × 0.33 × length.  µM = pmol/µL.  Water for a 100 µM stock (µL) = nmol on the label × 10</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/oligo-converter.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Oligo pmol/µL to µg/mL Converter — µg/mL for a 100 µM oligo, by length\" title=\"Oligo pmol/µL to µg/mL Converter\"><figcaption>µg/mL for a 100 µM oligo, by length</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>330</code></td><td>g/mol per nucleotide of single-stranded DNA</td><td>g/mol</td></tr><tr><td><code>pmol/µL</code></td><td>the same number as µM</td><td>mol/L</td></tr><tr><td><code>nt</code></td><td>nucleotide</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Oligo pmol/µL to µg/mL Converter?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the primer length and the concentration you have or want.</li><li>The other units are filled in — pmol/µL, µM and µg/mL are the same quantity expressed three ways.</li><li>For a fresh tube, enter the nanomoles printed on the label to get the water volume for a 100 µM stock.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: oligo length of <strong>20</strong> nt, oligo amount on the label of <strong>25</strong> nmol.</p>\n<p>Substituting them into the formula gives concentration of <strong>100</strong> µM, concentration of <strong>660</strong> µg/mL, concentration of <strong>100</strong> pmol/µL, amount in the tube of <strong>0.1</strong> nmol, water to add for a 100 µm stock of <strong>250</strong> µL.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>100 µM</td><td><strong>Standard stock</strong></td><td>dilute 1:10 into a PCR for a 10 µM working stock</td></tr><tr><td>10 µM</td><td><strong>Working stock</strong></td><td>1 µL in a 25 µL reaction is 0.4 µM</td></tr><tr><td>under 1 µM</td><td><strong>Too dilute to freeze</strong></td><td>aliquot at 10 µM or above</td></tr></tbody></table>\n<ul><li><p>pmol/µL and µM are the same number: 1 pmol/µL is 1 µmol/L. Half of all primer-dilution mistakes come from treating them as different.</p></li><li><p>A primer arrives as a known number of nanomoles. Adding 10 µL of water per nanomole gives exactly a 100 µM stock, whatever the sequence.</p></li><li><p>The 330 g/mol per nucleotide constant is an average; a GC-rich 20-mer is a few percent heavier, which matters only for quantitative work.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Adding a round number of microlitres (say 200 µL) instead of nmol × 10, which gives an unknown concentration.</li><li>Freezing and thawing a 10 µM stock repeatedly — keep 100 µM aliquots and dilute fresh.</li><li>Using the double-stranded 660 constant for a primer, which halves the answer.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/pcr-primer-stats\">PCR primer stats</a>. <a href=\"/biology/primer-dimer-checker\">Primer dimer checker</a>. <a href=\"/biology/dna-molarity-calculator\">DNA molarity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much water do I add to a 25 nmol primer?",
+      "a": "250 µL for a 100 µM stock — 10 µL per nanomole."
+    },
+    {
+      "q": "Is pmol/µL the same as µM?",
+      "a": "Yes. 1 pmol/µL = 1 µmol/L = 1 µM."
+    },
+    {
+      "q": "What working concentration should I use?",
+      "a": "10 µM for routine PCR; 100 µM stocks keep better at −20 °C."
+    },
+    {
+      "q": "What does the Oligo pmol/µL to µg/mL Converter actually calculate?",
+      "a": "It returns concentration, concentration, concentration and amount in the tube. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 711
+}

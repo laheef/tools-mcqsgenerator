@@ -569,6 +569,7 @@ final class Data
              * the <title> tag, where it is doing real work.
              */
             '~\s*[:—–-]\s*Free,?\s+With\s+Steps\s*$~iu',
+            '~\s*[—–-]\s*Formula\s*&\s*Results\s*$~iu',
             '~\s*[:—–-]\s*Formula,?\s*Units\s*&\s*Example\s*$~iu',
             '~\s*[—–-]\s*Answer,? Formula\s*&\s*Units\s*$~iu',
             '~\s*[—–-]\s*Free Calculator with Units\s*$~iu',

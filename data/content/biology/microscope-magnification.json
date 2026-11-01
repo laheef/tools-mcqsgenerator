@@ -1,0 +1,64 @@
+{
+  "path": "/biology/microscope-magnification",
+  "slug": "microscope-magnification",
+  "cat": "biology",
+  "name": "Microscope Magnification Calculator",
+  "seoTitle": "Microscope Magnification Calculator — Formula & Results",
+  "seoDesc": "Total magnification is the objective times the eyepiece, but what people usually need is the reverse: how big the object actually is. Free microscope magnific",
+  "h1": "Microscope Magnification Calculator",
+  "summary": "Total magnification is the objective times the eyepiece, but what people usually need is the reverse: how big the object actually is. It returns total magnification, field of view and actual specimen size, and the panel shows all of them at once.\n\nThis calculator converts a measured image size into a real size, and a real size into the field of view. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Microscope Magnification",
+      "html": "<p>Total magnification = objective × eyepiece;  field of view = field number ÷ objective</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/microscope-magnification.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Microscope Magnification Calculator — Objective, eyepiece, and the size of the real object.\" title=\"Microscope Magnification Calculator\"><figcaption>Objective, eyepiece, and the size of the real object.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>objective</code></td><td>objective lens magnification</td><td>×</td></tr><tr><td><code>eyepiece</code></td><td>ocular magnification</td><td>×</td></tr><tr><td><code>field number</code></td><td>the eyepiece's field-of-view diameter in mm</td><td>mm</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Microscope Magnification?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: objective magnification of <strong>40</strong> ×, eyepiece magnification of <strong>10</strong> ×, field number of <strong>20</strong>, measured image size of <strong>25</strong> mm.</p>\n<p>Substituting them into the formula gives total magnification of <strong>400</strong> ×, field of view of <strong>0.5</strong> mm, actual specimen size of <strong>62.5</strong> µm.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>Resolution, not magnification, is the limit: 0.2 µm is about the best a light microscope can do, and empty magnification beyond about 1000× adds nothing.</p></li><li><p>Use a stage micrometer to calibrate a camera or an eyepiece graticule — the printed magnification of a screen image is almost never the optical one.</p></li><li><p>Field of view shrinks in proportion to the objective magnification: a 40× objective on a 20 mm field number sees 0.5 mm.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Multiplying by the camera's digital zoom and calling it magnification.</li><li>Measuring an image printed at a different size than assumed.</li><li>Confusing field of view (diameter) with field area.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/microscope-magnification\">Microscope magnification</a>. <a href=\"/biology/mitotic-index\">Mitotic index</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the magnification of a 40× objective with a 10× eyepiece?",
+      "a": "400×."
+    },
+    {
+      "q": "How do I measure a cell from a photograph?",
+      "a": "Calibrate with a stage micrometer, then measure pixels and convert; the optical magnification alone does not tell you the scale of a resized image."
+    },
+    {
+      "q": "What does the Microscope Magnification actually calculate?",
+      "a": "It returns total magnification, field of view and actual specimen size. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 654
+}

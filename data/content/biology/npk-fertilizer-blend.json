@@ -1,0 +1,64 @@
+{
+  "path": "/biology/npk-fertilizer-blend",
+  "slug": "npk-fertilizer-blend",
+  "cat": "biology",
+  "name": "NPK Fertilizer Blend Calculator",
+  "seoTitle": "NPK Fertilizer Blend Calculator — Formula & Results",
+  "seoDesc": "A fertilizer grade such as 20-10-10 tells you the percentage of nitrogen, phosphate and potash by weight — not the mass to spread. Free npk fertilizer blend c",
+  "h1": "NPK Fertilizer Blend Calculator",
+  "summary": "A fertilizer grade such as 20-10-10 tells you the percentage of nitrogen, phosphate and potash by weight — not the mass to spread. It returns product to apply (limited by N), product limited by P, product limited by K and bags of 50 kg per hectare, and the panel shows all of them at once.\n\nThis calculator converts a nutrient requirement into kilograms of product per hectare and the fill weight for a spreader. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the NPK Fertilizer Blend",
+      "html": "<p>Product (kg/ha) = nutrient required ÷ percentage in the product × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/npk-fertilizer-blend.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: NPK Fertilizer Blend Calculator — Nutrient requirement against the product rate for each nutrient.\" title=\"NPK Fertilizer Blend Calculator\"><figcaption>Nutrient requirement against the product rate for each nutrient.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N, P₂O₅, K₂O</code></td><td>nutrient requirement</td><td>kg/ha</td></tr><tr><td><code>grade</code></td><td>percentage of each nutrient in the product</td><td>%</td></tr><tr><td><code>rate</code></td><td>product needed</td><td>kg/ha</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the NPK Fertilizer Blend?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: nitrogen required of <strong>120</strong> kg/ha, phosphate required (p₂o₅) of <strong>60</strong> kg/ha, potash required (k₂o) of <strong>60</strong> kg/ha, n in the product of <strong>20</strong>%, p₂o₅ in the product of <strong>10</strong>%, k₂o in the product of <strong>10</strong>%.</p>\n<p>Substituting them into the formula gives product to apply (limited by n) of <strong>600</strong> kg/ha, product limited by p of <strong>600</strong> kg/ha, product limited by k of <strong>600</strong> kg/ha, bags of 50 kg per hectare of <strong>12</strong> bags.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The grade is by weight of N, P₂O₅ and K₂O — not elemental phosphorus and potassium. To convert, P₂O₅ × 0.44 = P and K₂O × 0.83 = K.</p></li><li><p>A single blend rarely matches all three requirements, so the product rate is set by the nutrient that runs out first and the rest is topped up with straight fertilizers.</p></li><li><p>Fertilizer grade percentages must sum to at most 100; a 20-10-10 blend is 40% nutrient and 60% carrier.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Treating P₂O₅ as elemental P, which overstates phosphate by a factor of 2.3.</li><li>Dividing by the grade instead of multiplying by 100 ÷ grade.</li><li>Ignoring the nutrient already in the soil test.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/fertilizer-injector-ratio\">Fertilizer injector ratio</a>. <a href=\"/biology/lime-requirement\">Lime requirement</a>. <a href=\"/biology/crop-water-requirement\">Crop water requirement</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much 20-10-10 gives 120 kg of nitrogen?",
+      "a": "600 kg per hectare — 120 ÷ 0.20."
+    },
+    {
+      "q": "Why does the bag count differ from the rate?",
+      "a": "Because bags are sold in fixed weights; divide the rate by the bag weight."
+    },
+    {
+      "q": "What does the NPK Fertilizer Blend actually calculate?",
+      "a": "It returns product to apply (limited by N), product limited by P, product limited by K and bags of 50 kg per hectare. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 707
+}

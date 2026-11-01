@@ -1,0 +1,64 @@
+{
+  "path": "/biology/height-to-finger-length",
+  "slug": "height-to-finger-length",
+  "cat": "biology",
+  "name": "Height to Finger Length Calculator",
+  "seoTitle": "Height to Finger Length Calculator — Formula & Results",
+  "seoDesc": "Hand length is roughly 10.8% of standing height, and fingers are fixed fractions of the hand. Free height to finger length calculator: enter your values and g",
+  "h1": "Height to Finger Length Calculator",
+  "summary": "Hand length is roughly 10.8% of standing height, and fingers are fixed fractions of the hand. It returns expected hand length, expected finger length and your finger minus the expectation, and the panel shows all of them at once.\n\nEnter your height and a finger length to see how the two compare, or estimate the expected finger length from height alone. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Height to Finger Length",
+      "html": "<p>Hand length ≈ 0.108 × height; index finger ≈ 0.42 × hand length, ring finger ≈ 0.44, middle finger ≈ 0.48</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/height-to-finger-length.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Height to Finger Length Calculator — Height sets the expected hand, the hand sets the expected finger, and your measurement is compared with it.\" title=\"Height to Finger Length Calculator\"><figcaption>Height sets the expected hand, the hand sets the expected finger, and your measurement is compared with it.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>height</code></td><td>standing height without shoes</td><td>cm</td></tr><tr><td><code>hand length</code></td><td>wrist crease to the tip of the middle finger</td><td>cm</td></tr><tr><td><code>finger length</code></td><td>base to tip on the palmar side</td><td>cm</td></tr></tbody></table>\n<p><strong>Where the relationship comes from.</strong> Hand-to-stature proportion of 10.8% is the figure used in anthropometric tables (Pheasant & Haslegrave, Bodyspace).</p>"
+    },
+    {
+      "title": "How do I use the Height to Finger Length?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: standing height of <strong>175</strong> cm, measured finger length of <strong>7.5</strong> cm, which finger set to <strong>1.0</strong>.</p>\n<p>Substituting them into the formula gives expected hand length of <strong>18.9</strong> cm, expected finger length of <strong>7.94</strong> cm, your finger minus the expectation of <strong>-0.438</strong> cm.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The fractions are averages: the standard deviation around them is about 0.4 cm, so a difference of a few millimetres means nothing.</p></li><li><p>Digit ratio (index length ÷ ring length) is a separate measure and is not reproduced by this scaling — the two fingers move together with height.</p></li><li><p>If the difference is more than about 1.5 cm, re-measure before drawing conclusions: the base of the finger is easy to place wrongly by a centimetre.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Measuring the finger from the knuckle of the hand rather than the crease at the base of the digit.</li><li>Measuring on the back of the hand, where the knuckle adds a centimetre.</li><li>Using height in inches with a finger length in centimetres.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/bone-length-to-body-height\">Bone length to body height</a>. <a href=\"/biology/femur-to-foot-ratio\">Femur to foot ratio</a>. <a href=\"/biology/cephalic-index\">Cephalic index</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can finger length predict how tall someone will be?",
+      "a": "Only weakly. Hand and finger lengths correlate with height at about 0.7, which is good enough to flag a measurement error and not good enough to replace a stadiometer."
+    },
+    {
+      "q": "What does the Height to Finger Length actually calculate?",
+      "a": "It returns expected hand length, expected finger length and your finger minus the expectation. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    },
+    {
+      "q": "Does it work in both directions?",
+      "a": "Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into."
+    }
+  ],
+  "related": [],
+  "words": 729
+}

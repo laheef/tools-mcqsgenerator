@@ -1,0 +1,64 @@
+{
+  "path": "/biology/fuzzy-protein-search",
+  "slug": "fuzzy-protein-search",
+  "cat": "biology",
+  "name": "Fuzzy Protein Search Calculator",
+  "seoTitle": "Fuzzy Protein Search Calculator — Formula & Results",
+  "seoDesc": "A fuzzy protein search finds an approximate motif: X matches any residue, B, Z and J their ambiguous pairs. Free fuzzy protein search calculator: enter your v",
+  "h1": "Fuzzy Protein Search Calculator",
+  "summary": "A fuzzy protein search finds an approximate motif: X matches any residue, B, Z and J their ambiguous pairs. It returns matches found, fewest mismatches in a hit and residues searched, and the panel shows all of them at once.\n\nEvery hit is reported with its position, its mass and how many positions it missed — the quick way to find a motif in a protein whose exact sequence you are not sure of. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Fuzzy Protein Search",
+      "html": "<p>a window of length |P| matches when the number of positions where P[i] does not cover S[i] is ≤ the allowed mismatches</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/fuzzy-protein-search.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Fuzzy Protein Search Calculator — Hits for a six-residue motif at three mismatch allowances\" title=\"Fuzzy Protein Search Calculator\"><figcaption>Hits for a six-residue motif at three mismatch allowances</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>the protein sequence</td><td>residues</td></tr><tr><td><code>P</code></td><td>the pattern</td><td>residues</td></tr><tr><td><code>X, B, Z, J</code></td><td>any residue; Asp/Asn; Glu/Gln; Ile/Leu</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Fuzzy Protein Search?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Paste the protein and the motif. Case does not matter.</li><li>Allow a mismatch or two if the sequence comes from a different isoform or a related species.</li><li>Read the positions and the reported masses: the mass tells you at a glance whether the hit is the peptide you expect or an unrelated stretch.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: mismatches allowed of <strong>0</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 mismatches</td><td><strong>Exact motif</strong></td><td>the pattern is present as written</td></tr><tr><td>1 mismatch</td><td><strong>Conservative hit</strong></td><td>usually a point mutation or a species difference</td></tr><tr><td>2+ mismatches</td><td><strong>Loose hit</strong></td><td>raise the allowance only if you expect divergence</td></tr></tbody></table>\n<ul><li><p>X matches any residue, so a pattern full of X matches almost anywhere — count the X positions before trusting a hit.</p></li><li><p>The search is a sliding window over the forward sequence only; report both strands only makes sense for DNA, and this page is for protein.</p></li><li><p>Masses are average residue masses plus one water, the same convention as a peptide mass calculator, so they will be a few hundredths off a monoisotopic mass.</p></li><li><p>Positions are 1-based, the convention in protein databases.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Searching a nucleotide sequence with a protein pattern — every window will look like noise.</li><li>Treating B and Z as literal letters; they are ambiguity codes for Asp/Asn and Glu/Gln.</li><li>Allowing three mismatches on a six-residue pattern, which matches everything.</li><li>Comparing a hit's average mass with a monoisotopic mass from a mass spectrometer and expecting them to agree to the last decimal.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/dna-pattern-finder\">DNA pattern finder</a>. <a href=\"/biology/protein-molecular-weight\">Protein molecular weight</a>. <a href=\"/biology/amino-acid-composition\">Amino-acid composition</a>. <a href=\"/biology/protein-gravy-calculator\">GRAVY</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does a fuzzy search do that an exact search does not?",
+      "a": "It lets a pattern match when a few positions differ, and it understands the IUPAC ambiguity letters (B, Z, J, X) that protein databases use."
+    },
+    {
+      "q": "Why do I get a hit in a protein that should not contain the motif?",
+      "a": "Because you allowed mismatches — check the mismatch count on the hit. With a short pattern and two allowed mismatches, random matches are common."
+    },
+    {
+      "q": "Are the masses monoisotopic or average?",
+      "a": "Average, using the standard residue masses plus H₂O for the intact peptide. For a mass spectrometry match, compare the monoisotopic mass instead."
+    },
+    {
+      "q": "Can I search several patterns at once?",
+      "a": "Run them one after another; the page reports every window of the one pattern you paste."
+    },
+    {
+      "q": "What does the Fuzzy Protein Search actually calculate?",
+      "a": "It returns matches found, fewest mismatches in a hit and residues searched. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    }
+  ],
+  "related": [],
+  "words": 746
+}

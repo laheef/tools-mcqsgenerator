@@ -1,0 +1,64 @@
+{
+  "path": "/biology/growing-degree-days",
+  "slug": "growing-degree-days",
+  "cat": "biology",
+  "name": "Growing Degree Days Calculator",
+  "seoTitle": "Growing Degree Days Calculator — Formula & Results",
+  "seoDesc": "Growing degree days count the heat a crop has accumulated above its base temperature. Free growing degree days calculator: enter your values and get growing d",
+  "h1": "Growing Degree Days Calculator",
+  "summary": "Growing degree days count the heat a crop has accumulated above its base temperature. It returns growing degree days for the day, over seven days at this weather and accumulated over 60 days, and the panel shows all of them at once.\n\nThey predict development far better than calendar days do, which is why sowing dates, variety maturity and pest emergence are all scheduled on them. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Growing Degree Days",
+      "html": "<p>GDD = max(0, (T_max + T_min)/2 − T_base)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/growing-degree-days.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Growing Degree Days Calculator — Degree days accumulating across a season.\" title=\"Growing Degree Days Calculator\"><figcaption>Degree days accumulating across a season.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>T_max, T_min</code></td><td>daily maximum and minimum air temperature</td><td>°C</td></tr><tr><td><code>T_base</code></td><td>temperature below which development stops</td><td>°C</td></tr><tr><td><code>GDD</code></td><td>degree days accumulated in one day</td><td>°C·day</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Growing Degree Days?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: method set to <strong>0.0</strong>, daily maximum of <strong>33</strong>°C, daily minimum of <strong>12</strong>°C, base temperature of <strong>10</strong>°C, upper cut-off of <strong>30</strong>°C.</p>\n<p>Substituting them into the formula gives growing degree days for the day of <strong>12.5</strong> GDD, over seven days at this weather of <strong>87.5</strong> GDD, accumulated over 60 days of <strong>750</strong> GDD.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 GDD</td><td><strong>No development</strong></td><td>below the base temperature all day</td></tr><tr><td>5 – 15 GDD/day</td><td><strong>Normal growing weather</strong></td><td>typical of a temperate summer</td></tr><tr><td>above 25 GDD/day</td><td><strong>Very rapid</strong></td><td>heat that may also stress the crop</td></tr></tbody></table>\n<ul><li><p>Base temperatures are crop-specific: 0 °C for cool-season grasses, 5 °C for wheat, 10 °C for maize and soybean, 15.5 °C for cotton.</p></li><li><p>The upper cut-off matters in hot climates: without it, a 40 °C day adds heat the plant cannot use and maturity predictions come out early.</p></li><li><p>Accumulate from sowing, not from 1 January, if you are timing a crop rather than a season.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using the mean of hourly readings instead of the daily maximum and minimum.</li><li>Mixing Fahrenheit maxima with Celsius minima.</li><li>Assuming a single GDD target fits every variety — early and late maturities differ by hundreds of degree days.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/crop-water-requirement\">Crop water requirement</a>. <a href=\"/biology/days-to-maturity\">Days to maturity</a>. <a href=\"/biology/q10-temperature-coefficient\">Q10 coefficient</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many GDD does maize need to mature?",
+      "a": "About 2 400–2 800 GDD (50 °F base) depending on the hybrid; in Celsius-base-10 terms, roughly 1 300–1 500."
+    },
+    {
+      "q": "What if the minimum is below the base temperature?",
+      "a": "The standard method still uses the daily mean; more refined models floor each half-day at the base temperature."
+    },
+    {
+      "q": "What does the Growing Degree Days actually calculate?",
+      "a": "It returns growing degree days for the day, over seven days at this weather and accumulated over 60 days. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 715
+}

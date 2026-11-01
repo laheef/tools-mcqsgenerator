@@ -1,0 +1,64 @@
+{
+  "path": "/biology/sequence-shuffler",
+  "slug": "sequence-shuffler",
+  "cat": "biology",
+  "name": "DNA Sequence Shuffler",
+  "seoTitle": "DNA Sequence Shuffler Calculator — Formula & Results",
+  "seoDesc": "Shuffling preserves the exact composition of a sequence — every base, or every dinucleotide — while destroying its order. Free dna sequence shuffler calculato",
+  "h1": "DNA Sequence Shuffler",
+  "summary": "Shuffling preserves the exact composition of a sequence — every base, or every dinucleotide — while destroying its order. It returns length, gc content, positions changed and difference from the input, and the panel shows all of them at once.\n\nIt is how you build the null model that tells you whether a motif count, a repeat or a codon bias is more than chance. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the DNA Sequence Shuffler",
+      "html": "<p>Shuffled sequence has the same base counts: A₁ = A₀, C₁ = C₀, G₁ = G₀, T₁ = T₀.  Dinucleotide shuffling also preserves every dinucleotide count</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/sequence-shuffler.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: DNA Sequence Shuffler — A shuffle keeps the base counts\" title=\"DNA Sequence Shuffler\"><figcaption>A shuffle keeps the base counts</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A₀, C₀, G₀, T₀</code></td><td>base counts in the input</td><td>bases</td></tr><tr><td><code>A₁ … T₁</code></td><td>base counts in the output; identical</td><td>bases</td></tr><tr><td><code>seed</code></td><td>starting value of the pseudo-random generator</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the DNA Sequence Shuffler?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: random seed of <strong>42</strong>.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0% changed</td><td><strong>Identical</strong></td><td>a very short or single-base sequence cannot be shuffled</td></tr><tr><td>30 – 70% changed</td><td><strong>Well shuffled</strong></td><td>what a random permutation normally looks like</td></tr><tr><td>100% changed</td><td><strong>Fully displaced</strong></td><td>possible for short sequences, unlikely for long ones</td></tr></tbody></table>\n<ul><li><p>A mononucleotide shuffle preserves base composition but not dinucleotide composition, so it is the right null for asking whether a motif is over-represented.</p></li><li><p>For CpG or oligo-frequency questions the dinucleotide shuffle is stricter and is the better null, because it keeps the sequence's dinucleotide bias intact.</p></li><li><p>Reproducibility matters: report the seed alongside the shuffled sequence, otherwise nobody can regenerate the control you used.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Shuffling to test a property the shuffle preserves — GC content cannot be tested this way, because it is fixed by construction.</li><li>Using one shuffle as a null; a proper test needs hundreds and a distribution.</li><li>Forgetting that a dinucleotide shuffle reproduces mononucleotide composition only approximately for very short sequences.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/cpg-island-finder\">CpG islands</a>. <a href=\"/biology/gc-content-sequence\">GC content</a>. <a href=\"/biology/reverse-complement\">Reverse complement</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does sequence shuffling test?",
+      "a": "Whether an observed pattern — a motif count, a repeat, a codon bias — is more than the composition alone would produce."
+    },
+    {
+      "q": "Why preserve dinucleotides?",
+      "a": "Because genomes have strong dinucleotide biases, notably CpG depletion. A mononucleotide shuffle destroys that and inflates significance."
+    },
+    {
+      "q": "Is the output random?",
+      "a": "Pseudo-random from the seed. The same seed always gives the same sequence, which is what you want in a methods section."
+    },
+    {
+      "q": "What does the DNA Sequence Shuffler actually calculate?",
+      "a": "It returns length, gc content, positions changed and difference from the input. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 693
+}

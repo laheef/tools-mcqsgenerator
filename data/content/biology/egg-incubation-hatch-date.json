@@ -1,0 +1,64 @@
+{
+  "path": "/biology/egg-incubation-hatch-date",
+  "slug": "egg-incubation-hatch-date",
+  "cat": "biology",
+  "name": "Egg Incubation Hatch Date Calculator",
+  "seoTitle": "Egg Incubation Hatch Date Calculator — Formula & Results",
+  "seoDesc": "Different species take different times to hatch, and setting a mixed batch means tracking several dates at once. Free egg incubation hatch date calculator: en",
+  "h1": "Egg Incubation Hatch Date Calculator",
+  "summary": "Different species take different times to hatch, and setting a mixed batch means tracking several dates at once. It returns incubation period, hatch - day of the year, hatch month and hatch day of month, and the panel shows all of them at once.\n\nChoose the species, enter the set date and the calculator returns the hatch date, the candling window and the lockdown day for chickens, ducks, quail, turkeys, geese and pheasants. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Egg Incubation Hatch Date",
+      "html": "<p>Hatch date = set date + incubation period;  candling at about a third of the way through;  lockdown 3 days before hatch</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/egg-incubation-hatch-date.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Egg Incubation Hatch Date Calculator — Incubation lengths side by side.\" title=\"Egg Incubation Hatch Date Calculator\"><figcaption>Incubation lengths side by side.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>species period</code></td><td>days from set to hatch</td><td>days</td></tr><tr><td><code>set day</code></td><td>day of month the eggs went in</td><td>day</td></tr><tr><td><code>hatch day</code></td><td>day of month they should hatch</td><td>day</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Egg Incubation Hatch Date?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: species set to <strong>21.0</strong>, day of month set of <strong>10</strong> day, month set of <strong>3</strong> month.</p>\n<p>Substituting them into the formula gives incubation period of <strong>21</strong> days, hatch - day of the year of <strong>88</strong> day, hatch month of <strong>3</strong> month, hatch day of month of <strong>29</strong> day, candle on day of <strong>7</strong> days, lockdown month of <strong>3</strong> month, lockdown day of month of <strong>26</strong> day.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>17 – 18 days</td><td><strong>Quail</strong></td><td>the shortest common incubation</td></tr><tr><td>21 days</td><td><strong>Chicken</strong></td><td>37.5 °C, 45–55% humidity</td></tr><tr><td>28 days</td><td><strong>Duck / turkey</strong></td><td>slightly higher humidity than chicken</td></tr><tr><td>30 – 35 days</td><td><strong>Goose / Muscovy</strong></td><td>cooler and slower, more water needed</td></tr></tbody></table>\n<ul><li><p>Candling is placed at a third of the way through the incubation, which is when the embryo is large enough to see but the egg is still easy to handle.</p></li><li><p>Waterfowl eggs need more humidity and benefit from cooling and misting once a day once incubation is under way.</p></li><li><p>The quoted periods assume a forced-air incubator at the species' standard temperature.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Running waterfowl eggs on the chicken humidity schedule, which dries them out.</li><li>Candling too early and discarding eggs that are merely slow to show veins.</li><li>Mixing species in one incubator without tracking each batch separately.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/chicken-hatch-date\">Chicken hatch date</a>. <a href=\"/biology/hatch-rate\">Hatch rate</a>. <a href=\"/biology/chicken-feed-amount\">Chicken feed amount</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How long do duck eggs take to hatch?",
+      "a": "28 days for mallard-type ducks and 35 for Muscovy, which are a different species entirely."
+    },
+    {
+      "q": "Can I set different species together?",
+      "a": "Yes, if you track each batch's dates separately — lockdown differs by several days."
+    },
+    {
+      "q": "What does the Egg Incubation Hatch Date actually calculate?",
+      "a": "It returns incubation period, hatch - day of the year, hatch month and hatch day of month. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 728
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/dna-molarity-calculator",
+  "slug": "dna-molarity-calculator",
+  "cat": "biology",
+  "name": "DNA Molarity Calculator",
+  "seoTitle": "DNA Molarity Calculator — Formula & Results",
+  "seoDesc": "A DNA molarity comes from an A₂₆₀ reading, a mass or a concentration, once you know the length. Free dna molarity calculator: enter your values and get total",
+  "h1": "DNA Molarity Calculator",
+  "summary": "A DNA molarity comes from an A₂₆₀ reading, a mass or a concentration, once you know the length. It returns total mass, concentration, A₂₆₀ equivalent and amount, and the panel shows all of them at once.\n\nOne A₂₆₀ unit means 50 µg/mL of double-stranded DNA, 33 µg/mL of single-stranded DNA and 40 µg/mL of RNA, and a known length converts that mass into moles — the number a sequencing reaction or a ligation actually asks for. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the DNA Molarity",
+      "html": "<p>mass (ng) = concentration (ng/µL) × volume (µL).  pmol = mass (ng) × 1000 ÷ (660 × length in bp).  c (nM) = pmol ÷ volume (µL) × 1000.  A₂₆₀ = concentration ÷ 50 (dsDNA), 33 (ssDNA) or 40 (RNA)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/dna-molarity-calculator.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: DNA Molarity Calculator — A₂₆₀ conversion factors (µg/mL per absorbance unit)\" title=\"DNA Molarity Calculator\"><figcaption>A₂₆₀ conversion factors (µg/mL per absorbance unit)</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A₂₆₀</code></td><td>absorbance at 260 nm through a 1 cm path</td><td>—</td></tr><tr><td><code>660</code></td><td>g/mol per base pair of dsDNA</td><td>g/mol</td></tr><tr><td><code>nM</code></td><td>nanomole per litre</td><td>mol/L</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the DNA Molarity?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the length of the molecule — this is what turns a mass into a molar amount.</li><li>Type the concentration your nanodrop or Qubit reports, and the volume you will use.</li><li>Read the amount in pmol, the molarity in nM, the molecule count and the A₂₆₀ it corresponds to.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: length of <strong>1,000</strong> bp, volume of <strong>50</strong> µL, molecule (a₂₆₀ factor) set to <strong>50.0</strong>, molar mass per base of <strong>660</strong> g/mol.</p>\n<p>Substituting them into the formula gives total mass of <strong>5,000</strong> ng, concentration of <strong>100</strong> ng/µL, a₂₆₀ equivalent of <strong>2</strong> A, amount of <strong>7.58</strong> pmol, molarity of <strong>151.52</strong> nM, molecules of <strong>4,562,227,848,485</strong>.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1.8 – 1.9</td><td><strong>A₂₆₀/A₂₈₀</strong></td><td>clean DNA; lower means protein or phenol carry-over</td></tr><tr><td>50 ng/µL</td><td><strong>Typical miniprep</strong></td><td>enough for a dozen PCRs</td></tr><tr><td>under 2 ng/µL</td><td><strong>Too dilute</strong></td><td>concentrate before a sequencing reaction</td></tr></tbody></table>\n<ul><li><p>The A₂₆₀ factor assumes a 1 cm path. A nanodrop uses a much shorter path and applies its own multiplier, so its answer is already in ng/µL — do not multiply it again.</p></li><li><p>A₂₆₀ cannot tell DNA from RNA or from free nucleotides. A reading with a huge 260 peak and a ratio near 1.8 often means nucleotides left over from a bad cleanup.</p></li><li><p>Molarity needs the length. Without it a mass tells you nothing about how many molecules are in the tube: the same 100 ng is 0.15 pmol of a 1 kb fragment but 0.003 pmol of a 50 kb one.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Using the dsDNA factor (50) for an oligo, which understates the absorbance by a third.</li><li>Forgetting to divide by the volume when converting to a working concentration.</li><li>Comparing A₂₆₀ readings taken in different cuvettes or after a freeze–thaw.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/dsdna-ug-to-pmol\">dsDNA µg to pmol</a>. <a href=\"/biology/dna-molecular-weight-calculator\">DNA molecular weight</a>. <a href=\"/biology/oligo-tm-calculator\">Oligo Tm</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I convert A₂₆₀ to concentration?",
+      "a": "Multiply by 50 for dsDNA, 33 for ssDNA or 40 for RNA to get µg/mL, which is the same number in ng/µL."
+    },
+    {
+      "q": "How many copies are in 100 ng of a 1 kb plasmid?",
+      "a": "About 9 × 10¹⁰ — 100 ng ÷ 660 kDa, times Avogadro's number."
+    },
+    {
+      "q": "Why does molarity need the fragment length?",
+      "a": "Because the same mass of a longer molecule is fewer molecules."
+    },
+    {
+      "q": "What does the DNA Molarity actually calculate?",
+      "a": "It returns total mass, concentration, A₂₆₀ equivalent and amount. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 742
+}

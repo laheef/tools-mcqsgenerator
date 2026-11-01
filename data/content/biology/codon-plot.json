@@ -1,0 +1,64 @@
+{
+  "path": "/biology/codon-plot",
+  "slug": "codon-plot",
+  "cat": "biology",
+  "name": "Codon Plot Calculator",
+  "seoTitle": "Codon Plot Calculator — Formula & Results",
+  "seoDesc": "A codon plot shows where the rare codons sit along a coding sequence, not just how many there are. Free codon plot calculator: enter your values and get codon",
+  "h1": "Codon Plot Calculator",
+  "summary": "A codon plot shows where the rare codons sit along a coding sequence, not just how many there are. It returns codons read, rare codons (w ≤ 0.2) and runs of 3+ rare codons, and the panel shows all of them at once.\n\nIt scores every codon for E. coli adaptation, draws the sequence as a track of bars and lists runs of rare codons — the clusters that stall a ribosome and cost protein yield. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Codon Plot",
+      "html": "<p>plot the relative adaptiveness w of each codon in order; a cluster is 3 or more consecutive codons with w ≤ 0.2</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/codon-plot.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Codon Plot Calculator — Rare codons per 30-codon window along a 720 bp gene\" title=\"Codon Plot Calculator\"><figcaption>Rare codons per 30-codon window along a 720 bp gene</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>w</code></td><td>relative adaptiveness of the codon in E. coli</td><td>0 – 1</td></tr><tr><td><code>window</code></td><td>codons per summary point on the plot</td><td>codons</td></tr><tr><td><code>cluster</code></td><td>consecutive rare codons</td><td>codons</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Codon Plot?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Paste the coding sequence — the page reads from the first base as codon 1.</li><li>Set the window if you want the summary coarser or finer than 30 codons.</li><li>Read the track first: a flat blue line with a handful of dips is a healthy gene. Then read the cluster list — a run of three or more rare codons is the part worth resynthesising.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: window size of <strong>30</strong> codons.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>no cluster</td><td><strong>Even</strong></td><td>the gene has rare codons but they are spread out — usually fine</td></tr><tr><td>one cluster</td><td><strong>One hot spot</strong></td><td>often at the 5′ end; check the translation initiation region</td></tr><tr><td>two or three</td><td><strong>Several hot spots</strong></td><td>expect a yield penalty; consider changing those codons</td></tr><tr><td>four or more</td><td><strong>Poorly adapted</strong></td><td>resynthesise the gene rather than tune single codons</td></tr></tbody></table>\n<ul><li><p>This is the plot that shows what a single CAI number cannot: a gene with a good average can still carry five consecutive codons at w = 0.06, and that run is what the ribosome queues on.</p></li><li><p>The y-axis is relative adaptiveness, not frequency. w = 1.00 means the codon is the host's most-used synonym for that amino acid; w = 0.03 means it is nearly unused.</p></li><li><p>Positions are codon numbers, not base numbers, so position 12 is bases 34–36.</p></li><li><p>Met, Trp and stop codons carry no adaptiveness — they are drawn as neutral points rather than scored, because there is no choice to make.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Plotting a genomic sequence with introns: the frame breaks at the first intron and every codon after it is wrong.</li><li>Treating a low average as the whole story, or a high one as a clean bill of health.</li><li>Ignoring an all-rare cluster at the very start, which affects initiation more than internal clusters affect elongation.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/codon-adaptation-index\">Codon adaptation index</a>. <a href=\"/biology/codon-usage-calculator\">Codon usage</a>. <a href=\"/biology/orf-finder\">ORF finder</a>. <a href=\"/biology/multi-reverse-translate\">Multi reverse translate</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does a codon plot show that the CAI does not?",
+      "a": "Position. CAI averages the whole sequence; the plot shows where the rare codons are, so a cluster that stalls translation is visible instead of averaged away."
+    },
+    {
+      "q": "What counts as a rare codon?",
+      "a": "Here, a codon whose relative adaptiveness in E. coli is 0.2 or below — roughly the bottom fifth of the usage range. The cut-off is stated on the page rather than implied."
+    },
+    {
+      "q": "Why are the stops and Met not scored?",
+      "a": "Because they have a single codon. Adaptiveness measures a choice between synonyms, and there is none for those."
+    },
+    {
+      "q": "Can I use the plot for a human gene?",
+      "a": "The weighting table here is E. coli. For a mammalian expression experiment the pattern of rare codons differs, and the codon adaptation index page lets you switch the host."
+    },
+    {
+      "q": "What does the Codon Plot actually calculate?",
+      "a": "It returns codons read, rare codons (w ≤ 0.2) and runs of 3+ rare codons. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    }
+  ],
+  "related": [],
+  "words": 789
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/dna-percentage",
+  "slug": "dna-percentage",
+  "cat": "biology",
+  "name": "DNA Percentage Calculator",
+  "seoTitle": "DNA Percentage Calculator — Formula & Results",
+  "seoDesc": "The DNA percentage of a genome is the share of its bases that code for protein. Free dna percentage calculator: enter your values and get coding percentage, n",
+  "h1": "DNA Percentage Calculator",
+  "summary": "The DNA percentage of a genome is the share of its bases that code for protein. It returns coding percentage, non-coding share, gene density and bases per gene, and the panel shows all of them at once.\n\nGive the genome size and either the coding bases or a gene count with a mean gene length, and the page returns the coding percentage, the non-coding share, the gene density in genes per megabase and the mean bases per gene — the numbers that decide whether a genome is compact or mostly intergenic. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the DNA Percentage",
+      "html": "<p>coding % = coding bases ÷ genome size × 100;  gene density = genes ÷ genome size (Mb);  bases per gene = genome (bp) ÷ genes</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/dna-percentage.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: DNA Percentage Calculator — Coding share of four genomes\" title=\"DNA Percentage Calculator\"><figcaption>Coding share of four genomes</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>genome</code></td><td>haploid genome size</td><td>Mb</td></tr><tr><td><code>coding</code></td><td>total length of coding sequence</td><td>Mb</td></tr><tr><td><code>genes</code></td><td>number of protein-coding genes</td><td>—</td></tr><tr><td><code>gene density</code></td><td>how tightly genes are packed</td><td>genes/Mb</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the DNA Percentage?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the genome size in megabases — one copy, not the diploid total.</li><li>Enter the coding bases: the sum of all coding exons, which is what a genome annotation gives you as the total CDS length.</li><li>Add the gene count if you want gene density and bases per gene; leave it as it is to skip those two lines.</li><li>Compare the coding percentage across organisms: it is the single clearest number for how much of a genome is doing something.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: genome size of <strong>3,000</strong> Mb, coding bases of <strong>90</strong> Mb, gene count of <strong>20,000</strong>.</p>\n<p>Substituting them into the formula gives coding percentage of <strong>3</strong>%, non-coding share of <strong>97</strong>%, gene density of <strong>6.67</strong> genes/Mb, bases per gene of <strong>150,000</strong> bp, coding bases per gene of <strong>4,500</strong> bp.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>above 70 %</td><td><strong>Compact</strong></td><td>bacterial and archaeal genomes, and viral genomes</td></tr><tr><td>30 – 70 %</td><td><strong>Dense</strong></td><td>small eukaryotes such as yeast and some fungi</td></tr><tr><td>10 – 30 %</td><td><strong>Typical eukaryote</strong></td><td>invertebrates and many plants</td></tr><tr><td>1 – 10 %</td><td><strong>Sparse</strong></td><td>vertebrates, including the human 1.5 %</td></tr><tr><td>below 1 %</td><td><strong>Very sparse</strong></td><td>large plant and amphibian genomes dominated by repeats</td></tr></tbody></table>\n<ul><li><p>The human figure is about 1.5 % coding and roughly 39 % in introns; the rest is intergenic sequence, much of it repetitive. A genome can be 50× larger than another with barely more genes — the difference is mostly repeats.</p></li><li><p>Coding percentage is not the same as exon percentage: exons include untranslated regions, so exon totals run higher than coding sequence totals.</p></li><li><p>Gene density and mean gene length move in opposite directions across taxa: compact genomes have short genes packed closely, which is why the bases-per-gene figure is worth reading next to the density.</p></li><li><p>Genome size here is haploid. A diploid cell contains twice this, which matters if you are converting to mass of DNA per cell.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using the diploid genome size and then comparing with published haploid percentages.</li><li>Entering the number of exons instead of the coding length.</li><li>Comparing coding percentages between an annotation that counts only reviewed genes and one that includes predicted open reading frames.</li><li>Assuming non-coding means non-functional: promoters, enhancers and non-coding RNA all live in the non-coding share.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/coding-capacity-of-dna\">Coding capacity of DNA</a>. <a href=\"/biology/genome-copy-number\">Genome copy number</a>. <a href=\"/biology/dna-concentration\">DNA concentration</a>. <a href=\"/biology/gc-content-calculator\">GC content</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What percentage of the human genome is coding?",
+      "a": "About 1.5 % — roughly 30 Mb of coding sequence in a 3 000 Mb haploid genome. Adding untranslated regions brings the exonic total to a few percent, and introns take about 39 %."
+    },
+    {
+      "q": "Why do some genomes have almost no non-coding DNA?",
+      "a": "Because selection against carrying extra DNA is strong in fast-growing cells with large population sizes, which is the usual explanation for bacterial genome compaction."
+    },
+    {
+      "q": "Is coding percentage the same as gene density?",
+      "a": "No. Gene density counts genes per megabase and says how packed the genes are; coding percentage measures how much of the sequence is coding. A genome can be gene-dense and still have a low coding percentage if its genes are mostly introns."
+    },
+    {
+      "q": "Can I use this for a single gene or contig?",
+      "a": "Yes, with small numbers: a 2 000 bp gene with 1 500 bp of coding sequence is 75 % coding. The same formula works at any scale."
+    },
+    {
+      "q": "What does the DNA Percentage actually calculate?",
+      "a": "It returns coding percentage, non-coding share, gene density and bases per gene. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    }
+  ],
+  "related": [],
+  "words": 873
+}

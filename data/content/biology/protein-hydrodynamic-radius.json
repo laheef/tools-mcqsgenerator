@@ -1,0 +1,64 @@
+{
+  "path": "/biology/protein-hydrodynamic-radius",
+  "slug": "protein-hydrodynamic-radius",
+  "cat": "biology",
+  "name": "Protein Hydrodynamic Radius Calculator",
+  "seoTitle": "Protein Hydrodynamic Radius Calculator — Formula & Results",
+  "seoDesc": "The hydrodynamic radius is the effective size a protein presents to the solvent — what size-exclusion chromatography and dynamic light scattering actually mea",
+  "h1": "Protein Hydrodynamic Radius Calculator",
+  "summary": "The hydrodynamic radius is the effective size a protein presents to the solvent — what size-exclusion chromatography and dynamic light scattering actually measure. It returns hydrodynamic radius, diffusion coefficient and relative elution volume (SEC), and the panel shows all of them at once.\n\nThis calculator estimates it from molecular weight, and converts between radius, diffusion coefficient and elution behaviour for globular and disordered proteins. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Protein Hydrodynamic Radius",
+      "html": "<p>Globular: Rh ≈ 0.066 × MW^⅓ nm;  D = kT ÷ (6πηR)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/protein-hydrodynamic-radius.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Protein Hydrodynamic Radius Calculator — Mass and fold give a radius, and the radius gives the diffusion coefficient.\" title=\"Protein Hydrodynamic Radius Calculator\"><figcaption>Mass and fold give a radius, and the radius gives the diffusion coefficient.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>MW</code></td><td>molecular weight</td><td>Da</td></tr><tr><td><code>Rh</code></td><td>hydrodynamic radius</td><td>nm</td></tr><tr><td><code>η</code></td><td>solvent viscosity</td><td>Pa·s</td></tr><tr><td><code>D</code></td><td>translational diffusion coefficient</td><td>µm²/s</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Protein Hydrodynamic Radius?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: molecular weight of <strong>55,000</strong> Da, fold set to <strong>1.0</strong>, solvent viscosity of <strong>0.89</strong> cP, temperature of <strong>25</strong>°C.</p>\n<p>Substituting them into the formula gives hydrodynamic radius of <strong>2.5</strong> nm, diffusion coefficient of <strong>98.07</strong> µm²/s, relative elution volume (sec) of <strong>1.35</strong> Ve/V0.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 – 3 nm</td><td><strong>Small globular</strong></td><td>lysozyme, cytochrome c</td></tr><tr><td>3 – 6 nm</td><td><strong>Typical globular</strong></td><td>BSA, IgG fragments</td></tr><tr><td>above 8 nm</td><td><strong>Large or disordered</strong></td><td>multimers, complexes, IDPs</td></tr></tbody></table>\n<ul><li><p>A disordered protein of the same molecular weight is two to three times larger than a globular one; the difference is what makes SEC a shape measurement, not just a mass one.</p></li><li><p>The Stokes–Einstein relation assumes a sphere, which is why a radius derived this way is 'hydrodynamic' rather than geometric.</p></li><li><p>Glycosylation adds mass without adding much radius per dalton, so heavily modified proteins sit below the globular line.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Using viscosity in poise where Pa·s is needed (a factor of 10).</li><li>Treating the estimate as a measurement: DLS gives the real number.</li><li>Comparing Rh across temperatures without correcting the viscosity of water.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/protein-molar-conversions\">Protein molar conversions</a>. <a href=\"/biology/beer-lambert-a280-protein-concentration\">A280 concentration</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a normal hydrodynamic radius for a 50 kDa protein?",
+      "a": "About 3 nm if globular, 6–8 nm if partly disordered."
+    },
+    {
+      "q": "Why does my SEC elution suggest a much larger protein?",
+      "a": "Because SEC separates by size, and an elongated or disordered protein behaves like a larger sphere."
+    },
+    {
+      "q": "What does the Protein Hydrodynamic Radius actually calculate?",
+      "a": "It returns hydrodynamic radius, diffusion coefficient and relative elution volume (SEC). Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 698
+}

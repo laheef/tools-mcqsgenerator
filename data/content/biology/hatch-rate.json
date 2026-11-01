@@ -1,0 +1,64 @@
+{
+  "path": "/biology/hatch-rate",
+  "slug": "hatch-rate",
+  "cat": "biology",
+  "name": "Hatch Rate Calculator",
+  "seoTitle": "Hatch Rate Calculator — Formula & Results",
+  "seoDesc": "Hatch rate is the share of fertile eggs that actually hatch, and hatchability is the share of all eggs set. Free hatch rate calculator: enter your values and",
+  "h1": "Hatch Rate Calculator",
+  "summary": "Hatch rate is the share of fertile eggs that actually hatch, and hatchability is the share of all eggs set. It returns hatch rate (of fertile), hatchability (of set), infertile eggs and died after candling, and the panel shows all of them at once.\n\nThe two numbers answer different questions — one measures the incubator, the other the flock — and this calculator reports both plus the total losses. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Hatch Rate",
+      "html": "<p>Hatch rate = hatched ÷ fertile × 100;  hatchability = hatched ÷ eggs set × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/hatch-rate.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Hatch Rate Calculator — Eggs set, fertile eggs and chicks give two different percentages.\" title=\"Hatch Rate Calculator\"><figcaption>Eggs set, fertile eggs and chicks give two different percentages.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>set</code></td><td>eggs placed in the incubator</td><td>eggs</td></tr><tr><td><code>fertile</code></td><td>eggs with a visible embryo at candling</td><td>eggs</td></tr><tr><td><code>hatched</code></td><td>chicks that emerged</td><td>chicks</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Hatch Rate?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: eggs set of <strong>48</strong> eggs.</p>\n<p>Substituting them into the formula gives hatch rate (of fertile) of <strong>85</strong>%, hatchability (of set) of <strong>70.83</strong>%, infertile eggs of <strong>8</strong> eggs, died after candling of <strong>6</strong> eggs, chicks hatched of <strong>34</strong> chicks, fertile eggs of <strong>40</strong> eggs.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>85% and above</td><td><strong>Good</strong></td><td>commercial hatchery performance</td></tr><tr><td>70 – 85%</td><td><strong>Fair</strong></td><td>check turning, temperature and humidity</td></tr><tr><td>below 70%</td><td><strong>Poor</strong></td><td>look at fertility, storage and incubation first</td></tr></tbody></table>\n<ul><li><p>A low hatch rate with good fertility points at incubation; a low hatchability with poor fertility points at the breeding flock, the cockerel ratio or egg storage.</p></li><li><p>Candling at day 7 removes the infertiles, which is why both numbers are worth reporting: they separate two different problems.</p></li><li><p>Stored eggs lose about 1% of hatchability per day after day seven.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Dividing by eggs set and calling it hatch rate — that is hatchability, and it makes a fertility problem look like an incubator problem.</li><li>Candling too early, before day 7, and counting live embryos as infertile.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/chicken-hatch-date\">Chicken hatch date</a>. <a href=\"/biology/egg-incubation-hatch-date\">Egg incubation hatch date</a>. <a href=\"/biology/hatch-rate\">Percent germination</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a good hatch rate for chickens?",
+      "a": "85% of fertile eggs is the commercial benchmark; backyard hatches often run 70–85%."
+    },
+    {
+      "q": "What is the difference between hatch rate and hatchability?",
+      "a": "Hatch rate is chicks over fertile eggs; hatchability is chicks over all eggs set. The gap between them is the infertile count."
+    },
+    {
+      "q": "What does the Hatch Rate actually calculate?",
+      "a": "It returns hatch rate (of fertile), hatchability (of set), infertile eggs and died after candling. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 688
+}

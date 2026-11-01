@@ -1,0 +1,64 @@
+{
+  "path": "/biology/gc-content-sequence",
+  "slug": "gc-content-sequence",
+  "cat": "biology",
+  "name": "GC Content from a Sequence",
+  "seoTitle": "GC Content from a Sequence — Sliding Window",
+  "seoDesc": "GC content is the share of a DNA molecule that is guanine or cytosine, and it decides how strongly two strands stick together. Free gc content from a sequence",
+  "h1": "GC Content from a Sequence",
+  "summary": "GC content is the share of a DNA molecule that is guanine or cytosine, and it decides how strongly two strands stick together. It returns length, g + c bases, gc content, at content and melting temperature of the duplex, and the panel shows all of them at once.\n\nThis calculator reports GC% overall and in sliding windows, so a GC-rich island inside an otherwise AT-rich sequence is visible rather than averaged away. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the GC Content from a Sequence",
+      "html": "<p>GC% = (G + C) ÷ N × 100;  Tm ≈ 64.9 + 41(G+C − 16.4)/N  (G+C as a count)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/gc-content-sequence.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: GC Content from a Sequence — Typical GC content (%)\" title=\"GC Content from a Sequence\"><figcaption>Typical GC content (%)</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N</code></td><td>sequence length</td><td>bp</td></tr><tr><td><code>GC</code></td><td>number of guanine and cytosine bases</td><td>bases</td></tr><tr><td><code>Tm</code></td><td>melting temperature of the duplex</td><td>°C</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the GC Content from a Sequence?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: window size of <strong>50</strong> bp.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 40%</td><td><strong>AT-rich</strong></td><td>easier to melt; often regulatory or repeat DNA</td></tr><tr><td>40 – 60%</td><td><strong>Typical</strong></td><td>most vertebrate genomic DNA sits here</td></tr><tr><td>60 – 70%</td><td><strong>GC-rich</strong></td><td>more stable duplex, harder to denature</td></tr><tr><td>above 70%</td><td><strong>Very GC-rich</strong></td><td>CpG islands, ribosomal DNA, some bacterial genomes</td></tr></tbody></table>\n<ul><li><p>GC pairs have three hydrogen bonds and AT pairs have two, which is why GC-rich DNA melts at a higher temperature and why GC-rich templates are harder to sequence through.</p></li><li><p>A single GC% figure hides structure. A 200 bp CpG island at 70% GC inside a 100 kb region at 41% GC changes the overall number by a fraction of a percent.</p></li><li><p>RNA has uracil instead of thymine; the GC fraction is calculated the same way.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting ambiguous bases (N, R, Y) as AT because they are not G or C.</li><li>Comparing GC% of an mRNA (no introns) with that of its gene.</li><li>Assuming high GC always means a high melting temperature in a cell — salt and length matter at least as much.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/reverse-complement\">Reverse complement</a>. <a href=\"/biology/oligo-tm-calculator\">Oligo Tm</a>. <a href=\"/biology/coding-capacity-of-dna\">Coding capacity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a normal GC content?",
+      "a": "About 41% for the human genome, 50% for many bacteria, and as low as 25% in some Plasmodium genomes."
+    },
+    {
+      "q": "Why does GC content matter for PCR?",
+      "a": "GC-rich regions need higher denaturation temperatures and often additives such as betaine or DMSO."
+    },
+    {
+      "q": "What does the GC Content from a Sequence actually calculate?",
+      "a": "It returns length, g + c bases, gc content, at content and melting temperature of the duplex. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 692
+}

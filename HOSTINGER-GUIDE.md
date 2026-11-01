@@ -174,21 +174,25 @@ so there is nothing to break under HTTPS.
 
 ## 9. Verify the deployment (10 minutes, do not skip)
 
-Run this **after** Step 6 (import + installer). A file-only install answers most of
-it too, but with 3 831 calculators instead of 4 041 and without the CMS pages,
-because those rows come from `install/database.sql`.
+Run this **after** Step 6 (import + installer).
+
+The calculator catalogue itself needs no database: all **4 041** calculators (320
+of them biology) ship as files in `data/`, so a file-only install already answers
+rows 1–5, 8–10 and 12–18 below with the full set. The SQL import adds the CMS —
+pages, blog post, menu, settings — and the panel's screens; it is not what puts
+the calculators on the site.
 
 | # | URL | Expected |
 |---|---|---|
-| 1 | `https://mcqsgenerator.com/tool/` | Home page, counter reads **4 041 calculators** (before the database import it reads **3 831** — the 210 panel-authored calculators live in MySQL, so this number is your proof the import worked) |
+| 1 | `https://mcqsgenerator.com/tool/` | Home page, counter reads **4 041 calculators** — with or without the database, because the whole catalogue is in `data/calc/` |
 | 2 | `/tool/calculators` | Full catalogue, paginated |
 | 3 | `/tool/math/percentage` | Put **25** in *What is: %*, **200** in *Of*, press Calculate → **Y = 50** |
 | 4 | `/tool/biology/dog-age` | Biology calculator renders and calculates |
-| 5 | `/tool/biology/cephalic-index` | A **database-authored** calculator: the page and its figure come from the CMS rows you imported. If it 404s, the import did not run. The image must load from `/tool/uploads/biology/…` |
+| 5 | `/tool/biology/cephalic-index` | One of the 320 biology calculators, with its animated figure from `/tool/uploads/biology/cephalic-index.svg`. Both the page and the image must load before the database is touched — if this 404s, the deploy is incomplete, not the import |
 | 6 | `/tool/about` · `/tool/contact` · `/tool/privacy` · `/tool/terms` | CMS pages; the contact form posts and shows the success note |
 | 7 | `/tool/blog` | Blog index with the imported post |
 | 8 | `/tool/search?q=bmi` | Results with live suggestions |
-| 9 | `/tool/sitemap.xml` | XML, **4 065 `<loc>`**, every URL starting `https://mcqsgenerator.com/tool/` |
+| 9 | `/tool/sitemap.xml` | XML, **4 057 `<loc>`** before the import and **4 065** after it (the 8 CMS pages and the post join the sitemap once the rows exist), every URL starting `https://mcqsgenerator.com/tool/` |
 | 10 | `/tool/robots.txt` | `Allow: /tool/`, `Disallow: /tool/admin/`, `Sitemap: …/tool/sitemap.xml` |
 | 11 | `/tool/admin/` | Sign-in form; wrong password refused; your account works |
 | 12 | `/tool/assets/css/app.css` · `/tool/assets/js/vendor/tailwind.js` | 200, not 404 |

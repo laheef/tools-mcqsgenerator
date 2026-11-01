@@ -1,0 +1,64 @@
+{
+  "path": "/biology/chicken-hatch-date",
+  "slug": "chicken-hatch-date",
+  "cat": "biology",
+  "name": "Chicken Hatch Date Calculator",
+  "seoTitle": "Chicken Hatch Date Calculator — Formula & Results",
+  "seoDesc": "Chicken eggs hatch 21 days after they are set, with a one-day window either side. Free chicken hatch date calculator: enter your values and get days remaining",
+  "h1": "Chicken Hatch Date Calculator",
+  "summary": "Chicken eggs hatch 21 days after they are set, with a one-day window either side. It returns days remaining, candle on day, stop turning on day and hatch day (day of month), and the panel shows all of them at once.\n\nThis calculator counts forward from the day you set the eggs to the hatch date, tells you which incubation stage the eggs are at today, and flags the days when you should candle and when to stop turning. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Chicken Hatch Date",
+      "html": "<p>Hatch date = set date + 21 days; lockdown (stop turning, raise humidity) at day 18</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/chicken-hatch-date.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Chicken Hatch Date Calculator — Set date plus incubation period lands on hatch day.\" title=\"Chicken Hatch Date Calculator\"><figcaption>Set date plus incubation period lands on hatch day.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>set date</code></td><td>the day the eggs went in</td><td>date</td></tr><tr><td><code>total_days</code></td><td>incubation period for the species</td><td>days</td></tr><tr><td><code>hatch date</code></td><td>expected hatch</td><td>date</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Chicken Hatch Date?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: day of month you set the eggs of <strong>1</strong> day, month of <strong>4</strong> month, days already incubated of <strong>0</strong> days, incubation period of <strong>21</strong> days.</p>\n<p>Substituting them into the formula gives days remaining of <strong>21</strong> days, candle on day of <strong>7</strong>, stop turning on day of <strong>18</strong>, hatch day (day of month) of <strong>22</strong> day, hatch month of <strong>4</strong> month.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>day 1 – 7</td><td><strong>Setting</strong></td><td>temperature and humidity stabilising</td></tr><tr><td>day 7 – 10</td><td><strong>Candling</strong></td><td>clear eggs can be removed</td></tr><tr><td>day 18</td><td><strong>Lockdown</strong></td><td>stop turning, raise humidity to 65–70%</td></tr><tr><td>day 21</td><td><strong>Hatch</strong></td><td>chicks emerge over 12–24 hours</td></tr></tbody></table>\n<ul><li><p>The hatch date moves by up to a day either way with temperature: a forced-air incubator running 0.5 °C cool can add a day, and a still-air one can finish early.</p></li><li><p>If you set eggs on several days, treat each batch separately — a two-day spread becomes a two-day spread at hatch.</p></li><li><p>Month arithmetic here is a plain addition of the day number; if the sum passes the end of the month, count into the next month when you plan your calendar.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting the set day as day 1 when the eggs went in late in the evening.</li><li>Leaving the turner on past day 18, which is a common cause of malpositioned chicks.</li><li>Opening the incubator during hatch, which drops humidity exactly when the chicks need it.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/egg-incubation-hatch-date\">Egg incubation hatch date</a>. <a href=\"/biology/hatch-rate\">Hatch rate</a>. <a href=\"/biology/chicken-years-to-human-years\">Chicken years to human years</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How long do chicken eggs take to hatch?",
+      "a": "21 days at 37.5 °C in a forced-air incubator. Ducks take 28, quail 17–18, geese 28–30."
+    },
+    {
+      "q": "What is lockdown?",
+      "a": "The last three days, when turning stops, humidity goes up to about 65–70% and the incubator stays closed."
+    },
+    {
+      "q": "What does the Chicken Hatch Date actually calculate?",
+      "a": "It returns days remaining, candle on day, stop turning on day and hatch day (day of month). Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 747
+}

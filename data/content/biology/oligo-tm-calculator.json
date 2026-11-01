@@ -1,0 +1,64 @@
+{
+  "path": "/biology/oligo-tm-calculator",
+  "slug": "oligo-tm-calculator",
+  "cat": "biology",
+  "name": "Oligo Tm (Melting Temperature) Calculator",
+  "seoTitle": "Oligo Tm (Melting Temperature) Calculator — Formula & Results",
+  "seoDesc": "Melting temperature is where half the oligo is unpaired, and it decides annealing temperatures, hybridisation conditions and whether a primer pair will work t",
+  "h1": "Oligo Tm (Melting Temperature) Calculator",
+  "summary": "Melting temperature is where half the oligo is unpaired, and it decides annealing temperatures, hybridisation conditions and whether a primer pair will work together. It returns GC content, tm, Wallace, tm, GC rule and tm, GC rule with salt correction, and the panel shows all of them at once.\n\nThis calculator offers the simple Wallace rule, the GC-based rule and the nearest-neighbour model that real protocols use. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Oligo Tm (Melting Temperature)",
+      "html": "<p>Wallace: Tm = 2(A+T) + 4(G+C);  GC rule: Tm = 64.9 + 41(G+C − 16.4)/N;  salt correction adds 16.6·log₁₀[Na⁺]</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/oligo-tm-calculator.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Oligo Tm (Melting Temperature) Calculator — Three models, one oligo, a spread worth knowing about.\" title=\"Oligo Tm (Melting Temperature) Calculator\"><figcaption>Three models, one oligo, a spread worth knowing about.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A, T, G, C</code></td><td>base counts</td><td>nt</td></tr><tr><td><code>N</code></td><td>oligo length</td><td>nt</td></tr><tr><td><code>[Na⁺]</code></td><td>monovalent salt concentration</td><td>M</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Oligo Tm (Melting Temperature)?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: oligo length of <strong>20</strong> nt, number of g and c bases of <strong>11</strong>, monovalent salt of <strong>50</strong> mM.</p>\n<p>Substituting them into the formula gives gc content of <strong>55</strong>%, tm, wallace of <strong>62</strong>°C, tm, gc rule of <strong>53.83</strong>°C, tm, gc rule with salt correction of <strong>32.23</strong>°C.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The Wallace rule is only valid for oligos of 14 nt or shorter; for longer primers it overestimates Tm badly.</p></li><li><p>The nearest-neighbour model is the one to trust: it accounts for stacking interactions between adjacent bases, which is why GC content alone is not enough.</p></li><li><p>The salt correction is large: going from 50 mM to 1 M Na⁺ adds about 16 °C to Tm.</p></li><li><p>The value shown here is the GC-based estimate with a salt correction; treat it as a strong starting point and confirm with a gradient.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Using the Wallace rule for a 25-mer.</li><li>Comparing Tm values computed by different methods and expecting them to agree.</li><li>Ignoring the magnesium concentration, which raises Tm further.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/pcr-annealing-temperature\">Annealing temperature</a>. <a href=\"/biology/gc-content-calculator\">GC content</a>. <a href=\"/biology/primer-resuspension-working-stock\">Primer resuspension</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which Tm method should I use?",
+      "a": "Nearest-neighbour for anything you will actually order or anneal; Wallace for quick estimates of short oligos."
+    },
+    {
+      "q": "Does Tm depend on concentration?",
+      "a": "Yes — higher oligo concentration raises Tm, which is why 250 nM is quoted as a standard."
+    },
+    {
+      "q": "What does the Oligo Tm (Melting Temperature) actually calculate?",
+      "a": "It returns GC content, tm, Wallace, tm, GC rule and tm, GC rule with salt correction. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 682
+}

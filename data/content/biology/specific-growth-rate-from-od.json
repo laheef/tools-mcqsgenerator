@@ -1,0 +1,64 @@
+{
+  "path": "/biology/specific-growth-rate-from-od",
+  "slug": "specific-growth-rate-from-od",
+  "cat": "biology",
+  "name": "Specific Growth Rate from OD Readings",
+  "seoTitle": "Specific Growth Rate from OD Readings Calculator",
+  "seoDesc": "The specific growth rate µ is the slope of ln(OD) against time, and it is the standard way to compare growth conditions. Free specific growth rate from od rea",
+  "h1": "Specific Growth Rate from OD Readings",
+  "summary": "The specific growth rate µ is the slope of ln(OD) against time, and it is the standard way to compare growth conditions. It returns specific growth rate, doubling time, generations and cell density at the end, and the panel shows all of them at once.\n\nThis calculator computes it from a series of OD readings, with the doubling time and the generation count that follow from it. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Specific Growth Rate from OD Readings",
+      "html": "<p>µ = ln(OD_end ÷ OD_start) ÷ Δt</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/specific-growth-rate-from-od.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Specific Growth Rate from OD Readings — ln(OD) against time: the slope is the growth rate.\" title=\"Specific Growth Rate from OD Readings\"><figcaption>ln(OD) against time: the slope is the growth rate.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>OD</code></td><td>absorbance at 600 nm</td><td>AU</td></tr><tr><td><code>µ</code></td><td>specific growth rate</td><td>h⁻¹</td></tr><tr><td><code>Δt</code></td><td>time between readings</td><td>h</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Specific Growth Rate from OD Readings?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: od at start of <strong>0.05</strong>, od at end of <strong>0.9</strong>, time between readings of <strong>3</strong> h.</p>\n<p>Substituting them into the formula gives specific growth rate of <strong>0.9635</strong> h⁻¹, doubling time of <strong>0.7194</strong> h, generations of <strong>4.17</strong>, cell density at the end of <strong>720,000,000</strong> cells/mL.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>µ above 0.6 h⁻¹</td><td><strong>Fast</strong></td><td>rich medium, optimal temperature</td></tr><tr><td>µ 0.3 – 0.6 h⁻¹</td><td><strong>Moderate</strong></td><td>typical of minimal medium with a good carbon source</td></tr><tr><td>µ below 0.3 h⁻¹</td><td><strong>Slow</strong></td><td>stress, a poor carbon source, or a suboptimal temperature</td></tr></tbody></table>\n<ul><li><p>Doubling time is ln2/µ — 0.693 divided by the rate — not 1/µ. Mixing the two is the most common error in growth-rate reporting.</p></li><li><p>Take at least three readings across log phase and fit a line rather than using two points; two points hide the moment the culture leaves exponential growth.</p></li><li><p>µ is temperature- and medium-dependent; a Q10-style comparison only makes sense when nothing else changed.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using OD values below 0.05, where the blank error dominates.</li><li>Fitting a line through lag, log and stationary points together.</li><li>Reporting 1/µ as the doubling time.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/bacterial-growth-curve\">Bacterial growth curve</a>. <a href=\"/biology/od600-to-cell-density\">OD600 to cell density</a>. <a href=\"/biology/cell-doubling-time\">Cell doubling time</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between µ and the doubling time?",
+      "a": "µ is the rate of exponential increase per unit time; doubling time is the time to double, ln2/µ."
+    },
+    {
+      "q": "Can I use this for mammalian cells?",
+      "a": "Yes, provided the readings are in the linear range or replaced by cell counts."
+    },
+    {
+      "q": "What does the Specific Growth Rate from OD Readings actually calculate?",
+      "a": "It returns specific growth rate, doubling time, generations and cell density at the end. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 729
+}

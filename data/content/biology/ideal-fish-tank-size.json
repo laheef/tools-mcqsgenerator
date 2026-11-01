@@ -1,0 +1,64 @@
+{
+  "path": "/biology/ideal-fish-tank-size",
+  "slug": "ideal-fish-tank-size",
+  "cat": "biology",
+  "name": "Ideal Fish Tank Size Calculator",
+  "seoTitle": "Ideal Fish Tank Size Calculator — Formula & Results",
+  "seoDesc": "The right tank is set by the largest adult fish, because a fish needs a length to swim and a volume for its waste. Free ideal fish tank size calculator: enter",
+  "h1": "Ideal Fish Tank Size Calculator",
+  "summary": "The right tank is set by the largest adult fish, because a fish needs a length to swim and a volume for its waste. It returns recommended volume, minimum tank length, minimum tank depth and recommended volume, and the panel shows all of them at once.\n\nThis calculator turns your species list into a recommended volume, footprint and minimum dimension, and flags when the plan is too small. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Ideal Fish Tank Size",
+      "html": "<p>Minimum length = 8 × adult body length;  minimum depth = 3 × body length;  volume grows with the square of length times the school size</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/ideal-fish-tank-size.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Ideal Fish Tank Size Calculator — Eight lengths long, three deep — the swimming rule.\" title=\"Ideal Fish Tank Size Calculator\"><figcaption>Eight lengths long, three deep — the swimming rule.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>L</code></td><td>adult body length of the largest fish</td><td>cm</td></tr><tr><td><code>n</code></td><td>number of fish in the school</td><td>fish</td></tr><tr><td><code>temperament</code></td><td>multiplier for aggression</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Ideal Fish Tank Size?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: adult length of the largest fish of <strong>12</strong> cm, number in the school of <strong>6</strong>, temperament set to <strong>1.0</strong>.</p>\n<p>Substituting them into the formula gives recommended volume of <strong>123.84</strong> L, minimum tank length of <strong>96</strong> cm, minimum tank depth of <strong>36</strong> cm, recommended volume of <strong>32.72</strong> US gal.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>8 × body length</td><td><strong>Minimum tank length</strong></td><td>three body lengths to accelerate, five to cruise, eight to feel safe</td></tr><tr><td>3 × body length</td><td><strong>Minimum depth</strong></td><td>room to turn without touching the glass</td></tr><tr><td>6 × body length</td><td><strong>Comfortable</strong></td><td>what a permanent home should really be</td></tr></tbody></table>\n<ul><li><p>Swimming length matters more than volume for active species: a 30 cm fish needs a tank at least 240 cm long, whatever the litres say.</p></li><li><p>Territorial species need footprint, not depth. A tall narrow tank gives litres without giving the territory a cichlid actually defends.</p></li><li><p>Volume scales with the cube of linear size, so doubling a fish's length multiplies its waste output by about eight.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Buying by litres alone and ending up with a tall, short tank.</li><li>Sizing for juveniles and then discovering the fish triples in length.</li><li>Ignoring the school size: many 'peaceful' species are only peaceful in groups.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/aquarium-water-volume\">Aquarium water volume</a>. <a href=\"/biology/fish-tank-stocking\">Fish tank stocking</a>. <a href=\"/biology/fish-per-liter\">Fish per litre</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What size tank does a 12 cm fish need?",
+      "a": "At least 96 cm long and 36 cm deep, which in practice means a 120 cm tank."
+    },
+    {
+      "q": "Do goldfish need a big tank?",
+      "a": "Yes — they reach 25–30 cm, so 120 cm and 200 L or more, not the bowl they are sold with."
+    },
+    {
+      "q": "What does the Ideal Fish Tank Size actually calculate?",
+      "a": "It returns recommended volume, minimum tank length, minimum tank depth and recommended volume. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 723
+}

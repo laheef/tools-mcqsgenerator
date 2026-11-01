@@ -1,0 +1,64 @@
+{
+  "path": "/biology/cheng-prusoff-equation",
+  "slug": "cheng-prusoff-equation",
+  "cat": "biology",
+  "name": "Cheng-Prusoff Equation Calculator",
+  "seoTitle": "Cheng-Prusoff Equation Calculator — Formula & Results",
+  "seoDesc": "The Cheng–Prusoff equation converts an assay IC50 into Ki, the true inhibition constant. Free cheng-prusoff equation calculator: enter your values and get ki",
+  "h1": "Cheng-Prusoff Equation Calculator",
+  "summary": "The Cheng–Prusoff equation converts an assay IC50 into Ki, the true inhibition constant. It returns ki and km apparent at this [S], and the panel shows all of them at once.\n\nThe Cheng–Prusoff relationship converts one into the other using the substrate concentration and its Km, and it is the standard correction when comparing inhibitors across assays. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Cheng-Prusoff Equation",
+      "html": "<p>Competitive: Ki = IC50 ÷ (1 + [S]/Km);  non-competitive: Ki = IC50;  uncompetitive: Ki = IC50 ÷ (1 + Km/[S])</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/cheng-prusoff-equation.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Cheng-Prusoff Equation Calculator — IC50 corrected by the substrate-to-Km ratio gives Ki.\" title=\"Cheng-Prusoff Equation Calculator\"><figcaption>IC50 corrected by the substrate-to-Km ratio gives Ki.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>IC50</code></td><td>half-maximal inhibitory concentration in the assay</td><td>nM</td></tr><tr><td><code>[S]</code></td><td>substrate concentration</td><td>µM</td></tr><tr><td><code>Km</code></td><td>Michaelis constant of the substrate</td><td>µM</td></tr><tr><td><code>Ki</code></td><td>dissociation constant of the inhibitor</td><td>nM</td></tr></tbody></table>\n<p><strong>Where the relationship comes from.</strong> Cheng & Prusoff (1973), Biochemical Pharmacology 22:3099–3108.</p>"
+    },
+    {
+      "title": "How do I use the Cheng-Prusoff Equation?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: ic50 of <strong>120</strong> nM, substrate concentration of <strong>1</strong> × Km, km of the substrate of <strong>1</strong> µM, inhibition type set to <strong>1.0</strong>.</p>\n<p>Substituting them into the formula gives ki of <strong>60</strong> nM, km apparent at this [s] of <strong>2</strong> µM.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>competitive</td><td><strong>Ki &lt; IC50</strong></td><td>raising [S] makes inhibition look weaker</td></tr><tr><td>non-competitive</td><td><strong>Ki = IC50</strong></td><td>substrate concentration does not matter</td></tr><tr><td>uncompetitive</td><td><strong>Ki &lt; IC50</strong></td><td>the inhibitor prefers the ES complex</td></tr></tbody></table>\n<ul><li><p>The correction only holds for reversible inhibitors under rapid-equilibrium assumptions; tight-binding inhibitors need the Morrison equation.</p></li><li><p>Assay at a substrate concentration near Km: that is where the correction is most robust and where the signal is still workable.</p></li><li><p>Report Ki and the conditions: a Ki without Km and [S] cannot be reproduced.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Applying the competitive correction to a non-competitive inhibitor.</li><li>Using [S] in µM with Km in mM.</li><li>Treating IC50 from a cell-based assay as Ki — transport and protein binding intervene.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/lineweaver-burk-plot\">Lineweaver–Burk plot</a>. <a href=\"/chemistry/michaelis-menten-equation\">Michaelis–Menten equation</a>. <a href=\"/biology/percent-inhibition\">Percent inhibition</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why is IC50 different from Ki?",
+      "a": "Because IC50 depends on how much substrate is present: more substrate competes with the inhibitor and raises the apparent IC50."
+    },
+    {
+      "q": "When can I skip the correction?",
+      "a": "When [S] is far below Km, the competitive correction factor is close to 1."
+    },
+    {
+      "q": "What does the Cheng-Prusoff Equation actually calculate?",
+      "a": "It returns ki and km apparent at this [S]. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 680
+}

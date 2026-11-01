@@ -1,0 +1,64 @@
+{
+  "path": "/biology/net-primary-productivity",
+  "slug": "net-primary-productivity",
+  "cat": "biology",
+  "name": "Net Primary Productivity Calculator",
+  "seoTitle": "Net Primary Productivity Calculator — Formula & Results",
+  "seoDesc": "Net primary productivity is what plants accumulate after their own respiration: gross photosynthesis minus the carbon they burn to stay alive. Free net primar",
+  "h1": "Net Primary Productivity Calculator",
+  "summary": "Net primary productivity is what plants accumulate after their own respiration: gross photosynthesis minus the carbon they burn to stay alive. It returns net primary productivity, per hectare, dry biomass equivalent and energy equivalent, and the panel shows all of them at once.\n\nThis calculator converts between carbon, biomass and energy, and scales a measured rate to a hectare and a year. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Net Primary Productivity",
+      "html": "<p>NPP = GPP − R_a;  carbon × 2.2 ≈ dry biomass</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/net-primary-productivity.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Net Primary Productivity Calculator — Gross production, respiration and what is left over.\" title=\"Net Primary Productivity Calculator\"><figcaption>Gross production, respiration and what is left over.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>GPP</code></td><td>gross primary production</td><td>g C/m²/yr</td></tr><tr><td><code>R_a</code></td><td>autotrophic respiration</td><td>g C/m²/yr</td></tr><tr><td><code>NPP</code></td><td>net primary productivity</td><td>g C/m²/yr</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Net Primary Productivity?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: gross primary production of <strong>2,200</strong> g C/m²/yr, plant respiration of <strong>900</strong> g C/m²/yr.</p>\n<p>Substituting them into the formula gives net primary productivity of <strong>1,300</strong> g C/m²/yr, per hectare of <strong>13,000</strong> kg C/ha/yr, dry biomass equivalent of <strong>2,860</strong> g/m²/yr, energy equivalent of <strong>111.54</strong> MJ/m²/yr, net ecosystem production (less 10% heterotroph) of <strong>1,170</strong> g C/m²/yr.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 200 g C/m²/yr</td><td><strong>Low</strong></td><td>deserts, tundra, open ocean</td></tr><tr><td>400 – 1 200</td><td><strong>Moderate</strong></td><td>temperate grassland and forest</td></tr><tr><td>above 1 500</td><td><strong>High</strong></td><td>tropical rainforest, wetlands, estuaries</td></tr></tbody></table>\n<ul><li><p>NPP is the carbon available to herbivores and decomposers; NEP subtracts their respiration and is the number that matters for carbon storage.</p></li><li><p>The 2.2 factor converts carbon to dry biomass; energy conversion uses about 17–20 kJ per g carbon, or roughly 39 kJ per g of biomass.</p></li><li><p>Global terrestrial NPP is around 56 Pg carbon a year, roughly half of it in the tropics.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Reporting GPP when you mean NPP.</li><li>Converting carbon to biomass with the 0.5 factor used for soil organic matter.</li><li>Scaling a single-day measurement to a year without accounting for seasonality.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/photosynthesis-rate\">Photosynthesis rate</a>. <a href=\"/biology/respiratory-quotient\">Respiratory quotient</a>. <a href=\"/biology/q10-temperature-coefficient\">Q10 coefficient</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between GPP and NPP?",
+      "a": "GPP is everything photosynthesised; NPP is what remains after the plant respires."
+    },
+    {
+      "q": "Can NPP be negative?",
+      "a": "Not over a season for a living plant community — but a net carbon loss can occur in disturbed or dark systems."
+    },
+    {
+      "q": "What does the Net Primary Productivity actually calculate?",
+      "a": "It returns net primary productivity, per hectare, dry biomass equivalent and energy equivalent. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 732
+}

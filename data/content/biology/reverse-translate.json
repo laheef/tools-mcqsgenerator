@@ -1,0 +1,64 @@
+{
+  "path": "/biology/reverse-translate",
+  "slug": "reverse-translate",
+  "cat": "biology",
+  "name": "Reverse Translate Calculator",
+  "seoTitle": "Reverse Translate Calculator — Formula & Results",
+  "seoDesc": "Reverse translation turns a protein sequence back into a DNA sequence that would encode it. Free reverse translate calculator: enter your values and get prote",
+  "h1": "Reverse Translate Calculator",
+  "summary": "Reverse translation turns a protein sequence back into a DNA sequence that would encode it. It returns protein length, dna length, gc content of the dna, codons and melting temperature of the duplex, and the panel shows all of them at once.\n\nEvery amino acid except methionine and tryptophan has several codons, so there is no single right answer — this tool offers the codons a host actually uses, the GC-balanced choice, and the rare-codon-avoiding choice. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Reverse Translate",
+      "html": "<p>Each residue is replaced by a codon from the host's preferred set; DNA length = 3 × (residues + stop).  GC% = (G + C) ÷ length × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/reverse-translate.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Reverse Translate Calculator — Codons a residue can use\" title=\"Reverse Translate Calculator\"><figcaption>Codons a residue can use</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>aa</code></td><td>amino acid residue</td><td>—</td></tr><tr><td><code>nt</code></td><td>nucleotide</td><td>—</td></tr><tr><td><code>codon</code></td><td>three bases that specify one residue</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Reverse Translate?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>rare codons kept</td><td><strong>Risk of poor expression</strong></td><td>especially clusters near the 5′ end</td></tr><tr><td>GC 40 – 60%</td><td><strong>Comfortable range</strong></td><td>synthesis and PCR both behave well</td></tr><tr><td>GC above 70%</td><td><strong>Hard to synthesise</strong></td><td>secondary structure and mispriming become likely</td></tr></tbody></table>\n<ul><li><p>A back-translated sequence is a design proposal, not a recovered gene. Silent codons are lost forever when you translate forward, so the original DNA cannot be reconstructed.</p></li><li><p>The most-used codon is not always the best choice: runs of the same rare tRNA demand, strong secondary structure at the ribosome binding site, and hidden restriction sites all matter. Treat the output as a starting point for codon optimisation.</p></li><li><p>GC-balanced output is the safest default when the DNA will be chemically synthesised, because synthesis fails most often on extreme GC.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming the reverse-translated sequence will match the original gene — it will not.</li><li>Ignoring the host: a codon set chosen for E. coli can be poor for Pichia or CHO.</li><li>Forgetting the stop codon, which truncates translation if it is missing in an expression construct.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/codon-usage-calculator\">Codon usage</a>. <a href=\"/biology/dna-to-protein\">DNA to protein</a>. <a href=\"/biology/gc-content-sequence\">GC content</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can I recover the original DNA from a protein?",
+      "a": "No. Most amino acids map to several codons and that information is lost in translation; you can only propose a new sequence."
+    },
+    {
+      "q": "Which codon table should I use?",
+      "a": "The host you will express in. E. coli for bacterial work, human for mammalian cells, GC-balanced if the sequence is being synthesised."
+    },
+    {
+      "q": "Why does the tool avoid rare codons?",
+      "a": "Clusters of rare codons deplete the matching tRNA and stall the ribosome, which lowers yield and can cause truncation."
+    },
+    {
+      "q": "What does the Reverse Translate actually calculate?",
+      "a": "It returns protein length, dna length, gc content of the dna, codons and melting temperature of the duplex. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 701
+}

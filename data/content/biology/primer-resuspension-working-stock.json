@@ -1,0 +1,64 @@
+{
+  "path": "/biology/primer-resuspension-working-stock",
+  "slug": "primer-resuspension-working-stock",
+  "cat": "biology",
+  "name": "Primer Resuspension and Working Stock Calculator",
+  "seoTitle": "Primer Resuspension and Working Stock Calculator",
+  "seoDesc": "A primer arrives as a dried pellet measured in nanomoles. Free primer resuspension and working stock calculator: enter your values and get volume to add to th",
+  "h1": "Primer Resuspension and Working Stock Calculator",
+  "summary": "A primer arrives as a dried pellet measured in nanomoles. It returns volume to add to the pellet, stock to take for the working stock, diluent for the working stock and working stocks from one tube, and the panel shows all of them at once.\n\nDissolve it to a 100 µM stock, then dilute to a 10 µM working stock — this calculator gives the exact volume of TE or water for each step and how much working stock one tube of stock will make. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Primer Resuspension and Working Stock",
+      "html": "<p>Volume (µL) = nmol ÷ concentration (µM) × 1000;  stock volume = C2V2 ÷ C1</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/primer-resuspension-working-stock.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Primer Resuspension and Working Stock Calculator — Nanonmoles in the tube to microlitres of diluent, twice over.\" title=\"Primer Resuspension and Working Stock Calculator\"><figcaption>Nanonmoles in the tube to microlitres of diluent, twice over.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>nmol</code></td><td>amount in the vial, per the spec sheet</td><td>nmol</td></tr><tr><td><code>stock</code></td><td>master stock concentration</td><td>µM</td></tr><tr><td><code>volume</code></td><td>diluent to add</td><td>µL</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Primer Resuspension and Working Stock?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: primer in the tube of <strong>33.4</strong> nmol, stock concentration of <strong>100</strong> µM, working concentration of <strong>10</strong> µM, working stock to make of <strong>500</strong> µL.</p>\n<p>Substituting them into the formula gives volume to add to the pellet of <strong>334</strong> µL, stock to take for the working stock of <strong>50</strong> µL, diluent for the working stock of <strong>450</strong> µL, working stocks from one tube of <strong>167</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>1 nmol in 1 mL is 1 µM, so the arithmetic is friendly: 33.4 nmol in 334 µL gives 100 µM.</p></li><li><p>Vortex for 30 seconds and leave at room temperature for 10 minutes; pellets of long oligos dissolve slowly and a half-dissolved stock reads low.</p></li><li><p>Use TE rather than water for long-term storage: the Tris buffer holds the pH and the EDTA protects against nucleases.</p></li><li><p>Store the 100 µM stock at −20 °C in aliquots and keep the 10 µM working stock at 4 °C for up to a few weeks.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming the vial contains exactly the nominal amount instead of reading the spec sheet.</li><li>Freezing and thawing the working stock repeatedly, which is a common source of failed PCR.</li><li>Recording concentrations as '100×' rather than in µM, which cannot be checked later.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/pcr-master-mix-calculator\">PCR master mix</a>. <a href=\"/biology/dilution-calculator-c1v1\">C1V1 dilution</a>. <a href=\"/biology/oligo-tm-calculator\">Oligo Tm</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much water do I add to a 33.4 nmol primer?",
+      "a": "334 µL for a 100 µM stock, or 3.34 mL for 10 µM."
+    },
+    {
+      "q": "Can I use water instead of TE?",
+      "a": "For short-term use yes, but TE keeps the oligo stable for years."
+    },
+    {
+      "q": "What does the Primer Resuspension and Working Stock actually calculate?",
+      "a": "It returns volume to add to the pellet, stock to take for the working stock, diluent for the working stock and working stocks from one tube. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 722
+}

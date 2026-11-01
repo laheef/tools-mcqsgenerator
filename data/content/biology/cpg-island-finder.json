@@ -1,0 +1,64 @@
+{
+  "path": "/biology/cpg-island-finder",
+  "slug": "cpg-island-finder",
+  "cat": "biology",
+  "name": "CpG Island Finder",
+  "seoTitle": "CpG Island Finder Calculator — Formula & Results",
+  "seoDesc": "A CpG island finder scans a sequence for windows that are GC-rich and CpG-dense against expectation. Free cpg island finder calculator: enter your values and",
+  "h1": "CpG Island Finder",
+  "summary": "A CpG island finder scans a sequence for windows that are GC-rich and CpG-dense against expectation. It returns gc content of the sequence, cpg dinucleotides observed, observed / expected cpg, cpg islands found and longest island, and the panel shows all of them at once.\n\nBy the classic definition an island is 200 bp or more with GC ≥ 50% and observed over expected CpG ≥ 0.6. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the CpG Island Finder",
+      "html": "<p>Expected CpG = (C count × G count) ÷ N.  Observed/expected = CpG observed ÷ expected.  An island needs GC ≥ 50%, O/E ≥ 0.6 across a window of 200 bp</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/cpg-island-finder.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: CpG Island Finder — CpG observed / expected\" title=\"CpG Island Finder\"><figcaption>CpG observed / expected</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>CpG</code></td><td>a cytosine followed by a guanine on the same strand</td><td>—</td></tr><tr><td><code>O/E</code></td><td>observed divided by expected CpG count</td><td>—</td></tr><tr><td><code>N</code></td><td>number of bases examined</td><td>bp</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the CpG Island Finder?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: window of <strong>200</strong> bp, minimum gc in the window of <strong>50</strong>%, minimum observed/expected cpg of <strong>0.6</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>O/E &gt; 1.0</td><td><strong>CpG-rich</strong></td><td>unusual outside promoters and repeats</td></tr><tr><td>O/E 0.6 – 1.0</td><td><strong>Candidate island</strong></td><td>island criteria met if GC is also ≥ 50%</td></tr><tr><td>O/E &lt; 0.6</td><td><strong>Depleted</strong></td><td>the normal state of vertebrate DNA, where CpG is methylated and mutates to TpG</td></tr></tbody></table>\n<ul><li><p>About 70–80% of human gene promoters sit in a CpG island, which is why a predicted island is used as a first pass at finding promoters in an unknown sequence.</p></li><li><p>Vertebrate genomes are CpG-depleted overall (O/E near 0.25) because methylated cytosine deaminates to thymine. Islands stay unmethylated and therefore keep their CpGs.</p></li><li><p>Methylation of an island silences the gene beneath it — the mechanism behind X inactivation and many tumour suppressors.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Running the finder on a sequence shorter than the window: every window then fails and the answer looks like 'no islands' rather than 'sequence too short'.</li><li>Treating a predicted island as a proven promoter — it is a hypothesis that needs a transcription start site or a ChIP signal.</li><li>Forgetting that GC-rich repeats also score as islands.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/gc-content-sequence\">GC content</a>. <a href=\"/biology/reverse-complement\">Reverse complement</a>. <a href=\"/biology/dna-molecular-weight-calculator\">DNA molecular weight</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What defines a CpG island?",
+      "a": "Historically 200 bp or more with GC ≥ 50% and observed over expected CpG ≥ 0.6. Modern genome annotations use slightly relaxed thresholds."
+    },
+    {
+      "q": "How many CpG islands does a human genome have?",
+      "a": "About 28 000, roughly one per gene, plus many in repeats."
+    },
+    {
+      "q": "Why is CpG depleted in vertebrates?",
+      "a": "Cytosine in a CpG is methylated, and methylcytosine deaminates to thymine, so CG slowly mutates away to TG."
+    },
+    {
+      "q": "What does the CpG Island Finder actually calculate?",
+      "a": "It returns gc content of the sequence, cpg dinucleotides observed, observed / expected cpg, cpg islands found and longest island. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 704
+}

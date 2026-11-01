@@ -1,0 +1,64 @@
+{
+  "path": "/biology/coefficient-of-coincidence",
+  "slug": "coefficient-of-coincidence",
+  "cat": "biology",
+  "name": "Coefficient of Coincidence Calculator",
+  "seoTitle": "Coefficient of Coincidence Calculator — Formula & Results",
+  "seoDesc": "The coefficient of coincidence compares observed double crossovers with the doubles the single rates predict. Free coefficient of coincidence calculator: ente",
+  "h1": "Coefficient of Coincidence Calculator",
+  "summary": "The coefficient of coincidence compares observed double crossovers with the doubles the single rates predict. It returns expected double crossovers, coefficient of coincidence and interference, and the panel shows all of them at once.\n\nThe coefficient of coincidence compares observed doubles with expected doubles, and its complement is interference — the quantity that tells you whether crossovers inhibit each other. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Coefficient of Coincidence",
+      "html": "<p>Expected doubles = RF₁ × RF₂ × N;  CoC = observed ÷ expected;  I = 1 − CoC</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/coefficient-of-coincidence.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Coefficient of Coincidence Calculator — Observed doubles against the number chance predicts.\" title=\"Coefficient of Coincidence Calculator\"><figcaption>Observed doubles against the number chance predicts.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>RF₁, RF₂</code></td><td>single-crossover frequencies in each interval</td><td>%</td></tr><tr><td><code>N</code></td><td>offspring scored</td><td>individuals</td></tr><tr><td><code>CoC</code></td><td>coefficient of coincidence</td><td>—</td></tr><tr><td><code>I</code></td><td>interference</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Coefficient of Coincidence?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: recombination frequency, region 1 of <strong>10</strong>%, recombination frequency, region 2 of <strong>12</strong>%, observed double crossovers of <strong>14</strong> individuals, total offspring of <strong>1,000</strong> individuals.</p>\n<p>Substituting them into the formula gives expected double crossovers of <strong>12</strong> individuals, coefficient of coincidence of <strong>1.17</strong>, interference of <strong>-0.1667</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>CoC = 1</td><td><strong>No interference</strong></td><td>doubles as often as predicted</td></tr><tr><td>CoC below 1</td><td><strong>Positive interference</strong></td><td>a crossover inhibits a nearby one — the usual case</td></tr><tr><td>CoC above 1</td><td><strong>Negative interference</strong></td><td>doubles more common than predicted, often near a crossover hotspot</td></tr></tbody></table>\n<ul><li><p>Interference is usually strongest near the centromere and weakest at chromosome ends; values around 0.2–0.6 are typical for genes a few map units apart.</p></li><li><p>The expected number of doubles uses the product of the two single frequencies, which assumes independence — exactly the assumption the coefficient tests.</p></li><li><p>Small expected counts make the ratio unstable: with two expected doubles, one observed changes the coefficient by half.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using percentages as fractions in the multiplication.</li><li>Counting each double crossover once per interval instead of once per individual.</li><li>Reporting interference without stating the interval over which it was measured.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/recombination-frequency\">Recombination frequency</a>. <a href=\"/biology/genetic-map-distance\">Genetic linkage distance</a>. <a href=\"/biology/centimorgan-to-percentage\">Centimorgan to percentage</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does interference of 0.4 mean?",
+      "a": "40% of the double crossovers predicted by chance did not occur."
+    },
+    {
+      "q": "Can interference be negative?",
+      "a": "Yes, rarely: negative interference means doubles occur more often than expected, which happens near hotspots."
+    },
+    {
+      "q": "What does the Coefficient of Coincidence actually calculate?",
+      "a": "It returns expected double crossovers, coefficient of coincidence and interference. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 671
+}

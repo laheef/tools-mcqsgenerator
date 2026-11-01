@@ -11,8 +11,8 @@ build in `assets/js/vendor/`, fonts are system fonts.
 
 | | |
 |---|---|
-| Calculators | **4 041** across 14 categories (320 biology) |
-| Sitemap | 4 065 URLs, all under `/tool/` |
+| Calculators | **4 041** across 14 categories (320 biology) — every one of them a file, so they deploy without a database |
+| Sitemap | 4 057 URLs from files (4 065 once the CMS pages are imported), all under `/tool/` |
 | Engine | one declarative equation solver (PHP + JS) drives every page |
 | Repairs | 378 hand-written supplements where the harvested equations were incomplete |
 | Admin | PHP + MySQL panel: pages, posts, calculators, media, menu, SEO, settings, backups, contact inbox |
@@ -133,6 +133,17 @@ foreach (CustomCalc::rows() as $custom) {          // MySQL rows …
     $rows[] = CustomCalc::dataRow($custom);        // … become catalogue rows
 }
 ```
+
+A panel calculator lives in MySQL, and MySQL is optional on the public site — so a
+definition written only to the database is a page that exists in the panel and
+404s on the deployed site. `php tools/export_custom_calcs.php` closes that gap: it
+writes every published custom calculator into `data/calc/` (a new shard, compiled
+definition verbatim) and `data/content/` (the article), then
+`python3 tools/build_manifest.py` refreshes the offset map. That is how the 210
+biology calculators that used to exist only in `install/database.sql` became part
+of the file catalogue, and why the site now answers **320 biology** pages with no
+database at all. The rows stay in the SQL; `Data::all()` gives the catalogue
+priority, so an install that does import it still shows each calculator once.
 
 Adding the next 1,000 calculators is 1,000 rows, not 1,000 PHP files — and a
 whole niche at once is one document: **Bulk import** takes JSON or CSV, shows a dry
@@ -259,6 +270,14 @@ manual read of `/physics/density`:
   the element stays in the DOM so the browser can fill it as soon as the value exists.
 
 ## What is verified
+
+The sweep below was measured on the 3 831 calculators that come from the harvest.
+The 210 biology calculators promoted from the panel's database into the file
+catalogue afterwards were checked the same way and separately: **210/210 pages
+return 200 with no database**, each one's engine payload is byte-identical to what
+the database-backed page served, all 210 figures resolve, and `tools/audit_expr.php`
+reports **0 failures** among their formulas — so the counts below read 3 831 where
+the live site now reads 4 041.
 
 | Suite | Command | Result |
 | --- | --- | --- |

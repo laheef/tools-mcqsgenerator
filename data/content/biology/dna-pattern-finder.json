@@ -1,0 +1,64 @@
+{
+  "path": "/biology/dna-pattern-finder",
+  "slug": "dna-pattern-finder",
+  "cat": "biology",
+  "name": "DNA Pattern Finder",
+  "seoTitle": "DNA Pattern Finder Calculator — Formula & Results",
+  "seoDesc": "Search a DNA sequence for a motif written in IUPAC code and get every position on both strands. Free dna pattern finder calculator: enter your values and get",
+  "h1": "DNA Pattern Finder",
+  "summary": "Search a DNA sequence for a motif written in IUPAC code and get every position on both strands. It returns matches, forward strand, matches, reverse strand, total sites and average spacing, and the panel shows all of them at once.\n\nIt is the quickest way to count a regulatory element or check whether a cloning site is unique. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the DNA Pattern Finder",
+      "html": "<p>A pattern of length k has N − k + 1 possible start positions.  Each IUPAC letter is expanded to the set of bases it stands for</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/dna-pattern-finder.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: DNA Pattern Finder — Start positions a pattern can have\" title=\"DNA Pattern Finder\"><figcaption>Start positions a pattern can have</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N</code></td><td>sequence length</td><td>bp</td></tr><tr><td><code>k</code></td><td>pattern length</td><td>bp</td></tr><tr><td><code>IUPAC</code></td><td>the standard degenerate base alphabet</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the DNA Pattern Finder?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 site</td><td><strong>Unique</strong></td><td>usable as a single-cutter cloning site</td></tr><tr><td>2 – 5 sites</td><td><strong>A few</strong></td><td>check fragment sizes before digesting</td></tr><tr><td>more than 5</td><td><strong>Frequent</strong></td><td>poor choice for a unique site</td></tr></tbody></table>\n<ul><li><p>Positions are 1-based and count from the first base of the pasted sequence, on the strand as written. Reverse-strand hits are reported at the position of the equivalent forward site so the two lists line up.</p></li><li><p>Palindromic patterns (GAATTC, most type II restriction sites) match both strands at the same coordinates and are therefore counted once, not twice.</p></li><li><p>Overlapping matches are counted, which matters for repeats such as ATATAT.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Forgetting that a reverse-strand hit means the motif is on the other strand — the protein or enzyme still binds there.</li><li>Typing a pattern with a space or a digit in it; both are stripped, which can silently change the motif.</li><li>Assuming a unique site is unique in the whole plasmid when only an insert was pasted.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/reverse-complement\">Reverse complement</a>. <a href=\"/biology/gc-content-sequence\">GC content</a>. <a href=\"/biology/codon-usage-calculator\">Codon usage</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does N mean in a DNA pattern?",
+      "a": "Any base. It is the IUPAC wildcard, so NNNN finds any four bases."
+    },
+    {
+      "q": "How do I find a restriction site?",
+      "a": "Type the recognition sequence, e.g. GAATTC for EcoRI or AAGCTT for HindIII, and search both strands."
+    },
+    {
+      "q": "Does the search handle overlapping matches?",
+      "a": "Yes — ATATAT contains ATATAT twice in an ATATATAT run, and both are reported."
+    },
+    {
+      "q": "What does the DNA Pattern Finder actually calculate?",
+      "a": "It returns matches, forward strand, matches, reverse strand, total sites and average spacing. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 647
+}

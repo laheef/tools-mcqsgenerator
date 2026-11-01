@@ -1,0 +1,64 @@
+{
+  "path": "/biology/crop-water-stress-index",
+  "slug": "crop-water-stress-index",
+  "cat": "biology",
+  "name": "Crop Water Stress Index Calculator",
+  "seoTitle": "Crop Water Stress Index Calculator — Formula & Results",
+  "seoDesc": "The crop water stress index compares a canopy temperature with the wet and dry reference surfaces around it: 0 means a well-watered crop transpiring freely, 1",
+  "h1": "Crop Water Stress Index Calculator",
+  "summary": "The crop water stress index compares a canopy temperature with the wet and dry reference surfaces around it: 0 means a well-watered crop transpiring freely, 1 means a fully closed stomata. It returns crop water stress index, estimated root-zone depletion and stress class, and the panel shows all of them at once.\n\nIt is the standard way to turn a thermal image into an irrigation decision. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Crop Water Stress Index",
+      "html": "<p>CWSI = (T_c − T_wet) ÷ (T_dry − T_wet)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/crop-water-stress-index.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Crop Water Stress Index Calculator — Canopy temperature between the wet and dry references.\" title=\"Crop Water Stress Index Calculator\"><figcaption>Canopy temperature between the wet and dry references.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>T_c</code></td><td>canopy temperature</td><td>°C</td></tr><tr><td><code>T_wet</code></td><td>temperature of a well-watered reference surface</td><td>°C</td></tr><tr><td><code>T_dry</code></td><td>temperature of a dry, non-transpiring surface</td><td>°C</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Crop Water Stress Index?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: canopy temperature of <strong>28.5</strong>°C, wet reference temperature of <strong>22</strong>°C, dry reference temperature of <strong>36</strong>°C.</p>\n<p>Substituting them into the formula gives crop water stress index of <strong>0.4643</strong>, estimated root-zone depletion of <strong>46.43</strong>%, stress class of <strong>1.39</strong>.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 – 0.2</td><td><strong>No stress</strong></td><td>transpiring freely; irrigate on schedule</td></tr><tr><td>0.2 – 0.4</td><td><strong>Mild stress</strong></td><td>the usual trigger for scheduling</td></tr><tr><td>0.4 – 0.7</td><td><strong>Moderate stress</strong></td><td>yield is beginning to be affected</td></tr><tr><td>above 0.7</td><td><strong>Severe stress</strong></td><td>stomata closed; growth has stopped</td></tr></tbody></table>\n<ul><li><p>The wet and dry references can be measured (wet and dry paper discs beside the canopy) or computed from air temperature and humidity.</p></li><li><p>Thermal readings need to be taken near solar noon, from a nadir angle, with the canopy filling the field of view.</p></li><li><p>CWSI rises before visible wilting, which is the point: it gives a day or two of warning.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Measuring the canopy from an oblique angle, which mixes in soil temperature.</li><li>Using air temperature as the wet reference — a transpiring surface is usually cooler.</li><li>Comparing CWSI between days with very different vapour pressure deficits.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/crop-water-requirement\">Crop water requirement</a>. <a href=\"/biology/stomatal-density\">Stomatal density</a>. <a href=\"/biology/transpiration-rate\">Transpiration rate</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What CWSI should trigger irrigation?",
+      "a": "Most scheduling programmes use 0.3–0.4 as the threshold; sensitive crops prefer the lower end."
+    },
+    {
+      "q": "Can CWSI be negative?",
+      "a": "Yes — a canopy cooler than the wet reference means unusually high transpiration, often after irrigation."
+    },
+    {
+      "q": "What does the Crop Water Stress Index actually calculate?",
+      "a": "It returns crop water stress index, estimated root-zone depletion and stress class. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 702
+}

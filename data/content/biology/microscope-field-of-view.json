@@ -1,0 +1,64 @@
+{
+  "path": "/biology/microscope-field-of-view",
+  "slug": "microscope-field-of-view",
+  "cat": "biology",
+  "name": "Microscope Field of View Calculator",
+  "seoTitle": "Microscope Field of View Calculator — Formula & Results",
+  "seoDesc": "The field of view is how much of the specimen you see through the eyepiece: the eyepiece field number divided by the objective magnification. Free microscope",
+  "h1": "Microscope Field of View Calculator",
+  "summary": "The field of view is how much of the specimen you see through the eyepiece: the eyepiece field number divided by the objective magnification. It returns field of view, field of view, area of the field and cell density, and the panel shows all of them at once.\n\nIt decides how many cells fit in one frame, which is the first number you need to turn a count into a concentration. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Microscope Field of View",
+      "html": "<p>FOV (mm) = field number ÷ magnification.  Area = π × (FOV ÷ 2)².  Density = cells counted ÷ area</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/microscope-field-of-view.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Microscope Field of View Calculator — Field of view with a 20 mm field number (mm)\" title=\"Microscope Field of View Calculator\"><figcaption>Field of view with a 20 mm field number (mm)</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>FN</code></td><td>field number of the eyepiece, in mm</td><td>mm</td></tr><tr><td><code>M</code></td><td>objective magnification</td><td>×</td></tr><tr><td><code>FOV</code></td><td>diameter of the circular field of view</td><td>mm</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Microscope Field of View?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Read the field number off the eyepiece (18, 20, 22 or 25 mm is common).</li><li>Enter the objective magnification you are using.</li><li>The diameter, area and — if you counted cells — the density are calculated.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: eyepiece field number of <strong>20</strong> mm, objective magnification of <strong>40</strong> ×, cells counted in the field of <strong>50</strong>.</p>\n<p>Substituting them into the formula gives field of view of <strong>0.5</strong> mm, field of view of <strong>500</strong> µm, area of the field of <strong>0.1963</strong> mm², cell density of <strong>254.65</strong> cells/mm², cells per ml of <strong>25,464.79</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>4× / 10×</td><td><strong>Overview</strong></td><td>find the specimen and check confluence</td></tr><tr><td>40×</td><td><strong>Counting</strong></td><td>individual cells are distinguishable</td></tr><tr><td>100× oil</td><td><strong>Detail</strong></td><td>subcellular structure, not for counting</td></tr></tbody></table>\n<ul><li><p>The objective magnifies, not the eyepiece: a 10× eyepiece with a 20 mm field number gives a 2 mm field at 10× and a 0.5 mm field at 40×.</p></li><li><p>Counting cells in a field only gives a density once you know the area — which is why the field number matters and the eyepiece magnification does not.</p></li><li><p>For a haemocytometer the field of view is irrelevant: the grid defines the volume, and a count there is already per 0.1 µL.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using the eyepiece magnification instead of the field number, which gives a made-up answer.</li><li>Assuming the field is square — it is a circle, so the area uses π.</li><li>Comparing cell counts from different objectives without rescaling to area.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/western-blot-loading\">Western blot loading</a>. <a href=\"/biology/cell-doubling-time\">Cell doubling time</a>. <a href=\"/biology/bacterial-growth-curve\">Bacterial growth curve</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a field number?",
+      "a": "The diameter in millimetres of the image the eyepiece shows before the objective magnifies it, usually 18–26 mm."
+    },
+    {
+      "q": "How big is the field at 400× total magnification?",
+      "a": "With a 20 mm field number and a 40× objective, 0.5 mm across — about 0.196 mm²."
+    },
+    {
+      "q": "Does the eyepiece magnification change the field?",
+      "a": "No, only the field number does; the eyepiece's 10× affects the apparent size, not the area imaged."
+    },
+    {
+      "q": "What does the Microscope Field of View actually calculate?",
+      "a": "It returns field of view, field of view, area of the field and cell density. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 702
+}

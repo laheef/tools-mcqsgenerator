@@ -1,0 +1,64 @@
+{
+  "path": "/biology/species-richness",
+  "slug": "species-richness",
+  "cat": "biology",
+  "name": "Species Richness Calculator",
+  "seoTitle": "Species Richness Calculator — Formula & Results",
+  "seoDesc": "Species richness is simply the number of species present — the most basic biodiversity measure and the one every other index is compared with. Free species ri",
+  "h1": "Species Richness Calculator",
+  "summary": "Species richness is simply the number of species present — the most basic biodiversity measure and the one every other index is compared with. It returns total individuals, species richness S, margalef index and menhinick index, and the panel shows all of them at once.\n\nThis calculator counts them from a list of abundances, adds the Margalef richness index and estimates how many species a larger sample would find. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Species Richness",
+      "html": "<p>S = number of species with at least one individual;  Margalef = (S − 1) ÷ ln N</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/species-richness.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Species Richness Calculator — Five species and the individuals counted in each.\" title=\"Species Richness Calculator\"><figcaption>Five species and the individuals counted in each.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>species richness</td><td>species</td></tr><tr><td><code>N</code></td><td>total individuals counted</td><td>individuals</td></tr><tr><td><code>Margalef</code></td><td>richness corrected for effort</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Species Richness?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: species 1 count of <strong>40</strong> individuals, species 2 count of <strong>25</strong> individuals, species 3 count of <strong>15</strong> individuals, species 4 count of <strong>10</strong> individuals, species 5 count of <strong>6</strong> individuals.</p>\n<p>Substituting them into the formula gives total individuals of <strong>96</strong>, species richness s of <strong>5</strong>, margalef index of <strong>0.8764</strong>, menhinick index of <strong>0.5103</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>Richness depends on effort: doubling the area or the time almost always adds species, which is why raw S is a poor comparison between studies.</p></li><li><p>Margalef and Menhinick divide by a function of N, so they compare samples of different size — imperfectly, but far better than raw counts.</p></li><li><p>Rarefaction curves plot expected richness against sample size and show when the inventory has plateaued.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Recording zero for a species you simply did not see, then reporting S as complete.</li><li>Comparing richness between a 1 m² quadrat and a 100 m² plot.</li><li>Counting morphospecies as species without saying so.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/shannon-wiener-index\">Shannon–Wiener index</a>. <a href=\"/biology/quadrat-sampling-density\">Quadrat sampling</a>. <a href=\"/biology/sorensen-index\">Sørensen similarity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between richness and diversity?",
+      "a": "Richness counts species; diversity also weighs how evenly individuals are spread among them."
+    },
+    {
+      "q": "How many samples do I need before richness stops rising?",
+      "a": "Until the rarefaction curve flattens — on average 20–50 standardised samples for invertebrates, more for plants."
+    },
+    {
+      "q": "What does the Species Richness actually calculate?",
+      "a": "It returns total individuals, species richness S, margalef index and menhinick index. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 670
+}

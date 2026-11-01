@@ -1,0 +1,64 @@
+{
+  "path": "/biology/mark-recapture-population",
+  "slug": "mark-recapture-population",
+  "cat": "biology",
+  "name": "Mark–Recapture Population Calculator (Lincoln–Petersen)",
+  "seoTitle": "Mark–Recapture Population (Lincoln–Petersen) Calculator",
+  "seoDesc": "Mark a sample, release it, catch a second sample and count how many are marked: the share of marked animals in the second sample estimates the share of the wh",
+  "h1": "Mark–Recapture Population Calculator (Lincoln–Petersen)",
+  "summary": "Mark a sample, release it, catch a second sample and count how many are marked: the share of marked animals in the second sample estimates the share of the whole population. It returns population estimate (Lincoln–Petersen), chapman-corrected estimate, standard error and 95% lower bound, and the panel shows all of them at once.\n\nThis calculator gives the Lincoln–Petersen estimate, the Chapman small-sample correction and a confidence interval. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Mark–Recapture Population (Lincoln–Petersen)",
+      "html": "<p>N ≈ (M × C) ÷ R,  with Chapman's correction N = [(M+1)(C+1) ÷ (R+1)] − 1</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/mark-recapture-population.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Mark–Recapture Population Calculator (Lincoln–Petersen) — Marked animals, second sample and recaptures give the population size.\" title=\"Mark–Recapture Population Calculator (Lincoln–Petersen)\"><figcaption>Marked animals, second sample and recaptures give the population size.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>M</code></td><td>marked and released in the first sample</td><td>individuals</td></tr><tr><td><code>C</code></td><td>total caught in the second sample</td><td>individuals</td></tr><tr><td><code>R</code></td><td>marked individuals in the second sample</td><td>individuals</td></tr><tr><td><code>N</code></td><td>estimated population size</td><td>individuals</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Mark–Recapture Population (Lincoln–Petersen)?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: animals marked and released (m) of <strong>120</strong> individuals, animals in the second sample (c) of <strong>100</strong> individuals, marked animals recaptured (r) of <strong>22</strong> individuals.</p>\n<p>Substituting them into the formula gives population estimate (lincoln–petersen) of <strong>545.45</strong> individuals, chapman-corrected estimate of <strong>530.35</strong> individuals, standard error of <strong>527.58</strong> individuals, 95% lower bound of <strong>-3,389.75</strong> individuals, 95% upper bound of <strong>4,450.44</strong> individuals.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>R above 20</td><td><strong>Reliable</strong></td><td>the estimate is stable and the interval is narrow</td></tr><tr><td>R 5 – 20</td><td><strong>Use the correction</strong></td><td>Chapman's version removes most of the bias</td></tr><tr><td>R below 5</td><td><strong>Poor</strong></td><td>collect another sample; the interval is wider than the estimate</td></tr></tbody></table>\n<ul><li><p>The method assumes a closed population (no births, deaths, immigration or emigration between samples), equal catchability and that marks are not lost.</p></li><li><p>Trapshy animals violate equal catchability and inflate the estimate; baited traps and trap-happy animals deflate it.</p></li><li><p>The Chapman estimator is less biased than the plain ratio at the sample sizes field biologists actually achieve.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Sampling too soon after marking, before the animals have mixed back into the population.</li><li>Marking only the largest individuals, which makes them easier to recapture.</li><li>Reporting a point estimate with no interval, which overstates what a single sample can say.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/quadrat-sampling-density\">Quadrat sampling density</a>. <a href=\"/biology/catch-per-unit-effort\">Catch per unit effort</a>. <a href=\"/biology/logistic-population-growth\">Logistic growth</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why is my recapture rate so low?",
+      "a": "Either the population is large or the second sample was small; the estimator needs at least five to twenty recaptures to be meaningful."
+    },
+    {
+      "q": "What if marked animals die from handling?",
+      "a": "That violates the closure assumption and biases the estimate; use a model that allows for losses on capture (Cormack–Jolly–Seber)."
+    },
+    {
+      "q": "What does the Mark–Recapture Population (Lincoln–Petersen) actually calculate?",
+      "a": "It returns population estimate (Lincoln–Petersen), chapman-corrected estimate, standard error and 95% lower bound. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 759
+}

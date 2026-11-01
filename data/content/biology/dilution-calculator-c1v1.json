@@ -1,0 +1,64 @@
+{
+  "path": "/biology/dilution-calculator-c1v1",
+  "slug": "dilution-calculator-c1v1",
+  "cat": "biology",
+  "name": "Dilution Calculator (C1V1 = C2V2)",
+  "seoTitle": "Dilution (C1V1 = C2V2) Calculator — Formula & Results",
+  "seoDesc": "Every dilution question is the same equation: the amount of solute before equals the amount after. Free dilution (c1v1 = c2v2) calculator: enter your values a",
+  "h1": "Dilution Calculator (C1V1 = C2V2)",
+  "summary": "Every dilution question is the same equation: the amount of solute before equals the amount after. It returns stock volume, diluent to add and dilution factor, and the panel shows all of them at once.\n\nThis calculator solves C₁V₁ = C₂V₂ for whichever value you are missing and tells you how much diluent to add. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Dilution (C1V1 = C2V2)",
+      "html": "<p>C₁ × V₁ = C₂ × V₂</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/dilution-calculator-c1v1.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Dilution Calculator (C1V1 = C2V2) — Concentration before and after, and the volume that bridges them.\" title=\"Dilution Calculator (C1V1 = C2V2)\"><figcaption>Concentration before and after, and the volume that bridges them.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>C₁</code></td><td>stock concentration</td><td>any</td></tr><tr><td><code>V₁</code></td><td>volume of stock to take</td><td>mL</td></tr><tr><td><code>C₂</code></td><td>final concentration</td><td>any</td></tr><tr><td><code>V₂</code></td><td>final volume</td><td>mL</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Dilution (C1V1 = C2V2)?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: stock concentration of <strong>10</strong> M, final concentration of <strong>0.5</strong> M, final volume of <strong>100</strong> mL.</p>\n<p>Substituting them into the formula gives stock volume of <strong>5</strong> mL, diluent to add of <strong>95</strong> mL, dilution factor of <strong>20</strong> ×.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The confidence check is units: C₁ and C₂ must be in the same unit and V₁ and V₂ in the same unit, or the equation quietly gives a wrong answer.</p></li><li><p>Add the stock to about 80% of the final volume of diluent, then top up to the mark: mixing volumes is not strictly additive.</p></li><li><p>For a dilution series, do it stepwise; a single 1000× dilution is less accurate than three 10× steps because of pipetting error.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Mixing molarity with mass concentration in the same equation.</li><li>Forgetting that V₂ includes the stock volume.</li><li>Using a volumetric flask for a small volume and a beaker for the rest.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/serial-dilution-planner\">Serial dilution</a>. <a href=\"/chemistry/molarity\">Molarity</a>. <a href=\"/biology/primer-resuspension-working-stock\">Primer resuspension</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What if I want a dilution factor, not a concentration?",
+      "a": "Dilution factor is C₁/C₂; a 1:10 dilution has a factor of 10."
+    },
+    {
+      "q": "Can V₁ be larger than V₂?",
+      "a": "No — that would mean concentrating the solution, which a dilution cannot do."
+    },
+    {
+      "q": "What does the Dilution (C1V1 = C2V2) actually calculate?",
+      "a": "It returns stock volume, diluent to add and dilution factor. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 633
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/autosomal-dominant-pedigree",
+  "slug": "autosomal-dominant-pedigree",
+  "cat": "biology",
+  "name": "Autosomal Dominant Pedigree Analyzer",
+  "seoTitle": "Autosomal Dominant Pedigree Analyzer Calculator",
+  "seoDesc": "A dominant allele shows in every generation and has an affected parent for every affected child. Free autosomal dominant pedigree analyzer calculator: enter y",
+  "h1": "Autosomal Dominant Pedigree Analyzer",
+  "summary": "A dominant allele shows in every generation and has an affected parent for every affected child. It returns chance of an affected child, chance of an unaffected child, chance the child carries the allele and expected affected fraction at generation 5, and the panel shows all of them at once.\n\nThis calculator works out the genotype of each parent, the risk for their children and the chance a healthy child of an affected carrier-free parent still carries the allele. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Autosomal Dominant Pedigree Analyzer",
+      "html": "<p>Aa × aa → 1 affected : 1 unaffected;  each generation halves the allele's share</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/autosomal-dominant-pedigree.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Autosomal Dominant Pedigree Analyzer — An affected heterozygote mated with an unaffected partner.\" title=\"Autosomal Dominant Pedigree Analyzer\"><figcaption>An affected heterozygote mated with an unaffected partner.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A</code></td><td>the dominant disease allele</td><td>—</td></tr><tr><td><code>a</code></td><td>the normal allele</td><td>—</td></tr><tr><td><code>penetrance</code></td><td>share of carriers who show the trait</td><td>%</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Autosomal Dominant Pedigree Analyzer?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: parent 1 genotype set to <strong>Aa — affected heterozygote</strong>, parent 2 genotype set to <strong>0.0</strong>, penetrance of <strong>100</strong>%.</p>\n<p>Substituting them into the formula gives chance of an affected child of <strong>50</strong>%, chance of an unaffected child of <strong>50</strong>%, chance the child carries the allele of <strong>50</strong>%, expected affected fraction at generation 5 of <strong>3.12</strong>%.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>Dominant alleles are lost from a pedigree as carriers die without children: the expected share of affected offspring after five generations of mating with unaffected partners is about 3%.</p></li><li><p>Incomplete penetrance makes a dominant allele appear to skip a generation, which is the classic mimic of a recessive pattern.</p></li><li><p>Huntington's disease, Marfan syndrome and familial hypercholesterolaemia are the usual textbook autosomal dominant examples.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming a dominant trait must appear in every generation when penetrance is incomplete.</li><li>Ignoring new mutations, which can produce an affected child in an unaffected family.</li><li>Confusing an affected homozygote with a heterozygote — the first passes the allele to every child.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/autosomal-recessive-risk\">Recessive inheritance risk</a>. <a href=\"/biology/pedigree-probability\">Pedigree probability</a>. <a href=\"/biology/relatedness-coefficient\">Relatedness coefficient</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can two affected parents have an unaffected child?",
+      "a": "Yes, if both are heterozygotes: the child may inherit the normal allele from each."
+    },
+    {
+      "q": "What does an affected parent pass on?",
+      "a": "A heterozygote passes the allele to 50% of children; a homozygote to all of them."
+    },
+    {
+      "q": "What does the Autosomal Dominant Pedigree Analyzer actually calculate?",
+      "a": "It returns chance of an affected child, chance of an unaffected child, chance the child carries the allele and expected affected fraction at generation 5. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 686
+}

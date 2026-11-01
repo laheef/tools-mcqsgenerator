@@ -1,0 +1,64 @@
+{
+  "path": "/biology/phenotypic-ratio",
+  "slug": "phenotypic-ratio",
+  "cat": "biology",
+  "name": "Phenotypic Ratio Calculator",
+  "seoTitle": "Phenotypic Ratio Calculator — Formula & Results",
+  "seoDesc": "Phenotypic ratios are what you count on a bench, but the numbers that matter are the proportions they imply. Free phenotypic ratio calculator: enter your valu",
+  "h1": "Phenotypic Ratio Calculator",
+  "summary": "Phenotypic ratios are what you count on a bench, but the numbers that matter are the proportions they imply. It returns total scored, ratio to the smallest class, class 1 share and chi-square vs 9:3:3:1, and the panel shows all of them at once.\n\nThis calculator turns raw counts into a ratio in lowest whole numbers, the percentage of each class and the chi-square test against an expected Mendelian ratio. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Phenotypic Ratio",
+      "html": "<p>Ratio = each class ÷ the smallest class;  χ² = Σ (O − E)² ÷ E</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/phenotypic-ratio.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Phenotypic Ratio Calculator — Observed classes against the expected ratio.\" title=\"Phenotypic Ratio Calculator\"><figcaption>Observed classes against the expected ratio.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>O</code></td><td>observed count in a class</td><td>individuals</td></tr><tr><td><code>E</code></td><td>expected count from the ratio</td><td>individuals</td></tr><tr><td><code>χ²</code></td><td>test statistic, 3 degrees of freedom for four classes</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Phenotypic Ratio?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: class 1 count of <strong>180</strong>, class 2 count of <strong>62</strong>, class 3 count of <strong>58</strong>, class 4 count of <strong>20</strong>.</p>\n<p>Substituting them into the formula gives total scored of <strong>320</strong>, ratio to the smallest class of <strong>16</strong>, class 1 share of <strong>56.25</strong>%, chi-square vs 9:3:3:1 of <strong>0.1333</strong>.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>χ² below 7.81</td><td><strong>Fits 9:3:3:1</strong></td><td>the 5% critical value at 3 df</td></tr><tr><td>7.81 – 11.34</td><td><strong>Marginal</strong></td><td>between the 5% and 1% critical values</td></tr><tr><td>above 11.34</td><td><strong>Does not fit</strong></td><td>linkage, lethality or scoring error</td></tr></tbody></table>\n<ul><li><p>Ratios are only comparable when every class has the same expected weight; a cross with lethal genotypes will not give whole-number Mendelian ratios.</p></li><li><p>Chi-square assumes independent observations. Counts from the same plant or the same family are not independent, which inflates the statistic.</p></li><li><p>The 5% critical values are 3.84 (1 df), 5.99 (2 df) and 7.81 (3 df).</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Dividing by the largest class instead of the smallest, which gives ratios below 1.</li><li>Comparing a chi-square to a critical value with the wrong number of degrees of freedom.</li><li>Reporting a ratio from fewer than about 100 individuals.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/dihybrid-cross\">Dihybrid cross</a>. <a href=\"/biology/chi-square-genetics-test\">Chi-square test for genetics</a>. <a href=\"/biology/recombination-frequency\">Recombination frequency</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I get a ratio like 9:3:3:1 from counts?",
+      "a": "Divide every count by the smallest, then scale to whole numbers — 180:62:58:20 is about 9:3:3:1."
+    },
+    {
+      "q": "What does a large chi-square mean?",
+      "a": "The observations are unlikely under the expected ratio: look for linkage, lethality or a scoring error."
+    },
+    {
+      "q": "What does the Phenotypic Ratio actually calculate?",
+      "a": "It returns total scored, ratio to the smallest class, class 1 share and chi-square vs 9:3:3:1. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 697
+}

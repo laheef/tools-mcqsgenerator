@@ -1,0 +1,64 @@
+{
+  "path": "/biology/mitotic-index",
+  "slug": "mitotic-index",
+  "cat": "biology",
+  "name": "Mitotic Index Calculator",
+  "seoTitle": "Mitotic Index Calculator — Formula & Results",
+  "seoDesc": "The mitotic index is the percentage of cells caught in mitosis on a slide, the classic measure of proliferation in plant roots, tumour tissue and any treated",
+  "h1": "Mitotic Index Calculator",
+  "summary": "The mitotic index is the percentage of cells caught in mitosis on a slide, the classic measure of proliferation in plant roots, tumour tissue and any treated culture. It returns mitotic index, mitotic cells per 1000 and phases add up to, and the panel shows all of them at once.\n\nThis calculator returns the index, the phase breakdown and the total counted. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Mitotic Index",
+      "html": "<p>Mitotic index (%) = mitotic cells ÷ total cells × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/mitotic-index.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Mitotic Index Calculator — Mitotic phases as a share of the cells counted.\" title=\"Mitotic Index Calculator\"><figcaption>Mitotic phases as a share of the cells counted.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>mitotic</code></td><td>cells showing condensed chromosomes</td><td>cells</td></tr><tr><td><code>total</code></td><td>all cells counted in the field</td><td>cells</td></tr><tr><td><code>index</code></td><td>share of cells in mitosis</td><td>%</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Mitotic Index?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: total cells counted of <strong>1,200</strong> cells, cells in mitosis of <strong>96</strong> cells, prophase of <strong>40</strong> cells, metaphase of <strong>28</strong> cells, anaphase of <strong>18</strong> cells, telophase of <strong>10</strong> cells.</p>\n<p>Substituting them into the formula gives mitotic index of <strong>8</strong>%, mitotic cells per 1000 of <strong>80</strong>, phases add up to of <strong>96</strong> cells.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 – 2%</td><td><strong>Low</strong></td><td>quiescent tissue or an inhibited treatment</td></tr><tr><td>2 – 6%</td><td><strong>Normal</strong></td><td>typical of healthy root meristems</td></tr><tr><td>above 6%</td><td><strong>High</strong></td><td>rapidly dividing tissue, or a block in mitosis</td></tr></tbody></table>\n<ul><li><p>The index depends on how long mitosis lasts as well as on how often it starts: a drug that arrests cells in metaphase raises the index without raising proliferation.</p></li><li><p>Count at least 1000 cells, ideally from several fields, and score blind to the treatment.</p></li><li><p>Colchicine or similar spindle poisons are used to accumulate metaphases; say whether you used one.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting only fields with obvious mitoses, which inflates the index.</li><li>Confusing apoptotic bodies with mitotic figures.</li><li>Counting cells that overlap, which makes the denominator unreliable.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/cell-doubling-time\">Cell doubling time</a>. <a href=\"/biology/percent-viability\">Percent viability</a>. <a href=\"/biology/microscope-magnification\">Microscope magnification</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a normal mitotic index?",
+      "a": "About 2–6% in plant root tips and lower in most adult animal tissues."
+    },
+    {
+      "q": "Why is my mitotic index so high after treatment?",
+      "a": "Spindle poisons and DNA damage can arrest cells in mitosis, so the index rises even as proliferation falls."
+    },
+    {
+      "q": "What does the Mitotic Index actually calculate?",
+      "a": "It returns mitotic index, mitotic cells per 1000 and phases add up to. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 669
+}

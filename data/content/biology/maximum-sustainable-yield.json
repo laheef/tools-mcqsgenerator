@@ -1,0 +1,64 @@
+{
+  "path": "/biology/maximum-sustainable-yield",
+  "slug": "maximum-sustainable-yield",
+  "cat": "biology",
+  "name": "Maximum Sustainable Yield Calculator",
+  "seoTitle": "Maximum Sustainable Yield Calculator — Formula & Results",
+  "seoDesc": "Maximum sustainable yield is half the carrying capacity, taken at half the maximum growth rate. Free maximum sustainable yield calculator: enter your values a",
+  "h1": "Maximum Sustainable Yield Calculator",
+  "summary": "Maximum sustainable yield is half the carrying capacity, taken at half the maximum growth rate. It returns maximum sustainable yield, stock size at MSY, sustainable harvest rate and yield at half of K, and the panel shows all of them at once.\n\nThis calculator gives the yield, the stock size to leave behind and the effort that produces it. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Maximum Sustainable Yield",
+      "html": "<p>MSY = r × K ÷ 4,  taken at N = K ÷ 2</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/maximum-sustainable-yield.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Maximum Sustainable Yield Calculator — Yield against stock size, peaking at half the carrying capacity.\" title=\"Maximum Sustainable Yield Calculator\"><figcaption>Yield against stock size, peaking at half the carrying capacity.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>r</code></td><td>intrinsic rate of increase</td><td>per year</td></tr><tr><td><code>K</code></td><td>carrying capacity</td><td>individuals</td></tr><tr><td><code>MSY</code></td><td>maximum sustainable yield</td><td>individuals/year</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Maximum Sustainable Yield?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: carrying capacity (k) of <strong>10,000</strong> individuals, intrinsic growth rate (r) of <strong>0.6</strong> per year.</p>\n<p>Substituting them into the formula gives maximum sustainable yield of <strong>1,500</strong> individuals/year, stock size at msy of <strong>5,000</strong> individuals, sustainable harvest rate of <strong>30</strong> %/year, yield at half of k of <strong>1,500</strong> individuals/year.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>harvest below 50% of MSY</td><td><strong>Conservative</strong></td><td>the stock stays near K</td></tr><tr><td>harvest at MSY</td><td><strong>Maximum</strong></td><td>productive but leaves no margin for bad years</td></tr><tr><td>harvest above MSY</td><td><strong>Overfishing</strong></td><td>the stock declines and the yield falls with it</td></tr></tbody></table>\n<ul><li><p>MSY is a theoretical maximum, not a management target: real stocks fluctuate, and fishing at MSY in a bad year pushes the population below the level that produces it.</p></li><li><p>The model assumes logistic growth, no age structure and no environmental variability. Modern management uses reference points such as B_MSY and F_MSY with buffers.</p></li><li><p>Because yield peaks at K/2, a depleted stock can produce more surplus than a full one — which is why recovery plans sometimes allow fishing before the stock is fully rebuilt.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using r as a percentage in one place and a fraction in another.</li><li>Treating MSY as a fixed tonnage when it depends on the current stock size.</li><li>Applying a single-species formula to a multi-species fishery without accounting for bycatch.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/logistic-population-growth\">Logistic growth</a>. <a href=\"/biology/exponential-population-growth\">Exponential growth</a>. <a href=\"/biology/catch-per-unit-effort\">Catch per unit effort</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why is MSY at half the carrying capacity?",
+      "a": "Because logistic growth is fastest at K/2, so the population replaces harvested individuals most quickly there."
+    },
+    {
+      "q": "Is MSY always sustainable?",
+      "a": "No — it is sustainable only in the deterministic model. In practice it is a ceiling, and management sets targets well below it."
+    },
+    {
+      "q": "What does the Maximum Sustainable Yield actually calculate?",
+      "a": "It returns maximum sustainable yield, stock size at MSY, sustainable harvest rate and yield at half of K. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 766
+}

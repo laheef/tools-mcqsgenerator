@@ -1,0 +1,64 @@
+{
+  "path": "/biology/protein-gravy-calculator",
+  "slug": "protein-gravy-calculator",
+  "cat": "biology",
+  "name": "Protein GRAVY (Hydropathy) Calculator",
+  "seoTitle": "Protein GRAVY (Hydropathy) Calculator — Formula & Results",
+  "seoDesc": "GRAVY — grand average of hydropathicity — is the mean Kyte–Doolittle hydropathy of a protein's residues. Free protein gravy (hydropathy) calculator: enter you",
+  "h1": "Protein GRAVY (Hydropathy) Calculator",
+  "summary": "GRAVY — grand average of hydropathicity — is the mean Kyte–Doolittle hydropathy of a protein's residues. It returns GRAVY and hydrophobic fraction, and the panel shows all of them at once.\n\nPositive values mean the protein is hydrophobic, negative means hydrophilic, and the number is a quick read on solubility. This calculator computes it from residue counts. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Protein GRAVY (Hydropathy)",
+      "html": "<p>GRAVY = Σ (hydropathy value of each residue) ÷ number of residues</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/protein-gravy-calculator.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Protein GRAVY (Hydropathy) Calculator — GRAVY on the Kyte–Doolittle scale.\" title=\"Protein GRAVY (Hydropathy) Calculator\"><figcaption>GRAVY on the Kyte–Doolittle scale.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>hydrophobic</code></td><td>A, V, I, L, M, F, W, Y — positive Kyte–Doolittle values</td><td>count</td></tr><tr><td><code>neutral</code></td><td>G, P, S, T, C, N, Q — near zero</td><td>count</td></tr><tr><td><code>hydrophilic</code></td><td>D, E, K, R, H — strongly negative</td><td>count</td></tr><tr><td><code>GRAVY</code></td><td>mean hydropathy, roughly −2 to +2</td><td>—</td></tr></tbody></table>\n<p><strong>Where the relationship comes from.</strong> Kyte & Doolittle (1982), Journal of Molecular Biology 157:105–132.</p>"
+    },
+    {
+      "title": "How do I use the Protein GRAVY (Hydropathy)?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: hydrophobic residues (a v i l m f w y) of <strong>120</strong>, neutral residues (g p s t c n q) of <strong>80</strong>, hydrophilic residues (d e k r h) of <strong>100</strong>, total residues of <strong>300</strong>.</p>\n<p>Substituting them into the formula gives gravy of <strong>-0.3867</strong>, hydrophobic fraction of <strong>40</strong>%.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below −1.0</td><td><strong>Hydrophilic</strong></td><td>soluble cytoplasmic protein</td></tr><tr><td>−1.0 to 0</td><td><strong>Mixed</strong></td><td>soluble, often with a hydrophobic core</td></tr><tr><td>0 to +0.5</td><td><strong>Hydrophobic</strong></td><td>membrane-associated or aggregation-prone</td></tr><tr><td>above +0.5</td><td><strong>Strongly hydrophobic</strong></td><td>membrane protein or a fragment of one</td></tr></tbody></table>\n<ul><li><p>The grouped average uses representative values; residue-exact GRAVY needs the real sequence and a lookup table, which is what ProtParam does.</p></li><li><p>GRAVY is a bulk property: a soluble protein can contain a strongly hydrophobic stretch (a transmembrane helix) and still average out hydrophilic.</p></li><li><p>For aggregation risk, look at the hydrophobic fraction inside a sliding window, not the whole-protein average.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Counting residues twice or using the sequence length instead of the counted total.</li><li>Reading GRAVY as a solubility test — it correlates with, but does not determine, solubility.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/protein-molar-conversions\">Protein molar conversions</a>. <a href=\"/biology/protein-hydrodynamic-radius\">Protein hydrodynamic radius</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What GRAVY value means a protein is soluble?",
+      "a": "Usually below 0, and comfortably below −0.5. Overexpression constructs often carry a fusion tag partly to push GRAVY down."
+    },
+    {
+      "q": "Is GRAVY the same as the hydropathy plot?",
+      "a": "No. GRAVY is one number for the whole protein; a hydropathy plot slides a window along the sequence to find transmembrane segments."
+    },
+    {
+      "q": "What does the Protein GRAVY (Hydropathy) actually calculate?",
+      "a": "It returns GRAVY and hydrophobic fraction. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 742
+}

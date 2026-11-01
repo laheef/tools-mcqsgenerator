@@ -1,0 +1,64 @@
+{
+  "path": "/biology/sds-page-gel",
+  "slug": "sds-page-gel",
+  "cat": "biology",
+  "name": "SDS-PAGE Gel Calculator",
+  "seoTitle": "SDS-PAGE Gel Calculator — Formula & Results",
+  "seoDesc": "The acrylamide percentage decides which protein sizes a gel separates. Free sds-page gel calculator: enter your values and get 30% acrylamide stock, water, 2%",
+  "h1": "SDS-PAGE Gel Calculator",
+  "summary": "The acrylamide percentage decides which protein sizes a gel separates. It returns 30% acrylamide stock, water, 2% bis-acrylamide stock and best acrylamide percentage, and the panel shows all of them at once.\n\nTotal acrylamide (%T) and the crosslinker ratio (%C) set the pore size, and a gel outside the right range runs everything into one band at the top or into the dye front. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the SDS-PAGE Gel",
+      "html": "<p>%T = (acrylamide + bis) ÷ total volume × 100.  %C = bis ÷ (acrylamide + bis) × 100.  A gel of %T resolves proteins up to roughly 1 500 ÷ %T kDa</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/sds-page-gel.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: SDS-PAGE Gel Calculator — Acrylamide percentage and the proteins it resolves\" title=\"SDS-PAGE Gel Calculator\"><figcaption>Acrylamide percentage and the proteins it resolves</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>%T</code></td><td>total acrylamide concentration</td><td>%</td></tr><tr><td><code>%C</code></td><td>crosslinker as a share of the total acrylamide</td><td>%</td></tr><tr><td><code>kDa</code></td><td>kilodalton</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the SDS-PAGE Gel?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the size of your protein in kDa to see which percentage suits it.</li><li>Set the gel volume you need (about 10 mL for two mini gels).</li><li>The volumes of acrylamide, bis-acrylamide and water are given for the stocks you have.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: protein of interest of <strong>50</strong> kDa, acrylamide in the gel of <strong>10</strong> %T, crosslinker in the gel of <strong>2.6</strong> %C, gel volume to pour of <strong>10</strong> mL.</p>\n<p>Substituting them into the formula gives 30% acrylamide stock of <strong>3.33</strong> mL, water of <strong>-7.33</strong> mL, 2% bis-acrylamide stock of <strong>13</strong> mL, best acrylamide percentage of <strong>15</strong> %T, range this gel resolves of <strong>150</strong> kDa.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>7.5 %</td><td><strong>Large proteins</strong></td><td>50–500 kDa, good for antibodies</td></tr><tr><td>10 %</td><td><strong>The default</strong></td><td>20–150 kDa, which covers most proteins</td></tr><tr><td>12 – 15 %</td><td><strong>Small proteins</strong></td><td>10–50 kDa, peptides and growth factors</td></tr><tr><td>gradient 4–20%</td><td><strong>Wide range</strong></td><td>one gel for a whole lysate</td></tr></tbody></table>\n<ul><li><p>Pore size falls as %T rises, so a higher percentage resolves smaller proteins and a lower percentage lets large ones enter the gel at all.</p></li><li><p>%C matters as much as %T: at 2.6% crosslinking the pores are at their tightest for a given acrylamide concentration, which is why nearly every recipe uses it.</p></li><li><p>A protein that runs at the dye front is too small for the gel; one that stays at the top is too large. Neither is a loading problem.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Pouring a 15% gel for a 200 kDa protein, which never enters the separating layer.</li><li>Mixing 30% acrylamide with the crosslinker already in it and then adding more bis.</li><li>Forgetting that the running buffer pH, not the acrylamide, sets the stacking.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/western-blot-loading\">Western blot loading</a>. <a href=\"/biology/protein-isoelectric-point\">Protein isoelectric point</a>. <a href=\"/biology/amino-acid-composition\">Amino acid composition</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What percentage gel do I need for a 50 kDa protein?",
+      "a": "10% — it resolves 20–150 kDa and puts a 50 kDa band comfortably in the middle."
+    },
+    {
+      "q": "What is %C?",
+      "a": "The crosslinker (bis-acrylamide) as a percentage of total acrylamide; 2.6% gives the smallest pores for a given %T."
+    },
+    {
+      "q": "Why is my protein at the dye front?",
+      "a": "It is smaller than the gel can resolve — lower the acrylamide percentage or use a gradient gel."
+    },
+    {
+      "q": "What does the SDS-PAGE Gel actually calculate?",
+      "a": "It returns 30% acrylamide stock, water, 2% bis-acrylamide stock and best acrylamide percentage. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 694
+}

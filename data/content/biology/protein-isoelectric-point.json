@@ -1,0 +1,64 @@
+{
+  "path": "/biology/protein-isoelectric-point",
+  "slug": "protein-isoelectric-point",
+  "cat": "biology",
+  "name": "Protein Isoelectric Point Calculator",
+  "seoTitle": "Protein Isoelectric Point Calculator — Formula & Results",
+  "seoDesc": "A protein's isoelectric point is the pH at which its net charge is exactly zero. Free protein isoelectric point calculator: enter your values and get isoelect",
+  "h1": "Protein Isoelectric Point Calculator",
+  "summary": "A protein's isoelectric point is the pH at which its net charge is exactly zero. It returns isoelectric point, net charge at the given ph, length, molecular weight, acidic residues (d + e), basic residues (k + r + h) and gravy (hydrophobicity), and the panel shows all of them at once.\n\nIt is found by summing the charge of every ionisable residue at each trial pH and bisecting until the sum vanishes. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Protein Isoelectric Point",
+      "html": "<p>Z(pH) = Σ (+) ÷ (1 + 10^(pH − pKa)) − Σ (−) ÷ (1 + 10^(pKa − pH)).  pI is the pH at which Z = 0, found by bisection between 0 and 14</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/protein-isoelectric-point.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Protein Isoelectric Point Calculator — Net charge against pH for the example protein\" title=\"Protein Isoelectric Point Calculator\"><figcaption>Net charge against pH for the example protein</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Z</code></td><td>net charge in units of the elementary charge</td><td>e</td></tr><tr><td><code>pI</code></td><td>isoelectric point</td><td>pH</td></tr><tr><td><code>pKa</code></td><td>acid dissociation constant of each ionisable group</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Protein Isoelectric Point?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: ph for the charge calculation of <strong>7</strong> pH.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>pI below 5</td><td><strong>Acidic</strong></td><td>binds anion exchangers such as Q Sepharose</td></tr><tr><td>pI 5 – 7.5</td><td><strong>Neutral</strong></td><td>poor solubility near its pI; buffer away from it</td></tr><tr><td>pI above 7.5</td><td><strong>Basic</strong></td><td>binds cation exchangers such as SP Sepharose</td></tr></tbody></table>\n<ul><li><p>Solubility is lowest at the pI because the protein has no net charge and molecules aggregate. Purification buffers are usually set one pH unit away from it.</p></li><li><p>The pKa values used are the standard solution values (D 3.65, E 4.25, C 8.18, Y 10.07, H 6.0, K 10.53, R 12.48, N-terminus 8.2, C-terminus 3.65). Real pKa values shift in a folded protein, so a measured pI can differ by half a unit.</p></li><li><p>Modifications are ignored: phosphorylation adds negative charges and moves the pI down, while a His-tag or a nuclear localisation signal moves it up.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Assuming the calculated pI equals the value on an IEF gel — glycosylation and PTMs shift it.</li><li>Running an ion-exchange step at the pI, where the protein has no charge to bind with.</li><li>Forgetting that the N- and C-termini contribute, which matters for short peptides.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/amino-acid-composition\">Amino acid composition</a>. <a href=\"/biology/dna-to-protein\">DNA to protein</a>. <a href=\"/biology/codon-usage-calculator\">Codon usage</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a typical protein pI?",
+      "a": "Most cytosolic proteins sit between 5 and 7; the human proteome averages around 6.5."
+    },
+    {
+      "q": "How is pI calculated?",
+      "a": "By finding the pH where the sum of positive and negative charges is zero, using the Henderson-Hasselbalch equation for every ionisable group."
+    },
+    {
+      "q": "Why is my measured pI different?",
+      "a": "Post-translational modification, bound ions, glycosylation and the local environment of each residue all shift the true value."
+    },
+    {
+      "q": "What does the Protein Isoelectric Point actually calculate?",
+      "a": "It returns isoelectric point, net charge at the given ph, length, molecular weight, acidic residues (d + e), basic residues (k + r + h) and gravy (hydrophobicity). Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 743
+}

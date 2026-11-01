@@ -1,0 +1,64 @@
+{
+  "path": "/biology/amino-acid-composition",
+  "slug": "amino-acid-composition",
+  "cat": "biology",
+  "name": "Amino Acid Composition Calculator",
+  "seoTitle": "Amino Acid Composition Calculator — Formula & Results",
+  "seoDesc": "Amino acid composition counts each residue in a protein and the share of the chain it makes up. Free amino acid composition calculator: enter your values and",
+  "h1": "Amino Acid Composition Calculator",
+  "summary": "Amino acid composition counts each residue in a protein and the share of the chain it makes up. It returns length, molecular weight, gravy, aromatic residues (f + w + y), acidic minus basic residues and cysteines, and the panel shows all of them at once.\n\nFrom those counts it derives molecular weight, GRAVY hydrophobicity, aromatic content and the acidic-to-basic balance. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Amino Acid Composition",
+      "html": "<p>Molecular weight = Σ(residue masses) − (n − 1) × 18.015.  GRAVY = Σ(hydropathy × count) ÷ n.  Share of an amino acid = count ÷ n × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/amino-acid-composition.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Amino Acid Composition Calculator — Kyte–Doolittle hydropathy, most and least hydrophobic\" title=\"Amino Acid Composition Calculator\"><figcaption>Kyte–Doolittle hydropathy, most and least hydrophobic</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>n</code></td><td>number of residues</td><td>aa</td></tr><tr><td><code>GRAVY</code></td><td>grand average of hydropathicity (Kyte–Doolittle)</td><td>—</td></tr><tr><td><code>Da</code></td><td>dalton</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Amino Acid Composition?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>GRAVY above 0.2</td><td><strong>Hydrophobic</strong></td><td>likely membrane-associated or a membrane domain</td></tr><tr><td>GRAVY −0.2 to 0.2</td><td><strong>Mixed</strong></td><td>soluble globular proteins typically sit here</td></tr><tr><td>GRAVY below −0.5</td><td><strong>Very hydrophilic</strong></td><td>highly soluble, often disordered</td></tr></tbody></table>\n<ul><li><p>GRAVY is the mean Kyte–Doolittle hydropathy. A value above about 0.2 across a window of 19–20 residues is the classic signal of a transmembrane helix.</p></li><li><p>Cysteine count matters downstream: an even number can form disulfide bonds, and free cysteines cause aggregation in formulation.</p></li><li><p>The mass here is the unmodified chain. Signal peptides are cleaved, glycosylation adds several kDa, and a His-tag adds about 0.8 kDa per histidine.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming an extinction coefficient from composition alone — Trp and Tyr are close, but disulfides also contribute at 280 nm.</li><li>Comparing GRAVY of a full-length protein with that of its mature, processed form.</li><li>Treating percent composition as conserved: it varies widely between unrelated proteins of the same size.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/protein-isoelectric-point\">Isoelectric point</a>. <a href=\"/biology/dna-to-protein\">DNA to protein</a>. <a href=\"/biology/codon-usage-calculator\">Codon usage</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I calculate protein molecular weight from sequence?",
+      "a": "Add the average residue masses and subtract one water molecule per peptide bond."
+    },
+    {
+      "q": "What does a positive GRAVY mean?",
+      "a": "The protein is net hydrophobic — often a membrane protein or a hydrophobic domain."
+    },
+    {
+      "q": "Why does cysteine count matter?",
+      "a": "Two cysteines can form a disulfide bond; unpaired ones drive aggregation and need to be capped or removed."
+    },
+    {
+      "q": "What does the Amino Acid Composition actually calculate?",
+      "a": "It returns length, molecular weight, gravy, aromatic residues (f + w + y), acidic minus basic residues and cysteines. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 635
+}

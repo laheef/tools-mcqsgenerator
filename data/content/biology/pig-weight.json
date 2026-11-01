@@ -1,0 +1,64 @@
+{
+  "path": "/biology/pig-weight",
+  "slug": "pig-weight",
+  "cat": "biology",
+  "name": "Pig Weight Calculator",
+  "seoTitle": "Pig Weight Calculator — Formula & Results",
+  "seoDesc": "You cannot put a pig on a bathroom scale, but you can measure it with a tape. Free pig weight calculator: enter your values and get estimated live weight, est",
+  "h1": "Pig Weight Calculator",
+  "summary": "You cannot put a pig on a bathroom scale, but you can measure it with a tape. It returns estimated live weight, estimated live weight, heart girth and body length, and the panel shows all of them at once.\n\nThis calculator estimates live weight from heart girth and body length using the standard girth-squared × length formula, and reports the result in kilograms and pounds. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Pig Weight",
+      "html": "<p>Live weight (kg) ≈ (heart girth² × body length) ÷ 400, with both measured in centimetres</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/pig-weight.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Pig Weight Calculator — Two tape measurements give the weight.\" title=\"Pig Weight Calculator\"><figcaption>Two tape measurements give the weight.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>girth</code></td><td>heart girth behind the front legs</td><td>cm</td></tr><tr><td><code>length</code></td><td>from between the ears to the tail base</td><td>cm</td></tr><tr><td><code>weight</code></td><td>estimated live weight</td><td>kg</td></tr></tbody></table>\n<p><strong>Where the relationship comes from.</strong> Girth-squared method used in pig husbandry extension guidance; the constant is calibrated for commercial crossbreeds.</p>"
+    },
+    {
+      "title": "How do I use the Pig Weight?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: measured in set to <strong>1.0</strong>.</p>\n<p>Substituting them into the formula gives estimated live weight of <strong>3,025</strong> kg, estimated live weight of <strong>6,668.91</strong> lb, heart girth of <strong>110</strong> cm, body length of <strong>100</strong> cm.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 30 kg</td><td><strong>Piglet</strong></td><td>still on the sow</td></tr><tr><td>30 – 70 kg</td><td><strong>Grower</strong></td><td>the fast-growth phase</td></tr><tr><td>70 – 110 kg</td><td><strong>Finisher</strong></td><td>approaching market weight</td></tr><tr><td>over 110 kg</td><td><strong>Heavy</strong></td><td>sow or mature boar territory</td></tr></tbody></table>\n<ul><li><p>The 400 divisor is an empirical constant for typical commercial pigs. Feral, obese or very lean animals fall outside it, and the estimate can be 10% out.</p></li><li><p>Measure with the pig standing square and its head up; a pig that is lying down or squirming gives a girth several centimetres too small.</p></li><li><p>For management decisions — dosing, feed allocation — a 10% margin is the useful way to read this number.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Measuring girth behind the shoulders instead of behind the front legs.</li><li>Taking the length along the back's curve instead of straight from ear base to tail base.</li><li>Mixing centimetres and inches in one calculation.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/dry-matter-intake\">Dry matter intake</a>. <a href=\"/biology/pasture-stocking-rate\">Pasture stocking rate</a>. <a href=\"/biology/horse-weight\">Horse weight</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How accurate is the tape method?",
+      "a": "Usually within 5–10% for healthy commercial pigs. Weigh on a scale when the decision is critical, such as medication dosing."
+    },
+    {
+      "q": "Can I use it for a pot-bellied pig?",
+      "a": "Roughly, but the constant is calibrated on commercial breeds; expect a larger error on very different body shapes."
+    },
+    {
+      "q": "What does the Pig Weight actually calculate?",
+      "a": "It returns estimated live weight, estimated live weight, heart girth and body length. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 705
+}

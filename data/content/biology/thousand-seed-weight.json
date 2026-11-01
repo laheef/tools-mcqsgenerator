@@ -1,0 +1,64 @@
+{
+  "path": "/biology/thousand-seed-weight",
+  "slug": "thousand-seed-weight",
+  "cat": "biology",
+  "name": "Thousand Seed Weight Calculator",
+  "seoTitle": "Thousand Seed Weight Calculator — Formula & Results",
+  "seoDesc": "Thousand seed weight — the mass of a thousand seeds — converts plant populations into kilograms of seed and is the fastest way to compare seed lots. Free thou",
+  "h1": "Thousand Seed Weight Calculator",
+  "summary": "Thousand seed weight — the mass of a thousand seeds — converts plant populations into kilograms of seed and is the fastest way to compare seed lots. It returns thousand seed weight, seeds per kilogram, TSW at 12% moisture and seeds per gram, and the panel shows all of them at once.\n\nThis calculator standardises a sample of any size to the standard TSW figure and gives the seed count per kilogram. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Thousand Seed Weight",
+      "html": "<p>TSW (g) = sample mass ÷ seeds in the sample × 1 000</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/thousand-seed-weight.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Thousand Seed Weight Calculator — A counted sample scaled to a thousand seeds.\" title=\"Thousand Seed Weight Calculator\"><figcaption>A counted sample scaled to a thousand seeds.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>sample mass</code></td><td>mass of the counted seeds</td><td>g</td></tr><tr><td><code>sample count</code></td><td>number of seeds weighed</td><td>seeds</td></tr><tr><td><code>TSW</code></td><td>thousand seed weight</td><td>g</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Thousand Seed Weight?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: sample mass of <strong>4.2</strong> g, seeds in the sample of <strong>100</strong> seeds, moisture content of <strong>12</strong>%.</p>\n<p>Substituting them into the formula gives thousand seed weight of <strong>42</strong> g, seeds per kilogram of <strong>23,809.52</strong> seeds/kg, tsw at 12% moisture of <strong>42</strong> g, seeds per gram of <strong>23.81</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>Count at least 100 seeds and weigh to 0.01 g; the error in TSW falls as the square root of the count, so a 100-seed sample is about ±5%.</p></li><li><p>Moisture matters: the same lot is heavier at 14% than at 10%, which is why standards quote TSW at a stated moisture.</p></li><li><p>TSW is a variety and seed-lot trait — it also predicts seedling vigour, because bigger seeds carry more reserves.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Weighing a scoop instead of counting the seeds in it.</li><li>Comparing TSW between lots at different moisture contents.</li><li>Using field-run seed (with chaff) in a weight-based rate calculation.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/seeding-rate\">Seeding rate</a>. <a href=\"/biology/percent-germination\">Percent germination</a>. <a href=\"/biology/days-to-maturity\">Days to maturity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a typical thousand seed weight?",
+      "a": "40 g for wheat, 300 g for maize, 150 g for soybean, 4 g for oilseed rape."
+    },
+    {
+      "q": "How does TSW affect seeding rate?",
+      "a": "Directly and proportionally: doubling TSW doubles the kilograms needed for the same plant population."
+    },
+    {
+      "q": "What does the Thousand Seed Weight actually calculate?",
+      "a": "It returns thousand seed weight, seeds per kilogram, TSW at 12% moisture and seeds per gram. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 644
+}

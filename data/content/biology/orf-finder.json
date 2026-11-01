@@ -1,0 +1,64 @@
+{
+  "path": "/biology/orf-finder",
+  "slug": "orf-finder",
+  "cat": "biology",
+  "name": "ORF Finder",
+  "seoTitle": "ORF Finder Calculator — Formula & Results",
+  "seoDesc": "An ORF finder lists every open reading frame in a sequence: each stretch between a start and a stop codon. Free orf finder calculator: enter your values and g",
+  "h1": "ORF Finder",
+  "summary": "An ORF finder lists every open reading frame in a sequence: each stretch between a start and a stop codon. It returns open reading frames, longest orf, on the forward strand, on the reverse strand and stop codons in frame, and the panel shows all of them at once.\n\nIt is how you decide which frame to express, whether a cloned insert is intact, and where a sequencing read's protein should start. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the ORF Finder",
+      "html": "<p>An ORF runs from a start codon to the first in-frame stop.  Length in aa = (stop − start) ÷ 3.  Six frames = three on the forward strand and three on its reverse complement</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/orf-finder.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: ORF Finder — Open reading frames are read from six registers\" title=\"ORF Finder\"><figcaption>Open reading frames are read from six registers</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ORF</code></td><td>open reading frame</td><td>—</td></tr><tr><td><code>frame</code></td><td>one of the three registers a sequence can be read in</td><td>—</td></tr><tr><td><code>aa</code></td><td>amino acid</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the ORF Finder?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: minimum protein length of <strong>30</strong> aa.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 100 aa</td><td><strong>Short ORF</strong></td><td>often a false call in a random sequence</td></tr><tr><td>100 – 300 aa</td><td><strong>Typical protein</strong></td><td>most bacterial proteins fall here</td></tr><tr><td>above 500 aa</td><td><strong>Large protein</strong></td><td>check for a fused or unfused tag</td></tr></tbody></table>\n<ul><li><p>In a random DNA sequence an ORF of 100 codons appears by chance roughly once per 60 kb, so a short ORF on its own proves nothing.</p></li><li><p>The longest ORF is not automatically the gene: in a bacterial operon the first gene may be shorter than a downstream one, and on the reverse strand there may be an equally long frame.</p></li><li><p>The bacterial start set (ATG, GTG, TTG) is worth using on prokaryotic sequence; eukaryotic scans should stay with ATG.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Reporting an ORF that starts mid-gene because the real start codon is upstream of the pasted region.</li><li>Forgetting the reverse strand — a gene can be on either strand.</li><li>Assuming the first ATG is the start; in eukaryotes the first ATG in a good Kozak context is the better guess.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/dna-to-protein\">DNA to protein</a>. <a href=\"/biology/reverse-complement\">Reverse complement</a>. <a href=\"/biology/dna-pattern-finder\">DNA pattern finder</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is an open reading frame?",
+      "a": "A stretch with no stop codon in a given frame, usually counted from a start codon to the next in-frame stop."
+    },
+    {
+      "q": "Why six frames?",
+      "a": "DNA is double-stranded, and each strand can be read in three registers, so a sequence has six possible protein products."
+    },
+    {
+      "q": "How long must an ORF be to be believable?",
+      "a": "In bacteria, 100 codons or more; in eukaryotes, longer, because introns break the frame."
+    },
+    {
+      "q": "What does the ORF Finder actually calculate?",
+      "a": "It returns open reading frames, longest orf, on the forward strand, on the reverse strand and stop codons in frame. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 713
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/atp-cellular-respiration-energy-yield",
+  "slug": "atp-cellular-respiration-energy-yield",
+  "cat": "biology",
+  "name": "ATP / Cellular Respiration Energy Yield Calculator",
+  "seoTitle": "ATP / Cellular Respiration Energy Yield Calculator",
+  "seoDesc": "How much ATP a fuel yields depends on the pathway it enters and on which shuttle carries its electrons into the mitochondrion. Free atp / cellular respiration",
+  "h1": "ATP / Cellular Respiration Energy Yield Calculator",
+  "summary": "How much ATP a fuel yields depends on the pathway it enters and on which shuttle carries its electrons into the mitochondrion. It returns total ATP and energy captured, and the panel shows all of them at once.\n\nThis calculator totals ATP, NADH and FADH₂ for glucose, fatty acids and amino acids using the modern P/O ratios of 2.5 and 1.5. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the ATP / Cellular Respiration Energy Yield",
+      "html": "<p>ATP total = substrate-level ATP + 2.5 × NADH + 1.5 × FADH₂</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/atp-cellular-respiration-energy-yield.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: ATP / Cellular Respiration Energy Yield Calculator — Yield by pathway for the same starting material.\" title=\"ATP / Cellular Respiration Energy Yield Calculator\"><figcaption>Yield by pathway for the same starting material.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>NADH</code></td><td>reducing equivalents delivered to complex I</td><td>mol/mol fuel</td></tr><tr><td><code>FADH₂</code></td><td>equivalents delivered via complex II</td><td>mol/mol fuel</td></tr><tr><td><code>P/O ratio</code></td><td>ATP per oxygen atom reduced (2.5 for NADH, 1.5 for FADH₂)</td><td>—</td></tr><tr><td><code>energy</code></td><td>chemical energy captured at ~30.5 kJ/mol ATP</td><td>kJ/mol</td></tr></tbody></table>\n<p><strong>Where the relationship comes from.</strong> P/O ratios from the current biochemistry consensus (2.5 for NADH, 1.5 for FADH₂).</p>"
+    },
+    {
+      "title": "How do I use the ATP / Cellular Respiration Energy Yield?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: fuel set to <strong>1.0</strong>, nadh produced of <strong>10</strong>, fadh₂ produced of <strong>2</strong>, atp (or gtp) made directly of <strong>4</strong>.</p>\n<p>Substituting them into the formula gives total atp of <strong>32</strong> ATP, energy captured of <strong>976</strong> kJ/mol.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>2 ATP</td><td><strong>Anaerobic glycolysis</strong></td><td>glucose to lactate, no oxygen needed</td></tr><tr><td>30 – 32 ATP</td><td><strong>Aerobic glucose</strong></td><td>the textbook figure; 32 with the malate–aspartate shuttle</td></tr><tr><td>106 ATP</td><td><strong>Palmitate</strong></td><td>the classic fatty-acid figure, β-oxidation plus the cycle</td></tr></tbody></table>\n<ul><li><p>The older textbooks said 38 ATP for glucose, using P/O ratios of 3 and 2. The modern values 2.5 and 1.5 give 30–32.</p></li><li><p>The glycerol-3-phosphate shuttle costs one ATP per cytosolic NADH, which is why muscle tissue reports 30 and liver 32 for the same glucose.</p></li><li><p>Anaerobic yield is small but fast: 2 ATP per glucose, and lactate is regenerated to keep glycolysis running.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Counting the 2 ATP from glycolysis twice.</li><li>Using 3 and 2 as P/O ratios and then comparing with a modern paper.</li><li>Forgetting that amino-acid entry points differ — glutamate enters as α-ketoglutarate and yields far less than a fatty acid.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/chemistry/q10\">Q10 temperature coefficient</a>. <a href=\"/biology/atp-cellular-respiration-energy-yield\">Respiratory quotient</a>. <a href=\"/chemistry/enzyme-activity\">Enzyme activity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why 30 and 32 ATP for glucose?",
+      "a": "The difference is the shuttle used to move cytosolic NADH into the mitochondrion: the malate–aspartate shuttle preserves it (32), the glycerol-3-phosphate shuttle costs 1 ATP (30)."
+    },
+    {
+      "q": "How much ATP does a fatty acid give?",
+      "a": "Palmitate yields 106 ATP by β-oxidation plus the cycle — more than three times glucose, per molecule, because it is far more reduced."
+    },
+    {
+      "q": "What does the ATP / Cellular Respiration Energy Yield actually calculate?",
+      "a": "It returns total ATP and energy captured. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 759
+}

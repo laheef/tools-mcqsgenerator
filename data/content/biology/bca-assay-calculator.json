@@ -1,0 +1,64 @@
+{
+  "path": "/biology/bca-assay-calculator",
+  "slug": "bca-assay-calculator",
+  "cat": "biology",
+  "name": "BCA Assay Calculator (standard curve)",
+  "seoTitle": "BCA Assay (standard curve) Calculator — Formula & Results",
+  "seoDesc": "The BCA assay returns a colour, not a concentration: you read absorbance, put it on a standard curve and interpolate. Free bca assay (standard curve) calculat",
+  "h1": "BCA Assay Calculator (standard curve)",
+  "summary": "The BCA assay returns a colour, not a concentration: you read absorbance, put it on a standard curve and interpolate. It returns protein concentration and sample absorbance, and the panel shows all of them at once.\n\nThis calculator takes the slope and intercept of your BSA standards and converts sample absorbance into protein concentration, including the dilution factor you used. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the BCA Assay (standard curve)",
+      "html": "<p>Protein (mg/mL) = (A₅₆₂ − intercept) ÷ slope × dilution factor</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/bca-assay-calculator.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: BCA Assay Calculator (standard curve) — Absorbance minus the intercept, divided by the slope, times the dilution.\" title=\"BCA Assay Calculator (standard curve)\"><figcaption>Absorbance minus the intercept, divided by the slope, times the dilution.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A₅₆₂</code></td><td>blank-corrected absorbance of the sample</td><td>AU</td></tr><tr><td><code>slope</code></td><td>absorbance per mg/mL from the standards</td><td>AU·mL/mg</td></tr><tr><td><code>intercept</code></td><td>fitted absorbance at zero protein</td><td>AU</td></tr><tr><td><code>dilution</code></td><td>how much the sample was diluted before reading</td><td>×</td></tr></tbody></table>\n<p><strong>Where the relationship comes from.</strong> BCA chemistry: Smith et al. (1985), Analytical Biochemistry 150:76–85.</p>"
+    },
+    {
+      "title": "How do I use the BCA Assay (standard curve)?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: standard curve slope of <strong>1.35</strong> per mg/mL, standard curve intercept of <strong>0.02</strong>, sample dilution factor of <strong>1</strong> ×.</p>\n<p>Substituting them into the formula gives protein concentration of <strong>0.4444</strong> mg/mL, sample absorbance of <strong>0.62</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.05 – 2 mg/mL</td><td><strong>Working range</strong></td><td>the linear part of a typical BCA curve</td></tr><tr><td>below 0.05</td><td><strong>Too dilute</strong></td><td>concentrate or use a micro-BCA protocol</td></tr><tr><td>above 2</td><td><strong>Too concentrated</strong></td><td>dilute and re-read; the curve flattens</td></tr></tbody></table>\n<ul><li><p>The BCA curve is linear over roughly 20–2000 µg/mL for BSA. Outside that you are reading the shoulder of the curve, where a small absorbance error becomes a large concentration error.</p></li><li><p>BCA is compatible with detergents such as 1% SDS but not with reducing agents above about 5 mM DTT, which drive the colour reaction on their own.</p></li><li><p>The response depends on the protein: BSA over-reads, lysozyme under-reads. Quote the standard you used.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Forgetting the dilution factor, which is the most common cause of a concentration that is half or a quarter of the true value.</li><li>Subtracting the blank from the standards but not from the samples.</li><li>Reading at the wrong wavelength — BCA is measured at 562 nm, Bradford at 595 nm.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/bradford-assay-calculator\">Bradford assay</a>. <a href=\"/chemistry/beer-lambert-law\">Beer–Lambert law</a>. <a href=\"/biology/protein-molar-conversions\">Protein molar conversions</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I make the standard curve?",
+      "a": "Dilute BSA to 0, 0.125, 0.25, 0.5, 1 and 2 mg/mL, run them with the samples, and fit absorbance against concentration. The slope and intercept go in the two boxes above."
+    },
+    {
+      "q": "Why is my sample reading above the top standard?",
+      "a": "The assay has saturated. Dilute the sample and multiply by the new dilution factor."
+    },
+    {
+      "q": "What does the BCA Assay (standard curve) actually calculate?",
+      "a": "It returns protein concentration and sample absorbance. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 733
+}

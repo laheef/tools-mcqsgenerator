@@ -1,0 +1,64 @@
+{
+  "path": "/biology/restriction-digest",
+  "slug": "restriction-digest",
+  "cat": "biology",
+  "name": "Restriction Digest Calculator",
+  "seoTitle": "Restriction Digest Calculator — Formula & Results",
+  "seoDesc": "Work out where a restriction enzyme cuts a DNA sequence and how big the fragments will be. Free restriction digest calculator: enter your values and get seque",
+  "h1": "Restriction Digest Calculator",
+  "summary": "Work out where a restriction enzyme cuts a DNA sequence and how big the fragments will be. It returns sequence length, cut sites, fragments, largest fragment and smallest fragment, and the panel shows all of them at once.\n\nPaste a plasmid or a PCR product, choose one enzyme or two, and the map gives every cut site, the fragment sizes in base pairs and what the gel will look like — the check you want before committing a digest. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Restriction Digest",
+      "html": "<p>Distance between adjacent cut sites gives each fragment; for a circular molecule the last fragment wraps from the final site back to the first.  Σ fragments = sequence length</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/restriction-digest.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Restriction Digest Calculator — A typical double digest on a 3 kb plasmid\" title=\"Restriction Digest Calculator\"><figcaption>A typical double digest on a 3 kb plasmid</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>^</code></td><td>where the enzyme cuts, on the top strand</td><td>—</td></tr><tr><td><code>bp</code></td><td>base pair</td><td>—</td></tr><tr><td><code>site</code></td><td>a recognition sequence, usually 4–8 bp and palindromic</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Restriction Digest?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 fragment</td><td><strong>No cut</strong></td><td>the enzyme does not cut, or cuts once on a circle</td></tr><tr><td>2 – 4 fragments</td><td><strong>Diagnostic</strong></td><td>a good check on a clone's identity</td></tr><tr><td>more than 6</td><td><strong>Frequent cutter</strong></td><td>hard to read on a gel; use a different enzyme</td></tr></tbody></table>\n<ul><li><p>A circular molecule cut once gives one linear fragment; cut twice it gives two fragments whose sizes add up to the plasmid length.</p></li><li><p>Fragment sizes are what a gel will show. Two fragments of similar size appear as one thick band, which is why a double digest that gives 1 200 and 1 250 bp is a poor diagnostic.</p></li><li><p>Methylation blocks many enzymes in vivo: Dam methylation stops MboI and ClaI, Dcm stops EcoRII. A site that exists in the sequence may still not cut in a plasmid prepared from E. coli.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Pasting only the insert when the question is about the plasmid map.</li><li>Forgetting that a PCR product is linear while the template was circular.</li><li>Assuming a single-cutter is unique in the whole construct when only part of it was pasted.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/dna-pattern-finder\">DNA pattern finder</a>. <a href=\"/biology/dna-molecular-weight-calculator\">DNA molecular weight</a>. <a href=\"/biology/dsdna-ug-to-pmol\">dsDNA µg to pmol</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many fragments does a circular plasmid give with two cuts?",
+      "a": "Two — the plasmid is split at both sites and the two arcs add up to the full length."
+    },
+    {
+      "q": "Why does an enzyme not cut a site that is in the sequence?",
+      "a": "Usually methylation (Dam or Dcm), supercoiling, or a buffer that does not suit the enzyme."
+    },
+    {
+      "q": "How do I pick a diagnostic digest?",
+      "a": "Choose an enzyme that gives two or three clearly differently sized fragments, nothing within 15% of another."
+    },
+    {
+      "q": "What does the Restriction Digest actually calculate?",
+      "a": "It returns sequence length, cut sites, fragments, largest fragment and smallest fragment. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 754
+}

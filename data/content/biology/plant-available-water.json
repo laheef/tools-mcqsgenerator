@@ -1,0 +1,64 @@
+{
+  "path": "/biology/plant-available-water",
+  "slug": "plant-available-water",
+  "cat": "biology",
+  "name": "Field Capacity and Plant Available Water Calculator",
+  "seoTitle": "Field Capacity and Plant Available Water Calculator",
+  "seoDesc": "Plant available water is what a soil holds between field capacity and the permanent wilting point. Free field capacity and plant available water calculator: e",
+  "h1": "Field Capacity and Plant Available Water Calculator",
+  "summary": "Plant available water is what a soil holds between field capacity and the permanent wilting point. It returns plant available water, available water in the root zone, deficit to refill and days until wilting at 5 mm/day, and the panel shows all of them at once.\n\nIt decides how long a crop can go between irrigations, and it is one of the few soil properties worth measuring once because it barely changes. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Field Capacity and Plant Available Water",
+      "html": "<p>PAW (%) = FC − PWP;  PAW (mm) = PAW% ÷ 100 × rooting depth</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/plant-available-water.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Field Capacity and Plant Available Water Calculator — Saturation, field capacity, wilting point, and what roots can reach.\" title=\"Field Capacity and Plant Available Water Calculator\"><figcaption>Saturation, field capacity, wilting point, and what roots can reach.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>FC</code></td><td>field capacity, volumetric</td><td>%</td></tr><tr><td><code>PWP</code></td><td>permanent wilting point, volumetric</td><td>%</td></tr><tr><td><code>PAW</code></td><td>plant available water</td><td>% or mm</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Field Capacity and Plant Available Water?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: field capacity of <strong>32</strong>%, permanent wilting point of <strong>15</strong>%, rooting depth of <strong>600</strong> mm, current water content of <strong>24</strong>%.</p>\n<p>Substituting them into the formula gives plant available water of <strong>17</strong>%, available water in the root zone of <strong>102</strong> mm, deficit to refill of <strong>48</strong> mm, days until wilting at 5 mm/day of <strong>10.8</strong> days.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 10%</td><td><strong>Low</strong></td><td>sand and gravel; irrigate little and often</td></tr><tr><td>10 – 20%</td><td><strong>Moderate</strong></td><td>sandy loam; the common middle ground</td></tr><tr><td>above 20%</td><td><strong>High</strong></td><td>clay loam and peat; long intervals between irrigations</td></tr></tbody></table>\n<ul><li><p>Sands hold little plant available water even though they drain freely; clays hold a lot but release it slowly.</p></li><li><p>The mm figure is what an irrigation schedule works in: 51 mm of available water at 5 mm/day is about ten days of buffer.</p></li><li><p>Field capacity and wilting point are measured on undisturbed cores — a texture class conversion is only a rough guide.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using gravimetric water content as if it were volumetric.</li><li>Applying the same rooting depth to seedlings and mature plants.</li><li>Ignoring compaction, which cuts rooting depth far below the value in the table.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/crop-water-requirement\">Crop water requirement</a>. <a href=\"/biology/crop-water-stress-index\">Crop water stress index</a>. <a href=\"/biology/field-capacity\">Field capacity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How long can a crop go between irrigations?",
+      "a": "Divide the available water in the root zone by the daily crop water use."
+    },
+    {
+      "q": "Why does clay hold more water than sand but wilt sooner?",
+      "a": "Because much of the water in clay is held too tightly for roots to extract."
+    },
+    {
+      "q": "What does the Field Capacity and Plant Available Water actually calculate?",
+      "a": "It returns plant available water, available water in the root zone, deficit to refill and days until wilting at 5 mm/day. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 717
+}

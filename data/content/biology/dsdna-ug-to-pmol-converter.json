@@ -1,0 +1,64 @@
+{
+  "path": "/biology/dsdna-ug-to-pmol-converter",
+  "slug": "dsdna-ug-to-pmol-converter",
+  "cat": "biology",
+  "name": "dsDNA µg to pmol Converter",
+  "seoTitle": "dsDNA µg to pmol Converter Calculator — Formula & Results",
+  "seoDesc": "Molecular biology protocols ask for DNA in pmol, and the freezer gives you µg. Free dsdna µg to pmol converter calculator: enter your values and get amount, m",
+  "h1": "dsDNA µg to pmol Converter",
+  "summary": "Molecular biology protocols ask for DNA in pmol, and the freezer gives you µg. It returns amount, mass for 1 pmol, concentration if in 50 µL and molecules, and the panel shows all of them at once.\n\nThe bridge is the length of the molecule: one base pair of double-stranded DNA weighs 660 g/mol, so the conversion needs the size as well as the mass. This calculator handles both directions. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the dsDNA µg to pmol Converter",
+      "html": "<p>pmol = µg × 10⁶ ÷ (length in bp × 660);  1 pmol of 1 000 bp = 0.66 µg</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/dsdna-ug-to-pmol-converter.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: dsDNA µg to pmol Converter — Mass divided by the molar mass of the fragment.\" title=\"dsDNA µg to pmol Converter\"><figcaption>Mass divided by the molar mass of the fragment.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>µg</code></td><td>mass of DNA</td><td>µg</td></tr><tr><td><code>bp</code></td><td>length in base pairs</td><td>bp</td></tr><tr><td><code>660</code></td><td>average molar mass of one base pair, g/mol</td><td>g/mol</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the dsDNA µg to pmol Converter?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: mass of dna of <strong>1</strong> µg, fragment length of <strong>3,000</strong> bp.</p>\n<p>Substituting them into the formula gives amount of <strong>0.5051</strong> pmol, mass for 1 pmol of <strong>1.98</strong> µg, concentration if in 50 µl of <strong>20</strong> ng/µL, molecules of <strong>304,141</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>660 g/mol per bp is the standard average; a specific fragment can differ by a few percent depending on GC content, which does not matter for ligation ratios.</p></li><li><p>The same arithmetic works in reverse: pmol × bp × 660 ÷ 10⁶ = µg.</p></li><li><p>For single-stranded oligos the molar mass is roughly 330 g/mol per nucleotide, which is why primers are quoted in nmol rather than µg.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using the plasmid length when the fragment of interest is much shorter.</li><li>Dropping the 10⁶ that converts grams to micrograms.</li><li>Treating nmol and pmol as interchangeable — they differ by a thousand.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/od260-nucleic-acid-concentration\">OD260 concentration</a>. <a href=\"/biology/ligation-molar-ratio\">Ligation molar ratio</a>. <a href=\"/biology/genome-copy-number\">Genome copy number</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many pmol is 1 µg of a 3 kb plasmid?",
+      "a": "About 0.505 pmol — 1 000 ng ÷ (3 000 × 0.66 ng/pmol)."
+    },
+    {
+      "q": "Why does length matter so much?",
+      "a": "Because the amount of substance is the mass divided by the molar mass, and the molar mass scales with length."
+    },
+    {
+      "q": "What does the dsDNA µg to pmol Converter actually calculate?",
+      "a": "It returns amount, mass for 1 pmol, concentration if in 50 µL and molecules. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 664
+}

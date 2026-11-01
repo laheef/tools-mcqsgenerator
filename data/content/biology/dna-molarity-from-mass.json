@@ -1,0 +1,64 @@
+{
+  "path": "/biology/dna-molarity-from-mass",
+  "slug": "dna-molarity-from-mass",
+  "cat": "biology",
+  "name": "DNA Molarity from Mass or A260",
+  "seoTitle": "DNA Molarity from Mass or A260 Calculator — Formula & Results",
+  "seoDesc": "Concentration in ng/µL tells you how much DNA you have; molarity tells you how many molecules. Free dna molarity from mass or a260 calculator: enter your valu",
+  "h1": "DNA Molarity from Mass or A260",
+  "summary": "Concentration in ng/µL tells you how much DNA you have; molarity tells you how many molecules. It returns molar concentration, pmol per µL, copies per µL and equivalent A260, and the panel shows all of them at once.\n\nSequencing, ligation and qPCR all need the second. This calculator converts between mass concentration, molar concentration and copy number. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the DNA Molarity from Mass or A260",
+      "html": "<p>nM = (ng/µL × 10⁶) ÷ (bp × 660);  copies/µL = (ng/µL × 6.022×10¹⁴) ÷ (bp × 660)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/dna-molarity-from-mass.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: DNA Molarity from Mass or A260 — Mass concentration, length and Avogadro's number.\" title=\"DNA Molarity from Mass or A260\"><figcaption>Mass concentration, length and Avogadro's number.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ng/µL</code></td><td>mass concentration</td><td>ng/µL</td></tr><tr><td><code>bp</code></td><td>molecule length</td><td>bp</td></tr><tr><td><code>nM</code></td><td>molar concentration</td><td>nM</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the DNA Molarity from Mass or A260?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: dna concentration of <strong>50</strong> ng/µL, fragment length of <strong>5,000</strong> bp.</p>\n<p>Substituting them into the formula gives molar concentration of <strong>15.15</strong> nM, pmol per µl of <strong>0.0152</strong> pmol/µL, copies per µl of <strong>9,124,242,424</strong>, equivalent a260 of <strong>1</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The copy-number form is the one qPCR standard curves are built on: a 10-fold dilution series is a 10-fold drop in copies per microlitre.</p></li><li><p>Doubling the length halves the molarity at the same mass concentration — long constructs need much more mass for the same number of molecules.</p></li><li><p>For a plasmid, use the full plasmid length, not the insert.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Mixing ng/µL and µg/mL by a factor of a thousand.</li><li>Using a size in kilobases in a formula that expects base pairs.</li><li>Quoting molarity from a concentration measured with the wrong UV factor.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/dsdna-ug-to-pmol-converter\">dsDNA µg to pmol</a>. <a href=\"/biology/genome-copy-number\">Genome copy number</a>. <a href=\"/biology/od260-nucleic-acid-concentration\">OD260 concentration</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many copies are in 1 ng of a 5 kb plasmid?",
+      "a": "About 1.8 × 10⁸ copies."
+    },
+    {
+      "q": "Why do I need molarity for sequencing?",
+      "a": "Because the reaction consumes molecules, not micrograms, and library molarity determines cluster density."
+    },
+    {
+      "q": "What does the DNA Molarity from Mass or A260 actually calculate?",
+      "a": "It returns molar concentration, pmol per µL, copies per µL and equivalent A260. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 637
+}

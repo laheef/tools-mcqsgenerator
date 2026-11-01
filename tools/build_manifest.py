@@ -36,6 +36,18 @@ def main() -> None:
     rows = []
     counts: dict[str, int] = {}
 
+    # Titles and descriptions already in the manifest win over the ones derived
+    # from the article files. The corpus carries a handful of mangled seoTitles
+    # ("Percentage differenceerenceerence", "P ka" for pKa); they were corrected
+    # in the manifest at build time, and a naive rebuild would undo that fix for
+    # every page that was never touched. New calculators still get theirs from
+    # their article, so adding a shard is enough to publish one.
+    previous: dict[str, list] = {}
+    old_manifest = CALC / "manifest.json"
+    if old_manifest.exists():
+        for entry in json.loads(old_manifest.read_text()).get("calcs", []):
+            previous[entry[0]] = entry
+
     for si, shard in enumerate(shards):
         offset = 0
         with shard.open("rb") as fh:
@@ -49,7 +61,9 @@ def main() -> None:
                     # original copy — never the reference site's own text.
                     title, desc = rec.get("name") or "", ""
                     cpath = CONTENT / cat / f"{slug}.json"
-                    if cpath.exists():
+                    if rec["path"] in previous:
+                        title, desc = previous[rec["path"]][3], previous[rec["path"]][4]
+                    elif cpath.exists():
                         doc = json.loads(cpath.read_text())
                         title = doc.get("seoTitle") or title
                         # Stored as plain text: the corpus keeps the maths escaped
@@ -72,6 +86,19 @@ def main() -> None:
     }
     out = CALC / "manifest.json"
     out.write_text(json.dumps(manifest, ensure_ascii=False, separators=(",", ":")))
+
+    # index.json is the same offsets keyed by path, kept for the harvest-side
+    # tooling that reads one calculator without loading the whole manifest.
+    # Written here so the two files can never disagree about a shard again.
+    index = {
+        "count": len(rows),
+        "units": "units.json",
+        "batchSize": 100,
+        "shards": names,
+        "index": {r[0]: [names[r[5]], r[6], r[7]] for r in rows},
+    }
+    (CALC / "index.json").write_text(
+        json.dumps(index, ensure_ascii=False, separators=(",", ":")))
     print(f"{len(rows)} calculators · {len(shards)} shards · "
           f"{out.stat().st_size / 1024:.0f} KB · {len(counts)} categories")
     for c in manifest["categories"]:

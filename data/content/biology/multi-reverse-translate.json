@@ -1,0 +1,64 @@
+{
+  "path": "/biology/multi-reverse-translate",
+  "slug": "multi-reverse-translate",
+  "cat": "biology",
+  "name": "Multi Reverse Translate Calculator",
+  "seoTitle": "Multi Reverse Translate Calculator — Formula & Results",
+  "seoDesc": "Back-translate several protein sequences at once into DNA, either with the codons a chosen host prefers or with a fully degenerate codon for every residue. Fr",
+  "h1": "Multi Reverse Translate Calculator",
+  "summary": "Back-translate several protein sequences at once into DNA, either with the codons a chosen host prefers or with a fully degenerate codon for every residue. It returns sequences translated, residues translated and gc content of the output, and the panel shows all of them at once.\n\nPaste a multi-FASTA of proteins, pick the host, and every sequence comes back as DNA with its own length, GC content and rare-codon count — the starting point for a synthetic construct or a primer design. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Multi Reverse Translate",
+      "html": "<p>one codon per residue: argmax w(codon) for the host, or the IUPAC codon covering every synonym</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/multi-reverse-translate.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Multi Reverse Translate Calculator — Codons needed for the same peptide under two hosts\" title=\"Multi Reverse Translate Calculator\"><figcaption>Codons needed for the same peptide under two hosts</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>w</code></td><td>relative adaptiveness of a codon for the host</td><td>0 – 1</td></tr><tr><td><code>IUPAC codon</code></td><td>a three-letter code with ambiguity, e.g. YTN for leucine</td><td>—</td></tr><tr><td><code>*</code></td><td>stop</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Multi Reverse Translate?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Paste the proteins, each on its own line or under a FASTA header.</li><li>Pick the expression host — the page takes the most-used codon of each amino acid from that host's table — or choose degenerate to keep every synonymous option.</li><li>Copy the DNA out, keeping the wrap at 60 columns so it drops straight into a cloning tool.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: add a stop codon at the end of <strong>1</strong>.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>Host-preferred</td><td><strong>One defined sequence</strong></td><td>best for expression; the sequence is fixed</td></tr><tr><td>Degenerate</td><td><strong>A codon family per residue</strong></td><td>best for primer design and for unknown host bias</td></tr><tr><td>GC 40 – 60 %</td><td><strong>Comfortable range</strong></td><td>synthesis and PCR both behave well</td></tr><tr><td>GC above 70 %</td><td><strong>Hard to synthesise</strong></td><td>secondary structure and synthesis cost both rise</td></tr></tbody></table>\n<ul><li><p>Host-preferred back-translation is not codon optimisation: it uses each host's single most frequent codon everywhere, which maximises CAI but can create repeats and hairpins. A real optimisation algorithm also scans for those — this page gives you the honest starting point.</p></li><li><p>Degenerate codons are the right output when the DNA is a hybridisation probe or a primer mix: YTN for leucine means four codons in one synthesis.</p></li><li><p>Every protein is translated in its own frame; a sequence containing a character that is not an amino acid is reported rather than silently dropped.</p></li><li><p>The GC content reported is of the DNA you would order, so it is the number a synthesis quote depends on.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Pasting DNA by mistake: it is read as protein and every letter becomes a codon.</li><li>Forgetting that removing the stop codon is required for a C-terminal fusion.</li><li>Assuming the host-preferred sequence is also the highest-expressing one — mRNA structure at the 5′ end often dominates.</li><li>Using E. coli codons for a mammalian host and then wondering why expression is poor.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/reverse-translate\">Reverse translate (single)</a>. <a href=\"/biology/codon-adaptation-index\">Codon adaptation index</a>. <a href=\"/biology/codon-usage-calculator\">Codon usage</a>. <a href=\"/biology/oligo-tm-calculator\">Oligo Tm</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between reverse translation and codon optimisation?",
+      "a": "Reverse translation picks one codon per residue — here, the host's most-used one. Codon optimisation additionally avoids repeats, extreme GC, cryptic splice sites and hairpins, and often mixes synonymous codons on purpose."
+    },
+    {
+      "q": "Why does the page use the most frequent codon everywhere?",
+      "a": "Because it is deterministic and reproducible: the same protein always gives the same DNA, which is what you want when comparing constructs. Add synonymous variation yourself where the output has runs of the same codon."
+    },
+    {
+      "q": "Can I get several sequences in one run?",
+      "a": "Yes. Paste them one per line or with FASTA headers; each is translated separately and numbered in the output."
+    },
+    {
+      "q": "Is the degenerate output usable for ordering a primer?",
+      "a": "Yes — that is its main use. Order it as a degenerate oligo and the synthesiser will make the mixture the IUPAC code describes."
+    },
+    {
+      "q": "What does the Multi Reverse Translate actually calculate?",
+      "a": "It returns sequences translated, residues translated and gc content of the output. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    }
+  ],
+  "related": [],
+  "words": 800
+}

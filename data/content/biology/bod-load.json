@@ -1,0 +1,64 @@
+{
+  "path": "/biology/bod-load",
+  "slug": "bod-load",
+  "cat": "biology",
+  "name": "BOD Load Calculator",
+  "seoTitle": "BOD Load Calculator — Formula & Results",
+  "seoDesc": "BOD load is the mass of oxygen-demanding material a waste stream delivers to a treatment plant each day, and it sizes the aeration tank. Free bod load calcula",
+  "h1": "BOD Load Calculator",
+  "summary": "BOD load is the mass of oxygen-demanding material a waste stream delivers to a treatment plant each day, and it sizes the aeration tank. It returns BOD load, BOD removed, population equivalent and food to microorganism ratio, and the panel shows all of them at once.\n\nThis calculator converts flow and BOD concentration into kilograms per day, population equivalents and the effluent surcharge band. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the BOD Load",
+      "html": "<p>BOD load (kg/day) = flow (m³/day) × BOD (mg/L) ÷ 1 000;  F/M = BOD load ÷ (tank volume × MLSS)</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/bod-load.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: BOD Load Calculator — Load in, load out: the gap is what the biology removed.\" title=\"BOD Load Calculator\"><figcaption>Load in, load out: the gap is what the biology removed.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Q</code></td><td>flow</td><td>m³/day</td></tr><tr><td><code>BOD</code></td><td>5-day biochemical oxygen demand</td><td>mg/L</td></tr><tr><td><code>MLSS</code></td><td>mixed liquor suspended solids</td><td>mg/L</td></tr><tr><td><code>F/M</code></td><td>food to microorganism ratio</td><td>kg/kg/day</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the BOD Load?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: flow of <strong>500</strong> m³/day, influent bod of <strong>320</strong> mg/L, effluent bod of <strong>20</strong> mg/L, aeration tank volume of <strong>750</strong> m³, mlss of <strong>3,000</strong> mg/L.</p>\n<p>Substituting them into the formula gives bod load of <strong>160</strong> kg/day, bod removed of <strong>150</strong> kg/day, population equivalent of <strong>2,666.67</strong> people, food to microorganism ratio of <strong>0.0711</strong> kg/kg/day, removal efficiency of <strong>93.75</strong>%.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.05 – 0.15</td><td><strong>Extended aeration</strong></td><td>long sludge age, low surplus sludge</td></tr><tr><td>0.2 – 0.4</td><td><strong>Conventional</strong></td><td>the classic activated-sludge window</td></tr><tr><td>0.4 – 0.6</td><td><strong>High rate</strong></td><td>fast, but sludge quality suffers</td></tr><tr><td>above 1.0</td><td><strong>Overloaded</strong></td><td>poor settling, carry-over and odour</td></tr></tbody></table>\n<ul><li><p>Population equivalent assumes 60 g of BOD per person per day, which is a European convention; check the local figure before quoting it in a permit application.</p></li><li><p>BOD is a five-day test, so the number always lags the plant by a week. COD is the fast proxy, and the BOD/COD ratio tells you how biodegradable the stream is.</p></li><li><p>F/M ratio, not load alone, decides whether the sludge settles. Two plants with the same load behave completely differently if one has triple the tank volume.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Mixing units: mg/L with L/s needs a factor of 86.4 to reach kg/day.</li><li>Using the influent BOD where the permit limit is on the effluent.</li><li>Treating BOD load as constant when the plant sees a diurnal peak two to three times the daily mean.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/svi-sludge-volume-index\">Sludge volume index</a>. <a href=\"/biology/solids-retention-time\">Solids retention time</a>. <a href=\"/biology/dilution-calculator-c1v1\">Dilution calculator</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I convert mg/L and m³/day to kg/day?",
+      "a": "Multiply flow by concentration and divide by 1 000."
+    },
+    {
+      "q": "What population does 1 000 kg BOD/day serve?",
+      "a": "About 16 700 people at 60 g per person per day."
+    },
+    {
+      "q": "What does the BOD Load actually calculate?",
+      "a": "It returns BOD load, BOD removed, population equivalent and food to microorganism ratio. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 782
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/percent-inhibition",
+  "slug": "percent-inhibition",
+  "cat": "biology",
+  "name": "Percent Inhibition Calculator",
+  "seoTitle": "Percent Inhibition Calculator — Formula & Results",
+  "seoDesc": "Percent inhibition compares a treated sample with an untreated control, and there are two conventions in use: relative to the control signal, and relative to",
+  "h1": "Percent Inhibition Calculator",
+  "summary": "Percent inhibition compares a treated sample with an untreated control, and there are two conventions in use: relative to the control signal, and relative to the full signal window. It returns percent inhibition, percent of control remaining and percent of signal window, and the panel shows all of them at once.\n\nThis calculator reports both, plus the IC50-style fraction remaining. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Percent Inhibition",
+      "html": "<p>Inhibition (%) = (control − sample) ÷ (control − blank) × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/percent-inhibition.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Percent Inhibition Calculator — Control, sample and blank, and the inhibition they imply.\" title=\"Percent Inhibition Calculator\"><figcaption>Control, sample and blank, and the inhibition they imply.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>control</code></td><td>mean of untreated wells</td><td>AU</td></tr><tr><td><code>sample</code></td><td>mean of treated wells</td><td>AU</td></tr><tr><td><code>blank</code></td><td>background with no enzyme or no cells</td><td>AU</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Percent Inhibition?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: control signal of <strong>1.2</strong> AU, sample signal of <strong>0.45</strong> AU, blank / background of <strong>0.05</strong> AU.</p>\n<p>Substituting them into the formula gives percent inhibition of <strong>65.22</strong>%, percent of control remaining of <strong>37.5</strong>%, percent of signal window of <strong>34.78</strong>%.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 – 20%</td><td><strong>Weak</strong></td><td>within assay noise for many systems</td></tr><tr><td>20 – 80%</td><td><strong>Dose-dependent</strong></td><td>the useful part of a dose–response curve</td></tr><tr><td>80 – 100%</td><td><strong>Near-complete</strong></td><td>check for cytotoxicity or assay interference</td></tr></tbody></table>\n<ul><li><p>Blank-correcting both arms matters: a raw comparison against an uncorrected control understates inhibition whenever the background is a significant fraction of the signal.</p></li><li><p>Percent inhibition is concentration-dependent; on its own, without the concentration, it is not a property of the compound.</p></li><li><p>Aggregators and fluorescence quenchers show up as 100% inhibition at every concentration — a flat curve is a warning sign, not a hit.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Averaging wells with very different cell numbers and calling it a mean.</li><li>Comparing a treated plate read on one day with a control plate read on another.</li><li>Reporting inhibition without the concentration and the incubation time.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/cheng-prusoff-equation\">Cheng–Prusoff equation</a>. <a href=\"/biology/percent-viability\">Percent viability</a>. <a href=\"/biology/alamarblue-cell-viability\">AlamarBlue viability</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Should I blank-correct?",
+      "a": "Yes, both the control and the sample. Otherwise the background dilutes the apparent effect."
+    },
+    {
+      "q": "What is a good percent inhibition?",
+      "a": "There is no universal threshold; what matters is the shape of the dose–response curve and the reproducibility of the control."
+    },
+    {
+      "q": "What does the Percent Inhibition actually calculate?",
+      "a": "It returns percent inhibition, percent of control remaining and percent of signal window. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 712
+}

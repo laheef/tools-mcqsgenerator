@@ -1,0 +1,64 @@
+{
+  "path": "/biology/primer-dimer-checker",
+  "slug": "primer-dimer-checker",
+  "cat": "biology",
+  "name": "Primer Dimer Checker",
+  "seoTitle": "Primer Dimer Checker Calculator — Formula & Results",
+  "seoDesc": "Primer dimers are the most common reason a PCR reaction produces no product: the primers pair with each other or with themselves and the polymerase extends th",
+  "h1": "Primer Dimer Checker",
+  "summary": "Primer dimers are the most common reason a PCR reaction produces no product: the primers pair with each other or with themselves and the polymerase extends that product instead. It returns 3′ complementary run, longest complementary run, forward self-dimer run, reverse self-dimer run, forward hairpin stem, reverse hairpin stem and dimer risk score, and the panel shows all of them at once.\n\nThis tool scores the 3′ complementarity of a pair, each primer's self-dimer and its hairpin, and says plainly whether the pair is safe. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Primer Dimer Checker",
+      "html": "<p>A 3′ run of k complementary bases contributes 3^(k−1) to the risk: 4 bases is 27× the chance of a 2-base match, because the polymerase only needs a short 3′ duplex to extend</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/primer-dimer-checker.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Primer Dimer Checker — Dimer risk rises sharply with the length of the 3′ run\" title=\"Primer Dimer Checker\"><figcaption>Dimer risk rises sharply with the length of the 3′ run</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>3′ run</code></td><td>complementary bases at the 3′ ends, which can be extended</td><td>bases</td></tr><tr><td><code>hairpin</code></td><td>a primer folding back on itself</td><td>bases</td></tr><tr><td><code>ΔG</code></td><td>free energy of the dimer — lower is worse</td><td>kcal/mol</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Primer Dimer Checker?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>3′ run 0–2</td><td><strong>Safe</strong></td><td>no extension possible in practice</td></tr><tr><td>3′ run 3–4</td><td><strong>Watch</strong></td><td>some dimer forms; consider a redesign</td></tr><tr><td>3′ run 5+</td><td><strong>Redesign</strong></td><td>the pair will amplify a dimer instead of the target</td></tr></tbody></table>\n<ul><li><p>Only 3′ complementarity is extendable. A strong match in the middle of two primers looks alarming but the polymerase has no 3′ end to extend there.</p></li><li><p>Self-dimers matter as much as cross-dimers: a primer that can pair with another copy of itself doubles its own effective concentration.</p></li><li><p>A hairpin with a stem of four or more G–C pairs is stable enough to compete with template binding, especially at low annealing temperatures.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Checking only the forward primer against the reverse, and not each against itself.</li><li>Judging a dimer by the total number of complementary bases instead of the 3′ run.</li><li>Ignoring a 3′ G/C clamp that also happens to be complementary to the other primer's 3′ end.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/pcr-primer-stats\">PCR primer stats</a>. <a href=\"/biology/oligo-tm-calculator\">Oligo Tm</a>. <a href=\"/biology/reverse-complement\">Reverse complement</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many complementary bases cause a primer dimer?",
+      "a": "Three at the 3′ end is already a risk because that is where the polymerase extends; five or more will almost always dimerise."
+    },
+    {
+      "q": "What is the difference between a self-dimer and a hairpin?",
+      "a": "A self-dimer is two copies of the primer pairing; a hairpin is one primer folding back on itself."
+    },
+    {
+      "q": "Does a dimer always stop the PCR?",
+      "a": "No, but it consumes primers and polymerase, so the target product appears late or not at all, and a low band appears on the gel."
+    },
+    {
+      "q": "What does the Primer Dimer Checker actually calculate?",
+      "a": "It returns 3′ complementary run, longest complementary run, forward self-dimer run, reverse self-dimer run, forward hairpin stem, reverse hairpin stem and dimer risk score. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 728
+}

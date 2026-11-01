@@ -1,0 +1,64 @@
+{
+  "path": "/biology/agarose-gel-calculator",
+  "slug": "agarose-gel-calculator",
+  "cat": "biology",
+  "name": "Agarose Gel Calculator (gel percentage and loading)",
+  "seoTitle": "Agarose Gel (gel percentage and loading) Calculator",
+  "seoDesc": "The agarose percentage decides which fragment sizes resolve, and the number of lanes decides how much gel and buffer you need. Free agarose gel (gel percentag",
+  "h1": "Agarose Gel Calculator (gel percentage and loading)",
+  "summary": "The agarose percentage decides which fragment sizes resolve, and the number of lanes decides how much gel and buffer you need. It returns agarose to weigh out, loading dye per sample, running buffer and total volume needed, and the panel shows all of them at once.\n\nThis calculator gives the grams of agarose, the buffer volume, the loading dye and the ladder volume for your gel. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Agarose Gel (gel percentage and loading)",
+      "html": "<p>Agarose (g) = % × gel volume (mL) ÷ 100;  dye volume = sample volume ÷ dye fold</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/agarose-gel-calculator.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Agarose Gel Calculator (gel percentage and loading) — Agarose, buffer, dye and sample for one gel.\" title=\"Agarose Gel Calculator (gel percentage and loading)\"><figcaption>Agarose, buffer, dye and sample for one gel.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>percent</code></td><td>agarose concentration</td><td>% w/v</td></tr><tr><td><code>volume</code></td><td>gel volume</td><td>mL</td></tr><tr><td><code>agarose</code></td><td>mass to weigh</td><td>g</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Agarose Gel (gel percentage and loading)?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: agarose percentage of <strong>1</strong>%, gel volume of <strong>100</strong> mL, number of lanes of <strong>16</strong>, sample volume per lane of <strong>10</strong> µL, loading dye stock of <strong>6</strong> ×.</p>\n<p>Substituting them into the formula gives agarose to weigh out of <strong>1</strong> g, loading dye per sample of <strong>1.67</strong> µL, running buffer of <strong>500</strong> mL, total volume needed of <strong>160</strong> µL.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.5 – 0.8%</td><td><strong>Large fragments</strong></td><td>1–20 kb; resolves genomic digests</td></tr><tr><td>1 – 1.5%</td><td><strong>Most PCR products</strong></td><td>200 bp – 5 kb</td></tr><tr><td>2 – 3%</td><td><strong>Small fragments</strong></td><td>20–200 bp; needs high-resolution agarose</td></tr></tbody></table>\n<ul><li><p>Migration is roughly logarithmic in size: a 1% gel resolves 0.5–10 kb well, and every increase in percentage shifts the useful window downward.</p></li><li><p>Use the same buffer for the gel and the tank. TAE gives better resolution on large fragments, TBE better buffering capacity for long runs.</p></li><li><p>Let the gel cool to about 55 °C before pouring — hotter warps the tray, cooler sets it before you pour.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Weighing agarose into a wet flask and forgetting the water already there.</li><li>Overloading lanes so the bands merge into a smear.</li><li>Running at a voltage that heats the gel enough to distort the bands.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/restriction-digest-setup\">Restriction digest</a>. <a href=\"/biology/dsdna-ug-to-pmol-converter\">dsDNA µg to pmol</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What percentage gel do I need?",
+      "a": "1% for most PCR products, 2% for fragments under 300 bp, 0.7% for genomic digests."
+    },
+    {
+      "q": "How much dye do I add to a 10 µL sample with 6× dye?",
+      "a": "About 1.7 µL, or adjust the sample so the final volume is convenient."
+    },
+    {
+      "q": "What does the Agarose Gel (gel percentage and loading) actually calculate?",
+      "a": "It returns agarose to weigh out, loading dye per sample, running buffer and total volume needed. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 695
+}

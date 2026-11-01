@@ -1,0 +1,64 @@
+{
+  "path": "/biology/compost-application-rate",
+  "slug": "compost-application-rate",
+  "cat": "biology",
+  "name": "Compost Application Rate Calculator",
+  "seoTitle": "Compost Application Rate Calculator — Formula & Results",
+  "seoDesc": "How much compost to spread, in cubic yards or tonnes, from the area and the depth you want. Free compost application rate calculator: enter your values and ge",
+  "h1": "Compost Application Rate Calculator",
+  "summary": "How much compost to spread, in cubic yards or tonnes, from the area and the depth you want. It returns volume, volume, mass and rate, and the panel shows all of them at once.\n\nA garden bed usually takes 5–10 cm worked into the top 15 cm, a lawn a 1 cm top-dressing, and a farm a 5–20 tonne per hectare maintenance application. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Compost Application Rate",
+      "html": "<p>Volume (m³) = area (m²) × depth (m).  Tonnes = volume × bulk density.  1 m³ = 1.308 cubic yards</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/compost-application-rate.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Compost Application Rate Calculator — Compost for 100 m² at different depths (m³)\" title=\"Compost Application Rate Calculator\"><figcaption>Compost for 100 m² at different depths (m³)</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>bulk density</code></td><td>mass per cubic metre of loose compost, 0.4–0.7 t/m³</td><td>t/m³</td></tr><tr><td><code>depth</code></td><td>how thick the layer is spread</td><td>cm</td></tr><tr><td><code>t/ha</code></td><td>tonnes per hectare, the field-scale unit</td><td>t/ha</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Compost Application Rate?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the area you will cover in square metres.</li><li>Set the depth you want and, if you know it, the bulk density of your compost.</li><li>Read the volume in cubic metres and yards, and the mass in tonnes.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: area of <strong>100</strong> m², depth of <strong>5</strong> cm, bulk density of the compost of <strong>0.55</strong> t/m³.</p>\n<p>Substituting them into the formula gives volume of <strong>5</strong> m³, volume of <strong>6.54</strong> yd³, mass of <strong>2.75</strong> t, rate of <strong>275</strong> t/ha, cost at 40 per tonne of <strong>110</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>5 – 10 cm</td><td><strong>New bed</strong></td><td>worked into the top 15 cm to build organic matter</td></tr><tr><td>1 – 2 cm</td><td><strong>Lawn top-dressing</strong></td><td>applied in spring and brushed in</td></tr><tr><td>5 – 20 t/ha</td><td><strong>Field maintenance</strong></td><td>an annual or biennial application on arable land</td></tr></tbody></table>\n<ul><li><p>Compost is sold by volume and spread by mass, so the bulk density is the number that converts one to the other. It varies by a factor of two between a dry strawy compost and a wet, heavy one.</p></li><li><p>More is not better: above about 25 t/ha in one application, salt and phosphorus load can harm the soil and the water course.</p></li><li><p>Compost shrinks as it matures. A cubic metre delivered today can be 20% smaller in a month, which matters if you are ordering to a finished depth.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Ordering by weight when the supplier sells by the cubic yard, or the reverse.</li><li>Spreading fresh, immature compost, which ties up nitrogen as it finishes breaking down.</li><li>Assuming 1 m³ is 1 yard³ — it is 1.31 yard³, so a short order is a 24% shortfall.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/gypsum-application-rate\">Gypsum application</a>. <a href=\"/biology/sulfur-soil-acidifier\">Sulfur to acidify</a>. <a href=\"/biology/lawn-fertilizer-rate\">Lawn fertiliser rate</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many cubic yards is 1 m³ of compost?",
+      "a": "1.31 cubic yards."
+    },
+    {
+      "q": "How deep should compost be on a new bed?",
+      "a": "5–10 cm, mixed into the top 15 cm of soil."
+    },
+    {
+      "q": "How much does a cubic metre of compost weigh?",
+      "a": "About 550 kg, or 0.4–0.7 tonnes depending on moisture."
+    },
+    {
+      "q": "What does the Compost Application Rate actually calculate?",
+      "a": "It returns volume, volume, mass and rate. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 701
+}

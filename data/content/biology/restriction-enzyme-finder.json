@@ -1,0 +1,64 @@
+{
+  "path": "/biology/restriction-enzyme-finder",
+  "slug": "restriction-enzyme-finder",
+  "cat": "biology",
+  "name": "Restriction Enzyme Finder Calculator",
+  "seoTitle": "Restriction Enzyme Finder Calculator — Formula & Results",
+  "seoDesc": "Paste a DNA sequence and the finder checks it against a panel of 26 common enzymes. Free restriction enzyme finder calculator: enter your values and get enzym",
+  "h1": "Restriction Enzyme Finder Calculator",
+  "summary": "Paste a DNA sequence and the finder checks it against a panel of 26 common enzymes. It returns enzymes that cut, unique cutters and enzymes that do not cut, and the panel shows all of them at once.\n\nIt also reports the cut position, the overhang each enzyme leaves and whether the site crosses the origin of a circular plasmid. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Restriction Enzyme Finder",
+      "html": "<p>A site is a match of the enzyme's recognition sequence on either strand; a unique cutter has exactly one match</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/restriction-enzyme-finder.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Restriction Enzyme Finder Calculator — 26 enzymes screened against a 4 kb plasmid\" title=\"Restriction Enzyme Finder Calculator\"><figcaption>26 enzymes screened against a 4 kb plasmid</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>recognition site</code></td><td>the 6–8 bp sequence the enzyme binds</td><td>bp</td></tr><tr><td><code>cut offset</code></td><td>where the phosphodiester bond breaks, from the 5′ end of the site</td><td>bp</td></tr><tr><td><code>overhang</code></td><td>the single-stranded end left behind</td><td>5′, 3′ or blunt</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Restriction Enzyme Finder?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Paste the sequence — plasmid map coordinates are not needed, the page counts from the first base.</li><li>Tick circular if it is a plasmid, so a site spanning the origin is found.</li><li>Start from the unique-cutter list: a single site per enzyme is what you need for a clean single-insert ligation, and a pair of unique sites with different overhangs is what you need for a directional one.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: treat the molecule as circular (plasmid) of <strong>1</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 site</td><td><strong>Unique cutter</strong></td><td>the cloning workhorse — one cut, one linear product</td></tr><tr><td>2 sites</td><td><strong>Double cutter</strong></td><td>useful for dropping a cassette out, or for a double digest</td></tr><tr><td>3+ sites</td><td><strong>Frequent cutter</strong></td><td>avoid unless you want the fragment pattern</td></tr><tr><td>0 sites</td><td><strong>Non-cutter</strong></td><td>useful when you must leave the sequence untouched</td></tr></tbody></table>\n<ul><li><p>Both strands are searched, so a non-palindromic site on the bottom strand is reported at its top-strand coordinate rather than being missed.</p></li><li><p>For a circular molecule the sequence is searched against itself with an overlap of one site length, so a site straddling base 1 is found.</p></li><li><p>Overhang matters more than the cut position for cloning: two enzymes that leave the same cohesive end can be ligated together, and a blunt-end enzyme can go into any blunt site.</p></li><li><p>Dam and Dcm methylation of E. coli DNA blocks some sites (Dam: GATC; Dcm: CCWGG). If a site is absent from a plasmid prepped from a dam+ strain, that is usually why.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Searching a circular plasmid as linear and concluding an enzyme does not cut when its site spans the origin.</li><li>Choosing a unique site without checking its position: 3 bp from the end of the insert is unique but useless.</li><li>Forgetting that two different enzymes can leave the same overhang — BamHI (G^GATCC), BglII (A^GATCT), BclI and Sau3AI all produce a GATC 5′ overhang.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/restriction-digest\">Restriction digest</a>. <a href=\"/biology/restriction-digest-setup\">Restriction digest setup</a>. <a href=\"/biology/restriction-buffer-compatibility\">Buffer compatibility</a>. <a href=\"/biology/dna-pattern-finder\">DNA pattern finder</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a unique restriction site?",
+      "a": "A site that occurs exactly once in the molecule, so digesting with that enzyme linearises a plasmid in one place. That is the standard position for cloning a single insert."
+    },
+    {
+      "q": "Why does an enzyme I expected cut nothing?",
+      "a": "Three reasons cover almost every case. The site spans the origin of a circular plasmid, the DNA is methylated at that site, or a star activity buffer was assumed where the standard buffer does not support the enzyme."
+    },
+    {
+      "q": "Can I use two enzymes with different overhangs?",
+      "a": "Yes — that is a directional clone, and it stops the insert going in backwards. Check that the two buffers are compatible, or digest sequentially."
+    },
+    {
+      "q": "Does this page give fragment sizes?",
+      "a": "The digest page does. This one is the screening step: which enzymes are worth taking forward, and where they cut."
+    },
+    {
+      "q": "What does the Restriction Enzyme Finder actually calculate?",
+      "a": "It returns enzymes that cut, unique cutters and enzymes that do not cut. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    }
+  ],
+  "related": [],
+  "words": 809
+}

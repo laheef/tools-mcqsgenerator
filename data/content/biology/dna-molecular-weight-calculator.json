@@ -1,0 +1,64 @@
+{
+  "path": "/biology/dna-molecular-weight-calculator",
+  "slug": "dna-molecular-weight-calculator",
+  "cat": "biology",
+  "name": "DNA Molecular Weight Calculator",
+  "seoTitle": "DNA Molecular Weight Calculator — Formula & Results",
+  "seoDesc": "Molecular weight of a DNA molecule, single- or double-stranded, from its base composition. Free dna molecular weight calculator: enter your values and get len",
+  "h1": "DNA Molecular Weight Calculator",
+  "summary": "Molecular weight of a DNA molecule, single- or double-stranded, from its base composition. It returns length, gc content, molecular weight, one strand, molecular weight of the molecule, molecular weight and amount in 1 µg, and the panel shows all of them at once.\n\nIt is what you need to convert a mass in nanograms into picomoles for a ligation, and to work out how much of a PCR product is in a band on a gel. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the DNA Molecular Weight",
+      "html": "<p>ssDNA = 313.21·A + 304.20·T + 289.18·C + 329.21·G − 61.96  (Da).  dsDNA = 2 × ssDNA.  pmol per µg = 10⁶ ÷ MW</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/dna-molecular-weight-calculator.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: DNA Molecular Weight Calculator — Residue mass of each base (Da)\" title=\"DNA Molecular Weight Calculator\"><figcaption>Residue mass of each base (Da)</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A, T, C, G</code></td><td>counts of each base</td><td>bases</td></tr><tr><td><code>MW</code></td><td>molecular weight</td><td>g/mol = Da</td></tr><tr><td><code>Da</code></td><td>dalton, one atomic mass unit</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the DNA Molecular Weight?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 50 bp</td><td><strong>Oligonucleotide</strong></td><td>order by scale, not by mass</td></tr><tr><td>100 – 3 000 bp</td><td><strong>Typical PCR product</strong></td><td>a 1 kb dsDNA is about 660 kDa</td></tr><tr><td>above 10 000 bp</td><td><strong>Plasmid or genomic fragment</strong></td><td>handle shear-sensitive</td></tr></tbody></table>\n<ul><li><p>A base pair of double-stranded DNA weighs about 618–660 Da depending on GC content; the often quoted 660 Da per bp is the average over equal base frequencies.</p></li><li><p>Pairing does not consume mass: a duplex weighs the sum of its two strands. Because the complement has the same composition as the strand you pasted, the duplex is exactly twice the single strand.</p></li><li><p>RNA uses uracil, which is 306.17 Da, so an RNA strand of the same sequence weighs slightly more than the equivalent DNA.</p></li><li><p>The figure here is the free-acid mass, summed from the exact residue masses (about 618 Da per base pair at 50% GC). The rounded 660 Da per base pair used for quick bench arithmetic is the sodium salt, which adds a sodium counterion for every phosphate — that is why the µg-to-pmol converter, which uses 660, returns about 7% fewer picomoles per microgram.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Reporting the duplex mass for a single-stranded oligo, which doubles the number.</li><li>Using the 660 Da/bp shortcut for a GC-rich molecule; at 70% GC, a base pair is closer to 640 Da.</li><li>Forgetting that a 5′ modification (biotin, phosphate, a fluorophore) adds its own mass.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/dsdna-ug-to-pmol\">dsDNA µg to pmol</a>. <a href=\"/biology/oligo-tm-calculator\">Oligo Tm</a>. <a href=\"/biology/gc-content-sequence\">GC content</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does a 1 kb DNA fragment weigh?",
+      "a": "About 660 kDa double-stranded, roughly 1.1 × 10⁻¹⁸ g per molecule."
+    },
+    {
+      "q": "How many pmol are in 100 ng of a 500 bp dsDNA?",
+      "a": "100 ng ÷ 330 000 g/mol = 3 × 10⁻¹³ mol ≈ 0.30 pmol."
+    },
+    {
+      "q": "Does the calculator handle RNA?",
+      "a": "Yes — choose RNA and uracil is counted at its own residue mass."
+    },
+    {
+      "q": "What does the DNA Molecular Weight actually calculate?",
+      "a": "It returns length, gc content, molecular weight, one strand, molecular weight of the molecule, molecular weight and amount in 1 µg. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 706
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/pcr-master-mix-calculator",
+  "slug": "pcr-master-mix-calculator",
+  "cat": "biology",
+  "name": "PCR Master Mix Calculator",
+  "seoTitle": "PCR Master Mix Calculator — Formula & Results",
+  "seoDesc": "A master mix is one bulk solution split across every tube in the run. Free pcr master mix calculator: enter your values and get total mix volume, master mix t",
+  "h1": "PCR Master Mix Calculator",
+  "summary": "A master mix is one bulk solution split across every tube in the run. It returns total mix volume, master mix to add, each primer to add and water to add, and the panel shows all of them at once.\n\nThis calculator sizes the mix, adds a pipetting allowance and returns the water volume to top up. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the PCR Master Mix",
+      "html": "<p>Reactions prepared = reactions + extra;  master mix = total ÷ stock fold;  water = total − master mix − primers − template</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/pcr-master-mix-calculator.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: PCR Master Mix Calculator — Reactions × volume, then each component's share, then the water.\" title=\"PCR Master Mix Calculator\"><figcaption>Reactions × volume, then each component's share, then the water.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>total</code></td><td>number of tubes × volume per tube</td><td>µL</td></tr><tr><td><code>mm_vol</code></td><td>2× master mix, used at half the final volume</td><td>µL</td></tr><tr><td><code>primer_vol</code></td><td>each primer, from C1V1 = C2V2</td><td>µL</td></tr><tr><td><code>water_vol</code></td><td>the balance</td><td>µL</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the PCR Master Mix?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: reactions of <strong>24</strong>, extra reactions of <strong>2</strong>, volume per reaction of <strong>25</strong> µL, master mix stock concentration of <strong>2</strong> ×, primer stock of <strong>10</strong> µM, primer final concentration of <strong>0.5</strong> µM, template volume per reaction of <strong>1</strong> µL.</p>\n<p>Substituting them into the formula gives total mix volume of <strong>650</strong> µL, master mix to add of <strong>325</strong> µL, each primer to add of <strong>32.5</strong> µL, water to add of <strong>234</strong> µL.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>Prepare for two more reactions than you have tubes. Pipetting loss of 5–10% per component is normal, and running out halfway through a plate is unrecoverable.</p></li><li><p>Add the master mix to the plate first and the template last: template in a well without mix is the classic cause of one empty lane.</p></li><li><p>Primer volume is C1V1 = C2V2 per reaction, then multiplied by the number of reactions — 0.5 µM final from a 10 µM stock is 1.25 µL in a 25 µL reaction.</p></li><li><p>Keep the mix on ice and add polymerase last if it is a hot-start enzyme supplied separately.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Making exactly the number of reactions needed and coming up short.</li><li>Forgetting that the template volume is part of the 25 µL, not additional to it.</li><li>Pipetting the viscous master mix without pre-wetting the tip, which loses several microlitres.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/pcr-annealing-temperature\">Annealing temperature</a>. <a href=\"/biology/primer-resuspension-working-stock\">Primer resuspension</a>. <a href=\"/biology/dilution-calculator-c1v1\">C1V1 dilution</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many extra reactions should I make?",
+      "a": "Two, or 10% of the plate — more for a full 96-well plate."
+    },
+    {
+      "q": "Why is my water volume negative?",
+      "a": "The components already add up to more than the reaction volume: check the master mix concentration and the template volume."
+    },
+    {
+      "q": "Does this work for a 20 µL reaction?",
+      "a": "Yes — set the volume per reaction to 20 and every component rescales."
+    },
+    {
+      "q": "What does the PCR Master Mix actually calculate?",
+      "a": "It returns total mix volume, master mix to add, each primer to add and water to add. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 722
+}

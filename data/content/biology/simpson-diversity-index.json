@@ -1,0 +1,64 @@
+{
+  "path": "/biology/simpson-diversity-index",
+  "slug": "simpson-diversity-index",
+  "cat": "biology",
+  "name": "Simpson's Diversity Index Calculator",
+  "seoTitle": "Simpson's Diversity Index Calculator — Formula & Results",
+  "seoDesc": "Simpson's index measures how likely it is that two individuals picked at random from a community belong to the same species — so a high value means a low-dive",
+  "h1": "Simpson's Diversity Index Calculator",
+  "summary": "Simpson's index measures how likely it is that two individuals picked at random from a community belong to the same species — so a high value means a low-diversity community. It returns species richness, simpson's index (D), simpson's diversity (1 − D) and reciprocal index (1 ÷ D), and the panel shows all of them at once.\n\nIt is the standard index for dominance, and the one to use when a few species dominate the sample. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Simpson's Diversity Index",
+      "html": "<p>D = Σ nᵢ(nᵢ − 1) ÷ [N(N − 1)].  Diversity = 1 − D.  Reciprocal index = 1 ÷ D, the effective number of species</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/simpson-diversity-index.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Simpson's Diversity Index Calculator — Simpson's diversity in three communities\" title=\"Simpson's Diversity Index Calculator\"><figcaption>Simpson's diversity in three communities</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>nᵢ</code></td><td>number of individuals of species i</td><td>individuals</td></tr><tr><td><code>N</code></td><td>total individuals across all species</td><td>individuals</td></tr><tr><td><code>D</code></td><td>probability that two random individuals are the same species</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Simpson's Diversity Index?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Count the individuals of each species in your sample (up to five species).</li><li>The index, the diversity, the reciprocal index and the evenness are all calculated.</li><li>Read 1 − D or 1/D for a number that rises with diversity.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: individuals of species 1 of <strong>40</strong>, individuals of species 2 of <strong>25</strong>, individuals of species 3 of <strong>15</strong>, individuals of species 4 of <strong>12</strong>, individuals of species 5 of <strong>8</strong>.</p>\n<p>Substituting them into the formula gives species richness of <strong>5</strong>, simpson's index (d) of <strong>0.2584</strong>, simpson's diversity (1 − d) of <strong>0.7416</strong>, reciprocal index (1 ÷ d) of <strong>3.87</strong>, evenness of <strong>0.774</strong>.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>D above 0.6</td><td><strong>Low diversity</strong></td><td>one or two species dominate</td></tr><tr><td>D 0.3 – 0.6</td><td><strong>Moderate</strong></td><td>a few common species with several rare ones</td></tr><tr><td>D below 0.2</td><td><strong>High diversity</strong></td><td>individuals are spread evenly across many species</td></tr></tbody></table>\n<ul><li><p>Two forms exist: the finite-sample form used here (n(n−1)/N(N−1)) and the simpler Σp² for an infinite population. They agree closely once samples are large.</p></li><li><p>Simpson's index is dominated by the commonest species, which is why it is called a dominance index. Shannon's index weights rare species more heavily.</p></li><li><p>The reciprocal 1/D is the most interpretable number: it is the effective number of equally common species that would give the same diversity.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Reporting D where 1 − D was meant, which inverts the meaning of the answer.</li><li>Using percentages as counts — the formula needs individuals.</li><li>Comparing samples of very different size without rarefying them first.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/biodiversity-index\">Biodiversity index</a>. <a href=\"/biology/sorensen-index\">Sørensen index</a>. <a href=\"/biology/mark-recapture\">Mark–recapture</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is a higher Simpson's index more diverse?",
+      "a": "No. D is the probability of picking two of the same species, so higher D means lower diversity; use 1 − D or 1/D."
+    },
+    {
+      "q": "What is the difference from Shannon?",
+      "a": "Shannon is more sensitive to rare species; Simpson to dominant ones."
+    },
+    {
+      "q": "What does a reciprocal index of 4 mean?",
+      "a": "The community behaves like one with four equally common species."
+    },
+    {
+      "q": "What does the Simpson's Diversity Index actually calculate?",
+      "a": "It returns species richness, simpson's index (D), simpson's diversity (1 − D) and reciprocal index (1 ÷ D). Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 710
+}

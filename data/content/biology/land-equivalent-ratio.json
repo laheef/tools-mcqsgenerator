@@ -1,0 +1,64 @@
+{
+  "path": "/biology/land-equivalent-ratio",
+  "slug": "land-equivalent-ratio",
+  "cat": "biology",
+  "name": "Land Equivalent Ratio Calculator",
+  "seoTitle": "Land Equivalent Ratio Calculator — Formula & Results",
+  "seoDesc": "The land equivalent ratio answers the only question that matters about intercropping: would two crops be better grown separately? LER is the sum, over every c",
+  "h1": "Land Equivalent Ratio Calculator",
+  "summary": "The land equivalent ratio answers the only question that matters about intercropping: would two crops be better grown separately? It returns crop 1 partial ratio, crop 2 partial ratio, land equivalent ratio and land saved, and the panel shows all of them at once.\n\nLER is the sum, over every crop in the mixture, of its intercrop yield divided by its sole-crop yield. Above 1.0 the mixture wins, below 1.0 it loses. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Land Equivalent Ratio",
+      "html": "<p>LER = (Y₁ᵢ ÷ Y₁ₛ) + (Y₂ᵢ ÷ Y₂ₛ).  Land saved (%) = (LER − 1) × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/land-equivalent-ratio.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Land Equivalent Ratio Calculator — Partial land equivalent ratios in a cereal–legume intercrop\" title=\"Land Equivalent Ratio Calculator\"><figcaption>Partial land equivalent ratios in a cereal–legume intercrop</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Yᵢ</code></td><td>yield of a crop in the intercrop</td><td>kg/ha</td></tr><tr><td><code>Yₛ</code></td><td>yield of the same crop as a sole crop</td><td>kg/ha</td></tr><tr><td><code>LER</code></td><td>land equivalent ratio, the land the mixture replaces</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Land Equivalent Ratio?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the yield of each crop grown in the mixture.</li><li>Enter the yield of each crop grown alone, under the same management.</li><li>Compare the total with 1.0; above it, the mixture is using land more efficiently.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: crop 1 yield, intercropped of <strong>3,200</strong> kg/ha, crop 1 yield, sole crop of <strong>5,000</strong> kg/ha, crop 2 yield, intercropped of <strong>1,800</strong> kg/ha, crop 2 yield, sole crop of <strong>2,500</strong> kg/ha.</p>\n<p>Substituting them into the formula gives crop 1 partial ratio of <strong>0.64</strong>, crop 2 partial ratio of <strong>0.72</strong>, land equivalent ratio of <strong>1.36</strong>, land saved of <strong>36</strong>%.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>LER above 1.2</td><td><strong>Strong advantage</strong></td><td>the mixture is worth the extra management</td></tr><tr><td>LER 1.0 – 1.2</td><td><strong>Small advantage</strong></td><td>possible, but check the economics and the labour</td></tr><tr><td>LER below 1.0</td><td><strong>Disadvantage</strong></td><td>grow the crops separately</td></tr></tbody></table>\n<ul><li><p>An LER of 1.25 means the same total yield could only be produced from 1.25 ha of sole crops — so the mixture saves a quarter of the land.</p></li><li><p>Compare like with like: the sole-crop yields must come from the same season, soil and management. Book values from another year will give a meaningless ratio.</p></li><li><p>LER is a yield measure, not an economic one. A mixture that wins on land can still lose on labour, harvest timing and the price of the smaller crop.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Adding yields in tonnes without dividing by the sole-crop yields, which ignores that the two crops are not comparable.</li><li>Using a sole-crop yield from an unfertilised plot to flatter the intercrop.</li><li>Reporting LER without saying which season and site the sole-crop reference came from.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/plants-per-hectare\">Plants per hectare</a>. <a href=\"/biology/crop-coefficient\">Crop coefficient</a>. <a href=\"/biology/biodiversity-index\">Biodiversity index</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What LER is worth intercropping?",
+      "a": "Above 1.1 to justify the extra management; the best cereal–legume systems reach 1.2–1.4."
+    },
+    {
+      "q": "What does LER 1.0 mean?",
+      "a": "The mixture produces exactly as much as the same land split between the two sole crops — no advantage."
+    },
+    {
+      "q": "Can LER exceed 2?",
+      "a": "In theory each crop could yield its sole-crop yield in half the land, but real systems rarely pass 1.5."
+    },
+    {
+      "q": "What does the Land Equivalent Ratio actually calculate?",
+      "a": "It returns crop 1 partial ratio, crop 2 partial ratio, land equivalent ratio and land saved. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 691
+}

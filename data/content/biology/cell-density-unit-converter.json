@@ -1,0 +1,64 @@
+{
+  "path": "/biology/cell-density-unit-converter",
+  "slug": "cell-density-unit-converter",
+  "cat": "biology",
+  "name": "Cell Density Unit Converter",
+  "seoTitle": "Cell Density Unit Converter Calculator — Formula & Results",
+  "seoDesc": "Cell counts get written as cells/mL, cells/µL, ×10⁶/mL or ×10⁵/mL depending on the lab, and a factor of a thousand between them is easy to lose. Free cell den",
+  "h1": "Cell Density Unit Converter",
+  "summary": "Cell counts get written as cells/mL, cells/µL, ×10⁶/mL or ×10⁵/mL depending on the lab, and a factor of a thousand between them is easy to lose. It returns cells per mL, cells per µL, millions per mL and cells per litre, and the panel shows all of them at once.\n\nThis converter moves between all of them, and to and from a haemocytometer count. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Cell Density Unit Converter",
+      "html": "<p>1 ×10⁶ cells/mL = 1 000 000 cells/mL = 1 000 cells/µL</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/cell-density-unit-converter.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Cell Density Unit Converter — One concentration, every unit.\" title=\"Cell Density Unit Converter\"><figcaption>One concentration, every unit.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>cells/mL</code></td><td>the base unit</td><td>cells/mL</td></tr><tr><td><code>cells/µL</code></td><td>a thousandth of cells/mL</td><td>cells/µL</td></tr><tr><td><code>×10⁶/mL</code></td><td>millions per mL</td><td>10⁶ cells/mL</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Cell Density Unit Converter?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: cell concentration of <strong>1.5</strong> ×10⁶/mL.</p>\n<p>Substituting them into the formula gives cells per ml of <strong>1,500,000</strong> cells/mL, cells per µl of <strong>1,500</strong> cells/µL, millions per ml of <strong>1.5</strong> ×10⁶/mL, cells per litre of <strong>1,500,000,000</strong> cells/L, log₁₀(cells/ml) of <strong>6.18</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>A log₁₀ value is how cell densities are plotted in growth curves, because it turns exponential growth into a straight line.</p></li><li><p>The ×10⁶/mL convention is common in haematology and in cell culture; the underlying unit is still cells per millilitre.</p></li><li><p>Mixing cells/µL and cells/mL between a count and a protocol is the most common unit error in the lab.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Reading 1.5 as 1.5 × 10⁵ rather than 1.5 × 10⁶.</li><li>Converting a bacterial count (10⁸ scale) with the same factor as a mammalian one (10⁶ scale).</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/cell-density\">Cell density</a>. <a href=\"/biology/hemocytometer-cell-counter\">Hemocytometer counter</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many cells/µL is 1 × 10⁶ cells/mL?",
+      "a": "Exactly 1 000 cells/µL."
+    },
+    {
+      "q": "What does the Cell Density Unit Converter actually calculate?",
+      "a": "It returns cells per mL, cells per µL, millions per mL and cells per litre. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    },
+    {
+      "q": "Does it work in both directions?",
+      "a": "Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into."
+    }
+  ],
+  "related": [],
+  "words": 628
+}

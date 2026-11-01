@@ -1,0 +1,64 @@
+{
+  "path": "/biology/pcr-primer-stats",
+  "slug": "pcr-primer-stats",
+  "cat": "biology",
+  "name": "PCR Primer Stats Calculator",
+  "seoTitle": "PCR Primer Stats Calculator — Formula & Results",
+  "seoDesc": "A primer pair is worth checking on eight counts before you order it. Free pcr primer stats calculator: enter your values and get forward length, forward gc, f",
+  "h1": "PCR Primer Stats Calculator",
+  "summary": "A primer pair is worth checking on eight counts before you order it. It returns forward length, forward gc, forward tm, reverse length, reverse gc, reverse tm, suggested annealing temperature, difference in tm and longest 3′ complementary run, and the panel shows all of them at once.\n\nA pair that differs by more than 5 °C, or that can dimerise at its 3′ end, will amplify badly no matter how good the polymerase is. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the PCR Primer Stats",
+      "html": "<p>Tm = 2(A+T) + 4(G+C) up to 14 nt;  64.9 + 41(G+C − 16.4)/N from 15 to 40 nt;  81.5 + 16.6·log₁₀[Na⁺] + 0.41(GC%) − 675/N above 40 nt.  Ta ≈ Tm(lower) − 5</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/pcr-primer-stats.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: PCR Primer Stats Calculator — Melting temperature by primer length (°C)\" title=\"PCR Primer Stats Calculator\"><figcaption>Melting temperature by primer length (°C)</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Tm</code></td><td>melting temperature of the primer-template duplex</td><td>°C</td></tr><tr><td><code>Ta</code></td><td>annealing temperature for the PCR programme</td><td>°C</td></tr><tr><td><code>GC clamp</code></td><td>a G or C at the 3′ end</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the PCR Primer Stats?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>18 – 22 nt</td><td><strong>Ideal length</strong></td><td>specific and cheap to synthesise</td></tr><tr><td>40 – 60%</td><td><strong>Ideal GC</strong></td><td>balanced stability</td></tr><tr><td>difference over 5 °C</td><td><strong>Mismatched pair</strong></td><td>the cooler primer sets the annealing temperature</td></tr><tr><td>3′ run of 4+</td><td><strong>Dimer risk</strong></td><td>primers will amplify each other instead of the target</td></tr></tbody></table>\n<ul><li><p>The annealing temperature is set by the less stable primer, so a big Tm difference wastes the better one. Aim for a pair within 2–5 °C.</p></li><li><p>Complementarity at the 3′ end is the dangerous kind: a polymerase will extend from it, so even two or three paired bases there produce primer dimers.</p></li><li><p>These Tm values are length-banded approximations. For a critical assay use a nearest-neighbour calculation with your real salt and primer concentrations.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Entering the reverse primer as it appears in the template rather than as it is ordered (the order is the reverse complement).</li><li>Choosing a primer with a 3′ T — it is a poor clamp and misprimes more often.</li><li>Running all 40 cycles at the Tm of the higher primer, which lets the lower one misprime.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/oligo-tm-calculator\">Oligo Tm</a>. <a href=\"/biology/reverse-complement\">Reverse complement</a>. <a href=\"/biology/gc-content-sequence\">GC content</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a good Tm difference for a primer pair?",
+      "a": "Under 5 °C, ideally 2–3 °C."
+    },
+    {
+      "q": "How long should a primer be?",
+      "a": "18–22 nt for routine PCR; longer for high GC or for adding restriction tails."
+    },
+    {
+      "q": "Why is my primer dimerising?",
+      "a": "Complementary 3′ ends, or a long self-complementary run. Check the 3′ complementary run in the table above."
+    },
+    {
+      "q": "What does the PCR Primer Stats actually calculate?",
+      "a": "It returns forward length, forward gc, forward tm, reverse length, reverse gc, reverse tm, suggested annealing temperature, difference in tm and longest 3′ complementary run. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 682
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/cell-culture-vessel-reference",
+  "slug": "cell-culture-vessel-reference",
+  "cat": "biology",
+  "name": "Cell Culture Dish / Plate / Flask Reference",
+  "seoTitle": "Cell Culture Dish / Plate / Flask Reference Calculator",
+  "seoDesc": "Every plasticware format has a growth area, a working volume and a recommended cell number, and mixing them up is a classic source of inconsistent experiments",
+  "h1": "Cell Culture Dish / Plate / Flask Reference",
+  "summary": "Every plasticware format has a growth area, a working volume and a recommended cell number, and mixing them up is a classic source of inconsistent experiments. It returns growth area, medium per vessel, cells per vessel at that density and total growth area, and the panel shows all of them at once.\n\nThis reference converts between formats and tells you how much medium and how many cells a vessel takes. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Cell Culture Dish / Plate / Flask Reference",
+      "html": "<p>Medium (mL) ≈ 0.2 × growth area (cm²);  cells = growth area × target density</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/cell-culture-vessel-reference.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Cell Culture Dish / Plate / Flask Reference — Growth area, medium and cells for the format you picked.\" title=\"Cell Culture Dish / Plate / Flask Reference\"><figcaption>Growth area, medium and cells for the format you picked.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>vessel</code></td><td>growth area of one vessel</td><td>cm²</td></tr><tr><td><code>medium</code></td><td>working volume</td><td>mL</td></tr><tr><td><code>cells</code></td><td>cells to seed</td><td>cells</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Cell Culture Dish / Plate / Flask Reference?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: format set to <strong>75.0</strong>, number of vessels of <strong>1</strong>, medium per cm² of <strong>0.2</strong> mL/cm², target seeding density of <strong>20,000</strong> cells/cm².</p>\n<p>Substituting them into the formula gives growth area of <strong>75</strong> cm², medium per vessel of <strong>15</strong> mL, cells per vessel at that density of <strong>1,500,000</strong> cells, total growth area of <strong>75</strong> cm².</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The 0.2 mL/cm² rule keeps the depth of medium at about 2 mm, which is what most protocols assume for gas exchange and autocrine signalling.</p></li><li><p>Multi-well plates are quoted per well: a 6-well plate is 9.6 cm² per well, about 58 cm² in total.</p></li><li><p>Transwell and low-attachment formats have their own areas and should not be substituted.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Using the plate's total area when the protocol is per well.</li><li>Filling a T175 with the T25 volume (or the reverse) and calling the difference a medium effect.</li><li>Forgetting that medium volume changes the drug concentration in a dose–response assay.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/cell-seeding-density\">Cell seeding density</a>. <a href=\"/biology/cell-density\">Cell density</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much medium does a T75 flask need?",
+      "a": "About 15 mL at the usual 0.2 mL/cm², with a range of 10–20 mL depending on the protocol."
+    },
+    {
+      "q": "How many cells in a confluent T75?",
+      "a": "Roughly 7–8 million for most adherent lines, which is about 10⁵ cells/cm²."
+    },
+    {
+      "q": "What does the Cell Culture Dish / Plate / Flask Reference actually calculate?",
+      "a": "It returns growth area, medium per vessel, cells per vessel at that density and total growth area. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 670
+}

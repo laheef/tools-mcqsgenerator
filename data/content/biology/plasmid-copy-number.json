@@ -1,0 +1,64 @@
+{
+  "path": "/biology/plasmid-copy-number",
+  "slug": "plasmid-copy-number",
+  "cat": "biology",
+  "name": "Plasmid Copy Number Calculator",
+  "seoTitle": "Plasmid Copy Number Calculator — Formula & Results",
+  "seoDesc": "Copy number is how many plasmids each cell carries, and it decides how much a culture yields and how strongly a gene is expressed. Free plasmid copy number ca",
+  "h1": "Plasmid Copy Number Calculator",
+  "summary": "Copy number is how many plasmids each cell carries, and it decides how much a culture yields and how strongly a gene is expressed. It returns cells harvested, plasmid recovered and plasmids per cell, and the panel shows all of them at once.\n\nThis calculator derives it from a miniprep yield, the plasmid size and the number of cells harvested. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Plasmid Copy Number",
+      "html": "<p>Copy number = plasmids recovered ÷ cells harvested</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/plasmid-copy-number.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Plasmid Copy Number Calculator — Yield per cell decides the copy number class.\" title=\"Plasmid Copy Number Calculator\"><figcaption>Yield per cell decides the copy number class.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>yield</code></td><td>plasmid mass from the prep</td><td>µg</td></tr><tr><td><code>plasmid size</code></td><td>length in kb</td><td>kb</td></tr><tr><td><code>cells</code></td><td>culture volume × OD600 × 8×10⁸</td><td>cells</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Plasmid Copy Number?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: plasmid yield of <strong>8</strong> µg, plasmid size of <strong>5</strong> kb, culture volume of <strong>3</strong> mL, culture od600 of <strong>2</strong>.</p>\n<p>Substituting them into the formula gives cells harvested of <strong>4,800,000,000</strong>, plasmid recovered of <strong>2.42</strong> pmol, plasmids per cell of <strong>304.14</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 – 20</td><td><strong>Low copy</strong></td><td>pBR322-style, stringent replication</td></tr><tr><td>20 – 100</td><td><strong>Medium copy</strong></td><td>pUC relatives with a weakened origin</td></tr><tr><td>above 100</td><td><strong>High copy</strong></td><td>pUC19 and pET-style plasmids, relaxed replication</td></tr></tbody></table>\n<ul><li><p>Culture OD600 × 8 × 10⁸ cells/mL is a working estimate for E. coli; the answer moves with the strain and the medium, so compare copy numbers measured the same way.</p></li><li><p>Copy number rises with chloramphenicol amplification in relaxed plasmids and falls with large inserts, which are a replication burden.</p></li><li><p>A miniprep yield is not a purity measurement: contaminating genomic DNA and RNA inflate the apparent copy number.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Forgetting that the harvested culture volume sets the cell number.</li><li>Using the insert size instead of the whole plasmid length.</li><li>Comparing a maxiprep yield per litre with a miniprep yield per millilitre.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/genome-copy-number\">Genome copy number</a>. <a href=\"/biology/transformation-efficiency\">Transformation efficiency</a>. <a href=\"/biology/dna-molarity-from-mass\">DNA molarity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a normal plasmid copy number?",
+      "a": "About 15–20 for pBR322 and 500–700 for pUC-based high-copy plasmids."
+    },
+    {
+      "q": "Why is my measured copy number low?",
+      "a": "Large inserts, a low-copy origin, or growth at 37 °C to stationary phase, which reduces plasmid yield per cell."
+    },
+    {
+      "q": "What does the Plasmid Copy Number actually calculate?",
+      "a": "It returns cells harvested, plasmid recovered and plasmids per cell. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 665
+}

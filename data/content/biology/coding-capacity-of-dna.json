@@ -1,0 +1,64 @@
+{
+  "path": "/biology/coding-capacity-of-dna",
+  "slug": "coding-capacity-of-dna",
+  "cat": "biology",
+  "name": "Coding Capacity of DNA Calculator",
+  "seoTitle": "Coding Capacity of DNA Calculator — Formula & Results",
+  "seoDesc": "A stretch of DNA can encode a predictable amount of protein: three bases per amino acid, about 110 daltons per residue. Free coding capacity of dna calculator",
+  "h1": "Coding Capacity of DNA Calculator",
+  "summary": "A stretch of DNA can encode a predictable amount of protein: three bases per amino acid, about 110 daltons per residue. It returns codons, amino acids encoded, protein mass and DNA needed for a 50 kDa protein, and the panel shows all of them at once.\n\nThis calculator converts a coding length into amino acids and protein mass, and a target protein size back into the DNA needed. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Coding Capacity of DNA",
+      "html": "<p>Amino acids = (coding bp ÷ 3) − 1;  mass ≈ amino acids × 110 Da</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/coding-capacity-of-dna.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Coding Capacity of DNA Calculator — Three bases per codon, about 110 daltons per residue.\" title=\"Coding Capacity of DNA Calculator\"><figcaption>Three bases per codon, about 110 daltons per residue.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>bp</code></td><td>coding sequence length</td><td>bp</td></tr><tr><td><code>codons</code></td><td>bp ÷ 3</td><td>codons</td></tr><tr><td><code>110 Da</code></td><td>average residue mass</td><td>Da</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Coding Capacity of DNA?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: coding dna length of <strong>1,200</strong> bp, share that is coding of <strong>100</strong>%.</p>\n<p>Substituting them into the formula gives codons of <strong>400</strong>, amino acids encoded of <strong>399</strong>, protein mass of <strong>43.89</strong> kDa, dna needed for a 50 kda protein of <strong>1,366.64</strong> bp.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The minus one removes the stop codon, which encodes no amino acid; the start codon's methionine is usually cleaved too, so real proteins are a residue or two shorter.</p></li><li><p>Introns inflate genomic length without changing the protein, which is why cDNA length is the number to use.</p></li><li><p>The genetic code is redundant but unambiguous: 61 sense codons for 20 amino acids, so the DNA-to-protein length ratio is fixed at 3:1 even though the masses vary.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using genomic length for a eukaryotic gene.</li><li>Forgetting that untranslated regions at both ends are transcribed but not translated.</li><li>Assuming a protein's mass from the gene without checking the reading frame.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/base-pair-to-kda\">Base pair to kDa</a>. <a href=\"/biology/base-pair-to-dalton\">Base pair to dalton</a>. <a href=\"/biology/coding-capacity-of-dna\">Coding capacity of DNA</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many amino acids does 900 bp encode?",
+      "a": "299 after removing the stop codon — 900 ÷ 3 = 300 codons."
+    },
+    {
+      "q": "Why is the average residue mass 110 Da?",
+      "a": "Because the 20 amino acids average about 110 Da, and each peptide bond loses one water."
+    },
+    {
+      "q": "What does the Coding Capacity of DNA actually calculate?",
+      "a": "It returns codons, amino acids encoded, protein mass and DNA needed for a 50 kDa protein. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 664
+}

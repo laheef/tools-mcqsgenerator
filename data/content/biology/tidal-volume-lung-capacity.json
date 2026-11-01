@@ -1,0 +1,64 @@
+{
+  "path": "/biology/tidal-volume-lung-capacity",
+  "slug": "tidal-volume-lung-capacity",
+  "cat": "biology",
+  "name": "Tidal Volume and Lung Capacity Calculator",
+  "seoTitle": "Tidal Volume and Lung Capacity Calculator — Formula & Results",
+  "seoDesc": "Tidal volume is the air moved in one quiet breath, about 6–8 mL per kilogram of ideal body weight. Free tidal volume and lung capacity calculator: enter your",
+  "h1": "Tidal Volume and Lung Capacity Calculator",
+  "summary": "Tidal volume is the air moved in one quiet breath, about 6–8 mL per kilogram of ideal body weight. It returns ideal body weight, tidal volume, minute ventilation and anatomical dead space, and the panel shows all of them at once.\n\nThis calculator predicts it from height and sex, adds the standard lung volumes and converts to minute ventilation for a given respiratory rate. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Tidal Volume and Lung Capacity",
+      "html": "<p>IBW (kg) = 50 + 0.91 × (height − 152.4);  V_T = 7 mL/kg IBW;  V_E = V_T × rate</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/tidal-volume-lung-capacity.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Tidal Volume and Lung Capacity Calculator — Tidal volume, respiratory rate and the minute volume they produce.\" title=\"Tidal Volume and Lung Capacity Calculator\"><figcaption>Tidal volume, respiratory rate and the minute volume they produce.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>IBW</code></td><td>ideal body weight</td><td>kg</td></tr><tr><td><code>V_T</code></td><td>tidal volume</td><td>mL</td></tr><tr><td><code>V_E</code></td><td>minute ventilation</td><td>L/min</td></tr><tr><td><code>V_D</code></td><td>anatomical dead space, about 2.2 mL/kg IBW</td><td>mL</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Tidal Volume and Lung Capacity?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: height of <strong>175</strong> cm, respiratory rate of <strong>14</strong> breaths/min, tidal volume per kg ideal body weight of <strong>7</strong> mL/kg.</p>\n<p>Substituting them into the formula gives ideal body weight of <strong>70.57</strong> kg, tidal volume of <strong>493.96</strong> mL, minute ventilation of <strong>6.92</strong> L/min, anatomical dead space of <strong>155.25</strong> mL.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>4 – 6 mL/kg IBW</td><td><strong>Lung-protective</strong></td><td>the target in ARDS ventilation</td></tr><tr><td>6 – 8 mL/kg IBW</td><td><strong>Standard</strong></td><td>normal adult ventilation</td></tr><tr><td>above 10 mL/kg IBW</td><td><strong>Large</strong></td><td>risk of volutrauma in injured lungs</td></tr></tbody></table>\n<ul><li><p>Tidal volume is set from ideal body weight, not actual weight, because lung size scales with height rather than with fat mass.</p></li><li><p>Minute ventilation is tidal volume times respiratory rate — a small fast breath ventilates the same as a large slow one, but not the same alveoli.</p></li><li><p>Vital capacity predictions are ±20%, and the gender difference in the reference equation is about 0.6 L.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using actual body weight in an obese patient, which gives dangerously large tidal volumes.</li><li>Confusing tidal volume with minute volume.</li><li>Entering height in inches in a centimetre field.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/respiratory-quotient\">Respiratory quotient</a>. <a href=\"/biology/acid-base-balance\">Acid-base balance</a>. <a href=\"/health/mean-arterial-pressure\">Mean arterial pressure</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why use ideal body weight?",
+      "a": "Because lung volume follows height; using actual weight in obesity over-ventilates the patient."
+    },
+    {
+      "q": "What is a normal tidal volume?",
+      "a": "About 500 mL for an adult man and 400 mL for an adult woman at rest."
+    },
+    {
+      "q": "What does the Tidal Volume and Lung Capacity actually calculate?",
+      "a": "It returns ideal body weight, tidal volume, minute ventilation and anatomical dead space. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 688
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/relatedness-coefficient",
+  "slug": "relatedness-coefficient",
+  "cat": "biology",
+  "name": "Relatedness Coefficient Calculator",
+  "seoTitle": "Relatedness Coefficient Calculator — Formula & Results",
+  "seoDesc": "The coefficient of relationship is the share of alleles two individuals have in common by descent: 50% for a parent and child, 25% for half-siblings, 12.5% fo",
+  "h1": "Relatedness Coefficient Calculator",
+  "summary": "The coefficient of relationship is the share of alleles two individuals have in common by descent: 50% for a parent and child, 25% for half-siblings, 12.5% for first cousins. It returns coefficient of relationship, expected shared DNA and shared DNA share, and the panel shows all of them at once.\n\nThis calculator gives it for a pedigree distance and the expected shared DNA in centimorgans. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Relatedness Coefficient",
+      "html": "<p>r = Σ (½)^(n₁ + n₂),  summed over common ancestors</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/relatedness-coefficient.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Relatedness Coefficient Calculator — Relatedness by pedigree distance, from parent to third cousin.\" title=\"Relatedness Coefficient Calculator\"><figcaption>Relatedness by pedigree distance, from parent to third cousin.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>n₁, n₂</code></td><td>meioses separating each individual from the shared ancestor</td><td>meioses</td></tr><tr><td><code>r</code></td><td>coefficient of relationship</td><td>%</td></tr><tr><td><code>cM</code></td><td>expected shared centimorgans, using 6 800 cM per genome</td><td>cM</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Relatedness Coefficient?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: meioses from individual 1 of <strong>2</strong>, meioses from individual 2 of <strong>2</strong>, paths through common ancestors of <strong>1</strong>.</p>\n<p>Substituting them into the formula gives coefficient of relationship of <strong>6.25</strong>%, expected shared dna of <strong>425</strong> cM, shared dna share of <strong>6.25</strong>%.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>50%</td><td><strong>Parent–child, full siblings</strong></td><td>about 3 400 cM shared</td></tr><tr><td>25%</td><td><strong>Half-siblings, grandparent, aunt/uncle</strong></td><td>about 1 700 cM</td></tr><tr><td>12.5%</td><td><strong>First cousins</strong></td><td>about 850 cM</td></tr><tr><td>0.4%</td><td><strong>Third cousins</strong></td><td>at the edge of what consumer tests can resolve</td></tr></tbody></table>\n<ul><li><p>The relationship coefficient is twice the inbreeding coefficient of their offspring: full siblings are 50% related, so their offspring have F = 25%.</p></li><li><p>Expected shared centimorgans assume 6 800 cM per genome and uniform recombination; real sharing has a standard deviation of several hundred cM.</p></li><li><p>Consanguinity in the pedigree multiplies paths, which is why double first cousins are as related as half-siblings.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting meioses to the ancestor for one side and to the individual for the other.</li><li>Reporting shared DNA as identical by descent when some of it is merely identical by state.</li><li>Assuming a genetic test result must match the pedigree exactly.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/inbreeding-coefficient\">Inbreeding coefficient</a>. <a href=\"/biology/pedigree-probability\">Pedigree probability</a>. <a href=\"/biology/autosomal-recessive-risk\">Recessive inheritance risk</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How related are first cousins?",
+      "a": "12.5%, sharing about 850 cM on average."
+    },
+    {
+      "q": "Why do siblings share 50% on average but not exactly?",
+      "a": "Because they inherit random halves of their parents' chromosomes; the observed value varies around 50%."
+    },
+    {
+      "q": "What does the Relatedness Coefficient actually calculate?",
+      "a": "It returns coefficient of relationship, expected shared DNA and shared DNA share. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 676
+}

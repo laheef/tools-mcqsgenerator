@@ -1,0 +1,64 @@
+{
+  "path": "/biology/enzyme-specific-activity-yield",
+  "slug": "enzyme-specific-activity-yield",
+  "cat": "biology",
+  "name": "Enzyme Kinetics: Specific Activity and Yield",
+  "seoTitle": "Enzyme Kinetics: Specific Activity and Yield Calculator",
+  "seoDesc": "Purification tables report specific activity and fold purification, and both come from the same three numbers: total protein, total activity and the starting",
+  "h1": "Enzyme Kinetics: Specific Activity and Yield",
+  "summary": "Purification tables report specific activity and fold purification, and both come from the same three numbers: total protein, total activity and the starting values. It returns specific activity, starting specific activity, fold purification and activity yield, and the panel shows all of them at once.\n\nThis calculator builds the two summary figures for any step and shows what the recovery cost. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Enzyme Kinetics: Specific Activity and Yield",
+      "html": "<p>Specific activity = total activity ÷ total protein;  fold = specific ÷ starting specific;  yield = activity recovered ÷ activity started with × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/enzyme-specific-activity-yield.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Enzyme Kinetics: Specific Activity and Yield — Activity over protein gives specific activity; compare it with the start.\" title=\"Enzyme Kinetics: Specific Activity and Yield\"><figcaption>Activity over protein gives specific activity; compare it with the start.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>total protein</code></td><td>protein in the fraction</td><td>mg</td></tr><tr><td><code>total activity</code></td><td>units in the fraction</td><td>U</td></tr><tr><td><code>fold</code></td><td>purification factor</td><td>×</td></tr><tr><td><code>yield</code></td><td>recovery of activity</td><td>%</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Enzyme Kinetics: Specific Activity and Yield?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: total protein in this step of <strong>45</strong> mg, total activity in this step of <strong>5,400</strong> U, total protein in the starting material of <strong>900</strong> mg, total activity in the starting material of <strong>7,200</strong> U.</p>\n<p>Substituting them into the formula gives specific activity of <strong>120</strong> U/mg, starting specific activity of <strong>8</strong> U/mg, fold purification of <strong>15</strong> ×, activity yield of <strong>75</strong>%.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>Fold purification and yield always trade off: the step that purifies most is usually the one that loses the most activity.</p></li><li><p>A step with a fold below 1 has removed protein and activity in the same proportion — it is a concentration step, not a purification step.</p></li><li><p>Specific activity is only comparable if it is measured at the same temperature, pH and substrate concentration in every row of the table.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Using the protein concentration of the fraction instead of the total.</li><li>Adding the yields of successive steps — they multiply, not add.</li><li>Comparing specific activities measured with different substrates.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/enzyme-unit-converter\">Enzyme unit converter</a>. <a href=\"/chemistry/enzyme-activity\">Enzyme activity</a>. <a href=\"/biology/bca-assay-calculator\">BCA assay</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a good fold purification?",
+      "a": "There is no target; what matters is that specific activity rises and enough activity survives for the next step."
+    },
+    {
+      "q": "Why did my yield rise?",
+      "a": "Usually activation or removal of an inhibitor — or an assay artefact. Re-measure before believing it."
+    },
+    {
+      "q": "What does the Enzyme Kinetics: Specific Activity and Yield actually calculate?",
+      "a": "It returns specific activity, starting specific activity, fold purification and activity yield. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 679
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/base-pair-to-dalton",
+  "slug": "base-pair-to-dalton",
+  "cat": "biology",
+  "name": "Base Pair to Dalton Calculator",
+  "seoTitle": "Base Pair to Dalton Calculator — Formula & Results",
+  "seoDesc": "A base pair to dalton conversion multiplies the length by the average mass of one base or base pair. Free base pair to dalton calculator: enter your values an",
+  "h1": "Base Pair to Dalton Calculator",
+  "summary": "A base pair to dalton conversion multiplies the length by the average mass of one base or base pair. It returns molecular weight, molecular weight, molar mass and mass of one molecule, and the panel shows all of them at once.\n\nA 1 000 bp DNA fragment weighs about 650 kDa, and the same factor gives the molar mass and the mass of a single molecule. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Base Pair to Dalton",
+      "html": "<p>MW (Da) = length × average mass per base or base pair</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/base-pair-to-dalton.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Base Pair to Dalton Calculator — Length times the mass of one base or base pair.\" title=\"Base Pair to Dalton Calculator\"><figcaption>Length times the mass of one base or base pair.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>length</code></td><td>nucleotides or base pairs</td><td>bp</td></tr><tr><td><code>650</code></td><td>average mass of one DNA base pair</td><td>Da</td></tr><tr><td><code>330</code></td><td>average mass of one DNA nucleotide</td><td>Da</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Base Pair to Dalton?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: molecule set to <strong>650.0</strong>, length of <strong>1,000</strong> bp.</p>\n<p>Substituting them into the formula gives molecular weight of <strong>650,000</strong> Da, molecular weight of <strong>650</strong> kDa, molar mass of <strong>650,000</strong> g/mol, mass of one molecule of <strong>1.08e-06</strong> pg.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>The average is the useful figure for long molecules; short oligos and GC-rich sequences differ by a few percent, which matters for mass spectrometry but not for a gel.</p></li><li><p>One dalton is one gram per mole, so 650 Da per base pair means 660 g/mol for a kilobase (the 1.5% difference comes from rounding conventions).</p></li><li><p>Double-stranded DNA counts base pairs, single-stranded counts nucleotides — a 1 000 bp fragment is 2 000 nt if you melt it.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using the single-stranded factor for a duplex and reporting half the mass.</li><li>Mixing bp with nt when converting a plasmid and its insert.</li><li>Assuming a protein's mass from its gene length without accounting for introns.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/base-pair-to-kda\">Base pair to kDa</a>. <a href=\"/biology/coding-capacity-of-dna\">Coding capacity of DNA</a>. <a href=\"/biology/dna-molarity-from-mass\">DNA molarity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does a 1 000 bp DNA fragment weigh?",
+      "a": "About 650 kDa, or 650 000 daltons."
+    },
+    {
+      "q": "Why does a protein weigh less than its gene predicts?",
+      "a": "Introns are spliced out and the gene also contains untranslated regions."
+    },
+    {
+      "q": "What does the Base Pair to Dalton actually calculate?",
+      "a": "It returns molecular weight, molecular weight, molar mass and mass of one molecule. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 648
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/plasmid-molar-ratio",
+  "slug": "plasmid-molar-ratio",
+  "cat": "biology",
+  "name": "Plasmid Molar Ratio Calculator",
+  "seoTitle": "Plasmid Molar Ratio Calculator — Formula & Results",
+  "seoDesc": "When you ligate two fragments into a vector, the ratio that matters is molar, not by mass. Free plasmid molar ratio calculator: enter your values and get inse",
+  "h1": "Plasmid Molar Ratio Calculator",
+  "summary": "When you ligate two fragments into a vector, the ratio that matters is molar, not by mass. It returns insert 1 mass, insert 2 mass, total DNA and vector molecules, and the panel shows all of them at once.\n\nThis gives the nanograms of each part for a chosen ratio and tells you the total molar concentration of the reaction — the number that decides whether the ends ever find each other. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Plasmid Molar Ratio",
+      "html": "<p>Insert (ng) = ratio × vector (ng) × insert length ÷ vector length.  fmol = ng × 1 000 000 ÷ (660 × length in bp), i.e. pmol × 1000</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/plasmid-molar-ratio.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Plasmid Molar Ratio Calculator — Insert mass for an 800 bp insert into a 5 kb vector\" title=\"Plasmid Molar Ratio Calculator\"><figcaption>Insert mass for an 800 bp insert into a 5 kb vector</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ratio</code></td><td>molecules of each insert per molecule of vector</td><td>—</td></tr><tr><td><code>ng</code></td><td>nanogram</td><td>—</td></tr><tr><td><code>fmol</code></td><td>femtomole, 10⁻¹⁵ mol</td><td>mol</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Plasmid Molar Ratio?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the vector mass and length, and the length of each insert.</li><li>Set the molar ratio and how many inserts the reaction has.</li><li>Read the mass of each insert, the total DNA and the molar amounts.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: vector mass of <strong>50</strong> ng, vector length of <strong>5,000</strong> bp, insert 1 length of <strong>800</strong> bp, insert 2 length of <strong>0</strong> bp, insert : vector molar ratio of <strong>3</strong> ×.</p>\n<p>Substituting them into the formula gives insert 1 mass of <strong>24</strong> ng, insert 2 mass of <strong>0</strong> ng, total dna of <strong>74</strong> ng, vector molecules of <strong>15.15</strong> fmol, total dna in the reaction of <strong>19.33</strong> fmol.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 : 1</td><td><strong>Equimolar</strong></td><td>three-part assemblies, or when every fragment is unique</td></tr><tr><td>3 : 1</td><td><strong>Standard</strong></td><td>a single insert with compatible sticky ends</td></tr><tr><td>10 : 1</td><td><strong>Saturating</strong></td><td>blunt ends or a very short insert</td></tr></tbody></table>\n<ul><li><p>For a three-part assembly, each insert gets the full molar ratio — so the total DNA rises fast and the reaction volume has to grow with it.</p></li><li><p>Check the total concentration, not just the ratio: below about 5 ng/µL of total DNA the ends rarely meet, however perfect the ratio.</p></li><li><p>A vector that has been dephosphorylated cannot ligate to itself, which is what makes a high insert ratio productive rather than wasteful.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Splitting the insert mass between inserts instead of giving each the full ratio.</li><li>Using mass ratios for fragments of very different lengths.</li><li>Adding so much DNA that the salt carried in with it inhibits the ligase.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/ligation-calculator\">Ligation calculator</a>. <a href=\"/biology/dsdna-ug-to-pmol\">dsDNA µg to pmol</a>. <a href=\"/biology/restriction-digest\">Restriction digest</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What ratio for a two-fragment ligation?",
+      "a": "3:1 insert to vector, in a total volume where the DNA is at least 5 ng/µL."
+    },
+    {
+      "q": "Does a third fragment change the ratio?",
+      "a": "No, but it multiplies the total DNA: give each insert the same molar ratio to the vector."
+    },
+    {
+      "q": "How much vector should I use?",
+      "a": "25–100 ng per reaction; more vector means more self-ligation background."
+    },
+    {
+      "q": "What does the Plasmid Molar Ratio actually calculate?",
+      "a": "It returns insert 1 mass, insert 2 mass, total DNA and vector molecules. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 670
+}

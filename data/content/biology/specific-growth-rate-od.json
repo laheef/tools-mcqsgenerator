@@ -1,0 +1,64 @@
+{
+  "path": "/biology/specific-growth-rate-od",
+  "slug": "specific-growth-rate-od",
+  "cat": "biology",
+  "name": "Specific Growth Rate from OD",
+  "seoTitle": "Specific Growth Rate from OD Calculator — Formula & Results",
+  "seoDesc": "Specific growth rate is how fast a culture is dividing, in units of generations per hour: µ = ln(OD₂/OD₁) ÷ (t₂ − t₁). Free specific growth rate from od calcu",
+  "h1": "Specific Growth Rate from OD",
+  "summary": "Specific growth rate is how fast a culture is dividing, in units of generations per hour: µ = ln(OD₂/OD₁) ÷ (t₂ − t₁). It returns specific growth rate, doubling time, generations and growth rate, and the panel shows all of them at once.\n\nFrom two optical densities and the time between them you get µ, the doubling time and the number of generations the culture went through — as long as the readings sit in the exponential phase. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Specific Growth Rate from OD",
+      "html": "<p>µ = ln(OD₂ ÷ OD₁) ÷ (t₂ − t₁).  Doubling time = ln2 ÷ µ.  Generations = µ × Δt ÷ ln2</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/specific-growth-rate-od.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Specific Growth Rate from OD — Exponential growth: the OD doubles at a constant interval\" title=\"Specific Growth Rate from OD\"><figcaption>Exponential growth: the OD doubles at a constant interval</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>µ</code></td><td>specific growth rate</td><td>1/h</td></tr><tr><td><code>OD₆₀₀</code></td><td>optical density at 600 nm</td><td>—</td></tr><tr><td><code>ln2</code></td><td>0.693, the natural log of two</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Specific Growth Rate from OD?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Take two OD₆₀₀ readings that are both between 0.05 and 0.6.</li><li>Enter each with the time it was taken.</li><li>Read µ, the doubling time in minutes and how many generations passed.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: first od₆₀₀ of <strong>0.15</strong>, second od₆₀₀ of <strong>0.62</strong>, first reading at of <strong>0</strong> h, second reading at of <strong>3</strong> h.</p>\n<p>Substituting them into the formula gives specific growth rate of <strong>0.473</strong> 1/h, doubling time of <strong>87.92</strong> min, generations of <strong>2.05</strong>, growth rate of <strong>11.35</strong> 1/day.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 0.2 1/h</td><td><strong>Slow</strong></td><td>doubling in more than 3.5 h — stressed or minimal medium</td></tr><tr><td>0.2 – 0.8 1/h</td><td><strong>Typical</strong></td><td>E. coli in rich medium doubles in 20–60 min</td></tr><tr><td>above 1.0 1/h</td><td><strong>Fast</strong></td><td>doubling faster than 42 min; check for clumping or a bad blank</td></tr></tbody></table>\n<ul><li><p>OD₆₀₀ is only proportional to cell number up to about 0.4–0.6. Above that, dilute and measure again — an OD of 1.2 underestimates the cells by a third or more.</p></li><li><p>A rate calculated across the lag or stationary phase is meaningless. Use two points that are both in the exponential phase, and ideally more than two.</p></li><li><p>OD₆₀₀ depends on the spectrophotometer and the cuvette. Report µ, not the OD, and describe the instrument.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Using OD 0.05 as the first point, when the blank or the cuvette dominates the reading.</li><li>Averaging several late readings, where the culture has already slowed.</li><li>Confusing µ (per hour) with the number of generations, which is µ × Δt ÷ ln2.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/bacterial-growth-curve\">Bacterial growth curve</a>. <a href=\"/biology/cell-doubling-time\">Cell doubling time</a>. <a href=\"/chemistry/michaelis-menten-equation\">Michaelis–Menten</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a typical growth rate for E. coli?",
+      "a": "About 0.6–0.8 1/h in LB at 37 °C, a doubling time of 20–30 minutes."
+    },
+    {
+      "q": "Why is my doubling time longer in minimal medium?",
+      "a": "Fewer nutrients, so the cell spends longer building biomass; 60–120 minutes is normal."
+    },
+    {
+      "q": "Can I use OD above 1?",
+      "a": "Dilute the sample into medium and multiply the reading by the dilution factor — beyond about 0.6 the relation is no longer linear."
+    },
+    {
+      "q": "What does the Specific Growth Rate from OD actually calculate?",
+      "a": "It returns specific growth rate, doubling time, generations and growth rate. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 684
+}

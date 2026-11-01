@@ -1,0 +1,64 @@
+{
+  "path": "/biology/ligation-molar-ratio",
+  "slug": "ligation-molar-ratio",
+  "cat": "biology",
+  "name": "Ligation Molar Ratio Calculator (Insert : Vector)",
+  "seoTitle": "Ligation Molar Ratio (Insert : Vector) Calculator",
+  "seoDesc": "A ligation works when the insert outnumbers the vector enough to find it, but not so much that it ligates to itself. Free ligation molar ratio (insert : vecto",
+  "h1": "Ligation Molar Ratio Calculator (Insert : Vector)",
+  "summary": "A ligation works when the insert outnumbers the vector enough to find it, but not so much that it ligates to itself. It returns insert mass, vector amount, insert amount and total DNA in the reaction, and the panel shows all of them at once.\n\nThe standard is a 3:1 molar ratio, and the calculation converts that ratio into nanograms using the two lengths. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Ligation Molar Ratio (Insert : Vector)",
+      "html": "<p>Insert (ng) = vector (ng) × (insert bp ÷ vector bp) × molar ratio</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/ligation-molar-ratio.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Ligation Molar Ratio Calculator (Insert : Vector) — Vector and insert masses that give the chosen molar ratio.\" title=\"Ligation Molar Ratio Calculator (Insert : Vector)\"><figcaption>Vector and insert masses that give the chosen molar ratio.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>vector_ng</code></td><td>mass of cut vector</td><td>ng</td></tr><tr><td><code>vector_bp</code></td><td>vector length</td><td>bp</td></tr><tr><td><code>insert_bp</code></td><td>insert length</td><td>bp</td></tr><tr><td><code>ratio</code></td><td>moles of insert per mole of vector</td><td>:1</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Ligation Molar Ratio (Insert : Vector)?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: vector mass of <strong>100</strong> ng, vector length of <strong>4,000</strong> bp, insert length of <strong>800</strong> bp, insert : vector molar ratio of <strong>3</strong> :1.</p>\n<p>Substituting them into the formula gives insert mass of <strong>60</strong> ng, vector amount of <strong>37.88</strong> pmol, insert amount of <strong>113.64</strong> pmol, total dna in the reaction of <strong>160</strong> ng.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><p>3:1 favours the desired product without starving the vector; 1:1 reduces tandem inserts, 10:1 drives short-insert ligations that otherwise fail.</p></li><li><p>Total DNA in a 20 µL ligation should stay around 100–200 ng: more DNA favours self-ligation and concatemers.</p></li><li><p>Both fragments should be clean — a ligation is exquisitely sensitive to residual phosphatase, salt and EDTA from a gel-purification kit.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using the insert:vector mass ratio when the two fragments are different lengths.</li><li>Phosphatasing the insert as well as the vector, which leaves nothing to ligate to.</li><li>Leaving the ligation for hours at room temperature, which favours rearrangement.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/dsdna-ug-to-pmol-converter\">dsDNA µg to pmol</a>. <a href=\"/biology/transformation-efficiency\">Transformation efficiency</a>. <a href=\"/biology/restriction-digest-setup\">Restriction digest</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why 3:1?",
+      "a": "It is the ratio that maximises the chance of a vector meeting an insert while limiting vector–vector and insert–insert products."
+    },
+    {
+      "q": "How much insert for 100 ng of a 4 kb vector and an 800 bp insert?",
+      "a": "60 ng — 100 × (800/4000) × 3."
+    },
+    {
+      "q": "What does the Ligation Molar Ratio (Insert : Vector) actually calculate?",
+      "a": "It returns insert mass, vector amount, insert amount and total DNA in the reaction. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 668
+}

@@ -1,0 +1,64 @@
+{
+  "path": "/biology/restriction-reaction-setup",
+  "slug": "restriction-reaction-setup",
+  "cat": "biology",
+  "name": "Restriction Digest Recipe",
+  "seoTitle": "Restriction Digest Recipe — Enzyme Limit",
+  "seoDesc": "Work out how much enzyme, buffer and water go into a digest. Free restriction digest recipe calculator: enter your values and get DNA volume, enzyme units nee",
+  "h1": "Restriction Digest Recipe",
+  "summary": "Work out how much enzyme, buffer and water go into a digest. It returns DNA volume, enzyme units needed, enzyme volume and 10× buffer, and the panel shows all of them at once.\n\nThe rule that matters is that the enzyme must never be more than a tenth of the reaction volume, because restriction enzymes are stored in glycerol and too much of it inhibits the digest. Press Calculate and the results appear in the grey boxes; after the first press they keep up with every edit, so there is no page to reload. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Restriction Digest Recipe",
+      "html": "<p>DNA volume (µL) = µg × 1000 ÷ ng/µL.  Units = µg × U/µg.  Enzyme volume = units ÷ (U/mL ÷ 1000).  Buffer = 1/10 of the reaction</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/restriction-reaction-setup.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Restriction Digest Recipe — Glycerol carried in by the enzyme, by enzyme volume in a 20 µL digest\" title=\"Restriction Digest Recipe\"><figcaption>Glycerol carried in by the enzyme, by enzyme volume in a 20 µL digest</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>U</code></td><td>one unit digests 1 µg of substrate in one hour</td><td>U</td></tr><tr><td><code>glycerol</code></td><td>the storage solvent of the enzyme, an inhibitor above 5%</td><td>%</td></tr><tr><td><code>10×</code></td><td>ten-times concentrated buffer, diluted to 1× in the reaction</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Restriction Digest Recipe?",
+      "html": "<p>Every input sits in the same order the formula is written, so the page reads like the equation.</p>\n<ol><li>Enter how much DNA you want to cut and its concentration.</li><li>Set the final reaction volume and the units per microgram you intend to use.</li><li>Read the volumes of DNA, enzyme, buffer and water — and the glycerol percentage, which must stay under 5%.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: dna to digest of <strong>1</strong> µg, dna concentration of <strong>100</strong> ng/µL, reaction volume of <strong>20</strong> µL, units per microgram of <strong>10</strong> U/µg, enzyme stock of <strong>20,000</strong> U/mL.</p>\n<p>Substituting them into the formula gives dna volume of <strong>10</strong> µL, enzyme units needed of <strong>10</strong> U, enzyme volume of <strong>0.5</strong> µL, 10× buffer of <strong>2</strong> µL, water of <strong>7.5</strong> µL, glycerol in the reaction of <strong>2.5</strong>%.</p>\n<p>Those numbers come from the same solver the page runs in your browser, not from an illustration, so typing different inputs moves the answer exactly as the arithmetic says.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>The number on its own is not a judgement. These are the bands most often used when the result is quoted in a paper, a report or a label:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>glycerol under 5%</td><td><strong>Safe</strong></td><td>the enzyme works at full speed</td></tr><tr><td>glycerol 5 – 10%</td><td><strong>Marginal</strong></td><td>star activity and incomplete digestion appear</td></tr><tr><td>glycerol over 10%</td><td><strong>Inhibited</strong></td><td>dilute the DNA first rather than adding more enzyme</td></tr></tbody></table>\n<ul><li><p>Adding more enzyme is the usual reaction to an incomplete digest, and it is usually wrong: it adds glycerol, which inhibits the enzyme and can relax its specificity.</p></li><li><p>One unit is defined against a specific substrate in one hour. A PCR product with a blunt end or a plasmid with a methylation pattern may need several times the nominal amount.</p></li><li><p>Keep the reaction at 1× buffer. A 10× buffer diluted wrongly is a common cause of a digest that simply does not work.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Adding 2 µL of enzyme to a 20 µL reaction, which is 10% glycerol before the DNA is counted.</li><li>Forgetting to mix gently — enzyme sticks to the tube wall above the liquid line.</li><li>Incubating for 15 minutes and calling an incomplete digest a failure of the enzyme.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>This tool answers one step of the question. The neighbouring steps have their own pages:</p><p><a href=\"/biology/restriction-digest\">Restriction digest</a>. <a href=\"/biology/dna-molarity-calculator\">DNA molarity</a>. <a href=\"/chemistry/dilution-factor\">Dilution factor</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why must the enzyme be under a tenth of the volume?",
+      "a": "Because the enzyme is stored in 50% glycerol, and glycerol above about 5% of the reaction inhibits cutting and can change specificity."
+    },
+    {
+      "q": "How many units should I use?",
+      "a": "5–10 U per microgram of plasmid for an hour; more for genomic DNA or a blunt-ended PCR product."
+    },
+    {
+      "q": "Can I digest in a smaller volume?",
+      "a": "Yes, and it usually works better — a smaller volume means a higher concentration of both ends."
+    },
+    {
+      "q": "What does the Restriction Digest Recipe actually calculate?",
+      "a": "It returns DNA volume, enzyme units needed, enzyme volume and 10× buffer. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 768
+}

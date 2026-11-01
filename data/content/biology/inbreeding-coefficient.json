@@ -1,0 +1,64 @@
+{
+  "path": "/biology/inbreeding-coefficient",
+  "slug": "inbreeding-coefficient",
+  "cat": "biology",
+  "name": "Inbreeding Coefficient Calculator (COI)",
+  "seoTitle": "Inbreeding Coefficient (COI) Calculator — Formula & Results",
+  "seoDesc": "The coefficient of inbreeding is the probability that two alleles at a locus in one individual are identical by descent. Free inbreeding coefficient (coi) cal",
+  "h1": "Inbreeding Coefficient Calculator (COI)",
+  "summary": "The coefficient of inbreeding is the probability that two alleles at a locus in one individual are identical by descent. It returns inbreeding coefficient, heterozygosity retained and relationship coefficient, and the panel shows all of them at once.\n\nThis calculator estimates it from an ancestral path and shows the expected loss of heterozygosity, which is what actually matters for a breeding programme. Every result is derived from the boxes you fill in, so changing one input updates the whole panel at once. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Inbreeding Coefficient (COI)",
+      "html": "<p>F = Σ (½)^(n₁ + n₂ + 1), summed over independent paths to a common ancestor</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/inbreeding-coefficient.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Inbreeding Coefficient Calculator (COI) — Two paths up the pedigree and the probability they carry the same allele.\" title=\"Inbreeding Coefficient Calculator (COI)\"><figcaption>Two paths up the pedigree and the probability they carry the same allele.</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>n₁, n₂</code></td><td>generations from each parent to the shared ancestor</td><td>generations</td></tr><tr><td><code>F</code></td><td>coefficient of inbreeding</td><td>%</td></tr><tr><td><code>½^(n+1)</code></td><td>the probability the same allele travelled down both paths</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Inbreeding Coefficient (COI)?",
+      "html": "<p>The form asks only for what the formula needs — nothing is optional decoration.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: independent ancestral paths of <strong>1</strong>, generations on the sire's side of <strong>2</strong>, generations on the dam's side of <strong>2</strong>.</p>\n<p>Substituting them into the formula gives inbreeding coefficient of <strong>3.12</strong>%, heterozygosity retained of <strong>96.88</strong>%, relationship coefficient of <strong>6.25</strong>%.</p>\n<p>The arithmetic is the page's own: change one box and the result moves by the amount the formula implies, which is the quickest way to convince yourself the tool is honest.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>A raw figure only means something next to the bands it is normally judged against. Here is the scale that goes with this one:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>F below 6.25%</td><td><strong>Low</strong></td><td>mating of second cousins or more distant relatives</td></tr><tr><td>6.25 – 12.5%</td><td><strong>Moderate</strong></td><td>first cousins are 6.25%, uncle–niece 12.5%</td></tr><tr><td>above 25%</td><td><strong>High</strong></td><td>parent–offspring or full siblings; inbreeding depression is likely</td></tr></tbody></table>\n<ul><li><p>F measures identity by descent, not homozygosity: a population may be homozygous for a reason other than inbreeding.</p></li><li><p>Each 1% of inbreeding coefficient removes about 1% of expected heterozygosity, which is the quantity that predicts inbreeding depression in fitness traits.</p></li><li><p>Pedigree F values are expectations; realised inbreeding from genome data differs because recombination is uneven.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>The arithmetic is simple; the inputs are where things go wrong. The usual culprits:</p><ul><li>Counting the same ancestral path twice.</li><li>Mixing species: the same pedigree gives the same F, but the fitness consequences differ enormously.</li><li>Treating F as a percentage of the genome that is homozygous.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href=\"/biology/relatedness-coefficient\">Relatedness coefficient</a>. <a href=\"/biology/hardy-weinberg-equilibrium\">Hardy–Weinberg equilibrium</a>. <a href=\"/biology/autosomal-recessive-risk\">Recessive inheritance risk</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is F for a mating of full siblings?",
+      "a": "25% for their offspring, from two paths through the shared parents."
+    },
+    {
+      "q": "Does inbreeding cause mutations?",
+      "a": "No — it makes existing recessive alleles homozygous, which exposes them."
+    },
+    {
+      "q": "What does the Inbreeding Coefficient (COI) actually calculate?",
+      "a": "It returns inbreeding coefficient, heterozygosity retained and relationship coefficient. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use it with the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [],
+  "words": 691
+}

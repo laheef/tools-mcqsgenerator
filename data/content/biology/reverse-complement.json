@@ -1,0 +1,64 @@
+{
+  "path": "/biology/reverse-complement",
+  "slug": "reverse-complement",
+  "cat": "biology",
+  "name": "Reverse Complement Calculator",
+  "seoTitle": "Reverse Complement Calculator — Formula & Results",
+  "seoDesc": "The reverse complement is the other strand of a DNA molecule written 5′ to 3′: read the sequence backwards and swap every base for its partner (A↔T, G↔C). Fre",
+  "h1": "Reverse Complement Calculator",
+  "summary": "The reverse complement is the other strand of a DNA molecule written 5′ to 3′: read the sequence backwards and swap every base for its partner (A↔T, G↔C). It returns length, gc content and melting temperature of the duplex, and the panel shows all of them at once.\n\nIt is the first step of primer design, of checking that a sequencing read maps to the strand you expect, and of turning a gene's coding sequence into the template you will actually order. The arithmetic keeps full precision internally and only rounds what it displays, so the number you copy out is the number the formula produced. Units are stated on every box and in every result, so a figure copied out of a protocol, a datasheet or a chart can be entered without converting it first.",
+  "sections": [
+    {
+      "title": "The formula behind the Reverse Complement",
+      "html": "<p>Reverse complement: read 3′→5′ and pair A·T, G·C.  GC% = (G + C) ÷ length × 100</p>\n<figure class=\"calc-figure\"><img src=\"/uploads/biology/reverse-complement.svg\" width=\"720\" height=\"300\" loading=\"lazy\" alt=\"Animated diagram: Reverse Complement Calculator — Hydrogen bonds per base pair\" title=\"Reverse Complement Calculator\"><figcaption>Hydrogen bonds per base pair</figcaption></figure>\n<table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>5′</code></td><td>the end with a free phosphate</td><td>—</td></tr><tr><td><code>3′</code></td><td>the end with a free hydroxyl</td><td>—</td></tr><tr><td><code>revcomp</code></td><td>the opposite strand, written 5′→3′</td><td>—</td></tr></tbody></table>"
+    },
+    {
+      "title": "How do I use the Reverse Complement?",
+      "html": "<p>Fill the boxes you have numbers for; the calculator decides what it can derive from them.</p>\n<ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. The results fill in together, and from then on they follow every edit you make — there is no page to reload and nothing to submit.</li></ol>"
+    },
+    {
+      "title": "A worked example",
+      "html": "<p>Take the default values the page opens with: base pairs per line of <strong>60</strong>.</p>\n<p>Because the example uses the defaults, you can reproduce it by loading the page and reading the results panel before touching anything.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<p>Interpretation is a convention, not part of the arithmetic. The usual bands are:</p>\n<table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>A ↔ T</td><td><strong>DNA pairing</strong></td><td>two hydrogen bonds</td></tr><tr><td>G ↔ C</td><td><strong>DNA pairing</strong></td><td>three hydrogen bonds, which is why GC-rich duplexes melt higher</td></tr><tr><td>A ↔ U</td><td><strong>RNA pairing</strong></td><td>RNA has uracil where DNA has thymine</td></tr></tbody></table>\n<ul><li><p>A reverse complement is not a palindrome: the reverse complement of ATGC is GCAT, and the reverse alone would be CGTA.</p></li><li><p>Ambiguity codes are handled properly — R (A or G) pairs with Y (C or T), S with S, W with W, K with M, B with V, D with H, and N with N.</p></li><li><p>The translation tools on this site take the reverse complement as input when you need the protein from the opposite strand.</p></li></ul>"
+    },
+    {
+      "title": "What are the common mistakes?",
+      "html": "<p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Reversing without complementing (or the other way round) — both are common and both give a sequence that looks plausible.</li><li>Forgetting that a primer is written 5′→3′ and its template binding site is the reverse complement of the primer.</li><li>Pasting an alignment with gaps into a tool that does not strip them.</li></ul>"
+    },
+    {
+      "title": "Calculators that go with this one",
+      "html": "<p>Most real jobs need two or three of these together:</p><p><a href=\"/biology/gc-content-calculator\">GC content</a>. <a href=\"/biology/oligo-tm-calculator\">Oligo Tm</a>. <a href=\"/biology/coding-capacity-of-dna\">Coding capacity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the reverse complement of ATGGCC?",
+      "a": "GGCCAT — read backwards (CCGGTA) and swap each base for its partner."
+    },
+    {
+      "q": "Why is the reverse complement used instead of the reverse?",
+      "a": "Because DNA is antiparallel: the other strand runs in the opposite direction, so its sequence must be both reversed and complemented to be written 5′→3′."
+    },
+    {
+      "q": "How do I get the protein from the opposite strand?",
+      "a": "Take the reverse complement, then translate it in frame 1."
+    },
+    {
+      "q": "What does the Reverse Complement actually calculate?",
+      "a": "It returns length, gc content and melting temperature of the duplex. Each one is derived by the formula on this page, so you can check any figure by hand."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [],
+  "words": 691
+}
