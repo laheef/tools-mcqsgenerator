@@ -180,7 +180,7 @@ foreach ($categories as $categoryRow) {
                         <td class="actions">
                             <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('calculator-edit', ['path' => $row['sourcePath']])) ?>" title="Edit"><?= admin_icon('edit', 15) ?></a>
                             <?php if (($row['status'] ?? 'published') === 'published'): ?>
-                                <a class="btn btn-sm btn-ghost" href="<?= e($row['path']) ?>" target="_blank" rel="noopener" title="Open the public page"><?= admin_icon('external', 15) ?></a>
+                                <a class="btn btn-sm btn-ghost" href="<?= e(site_link((string) $row['path'])) ?>" target="_blank" rel="noopener" title="Open the public page"><?= admin_icon('external', 15) ?></a>
                             <?php else: ?>
                                 <a class="btn btn-sm btn-ghost" href="<?= e(site_link(\Omni\Cms::previewUrl((string) $row['path']))) ?>" target="_blank" rel="noopener" title="Preview this unpublished calculator (signed link)"><?= admin_icon('eye', 15) ?></a>
                             <?php endif; ?>

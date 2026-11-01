@@ -90,7 +90,7 @@ $pageTitle = 'Calculators';
 $title = $pageTitle;
 $wide = true;
 $topbarActions = [
-    ['label' => 'Public index', 'url' => '/search', 'icon' => 'external'],
+    ['label' => 'Public index', 'url' => site_link('/search'), 'icon' => 'external'],
 ];
 
 render('calculators', compact('rows', 'pagination', 'filters', 'stats', 'categories', 'result', 'pageTitle', 'title', 'wide', 'topbarActions'));

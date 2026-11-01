@@ -179,7 +179,10 @@ $publicUrl  = null;
 if ((int) ($row['id'] ?? 0) > 0 && (string) $values['slug'] !== '') {
     $path = '/' . (string) $values['category_slug'] . '/' . $values['slug'];
     $previewUrl = site_link(Cms::previewUrl($path));
-    $publicUrl  = (string) $values['status'] === 'published' ? $path : null;
+    /* The panel can be installed in a subdirectory, so the public URL of this
+       calculator needs the install prefix — a bare $path would open the domain
+       root and 404. */
+    $publicUrl  = (string) $values['status'] === 'published' ? site_link($path) : null;
 }
 
 $unitGroups = CustomCalc::unitGroups();

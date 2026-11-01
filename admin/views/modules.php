@@ -140,7 +140,7 @@ modules/my-module/partials/extra.php</pre>
                                 </form>
                                 <?php if ($row['paths'] !== []): ?>
                                     <a class="btn btn-sm btn-ghost" target="_blank" rel="noopener"
-                                       href="<?= e($row['paths'][0]) ?>"><?= admin_icon('external', 14) ?> Page</a>
+                                       href="<?= e(site_link((string) $row['paths'][0])) ?>"><?= admin_icon('external', 14) ?> Page</a>
                                 <?php endif; ?>
                             <?php endif; ?>
                             <?php foreach ($row['relative'] as $file): ?>

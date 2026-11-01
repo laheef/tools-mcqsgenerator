@@ -90,7 +90,7 @@ $label = static function (string $action): string {
                             <?php foreach (array_merge($result['created'], $result['updated']) as $path): ?>
                                 <li style="padding:2px 0">
                                     <?= admin_icon('check', 13) ?>
-                                    <a href="<?= e($path) ?>" target="_blank" rel="noopener"><code><?= e($path) ?></code></a>
+                                    <a href="<?= e(site_link($path)) ?>" target="_blank" rel="noopener"><code><?= e($path) ?></code></a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
