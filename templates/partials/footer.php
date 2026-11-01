@@ -229,7 +229,12 @@ $legal = Cms::menu('legal');
         <?php endif; ?>
 
         <div class="footer-bottom">
-            <p class="footer-copyright"><?= View::escape($copyright !== '' ? $copyright : '© ' . date('Y') . ' ' . $siteName . '. All rights reserved.') ?></p>
+            <div class="footer-bottom-left">
+                <p class="footer-copyright"><?= View::escape($copyright !== '' ? $copyright : '© ' . date('Y') . ' ' . $siteName . '. All rights reserved.') ?></p>
+                <?php if ($showNotice): ?>
+                    <p class="footer-note">Every calculation runs on this site — nothing you type is sent to a third party.</p>
+                <?php endif; ?>
+            </div>
             <?php if ($legal !== []): ?>
                 <nav class="footer-legal" aria-label="Legal">
                     <?php foreach ($legal as $item): ?>
@@ -243,9 +248,6 @@ $legal = Cms::menu('legal');
                     <a href="<?= View::escape(View::url('/disclaimer')) ?>">Disclaimer</a>
                     <a href="<?= View::escape(View::url('/faq')) ?>">FAQ</a>
                 </nav>
-            <?php endif; ?>
-            <?php if ($showNotice): ?>
-                <p class="footer-note">Every calculation runs on this site — nothing you type is sent to a third party.</p>
             <?php endif; ?>
         </div>
     </div>

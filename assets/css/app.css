@@ -899,7 +899,8 @@ button { font: inherit; color: inherit; }
 .footer-legal { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-left: auto; }
 .footer-legal a { font-size: 12.8px; color: var(--ink-3); }
 .footer-legal a:hover { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
-.footer-note { margin: 0; font-size: 12.4px; color: var(--ink-4); flex-basis: 100%; max-width: 90ch; }
+.footer-note { margin: 3px 0 0; font-size: 12.2px; color: var(--ink-4); }
+.footer-bottom-left { display: flex; flex-direction: column; min-width: 0; }
 
 /* ------------------------------------------------------- print styles */
 @media print {
