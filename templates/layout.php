@@ -19,6 +19,8 @@ $bodyClass = $bodyClass ?? '';
 /* Everything below comes from the admin panel when it is installed, and falls
    back to the values compiled into config.php when it is not. */
 $siteName  = Cms::siteName();
+/* The lockup next to the logo: same name, without a trailing "Calculator". */
+$brandName = Cms::brandName();
 $brand     = (string) Cms::setting('brand_primary', '#3B68FC');
 $accent    = (string) Cms::setting('brand_accent', '#FF6B35');
 $radiusMap = ['none' => '0', 'small' => '6px', 'medium' => '12px', 'large' => '18px', 'pill' => '28px'];
@@ -141,13 +143,13 @@ $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
 </head>
 <body class="<?= View::escape($bodyClass) ?>">
     <a class="skip-link" href="#main">Skip to content</a>
-    <?= View::render('partials/header', ['navCategories' => $navCategories ?? [], 'active' => $active ?? '', 'siteName' => $siteName]) ?>
+    <?= View::render('partials/header', ['navCategories' => $navCategories ?? [], 'active' => $active ?? '', 'siteName' => $brandName]) ?>
 
     <main id="main" class="site-main">
         <?= $content ?>
     </main>
 
-    <?= View::render('partials/footer', ['categories' => $categories ?? [], 'siteName' => $siteName]) ?>
+    <?= View::render('partials/footer', ['categories' => $categories ?? [], 'siteName' => $brandName]) ?>
 
     <script>window.BASE_PATH = <?= json_encode(BASE_PATH) ?>;</script>
     <script src="<?= View::escape(View::asset('js/app.js')) ?>" defer></script>

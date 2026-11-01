@@ -119,8 +119,13 @@ $copyright = (string) (Cms::setting('footer_copyright', '') ?? '');
  * sentence is not an editorial choice, so it is corrected at render time: the
  * year and the words stay, a stale variant of the name does not.
  */
+$copyright = str_replace(
+    ["\xc2\xa0", "\xe2\x80\xaf", "\xe2\x80\x89"],   // NBSP, narrow NBSP, thin space
+    ' ',
+    $copyright
+);
 $copyright = (string) preg_replace(
-    '~\b(?:Onim|Omni)\s+Calculator\b~i',
+    '~\b(?:Onim|Omni)[ ]+Calculator\b~i',
     $siteName,
     $copyright
 );

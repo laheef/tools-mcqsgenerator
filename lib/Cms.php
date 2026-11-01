@@ -77,6 +77,22 @@ final class Cms
         return self::setting('site_name', SITE_NAME) ?? SITE_NAME;
     }
 
+    /**
+     * The name as a brand, for places that print it next to the logo.
+     *
+     * A site name is allowed to carry a descriptor ("Onim Calculator"), and old
+     * databases carry one written under the previous brand. Next to a logo the
+     * descriptor is noise — the mark already says what the site is — so it is
+     * dropped there and only there: titles, <title> suffixes and structured data
+     * keep the full configured name.
+     */
+    public static function brandName(): string
+    {
+        $name = trim(self::siteName());
+        $bare = trim((string) preg_replace('~\s+Calculators?$~i', '', $name));
+        return $bare !== '' ? $bare : $name;
+    }
+
     public static function tagline(): string
     {
         return self::setting('site_tagline', SITE_TAGLINE) ?? SITE_TAGLINE;

@@ -12,20 +12,29 @@
 -- Content an editor wrote (pages, posts) is not rewritten: a bulk REPLACE over
 -- prose would corrupt words like "Omnicef" and "Omnibus".
 
+-- A previous partial rename left "Onim Calculator" in some databases, and a
+-- fresh install of the old release wrote "Omni Calculator". Both are the same
+-- mistake: the brand carrying the other site's descriptor.
 UPDATE `settings`
    SET `svalue` = 'Onim', `updated_at` = NOW()
  WHERE `skey` = 'site_name'
-   AND `svalue` LIKE '%Omni%';
+   AND (`svalue` LIKE '%Omni%' OR `svalue` LIKE 'Onim Calculator%');
 
 UPDATE `settings`
    SET `svalue` = '| Onim', `updated_at` = NOW()
  WHERE `skey` = 'seo_title_suffix'
-   AND `svalue` LIKE '%Omni%';
+   AND (`svalue` LIKE '%Omni%' OR `svalue` LIKE '%Onim Calculator%');
 
 UPDATE `settings`
    SET `svalue` = 'Onim', `updated_at` = NOW()
  WHERE `skey` = 'mail_from_name'
-   AND `svalue` LIKE '%Omni%';
+   AND (`svalue` LIKE '%Omni%' OR `svalue` LIKE 'Onim Calculator%');
+
+-- The copyright sentence, wherever an editor typed the old name into it.
+UPDATE `settings`
+   SET `svalue` = REPLACE(REPLACE(`svalue`, 'Omni Calculator', 'Onim'), 'Onim Calculator', 'Onim'), `updated_at` = NOW()
+ WHERE `skey` = 'footer_copyright'
+   AND (`svalue` LIKE '%Omni Calculator%' OR `svalue` LIKE '%Onim Calculator%');
 
 -- The same three keys, but as the installer seeds them when the rows are absent
 -- altogether (a database restored from an older dump may be missing one).
