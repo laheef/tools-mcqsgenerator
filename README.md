@@ -451,8 +451,9 @@ counts for the categories) drops below the article.
 
 ### The footer
 
-Rebuilt in `templates/partials/footer.php` and driven entirely from the menu
-tables: a brand block (logo, tagline, "N calculators in M categories"), a column
+Rebuilt in `templates/partials/footer.php` and driven from the menu tables, with
+the template itself narrowing the seeded shape (so a database that has not run
+the migration yet still renders a proper footer): a brand block (logo, tagline, "N calculators in M categories"), a column
 grid — **Calculators** (four real category indexes), **Company**, **Resources** —
 and one bottom bar with the copyright and four legal links. Migration
 `006_footer_cleanup.sql` removed the 57 seeded calculator-name links that padded

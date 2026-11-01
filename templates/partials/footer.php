@@ -27,25 +27,87 @@ use Onim\View;
 $siteName = $siteName ?? SITE_NAME;
 $columns = Cms::footerColumns();
 
-if ($columns === []) {
-    /* No database: four category columns built from the catalogue itself. */
-    $links = [];
-    foreach (array_slice($categories ?? [], 0, 4) as $cat) {
-        $links[] = [
-            'title' => (string) $cat['name'],
-            'links' => [['label' => 'All ' . mb_strtolower((string) $cat['name']) . ' calculators', 'url' => '/' . $cat['slug'], 'target' => '_self']],
-        ];
+/*
+ * Normalise whatever the database holds into the footer this site actually
+ * wants: one Calculators column, Company, Resources.
+ *
+ * Two states have to be handled, and neither of them is hypothetical:
+ *
+ *   * A database seeded by an older release has one column per category (14 of
+ *     them) filled with every calculator name that happened to be harvested —
+ *     "Acres per hour Calculator", 57 of those. That is padding, not
+ *     navigation: a footer is a map of the site, and 57 arbitrary calculator
+ *     names are not a map of anything.
+ *   * A database with no footer columns at all falls back to the matrix below.
+ *
+ * Rather than trust a migration to have run, the template does the narrowing
+ * itself: a padding link (a label ending in " Calculator") is dropped wherever it
+ * appears, and a spread of category columns is folded into one Calculators column
+ * with four real category indexes. Columns an editor deliberately made stay
+ * exactly as they are — the rule only fires when the footer looks like the
+ * seeded one.
+ */
+$isPadding = static fn (array $link): bool => (bool) preg_match('~\s+Calculator$~i', (string) ($link['label'] ?? ''));
+
+/* A column titled after a category is a copy of the catalogue index, not a
+   footer section: the Calculators column already links the categories, so a
+   second "Biology" column beside it adds nothing a reader wants twice. */
+$categoryTitles = [];
+foreach (($categories ?? []) as $cat) {
+    $categoryTitles[] = mb_strtolower(trim((string) ($cat['name'] ?? '')));
+}
+$isCategoryColumn = static fn (array $column): bool => in_array(mb_strtolower(trim((string) ($column['title'] ?? ''))), $categoryTitles, true);
+
+if ($columns !== []) {
+    $clean = [];
+    foreach ($columns as $column) {
+        if ($isCategoryColumn($column)) {
+            continue;
+        }
+        $links = array_values(array_filter((array) ($column['links'] ?? []), static fn ($l): bool => !$isPadding((array) $l)));
+        if ($links === []) {
+            continue;
+        }
+        $column['links'] = $links;
+        $clean[] = $column;
     }
-    $links[] = [
-        'title' => 'Site',
-        'links' => [
-            ['label' => 'All calculators', 'url' => '/calculators', 'target' => '_self'],
-            ['label' => 'Blog', 'url' => '/blog', 'target' => '_self'],
-            ['label' => 'About us', 'url' => '/about', 'target' => '_self'],
-            ['label' => 'Contact', 'url' => '/contact', 'target' => '_self'],
-        ],
-    ];
-    $columns = $links;
+    $columns = $clean;
+}
+
+/* The two columns that make a footer navigation rather than a list of links.
+   Added when absent, so a half-migrated database still renders the whole
+   footer instead of a lonely Calculators column. */
+$designed = static fn (): array => [
+    ['title' => 'Company', 'links' => [
+        ['label' => 'About us', 'url' => '/about', 'target' => '_self'],
+        ['label' => 'Contact', 'url' => '/contact', 'target' => '_self'],
+        ['label' => 'Discover Onim', 'url' => '/discover', 'target' => '_self'],
+    ]],
+    ['title' => 'Resources', 'links' => [
+        ['label' => 'All calculators', 'url' => '/calculators', 'target' => '_self'],
+        ['label' => 'Search', 'url' => '/search', 'target' => '_self'],
+        ['label' => 'Blog', 'url' => '/blog', 'target' => '_self'],
+    ]],
+];
+/* The Calculators column: four real category indexes, biggest first, plus the
+   catalogue. Built from the file catalogue, so it is right even when the
+   database has nothing to say. */
+$bySize = ($categories ?? []);
+usort($bySize, static fn (array $a, array $b): int => (int) ($b['count'] ?? 0) <=> (int) ($a['count'] ?? 0));
+$catLinks = [];
+foreach (array_slice($bySize, 0, 4) as $cat) {
+    $catLinks[] = ['label' => (string) $cat['name'], 'url' => '/' . $cat['slug'], 'target' => '_self'];
+}
+$catLinks[] = ['label' => 'All calculators', 'url' => '/calculators', 'target' => '_self'];
+
+$have = array_map(static fn (array $c): string => mb_strtolower(trim((string) $c['title'])), $columns);
+if (!in_array('calculators', $have, true)) {
+    $columns = array_merge([['title' => 'Calculators', 'links' => $catLinks]], $columns);
+}
+foreach ($designed() as $wanted) {
+    if (!in_array(mb_strtolower($wanted['title']), $have, true)) {
+        $columns[] = $wanted;
+    }
 }
 
 $about = (string) (Cms::setting('footer_about', '') ?? '');
