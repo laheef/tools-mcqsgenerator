@@ -1,0 +1,9 @@
+# The SQL import is needed once. It is tracked in Git, so deleting it on the
+# server does not survive the next deployment — deny it instead.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

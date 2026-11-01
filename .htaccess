@@ -12,6 +12,10 @@ AddDefaultCharset UTF-8
     RewriteBase /tool/
 
     # ---- blocked before anything else is served -------------------------
+    # Version-control metadata. A Hostinger Git deployment leaves a .git
+    # directory inside this folder; served as files it would expose the whole
+    # history (and config.db.php from any commit that ever contained it).
+    RewriteRule (^|/)\.git(/|$) - [F,L]
     # The panel keeps its own front controller.
     RewriteRule ^admin/(lib|views|controllers|migrations)/ - [F,L]
     # Data, caches, backups, tests and the build notes are not public.
@@ -40,7 +44,7 @@ AddDefaultCharset UTF-8
 </IfModule>
 
 # Never serve credentials, dumps or the internals through the web server.
-<FilesMatch "^(config\.db\.php|config\.local\.php|config\.db\.sample\.php|\.htaccess|\.gitignore|.*\.sql)$">
+<FilesMatch "^(config\.db\.php|config\.local\.php|config\.db\.sample\.php|\.htaccess|\.gitignore|\.gitattributes|.*\.sql)$">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>

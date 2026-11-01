@@ -52,13 +52,28 @@ only the admin panel needs MySQL.
 
 ## Deploy
 
-`HOSTINGER-GUIDE.md` is the step-by-step deployment for `mcqsgenerator.com/tool`:
-PHP 8.2 + extensions, MySQL in hPanel, upload/extract, `install/database.sql`
-import, `/tool/admin/install.php`, HTTPS, sitemap submission, and a 17-item
-post-deploy check with expected results.
+This repository **is** the site. Hostinger's Git integration pulls `main` into
+`public_html/tool` and redeploys automatically on every push, so publishing a change
+is `git push origin main`.
 
-The release zip (`mcqsgenerator-tool.zip`, 25 MB) is the same tree without
-`tools/`, `docs/`, `.git` and the development scripts, and is what you upload.
+`HOSTINGER-GUIDE.md` is the step-by-step guide: PHP 8.2 + extensions, MySQL in
+hPanel, connecting the repository (root directory `public_html/tool`, which must be
+empty), `install/database.sql` import, `/tool/admin/install.php`, HTTPS, sitemap
+submission, an 18-item post-deploy check, and the update/rollback workflow.
+
+Three things that differ from a plain zip deployment, and are already handled here:
+
+- `config.db.php` is git-ignored — the installer writes it on the server and Git
+  never overwrites it. Back it up once; Git cannot restore it.
+- `install/` and `admin/install.php` stay in the repository (a redeploy would restore
+  them anyway). They are blocked by `.htaccess` and the installer locks itself once
+  an administrator exists.
+- Hostinger leaves a `.git` directory inside the deployed folder; the `.htaccess`
+  here answers **403** for it, and for `tools/`, `docs/` and `tests/`.
+
+A release zip (`mcqsgenerator-tool.zip`, 25 MB) exists for hosts without Git — the
+same tree without `tools/`, `docs/`, `.git` and the development scripts. Do not
+extract it into a folder that Hostinger manages.
 
 ### Working on the site rather than just running it
 

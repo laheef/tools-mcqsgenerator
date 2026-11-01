@@ -1,43 +1,71 @@
-mcqsgenerator.com/tool — first-run checklist
+mcqsgenerator.com/tool — deployment in short
 ============================================
 
-The full step-by-step guide is the "hostinger-deploy.md" document that came
-with this package. The short version:
+The full guide is HOSTINGER-GUIDE.md (or docs/hostinger-deploy.md). This is the
+condensed version for the Git deployment route.
 
-1. hPanel -> Websites -> Advanced -> PHP Configuration
-   Choose PHP 8.2 or 8.3, enable pdo_mysql, mbstring, openssl, fileinfo, gd.
+This repository IS the site. Hostinger pulls it into public_html/tool and
+redeploys on every push to main.
+
+ONE-TIME SETUP
+--------------
+1. hPanel -> Advanced -> PHP Configuration
+   PHP 8.2, enable pdo_mysql, mbstring, openssl, fileinfo, gd.
+   memory_limit 256M, max_execution_time 120.
 
 2. hPanel -> Databases -> MySQL Databases
-   Create a database and a user; note the generated name, user and password.
-   Host is "localhost" on Hostinger.
+   Create the database and its user. Host is "localhost".
+   Note the generated name, user and password.
 
-3. Upload this folder so the files land in  public_html/tool/
-   (public_html/tool/index.php, public_html/tool/config.php, ...).
-   File Manager -> Upload the zip -> right-click -> Extract.
+3. hPanel -> Advanced -> Git -> Connect with GitHub
+   Repository : laheef/tools-mcqsgenerator
+   Branch     : main
+   Root dir   : public_html/tool        <- must be EMPTY or not exist yet
+   Click Deploy.
 
-4. phpMyAdmin -> select the new database -> Import -> install/database.sql
-   This creates the tables and loads the six pages, the posts, the settings and
-   the calculator overrides. It does NOT contain any user account.
+   Do NOT extract a zip into public_html/tool first; the deploy fails if the
+   folder already has files in it.
 
-5. Open  https://mcqsgenerator.com/tool/admin/install.php
-   Enter the database name/user/password, then your own administrator e-mail and
-   password. The installer writes config.db.php, applies any missing migrations
-   and creates your account.
+4. phpMyAdmin -> select the database -> Import -> tool/install/database.sql
+   It creates the tables and the content. It contains no user account.
 
-6. Delete  install/  and  admin/install.php  when you are signed in
-   (the .htaccess already blocks install/, deleting it is belt and braces).
+5. Open https://mcqsgenerator.com/tool/admin/install.php
+   Enter the database details from step 2, then your own admin e-mail/password.
+   It writes config.db.php and creates your account.
 
-Then check:  /tool/  /tool/math/percentage  /tool/sitemap.xml  /tool/robots.txt
-             /tool/admin/  (sign in)  and one calculator -> Calculate.
+6. Download public_html/tool/config.db.php and keep it safe. It is git-ignored,
+   so Git can never restore it for you.
 
-If something 500s, set  define('OMNI_DEBUG', true);  as a line in config.php
-temporarily, or read the error log in hPanel -> Advanced -> Error logs.
+7. Force HTTPS in hPanel, pick www or non-www.
 
-Notes
+UPDATES FROM NOW ON
+-------------------
+   git clone https://github.com/laheef/tools-mcqsgenerator.git
+   cd tools-mcqsgenerator
+   # edit
+   git add -A && git commit -m "..." && git push origin main
+
+   Hostinger redeploys automatically (hPanel -> Git -> All deployments shows the
+   commit). If the change needs a schema update, the admin dashboard shows an
+   "Upgrade" button - click it once.
+
+RULES
 -----
-* The site needs no build step, no Node, no composer. Plain PHP 8.1+.
-* Everything is served from /tool: links, CSS, JS, images, admin, sitemap,
-  robots.txt. If you ever move it to another folder, change the two "/tool"
-  paths in .htaccess (RewriteBase, ErrorDocument) and delete config.local.php
-  if you created one.
-* config.db.php is created on the server and must never be uploaded or shared.
+* Never edit tracked files on the server; the next deploy overwrites them.
+  Site content goes through the admin panel, code goes through a commit.
+* Do not delete install/ or admin/install.php: Git restores them. They are
+  already blocked (403) and the installer locks itself after setup.
+* Never commit config.db.php, data/backups/*.sql or uploads/media/*.
+* Bump ASSET_VERSION in config.php whenever you change CSS or JS.
+
+CHECKS AFTER THE FIRST DEPLOY
+-----------------------------
+  /tool/                    4 041 calculators, styled
+  /tool/math/percentage     25 + 200 -> Calculate -> 50
+  /tool/biology/dog-age     calculates
+  /tool/sitemap.xml         4 065 URLs, all under /tool/
+  /tool/robots.txt          Allow: /tool/ , Disallow: /tool/admin/
+  /tool/admin/              sign-in form
+  /tool/config.db.php       403 or 404, never the contents
+  /tool/.git/config         403  <- proves the history is not downloadable
+  /tool/install/            403

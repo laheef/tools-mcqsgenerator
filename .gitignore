@@ -5,8 +5,13 @@
 /config.local.php
 
 # ---- runtime / generated ------------------------------------------------
-/data/cache/
-/data/backups/
+# The folders still have to EXIST after a fresh clone (Hostinger Git deploys
+# into an empty directory), so their .gitkeep is tracked and only the contents
+# are ignored. Everything in them is recreated on demand.
+/data/cache/*
+!/data/cache/.gitkeep
+/data/backups/*
+!/data/backups/.gitkeep
 /data/engagement/*.json.tmp
 /uploads/media/*
 !/uploads/media/.gitkeep
