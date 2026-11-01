@@ -112,6 +112,23 @@ foreach ($designed() as $wanted) {
 
 $about = (string) (Cms::setting('footer_about', '') ?? '');
 $copyright = (string) (Cms::setting('footer_copyright', '') ?? '');
+/*
+ * The stored copyright is a sentence somebody typed once, and it outlives the
+ * name it was typed under — the live site was still printing "Onim Calculator"
+ * after the rename, from a row no migration looks at. The brand inside that
+ * sentence is not an editorial choice, so it is corrected at render time: the
+ * year and the words stay, a stale variant of the name does not.
+ */
+$copyright = (string) preg_replace(
+    '~\b(?:Onim|Omni)\s+Calculator\b~i',
+    $siteName,
+    $copyright
+);
+/* A stored line with no year is a fragment, not a copyright: give it the year
+   rather than printing "Onim. All rights reserved." with nothing in front. */
+if ($copyright !== '' && !preg_match('~\d{4}~', $copyright)) {
+    $copyright = '© ' . date('Y') . ' ' . $copyright;
+}
 $showNotice = Cms::enabled() ? Cms::settingBool('footer_show_notice', false) : SHOW_CLONE_NOTICE;
 $newsletter = Cms::settingBool('newsletter_enabled', false);
 $newsletterNote = (string) (Cms::setting('newsletter_note', '') ?? '');
