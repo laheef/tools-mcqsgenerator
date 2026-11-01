@@ -1,0 +1,97 @@
+{
+  "path": "/health/bmi-weight-loss",
+  "slug": "bmi-weight-loss",
+  "cat": "health",
+  "name": "BMI weight loss",
+  "seoTitle": "BMI weight loss Calculator — Formula, Units & Example",
+  "seoDesc": "BMI weight loss: work out BMI from the target BMI and the target weight. A free health calculator with the formula, units and a worked example.",
+  "h1": "BMI weight loss Calculator",
+  "summary": "Supply the target <strong>BMI</strong>, the target weight, the weight to lose and the age and the BMI weight loss calculator solves for BMI. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nNothing repaints underneath you: edit a field, press Calculate, and the new answer appears. That is how you find out which input the result is sensitive to.",
+  "sections": [
+    {
+      "title": "How does the BMI weight loss calculator work?",
+      "html": "<p>The BMI weight loss calculator takes the values in the form, applies the relationship described below and reports <strong>BMI</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the sex); then you type in the target BMI, the target weight, the weight to lose and the age.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>Pick the option that matches your case — 2 options, such as yes and no. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>meters / centimeters</td><td>Calculated</td></tr><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>BMI</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>BMI Prime</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Target BMI</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Target BMI prime</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Target weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Weight to lose</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Weight to gain</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Sex</strong></td><td>One of 2 options, such as female and male.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Age</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Current percentile</strong></td><td>A number stated in th percentile.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Target percentile</strong></td><td>A number stated in th percentile.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the BMI weight loss calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">BMI</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weight ÷ (height ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">BMI</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">25 × BMI Prime</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Current percentile</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(BMI, age, sex)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (target weight ÷ target BMI)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">target weight + weight to lose</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Target percentile</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(target BMI, age, sex)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in meters / centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in meters / centimeters</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Time, opening in years</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The BMI weight loss calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 4 figures keep coming back — the target BMI, the target weight and the weight to lose — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/albumin-globulin-ratio\">Albumin globulin ratio</a>, <a href=\"/health/alcohol-units\">Alcohol units</a> and <a href=\"/health/aldrete-score\">Aldrete score</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the BMI weight loss calculator work out?",
+      "a": "It returns BMI, derived from the target BMI, the target weight and the weight to lose. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the BMI weight loss calculator?",
+      "a": "The form asks for the target BMI, the target weight, the weight to lose and the age, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter height in a different unit?",
+      "a": "Yes. Height opens in meters / centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports BMI = 111. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the BMI weight loss calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/albumin-globulin-ratio",
+      "name": "Albumin globulin ratio"
+    },
+    {
+      "path": "/health/alcohol-units",
+      "name": "Alcohol units"
+    },
+    {
+      "path": "/health/aldrete-score",
+      "name": "Aldrete score"
+    }
+  ],
+  "words": 1525
+}

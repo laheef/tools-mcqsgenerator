@@ -1,0 +1,93 @@
+{
+  "path": "/conversion/hours-to-week",
+  "slug": "hours-to-week",
+  "cat": "conversion",
+  "name": "Hours to week conversion",
+  "seoTitle": "Hours to week conversion Calculator — Formula, Units & Example",
+  "seoDesc": "Hours to week conversion: work out time in hours, minutes and seconds from the time in minutes. A free conversion calculator with the formula, units and a…",
+  "h1": "Hours to week conversion Calculator",
+  "summary": "The Hours to week conversion calculator is a free, no-sign-up conversion tool. Fill in the 1 field it asks for and it works out <strong>time in hours, minutes and seconds</strong> straight away, with the formula shown underneath.\n\nIt is built for a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use. Press Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Hours to week conversion calculator work?",
+      "html": "<p>The Hours to week conversion calculator takes the values in the form, applies the relationship described below and reports <strong>time in hours, minutes and seconds</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the time in minutes.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Time in hours</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>Time in weeks</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Time in years</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Time in months</strong></td><td>A measured quantity, 27 units available.</td><td>months</td><td>Calculated</td></tr><tr><td><strong>Time in days</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Time in minutes</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Time in seconds</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Time in hours, minutes and seconds</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes / seconds</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Hours to week conversion calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Time in hours, minutes and seconds</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">time in minutes</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time in hours</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">time in hours, minutes and seconds</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time in hours, minutes and seconds</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">time in days</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time in weeks</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">time in hours, minutes and seconds</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time in months</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">time in hours, minutes and seconds</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time in years</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">time in hours, minutes and seconds</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in hours / minutes / seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in weeks, and convertible to any of the 27 units on that chip.</li><li>Shown in months, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Time, opening in hours</li><li>Time, opening in weeks</li><li>Time, opening in years</li><li>Time, opening in months</li><li>Time, opening in days</li><li>Time, opening in minutes</li><li>Time, opening in seconds</li><li>Time, opening in hours / minutes / seconds</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Hours to week conversion calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting a figure someone quoted you so you can compare it</li><li>Filling in a form that asks for imperial or metric values</li><li>Checking a product listing against the measurements you work with</li><li>Any time the same 1 figures keep coming back — the time in minutes — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/liter-cc\">Liter to cc</a>, <a href=\"/conversion/liters-to-cl\">Liters to centiliters</a> and <a href=\"/conversion/liters-to-pounds\">Liters to pounds conversion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Hours to week conversion calculator work out?",
+      "a": "It returns time in hours, minutes and seconds, derived from the time in minutes. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Hours to week conversion calculator?",
+      "a": "The form asks for the time in minutes, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter time in hours in a different unit?",
+      "a": "Yes. Time in hours opens in hours and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Hours to week conversion calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/liter-cc",
+      "name": "Liter to cc"
+    },
+    {
+      "path": "/conversion/liters-to-cl",
+      "name": "Liters to centiliters"
+    },
+    {
+      "path": "/conversion/liters-to-pounds",
+      "name": "Liters to pounds conversion"
+    }
+  ],
+  "words": 1266
+}

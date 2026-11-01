@@ -1,0 +1,89 @@
+{
+  "path": "/health/gi",
+  "slug": "gi",
+  "cat": "health",
+  "name": "Glycemic index",
+  "seoTitle": "Glycemic index Calculator: Free, With Steps",
+  "seoDesc": "Glycemic index: answer 6 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Glycemic index Calculator",
+  "summary": "The Glycemic index calculator is a free, no-sign-up health tool. Fill in the 6 fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nIt suits an informed starting point to take to a clinician, not a diagnosis. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Glycemic index calculator work?",
+      "html": "<p>The Glycemic index calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the sweet treats and snacks, the dairy and alternatives and the fruits (and preserves)).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 28 options, such as banana cake with sugar, blueberry muffin and cereal bar. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 15 options, such as chocolate pudding, fat-Free natural yogurt and fermented cow's milk. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 23 options, such as apple, raw, apricots, dried and apricots, raw. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 24 options, such as bagel, white, barley and bran flakes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 26 options, such as baked beans, beetroot and blackeyed peas. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 9 options, such as apple juice, beer, Toohey's New and coconut water. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Sweet treats and snacks</strong></td><td>One of 28 options, such as banana cake with sugar, blueberry muffin and cereal bar.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Dairy and alternatives</strong></td><td>One of 15 options, such as chocolate pudding, fat-Free natural yogurt and fermented cow's milk.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Fruits (and preserves)</strong></td><td>One of 23 options, such as apple, raw, apricots, dried and apricots, raw.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cereal products</strong></td><td>One of 24 options, such as bagel, white, barley and bran flakes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Vegetables (and preserves)</strong></td><td>One of 26 options, such as baked beans, beetroot and blackeyed peas.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Beverages</strong></td><td>One of 9 options, such as apple juice, beer, Toohey's New and coconut water.</td><td>choice</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Glycemic index calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>If a field is empty the result waits rather than guessing: no zero is quietly substituted in the background.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Glycemic index calculator, these are the ones that matter:</p>\n<ul><li>The 6 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — sweet treats and snacks for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/diffuse-large-b-cell-lymphoma-prognosis\">Diffuse large B-cell lymphoma prognosis</a>, <a href=\"/health/discriminant-function\">Discriminant function</a> and <a href=\"/health/dog-walking-benefits\">Dog walking benefits</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Glycemic index calculator?",
+      "a": "The form asks for a few values, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Glycemic index calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/diffuse-large-b-cell-lymphoma-prognosis",
+      "name": "Diffuse large B-cell lymphoma prognosis"
+    },
+    {
+      "path": "/health/discriminant-function",
+      "name": "Discriminant function"
+    },
+    {
+      "path": "/health/dog-walking-benefits",
+      "name": "Dog walking benefits"
+    }
+  ],
+  "words": 1164
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/finance/unlevered-free-cash-flow",
+  "slug": "unlevered-free-cash-flow",
+  "cat": "finance",
+  "name": "Unlevered free cash flow",
+  "seoTitle": "Unlevered free cash flow Calculator",
+  "seoDesc": "Unlevered free cash flow: work out unlevered free cash flow (UFCF) from the EBIT and the effective tax rate. A free finance calculator with the formula,…",
+  "h1": "Unlevered free cash flow Calculator",
+  "summary": "The Unlevered free cash flow calculator works out <strong>unlevered free cash flow (UFCF)</strong> from the EBIT, the effective tax rate, the depreciation and amortization and the capital expenditures. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Unlevered free cash flow calculator work?",
+      "html": "<p>The Unlevered free cash flow calculator takes the values in the form, applies the relationship described below and reports <strong>unlevered free cash flow (UFCF)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the EBIT, the effective tax rate (ETR), the depreciation and amortization (DA) and the capital expenditures (CaPex).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>EBIT</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Effective tax rate (ETR)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Depreciation and amortization (DA)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Capital expenditures (CaPex)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Change in working capital (ΔWC)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Unlevered free cash flow (UFCF)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Unlevered free cash flow calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Unlevered free cash flow (UFCF)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-capital expenditures (CaPex) + depreciation and amortization (DA) − EBIT × effective tax rate (ETR) + EBIT + change in working capital (ΔWC)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Unlevered free cash flow calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 4 figures keep coming back — the EBIT, the effective tax rate and the depreciation and amortization — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Unlevered free cash flow calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/phillips-curve\">Phillips curve</a>, <a href=\"/finance/piti\">PITI</a> and <a href=\"/finance/pivot-point\">Pivot point</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Unlevered free cash flow calculator work out?",
+      "a": "It returns unlevered free cash flow (UFCF), derived from the EBIT, the effective tax rate and the depreciation and amortization. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Unlevered free cash flow calculator?",
+      "a": "The form asks for the EBIT, the effective tax rate, the depreciation and amortization and the capital expenditures, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter EBIT in a different unit?",
+      "a": "Yes. EBIT opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Unlevered free cash flow calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/phillips-curve",
+      "name": "Phillips curve"
+    },
+    {
+      "path": "/finance/piti",
+      "name": "PITI"
+    },
+    {
+      "path": "/finance/pivot-point",
+      "name": "Pivot point"
+    }
+  ],
+  "words": 1300
+}

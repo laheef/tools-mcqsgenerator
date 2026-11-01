@@ -1,0 +1,93 @@
+{
+  "path": "/food/salad-calories",
+  "slug": "salad-calories",
+  "cat": "food",
+  "name": "Salad calories",
+  "seoTitle": "Salad calories Calculator: Free, With Steps",
+  "seoDesc": "Salad calories: work out quantity of kale and quantity of romaine lettuce from 82 values. A free food calculator with the formula and a worked example.",
+  "h1": "Salad calories Calculator",
+  "summary": "The Salad <strong>calories</strong> calculator returns calories from the 81 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nThink of it as a shortcut for portioning, timing or nutrition. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Salad calories calculator work?",
+      "html": "<p>The Salad calories calculator takes the values in the form, applies the relationship described below and reports <strong>calories</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the vegetables, the nuts and seeds and the cheese and eggs); then you type in the quantity of dressing.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A single on/off switch — tick it for &ldquo;Kale&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Romaine&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Spinach&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Spring mix&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Iceberg&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Include vegatables&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Include nuts or seeds&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Include cheese or eggs&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Include fruit&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Include other choppings&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Artichoke hearts&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Avocados&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Bell peppers&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Black beans&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Black olives&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Broccoli&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Beets&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Brussels sprouts (roasted)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Butternut squash (roasted)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Carrots&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Cauliflower&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Celery&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Chickpeas&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Corn (roasted)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>The form has 81 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>80 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Quantity of kale</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of romaine lettuce</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of spinach</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of spring mix lettuce</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of iceberg lettuce</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Vegetables</strong></td><td>An on/off switch, ticked for artichoke hearts.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quantity of artichokes</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of avocados</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of bell peppers</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of black beans</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of black olives</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of broccoli</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of beets</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of roasted brussels sprouts</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of roasted butternut squash</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of carrots</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of cauliflower</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of celery</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of chickpeas</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of roasted corn</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of cucumber</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of hearts of palm</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of roasted jalapeños</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quantity of jicama</strong></td><td>A number stated in serving(s).</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 82 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Salad calories calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Calories</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(dressing calories × quantity of dressing + (quantity of kale, quantity of romaine lettuce, quantity of spinach, quantity of spring mix lettuce, quantity of iceberg lettuce, quantity of anchovies, quantity of broccoli, quantity of carrots, quantity of grapes, quantity of hard-boiled eggs, quantity of kidney beans, quantity of mangos, quantity of blue cheese, quantity of almonds, quantity of artichokes, quantity of apples, quantity of avocados, quantity of chickpeas, quantity of bacon, quantity of beets, quantity of bell peppers, quantity of black beans, quantity of black olives, quantity of roasted butternut squash, quantity of roasted brussels sprouts, quantity of cauliflower, quantity of celery, quantity of Chinese noodles, quantity of roasted corn, quantity of croutons, quantity of cucumber, quantity of dried cranberries, quantity of hearts of palm, quantity of roasted jalapeños, quantity of jicama, quantity of kalamata olives, quantity of mandarin oranges, quantity of mushrooms, quantity of peas, quantity of pepperoncini, quantity of radishes, quantity of red onions, quantity of roasted red peppers, quantity of snap peas, quantity of sprouts, quantity of sun dried tomatoes, quantity of strawberries, quantity of tomatoes, quantity of tortilla strips, quantity of couscous, quantity of quinoa, quantity of cheddar cheese, quantity of cotija cheese, quantity of feta cheese, quantity of goat cheese, quantity of pepper jack cheese, quantity of provolone cheese, quantity of shaved parmesan, quantity of caramelized walnuts, quantity of pine nuts, quantity of sunflower seeds, quantity of shrimp, quantity of sonoran blackened chicken, quantity of chicken salad, quantity of grilled chicken, quantity of turkey, quantity of ham, quantity of salami, quantity of salmon, quantity of tofu, quantity of tuna, quantity of tuna salad))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Energy, opening in kilocalories</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Salad calories calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Scaling a recipe up or down</li><li>Checking portions before you shop</li><li>Working out timing so everything finishes together</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/sulfur\">Sulfur</a>, <a href=\"/food/taco-bar\">Taco bar</a> and <a href=\"/food/thanksgiving\">Thanksgiving</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Salad calories calculator work out?",
+      "a": "It returns calories. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Salad calories calculator?",
+      "a": "The form asks for a few values, which is 81 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter calories in a different unit?",
+      "a": "Yes. Calories opens in kilocalories and the chip beside it offers 33 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (80 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Quantity of kale = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Salad calories calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/sulfur",
+      "name": "Sulfur"
+    },
+    {
+      "path": "/food/taco-bar",
+      "name": "Taco bar"
+    },
+    {
+      "path": "/food/thanksgiving",
+      "name": "Thanksgiving"
+    }
+  ],
+  "words": 2250
+}

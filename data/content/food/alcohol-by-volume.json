@@ -1,0 +1,93 @@
+{
+  "path": "/food/alcohol-by-volume",
+  "slug": "alcohol-by-volume",
+  "cat": "food",
+  "name": "ABV",
+  "seoTitle": "ABV Calculator — Formula, Units & Example",
+  "seoDesc": "ABV: work out alcohol by weight (ABW) from the original extract and the real extract. A free food calculator with the formula, units and a worked example.",
+  "h1": "ABV Calculator",
+  "summary": "The ABV calculator turns the original extract, the real extract and the alcohol content into <strong>alcohol by weight (ABW)</strong>. Think of it as a shortcut for portioning, timing or nutrition.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the ABV calculator work?",
+      "html": "<p>The ABV calculator takes the values in the form, applies the relationship described below and reports <strong>alcohol by weight (ABW)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the original extract (OE), the real extract (RE) and the alcohol content.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in degrees Plato. The unit chip switches it to any of the 2 supported units.</li><li>A measured quantity, entered by default in degrees Plato. The unit chip switches it to any of the 2 supported units.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Original extract (OE)</strong></td><td>A measured quantity, 2 units available.</td><td>degrees Plato</td><td>You supply it</td></tr><tr><td><strong>Apparent extract (AE)</strong></td><td>A measured quantity, 2 units available.</td><td>degrees Plato</td><td>Calculated</td></tr><tr><td><strong>Real extract (RE)</strong></td><td>A measured quantity, 2 units available.</td><td>degrees Plato</td><td>You supply it</td></tr><tr><td><strong>Apparent degree of fermentation (ADF)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Real degree of fermentation (RDF)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Alcohol by volume (ABV)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Alcohol by weight (ABW)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Proof (UK)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Proof (US)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total volume</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Alcohol content</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the ABV calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Alcohol by weight (ABW)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-357 ÷ 100000 × apparent extract (AE) × original extract (OE) − 93 ÷ 250 × apparent extract (AE) + (357 ÷ 100000) × (original extract (OE) ^ 2) + (93 ÷ 250) × original extract (OE)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Alcohol by weight (ABW)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 275346) × (-81371764323 × apparent extract (AE) − 4 × (613 × (apparent extract (AE) ^ 2) − 2118675, 2) + (-1226 × (apparent extract (AE) ^ 2) − (634063308939837 × (apparent extract (AE) ^ 3) − 16734756547767609 × (apparent extract (AE) ^ 2) + 56948798160556069032 × apparent extract (AE) − 56861564787000000000 × real extract (RE) + 413019 × (591051 × apparent extract (AE) − 496815689) × (613 × (apparent extract (AE) ^ 2) − 2118675) + 8 × (613 × (apparent extract (AE) ^ 2) − 2118675, 3) + the square root of (-(81371764323 × apparent extract (AE) + 4 × (613 × (apparent extract (AE) ^ 2) − 2118675, 2) − 68398106351697, 3) + (634063308939837 × (apparent extract (AE) ^ 3) − 16734756547767609 × (apparent extract (AE) ^ 2) + 56948798160556069032 × apparent extract (AE) − 56861564787000000000 × real extract (RE) − 413019 × (-591051 × apparent extract (AE) + 496815689) × (613 × (apparent extract (AE) ^ 2) − 2118675) + 8 × (613 × (apparent extract (AE) ^ 2) − 2118675, 3), 2)), 1 ÷ 3) + 4237350) × (634063308939837 × (apparent extract (AE) ^ 3) − 16734756547767609 × (apparent extract (AE) ^ 2) + 56948798160556069032 × apparent extract (AE) − 56861564787000000000 × real extract (RE) + 413019 × (591051 × apparent extract (AE) − 496815689) × (613 × (apparent extract (AE) ^ 2) − 2118675) + 8 × (613 × (apparent extract (AE) ^ 2) − 2118675, 3) + the square root of (-(81371764323 × apparent extract (AE) + 4 × (613 × (apparent extract (AE) ^ 2) − 2118675, 2) − 68398106351697, 3) + (634063308939837 × (apparent extract (AE) ^ 3) − 16734756547767609 × (apparent extract (AE) ^ 2) + 56948798160556069032 × apparent extract (AE) − 56861564787000000000 × real extract (RE) − 413019 × (-591051 × apparent extract (AE) + 496815689) × (613 × (apparent extract (AE) ^ 2) − 2118675) + 8 × (613 × (apparent extract (AE) ^ 2) − 2118675, 3), 2)), 1 ÷ 3) + 68398106351697) ÷ (634063308939837 × (apparent extract (AE) ^ 3) − 16734756547767609 × (apparent extract (AE) ^ 2) + 56948798160556069032 × apparent extract (AE) − 56861564787000000000 × real extract (RE) + 413019 × (591051 × apparent extract (AE) − 496815689) × (613 × (apparent extract (AE) ^ 2) − 2118675) + 8 × (613 × (apparent extract (AE) ^ 2) − 2118675, 3) + the square root of (-(81371764323 × apparent extract (AE) + 4 × (613 × (apparent extract (AE) ^ 2) − 2118675, 2) − 68398106351697, 3) + (634063308939837 × (apparent extract (AE) ^ 3) − 16734756547767609 × (apparent extract (AE) ^ 2) + 56948798160556069032 × apparent extract (AE) − 56861564787000000000 × real extract (RE) − 413019 × (-591051 × apparent extract (AE) + 496815689) × (613 × (apparent extract (AE) ^ 2) − 2118675) + 8 × (613 × (apparent extract (AE) ^ 2) − 2118675, 3), 2)), 1 ÷ 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Alcohol by weight (ABW)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">790700000 × alcohol by volume (ABV) ÷ (63 × (apparent extract (AE) ^ 3) + 12750 × (apparent extract (AE) ^ 2) + 3868000 × apparent extract (AE) + 1000013080)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Apparent degree of fermentation (ADF)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-100 × apparent extract (AE) ÷ original extract (OE) + 100</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Real degree of fermentation (RDF)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">100000000 × (-original extract (OE) + real extract (RE)) ÷ (original extract (OE) × (5161 × real extract (RE) − 1000000))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Proof (US)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × alcohol by volume (ABV)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in degrees Plato, and convertible to any of the 2 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in liters, and convertible to any of the 40 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Gravity of alcohol, opening in degrees Plato</li><li>Gravity of alcohol, opening in degrees Plato</li><li>Gravity of alcohol, opening in degrees Plato</li><li>Volume, opening in liters</li><li>Volume, opening in milliliters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The ABV calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking portions before you shop</li><li>Working out timing so everything finishes together</li><li>Scaling a recipe up or down</li><li>Any time the same 3 figures keep coming back — the original extract, the real extract and the alcohol content — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/bbq-grill-size\">BBQ grill size</a>, <a href=\"/food/bbq-party\">BBQ party</a> and <a href=\"/food/beer-pong\">Beer pong</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the ABV calculator work out?",
+      "a": "It returns alcohol by weight (ABW), derived from the original extract, the real extract and the alcohol content. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the ABV calculator?",
+      "a": "The form asks for the original extract, the real extract and the alcohol content, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter original extract (OE) in a different unit?",
+      "a": "Yes. Original extract (OE) opens in degrees Plato and the chip beside it offers 2 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the ABV calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/bbq-grill-size",
+      "name": "BBQ grill size"
+    },
+    {
+      "path": "/food/bbq-party",
+      "name": "BBQ party"
+    },
+    {
+      "path": "/food/beer-pong",
+      "name": "Beer pong"
+    }
+  ],
+  "words": 1825
+}

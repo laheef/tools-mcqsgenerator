@@ -1,0 +1,93 @@
+{
+  "path": "/other/chmod",
+  "slug": "chmod",
+  "cat": "other",
+  "name": "Chmod",
+  "seoTitle": "Chmod Calculator",
+  "seoDesc": "Chmod: work out chmod len from the chmod. A free other calculator with the formula, units and a worked example.",
+  "h1": "Chmod Calculator",
+  "summary": "The Chmod calculator takes the numbers you enter and reports <strong>chmod len</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt suits whatever you happen to be working on. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Chmod calculator work?",
+      "html": "<p>The Chmod calculator takes the values in the form, applies the relationship described below and reports <strong>chmod len</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the user / owner (Who can read), the group (Who can read) and the other (Who can read)); then you type in the chmod.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as find chmod command and decode octal number next to chmod. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in means:.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>13 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Chmod</strong></td><td>A number stated in means:.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>User / owner (Who can read)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Group (Who can read)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Other (Who can read)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>User / owner (Who can write)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Group (Who can write)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Other (Who can write)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>User / owner (Who can execute)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Group (Who can execute)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Other (Who can execute)</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Setuid</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Setgid</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Sticky bit</strong></td><td>A fixed choice.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Chmod len</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Chmod calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Chmod len</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((chmod))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>I want to</strong> set to find chmod command, <strong>chmod</strong> = 10, <strong>User / owner</strong> set to  and <strong>Group</strong> set to . The calculator returns <strong>Chmod len</strong> = 2.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Chmod len</strong> = 2 should be roughly the size you expected from <strong>I want to</strong> set to find chmod command and <strong>chmod</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Chmod calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 1 figures keep coming back — the chmod — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/matched-betting\">Matched betting</a>, <a href=\"/other/mayan-calendar\">Mayan calendar</a> and <a href=\"/other/middle-school-gpa\">Middle school GPA</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Chmod calculator work out?",
+      "a": "It returns chmod len, derived from the chmod. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Chmod calculator?",
+      "a": "The form asks for the chmod, which is 14 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (13 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Chmod len = 2. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Chmod calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/matched-betting",
+      "name": "Matched betting"
+    },
+    {
+      "path": "/other/mayan-calendar",
+      "name": "Mayan calendar"
+    },
+    {
+      "path": "/other/middle-school-gpa",
+      "name": "Middle school GPA"
+    }
+  ],
+  "words": 1419
+}

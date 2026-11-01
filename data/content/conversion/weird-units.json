@@ -1,0 +1,93 @@
+{
+  "path": "/conversion/weird-units",
+  "slug": "weird-units",
+  "cat": "conversion",
+  "name": "Weird units",
+  "seoTitle": "Weird units Calculator",
+  "seoDesc": "Weird units: work out weird units from the regular units and the weird units. A free conversion calculator with the formula, units and a worked example.",
+  "h1": "Weird units Calculator",
+  "summary": "Supply the regular units and the <strong>weird units</strong> and the Weird units calculator solves for weird units. That makes it useful for a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Weird units calculator work?",
+      "html": "<p>The Weird units calculator takes the values in the form, applies the relationship described below and reports <strong>weird units</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the unit type); then you type in the regular units, the weird units (2), the weird units (3) and the weird units (4).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 13 options, such as distance / length, height and thickness. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in LEGO bricks. The unit chip switches it to any of the 18 supported units.</li><li>A measured quantity, entered by default in human hairs. The unit chip switches it to any of the 15 supported units.</li><li>A measured quantity, entered by default in bees 🐝. The unit chip switches it to any of the 15 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in king size beds 🛏️. The unit chip switches it to any of the 15 supported units.</li><li>A measured quantity, entered by default in kilometers per hour. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in phone chargers 🔌. The unit chip switches it to any of the 15 supported units.</li><li>A measured quantity, entered by default in earth to moon. The unit chip switches it to any of the 10 supported units.</li><li>A number, expressed in dB.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A number, expressed in US$.</li><li>A measured quantity, entered by default in cartwheels 🤸. The unit chip switches it to any of the 18 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Unit type</strong></td><td>One of 13 options, such as distance / length, height and thickness.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Regular units</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Weird units</strong></td><td>A measured quantity, 18 units available.</td><td>footsteps 👣</td><td>Calculated</td></tr><tr><td><strong>Regular units (2)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Weird units (2)</strong></td><td>A measured quantity, 18 units available.</td><td>LEGO bricks</td><td>You supply it</td></tr><tr><td><strong>Regular units (3)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Weird units (3)</strong></td><td>A measured quantity, 15 units available.</td><td>human hairs</td><td>You supply it</td></tr><tr><td><strong>Regular units (4)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Weird units (4)</strong></td><td>A measured quantity, 15 units available.</td><td>bees 🐝</td><td>You supply it</td></tr><tr><td><strong>Regular units (5)</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Weird units (5)</strong></td><td>A measured quantity, 15 units available.</td><td>heartbeats ❤️</td><td>Calculated</td></tr><tr><td><strong>Regular units (6)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Weird units (6)</strong></td><td>A measured quantity, 15 units available.</td><td>king size beds 🛏️</td><td>You supply it</td></tr><tr><td><strong>Regular units (7)</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>You supply it</td></tr><tr><td><strong>Weird units (7)</strong></td><td>A measured quantity, 15 units available.</td><td>× Michael Phelps 🏊‍♂️</td><td>Calculated</td></tr><tr><td><strong>Regular units (8)</strong></td><td>A measured quantity, 21 units available.</td><td>watts</td><td>Calculated</td></tr><tr><td><strong>Weird units (8)</strong></td><td>A measured quantity, 15 units available.</td><td>phone chargers 🔌</td><td>You supply it</td></tr><tr><td><strong>Normal energy unit</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>Calculated</td></tr><tr><td><strong>Weird energy unit</strong></td><td>A measured quantity, 10 units available.</td><td>earth to moon</td><td>You supply it</td></tr><tr><td><strong>Sound volume</strong></td><td>A number stated in dB.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Regular units (9)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>Weird units (9)</strong></td><td>A measured quantity, 19 units available.</td><td>large egg</td><td>Calculated</td></tr><tr><td><strong>Temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Weird units (10)</strong></td><td>A measured quantity, 15 units available.</td><td>cans of coke (16 oz.)</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 29 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Weird units calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Weird units</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">regular units</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Your height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(17 ÷ 10) × regular units ÷ customized for you...</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Regular units</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weird units</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Normal energy unit</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weird energy unit</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">That&#x27;s...</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(10, (1 ÷ 10) × sound volume)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">That&#x27;s...</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">temperature</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in footsteps 👣, and convertible to any of the 18 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in heartbeats ❤️, and convertible to any of the 15 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in × Michael Phelps 🏊‍♂️, and convertible to any of the 15 units on that chip.</li><li>Shown in joules, and convertible to any of the 33 units on that chip.</li><li>Shown in watts, and convertible to any of the 21 units on that chip.</li><li>Shown in large egg, and convertible to any of the 19 units on that chip.</li><li>Shown in dropping a pin, and convertible to any of the 22 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in meters</li><li>Weird length units, opening in footsteps 👣</li><li>Length, opening in meters</li><li>Weird height units, opening in LEGO bricks</li><li>Length, opening in millimeters</li><li>Weird thickness units, opening in human hairs</li><li>Mass, opening in kilograms</li><li>Weird weight units, opening in bees 🐝</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Weird units calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Reading a recipe written in units you do not use</li><li>Checking a product listing against the measurements you work with</li><li>Filling in a form that asks for imperial or metric values</li><li>Any time the same 2 figures keep coming back — the regular units and the weird units — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/cm-to-km-conversion\">cm to km conversion</a>, <a href=\"/conversion/cm-to-m\">cm to m</a> and <a href=\"/conversion/cm-to-mm-conversion\">cm to mm conversion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Weird units calculator work out?",
+      "a": "It returns weird units, derived from the regular units and the weird units. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Weird units calculator?",
+      "a": "The form asks for the regular units and the weird units, which is 15 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter regular units in a different unit?",
+      "a": "Yes. Regular units opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Weird units calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/cm-to-km-conversion",
+      "name": "cm to km conversion"
+    },
+    {
+      "path": "/conversion/cm-to-m",
+      "name": "cm to m"
+    },
+    {
+      "path": "/conversion/cm-to-mm-conversion",
+      "name": "cm to mm conversion"
+    }
+  ],
+  "words": 1920
+}

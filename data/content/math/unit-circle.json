@@ -1,0 +1,93 @@
+{
+  "path": "/math/unit-circle",
+  "slug": "unit-circle",
+  "cat": "math",
+  "name": "Unit circle",
+  "seoTitle": "Unit circle Calculator — Formula, Units & Example",
+  "seoDesc": "Unit circle: work out your result from the angle. A free math calculator with the formula, units and a worked example.",
+  "h1": "Unit circle Calculator",
+  "summary": "The Unit circle calculator is a free, no-sign-up math tool. Fill in the 1 field it asks for and it works out the answer straight away, with the formula shown underneath.\n\nIt suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Unit circle calculator work?",
+      "html": "<p>The Unit circle calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you type in the angle.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li></ul>"
+    },
+    {
+      "title": "The formula behind the Unit circle calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Unit circle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a homework answer before you hand it in</li><li>Settling an argument about a number with a quick, traceable result</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Any time the same 1 figures keep coming back — the angle — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Unit circle calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — angle for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/cube\">Cube</a>, <a href=\"/math/cube-root\">Cube root</a> and <a href=\"/math/cube-surface-area\">Surface area of a cube</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Unit circle calculator?",
+      "a": "The form asks for the angle, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter angle in a different unit?",
+      "a": "Yes. Angle opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Is the Unit circle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/cube",
+      "name": "Cube"
+    },
+    {
+      "path": "/math/cube-root",
+      "name": "Cube root"
+    },
+    {
+      "path": "/math/cube-surface-area",
+      "name": "Surface area of a cube"
+    }
+  ],
+  "words": 918
+}

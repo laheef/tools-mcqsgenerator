@@ -1,0 +1,93 @@
+{
+  "path": "/conversion/conversion-calculator",
+  "slug": "conversion-calculator",
+  "cat": "conversion",
+  "name": "Conversion",
+  "seoTitle": "Conversion — Free Online Calculator",
+  "seoDesc": "Conversion: work out farhenheit from the metric units and the imperial units. A free conversion calculator with the formula, units and a worked example.",
+  "h1": "Conversion Calculator",
+  "summary": "The Conversion calculator turns the metric units, the imperial units and the kilograms into <strong>farhenheit</strong>. Think of it as a shortcut for a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Conversion calculator work?",
+      "html": "<p>The Conversion calculator takes the values in the form, applies the relationship described below and reports <strong>farhenheit</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the type of conversion); then you type in the metric units (Metric), the imperial units (Imperial/US), the imperial units (Imperial/US) and the kilograms.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 5 options, such as temperature, length and area. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in square inches. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in cubic inches. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Type of conversion</strong></td><td>One of 5 options, such as temperature, length and area.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Celsius</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Farhenheit</strong></td><td>A measured quantity, 28 units available.</td><td>Fahrenheit</td><td>Calculated</td></tr><tr><td><strong>Kelvin</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>Calculated</td></tr><tr><td><strong>Other temperature units</strong></td><td>A measured quantity, 28 units available.</td><td>Rankine</td><td>Calculated</td></tr><tr><td><strong>Other temperature units (2)</strong></td><td>A measured quantity, 28 units available.</td><td>Delisle</td><td>Calculated</td></tr><tr><td><strong>Metric units (Metric)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Metric units (Metric)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Imperial units (Imperial/US)</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>Calculated</td></tr><tr><td><strong>Imperial units (Imperial/US)</strong></td><td>A measured quantity, 34 units available.</td><td>feet</td><td>Calculated</td></tr><tr><td><strong>Other length units (Other)</strong></td><td>A measured quantity, 34 units available.</td><td>nautical miles</td><td>Calculated</td></tr><tr><td><strong>Other length units (Other)</strong></td><td>A measured quantity, 34 units available.</td><td>Sun radii</td><td>Calculated</td></tr><tr><td><strong>Metric units (Metric)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>Calculated</td></tr><tr><td><strong>Metric units (Metric)</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr><tr><td><strong>Metric units (Metric)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Imperial units (Imperial/US)</strong></td><td>A measured quantity, 24 units available.</td><td>square inches</td><td>You supply it</td></tr><tr><td><strong>Imperial units (Imperial/US)</strong></td><td>A measured quantity, 24 units available.</td><td>square feet</td><td>Calculated</td></tr><tr><td><strong>Imperial units (Imperial/US)</strong></td><td>A measured quantity, 24 units available.</td><td>square yards</td><td>Calculated</td></tr><tr><td><strong>Soccer fields</strong></td><td>A measured quantity, 24 units available.</td><td>soccer fields</td><td>Calculated</td></tr><tr><td><strong>Metric units (Metric)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>Calculated</td></tr><tr><td><strong>Metric units (Metric)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Imperial units (Imperial/US)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic inches</td><td>You supply it</td></tr><tr><td><strong>Imperial units (Imperial/US)</strong></td><td>A measured quantity, 40 units available.</td><td>fluid ounces (US)</td><td>Calculated</td></tr><tr><td><strong>Imperial units (Imperial/US)</strong></td><td>A measured quantity, 40 units available.</td><td>pints (US)</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 37 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Conversion calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Farhenheit</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">celsius</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Kelvin</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">celsius</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Metric units</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">metric units</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Other weight units</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">other weight units</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Other weight units</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">kilograms</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Other weight units</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">tons</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in Fahrenheit, and convertible to any of the 28 units on that chip.</li><li>Shown in kelvins, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in square centimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in milligrams, and convertible to any of the 29 units on that chip.</li><li>Shown in metric tons, and convertible to any of the 29 units on that chip.</li><li>Shown in inches, and convertible to any of the 34 units on that chip.</li><li>Shown in Rankine, and convertible to any of the 28 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Temperature, opening in Celsius</li><li>Temperature, opening in Fahrenheit</li><li>Temperature, opening in kelvins</li><li>Temperature, opening in Rankine</li><li>Temperature, opening in Delisle</li><li>Length, opening in millimeters</li><li>Length, opening in centimeters</li><li>Length, opening in inches</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Conversion calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Filling in a form that asks for imperial or metric values</li><li>Converting a figure someone quoted you so you can compare it</li><li>Checking a product listing against the measurements you work with</li><li>Any time the same 3 figures keep coming back — the metric units, the imperial units and the kilograms — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/fuel-economy-converter\">Fuel economy conversion</a>, <a href=\"/conversion/g-to-lbs\">g to lbs</a> and <a href=\"/conversion/g-to-oz\">Grams to ounces</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Conversion calculator work out?",
+      "a": "It returns farhenheit, derived from the metric units, the imperial units and the kilograms. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Conversion calculator?",
+      "a": "The form asks for the metric units, the imperial units and the kilograms, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter celsius in a different unit?",
+      "a": "Yes. Celsius opens in Celsius and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Conversion calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/fuel-economy-converter",
+      "name": "Fuel economy conversion"
+    },
+    {
+      "path": "/conversion/g-to-lbs",
+      "name": "g to lbs"
+    },
+    {
+      "path": "/conversion/g-to-oz",
+      "name": "Grams to ounces"
+    }
+  ],
+  "words": 1663
+}

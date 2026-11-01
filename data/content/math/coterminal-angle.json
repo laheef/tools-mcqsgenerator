@@ -1,0 +1,93 @@
+{
+  "path": "/math/coterminal-angle",
+  "slug": "coterminal-angle",
+  "cat": "math",
+  "name": "Coterminal angle",
+  "seoTitle": "Coterminal angle Calculator: Free, With Steps",
+  "seoDesc": "Coterminal angle: work out your result from the angle and the angle 2. A free math calculator with the formula, units and a worked example.",
+  "h1": "Coterminal angle Calculator",
+  "summary": "The Coterminal angle calculator turns the angle and the angle 2 into the answer. It is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Coterminal angle calculator work?",
+      "html": "<p>The Coterminal angle calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the angle, the angle 2, the angle (2) and the angle 2 (2).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as find coterminal angles and check if two angles are coterminal. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as degrees or decimal radians and multiple of 𝝅 radians. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A number, expressed in × 𝝅 radians.</li><li>A number, expressed in × 𝝅 radians.</li><li>Pick the option that matches your case — 3 options, such as error:!!Don't include `pi` in the angle. Please remove it.!!, error:!!Don't include `e` in the angle. Please remove it.!! and error:!!You can't have a decimal and a fraction sign `/`.!!. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as error:!!Don't include `pi` in the angle. Please remove it.!!, error:!!Don't include `e` in the angle. Please remove it.!! and error:!!You can't have a decimal and a fraction sign `/`.!!. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as error:!!Don't include `pi` in the angle. Please remove it.!!, error:!!Don't include `e` in the angle. Please remove it.!! and error:!!You can't have a decimal and a fraction sign `/`.!!. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Angle 2</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Angle (2)</strong></td><td>A number stated in × 𝝅 radians.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Angle 2 (2)</strong></td><td>A number stated in × 𝝅 radians.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Coterminal angle calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Coterminal angle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li><li>Checking a homework answer before you hand it in</li><li>Any time the same 2 figures keep coming back — the angle and the angle 2 — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/integration-by-completing-the-square\">Integration by completing the square</a>, <a href=\"/math/interior-and-exterior-triangle-angles\">Interior and exterior triangle angles</a> and <a href=\"/math/intersection-of-two-lines\">Intersection of two lines</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Coterminal angle calculator?",
+      "a": "The form asks for the angle and the angle 2, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter angle in a different unit?",
+      "a": "Yes. Angle opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Coterminal angle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/integration-by-completing-the-square",
+      "name": "Integration by completing the square"
+    },
+    {
+      "path": "/math/interior-and-exterior-triangle-angles",
+      "name": "Interior and exterior triangle angles"
+    },
+    {
+      "path": "/math/intersection-of-two-lines",
+      "name": "Intersection of two lines"
+    }
+  ],
+  "words": 1354
+}

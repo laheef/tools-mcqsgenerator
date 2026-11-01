@@ -1,0 +1,97 @@
+{
+  "path": "/food/ice-cream",
+  "slug": "ice-cream",
+  "cat": "food",
+  "name": "Ice cream",
+  "seoTitle": "Ice cream Calculator: Free, With Steps",
+  "seoDesc": "Ice cream: work out density milk from the quantity. A free food calculator with the formula, units and a worked example.",
+  "h1": "Ice cream Calculator",
+  "summary": "The Ice cream calculator is a free, no-sign-up food tool. Fill in the 18 fields it asks for and it works out <strong>density milk</strong> straight away, with the formula shown underneath.\n\nIt is built for portioning, timing or nutrition. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Ice cream calculator work?",
+      "html": "<p>The Ice cream calculator takes the values in the form, applies the relationship described below and reports <strong>density milk</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the milk, the cream and the sweetener); then you type in the quantity (Milk), the quantity (Cream), the quantity (Sweetener) and the quantity (nos).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 14 options, such as milk, condensed, sweetened, milk, evaporated, whole and milk, low fat (1%). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US customary cups (236.59 ml). The unit chip switches it to any of the 14 supported units.</li><li>Pick the option that matches your case — 9 options, such as cream, heavy (40% fat), cream, half and half and double cream. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US customary cups (236.59 ml). The unit chip switches it to any of the 14 supported units.</li><li>Pick the option that matches your case — 7 options, such as fructose, honey and invert sugar. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>Pick the option that matches your case — 12 options, such as cacao powder 11%, cacao powder 21% and chocolate 55%. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as egg white, large, egg whole, large and egg yolk, large. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 9 options, such as carboxymethyl Cellulose, corn starch and cremodan 500 Coldline. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in milligrams. The unit chip switches it to any of the 29 supported units.</li><li>Pick the option that matches your case — 10 options, such as milk powder, skim, chocolate chips, unsweetened and chocolate 70%, chunks. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in calories. The unit chip switches it to any of the 33 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li></ul><p>7 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Milk</strong></td><td>One of 14 options, such as milk, condensed, sweetened, milk, evaporated, whole and milk, low fat (1%).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quantity (Milk)</strong></td><td>A measured quantity, 14 units available.</td><td>US customary cups (236.59 ml)</td><td>You supply it</td></tr><tr><td><strong>Cream</strong></td><td>One of 9 options, such as cream, heavy (40% fat), cream, half and half and double cream.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quantity (Cream)</strong></td><td>A measured quantity, 14 units available.</td><td>US customary cups (236.59 ml)</td><td>You supply it</td></tr><tr><td><strong>Sweetener</strong></td><td>One of 7 options, such as fructose, honey and invert sugar.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quantity (Sweetener)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Flavoring</strong></td><td>One of 12 options, such as cacao powder 11%, cacao powder 21% and chocolate 55%.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quantity (Flavor)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Emulsifier</strong></td><td>One of 3 options, such as egg white, large, egg whole, large and egg yolk, large.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quantity (nos)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Stabilizer</strong></td><td>One of 9 options, such as carboxymethyl Cellulose, corn starch and cremodan 500 Coldline.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quantity (Stabilizer)</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>You supply it</td></tr><tr><td><strong>Additional ingredients</strong></td><td>One of 10 options, such as milk powder, skim, chocolate chips, unsweetened and chocolate 70%, chunks.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quantity (Additional ingredients)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Quantity of ice cream mix</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Total solids</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total fat (Result)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total sugar (Result)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Water milk</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total sugars milk</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total solids milk</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total fat milk</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Salt milk</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Protein milk</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 90 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Ice cream calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Density milk</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">quantity ÷ quantity</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Quantity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">density cream × quantity</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Quantity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 1000) × mass emuls × quantity (nos)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Quantity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-quantity × total solids add − quantity × total solids cream − quantity × total solids emuls − quantity × total solids milk − quantity × total solids stabilizer − quantity × total solids sugar + 100 × total solid) ÷ total solids flav</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Quantity of ice cream mix</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">quantity + quantity + quantity + quantity + quantity + quantity + quantity</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Quantity of ice cream mix</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">100 × total solid ÷ total solids</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Kitchen volume measures, opening in US customary cups (236.59 ml)</li><li>Kitchen volume measures, opening in US customary cups (236.59 ml)</li><li>Mass, opening in grams</li><li>Mass, opening in grams</li><li>Mass, opening in milligrams</li><li>Mass, opening in grams</li><li>Mass, opening in grams</li><li>Mass, opening in grams</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Ice cream calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Scaling a recipe up or down</li><li>Working out timing so everything finishes together</li><li>Checking portions before you shop</li><li>Any time the same 1 figures keep coming back — the quantity — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/oil-to-butter\">Oil to butter</a>, <a href=\"/food/pancake-recipe\">Pancake recipe</a> and <a href=\"/food/party-drink\">Party drink</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Ice cream calculator work out?",
+      "a": "It returns density milk, derived from the quantity. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Ice cream calculator?",
+      "a": "The form asks for the quantity, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter quantity (Milk) in a different unit?",
+      "a": "Yes. Quantity (Milk) opens in US customary cups (236.59 ml) and the chip beside it offers 14 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (7 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Quantity of ice cream mix = 0 g. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Ice cream calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/oil-to-butter",
+      "name": "Oil to butter"
+    },
+    {
+      "path": "/food/pancake-recipe",
+      "name": "Pancake recipe"
+    },
+    {
+      "path": "/food/party-drink",
+      "name": "Party drink"
+    }
+  ],
+  "words": 2188
+}

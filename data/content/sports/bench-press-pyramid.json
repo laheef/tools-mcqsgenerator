@@ -1,0 +1,97 @@
+{
+  "path": "/sports/bench-press-pyramid",
+  "slug": "bench-press-pyramid",
+  "cat": "sports",
+  "name": "Bench press pyramid",
+  "seoTitle": "Bench press pyramid — Free Online Calculator",
+  "seoDesc": "Bench press pyramid takes 6 values and returns one result — a free sports calculator with the formula shown.",
+  "h1": "Bench press pyramid Calculator",
+  "summary": "The Bench press pyramid calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt suits a training session, a performance comparison or a competition result. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Bench press pyramid calculator work?",
+      "html": "<p>The Bench press pyramid calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the pyramid type, number of sets and number of sets (2)); then you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>Pick the option that matches your case — 4 options, such as ascending, descending and full. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as 3, 4 and 5. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as 5 and 7. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Pyramid type</strong></td><td>One of 4 options, such as ascending, descending and full.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of sets</strong></td><td>One of 3 options, such as 3, 4 and 5.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of sets (2)</strong></td><td>One of 2 options, such as 5 and 7.</td><td>choice</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Bench press pyramid calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Mass, opening in kilograms</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Bench press pyramid calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two athletes or two attempts fairly</li><li>Planning a session around a target you already know</li><li>Tracking progress across a training block</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Bench press pyramid calculator, these are the ones that matter:</p>\n<ul><li>The 3 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/stride-length\">Stride length</a>, <a href=\"/sports/swimming-calorie\">Swimming calorie</a> and <a href=\"/sports/swimming-time\">Swimming time</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Bench press pyramid calculator?",
+      "a": "The form asks for a few values, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter 1RM in a different unit?",
+      "a": "Yes. 1RM opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Bench press pyramid calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/stride-length",
+      "name": "Stride length"
+    },
+    {
+      "path": "/sports/swimming-calorie",
+      "name": "Swimming calorie"
+    },
+    {
+      "path": "/sports/swimming-time",
+      "name": "Swimming time"
+    }
+  ],
+  "words": 1249
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/physics/ohms-law-power",
+  "slug": "ohms-law-power",
+  "cat": "physics",
+  "name": "Ohm's law power",
+  "seoTitle": "Ohm's law power Calculator",
+  "seoDesc": "Ohm's law power: work out resistance (R) from the voltage and the current density. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Ohm's law power Calculator",
+  "summary": "The Ohm's law power calculator turns the voltage, the current density and the electric field into <strong>resistance (R)</strong>. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nThe results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.",
+  "sections": [
+    {
+      "title": "How does the Ohm's law power calculator work?",
+      "html": "<p>The Ohm's law power calculator takes the values in the form, applies the relationship described below and reports <strong>resistance (R)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the voltage (V), the current density (J) and the electric field (E).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in amperes. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Voltage (V)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>Current (I)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>Calculated</td></tr><tr><td><strong>Resistance (R)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Power (P)</strong></td><td>A measured quantity, 21 units available.</td><td>watts</td><td>Calculated</td></tr><tr><td><strong>Current density (J)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>You supply it</td></tr><tr><td><strong>Electric field (E)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>Specific resistance (ρ)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Ohm's law power calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Resistance (R)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">voltage (V) ÷ current (I)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Current (I)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">power (P) ÷ voltage (V)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Resistance (R)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">power (P) ÷ (current (I) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Specific resistance (ρ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">electric field (E) ÷ current density (J)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Voltage (V)</strong> = 10 V and <strong>Current (I)</strong> = 10 A. Working through the relationship above gives <strong>Resistance (R)</strong> = 1 Ω and <strong>Power (P)</strong> = 100 W.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Resistance (R)</strong> = 1 Ω and <strong>Power (P)</strong> = 100 W should be roughly the size you expected from <strong>Voltage (V)</strong> = 10 V and <strong>Current (I)</strong> = 10 A.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in ohms, and convertible to any of the 5 units on that chip.</li><li>Shown in amperes, and convertible to any of the 3 units on that chip.</li><li>Shown in watts, and convertible to any of the 21 units on that chip.</li><li>Shown in ohms, and convertible to any of the 5 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Voltage, opening in volts</li><li>Electric current – ampere, opening in amperes</li><li>Resistance – ohms, opening in ohms</li><li>Power, opening in watts</li><li>Electric current – ampere, opening in amperes</li><li>Voltage, opening in volts</li><li>Resistance – ohms, opening in ohms</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Ohm's law power calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 3 figures keep coming back — the voltage, the current density and the electric field — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/contact-lens-vertex\">Contact lens vertex</a>, <a href=\"/physics/copper-wire-weight\">Copper wire weight</a> and <a href=\"/physics/coriolis-effect\">Coriolis effect</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Ohm's law power calculator work out?",
+      "a": "It returns resistance (R), derived from the voltage, the current density and the electric field. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Ohm's law power calculator?",
+      "a": "The form asks for the voltage, the current density and the electric field, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter voltage (V) in a different unit?",
+      "a": "Yes. Voltage (V) opens in volts and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Resistance (R) = 1 Ω. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Ohm's law power calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/contact-lens-vertex",
+      "name": "Contact lens vertex"
+    },
+    {
+      "path": "/physics/copper-wire-weight",
+      "name": "Copper wire weight"
+    },
+    {
+      "path": "/physics/coriolis-effect",
+      "name": "Coriolis effect"
+    }
+  ],
+  "words": 1345
+}

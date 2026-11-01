@@ -1,0 +1,89 @@
+{
+  "path": "/construction/boiler-size",
+  "slug": "boiler-size",
+  "cat": "construction",
+  "name": "Boiler size",
+  "seoTitle": "Boiler size Calculator — Formula, Units & Example",
+  "seoDesc": "Boiler size: a free construction calculator that walks you through 4 values, with the formula spelled out and a worked example.",
+  "h1": "Boiler size Calculator",
+  "summary": "The Boiler size calculator returns your result from the 4 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nIt is built for a materials order or a planning estimate you want to get roughly right first time. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Boiler size calculator work?",
+      "html": "<p>The Boiler size calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the boiler type, the age of property and number of bedrooms).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as combi, heat only and system. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as pre 1900 (poorly insulated), 1920-1930s (some insulation) and 1950-1980s (moderately insulated). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 6 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 9 options, such as 1 bedroom + 1 bathroom, 2 bedrooms + 1 bathroom and 2 bedrooms + 2 bathrooms. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>4 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Boiler type</strong></td><td>One of 3 options, such as combi, heat only and system.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Age of property</strong></td><td>One of 5 options, such as pre 1900 (poorly insulated), 1920-1930s (some insulation) and 1950-1980s (moderately insulated).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of bedrooms</strong></td><td>One of 6 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of bedrooms and bathrooms</strong></td><td>One of 9 options, such as 1 bedroom + 1 bathroom, 2 bedrooms + 1 bathroom and 2 bedrooms + 2 bathrooms.</td><td>choice</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Boiler size calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Quoting a job where areas and quantities drive the price</li><li>Checking a supplier's figure against your own measurements</li><li>Ordering material and not wanting a second trip</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>If a field is empty the result waits rather than guessing: no zero is quietly substituted in the background.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Boiler size calculator, these are the ones that matter:</p>\n<ul><li>The 4 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — boiler type for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/landscape-rock\">Landscape rock</a>, <a href=\"/construction/limestone\">Limestone</a> and <a href=\"/construction/liters-per-minute\">Liters per minute</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Boiler size calculator?",
+      "a": "The form asks for a few values, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Boiler size calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/landscape-rock",
+      "name": "Landscape rock"
+    },
+    {
+      "path": "/construction/limestone",
+      "name": "Limestone"
+    },
+    {
+      "path": "/construction/liters-per-minute",
+      "name": "Liters per minute"
+    }
+  ],
+  "words": 1048
+}

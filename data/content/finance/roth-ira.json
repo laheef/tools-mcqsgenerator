@@ -1,0 +1,97 @@
+{
+  "path": "/finance/roth-ira",
+  "slug": "roth-ira",
+  "cat": "finance",
+  "name": "Roth IRA",
+  "seoTitle": "Roth IRA Calculator: Free, With Steps",
+  "seoDesc": "Roth IRA: work out threshold level from the modified annual gross income and the current age. A free finance calculator with the formula, units and a…",
+  "h1": "Roth IRA Calculator",
+  "summary": "<strong>threshold level</strong> is what the Roth IRA calculator works out, and it gets there from the modified annual gross income, the current age, the retirement age and the income tax rate. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Roth IRA calculator work?",
+      "html": "<p>The Roth IRA calculator takes the values in the form, applies the relationship described below and reports <strong>threshold level</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the tax filing); then you type in the modified annual gross income (MAGI), the current age, the retirement age and the income tax rate.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A number, expressed in years.</li><li>A number, expressed in years.</li><li>Pick the option that matches your case — 3 options, such as single, married, filing jointly and married, filing separately. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Modified annual gross income (MAGI)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Current age</strong></td><td>A number stated in years.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Retirement age</strong></td><td>A number stated in years.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Tax filing</strong></td><td>One of 3 options, such as single, married, filing jointly and married, filing separately.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Income tax rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Annual return rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Threshold level</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Phaseout level</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ineligible percent</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Max contribution</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Contribution years</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Eligible contribution</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Eligible contribution after-tax</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Roth IRA Balance at retirement</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Roth IRA calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Threshold level</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(ineligible percent × phaseout level − modified annual gross income (MAGI)) ÷ (ineligible percent − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Max contribution</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(current age)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Eligible contribution</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(ineligible percent, (current age))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Eligible contribution after-tax</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 − income tax rate) × (ineligible percent, (current age)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Contribution years</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-current age + retirement age)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Roth IRA Balance at retirement</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((annual return rate × ((annual return rate + 1, (-current age + retirement age)) − 1) + (annual return rate + 1, (-current age + retirement age)) − 1) × ((1 − income tax rate) × (ineligible percent, (current age))) ÷ annual return rate)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Roth IRA calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing questions for a lender, an accountant or an adviser</li><li>Comparing two offers that quote their costs in different ways</li><li>Sizing up a purchase before you commit to it</li><li>Any time the same 4 figures keep coming back — the modified annual gross income, the current age and the retirement age — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/mileage-reimbursement\">Mileage reimbursement</a>, <a href=\"/finance/millionaire\">Millionaire</a> and <a href=\"/finance/missouri-sales-tax\">Missouri sales tax</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Roth IRA calculator work out?",
+      "a": "It returns threshold level, derived from the modified annual gross income, the current age and the retirement age. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Roth IRA calculator?",
+      "a": "The form asks for the modified annual gross income, the current age, the retirement age and the income tax rate, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter modified annual gross income (MAGI) in a different unit?",
+      "a": "Yes. Modified annual gross income (MAGI) opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Threshold level = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Roth IRA calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/mileage-reimbursement",
+      "name": "Mileage reimbursement"
+    },
+    {
+      "path": "/finance/millionaire",
+      "name": "Millionaire"
+    },
+    {
+      "path": "/finance/missouri-sales-tax",
+      "name": "Missouri sales tax"
+    }
+  ],
+  "words": 1644
+}

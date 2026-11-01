@@ -1,0 +1,97 @@
+{
+  "path": "/finance/real-estate-commission-vat",
+  "slug": "real-estate-commission-vat",
+  "cat": "finance",
+  "name": "Real estate commission w/ VAT",
+  "seoTitle": "Real estate commission w/ VAT Calculator",
+  "seoDesc": "Real estate commission w/ VAT: work out commission from the house price and the commission gross. A free finance calculator with the formula, units and a…",
+  "h1": "Real estate commission w/ VAT Calculator",
+  "summary": "Give the Real estate commission w/ VAT calculator the house price, the commission gross and the owner receives and it returns <strong>commission</strong>. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Real estate commission w/ VAT calculator work?",
+      "html": "<p>The Real estate commission w/ VAT calculator takes the values in the form, applies the relationship described below and reports <strong>commission</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the house price, the commission gross and the owner receives.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>House price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Commission</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>VAT rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Commission gross</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Owner receives</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Commission net</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Real estate commission w/ VAT calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Commission</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-owner receives + house price) ÷ (house price × (VAT rate + 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Commission</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">commission gross ÷ (house price × (VAT rate + 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Commission</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">commission net ÷ house price</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">VAT amount</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">commission net × VAT rate</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>House price</strong> = 1000, <strong>VAT rate</strong> = 10 % and <strong>Owner receives</strong> = 10. The calculator returns <strong>Commission</strong> = 90 %, <strong>Commission gross</strong> = 990, <strong>Commission net</strong> = 900 and <strong>VAT amount</strong> = 90.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Commission</strong> = 90 %, <strong>Commission gross</strong> = 990, <strong>Commission net</strong> = 900 and <strong>VAT amount</strong> = 90 should be roughly the size you expected from <strong>House price</strong> = 1000 and <strong>VAT rate</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Real estate commission w/ VAT calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Sizing up a purchase before you commit to it</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 3 figures keep coming back — the house price, the commission gross and the owner receives — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/loan-payment\">Loan payment</a>, <a href=\"/finance/loan-repayment\">Loan repayment</a> and <a href=\"/finance/long-term-care\">Long term care</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Real estate commission w/ VAT calculator work out?",
+      "a": "It returns commission, derived from the house price, the commission gross and the owner receives. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Real estate commission w/ VAT calculator?",
+      "a": "The form asks for the house price, the commission gross and the owner receives, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter house price in a different unit?",
+      "a": "Yes. House price opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Commission = 90 %. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Real estate commission w/ VAT calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/loan-payment",
+      "name": "Loan payment"
+    },
+    {
+      "path": "/finance/loan-repayment",
+      "name": "Loan repayment"
+    },
+    {
+      "path": "/finance/long-term-care",
+      "name": "Long term care"
+    }
+  ],
+  "words": 1322
+}

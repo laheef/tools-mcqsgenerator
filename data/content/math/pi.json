@@ -1,0 +1,101 @@
+{
+  "path": "/math/pi",
+  "slug": "pi",
+  "cat": "math",
+  "name": "Pi experiments",
+  "seoTitle": "Pi experiments Calculator — Formula, Units & Example",
+  "seoDesc": "Pi experiments: work out width (r) from the length and the time taken to complete the oscillations. A free math calculator with the formula, units and a…",
+  "h1": "Pi experiments Calculator",
+  "summary": "The Pi experiments calculator turns the length, the time taken to complete the oscillations, the time period of the pendulum and the length of the pendulum into <strong>width (r)</strong>. It suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Pi experiments calculator work?",
+      "html": "<p>The Pi experiments calculator takes the values in the form, applies the relationship described below and reports <strong>width (r)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the experiment); then you type in the length (C/2), the time taken to complete the oscillations, the time period of the pendulum and the length of the pendulum (L).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as using a pizza, with a pendulum and using Oreos or any circular object. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in seconds. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in seconds. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 5 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Experiment</strong></td><td>One of 4 options, such as using a pizza, with a pendulum and using Oreos or any circular object.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length (C/2)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Width (r)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Number of oscillations</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time taken to complete the oscillations</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>You supply it</td></tr><tr><td><strong>Time period of the pendulum</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>You supply it</td></tr><tr><td><strong>Length of the pendulum (L)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Circumference (C₁)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter (D₁)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Circumference (C₂)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter (D₂)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Circumference (C₃)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter (D₃)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Circumference (C₄)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter (D₄)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Circumference (C₅)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter (D₅)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Number of tosses</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of crosses</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Pi (π) (Your calculated value of pi....)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Pi (π) (Your calculated value of pi....)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Pi (π) (Your calculated value of pi....)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Pi (π) (Your calculated value of pi....)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Pi (π) (Your calculated value of pi....)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 43 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Pi experiments calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Width (r)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length (C ÷ 2) ÷ pi (π)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pi (π)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(7 ÷ 10) × the square root of (5) × time period of the pendulum × the square root of (1 ÷ length of the pendulum (L))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Diameter (D₁)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">circumference (C₁) ÷ pi (π)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Diameter (D₂)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-circumference (C₂) × diameter (D₁) ÷ (circumference (C₁) − 2 × diameter (D₁) × pi (π))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pi (π)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 3) × circumference (C₁) ÷ diameter (D₁) + (1 ÷ 3) × circumference (C₂) ÷ diameter (D₂) + (1 ÷ 3) × circumference (C₃) ÷ diameter (D₃)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pi (π)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × circumference (C₁) ÷ diameter (D₁) + (1 ÷ 4) × circumference (C₂) ÷ diameter (D₂) + (1 ÷ 4) × circumference (C₃) ÷ diameter (D₃) + (1 ÷ 4) × circumference (C₄) ÷ diameter (D₄)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Experiment</strong> set to Using a pizza, <strong>Length (C/2)</strong> = 30 cm, <strong>How many round objects do you have?</strong> set to 1 and <strong>Pi (π)</strong> = 10. Working through the relationship above gives <strong>Width (r)</strong> = 3 cm.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Width (r)</strong> = 3 cm should be roughly the size you expected from <strong>Experiment</strong> set to Using a pizza and <strong>Length (C/2)</strong> = 30 cm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Time, opening in seconds</li><li>Time, opening in seconds</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Pi experiments calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Checking a homework answer before you hand it in</li><li>Any time the same 4 figures keep coming back — the length, the time taken to complete the oscillations and the time period of the pendulum — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/square-pyramid\">Square Pyramid</a>, <a href=\"/math/square-pyramid-volume\">Square pyramid volume</a> and <a href=\"/math/square-root\">Square root</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Pi experiments calculator work out?",
+      "a": "It returns width (r), derived from the length, the time taken to complete the oscillations and the time period of the pendulum. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Pi experiments calculator?",
+      "a": "The form asks for the length, the time taken to complete the oscillations, the time period of the pendulum and the length of the pendulum, which is 19 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter length (C/2) in a different unit?",
+      "a": "Yes. Length (C/2) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Width (r) = 3 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Pi experiments calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/square-pyramid",
+      "name": "Square Pyramid"
+    },
+    {
+      "path": "/math/square-pyramid-volume",
+      "name": "Square pyramid volume"
+    },
+    {
+      "path": "/math/square-root",
+      "name": "Square root"
+    }
+  ],
+  "words": 2286
+}

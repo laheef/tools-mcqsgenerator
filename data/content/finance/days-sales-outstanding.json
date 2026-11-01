@@ -1,0 +1,97 @@
+{
+  "path": "/finance/days-sales-outstanding",
+  "slug": "days-sales-outstanding",
+  "cat": "finance",
+  "name": "Day sales outstanding (DSO)",
+  "seoTitle": "Day sales outstanding (DSO) Calculator",
+  "seoDesc": "Day sales outstanding (DSO): work out average receivables from the beginning accounts receivable and the total sales. A free finance calculator with the…",
+  "h1": "Day sales outstanding (DSO) Calculator",
+  "summary": "The Day sales outstanding (DSO) calculator turns the beginning accounts receivable, the total sales and more into <strong>average receivables</strong>. That makes it useful for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Day sales outstanding (DSO) calculator work?",
+      "html": "<p>The Day sales outstanding (DSO) calculator takes the values in the form, applies the relationship described below and reports <strong>average receivables</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the beginning accounts receivable, the total sales, the accounting period and the days sales outstanding (DSO).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Beginning accounts receivable</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>End accounts receivable</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Average receivables</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total sales</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Accounting period</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Days sales outstanding (DSO)</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Day sales outstanding (DSO) calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Average receivables</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">days sales outstanding (DSO) × total sales ÷ accounting period</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">End accounts receivable</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × average receivables − beginning accounts receivable</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Total sales</strong> = 10, <strong>Accounting period</strong> = 30 days and <strong>Days sales outstanding (DSO)</strong> = 10 days. The calculator returns <strong>Average receivables</strong> = 3.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Average receivables</strong> = 3 should be roughly the size you expected from <strong>Total sales</strong> = 10 and <strong>Accounting period</strong> = 30 days.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Time, opening in days</li><li>Time, opening in days</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Day sales outstanding (DSO) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two offers that quote their costs in different ways</li><li>Sizing up a purchase before you commit to it</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Any time the same 4 figures keep coming back — the beginning accounts receivable, the total sales and the accounting period — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/absence-percentage\">Absence percentage</a>, <a href=\"/finance/accounting-profit\">Accounting profit</a> and <a href=\"/finance/accrual-ratio\">Accrual ratio</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Day sales outstanding (DSO) calculator work out?",
+      "a": "It returns average receivables, derived from the beginning accounts receivable, the total sales and the accounting period. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Day sales outstanding (DSO) calculator?",
+      "a": "The form asks for the beginning accounts receivable, the total sales, the accounting period and the days sales outstanding, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter beginning accounts receivable in a different unit?",
+      "a": "Yes. Beginning accounts receivable opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Average receivables = 3. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Day sales outstanding (DSO) calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/absence-percentage",
+      "name": "Absence percentage"
+    },
+    {
+      "path": "/finance/accounting-profit",
+      "name": "Accounting profit"
+    },
+    {
+      "path": "/finance/accrual-ratio",
+      "name": "Accrual ratio"
+    }
+  ],
+  "words": 1339
+}

@@ -1,0 +1,101 @@
+{
+  "path": "/statistics/birthday-paradox",
+  "slug": "birthday-paradox",
+  "cat": "statistics",
+  "name": "Birthday paradox",
+  "seoTitle": "Birthday paradox Calculator: Free, With Steps",
+  "seoDesc": "Birthday paradox: work out probability of sharing a birthday from number of people. A free statistics calculator with the formula, units and a worked example.",
+  "h1": "Birthday paradox Calculator",
+  "summary": "The Birthday paradox calculator takes the numbers you enter and reports <strong>probability of sharing a birthday</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThink of it as a shortcut for an assignment, a report or a data discussion where you need a defensible number. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Birthday paradox calculator work?",
+      "html": "<p>The Birthday paradox calculator takes the values in the form, applies the relationship described below and reports <strong>probability of sharing a birthday</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the days in a year); then you type in number of people.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 2 options, such as without leap years and with leap years. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Number of people</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of pairs</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Days in a year</strong></td><td>One of 2 options, such as without leap years and with leap years.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Probability of sharing a birthday</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Birthday paradox calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of sharing a birthday</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 − ((days in a year − 1) ÷ days in a year, ((1 ÷ 2) × number of people × (number of people − 1))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of pairs</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × number of people × (number of people − 1))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Number of people</strong> = 10 and <strong>Days in a year</strong> set to Without leap years. Working through the relationship above gives <strong>Number of pairs</strong> = 45 and <strong>Probability of sharing a birthday</strong> = 12 %.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Number of pairs</strong> = 45 and <strong>Probability of sharing a birthday</strong> = 12 % should be roughly the size you expected from <strong>Number of people</strong> = 10 and <strong>Days in a year</strong> set to Without leap years.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>%, opening in percent</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Birthday paradox calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning raw numbers into something you can quote</li><li>Deciding how much confidence a sample really supports</li><li>Checking a result a piece of software produced</li><li>Any time the same 1 figures keep coming back — number of people — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Birthday paradox calculator, these are the ones that matter:</p>\n<ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/possible-combinations\">Possible combinations</a>, <a href=\"/statistics/post-test-probability\">Post test probability</a> and <a href=\"/statistics/power-analysis\">Power analysis</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Birthday paradox calculator work out?",
+      "a": "It returns probability of sharing a birthday, derived from number of people. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Birthday paradox calculator?",
+      "a": "The form asks for number of people, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter probability of sharing a birthday in a different unit?",
+      "a": "Yes. Probability of sharing a birthday opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Number of pairs = 45. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Birthday paradox calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/possible-combinations",
+      "name": "Possible combinations"
+    },
+    {
+      "path": "/statistics/post-test-probability",
+      "name": "Post test probability"
+    },
+    {
+      "path": "/statistics/power-analysis",
+      "name": "Power analysis"
+    }
+  ],
+  "words": 1374
+}

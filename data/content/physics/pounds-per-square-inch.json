@@ -1,0 +1,101 @@
+{
+  "path": "/physics/pounds-per-square-inch",
+  "slug": "pounds-per-square-inch",
+  "cat": "physics",
+  "name": "Pounds per square inch",
+  "seoTitle": "Pounds per square inch — Free Online Calculator",
+  "seoDesc": "Pounds per square inch: work out length from the force and the width. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Pounds per square inch Calculator",
+  "summary": "<strong>length</strong> is what the Pounds per square inch calculator works out, and it gets there from the force, the width and the pressure in other units. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.",
+  "sections": [
+    {
+      "title": "How does the Pounds per square inch calculator work?",
+      "html": "<p>The Pounds per square inch calculator takes the values in the form, applies the relationship described below and reports <strong>length</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the force, the width and the pressure in other units.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in pounds-force. The unit chip switches it to any of the 16 supported units.</li><li>A measured quantity, entered by default in inches. The unit chip switches it to any of the 34 supported units.</li><li>A single on/off switch — tick it for &ldquo;Show pressure in other units&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in pascals. The unit chip switches it to any of the 28 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Force</strong></td><td>A measured quantity, 16 units available.</td><td>pounds-force</td><td>You supply it</td></tr><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>Calculated</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>You supply it</td></tr><tr><td><strong>Pounds per square inch</strong></td><td>A measured quantity, 28 units available.</td><td>pounds per square inch</td><td>Calculated</td></tr><tr><td><strong>Pressure in other units</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Pounds per square inch calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">force ÷ (pounds per square inch × width)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pounds per square inch</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">pressure in other units</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Force</strong> = 10 lbf, <strong>Width</strong> = 30 in and <strong>Pounds per square inch</strong> = 10 psi. The calculator returns <strong>Length</strong> = 333.3333 in and <strong>Pressure in other units</strong> = 10 Pa.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Length</strong> = 333.3333 in and <strong>Pressure in other units</strong> = 10 Pa should be roughly the size you expected from <strong>Force</strong> = 10 lbf and <strong>Width</strong> = 30 in.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in inches, and convertible to any of the 34 units on that chip.</li><li>Shown in pounds per square inch, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Force, opening in pounds-force</li><li>Length, opening in inches</li><li>Length, opening in inches</li><li>Pressure, opening in pounds per square inch</li><li>Pressure, opening in pascals</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Pounds per square inch calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 3 figures keep coming back — the force, the width and the pressure in other units — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/differential-pressure\">Differential pressure</a>, <a href=\"/physics/diffraction\">Diffraction grating</a> and <a href=\"/physics/diopter\">Diopter</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Pounds per square inch calculator work out?",
+      "a": "It returns length, derived from the force, the width and the pressure in other units. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Pounds per square inch calculator?",
+      "a": "The form asks for the force, the width and the pressure in other units, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter force in a different unit?",
+      "a": "Yes. Force opens in pounds-force and the chip beside it offers 16 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Length = 333.3333 in. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Pounds per square inch calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/differential-pressure",
+      "name": "Differential pressure"
+    },
+    {
+      "path": "/physics/diffraction",
+      "name": "Diffraction grating"
+    },
+    {
+      "path": "/physics/diopter",
+      "name": "Diopter"
+    }
+  ],
+  "words": 1483
+}

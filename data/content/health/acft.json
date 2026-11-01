@@ -1,0 +1,93 @@
+{
+  "path": "/health/acft",
+  "slug": "acft",
+  "cat": "health",
+  "name": "ACFT",
+  "seoTitle": "ACFT Calculator",
+  "seoDesc": "ACFT: work out mdl score from the deadlift and the standing power throw. A free health calculator with the formula, units and a worked example.",
+  "h1": "ACFT Calculator",
+  "summary": "Give the ACFT calculator the deadlift, the standing power throw, the sprint, drag and carry and the leg tuck and it returns <strong>mdl score</strong>. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the ACFT calculator work?",
+      "html": "<p>The ACFT calculator takes the values in the form, applies the relationship described below and reports <strong>mdl score</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the unit type); then you type in the deadlift, the standing power throw, the sprint, drag and carry and the leg tuck.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as heavy, significant and moderate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as leg tuck and plank. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A number, expressed in per 2 minutes.</li><li>A measured quantity, entered by default in minutes / seconds. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in minutes / seconds. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in minutes / seconds. The unit chip switches it to any of the 27 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Unit type</strong></td><td>One of 3 options, such as heavy, significant and moderate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Deadlift</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Standing power throw</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Sprint, drag and carry</strong></td><td>A measured quantity, 27 units available.</td><td>minutes / seconds</td><td>You supply it</td></tr><tr><td><strong>Leg tuck</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Plank</strong></td><td>A measured quantity, 27 units available.</td><td>minutes / seconds</td><td>You supply it</td></tr><tr><td><strong>Two-mile run</strong></td><td>A measured quantity, 27 units available.</td><td>minutes / seconds</td><td>You supply it</td></tr><tr><td><strong>Score (Results)</strong></td><td>A number stated in points.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Score (Results)</strong></td><td>A number stated in points.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ltk score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Spt score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sdc score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mdl score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Hrp score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Tmr score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Plk score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Difference to the deadlift threshold</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Difference to the standing-throw threshold</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Difference to the push-up threshold</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Difference to the leg-tuck threshold</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sprint-drag-carry difference (minutes)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sprint-drag-carry difference (seconds)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Plank difference (minutes)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Plank difference (seconds)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 35 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the ACFT calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Mdl score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(deadlift)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Spt score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(standing power throw)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Hrp score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(hand-release push-up)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sdc score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(sprint, drag and carry)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ltk score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(leg tuck)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Tmr score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(two-mile run)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Mass, opening in kilograms</li><li>Length, opening in meters</li><li>Time, opening in minutes / seconds</li><li>Time, opening in minutes / seconds</li><li>Time, opening in minutes / seconds</li><li>Time, opening in seconds</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The ACFT calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 4 figures keep coming back — the deadlift, the standing power throw and the sprint, drag and carry — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/tpa\">tPA</a>, <a href=\"/health/tramadol-dosage\">Tramadol dosage</a> and <a href=\"/health/transferrin\">Transferrin saturation</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the ACFT calculator work out?",
+      "a": "It returns mdl score, derived from the deadlift, the standing power throw and the sprint, drag and carry. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the ACFT calculator?",
+      "a": "The form asks for the deadlift, the standing power throw, the sprint, drag and carry and the leg tuck, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter deadlift in a different unit?",
+      "a": "Yes. Deadlift opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the ACFT calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/tpa",
+      "name": "tPA"
+    },
+    {
+      "path": "/health/tramadol-dosage",
+      "name": "Tramadol dosage"
+    },
+    {
+      "path": "/health/transferrin",
+      "name": "Transferrin saturation"
+    }
+  ],
+  "words": 1573
+}

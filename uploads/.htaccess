@@ -1,0 +1,31 @@
+# ---------------------------------------------------------------------------
+# Uploaded media is served from here. Nothing in this folder may execute.
+# ---------------------------------------------------------------------------
+
+Options -Indexes -ExecCGI
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .pht .cgi .pl .py .sh
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8
+AddType text/plain .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .pht
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+# Only images and documents may be fetched; anything else is a 403.
+<FilesMatch "\.(php|phtml|php[0-9]|phps|pht|cgi|pl|py|sh|htaccess|asp|aspx|jsp)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set Cache-Control "public, max-age=604800"
+</IfModule>

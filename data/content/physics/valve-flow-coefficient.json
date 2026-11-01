@@ -1,0 +1,97 @@
+{
+  "path": "/physics/valve-flow-coefficient",
+  "slug": "valve-flow-coefficient",
+  "cat": "physics",
+  "name": "Cv (valve flow coefficient)",
+  "seoTitle": "Cv (valve flow coefficient) — Free Online Calculator",
+  "seoDesc": "Cv (valve flow coefficient): work out cv (valve flow coefficient) (Results) from the inlet pressure (P₁) and the outlet pressure (P₂). A free physics…",
+  "h1": "Cv (valve flow coefficient) Calculator",
+  "summary": "The Cv (valve flow coefficient) calculator turns the inlet pressure (P₁), the outlet pressure (P₂) and the flow rate (Q) into <strong>cv (valve flow coefficient) (Results)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Cv (valve flow coefficient) calculator work?",
+      "html": "<p>The Cv (valve flow coefficient) calculator takes the values in the form, applies the relationship described below and reports <strong>cv (valve flow coefficient) (Results)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the calculation type, the medium type and the system medium (Input details for valve sizing)); then you type in the inlet pressure (P₁) (Input details for valve sizing), the inlet pressure (P₁) (Input details for valve sizing), the outlet pressure (P₂) (Input details for valve sizing) and the outlet pressure (P₂) (Input details for valve sizing).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as cv (valve flow coefficient) and flow. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as liquid and gas. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilopascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in kilopascals. The unit chip switches it to any of the 28 supported units.</li><li>Pick the option that matches your case — 9 options, such as acetone, alcohol, ethyl and alcohol, methyl. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in cubic meters per second. The unit chip switches it to any of the 39 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilopascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in kilopascals. The unit chip switches it to any of the 28 supported units.</li><li>Pick the option that matches your case — 10 options, such as acetylene, ammonia and argon. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in liters per minute. The unit chip switches it to any of the 39 supported units.</li><li>A plain number with no unit attached.</li></ul><p>4 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Calculation type</strong></td><td>One of 2 options, such as cv (valve flow coefficient) and flow.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Medium type</strong></td><td>One of 2 options, such as liquid and gas.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Inlet pressure (P₁) (Input details for valve sizing)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>You supply it</td></tr><tr><td><strong>Outlet pressure (P₂) (Input details for valve sizing)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>You supply it</td></tr><tr><td><strong>System medium (Input details for valve sizing)</strong></td><td>One of 9 options, such as acetone, alcohol, ethyl and alcohol, methyl.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Specific gravity (Input details for valve sizing)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Flow rate (Q) (Input details for valve sizing)</strong></td><td>A measured quantity, 39 units available.</td><td>cubic meters per second</td><td>You supply it</td></tr><tr><td><strong>Cv (Valve flow coefficient)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Inlet pressure (P₁) (Input details for valve sizing)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>You supply it</td></tr><tr><td><strong>Outlet pressure (P₂) (Input details for valve sizing)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>You supply it</td></tr><tr><td><strong>System medium (Input details for valve sizing)</strong></td><td>One of 10 options, such as acetylene, ammonia and argon.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Specific gravity (Input details for valve sizing)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Gas temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Flow rate (Q) (Input details for valve sizing)</strong></td><td>A measured quantity, 39 units available.</td><td>liters per minute</td><td>You supply it</td></tr><tr><td><strong>Cv (valve flow coefficient) (Input details for valve sizing)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Cv (valve flow coefficient) (Results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Flow rate (Q) (Results)</strong></td><td>A measured quantity, 39 units available.</td><td>cubic meters per second</td><td>Calculated</td></tr><tr><td><strong>Cv (valve flow coefficient) (Results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Flow rate (Q) (Results)</strong></td><td>A measured quantity, 39 units available.</td><td>liters per minute</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Cv (valve flow coefficient) calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Cv (valve flow coefficient)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">flow rate (Q) × the square root of (specific gravity ÷ (inlet pressure (P₁) − outlet pressure (P₂)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Flow rate (Q)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cv (Valve flow coefficient) ÷ the square root of (specific gravity ÷ (inlet pressure (P₁) − outlet pressure (P₂)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cv (valve flow coefficient)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((outlet pressure (P₂) ÷ inlet pressure (P₁) &lt; 1 ÷ 2) ? ( (1 ÷ 816) × flow rate (Q) × the square root of (specific gravity × gas temperature) ÷ inlet pressure (P₁) ) : ( (1 ÷ 962) × flow rate (Q) × the square root of (specific gravity × gas temperature ÷ ((inlet pressure (P₁) ^ 2) − (outlet pressure (P₂) ^ 2))) )))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Flow rate (Q)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((outlet pressure (P₂) ÷ inlet pressure (P₁) &lt; 1 ÷ 2) ? ( 816 × cv (valve flow coefficient) × inlet pressure (P₁) ÷ the square root of (specific gravity × gas temperature) ) : ( 962 × cv (valve flow coefficient) ÷ the square root of (specific gravity × gas temperature ÷ ((inlet pressure (P₁) ^ 2) − (outlet pressure (P₂) ^ 2))) )))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in cubic meters per second, and convertible to any of the 39 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in liters per minute, and convertible to any of the 39 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Pressure, opening in kilopascals</li><li>Pressure, opening in kilopascals</li><li>Flow rate, opening in cubic meters per second</li><li>Pressure, opening in kilopascals</li><li>Pressure, opening in kilopascals</li><li>Temperature, opening in Celsius</li><li>Flow rate, opening in liters per minute</li><li>Flow rate, opening in cubic meters per second</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Cv (valve flow coefficient) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 3 figures keep coming back — the inlet pressure (P₁), the outlet pressure (P₂) and the flow rate (Q) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/laser-beam-divergence\">Laser beam divergence</a>, <a href=\"/physics/laser-beam-expander\">Laser beam expander</a> and <a href=\"/physics/laser-brightness\">Laser brightness</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Cv (valve flow coefficient) calculator work out?",
+      "a": "It returns cv (valve flow coefficient) (Results), derived from the inlet pressure (P₁), the outlet pressure (P₂) and the flow rate (Q). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Cv (valve flow coefficient) calculator?",
+      "a": "The form asks for the inlet pressure (P₁), the outlet pressure (P₂) and the flow rate (Q), which is 13 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter inlet pressure (P₁) (Input details for valve sizing) in a different unit?",
+      "a": "Yes. Inlet pressure (P₁) (Input details for valve sizing) opens in kilopascals and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Specific gravity = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Cv (valve flow coefficient) calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/laser-beam-divergence",
+      "name": "Laser beam divergence"
+    },
+    {
+      "path": "/physics/laser-beam-expander",
+      "name": "Laser beam expander"
+    },
+    {
+      "path": "/physics/laser-brightness",
+      "name": "Laser brightness"
+    }
+  ],
+  "words": 2209
+}

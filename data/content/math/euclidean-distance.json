@@ -1,0 +1,89 @@
+{
+  "path": "/math/euclidean-distance",
+  "slug": "euclidean-distance",
+  "cat": "math",
+  "name": "Euclidean distance",
+  "seoTitle": "Euclidean distance — Free Online Calculator",
+  "seoDesc": "Euclidean distance: a free math calculator that walks you through 63 values, with the formula spelled out and a worked example.",
+  "h1": "Euclidean distance Calculator",
+  "summary": "The Euclidean <strong>distance</strong> calculator is a free, no-sign-up math tool. Fill in the 20 fields it asks for and it works out distance straight away, with the formula shown underneath.\n\nIt suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Euclidean distance calculator work?",
+      "html": "<p>The Euclidean distance calculator takes the values in the form, applies the relationship described below and reports <strong>distance</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the dimensions, the type (Dimensions and problem type) and the type (Dimensions and problem type)); then you type in the m (Second line [y = mx + c₂]), the distance (Result), the distance (Result) and the distance 2-3.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li><strong>Dimensions</strong>: pick the option that matches your case — 4 options, such as 1D, 2D and 3D. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Type (Dimensions and problem type)</strong>: pick the option that matches your case — 2 options, such as 2 points and 3 points. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Type (Dimensions and problem type)</strong>: pick the option that matches your case — 4 options, such as 2 points, 3 points and point and straight line. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>X₁</strong>: a plain number with no unit attached.</li><li><strong>Y₁</strong>: a plain number with no unit attached.</li><li><strong>Z₁</strong>: a plain number with no unit attached.</li><li><strong>K₁</strong>: a plain number with no unit attached.</li><li><strong>Y₂</strong>: a plain number with no unit attached.</li><li><strong>Z₂</strong>: a plain number with no unit attached.</li><li><strong>K₂</strong>: a plain number with no unit attached.</li><li><strong>Y₃</strong>: a plain number with no unit attached.</li><li><strong>Z₃</strong>: a plain number with no unit attached.</li><li><strong>K₃</strong>: a plain number with no unit attached.</li><li><strong>C</strong>: a plain number with no unit attached.</li><li><strong>C₁</strong>: a plain number with no unit attached.</li><li><strong>M (Second line [y = mx + c₂])</strong>: a plain number with no unit attached.</li><li><strong>C₂</strong>: a plain number with no unit attached.</li><li><strong>Distance (Result)</strong>: a plain number with no unit attached.</li><li><strong>Distance 2-3</strong>: a plain number with no unit attached.</li><li><strong>Distance (Result)</strong>: a plain number with no unit attached.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Dimensions</strong></td><td>One of 4 options, such as 1D, 2D and 3D.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Type (Dimensions and problem type)</strong></td><td>One of 2 options, such as 2 points and 3 points.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Type (Dimensions and problem type)</strong></td><td>One of 4 options, such as 2 points, 3 points and point and straight line.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>M (First line [y = mx + c₁])</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>M (Second line [y = mx + c₂])</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Distance (Result)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Distance 1-2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Distance 2-3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Distance 1-3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Distance (Result)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Distance (Result)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Square k</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Square k 13</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Square k 23</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Square y 13</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Square y 23</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Square z 13</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Square z 23</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Calculation type</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Euclidean distance calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">X₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">X₁ + the square root of ((distance ^ 2) − ((((dimensions &gt; 3) ? ( (K₁ − K₂ ^ 2) ) : ( 0 )))) − ((((dimensions &gt; 1) ? ( (Y₁ − Y₂ ^ 2) ) : ( 0 )))) − ((((dimensions &gt; 2) ? ( (Z₁ − Z₂ ^ 2) ) : ( 0 )))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Distance</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the absolute value of (C + M × X₁ − Y₁) ÷ the square root of ((M ^ 2) + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">X₃ + the square root of ((distance 2-3 ^ 2) − ((((dimensions &gt; 3) ? ( (K₂ − K₃ ^ 2) ) : ( 0 )))) − ((((dimensions &gt; 1) ? ( (Y₂ − Y₃ ^ 2) ) : ( 0 )))) − ((((dimensions &gt; 2) ? ( (Z₂ − Z₃ ^ 2) ) : ( 0 )))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X₃</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">X₁ + the square root of ((distance 1-3 ^ 2) − ((((dimensions &gt; 3) ? ( (K₁ − K₃ ^ 2) ) : ( 0 )))) − ((((dimensions &gt; 1) ? ( (Y₁ − Y₃ ^ 2) ) : ( 0 )))) − ((((dimensions &gt; 2) ? ( (Z₁ − Z₃ ^ 2) ) : ( 0 )))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">X₁ + the square root of ((distance 1-2 ^ 2) − ((((dimensions &gt; 3) ? ( (K₁ − K₂ ^ 2) ) : ( 0 )))) − ((((dimensions &gt; 1) ? ( (Y₁ − Y₂ ^ 2) ) : ( 0 )))) − ((((dimensions &gt; 2) ? ( (Z₁ − Z₂ ^ 2) ) : ( 0 )))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">M</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (-1 + (the absolute value of (C₁ − C₂), 2) ÷ (distance ^ 2))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><strong>X₂</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Distance (Result)</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>X₃</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Distance 1-3</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Distance 1-2</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>M (Line [y = mx + c])</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>M (First line [y = mx + c₁])</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Square y</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Square z</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Square k</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Square y 23</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Square z 23</strong>: a number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Euclidean distance calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Settling an argument about a number with a quick, traceable result</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/mixed-number\">Mixed number</a>, <a href=\"/math/mixed-number-to-improper-fraction\">Mixed number to improper fraction</a> and <a href=\"/math/mobius-strip\">Möbius strip</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Euclidean distance calculator work out?",
+      "a": "It returns distance. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Euclidean distance calculator?",
+      "a": "The form asks for a few values, which is 20 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Square y = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Euclidean distance calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/mixed-number",
+      "name": "Mixed number"
+    },
+    {
+      "path": "/math/mixed-number-to-improper-fraction",
+      "name": "Mixed number to improper fraction"
+    },
+    {
+      "path": "/math/mobius-strip",
+      "name": "Möbius strip"
+    }
+  ],
+  "words": 1787
+}

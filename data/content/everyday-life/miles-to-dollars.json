@@ -1,0 +1,93 @@
+{
+  "path": "/everyday-life/miles-to-dollars",
+  "slug": "miles-to-dollars",
+  "cat": "everyday-life",
+  "name": "Miles to dollars",
+  "seoTitle": "Miles to dollars Calculator — Formula, Units & Example",
+  "seoDesc": "Miles to dollars: work out cost in miles from the additional cost in cash and fees and the final price. A free everyday life calculator with the formula,…",
+  "h1": "Miles to dollars Calculator",
+  "summary": "Supply the additional cost in cash and fees, the final price and the percentage and the Miles to dollars calculator solves for <strong>cost in miles</strong>. That makes it useful for a practical question that turns up in daily life.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Miles to dollars calculator work?",
+      "html": "<p>The Miles to dollars calculator takes the values in the form, applies the relationship described below and reports <strong>cost in miles</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the airline); then you type in the additional cost in cash and fees (if any), the final price and the percentage.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 20 options, such as air Canada, air France and alaska Airlines. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in $.</li><li>A number, expressed in $.</li><li>A number, expressed in %.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Airline</strong></td><td>One of 20 options, such as air Canada, air France and alaska Airlines.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost in miles</strong></td><td>A number stated in miles.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Additional cost in cash and fees (if any)</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Final price</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Cost in cash</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Price difference</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Percentage</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Miles to dollars calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Cost in miles</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">100 × (-additional cost in cash and fees (if any) + final price) ÷ miles value</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Price difference</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cost in cash − final price</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Price difference</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 100) × cost in cash × percentage</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Miles to dollars calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 3 figures keep coming back — the additional cost in cash and fees, the final price and the percentage — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Miles to dollars calculator, these are the ones that matter:</p>\n<ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/boat-speed\">Boat speed</a>, <a href=\"/everyday-life/bold-text\">Bold text</a> and <a href=\"/everyday-life/boost-horsepower\">Boost horsepower</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Miles to dollars calculator work out?",
+      "a": "It returns cost in miles, derived from the additional cost in cash and fees, the final price and the percentage. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Miles to dollars calculator?",
+      "a": "The form asks for the additional cost in cash and fees, the final price and the percentage, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Miles value = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Miles to dollars calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/boat-speed",
+      "name": "Boat speed"
+    },
+    {
+      "path": "/everyday-life/bold-text",
+      "name": "Bold text"
+    },
+    {
+      "path": "/everyday-life/boost-horsepower",
+      "name": "Boost horsepower"
+    }
+  ],
+  "words": 1327
+}

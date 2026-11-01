@@ -1,0 +1,93 @@
+{
+  "path": "/math/remainder",
+  "slug": "remainder",
+  "cat": "math",
+  "name": "Remainder",
+  "seoTitle": "Remainder — Free Online Calculator",
+  "seoDesc": "Remainder: work out quotient (Result) from the dividend and the divisor. A free math calculator with the formula, units and a worked example.",
+  "h1": "Remainder Calculator",
+  "summary": "<strong>quotient (Result)</strong> is what the Remainder calculator works out, and it gets there from the dividend and the divisor. Think of it as a shortcut for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nThe results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.",
+  "sections": [
+    {
+      "title": "How does the Remainder calculator work?",
+      "html": "<p>The Remainder calculator takes the values in the form, applies the relationship described below and reports <strong>quotient (Result)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the dividend and the divisor.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Dividend</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Divisor</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Quotient (Result)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Remainder (Result)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Quotient (Alternative result)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Remainder (Alternative result)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Negative remainder 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Negative remainder 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Remainder calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Quotient</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((dividend × divisor &gt; 0) ? ( rounded down, (dividend ÷ divisor) ) : ( rounded up, (dividend ÷ divisor) )))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Remainder</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((dividend &gt; 0) ? ( dividend − the absolute value of (divisor) × rounded down, (dividend ÷ the absolute value of (divisor)) ) : ( (((divisor &gt; 0) ? ( dividend − divisor × rounded up, (dividend ÷ divisor) ) : ( dividend − divisor × rounded down, (dividend ÷ divisor) ))) )))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Quotient</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((dividend × divisor &gt; 0) ? ( rounded up, (dividend ÷ divisor) ) : ( rounded down, (dividend ÷ divisor) )))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Remainder</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((dividend &lt; 0) ? ( dividend - the absolute value of (divisor)*rounded down, (dividend/the absolute value of (divisor)) ) : ( (((divisor &gt; 0) ? ( dividend − divisor × rounded up, (dividend ÷ divisor) ) : ( dividend − divisor × rounded down, (dividend ÷ divisor) ))) )))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Negative remainder 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-((((dividend &gt; 0) ? ( dividend − the absolute value of (divisor) × rounded down, (dividend ÷ the absolute value of (divisor)) ) : ( (((divisor &gt; 0) ? ( dividend − divisor × rounded up, (dividend ÷ divisor) ) : ( dividend − divisor × rounded down, (dividend ÷ divisor) ))) ))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Negative remainder 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-((((dividend &lt; 0) ? ( dividend - the absolute value of (divisor)*rounded down, (dividend/the absolute value of (divisor)) ) : ( (((divisor &gt; 0) ? ( dividend − divisor × rounded up, (dividend ÷ divisor) ) : ( dividend − divisor × rounded down, (dividend ÷ divisor) ))) ))))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Remainder calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Any time the same 2 figures keep coming back — the dividend and the divisor — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Remainder calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/triangle-perimeter\">Perimeter of a triangle</a>, <a href=\"/math/triangle-proportionality-theorem\">Triangle proportionality theorem</a> and <a href=\"/math/triangle-ratio\">Triangle ratio</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Remainder calculator work out?",
+      "a": "It returns quotient (Result), derived from the dividend and the divisor. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Remainder calculator?",
+      "a": "The form asks for the dividend and the divisor, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Is the Remainder calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/triangle-perimeter",
+      "name": "Perimeter of a triangle"
+    },
+    {
+      "path": "/math/triangle-proportionality-theorem",
+      "name": "Triangle proportionality theorem"
+    },
+    {
+      "path": "/math/triangle-ratio",
+      "name": "Triangle ratio"
+    }
+  ],
+  "words": 1123
+}

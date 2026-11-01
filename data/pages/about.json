@@ -1,0 +1,14 @@
+{
+    "slug": "about",
+    "title": "About this calculator site",
+    "excerpt": "What this site is, how the calculators are built, and what it does with your data (spoiler: it keeps it on your device).",
+    "content": "<p>This site is a library of free online calculators. Type a number, get an answer, and see the formula that produced it. No account, no paywall, no \"unlock the result\" step.</p>\n<h2>How a calculator is built</h2>\n<p>Every calculator is described by the relationships between its inputs. Those relationships — the equations — are what the page runs on, both on the server and again in your browser when you press Calculate. Where a problem needs more than arithmetic (a table lookup, an iterative solve, a piecewise rule), that logic is written out as a step-by-step method instead of being hidden behind a black box.</p>\n<h2>How the maths is checked</h2>\n<p>Each calculator is tested against worked examples with results that are stated independently of the code: the answer is computed by hand, then the page has to reproduce it. A calculator that disagrees is a bug and is fixed rather than annotated.</p>\n<h2>What happens to your numbers</h2>\n<p>Calculations run in your browser and on this server while the page is being drawn. We do not store what you type, we do not build profiles, and we do not sell anything to anyone. The only data we keep is what you deliberately send us, such as a message through the contact form.</p>\n<h2>Advertising</h2>\n<p>If advertising is enabled on this deployment, it is configured by the site owner and disclosed in the privacy policy. Ads never change a result.</p>",
+    "status": "published",
+    "template": "default",
+    "meta_title": "About this calculator site",
+    "meta_description": "How these free calculators are built, how the maths is checked, and why every page shows its formula.",
+    "canonical_url": "",
+    "noindex": 0,
+    "show_in_header": 0,
+    "show_in_footer": 1
+}

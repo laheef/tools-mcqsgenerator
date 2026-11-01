@@ -1,0 +1,93 @@
+{
+  "path": "/chemistry/titration",
+  "slug": "titration",
+  "cat": "chemistry",
+  "name": "Titration",
+  "seoTitle": "Titration Calculator: Free, With Steps",
+  "seoDesc": "Titration: work out volume (Acid) from the concentration and the volume. A free chemistry calculator with the formula, units and a worked example.",
+  "h1": "Titration Calculator",
+  "summary": "Supply the concentration, the volume, the H+ donated and the moles of acid and the Titration calculator solves for <strong>volume (Acid)</strong>. It is built for a bench calculation involving amounts, concentrations or reaction ratios.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Titration calculator work?",
+      "html": "<p>The Titration calculator takes the values in the form, applies the relationship described below and reports <strong>volume (Acid)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the strength (Acid), the strength (Acid) and the strength (Base)); then you type in the concentration (Acid), the volume (Acid), the H+ donated (Acid) and the moles of acid (Additional acid parameters).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as yes, no and not sure. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as strong, weak and unknown. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>Pick the option that matches your case — 3 options, such as strong, weak and unknown. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in moles. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in times 10 to the 0. The unit chip switches it to any of the 69 supported units.</li><li>A measured quantity, entered by default in times 10 to the 0. The unit chip switches it to any of the 69 supported units.</li><li>A measured quantity, entered by default in moles. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in times 10 to the 0. The unit chip switches it to any of the 69 supported units.</li><li>A measured quantity, entered by default in times 10 to the 0. The unit chip switches it to any of the 69 supported units.</li><li>Pick the option that matches your case — 3 options, such as strong, weak and unknown. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li>Pick the option that matches your case — 3 options, such as strong, weak and unknown. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in moles. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in times 10 to the 0. The unit chip switches it to any of the 69 supported units.</li><li>A measured quantity, entered by default in times 10 to the 0. The unit chip switches it to any of the 69 supported units.</li><li>A measured quantity, entered by default in times 10 to the 0. The unit chip switches it to any of the 69 supported units.</li><li>A measured quantity, entered by default in times 10 to the 0. The unit chip switches it to any of the 69 supported units.</li></ul><p>The form has 25 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Strength (Acid)</strong></td><td>One of 3 options, such as strong, weak and unknown.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Concentration (Acid)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Volume (Acid)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>H+ donated (Acid)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Strength (Acid)</strong></td><td>One of 3 options, such as strong, weak and unknown.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Concentration (Acid)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>Calculated</td></tr><tr><td><strong>Volume (Acid)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>H+ donated (Acid)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Moles of H+ (Additional acid parameters)</strong></td><td>A measured quantity, 5 units available.</td><td>moles</td><td>Calculated</td></tr><tr><td><strong>Moles of acid (Additional acid parameters)</strong></td><td>A measured quantity, 5 units available.</td><td>moles</td><td>You supply it</td></tr><tr><td><strong>Kb (Additional acid parameters)</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the 0</td><td>You supply it</td></tr><tr><td><strong>Ka2 (Additional acid parameters)</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the 0</td><td>You supply it</td></tr><tr><td><strong>Moles of H+ (Additional acid parameters)</strong></td><td>A measured quantity, 5 units available.</td><td>moles</td><td>Calculated</td></tr><tr><td><strong>Moles of acid (Additional acid parameters)</strong></td><td>A measured quantity, 5 units available.</td><td>moles</td><td>You supply it</td></tr><tr><td><strong>Kb (Additional acid parameters)</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the 0</td><td>You supply it</td></tr><tr><td><strong>Ka2 (Additional acid parameters)</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the 0</td><td>You supply it</td></tr><tr><td><strong>Strength (Base)</strong></td><td>One of 3 options, such as strong, weak and unknown.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Concentration (Base)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Volume (Base)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>OH- donated (Base)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Strength (Base)</strong></td><td>One of 3 options, such as strong, weak and unknown.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Concentration (Base)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Volume (Base)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>OH- donated (Base)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 33 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Titration calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Volume</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">moles of acid ÷ concentration</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Moles of base</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">concentration × volume</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Moles of H+</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">moles of OH-</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ka</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 100000000000000) ÷ kb</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Concentration</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">moles of acid ÷ volume</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">H+ donated</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">moles of H+ ÷ moles of acid</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in moles, and convertible to any of the 5 units on that chip.</li><li>Shown in moles, and convertible to any of the 5 units on that chip.</li><li>Shown in times 10 to the 0, and convertible to any of the 69 units on that chip.</li><li>Shown in times 10 to the 0, and convertible to any of the 69 units on that chip.</li><li>Shown in molars, and convertible to any of the 9 units on that chip.</li><li>Shown in moles, and convertible to any of the 5 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in moles, and convertible to any of the 5 units on that chip.</li><li>Shown in moles, and convertible to any of the 5 units on that chip.</li><li>Shown in times 10 to the 0, and convertible to any of the 69 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Molar concentration, opening in molars</li><li>Volume, opening in milliliters</li><li>Scientific notation, opening in times 10 to the 0</li><li>Molar concentration, opening in molars</li><li>Volume, opening in milliliters</li><li>Scientific notation, opening in times 10 to the 0</li><li>Mole, opening in moles</li><li>Mole, opening in moles</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Titration calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing a solution and checking the numbers first</li><li>Working through a stoichiometry problem</li><li>Converting between the units a protocol and your bench equipment use</li><li>Any time the same 4 figures keep coming back — the concentration, the volume and the H+ donated — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/water-hardness\">Water hardness</a>, <a href=\"/chemistry/young-laplace-equation\">Young Laplace equation</a> and <a href=\"/chemistry/activation-energy\">Activation energy</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Titration calculator work out?",
+      "a": "It returns volume (Acid), derived from the concentration, the volume and the H+ donated. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Titration calculator?",
+      "a": "The form asks for the concentration, the volume, the H+ donated and the moles of acid, which is 25 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter concentration (Acid) in a different unit?",
+      "a": "Yes. Concentration (Acid) opens in molars and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Titration calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/water-hardness",
+      "name": "Water hardness"
+    },
+    {
+      "path": "/chemistry/young-laplace-equation",
+      "name": "Young Laplace equation"
+    },
+    {
+      "path": "/chemistry/activation-energy",
+      "name": "Activation energy"
+    }
+  ],
+  "words": 2325
+}

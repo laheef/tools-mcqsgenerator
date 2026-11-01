@@ -1,0 +1,97 @@
+{
+  "path": "/conversion/inches-to-fraction",
+  "slug": "inches-to-fraction",
+  "cat": "conversion",
+  "name": "Inches to fraction",
+  "seoTitle": "Inches to fraction Calculator: Free, With Steps",
+  "seoDesc": "Inches to fraction: convert distance (Enter distance (decimal or fraction)) to precision instantly — the exact factor, a conversion table and no sign-up.",
+  "h1": "Inches to fraction Calculator",
+  "summary": "<strong>distance (Enter distance (decimal or fraction))</strong> to precision takes one exact factor, printed below with a worked example. One number goes in, press Calculate, and the equivalent in the other unit appears; the factor that links them is printed below, so you can repeat the arithmetic yourself.\n\nIt is built for a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Inches to fraction calculator work?",
+      "html": "<p>The Inches to fraction calculator takes the values in the form, applies the relationship described below and reports <strong>distance (Enter distance (decimal or fraction))</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the precision); then you type in the distance (Convert to other units).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 8 options, such as 1/2, 1/4 and 1/8. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li></ul><p>Both boxes accept a value, so it does not matter which one you start from. Type into the box you already know — the number in the other box is rewritten as soon as you press Calculate, and the unit chips beside them let you move to a third and fourth unit without leaving the page.</p><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Distance (Enter distance (decimal or fraction))</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>Calculated</td></tr><tr><td><strong>Precision</strong></td><td>One of 8 options, such as 1/2, 1/4 and 1/8.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Distance (Convert to other units)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Inches to fraction calculator",
+      "html": "<p>Spelled out as an equation, <strong>1 in = 25.4 mm</strong>. Everything else on this page follows from that one line.</p>\n<p>This is a conversion rather than a calculation. Distance (Enter distance (decimal or fraction)) and distance (Convert to other units) describe the same quantity, so the arithmetic underneath is a simple identity: whatever you type in one box is converted to a common base unit, and the other box is rendered from that base in its own unit.</p>\n<p>That is why changing the unit chip does not change the underlying value, only the way it is written — and why you can enter a figure in either box and read the answer from the other.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in inches, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "Common distance (Enter distance (decimal or fraction)) to distance conversions",
+      "html": "<p>The table applies the same relationship the calculator uses, so the numbers here and in the boxes above agree to the last digit shown. Multiply a distance (Enter distance (decimal or fraction)) figure by 25.4 to get distance; divide to go the other way.</p>\n<table><thead><tr><th>Distance (Enter distance (decimal or fraction))</th><th>Distance</th></tr></thead><tbody><tr><td>1</td><td>25.4</td></tr><tr><td>2</td><td>50.8</td></tr><tr><td>5</td><td>127</td></tr><tr><td>10</td><td>254</td></tr><tr><td>25</td><td>635</td></tr><tr><td>50</td><td>1,270</td></tr><tr><td>100</td><td>2,540</td></tr><tr><td>500</td><td>12,700</td></tr><tr><td>1,000</td><td>25,400</td></tr></tbody></table>\n<p>Display rounding is the only thing that changes between the table and the calculator: the underlying conversion runs at full precision.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in inches</li><li>Length, opening in millimeters</li><li>Length, opening in feet</li><li>Length, opening in inches</li><li>Length, opening in inches</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Inches to fraction calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting a figure someone quoted you so you can compare it</li><li>Reading a recipe written in units you do not use</li><li>Checking a product listing against the measurements you work with</li><li>Any time the same 1 figures keep coming back — the distance — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/mbps-to-gbps\">Mbps to gbps converter</a>, <a href=\"/conversion/mcg-to-mg\">mcg to mg</a> and <a href=\"/conversion/mcg-to-ml\">mcg to mL conversion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Inches to fraction calculator work out?",
+      "a": "It returns distance (Enter distance (decimal or fraction)), derived from the distance. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Inches to fraction calculator?",
+      "a": "The form asks for the distance, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter distance (Enter distance (decimal or fraction)) in a different unit?",
+      "a": "Yes. Distance (Enter distance (decimal or fraction)) opens in inches and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Inches to fraction calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/mbps-to-gbps",
+      "name": "Mbps to gbps converter"
+    },
+    {
+      "path": "/conversion/mcg-to-mg",
+      "name": "mcg to mg"
+    },
+    {
+      "path": "/conversion/mcg-to-ml",
+      "name": "mcg to mL conversion"
+    }
+  ],
+  "words": 1413
+}

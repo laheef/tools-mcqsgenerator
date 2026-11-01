@@ -1,0 +1,85 @@
+{
+  "path": "/math/circumcenter-of-a-triangle",
+  "slug": "circumcenter-of-a-triangle",
+  "cat": "math",
+  "name": "Circumcenter of a triangle",
+  "seoTitle": "Circumcenter of a triangle Calculator: Free, With Steps",
+  "seoDesc": "Circumcenter of a triangle: work out your result from the den. A free math calculator with the formula, units and a worked example.",
+  "h1": "Circumcenter of a triangle Calculator",
+  "summary": "The Circumcenter of a triangle calculator is a free, no-sign-up math tool. Fill in the 6 fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nIt is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Circumcenter of a triangle calculator work?",
+      "html": "<p>The Circumcenter of a triangle calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you type in the den.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Y₁</td><td>a plain number with no unit attached.</td></tr><tr><td>X₂</td><td>a plain number with no unit attached.</td></tr><tr><td>Y₂</td><td>a plain number with no unit attached.</td></tr><tr><td>X</td><td>a plain number with no unit attached.</td></tr><tr><td>Y</td><td>a plain number with no unit attached.</td></tr><tr><td>Den</td><td>a plain number with no unit attached.</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Circumcenter of a triangle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Y₃</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-1 ÷ 2 × den + X₁ × Y₂ − X₂ × Y₁ + X₃ × Y₁ − X₃ × Y₂) ÷ (X₁ − X₂)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y₃</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × ((X₁ ^ 2) − (X₂ ^ 2) + (Y₁ ^ 2) − (Y₂ ^ 2) + the square root of (4 × den × X × Y₁ − 4 × den × X × Y₂ + (X₁ ^ 4) − 2 × (X₁ ^ 2) × (X₂ ^ 2) + 2 × (X₁ ^ 2) × (Y₁ ^ 2) − 4 × (X₁ ^ 2) × Y₁ × Y₂ + 2 × (X₁ ^ 2) × (Y₂ ^ 2) + (X₂ ^ 4) + 2 × (X₂ ^ 2) × (Y₁ ^ 2) − 4 × (X₂ ^ 2) × Y₁ × Y₂ + 2 × (X₂ ^ 2) × (Y₂ ^ 2) − 4 × (X₃ ^ 2) × (Y₁ ^ 2) + 8 × (X₃ ^ 2) × Y₁ × Y₂ − 4 × (X₃ ^ 2) × (Y₂ ^ 2) + (Y₁ ^ 4) − 4 × (Y₁ ^ 3) × Y₂ + 6 × (Y₁ ^ 2) × (Y₂ ^ 2) − 4 × Y₁ × (Y₂ ^ 3) + (Y₂ ^ 4))) ÷ (Y₁ − Y₂)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y₃</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-the square root of (-(den × Y + (X₁ ^ 2) × X₂ − (X₁ ^ 2) × X₃ − X₁ × (X₂ ^ 2) + X₁ × (X₃ ^ 2) − X₁ × (Y₂ ^ 2) + (X₂ ^ 2) × X₃ − X₂ × (X₃ ^ 2) + X₂ × (Y₁ ^ 2) − X₃ × (Y₁ ^ 2) + X₃ × (Y₂ ^ 2)) ÷ (X₁ − X₂))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y₃</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-2 × area + X₁ × Y₂ − X₂ × Y₁ + X₃ × Y₁ − X₃ × Y₂) ÷ (X₁ − X₂)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Circumcenter of a triangle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Settling an argument about a number with a quick, traceable result</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Any time the same 1 figures keep coming back — the den — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/fractional-exponent\">Fraction exponent</a>, <a href=\"/math/frustum-cone-area\">Frustum cone area</a> and <a href=\"/math/fundamental-counting-principle\">Fundamental counting principle</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Circumcenter of a triangle calculator?",
+      "a": "The form asks for the den, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Circumcenter of a triangle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/fractional-exponent",
+      "name": "Fraction exponent"
+    },
+    {
+      "path": "/math/frustum-cone-area",
+      "name": "Frustum cone area"
+    },
+    {
+      "path": "/math/fundamental-counting-principle",
+      "name": "Fundamental counting principle"
+    }
+  ],
+  "words": 1128
+}

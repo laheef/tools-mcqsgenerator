@@ -1,0 +1,93 @@
+{
+  "path": "/everyday-life/gas",
+  "slug": "gas",
+  "cat": "everyday-life",
+  "name": "Gas",
+  "seoTitle": "Gas Calculator: Free, With Steps",
+  "seoDesc": "Gas: work out fuel price from the fuel economy and the fuel used. A free everyday life calculator with the formula, units and a worked example.",
+  "h1": "Gas Calculator",
+  "summary": "Give the Gas calculator the fuel economy, the fuel used and the cost of the trip and it returns <strong>fuel price</strong>. It is built for a practical question that turns up in daily life.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Gas calculator work?",
+      "html": "<p>The Gas calculator takes the values in the form, applies the relationship described below and reports <strong>fuel price</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the car and the trip type); then you type in the fuel economy (Plan a trip and fuel costs), the fuel used (Plan a trip and fuel costs), the cost of the trip (Plan a trip and fuel costs) and the cost of the trip (Plan a trip and fuel costs).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 18 options, such as other vehicle, ford F150 and ford Explorer. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as city, highway and urban and Highway. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in liters per 100 kilometers. The unit chip switches it to any of the 10 supported units.</li><li>A measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A plain number with no unit attached.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Car</strong></td><td>One of 18 options, such as other vehicle, ford F150 and ford Explorer.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trip type</strong></td><td>One of 4 options, such as city, highway and urban and Highway.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Fuel economy (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 10 units available.</td><td>liters per 100 kilometers</td><td>You supply it</td></tr><tr><td><strong>Distance</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Fuel used (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Fuel used (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Fuel used (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Fuel used (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>You supply it</td></tr><tr><td><strong>Fuel price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Cost of the trip (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of the trip (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of the trip (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of the trip (Plan a trip and fuel costs)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Number of people</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Cost per person (Division of payment)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Cost per person (Division of payment)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Cost per person (Division of payment)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Cost per person (Division of payment)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Fuel economy (hidden parameters)</strong></td><td>A measured quantity, 10 units available.</td><td>liters per 100 kilometers</td><td>Calculated</td></tr><tr><td><strong>Fuel economy (hidden parameters)</strong></td><td>A measured quantity, 10 units available.</td><td>liters per 100 kilometers</td><td>Calculated</td></tr><tr><td><strong>Fuel economy (hidden parameters)</strong></td><td>A measured quantity, 10 units available.</td><td>liters per 100 kilometers</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Gas calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Fuel price</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cost of the trip ÷ fuel used</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cost per person</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cost of the trip ÷ number of people</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Distance</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">fuel used × fuel economy</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Fuel used</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cost of the trip ÷ (fuel price)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Fuel economy</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance ÷ fuel used</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>Shown in liters, and convertible to any of the 40 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in liters per 100 kilometers, and convertible to any of the 10 units on that chip.</li><li>Shown in liters, and convertible to any of the 40 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in liters per 100 kilometers, and convertible to any of the 10 units on that chip.</li><li>Shown in liters, and convertible to any of the 40 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in liters per 100 kilometers, and convertible to any of the 10 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Fuel economy, opening in liters per 100 kilometers</li><li>Length, opening in kilometers</li><li>Volume, opening in liters</li><li>Volume, opening in liters</li><li>Volume, opening in liters</li><li>Volume, opening in liters</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Gas calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 3 figures keep coming back — the fuel economy, the fuel used and the cost of the trip — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/6-month\">6 month</a>, <a href=\"/everyday-life/60-day\">60 day</a> and <a href=\"/everyday-life/8-hour-shift\">8-hour shift</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Gas calculator work out?",
+      "a": "It returns fuel price, derived from the fuel economy, the fuel used and the cost of the trip. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Gas calculator?",
+      "a": "The form asks for the fuel economy, the fuel used and the cost of the trip, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter fuel economy (Plan a trip and fuel costs) in a different unit?",
+      "a": "Yes. Fuel economy (Plan a trip and fuel costs) opens in liters per 100 kilometers and the chip beside it offers 10 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Gas calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/6-month",
+      "name": "6 month"
+    },
+    {
+      "path": "/everyday-life/60-day",
+      "name": "60 day"
+    },
+    {
+      "path": "/everyday-life/8-hour-shift",
+      "name": "8-hour shift"
+    }
+  ],
+  "words": 2016
+}

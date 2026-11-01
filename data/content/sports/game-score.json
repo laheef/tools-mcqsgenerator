@@ -1,0 +1,97 @@
+{
+  "path": "/sports/game-score",
+  "slug": "game-score",
+  "cat": "sports",
+  "name": "Game score",
+  "seoTitle": "Game score Calculator — Formula, Units & Example",
+  "seoDesc": "Game score: work out game score (GS) from the field goals and the field goal attempts. A free sports calculator with the formula, units and a worked example.",
+  "h1": "Game score Calculator",
+  "summary": "Give the Game score calculator the field goals, the field goal attempts, the points scored and the free throws and it returns <strong>game score (GS)</strong>. That makes it useful for a training session, a performance comparison or a competition result.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Game score calculator work?",
+      "html": "<p>The Game score calculator takes the values in the form, applies the relationship described below and reports <strong>game score (GS)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the field goals (FG), the field goal attempts (FGA), the points scored (P) and the free throws (FT).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Field goals (FG)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Field goal attempts (FGA)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Points scored (P)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Free throws (FT)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Free throw attempts (FTA)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Defensive rebounds (DR)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Offensive rebounds (OR)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Assists (A)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Blocks (BS)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Steals (S)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Turnovers (T)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Personal fouls (PF)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Game score (GS)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Game score calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Game score (GS)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((7 ÷ 10) × assists (A) + (7 ÷ 10) × blocks (BS) + (3 ÷ 10) × defensive rebounds (DR) − 7 ÷ 10 × field goal attempts (FGA) + (2 ÷ 5) × field goals (FG) − 2 ÷ 5 × free throw attempts (FTA) + (2 ÷ 5) × free throws (FT) + (7 ÷ 10) × offensive rebounds (OR) − 2 ÷ 5 × personal fouls (PF) + points scored (P) + steals (S) − turnovers (T))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Field goals (FG)</strong> = 10, <strong>Field goal attempts (FGA)</strong> = 10, <strong>Points scored (P)</strong> = 10 and <strong>Free throws (FT)</strong> = 10. The calculator returns <strong>Game score (GS)</strong> = 27.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Game score (GS)</strong> = 27 should be roughly the size you expected from <strong>Field goals (FG)</strong> = 10 and <strong>Field goal attempts (FGA)</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Game score calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Planning a session around a target you already know</li><li>Tracking progress across a training block</li><li>Comparing two athletes or two attempts fairly</li><li>Any time the same 4 figures keep coming back — the field goals, the field goal attempts and the points scored — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Game score calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — field goals for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/bruce-protocol-mets\">Bruce protocol METs</a>, <a href=\"/sports/burpee-calorie\">Burpee calorie</a> and <a href=\"/sports/calories-burned\">Calories burned</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Game score calculator work out?",
+      "a": "It returns game score (GS), derived from the field goals, the field goal attempts and the points scored. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Game score calculator?",
+      "a": "The form asks for the field goals, the field goal attempts, the points scored and the free throws, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Game score (GS) = 27. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Game score calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/bruce-protocol-mets",
+      "name": "Bruce protocol METs"
+    },
+    {
+      "path": "/sports/burpee-calorie",
+      "name": "Burpee calorie"
+    },
+    {
+      "path": "/sports/calories-burned",
+      "name": "Calories burned"
+    }
+  ],
+  "words": 1243
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/construction/pitch-diameter",
+  "slug": "pitch-diameter",
+  "cat": "construction",
+  "name": "Pitch diameter",
+  "seoTitle": "Pitch diameter — Free Online Calculator",
+  "seoDesc": "Pitch diameter: work out height of fundamental triangle (H) from the maximum pitch diameter and the minimum pitch diameter. A free construction calculator…",
+  "h1": "Pitch diameter Calculator",
+  "summary": "Give the Pitch diameter calculator the maximum pitch diameter, the minimum pitch diameter and the lower deviation and it returns <strong>height of fundamental triangle (H)</strong>. Think of it as a shortcut for a materials order or a planning estimate you want to get roughly right first time.\n\nNothing repaints underneath you: edit a field, press Calculate, and the new answer appears. That is how you find out which input the result is sensitive to.",
+  "sections": [
+    {
+      "title": "How does the Pitch diameter calculator work?",
+      "html": "<p>The Pitch diameter calculator takes the values in the form, applies the relationship described below and reports <strong>height of fundamental triangle (H)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the tolerance grade for external thread, the tolerance position for external thread and the tolerance grade for internal thread); then you type in the maximum pitch diameter (External thread pitch diameters), the minimum pitch diameter (External thread pitch diameters), the maximum pitch diameter (Internal thread pitch diameters) and the lower deviation (EI).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as external thread dimensions, internal thread dimensions and external & internal thread dimensions. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as 3, 4 and 5. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as e, f and g. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as 4, 5 and 6. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Thread pitch</strong></td><td>One of 24 options, such as 0.2 mm, 0.25 mm and 0.3 mm.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Basic major diameter (Preliminary dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Basic major diameter (Preliminary dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Tolerance grade for external thread</strong></td><td>One of 7 options, such as 3, 4 and 5.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Tolerance position for external thread</strong></td><td>One of 4 options, such as e, f and g.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Tolerance grade for internal thread</strong></td><td>One of 5 options, such as 4, 5 and 6.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Tolerance position for internal thread</strong></td><td>One of 2 options, such as G and H.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Basic pitch diameter (External thread pitch diameters)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Maximum pitch diameter (External thread pitch diameters)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Minimum pitch diameter (External thread pitch diameters)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Basic pitch diameter (Internal thread pitch diameters)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Maximum pitch diameter (Internal thread pitch diameters)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Minimum pitch diameter (Internal thread pitch diameters)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Height of fundamental triangle (H)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Upper deviation (es)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Pitch diameter tolerance (td 2)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Lower deviation (EI)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Pitch diameter tolerance (td 2)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Td 2 temperature</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Td 2 temperature</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Pitch diameter calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Height of fundamental triangle (H)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × the square root of (3) × thread pitch</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Basic major diameter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">basic major diameter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Basic pitch diameter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">basic major diameter − 3 ÷ 4 × height of fundamental triangle (H)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Height of fundamental triangle (H)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(4 ÷ 3) × basic major diameter − 4 ÷ 3 × basic pitch diameter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Basic pitch diameter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">basic pitch diameter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Upper deviation (es)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-basic pitch diameter + maximum pitch diameter</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>The option the calculation settles on.</li><li>The option the calculation settles on.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Pitch diameter calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a supplier's figure against your own measurements</li><li>Quoting a job where areas and quantities drive the price</li><li>Ordering material and not wanting a second trip</li><li>Any time the same 3 figures keep coming back — the maximum pitch diameter, the minimum pitch diameter and the lower deviation — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/wood-fence\">Wood fence</a>, <a href=\"/construction/ac-tonnage\">AC tonnage</a> and <a href=\"/construction/air-changes-per-hour\">Air changes per hour</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Pitch diameter calculator work out?",
+      "a": "It returns height of fundamental triangle (H), derived from the maximum pitch diameter, the minimum pitch diameter and the lower deviation. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Pitch diameter calculator?",
+      "a": "The form asks for the maximum pitch diameter, the minimum pitch diameter and the lower deviation, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter basic major diameter (Preliminary dimensions) in a different unit?",
+      "a": "Yes. Basic major diameter (Preliminary dimensions) opens in millimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Height of fundamental triangle (H) = 129.9038 mm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Pitch diameter calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/wood-fence",
+      "name": "Wood fence"
+    },
+    {
+      "path": "/construction/ac-tonnage",
+      "name": "AC tonnage"
+    },
+    {
+      "path": "/construction/air-changes-per-hour",
+      "name": "Air changes per hour"
+    }
+  ],
+  "words": 2033
+}

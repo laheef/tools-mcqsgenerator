@@ -1,0 +1,14 @@
+{
+    "slug": "disclaimer",
+    "title": "Disclaimer",
+    "excerpt": "Financial, medical and legal results are estimates — here is exactly what that means.",
+    "content": "<p>Every calculator on this site is an estimate built from a documented formula. This page says, plainly, where the limits are.</p>\n<h2>Money</h2>\n<p>Loan, mortgage, investment and tax calculators reproduce standard formulas. Real statements differ: interest accrues on your lender's schedule, fees are charged in ways the formula cannot see, and tax rules change and depend on where you live. Treat the output as a planning figure and compare it with an official statement before committing to anything.</p>\n<h2>Health</h2>\n<p>Health calculators (BMI, dosage, pregnancy dates, risk scores) are educational. They use population-level formulas, not your individual clinical picture. They are not a diagnosis, a prescription or a substitute for a clinician who has examined you.</p>\n<h2>Engineering, construction and safety</h2>\n<p>Material, structural and electrical calculators give estimates from simplified models. Loads, tolerances and codes vary by jurisdiction and by product. Anything that bears weight, conducts current or holds back water needs a qualified professional and the manufacturer's data.</p>\n<h2>No professional relationship</h2>\n<p>Using this site does not create a professional relationship of any kind. No result here constitutes financial, legal, medical or engineering advice.</p>",
+    "status": "published",
+    "template": "default",
+    "meta_title": "Disclaimer",
+    "meta_description": "What the results on this site are and are not: estimates that need checking against a professional or a primary source.",
+    "canonical_url": "",
+    "noindex": 0,
+    "show_in_header": 0,
+    "show_in_footer": 1
+}

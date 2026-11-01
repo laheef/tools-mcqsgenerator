@@ -1,0 +1,101 @@
+{
+  "path": "/math/pyramid-angle",
+  "slug": "pyramid-angle",
+  "cat": "math",
+  "name": "Pyramid angle",
+  "seoTitle": "Pyramid angle — Free Online Calculator",
+  "seoDesc": "Pyramid angle: work out side (AB) (Base and measurements) from the segment MC and number of sides. A free math calculator with the formula, units and a…",
+  "h1": "Pyramid angle Calculator",
+  "summary": "Supply the segment MC, number of sides, the hypo and the hypo cus and the Pyramid angle calculator solves for <strong>side (AB) (Base and measurements)</strong>. That makes it useful for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Pyramid angle calculator work?",
+      "html": "<p>The Pyramid angle calculator takes the values in the form, applies the relationship described below and reports <strong>side (AB) (Base and measurements)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the base polygon); then you type in the segment MC (Base and measurements), number of sides, the hypo and the hypo cus.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 6 options, such as square, pentagon and hexagon. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Base polygon</strong></td><td>One of 6 options, such as square, pentagon and hexagon.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Segment MC (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of sides</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Side (AB) (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Side (AB) (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Segment MC (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Hypo</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Hypo cus</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Height (OC) (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Height (OC) (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Slanted side (BO) (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Slanted side (BO) (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Slanted height (MO) (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Slanted height (MO) (Base and measurements)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Alpha (α) (Angles)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Alpha (α) (Angles)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Beta (ß) (Angles)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Beta (ß) (Angles)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Gamma (γ) (Angles)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Gamma (γ) (Angles)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Delta (δ) (Angles)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Delta (δ) (Angles)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Corner</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Corner cus</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Pyramid angle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Side (AB)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × segment MC ÷ the tangent of (D × (base polygon − 2) ÷ base polygon)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Segment MC</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × side (AB) × the tangent of (D × (number of sides − 2) ÷ number of sides)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Height (OC)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-segment MC ÷ the tangent of (alpha (α) − D)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Segment MC</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-height (OC) × the tangent of (alpha (α) − D)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side (AB)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × hypo × the cosine of (D × (base polygon − 2) ÷ base polygon)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side (AB)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × hypo cus × the cosine of (D × (number of sides − 2) ÷ number of sides)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Base polygon</strong> set to Square, <strong>Segment MC</strong> = 10, <strong>Side (AB)</strong> = 10 and <strong>D</strong> = 10 deg. Working through the relationship above gives <strong>Hypo</strong> = 5.0191.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Hypo</strong> = 5.0191 should be roughly the size you expected from <strong>Base polygon</strong> set to Square and <strong>Segment MC</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Pyramid angle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li><li>Any time the same 4 figures keep coming back — the segment MC, number of sides and the hypo — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/surface-area-of-a-rectangle\">Surface area of a rectangle</a>, <a href=\"/math/surface-area-of-a-rectangular-pyramid\">Surface area of a rectangular pyramid</a> and <a href=\"/math/surface-area-of-a-triangular-prism\">Surface area of a triangular prism</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Pyramid angle calculator work out?",
+      "a": "It returns side (AB) (Base and measurements), derived from the segment MC, number of sides and the hypo. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Pyramid angle calculator?",
+      "a": "The form asks for the segment MC, number of sides, the hypo and the hypo cus, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter alpha (α) (Angles) in a different unit?",
+      "a": "Yes. Alpha (α) (Angles) opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Hypo = 5.0191. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Pyramid angle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/surface-area-of-a-rectangle",
+      "name": "Surface area of a rectangle"
+    },
+    {
+      "path": "/math/surface-area-of-a-rectangular-pyramid",
+      "name": "Surface area of a rectangular pyramid"
+    },
+    {
+      "path": "/math/surface-area-of-a-triangular-prism",
+      "name": "Surface area of a triangular prism"
+    }
+  ],
+  "words": 1900
+}

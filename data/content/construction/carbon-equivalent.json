@@ -1,0 +1,93 @@
+{
+  "path": "/construction/carbon-equivalent",
+  "slug": "carbon-equivalent",
+  "cat": "construction",
+  "name": "Carbon equivalent",
+  "seoTitle": "Carbon equivalent Calculator: Free, With Steps",
+  "seoDesc": "Carbon equivalent: work out carbon from the silicon and the chromium. A free construction calculator with the formula, units and a worked example.",
+  "h1": "Carbon equivalent Calculator",
+  "summary": "Supply the silicon, the chromium, the molybdenum and the vanadium and the <strong>carbon</strong> equivalent calculator solves for carbon. Think of it as a shortcut for a materials order or a planning estimate you want to get roughly right first time.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Carbon equivalent calculator work?",
+      "html": "<p>The Carbon equivalent calculator takes the values in the form, applies the relationship described below and reports <strong>carbon</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the silicon (Si), the chromium (Cr), the molybdenum (Mo) and the vanadium (V).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Carbon (C)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Manganese (Mn)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Silicon (Si)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Chromium (Cr)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Molybdenum (Mo)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Vanadium (V)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Copper (Cu)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Nickel (Ni)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Boron (B)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Critical metal parameter (Pcm)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Carbon equivalent calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">CE (AWS)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">carbon (C) + (1 ÷ 5) × chromium (Cr) + (1 ÷ 15) × copper (Cu) + (1 ÷ 6) × manganese (Mn) + (1 ÷ 5) × molybdenum (Mo) + (1 ÷ 15) × nickel (Ni) + (1 ÷ 6) × silicon (Si) + (1 ÷ 5) × vanadium (V)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Carbon (C)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">CE (IIW) − 1 ÷ 5 × chromium (Cr) − 1 ÷ 15 × copper (Cu) − 1 ÷ 6 × manganese (Mn) − 1 ÷ 5 × molybdenum (Mo) − 1 ÷ 15 × nickel (Ni) − 1 ÷ 5 × vanadium (V)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Carbon (C)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">CE (JWES) − 1 ÷ 5 × chromium (Cr) − 1 ÷ 6 × manganese (Mn) − 1 ÷ 4 × molybdenum (Mo) − 1 ÷ 40 × nickel (Ni) − 1 ÷ 24 × silicon (Si) − 1 ÷ 14 × vanadium (V)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Carbon (C)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-5 × boron (B) − 1 ÷ 20 × chromium (Cr) − 1 ÷ 20 × copper (Cu) − 1 ÷ 20 × manganese (Mn) − 1 ÷ 15 × molybdenum (Mo) − 1 ÷ 60 × nickel (Ni) + critical metal parameter (Pcm) − 1 ÷ 30 × silicon (Si) − 1 ÷ 10 × vanadium (V)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Carbon equivalent calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a supplier's figure against your own measurements</li><li>Quoting a job where areas and quantities drive the price</li><li>Ordering material and not wanting a second trip</li><li>Any time the same 4 figures keep coming back — the silicon, the chromium and the molybdenum — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Carbon equivalent calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/material-removal-rate\">Material removal rate</a>, <a href=\"/construction/metal-roof-cost\">Metal roof cost</a> and <a href=\"/construction/metal-weight\">Metal weight</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Carbon equivalent calculator work out?",
+      "a": "It returns carbon, derived from the silicon, the chromium and the molybdenum. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Carbon equivalent calculator?",
+      "a": "The form asks for the silicon, the chromium, the molybdenum and the vanadium, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Carbon equivalent calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/material-removal-rate",
+      "name": "Material removal rate"
+    },
+    {
+      "path": "/construction/metal-roof-cost",
+      "name": "Metal roof cost"
+    },
+    {
+      "path": "/construction/metal-weight",
+      "name": "Metal weight"
+    }
+  ],
+  "words": 1201
+}

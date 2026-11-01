@@ -1,0 +1,93 @@
+{
+  "path": "/physics/dc-wire-size",
+  "slug": "dc-wire-size",
+  "cat": "physics",
+  "name": "DC wire size",
+  "seoTitle": "DC wire size Calculator",
+  "seoDesc": "DC wire size: work out source voltage from the allowable voltage drop and the current. A free physics calculator with the formula, units and a worked example.",
+  "h1": "DC wire size Calculator",
+  "summary": "The DC wire size calculator turns the allowable voltage drop, the current and more into <strong>source voltage</strong>. It suits a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the DC wire size calculator work?",
+      "html": "<p>The DC wire size calculator takes the values in the form, applies the relationship described below and reports <strong>source voltage</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the conductor material); then you type in the allowable voltage drop (V), the current (I), the one-way distance (D) and the maximum wire temperature.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>Pick the option that matches your case — 2 options, such as copper (1.68 µΩ⋅cm) and aluminum (2.65 µΩ⋅cm). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in amperes. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in square millimeters. The unit chip switches it to any of the 24 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Source voltage</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>Allowable voltage drop (V)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Conductor material</strong></td><td>One of 2 options, such as copper (1.68 µΩ⋅cm) and aluminum (2.65 µΩ⋅cm).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Current (I)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>You supply it</td></tr><tr><td><strong>One-way distance (D)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Maximum wire temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Wire diameter (d) (Recommended wire size per cable)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Wire diameter (d) (Recommended wire size per cable)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Conductor resistivity</strong></td><td>A measured quantity, 3 units available.</td><td>micro-ohm centimeters</td><td>Calculated</td></tr><tr><td><strong>Temp coefficient</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Max current</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Wire gauge (Hidden)</strong></td><td>A number stated in AWG.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Wire gauge (Hidden)</strong></td><td>A number stated in AWG.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the DC wire size calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Source voltage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × conductor resistivity × current (I) × one-way distance (D) × (maximum wire temperature × temp coefficient − 20 × temp coefficient + 1) ÷ (allowable voltage drop (V) × wire cross-sectional area (A))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wire gauge</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(wire cross-sectional area (A))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wire diameter (d)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × the square root of (wire cross-sectional area (A)) ÷ the square root of (PI)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wire cross-sectional area (A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(current (I), maximum wire temperature, conductor resistivity)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wire gauge</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((current (I), maximum wire temperature, conductor resistivity))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wire diameter (d)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × the square root of ((current (I), maximum wire temperature, conductor resistivity)) ÷ the square root of (PI)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in square millimeters, and convertible to any of the 24 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in micro-ohm centimeters, and convertible to any of the 3 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Voltage, opening in volts</li><li>%, opening in percent</li><li>Electric current – ampere, opening in amperes</li><li>Length, opening in meters</li><li>Temperature, opening in Celsius</li><li>Area, opening in square millimeters</li><li>Length, opening in millimeters</li><li>Area, opening in square millimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The DC wire size calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the allowable voltage drop, the current and the one-way distance — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/simple-harmonic-motion\">Simple harmonic motion</a>, <a href=\"/physics/simple-pendulum\">Simple pendulum</a> and <a href=\"/physics/skin-depth\">Skin depth</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the DC wire size calculator work out?",
+      "a": "It returns source voltage, derived from the allowable voltage drop, the current and the one-way distance. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the DC wire size calculator?",
+      "a": "The form asks for the allowable voltage drop, the current, the one-way distance and the maximum wire temperature, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter source voltage in a different unit?",
+      "a": "Yes. Source voltage opens in volts and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the DC wire size calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/simple-harmonic-motion",
+      "name": "Simple harmonic motion"
+    },
+    {
+      "path": "/physics/simple-pendulum",
+      "name": "Simple pendulum"
+    },
+    {
+      "path": "/physics/skin-depth",
+      "name": "Skin depth"
+    }
+  ],
+  "words": 1680
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/math/oblique-triangle",
+  "slug": "oblique-triangle",
+  "cat": "math",
+  "name": "Oblique triangle",
+  "seoTitle": "Oblique triangle Calculator — Formula, Units & Example",
+  "seoDesc": "Oblique triangle: work out angle α (SSS results) from the side a and the side b. A free math calculator with the formula, units and a worked example.",
+  "h1": "Oblique triangle Calculator",
+  "summary": "<strong>angle α (SSS results)</strong> is what the Oblique triangle calculator works out, and it gets there from the side a and the side b. Think of it as a shortcut for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Oblique triangle calculator work?",
+      "html": "<p>The Oblique triangle calculator takes the values in the form, applies the relationship described below and reports <strong>angle α (SSS results)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the given); then you type in the side a (SSS inputs), the side b (SSS inputs), the side c (SSS inputs) and the side a (SAS inputs).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as three sides (SSS), two sides + angle between (SAS) and two angles + side between (ASA). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Given</strong></td><td>One of 4 options, such as three sides (SSS), two sides + angle between (SAS) and two angles + side between (ASA).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Side a (SSS inputs)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side b (SSS inputs)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side c (SSS inputs)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle α (SSS results)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle ß (SSS results)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle γ (SSS results)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Area (SSS results)</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr><tr><td><strong>Side a (SAS inputs)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle γ (SAS inputs)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Side b (SAS inputs)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle α (SAS results)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle α (SAS results)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle ß (SAS results)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle ß (SAS results)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Side c (SAS results)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Area (SAS results)</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr><tr><td><strong>Angle α (ASA inputs)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Side c (ASA inputs)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle ß (ASA inputs)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Angle γ (ASA results)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Side a (ASA results)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Side b (ASA results)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Area (ASA results)</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 31 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Oblique triangle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Angle α</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((1 ÷ 2) × (-(side a ^ 2) + (side b ^ 2) + (side c ^ 2)) ÷ (side b × side c)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle ß</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((1 ÷ 2) × ((side a ^ 2) − (side b ^ 2) + (side c ^ 2)) ÷ (side a × side c)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle γ</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((1 ÷ 2) × ((side a ^ 2) + (side b ^ 2) − (side c ^ 2)) ÷ (side a × side b)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">S 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(the square root of ((-side a × side b × side c + side a × side b × ((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c) + side a × side c × ((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c) − side a × (((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c), 2) + side b × side c × ((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c) − side b × (((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c), 2) − side c × (((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c), 2) + (((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c), 3)) × ((1 ÷ 2) × side a + (1 ÷ 2) × side b + (1 ÷ 2) × side c)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side c</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(the square root of ((side a ^ 2) − 2 × side a × side b × the cosine of (angle γ) + (side b ^ 2)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in square centimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in square centimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Area, opening in square centimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Oblique triangle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a homework answer before you hand it in</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Any time the same 2 figures keep coming back — the side a and the side b — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/simplify-cube-root\">Simplify cube root</a>, <a href=\"/math/simplify-fractions\">Simplify/reduce fractions</a> and <a href=\"/math/simplify-radicals\">Simplifying radicals</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Oblique triangle calculator work out?",
+      "a": "It returns angle α (SSS results), derived from the side a and the side b. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Oblique triangle calculator?",
+      "a": "The form asks for the side a and the side b, which is 13 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter side a (SSS inputs) in a different unit?",
+      "a": "Yes. Side a (SSS inputs) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Oblique triangle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/simplify-cube-root",
+      "name": "Simplify cube root"
+    },
+    {
+      "path": "/math/simplify-fractions",
+      "name": "Simplify/reduce fractions"
+    },
+    {
+      "path": "/math/simplify-radicals",
+      "name": "Simplifying radicals"
+    }
+  ],
+  "words": 2148
+}

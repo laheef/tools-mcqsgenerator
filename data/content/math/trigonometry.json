@@ -1,0 +1,93 @@
+{
+  "path": "/math/trigonometry",
+  "slug": "trigonometry",
+  "cat": "math",
+  "name": "Trigonometry",
+  "seoTitle": "Trigonometry Calculator: Free, With Steps",
+  "seoDesc": "Trigonometry: work out side b from the side c and the sin print. A free math calculator with the formula, units and a worked example.",
+  "h1": "Trigonometry Calculator",
+  "summary": "Supply the side c and the sin print and the Trigonometry calculator solves for <strong>side b</strong>. It suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Trigonometry calculator work?",
+      "html": "<p>The Trigonometry calculator takes the values in the form, applies the relationship described below and reports <strong>side b</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the side c and the sin print.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Side b</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Side c</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle α</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle β</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr><tr><td><strong>Angle degrees print</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Sin print</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Cos print</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Tan print</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cot print</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sec print</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Csc print</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Base angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Tan divide oddity</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Tan check first</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Tan check segment</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cot divide oddity</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cot check first</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cot check segment</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Trigonometry calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Side b</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (-(side a ^ 2) + (side c ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle α</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(side a ÷ side c)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × side a × the square root of (-(side a ^ 2) + (side c ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side b</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × area ÷ side a</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side b</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">side a ÷ the tangent of (angle α)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side b</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">side a × the tangent of (angle β)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in square centimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Angle, opening in degrees</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Area, opening in square centimeters</li><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Trigonometry calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Any time the same 2 figures keep coming back — the side c and the sin print — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/coterminal-angle\">Coterminal angle</a>, <a href=\"/math/cramers-rule\">Cramer's rule</a> and <a href=\"/math/crescent-area\">Area of crescent</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Trigonometry calculator work out?",
+      "a": "It returns side b, derived from the side c and the sin print. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Trigonometry calculator?",
+      "a": "The form asks for the side c and the sin print, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter angle in a different unit?",
+      "a": "Yes. Angle opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Trigonometry calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/coterminal-angle",
+      "name": "Coterminal angle"
+    },
+    {
+      "path": "/math/cramers-rule",
+      "name": "Cramer's rule"
+    },
+    {
+      "path": "/math/crescent-area",
+      "name": "Area of crescent"
+    }
+  ],
+  "words": 1341
+}

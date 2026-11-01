@@ -1,0 +1,101 @@
+{
+  "path": "/other/crosstalk",
+  "slug": "crosstalk",
+  "cat": "other",
+  "name": "Crosstalk",
+  "seoTitle": "Crosstalk Calculator",
+  "seoDesc": "Crosstalk: work out length of parallel routes (L) from the source rise time and the source voltage. A free other calculator with the formula, units and a…",
+  "h1": "Crosstalk Calculator",
+  "summary": "<strong>length of parallel routes (L)</strong> is what the Crosstalk calculator works out, and it gets there from the source rise time, the source voltage, the trace 1 height and the trace spacing. It suits whatever you happen to be working on.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Crosstalk calculator work?",
+      "html": "<p>The Crosstalk calculator takes the values in the form, applies the relationship described below and reports <strong>length of parallel routes (L)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the conductor type); then you type in the source rise time, the source voltage, the trace 1 height (h1) and the trace spacing (S).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as microstrip and stripline. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in nanoseconds. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Conductor type</strong></td><td>One of 2 options, such as microstrip and stripline.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Source rise time</strong></td><td>A measured quantity, 27 units available.</td><td>nanoseconds</td><td>You supply it</td></tr><tr><td><strong>Source voltage</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>Length of parallel routes (L)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Substrate height (H)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Trace 1 height (h 1)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Trace 2 height (h 2)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Trace spacing (S)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Substrate dielectric</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Coupled voltage</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>Crosstalk Coefficient</strong></td><td>A number stated in dB.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Seff</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Trt</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Multiplier</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Crosstalk calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Length of parallel routes (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(5000 ÷ 1017) × the square root of (2) × trt ÷ the square root of (95 × substrate dielectric + 134)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Trace 2 height (h 2)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-trace 1 height (h1) + the square root of ((seff − trace spacing (S)) × (seff + trace spacing (S)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">H 1eff</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">trace 1 height (h1) × (substrate height (H) − trace 1 height (h1)) ÷ substrate height (H)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Trace 2 height (h 2)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × substrate height (H) + (1 ÷ 2) × the square root of (substrate height (H) × (-4 × H 2eff + substrate height (H)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Multiplier</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(trt, source rise time)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Coupled voltage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(source voltage × (trt, source rise time) × ((((conductor type) ? ( H 1eff × H 2eff ) : ( substrate height (H) ))), 2) ÷ (((((conductor type) ? ( (seff ^ 2) ) : ( trace spacing (S) ))), 2) + ((((conductor type) ? ( H 1eff × H 2eff ) : ( substrate height (H) ))), 2)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Conductor type</strong> set to Microstrip, <strong>Trace 1 height (h 1)</strong> = 0 μm, <strong>Trace 2 height (h 2)</strong> = 0 μm and <strong>Substrate dielectric</strong> = 10. Working through the relationship above gives <strong>Length of parallel routes (L)</strong> = 211.1784 cm.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Length of parallel routes (L)</strong> = 211.1784 cm should be roughly the size you expected from <strong>Conductor type</strong> set to Microstrip and <strong>Trace 1 height (h 1)</strong> = 0 μm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in nanoseconds</li><li>Voltage, opening in volts</li><li>Length, opening in centimeters</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Voltage, opening in volts</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Crosstalk calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 4 figures keep coming back — the source rise time, the source voltage and the trace 1 height — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/nether-portal\">Nether portal</a>, <a href=\"/other/new-years-countdown\">New Year’s countdown</a> and <a href=\"/other/note-frequency\">Note frequency</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Crosstalk calculator work out?",
+      "a": "It returns length of parallel routes (L), derived from the source rise time, the source voltage and the trace 1 height. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Crosstalk calculator?",
+      "a": "The form asks for the source rise time, the source voltage, the trace 1 height and the trace spacing, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter source rise time in a different unit?",
+      "a": "Yes. Source rise time opens in nanoseconds and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Length of parallel routes (L) = 211.1784 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Crosstalk calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/nether-portal",
+      "name": "Nether portal"
+    },
+    {
+      "path": "/other/new-years-countdown",
+      "name": "New Year’s countdown"
+    },
+    {
+      "path": "/other/note-frequency",
+      "name": "Note frequency"
+    }
+  ],
+  "words": 1852
+}

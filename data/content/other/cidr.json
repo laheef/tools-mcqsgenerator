@@ -1,0 +1,89 @@
+{
+  "path": "/other/cidr",
+  "slug": "cidr",
+  "cat": "other",
+  "name": "CIDR",
+  "seoTitle": "CIDR Calculator",
+  "seoDesc": "CIDR: work out cidr hosts from the first octet of IP and the second octet of IP. A free other calculator with the formula, units and a worked example.",
+  "h1": "CIDR Calculator",
+  "summary": "The CIDR calculator turns the first octet of IP, the second octet of IP and more into <strong>cidr hosts</strong>. That makes it useful for whatever you happen to be working on.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the CIDR calculator work?",
+      "html": "<p>The CIDR calculator takes the values in the form, applies the relationship described below and reports <strong>cidr hosts</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the first octet of IP, the second octet of IP, the third octet of IP and the fourth octet of IP.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as CIDR to IPv4 range and iPv4 range to CIDR. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in ..</li><li>A number, expressed in ..</li><li>A number, expressed in ..</li><li>A number, expressed in /.</li><li>A plain number with no unit attached.</li><li>A number, expressed in ..</li><li>A number, expressed in ..</li><li>A number, expressed in ..</li><li>A plain number with no unit attached.</li><li>A number, expressed in ..</li><li>A number, expressed in ..</li><li>A number, expressed in ..</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>First octet of IP</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Second octet of IP</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Third octet of IP</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Fourth octet of IP</strong></td><td>A number stated in /.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Subnet mask width</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>First octet (First IP)</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Second octet (First IP)</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Third octet (First IP)</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Fourth octet (First IP)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>First octet (Last IP)</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Second octet (Last IP)</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Third octet (Last IP)</strong></td><td>A number stated in ..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Fourth octet (Last IP)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>First ip 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>First ip 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>First ip 3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>First ip 4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Last ip 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Last ip 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Last ip 3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Last ip 4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Range</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Num ips</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Valid range</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 40 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the CIDR calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Subnet 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(subnet mask width, 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Subnet 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(subnet mask width, 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Subnet 3</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(subnet mask width, 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Subnet 4</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(subnet mask width, 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Prefix 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(first octet of IP, second octet of IP, third octet of IP, fourth octet of IP, subnet mask width, 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Prefix 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(first octet of IP, second octet of IP, third octet of IP, fourth octet of IP, subnet mask width, 1)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The CIDR calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 4 figures keep coming back — the first octet of IP, the second octet of IP and the third octet of IP — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/morse-code\">Morse code</a>, <a href=\"/other/music-duration\">Music duration</a> and <a href=\"/other/music-interval\">Music interval</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the CIDR calculator work out?",
+      "a": "It returns cidr hosts, derived from the first octet of IP, the second octet of IP and the third octet of IP. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the CIDR calculator?",
+      "a": "The form asks for the first octet of IP, the second octet of IP, the third octet of IP and the fourth octet of IP, which is 14 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the CIDR calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/morse-code",
+      "name": "Morse code"
+    },
+    {
+      "path": "/other/music-duration",
+      "name": "Music duration"
+    },
+    {
+      "path": "/other/music-interval",
+      "name": "Music interval"
+    }
+  ],
+  "words": 1392
+}

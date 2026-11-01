@@ -1,0 +1,101 @@
+{
+  "path": "/food/pizza-party",
+  "slug": "pizza-party",
+  "cat": "food",
+  "name": "Pizza party",
+  "seoTitle": "Pizza party Calculator",
+  "seoDesc": "Pizza party: work out you should order from the people at the party and the slices per pizza. A free food calculator with the formula, units and a worked…",
+  "h1": "Pizza party Calculator",
+  "summary": "Supply the people at the party, the slices per pizza and the price and the Pizza party calculator solves for <strong>you should order</strong>. It suits portioning, timing or nutrition.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Pizza party calculator work?",
+      "html": "<p>The Pizza party calculator takes the values in the form, applies the relationship described below and reports <strong>you should order</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the size, the crust and the type); then you type in the people at the party, the slices per pizza and the price.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as moderately hungry, hungry and starving. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as small (10\"), medium (12\") and large (14\"). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 2 options, such as thin and classic. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as veggie pizza, cheese pizza and pepperoni pizza. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>4 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>People at the party</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Size</strong></td><td>One of 4 options, such as small (10\"), medium (12\") and large (14\").</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Pizza diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Slices per pizza</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Crust</strong></td><td>One of 2 options, such as thin and classic.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Type</strong></td><td>One of 5 options, such as veggie pizza, cheese pizza and pepperoni pizza.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Calories per slice</strong></td><td>A number stated in kcal.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>You should order</strong></td><td>A number stated in pizzas.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Slices per person</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Cost per person</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Pizza party calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">You should order</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(rounded up, (we are... × people at the party ÷ (slices per pizza × (crust, type, pizza diameter, slices per pizza))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Slices per person</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(slices per pizza × (rounded up, (we are... × people at the party ÷ (slices per pizza × (crust, type, pizza diameter, slices per pizza)))) ÷ people at the party)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(price × (rounded up, (we are... × people at the party ÷ (slices per pizza × (crust, type, pizza diameter, slices per pizza)))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cost per person</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((price × (rounded up, (we are... × people at the party ÷ (slices per pizza × (crust, type, pizza diameter, slices per pizza))))) ÷ people at the party)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Calories per slice</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(crust, type, pizza diameter, slices per pizza)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Each person will eat</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((crust, type, pizza diameter, slices per pizza) × (slices per pizza × (rounded up, (we are... × people at the party ÷ (slices per pizza × (crust, type, pizza diameter, slices per pizza)))) ÷ people at the party))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Open the page and it is already filled in. With the values it starts from — <strong>We are</strong> set to hungry, <strong>Size</strong> set to small (10\"), <strong>Slices per pizza</strong> = 8 and <strong>Crust</strong> set to Classic — it reports <strong>Pizza diameter</strong> = 1000 cm.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Pizza diameter</strong> = 1000 cm should be roughly the size you expected from <strong>We are</strong> set to hungry and <strong>Size</strong> set to small (10\").</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Pizza party calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Working out timing so everything finishes together</li><li>Scaling a recipe up or down</li><li>Checking portions before you shop</li><li>Any time the same 3 figures keep coming back — the people at the party, the slices per pizza and the price — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/quarantine-food\">Quarantine food</a>, <a href=\"/food/rice-water-ratio\">Rice to water ratio</a> and <a href=\"/food/salad-calories\">Salad calories</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Pizza party calculator work out?",
+      "a": "It returns you should order, derived from the people at the party, the slices per pizza and the price. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Pizza party calculator?",
+      "a": "The form asks for the people at the party, the slices per pizza and the price, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter pizza diameter in a different unit?",
+      "a": "Yes. Pizza diameter opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Pizza diameter = 1000 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Pizza party calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/quarantine-food",
+      "name": "Quarantine food"
+    },
+    {
+      "path": "/food/rice-water-ratio",
+      "name": "Rice to water ratio"
+    },
+    {
+      "path": "/food/salad-calories",
+      "name": "Salad calories"
+    }
+  ],
+  "words": 1831
+}

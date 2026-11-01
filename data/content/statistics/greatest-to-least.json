@@ -1,0 +1,89 @@
+{
+  "path": "/statistics/greatest-to-least",
+  "slug": "greatest-to-least",
+  "cat": "statistics",
+  "name": "Greatest to least",
+  "seoTitle": "Greatest to least Calculator: Free, With Steps",
+  "seoDesc": "Greatest to least: answer 51 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Greatest to least Calculator",
+  "summary": "The Greatest to least calculator returns your result from the 51 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nIt is built for an assignment, a report or a data discussion where you need a defensible number. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Greatest to least calculator work?",
+      "html": "<p>The Greatest to least calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the order); then you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Order</td><td>pick the option that matches your case — 2 options, such as ascending and descending. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>#1</td><td>a plain number with no unit attached.</td></tr><tr><td>#2</td><td>a plain number with no unit attached.</td></tr><tr><td>#3</td><td>a plain number with no unit attached.</td></tr><tr><td>#4</td><td>a plain number with no unit attached.</td></tr><tr><td>#5</td><td>a plain number with no unit attached.</td></tr><tr><td>#6</td><td>a plain number with no unit attached.</td></tr><tr><td>#7</td><td>a plain number with no unit attached.</td></tr><tr><td>#8</td><td>a plain number with no unit attached.</td></tr><tr><td>#9</td><td>a plain number with no unit attached.</td></tr><tr><td>#10</td><td>a plain number with no unit attached.</td></tr><tr><td>#11</td><td>a plain number with no unit attached.</td></tr><tr><td>#12</td><td>a plain number with no unit attached.</td></tr><tr><td>#13</td><td>a plain number with no unit attached.</td></tr><tr><td>#14</td><td>a plain number with no unit attached.</td></tr><tr><td>#15</td><td>a plain number with no unit attached.</td></tr><tr><td>#16</td><td>a plain number with no unit attached.</td></tr><tr><td>#17</td><td>a plain number with no unit attached.</td></tr><tr><td>#18</td><td>a plain number with no unit attached.</td></tr><tr><td>#19</td><td>a plain number with no unit attached.</td></tr><tr><td>#20</td><td>a plain number with no unit attached.</td></tr><tr><td>#21</td><td>a plain number with no unit attached.</td></tr><tr><td>#22</td><td>a plain number with no unit attached.</td></tr><tr><td>#23</td><td>a plain number with no unit attached.</td></tr></tbody></table><p>The form has 51 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Greatest to least calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Greatest to least calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning raw numbers into something you can quote</li><li>Deciding how much confidence a sample really supports</li><li>Checking a result a piece of software produced</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Greatest to least calculator, these are the ones that matter:</p>\n<ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — order for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/10-sided-dice-roller\">10 sided dice roller</a>, <a href=\"/statistics/2-dice-roller\">2 dice roller</a> and <a href=\"/statistics/4-sided-dice-roller\">4 sided dice roller</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Greatest to least calculator?",
+      "a": "The form asks for a few values, which is 51 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Greatest to least calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/10-sided-dice-roller",
+      "name": "10 sided dice roller"
+    },
+    {
+      "path": "/statistics/2-dice-roller",
+      "name": "2 dice roller"
+    },
+    {
+      "path": "/statistics/4-sided-dice-roller",
+      "name": "4 sided dice roller"
+    }
+  ],
+  "words": 1097
+}

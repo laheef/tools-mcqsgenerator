@@ -1,0 +1,93 @@
+{
+  "path": "/health/dog-walking-benefits",
+  "slug": "dog-walking-benefits",
+  "cat": "health",
+  "name": "Dog walking benefits",
+  "seoTitle": "Dog walking benefits Calculator — Formula, Units & Example",
+  "seoDesc": "Dog walking benefits: work out time of the activity (Set your walk details) from the time of the activity and the energy burned. A free health calculator…",
+  "h1": "Dog walking benefits Calculator",
+  "summary": "Give the Dog walking benefits calculator the time of the activity and the energy burned and it returns <strong>time of the activity (Set your walk details)</strong>. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Dog walking benefits calculator work?",
+      "html": "<p>The Dog walking benefits calculator takes the values in the form, applies the relationship described below and reports <strong>time of the activity (Set your walk details)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the walking pace, the additional play activity and the dog size); then you type in the time of the activity (Set your walk details), the energy burned (Pawsitive physical perks), the energy burned and the energy burned (2).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as leisurely walk and brisk walk. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no additional activity, playing tug of war and playing fetch ‍. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as small dog, medium dog and big dog. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in kilocalories. The unit chip switches it to any of the 33 supported units.</li><li>A measured quantity, entered by default in kilocalories. The unit chip switches it to any of the 33 supported units.</li><li>A measured quantity, entered by default in kilocalories. The unit chip switches it to any of the 33 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Walking pace</strong></td><td>One of 2 options, such as leisurely walk and brisk walk.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Time of the activity (Set your walk details)</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>Calculated</td></tr><tr><td><strong>Your weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Additional play activity</strong></td><td>One of 3 options, such as no additional activity, playing tug of war and playing fetch ‍.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Dog size</strong></td><td>One of 3 options, such as small dog, medium dog and big dog.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Time of the activity (Set your walk details)</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Time of the activity (Set your walk details)</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>Calculated</td></tr><tr><td><strong>Energy burned (Pawsitive physical perks)</strong></td><td>A measured quantity, 33 units available.</td><td>kilocalories</td><td>Calculated</td></tr><tr><td><strong>Energy burned (Pawsitive physical perks)</strong></td><td>A measured quantity, 33 units available.</td><td>kilocalories</td><td>Calculated</td></tr><tr><td><strong>Energy burned (Pawsitive physical perks)</strong></td><td>A measured quantity, 33 units available.</td><td>kilocalories</td><td>You supply it</td></tr><tr><td><strong>Energy burned</strong></td><td>A measured quantity, 33 units available.</td><td>kilocalories</td><td>You supply it</td></tr><tr><td><strong>Energy burned (2)</strong></td><td>A measured quantity, 33 units available.</td><td>kilocalories</td><td>You supply it</td></tr><tr><td><strong>Minutes bike</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Dog walking benefits calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Time of the activity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(24000 ÷ 7) × energy burned ÷ (walking pace × your weight)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time of the activity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(10000 ÷ 7) × energy burned ÷ your weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Your weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(24000 ÷ 7) × energy burned ÷ (dog size × time of the activity)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Energy burned</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-energy burned + energy burned</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Energy burned</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">energy burned + energy burned</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Energy burned</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(133 ÷ 800) × minutes bike × your weight</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in hours / minutes, and convertible to any of the 27 units on that chip.</li><li>Shown in minutes, and convertible to any of the 27 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in hours / minutes</li><li>Mass, opening in kilograms</li><li>Time, opening in minutes</li><li>Time, opening in minutes</li><li>Energy, opening in kilocalories</li><li>Energy, opening in kilocalories</li><li>Energy, opening in kilocalories</li><li>Energy, opening in kilocalories</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Dog walking benefits calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Deciding whether a reading is worth a second look</li><li>Any time the same 2 figures keep coming back — the time of the activity and the energy burned — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/bmr-harris-benedict-equation\">BMR - Harris-Benedict equation</a>, <a href=\"/health/bmr-katch-mcardle\">BMR - Katch-McArdle equation</a> and <a href=\"/health/bode-index\">BODE index</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Dog walking benefits calculator work out?",
+      "a": "It returns time of the activity (Set your walk details), derived from the time of the activity and the energy burned. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Dog walking benefits calculator?",
+      "a": "The form asks for the time of the activity and the energy burned, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter time of the activity (Set your walk details) in a different unit?",
+      "a": "Yes. Time of the activity (Set your walk details) opens in hours / minutes and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Dog walking benefits calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/bmr-harris-benedict-equation",
+      "name": "BMR - Harris-Benedict equation"
+    },
+    {
+      "path": "/health/bmr-katch-mcardle",
+      "name": "BMR - Katch-McArdle equation"
+    },
+    {
+      "path": "/health/bode-index",
+      "name": "BODE index"
+    }
+  ],
+  "words": 1729
+}

@@ -1,0 +1,89 @@
+{
+  "path": "/finance/alternative-minimum-tax",
+  "slug": "alternative-minimum-tax",
+  "cat": "finance",
+  "name": "Alternative minimum tax",
+  "seoTitle": "Alternative minimum tax Calculator — Formula, Units & Example",
+  "seoDesc": "Alternative minimum tax: work out AMTI from the adjusted Gross Income and the non-deductible taxes. A free finance calculator with the formula, units and…",
+  "h1": "Alternative minimum tax Calculator",
+  "summary": "Give the Alternative minimum tax calculator the adjusted Gross Income, the non-deductible taxes and the tax credits and it returns <strong>AMTI</strong>. Think of it as a shortcut for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Alternative minimum tax calculator work?",
+      "html": "<p>The Alternative minimum tax calculator takes the values in the form, applies the relationship described below and reports <strong>AMTI</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the year and the filing status); then you type in the adjusted Gross Income (AGI), the non-deductible taxes and the tax credits.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as 2022 and 2023. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in $.</li><li>A number, expressed in $.</li><li>Pick the option that matches your case — 3 options, such as single, married, filed jointly and married, filed separately. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in $.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Year</strong></td><td>One of 2 options, such as 2022 and 2023.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Adjusted Gross Income (AGI)</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Non-deductible taxes</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>AMTI</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Filing status</strong></td><td>One of 3 options, such as single, married, filed jointly and married, filed separately.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Taxable income</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Tax credits</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Amt 2022 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Amt 2022 4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Amt 2023 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Amt 2023 4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Amt common</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Alternative minimum tax calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">AMTI</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">non-deductible taxes + adjusted Gross Income (AGI)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Taxable income</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(AMTI, filing status, year)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Amt common</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-tax credits + (13 ÷ 50) × (AMTI, filing status, year))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Amt 2022 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-tax credits + (7 ÷ 25) × (AMTI, filing status, year) − 4122)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Amt 2022 4</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-tax credits + (7 ÷ 25) × (AMTI, filing status, year) − 2061)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Amt 2023 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-tax credits + (7 ÷ 25) × (AMTI, filing status, year) − 4414)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Alternative minimum tax calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two offers that quote their costs in different ways</li><li>Sizing up a purchase before you commit to it</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Any time the same 3 figures keep coming back — the adjusted Gross Income, the non-deductible taxes and the tax credits — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/rent-split\">Rent split</a>, <a href=\"/finance/rental-commission\">Rental commission</a> and <a href=\"/finance/rental-property\">Rental property</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Alternative minimum tax calculator work out?",
+      "a": "It returns AMTI, derived from the adjusted Gross Income, the non-deductible taxes and the tax credits. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Alternative minimum tax calculator?",
+      "a": "The form asks for the adjusted Gross Income, the non-deductible taxes and the tax credits, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Alternative minimum tax calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/rent-split",
+      "name": "Rent split"
+    },
+    {
+      "path": "/finance/rental-commission",
+      "name": "Rental commission"
+    },
+    {
+      "path": "/finance/rental-property",
+      "name": "Rental property"
+    }
+  ],
+  "words": 1316
+}

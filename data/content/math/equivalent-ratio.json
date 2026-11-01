@@ -1,0 +1,89 @@
+{
+  "path": "/math/equivalent-ratio",
+  "slug": "equivalent-ratio",
+  "cat": "math",
+  "name": "Equivalent ratio",
+  "seoTitle": "Equivalent ratio Calculator",
+  "seoDesc": "Equivalent ratio: answer 40 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Equivalent ratio Calculator",
+  "summary": "The Equivalent ratio calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThink of it as a shortcut for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Press Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Equivalent ratio calculator work?",
+      "html": "<p>The Equivalent ratio calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the I would like to (2)); then you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Ratio of</td><td>pick the option that matches your case — 2 options, such as two numbers (A: B) and three numbers (A: B: C). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>I would like to</td><td>pick the option that matches your case — 6 options, such as find an equivalent ratio., multiply my ratio by a number. and divide my ratio by a number.. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>I would like to (2)</td><td>pick the option that matches your case — 7 options, such as find an equivalent ratio., multiply my ratio by a number. and divide my ratio by a number.. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>A</td><td>a plain number with no unit attached.</td></tr><tr><td>B</td><td>a plain number with no unit attached.</td></tr><tr><td>D</td><td>a plain number with no unit attached.</td></tr><tr><td>C (2)</td><td>a plain number with no unit attached.</td></tr><tr><td>D (2)</td><td>a plain number with no unit attached.</td></tr><tr><td>E</td><td>a plain number with no unit attached.</td></tr><tr><td>F</td><td>a plain number with no unit attached.</td></tr><tr><td>Enlarge</td><td>a number, expressed in times larger is:.</td></tr><tr><td>Shrink</td><td>a number, expressed in times smaller is:.</td></tr></tbody></table><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Equivalent ratio calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">C</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">A × D ÷ B</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">B × D ÷ E</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">B</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">C × E ÷ F</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Ratio of</strong> set to two numbers (A: B), <strong>I would like to</strong> set to find an equivalent ratio., <strong>A</strong> = 10 and <strong>B</strong> = 10. Working through the relationship above gives <strong>C</strong> = 10.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>C</strong> = 10 should be roughly the size you expected from <strong>Ratio of</strong> set to two numbers (A: B) and <strong>I would like to</strong> set to find an equivalent ratio..</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Equivalent ratio calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li><li>Splitting a bill, a measurement or a shape problem between several people</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/miracle\">Miracle</a>, <a href=\"/math/missing-side-of-a-right-triangle\">Missing side of a right triangle</a> and <a href=\"/math/mixed-number\">Mixed number</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Equivalent ratio calculator?",
+      "a": "The form asks for a few values, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports C = 10. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Equivalent ratio calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/miracle",
+      "name": "Miracle"
+    },
+    {
+      "path": "/math/missing-side-of-a-right-triangle",
+      "name": "Missing side of a right triangle"
+    },
+    {
+      "path": "/math/mixed-number",
+      "name": "Mixed number"
+    }
+  ],
+  "words": 1273
+}

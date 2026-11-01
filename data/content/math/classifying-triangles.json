@@ -1,0 +1,97 @@
+{
+  "path": "/math/classifying-triangles",
+  "slug": "classifying-triangles",
+  "cat": "math",
+  "name": "Classifying triangles",
+  "seoTitle": "Classifying triangles Calculator",
+  "seoDesc": "Classifying triangles: work out your result from the A and the B. A free math calculator with the formula, units and a worked example.",
+  "h1": "Classifying triangles Calculator",
+  "summary": "The answer is what the Classifying triangles calculator works out, and it gets there from the A, the B and the C. That makes it useful for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Classifying triangles calculator work?",
+      "html": "<p>The Classifying triangles calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the given and the angle selection); then you type in a (Angle and two sides), a (Angle and two sides), a (Angle and two sides) and the b (Angle and two sides).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as 3 sides, angle and 2 sides and 2 angles. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as α, β and γ. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Given</strong></td><td>One of 3 options, such as 3 sides, angle and 2 sides and 2 angles.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Angle selection</strong></td><td>One of 3 options, such as α, β and γ.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Α (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>A (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>B (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>C (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Β (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Γ (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Β (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>A (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>B (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>C (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Α (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Γ (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Γ (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>A (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>B (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>C (Angle and two sides)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Α (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Β (Angle and two sides)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Classifying triangles calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Α</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((1 ÷ 2) × (-(A ^ 2) + (B ^ 2) + (C ^ 2)) ÷ (B × C)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Β</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((1 ÷ 2) × ((A ^ 2) − (B ^ 2) + (C ^ 2)) ÷ (A × C)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Γ</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((1 ÷ 2) × ((A ^ 2) + (B ^ 2) − (C ^ 2)) ÷ (A × B)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Α</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × (-(A ^ 2) + (B ^ 2) + (C ^ 2)) ÷ (B × C))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">B</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((A ^ 2) − 2 × A × C × the cosine of (Β) + (C ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">B</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">A × the cosine of (Γ) + the square root of (-(A ^ 2) × (the sine of (Γ), 2) + (C ^ 2))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Given</strong> set to angle and 2 sides, <strong>Angle selection</strong> set to α, <strong>a</strong> = 30 cm and <strong>b</strong> = 30 cm. The calculator returns <strong>α</strong> = 60 deg, <strong>β</strong> = 60 deg and <strong>γ</strong> = 60 deg.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>α</strong> = 60 deg, <strong>β</strong> = 60 deg and <strong>γ</strong> = 60 deg should be roughly the size you expected from <strong>Given</strong> set to angle and 2 sides and <strong>Angle selection</strong> set to α.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Length, opening in centimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Classifying triangles calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li><li>Any time the same 3 figures keep coming back — the A, the B and the C — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/gcf\">GCF</a>, <a href=\"/math/gcf-and-lcm\">GCF and LCM</a> and <a href=\"/math/general-form-equation-circle\">General form of the equation of a circle</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Classifying triangles calculator?",
+      "a": "The form asks for the A, the B and the C, which is 17 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter a (Three sides) in a different unit?",
+      "a": "Yes. A (Three sides) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports α = 60 deg. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Classifying triangles calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/gcf",
+      "name": "GCF"
+    },
+    {
+      "path": "/math/gcf-and-lcm",
+      "name": "GCF and LCM"
+    },
+    {
+      "path": "/math/general-form-equation-circle",
+      "name": "General form of the equation of a circle"
+    }
+  ],
+  "words": 2258
+}

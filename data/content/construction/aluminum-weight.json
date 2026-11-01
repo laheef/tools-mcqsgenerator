@@ -1,0 +1,101 @@
+{
+  "path": "/construction/aluminum-weight",
+  "slug": "aluminum-weight",
+  "cat": "construction",
+  "name": "Aluminum weight",
+  "seoTitle": "Aluminum weight Calculator",
+  "seoDesc": "Aluminum weight: work out length (Dimensions) from the width and the radius (r). A free construction calculator with the formula, units and a worked example.",
+  "h1": "Aluminum weight Calculator",
+  "summary": "Supply the width, the radius (r), the side length and the outer radius (R) and the Aluminum weight calculator solves for <strong>length (Dimensions)</strong>. It suits a materials order or a planning estimate you want to get roughly right first time.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Aluminum weight calculator work?",
+      "html": "<p>The Aluminum weight calculator takes the values in the form, applies the relationship described below and reports <strong>length (Dimensions)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the shape); then you type in the width, the radius (r) (Dimensions), the radius (r) (Dimensions) and the side length (Dimensions).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 11 options, such as rectangular prism (plate), circular prism and hexagonal prism. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 2 options, such as yes and no. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li></ul><p>The form has 26 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Alloy</strong></td><td>One of 14 options, such as aluminum (average), melted aluminum and aluminum 1050.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Shape</strong></td><td>One of 11 options, such as rectangular prism (plate), circular prism and hexagonal prism.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Radius (r) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Side length (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Side length (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Outer radius (R) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Inner radius (r) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Inner radius (r) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Outer radius (R) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Length (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Radius (r) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Length (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Outer diameter</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Outer radius (R) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Inner diameter</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Inner radius (r) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Tube thickness</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Radius (r) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Lid height</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Inner radius (r) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Outer radius (R) (Dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 40 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Aluminum weight calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total weight ÷ (alloy × number of metal pieces × thickness × width)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of metal pieces</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2 ÷ 9) × the square root of (3) × total weight ÷ (alloy × (side length ^ 2) × thickness)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">PI × alloy × number of metal pieces × (radius (r) ^ 2) × thickness</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of metal pieces</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × total weight ÷ (alloy × (side length ^ 2) × thickness × (1 + the square root of (2)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of metal pieces</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total weight ÷ ((PI ^ 2) × alloy × (inner radius (r) − outer radius (R) ^ 2) × (inner radius (r) + outer radius (R)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">alloy × number of metal pieces × volume</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Alloy</strong> set to Aluminum (average), <strong>Shape</strong> set to Rectangular prism (plate), <strong>Radius (r)</strong> = 30 m and <strong>Does the can have a lid?</strong> set to Yes. The calculator returns <strong>Total weight</strong> = 305.3628 kg.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Total weight</strong> = 305.3628 kg should be roughly the size you expected from <strong>Alloy</strong> set to Aluminum (average) and <strong>Shape</strong> set to Rectangular prism (plate).</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Aluminum weight calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Quoting a job where areas and quantities drive the price</li><li>Ordering material and not wanting a second trip</li><li>Checking a supplier's figure against your own measurements</li><li>Any time the same 4 figures keep coming back — the width, the radius (r) and the side length — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/gallons-per-square-foot\">Gallons per square foot</a>, <a href=\"/construction/gambrel-roof\">Gambrel roof</a> and <a href=\"/construction/glass-weight\">Glass weight</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Aluminum weight calculator work out?",
+      "a": "It returns length (Dimensions), derived from the width, the radius (r) and the side length. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Aluminum weight calculator?",
+      "a": "The form asks for the width, the radius (r), the side length and the outer radius (R), which is 26 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter length (Dimensions) in a different unit?",
+      "a": "Yes. Length (Dimensions) opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Total weight = 305.3628 kg. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Aluminum weight calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/gallons-per-square-foot",
+      "name": "Gallons per square foot"
+    },
+    {
+      "path": "/construction/gambrel-roof",
+      "name": "Gambrel roof"
+    },
+    {
+      "path": "/construction/glass-weight",
+      "name": "Glass weight"
+    }
+  ],
+  "words": 2427
+}

@@ -1,0 +1,101 @@
+{
+  "path": "/other/pcb-impedance",
+  "slug": "pcb-impedance",
+  "cat": "other",
+  "name": "PCB Impedance",
+  "seoTitle": "PCB Impedance Calculator — Formula, Units & Example",
+  "seoDesc": "PCB Impedance: work out effective permitivity less from the thickness and the substrate height. A free other calculator with the formula, units and a…",
+  "h1": "PCB Impedance Calculator",
+  "summary": "Supply the thickness, the substrate height, the spacing and the substrate dielectric and the PCB Impedance calculator solves for <strong>effective permitivity less</strong>. That makes it useful for whatever you happen to be working on.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the PCB Impedance calculator work?",
+      "html": "<p>The PCB Impedance calculator takes the values in the form, applies the relationship described below and reports <strong>effective permitivity less</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (select PCB conductor, the show all vars and the eeweb); then you type in the thickness (T), the substrate height (H2), the spacing (S) and the substrate dielectric.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 9 options, such as microstrip, edge-coupled microstrip and wire microstrip. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li><li>A single on/off switch — tick it for &ldquo;Show effective signal width&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in ohms. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in ohms. The unit chip switches it to any of the 5 supported units.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>4 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Select PCB conductor</strong></td><td>One of 9 options, such as microstrip, edge-coupled microstrip and wire microstrip.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Thickness (T)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Wire diameter (D)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Width (W)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Substrate height (H)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Substrate height (h 1)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Substrate height (B)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Substrate height (h 2)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Spacing (S)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Substrate dielectric</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Effective signal width (w')</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Effective Dielectric Constant (Ɛ_eff)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Impedance (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (odd) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (even) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (differential) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (common) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>You supply it</td></tr><tr><td><strong>Impedance (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>You supply it</td></tr><tr><td><strong>Impedance (odd) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (even) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (differential) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (common) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Impedance (odd) (Results)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 37 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the PCB Impedance calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Effective permitivity less</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 50) × ((substrate height (H) ^ 2) × (25 × substrate dielectric × the square root of (width (W) ÷ (12 × substrate height (H) + width (W))) + 26 × substrate dielectric − 25 × the square root of (width (W) ÷ (12 × substrate height (H) + width (W))) + 24) − substrate dielectric × (width (W) ^ 2) + (width (W) ^ 2)) ÷ (substrate height (H) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Effective permitivity more</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × substrate dielectric × the square root of (width (W) ÷ (12 × substrate height (H) + width (W))) + (1 ÷ 2) × substrate dielectric − 1 ÷ 2 × the square root of (width (W) ÷ (12 × substrate height (H) + width (W))) + 1 ÷ 2</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Effective Dielectric Constant (Ɛ_eff)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(effective permitivity more, effective permitivity less, width (W) ÷ substrate height (H))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Effective signal width (w&#x27;)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × thickness (T) × the natural log of (PI × (2718281828459 ÷ 250000000000) ÷ the square root of (100 × (thickness (T) ^ 2) ÷ (11 × thickness (T) + 10 × width (W) ^ 2) + (PI ^ 2) × (thickness (T) ^ 2) ÷ (substrate height (H) ^ 2))) ÷ PI + (1 ÷ 2) × thickness (T) × the natural log of (PI × (2718281828459 ÷ 250000000000) ÷ the square root of (100 × (thickness (T) ^ 2) ÷ (11 × thickness (T) + 10 × width (W) ^ 2) + (PI ^ 2) × (thickness (T) ^ 2) ÷ (substrate height (H) ^ 2))) ÷ (PI × ((effective permitivity more, effective permitivity less, width (W) ÷ substrate height (H)))) + width (W)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Effective signal width (w&#x27;)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">4 × the square root of (2) × substrate height (H) × the square root of (-(196 ÷ 121 + (224 ÷ 121) ÷ ((effective permitivity more, effective permitivity less, width (W) ÷ substrate height (H))) + (64 ÷ 121) ÷ (((effective permitivity more, effective permitivity less, width (W) ÷ substrate height (H))), 2)) × ((effective permitivity more, effective permitivity less, width (W) ÷ substrate height (H))) ÷ (-2 × (wartortle ^ 2) × ((effective permitivity more, effective permitivity less, width (W) ÷ substrate height (H))) + (PI ^ 2) × ((effective permitivity more, effective permitivity less, width (W) ÷ substrate height (H))) + (PI ^ 2)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wire diameter (D)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">4 × substrate height (H) × the exponential of (-impedance × (2 × PI × the square root of (substrate dielectric)) ÷ (120 × PI)) ÷ PI</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Select PCB conductor</strong> set to Microstrip, <strong>Width (W)</strong> = 30 μm, <strong>Substrate height (H)</strong> = 30 μm and <strong>Substrate dielectric</strong> = 10. Working through the relationship above gives <strong>Wire diameter (D)</strong> = 30 μm, <strong>Substrate height (h 1)</strong> = 30 μm, <strong>Substrate height (B)</strong> = 30 μm and <strong>Impedance</strong> = 4.5834 Ω.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Wire diameter (D)</strong> = 30 μm, <strong>Substrate height (h 1)</strong> = 30 μm, <strong>Substrate height (B)</strong> = 30 μm and <strong>Impedance</strong> = 4.5834 Ω should be roughly the size you expected from <strong>Select PCB conductor</strong> set to Microstrip and <strong>Width (W)</strong> = 30 μm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in ohms, and convertible to any of the 5 units on that chip.</li><li>Shown in ohms, and convertible to any of the 5 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in ohms, and convertible to any of the 5 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The PCB Impedance calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 4 figures keep coming back — the thickness, the substrate height and the spacing — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/age-on-other-planets\">Age on other planets</a>, <a href=\"/other/ai-job-risk\">AI job risk</a> and <a href=\"/other/amdahls-law\">Amdahl's law</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the PCB Impedance calculator work out?",
+      "a": "It returns effective permitivity less, derived from the thickness, the substrate height and the spacing. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the PCB Impedance calculator?",
+      "a": "The form asks for the thickness, the substrate height, the spacing and the substrate dielectric, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter thickness (T) in a different unit?",
+      "a": "Yes. Thickness (T) opens in micrometers and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Wire diameter (D) = 30 μm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the PCB Impedance calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/age-on-other-planets",
+      "name": "Age on other planets"
+    },
+    {
+      "path": "/other/ai-job-risk",
+      "name": "AI job risk"
+    },
+    {
+      "path": "/other/amdahls-law",
+      "name": "Amdahl's law"
+    }
+  ],
+  "words": 2411
+}

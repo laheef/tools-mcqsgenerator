@@ -1,0 +1,89 @@
+{
+  "path": "/chemistry/reaction-quotient",
+  "slug": "reaction-quotient",
+  "cat": "chemistry",
+  "name": "Reaction quotient",
+  "seoTitle": "Reaction quotient — Free Online Calculator",
+  "seoDesc": "Reaction quotient: work out your result from the coefficient boxes (numbered 1 to 4) and the activity boxes (numbered 1 to 4). A free chemistry calculator…",
+  "h1": "Reaction quotient Calculator",
+  "summary": "The Reaction quotient calculator turns the coefficient boxes (numbered 1 to 4) and the activity boxes (numbered 1 to 4) into the answer. Think of it as a shortcut for a bench calculation involving amounts, concentrations or reaction ratios.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Reaction quotient calculator work?",
+      "html": "<p>The Reaction quotient calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the precision); then you type in the coefficient #1 (Reagents), the activity #1 (Reagents), the coefficient #2 (Reagents) and the activity #2 (Reagents).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in molars. The unit chip switches it to any of the 9 supported units.</li></ul><p>The form has 25 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Coefficient #1 (Reagents)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #1 (Reagents)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #2 (Reagents)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #2 (Reagents)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #3 (Reagents)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #3 (Reagents)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #4 (Reagents)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #4 (Reagents)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #5 (Reagents)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #5 (Reagents)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #6 (Reagents)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #6</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #1 (Products)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #1 (Products)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #2 (Products)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #2 (Products)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #3 (Products)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #3 (Products)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #4 (Products)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #4 (Products)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #5 (Products)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity #5 (Products)</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr><tr><td><strong>Coefficient #6 (Products)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity of #6</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 25 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Reaction quotient calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Molar concentration, opening in molars</li><li>Molar concentration, opening in molars</li><li>Molar concentration, opening in molars</li><li>Molar concentration, opening in molars</li><li>Molar concentration, opening in molars</li><li>Molar concentration, opening in molars</li><li>Molar concentration, opening in molars</li><li>Molar concentration, opening in molars</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Reaction quotient calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting between the units a protocol and your bench equipment use</li><li>Working through a stoichiometry problem</li><li>Preparing a solution and checking the numbers first</li><li>Any time the same 2 figures keep coming back — the coefficient boxes (numbered 1 to 4) and the activity boxes (numbered 1 to 4) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/saponification-value\">Saponification value</a>, <a href=\"/chemistry/serial-dilution\">Serial dilution</a> and <a href=\"/chemistry/solution-dilution\">Solution dilution</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Reaction quotient calculator?",
+      "a": "The form asks for the coefficient boxes (numbered 1 to 4) and the activity boxes (numbered 1 to 4), which is 25 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter activity #1 (Reagents) in a different unit?",
+      "a": "Yes. Activity #1 (Reagents) opens in molars and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Reaction quotient calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/saponification-value",
+      "name": "Saponification value"
+    },
+    {
+      "path": "/chemistry/serial-dilution",
+      "name": "Serial dilution"
+    },
+    {
+      "path": "/chemistry/solution-dilution",
+      "name": "Solution dilution"
+    }
+  ],
+  "words": 1603
+}

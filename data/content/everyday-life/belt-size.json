@@ -1,0 +1,89 @@
+{
+  "path": "/everyday-life/belt-size",
+  "slug": "belt-size",
+  "cat": "everyday-life",
+  "name": "Belt size",
+  "seoTitle": "Belt size Calculator",
+  "seoDesc": "Belt size: a free everyday life calculator that walks you through 49 values, with the formula spelled out and a worked example.",
+  "h1": "Belt size Calculator",
+  "summary": "The Belt size calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThink of it as a shortcut for a practical question that turns up in daily life. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Belt size calculator work?",
+      "html": "<p>The Belt size calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the I know my (2)); then you type in the figures it asks for.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>I am a</td><td>pick the option that matches your case — 2 options, such as woman and man. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>I know my</td><td>pick the option that matches your case — 4 options, such as numerical belt size, general belt size and waist circumference. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>I know my (2)</td><td>pick the option that matches your case — 5 options, such as numerical belt size, general belt size and waist circumference. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>And it's...</td><td>a plain number with no unit attached.</td></tr><tr><td>Which is</td><td>pick the option that matches your case — 8 options, such as XS, S and M. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>Which is (2)</td><td>a measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</td></tr><tr><td>And it's... (2)</td><td>a measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</td></tr><tr><td>Which is (3)</td><td>pick the option that matches your case — 7 options, such as 0-2, 4-6 and 8-10. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr></tbody></table><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Belt size calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">General numerical</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(I am a, I know my, I know my, and it&#x27;s..., 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">General waist</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(I am a, I know my, I know my, which is, 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">General length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(I am a, I know my, I know my, and it&#x27;s..., 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">General dress</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(I am a, I know my, I know my, which is, 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Waist numerical max</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(I am a, I know my, I know my, and it&#x27;s..., 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Waist general max</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(I am a, I know my, I know my, which is, 0)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Belt size calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/recessed-lighting\">Recessed lighting</a>, <a href=\"/everyday-life/retirement-countdown\">Retirement countdown</a> and <a href=\"/everyday-life/reverse-text-generator\">Reverse text generator</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Belt size calculator?",
+      "a": "The form asks for a few values, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter which is (2) in a different unit?",
+      "a": "Yes. Which is (2) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Belt size calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/recessed-lighting",
+      "name": "Recessed lighting"
+    },
+    {
+      "path": "/everyday-life/retirement-countdown",
+      "name": "Retirement countdown"
+    },
+    {
+      "path": "/everyday-life/reverse-text-generator",
+      "name": "Reverse text generator"
+    }
+  ],
+  "words": 1315
+}

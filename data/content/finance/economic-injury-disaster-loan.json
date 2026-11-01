@@ -1,0 +1,81 @@
+{
+  "path": "/finance/economic-injury-disaster-loan",
+  "slug": "economic-injury-disaster-loan",
+  "cat": "finance",
+  "name": "Economic Injury Disaster Loan Emergency Advance (EIDL)",
+  "seoTitle": "Economic Injury Disaster Loan Emergency Advance … Calculator",
+  "seoDesc": "Economic Injury Disaster Loan Emergency Advance (EIDL): answer 0 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Economic Injury Disaster Loan Emergency Advance (EIDL) Calculator",
+  "summary": "The Economic Injury Disaster Loan Emergency Advance (EIDL) calculator is a free, no-sign-up finance tool. Fill in the handful of fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nThink of it as a shortcut for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Economic Injury Disaster Loan Emergency Advance (EIDL) calculator work?",
+      "html": "<p>The Economic Injury Disaster Loan Emergency Advance (EIDL) calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Economic Injury Disaster Loan Emergency Advance (EIDL) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two offers that quote their costs in different ways</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Sizing up a purchase before you commit to it</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>If a field is empty the result waits rather than guessing: no zero is quietly substituted in the background.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Economic Injury Disaster Loan Emergency Advance (EIDL) calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/bank-reconciliation\">Bank reconciliation</a>, <a href=\"/finance/basis-point\">Basis point</a> and <a href=\"/finance/beta-stock\">Beta stock</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Economic Injury Disaster Loan Emergency Advance (EIDL) calculator?",
+      "a": "The form asks for a few values, which is 0 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Is the Economic Injury Disaster Loan Emergency Advance (EIDL) calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    },
+    {
+      "q": "Does it work in both directions?",
+      "a": "Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/bank-reconciliation",
+      "name": "Bank reconciliation"
+    },
+    {
+      "path": "/finance/basis-point",
+      "name": "Basis point"
+    },
+    {
+      "path": "/finance/beta-stock",
+      "name": "Beta stock"
+    }
+  ],
+  "words": 580
+}

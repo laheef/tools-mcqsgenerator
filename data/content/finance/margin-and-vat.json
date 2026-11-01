@@ -1,0 +1,97 @@
+{
+  "path": "/finance/margin-and-vat",
+  "slug": "margin-and-vat",
+  "cat": "finance",
+  "name": "Margin and VAT",
+  "seoTitle": "Margin and VAT Calculator",
+  "seoDesc": "Margin and VAT: work out net cost from the VAT and my net price. A free finance calculator with the formula, units and a worked example.",
+  "h1": "Margin and VAT Calculator",
+  "summary": "<strong>net cost</strong> is what the Margin and VAT calculator works out, and it gets there from the VAT and my net price. That makes it useful for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nChange one value and the results step aside until you press Calculate again, which is what makes it easy to see how much the answer really depends on that one input.",
+  "sections": [
+    {
+      "title": "How does the Margin and VAT calculator work?",
+      "html": "<p>The Margin and VAT calculator takes the values in the form, applies the relationship described below and reports <strong>net cost</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the VAT and my net price.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>VAT</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Net cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Gross cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Margin</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Markup</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>My net price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>My gross price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Profit</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Margin and VAT calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Net cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">gross cost ÷ (VAT + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">My gross price</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">my net price × (VAT + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Net cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">my net price ÷ (markup + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">My gross price</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">gross cost × (markup + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Net cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">my net price − profit</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Margin</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">markup ÷ (markup + 1)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>VAT</strong> = 10 % and <strong>Gross cost</strong> = 10. The calculator returns <strong>Net cost</strong> = 9.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Net cost</strong> = 9 should be roughly the size you expected from <strong>VAT</strong> = 10 % and <strong>Gross cost</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Margin and VAT calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two offers that quote their costs in different ways</li><li>Sizing up a purchase before you commit to it</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Any time the same 2 figures keep coming back — the VAT and my net price — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/earned-value-management\">Earned value management</a>, <a href=\"/finance/earnest-money\">Earnest money</a> and <a href=\"/finance/ebit\">EBIT</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Margin and VAT calculator work out?",
+      "a": "It returns net cost, derived from the VAT and my net price. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Margin and VAT calculator?",
+      "a": "The form asks for the VAT and my net price, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter VAT in a different unit?",
+      "a": "Yes. VAT opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Net cost = 9. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Margin and VAT calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/earned-value-management",
+      "name": "Earned value management"
+    },
+    {
+      "path": "/finance/earnest-money",
+      "name": "Earnest money"
+    },
+    {
+      "path": "/finance/ebit",
+      "name": "EBIT"
+    }
+  ],
+  "words": 1333
+}

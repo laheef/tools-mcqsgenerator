@@ -1,0 +1,93 @@
+{
+  "path": "/math/hilberts-hotel-paradox",
+  "slug": "hilberts-hotel-paradox",
+  "cat": "math",
+  "name": "Hilbert's hotel paradox",
+  "seoTitle": "Hilbert's hotel paradox Calculator: Free, With Steps",
+  "seoDesc": "Hilbert's hotel paradox: answer 13 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Hilbert's hotel paradox Calculator",
+  "summary": "The Hilbert's hotel paradox calculator returns <strong>current guest's new room number (Finitely many new guests)</strong> from the 8 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nIt is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Hilbert's hotel paradox calculator work?",
+      "html": "<p>The Hilbert's hotel paradox calculator takes the values in the form, applies the relationship described below and reports <strong>current guest's new room number (Finitely many new guests)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the scenario); then you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as finitely many new guests, infinitely many new guests and infinitely many buses with infinitely many guests. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Scenario</strong></td><td>One of 3 options, such as finitely many new guests, infinitely many new guests and infinitely many buses with infinitely many guests.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Current guest's new room number (Finitely many new guests)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Current guest's new room number (Infinitely many new guests)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Hilbert's hotel paradox calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Current guest&#x27;s new room number</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(how many new guests are there? + current guest&#x27;s original room number)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Current guest&#x27;s new room number</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2 × current guest&#x27;s original room number)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">New guest&#x27;s room number</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2 × new guest&#x27;s seat number − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Current guest&#x27;s new room number</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((2 ^ current guest&#x27;s original room number))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Scenario</strong> set to Finitely many new guests, <strong>How many new guests are there?</strong> = 10, <strong>Current guest's original room number</strong> = 10 and <strong>New guest's seat number</strong> = 10. The calculator returns <strong>Current guest's new room number</strong> = 20 and <strong>New guest's room number</strong> = 19.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Current guest's new room number</strong> = 20 and <strong>New guest's room number</strong> = 19 should be roughly the size you expected from <strong>Scenario</strong> set to Finitely many new guests and <strong>How many new guests are there?</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Hilbert's hotel paradox calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/polar-form\">Polar form</a>, <a href=\"/math/polar-to-cartesian\">Polar to cartesian coordinates</a> and <a href=\"/math/polar-to-rectangular\">Polar to rectangular coordinates</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Hilbert's hotel paradox calculator work out?",
+      "a": "It returns current guest's new room number (Finitely many new guests). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Hilbert's hotel paradox calculator?",
+      "a": "The form asks for a few values, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Current guest's new room number = 20. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Hilbert's hotel paradox calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/polar-form",
+      "name": "Polar form"
+    },
+    {
+      "path": "/math/polar-to-cartesian",
+      "name": "Polar to cartesian coordinates"
+    },
+    {
+      "path": "/math/polar-to-rectangular",
+      "name": "Polar to rectangular coordinates"
+    }
+  ],
+  "words": 1300
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/biology/cricket-chirp-thermometer",
+  "slug": "cricket-chirp-thermometer",
+  "cat": "biology",
+  "name": "Crickets chirping thermometer",
+  "seoTitle": "Crickets chirping thermometer Calculator",
+  "seoDesc": "Crickets chirping thermometer: work out temperature from the cricket chirps. A free biology calculator with the formula, units and a worked example.",
+  "h1": "Crickets chirping thermometer Calculator",
+  "summary": "The Crickets chirping thermometer calculator is a free, no-sign-up biology tool. Fill in the 2 fields it asks for and it works out <strong>temperature</strong> straight away, with the formula shown underneath.\n\nThink of it as a shortcut for an animal, a plant or a biological process whose scale you want to put into perspective. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Crickets chirping thermometer calculator work?",
+      "html": "<p>The Crickets chirping thermometer calculator takes the values in the form, applies the relationship described below and reports <strong>temperature</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the formula); then you type in the cricket chirps.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as basic, field cricket and snowy tree cricket. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in fifteen seconds. The unit chip switches it to any of the 27 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Formula</strong></td><td>One of 4 options, such as basic, field cricket and snowy tree cricket.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cricket chirps</strong></td><td>A measured quantity, 27 units available.</td><td>fifteen seconds</td><td>You supply it</td></tr><tr><td><strong>Temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Temperature (2)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Temperature (3)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Crickets chirping thermometer calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Temperature</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × cricket chirps + 40</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Temperature</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(10 ÷ 47) × cricket chirps + 1430 ÷ 47</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Temperature</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 3) × cricket chirps + 161 ÷ 3</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Time, opening in fifteen seconds</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Crickets chirping thermometer calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 1 figures keep coming back — the cricket chirps — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href=\"/biology/daily-light-integral-dli\">Daily light integral (DLI)</a>, <a href=\"/biology/dihybrid-cross-punnett-square\">Dihybrid cross Punnett square</a> and <a href=\"/biology/dna-concentration\">DNA concentration</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Crickets chirping thermometer calculator work out?",
+      "a": "It returns temperature, derived from the cricket chirps. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Crickets chirping thermometer calculator?",
+      "a": "The form asks for the cricket chirps, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter cricket chirps in a different unit?",
+      "a": "Yes. Cricket chirps opens in fifteen seconds and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Crickets chirping thermometer calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/biology/daily-light-integral-dli",
+      "name": "Daily light integral (DLI)"
+    },
+    {
+      "path": "/biology/dihybrid-cross-punnett-square",
+      "name": "Dihybrid cross Punnett square"
+    },
+    {
+      "path": "/biology/dna-concentration",
+      "name": "DNA concentration"
+    }
+  ],
+  "words": 1269
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/physics/spring-rate-converter",
+  "slug": "spring-rate-converter",
+  "cat": "physics",
+  "name": "Spring rate converter",
+  "seoTitle": "Spring rate converter — Free Online Calculator",
+  "seoDesc": "Spring rate converter: work out spring rate in newtons per meter from the spring rate in newtons per millimeter. A free physics calculator with the…",
+  "h1": "Spring rate converter Calculator",
+  "summary": "The Spring rate converter takes the numbers you enter and reports <strong>spring rate in newtons per meter</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt is built for a lab report, a problem set or a sanity check on a physical situation. Editing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Spring rate converter calculator work?",
+      "html": "<p>The Spring rate converter takes the values in the form, applies the relationship described below and reports <strong>spring rate in newtons per meter</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the spring rate in newtons per millimeter.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in newtons per millimeter. The unit chip switches it to any of the 12 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Spring rate in pound-force per inch</strong></td><td>A measured quantity, 12 units available.</td><td>pound-force per inch</td><td>Calculated</td></tr><tr><td><strong>Spring rate in pound-force per foot</strong></td><td>A measured quantity, 12 units available.</td><td>pound-force per foot</td><td>Calculated</td></tr><tr><td><strong>Spring rate in kilopounds per linear inch</strong></td><td>A measured quantity, 12 units available.</td><td>kilopounds per linear inch</td><td>Calculated</td></tr><tr><td><strong>Spring rate in kilopounds per linear foot</strong></td><td>A measured quantity, 12 units available.</td><td>kilopounds per linear foot</td><td>Calculated</td></tr><tr><td><strong>Spring rate in newtons per meter</strong></td><td>A measured quantity, 12 units available.</td><td>newtons per meter</td><td>Calculated</td></tr><tr><td><strong>Spring rate in newtons per millimeter</strong></td><td>A measured quantity, 12 units available.</td><td>newtons per millimeter</td><td>You supply it</td></tr><tr><td><strong>Spring rate in kilograms per millimeter</strong></td><td>A measured quantity, 12 units available.</td><td>kilograms per millimeter</td><td>Calculated</td></tr><tr><td><strong>Spring rate in joules per square meter</strong></td><td>A measured quantity, 12 units available.</td><td>joules per square meter</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Spring rate converter calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Spring rate in newtons per meter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">spring rate in newtons per millimeter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Spring rate in newtons per meter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">spring rate in kilograms per millimeter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Spring rate in newtons per meter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">spring rate in joules per square meter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Spring rate in newtons per meter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">spring rate in pound-force per inch</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Spring rate in newtons per meter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">spring rate in pound-force per foot</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Spring rate in newtons per meter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">spring rate in kilopounds per linear inch</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in newtons per meter, and convertible to any of the 12 units on that chip.</li><li>Shown in kilograms per millimeter, and convertible to any of the 12 units on that chip.</li><li>Shown in joules per square meter, and convertible to any of the 12 units on that chip.</li><li>Shown in pound-force per inch, and convertible to any of the 12 units on that chip.</li><li>Shown in pound-force per foot, and convertible to any of the 12 units on that chip.</li><li>Shown in kilopounds per linear inch, and convertible to any of the 12 units on that chip.</li><li>Shown in kilopounds per linear foot, and convertible to any of the 12 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Force per length, opening in pound-force per inch</li><li>Force per length, opening in pound-force per foot</li><li>Force per length, opening in kilopounds per linear inch</li><li>Force per length, opening in kilopounds per linear foot</li><li>Force per length, opening in newtons per meter</li><li>Force per length, opening in newtons per millimeter</li><li>Force per length, opening in kilograms per millimeter</li><li>Force per length, opening in joules per square meter</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Spring rate converter earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 1 figures keep coming back — the spring rate in newtons per millimeter — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/heat-transfer\">Heat transfer</a>, <a href=\"/physics/heat-transfer-coefficient\">Heat transfer coefficient</a> and <a href=\"/physics/heisenberg-uncertainty\">Heisenberg uncertainty</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Spring rate converter calculator work out?",
+      "a": "It returns spring rate in newtons per meter, derived from the spring rate in newtons per millimeter. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Spring rate converter calculator?",
+      "a": "The form asks for the spring rate in newtons per millimeter, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter spring rate in pound-force per inch in a different unit?",
+      "a": "Yes. Spring rate in pound-force per inch opens in pound-force per inch and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Spring rate converter calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/heat-transfer",
+      "name": "Heat transfer"
+    },
+    {
+      "path": "/physics/heat-transfer-coefficient",
+      "name": "Heat transfer coefficient"
+    },
+    {
+      "path": "/physics/heisenberg-uncertainty",
+      "name": "Heisenberg uncertainty"
+    }
+  ],
+  "words": 1440
+}

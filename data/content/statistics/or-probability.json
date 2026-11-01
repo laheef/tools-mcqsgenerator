@@ -1,0 +1,93 @@
+{
+  "path": "/statistics/or-probability",
+  "slug": "or-probability",
+  "cat": "statistics",
+  "name": "OR probability",
+  "seoTitle": "OR probability Calculator: Free, With Steps",
+  "seoDesc": "OR probability: work out your result from the probability of B, P. A free statistics calculator with the formula, units and a worked example.",
+  "h1": "OR probability Calculator",
+  "summary": "The OR probability calculator is a free, no-sign-up statistics tool. Fill in the 3 fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nThink of it as a shortcut for an assignment, a report or a data discussion where you need a defensible number. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the OR probability calculator work?",
+      "html": "<p>The OR probability calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the probability of B, P(B).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Probability of B, P(B)</td><td>a measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</td></tr><tr><td>Which probability do you want to see?</td><td>pick the option that matches your case — 7 options, such as a and B both occurring, at least one of the events occurs and exactly one of these events occurs. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>P(A∪B)</td><td>a measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</td></tr></tbody></table><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the OR probability calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">P(A∩B)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">probability of A, P(A) × probability of B, P(B)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of A, P(A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-P(A∪B) + probability of B, P(B)) ÷ (probability of B, P(B) − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of A, P(A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-P(A∆B) + probability of B, P(B)) ÷ (2 × probability of B, P(B) − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">P((A∪B)&#x27;)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">probability of A, P(A) × probability of B, P(B) − probability of A, P(A) − probability of B, P(B) + 1</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of A, P(A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 − P(A&#x27;)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">P(B&#x27;)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 − probability of B, P(B)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Probability of A, P(A)</strong> = 10 %, <strong>Probability of B, P(B)</strong> = 10 % and <strong>Which probability do you want to see?</strong> set to At least one of the events occurs. The calculator returns <strong>P(A∩B)</strong> = 1 %, <strong>P(A∪B)</strong> = 19 %, <strong>P(A∆B)</strong> = 18 % and <strong>P((A∪B)')</strong> = 81 %.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>P(A∩B)</strong> = 1 %, <strong>P(A∪B)</strong> = 19 %, <strong>P(A∆B)</strong> = 18 % and <strong>P((A∪B)')</strong> = 81 % should be roughly the size you expected from <strong>Probability of A, P(A)</strong> = 10 % and <strong>Probability of B, P(B)</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The OR probability calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding how much confidence a sample really supports</li><li>Checking a result a piece of software produced</li><li>Turning raw numbers into something you can quote</li><li>Any time the same 1 figures keep coming back — the probability of B, P — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/combination\">Combination</a>, <a href=\"/statistics/combinations-with-repetition\">Combinations with repetition</a> and <a href=\"/statistics/combinations-without-repetition\">Combinations without repetition</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the OR probability calculator?",
+      "a": "The form asks for the probability of B, P, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter probability of A, P(A) in a different unit?",
+      "a": "Yes. Probability of A, P(A) opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports P(A∩B) = 1 %. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the OR probability calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/combination",
+      "name": "Combination"
+    },
+    {
+      "path": "/statistics/combinations-with-repetition",
+      "name": "Combinations with repetition"
+    },
+    {
+      "path": "/statistics/combinations-without-repetition",
+      "name": "Combinations without repetition"
+    }
+  ],
+  "words": 1441
+}

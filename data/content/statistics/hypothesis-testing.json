@@ -1,0 +1,89 @@
+{
+  "path": "/statistics/hypothesis-testing",
+  "slug": "hypothesis-testing",
+  "cat": "statistics",
+  "name": "Hypothesis testing",
+  "seoTitle": "Hypothesis testing Calculator: Free, With Steps",
+  "seoDesc": "Hypothesis testing: convert null Hypothesis H₀ to alternative Hypothesis H₁ instantly — the exact factor, a conversion table and no sign-up.",
+  "h1": "Hypothesis testing Calculator",
+  "summary": "<strong>null Hypothesis H₀</strong> to alternative Hypothesis H₁ takes one exact factor, printed below with a worked example. One number goes in, press Calculate, and the equivalent in the other unit appears; the factor that links them is printed below, so you can repeat the arithmetic yourself.\n\nIt is built for an assignment, a report or a data discussion where you need a defensible number. Change one value and the results step aside until you press Calculate again, which is what makes it easy to see how much the answer really depends on that one input.",
+  "sections": [
+    {
+      "title": "How does the Hypothesis testing calculator work?",
+      "html": "<p>The Hypothesis testing calculator takes the values in the form, applies the relationship described below and reports <strong>null Hypothesis H₀</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the alternative Hypothesis H₁ and the data type); then you type in the significance Level, the test Statistic (z), the sample Mean (x̄) and the sample Size (n).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as μ &lt;, μ ≠ and μ &gt;. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 2 options, such as mean, SD, Sample Size and z Value. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>There is no direction to choose: enter the figure you have in whichever box matches its unit and read the equivalent from the other. Both fields are editable for that reason, and the chips beside them change the unit a box speaks without touching the number inside it.</p><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Null Hypothesis H₀</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Alternative Hypothesis H₁</strong></td><td>One of 3 options, such as μ &lt;, μ ≠ and μ &gt;.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Significance Level</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Data type</strong></td><td>One of 2 options, such as mean, SD, Sample Size and z Value.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Test Statistic (z)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sample Mean (x̄)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sample Size (n)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sample Standard Deviation (sd)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Hypothesis testing calculator",
+      "html": "<p>This is a conversion rather than a calculation. Null Hypothesis H₀ and Μ₀ describe the same quantity, so the arithmetic underneath is a simple identity: whatever you type in one box is converted to a common base unit, and the other box is rendered from that base in its own unit.</p>\n<p>That is why changing the unit chip does not change the underlying value, only the way it is written — and why you can enter a figure in either box and read the answer from the other.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Hypothesis testing calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning raw numbers into something you can quote</li><li>Checking a result a piece of software produced</li><li>Deciding how much confidence a sample really supports</li><li>Any time the same 4 figures keep coming back — the significance Level, the test Statistic and the sample Mean — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/6-sided-dice-probability\">6 sided dice probability</a>, <a href=\"/statistics/6-sided-dice-roller\">6 sided dice roller</a> and <a href=\"/statistics/90-confidence-interval\">90% confidence interval</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Hypothesis testing calculator work out?",
+      "a": "It returns null Hypothesis H₀, derived from the significance Level, the test Statistic and the sample Mean. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Hypothesis testing calculator?",
+      "a": "The form asks for the significance Level, the test Statistic, the sample Mean and the sample Size, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Hypothesis testing calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/6-sided-dice-probability",
+      "name": "6 sided dice probability"
+    },
+    {
+      "path": "/statistics/6-sided-dice-roller",
+      "name": "6 sided dice roller"
+    },
+    {
+      "path": "/statistics/90-confidence-interval",
+      "name": "90% confidence interval"
+    }
+  ],
+  "words": 1313
+}

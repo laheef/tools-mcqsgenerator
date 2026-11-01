@@ -1,0 +1,89 @@
+{
+  "path": "/math/eigenvalue-eigenvector",
+  "slug": "eigenvalue-eigenvector",
+  "cat": "math",
+  "name": "Eigenvalue and eigenvector",
+  "seoTitle": "Eigenvalue and eigenvector Calculator",
+  "seoDesc": "Eigenvalue and eigenvector: work out A₁ (Input yout matrix) from the A₂ and the B₁. A free math calculator with the formula, units and a worked example.",
+  "h1": "Eigenvalue and eigenvector Calculator",
+  "summary": "<strong>A₁ (Input yout matrix)</strong> is what the Eigenvalue and eigenvector calculator works out, and it gets there from the A₂ and the B₁. It suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Eigenvalue and eigenvector calculator work?",
+      "html": "<p>The Eigenvalue and eigenvector calculator takes the values in the form, applies the relationship described below and reports <strong>A₁ (Input yout matrix)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the matrix size); then you type in the A₂ (Input yout matrix), the A₂ (Input yout matrix), the B₁ (Input yout matrix) and the B₁ (Input yout matrix).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as 2×2 and 3×3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Matrix size</strong></td><td>One of 2 options, such as 2×2 and 3×3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>A₁ (Input yout matrix)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>A₂ (Input yout matrix)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₁ (Input yout matrix)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₂ (Input yout matrix)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₁ (Input yout matrix)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₂ (Input yout matrix)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₁ (Input yout matrix)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₂ (Input yout matrix)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Trace (Trace and determinant)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Determinant |A| (Trace and determinant)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Trace (Trace and determinant)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Determinant |A| (Trace and determinant)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Check diagonal 22</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Check double eval 22</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Comp evect 33</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mult eval 33</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Pairs eval 33</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Real evect 33</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Eigenvalue and eigenvector calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">A₁</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-B₂ + trace</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">B₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-A₁ − C₃ + trace</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Determinant |A|</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, B₁, B₂)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Determinant |A|</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, A₃, B₁, B₂, B₃, C₁, C₂, C₃)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Check diagonal 22</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, B₁, B₂, 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Check double eval 22</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, B₁, B₂, 1)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Eigenvalue and eigenvector calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Checking a homework answer before you hand it in</li><li>Settling an argument about a number with a quick, traceable result</li><li>Any time the same 2 figures keep coming back — the A₂ and the B₁ — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/matrix\">Matrix</a>, <a href=\"/math/matrix-addition\">Matrix addition and subtraction</a> and <a href=\"/math/matrix-by-scalar\">Matrix by scalar</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Eigenvalue and eigenvector calculator work out?",
+      "a": "It returns A₁ (Input yout matrix), derived from the A₂ and the B₁. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Eigenvalue and eigenvector calculator?",
+      "a": "The form asks for the A₂ and the B₁, which is 14 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Eigenvalue and eigenvector calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/matrix",
+      "name": "Matrix"
+    },
+    {
+      "path": "/math/matrix-addition",
+      "name": "Matrix addition and subtraction"
+    },
+    {
+      "path": "/math/matrix-by-scalar",
+      "name": "Matrix by scalar"
+    }
+  ],
+  "words": 1438
+}

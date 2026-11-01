@@ -1,0 +1,93 @@
+{
+  "path": "/statistics/bertrand-box-paradox",
+  "slug": "bertrand-box-paradox",
+  "cat": "statistics",
+  "name": "Bertrand's box paradox",
+  "seoTitle": "Bertrand's box paradox Calculator: Free, With Steps",
+  "seoDesc": "Bertrand's box paradox: work out coins from the chances and number of rounds. A free statistics calculator with the formula, units and a worked example.",
+  "h1": "Bertrand's box paradox Calculator",
+  "summary": "The Bertrand's box paradox calculator turns the chances and number of rounds into <strong>coins</strong>. Think of it as a shortcut for an assignment, a report or a data discussion where you need a defensible number.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Bertrand's box paradox calculator work?",
+      "html": "<p>The Bertrand's box paradox calculator takes the values in the form, applies the relationship described below and reports <strong>coins</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (play or simulate?, choose a box! and ready?); then you type in the chances (2) and number of rounds.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as play and simulate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as box 1, box 2 and box 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as peek and I'll do without spoilers!. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Draw!&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 2 options, such as easy mode and hard mode. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as 25%, 33.33% and 50%. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A plain number with no unit attached.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Play or simulate?</strong></td><td>One of 2 options, such as play and simulate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Choose a box!</strong></td><td>One of 3 options, such as box 1, box 2 and box 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Ready?</strong></td><td>An on/off switch, ticked for draw!.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Chances</strong></td><td>One of 5 options, such as 25%, 33.33% and 50%.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Chances (2)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Number of rounds</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Coins</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Bertrand's box paradox calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Coins</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(choose a box!)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">You draw</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(choose a box!)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Bertrand's box paradox calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning raw numbers into something you can quote</li><li>Checking a result a piece of software produced</li><li>Deciding how much confidence a sample really supports</li><li>Any time the same 2 figures keep coming back — the chances and number of rounds — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/poisson-distribution\">Poisson distribution</a>, <a href=\"/statistics/polynomial-regression\">Polynomial regression</a> and <a href=\"/statistics/pooled-standard-deviation\">Pooled standard deviation</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Bertrand's box paradox calculator work out?",
+      "a": "It returns coins, derived from the chances and number of rounds. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Bertrand's box paradox calculator?",
+      "a": "The form asks for the chances and number of rounds, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter chances (2) in a different unit?",
+      "a": "Yes. Chances (2) opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Bertrand's box paradox calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/poisson-distribution",
+      "name": "Poisson distribution"
+    },
+    {
+      "path": "/statistics/polynomial-regression",
+      "name": "Polynomial regression"
+    },
+    {
+      "path": "/statistics/pooled-standard-deviation",
+      "name": "Pooled standard deviation"
+    }
+  ],
+  "words": 1273
+}

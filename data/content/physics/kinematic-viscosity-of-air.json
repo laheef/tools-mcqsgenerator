@@ -1,0 +1,93 @@
+{
+  "path": "/physics/kinematic-viscosity-of-air",
+  "slug": "kinematic-viscosity-of-air",
+  "cat": "physics",
+  "name": "Kinematic viscosity of air",
+  "seoTitle": "Kinematic viscosity of air Calculator",
+  "seoDesc": "Kinematic viscosity of air: work out dynamic viscosity (μ) from the pressure and the specific gas constant. A free physics calculator with the formula,…",
+  "h1": "Kinematic viscosity of air Calculator",
+  "summary": "Supply the pressure, the specific gas constant and the density and the Kinematic viscosity of air calculator solves for <strong>dynamic viscosity (μ)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Kinematic viscosity of air calculator work?",
+      "html": "<p>The Kinematic viscosity of air calculator takes the values in the form, applies the relationship described below and reports <strong>dynamic viscosity (μ)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the pressure (P), the specific gas constant (Rₛ) and the density (ρ).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in pascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in joules per kilogram per kelvin. The unit chip switches it to any of the 11 supported units.</li><li>A measured quantity, entered by default in kilograms per cubic meter. The unit chip switches it to any of the 28 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Pressure (P)</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>You supply it</td></tr><tr><td><strong>Temperature (T)</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>Calculated</td></tr><tr><td><strong>Specific gas constant (Rₛ)</strong></td><td>A measured quantity, 11 units available.</td><td>joules per kilogram per kelvin</td><td>You supply it</td></tr><tr><td><strong>Density (ρ)</strong></td><td>A measured quantity, 28 units available.</td><td>kilograms per cubic meter</td><td>You supply it</td></tr><tr><td><strong>Dynamic viscosity (μ)</strong></td><td>A measured quantity, 11 units available.</td><td>pascal seconds</td><td>Calculated</td></tr><tr><td><strong>Kinematic viscosity (ν)</strong></td><td>A measured quantity, 9 units available.</td><td>square meters per second</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Kinematic viscosity of air calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Dynamic viscosity (μ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((729 ÷ 100000000) × (temperature (T) ^ 3 ÷ 2) ÷ (5 × temperature (T) + 552))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Temperature (T)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">pressure (P) ÷ (density (ρ) × specific gas constant (Rₛ))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Kinematic viscosity (ν)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((729 ÷ 100000000) × (temperature (T) ^ 3 ÷ 2) ÷ (5 × temperature (T) + 552)) ÷ density (ρ))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in pascal seconds, and convertible to any of the 11 units on that chip.</li><li>Shown in kelvins, and convertible to any of the 28 units on that chip.</li><li>Shown in square meters per second, and convertible to any of the 9 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Pressure, opening in pascals</li><li>Temperature, opening in kelvins</li><li>Specific heat capacity, opening in joules per kilogram per kelvin</li><li>Density, opening in kilograms per cubic meter</li><li>Viscosity – dynamic, opening in pascal seconds</li><li>Viscosity – kinematic, opening in square meters per second</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Kinematic viscosity of air calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 3 figures keep coming back — the pressure, the specific gas constant and the density — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/angular-frequency\">Angular frequency</a>, <a href=\"/physics/angular-momentum\">Angular momentum</a> and <a href=\"/physics/angular-resolution\">Angular resolution</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Kinematic viscosity of air calculator work out?",
+      "a": "It returns dynamic viscosity (μ), derived from the pressure, the specific gas constant and the density. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Kinematic viscosity of air calculator?",
+      "a": "The form asks for the pressure, the specific gas constant and the density, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter pressure (P) in a different unit?",
+      "a": "Yes. Pressure (P) opens in pascals and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Kinematic viscosity of air calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/angular-frequency",
+      "name": "Angular frequency"
+    },
+    {
+      "path": "/physics/angular-momentum",
+      "name": "Angular momentum"
+    },
+    {
+      "path": "/physics/angular-resolution",
+      "name": "Angular resolution"
+    }
+  ],
+  "words": 1247
+}

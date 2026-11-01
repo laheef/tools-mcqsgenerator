@@ -1,0 +1,93 @@
+{
+  "path": "/physics/free-fall-air-resistance",
+  "slug": "free-fall-air-resistance",
+  "cat": "physics",
+  "name": "Free fall with air resistance",
+  "seoTitle": "Free fall with air resistance Calculator",
+  "seoDesc": "Free fall with air resistance: work out cross-section area (A) from the altitude and the gravitational acceleration. A free physics calculator with the…",
+  "h1": "Free fall with air resistance Calculator",
+  "summary": "The Free fall with air resistance calculator turns the altitude, the gravitational acceleration and more into <strong>cross-section area (A)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Free fall with air resistance calculator work?",
+      "html": "<p>The Free fall with air resistance calculator takes the values in the form, applies the relationship described below and reports <strong>cross-section area (A)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the altitude (h), the gravitational acceleration (g), the air resistance coefficient (k) and the drag coefficient (Cd).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters per second squared. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilograms per cubic meter. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in newtons. The unit chip switches it to any of the 16 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mass (m)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Altitude (h)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Gravitational acceleration (g)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>You supply it</td></tr><tr><td><strong>Air resistance coefficient (k)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Cross-section area (A)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Drag coefficient (Cd)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Medium density (ρ)</strong></td><td>A measured quantity, 28 units available.</td><td>kilograms per cubic meter</td><td>You supply it</td></tr><tr><td><strong>Time of fall (t)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Maximum velocity (vmax)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Terminal velocity (vt)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Free fall with air resistance calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Cross-section area (A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × air resistance coefficient (k) ÷ (drag coefficient (Cd) × medium density (ρ))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mass (m)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">air resistance coefficient (k) × (terminal velocity (vt) ^ 2) ÷ gravitational acceleration (g)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time of fall (t)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((air resistance coefficient (k) × altitude (h) ÷ mass (m) &lt; 50) ? ( the square root of (mass (m) ÷ (air resistance coefficient (k) × gravitational acceleration (g))) × ((the exponential of (air resistance coefficient (k) × altitude (h) ÷ mass (m)))) ) : ( the square root of (mass (m) ÷ (air resistance coefficient (k) × gravitational acceleration (g))) × ((5000000000000000000000)) ))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">At velocity...</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (drag force is... ÷ air resistance coefficient (k))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time of fall (t)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × the natural log of ((-maximum velocity (vmax) − the square root of (gravitational acceleration (g) × mass (m) ÷ air resistance coefficient (k))) ÷ (maximum velocity (vmax) − the square root of (gravitational acceleration (g) × mass (m) ÷ air resistance coefficient (k)))) ÷ the square root of (air resistance coefficient (k) × gravitational acceleration (g) ÷ mass (m))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Mass, opening in kilograms</li><li>Length, opening in meters</li><li>Acceleration, opening in meters per second squared</li><li>Mass, opening in kilograms</li><li>Area, opening in square meters</li><li>Density, opening in kilograms per cubic meter</li><li>Time, opening in seconds</li><li>Speed, opening in meters per second</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Free fall with air resistance calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the altitude, the gravitational acceleration and the air resistance coefficient — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/torsional-spring\">Torsional spring</a>, <a href=\"/physics/torsional-stiffness\">Torsional stiffness</a> and <a href=\"/physics/trajectory-projectile-motion\">Trajectory - projectile motion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Free fall with air resistance calculator work out?",
+      "a": "It returns cross-section area (A), derived from the altitude, the gravitational acceleration and the air resistance coefficient. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Free fall with air resistance calculator?",
+      "a": "The form asks for the altitude, the gravitational acceleration, the air resistance coefficient and the drag coefficient, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter mass (m) in a different unit?",
+      "a": "Yes. Mass (m) opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Free fall with air resistance calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/torsional-spring",
+      "name": "Torsional spring"
+    },
+    {
+      "path": "/physics/torsional-stiffness",
+      "name": "Torsional stiffness"
+    },
+    {
+      "path": "/physics/trajectory-projectile-motion",
+      "name": "Trajectory - projectile motion"
+    }
+  ],
+  "words": 1496
+}

@@ -1,0 +1,89 @@
+{
+  "path": "/statistics/dice",
+  "slug": "dice",
+  "cat": "statistics",
+  "name": "Dice probability",
+  "seoTitle": "Dice probability Calculator",
+  "seoDesc": "Dice probability: work out number of faces from the total number of dice and the dice value I want to get. A free statistics calculator with the formula,…",
+  "h1": "Dice probability Calculator",
+  "summary": "The Dice probability calculator turns the total number of dice, the dice value I want to get, the value and the...or into <strong>number of faces</strong>. Think of it as a shortcut for an assignment, a report or a data discussion where you need a defensible number.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Dice probability calculator work?",
+      "html": "<p>The Dice probability calculator takes the values in the form, applies the relationship described below and reports <strong>number of faces</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the dice type, the I want to get and choose the option); then you type in the total number of dice, the dice value I want to get, the value (Choose the conditions - Game rules) and the value (Choose the conditions - Game rules).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 7 options, such as tetrahedron (4 faces), cube (6 faces) and octahedron (8 faces). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 9 options, such as all dice with the same face/side value, all dice values equal or higher than... and all dice values equal or less than.... The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as advantage, normal and disadvantage. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Number of faces</strong></td><td>One of 7 options, such as tetrahedron (4 faces), cube (6 faces) and octahedron (8 faces).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of faces</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total number of dice</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>I want to get</strong></td><td>One of 9 options, such as all dice with the same face/side value, all dice values equal or higher than... and all dice values equal or less than....</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Choose the option</strong></td><td>One of 3 options, such as advantage, normal and disadvantage.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>The dice value I want to get</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>The value (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>...or (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>The value (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Target number of dice (X)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>The value (Choose the conditions - Game rules)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Dice probability</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Probability of getting any value from the dice</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Probability of getting the side value you want in all dice</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Probability (Results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Probability (Results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 30 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Dice probability calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Number of faces</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 ÷ dice probability</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of getting the side value you want in all dice</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(total number of dice, dice probability)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of getting any value from the dice</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(total number of dice, dice probability)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(total number of dice, dice probability × (number of faces − the dice value I want to get + 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(total number of dice, dice probability × the dice value I want to get)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(number of faces, total number of dice, target number of dice (X), dice probability, the value, ...or, ...or, ...or, ...or, ...or, ...or, ...or, ...or, ...or)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Dice probability calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning raw numbers into something you can quote</li><li>Deciding how much confidence a sample really supports</li><li>Checking a result a piece of software produced</li><li>Any time the same 4 figures keep coming back — the total number of dice, the dice value I want to get and the value — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/spearmans-rank-correlation\">Spearman's rank correlation</a>, <a href=\"/statistics/specificity\">Specificity</a> and <a href=\"/statistics/standard-deviation\">Standard deviation</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Dice probability calculator work out?",
+      "a": "It returns number of faces, derived from the total number of dice, the dice value I want to get and the value. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Dice probability calculator?",
+      "a": "The form asks for the total number of dice, the dice value I want to get, the value and the ...or, which is 19 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Number of faces = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Dice probability calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/spearmans-rank-correlation",
+      "name": "Spearman's rank correlation"
+    },
+    {
+      "path": "/statistics/specificity",
+      "name": "Specificity"
+    },
+    {
+      "path": "/statistics/standard-deviation",
+      "name": "Standard deviation"
+    }
+  ],
+  "words": 1947
+}

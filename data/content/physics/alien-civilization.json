@@ -1,0 +1,97 @@
+{
+  "path": "/physics/alien-civilization",
+  "slug": "alien-civilization",
+  "cat": "physics",
+  "name": "Alien civilization",
+  "seoTitle": "Alien civilization Calculator: Free, With Steps",
+  "seoDesc": "Alien civilization: work out supports life (nₑ) from the star formation rate and the planets. A free physics calculator with the formula, units and a…",
+  "h1": "Alien civilization Calculator",
+  "summary": "<strong>supports life (nₑ)</strong> is what the Alien civilization calculator works out, and it gets there from the star formation rate, the planets, the develops life and the smart life. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Alien civilization calculator work?",
+      "html": "<p>The Alien civilization calculator takes the values in the form, applies the relationship described below and reports <strong>supports life (nₑ)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (select a model to investigate and the modeling scenario); then you type in the star formation rate (R⁕), the planets (fₚ), the develops life (fₗ) and the smart life (fₛ).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li><strong>Select a model to investigate</strong>: pick the option that matches your case — 2 options, such as astrobiol. Copernican Princ. and drake equation. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Star formation rate (R⁕)</strong>: a number, expressed in /yr.</li><li><strong>Planets (fₚ)</strong>: a measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li><strong>Develops life (fₗ)</strong>: a measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li><strong>Smart life (fₛ)</strong>: a measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li><strong>Develops technology (fₜ)</strong>: a measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li><strong>Lifetime of signals (L) (Milky Way assumptions)</strong>: a number, expressed in yrs.</li><li><strong>Modeling scenario</strong>: pick the option that matches your case — 4 options, such as strong, moderate and weak. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Number of civilizations (N) (Results)</strong>: a plain number with no unit attached.</li><li><strong>Number of civilizations (N) (Results)</strong>: a plain number with no unit attached.</li><li><strong>Distance</strong>: a measured quantity, entered by default in light years. The unit chip switches it to any of the 34 supported units.</li><li><strong>Kappa</strong>: a plain number with no unit attached.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Select a model to investigate</strong></td><td>One of 2 options, such as astrobiol. Copernican Princ. and drake equation.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Star formation rate (R⁕)</strong></td><td>A number stated in /yr.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Planets (fₚ)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Supports life (nₑ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Develops life (fₗ)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Smart life (fₛ)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Develops technology (fₜ)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Lifetime of signals (L) (Milky Way assumptions)</strong></td><td>A number stated in yrs.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Modeling scenario</strong></td><td>One of 4 options, such as strong, moderate and weak.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of stars (N⁕)</strong></td><td>A number stated in billion.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mature stars (fL)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Habitable zone (fHZ)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Metallicity (fM)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Available time (τ′)</strong></td><td>A number stated in billion yrs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Lifetime of signals (L) (Milky Way assumptions)</strong></td><td>A number stated in yrs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of civilizations (N) (Results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Maximum distance to nearest (Results)</strong></td><td>A measured quantity, 34 units available.</td><td>light years</td><td>Calculated</td></tr><tr><td><strong>Number of civilizations (N) (Results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Maximum distance to nearest (Results)</strong></td><td>A measured quantity, 34 units available.</td><td>light years</td><td>Calculated</td></tr><tr><td><strong>Distance</strong></td><td>A measured quantity, 34 units available.</td><td>light years</td><td>You supply it</td></tr><tr><td><strong>Probability</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Probabilityinverse</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Probabilityinversemillion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Probabilityinversebillion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 29 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Alien civilization calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Supports life (nₑ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">number of civilizations (N) ÷ (develops life (fₗ) × smart life (fₛ) × planets (fₚ) × star formation rate (R⁕) × develops technology (fₜ) × lifetime of signals (L))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mature stars (fL)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1000000 × available time (τ′) × number of civilizations (N) ÷ (lifetime of signals (L) × habitable zone (fHZ) × metallicity (fM) × number of stars (N⁕))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Maximum distance to nearest</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(101000 ÷ (the square root of (lifetime of signals (L)) × the square root of (kappa)), 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mature stars (fL)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1000000 × available time (τ′) × kappa ÷ (habitable zone (fHZ) × metallicity (fM) × number of stars (N⁕))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(distance, (101000 ÷ (the square root of (lifetime of signals (L)) × the square root of (kappa)), 3))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probabilityinverse</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ (distance, (101000 ÷ (the square root of (lifetime of signals (L)) × the square root of (kappa)), 3)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><strong>Supports life (nₑ)</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Mature stars (fL)</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Maximum distance to nearest (Results)</strong>: shown in light years, and convertible to any of the 34 units on that chip.</li><li><strong>Available time (τ′)</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Probability</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Probabilityinverse</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Probabilityinversebillion</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Probabilityinversemillion</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Maximum distance to nearest (Results)</strong>: shown in light years, and convertible to any of the 34 units on that chip.</li><li><strong>Probabilitydrake</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Probabilityinversedrake</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Probabilityinverseblndrake</strong>: a number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li><strong>Planets (fₚ)</strong>: %, opening in percent</li><li><strong>Develops life (fₗ)</strong>: %, opening in percent</li><li><strong>Smart life (fₛ)</strong>: %, opening in percent</li><li><strong>Develops technology (fₜ)</strong>: %, opening in percent</li><li><strong>Maximum distance to nearest (Results)</strong>: Length, opening in light years</li><li><strong>Maximum distance to nearest (Results)</strong>: Length, opening in light years</li><li><strong>Distance</strong>: Length, opening in light years</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Alien civilization calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the star formation rate, the planets and the develops life — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/oblique-shock\">Oblique shock</a>, <a href=\"/physics/ohms-law\">Ohm's law</a> and <a href=\"/physics/ohms-law-current\">Ohm's law current</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Alien civilization calculator work out?",
+      "a": "It returns supports life (nₑ), derived from the star formation rate, the planets and the develops life. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Alien civilization calculator?",
+      "a": "The form asks for the star formation rate, the planets, the develops life and the smart life, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter planets (fₚ) in a different unit?",
+      "a": "Yes. Planets (fₚ) opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Number of stars (N⁕) = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Alien civilization calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/oblique-shock",
+      "name": "Oblique shock"
+    },
+    {
+      "path": "/physics/ohms-law",
+      "name": "Ohm's law"
+    },
+    {
+      "path": "/physics/ohms-law-current",
+      "name": "Ohm's law current"
+    }
+  ],
+  "words": 1966
+}

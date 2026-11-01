@@ -1,0 +1,101 @@
+{
+  "path": "/physics/ballistic-coefficient",
+  "slug": "ballistic-coefficient",
+  "cat": "physics",
+  "name": "Ballistic coefficient",
+  "seoTitle": "Ballistic coefficient Calculator: Free, With Steps",
+  "seoDesc": "Ballistic coefficient: work out area of cross-section (A) from the mass of projectile and the drag coefficient. A free physics calculator with the…",
+  "h1": "Ballistic coefficient Calculator",
+  "summary": "Supply the mass of projectile, the drag coefficient and the ballistic coefficient and the Ballistic coefficient calculator solves for <strong>area of cross-section (A)</strong>. It suits a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Ballistic coefficient calculator work?",
+      "html": "<p>The Ballistic coefficient calculator takes the values in the form, applies the relationship described below and reports <strong>area of cross-section (A)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the mass of projectile (m), the drag coefficient (C) and the ballistic coefficient (B).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilograms per square meter. The unit chip switches it to any of the 11 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mass of projectile (m)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Area of cross-section (A)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>Calculated</td></tr><tr><td><strong>Drag coefficient (C)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ballistic coefficient (B)</strong></td><td>A measured quantity, 11 units available.</td><td>kilograms per square meter</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Ballistic coefficient calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Area of cross-section (A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">mass of projectile (m) ÷ (ballistic coefficient (B) × drag coefficient (C))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Mass of projectile (m)</strong> = 10 g, <strong>Drag coefficient (C)</strong> = 10 and <strong>Ballistic coefficient (B)</strong> = 10 kg/m². Working through the relationship above gives <strong>Area of cross-section (A)</strong> = 0.1 mm².</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Area of cross-section (A)</strong> = 0.1 mm² should be roughly the size you expected from <strong>Mass of projectile (m)</strong> = 10 g and <strong>Drag coefficient (C)</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in square millimeters, and convertible to any of the 24 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Mass, opening in grams</li><li>Area, opening in square millimeters</li><li>Mass per area, opening in kilograms per square meter</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Ballistic coefficient calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 3 figures keep coming back — the mass of projectile, the drag coefficient and the ballistic coefficient — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Ballistic coefficient calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/pendulum-period\">Pendulum period</a>, <a href=\"/physics/performance-coefficient\">Coefficient of performance</a> and <a href=\"/physics/photoelectric-effect\">Photoelectric effect</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Ballistic coefficient calculator work out?",
+      "a": "It returns area of cross-section (A), derived from the mass of projectile, the drag coefficient and the ballistic coefficient. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Ballistic coefficient calculator?",
+      "a": "The form asks for the mass of projectile, the drag coefficient and the ballistic coefficient, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter mass of projectile (m) in a different unit?",
+      "a": "Yes. Mass of projectile (m) opens in grams and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Area of cross-section (A) = 0.1 mm². Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Ballistic coefficient calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/pendulum-period",
+      "name": "Pendulum period"
+    },
+    {
+      "path": "/physics/performance-coefficient",
+      "name": "Coefficient of performance"
+    },
+    {
+      "path": "/physics/photoelectric-effect",
+      "name": "Photoelectric effect"
+    }
+  ],
+  "words": 1346
+}

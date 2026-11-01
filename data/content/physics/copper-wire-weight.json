@@ -1,0 +1,97 @@
+{
+  "path": "/physics/copper-wire-weight",
+  "slug": "copper-wire-weight",
+  "cat": "physics",
+  "name": "Copper wire weight",
+  "seoTitle": "Copper wire weight Calculator — Formula, Units & Example",
+  "seoDesc": "Copper wire weight: work out copper wire weight (CWW) from the diameter of the wire and the side dimension of the wire. A free physics calculator with the…",
+  "h1": "Copper wire weight Calculator",
+  "summary": "The Copper wire weight calculator returns <strong>copper wire weight (CWW)</strong>. The inputs are the diameter of the wire, the side dimension of the wire, the longer side of the wire and the side length of the hexagon.\n\nIt suits a lab report, a problem set or a sanity check on a physical situation. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Copper wire weight calculator work?",
+      "html": "<p>The Copper wire weight calculator takes the values in the form, applies the relationship described below and reports <strong>copper wire weight (CWW)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the shape of the wire and the copper alloys); then you type in the diameter of the wire (D), the side dimension of the wire (A), the longer side of the wire (A) and the side length of the hexagon (A).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as round, square and rectangle. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 17 options, such as C10200 (oxygen-free copper), C11000 (electrolytic tough pitch copper) and pure copper. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Shape of the wire</strong></td><td>One of 4 options, such as round, square and rectangle.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Copper alloys</strong></td><td>One of 17 options, such as C10200 (oxygen-free copper), C11000 (electrolytic tough pitch copper) and pure copper.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Density of the alloy</strong></td><td>A measured quantity, 28 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Diameter of the wire (D)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Side dimension of the wire (A)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Longer side of the wire (A)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Shorter side of the wire (B)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Side length of the hexagon (A)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Length of the wire (L)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Length of the wire (L) (2)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Length of the wire (L) (3)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Length of the wire (L) (4)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Copper wire weight (CWW)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Copper wire weight (CWW) (2)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Copper wire weight (CWW) (3)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Copper wire weight (CWW) (4)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Copper wire weight calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Copper wire weight (CWW)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × PI × density of the alloy × length of the wire (L) × (diameter of the wire (D) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Density of the alloy</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">copper wire weight (CWW) ÷ (length of the wire (L) × (side dimension of the wire (A) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Shorter side of the wire (B)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">copper wire weight (CWW) ÷ (density of the alloy × length of the wire (L) × longer side of the wire (A))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Density of the alloy</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2 ÷ 9) × the square root of (3) × copper wire weight (CWW) ÷ (length of the wire (L) × (side length of the hexagon (A) ^ 2))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 28 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Density, opening in kilograms per cubic meter</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in meters</li><li>Length, opening in meters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Copper wire weight calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 4 figures keep coming back — the diameter of the wire, the side dimension of the wire and the longer side of the wire — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/rockwell-hardness-conversion\">Rockwell hardness conversion</a>, <a href=\"/physics/rolling-resistance\">Rolling resistance</a> and <a href=\"/physics/root-mean-square-velocity\">Root mean square velocity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Copper wire weight calculator work out?",
+      "a": "It returns copper wire weight (CWW), derived from the diameter of the wire, the side dimension of the wire and the longer side of the wire. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Copper wire weight calculator?",
+      "a": "The form asks for the diameter of the wire, the side dimension of the wire, the longer side of the wire and the side length of the hexagon, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter density of the alloy in a different unit?",
+      "a": "Yes. Density of the alloy opens in kilograms per cubic meter and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Density of the alloy = 0 kg/m³. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Copper wire weight calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/rockwell-hardness-conversion",
+      "name": "Rockwell hardness conversion"
+    },
+    {
+      "path": "/physics/rolling-resistance",
+      "name": "Rolling resistance"
+    },
+    {
+      "path": "/physics/root-mean-square-velocity",
+      "name": "Root mean square velocity"
+    }
+  ],
+  "words": 1974
+}

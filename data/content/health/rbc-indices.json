@@ -1,0 +1,97 @@
+{
+  "path": "/health/rbc-indices",
+  "slug": "rbc-indices",
+  "cat": "health",
+  "name": "RBC indices",
+  "seoTitle": "RBC indices — Free Online Calculator",
+  "seoDesc": "RBC indices: work out mean corpuscular volume (MCV) from the hemoglobin and the hematocrit. A free health calculator with the formula, units and a worked…",
+  "h1": "RBC indices Calculator",
+  "summary": "<strong>mean corpuscular volume (MCV)</strong> is what the RBC indices calculator works out, and it gets there from the hemoglobin, the hematocrit and the RBC count. It suits an informed starting point to take to a clinician, not a diagnosis.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the RBC indices calculator work?",
+      "html": "<p>The RBC indices calculator takes the values in the form, applies the relationship described below and reports <strong>mean corpuscular volume (MCV)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the hemoglobin (Hgb), the hematocrit (Hct) and the RBC count.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in g/dL.</li><li>A number, expressed in %.</li><li>A number, expressed in million cells/mcL.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Hemoglobin (Hgb)</strong></td><td>A number stated in g/dL.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Hematocrit (Hct)</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>RBC count</strong></td><td>A number stated in million cells/mcL.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mean corpuscular hemoglobin (MCH)</strong></td><td>A number stated in pg/cell.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mean corpuscular hemoglobin concentration (MCHC)</strong></td><td>A number stated in g/dL.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mean corpuscular volume (MCV)</strong></td><td>A number stated in fl.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the RBC indices calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Mean corpuscular volume (MCV)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(10 × hematocrit (Hct) ÷ RBC count)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mean corpuscular hemoglobin (MCH)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(10 × hemoglobin (Hgb) ÷ RBC count)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mean corpuscular hemoglobin concentration (MCHC)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(100 × hemoglobin (Hgb) ÷ hematocrit (Hct))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>I am a</strong> set to female, <strong>Hemoglobin (Hgb)</strong> = 10, <strong>Hematocrit (Hct)</strong> = 10 and <strong>RBC count</strong> = 10. Working through the relationship above gives <strong>Mean corpuscular hemoglobin (MCH)</strong> = 10, <strong>Mean corpuscular hemoglobin concentration (MCHC)</strong> = 100 and <strong>Mean corpuscular volume (MCV)</strong> = 10.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Mean corpuscular hemoglobin (MCH)</strong> = 10, <strong>Mean corpuscular hemoglobin concentration (MCHC)</strong> = 100 and <strong>Mean corpuscular volume (MCV)</strong> = 10 should be roughly the size you expected from <strong>I am a</strong> set to female and <strong>Hemoglobin (Hgb)</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The RBC indices calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Deciding whether a reading is worth a second look</li><li>Any time the same 3 figures keep coming back — the hemoglobin, the hematocrit and the RBC count — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the RBC indices calculator, these are the ones that matter:</p>\n<ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/nedocs\">NEDOCS</a>, <a href=\"/health/net-carbs\">Net carbs</a> and <a href=\"/health/newborn-hyperbilirubinemia-assessment\">Newborn hyperbilirubinemia assessment</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the RBC indices calculator work out?",
+      "a": "It returns mean corpuscular volume (MCV), derived from the hemoglobin, the hematocrit and the RBC count. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the RBC indices calculator?",
+      "a": "The form asks for the hemoglobin, the hematocrit and the RBC count, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Mean corpuscular hemoglobin (MCH) = 10. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the RBC indices calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/nedocs",
+      "name": "NEDOCS"
+    },
+    {
+      "path": "/health/net-carbs",
+      "name": "Net carbs"
+    },
+    {
+      "path": "/health/newborn-hyperbilirubinemia-assessment",
+      "name": "Newborn hyperbilirubinemia assessment"
+    }
+  ],
+  "words": 1244
+}

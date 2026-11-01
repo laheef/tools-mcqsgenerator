@@ -1,0 +1,97 @@
+{
+  "path": "/everyday-life/hexagon-quilt",
+  "slug": "hexagon-quilt",
+  "cat": "everyday-life",
+  "name": "Hexagon quilt",
+  "seoTitle": "Hexagon quilt Calculator",
+  "seoDesc": "Hexagon quilt: work out number of hexagonal columns from the width of quilt and the length of quilt. A free everyday life calculator with the formula,…",
+  "h1": "Hexagon quilt Calculator",
+  "summary": "Give the Hexagon quilt calculator the width of quilt, the length of quilt and the size of hexagon and it returns <strong>number of hexagonal columns</strong>. Think of it as a shortcut for a practical question that turns up in daily life.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Hexagon quilt calculator work?",
+      "html": "<p>The Hexagon quilt calculator takes the values in the form, applies the relationship described below and reports <strong>number of hexagonal columns</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the width of quilt, the length of quilt and the size of hexagon.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Width of quilt</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Length of quilt</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Size of hexagon</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Number of hexagonal columns</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of hexagonal rows</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of hexagons</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of half hexagons</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Actual width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Actual length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Hexagon quilt calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Number of hexagonal columns</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, ((250 ÷ 433) × width of quilt ÷ size of hexagon)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of hexagonal rows</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, ((1 ÷ 3) × (-size of hexagon + 2 × length of quilt) ÷ size of hexagon)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of hexagons</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, ((1 ÷ 3) × (size of hexagon × (2 − rounded up, ((250 ÷ 433) × width of quilt ÷ size of hexagon)) + 2 × length of quilt × rounded up, ((250 ÷ 433) × width of quilt ÷ size of hexagon) − length of quilt) ÷ size of hexagon)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of half hexagons</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, ((2 ÷ 3) × (-2 × size of hexagon + length of quilt) ÷ size of hexagon)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Actual width</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(433 ÷ 250) × size of hexagon × rounded up, ((250 ÷ 433) × width of quilt ÷ size of hexagon)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Actual length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, ((1 ÷ 2) × size of hexagon × (3 × rounded up, ((1 ÷ 3) × (-size of hexagon + 2 × length of quilt) ÷ size of hexagon) + 1))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Width of quilt</strong> = 30 cm and <strong>Size of hexagon</strong> = 30 cm. Working through the relationship above gives <strong>Number of hexagonal columns</strong> = 1 and <strong>Actual width</strong> = 51.96 cm.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Number of hexagonal columns</strong> = 1 and <strong>Actual width</strong> = 51.96 cm should be roughly the size you expected from <strong>Width of quilt</strong> = 30 cm and <strong>Size of hexagon</strong> = 30 cm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Hexagon quilt calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing how sensitive an answer is to one input</li><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Any time the same 3 figures keep coming back — the width of quilt, the length of quilt and the size of hexagon — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/age-in-weeks\">Age in weeks</a>, <a href=\"/everyday-life/age-in-years\">Age in years</a> and <a href=\"/everyday-life/age-in-years-months-and-days\">Age in years months and days</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Hexagon quilt calculator work out?",
+      "a": "It returns number of hexagonal columns, derived from the width of quilt, the length of quilt and the size of hexagon. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Hexagon quilt calculator?",
+      "a": "The form asks for the width of quilt, the length of quilt and the size of hexagon, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter width of quilt in a different unit?",
+      "a": "Yes. Width of quilt opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Number of hexagonal columns = 1. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Hexagon quilt calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/age-in-weeks",
+      "name": "Age in weeks"
+    },
+    {
+      "path": "/everyday-life/age-in-years",
+      "name": "Age in years"
+    },
+    {
+      "path": "/everyday-life/age-in-years-months-and-days",
+      "name": "Age in years months and days"
+    }
+  ],
+  "words": 1441
+}

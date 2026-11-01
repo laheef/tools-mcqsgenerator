@@ -1,0 +1,93 @@
+{
+  "path": "/math/angle-between-two-vectors",
+  "slug": "angle-between-two-vectors",
+  "cat": "math",
+  "name": "Angle between two vectors",
+  "seoTitle": "Angle between two vectors Calculator",
+  "seoDesc": "Angle between two vectors: a free math calculator that walks you through 54 values, with the formula spelled out and a worked example.",
+  "h1": "Angle between two vectors Calculator",
+  "summary": "The Angle between two vectors calculator is a free, no-sign-up math tool. Fill in the 23 fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nIt is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Angle between two vectors calculator work?",
+      "html": "<p>The Angle between two vectors calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the representation system (Vector a), the representation system (Vector a) and the representation system (Vector b)); then you type in the α (Angle between two vectors), the α (Angle between two vectors), the α (Angle between two vectors) and the α (Angle between two vectors).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as 2D and 3D. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as coordinate and point. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as coordinate and point. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 2 options, such as coordinate and point. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as coordinate and point. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Representation system (Vector a)</strong></td><td>One of 2 options, such as coordinate and point.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Representation system (Vector a)</strong></td><td>One of 2 options, such as coordinate and point.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Representation system (Vector b)</strong></td><td>One of 2 options, such as coordinate and point.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Representation system (Vector b)</strong></td><td>One of 2 options, such as coordinate and point.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Α (Angle between two vectors)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Α (Angle between two vectors)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Α (Angle between two vectors)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Α (Angle between two vectors)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Α (Angle between two vectors)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Α (Angle between two vectors)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Α (Angle between two vectors)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Α (Angle between two vectors)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>A magnitude 2d</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A magnitude 3d</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>A magnitude ab 2d</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>A magnitude ab 3d</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>B magnitude 2d</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>B magnitude 3d</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>B magnitude ab 2d</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>B magnitude ab 3d</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Angle between two vectors calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">X</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (-(Y ^ 2) − (Z ^ 2) + (a magnitude 3d ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">B magnitude 3d</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((X ^ 2) + (Y ^ 2) + (Z ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (-(Y ^ 2) + (a magnitude 2d ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">B magnitude 2d</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((X ^ 2) + (Y ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X₁</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-A12 + X₂</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A22</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">Y₂ − Y₁</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Angle between two vectors calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/direct-variation\">Direct variation</a>, <a href=\"/math/discriminant\">Discriminant</a> and <a href=\"/math/distance\">Distance</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Angle between two vectors calculator?",
+      "a": "The form asks for a few values, which is 23 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter α (Angle between two vectors) in a different unit?",
+      "a": "Yes. Α (Angle between two vectors) opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Angle between two vectors calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/direct-variation",
+      "name": "Direct variation"
+    },
+    {
+      "path": "/math/discriminant",
+      "name": "Discriminant"
+    },
+    {
+      "path": "/math/distance",
+      "name": "Distance"
+    }
+  ],
+  "words": 1917
+}

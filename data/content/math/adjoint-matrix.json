@@ -1,0 +1,89 @@
+{
+  "path": "/math/adjoint-matrix",
+  "slug": "adjoint-matrix",
+  "cat": "math",
+  "name": "Adjoint matrix",
+  "seoTitle": "Adjoint matrix Calculator — Formula, Units & Example",
+  "seoDesc": "Adjoint matrix: work out C₁₁ (Adjoint matrix (2×2)) from the A₁ (Matrix input (2×2)) and the A₂ (Matrix input (2×2)). A free math calculator with the…",
+  "h1": "Adjoint matrix Calculator",
+  "summary": "The Adjoint matrix calculator returns <strong>C₁₁ (Adjoint matrix (2×2))</strong>. The inputs are the A₁ (Matrix input (2×2)), the A₂ (Matrix input (2×2)), the B₁ (Matrix input (2×2)) and the B₂ (Matrix input (2×2)).\n\nIt is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Adjoint matrix calculator work?",
+      "html": "<p>The Adjoint matrix calculator takes the values in the form, applies the relationship described below and reports <strong>C₁₁ (Adjoint matrix (2×2))</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the matrix size); then you type in the A₁ (Matrix input (2×2)), the A₂ (Matrix input (2×2)), the B₁ (Matrix input (2×2)) and the B₂ (Matrix input (2×2)).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as 2×2, 3×3 and 4×4. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>The form has 30 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Matrix size</strong></td><td>One of 3 options, such as 2×2, 3×3 and 4×4.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>A₁ (Matrix input (2×2))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₂ (Matrix input (2×2))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₁ (Matrix input (2×2))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₂ (Matrix input (2×2))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₁ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₂ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₃ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₁ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₂ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₃ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>C₁ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>C₂ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>C₃ (Matrix input (3×3))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₁ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₂ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A₃ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₁ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₂ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>B₃ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>C₁ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>C₂ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>C₃ (Matrix input (4×4))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>C₁₁ (Adjoint matrix (2×2))</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 45 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Adjoint matrix calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">C₁₁</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, B₁, B₂, 0, 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">C₁₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, B₁, B₂, 1, 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">C₂₁</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, B₁, B₂, 0, 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">C₂₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, B₁, B₂, 1, 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">C₁₁</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, A₃, B₁, B₂, B₃, C₁, C₂, C₃, 0, 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">C₁₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(A₁, A₂, A₃, B₁, B₂, B₃, C₁, C₂, C₃, 1, 0)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Adjoint matrix calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Settling an argument about a number with a quick, traceable result</li><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Any time the same 4 figures keep coming back — the A₁ (Matrix input (2×2)), the A₂ (Matrix input (2×2)) and the B₁ (Matrix input (2×2)) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/digital-root\">Digital root</a>, <a href=\"/math/dimensions-of-a-rectangle\">Dimensions of a rectangle</a> and <a href=\"/math/direct-variation\">Direct variation</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Adjoint matrix calculator work out?",
+      "a": "It returns C₁₁ (Adjoint matrix (2×2)), derived from the A₁ (Matrix input (2×2)), the A₂ (Matrix input (2×2)) and the B₁ (Matrix input (2×2)). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Adjoint matrix calculator?",
+      "a": "The form has 30 fields, each listed with its unit in the article above. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Adjoint matrix calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/digital-root",
+      "name": "Digital root"
+    },
+    {
+      "path": "/math/dimensions-of-a-rectangle",
+      "name": "Dimensions of a rectangle"
+    },
+    {
+      "path": "/math/direct-variation",
+      "name": "Direct variation"
+    }
+  ],
+  "words": 1627
+}

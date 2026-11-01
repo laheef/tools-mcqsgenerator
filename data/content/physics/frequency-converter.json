@@ -1,0 +1,101 @@
+{
+  "path": "/physics/frequency-converter",
+  "slug": "frequency-converter",
+  "cat": "physics",
+  "name": "Frequency converter",
+  "seoTitle": "Frequency converter Calculator",
+  "seoDesc": "Frequency converter: work out your result from the convert from. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Frequency converter Calculator",
+  "summary": "The Frequency converter takes the values in the form and reports every result the relationship allows, with the formula and a worked example printed below. One number goes in, press Calculate, and the equivalent in the other unit appears; the factor that links them is printed below, so you can repeat the arithmetic yourself.\n\nIt suits a lab report, a problem set or a sanity check on a physical situation. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Frequency converter calculator work?",
+      "html": "<p>The Frequency converter takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you type in the convert from.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in hertz. The unit chip switches it to any of the 21 supported units.</li></ul><p>There is no direction to choose: enter the figure you have in whichever box matches its unit and read the equivalent from the other. Both fields are editable for that reason, and the chips beside them change the unit a box speaks without touching the number inside it.</p>"
+    },
+    {
+      "title": "The formula behind the Frequency converter calculator",
+      "html": "<p>Spelled out as an equation, <strong>1 Hz = 0.001 kHz</strong>. Everything else on this page follows from that one line.</p>\n<p>This is a conversion rather than a calculation. To and convert from describe the same quantity, so the arithmetic underneath is a simple identity: whatever you type in one box is converted to a common base unit, and the other box is rendered from that base in its own unit.</p>\n<p>That is why changing the unit chip does not change the underlying value, only the way it is written — and why you can enter a figure in either box and read the answer from the other.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilohertz, and convertible to any of the 21 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "Common convert from to to conversions",
+      "html": "<p>The table applies the same relationship the calculator uses, so the numbers here and in the boxes above agree to the last digit shown. Multiply a convert from figure by 0.001 to get to; divide to go the other way.</p>\n<table><thead><tr><th>Convert from</th><th>To</th></tr></thead><tbody><tr><td>1</td><td>0.001</td></tr><tr><td>2</td><td>0.002</td></tr><tr><td>5</td><td>0.005</td></tr><tr><td>10</td><td>0.01</td></tr><tr><td>25</td><td>0.025</td></tr><tr><td>50</td><td>0.05</td></tr><tr><td>100</td><td>0.1</td></tr><tr><td>500</td><td>0.5</td></tr><tr><td>1,000</td><td>1</td></tr></tbody></table>\n<p>Display rounding is the only thing that changes between the table and the calculator: the underlying conversion runs at full precision.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Frequency, opening in hertz</li><li>Frequency, opening in kilohertz</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Frequency converter earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 1 figures keep coming back — the convert from — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Frequency converter, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — convert from for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/twist-rate\">Twist rate</a>, <a href=\"/physics/ufo-travel\">UFO travel</a> and <a href=\"/physics/universe-expansion\">Universe expansion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Frequency converter calculator?",
+      "a": "The form asks for the convert from, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter convert from in a different unit?",
+      "a": "Yes. Convert from opens in hertz and the chip beside it offers 21 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Frequency converter calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/twist-rate",
+      "name": "Twist rate"
+    },
+    {
+      "path": "/physics/ufo-travel",
+      "name": "UFO travel"
+    },
+    {
+      "path": "/physics/universe-expansion",
+      "name": "Universe expansion"
+    }
+  ],
+  "words": 1207
+}

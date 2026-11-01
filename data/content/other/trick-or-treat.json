@@ -1,0 +1,101 @@
+{
+  "path": "/other/trick-or-treat",
+  "slug": "trick-or-treat",
+  "cat": "other",
+  "name": "Trick-or-treat",
+  "seoTitle": "Trick-or-treat — Free Online Calculator",
+  "seoDesc": "Trick-or-treat: work out trick-or-treaters in your neighborhood from the candies in a pack and the diameter. A free other calculator with the formula,…",
+  "h1": "Trick-or-treat Calculator",
+  "summary": "Give the Trick-or-treat calculator the candies in a pack, the diameter, the length and the depth and it returns <strong>trick-or-treaters in your neighborhood</strong>. That makes it useful for whatever you happen to be working on.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Trick-or-treat calculator work?",
+      "html": "<p>The Trick-or-treat calculator takes the values in the form, applies the relationship described below and reports <strong>trick-or-treaters in your neighborhood</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the weather type and the I want to buy); then you type in the candies in a pack, the diameter, the length and the depth.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li><strong>I want to know</strong>: pick the option that matches your case — 2 options, such as how much I need and how much fits my container. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Weather type</strong>: pick the option that matches your case — 3 options, such as very pleasant, manageable and extreme. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Candies in a pack</strong>: a number, expressed in candies / pack.</li><li><strong>Diameter</strong>: a measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li><strong>Length</strong>: a measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li><strong>Depth</strong>: a measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li><strong>Base side</strong>: a measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li><strong>Top side</strong>: a measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li><strong>Top diameter</strong>: a measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li><strong>Percent full</strong>: a measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li><strong>Candies per kid</strong>: a number, expressed in candies / kid.</li><li><strong>Total candies</strong>: a number, expressed in candies.</li><li><strong>I want to buy</strong>: pick the option that matches your case — 15 options, such as rEESE's Cups, skittles and starburst. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>N 1</strong>: a plain number with no unit attached.</li><li><strong>Volume rectangular</strong>: a measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li><li><strong>Volume spherical</strong>: a measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li><li><strong>Volume tapered round</strong>: a measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li><li><strong>Volume of jar</strong>: a measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Trick-or-treaters in your neighborhood</strong></td><td>A number stated in kids.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Decoration type</strong></td><td>One of 3 options, such as grandly decorated, normally decorated and minimal / No decoration.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Weather type</strong></td><td>One of 3 options, such as very pleasant, manageable and extreme.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Candies in a pack</strong></td><td>A number stated in candies / pack.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Container shape</strong></td><td>One of 8 options, such as cylindrical, rectangular and spherical.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Base side</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Top side</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Base diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Top diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Percent full</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Candies per kid</strong></td><td>A number stated in candies / kid.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total candies</strong></td><td>A number stated in candies.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Packs of candy</strong></td><td>A number stated in packs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>I want to buy</strong></td><td>One of 15 options, such as rEESE's Cups, skittles and starburst.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Volume of your container</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Candy one</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Candy two</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Candy three</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Candy four</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 40 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Trick-or-treat calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Trick-or-treaters in your neighborhood</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total candies ÷ candies per kid</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Decoration type</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × candies per kid − weather type</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Packs of candy</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, (total candies ÷ candies in a pack)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Volume cylindrical</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 924) × PI × (diameter ^ 2) × height</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Width</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">231 × volume rectangular ÷ (height × length)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-1 ÷ 2 × (PI) × (diameter ^ 2) ÷ (-PI × (diameter ^ 3) + 2772 × volume spherical + 6 × the square root of (154) × the square root of (-PI × (diameter ^ 3) × volume spherical + 1386 × (volume spherical ^ 2))) + (1 ÷ 2) × diameter − 1 ÷ 2 × (-PI × (diameter ^ 3) + 2772 × volume spherical + 6 × the square root of (154) × the square root of (-PI × (diameter ^ 3) × volume spherical + 1386 × (volume spherical ^ 2))) ÷ (PI)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>The form opens with a complete set of values: <strong>I want to know</strong> set to how much I need, <strong>Decoration type</strong> set to Normally decorated, <strong>Weather type</strong> set to Very pleasant and <strong>Candies in a pack</strong> = 10. Straight away the calculator returns <strong>Candies per kid</strong> = 2 and <strong>Volume of your container</strong> = 3 L.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Candies per kid</strong> = 2 and <strong>Volume of your container</strong> = 3 L should be roughly the size you expected from <strong>I want to know</strong> set to how much I need and <strong>Decoration type</strong> set to Normally decorated.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><strong>Trick-or-treaters in your neighborhood</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Decoration type</strong>: the option the calculation settles on.</li><li><strong>Packs of candy</strong>: a number, filled in as soon as the inputs allow it.</li><li><strong>Volume cylindrical</strong>: shown in liters, and convertible to any of the 40 units on that chip.</li><li><strong>Width</strong>: shown in centimeters, and convertible to any of the 34 units on that chip.</li><li><strong>Height</strong>: shown in centimeters, and convertible to any of the 34 units on that chip.</li><li><strong>Volume tapered rectangular</strong>: shown in liters, and convertible to any of the 40 units on that chip.</li><li><strong>Base diameter</strong>: shown in centimeters, and convertible to any of the 34 units on that chip.</li><li><strong>Volume quart mason jar</strong>: shown in liters, and convertible to any of the 40 units on that chip.</li><li><strong>Volume curved bowl</strong>: shown in liters, and convertible to any of the 40 units on that chip.</li><li><strong>Container shape</strong>: the option the calculation settles on.</li><li><strong>N 2</strong>: a number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li><strong>Diameter</strong>: Length, opening in centimeters</li><li><strong>Length</strong>: Length, opening in centimeters</li><li><strong>Width</strong>: Length, opening in centimeters</li><li><strong>Depth</strong>: Length, opening in centimeters</li><li><strong>Base side</strong>: Length, opening in centimeters</li><li><strong>Top side</strong>: Length, opening in centimeters</li><li><strong>Base diameter</strong>: Length, opening in centimeters</li><li><strong>Top diameter</strong>: Length, opening in centimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Trick-or-treat calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 4 figures keep coming back — the candies in a pack, the diameter and the length — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/drone-flight-time\">Drone flight time</a>, <a href=\"/other/drone-motor\">Drone motor</a> and <a href=\"/other/drop-chance\">Drop chance</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Trick-or-treat calculator work out?",
+      "a": "It returns trick-or-treaters in your neighborhood, derived from the candies in a pack, the diameter and the length. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Trick-or-treat calculator?",
+      "a": "The form asks for the candies in a pack, the diameter, the length and the depth, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter diameter in a different unit?",
+      "a": "Yes. Diameter opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Candies per kid = 2. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Trick-or-treat calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/drone-flight-time",
+      "name": "Drone flight time"
+    },
+    {
+      "path": "/other/drone-motor",
+      "name": "Drone motor"
+    },
+    {
+      "path": "/other/drop-chance",
+      "name": "Drop chance"
+    }
+  ],
+  "words": 2225
+}

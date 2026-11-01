@@ -1,0 +1,97 @@
+{
+  "path": "/everyday-life/meeting-cost",
+  "slug": "meeting-cost",
+  "cat": "everyday-life",
+  "name": "Meeting cost",
+  "seoTitle": "Meeting cost Calculator: Free, With Steps",
+  "seoDesc": "Meeting cost: work out meeting duration from the average salary and number of attendees. A free everyday life calculator with the formula, units and a…",
+  "h1": "Meeting cost Calculator",
+  "summary": "The Meeting cost calculator works out <strong>meeting duration</strong> from the average salary, number of attendees, the time spent on setting up the meeting and the supplementary cost per meeting. It is built for a practical question that turns up in daily life.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Meeting cost calculator work?",
+      "html": "<p>The Meeting cost calculator takes the values in the form, applies the relationship described below and reports <strong>meeting duration</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the average salary, number of attendees, the time spent on setting up the meeting and the supplementary cost per meeting.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as one-time meeting and recurring meeting. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 6 options, such as daily, weekly and bi-weekly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as average and individual setting. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A number, expressed in people.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Average salary</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Number of attendees</strong></td><td>A number stated in people.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Meeting duration</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>Calculated</td></tr><tr><td><strong>Time spent on setting up the meeting</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Supplementary cost per meeting</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Salary #1</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Salary #2</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Salary #3</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Salary #4</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Salary #5</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Salary #6</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Salary #7</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Salary #8</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Salary #9</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Salary #10</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of meeting (Results)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 35 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Meeting cost calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Meeting duration</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-average salary × time spent on setting up the meeting + cost of meeting − supplementary cost per meeting) ÷ (average salary × number of attendees)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Frequency value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cost of meetings per year ÷ cost of meeting</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Salary #2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cost of meeting − meeting duration × salary #1 − time spent on setting up the meeting × salary #1 − supplementary cost per meeting) ÷ meeting duration</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Meeting duration</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cost of meeting − time spent on setting up the meeting × salary #1 − supplementary cost per meeting) ÷ (salary #1 + salary #2 + salary #3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Salary #2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cost of meeting − meeting duration × (salary #1 + salary #3 + salary #4) − time spent on setting up the meeting × salary #1 − supplementary cost per meeting) ÷ meeting duration</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cost of meeting</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">meeting duration × salary #1 + meeting duration × salary #2 + meeting duration × salary #3 + meeting duration × salary #4 + meeting duration × salary #5 + time spent on setting up the meeting × salary #1 + supplementary cost per meeting</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in minutes, and convertible to any of the 27 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Time, opening in minutes</li><li>Time, opening in minutes</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Meeting cost calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 4 figures keep coming back — the average salary, number of attendees and the time spent on setting up the meeting — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/birthday\">Birthday</a>, <a href=\"/everyday-life/birthday-countdown\">Birthday countdown</a> and <a href=\"/everyday-life/blind-size\">Blind size</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Meeting cost calculator work out?",
+      "a": "It returns meeting duration, derived from the average salary, number of attendees and the time spent on setting up the meeting. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Meeting cost calculator?",
+      "a": "The form asks for the average salary, number of attendees, the time spent on setting up the meeting and the supplementary cost per meeting, which is 19 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter average salary in a different unit?",
+      "a": "Yes. Average salary opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Cost of meeting = 99000. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Meeting cost calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/birthday",
+      "name": "Birthday"
+    },
+    {
+      "path": "/everyday-life/birthday-countdown",
+      "name": "Birthday countdown"
+    },
+    {
+      "path": "/everyday-life/blind-size",
+      "name": "Blind size"
+    }
+  ],
+  "words": 2306
+}

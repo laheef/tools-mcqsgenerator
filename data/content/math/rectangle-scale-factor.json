@@ -1,0 +1,97 @@
+{
+  "path": "/math/rectangle-scale-factor",
+  "slug": "rectangle-scale-factor",
+  "cat": "math",
+  "name": "Rectangle scale factor",
+  "seoTitle": "Rectangle scale factor — Free Online Calculator",
+  "seoDesc": "Rectangle scale factor: work out width (Current rectangle size) from the width and the length. A free math calculator with the formula, units and a worked…",
+  "h1": "Rectangle scale factor Calculator",
+  "summary": "The Rectangle scale factor calculator turns the width, the length and the linear scale factor into <strong>width (Current rectangle size)</strong>. Think of it as a shortcut for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Rectangle scale factor calculator work?",
+      "html": "<p>The Rectangle scale factor calculator takes the values in the form, applies the relationship described below and reports <strong>width (Current rectangle size)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the width (New rectangle size), the length (New rectangle size) and the linear scale factor.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Width (Current rectangle size)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Length (Current rectangle size)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Area (Current rectangle size)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Width (New rectangle size)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Length (New rectangle size)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Area (New rectangle size)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Linear scale factor</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Area scale factor</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Rectangle scale factor calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Width</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">width ÷ linear scale factor</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length ÷ linear scale factor</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">area ÷ width</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length × width</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area scale factor</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(linear scale factor ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">area scale factor × area</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Width</strong> = 30 m and <strong>Linear scale factor</strong> = 10. Working through the relationship above gives <strong>Width</strong> = 3 m and <strong>Area scale factor</strong> = 100.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Width</strong> = 3 m and <strong>Area scale factor</strong> = 100 should be roughly the size you expected from <strong>Width</strong> = 30 m and <strong>Linear scale factor</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Rectangle scale factor calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Checking a homework answer before you hand it in</li><li>Any time the same 3 figures keep coming back — the width, the length and the linear scale factor — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/trapezoid-side\">Trapezoid side</a>, <a href=\"/math/trapezoidal-prism-volume\">Volume of a trapezoidal prism</a> and <a href=\"/math/triangle-30-60-90\">30 60 90 triangle</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Rectangle scale factor calculator work out?",
+      "a": "It returns width (Current rectangle size), derived from the width, the length and the linear scale factor. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Rectangle scale factor calculator?",
+      "a": "The form asks for the width, the length and the linear scale factor, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter width (Current rectangle size) in a different unit?",
+      "a": "Yes. Width (Current rectangle size) opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Width = 3 m. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Rectangle scale factor calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/trapezoid-side",
+      "name": "Trapezoid side"
+    },
+    {
+      "path": "/math/trapezoidal-prism-volume",
+      "name": "Volume of a trapezoidal prism"
+    },
+    {
+      "path": "/math/triangle-30-60-90",
+      "name": "30 60 90 triangle"
+    }
+  ],
+  "words": 1396
+}

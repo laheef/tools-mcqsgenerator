@@ -1,0 +1,93 @@
+{
+  "path": "/conversion/volume-conversion",
+  "slug": "volume-conversion",
+  "cat": "conversion",
+  "name": "Volume conversion",
+  "seoTitle": "Volume conversion Calculator",
+  "seoDesc": "Volume conversion: work out volume in quarts from the volume in other units. A free conversion calculator with the formula, units and a worked example.",
+  "h1": "Volume conversion Calculator",
+  "summary": "The Volume conversion calculator takes the numbers you enter and reports <strong>volume in quarts</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt is built for a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Volume conversion calculator work?",
+      "html": "<p>The Volume conversion calculator takes the values in the form, applies the relationship described below and reports <strong>volume in quarts</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the volume in other units.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Volume in milliliters</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Volume in liters</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Volume in gallons</strong></td><td>A measured quantity, 40 units available.</td><td>gallons (US)</td><td>Calculated</td></tr><tr><td><strong>Volume in quarts</strong></td><td>A measured quantity, 40 units available.</td><td>quarts (US)</td><td>Calculated</td></tr><tr><td><strong>Volume in pints</strong></td><td>A measured quantity, 40 units available.</td><td>pints (US)</td><td>Calculated</td></tr><tr><td><strong>Volume in cups</strong></td><td>A measured quantity, 40 units available.</td><td>US customary cups</td><td>Calculated</td></tr><tr><td><strong>Volume in ounces</strong></td><td>A measured quantity, 40 units available.</td><td>fluid ounces (US)</td><td>Calculated</td></tr><tr><td><strong>Volume in tablespoons</strong></td><td>A measured quantity, 40 units available.</td><td>tablespoons (15 mL)</td><td>Calculated</td></tr><tr><td><strong>Volume in teaspoons</strong></td><td>A measured quantity, 40 units available.</td><td>teaspoons (5 mL)</td><td>Calculated</td></tr><tr><td><strong>Volume in other units</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Volume conversion calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Volume in quarts</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume in gallons</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Volume in pints</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume in gallons</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Volume in cups</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume in gallons</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Volume in ounces</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume in gallons</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Volume in tablespoons</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume in gallons</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Volume in teaspoons</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume in gallons</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in quarts (US), and convertible to any of the 40 units on that chip.</li><li>Shown in pints (US), and convertible to any of the 40 units on that chip.</li><li>Shown in US customary cups, and convertible to any of the 40 units on that chip.</li><li>Shown in fluid ounces (US), and convertible to any of the 40 units on that chip.</li><li>Shown in tablespoons (15 mL), and convertible to any of the 40 units on that chip.</li><li>Shown in teaspoons (5 mL), and convertible to any of the 40 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in liters, and convertible to any of the 40 units on that chip.</li><li>Shown in gallons (US), and convertible to any of the 40 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Volume, opening in milliliters</li><li>Volume, opening in liters</li><li>Volume, opening in gallons (US)</li><li>Volume, opening in quarts (US)</li><li>Volume, opening in pints (US)</li><li>Volume, opening in US customary cups</li><li>Volume, opening in fluid ounces (US)</li><li>Volume, opening in tablespoons (15 mL)</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Volume conversion calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting a figure someone quoted you so you can compare it</li><li>Checking a product listing against the measurements you work with</li><li>Filling in a form that asks for imperial or metric values</li><li>Any time the same 1 figures keep coming back — the volume in other units — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/cgs-system-of-units\">CGS system of units converter</a>, <a href=\"/conversion/cm-height-conversion\">cm height conversion</a> and <a href=\"/conversion/cm-to-ft-in-converter\">cm to ft in converter</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Volume conversion calculator work out?",
+      "a": "It returns volume in quarts, derived from the volume in other units. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Volume conversion calculator?",
+      "a": "The form asks for the volume in other units, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter volume in milliliters in a different unit?",
+      "a": "Yes. Volume in milliliters opens in milliliters and the chip beside it offers 40 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Volume conversion calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/cgs-system-of-units",
+      "name": "CGS system of units converter"
+    },
+    {
+      "path": "/conversion/cm-height-conversion",
+      "name": "cm height conversion"
+    },
+    {
+      "path": "/conversion/cm-to-ft-in-converter",
+      "name": "cm to ft in converter"
+    }
+  ],
+  "words": 1270
+}

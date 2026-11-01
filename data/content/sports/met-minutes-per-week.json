@@ -1,0 +1,97 @@
+{
+  "path": "/sports/met-minutes-per-week",
+  "slug": "met-minutes-per-week",
+  "cat": "sports",
+  "name": "MET minutes per week",
+  "seoTitle": "MET minutes per week — Free Online Calculator",
+  "seoDesc": "MET minutes per week: work out MET (Activity #1) from the time spent and the MET minutes. A free sports calculator with the formula, units and a worked…",
+  "h1": "MET minutes per week Calculator",
+  "summary": "Supply the time spent and the MET minutes and the MET minutes per week calculator solves for <strong>MET (Activity #1)</strong>. Think of it as a shortcut for a training session, a performance comparison or a competition result.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the MET minutes per week calculator work?",
+      "html": "<p>The MET minutes per week calculator takes the values in the form, applies the relationship described below and reports <strong>MET (Activity #1)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (number of activities per week, the activity (Activity #1) and the activity (Activity #2)); then you type in the time spent (Activity #1), the MET minutes (Activity #1), the time spent (Activity #3) and the MET minutes (Activity #4).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Display MET values per activity&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours / minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours / minutes. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours / minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours / minutes. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours / minutes. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours / minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 39 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li></ul><p>The form has 28 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>12 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Number of activities per week</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Activity (Activity #1)</strong></td><td>One of 39 options, such as aerobics, baseball, softball and basketball.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>MET (Activity #1)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time spent (Activity #1)</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>You supply it</td></tr><tr><td><strong>MET minutes (Activity #1)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity (Activity #2)</strong></td><td>One of 39 options, such as aerobics, baseball, softball and basketball.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>MET (Activity #2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time spent (Activity #2)</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>Calculated</td></tr><tr><td><strong>MET minutes (Activity #2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Activity (Activity #3)</strong></td><td>One of 39 options, such as aerobics, baseball, softball and basketball.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>MET (Activity #3)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time spent (Activity #3)</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>You supply it</td></tr><tr><td><strong>MET minutes (Activity #3)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Activity (Activity #4)</strong></td><td>One of 39 options, such as aerobics, baseball, softball and basketball.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>MET (Activity #4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time spent (Activity #4)</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>Calculated</td></tr><tr><td><strong>MET minutes (Activity #4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity (Activity #5)</strong></td><td>One of 39 options, such as aerobics, baseball, softball and basketball.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>MET (Activity #5)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time spent (Activity #5)</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>Calculated</td></tr><tr><td><strong>MET minutes (Activity #5)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity (Activity #6)</strong></td><td>One of 39 options, such as aerobics, baseball, softball and basketball.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>MET (Activity #6)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time spent (Activity #6)</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 51 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the MET minutes per week calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">MET</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">MET minutes ÷ time spent</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">MET minutes</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">MET × time spent</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time spent</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">MET minutes ÷ MET</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">MET minutes</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">MET × time</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">MET</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total MET minutes ÷ time spent</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time spent</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-MET × time spent + total MET minutes) ÷ MET</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in hours / minutes, and convertible to any of the 27 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in hours / minutes, and convertible to any of the 27 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in hours / minutes</li><li>Time, opening in hours / minutes</li><li>Time, opening in hours / minutes</li><li>Time, opening in hours / minutes</li><li>Time, opening in hours / minutes</li><li>Time, opening in hours / minutes</li><li>Time, opening in hours / minutes</li><li>Time, opening in hours / minutes</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The MET minutes per week calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two athletes or two attempts fairly</li><li>Tracking progress across a training block</li><li>Planning a session around a target you already know</li><li>Any time the same 2 figures keep coming back — the time spent and the MET minutes — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/elliptical-calorie\">Elliptical calorie</a>, <a href=\"/sports/elo\">Elo rating</a> and <a href=\"/sports/erg\">ERG</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the MET minutes per week calculator work out?",
+      "a": "It returns MET (Activity #1), derived from the time spent and the MET minutes. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the MET minutes per week calculator?",
+      "a": "The form asks for the time spent and the MET minutes, which is 28 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter time spent (Activity #1) in a different unit?",
+      "a": "Yes. Time spent (Activity #1) opens in hours / minutes and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (12 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports MET = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the MET minutes per week calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/elliptical-calorie",
+      "name": "Elliptical calorie"
+    },
+    {
+      "path": "/sports/elo",
+      "name": "Elo rating"
+    },
+    {
+      "path": "/sports/erg",
+      "name": "ERG"
+    }
+  ],
+  "words": 2381
+}

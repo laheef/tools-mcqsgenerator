@@ -1,0 +1,97 @@
+{
+  "path": "/finance/new-york-overtime",
+  "slug": "new-york-overtime",
+  "cat": "finance",
+  "name": "New York overtime",
+  "seoTitle": "New York overtime — Free Online Calculator",
+  "seoDesc": "New York overtime: work out regular pay from the regular work time and the overtime pay multiplier. A free finance calculator with the formula, units and…",
+  "h1": "New York overtime Calculator",
+  "summary": "<strong>regular pay</strong> is what the New York overtime calculator works out, and it gets there from the regular work time, the overtime pay multiplier, the overtime pay and the overtime hours. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the New York overtime calculator work?",
+      "html": "<p>The New York overtime calculator takes the values in the form, applies the relationship described below and reports <strong>regular pay</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the regular work time, the overtime pay multiplier, the overtime pay and the overtime hours.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 4 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 4 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Regular pay</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Regular work time</strong></td><td>A measured quantity, 4 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Total regular pay</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Overtime pay multiplier</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Overtime pay</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Overtime hours</strong></td><td>A measured quantity, 4 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Total overtime pay</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total pay</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the New York overtime calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Regular pay</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">overtime pay ÷ overtime pay multiplier</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total overtime pay</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">overtime hours × overtime pay</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total regular pay</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">regular work time × regular pay</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total regular pay</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-total overtime pay + total pay</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Regular work time</strong> = 40 hours, <strong>Overtime pay multiplier</strong> = 10 and <strong>Overtime pay</strong> = 10. Working through the relationship above gives <strong>Regular pay</strong> = 1 and <strong>Total regular pay</strong> = 40.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Regular pay</strong> = 1 and <strong>Total regular pay</strong> = 40 should be roughly the size you expected from <strong>Regular work time</strong> = 40 hours and <strong>Overtime pay multiplier</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Working time, opening in hours</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Working time, opening in hours</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The New York overtime calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Any time the same 4 figures keep coming back — the regular work time, the overtime pay multiplier and the overtime pay — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/georgia-overtime\">Georgia overtime</a>, <a href=\"/finance/gift-of-equity\">Gift of equity</a> and <a href=\"/finance/gini-coefficient\">Gini coefficient</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the New York overtime calculator work out?",
+      "a": "It returns regular pay, derived from the regular work time, the overtime pay multiplier and the overtime pay. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the New York overtime calculator?",
+      "a": "The form asks for the regular work time, the overtime pay multiplier, the overtime pay and the overtime hours, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter regular pay in a different unit?",
+      "a": "Yes. Regular pay opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Regular pay = 1. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the New York overtime calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/georgia-overtime",
+      "name": "Georgia overtime"
+    },
+    {
+      "path": "/finance/gift-of-equity",
+      "name": "Gift of equity"
+    },
+    {
+      "path": "/finance/gini-coefficient",
+      "name": "Gini coefficient"
+    }
+  ],
+  "words": 1404
+}

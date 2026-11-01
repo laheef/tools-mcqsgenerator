@@ -1,0 +1,97 @@
+{
+  "path": "/finance/var",
+  "slug": "var",
+  "cat": "finance",
+  "name": "Value at risk (Va r)",
+  "seoTitle": "Value at risk (Va r) — Free Online Calculator",
+  "seoDesc": "Value at risk (Va r): work out vaR (Value at risk (Va r)) from the standard deviation and the expected return. A free finance calculator with the formula,…",
+  "h1": "Value at risk (Va r) Calculator",
+  "summary": "The Value at risk (Va r) calculator turns the standard deviation, the expected return and more to the desired Va r into <strong>vaR (Value at risk (Va r))</strong>. That makes it useful for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Value at risk (Va r) calculator work?",
+      "html": "<p>The Value at risk (Va r) calculator takes the values in the form, applies the relationship described below and reports <strong>vaR (Value at risk (Va r))</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the standard deviation, the expected return, the timeframe and enter Z-score corresponding to the desired Va r.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 4 options, such as 10% Va r, 5% Va r and 1% Va r. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Standard deviation</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Expected return</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Timeframe</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Enter Z-score corresponding to the desired Va r</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Va r (Value at risk (Va r))</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Va r (Value at risk (Va r))</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Value at risk (Va r) calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Va r</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the absolute value of (portfolio value × (the square root of (timeframe) × standard deviation × which Va r are you calculating? − expected return))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Va r</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the absolute value of (portfolio value × (the square root of (timeframe) × standard deviation × enter Z-score corresponding to the desired Va r − expected return))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Portfolio value</strong> = 10, <strong>Standard deviation</strong> = 10 %, <strong>Expected return</strong> = 10 % and <strong>Timeframe</strong> = 30 days. Working through the relationship above gives <strong>Va r</strong> = 540.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Va r</strong> = 540 should be roughly the size you expected from <strong>Portfolio value</strong> = 10 and <strong>Standard deviation</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Time, opening in days</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Value at risk (Va r) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 4 figures keep coming back — the standard deviation, the expected return and the timeframe — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/post-judgment-interest\">Post judgment interest</a>, <a href=\"/finance/post-office-monthly-income-scheme\">Post Office Monthly Income Scheme</a> and <a href=\"/finance/powerball\">Powerball</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Value at risk (Va r) calculator work out?",
+      "a": "It returns vaR (Value at risk (Va r)), derived from the standard deviation, the expected return and the timeframe. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Value at risk (Va r) calculator?",
+      "a": "The form asks for the standard deviation, the expected return, the timeframe and enter Z-score corresponding to the desired Va r, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter portfolio value in a different unit?",
+      "a": "Yes. Portfolio value opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Va r = 540. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Value at risk (Va r) calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/post-judgment-interest",
+      "name": "Post judgment interest"
+    },
+    {
+      "path": "/finance/post-office-monthly-income-scheme",
+      "name": "Post Office Monthly Income Scheme"
+    },
+    {
+      "path": "/finance/powerball",
+      "name": "Powerball"
+    }
+  ],
+  "words": 1480
+}

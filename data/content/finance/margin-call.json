@@ -1,0 +1,97 @@
+{
+  "path": "/finance/margin-call",
+  "slug": "margin-call",
+  "cat": "finance",
+  "name": "Margin call",
+  "seoTitle": "Margin call Calculator: Free, With Steps",
+  "seoDesc": "Margin call: work out number of ticks per point from the initial deposit and the current initial margin per contract. A free finance calculator with the…",
+  "h1": "Margin call Calculator",
+  "summary": "The Margin call calculator turns the initial deposit, the current initial margin per contract and more into <strong>number of ticks per point</strong>. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Margin call calculator work?",
+      "html": "<p>The Margin call calculator takes the values in the form, applies the relationship described below and reports <strong>number of ticks per point</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (trading direction? and select your futures contract); then you type in the initial deposit, the current initial margin per contract, the current maintenance margin per contract and add your buying contract price.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 2 options, such as long position and short position. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as e-Mini S&P 500, e-Mini NASDAQ-100 and e-Mini Russel 2000. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A number, expressed in points.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Initial deposit</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Current initial margin per contract</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Current maintenance margin per contract</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Number of futures contracts</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Trading direction?</strong></td><td>One of 2 options, such as long position and short position.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Select your futures contract</strong></td><td>One of 7 options, such as e-Mini S&P 500, e-Mini NASDAQ-100 and e-Mini Russel 2000.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of ticks per point</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Add your buying contract price</strong></td><td>A number stated in points.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Add your selling contract price</strong></td><td>A number stated in points.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of points</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Profit / loss for a long position</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Profit / loss for a short position</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Current total initial margin</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Current total maintenance margin</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Margin call calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Number of ticks per point</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">profit ÷ loss for a long position ÷ (number of futures contracts × number of points × tick value)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Add your selling contract price</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">add your buying contract price + number of points</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Profit / loss for a short position</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-profit ÷ loss for a long position</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Tick value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">point value ÷ number of ticks per point</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of futures contracts</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">current total initial margin ÷ current initial margin per contract</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of futures contracts</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">current total maintenance margin ÷ current maintenance margin per contract</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Margin call calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Comparing two offers that quote their costs in different ways</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Any time the same 4 figures keep coming back — the initial deposit, the current initial margin per contract and the current maintenance margin per contract — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/earnest-money\">Earnest money</a>, <a href=\"/finance/ebit\">EBIT</a> and <a href=\"/finance/ebitda\">EBITDA</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Margin call calculator work out?",
+      "a": "It returns number of ticks per point, derived from the initial deposit, the current initial margin per contract and the current maintenance margin per contract. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Margin call calculator?",
+      "a": "The form asks for the initial deposit, the current initial margin per contract, the current maintenance margin per contract and add your buying contract price, which is 10 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter initial deposit in a different unit?",
+      "a": "Yes. Initial deposit opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Tick value = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Margin call calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/earnest-money",
+      "name": "Earnest money"
+    },
+    {
+      "path": "/finance/ebit",
+      "name": "EBIT"
+    },
+    {
+      "path": "/finance/ebitda",
+      "name": "EBITDA"
+    }
+  ],
+  "words": 1814
+}

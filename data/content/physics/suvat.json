@@ -1,0 +1,93 @@
+{
+  "path": "/physics/suvat",
+  "slug": "suvat",
+  "cat": "physics",
+  "name": "SUVAT",
+  "seoTitle": "SUVAT Calculator",
+  "seoDesc": "SUVAT: work out initial Velocity (u) from the displacement (s) and the initial Velocity (u). A free physics calculator with the formula, units and a…",
+  "h1": "SUVAT Calculator",
+  "summary": "Give the SUVAT calculator the displacement (s), the initial Velocity (u) and the final Velocity (v) and it returns <strong>initial Velocity (u)</strong>. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the SUVAT calculator work?",
+      "html": "<p>The SUVAT calculator takes the values in the form, applies the relationship described below and reports <strong>initial Velocity (u)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the displacement (s) (2), the initial Velocity (u) (3), the final Velocity (v) (4) and the final Velocity (v) (5).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second squared. The unit chip switches it to any of the 5 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Displacement (s)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Displacement (s) (2)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Displacement (s) (3)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Displacement (s) (4)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Displacement (s) (5)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Initial Velocity (u)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Initial Velocity (u) (2)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Initial Velocity (u) (3)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Initial Velocity (u) (4)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Initial Velocity (u) (5)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final Velocity (v)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final Velocity (v) (2)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final Velocity (v) (3)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final Velocity (v) (4)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Final Velocity (v) (5)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Acceleration (a)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>Calculated</td></tr><tr><td><strong>Acceleration (a) (2)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>Calculated</td></tr><tr><td><strong>Acceleration (a) (3)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>You supply it</td></tr><tr><td><strong>Acceleration (a) (4)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>Calculated</td></tr><tr><td><strong>Acceleration (a) (5)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>Calculated</td></tr><tr><td><strong>Time (t)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Time (t) (2)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Time (t) (3)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Time (t) (4)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 25 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the SUVAT calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Initial Velocity (u)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-acceleration (a) × time (t) + final Velocity (v)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Initial Velocity (u)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × displacement (s) ÷ time (t) − final Velocity (v)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Initial Velocity (u)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-1 ÷ 2 × acceleration (a) × time (t) + displacement (s) ÷ time (t)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Initial Velocity (u)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (-2 × acceleration (a) × displacement (s) + (final Velocity (v) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time (t)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × displacement (s) ÷ (initial Velocity (u) + final Velocity (v))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Final Velocity (v)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × acceleration (a) × time (t) + displacement (s) ÷ time (t)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters per second squared, and convertible to any of the 5 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in meters per second squared, and convertible to any of the 5 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters per second squared, and convertible to any of the 5 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The SUVAT calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 3 figures keep coming back — the displacement (s), the initial Velocity (u) and the final Velocity (v) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/hydraulic-conductivity\">Hydraulic conductivity</a>, <a href=\"/physics/hydraulic-gradient\">Hydraulic gradient</a> and <a href=\"/physics/hydraulic-jump\">Hydraulic jump</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the SUVAT calculator work out?",
+      "a": "It returns initial Velocity (u), derived from the displacement (s), the initial Velocity (u) and the final Velocity (v). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the SUVAT calculator?",
+      "a": "The form asks for the displacement (s), the initial Velocity (u) and the final Velocity (v), which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter displacement (s) in a different unit?",
+      "a": "Yes. Displacement (s) opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the SUVAT calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/hydraulic-conductivity",
+      "name": "Hydraulic conductivity"
+    },
+    {
+      "path": "/physics/hydraulic-gradient",
+      "name": "Hydraulic gradient"
+    },
+    {
+      "path": "/physics/hydraulic-jump",
+      "name": "Hydraulic jump"
+    }
+  ],
+  "words": 1663
+}

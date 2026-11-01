@@ -1,0 +1,85 @@
+{
+  "path": "/health/dudit",
+  "slug": "dudit",
+  "cat": "health",
+  "name": "DUDIT",
+  "seoTitle": "DUDIT — Free Online Calculator",
+  "seoDesc": "DUDIT: answer 13 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "DUDIT Calculator",
+  "summary": "The DUDIT calculator is a free, no-sign-up health tool. Fill in the 12 fields it asks for and it works out <strong>DUDIT score</strong> straight away, with the formula shown underneath.\n\nThink of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the DUDIT calculator work?",
+      "html": "<p>The DUDIT calculator takes the values in the form, applies the relationship described below and reports <strong>DUDIT score</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the sex).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Sex</td><td>pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>1\\. How often do you use drugs other than alcohol?</td><td>pick the option that matches your case — 5 options, such as never, once a month and 2-4 times per month. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>2\\. Do you use more than one type of drug on the same occasion?</td><td>pick the option that matches your case — 5 options, such as never, once a month and 2-4 times per month. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>3\\. On days that you take drugs, how many times do you typically take them?</td><td>pick the option that matches your case — 5 options, such as 0, 1-2 and 3-4. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>4\\. How often are you influenced heavily by drugs?</td><td>pick the option that matches your case — 5 options, such as never, once a month and 2-4 times per month. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>5\\. Over the past year, have you felt that your longing for drugs was so strong that you couldn’t resist it?</td><td>pick the option that matches your case — 5 options, such as never, once a month and 2-4 times per month. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>6\\. Over the past year, has it happened that you started taking drugs and were then unable to stop?</td><td>pick the option that matches your case — 5 options, such as never, once a month and 2-4 times per month. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>7\\. How often over the past year have you taken drugs and then neglected to do something you should have done?</td><td>pick the option that matches your case — 5 options, such as never, once a month and 2-4 times per month. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>8\\. Over the past year, how often have you needed to take a drug the morning after heavy drug use the day before?</td><td>pick the option that matches your case — 5 options, such as never, once a month and 2-4 times per month. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>9\\. Over the past year, how often have you felt guilty or had a bad conscience because you used drugs?</td><td>pick the option that matches your case — 5 options, such as never, once a month and 2-4 times per month. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>10\\. Have you or anyone else ever been hurt (mentally or physically) because you used drugs?</td><td>pick the option that matches your case — 3 options, such as no, yes, but not over the past year and yes, over the past year. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>11\\. Has a relative, a friend, a doctor, a nurse, or anyone else ever been worried about your drug use, or told you that you should stop using drugs?</td><td>pick the option that matches your case — 3 options, such as no, yes, but not over the past year and yes, over the past year. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr></tbody></table><p>12 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the DUDIT calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">DUDIT score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1\\. How often do you use drugs other than alcohol? + 10\\. Have you or anyone else ever been hurt (mentally or physically) because you used drugs? + 11\\. Has a relative, a friend, a doctor, a nurse, or anyone else ever been worried about your drug use, or told you that you should stop using drugs? + 2\\. Do you use more than one type of drug on the same occasion? + 3\\. On days that you take drugs, how many times do you typically take them? + 4\\. How often are you influenced heavily by drugs? + 5\\. Over the past year, have you felt that your longing for drugs was so strong that you couldn’t resist it? + 6\\. Over the past year, has it happened that you started taking drugs and were then unable to stop? + 7\\. How often over the past year have you taken drugs and then neglected to do something you should have done? + 8\\. Over the past year, how often have you needed to take a drug the morning after heavy drug use the day before? + 9\\. Over the past year, how often have you felt guilty or had a bad conscience because you used drugs?)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The DUDIT calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/breast-cancer-recurrence-risk\">Breast cancer recurrence risk</a>, <a href=\"/health/breastfeeding-calorie\">Breastfeeding calorie</a> and <a href=\"/health/bri\">BRI (body roundness index)</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the DUDIT calculator work out?",
+      "a": "It returns DUDIT score. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the DUDIT calculator?",
+      "a": "The form asks for a few values, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (12 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports DUDIT score = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the DUDIT calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/breast-cancer-recurrence-risk",
+      "name": "Breast cancer recurrence risk"
+    },
+    {
+      "path": "/health/breastfeeding-calorie",
+      "name": "Breastfeeding calorie"
+    },
+    {
+      "path": "/health/bri",
+      "name": "BRI (body roundness index)"
+    }
+  ],
+  "words": 1627
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/physics/diffraction",
+  "slug": "diffraction",
+  "cat": "physics",
+  "name": "Diffraction grating",
+  "seoTitle": "Diffraction grating Calculator — Formula, Units & Example",
+  "seoDesc": "Diffraction grating: work out grating density from the first order and the second order. A free physics calculator with the formula, units and a worked…",
+  "h1": "Diffraction grating Calculator",
+  "summary": "<strong>grating density</strong> is what the Diffraction grating calculator works out, and it gets there from the first order, the second order and the third order. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Diffraction grating calculator work?",
+      "html": "<p>The Diffraction grating calculator takes the values in the form, applies the relationship described below and reports <strong>grating density</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the first order, the second order and the third order.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Wavelength</strong></td><td>A measured quantity, 34 units available.</td><td>nanometers</td><td>Calculated</td></tr><tr><td><strong>Grating density</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Angle of incidence</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>First order</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Second order</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Third order</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Fourth order</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Fifth order</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Diffraction grating calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Grating density</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(the sine of (angle of incidence) + the sine of (first order)) ÷ wavelength</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Grating density</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × (the sine of (angle of incidence) + the sine of (second order)) ÷ wavelength</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Grating density</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 3) × (the sine of (angle of incidence) + the sine of (third order)) ÷ wavelength</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Grating density</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × (the sine of (angle of incidence) + the sine of (fourth order)) ÷ wavelength</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Grating density</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 5) × (the sine of (angle of incidence) + the sine of (fifth order)) ÷ wavelength</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Wavelength</strong> = 30 nm, <strong>Angle of incidence</strong> = 10 deg and <strong>First order</strong> = 10 deg. Working through the relationship above gives <strong>Grating density</strong> = 115.7655 mm, <strong>Second order</strong> = 31.3956 deg, <strong>Third order</strong> = 60.2549 deg and <strong>Fourth order</strong> = 90 deg.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Grating density</strong> = 115.7655 mm, <strong>Second order</strong> = 31.3956 deg, <strong>Third order</strong> = 60.2549 deg and <strong>Fourth order</strong> = 90 deg should be roughly the size you expected from <strong>Wavelength</strong> = 30 nm and <strong>Angle of incidence</strong> = 10 deg.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in nanometers, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in nanometers</li><li>Length, opening in millimeters</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Diffraction grating calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 3 figures keep coming back — the first order, the second order and the third order — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/specific-heat\">Specific heat</a>, <a href=\"/physics/specific-impulse\">Specific impulse</a> and <a href=\"/physics/speed-of-light\">Speed of light</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Diffraction grating calculator work out?",
+      "a": "It returns grating density, derived from the first order, the second order and the third order. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Diffraction grating calculator?",
+      "a": "The form asks for the first order, the second order and the third order, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter wavelength in a different unit?",
+      "a": "Yes. Wavelength opens in nanometers and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Grating density = 115.7655 mm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Diffraction grating calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/specific-heat",
+      "name": "Specific heat"
+    },
+    {
+      "path": "/physics/specific-impulse",
+      "name": "Specific impulse"
+    },
+    {
+      "path": "/physics/speed-of-light",
+      "name": "Speed of light"
+    }
+  ],
+  "words": 1414
+}

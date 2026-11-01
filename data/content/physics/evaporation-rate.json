@@ -1,0 +1,97 @@
+{
+  "path": "/physics/evaporation-rate",
+  "slug": "evaporation-rate",
+  "cat": "physics",
+  "name": "Evaporation rate",
+  "seoTitle": "Evaporation rate Calculator — Formula, Units & Example",
+  "seoDesc": "Evaporation rate: work out maximum humidity ratio from the surface area of water and the air speed. A free physics calculator with the formula, units and…",
+  "h1": "Evaporation rate Calculator",
+  "summary": "The Evaporation rate calculator turns the surface area of water, the air speed and more into <strong>maximum humidity ratio</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Evaporation rate calculator work?",
+      "html": "<p>The Evaporation rate calculator takes the values in the form, applies the relationship described below and reports <strong>maximum humidity ratio</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the surface area of water, the air speed, the max humidity ratio temp and the relative humidity.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in kilometers per hour. The unit chip switches it to any of the 25 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 22 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Surface area of water</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr><tr><td><strong>Air speed</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>You supply it</td></tr><tr><td><strong>Air temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Max humidity ratio temp</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Relative humidity</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Evaporation rate (Use temperature and relative humidity)</strong></td><td>A measured quantity, 22 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Maximum humidity ratio</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Current humidity ratio</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Evaporation rate (Use maximum and current humidity ratio)</strong></td><td>A measured quantity, 22 units available.</td><td>kilograms</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Evaporation rate calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Maximum humidity ratio</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(19 × air speed × surface area of water × current humidity ratio + 25 × surface area of water × current humidity ratio + evaporation rate) ÷ (surface area of water × (19 × air speed + 25))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Air temperature</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-1 ÷ 6 × (15) × (-18000000 × max humidity ratio temp + 2 × the square root of (6) × the square root of (13500000000000 × (max humidity ratio temp ^ 2) − 79528500000 × max humidity ratio temp + 269713489) + 53019) − 5 ÷ 2 + (625 ÷ 6) × (15 ^ 2 ÷ 3) ÷ (-18000000 × max humidity ratio temp + 2 × the square root of (6) × the square root of (13500000000000 × (max humidity ratio temp ^ 2) − 79528500000 × max humidity ratio temp + 269713489) + 53019)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Evaporation rate</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">surface area of water × max humidity ratio temp × (-19 × air speed × relative humidity + 19 × air speed − 25 × relative humidity + 25)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Surface area of water</strong> = 10 m², <strong>Air speed</strong> = 10 km/h, <strong>Current humidity ratio</strong> = 10 kg and <strong>Evaporation rate</strong> = 10 kg. The calculator returns <strong>Maximum humidity ratio</strong> = 10 kg.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Maximum humidity ratio</strong> = 10 kg should be roughly the size you expected from <strong>Surface area of water</strong> = 10 m² and <strong>Air speed</strong> = 10 km/h.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 22 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Area, opening in square meters</li><li>Speed, opening in kilometers per hour</li><li>Temperature, opening in Celsius</li><li>%, opening in percent</li><li>Volume & mass mixed, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Volume & mass mixed, opening in kilograms</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Evaporation rate calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 4 figures keep coming back — the surface area of water, the air speed and the max humidity ratio temp — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/thermal-energy\">Thermal energy</a>, <a href=\"/physics/thermal-equilibrium\">Thermal equilibrium</a> and <a href=\"/physics/thermal-expansion\">Thermal expansion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Evaporation rate calculator work out?",
+      "a": "It returns maximum humidity ratio, derived from the surface area of water, the air speed and the max humidity ratio temp. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Evaporation rate calculator?",
+      "a": "The form asks for the surface area of water, the air speed, the max humidity ratio temp and the relative humidity, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter surface area of water in a different unit?",
+      "a": "Yes. Surface area of water opens in square meters and the chip beside it offers 24 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Maximum humidity ratio = 10 kg. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Evaporation rate calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/thermal-energy",
+      "name": "Thermal energy"
+    },
+    {
+      "path": "/physics/thermal-equilibrium",
+      "name": "Thermal equilibrium"
+    },
+    {
+      "path": "/physics/thermal-expansion",
+      "name": "Thermal expansion"
+    }
+  ],
+  "words": 1612
+}

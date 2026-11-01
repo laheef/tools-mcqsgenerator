@@ -1,0 +1,97 @@
+{
+  "path": "/physics/isentropic-flow",
+  "slug": "isentropic-flow",
+  "cat": "physics",
+  "name": "Isentropic flow",
+  "seoTitle": "Isentropic flow — Free Online Calculator",
+  "seoDesc": "Isentropic flow: work out speed of sound (a) from the flow velocity (c) and the temperature (T). A free physics calculator with the formula, units and a…",
+  "h1": "Isentropic flow Calculator",
+  "summary": "Supply the flow velocity (c), the temperature (T), the area ratio and the dynamic pressure ratio and the Isentropic flow calculator solves for <strong>speed of sound (a)</strong>. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Isentropic flow calculator work?",
+      "html": "<p>The Isentropic flow calculator takes the values in the form, applies the relationship described below and reports <strong>speed of sound (a)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the flow velocity (c) (Mach number), the temperature (T) (Additional parameters), the area ratio (Ar) and the dynamic pressure ratio.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilograms per cubic meter. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in bars. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Flow velocity (c) (Mach number)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Speed of sound (a)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Mach number (M)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mach angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Specific heat ratio (γ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Specific gas constant (R)</strong></td><td>A measured quantity, 11 units available.</td><td>joules per kilogram per kelvin</td><td>Calculated</td></tr><tr><td><strong>Temperature (T) (Additional parameters)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Temperature ratio (Tr)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Density ratio (ρr)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Area ratio (Ar)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Pressure ratio (Pr)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dynamic pressure ratio</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Pressure (P₀)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>Calculated</td></tr><tr><td><strong>Temperature (T₀)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Density (ρ₀)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>You supply it</td></tr><tr><td><strong>Pressure (Ps)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>You supply it</td></tr><tr><td><strong>Density (ρs)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Temperature (Ts)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Area (A) (Static)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr><tr><td><strong>Pressure (P)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>Calculated</td></tr><tr><td><strong>Temperature (T) (Throat)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Density (ρ)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Area (A) (Throat)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Flow velocity (c) (Throat)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 26 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Isentropic flow calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Speed of sound (a)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">flow velocity (c) ÷ mach number (M)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mach angle</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ mach number (M))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Specific gas constant (R)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(speed of sound (a) ^ 2) ÷ (specific heat ratio (γ) × temperature (T))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Specific heat ratio (γ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × dynamic pressure ratio ÷ (mach number (M) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Specific heat ratio (γ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((mach number (M) ^ 2) + 2 × ratio − 2) ÷ (mach number (M) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Specific heat ratio (γ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the natural log of (1 ÷ pressure ratio (Pr)) ÷ (-the natural log of (ratio) + the natural log of (1 ÷ pressure ratio (Pr)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>The form opens with a complete set of values: <strong>Specific heat ratio (γ)</strong> = 1.4, <strong>Specific gas constant (R)</strong> = 287.058 J/(kg·K) and <strong>Temperature (T)</strong> = 20 °C. Straight away the calculator returns <strong>Speed of sound (a)</strong> = 322.7501 m/s.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Speed of sound (a)</strong> = 322.7501 m/s should be roughly the size you expected from <strong>Specific heat ratio (γ)</strong> = 1.4 and <strong>Specific gas constant (R)</strong> = 287.058 J/(kg·K).</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in joules per kilogram per kelvin, and convertible to any of the 11 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in bars, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Angle, opening in degrees</li><li>Specific heat capacity, opening in joules per kilogram per kelvin</li><li>Temperature, opening in Celsius</li><li>Pressure, opening in bars</li><li>Temperature, opening in Celsius</li><li>Density, opening in kilograms per cubic meter</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Isentropic flow calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the flow velocity (c), the temperature (T) and the area ratio — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/angle-of-refraction\">Angle of refraction</a>, <a href=\"/physics/angle-of-repose\">Angle of repose</a> and <a href=\"/physics/angle-of-twist\">Angle of twist</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Isentropic flow calculator work out?",
+      "a": "It returns speed of sound (a), derived from the flow velocity (c), the temperature (T) and the area ratio. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Isentropic flow calculator?",
+      "a": "The form asks for the flow velocity (c), the temperature (T), the area ratio and the dynamic pressure ratio, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter flow velocity (c) (Mach number) in a different unit?",
+      "a": "Yes. Flow velocity (c) (Mach number) opens in meters per second and the chip beside it offers 25 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Speed of sound (a) = 322.7501 m/s. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Isentropic flow calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/angle-of-refraction",
+      "name": "Angle of refraction"
+    },
+    {
+      "path": "/physics/angle-of-repose",
+      "name": "Angle of repose"
+    },
+    {
+      "path": "/physics/angle-of-twist",
+      "name": "Angle of twist"
+    }
+  ],
+  "words": 1827
+}

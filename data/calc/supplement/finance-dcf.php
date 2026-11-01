@@ -1,0 +1,54 @@
+<?php
+/**
+ * /finance/dcf — the rows its script already publishes.
+ *
+ * The scan in docs/export-mismatch.json found the page script calling
+ * ctx.exportValue() for these names and the definition declaring none of
+ * them: the answer was computed correctly and then dropped, so the panel
+ * stayed empty. This supplement declares the rows and tidies the text the
+ * page publishes — the arithmetic is the page's own.
+ */
+require_once __DIR__ . '/_builder.php';
+
+return [
+    'hideTexts' => true,
+    'outputs' => [
+        'print1' => 'Print1',
+        'print2' => 'Print2',
+        'result2' => 'Result2',
+        'print3' => 'Print3',
+        'result3' => 'Result3',
+        'print4' => 'Print4',
+        'result4' => 'Result4',
+        'print5' => 'Print5',
+        'result5' => 'Result5',
+        'print67' => 'Print67',
+        'result67' => 'Result67',
+    ],
+    'js' => <<<'JS'
+/* The page hook has already run by the time this one does, so the values
+   below are its results: tidy the reference site's markup out of them
+   before they reach the panel. */
+omni.onResult([], function (ctx, values) {
+  var rows = [
+    'print1',
+    'print2',
+    'result2',
+    'print3',
+    'result3',
+    'print4',
+    'result4',
+    'print5',
+    'result5',
+    'print67',
+    'result67'
+  ];
+  rows.forEach(function (name) {
+    var v = values[name];
+    if (typeof v !== 'string' || v.trim() === '') { return; }
+    var text = sclean(sdelabel(v));
+    ctx.exportValue(name, text === '' ? null : text);
+  });
+});
+JS,
+];

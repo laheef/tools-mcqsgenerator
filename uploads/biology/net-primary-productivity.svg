@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" role="img" aria-labelledby="t d">
+<title id="t">Net Primary Productivity Calculator — results compared</title>
+<desc id="d">Net Primary Productivity Calculator: Gross production, respiration and what is left over. — Net primary productivity = 1,300; Per hectare = 13,000; Dry biomass equivalent = 2,860; Energy equivalent = 111.54; Net ecosystem production (less 10% heterotroph) = 1,170.</desc>
+<style>
+  .lbl { font: 600 13px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #0f172a; }
+  .val { font: 700 17px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #0f172a; }
+  .small { font: 500 11px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #64748b; }
+  .tag { font: 600 11px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #2563eb;
+         letter-spacing: .06em; text-transform: uppercase; }
+  .box { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; rx: 10; }
+  .boxout { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 10; }
+  .arrow { stroke: #cbd5e1; stroke-width: 2; fill: none; }
+  .flow { stroke: #0ea5e9; stroke-width: 2; fill: none; stroke-dasharray: 5 7; animation: dash 1.6s linear infinite; }
+  .grow { transform-box: fill-box; transform-origin: bottom; animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
+  .fade { animation: fade 1s ease both; }
+  .slide { animation: slide 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  .widen { transform-box: fill-box; transform-origin: left; animation: widen .8s cubic-bezier(.2,.8,.2,1) both; }
+  .sweep { animation: sweepdown 3.2s cubic-bezier(.4,0,.6,1) infinite; }
+  .tick { font: 700 12px ui-monospace, 'SF Mono', Menlo, monospace; fill: #64748b; }
+  @keyframes dash { to { stroke-dashoffset: -24; } }
+  @keyframes rise { from { transform: scaleY(.05); opacity: .2; } to { transform: scaleY(1); opacity: 1; } }
+  @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes slide { from { transform: translateX(-14px); opacity: 0 } to { transform: translateX(0); opacity: 1 } }
+  @keyframes pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }
+  @keyframes widen { from { transform: scaleX(.02); opacity: .25 } to { transform: scaleX(1); opacity: 1 } }
+  /* The band is a hint that the list is being read top to bottom, not data: it
+     stays translucent so a screenshot taken mid-animation can never be mistaken
+     for another bar in the chart. */
+  @keyframes sweepdown { 0% { transform: translateY(0); opacity: 0 }
+                         15% { opacity: .16 }
+                         85% { opacity: .16 }
+                         100% { transform: translateY(156px); opacity: 0 } }
+  @media (prefers-reduced-motion: reduce) {
+    .flow, .grow, .fade, .slide, .pulse, .widen, .sweep { animation: none; }
+  }
+</style>
+<rect width="720" height="300" fill="#ffffff"/>
+<text class="tag" x="28" y="32">Gross production, respiration and what is left over.</text>
+<rect class="grow" style="animation-delay:0.00s" x="80.0" y="195.0" width="62.7" height="15.0" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="111.4" y="185.0" text-anchor="middle">1,300</text>
+<text class="small" x="111.4" y="232" text-anchor="middle"><tspan x="111.4" dy="0">Net primary</tspan><tspan x="111.4" dy="13">productivity</tspan></text>
+<rect class="grow" style="animation-delay:0.10s" x="192.0" y="60.0" width="62.7" height="150.0" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="223.4" y="50.0" text-anchor="middle">13,000</text>
+<text class="small" x="223.4" y="232" text-anchor="middle"><tspan x="223.4" dy="0">Per hectare</tspan></text>
+<rect class="grow" style="animation-delay:0.20s" x="304.0" y="177.0" width="62.7" height="33.0" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="335.4" y="167.0" text-anchor="middle">2,860</text>
+<text class="small" x="335.4" y="232" text-anchor="middle"><tspan x="335.4" dy="0">Dry biomass</tspan><tspan x="335.4" dy="13">equivalent</tspan></text>
+<rect class="grow" style="animation-delay:0.30s" x="416.0" y="208.7" width="62.7" height="1.3" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="447.4" y="198.7" text-anchor="middle">111.54</text>
+<text class="small" x="447.4" y="232" text-anchor="middle"><tspan x="447.4" dy="0">Energy</tspan><tspan x="447.4" dy="13">equivalent</tspan></text>
+<rect class="grow" style="animation-delay:0.40s" x="528.0" y="196.5" width="62.7" height="13.5" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="559.4" y="186.5" text-anchor="middle">1,170</text>
+<text class="small" x="559.4" y="232" text-anchor="middle"><tspan x="559.4" dy="0">Net ecosystem</tspan><tspan x="559.4" dy="13">production (les…</tspan></text>
+<line x1="60" y1="210" x2="660" y2="210" stroke="#cbd5e1" stroke-width="1.5"/>
+</svg>

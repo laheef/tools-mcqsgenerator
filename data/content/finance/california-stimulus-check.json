@@ -1,0 +1,89 @@
+{
+  "path": "/finance/california-stimulus-check",
+  "slug": "california-stimulus-check",
+  "cat": "finance",
+  "name": "California Stimulus Check",
+  "seoTitle": "California Stimulus Check Calculator",
+  "seoDesc": "California Stimulus Check: work out test condition from the tax filing date and the zip code. A free finance calculator with the formula, units and a…",
+  "h1": "California Stimulus Check Calculator",
+  "summary": "<strong>test condition</strong> is what the California Stimulus Check calculator works out, and it gets there from the tax filing date and the zip code. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the California Stimulus Check calculator work?",
+      "html": "<p>The California Stimulus Check calculator takes the values in the form, applies the relationship described below and reports <strong>test condition</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the tax file and have you claimed at least one child dependent?); then you give the tax filing date; then you type in the zip code.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 2 options, such as yes and no. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as SSN and ITIN. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as yes and no. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as yes and no. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as direct deposit and paper check. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A plain number with no unit attached.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Tax file</strong></td><td>One of 2 options, such as SSN and ITIN.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Have you claimed at least one child dependent?</strong></td><td>One of 2 options, such as yes and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Tax filing date</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Zip code</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Test condition</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Second stim</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Stim criteria</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Zip code last 3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the California Stimulus Check calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Test condition</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((zip code % 1) + 1) % 1</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Text output number</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(what is your California Adjusted Gross Income?, have you been a California resident for more than half of 2020?, tax file, are you qualified for the Golden State Stimulus I?, have you claimed at least one child dependent?)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Second stim</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(what is your California Adjusted Gross Income?, have you been a California resident for more than half of 2020?, tax file, are you qualified for the Golden State Stimulus I?, have you claimed at least one child dependent?)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Stim criteria</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(what is your California Adjusted Gross Income?, have you been a California resident for more than half of 2020?, tax file, are you qualified for the Golden State Stimulus I?, have you claimed at least one child dependent?)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Zip code last 3</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(zip code)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The California Stimulus Check calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Comparing two offers that quote their costs in different ways</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Any time the same 2 figures keep coming back — the tax filing date and the zip code — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/student-loan\">Student loan</a>, <a href=\"/finance/student-loan-forgiveness\">Student loan forgiveness</a> and <a href=\"/finance/student-loan-repayment-us\">Student Loan Repayment - Covid</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the California Stimulus Check calculator work out?",
+      "a": "It returns test condition, derived from the tax filing date and the zip code. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the California Stimulus Check calculator?",
+      "a": "The form asks for the tax filing date and the zip code, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the California Stimulus Check calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/student-loan",
+      "name": "Student loan"
+    },
+    {
+      "path": "/finance/student-loan-forgiveness",
+      "name": "Student loan forgiveness"
+    },
+    {
+      "path": "/finance/student-loan-repayment-us",
+      "name": "Student Loan Repayment - Covid"
+    }
+  ],
+  "words": 1405
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/finance/car-depreciation",
+  "slug": "car-depreciation",
+  "cat": "finance",
+  "name": "Car depreciation",
+  "seoTitle": "Car depreciation Calculator",
+  "seoDesc": "Car depreciation: work out your result from the car age and the difference. A free finance calculator with the formula, units and a worked example.",
+  "h1": "Car depreciation Calculator",
+  "summary": "The answer is what the Car depreciation calculator works out, and it gets there from the car age and the difference. Think of it as a shortcut for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Car depreciation calculator work?",
+      "html": "<p>The Car depreciation calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you type in the car age and the difference.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Car age</td><td>a measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</td></tr><tr><td>Difference</td><td>a measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Car depreciation calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Initial car value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(10000000000000000 ÷ 9153997743531311) × 1 minute</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Initial car value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(5000 ÷ 3999) × 1 year</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">2 years</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(3451 ÷ 5000) × initial car value</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Initial car value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(5000 ÷ 2933) × 3 years</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Initial car value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1000 ÷ 489) × 4 years</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">5 years</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1987 ÷ 5000) × initial car value</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>1 minute</strong> = 10. The calculator returns <strong>Initial car value</strong> = 11, <strong>1 year</strong> = 9, <strong>2 years</strong> = 8 and <strong>3 years</strong> = 6.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Initial car value</strong> = 11, <strong>1 year</strong> = 9, <strong>2 years</strong> = 8 and <strong>3 years</strong> = 6 should be roughly the size you expected from <strong>1 minute</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Time, opening in years</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Car depreciation calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Comparing two offers that quote their costs in different ways</li><li>Sizing up a purchase before you commit to it</li><li>Any time the same 2 figures keep coming back — the car age and the difference — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/taylor-rule\">Taylor rule</a>, <a href=\"/finance/tds-interest\">TDS interest</a> and <a href=\"/finance/tenure\">Tenure</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Car depreciation calculator?",
+      "a": "The form asks for the car age and the difference, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter initial car value in a different unit?",
+      "a": "Yes. Initial car value opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Initial car value = 11. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Car depreciation calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/taylor-rule",
+      "name": "Taylor rule"
+    },
+    {
+      "path": "/finance/tds-interest",
+      "name": "TDS interest"
+    },
+    {
+      "path": "/finance/tenure",
+      "name": "Tenure"
+    }
+  ],
+  "words": 1265
+}

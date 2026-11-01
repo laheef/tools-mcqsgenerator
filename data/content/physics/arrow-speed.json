@@ -1,0 +1,93 @@
+{
+  "path": "/physics/arrow-speed",
+  "slug": "arrow-speed",
+  "cat": "physics",
+  "name": "Arrow speed",
+  "seoTitle": "Arrow speed — Free Online Calculator",
+  "seoDesc": "Arrow speed: work out speed from the draw length of the bow and the peak draw weight. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Arrow speed Calculator",
+  "summary": "<strong>speed</strong> is what the Arrow speed calculator works out, and it gets there from the draw length of the bow, the peak draw weight, the additional weight on string and the momentum. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Arrow speed calculator work?",
+      "html": "<p>The Arrow speed calculator takes the values in the form, applies the relationship described below and reports <strong>speed</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the draw length of the bow, the peak draw weight, the additional weight on string and the momentum.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in grains. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in newton-seconds. The unit chip switches it to any of the 11 supported units.</li><li>A measured quantity, entered by default in joules. The unit chip switches it to any of the 33 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Bow IBO rating</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Draw length of the bow</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Peak draw weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Arrow weight</strong></td><td>A measured quantity, 29 units available.</td><td>grains</td><td>Calculated</td></tr><tr><td><strong>Additional weight on string</strong></td><td>A measured quantity, 29 units available.</td><td>grains</td><td>You supply it</td></tr><tr><td><strong>Speed</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Momentum</strong></td><td>A measured quantity, 11 units available.</td><td>newton-seconds</td><td>You supply it</td></tr><tr><td><strong>Kinetic energy</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Arrow speed calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Speed</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(125000000 ÷ 246883809) × the square root of (1295978) × the square root of (kinetic energy ÷ arrow weight)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Speed</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(12500000000000 ÷ 246883809) × momentum ÷ arrow weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Bow IBO rating</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 3) × additional weight on string + speed − 10 × draw length of the bow − the smaller of (0, -1 ÷ 3 × arrow weight + (5 ÷ 3) × peak draw weight) + 300</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in grains, and convertible to any of the 29 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Speed, opening in meters per second</li><li>Length, opening in centimeters</li><li>Mass, opening in kilograms</li><li>Mass, opening in grains</li><li>Mass, opening in grains</li><li>Speed, opening in meters per second</li><li>Newton-seconds, opening in newton-seconds</li><li>Energy, opening in joules</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Arrow speed calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 4 figures keep coming back — the draw length of the bow, the peak draw weight and the additional weight on string — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/pde-sipm\">Photon detection efficiency (SiPM)</a>, <a href=\"/physics/pendulum-frequency\">Pendulum frequency</a> and <a href=\"/physics/pendulum-kinectic-energy\">Kinetic energy of a pendulum</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Arrow speed calculator work out?",
+      "a": "It returns speed, derived from the draw length of the bow, the peak draw weight and the additional weight on string. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Arrow speed calculator?",
+      "a": "The form asks for the draw length of the bow, the peak draw weight, the additional weight on string and the momentum, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter bow IBO rating in a different unit?",
+      "a": "Yes. Bow IBO rating opens in meters per second and the chip beside it offers 25 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Arrow speed calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/pde-sipm",
+      "name": "Photon detection efficiency (SiPM)"
+    },
+    {
+      "path": "/physics/pendulum-frequency",
+      "name": "Pendulum frequency"
+    },
+    {
+      "path": "/physics/pendulum-kinectic-energy",
+      "name": "Kinetic energy of a pendulum"
+    }
+  ],
+  "words": 1338
+}

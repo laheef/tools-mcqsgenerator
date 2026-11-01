@@ -1,0 +1,93 @@
+{
+  "path": "/chemistry/combustion-reaction",
+  "slug": "combustion-reaction",
+  "cat": "chemistry",
+  "name": "Combustion reaction",
+  "seoTitle": "Combustion reaction Calculator: Free, With Steps",
+  "seoDesc": "Combustion reaction: work out CO₂ coef. (b) from the total atoms of carbon C and the total atoms of hydrogen H. A free chemistry calculator with the…",
+  "h1": "Combustion reaction Calculator",
+  "summary": "Supply the total atoms of carbon C, the total atoms of hydrogen H, the total atoms of oxygen O and the oxygen coef and the Combustion reaction calculator solves for <strong>CO₂ coef. (b)</strong>.\n\nThat makes it useful for a bench calculation involving amounts, concentrations or reaction ratios. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Combustion reaction calculator work?",
+      "html": "<p>The Combustion reaction calculator takes the values in the form, applies the relationship described below and reports <strong>CO₂ coef. (b)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the total atoms of carbon C (α), the total atoms of hydrogen H (β), the total atoms of oxygen O (γ) and the oxygen coef (a).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Total atoms of carbon C (α)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total atoms of hydrogen H (β)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total atoms of oxygen O (γ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Oxygen coef (a)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>CO₂ coef. (b)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>H₂O coef. (c)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Coef cho</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Coef c o 2 b</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Coef h 2 o c</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Combustion reaction calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">CO₂ coef. (b)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total atoms of carbon C (α)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">H₂O coef. (c)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × total atoms of hydrogen H (β)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Coef oxygen a</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(total atoms of carbon C (α), total atoms of hydrogen H (β), total atoms of oxygen O (γ), CO₂ coef. (b), H₂O coef. (c))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Coef c o 2 b</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(total atoms of carbon C (α), total atoms of hydrogen H (β), total atoms of oxygen O (γ), CO₂ coef. (b), H₂O coef. (c))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Coef h 2 o c</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(total atoms of carbon C (α), total atoms of hydrogen H (β), total atoms of oxygen O (γ), CO₂ coef. (b), H₂O coef. (c))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Coef cho</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(total atoms of carbon C (α), total atoms of hydrogen H (β), total atoms of oxygen O (γ), CO₂ coef. (b), H₂O coef. (c))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Combustion reaction calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing a solution and checking the numbers first</li><li>Converting between the units a protocol and your bench equipment use</li><li>Working through a stoichiometry problem</li><li>Any time the same 4 figures keep coming back — the total atoms of carbon C, the total atoms of hydrogen H and the total atoms of oxygen O — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Combustion reaction calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/degree-of-unsaturation\">Degree of unsaturation</a>, <a href=\"/chemistry/detention-time\">Detention time</a> and <a href=\"/chemistry/diffusion-coefficient\">Diffusion coefficient</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Combustion reaction calculator work out?",
+      "a": "It returns CO₂ coef. (b), derived from the total atoms of carbon C, the total atoms of hydrogen H and the total atoms of oxygen O. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Combustion reaction calculator?",
+      "a": "The form asks for the total atoms of carbon C, the total atoms of hydrogen H, the total atoms of oxygen O and the oxygen coef, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Combustion reaction calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/degree-of-unsaturation",
+      "name": "Degree of unsaturation"
+    },
+    {
+      "path": "/chemistry/detention-time",
+      "name": "Detention time"
+    },
+    {
+      "path": "/chemistry/diffusion-coefficient",
+      "name": "Diffusion coefficient"
+    }
+  ],
+  "words": 1206
+}

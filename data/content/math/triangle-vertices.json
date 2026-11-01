@@ -1,0 +1,97 @@
+{
+  "path": "/math/triangle-vertices",
+  "slug": "triangle-vertices",
+  "cat": "math",
+  "name": "Triangle vertices",
+  "seoTitle": "Triangle vertices Calculator — Formula, Units & Example",
+  "seoDesc": "Triangle vertices: a free math calculator that walks you through 13 values, with the formula spelled out and a worked example.",
+  "h1": "Triangle vertices Calculator",
+  "summary": "The Triangle vertices calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThink of it as a shortcut for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Editing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Triangle vertices calculator work?",
+      "html": "<p>The Triangle vertices calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you type in the figures it asks for.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>X (Vertex A coordinates)</td><td>a plain number with no unit attached.</td></tr><tr><td>Y (Vertex A coordinates)</td><td>a plain number with no unit attached.</td></tr><tr><td>X (Vertex B coordinates)</td><td>a plain number with no unit attached.</td></tr><tr><td>Y (Vertex B coordinates)</td><td>a plain number with no unit attached.</td></tr><tr><td>X (Vertex C coordinates)</td><td>a plain number with no unit attached.</td></tr><tr><td>Y (Vertex C coordinates)</td><td>a plain number with no unit attached.</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Triangle vertices calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">X2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-X + X1 + X3</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">Y + Y2 − Y3</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">X − X1 + X3</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">Y − Y1 + Y3</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">X + X1 − X3</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">Y + Y1 − Y3</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>X1</strong> = 10, <strong>X3</strong> = 10 and <strong>x</strong> = 10. Working through the relationship above gives <strong>X2</strong> = 10 and <strong>x</strong> = 10.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>X2</strong> = 10 and <strong>x</strong> = 10 should be roughly the size you expected from <strong>X1</strong> = 10 and <strong>X3</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Triangle vertices calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Triangle vertices calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — x for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/convolution\">Convolution</a>, <a href=\"/math/coordinate-distance\">Coordinate distance</a> and <a href=\"/math/corner-point\">Corner point</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Triangle vertices calculator?",
+      "a": "The form asks for a few values, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports X2 = 10. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Triangle vertices calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/convolution",
+      "name": "Convolution"
+    },
+    {
+      "path": "/math/coordinate-distance",
+      "name": "Coordinate distance"
+    },
+    {
+      "path": "/math/corner-point",
+      "name": "Corner point"
+    }
+  ],
+  "words": 1111
+}

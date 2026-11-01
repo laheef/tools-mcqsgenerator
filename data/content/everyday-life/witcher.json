@@ -1,0 +1,93 @@
+{
+  "path": "/everyday-life/witcher",
+  "slug": "witcher",
+  "cat": "everyday-life",
+  "name": "The Witcher",
+  "seoTitle": "The Witcher Calculator: Free, With Steps",
+  "seoDesc": "The Witcher: a everyday life calculator with 53 values in and 13 results out, plus the formula and a worked example.",
+  "h1": "The Witcher Calculator",
+  "summary": "The Witcher calculator takes the numbers you enter and reports <strong>series days</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThink of it as a shortcut for a practical question that turns up in daily life. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the The Witcher calculator work?",
+      "html": "<p>The Witcher calculator takes the values in the form, applies the relationship described below and reports <strong>series days</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the reading speed, the order of reading and your play style); then you give the dates it asks for; then you type in the gaming time.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as books, games and books and games. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as the optimal experience, books first and games first. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>Pick the option that matches your case — 4 options, such as slow (1/4 of a page per min), normal (1/2 of a page per min) and fast (1 page per minute). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 4 options, such as publication order, chronological order and short stories only. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as main story only, balanced and completist. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;You want to include expansion packs&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A single on/off switch — tick it for &ldquo;Include \"Nightmare of the Wolf\"&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>7 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Reading speed</strong></td><td>One of 4 options, such as slow (1/4 of a page per min), normal (1/2 of a page per min) and fast (1 page per minute).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Order of reading</strong></td><td>One of 4 options, such as publication order, chronological order and short stories only.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Your play style</strong></td><td>One of 4 options, such as main story only, balanced and completist.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Gaming time</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Reading days 1</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Reading days 2</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Reading days 3</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Reading days 4</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Reading days 5</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Reading days 6</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Reading days 7</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Reading days 8</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Reading days total</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Reading finish date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Game hours 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game days 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game hours 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game days 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game hours 3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game days 3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game hours 4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game days 4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game hours 5</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Game days 5</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 30 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the The Witcher calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Series days</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, ((vesemir + 8) ÷ I will watch)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Series finish date</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(I will start on + rounded up, ((vesemir + 8) ÷ I will watch))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Reading days 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(288 ÷ (you can read up to... × how much time do you read?))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Reading days 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(366 ÷ (you can read up to... × how much time do you read?))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Reading days 3</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(385 ÷ (you can read up to... × how much time do you read?))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Reading days 4</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(324 ÷ (you can read up to... × how much time do you read?))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>A calendar date.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A calendar date.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in hours</li><li>Time, opening in hours</li><li>Time, opening in hours</li><li>Time, opening in days</li><li>Time, opening in days</li><li>Time, opening in days</li><li>Time, opening in days</li><li>Time, opening in days</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Witcher calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/leap-year\">Leap year</a>, <a href=\"/everyday-life/led-savings\">LED savings</a> and <a href=\"/everyday-life/lighting\">Lighting</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the The Witcher calculator work out?",
+      "a": "It returns series days. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the The Witcher calculator?",
+      "a": "The form asks for a few values, which is 11 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter you can read up to... in a different unit?",
+      "a": "Yes. You can read up to opens in hours and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (7 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports You can read up to = 0 hrs. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the The Witcher calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/leap-year",
+      "name": "Leap year"
+    },
+    {
+      "path": "/everyday-life/led-savings",
+      "name": "LED savings"
+    },
+    {
+      "path": "/everyday-life/lighting",
+      "name": "Lighting"
+    }
+  ],
+  "words": 1878
+}

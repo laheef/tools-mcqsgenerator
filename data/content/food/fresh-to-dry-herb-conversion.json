@@ -1,0 +1,93 @@
+{
+  "path": "/food/fresh-to-dry-herb-conversion",
+  "slug": "fresh-to-dry-herb-conversion",
+  "cat": "food",
+  "name": "Fresh to dry herb conversion",
+  "seoTitle": "Fresh to dry herb conversion — Free Online Calculator",
+  "seoDesc": "Fresh to dry herb conversion: work out fresh basil (finely chopped) from the dried basil and the fresh bay leaf. A free food calculator with the formula,…",
+  "h1": "Fresh to dry herb conversion Calculator",
+  "summary": "The Fresh to dry herb conversion calculator works out <strong>fresh basil (finely chopped)</strong> from the dried basil, the fresh bay leaf, the dried chili pepper and the ground ginger. Think of it as a shortcut for portioning, timing or nutrition.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Fresh to dry herb conversion calculator work?",
+      "html": "<p>The Fresh to dry herb conversion calculator takes the values in the form, applies the relationship described below and reports <strong>fresh basil (finely chopped)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (choose your herb); then you type in the dried basil, the fresh bay leaf, the dried chili pepper (powder) and the ground ginger.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 27 options, such as basil, bay leaf and chervil. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in teaspoons (5 ml). The unit chip switches it to any of the 14 supported units.</li><li>A number, expressed in leaves.</li><li>A measured quantity, entered by default in teaspoons (5 ml). The unit chip switches it to any of the 14 supported units.</li><li>A measured quantity, entered by default in teaspoons (5 ml). The unit chip switches it to any of the 14 supported units.</li><li>A measured quantity, entered by default in teaspoons (5 ml). The unit chip switches it to any of the 14 supported units.</li><li>A measured quantity, entered by default in tablespoons (15 ml). The unit chip switches it to any of the 14 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Choose your herb</strong></td><td>One of 27 options, such as basil, bay leaf and chervil.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Fresh basil (finely chopped)</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>Calculated</td></tr><tr><td><strong>Dried basil</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>You supply it</td></tr><tr><td><strong>Ground basil</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>Calculated</td></tr><tr><td><strong>Fresh bay leaf</strong></td><td>A number stated in leaves.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Dried bay leaf</strong></td><td>A number stated in leaves.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Fresh chili pepper (medium)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ground chili pepper (flakes)</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>Calculated</td></tr><tr><td><strong>Dried chili pepper (powder)</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>You supply it</td></tr><tr><td><strong>Fresh chives</strong></td><td>A measured quantity, 14 units available.</td><td>tablespoons (15 ml)</td><td>Calculated</td></tr><tr><td><strong>Dried chives</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>Calculated</td></tr><tr><td><strong>Ground ginger</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>You supply it</td></tr><tr><td><strong>Fresh vanilla (bean)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Dried vanilla (extract)</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>Calculated</td></tr><tr><td><strong>Ground vanilla</strong></td><td>A measured quantity, 14 units available.</td><td>teaspoons (5 ml)</td><td>You supply it</td></tr><tr><td><strong>Fresh cumin (whole seed)</strong></td><td>A measured quantity, 14 units available.</td><td>tablespoons (15 ml)</td><td>You supply it</td></tr><tr><td><strong>Ground cumin</strong></td><td>A measured quantity, 14 units available.</td><td>tablespoons (15 ml)</td><td>Calculated</td></tr><tr><td><strong>Dry</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Fresh</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ground</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Fresh to dry herb conversion calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Fresh basil (finely chopped)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">fresh × dried basil ÷ dry</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ground basil</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">ground × fresh basil (finely chopped) ÷ fresh</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Dried chives</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">dry × fresh chives ÷ fresh</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Fresh chives</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">fresh × ground ginger ÷ ground</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Dried bay leaf</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">dry × fresh bay leaf ÷ fresh</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Fresh chili pepper (medium)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">fresh × dried chili pepper (powder) ÷ ground</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in teaspoons (5 ml), and convertible to any of the 14 units on that chip.</li><li>Shown in teaspoons (5 ml), and convertible to any of the 14 units on that chip.</li><li>Shown in teaspoons (5 ml), and convertible to any of the 14 units on that chip.</li><li>Shown in tablespoons (15 ml), and convertible to any of the 14 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in teaspoons (5 ml), and convertible to any of the 14 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in teaspoons (5 ml), and convertible to any of the 14 units on that chip.</li><li>Shown in tablespoons (15 ml), and convertible to any of the 14 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Kitchen volume measures, opening in teaspoons (5 ml)</li><li>Kitchen volume measures, opening in teaspoons (5 ml)</li><li>Kitchen volume measures, opening in teaspoons (5 ml)</li><li>Kitchen volume measures, opening in teaspoons (5 ml)</li><li>Kitchen volume measures, opening in teaspoons (5 ml)</li><li>Kitchen volume measures, opening in tablespoons (15 ml)</li><li>Kitchen volume measures, opening in teaspoons (5 ml)</li><li>Kitchen volume measures, opening in teaspoons (5 ml)</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Fresh to dry herb conversion calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Working out timing so everything finishes together</li><li>Checking portions before you shop</li><li>Scaling a recipe up or down</li><li>Any time the same 4 figures keep coming back — the dried basil, the fresh bay leaf and the dried chili pepper — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/grams-to-tsp\">Grams to teaspoons</a>, <a href=\"/food/ham-cooking\">Ham cooking time</a> and <a href=\"/food/healthy-coffee\">Healthy coffee</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Fresh to dry herb conversion calculator work out?",
+      "a": "It returns fresh basil (finely chopped), derived from the dried basil, the fresh bay leaf and the dried chili pepper. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Fresh to dry herb conversion calculator?",
+      "a": "The form asks for the dried basil, the fresh bay leaf, the dried chili pepper and the ground ginger, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter fresh basil (finely chopped) in a different unit?",
+      "a": "Yes. Fresh basil (finely chopped) opens in teaspoons (5 ml) and the chip beside it offers 14 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Fresh to dry herb conversion calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/grams-to-tsp",
+      "name": "Grams to teaspoons"
+    },
+    {
+      "path": "/food/ham-cooking",
+      "name": "Ham cooking time"
+    },
+    {
+      "path": "/food/healthy-coffee",
+      "name": "Healthy coffee"
+    }
+  ],
+  "words": 1752
+}

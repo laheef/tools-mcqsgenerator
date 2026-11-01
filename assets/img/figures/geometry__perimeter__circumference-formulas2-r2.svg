@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 3047.62 1326.78" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<clipPath id="TextBounds">
+<rect height="393.855" transform="matrix(0.352734 -0 -0 0.352734 -263.693 -40.4592)" width="122.193" x="747.569" y="114.702"/>
+</clipPath>
+<clipPath id="TextBounds_2">
+<rect height="393.855" transform="matrix(0.352734 -0 -0 0.352734 -0.31901 13.7426)" width="178.605" x="0.904395" y="-38.9603"/>
+</clipPath>
+<clipPath id="TextBounds_3">
+<rect height="411.075" transform="matrix(0.352734 -0 -0 0.352734 -574 -54)" width="178.605" x="1627.29" y="153.09"/>
+</clipPath>
+<clipPath id="TextBounds_4">
+<rect height="445.15" transform="matrix(0.352734 -0 -0 0.352734 -659 -54)" width="1192.73" x="1868.26" y="153.09"/>
+</clipPath>
+<clipPath id="TextBounds_5">
+<rect height="445.15" transform="matrix(0.349428 -0 -0 0.352734 -556.648 -219.073)" width="1389.6" x="1593.02" y="621.072"/>
+</clipPath>
+</defs>
+<g id="Layer_x0020_1" vectornator:layerName="Layer_x0020_1">
+<path d="M56.7 663.39C56.7 303.273 348.633 11.34 708.75 11.34C1068.87 11.34 1360.8 303.273 1360.8 663.39C1360.8 1023.51 1068.87 1315.44 708.75 1315.44C348.633 1315.44 56.7 1023.51 56.7 663.39Z" fill="none" opacity="1" stroke="#ff6600" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="21.4619"/>
+<path d="M703.08 646.38L1105.65 133.245" fill="none" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="42.9236"/>
+<text clip-path="url(#TextBounds)" fill="#000000" font-family="Arial" font-size="120" opacity="1" stroke="none" text-anchor="start" transform="matrix(2.835 0 0 2.835 747.569 114.702)" vectornator:width="43.1016" x="0" y="0">
+<tspan textLength="39.9609" x="0" y="109">r</tspan>
+</text>
+<text clip-path="url(#TextBounds_2)" fill="#ff6600" font-family="Arial" font-size="120" opacity="1" stroke="none" text-anchor="start" transform="matrix(2.835 0 0 2.835 0.904395 -38.9603)" vectornator:width="63" x="0" y="0">
+<tspan textLength="60" x="0" y="109">c</tspan>
+</text>
+<text clip-path="url(#TextBounds_3)" fill="#ff6600" font-family="Cambria Math" font-size="120" opacity="1" stroke="none" text-anchor="start" transform="matrix(2.835 0 0 2.835 1627.29 153.09)" vectornator:width="63" x="0" y="0">
+<tspan textLength="60" x="0" y="116">c</tspan>
+</text>
+<text clip-path="url(#TextBounds_4)" fill="#000000" font-family="Helvetica" font-size="120" opacity="1" stroke="none" text-anchor="start" transform="matrix(2.835 0 0 2.835 1868.26 153.09)" vectornator:width="420.717" x="0" y="0">
+<tspan textLength="328.887" x="0" y="116">= 2π⋅r</tspan>
+</text>
+<text clip-path="url(#TextBounds_5)" fill="#000000" font-family="Helvetica" font-size="120" opacity="1" stroke="none" text-anchor="start" transform="matrix(2.86182 0 0 2.835 1593.02 621.072)" vectornator:width="485.567" x="0" y="0">
+<tspan textLength="408.926" x="0" y="116">A = π⋅r²</tspan>
+</text>
+</g>
+</svg>

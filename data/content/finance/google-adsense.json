@@ -1,0 +1,97 @@
+{
+  "path": "/finance/google-adsense",
+  "slug": "google-adsense",
+  "cat": "finance",
+  "name": "Google AdSense",
+  "seoTitle": "Google AdSense Calculator — Formula, Units & Example",
+  "seoDesc": "Google AdSense: work out number of ads per page from number of pageviews and the ad impressions. A free finance calculator with the formula, units and a…",
+  "h1": "Google AdSense Calculator",
+  "summary": "The Google AdSense calculator turns number of pageviews, the ad impressions and more into <strong>number of ads per page</strong>. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Google AdSense calculator work?",
+      "html": "<p>The Google AdSense calculator takes the values in the form, applies the relationship described below and reports <strong>number of ads per page</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in number of pageviews, the ad impressions, the click through rate (CTR) and the cost per click (CPC).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Number of pageviews</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Number of ads per page</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ad impressions</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Click through rate (CTR)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Number of clicks</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Cost per click (CPC)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Google AdSense revenue</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Google AdSense calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Number of ads per page</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">ad impressions ÷ number of pageviews</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of clicks</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">ad impressions × click through rate (CTR)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Google AdSense revenue</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cost per click (CPC) × number of clicks</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Number of pageviews</strong> = 10 days and <strong>Ad impressions</strong> = 10 days. The calculator returns <strong>Number of ads per page</strong> = 1.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Number of ads per page</strong> = 1 should be roughly the size you expected from <strong>Number of pageviews</strong> = 10 days and <strong>Ad impressions</strong> = 10 days.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in days</li><li>Time, opening in days</li><li>%, opening in percent</li><li>Time, opening in days</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Google AdSense calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two offers that quote their costs in different ways</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Any time the same 4 figures keep coming back — number of pageviews, the ad impressions and the click through rate — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/cell-phone-plan\">Cell phone plan</a>, <a href=\"/finance/child-tax-credit\">Child tax credit</a> and <a href=\"/finance/churn-rate\">Churn rate</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Google AdSense calculator work out?",
+      "a": "It returns number of ads per page, derived from number of pageviews, the ad impressions and the click through rate. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Google AdSense calculator?",
+      "a": "The form asks for number of pageviews, the ad impressions, the click through rate and the cost per click, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter number of pageviews in a different unit?",
+      "a": "Yes. Number of pageviews opens in days and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Number of ads per page = 1. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Google AdSense calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/cell-phone-plan",
+      "name": "Cell phone plan"
+    },
+    {
+      "path": "/finance/child-tax-credit",
+      "name": "Child tax credit"
+    },
+    {
+      "path": "/finance/churn-rate",
+      "name": "Churn rate"
+    }
+  ],
+  "words": 1404
+}

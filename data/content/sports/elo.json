@@ -1,0 +1,89 @@
+{
+  "path": "/sports/elo",
+  "slug": "elo",
+  "cat": "sports",
+  "name": "Elo rating",
+  "seoTitle": "Elo rating — Free Online Calculator",
+  "seoDesc": "Elo rating: work out your result from the player's rating and the opponent's rating. A free sports calculator with the formula, units and a worked example.",
+  "h1": "Elo rating Calculator",
+  "summary": "Supply the player's rating and the opponent's rating and the Elo rating calculator solves for the answer. It is built for a training session, a performance comparison or a competition result.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Elo rating calculator work?",
+      "html": "<p>The Elo rating calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the game type, the …playing versus and the development coefficient (K) (Game 1)); then you type in the player's rating, the opponent's rating (Game 1), the opponent's rating (Game 2) and the opponent's rating (Game 3).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 2 options, such as single game and tournament/Multiple games. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as the same player and different players. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Adjust K-factors manually&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 6 options, such as 40, 30 and 20. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as win (1), draw (0.5) and loss (0). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 6 options, such as 40, 30 and 20. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as win (1), draw (0.5) and loss (0). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 6 options, such as 40, 30 and 20. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as win (1), draw (0.5) and loss (0). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 6 options, such as 40, 30 and 20. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as win (1), draw (0.5) and loss (0). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 6 options, such as 40, 30 and 20. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as win (1), draw (0.5) and loss (0). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 6 options, such as 40, 30 and 20. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as win (1), draw (0.5) and loss (0). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 6 options, such as 40, 30 and 20. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>The form has 34 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>23 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Player's rating</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Game type</strong></td><td>One of 2 options, such as single game and tournament/Multiple games.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>…playing versus</strong></td><td>One of 2 options, such as the same player and different players.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Opponent's rating (Game 1)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Development coefficient (K) (Game 1)</strong></td><td>One of 6 options, such as 40, 30 and 20.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Custom K-factor (Game 1)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Score (Game 1)</strong></td><td>One of 4 options, such as win (1), draw (0.5) and loss (0).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Opponent's rating (Game 2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Development coefficient (K) (Game 2)</strong></td><td>One of 6 options, such as 40, 30 and 20.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Custom K-factor (Game 2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Score (Game 2)</strong></td><td>One of 4 options, such as win (1), draw (0.5) and loss (0).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Opponent's rating (Game 3)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Development coefficient (K) (Game 3)</strong></td><td>One of 6 options, such as 40, 30 and 20.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Custom K-factor (Game 3)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Score (Game 3)</strong></td><td>One of 4 options, such as win (1), draw (0.5) and loss (0).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Opponent's rating (Game 4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Development coefficient (K) (Game 4)</strong></td><td>One of 6 options, such as 40, 30 and 20.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Custom K-factor (Game 4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Score (Game 4)</strong></td><td>One of 4 options, such as win (1), draw (0.5) and loss (0).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Opponent's rating (Game 5)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Development coefficient (K) (Game 5)</strong></td><td>One of 6 options, such as 40, 30 and 20.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Custom K-factor (Game 5)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Score (Game 5)</strong></td><td>One of 4 options, such as win (1), draw (0.5) and loss (0).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Opponent's rating (Game 6)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 43 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Elo rating calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Elo rating calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking progress across a training block</li><li>Comparing two athletes or two attempts fairly</li><li>Planning a session around a target you already know</li><li>Any time the same 2 figures keep coming back — the player's rating and the opponent's rating — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/bench-press-pyramid\">Bench press pyramid</a>, <a href=\"/sports/bike-cadence\">Bike cadence</a> and <a href=\"/sports/bike-cadence-and-speed-calculator\">Bike cadence and speed</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Elo rating calculator?",
+      "a": "The form asks for the player's rating and the opponent's rating, which is 34 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (23 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Custom K-factor = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Elo rating calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/bench-press-pyramid",
+      "name": "Bench press pyramid"
+    },
+    {
+      "path": "/sports/bike-cadence",
+      "name": "Bike cadence"
+    },
+    {
+      "path": "/sports/bike-cadence-and-speed-calculator",
+      "name": "Bike cadence and speed"
+    }
+  ],
+  "words": 2095
+}

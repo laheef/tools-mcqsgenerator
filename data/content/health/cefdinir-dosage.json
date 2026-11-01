@@ -1,0 +1,93 @@
+{
+  "path": "/health/cefdinir-dosage",
+  "slug": "cefdinir-dosage",
+  "cat": "health",
+  "name": "Cefdinir dosage",
+  "seoTitle": "Cefdinir dosage Calculator",
+  "seoDesc": "Cefdinir dosage: a free health calculator that walks you through 11 values, with the formula spelled out and a worked example.",
+  "h1": "Cefdinir dosage Calculator",
+  "summary": "The Cefdinir dosage calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt suits an informed starting point to take to a clinician, not a diagnosis. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Cefdinir dosage calculator work?",
+      "html": "<p>The Cefdinir dosage calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the patient, the indication and the indication (2)); then you type in the figures it asks for.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as adults and adolestents &gt;13 years and children 6 months - 12 years old. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as community-acquired pneumonia (CAP), acute exacerbations of chronic bronchitis and acute maxillary sinusitis. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as acute bacterial otitis media, acute maxillary sinusitis and pharyngitis/tonsillitis. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as 125 mg/5 ml and 250 mg/5 ml. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li></ul><p>4 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Patient</strong></td><td>One of 2 options, such as adults and adolestents &gt;13 years and children 6 months - 12 years old.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Indication</strong></td><td>One of 5 options, such as community-acquired pneumonia (CAP), acute exacerbations of chronic bronchitis and acute maxillary sinusitis.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Indication (2)</strong></td><td>One of 4 options, such as acute bacterial otitis media, acute maxillary sinusitis and pharyngitis/tonsillitis.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Child's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Oral suspension strength</strong></td><td>One of 2 options, such as 125 mg/5 ml and 250 mg/5 ml.</td><td>choice</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Cefdinir dosage calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Susp 125 7</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(7 ÷ 25) × child&#x27;s weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Child&#x27;s weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(25 ÷ 14) × susp125 14</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Susp 250 7</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(7 ÷ 50) × child&#x27;s weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Susp 250 14</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(7 ÷ 25) × child&#x27;s weight</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Mass, opening in kilograms</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Cefdinir dosage calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/bai\">BAI</a>, <a href=\"/health/barthel-index\">Barthel index</a> and <a href=\"/health/basdai\">BASDAI score</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Cefdinir dosage calculator?",
+      "a": "The form asks for a few values, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter child's weight in a different unit?",
+      "a": "Yes. Child's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Cefdinir dosage calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/bai",
+      "name": "BAI"
+    },
+    {
+      "path": "/health/barthel-index",
+      "name": "Barthel index"
+    },
+    {
+      "path": "/health/basdai",
+      "name": "BASDAI score"
+    }
+  ],
+  "words": 1341
+}

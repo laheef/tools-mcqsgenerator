@@ -1,0 +1,97 @@
+{
+  "path": "/math/multiplication",
+  "slug": "multiplication",
+  "cat": "math",
+  "name": "Multiplication",
+  "seoTitle": "Multiplication — Free Online Calculator",
+  "seoDesc": "Multiplication: answer 13 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Multiplication Calculator",
+  "summary": "The Multiplication calculator returns <strong>result</strong> from the 12 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nIt suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Multiplication calculator work?",
+      "html": "<p>The Multiplication calculator takes the values in the form, applies the relationship described below and reports <strong>result</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (number of factors (up to 10)); then you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Multiply</td><td>pick the option that matches your case — 2 options, such as two numbers. and many numbers.. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>Number of factors (up to 10)</td><td>pick the option that matches your case — 8 options, such as 3, 4 and 5. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>A₁</td><td>a plain number with no unit attached.</td></tr><tr><td>A₂</td><td>a plain number with no unit attached.</td></tr><tr><td>A₃</td><td>a plain number with no unit attached.</td></tr><tr><td>A₄</td><td>a plain number with no unit attached.</td></tr><tr><td>A₅</td><td>a plain number with no unit attached.</td></tr><tr><td>A₆</td><td>a plain number with no unit attached.</td></tr><tr><td>A₇</td><td>a plain number with no unit attached.</td></tr><tr><td>A₈</td><td>a plain number with no unit attached.</td></tr><tr><td>A₉</td><td>a plain number with no unit attached.</td></tr><tr><td>A₁₀</td><td>a plain number with no unit attached.</td></tr></tbody></table><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Multiplication calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Result</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">A₁ × A₂</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Multiply</strong> set to two numbers., <strong>Number of factors (up to 10)</strong> set to 3, <strong>a₁</strong> = 10 and <strong>a₂</strong> = 10. Working through the relationship above gives <strong>Result</strong> = 100.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Result</strong> = 100 should be roughly the size you expected from <strong>Multiply</strong> set to two numbers. and <strong>Number of factors (up to 10)</strong> set to 3.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Multiplication calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Settling an argument about a number with a quick, traceable result</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Checking a homework answer before you hand it in</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Multiplication calculator, these are the ones that matter:</p>\n<ul><li>The 2 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — multiply... for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/scientific-notation-converter\">Scientific notation converter</a>, <a href=\"/math/scientific-notation-equation\">Scientific notation equation</a> and <a href=\"/math/sec\">Secant</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Multiplication calculator work out?",
+      "a": "It returns result. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Multiplication calculator?",
+      "a": "The form asks for a few values, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Result = 100. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Multiplication calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/scientific-notation-converter",
+      "name": "Scientific notation converter"
+    },
+    {
+      "path": "/math/scientific-notation-equation",
+      "name": "Scientific notation equation"
+    },
+    {
+      "path": "/math/sec",
+      "name": "Secant"
+    }
+  ],
+  "words": 1299
+}

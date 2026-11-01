@@ -1,0 +1,93 @@
+{
+  "path": "/sports/swimming-time",
+  "slug": "swimming-time",
+  "cat": "sports",
+  "name": "Swimming time",
+  "seoTitle": "Swimming time Calculator: Free, With Steps",
+  "seoDesc": "Swimming time: work out time (Result) from your time. A free sports calculator with the formula, units and a worked example.",
+  "h1": "Swimming time Calculator",
+  "summary": "The Swimming time calculator is a free, no-sign-up sports tool. Fill in the 7 fields it asks for and it works out <strong>time (Result)</strong> straight away, with the formula shown underneath.\n\nIt is built for a training session, a performance comparison or a competition result. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Swimming time calculator work?",
+      "html": "<p>The Swimming time calculator takes the values in the form, applies the relationship described below and reports <strong>time (Result)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the style, the distance and the distance (2)); then you type in your time.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 5 options, such as butterfly, backstroke and breaststroke. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as 50, 100 and 200. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 6 options, such as 50, 100 and 200. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as 200 and 400/500. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in seconds. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 3 options, such as SCY (Short Course Yards), LCM (Long Course Meters) and SCM (Short Course Meters). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as SCY (Short Course Yards), LCM (Long Course Meters) and SCM (Short Course Meters). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Style</strong></td><td>One of 5 options, such as butterfly, backstroke and breaststroke.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Distance</strong></td><td>One of 3 options, such as 50, 100 and 200.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Distance (2)</strong></td><td>One of 6 options, such as 50, 100 and 200.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Distance (3)</strong></td><td>One of 2 options, such as 200 and 400/500.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Your time</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>You supply it</td></tr><tr><td><strong>From</strong></td><td>One of 3 options, such as SCY (Short Course Yards), LCM (Long Course Meters) and SCM (Short Course Meters).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Time (Result)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Time (Result)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Time (Result)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Swimming time calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(style, distance, your time, to, from)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Time, opening in seconds</li><li>Time, opening in seconds</li><li>Time, opening in seconds</li><li>Time, opening in seconds</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Swimming time calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two athletes or two attempts fairly</li><li>Tracking progress across a training block</li><li>Planning a session around a target you already know</li><li>Any time the same 1 figures keep coming back — your time — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/magic-mile\">Magic mile</a>, <a href=\"/sports/magic-number\">Magic number</a> and <a href=\"/sports/marathon-pace\">Marathon pace</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Swimming time calculator work out?",
+      "a": "It returns time (Result), derived from your time. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Swimming time calculator?",
+      "a": "The form asks for your time, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter your time in a different unit?",
+      "a": "Yes. Your time opens in seconds and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Swimming time calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/magic-mile",
+      "name": "Magic mile"
+    },
+    {
+      "path": "/sports/magic-number",
+      "name": "Magic number"
+    },
+    {
+      "path": "/sports/marathon-pace",
+      "name": "Marathon pace"
+    }
+  ],
+  "words": 1324
+}

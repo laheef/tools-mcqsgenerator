@@ -1,0 +1,97 @@
+{
+  "path": "/food/coffee-footprint",
+  "slug": "coffee-footprint",
+  "cat": "food",
+  "name": "Coffee footprint",
+  "seoTitle": "Coffee footprint Calculator: Free, With Steps",
+  "seoDesc": "Coffee footprint: work out caffe latte from the espresso volume and the cappuccino volume. A free food calculator with the formula, units and a worked…",
+  "h1": "Coffee footprint Calculator",
+  "summary": "The Coffee footprint calculator turns the espresso volume, the cappuccino volume and more into <strong>caffe latte</strong>. That makes it useful for portioning, timing or nutrition.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Coffee footprint calculator work?",
+      "html": "<p>The Coffee footprint calculator takes the values in the form, applies the relationship described below and reports <strong>caffe latte</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the I want to know, would you like to see more options? and consider your milk use?); then you type in the espresso volume, the cappuccino volume, the flat white and the canned coffee volume.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li><strong>I want to know</strong>: pick the option that matches your case — 2 options, such as my actual coffee footprint and how to drink sustainably. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Espresso volume</strong>: a measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li><strong>Cappuccino volume</strong>: a measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li><strong>Flat white</strong>: a measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li><strong>Would you like to see more options?</strong>: pick the option that matches your case — 2 options, such as no and yes!. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Canned coffee volume</strong>: a measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li><strong>Instant coffee volume</strong>: a measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li><strong>French press</strong>: a measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li><strong>Coffee volume</strong>: a single on/off switch — tick it for &ldquo;Change coffee volume&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li><strong>Consider your milk use?</strong>: pick the option that matches your case — 3 options, such as dairy milk, non-dairy milk and no milk. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Buy sustainable coffee?</strong>: pick the option that matches your case — 2 options, such as no and yes!. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Drink less canned coffee?</strong>: pick the option that matches your case — 2 options, such as no and yes!. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Landuse</strong>: a measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li><strong>Water</strong>: a measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li><li><strong>Total caffeine</strong>: a measured quantity, entered by default in milligrams. The unit chip switches it to any of the 29 supported units.</li><li><strong>Distance</strong>: a measured quantity, entered by default in kilometers. The unit chip switches it to any of the 34 supported units.</li><li><strong>Distance 2</strong>: a measured quantity, entered by default in kilometers. The unit chip switches it to any of the 34 supported units.</li><li><strong>Cups</strong>: a plain number with no unit attached.</li></ul><p>9 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>I want to know</strong></td><td>One of 2 options, such as my actual coffee footprint and how to drink sustainably.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Espresso</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Espresso volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>Caffe latte</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Latte volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Cappuccino</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Cappuccino volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>Flat white</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Flat white volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Americano</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Americano volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Would you like to see more options?</strong></td><td>One of 2 options, such as no and yes!.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Filter coffee</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Filter coffee volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Canned coffee</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Canned coffee volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>Drip</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Drip volume</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Instant coffee</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Instant coffee volume</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>French press</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>French press volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Use only reusable cups?</strong></td><td>One of 2 options, such as no and yes!.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Consider your milk use?</strong></td><td>One of 3 options, such as dairy milk, non-dairy milk and no milk.</td><td>choice</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 37 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Coffee footprint calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Caffe latte</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(100 ÷ 13) × landuse ÷ my coffee footprint in a... − americano − canned coffee − cappuccino − drip − espresso − filter coffee − flat white − instant coffee − french press</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">CO₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(625000 ÷ 2494477) × distance</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Change</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(625000 ÷ 2494477) × distance2</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Filter coffee volume</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 42) × (100 × total caffeine − my coffee footprint in a... × (67 × americano volume + 74 × canned coffee volume + 103 × cappuccino volume + 41 × drip volume + 257 × espresso volume + 81 × flat white volume + 30 × instant coffee volume + 67 × latte volume + 47 × french press volume)) ÷ my coffee footprint in a...</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Espresso</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 59) × espresso volume</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Caffe latte</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 236) × latte volume</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><strong>Caffe latte</strong>: shown in weeks, and convertible to any of the 27 units on that chip.</li><li><strong>CO₂</strong>: shown in kilograms, and convertible to any of the 29 units on that chip.</li><li><strong>Change</strong>: shown in kilograms, and convertible to any of the 29 units on that chip.</li><li><strong>Filter coffee volume</strong>: shown in milliliters, and convertible to any of the 40 units on that chip.</li><li><strong>Espresso</strong>: shown in weeks, and convertible to any of the 27 units on that chip.</li><li><strong>Latte volume</strong>: shown in milliliters, and convertible to any of the 40 units on that chip.</li><li><strong>Cappuccino</strong>: shown in weeks, and convertible to any of the 27 units on that chip.</li><li><strong>Flat white volume</strong>: shown in milliliters, and convertible to any of the 40 units on that chip.</li><li><strong>Americano</strong>: shown in weeks, and convertible to any of the 27 units on that chip.</li><li><strong>Filter coffee</strong>: shown in weeks, and convertible to any of the 27 units on that chip.</li><li><strong>Canned coffee</strong>: shown in weeks, and convertible to any of the 27 units on that chip.</li><li><strong>Drip volume</strong>: shown in cubic meters, and convertible to any of the 40 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li><strong>Espresso</strong>: Time, opening in weeks</li><li><strong>Espresso volume</strong>: Volume, opening in milliliters</li><li><strong>Caffe latte</strong>: Time, opening in weeks</li><li><strong>Latte volume</strong>: Volume, opening in milliliters</li><li><strong>Cappuccino</strong>: Time, opening in weeks</li><li><strong>Cappuccino volume</strong>: Volume, opening in milliliters</li><li><strong>Flat white</strong>: Time, opening in weeks</li><li><strong>Flat white volume</strong>: Volume, opening in milliliters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Coffee footprint calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Working out timing so everything finishes together</li><li>Checking portions before you shop</li><li>Scaling a recipe up or down</li><li>Any time the same 4 figures keep coming back — the espresso volume, the cappuccino volume and the flat white — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/cold-brew-ratio\">Cold brew ratio</a>, <a href=\"/food/cooking-measurement\">Cooking measurement</a> and <a href=\"/food/cups-to-pounds\">Cups to pounds</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Coffee footprint calculator work out?",
+      "a": "It returns caffe latte, derived from the espresso volume, the cappuccino volume and the flat white. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Coffee footprint calculator?",
+      "a": "The form asks for the espresso volume, the cappuccino volume, the flat white and the canned coffee volume, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter espresso in a different unit?",
+      "a": "Yes. Espresso opens in weeks and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (9 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Latte volume = 0 mL. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Coffee footprint calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/cold-brew-ratio",
+      "name": "Cold brew ratio"
+    },
+    {
+      "path": "/food/cooking-measurement",
+      "name": "Cooking measurement"
+    },
+    {
+      "path": "/food/cups-to-pounds",
+      "name": "Cups to pounds"
+    }
+  ],
+  "words": 2133
+}

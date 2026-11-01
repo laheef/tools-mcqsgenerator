@@ -1,0 +1,101 @@
+{
+  "path": "/physics/bridge-rectifier",
+  "slug": "bridge-rectifier",
+  "cat": "physics",
+  "name": "Bridge rectifier",
+  "seoTitle": "Bridge rectifier Calculator — Formula, Units & Example",
+  "seoDesc": "Bridge rectifier: work out DC voltage (VDC) from the peak Voltage and the load resistance. A free physics calculator with the formula, units and a worked…",
+  "h1": "Bridge rectifier Calculator",
+  "summary": "<strong>DC voltage (VDC)</strong> is what the Bridge rectifier calculator works out, and it gets there from the peak Voltage, the load resistance, the maximum AC voltage and the current. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Bridge rectifier calculator work?",
+      "html": "<p>The Bridge rectifier calculator takes the values in the form, applies the relationship described below and reports <strong>DC voltage (VDC)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the calculate); then you type in the peak Voltage (VPₑₐₖ), the load resistance (RL), the maximum AC voltage (VM) and the current (IM).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as DC voltage, current and RMS current. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in ohms. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in amperes. The unit chip switches it to any of the 3 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Calculate</strong></td><td>One of 4 options, such as DC voltage, current and RMS current.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>DC voltage (VDC)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>Peak Voltage (VPₑₐₖ)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>Load resistance (RL)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>You supply it</td></tr><tr><td><strong>Forward resistance (Rf)</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Maximum AC voltage (VM)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>Current (IM)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>You supply it</td></tr><tr><td><strong>RMS current (IRMS)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>Calculated</td></tr><tr><td><strong>DC current (IDC)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>Calculated</td></tr><tr><td><strong>Ripple factor</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Bridge rectifier calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">DC voltage (VDC)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × peak Voltage (VPₑₐₖ) ÷ PI</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">DC voltage (VDC)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">load resistance (RL) × DC current (IDC)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Forward resistance (Rf)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × (-load resistance (RL) × current (IM) + maximum AC voltage (VM)) ÷ current (IM)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">RMS current (IRMS)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × the square root of (2) × current (IM)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">DC current (IDC)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">RMS current (IRMS) × the square root of (1 ÷ ((ripple factor ^ 2) + 1))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Calculate</strong> set to DC voltage and <strong>Peak Voltage (VPₑₐₖ)</strong> = 10 V. Working through the relationship above gives <strong>DC voltage (VDC)</strong> = 6.3662 V.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>DC voltage (VDC)</strong> = 6.3662 V should be roughly the size you expected from <strong>Calculate</strong> set to DC voltage and <strong>Peak Voltage (VPₑₐₖ)</strong> = 10 V.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in amperes, and convertible to any of the 3 units on that chip.</li><li>Shown in ohms, and convertible to any of the 5 units on that chip.</li><li>Shown in amperes, and convertible to any of the 3 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Resistance – ohms, opening in ohms</li><li>Resistance – ohms, opening in ohms</li><li>Voltage, opening in volts</li><li>Electric current – ampere, opening in amperes</li><li>Electric current – ampere, opening in amperes</li><li>Electric current – ampere, opening in amperes</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Bridge rectifier calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the peak Voltage, the load resistance and the maximum AC voltage — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/prandtl-meyer-expansion\">Prandtl Meyer expansion</a>, <a href=\"/physics/prandtl-number\">Prandtl number</a> and <a href=\"/physics/pressure\">Pressure</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Bridge rectifier calculator work out?",
+      "a": "It returns DC voltage (VDC), derived from the peak Voltage, the load resistance and the maximum AC voltage. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Bridge rectifier calculator?",
+      "a": "The form asks for the peak Voltage, the load resistance, the maximum AC voltage and the current, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter DC voltage (VDC) in a different unit?",
+      "a": "Yes. DC voltage (VDC) opens in volts and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports DC voltage (VDC) = 6.3662 V. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Bridge rectifier calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/prandtl-meyer-expansion",
+      "name": "Prandtl Meyer expansion"
+    },
+    {
+      "path": "/physics/prandtl-number",
+      "name": "Prandtl number"
+    },
+    {
+      "path": "/physics/pressure",
+      "name": "Pressure"
+    }
+  ],
+  "words": 1657
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/sports/pace",
+  "slug": "pace",
+  "cat": "sports",
+  "name": "Pace",
+  "seoTitle": "Pace Calculator: Free, With Steps",
+  "seoDesc": "Pace: work out time from the speed and the distance. A free sports calculator with the formula, units and a worked example.",
+  "h1": "Pace Calculator",
+  "summary": "The Pace calculator turns the speed and the distance into <strong>time</strong>. That makes it useful for a training session, a performance comparison or a competition result.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Pace calculator work?",
+      "html": "<p>The Pace calculator takes the values in the form, applies the relationship described below and reports <strong>time</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the race distance (Previous race performance) and the units); then you type in the speed and the distance (Estimate the finishing time for your next race).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 9 options, such as 100m, 400m and 1000m (1k). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilometers per hour. The unit chip switches it to any of the 25 supported units.</li><li>Pick the option that matches your case — 9 options, such as 100m, 400m and 1000m (1k). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilometers. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 2 options, such as male and female. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as table (pace) and chart (speed). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as metric and imperial. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Race distance (Previous race performance)</strong></td><td>One of 9 options, such as 100m, 400m and 1000m (1k).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Distance (Previous race performance)</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Time</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes / seconds</td><td>Calculated</td></tr><tr><td><strong>Pace</strong></td><td>A measured quantity, 20 units available.</td><td>minutes:seconds per kilometer</td><td>Calculated</td></tr><tr><td><strong>Speed</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>You supply it</td></tr><tr><td><strong>Distance (Estimate the finishing time for your next race)</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Distance (Estimate the finishing time for your next race)</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>You supply it</td></tr><tr><td><strong>Predicted finishing time</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes / seconds</td><td>Calculated</td></tr><tr><td><strong>Adjusted pace</strong></td><td>A measured quantity, 20 units available.</td><td>minutes:seconds per kilometer</td><td>Calculated</td></tr><tr><td><strong>Units</strong></td><td>One of 2 options, such as metric and imperial.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Level (adjusted pace)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Table conversion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Pace calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance ÷ speed</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance × pace</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Level (adjusted pace)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(compare to..., adjusted pace, distance, race distance)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Predicted finishing time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((race distance &gt; 0) ? ( (time, distance, compare to..., distance) ) : ( (time, distance, compare to..., distance) )))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Adjusted pace</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((((race distance &gt; 0) ? ( (time, distance, compare to..., distance) ) : ( (time, distance, compare to..., distance) )))) ÷ distance</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Table conversion</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((units) ? ( 621371 ÷ 1000000 ) : ( 1 )))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in hours / minutes / seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in minutes:seconds per kilometer, and convertible to any of the 20 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in hours / minutes / seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in minutes:seconds per kilometer, and convertible to any of the 20 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in kilometers</li><li>Time, opening in hours / minutes / seconds</li><li>Run pace, opening in minutes:seconds per kilometer</li><li>Speed, opening in kilometers per hour</li><li>Length, opening in kilometers</li><li>Length, opening in kilometers</li><li>Time, opening in hours / minutes / seconds</li><li>Run pace, opening in minutes:seconds per kilometer</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Pace calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two athletes or two attempts fairly</li><li>Planning a session around a target you already know</li><li>Tracking progress across a training block</li><li>Any time the same 2 figures keep coming back — the speed and the distance — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/fish-weight\">Fish weight</a>, <a href=\"/sports/fishing-reel-line-capacity\">Fishing reel line capacity</a> and <a href=\"/sports/foc\">Arrow FOC</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Pace calculator work out?",
+      "a": "It returns time, derived from the speed and the distance. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Pace calculator?",
+      "a": "The form asks for the speed and the distance, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter distance (Previous race performance) in a different unit?",
+      "a": "Yes. Distance (Previous race performance) opens in kilometers and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Distance = 0 km. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Pace calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/fish-weight",
+      "name": "Fish weight"
+    },
+    {
+      "path": "/sports/fishing-reel-line-capacity",
+      "name": "Fishing reel line capacity"
+    },
+    {
+      "path": "/sports/foc",
+      "name": "Arrow FOC"
+    }
+  ],
+  "words": 1737
+}

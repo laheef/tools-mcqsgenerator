@@ -1,0 +1,97 @@
+{
+  "path": "/health/standard-drink",
+  "slug": "standard-drink",
+  "cat": "health",
+  "name": "Standard drink",
+  "seoTitle": "Standard drink — Free Online Calculator",
+  "seoDesc": "Standard drink: work out standard drinks (Your result) from the regular beer and the pint of beer. A free health calculator with the formula, units and a…",
+  "h1": "Standard drink Calculator",
+  "summary": "The Standard drink calculator works out <strong>standard drinks (Your result)</strong> from the regular beer, the pint of beer, the bomber of beer and the glass of wine. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Standard drink calculator work?",
+      "html": "<p>The Standard drink calculator takes the values in the form, applies the relationship described below and reports <strong>standard drinks (Your result)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the regular beer (12 fl oz), the pint of beer (16 fl oz), the bomber of beer (22 fl oz) and the glass of wine (5 fl oz).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as the USA or Canada and australia or New Zealand. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in 140ml. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in 140ml. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in 140ml. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in 375ml. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in 375ml. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in 375ml. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in 425ml. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in 425ml. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in 425ml. The unit chip switches it to any of the 7 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 2 supported units.</li></ul><p>The form has 26 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Regular beer (12 fl oz)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Pint of beer (16 fl oz)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Bomber of beer (22 fl oz)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Glass of wine (5 fl oz)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Malt liquor (8-9 fl oz)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Jigger of spirit (1.5 fl oz)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Low-strength beer</strong></td><td>A measured quantity, 7 units available.</td><td>140ml</td><td>You supply it</td></tr><tr><td><strong>Low-strength beer (2)</strong></td><td>A measured quantity, 7 units available.</td><td>140ml</td><td>You supply it</td></tr><tr><td><strong>Low-strength beer (3)</strong></td><td>A measured quantity, 7 units available.</td><td>140ml</td><td>You supply it</td></tr><tr><td><strong>Mid-strength beer</strong></td><td>A measured quantity, 7 units available.</td><td>375ml</td><td>You supply it</td></tr><tr><td><strong>Mid-strength beer (2)</strong></td><td>A measured quantity, 7 units available.</td><td>375ml</td><td>You supply it</td></tr><tr><td><strong>Mid-strength beer (3)</strong></td><td>A measured quantity, 7 units available.</td><td>375ml</td><td>You supply it</td></tr><tr><td><strong>Full-strength beer</strong></td><td>A measured quantity, 7 units available.</td><td>425ml</td><td>You supply it</td></tr><tr><td><strong>Full-strength beer (2)</strong></td><td>A measured quantity, 7 units available.</td><td>425ml</td><td>You supply it</td></tr><tr><td><strong>Standard glass of wine (150ml)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Glass of champagne (150ml)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Shot of spirit (30ml)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Margarita</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Martini</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mojito</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Rum & cola</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Vodka & tonic</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Drink volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Drink proof</strong></td><td>A measured quantity, 2 units available.</td><td>percent</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 27 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Standard drink calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Standard drinks</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">regular beer (12 fl oz) + (11 ÷ 6) × bomber of beer (22 fl oz) + standard drinks + jigger of spirit (1.5 fl oz) + (119 ÷ 120) × malt liquor (8-9 fl oz) + (4 ÷ 3) × pint of beer (16 fl oz) + glass of wine (5 fl oz) + (9 ÷ 5) × margarita + (31 ÷ 10) × martini + (21 ÷ 10) × mojito + (19 ÷ 10) × rum &amp; cola + (3 ÷ 2) × vodka &amp; tonic</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Rum &amp; cola</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-72 ÷ 133 × glass of champagne (150ml) − 96 ÷ 475 × full-strength beer ÷ cider − 96 ÷ 475 × full-strength beer − 96 ÷ 475 × full-strength beer − 54 ÷ 475 × low-strength beer − 54 ÷ 475 × low-strength beer − 54 ÷ 475 × low-strength beer − 14 ÷ 95 × mid-strength beer − 14 ÷ 95 × mid-strength beer − 14 ÷ 95 × mid-strength beer − 48 ÷ 133 × shot of spirit (30ml) + (50 ÷ 133) × standard drinks − 72 ÷ 133 × standard glass of wine (150ml) − 50 ÷ 133 × standard drinks − 18 ÷ 19 × margarita − 31 ÷ 19 × martini − 21 ÷ 19 × mojito − 15 ÷ 19 × vodka &amp; tonic</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Drink volume</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1250 × standard drinks ÷ drink proof</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Australian beer sizes, opening in 140ml</li><li>Australian beer sizes, opening in 140ml</li><li>Australian beer sizes, opening in 140ml</li><li>Australian beer sizes, opening in 375ml</li><li>Australian beer sizes, opening in 375ml</li><li>Australian beer sizes, opening in 375ml</li><li>Australian beer sizes, opening in 425ml</li><li>Australian beer sizes, opening in 425ml</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Standard drink calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Any time the same 4 figures keep coming back — the regular beer, the pint of beer and the bomber of beer — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/plasma-volume\">Plasma volume</a>, <a href=\"/health/pokemon-go\">Pokémon Go weight loss</a> and <a href=\"/health/ponderal-index\">Ponderal index</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Standard drink calculator work out?",
+      "a": "It returns standard drinks (Your result), derived from the regular beer, the pint of beer and the bomber of beer. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Standard drink calculator?",
+      "a": "The form asks for the regular beer, the pint of beer, the bomber of beer and the glass of wine, which is 26 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter low-strength beer in a different unit?",
+      "a": "Yes. Low-strength beer opens in 140ml and the chip beside it offers 7 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Drink volume = 1250000000 mL. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Standard drink calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/plasma-volume",
+      "name": "Plasma volume"
+    },
+    {
+      "path": "/health/pokemon-go",
+      "name": "Pokémon Go weight loss"
+    },
+    {
+      "path": "/health/ponderal-index",
+      "name": "Ponderal index"
+    }
+  ],
+  "words": 2136
+}

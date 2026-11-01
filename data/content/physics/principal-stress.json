@@ -1,0 +1,93 @@
+{
+  "path": "/physics/principal-stress",
+  "slug": "principal-stress",
+  "cat": "physics",
+  "name": "Principal stress",
+  "seoTitle": "Principal stress Calculator",
+  "seoDesc": "Principal stress: work out maximum principal stress (σₘₐₓ) from the XY shear stress and the minimum principal stress. A free physics calculator with the…",
+  "h1": "Principal stress Calculator",
+  "summary": "Supply the XY shear stress, the minimum principal stress and the angle of principal stress and the Principal stress calculator solves for <strong>maximum principal stress (σₘₐₓ)</strong>. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Principal stress calculator work?",
+      "html": "<p>The Principal stress calculator takes the values in the form, applies the relationship described below and reports <strong>maximum principal stress (σₘₐₓ)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the XY shear stress (τₓy), the minimum principal stress (σₘiₙ) and the angle of principal stress (θ).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in megapascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in megapascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Horizontal normal stress (σₓ)</strong></td><td>A measured quantity, 28 units available.</td><td>megapascals</td><td>Calculated</td></tr><tr><td><strong>Vertical normal stress (σy)</strong></td><td>A measured quantity, 28 units available.</td><td>megapascals</td><td>Calculated</td></tr><tr><td><strong>XY shear stress (τₓy)</strong></td><td>A measured quantity, 28 units available.</td><td>megapascals</td><td>You supply it</td></tr><tr><td><strong>YX shear stress (τyₓ)</strong></td><td>A measured quantity, 28 units available.</td><td>megapascals</td><td>Calculated</td></tr><tr><td><strong>Maximum principal stress (σₘₐₓ)</strong></td><td>A measured quantity, 28 units available.</td><td>megapascals</td><td>Calculated</td></tr><tr><td><strong>Minimum principal stress (σₘiₙ)</strong></td><td>A measured quantity, 28 units available.</td><td>megapascals</td><td>You supply it</td></tr><tr><td><strong>Angle of principal stress (θ)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Angle of maximum shear stress (θτ ₘₐₓ)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle of minimum shear stress (θτ ₘiₙ)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Principal stress calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Maximum principal stress (σₘₐₓ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × horizontal normal stress (σₓ) + (1 ÷ 2) × vertical normal stress (σy) + (1 ÷ 2) × the square root of (4 × (XY shear stress (τₓy) ^ 2) + (horizontal normal stress (σₓ) − vertical normal stress (σy) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Horizontal normal stress (σₓ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((minimum principal stress (σₘiₙ) ^ 2) − minimum principal stress (σₘiₙ) × vertical normal stress (σy) − (XY shear stress (τₓy) ^ 2)) ÷ (minimum principal stress (σₘiₙ) − vertical normal stress (σy))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">YX shear stress (τyₓ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-XY shear stress (τₓy)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Horizontal normal stress (σₓ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × XY shear stress (τₓy) ÷ the tangent of (2 × angle of principal stress (θ)) + vertical normal stress (σy)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle of maximum shear stress (θτ ₘₐₓ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">angle of principal stress (θ) + (1 ÷ 4) × PI</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle of minimum shear stress (θτ ₘiₙ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">angle of principal stress (θ) − 1 ÷ 4 × PI</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in megapascals, and convertible to any of the 28 units on that chip.</li><li>Shown in megapascals, and convertible to any of the 28 units on that chip.</li><li>Shown in megapascals, and convertible to any of the 28 units on that chip.</li><li>Shown in megapascals, and convertible to any of the 28 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Pressure, opening in megapascals</li><li>Pressure, opening in megapascals</li><li>Pressure, opening in megapascals</li><li>Pressure, opening in megapascals</li><li>Pressure, opening in megapascals</li><li>Pressure, opening in megapascals</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Principal stress calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 3 figures keep coming back — the XY shear stress, the minimum principal stress and the angle of principal stress — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/distance-to-horizon\">Distance to horizon</a>, <a href=\"/physics/doppler-effect\">Doppler effect</a> and <a href=\"/physics/drag-equation\">Drag equation</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Principal stress calculator work out?",
+      "a": "It returns maximum principal stress (σₘₐₓ), derived from the XY shear stress, the minimum principal stress and the angle of principal stress. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Principal stress calculator?",
+      "a": "The form asks for the XY shear stress, the minimum principal stress and the angle of principal stress, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter horizontal normal stress (σₓ) in a different unit?",
+      "a": "Yes. Horizontal normal stress (σₓ) opens in megapascals and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Principal stress calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/distance-to-horizon",
+      "name": "Distance to horizon"
+    },
+    {
+      "path": "/physics/doppler-effect",
+      "name": "Doppler effect"
+    },
+    {
+      "path": "/physics/drag-equation",
+      "name": "Drag equation"
+    }
+  ],
+  "words": 1453
+}

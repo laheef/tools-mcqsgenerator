@@ -1,0 +1,97 @@
+{
+  "path": "/finance/savings-goal",
+  "slug": "savings-goal",
+  "cat": "finance",
+  "name": "Savings goal",
+  "seoTitle": "Savings goal Calculator — Formula, Units & Example",
+  "seoDesc": "Savings goal: work out annual growth rate from your goal and the time to reach your goal. A free finance calculator with the formula, units and a worked…",
+  "h1": "Savings goal Calculator",
+  "summary": "The Savings goal calculator turns your goal, the time to reach your goal, the date to reach your goal and your age now into <strong>annual growth rate</strong>. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Savings goal calculator work?",
+      "html": "<p>The Savings goal calculator takes the values in the form, applies the relationship described below and reports <strong>annual growth rate</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the compounding method, how often? and when?); then you give the date to reach your goal and from which day?; then you type in your goal, the time to reach your goal, your age now and your target age.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 3 options, such as in a specific time, on a specific date and at a certain age. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in years / months. The unit chip switches it to any of the 27 supported units.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A number, expressed in years.</li><li>A number, expressed in years.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>Pick the option that matches your case — 7 options, such as yearly, semi-annually and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>Pick the option that matches your case — 6 options, such as yearly, semi-annually and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>Pick the option that matches your case — 2 options, such as beginning of period and end of period. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>4 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your goal</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Time to reach your goal</strong></td><td>A measured quantity, 27 units available.</td><td>years / months</td><td>You supply it</td></tr><tr><td><strong>Date to reach your goal</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Your age now</strong></td><td>A number stated in years.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Your target age</strong></td><td>A number stated in years.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Your starting savings</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Interest rate or return</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Compounding method</strong></td><td>One of 7 options, such as yearly, semi-annually and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Inflation rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>How often?</strong></td><td>One of 6 options, such as yearly, semi-annually and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>From which day?</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>When?</strong></td><td>One of 2 options, such as beginning of period and end of period.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Annual growth rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Periodic growth rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Var time</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Var type</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Var rep</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Display</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Return status</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Savings goal calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Annual growth rate</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(periodic growth rate + 1 ^ how often?) − 1</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Return status</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(your goal, I would like to reach it, time to reach your goal, date to reach your goal, your age now, your target age, your starting savings, interest rate or return, compounding method, inflation rate, how often?, from which day?, when?, annual growth rate, periodic growth rate)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Time, opening in years / months</li><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Savings goal calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 4 figures keep coming back — your goal, the time to reach your goal and the date to reach your goal — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/mortgage-acceleration\">Mortgage acceleration</a>, <a href=\"/finance/mortgage-extra-payments\">Mortgage calculator with extra payments</a> and <a href=\"/finance/mortgage-interest\">Mortgage interest</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Savings goal calculator work out?",
+      "a": "It returns annual growth rate, derived from your goal, the time to reach your goal and the date to reach your goal. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Savings goal calculator?",
+      "a": "The form asks for your goal, the time to reach your goal, the date to reach your goal and your age now, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter your goal in a different unit?",
+      "a": "Yes. Your goal opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Periodic growth rate = 0 %. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Savings goal calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/mortgage-acceleration",
+      "name": "Mortgage acceleration"
+    },
+    {
+      "path": "/finance/mortgage-extra-payments",
+      "name": "Mortgage calculator with extra payments"
+    },
+    {
+      "path": "/finance/mortgage-interest",
+      "name": "Mortgage interest"
+    }
+  ],
+  "words": 1921
+}

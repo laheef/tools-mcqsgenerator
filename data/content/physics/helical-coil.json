@@ -1,0 +1,97 @@
+{
+  "path": "/physics/helical-coil",
+  "slug": "helical-coil",
+  "cat": "physics",
+  "name": "Helical coil",
+  "seoTitle": "Helical coil Calculator: Free, With Steps",
+  "seoDesc": "Helical coil: work out coil radius (Rc) from the coil diameter and the coil spacing. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Helical coil Calculator",
+  "summary": "The Helical coil calculator turns the coil diameter, the coil spacing and more into <strong>coil radius (Rc)</strong>. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Helical coil calculator work?",
+      "html": "<p>The Helical coil calculator takes the values in the form, applies the relationship described below and reports <strong>coil radius (Rc)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the coil diameter (Dc), the coil spacing (S), the coil height (H) and the volume of wire used (V).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic millimeters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in kilohertz. The unit chip switches it to any of the 21 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Coil diameter (Dc)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Coil radius (Rc)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Wire diameter (Dw)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Number of turns (N)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Coil spacing (S)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Coil height (H)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Wire length (Lw)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Volume of wire used (V)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic millimeters</td><td>You supply it</td></tr><tr><td><strong>Inductance (L)</strong></td><td>A measured quantity, 4 units available.</td><td>microhenries</td><td>Calculated</td></tr><tr><td><strong>Capacitance (C)</strong></td><td>A measured quantity, 5 units available.</td><td>picofarads</td><td>Calculated</td></tr><tr><td><strong>Resonant frequency (Rf)</strong></td><td>A measured quantity, 21 units available.</td><td>kilohertz</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Helical coil calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Coil radius (Rc)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × coil diameter (Dc)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of turns (N)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">wire length (Lw) ÷ the square root of ((PI ^ 2) × (coil diameter (Dc) ^ 2) + (coil spacing (S) + wire diameter (Dw) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wire diameter (Dw)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">coil height (H) ÷ number of turns (N) − coil spacing (S)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Coil radius (Rc)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × (9 × inductance (L) + the square root of (inductance (L) × (40 × coil height (H) × (number of turns (N) ^ 2) + 81 × inductance (L)))) ÷ (number of turns (N) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wire diameter (Dw)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × the square root of (volume of wire used (V) ÷ wire length (Lw)) ÷ the square root of (PI)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Capacitance (C)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">250000000000 ÷ ((PI ^ 2) × inductance (L) × (resonant frequency (Rf) ^ 2))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Coil diameter (Dc)</strong> = 30 mm. The calculator returns <strong>Coil radius (Rc)</strong> = 15 mm.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Coil radius (Rc)</strong> = 15 mm should be roughly the size you expected from <strong>Coil diameter (Dc)</strong> = 30 mm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in microhenries, and convertible to any of the 4 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in picofarads, and convertible to any of the 5 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Volume, opening in cubic millimeters</li><li>Inductance – henry, opening in microhenries</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Helical coil calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 4 figures keep coming back — the coil diameter, the coil spacing and the coil height — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/wavelength-to-energy\">Wavelength to energy</a>, <a href=\"/physics/wavelength-to-frequency\">Wavelength to frequency</a> and <a href=\"/physics/wavenumber\">Wavenumber</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Helical coil calculator work out?",
+      "a": "It returns coil radius (Rc), derived from the coil diameter, the coil spacing and the coil height. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Helical coil calculator?",
+      "a": "The form asks for the coil diameter, the coil spacing, the coil height and the volume of wire used, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter coil diameter (Dc) in a different unit?",
+      "a": "Yes. Coil diameter (Dc) opens in millimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Coil radius (Rc) = 15 mm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Helical coil calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/wavelength-to-energy",
+      "name": "Wavelength to energy"
+    },
+    {
+      "path": "/physics/wavelength-to-frequency",
+      "name": "Wavelength to frequency"
+    },
+    {
+      "path": "/physics/wavenumber",
+      "name": "Wavenumber"
+    }
+  ],
+  "words": 1569
+}

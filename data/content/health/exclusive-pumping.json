@@ -1,0 +1,93 @@
+{
+  "path": "/health/exclusive-pumping",
+  "slug": "exclusive-pumping",
+  "cat": "health",
+  "name": "Exclusive pumping",
+  "seoTitle": "Exclusive pumping Calculator: Free, With Steps",
+  "seoDesc": "Exclusive pumping: work out milk needed per day (I don't know my baby's milk intake) from the baby's weight and number of feedings in a day. A free health…",
+  "h1": "Exclusive pumping Calculator",
+  "summary": "The Exclusive pumping calculator returns <strong>milk needed per day (I don't know my baby's milk intake)</strong>. The inputs are baby's weight, number of feedings in a day, the milk needed per feeding and the baby's age now.\n\nThat makes it useful for an informed starting point to take to a clinician, not a diagnosis. The results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.",
+  "sections": [
+    {
+      "title": "How does the Exclusive pumping calculator work?",
+      "html": "<p>The Exclusive pumping calculator takes the values in the form, applies the relationship described below and reports <strong>milk needed per day (I don't know my baby's milk intake)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the baby's weight, number of feedings in a day, the milk needed per feeding and the baby's age now.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in pounds. The unit chip switches it to any of the 29 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in fluid ounces (US). The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in fluid ounces (US). The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in fluid ounces (US). The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Baby's age</strong></td><td>One of 5 options, such as newborn, 1-3 months and 3-6 months.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Baby's weight</strong></td><td>A measured quantity, 29 units available.</td><td>pounds</td><td>You supply it</td></tr><tr><td><strong>Milk needed per day (I don't know my baby's milk intake)</strong></td><td>A measured quantity, 40 units available.</td><td>fluid ounces (US)</td><td>Calculated</td></tr><tr><td><strong>Number of feedings in a day</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Milk needed per feeding</strong></td><td>A measured quantity, 40 units available.</td><td>fluid ounces (US)</td><td>You supply it</td></tr><tr><td><strong>Milk pumped per day</strong></td><td>A measured quantity, 40 units available.</td><td>fluid ounces (US)</td><td>Calculated</td></tr><tr><td><strong>Milk needed per day (I know my baby's milk intake)</strong></td><td>A measured quantity, 40 units available.</td><td>fluid ounces (US)</td><td>Calculated</td></tr><tr><td><strong>Baby's age now</strong></td><td>A measured quantity, 27 units available.</td><td>months</td><td>You supply it</td></tr><tr><td><strong>Existing freezer stash (optional)</strong></td><td>A measured quantity, 40 units available.</td><td>fluid ounces (US)</td><td>You supply it</td></tr><tr><td><strong>Volume of milk needed</strong></td><td>A measured quantity, 40 units available.</td><td>fluid ounces (US)</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Exclusive pumping calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Milk needed per day</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">number of feedings in a day × milk needed per feeding</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Baby&#x27;s age</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(62500000000 ÷ 958609993) × milk needed per day ÷ baby&#x27;s weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Milk needed per day</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">milk needed per day</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Do you want to add a buffer?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-baby&#x27;s age now × milk needed per day + baby&#x27;s age when your stash is over × milk needed per day − existing freezer stash (optional) − volume of milk needed) ÷ (baby&#x27;s age now − baby&#x27;s age when your stash is over)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Milk pumped per day</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume of milk needed ÷ you will stop pumping in...</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in fluid ounces (US), and convertible to any of the 40 units on that chip.</li><li>The option the calculation settles on.</li><li>Shown in fluid ounces (US), and convertible to any of the 40 units on that chip.</li><li>The option the calculation settles on.</li><li>Shown in fluid ounces (US), and convertible to any of the 40 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Mass, opening in pounds</li><li>Volume, opening in fluid ounces (US)</li><li>Volume, opening in fluid ounces (US)</li><li>Volume, opening in fluid ounces (US)</li><li>Volume, opening in fluid ounces (US)</li><li>Time, opening in months</li><li>Time, opening in months</li><li>Volume, opening in fluid ounces (US)</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Exclusive pumping calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 4 figures keep coming back — the baby's weight, number of feedings in a day and the milk needed per feeding — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/cha2ds2-vasc\">CHA₂DS₂-VASc</a>, <a href=\"/health/child-height-percentile\">Child height percentile</a> and <a href=\"/health/child-pugh\">Child Pugh</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Exclusive pumping calculator work out?",
+      "a": "It returns milk needed per day (I don't know my baby's milk intake), derived from the baby's weight, number of feedings in a day and the milk needed per feeding. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Exclusive pumping calculator?",
+      "a": "The form asks for the baby's weight, number of feedings in a day, the milk needed per feeding and the baby's age now, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter baby's weight in a different unit?",
+      "a": "Yes. Baby's weight opens in pounds and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Exclusive pumping calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/cha2ds2-vasc",
+      "name": "CHA₂DS₂-VASc"
+    },
+    {
+      "path": "/health/child-height-percentile",
+      "name": "Child height percentile"
+    },
+    {
+      "path": "/health/child-pugh",
+      "name": "Child Pugh"
+    }
+  ],
+  "words": 1696
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/physics/gold-weight",
+  "slug": "gold-weight",
+  "cat": "physics",
+  "name": "Gold weight",
+  "seoTitle": "Gold weight — Free Online Calculator",
+  "seoDesc": "Gold weight: work out thickness (Sheet) from the length and the width. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Gold weight Calculator",
+  "summary": "The Gold weight calculator turns the length, the width and more into <strong>thickness (Sheet)</strong>. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nChange one value and the results step aside until you press Calculate again, which is what makes it easy to see how much the answer really depends on that one input.",
+  "sections": [
+    {
+      "title": "How does the Gold weight calculator work?",
+      "html": "<p>The Gold weight calculator takes the values in the form, applies the relationship described below and reports <strong>thickness (Sheet)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the metal and the shape); then you type in the length (Sheet), the width, the volume (Sheet) and the radius (Chain (wire)).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 14 options, such as 8k yellow gold - 333, 14k yellow gold - 585 and 18k yellow gold - 750. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as pendant (sheet), chain (wire) and tube. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;I don't know the weight of my gold&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic centimeters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Metal</strong></td><td>One of 14 options, such as 8k yellow gold - 333, 14k yellow gold - 585 and 18k yellow gold - 750.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Density</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Shape</strong></td><td>One of 5 options, such as pendant (sheet), chain (wire) and tube.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length (Sheet)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Thickness (Sheet)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Volume (Sheet)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>You supply it</td></tr><tr><td><strong>Length (Chain (wire))</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Radius (Chain (wire))</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Volume (Chain (wire))</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>Calculated</td></tr><tr><td><strong>Inner radius (Tube)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Outer radius (Tube)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Length (Tube)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Volume (Tube)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>Calculated</td></tr><tr><td><strong>Radius (Bead (rondelle))</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Thickness (Bead (rondelle))</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Volume (Bead (rondelle))</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>Calculated</td></tr><tr><td><strong>Inner radius (Ring (torus))</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Outer radius (Ring (torus))</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Volume (Ring (torus))</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>Calculated</td></tr><tr><td><strong>Weight / Mass (Weight and cost)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Weight / Mass (Weight and cost)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Weight / Mass (Weight and cost)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Weight / Mass (Weight and cost)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 32 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Gold weight calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Thickness</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume ÷ (length × width)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Density</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-weight ÷ Mass ÷ (volume × (wastage − 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume ÷ (PI × (radius ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-volume ÷ (PI × ((inner radius ^ 2) − (outer radius ^ 2)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (volume ÷ thickness) ÷ the square root of (PI)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Outer radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-2 ÷ 3 × (2 ^ 2 ÷ 3) × (PI ^ 2 ÷ 3) × (inner radius ^ 2) ÷ (4 × (PI ^ 2) × (inner radius ^ 3) − 27 × volume + 3 × the square root of (3) × the square root of (-8 × (PI ^ 2) × (inner radius ^ 3) × volume + 27 × (volume ^ 2))) + (1 ÷ 3) × inner radius − 1 ÷ 3 × (2) × (4 × (PI ^ 2) × (inner radius ^ 3) − 27 × volume + 3 × the square root of (3) × the square root of (-8 × (PI ^ 2) × (inner radius ^ 3) × volume + 27 × (volume ^ 2))) ÷ (PI ^ 2 ÷ 3)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 9 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic centimeters, and convertible to any of the 40 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic centimeters, and convertible to any of the 40 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Density, opening in kilograms per cubic meter</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in millimeters</li><li>Volume, opening in cubic centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in millimeters</li><li>Volume, opening in cubic centimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Gold weight calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 4 figures keep coming back — the length, the width and the volume — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/water-heating\">Water heating</a>, <a href=\"/physics/water-pressure-at-depth\">Water pressure at depth</a> and <a href=\"/physics/water-viscosity\">Water viscosity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Gold weight calculator work out?",
+      "a": "It returns thickness (Sheet), derived from the length, the width and the volume. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Gold weight calculator?",
+      "a": "The form asks for the length, the width, the volume and the radius (Chain (wire)), which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter density in a different unit?",
+      "a": "Yes. Density opens in kilograms per cubic meter and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Density = 0 kg/m³. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Gold weight calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/water-heating",
+      "name": "Water heating"
+    },
+    {
+      "path": "/physics/water-pressure-at-depth",
+      "name": "Water pressure at depth"
+    },
+    {
+      "path": "/physics/water-viscosity",
+      "name": "Water viscosity"
+    }
+  ],
+  "words": 2267
+}

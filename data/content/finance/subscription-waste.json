@@ -1,0 +1,93 @@
+{
+  "path": "/finance/subscription-waste",
+  "slug": "subscription-waste",
+  "cat": "finance",
+  "name": "Subscription waste",
+  "seoTitle": "Subscription waste Calculator",
+  "seoDesc": "Subscription waste: work out total cost per month from the cost per month. A free finance calculator with the formula, units and a worked example.",
+  "h1": "Subscription waste Calculator",
+  "summary": "The Subscription waste calculator takes the numbers you enter and reports <strong>total cost per month</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Subscription waste calculator work?",
+      "html": "<p>The Subscription waste calculator takes the values in the form, applies the relationship described below and reports <strong>total cost per month</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the service #1 (Streaming TV), the service #2 (Streaming TV) and the service #3 (Streaming TV)); then you type in the cost per month (Streaming TV), the cost per month (Streaming TV), the cost per month (Streaming TV) and the cost per month (E-Commerce & Delivery).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 9 options, such as netflix, amazon Prime Video and hulu. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 9 options, such as netflix, amazon Prime Video and hulu. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 9 options, such as netflix, amazon Prime Video and hulu. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as amazon Prime, walmart+ and doorDash. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as amazon Prime, walmart+ and doorDash. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as amazon Prime, walmart+ and doorDash. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as spotify, apple Music and amazon Music Unlimited. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as spotify, apple Music and amazon Music Unlimited. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 4 options, such as google One, apple iCloud+ and microsoft OneDrive. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 4 options, such as google One, apple iCloud+ and microsoft OneDrive. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as xbox Game Pass, playStation Plus and nintendo Switch Online. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as xbox Game Pass, playStation Plus and nintendo Switch Online. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li></ul><p>The form has 39 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>17 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Service #1 (Streaming TV)</strong></td><td>One of 9 options, such as netflix, amazon Prime Video and hulu.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (Streaming TV)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Service #2 (Streaming TV)</strong></td><td>One of 9 options, such as netflix, amazon Prime Video and hulu.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (Streaming TV)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Service #3 (Streaming TV)</strong></td><td>One of 9 options, such as netflix, amazon Prime Video and hulu.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (Streaming TV)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>!!Total cost per month!! (Streaming TV)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Service #1 (E-Commerce & Delivery)</strong></td><td>One of 5 options, such as amazon Prime, walmart+ and doorDash.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (E-Commerce & Delivery)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Service #2 (E-Commerce & Delivery)</strong></td><td>One of 5 options, such as amazon Prime, walmart+ and doorDash.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (E-Commerce & Delivery)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Service #3 (E-Commerce & Delivery)</strong></td><td>One of 5 options, such as amazon Prime, walmart+ and doorDash.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (E-Commerce & Delivery)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>!!Total cost per month!! (E-Commerce & Delivery)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Service #1 (Music & Audio)</strong></td><td>One of 5 options, such as spotify, apple Music and amazon Music Unlimited.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (Music & Audio)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Service #2 (Music & Audio)</strong></td><td>One of 5 options, such as spotify, apple Music and amazon Music Unlimited.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (Music & Audio)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>!!Total cost per month!! (Music & Audio)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Service #1 (Cloud Storage)</strong></td><td>One of 4 options, such as google One, apple iCloud+ and microsoft OneDrive.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (Cloud Storage)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Service #2 (Cloud Storage)</strong></td><td>One of 4 options, such as google One, apple iCloud+ and microsoft OneDrive.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cost per month (Cloud Storage)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>!!Total cost per month!! (Cloud Storage)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 49 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Subscription waste calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Total cost per month</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((cost per month + cost per month) + (cost per month + cost per month) + (cost per month + cost per month) + (cost per month + cost per month) + (cost per month + cost per month + cost per month) + (cost per month + cost per month + cost per month) + (cost per month + cost per month + cost per month) + (other service #1 + other service #2 + other service #3 + other service #4 + other service #5))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">!!Total cost per month!!</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cost per month + cost per month + cost per month)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">!!Total cost per month!!</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cost per month + cost per month)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">!!Total cost per month!!</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(other service #1 + other service #2 + other service #3 + other service #4 + other service #5)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total cost per year</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(12 × ((cost per month + cost per month) + (cost per month + cost per month) + (cost per month + cost per month) + (cost per month + cost per month) + (cost per month + cost per month + cost per month) + (cost per month + cost per month + cost per month) + (cost per month + cost per month + cost per month) + (other service #1 + other service #2 + other service #3 + other service #4 + other service #5)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Service #1</strong> set to Netflix, <strong>cost per month</strong> = 10, <strong>Service #2</strong> set to Netflix and <strong>cost per month</strong> = 10. The calculator returns <strong>!!Total cost per month!!</strong> = 30, <strong>Total cost per month</strong> = 220 and <strong>Total cost per year</strong> = 2640.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>!!Total cost per month!!</strong> = 30, <strong>Total cost per month</strong> = 220 and <strong>Total cost per year</strong> = 2640 should be roughly the size you expected from <strong>Service #1</strong> set to Netflix and <strong>cost per month</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Subscription waste calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Sizing up a purchase before you commit to it</li><li>Any time the same 1 figures keep coming back — the cost per month — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/occupancy-rate\">Occupancy rate</a>, <a href=\"/finance/off-day\">Off days</a> and <a href=\"/finance/ohio-sales-tax\">Ohio sales tax</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Subscription waste calculator work out?",
+      "a": "It returns total cost per month, derived from the cost per month. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Subscription waste calculator?",
+      "a": "The form asks for the cost per month, which is 39 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (17 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports !!Total cost per month!! = 30. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Subscription waste calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/occupancy-rate",
+      "name": "Occupancy rate"
+    },
+    {
+      "path": "/finance/off-day",
+      "name": "Off days"
+    },
+    {
+      "path": "/finance/ohio-sales-tax",
+      "name": "Ohio sales tax"
+    }
+  ],
+  "words": 2397
+}

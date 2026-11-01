@@ -1,0 +1,97 @@
+{
+  "path": "/other/cv-screening-and-interview-time",
+  "slug": "cv-screening-and-interview-time",
+  "cat": "other",
+  "name": "CV screening and interview time",
+  "seoTitle": "CV screening and interview time — Free Online Calculator",
+  "seoDesc": "CV screening and interview time: work out total applicants CV screened from the skill screening time per applicant and the total applicants skill…",
+  "h1": "CV screening and interview time Calculator",
+  "summary": "The CV screening and interview time calculator works out <strong>total applicants CV screened</strong>. It uses the skill screening time per applicant, the total applicants skill screened, the CV screening time per applicant and the phone screening time per applicant.\n\nThink of it as a shortcut for whatever you happen to be working on. Editing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the CV screening and interview time calculator work?",
+      "html": "<p>The CV screening and interview time calculator takes the values in the form, applies the relationship described below and reports <strong>total applicants CV screened</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (how many rounds of interview?); then you type in the skill screening time per applicant, the total applicants skill screened, the CV screening time per applicant and the phone screening time per applicant.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 4 options, such as one round, two rounds and three rounds. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Skill screening time per applicant</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Total applicants skill screened</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>CV screening time per applicant</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Total applicants CV screened</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Phone screening time per applicant</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Total applicants phone screened</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Other screening time per applicant</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Total applicants screened using other methods</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total screening time</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Number of recruiters in screening</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Hours required of each recruiter (Screening)</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>How many rounds of interview?</strong></td><td>One of 4 options, such as one round, two rounds and three rounds.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Interview #1 time per candidate</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>Calculated</td></tr><tr><td><strong>Total interviewees in round #1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Interview #2 time per candidate</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Total interviewees in round #2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Interview #3 time per candidate</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Total interviewees in round #3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Interview #4 time per candidate</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Total interviewees in round #4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total interview time</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Number of interviewers</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Hours required of each interviewer</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>Reference checking time per candidate</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 38 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the CV screening and interview time calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Total applicants CV screened</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-total applicants screened using other methods × other screening time per applicant − total applicants phone screened × phone screening time per applicant − total applicants skill screened × skill screening time per applicant + total screening time) ÷ CV screening time per applicant</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Hours required of each recruiter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total screening time ÷ number of recruiters in screening</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-total 2 − total 3 − total 4 + total interview time</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Hours required of each interviewer</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total interview time ÷ number of interviewers</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Offer discussion time per candidate</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">average time per candidate − reference checking time per candidate</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total offer discussion time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">average time per candidate × number of candidates</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in minutes, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in minutes, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in minutes, and convertible to any of the 27 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in minutes</li><li>Time, opening in minutes</li><li>Time, opening in minutes</li><li>Time, opening in minutes</li><li>Time, opening in hours</li><li>Time, opening in hours</li><li>Time, opening in minutes</li><li>Time, opening in minutes</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The CV screening and interview time calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 4 figures keep coming back — the skill screening time per applicant, the total applicants skill screened and the CV screening time per applicant — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/note-frequency\">Note frequency</a>, <a href=\"/other/numbers-to-letters\">Numbers to letters converter</a> and <a href=\"/other/odd-parity\">Odd parity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the CV screening and interview time calculator work out?",
+      "a": "It returns total applicants CV screened, derived from the skill screening time per applicant, the total applicants skill screened and the CV screening time per applicant. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the CV screening and interview time calculator?",
+      "a": "The form asks for the skill screening time per applicant, the total applicants skill screened, the CV screening time per applicant and the phone screening time per applicant, which is 22 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter skill screening time per applicant in a different unit?",
+      "a": "Yes. Skill screening time per applicant opens in minutes and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Total = 0 min. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the CV screening and interview time calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/note-frequency",
+      "name": "Note frequency"
+    },
+    {
+      "path": "/other/numbers-to-letters",
+      "name": "Numbers to letters converter"
+    },
+    {
+      "path": "/other/odd-parity",
+      "name": "Odd parity"
+    }
+  ],
+  "words": 2273
+}

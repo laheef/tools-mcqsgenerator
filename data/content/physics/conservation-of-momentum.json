@@ -1,0 +1,101 @@
+{
+  "path": "/physics/conservation-of-momentum",
+  "slug": "conservation-of-momentum",
+  "cat": "physics",
+  "name": "Conservation of momentum",
+  "seoTitle": "Conservation of momentum Calculator — Formula, Units & Example",
+  "seoDesc": "Conservation of momentum: work out initial velocity (u₂) from the final velocity (V) and the mass. A free physics calculator with the formula, units and a…",
+  "h1": "Conservation of momentum Calculator",
+  "summary": "Give the Conservation of momentum calculator the final velocity (V), the mass and the final velocity (v₂) and it returns <strong>initial velocity (u₂)</strong>. It suits a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Conservation of momentum calculator work?",
+      "html": "<p>The Conservation of momentum calculator takes the values in the form, applies the relationship described below and reports <strong>initial velocity (u₂)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the collision type); then you type in the final velocity (V) (Object 1), the mass (m₂), the final velocity (v₂) (Object 2) and the final velocity (v₂) (Object 2).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as don't know, perfectly elastic and partially elastic. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Collision type</strong></td><td>One of 4 options, such as don't know, perfectly elastic and partially elastic.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Mass (m₁)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Initial velocity (u₁)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final velocity (v₁) (Object 1)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final velocity (v₁) (Object 1)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final velocity (V) (Object 1)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Mass (m₂)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Initial velocity (u₂)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final velocity (v₂) (Object 2)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Final velocity (v₂) (Object 2)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Final velocity (V) (Object 2)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Loss of kinetic energy (Kinetic energy)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Loss of kinetic energy (Kinetic energy)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Loss of kinetic energy (Kinetic energy)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Total KE before collision</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>Calculated</td></tr><tr><td><strong>Total KE after collision (Kinetic energy)</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>Calculated</td></tr><tr><td><strong>Total KE after collision (Kinetic energy)</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>Calculated</td></tr><tr><td><strong>Total KE after collision (Kinetic energy)</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Conservation of momentum calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Initial velocity (u₂)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-mass (m₁) × initial velocity (u₁) + mass (m₁) × final velocity (v₁) + mass (m₂) × final velocity (v₂)) ÷ mass (m₂)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total KE after collision</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total KE before collision × (1 − loss of kinetic energy)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total KE before collision</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × mass (m₁) × (initial velocity (u₁) ^ 2) + (1 ÷ 2) × mass (m₂) × (initial velocity (u₂) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total KE after collision</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × mass (m₁) × (final velocity (v₁) ^ 2) + (1 ÷ 2) × mass (m₂) × (final velocity (v₂) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Final velocity (v₁)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(mass (m₁) × initial velocity (u₁) − mass (m₂) × initial velocity (u₁) + 2 × mass (m₂) × initial velocity (u₂)) ÷ (mass (m₁) + mass (m₂))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Initial velocity (u₂)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2 × mass (m₁) × initial velocity (u₁) − mass (m₁) × final velocity (v₂) − mass (m₂) × final velocity (v₂)) ÷ (mass (m₁) − mass (m₂))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Collision type</strong> set to Don't know, <strong>Loss of kinetic energy</strong> = 10 % and <strong>Total KE before collision</strong> = 10 J. Working through the relationship above gives <strong>Total KE after collision</strong> = 9 J.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Total KE after collision</strong> = 9 J should be roughly the size you expected from <strong>Collision type</strong> set to Don't know and <strong>Loss of kinetic energy</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in joules, and convertible to any of the 33 units on that chip.</li><li>Shown in joules, and convertible to any of the 33 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in joules, and convertible to any of the 33 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in joules, and convertible to any of the 33 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Mass, opening in kilograms</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Mass, opening in kilograms</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Conservation of momentum calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 3 figures keep coming back — the final velocity (V), the mass and the final velocity (v₂) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/rms-voltage\">RMS voltage</a>, <a href=\"/physics/rocket-thrust\">Rocket thrust</a> and <a href=\"/physics/rockwell-hardness-conversion\">Rockwell hardness conversion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Conservation of momentum calculator work out?",
+      "a": "It returns initial velocity (u₂), derived from the final velocity (V), the mass and the final velocity (v₂). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Conservation of momentum calculator?",
+      "a": "The form asks for the final velocity (V), the mass and the final velocity (v₂), which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter mass (m₁) in a different unit?",
+      "a": "Yes. Mass (m₁) opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Total KE after collision = 9 J. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Conservation of momentum calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/rms-voltage",
+      "name": "RMS voltage"
+    },
+    {
+      "path": "/physics/rocket-thrust",
+      "name": "Rocket thrust"
+    },
+    {
+      "path": "/physics/rockwell-hardness-conversion",
+      "name": "Rockwell hardness conversion"
+    }
+  ],
+  "words": 2070
+}

@@ -1,0 +1,89 @@
+{
+  "path": "/biology/catculator",
+  "slug": "catculator",
+  "cat": "biology",
+  "name": "Catculator",
+  "seoTitle": "Catculator — Free Online Calculator",
+  "seoDesc": "Catculator: a free biology calculator that walks you through 43 values, with the formula spelled out and a worked example.",
+  "h1": "Catculator Calculator",
+  "summary": "The Catculator calculator takes the numbers you enter and reports <strong>cat1 index</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt is built for an animal, a plant or a biological process whose scale you want to put into perspective. The panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Catculator calculator work?",
+      "html": "<p>The Catculator calculator takes the values in the form, applies the relationship described below and reports <strong>cat1 index</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (what’s your ideal bed?).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 5 options, such as by ignoring people, depends on my mood and I don’t do it often, or by running away. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as wherever I like, preferably somebody’s bed, I can sleep anywhere and only in my bed, a safe place. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as whatever’s on someone else's plate, whatever's in the fridge, I like strange combinations and the same thing every day. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as puke on someone’s doormat, eat and drink even more and I’m never drunk. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as take A LOT of selfies, extreme sports! and holidays make me anxious. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>What’s your ideal bed?</strong></td><td>One of 5 options, such as wherever I like, preferably somebody’s bed, I can sleep anywhere and only in my bed, a safe place.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cat 1 index</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cat 2 index</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dom cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Agreeable cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Extrovert cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Shy cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Unpredictable cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Catculator calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Cat 1 index</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cat 2 index</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Dom cat</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Unpredictable cat</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Shy cat</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Extrovert cat</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Catculator calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href=\"/biology/cattle-per-acre\">Cattle per acre</a>, <a href=\"/biology/cell-dilution\">Cell dilution</a> and <a href=\"/biology/cell-doubling-time\">Cell doubling time</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Catculator calculator work out?",
+      "a": "It returns cat1 index. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Catculator calculator?",
+      "a": "The form asks for a few values, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Catculator calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/biology/cattle-per-acre",
+      "name": "Cattle per acre"
+    },
+    {
+      "path": "/biology/cell-dilution",
+      "name": "Cell dilution"
+    },
+    {
+      "path": "/biology/cell-doubling-time",
+      "name": "Cell doubling time"
+    }
+  ],
+  "words": 1353
+}

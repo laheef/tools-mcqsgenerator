@@ -1,0 +1,93 @@
+{
+  "path": "/statistics/youden-index",
+  "slug": "youden-index",
+  "cat": "statistics",
+  "name": "Youden index",
+  "seoTitle": "Youden index Calculator: Free, With Steps",
+  "seoDesc": "Youden index: work out false positive from the true positive and the false negative. A free statistics calculator with the formula, units and a worked…",
+  "h1": "Youden index Calculator",
+  "summary": "Supply the true positive, the false negative, the true negative and the youden index and the Youden index calculator solves for <strong>false positive</strong>. Think of it as a shortcut for an assignment, a report or a data discussion where you need a defensible number.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Youden index calculator work?",
+      "html": "<p>The Youden index calculator takes the values in the form, applies the relationship described below and reports <strong>false positive</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the true positive, the false negative, the true negative and the youden index (J).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as confusion matrix and sensitivity and specificity. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>True positive</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>False positive</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>False negative</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>True negative</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sensitivity</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Specificity</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Youden index (J)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Youden index calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">False positive</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-true negative + true negative ÷ specificity</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sensitivity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">true positive ÷ (false negative + true positive)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sensitivity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-specificity + youden index (J) + 1</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>What method are you using?</strong> set to Confusion matrix, <strong>True negative</strong> = 10 and <strong>Specificity</strong> = 10. The calculator returns <strong>False positive</strong> = -9.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>False positive</strong> = -9 should be roughly the size you expected from <strong>What method are you using?</strong> set to Confusion matrix and <strong>True negative</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Youden index calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a result a piece of software produced</li><li>Deciding how much confidence a sample really supports</li><li>Turning raw numbers into something you can quote</li><li>Any time the same 4 figures keep coming back — the true positive, the false negative and the true negative — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/normal-probability-sampling-distributions\">Normal probability for sampling distributions</a>, <a href=\"/statistics/odds\">Odds</a> and <a href=\"/statistics/or-probability\">OR probability</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Youden index calculator work out?",
+      "a": "It returns false positive, derived from the true positive, the false negative and the true negative. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Youden index calculator?",
+      "a": "The form asks for the true positive, the false negative, the true negative and the youden index, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports False positive = -9. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Youden index calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/normal-probability-sampling-distributions",
+      "name": "Normal probability for sampling distributions"
+    },
+    {
+      "path": "/statistics/odds",
+      "name": "Odds"
+    },
+    {
+      "path": "/statistics/or-probability",
+      "name": "OR probability"
+    }
+  ],
+  "words": 1304
+}

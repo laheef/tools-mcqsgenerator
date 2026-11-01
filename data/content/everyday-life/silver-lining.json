@@ -1,0 +1,97 @@
+{
+  "path": "/everyday-life/silver-lining",
+  "slug": "silver-lining",
+  "cat": "everyday-life",
+  "name": "Quarantine silver lining",
+  "seoTitle": "Quarantine silver lining — Free Online Calculator",
+  "seoDesc": "Quarantine silver lining: work out distance to workplace (one-way) from the total duration and the commute time. A free everyday life calculator with the…",
+  "h1": "Quarantine silver lining Calculator",
+  "summary": "Give the Quarantine silver lining calculator the total duration and the commute time and it returns <strong>distance to workplace (one-way)</strong>. It suits a practical question that turns up in daily life.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Quarantine silver lining calculator work?",
+      "html": "<p>The Quarantine silver lining calculator takes the values in the form, applies the relationship described below and reports <strong>distance to workplace (one-way)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the congestion level, the engine type and the production year); then you give the dates it asks for; then you type in the total duration, the commute time (one-way), the CO₂ emissions and the fuel economy.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A measured quantity, entered by default in months. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 4 options, such as ecological benefits, ⏲ Time benefits and financial benefits. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as a car, public transport and a bike / my legs ‍ ‍. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 6 options, such as no congestion (40 km/h), slight (32 km/h) and average (24 km/h). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as petrol and diesel. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 17 options, such as 2000 or older, 2001 and 2002. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in g/km.</li><li>A measured quantity, entered by default in liters per 100 kilometers. The unit chip switches it to any of the 10 supported units.</li><li>A number, expressed in $/year.</li><li>Pick the option that matches your case — 2 options, such as season tickets and single fare tickets. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in $.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A number, expressed in times / week.</li><li>A number, expressed in times / week.</li><li>A number, expressed in times / week.</li><li>A number, expressed in times / week.</li><li>A measured quantity, entered by default in hours / minutes. The unit chip switches it to any of the 27 supported units.</li><li>A number, expressed in $.</li><li>A single on/off switch — tick it for &ldquo;Display breakdown of savings&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A number, expressed in $.</li><li>A plain number with no unit attached.</li></ul><p>7 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Total duration</strong></td><td>A measured quantity, 27 units available.</td><td>months</td><td>You supply it</td></tr><tr><td><strong>Commute time (one-way)</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Distance to workplace (one-way)</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Congestion level</strong></td><td>One of 6 options, such as no congestion (40 km/h), slight (32 km/h) and average (24 km/h).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Average car speed</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>Calculated</td></tr><tr><td><strong>Engine type</strong></td><td>One of 2 options, such as petrol and diesel.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Production year</strong></td><td>One of 17 options, such as 2000 or older, 2001 and 2002.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>CO₂ emissions</strong></td><td>A number stated in g/km.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Gas price</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Fuel economy</strong></td><td>A measured quantity, 10 units available.</td><td>liters per 100 kilometers</td><td>You supply it</td></tr><tr><td><strong>Other car-related expenses</strong></td><td>A number stated in $/year.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ticket price</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Eating out</strong></td><td>A number stated in times / week.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ordered food (Pre-lockdown eating habits (lunches, 7-day…)</strong></td><td>A number stated in times / week.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ordered food (Lockdown eating habits (lunches, 7-day week))</strong></td><td>A number stated in times / week.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>⌚ Time saved</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>You supply it</td></tr><tr><td><strong>Money saved (Financial benefits)</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Money saved (Financial benefits)</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Money saved (Financial benefits)</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Money saved (Financial benefits)</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Car savings</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Public transport savings (Financial benefits)</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Public transport savings (Financial benefits)</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Food savings</strong></td><td>A number stated in $.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 33 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Quarantine silver lining calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Distance to workplace (one-way)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(5 ÷ 18) × average car speed × commute time (one-way)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Starts at</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-total duration + ends at</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">For a frequency of</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(7 ÷ 2) × ⌚ Time saved ÷ (commute time (one-way) × total duration)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Distance to workplace (one-way)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(350000000 ÷ 1461) × (1461 × car savings − 4 × total duration × other car-related expenses) ÷ (for a frequency of × fuel economy × gas price × total duration)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Public transport savings</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2 ÷ 7) × for a frequency of × total duration × ticket price</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Public transport savings</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total duration × ticket price ÷ ticket is valid for...</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in liters, and convertible to any of the 40 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Time, opening in months</li><li>Time, opening in minutes</li><li>Length, opening in kilometers</li><li>Speed, opening in kilometers per hour</li><li>Volume, opening in liters</li><li>Fuel economy, opening in liters per 100 kilometers</li><li>Time, opening in days</li><li>Time, opening in hours / minutes</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Quarantine silver lining calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 2 figures keep coming back — the total duration and the commute time — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/electricity-cost\">Electricity cost</a>, <a href=\"/everyday-life/electricity-cost-single-usage\">Electricity cost - single usage</a> and <a href=\"/everyday-life/email-alternatives\">Email alternatives</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Quarantine silver lining calculator work out?",
+      "a": "It returns distance to workplace (one-way), derived from the total duration and the commute time. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Quarantine silver lining calculator?",
+      "a": "The form asks for the total duration and the commute time, which is 23 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter total duration in a different unit?",
+      "a": "Yes. Total duration opens in months and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (7 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Average car speed = 0 km/h. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Quarantine silver lining calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/electricity-cost",
+      "name": "Electricity cost"
+    },
+    {
+      "path": "/everyday-life/electricity-cost-single-usage",
+      "name": "Electricity cost - single usage"
+    },
+    {
+      "path": "/everyday-life/email-alternatives",
+      "name": "Email alternatives"
+    }
+  ],
+  "words": 2233
+}

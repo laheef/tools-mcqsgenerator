@@ -1,0 +1,93 @@
+{
+  "path": "/math/rectangle-diagonal-angle",
+  "slug": "rectangle-diagonal-angle",
+  "cat": "math",
+  "name": "Rectangle diagonal angle",
+  "seoTitle": "Rectangle diagonal angle Calculator",
+  "seoDesc": "Rectangle diagonal angle: a free math calculator that walks you through 18 values, with the formula spelled out and a worked example.",
+  "h1": "Rectangle diagonal angle Calculator",
+  "summary": "The Rectangle diagonal angle calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Rectangle diagonal angle calculator work?",
+      "html": "<p>The Rectangle diagonal angle calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (select the known variable).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 12 options, such as A, B and C. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Rectangle diagonal angle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">B</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">A</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">G</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">H</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">E1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">F</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">D</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">C</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">H</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">90 − A</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">G</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">90 − F</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Select the known variable</strong> set to A and <strong>A</strong> = 10 deg. The calculator returns <strong>B</strong> = 10 deg, <strong>C</strong> = -9.975 deg, <strong>D</strong> = -9.975 deg and <strong>E1</strong> = 10 deg.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>B</strong> = 10 deg, <strong>C</strong> = -9.975 deg, <strong>D</strong> = -9.975 deg and <strong>E1</strong> = 10 deg should be roughly the size you expected from <strong>Select the known variable</strong> set to A and <strong>A</strong> = 10 deg.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<table><caption>What you get, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>B</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>G</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>E1</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>D</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>H</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>A</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>F</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>C</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>I1</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>J</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>K</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr><tr><td>L</td><td>shown in degrees, and convertible to any of the 13 units on that chip.</td></tr></tbody></table><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Rectangle diagonal angle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/trapezoid-perimeter\">Trapezoid perimeter</a>, <a href=\"/math/trapezoid-side\">Trapezoid side</a> and <a href=\"/math/trapezoidal-prism-volume\">Volume of a trapezoidal prism</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Rectangle diagonal angle calculator?",
+      "a": "The form asks for a few values, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter A in a different unit?",
+      "a": "Yes. A opens in degrees and the chip beside it offers 13 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports B = 10 deg. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Rectangle diagonal angle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/trapezoid-perimeter",
+      "name": "Trapezoid perimeter"
+    },
+    {
+      "path": "/math/trapezoid-side",
+      "name": "Trapezoid side"
+    },
+    {
+      "path": "/math/trapezoidal-prism-volume",
+      "name": "Volume of a trapezoidal prism"
+    }
+  ],
+  "words": 1348
+}

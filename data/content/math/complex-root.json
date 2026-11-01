@@ -1,0 +1,93 @@
+{
+  "path": "/math/complex-root",
+  "slug": "complex-root",
+  "cat": "math",
+  "name": "Complex root",
+  "seoTitle": "Complex root — Free Online Calculator",
+  "seoDesc": "Complex root: work out your result from the I need. A free math calculator with the formula, units and a worked example.",
+  "h1": "Complex root Calculator",
+  "summary": "The Complex root calculator is a free, no-sign-up math tool. Fill in the 4 fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nIt suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Complex root calculator work?",
+      "html": "<p>The Complex root calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the I need.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>I have a number in</td><td>pick the option that matches your case — 2 options, such as cartesian form a + bi and polar form r⋅exp(φi). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>I need</td><td>a number, expressed in th roots.</td></tr><tr><td>I want output in</td><td>pick the option that matches your case — 3 options, such as cartesian form a + bi, polar form r⋅exp(φi) and both forms. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>Precision yes no</td><td>a single on/off switch — tick it for &ldquo;I want to set output precision&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</td></tr></tbody></table><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Complex root calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (-(B ^ 2) + (R ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × B × (-the tangent of ((1 ÷ 2) × Φ) + 1 ÷ the tangent of ((1 ÷ 2) × Φ))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">R × the cosine of (Φ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Φ</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(B ÷ R)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>The form opens with a complete set of values: <strong>I have a number in</strong> set to Cartesian form a + bi and <strong>I want output in</strong> set to Cartesian form a + bi. Straight away the calculator returns <strong>Precision</strong> = 4.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Precision</strong> = 4 should be roughly the size you expected from <strong>I have a number in</strong> set to Cartesian form a + bi and <strong>I want output in</strong> set to Cartesian form a + bi.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Angle, opening in degrees</li><li>Angle, opening in radians</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Complex root calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Settling an argument about a number with a quick, traceable result</li><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Any time the same 1 figures keep coming back — the I need — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/harmonic-number\">Harmonic number</a>, <a href=\"/math/height-of-a-square-pyramid\">Height of a square pyramid</a> and <a href=\"/math/height-of-cone\">Height of a cone</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Complex root calculator?",
+      "a": "The form asks for the I need, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter Φ in a different unit?",
+      "a": "Yes. Φ opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Precision = 4. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Complex root calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/harmonic-number",
+      "name": "Harmonic number"
+    },
+    {
+      "path": "/math/height-of-a-square-pyramid",
+      "name": "Height of a square pyramid"
+    },
+    {
+      "path": "/math/height-of-cone",
+      "name": "Height of a cone"
+    }
+  ],
+  "words": 1430
+}

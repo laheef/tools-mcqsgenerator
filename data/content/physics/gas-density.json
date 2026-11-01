@@ -1,0 +1,101 @@
+{
+  "path": "/physics/gas-density",
+  "slug": "gas-density",
+  "cat": "physics",
+  "name": "Gas density",
+  "seoTitle": "Gas density Calculator: Free, With Steps",
+  "seoDesc": "Gas density: work out molecular mass (M) from the pressure and the temperature. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Gas density Calculator",
+  "summary": "The Gas density calculator turns the pressure, the temperature and the density into <strong>molecular mass (M)</strong>. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Gas density calculator work?",
+      "html": "<p>The Gas density calculator takes the values in the form, applies the relationship described below and reports <strong>molecular mass (M)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the pressure (P), the temperature (T) and the density (ρ).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in pascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in kelvins. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in kilograms per cubic meter. The unit chip switches it to any of the 9 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Pressure (P)</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>You supply it</td></tr><tr><td><strong>Temperature (T)</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>You supply it</td></tr><tr><td><strong>Molecular mass (M)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Density (ρ)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Gas density calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Molecular mass (M)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(207861565453831 ÷ 25000000000) × density (ρ) × temperature (T) ÷ pressure (P)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Pressure (P)</strong> = 10 Pa, <strong>Temperature (T)</strong> = 10 K and <strong>Density (ρ)</strong> = 10 kg/m³. The calculator returns <strong>Molecular mass (M)</strong> = 83.1446 g.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Molecular mass (M)</strong> = 83.1446 g should be roughly the size you expected from <strong>Pressure (P)</strong> = 10 Pa and <strong>Temperature (T)</strong> = 10 K.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in grams, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Pressure, opening in pascals</li><li>Temperature, opening in kelvins</li><li>Mass, opening in grams</li><li>Density, opening in kilograms per cubic meter</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Gas density calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 3 figures keep coming back — the pressure, the temperature and the density — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Gas density calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/volts-to-electron-volts\">Volts to electron volts</a>, <a href=\"/physics/volume-to-density\">Volume to density</a> and <a href=\"/physics/volume-to-mass\">Volume to mass</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Gas density calculator work out?",
+      "a": "It returns molecular mass (M), derived from the pressure, the temperature and the density. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Gas density calculator?",
+      "a": "The form asks for the pressure, the temperature and the density, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter pressure (P) in a different unit?",
+      "a": "Yes. Pressure (P) opens in pascals and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Molecular mass (M) = 83.1446 g. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Gas density calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/volts-to-electron-volts",
+      "name": "Volts to electron volts"
+    },
+    {
+      "path": "/physics/volume-to-density",
+      "name": "Volume to density"
+    },
+    {
+      "path": "/physics/volume-to-mass",
+      "name": "Volume to mass"
+    }
+  ],
+  "words": 1311
+}

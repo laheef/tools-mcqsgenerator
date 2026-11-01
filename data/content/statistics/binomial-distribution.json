@@ -1,0 +1,93 @@
+{
+  "path": "/statistics/binomial-distribution",
+  "slug": "binomial-distribution",
+  "cat": "statistics",
+  "name": "Binomial distribution",
+  "seoTitle": "Binomial distribution Calculator: Free, With Steps",
+  "seoDesc": "Binomial distribution: work out probability of success per event (p) from number of events and number of successes. A free statistics calculator with the…",
+  "h1": "Binomial distribution Calculator",
+  "summary": "The Binomial distribution calculator works out <strong>probability of success per event (p)</strong> from number of events, number of successes, the minimum number of successes and the max number of successes. Think of it as a shortcut for an assignment, a report or a data discussion where you need a defensible number.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Binomial distribution calculator work?",
+      "html": "<p>The Binomial distribution calculator takes the values in the form, applies the relationship described below and reports <strong>probability of success per event (p)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in number of events (n), number of successes (r), the minimum number of successes (r₀) and the max number of successes (r₁).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 4 options, such as exactly r successes, r or more successes and r or less successes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Number of events (n)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Probability of success per event (p)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Number of successes (r)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Minimum number of successes (r₀)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Max number of successes (r₁)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Probability of r successes</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Probability of r or more successes</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Probability of r or less successes</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Probability of r₀ to r₁ successes</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Mean number of successes</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Variance</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Standard deviation</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Binomial distribution calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of success per event (p)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">mean number of successes ÷ number of events (n)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Variance</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">number of events (n) × probability of success per event (p) × (1 − probability of success per event (p))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Variance</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(standard deviation ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of r successes</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((number of events (n), probability of success per event (p), number of successes (r), what is the probability of getting…))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of r or more successes</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((number of events (n), probability of success per event (p), number of successes (r), what is the probability of getting…))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of r or less successes</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((number of events (n), probability of success per event (p), number of successes (r), what is the probability of getting…))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Binomial distribution calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning raw numbers into something you can quote</li><li>Checking a result a piece of software produced</li><li>Deciding how much confidence a sample really supports</li><li>Any time the same 4 figures keep coming back — number of events, number of successes and the minimum number of successes — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/population-variance\">Population variance</a>, <a href=\"/statistics/possible-combinations\">Possible combinations</a> and <a href=\"/statistics/post-test-probability\">Post test probability</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Binomial distribution calculator work out?",
+      "a": "It returns probability of success per event (p), derived from number of events, number of successes and the minimum number of successes. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Binomial distribution calculator?",
+      "a": "The form asks for number of events, number of successes, the minimum number of successes and the max number of successes, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter probability of success per event (p) in a different unit?",
+      "a": "Yes. Probability of success per event (p) opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Binomial distribution calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/population-variance",
+      "name": "Population variance"
+    },
+    {
+      "path": "/statistics/possible-combinations",
+      "name": "Possible combinations"
+    },
+    {
+      "path": "/statistics/post-test-probability",
+      "name": "Post test probability"
+    }
+  ],
+  "words": 1610
+}

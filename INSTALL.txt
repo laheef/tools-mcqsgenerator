@@ -1,0 +1,43 @@
+mcqsgenerator.com/tool — first-run checklist
+============================================
+
+The full step-by-step guide is the "hostinger-deploy.md" document that came
+with this package. The short version:
+
+1. hPanel -> Websites -> Advanced -> PHP Configuration
+   Choose PHP 8.2 or 8.3, enable pdo_mysql, mbstring, openssl, fileinfo, gd.
+
+2. hPanel -> Databases -> MySQL Databases
+   Create a database and a user; note the generated name, user and password.
+   Host is "localhost" on Hostinger.
+
+3. Upload this folder so the files land in  public_html/tool/
+   (public_html/tool/index.php, public_html/tool/config.php, ...).
+   File Manager -> Upload the zip -> right-click -> Extract.
+
+4. phpMyAdmin -> select the new database -> Import -> install/database.sql
+   This creates the tables and loads the six pages, the posts, the settings and
+   the calculator overrides. It does NOT contain any user account.
+
+5. Open  https://mcqsgenerator.com/tool/admin/install.php
+   Enter the database name/user/password, then your own administrator e-mail and
+   password. The installer writes config.db.php, applies any missing migrations
+   and creates your account.
+
+6. Delete  install/  and  admin/install.php  when you are signed in
+   (the .htaccess already blocks install/, deleting it is belt and braces).
+
+Then check:  /tool/  /tool/math/percentage  /tool/sitemap.xml  /tool/robots.txt
+             /tool/admin/  (sign in)  and one calculator -> Calculate.
+
+If something 500s, set  define('OMNI_DEBUG', true);  as a line in config.php
+temporarily, or read the error log in hPanel -> Advanced -> Error logs.
+
+Notes
+-----
+* The site needs no build step, no Node, no composer. Plain PHP 8.1+.
+* Everything is served from /tool: links, CSS, JS, images, admin, sitemap,
+  robots.txt. If you ever move it to another folder, change the two "/tool"
+  paths in .htaccess (RewriteBase, ErrorDocument) and delete config.local.php
+  if you created one.
+* config.db.php is created on the server and must never be uploaded or shared.

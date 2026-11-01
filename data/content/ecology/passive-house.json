@@ -1,0 +1,93 @@
+{
+  "path": "/ecology/passive-house",
+  "slug": "passive-house",
+  "cat": "ecology",
+  "name": "Passive house savings",
+  "seoTitle": "Passive house savings — Free Online Calculator",
+  "seoDesc": "Passive house savings: work out size from the gas price and the gas to kwh. A free ecology calculator with the formula, units and a worked example.",
+  "h1": "Passive house savings Calculator",
+  "summary": "<strong>size</strong> is what the Passive house savings calculator works out, and it gets there from the gas price, the gas to kwh and the construction cost. It is built for a footprint, a resource or an environmental change you want to size up.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Passive house savings calculator work?",
+      "html": "<p>The Passive house savings calculator takes the values in the form, applies the relationship described below and reports <strong>size</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the gas price, the gas to kwh, the construction cost (Regular house) and the construction cost (Regular house).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A number, expressed in kWh/m³.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Size</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Gas price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Gas to kwh</strong></td><td>A number stated in kWh/m³.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Construction cost (Regular house)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Construction cost (Regular house)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Heating cost (Regular house)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Energy demand (Further attributes of a regular house)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Energy demand (Further attributes of a regular house)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Gas usage (Further attributes of a regular house)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Additional investment (Highly energy-efficient house)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Construction cost (Highly energy-efficient house)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Heating cost (Highly energy-efficient house)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Investment returns after (Highly energy-efficient house)</strong></td><td>A number stated in years.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Energy demand (Further attributes of highly…)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Energy demand (Further attributes of highly…)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Gas usage (Further attributes of highly…)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Saving on heating (Further attributes of highly…)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Additional investment (Passive house)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Construction cost (Passive house)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Heating cost (Passive house)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Investment returns after (Passive house)</strong></td><td>A number stated in years.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Energy demand (Further attributes of a passive house)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Energy demand (Further attributes of a passive house)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Gas usage (Further attributes of a passive house)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 25 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Passive house savings calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Size</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">construction cost ÷ construction cost</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Energy demand</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(energy demand × size)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Gas usage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((energy demand × size) ÷ gas to kwh)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Heating cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(gas price × ((energy demand × size) ÷ gas to kwh))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Construction cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(construction cost × (additional investment + 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Saving on heating</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(gas price × (((energy demand × size) ÷ gas to kwh) − ((energy demand × size) ÷ gas to kwh)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Area, opening in square meters</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Time, opening in years</li><li>Time, opening in years</li><li>Time, opening in years</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Passive house savings calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two options on the same basis</li><li>Sizing an environmental impact in familiar units</li><li>Putting a headline figure into context</li><li>Any time the same 3 figures keep coming back — the gas price, the gas to kwh and the construction cost — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these ecology calculators cover the neighbouring steps: <a href=\"/ecology/reduce-your-plastic\">Reduce Your Plastic</a>, <a href=\"/ecology/shannon-index\">Shannon diversity index</a> and <a href=\"/ecology/solar-panel\">Solar panel</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Passive house savings calculator work out?",
+      "a": "It returns size, derived from the gas price, the gas to kwh and the construction cost. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Passive house savings calculator?",
+      "a": "The form asks for the gas price, the gas to kwh and the construction cost, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter size in a different unit?",
+      "a": "Yes. Size opens in square meters and the chip beside it offers 24 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Energy demand = 115711200 yrs. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Passive house savings calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/ecology/reduce-your-plastic",
+      "name": "Reduce Your Plastic"
+    },
+    {
+      "path": "/ecology/shannon-index",
+      "name": "Shannon diversity index"
+    },
+    {
+      "path": "/ecology/solar-panel",
+      "name": "Solar panel"
+    }
+  ],
+  "words": 1837
+}

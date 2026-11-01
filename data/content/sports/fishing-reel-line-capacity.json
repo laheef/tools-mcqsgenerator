@@ -1,0 +1,101 @@
+{
+  "path": "/sports/fishing-reel-line-capacity",
+  "slug": "fishing-reel-line-capacity",
+  "cat": "sports",
+  "name": "Fishing reel line capacity",
+  "seoTitle": "Fishing reel line capacity Calculator: Free, With Steps",
+  "seoDesc": "Fishing reel line capacity: work out new line length from the line diameter and the line length. A free sports calculator with the formula, units and a…",
+  "h1": "Fishing reel line capacity Calculator",
+  "summary": "The Fishing reel line capacity calculator turns the line diameter, the line length and the new line diameter into <strong>new line length</strong>. It suits a training session, a performance comparison or a competition result.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Fishing reel line capacity calculator work?",
+      "html": "<p>The Fishing reel line capacity calculator takes the values in the form, applies the relationship described below and reports <strong>new line length</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the line diameter, the line length and the new line diameter.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Line diameter</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Line length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>New line diameter</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>New line length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Fishing reel line capacity calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">New line length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(line diameter ^ 2) × line length ÷ (new line diameter ^ 2)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Line diameter</strong> = 30 mm, <strong>Line length</strong> = 30 m and <strong>New line diameter</strong> = 30 mm. Working through the relationship above gives <strong>New line length</strong> = 30 m.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>New line length</strong> = 30 m should be roughly the size you expected from <strong>Line diameter</strong> = 30 mm and <strong>Line length</strong> = 30 m.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in millimeters</li><li>Length, opening in meters</li><li>Length, opening in millimeters</li><li>Length, opening in meters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Fishing reel line capacity calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking progress across a training block</li><li>Planning a session around a target you already know</li><li>Comparing two athletes or two attempts fairly</li><li>Any time the same 3 figures keep coming back — the line diameter, the line length and the new line diameter — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Fishing reel line capacity calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/bike-size\">Bike size</a>, <a href=\"/sports/bike-speed\">Bike speed</a> and <a href=\"/sports/biking-life-gain\">Biking life gain</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Fishing reel line capacity calculator work out?",
+      "a": "It returns new line length, derived from the line diameter, the line length and the new line diameter. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Fishing reel line capacity calculator?",
+      "a": "The form asks for the line diameter, the line length and the new line diameter, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter line diameter in a different unit?",
+      "a": "Yes. Line diameter opens in millimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports New line length = 30 m. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Fishing reel line capacity calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/bike-size",
+      "name": "Bike size"
+    },
+    {
+      "path": "/sports/bike-speed",
+      "name": "Bike speed"
+    },
+    {
+      "path": "/sports/biking-life-gain",
+      "name": "Biking life gain"
+    }
+  ],
+  "words": 1302
+}

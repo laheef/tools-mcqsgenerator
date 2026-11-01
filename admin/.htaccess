@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+# The panel's own directory rules.
+#
+# The query-string router (index.php?p=…) works on every host, so nothing here is
+# required for the panel to function — these rules add pretty URLs, keep the
+# panel's internals unreachable over HTTP, and harden the folder.
+# ---------------------------------------------------------------------------
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # /admin/lib/*, /admin/migrations/*, /admin/views/*, /admin/controllers/*
+    # contain PHP that is only ever included by index.php. Direct hits are 403.
+    RewriteRule ^(lib|migrations|views|controllers)/ - [F,L]
+
+    # Pretty URLs: /admin/calculators -> /admin/index.php?p=calculators
+    # (the query-string form keeps working either way)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([A-Za-z0-9_-]+)/?$ index.php?p=$1 [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # The panel is never indexed, and never cached by a proxy.
+    Header always set X-Robots-Tag "noindex, nofollow"
+    Header always set Cache-Control "no-store, max-age=0"
+</IfModule>
+
+# Belt and braces if the installer file is left behind after setup.
+<Files "config.sample.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>

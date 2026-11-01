@@ -1,0 +1,93 @@
+{
+  "path": "/statistics/degrees-of-freedom",
+  "slug": "degrees-of-freedom",
+  "cat": "statistics",
+  "name": "Degrees of freedom",
+  "seoTitle": "Degrees of freedom Calculator: Free, With Steps",
+  "seoDesc": "Degrees of freedom: work out sample size (N) from the degrees of freedom and the sample size. A free statistics calculator with the formula, units and a…",
+  "h1": "Degrees of freedom Calculator",
+  "summary": "Give the Degrees of freedom calculator the degrees of freedom and the sample size and it returns <strong>sample size (N)</strong>. Think of it as a shortcut for an assignment, a report or a data discussion where you need a defensible number.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Degrees of freedom calculator work?",
+      "html": "<p>The Degrees of freedom calculator takes the values in the form, applies the relationship described below and reports <strong>sample size (N)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the test type); then you type in the degrees of freedom, the sample size (N₁), the sample size (N₂) and number of columns in the table.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 5 options, such as 1-sample, 2-sample t-test with equal variances and 2-sample t-test with unequal variances. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Test type</strong></td><td>One of 5 options, such as 1-sample, 2-sample t-test with equal variances and 2-sample t-test with unequal variances.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Sample size (N)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Degrees of freedom</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sample size (N₁)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sample size (N₂)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Degrees of freedom (2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of columns in the table</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of rows in the table</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Degrees of freedom (3)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sample size (N) (2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of groups (k)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Degrees of freedom within groups</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Degrees of freedom between groups</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total degrees of freedom</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sample size (N₁) (2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sample size (N₂) (2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Variance (σ₁)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Standard deviation (s₁)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Variance (σ₂)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Standard deviation (s₂)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Degrees of freedom (4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Degrees of freedom calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Sample size (N)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">degrees of freedom + 1</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of rows in the table</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(number of columns in the table + degrees of freedom − 1) ÷ (number of columns in the table − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Degrees of freedom</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">sample size (N₁) + sample size (N₂) − 2</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of groups (k)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-degrees of freedom within groups + sample size (N)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of groups (k)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">degrees of freedom between groups + 1</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total degrees of freedom</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">sample size (N) − 1</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Test type</strong> set to 1-sample and <strong>Degrees of freedom</strong> = 10. Working through the relationship above gives <strong>Sample size (N)</strong> = 11.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Sample size (N)</strong> = 11 should be roughly the size you expected from <strong>Test type</strong> set to 1-sample and <strong>Degrees of freedom</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Degrees of freedom calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding how much confidence a sample really supports</li><li>Checking a result a piece of software produced</li><li>Turning raw numbers into something you can quote</li><li>Any time the same 2 figures keep coming back — the degrees of freedom and the sample size — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/skewness\">Skewness</a>, <a href=\"/statistics/smpx\">SMp(x)</a> and <a href=\"/statistics/spearmans-rank-correlation\">Spearman's rank correlation</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Degrees of freedom calculator work out?",
+      "a": "It returns sample size (N), derived from the degrees of freedom and the sample size. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Degrees of freedom calculator?",
+      "a": "The form asks for the degrees of freedom and the sample size, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Sample size (N) = 11. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Degrees of freedom calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/skewness",
+      "name": "Skewness"
+    },
+    {
+      "path": "/statistics/smpx",
+      "name": "SMp(x)"
+    },
+    {
+      "path": "/statistics/spearmans-rank-correlation",
+      "name": "Spearman's rank correlation"
+    }
+  ],
+  "words": 1641
+}

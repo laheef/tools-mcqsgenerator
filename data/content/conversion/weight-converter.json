@@ -1,0 +1,93 @@
+{
+  "path": "/conversion/weight-converter",
+  "slug": "weight-converter",
+  "cat": "conversion",
+  "name": "Weight converter",
+  "seoTitle": "Weight converter Calculator",
+  "seoDesc": "Weight converter: work out weight in atomic mass units (amu) from the weight in milligrams. A free conversion calculator with the formula, units and a…",
+  "h1": "Weight converter Calculator",
+  "summary": "The Weight converter is a free, no-sign-up conversion tool. Fill in the 1 field it asks for and it works out <strong>weight in atomic mass units (amu)</strong> straight away, with the formula shown underneath.\n\nIt is built for a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Weight converter calculator work?",
+      "html": "<p>The Weight converter takes the values in the form, applies the relationship described below and reports <strong>weight in atomic mass units (amu)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the weight in milligrams.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in milligrams. The unit chip switches it to any of the 29 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Weight in milligrams</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>You supply it</td></tr><tr><td><strong>Weight in grams</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Weight in kilograms</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Weight in other metric units</strong></td><td>A measured quantity, 29 units available.</td><td>metric tons</td><td>Calculated</td></tr><tr><td><strong>Weight in ounces</strong></td><td>A measured quantity, 29 units available.</td><td>ounces</td><td>Calculated</td></tr><tr><td><strong>Weight in pounds</strong></td><td>A measured quantity, 29 units available.</td><td>pounds</td><td>Calculated</td></tr><tr><td><strong>Weight in stones</strong></td><td>A measured quantity, 29 units available.</td><td>stones</td><td>Calculated</td></tr><tr><td><strong>Weight in other imperial units</strong></td><td>A measured quantity, 29 units available.</td><td>US short tons</td><td>Calculated</td></tr><tr><td><strong>Weight in atomic mass units (amu)</strong></td><td>A measured quantity, 29 units available.</td><td>atomic mass units</td><td>Calculated</td></tr><tr><td><strong>Weight in troy ounces</strong></td><td>A measured quantity, 29 units available.</td><td>troy ounces</td><td>Calculated</td></tr><tr><td><strong>Weight in weights of Earth</strong></td><td>A measured quantity, 29 units available.</td><td>masses of the Earth</td><td>Calculated</td></tr><tr><td><strong>Weights in other units</strong></td><td>A measured quantity, 29 units available.</td><td>masses of the Sun</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Weight converter calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Weight in atomic mass units (amu)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weight in kilograms</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weight in pounds</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weight in kilograms</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weight in ounces</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weight in kilograms</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weight in grams</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weight in kilograms</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weight in kilograms</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weight in milligrams</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weight in other metric units</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weight in kilograms</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in atomic mass units, and convertible to any of the 29 units on that chip.</li><li>Shown in pounds, and convertible to any of the 29 units on that chip.</li><li>Shown in ounces, and convertible to any of the 29 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in metric tons, and convertible to any of the 29 units on that chip.</li><li>Shown in US short tons, and convertible to any of the 29 units on that chip.</li><li>Shown in stones, and convertible to any of the 29 units on that chip.</li><li>Shown in masses of the Sun, and convertible to any of the 29 units on that chip.</li><li>Shown in troy ounces, and convertible to any of the 29 units on that chip.</li><li>Shown in masses of the Earth, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Mass, opening in milligrams</li><li>Mass, opening in grams</li><li>Mass, opening in kilograms</li><li>Mass, opening in metric tons</li><li>Mass, opening in ounces</li><li>Mass, opening in pounds</li><li>Mass, opening in stones</li><li>Mass, opening in US short tons</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Weight converter earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Filling in a form that asks for imperial or metric values</li><li>Checking a product listing against the measurements you work with</li><li>Converting a figure someone quoted you so you can compare it</li><li>Any time the same 1 figures keep coming back — the weight in milligrams — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/cm-to-in\">cm to in</a>, <a href=\"/conversion/cm-to-km-conversion\">cm to km conversion</a> and <a href=\"/conversion/cm-to-m\">cm to m</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Weight converter calculator work out?",
+      "a": "It returns weight in atomic mass units (amu), derived from the weight in milligrams. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Weight converter calculator?",
+      "a": "The form asks for the weight in milligrams, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter weight in milligrams in a different unit?",
+      "a": "Yes. Weight in milligrams opens in milligrams and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Weight converter calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/cm-to-in",
+      "name": "cm to in"
+    },
+    {
+      "path": "/conversion/cm-to-km-conversion",
+      "name": "cm to km conversion"
+    },
+    {
+      "path": "/conversion/cm-to-m",
+      "name": "cm to m"
+    }
+  ],
+  "words": 1367
+}

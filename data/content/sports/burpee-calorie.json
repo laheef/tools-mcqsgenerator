@@ -1,0 +1,101 @@
+{
+  "path": "/sports/burpee-calorie",
+  "slug": "burpee-calorie",
+  "cat": "sports",
+  "name": "Burpee calorie",
+  "seoTitle": "Burpee calorie Calculator — Formula, Units & Example",
+  "seoDesc": "Burpee calorie: work out cal burnt low from the burpees and your weight. A free sports calculator with the formula, units and a worked example.",
+  "h1": "Burpee calorie Calculator",
+  "summary": "Give the Burpee calorie calculator the burpees and your weight and it returns <strong>cal burnt low</strong>. It suits a training session, a performance comparison or a competition result.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Burpee calorie calculator work?",
+      "html": "<p>The Burpee calorie calculator takes the values in the form, applies the relationship described below and reports <strong>cal burnt low</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the burpees and your weight.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Burpees</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Your weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Bwf</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cal burnt high</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cal burnt low</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cal mean</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Burpee calorie calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Cal burnt low</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 4) × burpees × ((1 ÷ 150) × your weight))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cal burnt high</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((3 ÷ 4) × burpees × ((1 ÷ 150) × your weight))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cal mean</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × burpees × ((1 ÷ 150) × your weight))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Bwf</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 150) × your weight)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Mass, opening in kilograms</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Burpee calorie calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Planning a session around a target you already know</li><li>Comparing two athletes or two attempts fairly</li><li>Tracking progress across a training block</li><li>Any time the same 2 figures keep coming back — the burpees and your weight — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Burpee calorie calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — burpees for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/vo2-max\">Vo 2 max</a>, <a href=\"/sports/vo2-max-runners\">Vo 2 max runners</a> and <a href=\"/sports/walking-calorie\">Walking calorie</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Burpee calorie calculator work out?",
+      "a": "It returns cal burnt low, derived from the burpees and your weight. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Burpee calorie calculator?",
+      "a": "The form asks for the burpees and your weight, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter your weight in a different unit?",
+      "a": "Yes. Your weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Is the Burpee calorie calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/vo2-max",
+      "name": "Vo 2 max"
+    },
+    {
+      "path": "/sports/vo2-max-runners",
+      "name": "Vo 2 max runners"
+    },
+    {
+      "path": "/sports/walking-calorie",
+      "name": "Walking calorie"
+    }
+  ],
+  "words": 1105
+}

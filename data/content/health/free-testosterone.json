@@ -1,0 +1,93 @@
+{
+  "path": "/health/free-testosterone",
+  "slug": "free-testosterone",
+  "cat": "health",
+  "name": "Free & bioavailable testosterone",
+  "seoTitle": "Free & bioavailable testosterone — Free Online Calculator",
+  "seoDesc": "Free & bioavailable testosterone: work out albumin from the free testosterone and the calculated bioavailable testosterone. A free health calculator with…",
+  "h1": "Free & bioavailable testosterone Calculator",
+  "summary": "<strong>albumin</strong> is what the Free & bioavailable testosterone calculator works out, and it gets there from the free testosterone and the calculated bioavailable testosterone. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Free & bioavailable testosterone calculator work?",
+      "html": "<p>The Free & bioavailable testosterone calculator takes the values in the form, applies the relationship described below and reports <strong>albumin</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the free testosterone (FT) and the calculated bioavailable testosterone (cBAT).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in nanomoles per liter. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in nanomoles per liter. The unit chip switches it to any of the 5 supported units.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Albumin</strong></td><td>A measured quantity, 2 units available.</td><td>grams per deciliter</td><td>Calculated</td></tr><tr><td><strong>Sex hormone-binding globulin (SHBG)</strong></td><td>A measured quantity, 5 units available.</td><td>nanomoles per liter</td><td>Calculated</td></tr><tr><td><strong>Total testosterone (TT)</strong></td><td>A measured quantity, 5 units available.</td><td>nanomoles per liter</td><td>Calculated</td></tr><tr><td><strong>Free testosterone (FT)</strong></td><td>A measured quantity, 5 units available.</td><td>nanomoles per liter</td><td>You supply it</td></tr><tr><td><strong>Free testosterone %</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Calculated bioavailable testosterone (cBAT)</strong></td><td>A measured quantity, 5 units available.</td><td>nanomoles per liter</td><td>You supply it</td></tr><tr><td><strong>Calculated bioavailable testosterone %</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Free & bioavailable testosterone calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Albumin</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(23 ÷ 12) × N − 23 ÷ 12</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1000000000 × N</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sex hormone-binding globulin (SHBG)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">B − N + total testosterone (TT)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total testosterone (TT)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-1000000000 × C</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1000000000 × (-B × free testosterone (FT) − 1000000000 × C) ÷ (free testosterone (FT) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">N</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">calculated bioavailable testosterone (cBAT) ÷ free testosterone (FT)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in grams per deciliter, and convertible to any of the 2 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in nanomoles per liter, and convertible to any of the 5 units on that chip.</li><li>Shown in nanomoles per liter, and convertible to any of the 5 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Albumin units, opening in grams per deciliter</li><li>Testosterone units, opening in nanomoles per liter</li><li>Testosterone units, opening in nanomoles per liter</li><li>Testosterone units, opening in nanomoles per liter</li><li>%, opening in percent</li><li>Testosterone units, opening in nanomoles per liter</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Free & bioavailable testosterone calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking a measurement over time and understanding what changed</li><li>Deciding whether a reading is worth a second look</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Any time the same 2 figures keep coming back — the free testosterone and the calculated bioavailable testosterone — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/cvd-risk\">CVD risk</a>, <a href=\"/health/dapt\">DAPT</a> and <a href=\"/health/dasi\">Duke Activity Status Index (DASI)</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Free & bioavailable testosterone calculator work out?",
+      "a": "It returns albumin, derived from the free testosterone and the calculated bioavailable testosterone. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Free & bioavailable testosterone calculator?",
+      "a": "The form asks for the free testosterone and the calculated bioavailable testosterone, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter albumin in a different unit?",
+      "a": "Yes. Albumin opens in grams per deciliter and the chip beside it offers 2 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports N = 23.4348. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Free & bioavailable testosterone calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/cvd-risk",
+      "name": "CVD risk"
+    },
+    {
+      "path": "/health/dapt",
+      "name": "DAPT"
+    },
+    {
+      "path": "/health/dasi",
+      "name": "Duke Activity Status Index (DASI)"
+    }
+  ],
+  "words": 1312
+}

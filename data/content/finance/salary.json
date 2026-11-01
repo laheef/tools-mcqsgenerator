@@ -1,0 +1,101 @@
+{
+  "path": "/finance/salary",
+  "slug": "salary",
+  "cat": "finance",
+  "name": "Salary",
+  "seoTitle": "Salary Calculator — Formula, Units & Example",
+  "seoDesc": "Salary: work out I work from the pay per hour and the pay per day. A free finance calculator with the formula, units and a worked example.",
+  "h1": "Salary Calculator",
+  "summary": "<strong>I work</strong> is what the Salary calculator works out, and it gets there from the pay per hour, the pay per day, the pay per week and the pay per biweek. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Salary calculator work?",
+      "html": "<p>The Salary calculator takes the values in the form, applies the relationship described below and reports <strong>I work</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the I get paid); then you type in the pay per hour, the pay per day, the pay per week and the pay per biweek.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 5 options, such as per hour, per day and per week. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A number, expressed in hours per week.</li><li>A number, expressed in days per week.</li><li>A number, expressed in days.</li><li>A number, expressed in days.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>I get paid</strong></td><td>One of 5 options, such as per hour, per day and per week.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Pay per hour</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Pay per day</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Pay per week</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Pay per biweek</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Pay per month</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>I work</strong></td><td>A number stated in hours per day.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>I work (2)</strong></td><td>A number stated in hours per week.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>I work (3)</strong></td><td>A number stated in days per week.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Holidays per year</strong></td><td>A number stated in days.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Paid vacation per year</strong></td><td>A number stated in days.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Salary calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">I work</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">I work ÷ I work</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Open the page and it is already filled in. With the values it starts from — <strong>I get paid</strong> set to Per hour, <strong>I work</strong> = 8, <strong>Holidays per year</strong> = 8 and <strong>Paid vacation per year</strong> = 15 — it reports <strong>I work</strong> = 40.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>I work</strong> = 40 should be roughly the size you expected from <strong>I get paid</strong> set to Per hour and <strong>I work</strong> = 8.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Salary calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 4 figures keep coming back — the pay per hour, the pay per day and the pay per week — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/money-multiplier\">Money multiplier</a>, <a href=\"/finance/money-per-hour\">Money per hour</a> and <a href=\"/finance/money-supply\">Money supply</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Salary calculator work out?",
+      "a": "It returns I work, derived from the pay per hour, the pay per day and the pay per week. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Salary calculator?",
+      "a": "The form asks for the pay per hour, the pay per day, the pay per week and the pay per biweek, which is 10 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter pay per hour in a different unit?",
+      "a": "Yes. Pay per hour opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports I work = 40. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Salary calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/money-multiplier",
+      "name": "Money multiplier"
+    },
+    {
+      "path": "/finance/money-per-hour",
+      "name": "Money per hour"
+    },
+    {
+      "path": "/finance/money-supply",
+      "name": "Money supply"
+    }
+  ],
+  "words": 1653
+}

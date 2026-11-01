@@ -1,0 +1,101 @@
+{
+  "path": "/other/battery-life",
+  "slug": "battery-life",
+  "cat": "other",
+  "name": "Battery life",
+  "seoTitle": "Battery life Calculator — Formula, Units & Example",
+  "seoDesc": "Battery life: work out sleep time from the discharge safety and the awake mode. A free other calculator with the formula, units and a worked example.",
+  "h1": "Battery life Calculator",
+  "summary": "The Battery life calculator turns the discharge safety, the awake mode and more into <strong>sleep time</strong>. That makes it useful for whatever you happen to be working on.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Battery life calculator work?",
+      "html": "<p>The Battery life calculator takes the values in the form, applies the relationship described below and reports <strong>sleep time</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the find battery life for device); then you type in the discharge safety, the awake mode, the awake time and the sleep mode.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>Pick the option that matches your case — 2 options, such as with no sleep mode and with awake/sleep modes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as current draw and wattage rating. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in milliamperes. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in milliamperes. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in milliamperes. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Battery capacity</strong></td><td>A measured quantity, 9 units available.</td><td>milliampere hours</td><td>Calculated</td></tr><tr><td><strong>Discharge safety</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Find battery life for device</strong></td><td>One of 2 options, such as with no sleep mode and with awake/sleep modes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Battery voltage</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>Device consumption</strong></td><td>A measured quantity, 21 units available.</td><td>watts</td><td>Calculated</td></tr><tr><td><strong>Device current draw</strong></td><td>A measured quantity, 3 units available.</td><td>milliamperes</td><td>Calculated</td></tr><tr><td><strong>Awake device wattage</strong></td><td>A measured quantity, 21 units available.</td><td>watts</td><td>Calculated</td></tr><tr><td><strong>Awake mode</strong></td><td>A measured quantity, 3 units available.</td><td>milliamperes</td><td>You supply it</td></tr><tr><td><strong>Awake time</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Sleep mode device wattage</strong></td><td>A measured quantity, 21 units available.</td><td>watts</td><td>Calculated</td></tr><tr><td><strong>Sleep mode</strong></td><td>A measured quantity, 3 units available.</td><td>milliamperes</td><td>You supply it</td></tr><tr><td><strong>Sleep time</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>Calculated average consumption</strong></td><td>A measured quantity, 3 units available.</td><td>milliamperes</td><td>You supply it</td></tr><tr><td><strong>Battery life</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Battery life (2)</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Battery life calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Sleep time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">awake time × (-calculated average consumption + awake mode) ÷ (calculated average consumption − sleep mode)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Battery capacity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-battery life × calculated average consumption ÷ (discharge safety − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Battery capacity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-battery life × device consumption ÷ (battery voltage × (discharge safety − 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Battery capacity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-device current draw × battery life ÷ (discharge safety − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Device current draw</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">device consumption ÷ battery voltage</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Battery voltage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">awake device wattage ÷ awake mode</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Discharge safety</strong> = 20 %, <strong>Find battery life for device</strong> set to with no sleep mode, <strong>I know my device's</strong> set to current draw and <strong>Awake mode</strong> = 10 mA. Working through the relationship above gives <strong>Calculated average consumption</strong> = 10 mA.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Calculated average consumption</strong> = 10 mA should be roughly the size you expected from <strong>Discharge safety</strong> = 20 % and <strong>Find battery life for device</strong> set to with no sleep mode.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in milliampere hours, and convertible to any of the 9 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in milliamperes, and convertible to any of the 3 units on that chip.</li><li>Shown in watts, and convertible to any of the 21 units on that chip.</li><li>Shown in watts, and convertible to any of the 21 units on that chip.</li><li>Shown in watts, and convertible to any of the 21 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Electric charge, opening in milliampere hours</li><li>%, opening in percent</li><li>Voltage, opening in volts</li><li>Power, opening in watts</li><li>Electric current – ampere, opening in milliamperes</li><li>Power, opening in watts</li><li>Electric current – ampere, opening in milliamperes</li><li>Time, opening in hours</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Battery life calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 4 figures keep coming back — the discharge safety, the awake mode and the awake time — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/image-ratio\">Image ratio</a>, <a href=\"/other/impact-factor\">Impact factor</a> and <a href=\"/other/impedance-matching\">Impedance matching</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Battery life calculator work out?",
+      "a": "It returns sleep time, derived from the discharge safety, the awake mode and the awake time. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Battery life calculator?",
+      "a": "The form asks for the discharge safety, the awake mode, the awake time and the sleep mode, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter battery capacity in a different unit?",
+      "a": "Yes. Battery capacity opens in milliampere hours and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Calculated average consumption = 10 mA. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Battery life calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/image-ratio",
+      "name": "Image ratio"
+    },
+    {
+      "path": "/other/impact-factor",
+      "name": "Impact factor"
+    },
+    {
+      "path": "/other/impedance-matching",
+      "name": "Impedance matching"
+    }
+  ],
+  "words": 1873
+}

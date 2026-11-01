@@ -1,0 +1,101 @@
+{
+  "path": "/physics/bug-rivet-paradox",
+  "slug": "bug-rivet-paradox",
+  "cat": "physics",
+  "name": "Bug-rivet paradox",
+  "seoTitle": "Bug-rivet paradox Calculator — Formula, Units & Example",
+  "seoDesc": "Bug-rivet paradox: work out speed (v) from the speed ratio and the apparent rivet length. A free physics calculator with the formula, units and a worked…",
+  "h1": "Bug-rivet paradox Calculator",
+  "summary": "Supply the speed ratio, the apparent rivet length, the time before the tip of the rivet stops and the critic betab and the Bug-rivet paradox calculator solves for <strong>speed (v)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Bug-rivet paradox calculator work?",
+      "html": "<p>The Bug-rivet paradox calculator takes the values in the form, applies the relationship described below and reports <strong>speed (v)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the frame of reference); then you type in the speed ratio (ß), the apparent rivet length, the time before the tip of the rivet stops (t₁) and the critic betab.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as bug and rivet. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in nanoseconds. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Frame of reference</strong></td><td>One of 2 options, such as bug and rivet.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length of rivet (a)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Length of the hole (L)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Speed (v)</strong></td><td>A measured quantity, 25 units available.</td><td>light speed</td><td>Calculated</td></tr><tr><td><strong>Speed ratio (ß)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Lorentz factor (γ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Speed of light (c)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Apparent rivet length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Time before the tip of the rivet stops (t₁)</strong></td><td>A measured quantity, 27 units available.</td><td>nanoseconds</td><td>You supply it</td></tr><tr><td><strong>Distance traveled by the rivet tip</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Critical ß (Bug frame of reference)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Apparent hole length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Time before the rivet hole stops (t₂)</strong></td><td>A measured quantity, 27 units available.</td><td>nanoseconds</td><td>Calculated</td></tr><tr><td><strong>Distance (apparently) traveled by the bug</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>SS for direct squish</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Critical ß (Rivet frame of reference)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Critic betab</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Bug-rivet paradox calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Speed (v)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">speed of light (c) × speed ratio (ß)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Lorentz factor (γ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 − (speed ratio (ß) ^ 2), -1 ÷ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Lorentz factor (γ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length of rivet (a) ÷ apparent rivet length</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Speed of light (c)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-length of rivet (a) ÷ (lorentz factor (γ) × time before the tip of the rivet stops (t₁) × (speed ratio (ß) − 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Speed (v)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance traveled by the rivet tip ÷ time before the tip of the rivet stops (t₁)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">How is the bug?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((speed (v) × time before the tip of the rivet stops (t₁) &gt; length of the hole (L) − length of rivet (a) ÷ lorentz factor (γ)) ? ( 1 ) : ( -1 )))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Frame of reference</strong> set to Bug, <strong>Speed ratio (ß)</strong> = 10 and <strong>Speed of light (c)</strong> = 10 m/s. Working through the relationship above gives <strong>Speed (v)</strong> = 100 c.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Speed (v)</strong> = 100 c should be roughly the size you expected from <strong>Frame of reference</strong> set to Bug and <strong>Speed ratio (ß)</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in light speed, and convertible to any of the 25 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in nanoseconds, and convertible to any of the 27 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Speed, opening in light speed</li><li>Speed, opening in meters per second</li><li>Length, opening in centimeters</li><li>Time, opening in nanoseconds</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Bug-rivet paradox calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 4 figures keep coming back — the speed ratio, the apparent rivet length and the time before the tip of the rivet stops — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/prop-pitch\">Prop pitch</a>, <a href=\"/physics/prop-slip\">Prop slip</a> and <a href=\"/physics/psychrometric\">Psychrometric</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Bug-rivet paradox calculator work out?",
+      "a": "It returns speed (v), derived from the speed ratio, the apparent rivet length and the time before the tip of the rivet stops. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Bug-rivet paradox calculator?",
+      "a": "The form asks for the speed ratio, the apparent rivet length, the time before the tip of the rivet stops and the critic betab, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter length of rivet (a) in a different unit?",
+      "a": "Yes. Length of rivet (a) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Speed (v) = 100 c. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Bug-rivet paradox calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/prop-pitch",
+      "name": "Prop pitch"
+    },
+    {
+      "path": "/physics/prop-slip",
+      "name": "Prop slip"
+    },
+    {
+      "path": "/physics/psychrometric",
+      "name": "Psychrometric"
+    }
+  ],
+  "words": 1905
+}

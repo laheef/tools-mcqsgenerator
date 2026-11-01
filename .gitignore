@@ -1,0 +1,24 @@
+# ---- never commit -------------------------------------------------------
+# Database credentials + application key. Created on the server by
+# admin/install.php (or by copying config.db.sample.php).
+/config.db.php
+/config.local.php
+
+# ---- runtime / generated ------------------------------------------------
+/data/cache/
+/data/backups/
+/data/engagement/*.json.tmp
+/uploads/media/*
+!/uploads/media/.gitkeep
+*.log
+.DS_Store
+Thumbs.db
+
+# ---- local tooling ------------------------------------------------------
+/node_modules/
+/vendor/
+/.venv/
+__pycache__/
+*.pyc
+.idea/
+.vscode/

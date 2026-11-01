@@ -1,0 +1,97 @@
+{
+  "path": "/finance/bi-weekly-mortgage-payment",
+  "slug": "bi-weekly-mortgage-payment",
+  "cat": "finance",
+  "name": "Bi-weekly mortgage payment",
+  "seoTitle": "Bi-weekly mortgage payment Calculator: Free, With Steps",
+  "seoDesc": "Bi-weekly mortgage payment: work out mortgage amount (Mortgage #1) from the mortgage term and the interest rate. A free finance calculator with the…",
+  "h1": "Bi-weekly mortgage payment Calculator",
+  "summary": "Supply the mortgage term and the interest rate and the Bi-weekly mortgage payment calculator solves for <strong>mortgage amount (Mortgage #1)</strong>. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Bi-weekly mortgage payment calculator work?",
+      "html": "<p>The Bi-weekly mortgage payment calculator takes the values in the form, applies the relationship described below and reports <strong>mortgage amount (Mortgage #1)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the payment frequency, the compounding frequency (Bi-weekly mortgage inputs) and the compounding frequency (Bi-weekly mortgage inputs)); then you give the due date and the date single; then you type in the mortgage term (Mortgage #1), the interest rate (Mortgage #1), the mortgage points (Mortgage #1) and the upfront fee (Mortgage #1).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 2 options, such as bi-weekly payments and accelerated weekly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A single on/off switch — tick it for &ldquo;Change points, fee or compounding&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 4 options, such as yearly, semi-annually (Canada) and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 4 options, such as yearly, semi-annually (Canada) and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as monthly payments, bi-monthly payments and bi-weekly payments. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as chart of balances and table of balances. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>Pick the option that matches your case — 2 options, such as periodic schedule and annual schedule. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>7 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mortgage amount (Mortgage #1)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Mortgage term (Mortgage #1)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Interest rate (Mortgage #1)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mortgage points (Mortgage #1)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Upfront fee (Mortgage #1)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Mortgage amount (Bi-weekly mortgage inputs)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Payment frequency</strong></td><td>One of 2 options, such as bi-weekly payments and accelerated weekly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Mortgage term (Bi-weekly mortgage inputs)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Interest rate (Bi-weekly mortgage inputs)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Extra payment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Compounding frequency (Bi-weekly mortgage inputs)</strong></td><td>One of 4 options, such as yearly, semi-annually (Canada) and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Mortgage points (Bi-weekly mortgage inputs)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Upfront fee (Bi-weekly mortgage inputs)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Compounding frequency (Bi-weekly mortgage inputs)</strong></td><td>One of 4 options, such as yearly, semi-annually (Canada) and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Comparison with</strong></td><td>One of 4 options, such as monthly payments, bi-monthly payments and bi-weekly payments.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Varrep</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Due date</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Date single</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Vartable</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>M ref</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Var q 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cash in / out</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Q ref</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Biweekly mortgage</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 36 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Bi-weekly mortgage payment calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Mortgage amount</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">upfront fee ÷ mortgage points</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Biweekly mortgage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(interest rate, mortgage term, M, Q, q ref, mortgage amount, mortgage amount, vartable, varrep, due date, mortgage term, interest rate, mortgage points, mortgage points, upfront fee, upfront fee, cash in ÷ out, m ref, var q, var q2, extra payment)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Title comp 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">()</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Title comp 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">()</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Payment 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">()</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Payment 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">()</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in years / months, and convertible to any of the 27 units on that chip.</li><li>Shown in years / months, and convertible to any of the 27 units on that chip.</li><li>Shown in years / months, and convertible to any of the 27 units on that chip.</li><li>A calendar date.</li><li>A calendar date.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Time, opening in years</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Time, opening in years</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Bi-weekly mortgage payment calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two offers that quote their costs in different ways</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Sizing up a purchase before you commit to it</li><li>Any time the same 2 figures keep coming back — the mortgage term and the interest rate — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/sales-commission\">Sales commission</a>, <a href=\"/finance/sales-tax\">Sales tax</a> and <a href=\"/finance/savings\">Savings</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Bi-weekly mortgage payment calculator work out?",
+      "a": "It returns mortgage amount (Mortgage #1), derived from the mortgage term and the interest rate. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Bi-weekly mortgage payment calculator?",
+      "a": "The form asks for the mortgage term and the interest rate, which is 20 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter mortgage amount (Mortgage #1) in a different unit?",
+      "a": "Yes. Mortgage amount (Mortgage #1) opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (7 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Varrep = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Bi-weekly mortgage payment calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/sales-commission",
+      "name": "Sales commission"
+    },
+    {
+      "path": "/finance/sales-tax",
+      "name": "Sales tax"
+    },
+    {
+      "path": "/finance/savings",
+      "name": "Savings"
+    }
+  ],
+  "words": 2294
+}

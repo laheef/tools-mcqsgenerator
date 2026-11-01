@@ -1,0 +1,93 @@
+{
+  "path": "/conversion/cgs-system-of-units",
+  "slug": "cgs-system-of-units",
+  "cat": "conversion",
+  "name": "CGS system of units converter",
+  "seoTitle": "CGS system of units converter — Free Online Calculator",
+  "seoDesc": "CGS system of units converter: work out CGS from the CGS. A free conversion calculator with the formula, units and a worked example.",
+  "h1": "CGS system of units converter Calculator",
+  "summary": "The <strong>CGS</strong> system of units converter is a free, no-sign-up conversion tool. Fill in the 11 fields it asks for and it works out CGS straight away, with the formula shown underneath.\n\nThink of it as a shortcut for a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the CGS system of units converter calculator work?",
+      "html": "<p>The CGS system of units converter takes the values in the form, applies the relationship described below and reports <strong>CGS</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (select the type of conversion you need); then you type in the CGS (Acceleration), the CGS (Force), the CGS (Kinematic viscosity) and the CGS (Voltage).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 10 options, such as acceleration, force and energy. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in Gal.</li><li>A number, expressed in dyne.</li><li>A measured quantity, entered by default in joules. The unit chip switches it to any of the 33 supported units.</li><li>A measured quantity, entered by default in pascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in kilograms per meter second. The unit chip switches it to any of the 11 supported units.</li><li>A measured quantity, entered by default in stokes. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A number, expressed in statV.</li><li>A measured quantity, entered by default in tesla. The unit chip switches it to any of the 3 supported units.</li><li>A number, expressed in Oe.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Select the type of conversion you need</strong></td><td>One of 10 options, such as acceleration, force and energy.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>CGS (Acceleration)</strong></td><td>A number stated in Gal.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>CGS (Force)</strong></td><td>A number stated in dyne.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>CGS (Energy)</strong></td><td>A number stated in erg.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>CGS (Pressure)</strong></td><td>A number stated in Ba.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>CGS (Dynamic viscosity)</strong></td><td>A measured quantity, 11 units available.</td><td>poises</td><td>Calculated</td></tr><tr><td><strong>CGS (Kinematic viscosity)</strong></td><td>A measured quantity, 9 units available.</td><td>stokes</td><td>You supply it</td></tr><tr><td><strong>CGS (Charge)</strong></td><td>A number stated in Fr.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>CGS (Voltage)</strong></td><td>A number stated in statV.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>CGS (Magnetic B field)</strong></td><td>A number stated in G.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>CGS (Magnetic H field)</strong></td><td>A number stated in Oe.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the CGS system of units converter calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">SI</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 100000) × CGS</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">CGS</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">10000000 × SI</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">SI</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 100) × CGS</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">CGS</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">10 × SI</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">SI</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 1000) × CGS</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">CGS</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2997924580 × SI</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in newtons, and convertible to any of the 16 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in meters per second squared, and convertible to any of the 5 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in poises, and convertible to any of the 11 units on that chip.</li><li>Shown in square meters per second, and convertible to any of the 9 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Acceleration, opening in meters per second squared</li><li>Force, opening in newtons</li><li>Energy, opening in joules</li><li>Pressure, opening in pascals</li><li>Viscosity – dynamic, opening in kilograms per meter second</li><li>Viscosity – dynamic, opening in poises</li><li>Viscosity – kinematic, opening in square meters per second</li><li>Viscosity – kinematic, opening in stokes</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The CGS system of units converter earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Filling in a form that asks for imperial or metric values</li><li>Checking a product listing against the measurements you work with</li><li>Converting a figure someone quoted you so you can compare it</li><li>Any time the same 1 figures keep coming back — the CGS — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/feet-converter\">Feet converter</a>, <a href=\"/conversion/feet-to-inches\">Feet to inches</a> and <a href=\"/conversion/feet-to-miles\">Feet to miles</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the CGS system of units converter calculator work out?",
+      "a": "It returns CGS, derived from the CGS. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the CGS system of units converter calculator?",
+      "a": "The form asks for the CGS, which is 11 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter SI (Acceleration) in a different unit?",
+      "a": "Yes. SI (Acceleration) opens in meters per second squared and the chip beside it offers 5 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the CGS system of units converter calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/feet-converter",
+      "name": "Feet converter"
+    },
+    {
+      "path": "/conversion/feet-to-inches",
+      "name": "Feet to inches"
+    },
+    {
+      "path": "/conversion/feet-to-miles",
+      "name": "Feet to miles"
+    }
+  ],
+  "words": 1650
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/finance/days-payable-outstanding",
+  "slug": "days-payable-outstanding",
+  "cat": "finance",
+  "name": "Days payable outstanding (DPO)",
+  "seoTitle": "Days payable outstanding (DPO) Calculator",
+  "seoDesc": "Days payable outstanding (DPO): work out days in accounting period from the beginning account payable and the average accounts payables. A free finance…",
+  "h1": "Days payable outstanding (DPO) Calculator",
+  "summary": "Supply the beginning account payable, the average accounts payables, the ending inventory and the cost of goods sold and the Days payable outstanding (DPO) calculator solves for <strong>days in accounting period</strong>. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Days payable outstanding (DPO) calculator work?",
+      "html": "<p>The Days payable outstanding (DPO) calculator takes the values in the form, applies the relationship described below and reports <strong>days in accounting period</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the beginning account payable, the average accounts payables, the ending inventory and the cost of goods sold.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Beginning account payable</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Ending accounts payable</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Average accounts payables</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Beginning inventory</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Ending inventory</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Cost of goods sold</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Purchases</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Days in accounting period</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Days payable outstanding</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Days payable outstanding (DPO) calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Days in accounting period</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">days payable outstanding × purchases ÷ average accounts payables</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Beginning inventory</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cost of goods sold + ending inventory − purchases</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ending accounts payable</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × average accounts payables − beginning account payable</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Time, opening in days</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Days payable outstanding (DPO) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing questions for a lender, an accountant or an adviser</li><li>Comparing two offers that quote their costs in different ways</li><li>Sizing up a purchase before you commit to it</li><li>Any time the same 4 figures keep coming back — the beginning account payable, the average accounts payables and the ending inventory — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/70-20-10-rule-money\">70/20/10 rule money</a>, <a href=\"/finance/absence-percentage\">Absence percentage</a> and <a href=\"/finance/accounting-profit\">Accounting profit</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Days payable outstanding (DPO) calculator work out?",
+      "a": "It returns days in accounting period, derived from the beginning account payable, the average accounts payables and the ending inventory. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Days payable outstanding (DPO) calculator?",
+      "a": "The form asks for the beginning account payable, the average accounts payables, the ending inventory and the cost of goods sold, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter beginning account payable in a different unit?",
+      "a": "Yes. Beginning account payable opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Days payable outstanding (DPO) calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/70-20-10-rule-money",
+      "name": "70/20/10 rule money"
+    },
+    {
+      "path": "/finance/absence-percentage",
+      "name": "Absence percentage"
+    },
+    {
+      "path": "/finance/accounting-profit",
+      "name": "Accounting profit"
+    }
+  ],
+  "words": 1335
+}

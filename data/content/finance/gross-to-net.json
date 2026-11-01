@@ -1,0 +1,97 @@
+{
+  "path": "/finance/gross-to-net",
+  "slug": "gross-to-net",
+  "cat": "finance",
+  "name": "Gross to net",
+  "seoTitle": "Gross to net Calculator: Free, With Steps",
+  "seoDesc": "Gross to net: a free finance calculator that walks you through 6 values, with the formula spelled out and a worked example.",
+  "h1": "Gross to net Calculator",
+  "summary": "The Gross to net calculator is a free, no-sign-up finance tool. Fill in the 2 fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nIt is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Gross to net calculator work?",
+      "html": "<p>The Gross to net calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the tax rate type); then you type in the figures it asks for.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as gross to net and net to gross. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Tax rate type</strong></td><td>One of 2 options, such as gross to net and net to gross.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Insert the tax rate (%)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Insert the tax rate (%) (2)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Gross to net calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Gross amount</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">net amount × (insert the tax rate (%) + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Gross amount</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">tax amount + net amount</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Gross amount</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-net amount ÷ (insert the tax rate (%) − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Insert the tax rate (%)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-insert the tax rate (%) ÷ (insert the tax rate (%) − 1)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Tax rate type</strong> set to gross to net, <strong>Insert the tax rate (%)</strong> = 10 % and <strong>Net amount</strong> = 10. The calculator returns <strong>Gross amount</strong> = 11, <strong>Insert the tax rate (%)</strong> = 9.090909 % and <strong>Tax amount</strong> = 1.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Gross amount</strong> = 11, <strong>Insert the tax rate (%)</strong> = 9.090909 % and <strong>Tax amount</strong> = 1 should be roughly the size you expected from <strong>Tax rate type</strong> set to gross to net and <strong>Insert the tax rate (%)</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Gross to net calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Sizing up a purchase before you commit to it</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/cogs\">Cost of goods sold</a>, <a href=\"/finance/combined-ratio\">Combined ratio</a> and <a href=\"/finance/commercial-lease\">Commercial lease</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Gross to net calculator?",
+      "a": "The form asks for a few values, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter gross amount in a different unit?",
+      "a": "Yes. Gross amount opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Gross amount = 11. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Gross to net calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/cogs",
+      "name": "Cost of goods sold"
+    },
+    {
+      "path": "/finance/combined-ratio",
+      "name": "Combined ratio"
+    },
+    {
+      "path": "/finance/commercial-lease",
+      "name": "Commercial lease"
+    }
+  ],
+  "words": 1407
+}

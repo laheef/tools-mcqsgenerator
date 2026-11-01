@@ -1,0 +1,97 @@
+{
+  "path": "/ecology/olympic-games-sustainability",
+  "slug": "olympic-games-sustainability",
+  "cat": "ecology",
+  "name": "Olympic Games sustainability",
+  "seoTitle": "Olympic Games sustainability — Free Online Calculator",
+  "seoDesc": "Olympic Games sustainability: work out ecological score from the ​ Total sustainability score. A free ecology calculator with the formula, units and a…",
+  "h1": "Olympic Games sustainability Calculator",
+  "summary": "The Olympic Games sustainability calculator returns <strong>ecological score</strong> from the 2 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nIt is built for a footprint, a resource or an environmental change you want to size up. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Olympic Games sustainability calculator work?",
+      "html": "<p>The Olympic Games sustainability calculator takes the values in the form, applies the relationship described below and reports <strong>ecological score</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (select the Olympic Games); then you type in the ​ Total sustainability score.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 18 options, such as paris 2024, beijing 2022 and tokyo 2020. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Select the Olympic Games</strong></td><td>One of 18 options, such as paris 2024, beijing 2022 and tokyo 2020.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>‍ ‍ ‍ Social score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ecological score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>​ Economical score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>​ Total sustainability score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Olympic Games sustainability calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Ecological score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-​ Economical score − ‍ ‍ ‍ Social score + 3 × ​ Total sustainability score</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Olympic Games sustainability calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two options on the same basis</li><li>Sizing an environmental impact in familiar units</li><li>Putting a headline figure into context</li><li>Any time the same 1 figures keep coming back — the ​ Total sustainability score — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Olympic Games sustainability calculator, these are the ones that matter:</p>\n<ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — select the Olympic Games for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these ecology calculators cover the neighbouring steps: <a href=\"/ecology/plastic-footprint\">Plastic footprint</a>, <a href=\"/ecology/reduce-your-plastic\">Reduce Your Plastic</a> and <a href=\"/ecology/shannon-index\">Shannon diversity index</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Olympic Games sustainability calculator work out?",
+      "a": "It returns ecological score, derived from the ​ Total sustainability score. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Olympic Games sustainability calculator?",
+      "a": "The form asks for the ​ Total sustainability score, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports ‍ ‍ ‍ Social score = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Olympic Games sustainability calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/ecology/plastic-footprint",
+      "name": "Plastic footprint"
+    },
+    {
+      "path": "/ecology/reduce-your-plastic",
+      "name": "Reduce Your Plastic"
+    },
+    {
+      "path": "/ecology/shannon-index",
+      "name": "Shannon diversity index"
+    }
+  ],
+  "words": 1246
+}

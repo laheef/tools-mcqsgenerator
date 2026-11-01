@@ -1,0 +1,101 @@
+{
+  "path": "/biology/grain-bin",
+  "slug": "grain-bin",
+  "cat": "biology",
+  "name": "Grain bin",
+  "seoTitle": "Grain bin Calculator",
+  "seoDesc": "Grain bin: work out grain weight from the roof height and the diameter. A free biology calculator with the formula, units and a worked example.",
+  "h1": "Grain bin Calculator",
+  "summary": "The Grain bin calculator turns the roof height, the diameter and more into <strong>grain weight</strong>. It is built for an animal, a plant or a biological process whose scale you want to put into perspective.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Grain bin calculator work?",
+      "html": "<p>The Grain bin calculator takes the values in the form, applies the relationship described below and reports <strong>grain weight</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the grain bin type and the roof); then you type in the roof height, the diameter, the width and the volume of grain (Volume and weight results).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as round and rectangular. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no, conical and curved. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A single on/off switch — tick it for &ldquo;The grain bin has a hopper&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A number, expressed in Bu.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Grain bin type</strong></td><td>One of 2 options, such as round and rectangular.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Roof</strong></td><td>One of 3 options, such as no, conical and curved.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Roof height</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Diameter</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Radius</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Sidewall height</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Hopper height</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Grain weight</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Volume of grain (Volume and weight results)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>Grain volume in bushels (Volume and weight results)</strong></td><td>A number stated in Bu.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume of grain (Volume and weight results)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Grain volume in bushels (Volume and weight results)</strong></td><td>A number stated in Bu.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume of grain (Volume and weight results)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Grain volume in bushels (Volume and weight results)</strong></td><td>A number stated in Bu.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume of grain (Volume and weight results)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Grain volume in bushels (Volume and weight results)</strong></td><td>A number stated in Bu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Volume of grain (Volume and weight results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Grain volume in bushels (Volume and weight results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume of grain (Volume and weight results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Grain volume in bushels (Volume and weight results)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total grain weight (Volume and weight results)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Total grain weight (Volume and weight results)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 31 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Grain bin calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Grain weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total grain weight ÷ volume of grain</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total grain weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">grain weight × volume of grain</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Volume of grain</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total grain weight ÷ grain weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × diameter)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sidewall height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume of grain ÷ (PI × ((((1 ÷ 2) × diameter), 2)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Grain volume in bushels</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(3893 ÷ 5000) × volume of grain</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Grain bin type</strong> set to Round, <strong>Roof</strong> set to No, <strong>Roof height</strong> = 0 m and <strong>Diameter</strong> = 30 m. The calculator returns <strong>Radius</strong> = 15 m.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Radius</strong> = 15 m should be roughly the size you expected from <strong>Grain bin type</strong> set to Round and <strong>Roof</strong> set to No.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilograms per cubic meter, and convertible to any of the 9 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Density, opening in kilograms per cubic meter</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Grain bin calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 4 figures keep coming back — the roof height, the diameter and the width — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href=\"/biology/grain-conversion\">Grain conversion</a>, <a href=\"/biology/grass-seed\">Grass seed</a> and <a href=\"/biology/guinea-pig-age\">Guinea pig years to human years</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Grain bin calculator work out?",
+      "a": "It returns grain weight, derived from the roof height, the diameter and the width. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Grain bin calculator?",
+      "a": "The form asks for the roof height, the diameter, the width and the volume of grain, which is 11 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter roof height in a different unit?",
+      "a": "Yes. Roof height opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Radius = 15 m. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Grain bin calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/biology/grain-conversion",
+      "name": "Grain conversion"
+    },
+    {
+      "path": "/biology/grass-seed",
+      "name": "Grass seed"
+    },
+    {
+      "path": "/biology/guinea-pig-age",
+      "name": "Guinea pig years to human years"
+    }
+  ],
+  "words": 2088
+}

@@ -1,0 +1,101 @@
+{
+  "path": "/construction/thread",
+  "slug": "thread",
+  "cat": "construction",
+  "name": "Thread",
+  "seoTitle": "Thread — Free Online Calculator",
+  "seoDesc": "Thread: work out basic pitch diameter from the major diameter tolerance and the minor diameter tolerance. A free construction calculator with the formula,…",
+  "h1": "Thread Calculator",
+  "summary": "The Thread calculator turns the major diameter tolerance, the minor diameter tolerance and more into <strong>basic pitch diameter</strong>. Think of it as a shortcut for a materials order or a planning estimate you want to get roughly right first time.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Thread calculator work?",
+      "html": "<p>The Thread calculator takes the values in the form, applies the relationship described below and reports <strong>basic pitch diameter</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the external tolerance position); then you type in the major diameter tolerance (Td), the minor diameter tolerance (TD₁), the maximum major diameter and the minimum major diameter (Internal thread limits).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as external thread dimensions, internal thread dimensions and external & internal thread dimensions. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as e, f and g. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li></ul><p>8 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Thread pitch</strong></td><td>One of 24 options, such as 0.2 mm, 0.25 mm and 0.3 mm.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Basic major diameter</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Basic pitch diameter</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Basic minor diameter</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>External pitch diameter tolerance grade</strong></td><td>One of 7 options, such as 3, 4 and 5.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>External major diameter tolerance grade</strong></td><td>One of 3 options, such as 4, 6 and 8.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>External tolerance position</strong></td><td>One of 4 options, such as e, f and g.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Internal pitch diameter tolerance grade</strong></td><td>One of 5 options, such as 4, 5 and 6.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Internal minor diameter tolerance grade</strong></td><td>One of 5 options, such as 4, 5 and 6.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Internal tolerance position</strong></td><td>One of 2 options, such as G and H.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Height of fundamental triangle (H)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Minimum root radius (Rmin)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Cmax</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Upper deviation (es)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Major diameter tolerance (Td)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Pitch diameter tolerance (Td₂)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Lower deviation (EI)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Minor diameter tolerance (TD₁)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Pitch diameter tolerance (TD₂)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Maximum major diameter</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Minimum major diameter (External thread limits)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Maximum pitch diameter (External thread limits)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Minimum pitch diameter (External thread limits)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Maximum minor diameter (External thread limits)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 33 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Thread calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Basic pitch diameter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-3 ÷ 8 × the square root of (3) × thread pitch + basic major diameter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Basic major diameter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(5 ÷ 8) × the square root of (3) × thread pitch + basic minor diameter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Basic pitch diameter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × the square root of (3) × thread pitch + basic minor diameter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Height of fundamental triangle (H)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × the square root of (3) × thread pitch</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Minimum root radius (Rmin)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 8) × thread pitch</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pitch diameter tolerance (Td₂)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × the square root of (3) × minimum root radius (Rmin) × the square root of (Y × (2 × minimum root radius (Rmin) − Y) ÷ (minimum root radius (Rmin) ^ 2)) + 2 × minimum root radius (Rmin) + 2 × Y</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Calculate</strong> set to External thread dimensions, <strong>Thread pitch</strong> set to 1.0 mm, <strong>Basic major diameter</strong> = 30 mm and <strong>Basic pitch diameter</strong> = 30 mm. Working through the relationship above gives <strong>Basic minor diameter</strong> = -78.2532 mm, <strong>Height of fundamental triangle (H)</strong> = 86.6025 mm, <strong>Minimum root radius (Rmin)</strong> = 12.5 mm and <strong>Cmax</strong> = 23.087 mm.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Basic minor diameter</strong> = -78.2532 mm, <strong>Height of fundamental triangle (H)</strong> = 86.6025 mm, <strong>Minimum root radius (Rmin)</strong> = 12.5 mm and <strong>Cmax</strong> = 23.087 mm should be roughly the size you expected from <strong>Calculate</strong> set to External thread dimensions and <strong>Thread pitch</strong> set to 1.0 mm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>The option the calculation settles on.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Thread calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Quoting a job where areas and quantities drive the price</li><li>Checking a supplier's figure against your own measurements</li><li>Ordering material and not wanting a second trip</li><li>Any time the same 4 figures keep coming back — the major diameter tolerance, the minor diameter tolerance and the maximum major diameter — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/epoxy\">Epoxy</a>, <a href=\"/construction/fence\">Fence</a> and <a href=\"/construction/fence-cost\">Fence cost</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Thread calculator work out?",
+      "a": "It returns basic pitch diameter, derived from the major diameter tolerance, the minor diameter tolerance and the maximum major diameter. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Thread calculator?",
+      "a": "The form asks for the major diameter tolerance, the minor diameter tolerance, the maximum major diameter and the minimum major diameter, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter basic major diameter in a different unit?",
+      "a": "Yes. Basic major diameter opens in millimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (8 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Basic minor diameter = -78.2532 mm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Thread calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/epoxy",
+      "name": "Epoxy"
+    },
+    {
+      "path": "/construction/fence",
+      "name": "Fence"
+    },
+    {
+      "path": "/construction/fence-cost",
+      "name": "Fence cost"
+    }
+  ],
+  "words": 2105
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/construction/miter-angle",
+  "slug": "miter-angle",
+  "cat": "construction",
+  "name": "Miter angle",
+  "seoTitle": "Miter angle Calculator",
+  "seoDesc": "Miter angle: work out miter angle of board A (α) (Output values) from the joint angle and the width of board B. A free construction calculator with the…",
+  "h1": "Miter angle Calculator",
+  "summary": "<strong>miter angle of board A (α) (Output values)</strong> is what the Miter angle calculator works out, and it gets there from the joint angle and the width of board B. That makes it useful for a materials order or a planning estimate you want to get roughly right first time.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Miter angle calculator work?",
+      "html": "<p>The Miter angle calculator takes the values in the form, applies the relationship described below and reports <strong>miter angle of board A (α) (Output values)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the joint angle (θ) and the width of board B.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Joint angle (θ)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Width of board B</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Miter angles α and ß</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Miter angle of board A (α) (Output values)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Miter angle of board B (ß) (Output values)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Miter angle of board A (α) (Output values)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Miter angle of board B (ß) (Output values)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>A width inches</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>B width inches</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Miter angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>A miter angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>B miter angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Aa miter angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Bb miter angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Miter angle a and b same width print (cJS calculated values)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Miter angle a and b same width print (cJS calculated values)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Miter angle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Miter angle of board A (α)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((width of board A × the sine of (joint angle (θ)) ÷ (width of board A × the cosine of (joint angle (θ)) + width of board B)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Miter angle of board B (ß)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(joint angle (θ) − ((width of board A × the sine of (joint angle (θ)) ÷ (width of board A × the cosine of (joint angle (θ)) + width of board B))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Miter angle of board B (ß)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((width of board B × the sine of (joint angle (θ)) ÷ (width of board A + width of board B × the cosine of (joint angle (θ)))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Miter angle of board A (α)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(joint angle (θ) − ((width of board B × the sine of (joint angle (θ)) ÷ (width of board A + width of board B × the cosine of (joint angle (θ))))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Miter angles α and ß</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((width of board A × the sine of (joint angle (θ)) ÷ (width of board A × the cosine of (joint angle (θ)) + width of board B))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Miter angle</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the absolute value of ((((width of board A × the sine of (joint angle (θ)) ÷ (width of board A × the cosine of (joint angle (θ)) + width of board B)))) − 1 ÷ 2 × PI)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Joint angle (θ)</strong> = 10 deg, <strong>Width of board A</strong> = 30 cm and <strong>Width of board B</strong> = 30 cm. The calculator returns <strong>Miter angles α and ß</strong> = 5 deg, <strong>Miter angle of board A (α)</strong> = 5 deg, <strong>Miter angle of board B (ß)</strong> = 5 deg and <strong>A width inches</strong> = 12 cm.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Miter angles α and ß</strong> = 5 deg, <strong>Miter angle of board A (α)</strong> = 5 deg, <strong>Miter angle of board B (ß)</strong> = 5 deg and <strong>A width inches</strong> = 12 cm should be roughly the size you expected from <strong>Joint angle (θ)</strong> = 10 deg and <strong>Width of board A</strong> = 30 cm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Angle, opening in degrees</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Miter angle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Quoting a job where areas and quantities drive the price</li><li>Ordering material and not wanting a second trip</li><li>Checking a supplier's figure against your own measurements</li><li>Any time the same 2 figures keep coming back — the joint angle and the width of board B — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/vinyl-fence\">Vinyl fence</a>, <a href=\"/construction/vinyl-fence-cost\">Vinyl fence cost</a> and <a href=\"/construction/vinyl-siding\">Vinyl siding</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Miter angle calculator work out?",
+      "a": "It returns miter angle of board A (α) (Output values), derived from the joint angle and the width of board B. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Miter angle calculator?",
+      "a": "The form asks for the joint angle and the width of board B, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter joint angle (θ) in a different unit?",
+      "a": "Yes. Joint angle (θ) opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Miter angles α and ß = 5 deg. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Miter angle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/vinyl-fence",
+      "name": "Vinyl fence"
+    },
+    {
+      "path": "/construction/vinyl-fence-cost",
+      "name": "Vinyl fence cost"
+    },
+    {
+      "path": "/construction/vinyl-siding",
+      "name": "Vinyl siding"
+    }
+  ],
+  "words": 1832
+}

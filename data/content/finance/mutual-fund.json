@@ -1,0 +1,93 @@
+{
+  "path": "/finance/mutual-fund",
+  "slug": "mutual-fund",
+  "cat": "finance",
+  "name": "Mutual fund",
+  "seoTitle": "Mutual fund Calculator: Free, With Steps",
+  "seoDesc": "Mutual fund: work out monthly investment from the expected annual return and the investment period. A free finance calculator with the formula, units and…",
+  "h1": "Mutual fund Calculator",
+  "summary": "Give the Mutual fund calculator the expected annual return, the investment period and the investment amount at maturity and it returns <strong>monthly investment</strong>. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Mutual fund calculator work?",
+      "html": "<p>The Mutual fund calculator takes the values in the form, applies the relationship described below and reports <strong>monthly investment</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the investment form); then you type in the expected annual return, the investment period and the investment amount at maturity.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as systematic Investment Plan (SIP) and one-time investment (lump sum). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A number, expressed in %.</li><li>A measured quantity, entered by default in years / months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Investment form</strong></td><td>One of 2 options, such as systematic Investment Plan (SIP) and one-time investment (lump sum).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Monthly investment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Expected annual return</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Investment period</strong></td><td>A measured quantity, 27 units available.</td><td>years / months</td><td>You supply it</td></tr><tr><td><strong>Investment amount at maturity</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Investment amount at maturity (2)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Mutual fund calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Monthly investment</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(8916100448256000000000000000000000000 ^ investment period) × expected annual return × investment amount at maturity ÷ (-(1200 ^ 12 × investment period) × expected annual return − 1200 × (1200 ^ 12 × investment period) + expected annual return × (expected annual return + 1200 ^ 12 × investment period) + 1200 × (expected annual return + 1200 ^ 12 × investment period))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Investment amount at maturity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">investment amount × ((1 ÷ 100) × expected annual return + 1, investment period)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Time, opening in years / months</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Mutual fund calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Comparing two offers that quote their costs in different ways</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Any time the same 3 figures keep coming back — the expected annual return, the investment period and the investment amount at maturity — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/florida-sales-tax\">Florida sales tax</a>, <a href=\"/finance/forward-premium\">Forward premium</a> and <a href=\"/finance/forward-rate\">Forward rate</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Mutual fund calculator work out?",
+      "a": "It returns monthly investment, derived from the expected annual return, the investment period and the investment amount at maturity. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Mutual fund calculator?",
+      "a": "The form asks for the expected annual return, the investment period and the investment amount at maturity, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter monthly investment in a different unit?",
+      "a": "Yes. Monthly investment opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Mutual fund calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/florida-sales-tax",
+      "name": "Florida sales tax"
+    },
+    {
+      "path": "/finance/forward-premium",
+      "name": "Forward premium"
+    },
+    {
+      "path": "/finance/forward-rate",
+      "name": "Forward rate"
+    }
+  ],
+  "words": 1406
+}

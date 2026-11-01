@@ -1,0 +1,93 @@
+{
+  "path": "/math/is-it-a-right-triangle",
+  "slug": "is-it-a-right-triangle",
+  "cat": "math",
+  "name": "Is it a right triangle",
+  "seoTitle": "Is it a right triangle Calculator — Formula, Units & Example",
+  "seoDesc": "Is it a right triangle: work out answer from the side length b and the side length c. A free math calculator with the formula, units and a worked example.",
+  "h1": "Is it a right triangle Calculator",
+  "summary": "The Is it a right triangle calculator turns the side length b, the side length c and more into <strong>answer</strong>. It suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nChange one value and the results step aside until you press Calculate again, which is what makes it easy to see how much the answer really depends on that one input.",
+  "sections": [
+    {
+      "title": "How does the Is it a right triangle calculator work?",
+      "html": "<p>The Is it a right triangle calculator takes the values in the form, applies the relationship described below and reports <strong>answer</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (which sides and angle?); then you type in the side length b, the side length c, the angle α and the angle β.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as 3 sides, angles α and β and 2 sides and 1 angle. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 6 options, such as a, b, and Angle α, a, c, and Angle α and b, c, and Angle α. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A plain number with no unit attached.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Which sides and angle?</strong></td><td>One of 6 options, such as a, b, and Angle α, a, c, and Angle α and b, c, and Angle α.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Side length b</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length c</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle α</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Angle β</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Side length a (2)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length b (2)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length c (2)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Angle α (2)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle β (2)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Precision</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Answer</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Is it a right triangle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Answer</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(side length a ^ 2) + (side length b ^ 2) − (side length c ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">angle α + angle β − 1 ÷ 2 × PI</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle α</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(side length a ÷ side length b + Result 4a)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle α</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(side length a ÷ side length c + Result 4b)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side length c</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">side length b ÷ (Result 4c + the cosine of (angle α))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle α</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-angle β + (1 ÷ 2) × PI</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Is it a right triangle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Checking a homework answer before you hand it in</li><li>Settling an argument about a number with a quick, traceable result</li><li>Any time the same 4 figures keep coming back — the side length b, the side length c and the angle α — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/pythagorean-theorem\">Pythagorean theorem</a>, <a href=\"/math/pythagorean-triples\">Pythagorean triples</a> and <a href=\"/math/quadratic-formula\">Quadratic formula</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Is it a right triangle calculator work out?",
+      "a": "It returns answer, derived from the side length b, the side length c and the angle α. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Is it a right triangle calculator?",
+      "a": "The form asks for the side length b, the side length c, the angle α and the angle β, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter side length a in a different unit?",
+      "a": "Yes. Side length a opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Is it a right triangle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/pythagorean-theorem",
+      "name": "Pythagorean theorem"
+    },
+    {
+      "path": "/math/pythagorean-triples",
+      "name": "Pythagorean triples"
+    },
+    {
+      "path": "/math/quadratic-formula",
+      "name": "Quadratic formula"
+    }
+  ],
+  "words": 1748
+}

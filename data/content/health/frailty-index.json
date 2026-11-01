@@ -1,0 +1,101 @@
+{
+  "path": "/health/frailty-index",
+  "slug": "frailty-index",
+  "cat": "health",
+  "name": "Frailty index",
+  "seoTitle": "Frailty index Calculator — Formula, Units & Example",
+  "seoDesc": "Frailty index: work out health deficits present from the health deficits measured and the frailty index. A free health calculator with the formula, units…",
+  "h1": "Frailty index Calculator",
+  "summary": "Supply the health deficits measured, the frailty index and the weight and the Frailty index calculator solves for <strong>health deficits present</strong>. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Frailty index calculator work?",
+      "html": "<p>The Frailty index calculator takes the values in the form, applies the relationship described below and reports <strong>health deficits present</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the patient's sex, have trouble getting going and the walk outside (per week)); then you type in the health deficits measured, the frailty index (FI), the weight and the BMI.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A single on/off switch — tick it for &ldquo;Show sample questionnaire (40 questions)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A number, expressed in #.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A single on/off switch — tick it for &ldquo;Help bathing&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Stayed in bed ≥0.5 day (last month)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help getting in/out of chair&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Cut down on usual activity (last month)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help dressing&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help eating&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help with finances&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 3 options, such as most times, sometimes and rarely. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Help grooming&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help walking around the house&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help lifting 10 lb (4.54 kg)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help with meal preparation&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help with taking medications&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 2 options, such as &lt;3 days and ≥ 3 days. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as ≤ 16 seconds and &gt; 16 seconds. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as ≤ 10 seconds and &gt;10 seconds. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Help shopping&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help down/up the stairs&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Help using toilet&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>The form has 46 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>40 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Health deficits present</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Health deficits measured</strong></td><td>A number stated in #.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Frailty index (FI)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Patient's sex</strong></td><td>One of 2 options, such as female and male.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Have trouble getting going</strong></td><td>One of 3 options, such as most times, sometimes and rarely.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Walk outside (per week)</strong></td><td>One of 2 options, such as &lt;3 days and ≥ 3 days.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Usual pace walk</strong></td><td>One of 2 options, such as ≤ 16 seconds and &gt; 16 seconds.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Rapid pace walk</strong></td><td>One of 2 options, such as ≤ 10 seconds and &gt;10 seconds.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Feeling happy</strong></td><td>One of 3 options, such as most times, sometimes and rarely.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Feel depressed</strong></td><td>One of 3 options, such as most times, sometimes and rarely.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Feel lonely</strong></td><td>One of 3 options, such as most times, sometimes and rarely.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>MMSE</strong></td><td>One of 5 options, such as &lt;10, 11-17 and 18-20.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Arthritis</strong></td><td>One of 3 options, such as yes, suspected and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cancer</strong></td><td>One of 3 options, such as yes, suspected and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Congestive heart failure</strong></td><td>One of 3 options, such as yes, suspected and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Chronic lung disease</strong></td><td>One of 3 options, such as yes, suspected and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Diabetes</strong></td><td>One of 3 options, such as yes, suspected and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Stroke</strong></td><td>One of 3 options, such as yes, suspected and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Heart attack</strong></td><td>One of 3 options, such as yes, suspected and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>BMI</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Grip strength</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Shoulder strength</strong></td><td>One of 3 options, such as ≤ 9 kg, 9.1-12 kg and &gt;12 kg.</td><td>choice</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 32 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Frailty index calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Health deficits present</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">frailty index (FI) × health deficits measured</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Health deficits measured</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">health deficits present ÷ frailty index (FI)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Walk</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-arthritis − bath − bed − high blood pressure − cancer − chair − how health has changed (last year) − congestive heart failure − chronic lung disease − cut − feel depressed − diabetes − dress − eat − feel everything is an effort − finance − have trouble getting going − groom − feeling happy − heart attack − house − lift − feel lonely − lost more than 10 lb (4.54 kg) in last year? − meal − med − MMSE − walk outside (per week) + health deficits present − rapid pace walk − self-rating of health − shop − stairs − stroke − toilet − usual pace walk − (BMI) − (grip strength, patient&#x27;s sex, BMI) − (peak flow, patient&#x27;s sex) − (shoulder strength, patient&#x27;s sex)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (weight ÷ BMI)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Health deficits measured</strong> = 10, <strong>Frailty index (FI)</strong> = 10, <strong>Patient's sex</strong> set to Female and <strong>Have trouble getting going</strong> set to Rarely. The calculator returns <strong>Health deficits present</strong> = 100.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Health deficits present</strong> = 100 should be roughly the size you expected from <strong>Health deficits measured</strong> = 10 and <strong>Frailty index (FI)</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Frailty index calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Any time the same 3 figures keep coming back — the health deficits measured, the frailty index and the weight — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/crown-rump-length\">Crown-rump length</a>, <a href=\"/health/curb\">CURB-65</a> and <a href=\"/health/cvd-risk\">CVD risk</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Frailty index calculator work out?",
+      "a": "It returns health deficits present, derived from the health deficits measured, the frailty index and the weight. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Frailty index calculator?",
+      "a": "The form asks for the health deficits measured, the frailty index and the weight, which is 46 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter height in a different unit?",
+      "a": "Yes. Height opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (40 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Health deficits present = 100. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Frailty index calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/crown-rump-length",
+      "name": "Crown-rump length"
+    },
+    {
+      "path": "/health/curb",
+      "name": "CURB-65"
+    },
+    {
+      "path": "/health/cvd-risk",
+      "name": "CVD risk"
+    }
+  ],
+  "words": 2516
+}

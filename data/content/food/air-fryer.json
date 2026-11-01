@@ -1,0 +1,101 @@
+{
+  "path": "/food/air-fryer",
+  "slug": "air-fryer",
+  "cat": "food",
+  "name": "Air fryer",
+  "seoTitle": "Air fryer Calculator — Formula, Units & Example",
+  "seoDesc": "Air fryer: work out oven recipe’s temperature (Temperature measurement) from the temperature for air fryer and the air frying cooking time. A free food…",
+  "h1": "Air fryer Calculator",
+  "summary": "<strong>oven recipe’s temperature (Temperature measurement)</strong> is what the Air fryer calculator works out, and it gets there from the temperature for air fryer and the air frying cooking time. That makes it useful for portioning, timing or nutrition.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Air fryer calculator work?",
+      "html": "<p>The Air fryer calculator takes the values in the form, applies the relationship described below and reports <strong>oven recipe’s temperature (Temperature measurement)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the temperature unit); then you type in the temperature for air fryer (Temperature measurement), the temperature for air fryer (Temperature measurement) and the air frying cooking time.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as °C and °F. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in Fahrenheit. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Temperature unit</strong></td><td>One of 2 options, such as °C and °F.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Oven recipe’s temperature (Temperature measurement)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Oven recipe’s temperature (Temperature measurement)</strong></td><td>A measured quantity, 28 units available.</td><td>Fahrenheit</td><td>Calculated</td></tr><tr><td><strong>Temperature for air fryer (Temperature measurement)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Temperature for air fryer (Temperature measurement)</strong></td><td>A measured quantity, 28 units available.</td><td>Fahrenheit</td><td>You supply it</td></tr><tr><td><strong>Oven cooking time</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>Calculated</td></tr><tr><td><strong>Air frying cooking time</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Air fryer calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Oven recipe’s temperature</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">temperature for air fryer + 15</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Oven recipe’s temperature</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">temperature for air fryer + 25</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Oven cooking time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(5 ÷ 4) × air frying cooking time</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Temperature unit</strong> set to °C and <strong>Temperature for air fryer</strong> = 10 °C. Working through the relationship above gives <strong>Oven recipe’s temperature</strong> = 25 °C.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Oven recipe’s temperature</strong> = 25 °C should be roughly the size you expected from <strong>Temperature unit</strong> set to °C and <strong>Temperature for air fryer</strong> = 10 °C.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Fahrenheit, and convertible to any of the 28 units on that chip.</li><li>Shown in minutes, and convertible to any of the 27 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Temperature, opening in Celsius</li><li>Temperature, opening in Fahrenheit</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Fahrenheit</li><li>Time, opening in minutes</li><li>Time, opening in minutes</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Air fryer calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Scaling a recipe up or down</li><li>Checking portions before you shop</li><li>Working out timing so everything finishes together</li><li>Any time the same 2 figures keep coming back — the temperature for air fryer and the air frying cooking time — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/bakers-percentage\">Baker's percentage</a>, <a href=\"/food/bbq-grill-size\">BBQ grill size</a> and <a href=\"/food/bbq-party\">BBQ party</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Air fryer calculator work out?",
+      "a": "It returns oven recipe’s temperature (Temperature measurement), derived from the temperature for air fryer and the air frying cooking time. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Air fryer calculator?",
+      "a": "The form asks for the temperature for air fryer and the air frying cooking time, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter oven recipe’s temperature (Temperature measurement) in a different unit?",
+      "a": "Yes. Oven recipe’s temperature (Temperature measurement) opens in Celsius and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Oven recipe’s temperature = 25 °C. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Air fryer calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/bakers-percentage",
+      "name": "Baker's percentage"
+    },
+    {
+      "path": "/food/bbq-grill-size",
+      "name": "BBQ grill size"
+    },
+    {
+      "path": "/food/bbq-party",
+      "name": "BBQ party"
+    }
+  ],
+  "words": 1554
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/chemistry/average-atomic-mass",
+  "slug": "average-atomic-mass",
+  "cat": "chemistry",
+  "name": "Average atomic mass",
+  "seoTitle": "Average atomic mass Calculator — Formula, Units & Example",
+  "seoDesc": "Average atomic mass: work out average atomic mass from the percentage of 1st isotope and the mass of 1st isotope. A free chemistry calculator with the…",
+  "h1": "Average atomic mass Calculator",
+  "summary": "The Average atomic mass calculator turns the percentage of 1st isotope, the mass of 1st isotope and more into <strong>average atomic mass</strong>. It is built for a bench calculation involving amounts, concentrations or reaction ratios.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Average atomic mass calculator work?",
+      "html": "<p>The Average atomic mass calculator takes the values in the form, applies the relationship described below and reports <strong>average atomic mass</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the percentage of 1st isotope, the mass of 1st isotope, the percentage of 2nd isotope and the mass of 2nd isotope.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 9 options, such as 2, 3 and 4. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in amu.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Percentage of 1st isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 1st isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 2nd isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 2nd isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 3rd isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 3rd isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 4th isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 4th isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 5th isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 5th isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 6th isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 6th isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 7th isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 7th isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 8th isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 8th isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 9th isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 9th isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage of 10th isotope</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Mass of 10th isotope</strong></td><td>A number stated in amu.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Average atomic mass</strong></td><td>A number stated in amu.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Average atomic mass (2)</strong></td><td>A number stated in amu.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Average atomic mass (3)</strong></td><td>A number stated in amu.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Average atomic mass (4)</strong></td><td>A number stated in amu.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 30 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Average atomic mass calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Average atomic mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 100) × percentage of 1st isotope × mass of 1st isotope)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Average atomic mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 100) × percentage of 1st isotope × mass of 1st isotope + (1 ÷ 100) × percentage of 2nd isotope × mass of 2nd isotope)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Average atomic mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 100) × percentage of 1st isotope × mass of 1st isotope + (1 ÷ 100) × percentage of 2nd isotope × mass of 2nd isotope + (1 ÷ 100) × percentage of 3rd isotope × mass of 3rd isotope)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Average atomic mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 100) × percentage of 1st isotope × mass of 1st isotope + (1 ÷ 100) × percentage of 2nd isotope × mass of 2nd isotope + (1 ÷ 100) × percentage of 3rd isotope × mass of 3rd isotope + (1 ÷ 100) × percentage of 4th isotope × mass of 4th isotope)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Average atomic mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 100) × percentage of 1st isotope × mass of 1st isotope + (1 ÷ 100) × percentage of 2nd isotope × mass of 2nd isotope + (1 ÷ 100) × percentage of 3rd isotope × mass of 3rd isotope + (1 ÷ 100) × percentage of 4th isotope × mass of 4th isotope + (1 ÷ 100) × percentage of 5th isotope × mass of 5th isotope)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Average atomic mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 100) × percentage of 1st isotope × mass of 1st isotope + (1 ÷ 100) × percentage of 2nd isotope × mass of 2nd isotope + (1 ÷ 100) × percentage of 3rd isotope × mass of 3rd isotope + (1 ÷ 100) × percentage of 4th isotope × mass of 4th isotope + (1 ÷ 100) × percentage of 5th isotope × mass of 5th isotope + (1 ÷ 100) × percentage of 6th isotope × mass of 6th isotope)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>How many isotopes do you have?</strong> set to 2, <strong>Percentage of 1st isotope</strong> = 10 %, <strong>Mass of 1st isotope</strong> = 10 and <strong>Percentage of 2nd isotope</strong> = 10 %. The calculator returns <strong>Average atomic mass</strong> = 0.01.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Average atomic mass</strong> = 0.01 should be roughly the size you expected from <strong>How many isotopes do you have?</strong> set to 2 and <strong>Percentage of 1st isotope</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Average atomic mass calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Working through a stoichiometry problem</li><li>Preparing a solution and checking the numbers first</li><li>Converting between the units a protocol and your bench equipment use</li><li>Any time the same 4 figures keep coming back — the percentage of 1st isotope, the mass of 1st isotope and the percentage of 2nd isotope — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/boiling-point\">Boiling point</a>, <a href=\"/chemistry/boiling-point-altitude\">Boiling point at altitude</a> and <a href=\"/chemistry/boiling-point-elevation\">Boiling point elevation</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Average atomic mass calculator work out?",
+      "a": "It returns average atomic mass, derived from the percentage of 1st isotope, the mass of 1st isotope and the percentage of 2nd isotope. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Average atomic mass calculator?",
+      "a": "The form asks for the percentage of 1st isotope, the mass of 1st isotope, the percentage of 2nd isotope and the mass of 2nd isotope, which is 21 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter percentage of 1st isotope in a different unit?",
+      "a": "Yes. Percentage of 1st isotope opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Average atomic mass = 0.01. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Average atomic mass calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/boiling-point",
+      "name": "Boiling point"
+    },
+    {
+      "path": "/chemistry/boiling-point-altitude",
+      "name": "Boiling point at altitude"
+    },
+    {
+      "path": "/chemistry/boiling-point-elevation",
+      "name": "Boiling point elevation"
+    }
+  ],
+  "words": 2212
+}

@@ -1,0 +1,101 @@
+{
+  "path": "/health/sodium-in-salt",
+  "slug": "sodium-in-salt",
+  "cat": "health",
+  "name": "Sodium in salt",
+  "seoTitle": "Sodium in salt Calculator: Free, With Steps",
+  "seoDesc": "Sodium in salt: work out type of salt from amount of salt and the pure salt. A free health calculator with the formula, units and a worked example.",
+  "h1": "Sodium in salt Calculator",
+  "summary": "The Sodium in salt calculator turns amount of salt and the pure salt into <strong>type of salt</strong>. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Sodium in salt calculator work?",
+      "html": "<p>The Sodium in salt calculator takes the values in the form, applies the relationship described below and reports <strong>type of salt</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in amount of salt and the pure salt (NaCl).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in teaspoons (5ml). The unit chip switches it to any of the 4 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Type of salt</strong></td><td>One of 7 options, such as iodized table salt, fine, kosher salt, coarse and kosher salt, fine.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Amount of salt</strong></td><td>A measured quantity, 4 units available.</td><td>teaspoons (5ml)</td><td>You supply it</td></tr><tr><td><strong>Amount of sodium</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>Calculated</td></tr><tr><td><strong>Pure salt (NaCl)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Sodium in salt calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Type of salt</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">amount of sodium ÷ amount of salt</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Amount of sodium</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2 ÷ 5) × pure salt (NaCl)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Type of salt</strong> set to Iodized table salt, fine, <strong>Amount of salt</strong> = 10 tsp and <strong>Amount of sodium</strong> = 10 mg. Working through the relationship above gives <strong>Pure salt (NaCl)</strong> = 25 g.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Pure salt (NaCl)</strong> = 25 g should be roughly the size you expected from <strong>Type of salt</strong> set to Iodized table salt, fine and <strong>Amount of salt</strong> = 10 tsp.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>The option the calculation settles on.</li><li>Shown in milligrams, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Salt measures, opening in teaspoons (5ml)</li><li>Mass, opening in milligrams</li><li>Mass, opening in grams</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Sodium in salt calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Deciding whether a reading is worth a second look</li><li>Any time the same 2 figures keep coming back — amount of salt and the pure salt — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/pg-e2-ratio\">Progesterone to estradiol ratio</a>, <a href=\"/health/pisa\">PISA</a> and <a href=\"/health/plasma-osmolality\">Plasma osmolality calculator</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Sodium in salt calculator work out?",
+      "a": "It returns type of salt, derived from amount of salt and the pure salt. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Sodium in salt calculator?",
+      "a": "The form asks for amount of salt and the pure salt, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter amount of salt in a different unit?",
+      "a": "Yes. Amount of salt opens in teaspoons (5ml) and the chip beside it offers 4 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Pure salt (NaCl) = 25 g. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Sodium in salt calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/pg-e2-ratio",
+      "name": "Progesterone to estradiol ratio"
+    },
+    {
+      "path": "/health/pisa",
+      "name": "PISA"
+    },
+    {
+      "path": "/health/plasma-osmolality",
+      "name": "Plasma osmolality calculator"
+    }
+  ],
+  "words": 1391
+}

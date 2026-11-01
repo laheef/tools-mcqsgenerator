@@ -1,0 +1,97 @@
+{
+  "path": "/health/maintenance-calorie",
+  "slug": "maintenance-calorie",
+  "cat": "health",
+  "name": "Maintenance calorie",
+  "seoTitle": "Maintenance calorie Calculator",
+  "seoDesc": "Maintenance calorie: work out calories to maintain weight from the height and the age. A free health calculator with the formula, units and a worked example.",
+  "h1": "Maintenance calorie Calculator",
+  "summary": "Supply the height and the age and the Maintenance calorie calculator solves for <strong>calories to maintain weight</strong>. It suits an informed starting point to take to a clinician, not a diagnosis.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Maintenance calorie calculator work?",
+      "html": "<p>The Maintenance calorie calculator takes the values in the form, applies the relationship described below and reports <strong>calories to maintain weight</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the sex, the physical activity level and the weight loss route); then you give the today; then you type in the height, the age, the hours per session and the current bmi.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 4 options, such as I do not exercise, I exercise regularly and I have a physical job. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as less than once a week, 1-2 times/week and 2-3 times/week. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Check calories distribution (%)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Check calories distribution (kcal)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Check my ideal weight&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;I want to change my weight&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 2 options, such as calorie deficit and exercising. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as total calories and detailed calories. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 38 options, such as aerobics, baseball, softball and basketball. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours / minutes. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilocalories. The unit chip switches it to any of the 33 supported units.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li></ul><p>11 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Sex</strong></td><td>One of 2 options, such as female and male.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Age</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Physical activity level</strong></td><td>One of 4 options, such as I do not exercise, I exercise regularly and I have a physical job.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Calories to maintain weight</strong></td><td>A measured quantity, 33 units available.</td><td>kilocalories</td><td>Calculated</td></tr><tr><td><strong>Enter your target weight here</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Weight gain pace</strong></td><td>One of 3 options, such as relaxed: 0.25 kg (0.5 lb) / week, normal 0.5 kg (1.1 lb) / week and strict 1 kg (2.2 lb) / week.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Weight loss route</strong></td><td>One of 2 options, such as calorie deficit and exercising.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Type of chart</strong></td><td>One of 2 options, such as total calories and detailed calories.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Select your activity</strong></td><td>One of 38 options, such as aerobics, baseball, softball and basketball.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hours per session</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>You supply it</td></tr><tr><td><strong>Sessions (Weight change calorie intake)</strong></td><td>A number stated in / week.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Exercise time</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>Calculated</td></tr><tr><td><strong>Goal date day</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Goal date month</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Goal date year</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Weeks to goal</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Current bmi</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Target bmi</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Activity factor ph</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sex ph</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Weight loss pace ph</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Bmi status</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 35 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Maintenance calorie calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Calories to maintain weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((physical activity level &lt; 1) ? ( (-5 × age + 625 × height + sex + 10 × weight) × (6 ÷ 5) ) : ((physical activity level &lt; 2) ? ( (-5 × age + 625 × height + sex + 10 × weight) × ((how often do you exercise?)) ) : ((physical activity level &lt; 3) ? ( (-5 × age + 625 × height + sex + 10 × weight) × (((2))) ) : ( (-5 × age + 625 × height + sex + 10 × weight) × (((12 ÷ 5))) ))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">current bmi × (height ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Enter your target weight here</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(height ^ 2) × target bmi</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weeks to goal</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(weight, enter your target weight here, weight gain pace)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Goal date day</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((weight, enter your target weight here, weight gain pace), 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Goal date month</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((weight, enter your target weight here, weight gain pace), 1)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Mass, opening in kilograms</li><li>Time, opening in years</li><li>Energy, opening in kilocalories</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Time, opening in hours / minutes</li><li>Time, opening in hours / minutes</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Maintenance calorie calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Any time the same 2 figures keep coming back — the height and the age — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/glycemic-load\">Glycemic load</a>, <a href=\"/health/gorlin-formula\">Gorlin formula</a> and <a href=\"/health/gout-diagnosis\">Gout diagnosis</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Maintenance calorie calculator work out?",
+      "a": "It returns calories to maintain weight, derived from the height and the age. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Maintenance calorie calculator?",
+      "a": "The form asks for the height and the age, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter height in a different unit?",
+      "a": "Yes. Height opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (11 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Equivalent PAL value = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Maintenance calorie calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/glycemic-load",
+      "name": "Glycemic load"
+    },
+    {
+      "path": "/health/gorlin-formula",
+      "name": "Gorlin formula"
+    },
+    {
+      "path": "/health/gout-diagnosis",
+      "name": "Gout diagnosis"
+    }
+  ],
+  "words": 2308
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/everyday-life/cross-stitch",
+  "slug": "cross-stitch",
+  "cat": "everyday-life",
+  "name": "Cross stitch",
+  "seoTitle": "Cross stitch Calculator: Free, With Steps",
+  "seoDesc": "Cross stitch: work out stitches per inch from the width and the height. A free everyday life calculator with the formula, units and a worked example.",
+  "h1": "Cross stitch Calculator",
+  "summary": "Give the Cross stitch calculator the width, the height, the fabric count and the fabric width and it returns <strong>stitches per inch</strong>. Think of it as a shortcut for a practical question that turns up in daily life.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Cross stitch calculator work?",
+      "html": "<p>The Cross stitch calculator takes the values in the form, applies the relationship described below and reports <strong>stitches per inch</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the each stitch covers); then you type in the width, the height, the fabric count and the fabric width.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in ₛₜiₜcₕₑₛ.</li><li>A number, expressed in ₛₜiₜcₕₑₛ.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 4 options, such as 1 thread (for Aida), 2 threads (for linen) and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Width</strong></td><td>A number stated in ₛₜiₜcₕₑₛ.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Height</strong></td><td>A number stated in ₛₜiₜcₕₑₛ.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Fabric count</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Each stitch covers</strong></td><td>One of 4 options, such as 1 thread (for Aida), 2 threads (for linen) and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Extra fabric on each side</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Stitched width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Stitched height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Fabric width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Fabric height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Suggested needle size</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cross-stitch strands</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Backstitch strands</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Stitches per inch</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Cross stitch calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Stitches per inch</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">fabric count ÷ each stitch covers</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Stitches per inch</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">width ÷ stitched width</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Stitched height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">height ÷ stitches per inch</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Extra fabric on each side</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × fabric width − 1 ÷ 2 × stitched width</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Fabric height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × extra fabric on each side + stitched height</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Suggested needle size</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(stitches per inch)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in inches, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in inches</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Cross stitch calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 4 figures keep coming back — the width, the height and the fabric count — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/tiktok-time-alternatives\">TikTok time alternatives</a>, <a href=\"/everyday-life/time\">Time</a> and <a href=\"/everyday-life/time-adder\">Time adder</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Cross stitch calculator work out?",
+      "a": "It returns stitches per inch, derived from the width, the height and the fabric count. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Cross stitch calculator?",
+      "a": "The form asks for the width, the height, the fabric count and the fabric width, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter fabric count in a different unit?",
+      "a": "Yes. Fabric count opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Cross stitch calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/tiktok-time-alternatives",
+      "name": "TikTok time alternatives"
+    },
+    {
+      "path": "/everyday-life/time",
+      "name": "Time"
+    },
+    {
+      "path": "/everyday-life/time-adder",
+      "name": "Time adder"
+    }
+  ],
+  "words": 1481
+}

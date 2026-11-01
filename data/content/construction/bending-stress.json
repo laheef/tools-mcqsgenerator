@@ -1,0 +1,97 @@
+{
+  "path": "/construction/bending-stress",
+  "slug": "bending-stress",
+  "cat": "construction",
+  "name": "Bending stress",
+  "seoTitle": "Bending stress — Free Online Calculator",
+  "seoDesc": "Bending stress: work out inner depth (di) from the distance to surface and the area moment of inertia (Iₓ). A free construction calculator with the…",
+  "h1": "Bending stress Calculator",
+  "summary": "Supply the distance to surface, the area moment of inertia (Iₓ) and the x-axis to bottom surface and the Bending stress calculator solves for <strong>inner depth (di)</strong>. That makes it useful for a materials order or a planning estimate you want to get roughly right first time.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Bending stress calculator work?",
+      "html": "<p>The Bending stress calculator takes the values in the form, applies the relationship described below and reports <strong>inner depth (di)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the cross-section of the beam); then you type in the distance to surface (yc), the area moment of inertia (Iₓ) (2), the x-axis to bottom surface (t + d − yc) and the area moment of inertia (Iₓ) (3).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 9 options, such as square, rectangle and rectangular tube. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Show parameters Iₓ, c, and Sₓ&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in quartic millimeters. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in quartic millimeters. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic millimeters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in newton meters. The unit chip switches it to any of the 18 supported units.</li><li>A measured quantity, entered by default in megapascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in megapascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in megapascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in megapascals. The unit chip switches it to any of the 28 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Cross-section of the beam</strong></td><td>One of 9 options, such as square, rectangle and rectangular tube.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Depth (d)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Width (b)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Inner depth (di)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Inner width (bi)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Flange thickness (t)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Web thickness (tw)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Area moment of inertia (Iₓ)</strong></td><td>A measured quantity, 5 units available.</td><td>quartic millimeters</td><td>Calculated</td></tr><tr><td><strong>Distance to surface (yc)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Area moment of inertia (Iₓ) (2)</strong></td><td>A measured quantity, 5 units available.</td><td>quartic millimeters</td><td>You supply it</td></tr><tr><td><strong>X-axis to bottom surface (yc)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>X-axis to bottom surface (t + d − yc)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Area moment of inertia (Iₓ) (3)</strong></td><td>A measured quantity, 5 units available.</td><td>quartic millimeters</td><td>You supply it</td></tr><tr><td><strong>X-axis to bottom surface (yc) (2)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>X-axis to bottom surface (t + d − yc) (2)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Area moment of inertia (Iₓ) (4)</strong></td><td>A measured quantity, 5 units available.</td><td>quartic millimeters</td><td>Calculated</td></tr><tr><td><strong>X-axis to bottom surface (yc) (3)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Area moment of inertia (Iₓ) (5)</strong></td><td>A measured quantity, 5 units available.</td><td>quartic millimeters</td><td>Calculated</td></tr><tr><td><strong>X-axis to top surface (d - yc)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>X-axis to bottom surface (yc) (4)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Section modulus (Sₓ)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic millimeters</td><td>You supply it</td></tr><tr><td><strong>Section modulus (Sₓ) (2)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic millimeters</td><td>Calculated</td></tr><tr><td><strong>Section modulus (Sₓ) (3)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic millimeters</td><td>Calculated</td></tr><tr><td><strong>Section modulus (Sₓ) (4)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic millimeters</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 39 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Bending stress calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Inner depth (di)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((inner width (bi) ^ -exp b) × (-I denom × area moment of inertia (Iₓ) − (depth (d) ^ exp d) × mult × (width (b) ^ exp b) + PI × (depth (d) ^ exp d) × mult × (width (b) ^ exp b) + (depth (d) ^ exp d) × (width (b) ^ exp b)) ÷ (-mult + PI × mult + 1), 1 ÷ exp d)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">C denom</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">depth (d) ÷ distance to surface (yc)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area moment of inertia (Iₓ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">section modulus (Sₓ) × distance to surface (yc)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Applied bending moment (M)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">maximum bending stress (σₘₐₓ) × (area moment of inertia (Iₓ) ÷ distance to surface (yc))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Web thickness (tw)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-2 × (depth (d) ^ 2) × flange thickness (t) × width (b) − 3 × depth (d) × (flange thickness (t) ^ 2) × width (b) − 2 × (flange thickness (t) ^ 3) × width (b) + 6 × area moment of inertia (Iₓ) + 2 × the square root of ((depth (d) ^ 4) × (flange thickness (t) ^ 2) × (width (b) ^ 2) + 3 × (depth (d) ^ 3) × (flange thickness (t) ^ 3) × (width (b) ^ 2) + 4 × (depth (d) ^ 2) × (flange thickness (t) ^ 4) × (width (b) ^ 2) − 3 × (depth (d) ^ 2) × flange thickness (t) × area moment of inertia (Iₓ) × width (b) + 3 × depth (d) × (flange thickness (t) ^ 5) × (width (b) ^ 2) − 9 × depth (d) × (flange thickness (t) ^ 2) × area moment of inertia (Iₓ) × width (b) + (flange thickness (t) ^ 6) × (width (b) ^ 2) − 6 × (flange thickness (t) ^ 3) × area moment of inertia (Iₓ) × width (b) + 9 × (area moment of inertia (Iₓ) ^ 2))) ÷ (depth (d) ^ 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X-axis to bottom surface (yc)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × (depth (d) ^ 2) × web thickness (tw) + depth (d) × flange thickness (t) × web thickness (tw) + (1 ÷ 2) × (flange thickness (t) ^ 2) × width (b)) ÷ (depth (d) × web thickness (tw) + flange thickness (t) × width (b))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in quartic millimeters, and convertible to any of the 5 units on that chip.</li><li>Shown in newton meters, and convertible to any of the 18 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic millimeters, and convertible to any of the 40 units on that chip.</li><li>Shown in newton meters, and convertible to any of the 18 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Length, opening in millimeters</li><li>Second moment of area, opening in quartic millimeters</li><li>Length, opening in millimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Bending stress calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Ordering material and not wanting a second trip</li><li>Checking a supplier's figure against your own measurements</li><li>Quoting a job where areas and quantities drive the price</li><li>Any time the same 3 figures keep coming back — the distance to surface, the area moment of inertia (Iₓ) and the x-axis to bottom surface — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/hoop-house\">Hoop house</a>, <a href=\"/construction/insulation\">Insulation</a> and <a href=\"/construction/junction-box-sizing\">Junction box sizing</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Bending stress calculator work out?",
+      "a": "It returns inner depth (di), derived from the distance to surface, the area moment of inertia (Iₓ) and the x-axis to bottom surface. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Bending stress calculator?",
+      "a": "The form asks for the distance to surface, the area moment of inertia (Iₓ) and the x-axis to bottom surface, which is 13 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter depth (d) in a different unit?",
+      "a": "Yes. Depth (d) opens in millimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Width (b) = 0 mm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Bending stress calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/hoop-house",
+      "name": "Hoop house"
+    },
+    {
+      "path": "/construction/insulation",
+      "name": "Insulation"
+    },
+    {
+      "path": "/construction/junction-box-sizing",
+      "name": "Junction box sizing"
+    }
+  ],
+  "words": 2374
+}

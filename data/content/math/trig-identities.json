@@ -1,0 +1,89 @@
+{
+  "path": "/math/trig-identities",
+  "slug": "trig-identities",
+  "cat": "math",
+  "name": "Trig identities",
+  "seoTitle": "Trig identities Calculator — Formula, Units & Example",
+  "seoDesc": "Trig identities: a free math calculator that walks you through 43 values, with the formula spelled out and a worked example.",
+  "h1": "Trig identities Calculator",
+  "summary": "The Trig identities calculator is a free, no-sign-up math tool. Fill in the 5 fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nIt is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. The results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.",
+  "sections": [
+    {
+      "title": "How does the Trig identities calculator work?",
+      "html": "<p>The Trig identities calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the type of identity and the fraction of the period); then you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Type of identity</td><td>pick the option that matches your case — 7 options, such as pythagorean identities, reflection identities and shift identities. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>Fraction of the period</td><td>pick the option that matches your case — 3 options, such as quarter period, half period and full period. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>Reflection along the line</td><td>pick the option that matches your case — 4 options, such as α = 0, α = π/4 and α = π/2. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>Φ</td><td>a measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</td></tr><tr><td>Θ</td><td>a measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</td></tr></tbody></table><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Trig identities calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Sin(θ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(Θ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cos(θ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(Θ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Tan(θ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(Θ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cot(θ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 ÷ (Θ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Csc(θ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 ÷ (Θ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sec(θ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 ÷ (Θ)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Trig identities calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li><li>Splitting a bill, a measurement or a shape problem between several people</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/cosine-similarity\">Cosine similarity</a>, <a href=\"/math/cosine-triangle\">Cosine triangle</a> and <a href=\"/math/cot\">Cotangent</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Trig identities calculator?",
+      "a": "The form asks for a few values, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter Φ in a different unit?",
+      "a": "Yes. Φ opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Trig identities calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/cosine-similarity",
+      "name": "Cosine similarity"
+    },
+    {
+      "path": "/math/cosine-triangle",
+      "name": "Cosine triangle"
+    },
+    {
+      "path": "/math/cot",
+      "name": "Cotangent"
+    }
+  ],
+  "words": 1182
+}

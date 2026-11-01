@@ -1,0 +1,93 @@
+{
+  "path": "/other/ai-job-risk",
+  "slug": "ai-job-risk",
+  "cat": "other",
+  "name": "AI job risk",
+  "seoTitle": "AI job risk Calculator",
+  "seoDesc": "AI job risk: work out ai exposure score from the annual salary. A free other calculator with the formula, units and a worked example.",
+  "h1": "AI job risk Calculator",
+  "summary": "The AI job risk calculator returns <strong>ai exposure score</strong> from the 7 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nThink of it as a shortcut for whatever you happen to be working on. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the AI job risk calculator work?",
+      "html": "<p>The AI job risk calculator takes the values in the form, applies the relationship described below and reports <strong>ai exposure score</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (your role, the experience level and the location); then you type in the annual salary.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 51 options, such as accountants and auditors, automotive service technicians and mechanics and bartenders. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as junior/Entry, mid-level and senior/Lead. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 37 options, such as australia, austria and belgium. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as rural/Low-tech region, standard and tech hub/Major city. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as remote, hybrid and on-site. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Show explanation of categories&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your role</strong></td><td>One of 51 options, such as accountants and auditors, automotive service technicians and mechanics and bartenders.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Experience level</strong></td><td>One of 3 options, such as junior/Entry, mid-level and senior/Lead.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Annual salary</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Location</strong></td><td>One of 37 options, such as australia, austria and belgium.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Work environment</strong></td><td>One of 3 options, such as rural/Low-tech region, standard and tech hub/Major city.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Work mode</strong></td><td>One of 3 options, such as remote, hybrid and on-site.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Ai exposure score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the AI job risk calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Ai exposure score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(your role, experience level, work mode, location, work environment, annual salary)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The AI job risk calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 1 figures keep coming back — the annual salary — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/grade\">Grade</a>, <a href=\"/other/grade-curve\">Grade curve</a> and <a href=\"/other/graduation-by-birthday\">Graduation by birthday</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the AI job risk calculator work out?",
+      "a": "It returns ai exposure score, derived from the annual salary. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the AI job risk calculator?",
+      "a": "The form asks for the annual salary, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter annual salary in a different unit?",
+      "a": "Yes. Annual salary opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the AI job risk calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/grade",
+      "name": "Grade"
+    },
+    {
+      "path": "/other/grade-curve",
+      "name": "Grade curve"
+    },
+    {
+      "path": "/other/graduation-by-birthday",
+      "name": "Graduation by birthday"
+    }
+  ],
+  "words": 1300
+}

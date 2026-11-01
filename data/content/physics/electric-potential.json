@@ -1,0 +1,97 @@
+{
+  "path": "/physics/electric-potential",
+  "slug": "electric-potential",
+  "cat": "physics",
+  "name": "Electric potential",
+  "seoTitle": "Electric potential — Free Online Calculator",
+  "seoDesc": "Electric potential: work out distance (r) from the relative permittivity and the charge 1. A free physics calculator with the formula, units and a worked…",
+  "h1": "Electric potential Calculator",
+  "summary": "Give the Electric potential calculator the relative permittivity, the charge 1, the charge 2 and the charge 3 and it returns <strong>distance (r)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Electric potential calculator work?",
+      "html": "<p>The Electric potential calculator takes the values in the form, applies the relationship described below and reports <strong>distance (r)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (number of point charges); then you type in the relative permittivity (ϵᵣ), the charge 1 (q₁), the distance 1 (r₁) and the charge 2 (q₂).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as due to a point charge, due to a system of point charges and difference. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in coulombs. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in times 10 to the 6. The unit chip switches it to any of the 69 supported units.</li></ul><p>The form has 27 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Relative permittivity (ϵᵣ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of point charges</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Charge 1 (q₁)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 1 (r₁)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 2 (q₂)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 2 (r₂)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 3 (q₃)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 3 (r₃)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 4 (q₄)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>Calculated</td></tr><tr><td><strong>Distance 4 (r₄)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 5 (q₅)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 5 (r₅)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 6 (q₆)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 6 (r₆)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 7 (q₇)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 7 (r₇)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 8 (q₈)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 8 (r₈)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 9 (q₉)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 9 (r₉)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Charge 10 (q₁₀)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr><tr><td><strong>Distance 10 (r₁₀)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Electric potential (V) (Electric potential of the system)</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the 6</td><td>Calculated</td></tr><tr><td><strong>Charge (q) (Electric potential of a point charge)</strong></td><td>A measured quantity, 9 units available.</td><td>coulombs</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 31 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Electric potential calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Distance (r)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">charge (q) × constant ÷ electric potential (V)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Constant</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">8987551788 ÷ relative permittivity (ϵᵣ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Electric potential (V)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(constant × (Electric pot system part 1 + Electric pot system part 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Charge 4 (q₄)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-charge 1 (q₁) × distance 4 (r₄) ÷ distance 1 (r₁) − charge 2 (q₂) × distance 4 (r₄) ÷ distance 2 (r₂) − charge 3 (q₃) × distance 4 (r₄) ÷ distance 3 (r₃) − charge 5 (q₅) × distance 4 (r₄) ÷ distance 5 (r₅) + distance 4 (r₄) × electric pot system part1</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Electric pot system part 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">charge 10 (q₁₀) ÷ distance 10 (r₁₀) + charge 6 (q₆) ÷ distance 6 (r₆) + charge 7 (q₇) ÷ distance 7 (r₇) + charge 8 (q₈) ÷ distance 8 (r₈) + charge 9 (q₉) ÷ distance 9 (r₉)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Charge (q)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">electric potential energy (U) ÷ electric potential difference (∆V)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in times 10 to the 6, and convertible to any of the 69 units on that chip.</li><li>Shown in coulombs, and convertible to any of the 9 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in coulombs, and convertible to any of the 9 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Electric charge, opening in coulombs</li><li>Length, opening in micrometers</li><li>Electric charge, opening in coulombs</li><li>Length, opening in micrometers</li><li>Electric charge, opening in coulombs</li><li>Length, opening in micrometers</li><li>Electric charge, opening in coulombs</li><li>Length, opening in micrometers</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Electric potential calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 4 figures keep coming back — the relative permittivity, the charge 1 and the charge 2 — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/sunset\">Sunset</a>, <a href=\"/physics/surface-tension\">Surface tension</a> and <a href=\"/physics/suvat\">SUVAT</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Electric potential calculator work out?",
+      "a": "It returns distance (r), derived from the relative permittivity, the charge 1 and the charge 2. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Electric potential calculator?",
+      "a": "The form asks for the relative permittivity, the charge 1, the charge 2 and the charge 3, which is 27 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter charge 1 (q₁) in a different unit?",
+      "a": "Yes. Charge 1 (q₁) opens in coulombs and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Electric potential (V) = 0 × 10⁶. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Electric potential calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/sunset",
+      "name": "Sunset"
+    },
+    {
+      "path": "/physics/surface-tension",
+      "name": "Surface tension"
+    },
+    {
+      "path": "/physics/suvat",
+      "name": "SUVAT"
+    }
+  ],
+  "words": 2289
+}

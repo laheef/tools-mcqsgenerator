@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" role="img" aria-labelledby="t d">
+<title id="t">Protein Molar Conversions — how the answer is built</title>
+<desc id="d">Protein Molar Conversions: the inputs (Molecular weight, Mass concentration) are combined by the formula Molarity (M) = mass concentration (g/L) ÷ molecular weight (g/mol) to give Molar concentration, Molar concentration.</desc>
+<style>
+  .lbl { font: 600 13px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #0f172a; }
+  .val { font: 700 17px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #0f172a; }
+  .small { font: 500 11px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #64748b; }
+  .tag { font: 600 11px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #2563eb;
+         letter-spacing: .06em; text-transform: uppercase; }
+  .box { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; rx: 10; }
+  .boxout { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 10; }
+  .arrow { stroke: #cbd5e1; stroke-width: 2; fill: none; }
+  .flow { stroke: #0ea5e9; stroke-width: 2; fill: none; stroke-dasharray: 5 7; animation: dash 1.6s linear infinite; }
+  .grow { transform-box: fill-box; transform-origin: bottom; animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
+  .fade { animation: fade 1s ease both; }
+  .slide { animation: slide 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  .widen { transform-box: fill-box; transform-origin: left; animation: widen .8s cubic-bezier(.2,.8,.2,1) both; }
+  .sweep { animation: sweepdown 3.2s cubic-bezier(.4,0,.6,1) infinite; }
+  .tick { font: 700 12px ui-monospace, 'SF Mono', Menlo, monospace; fill: #64748b; }
+  @keyframes dash { to { stroke-dashoffset: -24; } }
+  @keyframes rise { from { transform: scaleY(.05); opacity: .2; } to { transform: scaleY(1); opacity: 1; } }
+  @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes slide { from { transform: translateX(-14px); opacity: 0 } to { transform: translateX(0); opacity: 1 } }
+  @keyframes pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }
+  @keyframes widen { from { transform: scaleX(.02); opacity: .25 } to { transform: scaleX(1); opacity: 1 } }
+  /* The band is a hint that the list is being read top to bottom, not data: it
+     stays translucent so a screenshot taken mid-animation can never be mistaken
+     for another bar in the chart. */
+  @keyframes sweepdown { 0% { transform: translateY(0); opacity: 0 }
+                         15% { opacity: .16 }
+                         85% { opacity: .16 }
+                         100% { transform: translateY(156px); opacity: 0 } }
+  @media (prefers-reduced-motion: reduce) {
+    .flow, .grow, .fade, .slide, .pulse, .widen, .sweep { animation: none; }
+  }
+</style>
+<rect width="720" height="300" fill="#ffffff"/>
+<text class="tag" x="28" y="30">Inputs</text>
+<text class="tag" x="452" y="30">Result</text>
+<g class="slide" style="animation-delay:0.00s">
+<rect class="box" x="28" y="52" width="212" height="44"/>
+<text class="lbl" x="40" y="71">Molecular weight</text>
+<text class="val" x="40" y="88">55,000<tspan class="small"> Da</tspan></text>
+</g>
+<g class="slide" style="animation-delay:0.08s">
+<rect class="box" x="28" y="104" width="212" height="44"/>
+<text class="lbl" x="40" y="123">Mass concentration</text>
+<text class="val" x="40" y="140">2<tspan class="small"> mg/mL</tspan></text>
+</g>
+<path class="flow" d="M250 120 H300"/>
+<rect x="300" y="70" width="132" height="100" rx="12" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text class="small" x="366" y="104" text-anchor="middle">mass concentration</text>
+<text class="small" x="366" y="119" text-anchor="middle">(g/L) ÷ molecular…</text>
+<text class="small" x="366" y="152" text-anchor="middle">worked out for you</text>
+<path class="flow" d="M432 120 H480" style="animation-delay:.3s"/>
+<g class="fade" style="animation-delay:0.50s">
+<rect class="boxout" x="480" y="56" width="212" height="64"/>
+<text class="lbl" x="494" y="78">Molar concentration</text>
+<text class="val" x="494" y="102" font-size="22">36.36<tspan class="small"> µM</tspan></text>
+</g>
+<g class="fade" style="animation-delay:0.65s">
+<rect class="boxout" x="480" y="130" width="212" height="64"/>
+<text class="lbl" x="494" y="152">Molar concentration</text>
+<text class="val" x="494" y="176" font-size="22">36,363.64<tspan class="small"> nM</tspan></text>
+</g>
+</svg>

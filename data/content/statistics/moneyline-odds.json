@@ -1,0 +1,97 @@
+{
+  "path": "/statistics/moneyline-odds",
+  "slug": "moneyline-odds",
+  "cat": "statistics",
+  "name": "Moneyline odds",
+  "seoTitle": "Moneyline odds Calculator — Formula, Units & Example",
+  "seoDesc": "Moneyline odds: work out chances against success from number of consecutive wins and the probability of losing. A free statistics calculator with the…",
+  "h1": "Moneyline odds Calculator",
+  "summary": "Give the Moneyline odds calculator number of consecutive wins, the probability of losing, number of consecutive losses and the stake and it returns <strong>chances against success</strong>. That makes it useful for an assignment, a report or a data discussion where you need a defensible number.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Moneyline odds calculator work?",
+      "html": "<p>The Moneyline odds calculator takes the values in the form, applies the relationship described below and reports <strong>chances against success</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in number of consecutive wins, the probability of losing, number of consecutive losses and the stake.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in times in a row.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in times in a row.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Chances for success</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Chances against success</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>American (moneyline odds)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>American (moneyline odds) (2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Probability of winning</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Number of consecutive wins</strong></td><td>A number stated in times in a row.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Probability of winning times in a row</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Probability of losing</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Number of consecutive losses</strong></td><td>A number stated in times in a row.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Probability of losing times in a row</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Stake</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Total returned</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Potential net profit</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Decimal odds</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Moneyline odds calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Chances against success</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-chances for success + chances for success ÷ probability of winning</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Chances against success</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-probability of losing × chances for success ÷ (probability of losing − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Probability of winning</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 − probability of losing</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Decimal odds</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((chances against success + chances for success) ÷ chances for success)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">American (moneyline odds)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(100 × ((chances against success + chances for success) ÷ chances for success) − 100)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">American (moneyline odds)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-100 ÷ (((chances against success + chances for success) ÷ chances for success) − 1))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Chances for success</strong> = 10, <strong>Probability of winning</strong> = 10 %, <strong>Number of consecutive wins</strong> = 2 and <strong>Number of consecutive losses</strong> = 2. Working through the relationship above gives <strong>Chances against success</strong> = 90, <strong>American (moneyline odds)</strong> = 900, <strong>Probability of winning times in a row</strong> = 1 % and <strong>Probability of losing</strong> = 90 %.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Chances against success</strong> = 90, <strong>American (moneyline odds)</strong> = 900, <strong>Probability of winning times in a row</strong> = 1 % and <strong>Probability of losing</strong> = 90 % should be roughly the size you expected from <strong>Chances for success</strong> = 10 and <strong>Probability of winning</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Moneyline odds calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a result a piece of software produced</li><li>Deciding how much confidence a sample really supports</li><li>Turning raw numbers into something you can quote</li><li>Any time the same 4 figures keep coming back — number of consecutive wins, the probability of losing and number of consecutive losses — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/chi-square\">Chi-square</a>, <a href=\"/statistics/class-width\">Class width</a> and <a href=\"/statistics/coefficient-of-determination\">Coefficient of determination</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Moneyline odds calculator work out?",
+      "a": "It returns chances against success, derived from number of consecutive wins, the probability of losing and number of consecutive losses. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Moneyline odds calculator?",
+      "a": "The form asks for number of consecutive wins, the probability of losing, number of consecutive losses and the stake, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter probability of winning in a different unit?",
+      "a": "Yes. Probability of winning opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Chances against success = 90. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Moneyline odds calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/chi-square",
+      "name": "Chi-square"
+    },
+    {
+      "path": "/statistics/class-width",
+      "name": "Class width"
+    },
+    {
+      "path": "/statistics/coefficient-of-determination",
+      "name": "Coefficient of determination"
+    }
+  ],
+  "words": 1600
+}

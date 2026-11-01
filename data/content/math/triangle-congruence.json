@@ -1,0 +1,97 @@
+{
+  "path": "/math/triangle-congruence",
+  "slug": "triangle-congruence",
+  "cat": "math",
+  "name": "Triangle congruence",
+  "seoTitle": "Triangle congruence Calculator — Formula, Units & Example",
+  "seoDesc": "Triangle congruence: work out side length c (Triangle 1) from the side length a and the side length b. A free math calculator with the formula, units and…",
+  "h1": "Triangle congruence Calculator",
+  "summary": "Supply the side length a and the side length b and the Triangle congruence calculator solves for <strong>side length c (Triangle 1)</strong>. It suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Triangle congruence calculator work?",
+      "html": "<p>The Triangle congruence calculator takes the values in the form, applies the relationship described below and reports <strong>side length c (Triangle 1)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the given... (Triangle 1) and the given... (Triangle 2)); then you type in the side length a (Triangle 1), the side length a (Triangle 1), the side length b (Triangle 1) and the side length b (Triangle 1).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as three sides (SSS), two sides + angle between (SAS) and two angles + side between them (ASA). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 4 options, such as three sides (SSS), two sides + angle between (SAS) and two angles + side between them (ASA). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li></ul><p>The form has 26 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Given (Triangle 1)</strong></td><td>One of 4 options, such as three sides (SSS), two sides + angle between (SAS) and two angles + side between them (ASA).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Side length a (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length a (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length b (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle γ (Triangle 1)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Side length b (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length c (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length c (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Angle α (Triangle 1)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Side length c (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle ß (Triangle 1)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Side length a (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Side length b (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Angle ß (Triangle 1)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Angle γ (Triangle 1)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Angle γ (Triangle 1)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Side length b (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length a (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Side length c (Triangle 1)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Angle α (Triangle 1)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Given (Triangle 2)</strong></td><td>One of 4 options, such as three sides (SSS), two sides + angle between (SAS) and two angles + side between them (ASA).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Side length a (Triangle 2)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length a (Triangle 2)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side length b (Triangle 2)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 56 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Triangle congruence calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Side length c</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(the square root of ((side length a ^ 2) − 2 × side length a × side length b × the cosine of (angle γ) + (side length b ^ 2)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle γ</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-angle α − angle ß + PI)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side length a</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(side length c × the sine of (angle α) ÷ the sine of ((-angle α − angle ß + PI)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side length b</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(the sine of (angle ß) × (side length c × the sine of (angle α) ÷ the sine of ((-angle α − angle ß + PI))) ÷ the sine of (angle α))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Angle α</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-angle ß − angle γ + PI)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Side length c</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(side length b × the sine of (angle γ) ÷ the sine of (angle ß))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Given</strong> set to three sides (SSS), <strong>Side length a</strong> = 30 cm, <strong>Side length b</strong> = 30 cm and <strong>Angle γ</strong> = 10 deg. Working through the relationship above gives <strong>Side length c</strong> = 5.2293 cm, <strong>Side length a</strong> = 15.2314 cm, <strong>Side length b</strong> = 15.2314 cm and <strong>Angle γ</strong> = 160 deg.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Side length c</strong> = 5.2293 cm, <strong>Side length a</strong> = 15.2314 cm, <strong>Side length b</strong> = 15.2314 cm and <strong>Angle γ</strong> = 160 deg should be roughly the size you expected from <strong>Given</strong> set to three sides (SSS) and <strong>Side length a</strong> = 30 cm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Angle, opening in degrees</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Angle, opening in degrees</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Triangle congruence calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Settling an argument about a number with a quick, traceable result</li><li>Checking a homework answer before you hand it in</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Any time the same 2 figures keep coming back — the side length a and the side length b — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/completing-the-square-works\">Completing the square works</a>, <a href=\"/math/complex-number\">Complex number</a> and <a href=\"/math/complex-number-to-polar-form\">Complex number to polar form</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Triangle congruence calculator work out?",
+      "a": "It returns side length c (Triangle 1), derived from the side length a and the side length b. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Triangle congruence calculator?",
+      "a": "The form asks for the side length a and the side length b, which is 26 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter side length a (Triangle 1) in a different unit?",
+      "a": "Yes. Side length a (Triangle 1) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Side length c = 5.2293 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Triangle congruence calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/completing-the-square-works",
+      "name": "Completing the square works"
+    },
+    {
+      "path": "/math/complex-number",
+      "name": "Complex number"
+    },
+    {
+      "path": "/math/complex-number-to-polar-form",
+      "name": "Complex number to polar form"
+    }
+  ],
+  "words": 2530
+}

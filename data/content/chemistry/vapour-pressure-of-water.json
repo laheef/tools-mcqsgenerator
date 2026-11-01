@@ -1,0 +1,97 @@
+{
+  "path": "/chemistry/vapour-pressure-of-water",
+  "slug": "vapour-pressure-of-water",
+  "cat": "chemistry",
+  "name": "Vapor pressure of water",
+  "seoTitle": "Vapor pressure of water Calculator — Formula, Units & Example",
+  "seoDesc": "Vapor pressure of water: work out antoine formula (Pressure) from the temperature. A free chemistry calculator with the formula, units and a worked example.",
+  "h1": "Vapor pressure of water Calculator",
+  "summary": "The Vapor pressure of water calculator returns <strong>antoine formula (Pressure)</strong> from the 1 field on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nIt suits a bench calculation involving amounts, concentrations or reaction ratios. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Vapor pressure of water calculator work?",
+      "html": "<p>The Vapor pressure of water calculator takes the values in the form, applies the relationship described below and reports <strong>antoine formula (Pressure)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the temperature.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Simplified formula</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>Calculated</td></tr><tr><td><strong>Antoine formula (Pressure)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>Calculated</td></tr><tr><td><strong>Antoine formula (Pressure)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>Calculated</td></tr><tr><td><strong>Magnus formula</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>Calculated</td></tr><tr><td><strong>Tetens formula (Pressure)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>Calculated</td></tr><tr><td><strong>Buck formula (Pressure)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>Calculated</td></tr><tr><td><strong>Tetens formula (Pressure)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>Calculated</td></tr><tr><td><strong>Buck formula (Pressure)</strong></td><td>A measured quantity, 28 units available.</td><td>kilopascals</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Vapor pressure of water calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Antoine formula</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(10, (1 ÷ 100000) × (403565500 × temperature + 7671180403) ÷ (500 × temperature + 116713))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Antoine formula</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(10, (1 ÷ 100000) × (162803800 × temperature + 3584287043) ÷ (200 × temperature + 48897))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Magnus formula</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((30547 ÷ 50000) × the exponential of ((3525 ÷ 8) × temperature ÷ (25 × temperature + 6076)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Tetens formula</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((30539 ÷ 50000) × the exponential of ((1727 ÷ 10) × temperature ÷ (10 × temperature + 2373)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Buck formula</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((61121 ÷ 100000) × (10, -6 ÷ 2345 × temperature × (4379991 − 1000 × temperature) ÷ (50 × temperature + 12857)) × (2718281828459, (1 ÷ 4690) × temperature × (4379991 − 1000 × temperature) ÷ (50 × temperature + 12857)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Tetens formula</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((30539 ÷ 50000) × (10, -525 × temperature ÷ (2 × temperature + 531)) × (10035391806114069475466996942461686700452719190138298555602723166738730266491323759667868498278191964292111408216808841258316052232810057330767115187766708305370364343495499983119659657890318804553777204166437250465188337238724396751786615801681242886459431258011712126572762702415676640445915859797630270168311775955619584318798146853473477915160614030012732942194885642985661977941163656511034021223171466672147409556147574306315127136108623746110712996574848787313268276800831527495295640309776301348422028755898037106939147301878173991811002211829087464103278395368832272716619131730327394675373415027990862682703629687978196936709386909125074078140671957147563440657320345184826566501606051478521225107088868613295986495746518685238224919290742196903981962595754037061310746884578257001502203009002899536880706310745896955106875427503509575932569399759205619259996542169626935031180467923270724560640754186697277130169627788805990445225877340454653870809722962450125464083403397838339115254162297347311269096609709610487354396427106474557067555527246389057606804448136170827240067944466479377734024145665449040156683507517844230273828221718087799825026414071071565255267467220546796670742776293638286164926655338684569209702661249397945311610439257340689381681077151320046138362929775798507922148088921683691153079878348118590966594217359487428972825777755981520794050745986263948116861623306999489204069258169615658983666547068175668272557243973701089816353845184486602368737628222132850320734028256281919147339774560217286261923738234602971834823788882927216230586543938296965277947873086559629282809060258986999102593711550582391806570385233685406450168976630898610288318910718058043712318565322617279077434140535422042147944187291650308632801144521354068831428351300154011950100503643070278900617507193993483040091970060482996152391155262004945205935314220997816388535808382679216094247409961798781892771747519171484746027849446641025354098338971450280925789198980866502236135137748522781246784854843558149710388950815625070280946210640036567504995612730049531564897108206016926606591836285309318126380297302487711762952590950486074736878678712182513060674722344970499, (1 ÷ 4) × temperature ÷ (2 × temperature + 531)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Open the page and it is already filled in. With the values it starts from — <strong>Temperature</strong> = 25 °C — it reports <strong>Simplified formula</strong> = 0.0237 kPa, <strong>Antoine formula</strong> = 0.0237 kPa, <strong>Magnus formula</strong> = 0.0032 kPa and <strong>Tetens formula</strong> = 0.0032 kPa.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Simplified formula</strong> = 0.0237 kPa, <strong>Antoine formula</strong> = 0.0237 kPa, <strong>Magnus formula</strong> = 0.0032 kPa and <strong>Tetens formula</strong> = 0.0032 kPa should be roughly the size you expected from <strong>Temperature</strong> = 25 °C.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilopascals, and convertible to any of the 28 units on that chip.</li><li>Shown in kilopascals, and convertible to any of the 28 units on that chip.</li><li>Shown in kilopascals, and convertible to any of the 28 units on that chip.</li><li>Shown in kilopascals, and convertible to any of the 28 units on that chip.</li><li>Shown in kilopascals, and convertible to any of the 28 units on that chip.</li><li>Shown in kilopascals, and convertible to any of the 28 units on that chip.</li><li>Shown in kilopascals, and convertible to any of the 28 units on that chip.</li><li>Shown in kilopascals, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Temperature, opening in Celsius</li><li>Pressure, opening in kilopascals</li><li>Pressure, opening in kilopascals</li><li>Pressure, opening in kilopascals</li><li>Pressure, opening in kilopascals</li><li>Pressure, opening in kilopascals</li><li>Pressure, opening in kilopascals</li><li>Pressure, opening in kilopascals</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Vapor pressure of water calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting between the units a protocol and your bench equipment use</li><li>Working through a stoichiometry problem</li><li>Preparing a solution and checking the numbers first</li><li>Any time the same 1 figures keep coming back — the temperature — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/activity-coefficient\">Activity coefficient</a>, <a href=\"/chemistry/actual-yield\">Actual yield</a> and <a href=\"/chemistry/air-fuel-ratio-afr\">Air-fuel ratio (AFR)</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Vapor pressure of water calculator work out?",
+      "a": "It returns antoine formula (Pressure), derived from the temperature. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Vapor pressure of water calculator?",
+      "a": "The form asks for the temperature, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter temperature in a different unit?",
+      "a": "Yes. Temperature opens in Celsius and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Simplified formula = 0.0237 kPa. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Vapor pressure of water calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/activity-coefficient",
+      "name": "Activity coefficient"
+    },
+    {
+      "path": "/chemistry/actual-yield",
+      "name": "Actual yield"
+    },
+    {
+      "path": "/chemistry/air-fuel-ratio-afr",
+      "name": "Air-fuel ratio (AFR)"
+    }
+  ],
+  "words": 1401
+}

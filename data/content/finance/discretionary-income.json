@@ -1,0 +1,97 @@
+{
+  "path": "/finance/discretionary-income",
+  "slug": "discretionary-income",
+  "cat": "finance",
+  "name": "Discretionary income",
+  "seoTitle": "Discretionary income Calculator — Formula, Units & Example",
+  "seoDesc": "Discretionary income: work out pov guide from the annual Adjusted Gross Income and the spouse's Adjusted Gross Income. A free finance calculator with the…",
+  "h1": "Discretionary income Calculator",
+  "summary": "Give the Discretionary income calculator the annual Adjusted Gross Income, the spouse's Adjusted Gross Income and number of dependents and it returns <strong>pov guide</strong>. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Discretionary income calculator work?",
+      "html": "<p>The Discretionary income calculator takes the values in the form, applies the relationship described below and reports <strong>pov guide</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the marital status and the state); then you type in the annual Adjusted Gross Income, the spouse's Adjusted Gross Income and number of dependents.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as single, married filed jointly and married filed separately. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 51 options, such as alabama, alaska and arizona. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A number, expressed in person(s).</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Marital status</strong></td><td>One of 3 options, such as single, married filed jointly and married filed separately.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>State</strong></td><td>One of 51 options, such as alabama, alaska and arizona.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Annual Adjusted Gross Income</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Spouse's Adjusted Gross Income</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of dependents</strong></td><td>A number stated in person(s).</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Pov guide</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total income</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Discretionary income calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Pov guide</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(state, marital status, number of dependents)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total income</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(annual Adjusted Gross Income, spouse&#x27;s Adjusted Gross Income, marital status)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Discretionary income calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 3 figures keep coming back — the annual Adjusted Gross Income, the spouse's Adjusted Gross Income and number of dependents — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Discretionary income calculator, these are the ones that matter:</p>\n<ul><li>The 2 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/annual-salary-per-hour\">Annual salary per hour</a>, <a href=\"/finance/annual-to-monthly-salary\">Annual to monthly salary</a> and <a href=\"/finance/annualized-rate-of-return\">Annualized rate of return</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Discretionary income calculator work out?",
+      "a": "It returns pov guide, derived from the annual Adjusted Gross Income, the spouse's Adjusted Gross Income and number of dependents. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Discretionary income calculator?",
+      "a": "The form asks for the annual Adjusted Gross Income, the spouse's Adjusted Gross Income and number of dependents, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter disc Inc Comb in a different unit?",
+      "a": "Yes. Disc Inc Comb opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Discretionary income calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/annual-salary-per-hour",
+      "name": "Annual salary per hour"
+    },
+    {
+      "path": "/finance/annual-to-monthly-salary",
+      "name": "Annual to monthly salary"
+    },
+    {
+      "path": "/finance/annualized-rate-of-return",
+      "name": "Annualized rate of return"
+    }
+  ],
+  "words": 1359
+}

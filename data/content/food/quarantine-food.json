@@ -1,0 +1,93 @@
+{
+  "path": "/food/quarantine-food",
+  "slug": "quarantine-food",
+  "cat": "food",
+  "name": "Quarantine food",
+  "seoTitle": "Quarantine food Calculator",
+  "seoDesc": "Quarantine food: work out minced meat (Perishable foods) from the women and the men. A free food calculator with the formula, units and a worked example.",
+  "h1": "Quarantine food Calculator",
+  "summary": "Give the Quarantine food calculator the women, the men, the girls and the boys and it returns <strong>minced meat (Perishable foods)</strong>. It is built for portioning, timing or nutrition.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Quarantine food calculator work?",
+      "html": "<p>The Quarantine food calculator takes the values in the form, applies the relationship described below and reports <strong>minced meat (Perishable foods)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the women, the men, the girls and the boys.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Women</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Men</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Girls</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Boys</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Quarantine time</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Apples</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Onions</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Carrots</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Bell peppers</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Potatoes</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Eggs</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Bread</strong></td><td>A number stated in loaves.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Butter (Perishable foods)</strong></td><td>A number stated in blocks.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cheese (Perishable foods)</strong></td><td>A number stated in blocks.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Butter (Perishable foods)</strong></td><td>A number stated in sticks.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cheese (Perishable foods)</strong></td><td>A number stated in blocks.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Milk (Perishable foods)</strong></td><td>A number stated in liters.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Minced meat (Perishable foods)</strong></td><td>A number stated in trays.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Milk (Perishable foods)</strong></td><td>A number stated in cartons.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Minced meat (Perishable foods)</strong></td><td>A number stated in trays.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Crispbread (Non-perishable foods)</strong></td><td>A number stated in packs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Oats (Non-perishable foods)</strong></td><td>A number stated in packs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Crispbread (Non-perishable foods)</strong></td><td>A number stated in packs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Oats (Non-perishable foods)</strong></td><td>A number stated in packs.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 52 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Quarantine food calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Minced meat</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(men, boys, quarantine time, women, girls)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Eggs</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(men, boys, quarantine time, women, girls)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Butter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(men, boys, quarantine time, women, girls)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Milk</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(men, boys, quarantine time, women, girls)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cheese</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(men, boys, quarantine time, women, girls)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Bread</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(men, boys, quarantine time, women, girls)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in days</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Quarantine food calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Working out timing so everything finishes together</li><li>Checking portions before you shop</li><li>Scaling a recipe up or down</li><li>Any time the same 4 figures keep coming back — the women, the men and the girls — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/sourdough\">Sourdough</a>, <a href=\"/food/steak-cook-time\">Steak cook time</a> and <a href=\"/food/sulfur\">Sulfur</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Quarantine food calculator work out?",
+      "a": "It returns minced meat (Perishable foods), derived from the women, the men and the girls. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Quarantine food calculator?",
+      "a": "The form asks for the women, the men, the girls and the boys, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter quarantine time in a different unit?",
+      "a": "Yes. Quarantine time opens in days and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Is the Quarantine food calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/sourdough",
+      "name": "Sourdough"
+    },
+    {
+      "path": "/food/steak-cook-time",
+      "name": "Steak cook time"
+    },
+    {
+      "path": "/food/sulfur",
+      "name": "Sulfur"
+    }
+  ],
+  "words": 1233
+}

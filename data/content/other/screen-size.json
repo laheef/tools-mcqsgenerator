@@ -1,0 +1,97 @@
+{
+  "path": "/other/screen-size",
+  "slug": "screen-size",
+  "cat": "other",
+  "name": "Screen size",
+  "seoTitle": "Screen size — Free Online Calculator",
+  "seoDesc": "Screen size: work out diagonal from the height. A free other calculator with the formula, units and a worked example.",
+  "h1": "Screen size Calculator",
+  "summary": "The Screen size calculator is a free, no-sign-up other tool. Fill in the 4 fields it asks for and it works out <strong>diagonal</strong> straight away, with the formula shown underneath.\n\nIt suits whatever you happen to be working on. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Screen size calculator work?",
+      "html": "<p>The Screen size calculator takes the values in the form, applies the relationship described below and reports <strong>diagonal</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the screen, the type and the curvature rating (R)); then you type in the height (H).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 13 options, such as 16:9 (4K / HD / FHD TV, computer), 4:3 (old TV, computer, SVGA, XGA) and 16:10 (computer). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as flat and curved. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 6 options, such as 1500R, 1800R and 2300R. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Screen</strong></td><td>One of 13 options, such as 16:9 (4K / HD / FHD TV, computer), 4:3 (old TV, computer, SVGA, XGA) and 16:10 (computer).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Width (W)</strong></td><td>A number stated in :.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Height (H)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Type</strong></td><td>One of 2 options, such as flat and curved.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Curvature rating (R)</strong></td><td>One of 6 options, such as 1500R, 1800R and 2300R.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Radius</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Diagonal</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>Calculated</td></tr><tr><td><strong>Width (W)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Height (H)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Screen length (L)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Base width (w)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Base depth (d)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Screen area</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Screen size calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Diagonal</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((height (H) ^ 2) × ((width ^ 2) + (height ^ 2)) ÷ (height ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Screen area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(height (H) × width (W))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Width (W)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">width × height (H) ÷ height</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Screen length (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">width × height (H) ÷ height</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Screen length (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × radius × ((1 ÷ 2) × base width (w) ÷ radius)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Screen length (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × radius × ((-base depth (d) + radius) ÷ radius)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in inches, and convertible to any of the 34 units on that chip.</li><li>Shown in square centimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in millimeters</li><li>Length, opening in inches</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Area, opening in square centimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Screen size calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 1 figures keep coming back — the height — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/chord-inversion\">Chord inversion</a>, <a href=\"/other/chord-progression\">Chord progression</a> and <a href=\"/other/chord-transposer\">Chord transposer</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Screen size calculator work out?",
+      "a": "It returns diagonal, derived from the height. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Screen size calculator?",
+      "a": "The form asks for the height, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter radius in a different unit?",
+      "a": "Yes. Radius opens in millimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Width = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Screen size calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/chord-inversion",
+      "name": "Chord inversion"
+    },
+    {
+      "path": "/other/chord-progression",
+      "name": "Chord progression"
+    },
+    {
+      "path": "/other/chord-transposer",
+      "name": "Chord transposer"
+    }
+  ],
+  "words": 1598
+}

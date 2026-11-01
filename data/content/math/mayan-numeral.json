@@ -1,0 +1,89 @@
+{
+  "path": "/math/mayan-numeral",
+  "slug": "mayan-numeral",
+  "cat": "math",
+  "name": "Mayan numeral",
+  "seoTitle": "Mayan numeral Calculator — Formula, Units & Example",
+  "seoDesc": "Mayan numeral: a free math calculator that walks you through 18 values, with the formula spelled out and a worked example.",
+  "h1": "Mayan numeral Calculator",
+  "summary": "The Mayan numeral calculator takes the numbers you enter and reports <strong>numeral order 0</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Mayan numeral calculator work?",
+      "html": "<p>The Mayan numeral calculator takes the values in the form, applies the relationship described below and reports <strong>numeral order 0</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A single on/off switch — tick it for &ldquo;Show decomposition&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Numeral order 5</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Numeral order 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Numeral order 7</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Numeral order 4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Numeral order 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Numeral order 6</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Numeral order 3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Numeral order 0</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Mayan numeral calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Numeral order 0</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((your number % 20) + 20) % 20</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Numeral order 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 20) × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Numeral order 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 400) × ((((-7999 × your number + 7999 × (((your number % 20) + 20) % 20) + 7999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)) % 8000) + 8000) % 8000)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Numeral order 3</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 8000) × ((((-159999 × your number + 159999 × (((your number % 20) + 20) % 20) + 159999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400) + 159999 × ((((-7999 × your number + 7999 × (((your number % 20) + 20) % 20) + 7999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)) % 8000) + 8000) % 8000)) % 160000) + 160000) % 160000)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Numeral order 4</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 160000) × ((((-3199999 × your number + 3199999 × (((your number % 20) + 20) % 20) + 3199999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400) + 3199999 × ((((-7999 × your number + 7999 × (((your number % 20) + 20) % 20) + 7999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)) % 8000) + 8000) % 8000) + 3199999 × ((((-159999 × your number + 159999 × (((your number % 20) + 20) % 20) + 159999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400) + 159999 × ((((-7999 × your number + 7999 × (((your number % 20) + 20) % 20) + 7999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)) % 8000) + 8000) % 8000)) % 160000) + 160000) % 160000)) % 3200000) + 3200000) % 3200000)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Numeral order 5</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 3200000) × ((((-63999999 × your number + 63999999 × (((your number % 20) + 20) % 20) + 63999999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400) + 63999999 × ((((-7999 × your number + 7999 × (((your number % 20) + 20) % 20) + 7999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)) % 8000) + 8000) % 8000) + 63999999 × ((((-159999 × your number + 159999 × (((your number % 20) + 20) % 20) + 159999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400) + 159999 × ((((-7999 × your number + 7999 × (((your number % 20) + 20) % 20) + 7999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)) % 8000) + 8000) % 8000)) % 160000) + 160000) % 160000) + 63999999 × ((((-3199999 × your number + 3199999 × (((your number % 20) + 20) % 20) + 3199999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400) + 3199999 × ((((-7999 × your number + 7999 × (((your number % 20) + 20) % 20) + 7999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)) % 8000) + 8000) % 8000) + 3199999 × ((((-159999 × your number + 159999 × (((your number % 20) + 20) % 20) + 159999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400) + 159999 × ((((-7999 × your number + 7999 × (((your number % 20) + 20) % 20) + 7999 × ((((your number − (((your number % 20) + 20) % 20)) % 400) + 400) % 400)) % 8000) + 8000) % 8000)) % 160000) + 160000) % 160000)) % 3200000) + 3200000) % 3200000)) % 64000000) + 64000000) % 64000000)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Mayan numeral calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Checking a homework answer before you hand it in</li><li>Settling an argument about a number with a quick, traceable result</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/round-to-the-nearest-integer\">Round to the nearest integer</a>, <a href=\"/math/round-to-the-nearest-penny\">Round to the nearest penny</a> and <a href=\"/math/round-to-the-nearest-ten\">Round to the nearest ten</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Mayan numeral calculator work out?",
+      "a": "It returns numeral order 0. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Mayan numeral calculator?",
+      "a": "The form asks for a few values, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Mayan numeral calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/round-to-the-nearest-integer",
+      "name": "Round to the nearest integer"
+    },
+    {
+      "path": "/math/round-to-the-nearest-penny",
+      "name": "Round to the nearest penny"
+    },
+    {
+      "path": "/math/round-to-the-nearest-ten",
+      "name": "Round to the nearest ten"
+    }
+  ],
+  "words": 1676
+}

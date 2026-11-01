@@ -1,0 +1,97 @@
+{
+  "path": "/everyday-life/sofa-size",
+  "slug": "sofa-size",
+  "cat": "everyday-life",
+  "name": "Sofa size",
+  "seoTitle": "Sofa size Calculator",
+  "seoDesc": "Sofa size: work out maximum seat length 'width' from the lift height and the lift width. A free everyday life calculator with the formula, units and a…",
+  "h1": "Sofa size Calculator",
+  "summary": "Give the Sofa size calculator the lift height, the lift width, the lift depth and the staircase width and it returns <strong>maximum seat length 'width'</strong>. It is built for a practical question that turns up in daily life.\n\nThe results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.",
+  "sections": [
+    {
+      "title": "How does the Sofa size calculator work?",
+      "html": "<p>The Sofa size calculator takes the values in the form, applies the relationship described below and reports <strong>maximum seat length 'width'</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the point of entry); then you type in the lift height, the lift width, the lift depth and the staircase width.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as lift and staircase. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;There is a hallway&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Point of entry</strong></td><td>One of 2 options, such as lift and staircase.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Lift height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Lift width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Lift depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Staircase width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Hallway width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Width of door</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Wall length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Sofa total depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Sofa total width (Sofa dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Sofa frame height (Sofa dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Sofa frame height (Sofa dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Sofa frame height (Sofa dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Sofa frame height (Sofa dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Sofa total width (Sofa dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Maximum seat length 'width'</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Sofa total width 2</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Sofa size calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Maximum seat length &#x27;width&#x27;</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(wall length − 36)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sofa total width 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(lift height − 14)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sofa total width</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(wall length − 24)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sofa frame height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(staircase width − 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sofa frame height</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(lift width − 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sofa total depth</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(lift depth − 2)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Open the page and it is already filled in. With the values it starts from — <strong>Point of entry</strong> set to Lift, <strong>Lift height</strong> = 244 cm, <strong>Lift width</strong> = 92 cm and <strong>Lift depth</strong> = 122 cm — it reports <strong>Sofa total depth</strong> = -78 cm, <strong>Sofa total width</strong> = 44 cm and <strong>Sofa frame height</strong> = -108 cm.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Sofa total depth</strong> = -78 cm, <strong>Sofa total width</strong> = 44 cm and <strong>Sofa frame height</strong> = -108 cm should be roughly the size you expected from <strong>Point of entry</strong> set to Lift and <strong>Lift height</strong> = 244 cm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Sofa size calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 4 figures keep coming back — the lift height, the lift width and the lift depth — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/eui\">Energy use intensity</a>, <a href=\"/everyday-life/every-second\">Every second</a> and <a href=\"/everyday-life/expiration-date\">Expiration date</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Sofa size calculator work out?",
+      "a": "It returns maximum seat length 'width', derived from the lift height, the lift width and the lift depth. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Sofa size calculator?",
+      "a": "The form asks for the lift height, the lift width, the lift depth and the staircase width, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter lift height in a different unit?",
+      "a": "Yes. Lift height opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Sofa total depth = -78 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Sofa size calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/eui",
+      "name": "Energy use intensity"
+    },
+    {
+      "path": "/everyday-life/every-second",
+      "name": "Every second"
+    },
+    {
+      "path": "/everyday-life/expiration-date",
+      "name": "Expiration date"
+    }
+  ],
+  "words": 1752
+}

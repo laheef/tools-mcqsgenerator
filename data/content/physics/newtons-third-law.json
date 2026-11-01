@@ -1,0 +1,97 @@
+{
+  "path": "/physics/newtons-third-law",
+  "slug": "newtons-third-law",
+  "cat": "physics",
+  "name": "Newton's third law",
+  "seoTitle": "Newton's third law — Free Online Calculator",
+  "seoDesc": "Newton's third law: work out mass (m₁) from the mass and the acceleration. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Newton's third law Calculator",
+  "summary": "The Newton's third law calculator turns the mass, the acceleration and the reaction force into <strong>mass (m₁)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Newton's third law calculator work?",
+      "html": "<p>The Newton's third law calculator takes the values in the form, applies the relationship described below and reports <strong>mass (m₁)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the mass (m₂), the acceleration (a₂) and the reaction force.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in meters per second squared. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in newtons. The unit chip switches it to any of the 16 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mass (m₁)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Acceleration (a₁)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>Calculated</td></tr><tr><td><strong>Mass (m₂)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Acceleration (a₂)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>You supply it</td></tr><tr><td><strong>Action force</strong></td><td>A measured quantity, 16 units available.</td><td>newtons</td><td>Calculated</td></tr><tr><td><strong>Reaction force</strong></td><td>A measured quantity, 16 units available.</td><td>newtons</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Newton's third law calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Mass (m₁)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-acceleration (a₂) × mass (m₂) ÷ acceleration (a₁)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mass (m₁)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">action force ÷ acceleration (a₁)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Action force</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-reaction force</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Acceleration (a₁)</strong> = 10 m/s², <strong>Mass (m₂)</strong> = 10 kg and <strong>Acceleration (a₂)</strong> = 10 m/s². The calculator returns <strong>Mass (m₁)</strong> = -10 kg, <strong>Action force</strong> = -0.1 N and <strong>Reaction force</strong> = 0.1 N.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Mass (m₁)</strong> = -10 kg, <strong>Action force</strong> = -0.1 N and <strong>Reaction force</strong> = 0.1 N should be roughly the size you expected from <strong>Acceleration (a₁)</strong> = 10 m/s² and <strong>Mass (m₂)</strong> = 10 kg.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in meters per second squared, and convertible to any of the 5 units on that chip.</li><li>Shown in newtons, and convertible to any of the 16 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Mass, opening in kilograms</li><li>Acceleration, opening in meters per second squared</li><li>Mass, opening in kilograms</li><li>Acceleration, opening in meters per second squared</li><li>Force, opening in newtons</li><li>Force, opening in newtons</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Newton's third law calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 3 figures keep coming back — the mass, the acceleration and the reaction force — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/charles-law\">Charles' law</a>, <a href=\"/physics/circular-motion\">Circular motion</a> and <a href=\"/physics/cloud-base\">Cloud base</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Newton's third law calculator work out?",
+      "a": "It returns mass (m₁), derived from the mass, the acceleration and the reaction force. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Newton's third law calculator?",
+      "a": "The form asks for the mass, the acceleration and the reaction force, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter mass (m₁) in a different unit?",
+      "a": "Yes. Mass (m₁) opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Mass (m₁) = -10 kg. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Newton's third law calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/charles-law",
+      "name": "Charles' law"
+    },
+    {
+      "path": "/physics/circular-motion",
+      "name": "Circular motion"
+    },
+    {
+      "path": "/physics/cloud-base",
+      "name": "Cloud base"
+    }
+  ],
+  "words": 1324
+}

@@ -1,0 +1,89 @@
+{
+  "path": "/health/berg-balance-test",
+  "slug": "berg-balance-test",
+  "cat": "health",
+  "name": "Berg balance test",
+  "seoTitle": "Berg balance test Calculator — Formula, Units & Example",
+  "seoDesc": "Berg balance test: answer 15 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Berg balance test Calculator",
+  "summary": "The Berg balance test calculator takes the numbers you enter and reports <strong>berg Score</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThink of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis. Change one value and the results step aside until you press Calculate again, which is what makes it easy to see how much the answer really depends on that one input.",
+  "sections": [
+    {
+      "title": "How does the Berg balance test calculator work?",
+      "html": "<p>The Berg balance test calculator takes the values in the form, applies the relationship described below and reports <strong>berg Score</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>1\\. Sitting to standing</td><td>pick the option that matches your case — 5 options, such as stands without using hands, stands using hands and stands using hands after several tries. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>2\\. Standing unsupported</td><td>pick the option that matches your case — 5 options, such as stands safely for 2 min, stands 2 min with supervision and stands 30 s unsupported. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>3\\. Sitting with back unsupported but feet supported on floor or on a stool</td><td>pick the option that matches your case — 5 options, such as sits securely for 2 min, sits 2 min under supervision and able to sit 30 s. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>4\\. Standing to sitting</td><td>pick the option that matches your case — 5 options, such as sits safely with minimal use of hands, controls descent by using hands and uses legs against chair to descend. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>5\\. Transfers</td><td>pick the option that matches your case — 5 options, such as able to transfer, minor use of hands, able to transfer needs to use hands and able to transfer with supervision. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>6\\. Standing unsupported with eyes closed</td><td>pick the option that matches your case — 5 options, such as able to stand 10 s safely, stands 10 s with supervision and able to stand 3 s. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>7\\. Standing unsupported with feet together</td><td>pick the option that matches your case — 5 options, such as can put feet together and stand 1 min, can do so with assistance for 1 min and can do so, but unable to hold for 30 s. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>8\\. Reaching forward with outstretched arm while standing</td><td>pick the option that matches your case — 5 options, such as can reach forward 25 cm (10 in), can reach forward 12 cm (5 in) and can reach forward 5 cm (2 in). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>9\\. Pick up object from the floor from a standing position</td><td>pick the option that matches your case — 5 options, such as able to pick up safely and easily, able to pick up but needs supervision and can't, but reaches and keeps balance. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>10\\. Turning to look behind over left and right shoulders while standing</td><td>pick the option that matches your case — 5 options, such as looks from both sides/weight shifts, looks from one side/weight shifts and turns sideways only/keeps balance. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>11\\. Turn 360 degrees</td><td>pick the option that matches your case — 5 options, such as can turn 360° safely under 4 s, can turn 360° one side under 4 s and can turn 360° safely but slowly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>12\\. Place alternate foot on step/stool while standing unsupported</td><td>pick the option that matches your case — 5 options, such as can stand and do 8 steps in 20 s, can stand and do 8 steps in &gt;20 s and can do 4 steps without aid/with assist. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>13\\. Standing unsupported one foot in front</td><td>pick the option that matches your case — 5 options, such as can place foot tandem and hold 30 s, can place foot ahead and hold 30 s and can take small step and hold 30 s. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>14\\. Standing on one leg</td><td>pick the option that matches your case — 5 options, such as can lift leg and hold &gt;10 s, can lift leg and hold 5-10 s and can lift leg and hold 3 s. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr></tbody></table><p>14 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Berg balance test calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Berg Score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1\\. Sitting to standing + 10\\. Turning to look behind over left and right shoulders while standing + 11\\. Turn 360 degrees + 12\\. Place alternate foot on step ÷ stool while standing unsupported + 13\\. Standing unsupported one foot in front + 14\\. Standing on one leg + 2\\. Standing unsupported + 3\\. Sitting with back unsupported but feet supported on floor or on a stool + 4\\. Standing to sitting + 5\\. Transfers + 6\\. Standing unsupported with eyes closed + 7\\. Standing unsupported with feet together + 8\\. Reaching forward with outstretched arm while standing + 9\\. Pick up object from the floor from a standing position)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Open the page and it is already filled in. With the values it starts from — <strong>1\\. Sitting to standing</strong> set to Stands without using hands, <strong>2\\. Standing unsupported</strong> set to Stands safely for 2 min, <strong>3\\. Sitting with back unsupported but feet supported on floor or on a stool</strong> set to Sits securely for 2 min and <strong>4\\. Standing to sitting</strong> set to Sits safely with minimal use of hands — it reports <strong>Berg Score</strong> = 56.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Berg Score</strong> = 56 should be roughly the size you expected from <strong>1\\. Sitting to standing</strong> set to Stands without using hands and <strong>2\\. Standing unsupported</strong> set to Stands safely for 2 min.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Berg balance test calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/wells-pe\">Pulmonary embolism (Wells)</a>, <a href=\"/health/winters-formula\">Winters' formula</a> and <a href=\"/health/2020-vision\">20/20 Vision for 2020</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Berg balance test calculator work out?",
+      "a": "It returns berg Score. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Berg balance test calculator?",
+      "a": "The form asks for a few values, which is 14 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (14 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Berg Score = 56. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Berg balance test calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/wells-pe",
+      "name": "Pulmonary embolism (Wells)"
+    },
+    {
+      "path": "/health/winters-formula",
+      "name": "Winters' formula"
+    },
+    {
+      "path": "/health/2020-vision",
+      "name": "20/20 Vision for 2020"
+    }
+  ],
+  "words": 1824
+}

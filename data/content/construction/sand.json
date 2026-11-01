@@ -1,0 +1,93 @@
+{
+  "path": "/construction/sand",
+  "slug": "sand",
+  "cat": "construction",
+  "name": "Sand",
+  "seoTitle": "Sand Calculator",
+  "seoDesc": "Sand: work out area from the length and the width. A free construction calculator with the formula, units and a worked example.",
+  "h1": "Sand Calculator",
+  "summary": "Give the Sand calculator the length, the width, the volume needed and the weight needed and it returns <strong>area</strong>. It suits a materials order or a planning estimate you want to get roughly right first time.\n\nNothing repaints underneath you: edit a field, press Calculate, and the new answer appears. That is how you find out which input the result is sensitive to.",
+  "sections": [
+    {
+      "title": "How does the Sand calculator work?",
+      "html": "<p>The Sand calculator takes the values in the form, applies the relationship described below and reports <strong>area</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the length, the width, the volume needed and the weight needed.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in metric tons. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Volume needed</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>Density</strong></td><td>A measured quantity, 28 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Weight needed</strong></td><td>A measured quantity, 29 units available.</td><td>metric tons</td><td>You supply it</td></tr><tr><td><strong>Price per weight</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Price per volume</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Sand calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length × width</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume needed ÷ depth</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Density</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">weight needed ÷ volume needed</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">price per weight × weight needed</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">price per volume × volume needed</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 28 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li><li>Length, opening in centimeters</li><li>Volume, opening in cubic meters</li><li>Density, opening in kilograms per cubic meter</li><li>Mass, opening in metric tons</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Sand calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Quoting a job where areas and quantities drive the price</li><li>Ordering material and not wanting a second trip</li><li>Checking a supplier's figure against your own measurements</li><li>Any time the same 4 figures keep coming back — the length, the width and the volume needed — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/cement\">Cement</a>, <a href=\"/construction/cfm\">CFM</a> and <a href=\"/construction/chicken-coop-size\">Chicken coop size</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Sand calculator work out?",
+      "a": "It returns area, derived from the length, the width and the volume needed. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Sand calculator?",
+      "a": "The form asks for the length, the width, the volume needed and the weight needed, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter length in a different unit?",
+      "a": "Yes. Length opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Sand calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/cement",
+      "name": "Cement"
+    },
+    {
+      "path": "/construction/cfm",
+      "name": "CFM"
+    },
+    {
+      "path": "/construction/chicken-coop-size",
+      "name": "Chicken coop size"
+    }
+  ],
+  "words": 1284
+}

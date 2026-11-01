@@ -1,0 +1,93 @@
+{
+  "path": "/health/egg-freezing",
+  "slug": "egg-freezing",
+  "cat": "health",
+  "name": "Egg freezing",
+  "seoTitle": "Egg freezing Calculator — Formula, Units & Example",
+  "seoDesc": "Egg freezing: work out number of frozen mature eggs from the age and the live birth probability. A free health calculator with the formula, units and a…",
+  "h1": "Egg freezing Calculator",
+  "summary": "Give the Egg freezing calculator the age and the live birth probability and it returns <strong>number of frozen mature eggs</strong>. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Egg freezing calculator work?",
+      "html": "<p>The Egg freezing calculator takes the values in the form, applies the relationship described below and reports <strong>number of frozen mature eggs</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the age and the live birth probability.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in years.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Age</strong></td><td>A number stated in years.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of frozen mature eggs</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Live birth probability</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Two live births</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Three live births</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Egg freezing calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Number of frozen mature eggs</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-the natural log of (-1 ÷ (live birth probability − 1)) ÷ the natural log of (-3 ÷ 5 × (age) × (age) + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Two live births</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(5 ^ -N) × ((5 ^ N) − 3 × N × (-3 × (age) × (age) + 5, N − 1) × (age) × (age) − (-3 × (age) × (age) + 5, N))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Three live births</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(5 ^ -N) × ((5 ^ N) − 9 ÷ 2 × (N ^ 2) × (-3 × (age) × (age) + 5, N − 2) × ((age), 2) × ((age), 2) + (9 ÷ 2) × N × (-3 × (age) × (age) + 5, N − 2) × ((age), 2) × ((age), 2) − 3 × N × (-3 × (age) × (age) + 5, N − 1) × (age) × (age) − (-3 × (age) × (age) + 5, N))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">N</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">number of frozen mature eggs</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Egg freezing calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 2 figures keep coming back — the age and the live birth probability — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/calorie\">Calorie</a>, <a href=\"/health/calorie-deficit\">Calorie deficit</a> and <a href=\"/health/car-heat\">Car heat</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Egg freezing calculator work out?",
+      "a": "It returns number of frozen mature eggs, derived from the age and the live birth probability. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Egg freezing calculator?",
+      "a": "The form asks for the age and the live birth probability, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter live birth probability in a different unit?",
+      "a": "Yes. Live birth probability opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Egg freezing calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/calorie",
+      "name": "Calorie"
+    },
+    {
+      "path": "/health/calorie-deficit",
+      "name": "Calorie deficit"
+    },
+    {
+      "path": "/health/car-heat",
+      "name": "Car heat"
+    }
+  ],
+  "words": 1233
+}

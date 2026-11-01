@@ -1,0 +1,89 @@
+{
+  "path": "/food/cake-serving",
+  "slug": "cake-serving",
+  "cat": "food",
+  "name": "Cake serving",
+  "seoTitle": "Cake serving Calculator: Free, With Steps",
+  "seoDesc": "Cake serving: work out your result from the people at the party and the finger size slice. A free food calculator with the formula, units and a worked…",
+  "h1": "Cake serving Calculator",
+  "summary": "Supply the people at the party, the finger size slice, the small slice and the standard slice and the Cake serving calculator solves for the answer. Think of it as a shortcut for portioning, timing or nutrition.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Cake serving calculator work?",
+      "html": "<p>The Cake serving calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the I would like to have and the difference between tiers); then you type in the people at the party, the finger size slice, the small slice and the standard slice.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 2 options, such as round and square. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Input your own slices' sizes&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in square centimeters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in square centimeters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in square centimeters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in square centimeters. The unit chip switches it to any of the 24 supported units.</li><li>Pick the option that matches your case — 2 options, such as 2 in (5 cm) and 3 in (7.5 cm). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>People at the party</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>I would like to have</strong></td><td>One of 2 options, such as round and square.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Finger size slice</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>You supply it</td></tr><tr><td><strong>Small slice</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>You supply it</td></tr><tr><td><strong>Standard slice</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>You supply it</td></tr><tr><td><strong>Big slice</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>You supply it</td></tr><tr><td><strong>Difference between tiers</strong></td><td>One of 2 options, such as 2 in (5 cm) and 3 in (7.5 cm).</td><td>choice</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Area, opening in square centimeters</li><li>Area, opening in square centimeters</li><li>Area, opening in square centimeters</li><li>Area, opening in square centimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Cake serving calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Scaling a recipe up or down</li><li>Checking portions before you shop</li><li>Working out timing so everything finishes together</li><li>Any time the same 4 figures keep coming back — the people at the party, the finger size slice and the small slice — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>If a field is empty the result waits rather than guessing: no zero is quietly substituted in the background.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Cake serving calculator, these are the ones that matter:</p>\n<ul><li>The 3 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/coffee-footprint\">Coffee footprint</a>, <a href=\"/food/coffee-kick\">Coffee kick</a> and <a href=\"/food/coffee-ratio\">Coffee ratio</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Cake serving calculator?",
+      "a": "The form asks for the people at the party, the finger size slice, the small slice and the standard slice, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter finger size slice in a different unit?",
+      "a": "Yes. Finger size slice opens in square centimeters and the chip beside it offers 24 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Cake serving calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/coffee-footprint",
+      "name": "Coffee footprint"
+    },
+    {
+      "path": "/food/coffee-kick",
+      "name": "Coffee kick"
+    },
+    {
+      "path": "/food/coffee-ratio",
+      "name": "Coffee ratio"
+    }
+  ],
+  "words": 1281
+}

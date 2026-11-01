@@ -1,0 +1,93 @@
+{
+  "path": "/health/apache-ii",
+  "slug": "apache-ii",
+  "cat": "health",
+  "name": "APACHE II",
+  "seoTitle": "APACHE II Calculator: Free, With Steps",
+  "seoDesc": "APACHE II: work out surgery required? from the age and the temperature. A free health calculator with the formula, units and a worked example.",
+  "h1": "APACHE II Calculator",
+  "summary": "<strong>surgery required?</strong> is what the APACHE II calculator works out, and it gets there from the age, the temperature, the glasgow Coma Scale and the mean arterial pressure. It suits an informed starting point to take to a clinician, not a diagnosis.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the APACHE II calculator work?",
+      "html": "<p>The APACHE II calculator takes the values in the form, applies the relationship described below and reports <strong>surgery required?</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the history of severe organ insufficiency, the renal failure and the a-a gradient); then you type in the age, the temperature, the glasgow Coma Scale and the mean arterial pressure.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in years.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no, acute renal failure and chronic renal failure. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in millimeters of mercury. The unit chip switches it to any of the 28 supported units.</li><li>A number, expressed in bpm.</li><li>A number, expressed in breaths per min.</li><li>Pick the option that matches your case — 2 options, such as &lt;50% and ≥50%. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as &lt;55, 55-60 and 61-70. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as &gt;499, 350-499 and 200-349. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in %.</li><li>A measured quantity, entered by default in platelets per microliter. The unit chip switches it to any of the 3 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in millimoles per liter. The unit chip switches it to any of the 2 supported units.</li><li>A measured quantity, entered by default in millimoles per liter. The unit chip switches it to any of the 2 supported units.</li><li>A measured quantity, entered by default in milligrams per deciliter. The unit chip switches it to any of the 3 supported units.</li><li>A plain number with no unit attached.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Age</strong></td><td>A number stated in years.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>History of severe organ insufficiency</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Surgery required?</strong></td><td>One of 3 options, such as no, non-surgical or emergency and elective.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Renal failure</strong></td><td>One of 3 options, such as no, acute renal failure and chronic renal failure.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Glasgow Coma Scale</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mean arterial pressure</strong></td><td>A measured quantity, 28 units available.</td><td>millimeters of mercury</td><td>You supply it</td></tr><tr><td><strong>Heart rate</strong></td><td>A number stated in bpm.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Respiratory rate</strong></td><td>A number stated in breaths per min.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A-a gradient</strong></td><td>One of 4 options, such as &gt;499, 350-499 and 200-349.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hematocrit</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>White blood count</strong></td><td>A measured quantity, 3 units available.</td><td>platelets per microliter</td><td>You supply it</td></tr><tr><td><strong>Arterial pH</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Potassium (K⁺)</strong></td><td>A measured quantity, 2 units available.</td><td>millimoles per liter</td><td>You supply it</td></tr><tr><td><strong>Sodium (Na⁺)</strong></td><td>A measured quantity, 2 units available.</td><td>millimoles per liter</td><td>You supply it</td></tr><tr><td><strong>Creatinine</strong></td><td>A measured quantity, 3 units available.</td><td>milligrams per deciliter</td><td>You supply it</td></tr><tr><td><strong>Apache II score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the APACHE II calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Surgery required?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">glasgow Coma Scale + apache II score − (heart rate) − (respiratory rate) − (age) − (renal failure, creatinine) − (paO₂, a-a gradient, fiO₂) − (hematocrit) − (potassium (K⁺)) − (mean arterial pressure) − (sodium (Na⁺)) − (arterial pH) − (temperature) − (white blood count) − 15</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>The option the calculation settles on.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Temperature, opening in Celsius</li><li>Pressure, opening in millimeters of mercury</li><li>Platelet count, opening in platelets per microliter</li><li>Winters, Na_K, opening in millimoles per liter</li><li>Winters, Na_K, opening in millimoles per liter</li><li>Creatinine, opening in milligrams per deciliter</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The APACHE II calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Deciding whether a reading is worth a second look</li><li>Any time the same 4 figures keep coming back — the age, the temperature and the glasgow Coma Scale — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/vaccine-queue-philippines\">Vaccine queue Philippines</a>, <a href=\"/health/vaccine-queue-sa\">Vaccine queue South Africa</a> and <a href=\"/health/vaccine-queue-scotland\">Vaccine queue Scotland</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the APACHE II calculator work out?",
+      "a": "It returns surgery required?, derived from the age, the temperature and the glasgow Coma Scale. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the APACHE II calculator?",
+      "a": "The form asks for the age, the temperature, the glasgow Coma Scale and the mean arterial pressure, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter temperature in a different unit?",
+      "a": "Yes. Temperature opens in Celsius and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the APACHE II calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/vaccine-queue-philippines",
+      "name": "Vaccine queue Philippines"
+    },
+    {
+      "path": "/health/vaccine-queue-sa",
+      "name": "Vaccine queue South Africa"
+    },
+    {
+      "path": "/health/vaccine-queue-scotland",
+      "name": "Vaccine queue Scotland"
+    }
+  ],
+  "words": 1707
+}

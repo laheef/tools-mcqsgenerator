@@ -1,0 +1,101 @@
+{
+  "path": "/everyday-life/hours-to-decimal",
+  "slug": "hours-to-decimal",
+  "cat": "everyday-life",
+  "name": "Hours to decimal",
+  "seoTitle": "Hours to decimal — Free Online Calculator",
+  "seoDesc": "Hours to decimal: work out hours from the hours and the minutes. A free everyday life calculator with the formula, units and a worked example.",
+  "h1": "Hours to decimal Calculator",
+  "summary": "<strong>hours</strong> is what the Hours to decimal calculator works out, and it gets there from the hours, the minutes, the seconds and the clock time. That makes it useful for a practical question that turns up in daily life.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Hours to decimal calculator work?",
+      "html": "<p>The Hours to decimal calculator takes the values in the form, applies the relationship described below and reports <strong>hours</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the mode); then you type in the hours (hh), the minutes (mm), the seconds (ss) and the clock time (hh:mm:ss).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as hours to decimal and decimal to hours. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A single on/off switch — tick it for &ldquo;Show step-by-step solutions&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in hours / minutes / seconds. The unit chip switches it to any of the 27 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mode</strong></td><td>One of 2 options, such as hours to decimal and decimal to hours.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hours (hh)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Minutes (mm)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Seconds (ss)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Hours</strong></td><td>A number stated in hrs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Minutes</strong></td><td>A number stated in min.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Seconds</strong></td><td>A number stated in sec.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Decimal time</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>Clock time (hh:mm:ss)</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes / seconds</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Hours to decimal calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Hours</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(hours (hh) + (1 ÷ 60) × minutes (mm) + (1 ÷ 3600) × seconds (ss))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Minutes</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(60 × (hours (hh) + (1 ÷ 60) × minutes (mm) + (1 ÷ 3600) × seconds (ss)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Seconds</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(3600 × (hours (hh) + (1 ÷ 60) × minutes (mm) + (1 ÷ 3600) × seconds (ss)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Decimal time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">clock time (hh:mm:ss)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Mode</strong> set to Hours to decimal, <strong>Hours (hh)</strong> = 10, <strong>Minutes (mm)</strong> = 10 and <strong>Seconds (ss)</strong> = 10. The calculator returns <strong>Hours</strong> = 10.1694, <strong>Minutes</strong> = 610.1667 and <strong>Seconds</strong> = 36610.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Hours</strong> = 10.1694, <strong>Minutes</strong> = 610.1667 and <strong>Seconds</strong> = 36610 should be roughly the size you expected from <strong>Mode</strong> set to Hours to decimal and <strong>Hours (hh)</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Time, opening in hours</li><li>Time, opening in hours / minutes / seconds</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Hours to decimal calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing how sensitive an answer is to one input</li><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Any time the same 4 figures keep coming back — the hours, the minutes and the seconds — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/audiobook-speed\">Audiobook speed</a>, <a href=\"/everyday-life/audiobooks\">Audiobooks</a> and <a href=\"/everyday-life/baby-age\">Baby age</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Hours to decimal calculator work out?",
+      "a": "It returns hours, derived from the hours, the minutes and the seconds. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Hours to decimal calculator?",
+      "a": "The form asks for the hours, the minutes, the seconds and the clock time, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter decimal time in a different unit?",
+      "a": "Yes. Decimal time opens in hours and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Hours = 10.1694. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Hours to decimal calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/audiobook-speed",
+      "name": "Audiobook speed"
+    },
+    {
+      "path": "/everyday-life/audiobooks",
+      "name": "Audiobooks"
+    },
+    {
+      "path": "/everyday-life/baby-age",
+      "name": "Baby age"
+    }
+  ],
+  "words": 1545
+}

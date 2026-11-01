@@ -1,0 +1,97 @@
+{
+  "path": "/physics/car-crash-force",
+  "slug": "car-crash-force",
+  "cat": "physics",
+  "name": "Car crash force",
+  "seoTitle": "Car crash force — Free Online Calculator",
+  "seoDesc": "Car crash force: work out kinetic energy from the car speed and the deceleration. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Car crash force Calculator",
+  "summary": "Supply the car speed and the deceleration and the Car crash force calculator solves for <strong>kinetic energy</strong>. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Car crash force calculator work?",
+      "html": "<p>The Car crash force calculator takes the values in the form, applies the relationship described below and reports <strong>kinetic energy</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the car speed and the deceleration.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A single on/off switch — tick it for &ldquo;I wear a seat belt&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in kilometers per hour. The unit chip switches it to any of the 25 supported units.</li><li>A single on/off switch — tick it for &ldquo;I want to change the above distance&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in gravitational acc. on Earth. The unit chip switches it to any of the 5 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Car speed</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>You supply it</td></tr><tr><td><strong>Your weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Seat belt stopping distance (Additional variables)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Seat belt stopping distance (Additional variables)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Kinetic energy</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>Calculated</td></tr><tr><td><strong>One or zero</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Average impact force</strong></td><td>A measured quantity, 16 units available.</td><td>kilonewtons</td><td>Calculated</td></tr><tr><td><strong>Stopping time</strong></td><td>A measured quantity, 27 units available.</td><td>milliseconds</td><td>Calculated</td></tr><tr><td><strong>Deceleration</strong></td><td>A measured quantity, 5 units available.</td><td>gravitational acc. on Earth</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Car crash force calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Kinetic energy</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × your weight × (car speed ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Kinetic energy</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 100) × average impact force × (-625 × seat belt stopping distance × seat belt stopping distance × one or zero + 625 × seat belt stopping distance × seat belt stopping distance + 100 × seat belt stopping distance × one or zero + 4)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Average impact force</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">your weight × car speed ÷ stopping time</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Stopping time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">car speed ÷ deceleration</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">One or zero</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 25) × (625 × deceleration × seat belt stopping distance × seat belt stopping distance + 4 × deceleration − 50 × (car speed ^ 2)) ÷ (deceleration × seat belt stopping distance × (25 × seat belt stopping distance − 4))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Your weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(981 ÷ 100) × it feels like being pressed with a mass of ÷ deceleration</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in joules, and convertible to any of the 33 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilonewtons, and convertible to any of the 16 units on that chip.</li><li>Shown in milliseconds, and convertible to any of the 27 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Speed, opening in kilometers per hour</li><li>Mass, opening in kilograms</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Energy, opening in joules</li><li>Force, opening in kilonewtons</li><li>Time, opening in milliseconds</li><li>Acceleration, opening in gravitational acc. on Earth</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Car crash force calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 2 figures keep coming back — the car speed and the deceleration — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/reduced-mass\">Reduced mass</a>, <a href=\"/physics/refrigerant-capillary-tube\">Refrigerant capillary tube</a> and <a href=\"/physics/relative-humidity\">Relative humidity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Car crash force calculator work out?",
+      "a": "It returns kinetic energy, derived from the car speed and the deceleration. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Car crash force calculator?",
+      "a": "The form asks for the car speed and the deceleration, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter car speed in a different unit?",
+      "a": "Yes. Car speed opens in kilometers per hour and the chip beside it offers 25 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Seat belt stopping distance = 0 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Car crash force calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/reduced-mass",
+      "name": "Reduced mass"
+    },
+    {
+      "path": "/physics/refrigerant-capillary-tube",
+      "name": "Refrigerant capillary tube"
+    },
+    {
+      "path": "/physics/relative-humidity",
+      "name": "Relative humidity"
+    }
+  ],
+  "words": 1609
+}

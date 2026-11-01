@@ -1,0 +1,97 @@
+{
+  "path": "/finance/degree-of-operating-leverage",
+  "slug": "degree-of-operating-leverage",
+  "cat": "finance",
+  "name": "Degree of operating leverage",
+  "seoTitle": "Degree of operating leverage Calculator",
+  "seoDesc": "Degree of operating leverage: work out change in sales from the period one sales and the period one EBIT. A free finance calculator with the formula,…",
+  "h1": "Degree of operating leverage Calculator",
+  "summary": "Supply the period one sales, the period one EBIT, the period two EBIT and the degree of operating leverage and the Degree of operating leverage calculator solves for <strong>change in sales</strong>. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Degree of operating leverage calculator work?",
+      "html": "<p>The Degree of operating leverage calculator takes the values in the form, applies the relationship described below and reports <strong>change in sales</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the period one sales, the period one EBIT, the period two EBIT and the degree of operating leverage.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Period one sales</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Period one EBIT</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Period two sales</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Period two EBIT</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Change in sales</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Change in EBIT</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Degree of operating leverage</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Degree of operating leverage calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Change in sales</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">change in EBIT ÷ degree of operating leverage</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Change in EBIT</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-period one EBIT + period two EBIT) ÷ period one EBIT</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Change in sales</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-period one sales + period two sales) ÷ period one sales</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Change in EBIT</strong> = 10 % and <strong>Degree of operating leverage</strong> = 10. Working through the relationship above gives <strong>Change in sales</strong> = 1 %.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Change in sales</strong> = 1 % should be roughly the size you expected from <strong>Change in EBIT</strong> = 10 % and <strong>Degree of operating leverage</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Degree of operating leverage calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Comparing two offers that quote their costs in different ways</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Any time the same 4 figures keep coming back — the period one sales, the period one EBIT and the period two EBIT — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/american-rescue-plan\">Stimulus check - American Rescue Plan</a>, <a href=\"/finance/amortization\">Amortization</a> and <a href=\"/finance/annual-income\">Annual income</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Degree of operating leverage calculator work out?",
+      "a": "It returns change in sales, derived from the period one sales, the period one EBIT and the period two EBIT. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Degree of operating leverage calculator?",
+      "a": "The form asks for the period one sales, the period one EBIT, the period two EBIT and the degree of operating leverage, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter period one sales in a different unit?",
+      "a": "Yes. Period one sales opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Change in sales = 1 %. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Degree of operating leverage calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/american-rescue-plan",
+      "name": "Stimulus check - American Rescue Plan"
+    },
+    {
+      "path": "/finance/amortization",
+      "name": "Amortization"
+    },
+    {
+      "path": "/finance/annual-income",
+      "name": "Annual income"
+    }
+  ],
+  "words": 1436
+}

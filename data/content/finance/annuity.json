@@ -1,0 +1,101 @@
+{
+  "path": "/finance/annuity",
+  "slug": "annuity",
+  "cat": "finance",
+  "name": "Annuity",
+  "seoTitle": "Annuity Calculator — Formula, Units & Example",
+  "seoDesc": "Annuity: work out annuity frequency from the initial deposit and the final balance. A free finance calculator with the formula, units and a worked example.",
+  "h1": "Annuity Calculator",
+  "summary": "The Annuity calculator turns the initial deposit and the final balance into <strong>annuity frequency</strong>. That makes it useful for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Annuity calculator work?",
+      "html": "<p>The Annuity calculator takes the values in the form, applies the relationship described below and reports <strong>annuity frequency</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the subject of interest, the direction of payment and the annuity payment frequency); then you give the dates it asks for; then you type in the initial deposit, the final balance, the length of annuity and the rate of return.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 5 options, such as initial deposit, final balance and annuity amount. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as deposit and withdrawal. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as yearly, semi-annually and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as ordinary annuity and annuity due. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 8 options, such as yearly, semi-annually and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A plain number with no unit attached.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Subject of interest</strong></td><td>One of 5 options, such as initial deposit, final balance and annuity amount.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Direction of payment</strong></td><td>One of 2 options, such as deposit and withdrawal.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Annuity payment frequency</strong></td><td>One of 7 options, such as yearly, semi-annually and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Type of annuity</strong></td><td>One of 2 options, such as ordinary annuity and annuity due.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Compounding frequency</strong></td><td>One of 8 options, such as yearly, semi-annually and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Initial deposit</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Final balance</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Length of annuity</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Rate of return</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Annual growth rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Periodic growth rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Annuity frequency</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Return status</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>End date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Annuity calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Annuity frequency</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the natural log of (annual growth rate + 1) ÷ the natural log of (periodic growth rate + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Return status</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(subject of interest, direction of payment, initial deposit, final balance, compounding frequency, annuity payment frequency, length of annuity, first period starts from..., annuity amount, type of annuity, rate of return, annual growth rate, periodic growth rate)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">End date</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">()</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Subject of interest</strong> set to Final balance, <strong>Direction of payment</strong> set to Deposit, <strong>Annuity payment frequency</strong> set to Monthly and <strong>Type of annuity</strong> set to Annuity due. Working through the relationship above gives <strong>Annuity frequency</strong> = 12.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Annuity frequency</strong> = 12 should be roughly the size you expected from <strong>Subject of interest</strong> set to Final balance and <strong>Direction of payment</strong> set to Deposit.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Time, opening in years</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Annuity calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 2 figures keep coming back — the initial deposit and the final balance — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/revenue-growth\">Revenue growth</a>, <a href=\"/finance/revenue-per-employee\">Revenue per employee</a> and <a href=\"/finance/rmd\">RMD</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Annuity calculator work out?",
+      "a": "It returns annuity frequency, derived from the initial deposit and the final balance. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Annuity calculator?",
+      "a": "The form asks for the initial deposit and the final balance, which is 14 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter initial deposit in a different unit?",
+      "a": "Yes. Initial deposit opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Annuity frequency = 12. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Annuity calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/revenue-growth",
+      "name": "Revenue growth"
+    },
+    {
+      "path": "/finance/revenue-per-employee",
+      "name": "Revenue per employee"
+    },
+    {
+      "path": "/finance/rmd",
+      "name": "RMD"
+    }
+  ],
+  "words": 1948
+}

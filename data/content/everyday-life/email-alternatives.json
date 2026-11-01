@@ -1,0 +1,97 @@
+{
+  "path": "/everyday-life/email-alternatives",
+  "slug": "email-alternatives",
+  "cat": "everyday-life",
+  "name": "Email alternatives",
+  "seoTitle": "Email alternatives — Free Online Calculator",
+  "seoDesc": "Email alternatives: work out life expectancy (Please share a few more details) and retirement age (Please share a few more details) from 31 values. A free…",
+  "h1": "Email alternatives Calculator",
+  "summary": "The Email alternatives calculator is a free, no-sign-up everyday life tool. Fill in the 20 fields it asks for and it works out <strong>everyday you lose</strong> straight away, with the formula shown underneath.\n\nThat makes it useful for a practical question that turns up in daily life. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Email alternatives calculator work?",
+      "html": "<p>The Email alternatives calculator takes the values in the form, applies the relationship described below and reports <strong>everyday you lose</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the sex, the country and the activity); then you type in the you could also live (You could use this time to bike), the you could also live (You could use this time to bike), the and lose (You could use this time to walk or jog) and the you would need (You could use this time to try some hiking).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 4 options, such as read emails with regular speed, read each carefully and skim read them. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 74 options, such as albania, argentina and armenia. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in years / months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 6 options, such as walking (slow pace), walking (average pace) and walking (fast pace). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>Pick the option that matches your case — 6 options, such as camino de Santiago, great Ocean Walk and pacific Crest Trail. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in months. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 8 options, such as the Simpsons, family Guy and game of Thrones. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A number, expressed in /page.</li><li>A number, expressed in /book.</li><li>A plain number with no unit attached.</li></ul><p>8 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Your age</strong></td><td>A number stated in years old.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sex</strong></td><td>One of 2 options, such as female and male.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Country</strong></td><td>One of 74 options, such as albania, argentina and armenia.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Life expectancy (Please share a few more details)</strong></td><td>A number stated in years old.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Life expectancy (Please share a few more details)</strong></td><td>A number stated in years old.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Retirement age (Please share a few more details)</strong></td><td>A number stated in years old.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Retirement age (Please share a few more details)</strong></td><td>A number stated in years old.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Everyday you lose</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>Calculated</td></tr><tr><td><strong>You could burn (You could use this time to bike)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>And lose (You could use this time to bike)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>You could also live (You could use this time to bike)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>You could also live (You could use this time to bike)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Activity</strong></td><td>One of 6 options, such as walking (slow pace), walking (average pace) and walking (fast pace).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>You could burn (You could use this time to walk or jog)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>And lose (You could use this time to walk or jog)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Pick a trail</strong></td><td>One of 6 options, such as camino de Santiago, great Ocean Walk and pacific Crest Trail.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hiking duration</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Your preferred pace</strong></td><td>One of 5 options, such as chilling mostly, relaxed walk and ambitious walk.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>You would need (You could use this time to try some hiking)</strong></td><td>A measured quantity, 27 units available.</td><td>months</td><td>You supply it</td></tr><tr><td><strong>Choose a title</strong></td><td>One of 8 options, such as the Simpsons, family Guy and game of Thrones.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>TV series duration</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>You would need (You could watch an entire TV series)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Reading speed</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 28 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Email alternatives calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Everyday you lose</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-115200 ÷ 487 × you could also live ÷ (if you cut this time spent on email by... × (your age − life expectancy))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Everyday you lose</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">36000000 × you could burn ÷ (your weight × if you cut this time spent on email by... × (215 × (activity ^ 3) − 1765 × (activity ^ 2) + 8710 × activity + 14577))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">You could read</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 60) × everyday you lose × if you cut this time spent on email by... × reading speed ÷ (average pages × average words)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">You could burn</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 450) × everyday you lose × your weight × if you cut this time spent on email by...</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">You could burn</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1100 × and lose</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">And lose</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 1100) × you could burn</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in hours / minutes, and convertible to any of the 27 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in weeks, and convertible to any of the 27 units on that chip.</li><li>Shown in weeks, and convertible to any of the 27 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>The option the calculation settles on.</li><li>The option the calculation settles on.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in months, and convertible to any of the 27 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in days</li><li>Time, opening in days</li><li>Time, opening in minutes</li><li>Mass, opening in kilograms</li><li>Time, opening in hours / minutes</li><li>Time, opening in years / months</li><li>Time, opening in years / months</li><li>%, opening in percent</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Email alternatives calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/wheel-offset\">Wheel offset</a>, <a href=\"/everyday-life/winch-size\">Winch size</a> and <a href=\"/everyday-life/windsock\">Windsock</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Email alternatives calculator work out?",
+      "a": "It returns everyday you lose. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Email alternatives calculator?",
+      "a": "The form asks for a few values, which is 20 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter I usually receive in a different unit?",
+      "a": "Yes. I usually receive opens in days and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (8 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Life expectancy = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Email alternatives calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/wheel-offset",
+      "name": "Wheel offset"
+    },
+    {
+      "path": "/everyday-life/winch-size",
+      "name": "Winch size"
+    },
+    {
+      "path": "/everyday-life/windsock",
+      "name": "Windsock"
+    }
+  ],
+  "words": 2440
+}

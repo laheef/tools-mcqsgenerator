@@ -1,0 +1,97 @@
+{
+  "path": "/statistics/process-capability-index",
+  "slug": "process-capability-index",
+  "cat": "statistics",
+  "name": "Process capability index",
+  "seoTitle": "Process capability index Calculator — Formula, Units & Example",
+  "seoDesc": "Process capability index: work out standard deviation from the upper specification limit and the lower specification limit. A free statistics calculator…",
+  "h1": "Process capability index Calculator",
+  "summary": "Give the Process capability index calculator the upper specification limit, the lower specification limit, the mean and the potential process capability and it returns <strong>standard deviation</strong>. It suits an assignment, a report or a data discussion where you need a defensible number.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Process capability index calculator work?",
+      "html": "<p>The Process capability index calculator takes the values in the form, applies the relationship described below and reports <strong>standard deviation</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the upper specification limit, the lower specification limit, the mean and the potential process capability (Cₚ).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Upper specification limit</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Lower specification limit</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Standard deviation</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mean</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Potential process capability (Cₚ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Process capability index (Cₚₖ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Target</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Taguchi capability index (Cₚₘ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Process capability around a target (Cₚₖₘ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Process capability index calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Standard deviation</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 6) × (-lower specification limit + upper specification limit) ÷ potential process capability (Cₚ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Standard deviation</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 3) × the smaller of (-lower specification limit + mean, -mean + upper specification limit) ÷ process capability index (Cₚₖ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Standard deviation</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((taguchi capability index (Cₚₘ) ^ 2) ÷ ((potential process capability (Cₚ) ^ 2) − (taguchi capability index (Cₚₘ) ^ 2))) × (mean − target)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Standard deviation</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((process capability around a target (Cₚₖₘ) ^ 2) ÷ ((process capability index (Cₚₖ) ^ 2) − (process capability around a target (Cₚₖₘ) ^ 2))) × (mean − target)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Process capability index calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a result a piece of software produced</li><li>Turning raw numbers into something you can quote</li><li>Deciding how much confidence a sample really supports</li><li>Any time the same 4 figures keep coming back — the upper specification limit, the lower specification limit and the mean — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Process capability index calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — upper specification limit for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/expected-value\">Expected value</a>, <a href=\"/statistics/exponential-distribution\">Exponential distribution</a> and <a href=\"/statistics/exponential-growth-prediction\">Exponential growth prediction</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Process capability index calculator work out?",
+      "a": "It returns standard deviation, derived from the upper specification limit, the lower specification limit and the mean. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Process capability index calculator?",
+      "a": "The form asks for the upper specification limit, the lower specification limit, the mean and the potential process capability, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Process capability index calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/expected-value",
+      "name": "Expected value"
+    },
+    {
+      "path": "/statistics/exponential-distribution",
+      "name": "Exponential distribution"
+    },
+    {
+      "path": "/statistics/exponential-growth-prediction",
+      "name": "Exponential growth prediction"
+    }
+  ],
+  "words": 1230
+}

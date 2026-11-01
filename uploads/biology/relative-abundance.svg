@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" role="img" aria-labelledby="t d">
+<title id="t">Relative Abundance Calculator — results compared</title>
+<desc id="d">Relative Abundance Calculator: Counts and the share of the community each species holds. — Community size = 96; Species 1 relative abundance = 41.67; Species 2 relative abundance = 26.04; Top three species combined = 83.33.</desc>
+<style>
+  .lbl { font: 600 13px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #0f172a; }
+  .val { font: 700 17px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #0f172a; }
+  .small { font: 500 11px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #64748b; }
+  .tag { font: 600 11px ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #2563eb;
+         letter-spacing: .06em; text-transform: uppercase; }
+  .box { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; rx: 10; }
+  .boxout { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 10; }
+  .arrow { stroke: #cbd5e1; stroke-width: 2; fill: none; }
+  .flow { stroke: #0ea5e9; stroke-width: 2; fill: none; stroke-dasharray: 5 7; animation: dash 1.6s linear infinite; }
+  .grow { transform-box: fill-box; transform-origin: bottom; animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
+  .fade { animation: fade 1s ease both; }
+  .slide { animation: slide 1.2s cubic-bezier(.2,.8,.2,1) both; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  .widen { transform-box: fill-box; transform-origin: left; animation: widen .8s cubic-bezier(.2,.8,.2,1) both; }
+  .sweep { animation: sweepdown 3.2s cubic-bezier(.4,0,.6,1) infinite; }
+  .tick { font: 700 12px ui-monospace, 'SF Mono', Menlo, monospace; fill: #64748b; }
+  @keyframes dash { to { stroke-dashoffset: -24; } }
+  @keyframes rise { from { transform: scaleY(.05); opacity: .2; } to { transform: scaleY(1); opacity: 1; } }
+  @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes slide { from { transform: translateX(-14px); opacity: 0 } to { transform: translateX(0); opacity: 1 } }
+  @keyframes pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }
+  @keyframes widen { from { transform: scaleX(.02); opacity: .25 } to { transform: scaleX(1); opacity: 1 } }
+  /* The band is a hint that the list is being read top to bottom, not data: it
+     stays translucent so a screenshot taken mid-animation can never be mistaken
+     for another bar in the chart. */
+  @keyframes sweepdown { 0% { transform: translateY(0); opacity: 0 }
+                         15% { opacity: .16 }
+                         85% { opacity: .16 }
+                         100% { transform: translateY(156px); opacity: 0 } }
+  @media (prefers-reduced-motion: reduce) {
+    .flow, .grow, .fade, .slide, .pulse, .widen, .sweep { animation: none; }
+  }
+</style>
+<rect width="720" height="300" fill="#ffffff"/>
+<text class="tag" x="28" y="32">Counts and the share of the community each species holds.</text>
+<rect class="grow" style="animation-delay:0.00s" x="80.0" y="60.0" width="78.4" height="150.0" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="119.2" y="50.0" text-anchor="middle">96</text>
+<text class="small" x="119.2" y="232" text-anchor="middle"><tspan x="119.2" dy="0">Community size</tspan></text>
+<rect class="grow" style="animation-delay:0.10s" x="220.0" y="144.9" width="78.4" height="65.1" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="259.2" y="134.9" text-anchor="middle">41.67</text>
+<text class="small" x="259.2" y="232" text-anchor="middle"><tspan x="259.2" dy="0">Species 1</tspan><tspan x="259.2" dy="13">relative…</tspan></text>
+<rect class="grow" style="animation-delay:0.20s" x="360.0" y="169.3" width="78.4" height="40.7" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="399.2" y="159.3" text-anchor="middle">26.04</text>
+<text class="small" x="399.2" y="232" text-anchor="middle"><tspan x="399.2" dy="0">Species 2</tspan><tspan x="399.2" dy="13">relative…</tspan></text>
+<rect class="grow" style="animation-delay:0.30s" x="500.0" y="79.8" width="78.4" height="130.2" rx="6" fill="#2563eb" opacity="0.9"/>
+<text class="val" x="539.2" y="69.8" text-anchor="middle">83.33</text>
+<text class="small" x="539.2" y="232" text-anchor="middle"><tspan x="539.2" dy="0">Top three</tspan><tspan x="539.2" dy="13">species combined</tspan></text>
+<line x1="60" y1="210" x2="660" y2="210" stroke="#cbd5e1" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,13 @@
+{
+  "name": "Aim benchmarks",
+  "description": "A strip under the percentage calculator that bands the number the visitor entered and says what the next band costs. Ships as the reference module for the panel's module system.",
+  "version": "1.0.0",
+  "paths": [
+    "/math/percentage"
+  ],
+  "slots": {
+    "widget_bottom": "partials/benchmarks.php"
+  },
+  "enabled": true,
+  "priority": 10
+}

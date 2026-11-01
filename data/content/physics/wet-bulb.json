@@ -1,0 +1,93 @@
+{
+  "path": "/physics/wet-bulb",
+  "slug": "wet-bulb",
+  "cat": "physics",
+  "name": "Wet bulb",
+  "seoTitle": "Wet bulb — Free Online Calculator",
+  "seoDesc": "Wet bulb: work out wet-Bulb Globe Temperature (outdoor) from the temperature and the relative humidity. A free physics calculator with the formula, units…",
+  "h1": "Wet bulb Calculator",
+  "summary": "<strong>wet-Bulb Globe Temperature (outdoor)</strong> is what the Wet bulb calculator works out, and it gets there from the temperature, the relative humidity and the globe thermometer temperature. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Wet bulb calculator work?",
+      "html": "<p>The Wet bulb calculator takes the values in the form, applies the relationship described below and reports <strong>wet-Bulb Globe Temperature (outdoor)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the temperature, the relative humidity and the globe thermometer temperature.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Relative humidity</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Wet-bulb temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Wet-bulb depression</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Globe thermometer temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Wet-Bulb Globe Temperature (outdoor)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Wet-Bulb Globe Temperature (indoor)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Wet bulb calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Wet-Bulb Globe Temperature (outdoor)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 5) × globe thermometer temperature + (1 ÷ 10) × temperature + (7 ÷ 10) × ((195919 ÷ 50000) × (relative humidity ^ 3 ÷ 2) × ((23101 ÷ 10000) × relative humidity) + temperature × ((151977 ÷ 1000000000) × the square root of (100000000 × relative humidity + 8313659)) − (100 × relative humidity − 1676331 ÷ 1000000) + (100 × relative humidity + temperature) − 937207 ÷ 200000))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wet-Bulb Globe Temperature (indoor)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((3 ÷ 10) × temperature + (7 ÷ 10) × ((195919 ÷ 50000) × (relative humidity ^ 3 ÷ 2) × ((23101 ÷ 10000) × relative humidity) + temperature × ((151977 ÷ 1000000000) × the square root of (100000000 × relative humidity + 8313659)) − (100 × relative humidity − 1676331 ÷ 1000000) + (100 × relative humidity + temperature) − 937207 ÷ 200000))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wet-bulb temperature</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((195919 ÷ 50000) × (relative humidity ^ 3 ÷ 2) × ((23101 ÷ 10000) × relative humidity) + temperature × ((151977 ÷ 1000000000) × the square root of (100000000 × relative humidity + 8313659)) − (100 × relative humidity − 1676331 ÷ 1000000) + (100 × relative humidity + temperature) − 937207 ÷ 200000)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wet-bulb depression</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(temperature − ((195919 ÷ 50000) × (relative humidity ^ 3 ÷ 2) × ((23101 ÷ 10000) × relative humidity) + temperature × ((151977 ÷ 1000000000) × the square root of (100000000 × relative humidity + 8313659)) − (100 × relative humidity − 1676331 ÷ 1000000) + (100 × relative humidity + temperature) − 937207 ÷ 200000))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Temperature</strong> = 10 °C, <strong>Relative humidity</strong> = 10 % and <strong>Globe thermometer temperature</strong> = 10 °C. The calculator returns <strong>Wet-bulb temperature</strong> = 1.1781 °C, <strong>Wet-bulb depression</strong> = 8.8219 °C, <strong>Wet-Bulb Globe Temperature (outdoor)</strong> = 3.8247 °C and <strong>Wet-Bulb Globe Temperature (indoor)</strong> = 3.8247 °C.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Wet-bulb temperature</strong> = 1.1781 °C, <strong>Wet-bulb depression</strong> = 8.8219 °C, <strong>Wet-Bulb Globe Temperature (outdoor)</strong> = 3.8247 °C and <strong>Wet-Bulb Globe Temperature (indoor)</strong> = 3.8247 °C should be roughly the size you expected from <strong>Temperature</strong> = 10 °C and <strong>Relative humidity</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Temperature, opening in Celsius</li><li>%, opening in percent</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Wet bulb calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 3 figures keep coming back — the temperature, the relative humidity and the globe thermometer temperature — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/mass-moment-of-inertia\">Mass moment of inertia</a>, <a href=\"/physics/mass-to-density\">Mass to density</a> and <a href=\"/physics/maximum-height-projectile-motion\">Maximum height - projectile motion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Wet bulb calculator work out?",
+      "a": "It returns wet-Bulb Globe Temperature (outdoor), derived from the temperature, the relative humidity and the globe thermometer temperature. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Wet bulb calculator?",
+      "a": "The form asks for the temperature, the relative humidity and the globe thermometer temperature, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter temperature in a different unit?",
+      "a": "Yes. Temperature opens in Celsius and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Wet-bulb temperature = 1.1781 °C. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Wet bulb calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/mass-moment-of-inertia",
+      "name": "Mass moment of inertia"
+    },
+    {
+      "path": "/physics/mass-to-density",
+      "name": "Mass to density"
+    },
+    {
+      "path": "/physics/maximum-height-projectile-motion",
+      "name": "Maximum height - projectile motion"
+    }
+  ],
+  "words": 1475
+}

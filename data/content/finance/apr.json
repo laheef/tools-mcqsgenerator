@@ -1,0 +1,97 @@
+{
+  "path": "/finance/apr",
+  "slug": "apr",
+  "cat": "finance",
+  "name": "APR",
+  "seoTitle": "APR — Free Online Calculator",
+  "seoDesc": "APR: work out equivalent rate from the interest rate and the loan term. A free finance calculator with the formula, units and a worked example.",
+  "h1": "APR Calculator",
+  "summary": "The APR calculator turns the interest rate, the loan term, the fees rolled into loan and the fees paid separately into <strong>equivalent rate</strong>. That makes it useful for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the APR calculator work?",
+      "html": "<p>The APR calculator takes the values in the form, applies the relationship described below and reports <strong>equivalent rate</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the payment and the compounding); then you type in the interest rate, the loan term, the fees rolled into loan and the fees paid separately.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in years / months. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 7 options, such as yearly, semi-annually and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as yearly, semi-annually and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Interest rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Loan term</strong></td><td>A measured quantity, 27 units available.</td><td>years / months</td><td>You supply it</td></tr><tr><td><strong>Installment</strong></td><td>One of 7 options, such as yearly, semi-annually and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Compounding</strong></td><td>One of 7 options, such as yearly, semi-annually and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Fees rolled into loan</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Fees paid separately</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Effective Annual Rate (EAR)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Annual Percentage Rate (APR)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Effective APR</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Installment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total finance charge</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Principal</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Number of periods</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Approximate APR</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Total interest payment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total additional fees</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total payments</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Equivalent rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Periodic equivalent rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Equivalent APR</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the APR calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Equivalent rate</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Installment</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((fees rolled into loan + loan amount) × (((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) + 1, (payment × loan term)) × ((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) ÷ ((((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) + 1, (payment × loan term)) − 1))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Periodic equivalent rate</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of periods</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(payment × loan term)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total payments</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(fees paid separately + (payment × loan term) × ((fees rolled into loan + loan amount) × (((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) + 1, (payment × loan term)) × ((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) ÷ ((((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) + 1, (payment × loan term)) − 1)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total finance charge</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-loan amount + (fees paid separately + (payment × loan term) × ((fees rolled into loan + loan amount) × (((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) + 1, (payment × loan term)) × ((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) ÷ ((((payment × (((compounding + interest rate) ÷ compounding, compounding ÷ payment) − 1)) ÷ payment) + 1, (payment × loan term)) − 1))))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Loan amount</strong> = 10, <strong>Interest rate</strong> = 10 %, <strong>Loan term</strong> = 10 hrs and <strong>Installment</strong> set to Monthly. Working through the relationship above gives <strong>Effective Annual Rate (EAR)</strong> = 10.4713 %, <strong>Principal</strong> = 20, <strong>Number of periods</strong> = 432000 and <strong>Total additional fees</strong> = 20.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Effective Annual Rate (EAR)</strong> = 10.4713 %, <strong>Principal</strong> = 20, <strong>Number of periods</strong> = 432000 and <strong>Total additional fees</strong> = 20 should be roughly the size you expected from <strong>Loan amount</strong> = 10 and <strong>Interest rate</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>Time, opening in years / months</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The APR calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing questions for a lender, an accountant or an adviser</li><li>Sizing up a purchase before you commit to it</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 4 figures keep coming back — the interest rate, the loan term and the fees rolled into loan — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/roi\">ROI</a>, <a href=\"/finance/roic\">Return on invested capital (ROIC)</a> and <a href=\"/finance/ros\">Return on sales (ROS)</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the APR calculator work out?",
+      "a": "It returns equivalent rate, derived from the interest rate, the loan term and the fees rolled into loan. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the APR calculator?",
+      "a": "The form asks for the interest rate, the loan term, the fees rolled into loan and the fees paid separately, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter loan amount in a different unit?",
+      "a": "Yes. Loan amount opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Effective Annual Rate (EAR) = 10.4713 %. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the APR calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/roi",
+      "name": "ROI"
+    },
+    {
+      "path": "/finance/roic",
+      "name": "Return on invested capital (ROIC)"
+    },
+    {
+      "path": "/finance/ros",
+      "name": "Return on sales (ROS)"
+    }
+  ],
+  "words": 2039
+}

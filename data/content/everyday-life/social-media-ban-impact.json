@@ -1,0 +1,97 @@
+{
+  "path": "/everyday-life/social-media-ban-impact",
+  "slug": "social-media-ban-impact",
+  "cat": "everyday-life",
+  "name": "Social media ban impact",
+  "seoTitle": "Social media ban impact — Free Online Calculator",
+  "seoDesc": "Social media ban impact: work out time wasted using social media from the daily time spent using social media and the age. A free everyday life calculator…",
+  "h1": "Social media ban impact Calculator",
+  "summary": "Give the Social media ban impact calculator the daily time spent using social media and the age and it returns <strong>time wasted using social media</strong>. That makes it useful for a practical question that turns up in daily life.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Social media ban impact calculator work?",
+      "html": "<p>The Social media ban impact calculator takes the values in the form, applies the relationship described below and reports <strong>time wasted using social media</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the age limit); then you type in the daily time spent using social media, the age, the learning hours per course and the pages per book.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A single on/off switch — tick it for &ldquo;TikTok&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Snapchat&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;YouTube&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Instagram&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Other&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 3 options, such as 16 years, 15 years and customize. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A number, expressed in pages.</li><li>A number, expressed in words.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Daily time spent using social media</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Time wasted using social media</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>Age</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Age limit</strong></td><td>One of 3 options, such as 16 years, 15 years and customize.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Customised age limit</strong></td><td>A number stated in yrs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time saved after social media ban</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>Distance cycled</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Distance cycled one year</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Distance cycled total</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Biking trips</strong></td><td>A number stated in per week.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Tracks one year</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>High School / GCSE courses</strong></td><td>A measured quantity, 7 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Gcse bonus</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Books year</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Books read</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Podcasts</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Mastering a new skill</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Learning hours per course</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Pages per book</strong></td><td>A number stated in pages.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Words per page</strong></td><td>A number stated in words.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Words per minute</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Podcast length</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Hours of practice</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Time wasted</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Social media ban impact calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Time wasted using social media</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1461 ÷ 4) × daily time spent using social media</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time saved after social media ban</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(time wasted using social media × (-age + customised age limit))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">High School / GCSE courses</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(rounded down, (time wasted using social media ÷ learning hours per course))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Gcse bonus</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(rounded down, ((time wasted using social media × (-age + customised age limit)) ÷ learning hours per course))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Books read</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(rounded down, (60 × words per minute × (time wasted using social media × (-age + customised age limit)) ÷ (pages per book × words per page)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Books year</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(rounded down, (60 × time wasted using social media × words per minute ÷ (pages per book × words per page)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 7 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in hours</li><li>Time, opening in hours</li><li>Time, opening in hours</li><li>Time, opening in years</li><li>Time, opening in hours</li><li>Length, opening in kilometers</li><li>Length, opening in kilometers</li><li>Length, opening in kilometers</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Social media ban impact calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 2 figures keep coming back — the daily time spent using social media and the age — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/email-alternatives\">Email alternatives</a>, <a href=\"/everyday-life/engine-hours-to-miles-converter\">Engine hours to miles converter</a> and <a href=\"/everyday-life/english-learning\">English learning time</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Social media ban impact calculator work out?",
+      "a": "It returns time wasted using social media, derived from the daily time spent using social media and the age. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Social media ban impact calculator?",
+      "a": "The form asks for the daily time spent using social media and the age, which is 14 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter time other sm in a different unit?",
+      "a": "Yes. Time other sm opens in hours and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Daily time spent using social media = 0 hrs. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Social media ban impact calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/email-alternatives",
+      "name": "Email alternatives"
+    },
+    {
+      "path": "/everyday-life/engine-hours-to-miles-converter",
+      "name": "Engine hours to miles converter"
+    },
+    {
+      "path": "/everyday-life/english-learning",
+      "name": "English learning time"
+    }
+  ],
+  "words": 2025
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/finance/unpaid-work",
+  "slug": "unpaid-work",
+  "cat": "finance",
+  "name": "Unpaid work",
+  "seoTitle": "Unpaid work — Free Online Calculator",
+  "seoDesc": "Unpaid work: work out pet care (Average cost of outsourcing) from the cleaning and the laundry. A free finance calculator with the formula, units and a…",
+  "h1": "Unpaid work Calculator",
+  "summary": "Give the Unpaid work calculator the cleaning, the laundry, the child care and the schoolwork and it returns <strong>pet care (Average cost of outsourcing)</strong>. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Unpaid work calculator work?",
+      "html": "<p>The Unpaid work calculator takes the values in the form, applies the relationship described below and reports <strong>pet care (Average cost of outsourcing)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the country); then you type in the cleaning (My unpaid work), the laundry (My unpaid work), the child care (My unpaid work) and the schoolwork (My unpaid work).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as australia, canada and united Kingdom. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in h per week.</li><li>Pick the option that matches your case — 3 options, such as hourly wage, weekly salary and monthly salary. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Country</strong></td><td>One of 4 options, such as australia, canada and united Kingdom.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hourly wage (My professional work)</strong></td><td>A number stated in $/h.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Hourly wage (My professional work)</strong></td><td>A number stated in £/h.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Monthly salary (My professional work)</strong></td><td>A number stated in $/month.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Monthly salary (My professional work)</strong></td><td>A number stated in £/month.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Weekly salary (My professional work)</strong></td><td>A number stated in $/week.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Weekly salary (My professional work)</strong></td><td>A number stated in £/week.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Meal preparation (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>Calculated</td></tr><tr><td><strong>Cleaning (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Laundry (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Child care (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Schoolwork (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>‍ Adult care</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Pet care (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Transport (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Repairs (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Gardening (My unpaid work)</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Meal preparation (Average cost of outsourcing)</strong></td><td>A number stated in $/h.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cleaning (Average cost of outsourcing)</strong></td><td>A number stated in $/h.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Laundry (Average cost of outsourcing)</strong></td><td>A number stated in $/h.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Child care (Average cost of outsourcing)</strong></td><td>A number stated in $/h.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Schoolwork (Average cost of outsourcing)</strong></td><td>A number stated in $/h.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Adult care (Average cost of outsourcing)</strong></td><td>A number stated in $/h.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Pet care (Average cost of outsourcing)</strong></td><td>A number stated in $/h.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 50 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Unpaid work calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Pet care</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-‍ Adult care × adult care − child care × child care − cleaning × cleaning − meal preparation × meal preparation − gardening × gardening − laundry × laundry − repairs × repairs − schoolwork × schoolwork + value of unpaid work − transport × transport) ÷ pet care</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Meal preparation</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-‍ Adult care − child care − cleaning − gardening − laundry − pet care − repairs − schoolwork + time spent − transport</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Value of unpaid work</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">value of unpaid work</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cleaning</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cleaning</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Gardening</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">gardening</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Repairs</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">repairs</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in weeks, and convertible to any of the 27 units on that chip.</li><li>Shown in weeks, and convertible to any of the 27 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Unpaid work calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 4 figures keep coming back — the cleaning, the laundry and the child care — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/piti\">PITI</a>, <a href=\"/finance/pivot-point\">Pivot point</a> and <a href=\"/finance/pmi\">PMI</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Unpaid work calculator work out?",
+      "a": "It returns pet care (Average cost of outsourcing), derived from the cleaning, the laundry and the child care. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Unpaid work calculator?",
+      "a": "The form asks for the cleaning, the laundry, the child care and the schoolwork, which is 17 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter meal preparation (My unpaid work) in a different unit?",
+      "a": "Yes. Meal preparation (My unpaid work) opens in weeks and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Hourly wage = 23. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Unpaid work calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/piti",
+      "name": "PITI"
+    },
+    {
+      "path": "/finance/pivot-point",
+      "name": "Pivot point"
+    },
+    {
+      "path": "/finance/pmi",
+      "name": "PMI"
+    }
+  ],
+  "words": 2141
+}

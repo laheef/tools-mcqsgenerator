@@ -1,0 +1,101 @@
+{
+  "path": "/food/bbq-party",
+  "slug": "bbq-party",
+  "cat": "food",
+  "name": "BBQ party",
+  "seoTitle": "BBQ party Calculator — Formula, Units & Example",
+  "seoDesc": "BBQ party: work out how many adults? from the beefkcal and the veggieskcal. A free food calculator with the formula, units and a worked example.",
+  "h1": "BBQ party Calculator",
+  "summary": "Give the BBQ party calculator the beefkcal and the veggieskcal and it returns <strong>how many adults?</strong>. It is built for portioning, timing or nutrition.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the BBQ party calculator work?",
+      "html": "<p>The BBQ party calculator takes the values in the form, applies the relationship described below and reports <strong>how many adults?</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (want beef?, want pork? and want veggies?); then you type in how many kids?, the beefkcal, the veggieskcal and the prkcal.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 4 options, such as if you insist..., we will eat, but not much and bring the food!. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as not really, maybe a bit and yes, please. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as not really, maybe a bit and yes, please. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as not really, maybe a bit and yes, please. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as not really, maybe a bit and yes, please. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in pounds of beef. The unit chip switches it to any of the 10 supported units.</li><li>A measured quantity, entered by default in pounds. The unit chip switches it to any of the 8 supported units.</li><li>A measured quantity, entered by default in hot dogs (w/ bun). The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in pork chops (with bone). The unit chip switches it to any of the 8 supported units.</li><li>A measured quantity, entered by default in wings. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in hot dogs (w/ bun). The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>How many adults?</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>How many kids?</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Want beef?</strong></td><td>One of 4 options, such as not really, maybe a bit and yes, please.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Want pork?</strong></td><td>One of 4 options, such as not really, maybe a bit and yes, please.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Want veggies?</strong></td><td>One of 4 options, such as not really, maybe a bit and yes, please.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Want chicken?</strong></td><td>One of 4 options, such as not really, maybe a bit and yes, please.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Want sausages?</strong></td><td>One of 4 options, such as not really, maybe a bit and yes, please.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Totalprop</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total Budget</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Beefkcal</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Veggieskcal</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Prkcal</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Wingskcal</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Hdkcal</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Budgetbeef</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Budgetchicken</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Budgetpork</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Budgetsausages</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Budgetveggies</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Beef price</strong></td><td>A measured quantity, 10 units available.</td><td>pounds of beef</td><td>You supply it</td></tr><tr><td><strong>Pork price</strong></td><td>A measured quantity, 8 units available.</td><td>pounds</td><td>You supply it</td></tr><tr><td><strong>Veggies price</strong></td><td>A measured quantity, 29 units available.</td><td>pounds</td><td>Calculated</td></tr><tr><td><strong>Wings price</strong></td><td>A measured quantity, 6 units available.</td><td>pounds</td><td>Calculated</td></tr><tr><td><strong>Sausages price</strong></td><td>A measured quantity, 6 units available.</td><td>hot dogs (w/ bun)</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 42 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the BBQ party calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">How many adults?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-1 ÷ 2 × how many kids? + total food energy ÷ how hungry are you?</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Budgetveggies</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total Budget − budgetbeef − budgetchicken − budgetpork − budgetsausages</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Totalprop</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">want beef? × total food energy ÷ (beef × beefkcal)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Totalprop</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">want pork? × total food energy ÷ (prkcal × pork)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Totalprop</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">want veggies? × total food energy ÷ (veggies × veggieskcal)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Totalprop</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">want chicken? × total food energy ÷ (chicken × wingskcal)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>The form opens with a complete set of values: <strong>How many kids?</strong> = 0, <strong>How hungry are you?</strong> set to We will eat, but not much, <strong>Want beef?</strong> set to Yes, please and <strong>Want pork?</strong> set to Yes, please. Straight away the calculator returns <strong>Totalprop</strong> = 10.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Totalprop</strong> = 10 should be roughly the size you expected from <strong>How many kids?</strong> = 0 and <strong>How hungry are you?</strong> set to We will eat, but not much.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>Shown in pounds, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>The option the calculation settles on.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in burgers (patty + bun), and convertible to any of the 10 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in pounds, and convertible to any of the 6 units on that chip.</li><li>Shown in pounds, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The BBQ party calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Scaling a recipe up or down</li><li>Working out timing so everything finishes together</li><li>Checking portions before you shop</li><li>Any time the same 2 figures keep coming back — the beefkcal and the veggieskcal — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/butter\">Butter</a>, <a href=\"/food/cake-pans\">Cake pan</a> and <a href=\"/food/cake-pricing\">Cake pricing</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the BBQ party calculator work out?",
+      "a": "It returns how many adults?, derived from the beefkcal and the veggieskcal. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the BBQ party calculator?",
+      "a": "The form asks for the beefkcal and the veggieskcal, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter total Budget in a different unit?",
+      "a": "Yes. Total Budget opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Totalprop = 10. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the BBQ party calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/butter",
+      "name": "Butter"
+    },
+    {
+      "path": "/food/cake-pans",
+      "name": "Cake pan"
+    },
+    {
+      "path": "/food/cake-pricing",
+      "name": "Cake pricing"
+    }
+  ],
+  "words": 2215
+}

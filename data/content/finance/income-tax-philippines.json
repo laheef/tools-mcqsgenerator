@@ -1,0 +1,93 @@
+{
+  "path": "/finance/income-tax-philippines",
+  "slug": "income-tax-philippines",
+  "cat": "finance",
+  "name": "Income tax Philippines",
+  "seoTitle": "Income tax Philippines Calculator",
+  "seoDesc": "Income tax Philippines: work out employee MSC percentage from the taxable income and the total deductions. A free finance calculator with the formula,…",
+  "h1": "Income tax Philippines Calculator",
+  "summary": "<strong>employee MSC percentage</strong> is what the Income tax Philippines calculator works out, and it gets there from the taxable income, the total deductions and the net pay after tax. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Income tax Philippines calculator work?",
+      "html": "<p>The Income tax Philippines calculator takes the values in the form, applies the relationship described below and reports <strong>employee MSC percentage</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the employment status and the year); then you type in the taxable income (Deductions and tax expenses), the total deductions and the net pay after tax (Deductions and tax expenses).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as employed and self-employed. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as 2021, 2022 and 2023. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Employment status</strong></td><td>One of 2 options, such as employed and self-employed.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Monthly income</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>SSS (Contributions for employed individuals)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Phil health (Contributions for employed individuals)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Pag ibig (Contributions for employed individuals)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total contributions (Contributions for employed individuals)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>SSS (Contributions for self-employed individuals)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Phil health (Contributions for self-employed individuals)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Pag ibig (Contributions for self-employed individuals)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Taxable income (Deductions and tax expenses)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Withholding tax (Deductions and tax expenses)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Net pay after tax (Deductions and tax expenses)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total deductions</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Net pay after deductions</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Taxable income (Deductions and tax expenses)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Withholding tax (Deductions and tax expenses)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Net pay after tax (Deductions and tax expenses)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total deductions self employed</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Net pay after deductions self employed</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Year</strong></td><td>One of 5 options, such as 2021, 2022 and 2023.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Employee MSC percentage</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Individual MSC percentage</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Max monthly premium</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Premium rate</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 25 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Income tax Philippines calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Employee MSC percentage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">SSS ÷ (monthly income)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">SSS</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">individual MSC percentage × (monthly income) + (monthly income)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Phil health</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × max monthly premium × rounded up, ((1 ÷ 10000) × (monthly income)) × the absolute value of ((monthly income) − 1) − 1 ÷ 2 × monthly income × premium rate × (monthly income) + monthly income × premium rate − 5000 × premium rate × rounded up, ((1 ÷ 10000) × (monthly income)) + 5000 × premium rate</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Phil health</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">max monthly premium × rounded up, ((1 ÷ 10000) × (monthly income)) × the absolute value of ((monthly income) − 1) − monthly income × premium rate × (monthly income) + 2 × monthly income × premium rate − 10000 × premium rate × rounded up, ((1 ÷ 10000) × (monthly income)) + 10000 × premium rate</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pag ibig</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-monthly income × rounded up, ((1 ÷ 1000000000) × rounded down, ((100000 ÷ 500000001) × monthly income) ÷ monthly income) × (monthly income) + monthly income × (monthly income) + 100 × rounded up, ((1 ÷ 1000000000) × rounded down, ((100000 ÷ 500000001) × monthly income) ÷ monthly income)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pag ibig</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-monthly income × rounded up, ((1 ÷ 1000000000) × rounded down, ((100000 ÷ 500000001) × monthly income) ÷ monthly income) × (monthly income) − monthly income × rounded up, ((1 ÷ 1000000000) × rounded down, ((100000 ÷ 500000001) × monthly income) ÷ monthly income) × (monthly income) + monthly income × (monthly income) + monthly income × (monthly income) + 200 × rounded up, ((1 ÷ 1000000000) × rounded down, ((100000 ÷ 500000001) × monthly income) ÷ monthly income)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Employment status</strong> set to Employed and <strong>Monthly income</strong> = 10. The calculator returns <strong>SSS</strong> = 10.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>SSS</strong> = 10 should be roughly the size you expected from <strong>Employment status</strong> set to Employed and <strong>Monthly income</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Income tax Philippines calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing questions for a lender, an accountant or an adviser</li><li>Sizing up a purchase before you commit to it</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 3 figures keep coming back — the taxable income, the total deductions and the net pay after tax — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/credit-utilization\">Credit utilization</a>, <a href=\"/finance/cross-exchange-rate\">Cross exchange rate</a> and <a href=\"/finance/cross-price-elasticity\">Cross price elasticity</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Income tax Philippines calculator work out?",
+      "a": "It returns employee MSC percentage, derived from the taxable income, the total deductions and the net pay after tax. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Income tax Philippines calculator?",
+      "a": "The form asks for the taxable income, the total deductions and the net pay after tax, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports SSS = 10. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Income tax Philippines calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/credit-utilization",
+      "name": "Credit utilization"
+    },
+    {
+      "path": "/finance/cross-exchange-rate",
+      "name": "Cross exchange rate"
+    },
+    {
+      "path": "/finance/cross-price-elasticity",
+      "name": "Cross price elasticity"
+    }
+  ],
+  "words": 1936
+}

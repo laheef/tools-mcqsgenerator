@@ -1,0 +1,101 @@
+{
+  "path": "/physics/car-mass-center",
+  "slug": "car-mass-center",
+  "cat": "physics",
+  "name": "Car center of mass",
+  "seoTitle": "Car center of mass — Free Online Calculator",
+  "seoDesc": "Car center of mass: work out wheelbase (L) from the front axle weight and the height raised. A free physics calculator with the formula, units and a…",
+  "h1": "Car center of mass Calculator",
+  "summary": "The Car center of mass calculator works out <strong>wheelbase (L)</strong> from the front axle weight, the height raised, the rear axle weight and the height of mass center (h). It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Car center of mass calculator work?",
+      "html": "<p>The Car center of mass calculator takes the values in the form, applies the relationship described below and reports <strong>wheelbase (L)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the setup); then you type in the front axle weight, the height raised (H), the rear axle weight (wheels raised) and the height of mass center (h) (Altitudinal location).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>Pick the option that matches your case — 2 options, such as front wheels raised and rear wheels raised. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Car weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Wheelbase (L)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Front axle weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Rear axle weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Distance b</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Setup</strong></td><td>One of 2 options, such as front wheels raised and rear wheels raised.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Height raised (H)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Angle</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Wheel radius (r)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Front axle weight (wheels raised)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Rear axle weight (wheels raised)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Height of mass center (h) (Altitudinal location)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Height of mass center (h) (Altitudinal location)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Car track (T)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Left wheels weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Right wheels weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Car center of mass calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Wheelbase (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance a + distance b</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wheelbase (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance a × car weight ÷ rear axle weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wheelbase (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">car weight × distance b ÷ front axle weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wheelbase (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">height raised (H) ÷ the sine of (angle)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wheel radius (r)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance a ÷ the tangent of (angle) + height of mass center (h) − rear axle weight (wheels raised) × wheelbase (L) ÷ (car weight × the tangent of (angle))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Car weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">front axle weight (wheels raised) + rear axle weight (wheels raised)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Distance a</strong> = 30 m, <strong>Distance b</strong> = 30 m and <strong>Setup</strong> set to Front wheels raised. The calculator returns <strong>Wheelbase (L)</strong> = 60 m.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Wheelbase (L)</strong> = 60 m should be roughly the size you expected from <strong>Distance a</strong> = 30 m and <strong>Distance b</strong> = 30 m.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Mass, opening in kilograms</li><li>Length, opening in meters</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in centimeters</li><li>Angle, opening in degrees</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Car center of mass calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 4 figures keep coming back — the front axle weight, the height raised and the rear axle weight — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/relative-humidity\">Relative humidity</a>, <a href=\"/physics/relativistic-ke\">Relativistic kinetic energy</a> and <a href=\"/physics/resistor-color-code\">Resistor color code</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Car center of mass calculator work out?",
+      "a": "It returns wheelbase (L), derived from the front axle weight, the height raised and the rear axle weight. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Car center of mass calculator?",
+      "a": "The form asks for the front axle weight, the height raised, the rear axle weight and the height of mass center (h), which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter car weight in a different unit?",
+      "a": "Yes. Car weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Wheelbase (L) = 60 m. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Car center of mass calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/relative-humidity",
+      "name": "Relative humidity"
+    },
+    {
+      "path": "/physics/relativistic-ke",
+      "name": "Relativistic kinetic energy"
+    },
+    {
+      "path": "/physics/resistor-color-code",
+      "name": "Resistor color code"
+    }
+  ],
+  "words": 1905
+}

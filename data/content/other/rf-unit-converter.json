@@ -1,0 +1,101 @@
+{
+  "path": "/other/rf-unit-converter",
+  "slug": "rf-unit-converter",
+  "cat": "other",
+  "name": "RF unit converter",
+  "seoTitle": "RF unit converter Calculator — Formula, Units & Example",
+  "seoDesc": "RF unit converter: work out impedance from the voltage and the power. A free other calculator with the formula, units and a worked example.",
+  "h1": "RF unit converter Calculator",
+  "summary": "The RF unit converter turns the voltage and the power into <strong>impedance</strong>. Think of it as a shortcut for whatever you happen to be working on.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the RF unit converter calculator work?",
+      "html": "<p>The RF unit converter takes the values in the form, applies the relationship described below and reports <strong>impedance</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the voltage (V) and the power (P).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in (peak) voltage. The unit chip switches it to any of the 8 supported units.</li><li>A measured quantity, entered by default in watts. The unit chip switches it to any of the 10 supported units.</li><li>A single on/off switch — tick it for &ldquo;Show the circuit's current&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Impedance</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>Calculated</td></tr><tr><td><strong>Current (I)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>Calculated</td></tr><tr><td><strong>Voltage (V)</strong></td><td>A measured quantity, 8 units available.</td><td>(peak) voltage</td><td>You supply it</td></tr><tr><td><strong>Power (P)</strong></td><td>A measured quantity, 10 units available.</td><td>watts</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the RF unit converter calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Impedance</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">voltage (V) ÷ current (I)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Current (I)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">power (P) ÷ voltage (V)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Impedance</strong> = 50 Ω, <strong>Current (I)</strong> = 10 A and <strong>Voltage (V)</strong> = 30 V (peak). The calculator returns <strong>Power (P)</strong> = 300 W.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Power (P)</strong> = 300 W should be roughly the size you expected from <strong>Impedance</strong> = 50 Ω and <strong>Current (I)</strong> = 10 A.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in ohms, and convertible to any of the 5 units on that chip.</li><li>Shown in amperes, and convertible to any of the 3 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Resistance – ohms, opening in ohms</li><li>Electric current – ampere, opening in amperes</li><li>EEweb RF volts, opening in (peak) voltage</li><li>EEweb RF Power, opening in watts</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The RF unit converter earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li><li>Any time the same 2 figures keep coming back — the voltage and the power — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/camera-field-of-view\">Camera field of view</a>, <a href=\"/other/capital-case-converter\">Capital case converter</a> and <a href=\"/other/carat-weight\">Carat weight</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the RF unit converter calculator work out?",
+      "a": "It returns impedance, derived from the voltage and the power. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the RF unit converter calculator?",
+      "a": "The form asks for the voltage and the power, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter impedance in a different unit?",
+      "a": "Yes. Impedance opens in ohms and the chip beside it offers 5 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Power (P) = 300 W. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the RF unit converter calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/camera-field-of-view",
+      "name": "Camera field of view"
+    },
+    {
+      "path": "/other/capital-case-converter",
+      "name": "Capital case converter"
+    },
+    {
+      "path": "/other/carat-weight",
+      "name": "Carat weight"
+    }
+  ],
+  "words": 1352
+}

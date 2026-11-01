@@ -1,0 +1,97 @@
+{
+  "path": "/other/guitar-string-tension",
+  "slug": "guitar-string-tension",
+  "cat": "other",
+  "name": "Guitar string tension",
+  "seoTitle": "Guitar string tension Calculator: Free, With Steps",
+  "seoDesc": "Guitar string tension: work out gravitational acceleration from the scale length. A free other calculator with the formula, units and a worked example.",
+  "h1": "Guitar string tension Calculator",
+  "summary": "The Guitar string tension calculator returns <strong>gravitational acceleration</strong> from the 16 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nThat makes it useful for whatever you happen to be working on. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Guitar string tension calculator work?",
+      "html": "<p>The Guitar string tension calculator takes the values in the form, applies the relationship described below and reports <strong>gravitational acceleration</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the pitch, the string type and the string gauge); then you type in the scale length, the unit weight and the tension.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 55 options, such as E0, F0 and F#0. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 11 options, such as plain Steel, nickel-plated Steel and stainless Steel Round Wound. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 22 options, such as 0.007, 0.008 and 0.0085. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 33 options, such as 0.017, 0.018 and 0.019. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 21 options, such as 0.018, 0.020 and 0.021. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 11 options, such as 0.022, 0.024 and 0.026. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 17 options, such as 0.020, 0.022 and 0.024. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 28 options, such as 0.020, 0.021 and 0.022. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 15 options, such as 0.023, 0.024 and 0.026. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 23 options, such as 0.020, 0.021 and 0.022. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 18 options, such as 0.022, 0.024 and 0.025. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 18 options, such as 0.018, 0.019 and 0.020. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 24 options, such as 0.019, 0.020 and 0.022. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilograms per meter. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li></ul><p>13 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Scale length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Pitch</strong></td><td>One of 55 options, such as E0, F0 and F#0.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Frequency</strong></td><td>A measured quantity, 21 units available.</td><td>hertz</td><td>Calculated</td></tr><tr><td><strong>String type</strong></td><td>One of 11 options, such as plain Steel, nickel-plated Steel and stainless Steel Round Wound.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge</strong></td><td>One of 22 options, such as 0.007, 0.008 and 0.0085.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (2)</strong></td><td>One of 33 options, such as 0.017, 0.018 and 0.019.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (3)</strong></td><td>One of 21 options, such as 0.018, 0.020 and 0.021.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (4)</strong></td><td>One of 11 options, such as 0.022, 0.024 and 0.026.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (5)</strong></td><td>One of 17 options, such as 0.020, 0.022 and 0.024.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (6)</strong></td><td>One of 28 options, such as 0.020, 0.021 and 0.022.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (7)</strong></td><td>One of 15 options, such as 0.023, 0.024 and 0.026.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (8)</strong></td><td>One of 23 options, such as 0.020, 0.021 and 0.022.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (9)</strong></td><td>One of 18 options, such as 0.022, 0.024 and 0.025.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (10)</strong></td><td>One of 18 options, such as 0.018, 0.019 and 0.020.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>String gauge (11)</strong></td><td>One of 24 options, such as 0.019, 0.020 and 0.022.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Unit weight</strong></td><td>A measured quantity, 3 units available.</td><td>kilograms per meter</td><td>You supply it</td></tr><tr><td><strong>Tension</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Var k 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Var j 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Var h 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Var g 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Var f 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Var d 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Var c 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 38 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Guitar string tension calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Gravitational acceleration</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">4 × (frequency ^ 2) × unit weight × (scale length ^ 2) ÷ tension</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Var d 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(unit weight − var a 1 × var a 2 − var b 1 × var b 2 − var c 1 × var c 2 − var e 1 × E − var f 1 × var f 2 − var g 1 × var g 2 − var h 1 × var h 2 − var i 1 × I − var j 1 × var j 2 − var k 1 × var k 2) ÷ var d 1</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters per second squared, and convertible to any of the 5 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in hertz, and convertible to any of the 21 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Frequency, opening in hertz</li><li>Linear density, opening in kilograms per meter</li><li>Mass, opening in kilograms</li><li>Acceleration, opening in meters per second squared</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Guitar string tension calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 1 figures keep coming back — the scale length — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/school-age\">School age</a>, <a href=\"/other/screen-ratio\">Screen ratio</a> and <a href=\"/other/screen-size\">Screen size</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Guitar string tension calculator work out?",
+      "a": "It returns gravitational acceleration, derived from the scale length. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Guitar string tension calculator?",
+      "a": "The form asks for the scale length, which is 16 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter scale length in a different unit?",
+      "a": "Yes. Scale length opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (13 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Frequency = 0 Hz. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Guitar string tension calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/school-age",
+      "name": "School age"
+    },
+    {
+      "path": "/other/screen-ratio",
+      "name": "Screen ratio"
+    },
+    {
+      "path": "/other/screen-size",
+      "name": "Screen size"
+    }
+  ],
+  "words": 2230
+}

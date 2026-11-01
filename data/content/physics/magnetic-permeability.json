@@ -1,0 +1,101 @@
+{
+  "path": "/physics/magnetic-permeability",
+  "slug": "magnetic-permeability",
+  "cat": "physics",
+  "name": "Magnetic permeability",
+  "seoTitle": "Magnetic permeability Calculator — Formula, Units & Example",
+  "seoDesc": "Magnetic permeability: work out susceptibility from the permeability and the susceptibility. A free physics calculator with the formula, units and a…",
+  "h1": "Magnetic permeability Calculator",
+  "summary": "Supply the permeability and the <strong>susceptibility</strong> and the Magnetic permeability calculator solves for susceptibility. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Magnetic permeability calculator work?",
+      "html": "<p>The Magnetic permeability calculator takes the values in the form, applies the relationship described below and reports <strong>susceptibility</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the permeability and the susceptibility (Choose a substance).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in microhenries. The unit chip switches it to any of the 4 supported units.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Permeability</strong></td><td>A measured quantity, 4 units available.</td><td>microhenries</td><td>You supply it</td></tr><tr><td><strong>Relative permeability</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Susceptibility</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Substance</strong></td><td>One of 7 options, such as iron (99.95% pure), iron (99.8% pure) and ferrite.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Permeability (Choose a substance)</strong></td><td>A measured quantity, 4 units available.</td><td>microhenries</td><td>Calculated</td></tr><tr><td><strong>Relative permeability (Choose a substance)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Susceptibility (Choose a substance)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Magnetic permeability calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Susceptibility</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2500000 × permeability − PI) ÷ PI</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Relative permeability</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2500000 × permeability ÷ PI</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Permeability</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2500000) × PI × (susceptibility + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Permeability</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2500000) × PI × relative permeability</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Substance</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">relative permeability</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>The form opens with a complete set of values: <strong>Substance</strong> set to Iron (99.95% pure). Straight away the calculator returns <strong>Permeability</strong> = 251327412.2872 μH, <strong>Relative permeability</strong> = 200000 and <strong>Susceptibility</strong> = 199999.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Permeability</strong> = 251327412.2872 μH, <strong>Relative permeability</strong> = 200000 and <strong>Susceptibility</strong> = 199999 should be roughly the size you expected from <strong>Substance</strong> set to Iron (99.95% pure).</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in microhenries, and convertible to any of the 4 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Inductance – henry, opening in microhenries</li><li>Inductance – henry, opening in microhenries</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Magnetic permeability calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 2 figures keep coming back — the permeability and the susceptibility — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/broad-crested-weir\">Broad crested weir</a>, <a href=\"/physics/btu-to-tons-converter\">BTU to tons converter</a> and <a href=\"/physics/buck-converter\">Buck converter</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Magnetic permeability calculator work out?",
+      "a": "It returns susceptibility, derived from the permeability and the susceptibility. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Magnetic permeability calculator?",
+      "a": "The form asks for the permeability and the susceptibility, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter permeability in a different unit?",
+      "a": "Yes. Permeability opens in microhenries and the chip beside it offers 4 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Permeability = 251327412.2872 μH. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Magnetic permeability calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/broad-crested-weir",
+      "name": "Broad crested weir"
+    },
+    {
+      "path": "/physics/btu-to-tons-converter",
+      "name": "BTU to tons converter"
+    },
+    {
+      "path": "/physics/buck-converter",
+      "name": "Buck converter"
+    }
+  ],
+  "words": 1425
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/math/y-intercept",
+  "slug": "y-intercept",
+  "cat": "math",
+  "name": "y-intercept",
+  "seoTitle": "y-intercept Calculator",
+  "seoDesc": "y-intercept: work out your result from the C. A free math calculator with the formula, units and a worked example.",
+  "h1": "y-intercept Calculator",
+  "summary": "The y-intercept calculator returns your result from the 3 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nThink of it as a shortcut for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Press Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the y-intercept calculator work?",
+      "html": "<p>The y-intercept calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the c (General line equation: ax + by + c = 0) and the c (Slope-intercept form: y = mx + c).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as ax + by + c = 0, y = mx + c and to be determined. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>C (General line equation: ax + by + c = 0)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>C (Slope-intercept form: y = mx + c)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Slope (m)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the y-intercept calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-B × slope (m)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">B</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-C ÷ y-intercept (yc)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-C ÷ x-intercept (xc)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Slope (m)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">M</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y-intercept (yc)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">C</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">X-intercept (xc)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-C ÷ M</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Line equation is</strong> set to ax + by + c = 0, <strong>b</strong> = 10 and <strong>Slope (m)</strong> = 10. Working through the relationship above gives <strong>a</strong> = -100 and <strong>Slope (m)</strong> = 10.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>a</strong> = -100 and <strong>Slope (m)</strong> = 10 should be roughly the size you expected from <strong>Line equation is</strong> set to ax + by + c = 0 and <strong>b</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The y-intercept calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Settling an argument about a number with a quick, traceable result</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Any time the same 1 figures keep coming back — the C — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/cylinder-volume-liters\">Cylinder volume liters</a>, <a href=\"/math/cylindrical-coordinates\">Cylindrical coordinates</a> and <a href=\"/math/decagon\">Decagon</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the y-intercept calculator?",
+      "a": "The form asks for the C, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports a = -100. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the y-intercept calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/cylinder-volume-liters",
+      "name": "Cylinder volume liters"
+    },
+    {
+      "path": "/math/cylindrical-coordinates",
+      "name": "Cylindrical coordinates"
+    },
+    {
+      "path": "/math/decagon",
+      "name": "Decagon"
+    }
+  ],
+  "words": 1271
+}

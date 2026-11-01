@@ -1,0 +1,97 @@
+{
+  "path": "/conversion/metric-to-inches",
+  "slug": "metric-to-inches",
+  "cat": "conversion",
+  "name": "Metric to inches",
+  "seoTitle": "Metric to inches Calculator: Free, With Steps",
+  "seoDesc": "Metric to inches: work out length in centimeters from the length in inches. A free conversion calculator with the formula, units and a worked example.",
+  "h1": "Metric to inches Calculator",
+  "summary": "The Metric to inches calculator takes the numbers you enter and reports <strong>length in centimeters</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt suits a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Metric to inches calculator work?",
+      "html": "<p>The Metric to inches calculator takes the values in the form, applies the relationship described below and reports <strong>length in centimeters</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the length in inches.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in inches. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Length in millimeters</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Length in centimeters</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Length in meters</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Length in kilometers</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Length in other metric units</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Length in inches</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>You supply it</td></tr><tr><td><strong>Length in other imperial units</strong></td><td>A measured quantity, 34 units available.</td><td>feet</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Metric to inches calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Length in centimeters</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length in millimeters</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length in meters</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length in millimeters</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length in kilometers</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length in millimeters</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length in millimeters</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length in inches</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length in millimeters</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length in other metric units</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length in other imperial units</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length in millimeters</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>Shown in feet, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in millimeters</li><li>Length, opening in centimeters</li><li>Length, opening in meters</li><li>Length, opening in kilometers</li><li>Length, opening in micrometers</li><li>Length, opening in inches</li><li>Length, opening in feet</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Metric to inches calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Reading a recipe written in units you do not use</li><li>Converting a figure someone quoted you so you can compare it</li><li>Filling in a form that asks for imperial or metric values</li><li>Any time the same 1 figures keep coming back — the length in inches — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Metric to inches calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/newton-meter\">Newton meter</a>, <a href=\"/conversion/newton-to-joules\">Newton to joules converter</a> and <a href=\"/conversion/nickels-to-dollars\">Nickels to dollars</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Metric to inches calculator work out?",
+      "a": "It returns length in centimeters, derived from the length in inches. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Metric to inches calculator?",
+      "a": "The form asks for the length in inches, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter length in millimeters in a different unit?",
+      "a": "Yes. Length in millimeters opens in millimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Metric to inches calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/newton-meter",
+      "name": "Newton meter"
+    },
+    {
+      "path": "/conversion/newton-to-joules",
+      "name": "Newton to joules converter"
+    },
+    {
+      "path": "/conversion/nickels-to-dollars",
+      "name": "Nickels to dollars"
+    }
+  ],
+  "words": 1286
+}

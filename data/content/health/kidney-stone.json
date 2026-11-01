@@ -1,0 +1,97 @@
+{
+  "path": "/health/kidney-stone",
+  "slug": "kidney-stone",
+  "cat": "health",
+  "name": "Kidney STONE",
+  "seoTitle": "Kidney STONE Calculator",
+  "seoDesc": "Kidney STONE: a free health calculator that walks you through 6 values, with the formula spelled out and a worked example.",
+  "h1": "Kidney STONE Calculator",
+  "summary": "The Kidney STONE calculator is a free, no-sign-up health tool. Fill in the 5 fields it asks for and it works out <strong>result</strong> straight away, with the formula shown underneath.\n\nIt suits an informed starting point to take to a clinician, not a diagnosis. Press Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Kidney STONE calculator work?",
+      "html": "<p>The Kidney STONE calculator takes the values in the form, applies the relationship described below and reports <strong>result</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the stone size, the tract length and the obstruction (hydronephrosis)).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as 0-399, 400-799 and 800-1599. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as ⩽100 and &gt;100. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no/mild hydronephrosis and moderate/severe hydronephrosis. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as 1-2, 3 and full staghorn stone. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as ⩽950 HU and &gt;950 HU. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Stone size</strong></td><td>One of 4 options, such as 0-399, 400-799 and 800-1599.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Tract length</strong></td><td>One of 2 options, such as ⩽100 and &gt;100.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Obstruction (hydronephrosis)</strong></td><td>One of 2 options, such as no/mild hydronephrosis and moderate/severe hydronephrosis.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of calcyces with calculi</strong></td><td>One of 3 options, such as 1-2, 3 and full staghorn stone.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Stone density</strong></td><td>One of 2 options, such as ⩽950 HU and &gt;950 HU.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Result</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Kidney STONE calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Result</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(number of calcyces with calculi + stone density + obstruction (hydronephrosis) + stone size + tract length)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>The form opens with a complete set of values: <strong>Stone size</strong> set to 0-399, <strong>Tract length</strong> set to ⩽100, <strong>Obstruction (hydronephrosis)</strong> set to No/mild hydronephrosis and <strong>Number of calcyces with calculi</strong> set to 1-2. Straight away the calculator returns <strong>Result</strong> = 5.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Result</strong> = 5 should be roughly the size you expected from <strong>Stone size</strong> set to 0-399 and <strong>Tract length</strong> set to ⩽100.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Kidney STONE calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Deciding whether a reading is worth a second look</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Kidney STONE calculator, these are the ones that matter:</p>\n<ul><li>The 5 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/finnegan-nas\">Finnegan score for NAS</a>, <a href=\"/health/fish-oil\">Fish oil</a> and <a href=\"/health/flange-size\">Flange size</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Kidney STONE calculator work out?",
+      "a": "It returns result. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Kidney STONE calculator?",
+      "a": "The form asks for a few values, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Result = 5. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Kidney STONE calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/finnegan-nas",
+      "name": "Finnegan score for NAS"
+    },
+    {
+      "path": "/health/fish-oil",
+      "name": "Fish oil"
+    },
+    {
+      "path": "/health/flange-size",
+      "name": "Flange size"
+    }
+  ],
+  "words": 1250
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/finance/credit-card-minimum-payment",
+  "slug": "credit-card-minimum-payment",
+  "cat": "finance",
+  "name": "Credit card minimum payment",
+  "seoTitle": "Credit card minimum payment Calculator",
+  "seoDesc": "Credit card minimum payment: work out period count2 from the statement balance and the due date. A free finance calculator with the formula, units and a…",
+  "h1": "Credit card minimum payment Calculator",
+  "summary": "The Credit card minimum payment calculator turns the statement balance, the due date and more into <strong>period count2</strong>. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Credit card minimum payment calculator work?",
+      "html": "<p>The Credit card minimum payment calculator takes the values in the form, applies the relationship described below and reports <strong>period count2</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the interest capitalization frequency, the calculation method and the payment frequency); then you give the due date and the amortization schedule from; then you type in the statement balance, the APR, the minimum payment and the minimum percentage.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>Pick the option that matches your case — 4 options, such as yearly, monthly and daily (360). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Change capitalization frequency&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>Pick the option that matches your case — 2 options, such as flat percentage and percentage + interest. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in years / months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 3 options, such as monthly, bi-weekly and weekly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as monthly payment, desired payback term and desired payoff date. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as minimum payments and fixed payments. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as monthly amortization schedule and yearly amortization schedule. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>7 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Statement balance</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Due date</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>APR</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Interest capitalization frequency</strong></td><td>One of 4 options, such as yearly, monthly and daily (360).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Minimum payment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Minimum percentage</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Calculation method</strong></td><td>One of 2 options, such as flat percentage and percentage + interest.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Monthly fix payment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Payback within</strong></td><td>A measured quantity, 27 units available.</td><td>years / months</td><td>You supply it</td></tr><tr><td><strong>Monthly additional payment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Period count 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Period count 2 ne</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Payment frequency</strong></td><td>One of 3 options, such as monthly, bi-weekly and weekly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Vartable</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Varspec</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Varperc</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Amortization schedule from</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Varbase</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>VarBase vc</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Int paid</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Min pmt</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Payoff date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Int paid ne</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Min pmt ne</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 34 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Credit card minimum payment calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Period count 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(APR, payback within, M, payment frequency, statement balance, monthly additional payment, vartable, due date, amortization schedule from, monthly fix payment, varspec, minimum percentage, minimum payment, varbase, varperc, 0)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Period count 2 ne</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(APR, payback within, M, payment frequency, statement balance, monthly additional payment, vartable, due date, amortization schedule from, monthly fix payment, varspec, minimum percentage, minimum payment, varbase, varperc, 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Min pmt</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(APR, payback within, M, payment frequency, statement balance, monthly additional payment, vartable, due date, amortization schedule from, monthly fix payment, varspec, minimum percentage, minimum payment, varbase, varperc, 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pmt</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(APR, payback within, M, payment frequency, statement balance, monthly additional payment, vartable, due date, amortization schedule from, monthly fix payment, varspec, minimum percentage, minimum payment, varbase, varperc, 3)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Years</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(APR, payback within, M, payment frequency, statement balance, monthly additional payment, vartable, due date, amortization schedule from, monthly fix payment, varspec, minimum percentage, minimum payment, varbase, varperc, 4)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Years 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(APR, payback within, M, payment frequency, statement balance, monthly additional payment, vartable, due date, amortization schedule from, monthly fix payment, varspec, minimum percentage, minimum payment, varbase, varperc, 5)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Time, opening in years / months</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Credit card minimum payment calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 4 figures keep coming back — the statement balance, the due date and the APR — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/working-capital\">Working capital</a>, <a href=\"/finance/working-capital-turnover-ratio\">Working capital turnover ratio</a> and <a href=\"/finance/year-over-year-growth\">Year over year growth</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Credit card minimum payment calculator work out?",
+      "a": "It returns period count2, derived from the statement balance, the due date and the APR. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Credit card minimum payment calculator?",
+      "a": "The form asks for the statement balance, the due date, the APR and the minimum payment, which is 17 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter statement balance in a different unit?",
+      "a": "Yes. Statement balance opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (7 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports M = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Credit card minimum payment calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/working-capital",
+      "name": "Working capital"
+    },
+    {
+      "path": "/finance/working-capital-turnover-ratio",
+      "name": "Working capital turnover ratio"
+    },
+    {
+      "path": "/finance/year-over-year-growth",
+      "name": "Year over year growth"
+    }
+  ],
+  "words": 2118
+}

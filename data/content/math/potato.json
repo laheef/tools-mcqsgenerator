@@ -1,0 +1,97 @@
+{
+  "path": "/math/potato",
+  "slug": "potato",
+  "cat": "math",
+  "name": "Potato",
+  "seoTitle": "Potato Calculator: Free, With Steps",
+  "seoDesc": "Potato: work out water mass (Before dehydration) from the water percentage and the dry potato mass. A free math calculator with the formula, units and a…",
+  "h1": "Potato Calculator",
+  "summary": "Supply the water percentage, the dry potato mass and the total mass and the Potato calculator solves for <strong>water mass (Before dehydration)</strong>. It suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Potato calculator work?",
+      "html": "<p>The Potato calculator takes the values in the form, applies the relationship described below and reports <strong>water mass (Before dehydration)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the water percentage (Before dehydration), the dry potato mass (Before dehydration) and the total mass (After dehydration).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in kg.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A number, expressed in kg.</li><li>A number, expressed in kg.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Total mass (Before dehydration)</strong></td><td>A number stated in kg.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Water percentage (Before dehydration)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Dry potato mass (Before dehydration)</strong></td><td>A number stated in kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Water mass (Before dehydration)</strong></td><td>A number stated in kg.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Water percentage (After dehydration)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Water mass (After dehydration)</strong></td><td>A number stated in kg.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dry potato mass (After dehydration)</strong></td><td>A number stated in kg.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total mass (After dehydration)</strong></td><td>A number stated in kg.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Potato calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Water mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-dry potato mass + total mass</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Water mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total mass × water percentage</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Water percentage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-dry potato mass + total mass) ÷ total mass</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Dry potato mass</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">dry potato mass</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Open the page and it is already filled in. With the values it starts from — <strong>Total mass</strong> = 100 and <strong>Water percentage</strong> = 99 % — it reports <strong>Dry potato mass</strong> = 1 and <strong>Water mass</strong> = 99.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Dry potato mass</strong> = 1 and <strong>Water mass</strong> = 99 should be roughly the size you expected from <strong>Total mass</strong> = 100 and <strong>Water percentage</strong> = 99 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Potato calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Checking a homework answer before you hand it in</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Any time the same 3 figures keep coming back — the water percentage, the dry potato mass and the total mass — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/star-shape\">Star shape</a>, <a href=\"/math/string-girdling\">String girdling</a> and <a href=\"/math/subset\">Subset</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Potato calculator work out?",
+      "a": "It returns water mass (Before dehydration), derived from the water percentage, the dry potato mass and the total mass. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Potato calculator?",
+      "a": "The form asks for the water percentage, the dry potato mass and the total mass, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter water percentage (Before dehydration) in a different unit?",
+      "a": "Yes. Water percentage (Before dehydration) opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Dry potato mass = 1. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Potato calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/star-shape",
+      "name": "Star shape"
+    },
+    {
+      "path": "/math/string-girdling",
+      "name": "String girdling"
+    },
+    {
+      "path": "/math/subset",
+      "name": "Subset"
+    }
+  ],
+  "words": 1362
+}

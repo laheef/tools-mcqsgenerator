@@ -1,0 +1,85 @@
+{
+  "path": "/health/nih-stroke",
+  "slug": "nih-stroke",
+  "cat": "health",
+  "name": "NIH stroke scale",
+  "seoTitle": "NIH stroke scale — Free Online Calculator",
+  "seoDesc": "NIH stroke scale: answer 16 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "NIH stroke scale Calculator",
+  "summary": "The NIH stroke scale calculator returns your result from the 15 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nThink of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the NIH stroke scale calculator work?",
+      "html": "<p>The NIH stroke scale calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the NIH stroke scale score.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>1A. Responsiveness</td><td>pick the option that matches your case — 4 options, such as alert; keenly responsive, not alert; arousable by minor stimulation and not alert; requires repeated stimulation. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>1B. Ask month and age</td><td>pick the option that matches your case — 5 options, such as answers both questions correctly, answers one question correctly and answers neither question correctly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>1C. Blink eyes and squeeze hands</td><td>pick the option that matches your case — 3 options, such as performs both tasks correctly, performs one task correctly and performs neither task correctly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>2. Best gaze</td><td>pick the option that matches your case — 4 options, such as normal, partial gaze palsy (can be overcome) and forced gaze palsy (cannot be overcome). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>3. Visual fields</td><td>pick the option that matches your case — 4 options, such as no visual loss, partial hemianopia and complete hemianopia. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>4. Facial palsy</td><td>pick the option that matches your case — 4 options, such as normal symmetrical movements, minor paralysis and partial paralysis. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>5A. Motor arm - left</td><td>pick the option that matches your case — 6 options, such as no drift (10 seconds), limb drifts but doesn't hit the bed and limb drifts to bed; effort against gravity. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>5B. Motor arm - right</td><td>pick the option that matches your case — 6 options, such as no drift (10 seconds), limb drifts but doesn't hit the bed and limb drifts to bed; effort against gravity. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>6A. Motor leg - left</td><td>pick the option that matches your case — 6 options, such as no drift (5 seconds), leg drifts, but doesn't hit bed and falls to bed; effort against gravity. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>6B. Motor Leg - right</td><td>pick the option that matches your case — 6 options, such as no drift (5 seconds), leg drifts, but doesn't hit bed and falls to bed; effort against gravity. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>8. Sensation to pinprick</td><td>pick the option that matches your case — 4 options, such as normal; no sensory loss, mild to moderate sensory loss (pinprick less sharp) and severe sensory loss (no sense of being touched). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>9. Language or aphasia</td><td>pick the option that matches your case — 5 options, such as no aphasia, mild to moderate aphasia and severe aphasia. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>10. Dysarthria</td><td>pick the option that matches your case — 4 options, such as normal, mild-to-moderate; understood with difficulty and severe; speech is unintelligible. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>11. Extinction/inattention</td><td>pick the option that matches your case — 5 options, such as no abnormality, visual/tactile/auditory/spatial/personal inattention and extinction to bilateral simultaneous stimulation. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>NIH stroke scale score</td><td>a plain number with no unit attached.</td></tr></tbody></table><p>15 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the NIH stroke scale calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">7. Limb ataxia</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-2. Best gaze − 1C. Blink eyes and squeeze hands − 10. Dysarthria − 11. Extinction ÷ inattention − 9. Language or aphasia − 5A. Motor arm − left − 6A. Motor leg − left − 1B. Ask month and age − 4. Facial palsy − 1A. Responsiveness − 5B. Motor arm − right − 6B. Motor Leg − right + NIH stroke scale score − 8. Sensation to pinprick − 3. Visual fields</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>The option the calculation settles on.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The NIH stroke scale calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/iron-deficiency\">Iron deficiency</a>, <a href=\"/health/isotretinoin\">Isotretinoin</a> and <a href=\"/health/iss\">Injury Severity Score (ISS)</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the NIH stroke scale calculator?",
+      "a": "The form asks for a few values, which is 15 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (15 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports NIH stroke scale score = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the NIH stroke scale calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/iron-deficiency",
+      "name": "Iron deficiency"
+    },
+    {
+      "path": "/health/isotretinoin",
+      "name": "Isotretinoin"
+    },
+    {
+      "path": "/health/iss",
+      "name": "Injury Severity Score (ISS)"
+    }
+  ],
+  "words": 1612
+}

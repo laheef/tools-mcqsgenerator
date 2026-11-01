@@ -1,0 +1,97 @@
+{
+  "path": "/everyday-life/time-until",
+  "slug": "time-until",
+  "cat": "everyday-life",
+  "name": "Time until",
+  "seoTitle": "Time until Calculator",
+  "seoDesc": "Time until: work out years diff from the start date and end date. A free everyday life calculator with the formula, units and a worked example.",
+  "h1": "Time until Calculator",
+  "summary": "The Time until calculator takes the numbers you enter and reports <strong>Years differenceerence</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt is built for a practical question that turns up in daily life. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Time until calculator work?",
+      "html": "<p>The Time until calculator takes the values in the form, applies the relationship described below and reports <strong>Years differenceerence</strong> in the results panel.</p>\n<p>Working from the top of the form: you give the From date.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A date and a time of day. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A date and a time of day. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>From</strong></td><td>A calendar date with a time of day.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Days differenceerence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Hours differenceerence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Minutes differenceerence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Seconds differenceerence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Years differenceerence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Time until calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Years differenceerence</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(from, to)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Days differenceerence</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(from, to)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Hours differenceerence</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(from, to)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Minutes differenceerence</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(from, to)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Seconds differenceerence</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(from, to)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Time until calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing how sensitive an answer is to one input</li><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Any time the same 1 figures keep coming back — the From date — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Time until calculator, these are the ones that matter:</p>\n<ul><li>Dates are handled as whole calendar days in the time zone of the browser, so a birth date or a deadline is compared date to date rather than as a span of hours.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — from for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/half-square-triangle\">Half square triangle</a>, <a href=\"/everyday-life/hammock-hang\">Hammock hang</a> and <a href=\"/everyday-life/hat-size\">Hat size</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Time until calculator work out?",
+      "a": "It returns years diff, derived from the from. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Time until calculator?",
+      "a": "The form asks for the from, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Is the Time until calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/half-square-triangle",
+      "name": "Half square triangle"
+    },
+    {
+      "path": "/everyday-life/hammock-hang",
+      "name": "Hammock hang"
+    },
+    {
+      "path": "/everyday-life/hat-size",
+      "name": "Hat size"
+    }
+  ],
+  "words": 1024
+}

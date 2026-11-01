@@ -1,0 +1,101 @@
+{
+  "path": "/finance/natural-rate-of-unemployment",
+  "slug": "natural-rate-of-unemployment",
+  "cat": "finance",
+  "name": "Natural rate of unemployment",
+  "seoTitle": "Natural rate of unemployment Calculator: Free, With Steps",
+  "seoDesc": "Natural rate of unemployment: work out total labor force from the natural rate of unemployment and the fu rate. A free finance calculator with the…",
+  "h1": "Natural rate of unemployment Calculator",
+  "summary": "<strong>total labor force</strong> is what the Natural rate of unemployment calculator works out, and it gets there from the natural rate of unemployment, the fu rate and the su rate. It suits a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Natural rate of unemployment calculator work?",
+      "html": "<p>The Natural rate of unemployment calculator takes the values in the form, applies the relationship described below and reports <strong>total labor force</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the natural rate of unemployment, the fu rate and the su rate.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Frictionally unemployed</strong></td><td>A measured quantity, 6 units available.</td><td>millions</td><td>Calculated</td></tr><tr><td><strong>Structurally unemployed</strong></td><td>A measured quantity, 6 units available.</td><td>millions</td><td>Calculated</td></tr><tr><td><strong>Total labor force</strong></td><td>A measured quantity, 6 units available.</td><td>millions</td><td>Calculated</td></tr><tr><td><strong>Natural rate of unemployment</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Fu rate</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Su rate</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Natural rate of unemployment calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Total labor force</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(frictionally unemployed + structurally unemployed) ÷ natural rate of unemployment</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total labor force</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">100 × frictionally unemployed ÷ fu rate</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total labor force</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">100 × structurally unemployed ÷ su rate</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Frictionally unemployed</strong> = 10 million, <strong>Structurally unemployed</strong> = 10 million and <strong>Natural rate of unemployment</strong> = 10 %. The calculator returns <strong>Total labor force</strong> = 200 million.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Total labor force</strong> = 200 million should be roughly the size you expected from <strong>Frictionally unemployed</strong> = 10 million and <strong>Structurally unemployed</strong> = 10 million.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in millions, and convertible to any of the 6 units on that chip.</li><li>Shown in millions, and convertible to any of the 6 units on that chip.</li><li>Shown in millions, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Number notation, opening in millions</li><li>Number notation, opening in millions</li><li>Number notation, opening in millions</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Natural rate of unemployment calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building a monthly budget and testing how one number shifts the rest</li><li>Sizing up a purchase before you commit to it</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Any time the same 3 figures keep coming back — the natural rate of unemployment, the fu rate and the su rate — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Natural rate of unemployment calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/free-cash-flow\">Free cash flow</a>, <a href=\"/finance/free-cash-flow-to-equity\">Free cash flow to equity (FCFE)</a> and <a href=\"/finance/free-cash-flow-to-firm\">Free cash flow to firm (FCFF)</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Natural rate of unemployment calculator work out?",
+      "a": "It returns total labor force, derived from the natural rate of unemployment, the fu rate and the su rate. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Natural rate of unemployment calculator?",
+      "a": "The form asks for the natural rate of unemployment, the fu rate and the su rate, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter frictionally unemployed in a different unit?",
+      "a": "Yes. Frictionally unemployed opens in millions and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Total labor force = 200 million. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Natural rate of unemployment calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/free-cash-flow",
+      "name": "Free cash flow"
+    },
+    {
+      "path": "/finance/free-cash-flow-to-equity",
+      "name": "Free cash flow to equity (FCFE)"
+    },
+    {
+      "path": "/finance/free-cash-flow-to-firm",
+      "name": "Free cash flow to firm (FCFF)"
+    }
+  ],
+  "words": 1369
+}

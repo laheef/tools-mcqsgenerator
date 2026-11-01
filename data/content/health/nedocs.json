@@ -1,0 +1,93 @@
+{
+  "path": "/health/nedocs",
+  "slug": "nedocs",
+  "cat": "health",
+  "name": "NEDOCS",
+  "seoTitle": "NEDOCS Calculator",
+  "seoDesc": "NEDOCS: work out NEDOCS score from the total number of beds in ED and the total number of beds in the hospital. A free health calculator with the formula,…",
+  "h1": "NEDOCS Calculator",
+  "summary": "The critical care patients and the NEDOCS calculator solves for <strong>NEDOCS score</strong>. The inputs are the total number of beds in ED, the total number of beds in the hospital, the total number of the patients in ED.\n\nThink of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis. Press Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the NEDOCS calculator work?",
+      "html": "<p>The NEDOCS calculator takes the values in the form, applies the relationship described below and reports <strong>NEDOCS score</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the total number of beds in ED, the total number of beds in the hospital, the total number of the patients in ED and the critical care patients.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Total number of beds in ED</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total number of beds in the hospital</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total number of the patients in ED</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Critical care patients</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of admits in the ED</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Waiting time of the last admitted patient</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Waiting time of longest waiting room patient</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>NEDOCS score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the NEDOCS calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">NEDOCS score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the smaller of (200, (((critical care patients &lt; 2) ? ( 600 × number of admits in the ED ÷ total number of beds in the hospital + (141 ÷ 25) × waiting time of longest waiting room patient + (93 ÷ 100) × waiting time of the last admitted patient + (67 ÷ 5) × (critical care patients) − 20 + (429 ÷ 5) × total number of the patients in ED ÷ total number of beds in ED ) : ( 600 × number of admits in the ED ÷ total number of beds in the hospital + (141 ÷ 25) × waiting time of longest waiting room patient + (93 ÷ 100) × waiting time of the last admitted patient + (67 ÷ 5) × (2) − 20 + (429 ÷ 5) × total number of the patients in ED ÷ total number of beds in ED ))))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Total number of beds in ED</strong> = 10, <strong>Total number of beds in the hospital</strong> = 10, <strong>Total number of the patients in ED</strong> = 10 and <strong>Critical care patients</strong> = 10. Working through the relationship above gives <strong>NEDOCS score</strong> = 200.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>NEDOCS score</strong> = 200 should be roughly the size you expected from <strong>Total number of beds in ED</strong> = 10 and <strong>Total number of beds in the hospital</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Time, opening in hours</li><li>Time, opening in hours</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The NEDOCS calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 4 figures keep coming back — the total number of beds in ED, the total number of beds in the hospital and the total number of the patients in ED — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/insulin-dosage\">Insulin dosage</a>, <a href=\"/health/iq-percentile\">IQ percentile</a> and <a href=\"/health/ireland-vaccine-queue\">Vaccine queue Ireland</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the NEDOCS calculator work out?",
+      "a": "It returns NEDOCS score, derived from the total number of beds in ED, the total number of beds in the hospital and the total number of the patients in ED. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the NEDOCS calculator?",
+      "a": "The form has 7 fields, each listed with its unit in the article above. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter waiting time of the last admitted patient in a different unit?",
+      "a": "Yes. Waiting time of the last admitted patient opens in hours and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports NEDOCS score = 200. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the NEDOCS calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/insulin-dosage",
+      "name": "Insulin dosage"
+    },
+    {
+      "path": "/health/iq-percentile",
+      "name": "IQ percentile"
+    },
+    {
+      "path": "/health/ireland-vaccine-queue",
+      "name": "Vaccine queue Ireland"
+    }
+  ],
+  "words": 1424
+}

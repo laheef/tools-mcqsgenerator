@@ -1,0 +1,97 @@
+{
+  "path": "/physics/cyclotron-frequency",
+  "slug": "cyclotron-frequency",
+  "cat": "physics",
+  "name": "Cyclotron Frequency",
+  "seoTitle": "Cyclotron Frequency — Free Online Calculator",
+  "seoDesc": "Cyclotron Frequency: work out charge from the magnetic field strength and the mass. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Cyclotron Frequency Calculator",
+  "summary": "Supply the magnetic field strength, the mass, the cyclotron frequency and the particle velocity and the Cyclotron Frequency calculator solves for <strong>charge</strong>. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Cyclotron Frequency calculator work?",
+      "html": "<p>The Cyclotron Frequency calculator takes the values in the form, applies the relationship described below and reports <strong>charge</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the magnetic field strength, the mass, the cyclotron frequency and the particle velocity.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in tesla. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in atomic mass units. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in megahertz. The unit chip switches it to any of the 21 supported units.</li><li>A measured quantity, entered by default in light speed. The unit chip switches it to any of the 25 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Charge</strong></td><td>A measured quantity, 9 units available.</td><td>elementary charges</td><td>Calculated</td></tr><tr><td><strong>Magnetic field strength</strong></td><td>A measured quantity, 3 units available.</td><td>tesla</td><td>You supply it</td></tr><tr><td><strong>Mass</strong></td><td>A measured quantity, 29 units available.</td><td>atomic mass units</td><td>You supply it</td></tr><tr><td><strong>Cyclotron frequency</strong></td><td>A measured quantity, 21 units available.</td><td>megahertz</td><td>You supply it</td></tr><tr><td><strong>Radius</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Particle velocity</strong></td><td>A measured quantity, 25 units available.</td><td>light speed</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Cyclotron Frequency calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Charge</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(628319 ÷ 100000) × cyclotron frequency × mass ÷ magnetic field strength</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(100000 ÷ 628319) × particle velocity ÷ cyclotron frequency</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>The form opens with a complete set of values: <strong>Charge</strong> = 0 e, <strong>Magnetic field strength</strong> = 0.1 T, <strong>Mass</strong> = 0 u and <strong>Radius</strong> = 100 m. Straight away the calculator returns <strong>Cyclotron frequency</strong> = 153561.0414 MHz and <strong>Particle velocity</strong> = 3473471.5181 c.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Cyclotron frequency</strong> = 153561.0414 MHz and <strong>Particle velocity</strong> = 3473471.5181 c should be roughly the size you expected from <strong>Charge</strong> = 0 e and <strong>Magnetic field strength</strong> = 0.1 T.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in elementary charges, and convertible to any of the 9 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Electric charge, opening in elementary charges</li><li>Magnetic field – tesla, opening in tesla</li><li>Mass, opening in atomic mass units</li><li>Frequency, opening in megahertz</li><li>Length, opening in meters</li><li>Speed, opening in light speed</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Cyclotron Frequency calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 4 figures keep coming back — the magnetic field strength, the mass and the cyclotron frequency — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/shaft-size\">Shaft size</a>, <a href=\"/physics/shear-modulus\">Shear modulus</a> and <a href=\"/physics/shear-strain\">Shear strain</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Cyclotron Frequency calculator work out?",
+      "a": "It returns charge, derived from the magnetic field strength, the mass and the cyclotron frequency. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Cyclotron Frequency calculator?",
+      "a": "The form asks for the magnetic field strength, the mass, the cyclotron frequency and the particle velocity, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter charge in a different unit?",
+      "a": "Yes. Charge opens in elementary charges and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Cyclotron frequency = 153561.0414 MHz. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Cyclotron Frequency calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/shaft-size",
+      "name": "Shaft size"
+    },
+    {
+      "path": "/physics/shear-modulus",
+      "name": "Shear modulus"
+    },
+    {
+      "path": "/physics/shear-strain",
+      "name": "Shear strain"
+    }
+  ],
+  "words": 1338
+}

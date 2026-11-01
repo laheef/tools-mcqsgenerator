@@ -1,0 +1,93 @@
+{
+  "path": "/health/braden-score",
+  "slug": "braden-score",
+  "cat": "health",
+  "name": "Braden score (Braden scale for pressure ulcers)",
+  "seoTitle": "Braden score (Braden scale for pressure ulcers) Calculator",
+  "seoDesc": "Braden score (Braden scale for pressure ulcers): work out mobility from the braden score. A free health calculator with the formula, units and a worked…",
+  "h1": "Braden score (Braden scale for pressure ulcers) Calculator",
+  "summary": "The Braden score (Braden scale for pressure ulcers) calculator returns <strong>mobility</strong> from the 6 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nThat makes it useful for an informed starting point to take to a clinician, not a diagnosis. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Braden score (Braden scale for pressure ulcers) calculator work?",
+      "html": "<p>The Braden score (Braden scale for pressure ulcers) calculator takes the values in the form, applies the relationship described below and reports <strong>mobility</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the sensory perception, the moisture and the activity); then you type in the braden score.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as no impairment, slightly limited and very limited. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as rarely moist, occasionally moist and very moist. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as walks frequently, walks occasionally and chairfast. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as excellent, adequate and probably inadequate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no apparent problem, potential problem and problem. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Sensory perception</strong></td><td>One of 4 options, such as no impairment, slightly limited and very limited.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Moisture</strong></td><td>One of 4 options, such as rarely moist, occasionally moist and very moist.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Activity</strong></td><td>One of 4 options, such as walks frequently, walks occasionally and chairfast.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Mobility</strong></td><td>One of 4 options, such as no limitation, slightly limited and very limited.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Nutrition</strong></td><td>One of 4 options, such as excellent, adequate and probably inadequate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Braden score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Braden score (Braden scale for pressure ulcers) calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Mobility</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-activity + braden score − friction ÷ shear − moisture − nutrition − sensory perception</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Open the page and it is already filled in. With the values it starts from — <strong>Sensory perception</strong> set to No impairment, <strong>Moisture</strong> set to Rarely moist, <strong>Activity</strong> set to Walks frequently and <strong>Mobility</strong> set to No limitation — it reports <strong>Braden score</strong> = 23.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Braden score</strong> = 23 should be roughly the size you expected from <strong>Sensory perception</strong> set to No impairment and <strong>Moisture</strong> set to Rarely moist.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>The option the calculation settles on.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Braden score (Braden scale for pressure ulcers) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 1 figures keep coming back — the braden score — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/aortic-valve-area\">Aortic valve area</a>, <a href=\"/health/apache-ii\">APACHE II</a> and <a href=\"/health/apft\">APFT</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Braden score (Braden scale for pressure ulcers) calculator work out?",
+      "a": "It returns mobility, derived from the braden score. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Braden score (Braden scale for pressure ulcers) calculator?",
+      "a": "The form asks for the braden score, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Braden score = 23. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Braden score (Braden scale for pressure ulcers) calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/aortic-valve-area",
+      "name": "Aortic valve area"
+    },
+    {
+      "path": "/health/apache-ii",
+      "name": "APACHE II"
+    },
+    {
+      "path": "/health/apft",
+      "name": "APFT"
+    }
+  ],
+  "words": 1402
+}

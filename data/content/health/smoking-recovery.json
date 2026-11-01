@@ -1,0 +1,97 @@
+{
+  "path": "/health/smoking-recovery",
+  "slug": "smoking-recovery",
+  "cat": "health",
+  "name": "Smoking recovery",
+  "seoTitle": "Smoking recovery Calculator — Formula, Units & Example",
+  "seoDesc": "Smoking recovery: work out your result from the age and the I smoke. A free health calculator with the formula, units and a worked example.",
+  "h1": "Smoking recovery Calculator",
+  "summary": "Give the Smoking recovery calculator the age and the I smoke and it returns the answer. That makes it useful for an informed starting point to take to a clinician, not a diagnosis.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Smoking recovery calculator work?",
+      "html": "<p>The Smoking recovery calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the country and the sex); then you give the dates it asks for; then you type in the age and the I smoke.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 222 options, such as afghanistan, albania and algeria. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Country</strong></td><td>One of 222 options, such as afghanistan, albania and algeria.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Sex</strong></td><td>One of 2 options, such as female and male.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Age</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>I smoke</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Life gain</strong></td><td>A measured quantity, 27 units available.</td><td>years / months / days</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Smoking recovery calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">I will quit smoking on</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">anxiety kicks in on... − 3</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Symptoms diminish on</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">I will quit smoking on + 14</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">I will quit smoking on</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">symptoms disappear entirely on... − 28</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Heart rate drops on</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">I will quit smoking on + 1</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Heart disease risk drops in year</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded down, ((4 ÷ 1461) × I will quit smoking on) + 1985</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Diabetes risk drops in year</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded down, ((4 ÷ 1461) × I will quit smoking on − 5 × sex) + 1980</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Country</strong> set to Afghanistan and <strong>Sex</strong> set to Female. Working through the relationship above gives <strong>Lung cancer risk halves in year</strong> = 1980, <strong>Heart disease risk drops in year</strong> = 1985, <strong>Pancreatic cancer risk drops in year</strong> = 1990 and <strong>Diabetes risk drops in year</strong> = 1975.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Lung cancer risk halves in year</strong> = 1980, <strong>Heart disease risk drops in year</strong> = 1985, <strong>Pancreatic cancer risk drops in year</strong> = 1990 and <strong>Diabetes risk drops in year</strong> = 1975 should be roughly the size you expected from <strong>Country</strong> set to Afghanistan and <strong>Sex</strong> set to Female.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A calendar date.</li><li>A calendar date.</li><li>A calendar date.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in years / months / days, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Time, opening in years</li><li>Time, opening in days</li><li>Time, opening in years</li><li>Time, opening in years / months / days</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Smoking recovery calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 2 figures keep coming back — the age and the I smoke — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/pediatric-dose\">Pediatric dose</a>, <a href=\"/health/pediatric-epinephrine-dose\">Pediatric epinephrine dose</a> and <a href=\"/health/pediatric-epworth-sleepiness-scale\">Pediatric Epworth sleepiness scale</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Smoking recovery calculator?",
+      "a": "The form asks for the age and the I smoke, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter age in a different unit?",
+      "a": "Yes. Age opens in years and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Lung cancer risk halves in year = 1980. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Smoking recovery calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/pediatric-dose",
+      "name": "Pediatric dose"
+    },
+    {
+      "path": "/health/pediatric-epinephrine-dose",
+      "name": "Pediatric epinephrine dose"
+    },
+    {
+      "path": "/health/pediatric-epworth-sleepiness-scale",
+      "name": "Pediatric Epworth sleepiness scale"
+    }
+  ],
+  "words": 1691
+}

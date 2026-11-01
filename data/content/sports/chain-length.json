@@ -1,0 +1,97 @@
+{
+  "path": "/sports/chain-length",
+  "slug": "chain-length",
+  "cat": "sports",
+  "name": "Chain length",
+  "seoTitle": "Chain length Calculator — Formula, Units & Example",
+  "seoDesc": "Chain length: work out chain stay length from the largest front chainring and the chain length. A free sports calculator with the formula, units and a…",
+  "h1": "Chain length Calculator",
+  "summary": "<strong>chain stay length</strong> is what the Chain length calculator works out, and it gets there from the largest front chainring, the chain length and the shortest possible chain length. Think of it as a shortcut for a training session, a performance comparison or a competition result.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Chain length calculator work?",
+      "html": "<p>The Chain length calculator takes the values in the form, applies the relationship described below and reports <strong>chain stay length</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the largest front chainring, the chain length and the shortest possible chain length.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in teeth.</li><li>A measured quantity, entered by default in inches. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in inches. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Chain stay length</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>Calculated</td></tr><tr><td><strong>Largest front chainring</strong></td><td>A number stated in teeth.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Largest rear cog</strong></td><td>A number stated in teeth.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Chain length</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>You supply it</td></tr><tr><td><strong>Number of links</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Shortest possible chain length</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>You supply it</td></tr><tr><td><strong>Number of links in shortest possible chain</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Chain length calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Chain stay length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × chain length − 1 ÷ 8 × largest front chainring − 1 ÷ 8 × largest rear cog − 1 ÷ 2</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of links</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, (2 × chain length)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number of links in shortest possible chain</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, (2 × shortest possible chain length)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Chain stay length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 5000) × the square root of ((227 × largest front chainring + 1023 × largest rear cog − 2500 × shortest possible chain length) × (1023 × largest front chainring + 227 × largest rear cog − 2500 × shortest possible chain length))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Largest front chainring</strong> = 10, <strong>Largest rear cog</strong> = 10 and <strong>Chain length</strong> = 30 in. The calculator returns <strong>Chain stay length</strong> = -285 in, <strong>Number of links</strong> = 1, <strong>Shortest possible chain length</strong> = 1070 in and <strong>Number of links in shortest possible chain</strong> = 22.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Chain stay length</strong> = -285 in, <strong>Number of links</strong> = 1, <strong>Shortest possible chain length</strong> = 1070 in and <strong>Number of links in shortest possible chain</strong> = 22 should be roughly the size you expected from <strong>Largest front chainring</strong> = 10 and <strong>Largest rear cog</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in inches, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in inches</li><li>Length, opening in inches</li><li>Length, opening in inches</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Chain length calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking progress across a training block</li><li>Planning a session around a target you already know</li><li>Comparing two athletes or two attempts fairly</li><li>Any time the same 3 figures keep coming back — the largest front chainring, the chain length and the shortest possible chain length — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these sports calculators cover the neighbouring steps: <a href=\"/sports/wilks\">Wilks</a>, <a href=\"/sports/windsurfing\">Windsurfing</a> and <a href=\"/sports/winning-percentage\">Winning percentage</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Chain length calculator work out?",
+      "a": "It returns chain stay length, derived from the largest front chainring, the chain length and the shortest possible chain length. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Chain length calculator?",
+      "a": "The form asks for the largest front chainring, the chain length and the shortest possible chain length, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter chain stay length in a different unit?",
+      "a": "Yes. Chain stay length opens in inches and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Chain stay length = -285 in. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Chain length calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/sports/wilks",
+      "name": "Wilks"
+    },
+    {
+      "path": "/sports/windsurfing",
+      "name": "Windsurfing"
+    },
+    {
+      "path": "/sports/winning-percentage",
+      "name": "Winning percentage"
+    }
+  ],
+  "words": 1441
+}

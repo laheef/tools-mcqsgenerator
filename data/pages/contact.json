@@ -1,0 +1,14 @@
+{
+    "slug": "contact",
+    "title": "Contact",
+    "excerpt": "Report a bug, ask for a calculator, or say hello.",
+    "content": "<p>Bug reports get priority. If a result looks wrong, include the calculator name, the values you entered and the answer you expected — that is usually enough to reproduce it.</p>\n<p>Requests for new calculators are read and, when they fit the library, built. A note on what you were trying to work out helps more than a one-line \"please add X\".</p>",
+    "status": "published",
+    "template": "contact",
+    "meta_title": "Contact",
+    "meta_description": "How to reach the people behind this calculator site: bug reports, calculator requests and press.",
+    "canonical_url": "",
+    "noindex": 0,
+    "show_in_header": 0,
+    "show_in_footer": 1
+}

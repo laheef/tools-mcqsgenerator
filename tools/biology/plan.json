@@ -1,0 +1,1968 @@
+[
+ {
+  "kind": "new",
+  "name": "Bone Length to Body Height Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Cephalic Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "FWHR (Facial Width-to-Height Ratio) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Femur to Foot Ratio Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Height to Finger Length Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Medullary Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Bird Age Calculator",
+  "catalogue": "Bird age",
+  "slug": "bird-age",
+  "cat": "biology",
+  "path": "/biology/bird-age"
+ },
+ {
+  "kind": "new",
+  "name": "Chicken Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Chicken Feed Amount Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Chicken Hatch Date Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Chicken Years to Human Years Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Cow Gestation Calculator",
+  "catalogue": "Cow gestation",
+  "slug": "cow-gestation",
+  "cat": "biology",
+  "path": "/biology/cow-gestation"
+ },
+ {
+  "kind": "exists",
+  "name": "Dog Pregnancy Calculator",
+  "catalogue": "Dog pregnancy",
+  "slug": "dog-pregnancy",
+  "cat": "biology",
+  "path": "/biology/dog-pregnancy"
+ },
+ {
+  "kind": "new",
+  "name": "Dry Matter Intake Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Egg Incubation Hatch Date Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "FCR Calculator",
+  "catalogue": "Feed conversion ratio",
+  "slug": "fcr",
+  "cat": "biology",
+  "path": "/biology/fcr"
+ },
+ {
+  "kind": "new",
+  "name": "Farm Pond Fish Stocking Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Feed Conversion Ratio Calculator",
+  "catalogue": "Feed conversion ratio",
+  "slug": "fcr",
+  "cat": "biology",
+  "path": "/biology/fcr"
+ },
+ {
+  "kind": "new",
+  "name": "Fish Condition Factor Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Fish Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Fish Per Liter Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Goat Years Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Goldfish Years to Human Years Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Hatch Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Hunting Tooth Ratio Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Livestock Water Requirement Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Mouse to Human Age Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Pasture Stocking Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Pig Weight Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Puppy Adult Weight Predictor Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "ATP / Cellular Respiration Energy Yield Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Activation Energy Calculator",
+  "catalogue": "Activation energy",
+  "slug": "activation-energy",
+  "cat": "chemistry",
+  "path": "/chemistry/activation-energy"
+ },
+ {
+  "kind": "exists",
+  "name": "Arrhenius Equation Calculator",
+  "catalogue": "Arrhenius equation",
+  "slug": "arrhenius-equation",
+  "cat": "chemistry",
+  "path": "/chemistry/arrhenius-equation"
+ },
+ {
+  "kind": "new",
+  "name": "BCA Assay Calculator (standard curve)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Beer-Lambert A280 Protein Concentration",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Bradford Assay Calculator (standard curve)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Diffusion Coefficient Calculator",
+  "catalogue": "Diffusion coefficient",
+  "slug": "diffusion-coefficient",
+  "cat": "chemistry",
+  "path": "/chemistry/diffusion-coefficient"
+ },
+ {
+  "kind": "exists",
+  "name": "Enzyme Activity Calculator",
+  "catalogue": "Enzyme activity",
+  "slug": "enzyme-activity",
+  "cat": "chemistry",
+  "path": "/chemistry/enzyme-activity"
+ },
+ {
+  "kind": "new",
+  "name": "Enzyme Unit Converter (U/mg, kcat)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Protein Extinction Coefficient (\u03b5280) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Protein Molar Conversions Tool",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Radioactive Decay Calculator (isotope presets)",
+  "catalogue": "Radioactive decay",
+  "slug": "radioactive-decay",
+  "cat": "chemistry",
+  "path": "/chemistry/radioactive-decay"
+ },
+ {
+  "kind": "new",
+  "name": "Codon Plot",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Codon Usage Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "CpG Island Finder",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "DNA / Protein Pattern Finder",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "DNA Molecular Weight Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Fuzzy Search Protein",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Multi Reverse Translate",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "PCR Primer Stats (Tm, GC%)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Protein GRAVY (Hydropathy) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Protein Isoelectric Point (pI) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Protein Molecular Weight Calculator",
+  "catalogue": "Protein molecular weight",
+  "slug": "protein-molecular-weight",
+  "cat": "biology",
+  "path": "/biology/protein-molecular-weight"
+ },
+ {
+  "kind": "new",
+  "name": "Random DNA / Protein Sequence Generator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Restriction Digest / Restriction Map",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Reverse Complement Tool",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Reverse Translate (protein to DNA)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Shuffle DNA / Protein Sequence",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Translate DNA to Protein (reading frames)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "AlamarBlue Cell Viability / Percent Reduction Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Bacterial Concentration Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "CFU/g Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "CFU/mL Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Cell Counting Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Cell Culture Dish / Plate / Flask Reference (seeding density, volumes)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Cell Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Cell Density Unit Converter",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Cell Doubling Time Calculator",
+  "catalogue": "Cell doubling time",
+  "slug": "cell-doubling-time",
+  "cat": "biology",
+  "path": "/biology/cell-doubling-time"
+ },
+ {
+  "kind": "new",
+  "name": "Cheng-Prusoff Equation Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Fold Change Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Hemocytometer Cell Counter (cells/mL)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Log Reduction Calculator",
+  "catalogue": "Log Reduction",
+  "slug": "log-reduction",
+  "cat": "biology",
+  "path": "/biology/log-reduction"
+ },
+ {
+  "kind": "exists",
+  "name": "Michaelis-Menten Equation Calculator",
+  "catalogue": "Michaelis-Menten equation",
+  "slug": "michaelis-menten-equation",
+  "cat": "chemistry",
+  "path": "/chemistry/michaelis-menten-equation"
+ },
+ {
+  "kind": "new",
+  "name": "Mitotic Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "PCR Cycle Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Percent Inhibition Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Percent Viability Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Protein Hydrodynamic Radius Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Specific Productivity (qP) Calculator \u2013 fed-batch cell culture",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "TFF Membrane Area & Scale-Up Flux Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Transfection Setup Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Transformation Efficiency Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Trypan Blue Cell Viability Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "ng/\u00b5L Dilution Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Allometric Equation Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Berger-Parker Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Biodiversity Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Carrying Capacity Calculator",
+  "catalogue": "Carrying capacity",
+  "slug": "carrying-capacity",
+  "cat": "ecology",
+  "path": "/ecology/carrying-capacity"
+ },
+ {
+  "kind": "new",
+  "name": "Catch Per Unit Effort Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Encounter Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Maximum Sustainable Yield Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Net Primary Productivity Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Net Reproductive Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Relative Abundance Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Shannon-Wiener Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Simpson\u2019s Diversity Index Calculator",
+  "catalogue": "Simpson\u2019s diversity index",
+  "slug": "simpsons-diversity-index",
+  "cat": "statistics",
+  "path": "/statistics/simpsons-diversity-index"
+ },
+ {
+  "kind": "new",
+  "name": "Species Richness Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Specific Growth Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "S\u00f8rensen Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "AP Biology Calculator (genetics + population growth + dilution)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "BOD Load Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "SVI Sludge Volume Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Solids Retention Time (SRT) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Allele Frequency Calculator",
+  "catalogue": "Allele frequency",
+  "slug": "allele-frequency",
+  "cat": "biology",
+  "path": "/biology/allele-frequency"
+ },
+ {
+  "kind": "new",
+  "name": "Autosomal Dominant Pedigree Analyzer",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Autosomal Recessive Inheritance Risk Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Base Pair to Dalton Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Base Pair to kDa Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Centimorgan to Percentage Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Coat Color Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Coding Capacity of DNA Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Coefficient of Coincidence Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "DNA Percentage Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Dihybrid Cross Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Fixation Index (Fst) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Genetic Linkage Distance Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "HWE Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Hardy\u2013Weinberg: Given Dominant Allele Frequency",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Hardy\u2013Weinberg: Given Dominant Homozygote Frequency",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Hardy\u2013Weinberg: Given Heterozygote Frequency",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Hardy\u2013Weinberg: Given Recessive Allele Frequency",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Hardy\u2013Weinberg: Given Recessive Homozygote Frequency",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Heritability Coefficient Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Mutation Rate Calculator",
+  "catalogue": "Mutation rate",
+  "slug": "mutation-rate",
+  "cat": "biology",
+  "path": "/biology/mutation-rate"
+ },
+ {
+  "kind": "new",
+  "name": "Phenotypic Ratio Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Plasmid Molar Ratio Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Recombination Frequency Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Watterson Estimator Calculator (genetic diversity)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Acid-Base Balance (ABG) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "BMR / TDEE Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Blood Pressure & MAP Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Body Fat Calculator",
+  "catalogue": "Body fat",
+  "slug": "body-fat",
+  "cat": "health",
+  "path": "/health/body-fat"
+ },
+ {
+  "kind": "exists",
+  "name": "Cardiac Output Calculator",
+  "catalogue": "Cardiac output",
+  "slug": "cardiac-output",
+  "cat": "health",
+  "path": "/health/cardiac-output"
+ },
+ {
+  "kind": "exists",
+  "name": "ECG Heart Rate Calculator",
+  "catalogue": "ECG heart rate",
+  "slug": "ecg-heart-rate",
+  "cat": "health",
+  "path": "/health/ecg-heart-rate"
+ },
+ {
+  "kind": "new",
+  "name": "Absorbance \u2194 Transmittance Converter",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Agarose Gel Calculator (TAE/TBE, stain volume)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Buffer Preparation Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Centrifuge RCF \u2194 RPM Converter",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "DNA Molarity from Mass or A260",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Dilution Calculator (C1V1=C2V2)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Dilution Factor Calculator (molarity, %, ppm, cells/mL)",
+  "catalogue": "Dilution factor",
+  "slug": "dilution-factor",
+  "cat": "chemistry",
+  "path": "/chemistry/dilution-factor"
+ },
+ {
+  "kind": "new",
+  "name": "Double Digest Buffer Compatibility Finder",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Henderson-Hasselbalch Buffer Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "In Vivo Formulation Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Ligation Molar Ratio (Insert:Vector) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Linear DNA: \u00b5g to pmol of Ends Converter",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Mass\u2013Molarity Conversion Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Molarity Calculator",
+  "catalogue": "Molarity",
+  "slug": "molarity",
+  "cat": "chemistry",
+  "path": "/chemistry/molarity"
+ },
+ {
+  "kind": "exists",
+  "name": "Molarity Calculator (mass, moles, MW table)",
+  "catalogue": "Molarity",
+  "slug": "molarity",
+  "cat": "chemistry",
+  "path": "/chemistry/molarity"
+ },
+ {
+  "kind": "exists",
+  "name": "Molecular Weight Calculator (compound / sequence)",
+  "catalogue": "Molecular weight",
+  "slug": "molecular-weight",
+  "cat": "chemistry",
+  "path": "/chemistry/molecular-weight"
+ },
+ {
+  "kind": "new",
+  "name": "NEB Ligation Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "NEB Tm Calculator (primer annealing)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "NEBioCalculator (suite of lab calculators)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Normality Calculator",
+  "catalogue": "Normality",
+  "slug": "normality",
+  "cat": "chemistry",
+  "path": "/chemistry/normality"
+ },
+ {
+  "kind": "new",
+  "name": "OD260 to Nucleic Acid Concentration Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Oligo (ssDNA): pmol/\u00b5L to \u00b5g/mL Converter",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Oligo (ssDNA): \u00b5g/mL to pmol/\u00b5L Converter",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Oligo Tm (Melting Temperature) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "PCR Annealing Temperature Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "PCR Master Mix Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Percent Solution Calculator (w/v, v/v, w/w)",
+  "catalogue": "Percent solution",
+  "slug": "percent-solution",
+  "cat": "chemistry",
+  "path": "/chemistry/percent-solution"
+ },
+ {
+  "kind": "new",
+  "name": "Primer Dimer Checker",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Primer Resuspension / Working Stock Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Restriction Digest Reaction Setup",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Restriction Enzyme Double Digest Finder",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Restriction Enzyme Finder (name / sequence / overhang)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Restriction Enzyme Finder by Sequence",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "SDS-PAGE / Native PAGE Gel Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Serial Dilution Planner",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Temperature Conversions Tool (\u00b0C/\u00b0F/K)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "dsDNA: pmol to \u00b5g Converter",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "dsDNA: \u00b5g to pmol Converter",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Basal Area Calculator",
+  "catalogue": "Basal area",
+  "slug": "basal-area",
+  "cat": "biology",
+  "path": "/biology/basal-area"
+ },
+ {
+  "kind": "new",
+  "name": "Cedar Tree Value Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Compost Application Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Corn Yield Calculator",
+  "catalogue": "Corn yield",
+  "slug": "corn-yield",
+  "cat": "biology",
+  "path": "/biology/corn-yield"
+ },
+ {
+  "kind": "new",
+  "name": "Crop Coefficient (Kc) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Crop Water Requirement Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Crop Water Stress Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Days to Maturity Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Fertilizer Injector Ratio Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Field Capacity Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Fruit Tree Spacing Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Growing Degree Days Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Gypsum Application Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Huglin Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Land Equivalent Ratio Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Lawn Fertilizer Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Lime Requirement Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Mushroom Yield Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "NDVI Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "NPK Fertilizer Blend Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Percent Germination Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Plant Available Water Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Plants Per Hectare / Planting Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Solute Potential Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Stems Per Hectare Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Stomatal Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Sulfur Soil Acidifier Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Thousand Seed Weight Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Vine Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "exists",
+  "name": "Water Potential Calculator",
+  "catalogue": "Water potential",
+  "slug": "water-potential",
+  "cat": "biology",
+  "path": "/biology/water-potential"
+ },
+ {
+  "kind": "new",
+  "name": "Aquarium Water Volume Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Dog Pregnancy Week-by-Week / Ovulation Timing Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Fish Tank Stocking Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Ideal Fish Tank Size Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Lineweaver-Burk Plot / Km & Vmax Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Osmolarity / Osmotic Pressure Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Amino Acid Composition Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Codon Optimization / Codon Adaptation Index Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "GC Content Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "RNA to Protein (Translation) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Cell Seeding Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "maybe",
+  "name": "Cell Surface Area to Volume Ratio Calculator",
+  "catalogue": "Surface area to volume ratio",
+  "slug": "surface-area-volume-ratio",
+  "score": 0.8
+ },
+ {
+  "kind": "new",
+  "name": "OD600 to Cell Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Exponential Population Growth Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Logistic Population Growth Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Mark-Recapture (Lincoln-Petersen) Population Estimator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Quadrat Sampling Density Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Blood Type Inheritance Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Chi-Square Test for Genetics (Mendelian ratios)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Eye Color Inheritance Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Inbreeding Coefficient (COI) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Linkage Disequilibrium (D, D\u2032, r\u00b2) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Odds Ratio / Relative Risk Calculator for Genetics",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Pedigree Probability Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Relatedness Coefficient Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Tajima\u2019s D / Nucleotide Diversity Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Goldman-Hodgkin-Katz Membrane Potential Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "maybe",
+  "name": "Heart Rate Reserve / Target Heart Rate Calculator",
+  "catalogue": "Target heart rate",
+  "slug": "target-heart-rate",
+  "score": 0.75
+ },
+ {
+  "kind": "exists",
+  "name": "Nernst Equation (Equilibrium Potential) Calculator",
+  "catalogue": "Nernst equation",
+  "slug": "nernst-equation",
+  "cat": "chemistry",
+  "path": "/chemistry/nernst-equation"
+ },
+ {
+  "kind": "new",
+  "name": "Q10 Temperature Coefficient Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Respiratory Quotient (RQ) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Tidal Volume / Lung Capacity Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Bacterial Growth Curve (Lag/Log Phase) Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "MIC / Zone of Inhibition Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Specific Growth Rate (\u00b5) from OD Readings",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Actual Specimen Size from Image Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Microscope Field of View Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Microscope Magnification Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Genome Copy Number Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Plasmid Copy Number Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Primer Tm Calculator (nearest-neighbour)",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Western Blot Protein Loading Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Photosynthesis Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ },
+ {
+  "kind": "new",
+  "name": "Transpiration Rate Calculator",
+  "catalogue": "",
+  "slug": "",
+  "cat": "",
+  "path": ""
+ }
+]

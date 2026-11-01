@@ -1,0 +1,89 @@
+{
+  "path": "/other/ap-chem-score",
+  "slug": "ap-chem-score",
+  "cat": "other",
+  "name": "AP® chem score",
+  "seoTitle": "AP® chem score Calculator — Formula, Units & Example",
+  "seoDesc": "AP® chem score: work out composite score (0-100) from the long question 1 and the long question 2. A free other calculator with the formula, units and a…",
+  "h1": "AP® chem score Calculator",
+  "summary": "The AP® chem score calculator works out <strong>composite score (0-100)</strong> from the long question 1, the long question 2, the long question 3 and the short question 1. It suits whatever you happen to be working on.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the AP® chem score calculator work?",
+      "html": "<p>The AP® chem score calculator takes the values in the form, applies the relationship described below and reports <strong>composite score (0-100)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the long question 1 (0-10), the long question 2 (0-10), the long question 3 (0-10) and the short question 1 (0-4).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Long question 1 (0-10)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Long question 2 (0-10)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Long question 3 (0-10)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Short question 1 (0-4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Short question 2 (0-4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Short question 3 (0-4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Short question 4 (0-4)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Composite score (0-100)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>AP® score (1-5)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the AP® chem score calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Composite score (0-100)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded, ((25 ÷ 23) × long question 1 (0-10) + (25 ÷ 23) × long question 2 (0-10) + (25 ÷ 23) × long question 3 (0-10) + (25 ÷ 23) × short question 1 (0-4) + (25 ÷ 23) × short question 2 (0-4) + (25 ÷ 23) × short question 3 (0-4) + (25 ÷ 23) × short question 4 (0-4) + (5 ÷ 6) × multiple-choice (0-60))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">AP® score (1-5)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(((rounded, ((25 ÷ 23) × long question 1 (0-10) + (25 ÷ 23) × long question 2 (0-10) + (25 ÷ 23) × long question 3 (0-10) + (25 ÷ 23) × short question 1 (0-4) + (25 ÷ 23) × short question 2 (0-4) + (25 ÷ 23) × short question 3 (0-4) + (25 ÷ 23) × short question 4 (0-4) + (5 ÷ 6) × multiple-choice (0-60)) &gt;= 72) ? ( 5 ) : ( (((rounded, ((25 ÷ 23) × long question 1 (0-10) + (25 ÷ 23) × long question 2 (0-10) + (25 ÷ 23) × long question 3 (0-10) + (25 ÷ 23) × short question 1 (0-4) + (25 ÷ 23) × short question 2 (0-4) + (25 ÷ 23) × short question 3 (0-4) + (25 ÷ 23) × short question 4 (0-4) + (5 ÷ 6) × multiple-choice (0-60)) &gt;= 58) ? ( 4 ) : ( (((rounded, ((25 ÷ 23) × long question 1 (0-10) + (25 ÷ 23) × long question 2 (0-10) + (25 ÷ 23) × long question 3 (0-10) + (25 ÷ 23) × short question 1 (0-4) + (25 ÷ 23) × short question 2 (0-4) + (25 ÷ 23) × short question 3 (0-4) + (25 ÷ 23) × short question 4 (0-4) + (5 ÷ 6) × multiple-choice (0-60)) &gt;= 42) ? ( 3 ) : ( (((rounded, ((25 ÷ 23) × long question 1 (0-10) + (25 ÷ 23) × long question 2 (0-10) + (25 ÷ 23) × long question 3 (0-10) + (25 ÷ 23) × short question 1 (0-4) + (25 ÷ 23) × short question 2 (0-4) + (25 ÷ 23) × short question 3 (0-4) + (25 ÷ 23) × short question 4 (0-4) + (5 ÷ 6) × multiple-choice (0-60)) &gt;= 27) ? ( 2 ) : ( 1 ))) ))) ))) )))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Multiple-choice (0-60)</strong> = 10, <strong>Long question 1 (0-10)</strong> = 10, <strong>Long question 2 (0-10)</strong> = 10 and <strong>Long question 3 (0-10)</strong> = 10. Working through the relationship above gives <strong>Composite score (0-100)</strong> = 84 and <strong>AP® score (1-5)</strong> = 5.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Composite score (0-100)</strong> = 84 and <strong>AP® score (1-5)</strong> = 5 should be roughly the size you expected from <strong>Multiple-choice (0-60)</strong> = 10 and <strong>Long question 1 (0-10)</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The AP® chem score calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 4 figures keep coming back — the long question 1, the long question 2 and the long question 3 — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/gwa\">GWA (general weighted average)</a>, <a href=\"/other/hamming-code\">Hamming code</a> and <a href=\"/other/hamming-distance\">Hamming distance</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the AP® chem score calculator work out?",
+      "a": "It returns composite score (0-100), derived from the long question 1, the long question 2 and the long question 3. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the AP® chem score calculator?",
+      "a": "The form asks for the long question 1, the long question 2, the long question 3 and the short question 1, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Composite score (0-100) = 84. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the AP® chem score calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/gwa",
+      "name": "GWA (general weighted average)"
+    },
+    {
+      "path": "/other/hamming-code",
+      "name": "Hamming code"
+    },
+    {
+      "path": "/other/hamming-distance",
+      "name": "Hamming distance"
+    }
+  ],
+  "words": 1421
+}

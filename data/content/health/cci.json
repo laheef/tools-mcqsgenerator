@@ -1,0 +1,97 @@
+{
+  "path": "/health/cci",
+  "slug": "cci",
+  "cat": "health",
+  "name": "Charlson Comorbidity Index (CCI)",
+  "seoTitle": "Charlson Comorbidity Index (CCI) Calculator: Free, With Steps",
+  "seoDesc": "Charlson Comorbidity Index (CCI): a free health calculator that walks you through 20 values, with the formula spelled out and a worked example.",
+  "h1": "Charlson Comorbidity Index (CCI) Calculator",
+  "summary": "The Charlson Comorbidity Index (CCI) calculator takes the numbers you enter and reports <strong>diabetes</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThink of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Charlson Comorbidity Index (CCI) calculator work?",
+      "html": "<p>The Charlson Comorbidity Index (CCI) calculator takes the values in the form, applies the relationship described below and reports <strong>diabetes</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the age of the patient, the myocardial infarction and the congestive heart failure); then you type in the CCI score.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 5 options, such as &lt;50 years, 50-59 years and 60-69 years. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no, mild liver disease and moderate or severe liver disease. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no, localized solid tumor and metastatic solid tumor. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in points.</li></ul><p>17 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Age of the patient</strong></td><td>One of 5 options, such as &lt;50 years, 50-59 years and 60-69 years.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Myocardial infarction</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Congestive heart failure</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Peripheral vascular disease</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cerebrovascular disease</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Dementia</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Chronic pulmonary disease</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Rheumatologic disease</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Peptic ulcer disease</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Liver disease</strong></td><td>One of 3 options, such as no, mild liver disease and moderate or severe liver disease.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Diabetes</strong></td><td>One of 3 options, such as no, yes, no complications and yes, with chronic complications.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Hemiplegia or paraplegia</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Renal disease</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Malignancy</strong></td><td>One of 3 options, such as no, localized solid tumor and metastatic solid tumor.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Leukemia</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Lymphoma</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>AIDS</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Exponent</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>CCI score</strong></td><td>A number stated in points.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Estimated 10-year survival</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Charlson Comorbidity Index (CCI) calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Diabetes</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">CCI score − age of the patient − AIDS − cerebrovascular disease − congestive heart failure − chronic pulmonary disease − dementia − hemiplegia or paraplegia − leukemia − liver disease − lymphoma − malignancy − myocardial infarction − peptic ulcer disease − peripheral vascular disease − renal disease − rheumatologic disease</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Exponent</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 25000) × (2 ^ 3 ÷ 10) × the square root of (5) × (67957 ^ 9 ÷ 10), CCI score)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Exponent</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the natural log of (estimated 10-year survival) ÷ the natural log of (983 ÷ 1000)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Charlson Comorbidity Index (CCI) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/bac\">BAC (blood alcohol content)</a>, <a href=\"/health/back-to-normal-life\">Reopening - Coronavirus</a> and <a href=\"/health/bai\">BAI</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Charlson Comorbidity Index (CCI) calculator work out?",
+      "a": "It returns diabetes. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Charlson Comorbidity Index (CCI) calculator?",
+      "a": "The form asks for a few values, which is 17 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter estimated 10-year survival in a different unit?",
+      "a": "Yes. Estimated 10-year survival opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (17 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Exponent = 1. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Charlson Comorbidity Index (CCI) calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/bac",
+      "name": "BAC (blood alcohol content)"
+    },
+    {
+      "path": "/health/back-to-normal-life",
+      "name": "Reopening - Coronavirus"
+    },
+    {
+      "path": "/health/bai",
+      "name": "BAI"
+    }
+  ],
+  "words": 2001
+}

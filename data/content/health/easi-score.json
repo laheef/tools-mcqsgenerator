@@ -1,0 +1,89 @@
+{
+  "path": "/health/easi-score",
+  "slug": "easi-score",
+  "cat": "health",
+  "name": "EASI score",
+  "seoTitle": "EASI score Calculator — Formula, Units & Example",
+  "seoDesc": "EASI score: answer 30 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "EASI score Calculator",
+  "summary": "The EASI score calculator takes the numbers you enter and reports <strong>head and neck score adult</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThat makes it useful for an informed starting point to take to a clinician, not a diagnosis. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the EASI score calculator work?",
+      "html": "<p>The EASI score calculator takes the values in the form, applies the relationship described below and reports <strong>head and neck score adult</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the redness (Head and neck), the thickness (Head and neck) and the scratching (Head and neck)); then you type in the EASI score, the lower limbs score adult, the upper limbs score adult and the severity score head and neck adult.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as over 8 years old and under 8 year old. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as none, 1%-9% and 10%-29%. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as none, 1%-9% and 10%-29%. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild (just perceptible) and moderate (obvious). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>21 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Area score (Head and neck)</strong></td><td>One of 7 options, such as none, 1%-9% and 10%-29%.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Redness (Head and neck)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Thickness (Head and neck)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Scratching (Head and neck)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Lichenification (Head and neck)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Area score (Trunk)</strong></td><td>One of 7 options, such as none, 1%-9% and 10%-29%.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Redness (Trunk)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Thickness (Trunk)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Scratching (Trunk)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Lichenification (Trunk)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Area score (Upper limbs)</strong></td><td>One of 7 options, such as none, 1%-9% and 10%-29%.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Redness (Upper limbs)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Thickness (Upper limbs)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Scratching (Upper limbs)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Lichenification (Upper limbs)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Area score (Lower limbs)</strong></td><td>One of 7 options, such as none, 1%-9% and 10%-29%.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Redness (Lower limbs)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Thickness (Lower limbs)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Scratching (Lower limbs)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Lichenification (Lower limbs)</strong></td><td>One of 4 options, such as none, mild (just perceptible) and moderate (obvious).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>EASI score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Head and neck score adult</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Lower limbs score adult</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Trunk score adult</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 29 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the EASI score calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Head and neck score adult</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">EASI score − lower limbs score adult − trunk score adult − upper limbs score adult</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((how old is the patient? &lt; 2) ? ( head and neck score adult ÷ (severity score head and neck adult × (1 ÷ 10)) ) : ( head and neck score adult ÷ (severity score head and neck adult × (1 ÷ 5)) ))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Trunk score adult</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(3 ÷ 10) × area score × severity score trunk adult</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area score</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">5 × upper limbs score adult ÷ severity score upper limbs adult</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Severity score lower limbs adult</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((how old is the patient? &lt; 2) ? ( lower limbs score adult ÷ (area score × (2 ÷ 5)) ) : ( lower limbs score adult ÷ (area score × (3 ÷ 10)) ))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Lichenification</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-redness − scratching + severity score head and neck adult − thickness</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li><li>The option the calculation settles on.</li><li>The option the calculation settles on.</li><li>The option the calculation settles on.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The EASI score calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/bri\">BRI (body roundness index)</a>, <a href=\"/health/bsa\">BSA</a> and <a href=\"/health/bun-creatinine-ratio\">BUN/creatinine ratio</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the EASI score calculator work out?",
+      "a": "It returns head and neck score adult. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the EASI score calculator?",
+      "a": "The form asks for a few values, which is 21 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (21 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports EASI score = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the EASI score calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/bri",
+      "name": "BRI (body roundness index)"
+    },
+    {
+      "path": "/health/bsa",
+      "name": "BSA"
+    },
+    {
+      "path": "/health/bun-creatinine-ratio",
+      "name": "BUN/creatinine ratio"
+    }
+  ],
+  "words": 2187
+}

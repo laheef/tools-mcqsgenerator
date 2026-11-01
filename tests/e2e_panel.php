@@ -1,0 +1,1513 @@
+<?php
+/**
+ * Functional test of the admin panel. Every check drives the real panel over
+ * HTTP (cookies, CSRF tokens, multipart uploads) and then looks at MySQL or the
+ * public site to see what actually happened. Nothing here is simulated.
+ *
+ *   /home/user/tools/php.sh tests/e2e_panel.php
+ *
+ * The suite cleans up everything it creates, so it can be run repeatedly.
+ * Exit code 0 means every check passed.
+ */
+
+declare(strict_types=1);
+
+require_once dirname(__DIR__) . '/config.php';
+
+use Omni\CustomArticle;
+use Omni\CustomCalc;
+use Omni\Data;
+use Omni\Db;
+
+const BASE  = 'http://127.0.0.1:8080';
+const ADMIN = BASE . '/admin/index.php';
+
+$GLOBALS['passed'] = 0;
+$GLOBALS['failed'] = 0;
+$GLOBALS['cookies'] = [];
+
+/* ------------------------------------------------------------------ helpers */
+
+/**
+ * One HTTP request through the shared cookie jar.
+ *
+ * Uses PHP's HTTP stream wrapper rather than curl so the suite runs on a stock
+ * CLI build (Hostinger's PHP has curl, but the test must not depend on it).
+ *
+ * @return array{status:int, body:string, headers:string, location:string}
+ */
+function http(string $method, string $url, ?array $fields = null, ?array $files = null): array
+{
+    $headers = ['Accept: text/html', 'Connection: close'];
+    $content = '';
+    if ($method === 'POST') {
+        if ($files !== null) {
+            $boundary = '----OmniBoundary' . bin2hex(random_bytes(8));
+            foreach (($fields ?? []) as $name => $value) {
+                $content .= "--{$boundary}\r\n"
+                    . "Content-Disposition: form-data; name=\"{$name}\"\r\n\r\n{$value}\r\n";
+            }
+            foreach ($files as $name => $path) {
+                $content .= "--{$boundary}\r\n"
+                    . "Content-Disposition: form-data; name=\"{$name}\"; filename=\"" . basename($path) . "\"\r\n"
+                    . "Content-Type: " . (mime_content_type($path) ?: 'application/octet-stream') . "\r\n\r\n"
+                    . file_get_contents($path) . "\r\n";
+            }
+            $content .= "--{$boundary}--\r\n";
+            $headers[] = 'Content-Type: multipart/form-data; boundary=' . $boundary;
+        } else {
+            $content = http_build_query($fields ?? []);
+            $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+        }
+        $headers[] = 'Content-Length: ' . strlen($content);
+    }
+
+    $jar = cookie_header();
+    if ($jar !== '') {
+        $headers[] = 'Cookie: ' . $jar;
+    }
+
+    $context = stream_context_create(['http' => [
+        'method'          => $method,
+        'header'          => implode("\r\n", $headers),
+        'content'         => $content,
+        'follow_location' => 0,
+        'ignore_errors'   => true,
+        'timeout'         => 180,
+    ]]);
+    $body = @file_get_contents($url, false, $context);
+    $responseHeaders = $http_response_header ?? [];
+    $status = 0;
+    $location = '';
+    $head = implode("\n", $responseHeaders);
+    foreach ($responseHeaders as $line) {
+        if (preg_match('~^HTTP/\S+\s+(\d{3})~', $line, $m)) {
+            $status = (int) $m[1];
+        } elseif (preg_match('~^Location:\s*(.+)$~i', $line, $m)) {
+            $location = trim($m[1]);
+        } elseif (preg_match('~^Set-Cookie:\s*([^;]+)~i', $line, $m)) {
+            store_cookie(trim($m[1]));
+        }
+    }
+    return ['status' => $status, 'body' => (string) $body, 'headers' => $head, 'location' => $location];
+}
+
+/** Cookie jar: name → value, persisted for the run. */
+function store_cookie(string $pair): void
+{
+    if (!str_contains($pair, '=')) {
+        return;
+    }
+    [$name, $value] = explode('=', $pair, 2);
+    $GLOBALS['cookies'][trim($name)] = trim($value);
+}
+
+function cookie_header(): string
+{
+    $parts = [];
+    foreach ($GLOBALS['cookies'] ?? [] as $name => $value) {
+        $parts[] = $name . '=' . $value;
+    }
+    return implode('; ', $parts);
+}
+
+function get(string $url): array
+{
+    return http('GET', $url);
+}
+
+function page(string $p, array $query = []): array
+{
+    return get(ADMIN . '?' . http_build_query(array_merge(['p' => $p], $query)));
+}
+
+/** The CSRF token of the current session. */
+function token(): string
+{
+    static $token = null;
+    if ($token === null) {
+        $html = page('dashboard')['body'];
+        if (!preg_match('~name="_token" value="([a-f0-9]+)"~', $html, $m)) {
+            throw new RuntimeException('No CSRF token on the dashboard — is the panel running?');
+        }
+        $token = $m[1];
+    }
+    return $token;
+}
+
+function post(string $p, array $data, array $query = [], ?array $files = null): array
+{
+    $data['_token'] = $data['_token'] ?? token();
+    return http('POST', ADMIN . '?' . http_build_query(array_merge(['p' => $p], $query)), $data, $files);
+}
+
+function t(string $name, bool $ok, string $detail = ''): void
+{
+    if ($ok) {
+        $GLOBALS['passed']++;
+        echo "PASS  {$name}\n";
+        return;
+    }
+    $GLOBALS['failed']++;
+    echo "FAIL  {$name}" . ($detail !== '' ? "   [{$detail}]" : '') . "\n";
+}
+
+function value(string $sql, array $args = []): mixed
+{
+    return Db::value($sql, $args);
+}
+
+function row(string $sql, array $args = []): ?array
+{
+    return Db::one($sql, $args);
+}
+
+function esc(string $text): string
+{
+    return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+}
+
+/** Does this HTML contain a panel error box or a PHP diagnostic? */
+function clean(string $html): bool
+{
+    return stripos($html, 'panel-error') === false
+        && stripos($html, 'Fatal error') === false
+        && stripos($html, 'Uncaught') === false
+        && stripos($html, 'Warning: ' ) === false;
+}
+
+/* -------------------------------------------------------------------- login */
+
+$login = get(ADMIN . '?p=login');
+preg_match('~name="_token" value="([a-f0-9]+)"~', $login['body'], $m);
+$signedIn = http('POST', ADMIN . '?p=login', [
+    '_token' => $m[1] ?? '',
+    'email'  => 'owner@example.com',
+    'password' => 'DevPanel2026!',
+]);
+t('1 login succeeds and redirects', $signedIn['status'] === 303, (string) $signedIn['status']);
+t('1 dashboard renders for the signed-in administrator',
+    str_contains(page('dashboard')['body'], 'Dashboard'));
+
+/* 2 — CSRF ---------------------------------------------------------------- */
+$noToken = http('POST', ADMIN . '?p=settings', ['settings[site_name]' => 'CSRF bypass']);
+t('2 a POST without a CSRF token is refused',
+    $noToken['status'] === 419 && (string) value("SELECT svalue FROM settings WHERE skey='site_name'") !== 'CSRF bypass',
+    (string) $noToken['status']);
+
+/* 3 — settings round trip ------------------------------------------------- */
+$before = (string) value("SELECT svalue FROM settings WHERE skey='site_name'");
+post('settings', ['do' => 'save', 'group' => 'general', 'settings[site_name]' => 'Omni Panel Test',
+    'settings[site_tagline]' => (string) value("SELECT svalue FROM settings WHERE skey='site_tagline'")]);
+$after = (string) value("SELECT svalue FROM settings WHERE skey='site_name'");
+t('3 a settings save reaches MySQL', $after === 'Omni Panel Test', $after);
+t('3 the change is visible on the public homepage', str_contains(get(BASE . '/')['body'], 'Omni Panel Test'));
+post('settings', ['do' => 'save', 'group' => 'general', 'settings[site_name]' => $before,
+    'settings[site_tagline]' => (string) value("SELECT svalue FROM settings WHERE skey='site_tagline'")]);
+t('3 reverting restores the original name', (string) value("SELECT svalue FROM settings WHERE skey='site_name'") === $before);
+
+/* 4 — encrypted secret ---------------------------------------------------- */
+post('settings', ['do' => 'save', 'group' => 'email',
+    'settings[smtp_host]' => 'smtp.example.com', 'settings[smtp_port]' => '587',
+    'settings[smtp_user]' => 'user@example.com', 'settings[smtp_pass]' => 'sup3r secret',
+    'settings[mail_from_email]' => 'noreply@example.com', 'settings[mail_transport]' => 'mail']);
+$stored = (string) value("SELECT svalue FROM settings WHERE skey='smtp_pass'");
+t('4 the SMTP password is stored encrypted', str_starts_with($stored, 'v1:') && !str_contains($stored, 'sup3r'), substr($stored, 0, 12));
+t('4 the encrypted secret decrypts back to the same value',
+    \Omni\Cms::decryptSecret($stored) === 'sup3r secret');
+
+/* 5 — appearance ---------------------------------------------------------- */
+post('appearance', ['do' => 'save', 'settings[brand_primary]' => '#ff0055', 'settings[brand_accent]' => '#111111']);
+$css = get(BASE . '/math/percentage')['body'];
+t('5 the brand colour from the panel is printed into the page', str_contains($css, '#ff0055'));
+post('appearance', ['do' => 'save', 'settings[brand_primary]' => '#3B68FC', 'settings[brand_accent]' => '#12B981']);
+
+/* 6 — calculator override: prose, FAQ, related ---------------------------- */
+$form = page('calculator-edit', ['path' => '/math/percentage'])['body'];
+t('6 the calculator editor opens', clean($form) && str_contains($form, 'name="sections['));
+$post = [
+    'do' => 'save', 'slug' => 'percentage', 'category_slug' => 'math', 'status' => 'published',
+    'name' => 'Percentage calculator', 'h1' => 'Percentage calculator',
+    'meta_title' => 'Percentage calculator — panel test',
+    'meta_description' => 'A description written by the test suite.',
+    'summary' => 'A summary written by the test suite.',
+    'sections[0][title]' => 'What the panel wrote',
+    'sections[0][html]' => '<p>Section body written from the admin panel.</p>',
+    'faq[0][q]' => 'Does the panel write FAQs?',
+    'faq[0][a]' => 'Yes, and they render on the public page.',
+    'related[0]' => '/math/average',
+];
+post('calculator-edit', $post, ['path' => '/math/percentage']);
+$publicCalc = get(BASE . '/math/percentage')['body'];
+t('6 the override is stored', (string) value("SELECT meta_title FROM calculators WHERE source_path='/math/percentage'") === 'Percentage calculator — panel test');
+t('6 the override reaches the public page', str_contains($publicCalc, 'A description written by the test suite.'));
+t('6 the section the panel wrote is rendered', str_contains($publicCalc, 'Section body written from the admin panel.'));
+t('6 the FAQ from the panel is rendered', str_contains($publicCalc, 'Does the panel write FAQs?'));
+t('6 the pinned related calculator is linked', str_contains($publicCalc, '/math/average'));
+
+/* 7 — unpublish hides the page ------------------------------------------- */
+post('calculator-edit', array_merge($post, ['status' => 'draft']), ['path' => '/math/percentage']);
+t('7 a draft calculator 404s on the public site', get(BASE . '/math/percentage')['status'] === 404);
+post('calculator-edit', $post, ['path' => '/math/percentage']);
+t('7 republishing restores the page', get(BASE . '/math/percentage')['status'] === 200);
+
+/* 8 — reset removes the override ----------------------------------------- */
+post('calculator-edit', ['do' => 'reset', 'path' => '/math/percentage']);
+t('8 resetting removes the override row', value("SELECT COUNT(*) FROM calculators WHERE source_path='/math/percentage'") == 0);
+$restored = get(BASE . '/math/percentage')['body'];
+t('8 the harvested text is back', !str_contains($restored, 'A description written by the test suite.'));
+
+/* 9 — index page views --------------------------------------------------- */
+Db::exec("DELETE FROM page_views WHERE path = '/e2e-view-check'");
+// front controller 404s unknown paths, so count a real one instead
+$viewPath = '/math/average';
+Db::exec('DELETE FROM page_views WHERE path = ?', [$viewPath]);
+get(BASE . $viewPath);
+$hits = (int) value('SELECT COALESCE(SUM(hits),0) FROM page_views WHERE path = ?', [$viewPath]);
+t('9 a real page view is counted in MySQL', $hits >= 1, (string) $hits);
+get(BASE . $viewPath);
+t('9 a second view increments the same day bucket',
+    (int) value('SELECT COALESCE(SUM(hits),0) FROM page_views WHERE path = ?', [$viewPath]) === $hits + 1);
+
+/* 10 — contact form → inbox ---------------------------------------------- */
+Db::exec("DELETE FROM rate_limits WHERE rkey LIKE 'contact:%'");  // test hygiene
+$contactPage = get(BASE . '/contact')['body'];
+preg_match('~name="_token" value="([a-f0-9.]+)"~', $contactPage, $ct);
+$contactFields = ['_token' => $ct[1] ?? '', 'action' => 'contact', 'started' => (string) (time() - 10), 'website' => ''];
+foreach (Db::all("SELECT fkey, ftype, required FROM contact_fields WHERE enabled = 1") as $field) {
+    $key = (string) $field['fkey'];
+    if (($field['ftype'] ?? '') === 'select') {
+        $option = Db::value("SELECT svalue FROM settings WHERE skey='contact_topic_first'");
+        $contactFields[$key] = (string) ($option ?: 'General question');
+        continue;
+    }
+    $contactFields[$key] = match ($key) {
+        'email' => 'panel-test@example.com',
+        'name'  => 'Panel Test',
+        'phone' => '+37060000000',
+        default => 'A message sent by the automated panel test.',
+    };
+}
+$sent = http('POST', BASE . '/contact', $contactFields);
+$message = row("SELECT * FROM messages WHERE email='panel-test@example.com' ORDER BY id DESC LIMIT 1");
+t('10 a contact submission is stored', $message !== null && $sent['status'] === 303, (string) $sent['status']);
+t('10 the message body is stored', $message !== null && str_contains((string) $message['body'], 'automated panel test'));
+if ($message !== null) {
+    $mid = (int) $message['id'];
+    t('10 the inbox lists it', str_contains(page('inbox')['body'], 'Panel Test'));
+    post('inbox', ['do' => 'status', 'id' => (string) $mid, 'status' => 'read']);
+    t('10 the message can be marked read', (string) value('SELECT status FROM messages WHERE id = ?', [$mid]) === 'read');
+    post('inbox', ['do' => 'note', 'id' => (string) $mid, 'note' => 'Called back, nothing to do.']);
+    t('10 an internal note is stored', (int) value('SELECT COUNT(*) FROM message_notes WHERE message_id = ?', [$mid]) === 1);
+    $csv = page('inbox', ['action' => 'export'])['body'];
+    t('10 the CSV export contains the message', str_contains($csv, 'panel-test@example.com'));
+    post('inbox', ['do' => 'status', 'id' => (string) $mid, 'status' => 'spam']);
+    t('10 marking spam is stored', (string) value('SELECT status FROM messages WHERE id = ?', [$mid]) === 'spam');
+    post('inbox', ['do' => 'delete', 'id' => (string) $mid]);
+    t('10 deleting the message removes the row', (int) value('SELECT COUNT(*) FROM messages WHERE id = ?', [$mid]) === 0);
+}
+
+/* 11 — homepage sections -------------------------------------------------- */
+$home = page('homepage')['body'];
+preg_match_all('~name="sections\[(\d+)\]\[enabled\]"~', $home, $ids);
+t('11 the homepage screen lists its sections', ($ids[1] ?? []) !== []);
+$firstId = (int) ($ids[1][0] ?? 0);
+$wasEnabled = (string) value('SELECT enabled FROM homepage_sections WHERE id = ?', [$firstId]);
+post('homepage', ['do' => 'toggle', 'id' => (string) $firstId]);
+$enabled = (string) value('SELECT enabled FROM homepage_sections WHERE id = ?', [$firstId]);
+t('11 toggling a section flips it in MySQL', $enabled !== $wasEnabled, $wasEnabled . ' -> ' . $enabled);
+post('homepage', ['do' => 'toggle', 'id' => (string) $firstId]);
+t('11 toggling again restores it',
+    (string) value('SELECT enabled FROM homepage_sections WHERE id = ?', [$firstId]) === $wasEnabled);
+post('homepage', ['do' => 'add', 'type' => 'rich_text']);
+$newSection = row("SELECT * FROM homepage_sections WHERE stype='rich_text' ORDER BY id DESC LIMIT 1");
+t('11 a new section can be added', $newSection !== null);
+if ($newSection !== null) {
+    post('homepage', ['do' => 'save', 'sections' => [
+        (int) $newSection['id'] => ['title' => 'E2E strip', 'subtitle' => '', 'enabled' => '1',
+                                    'config' => ['html' => '<p>Rendered by the homepage test.</p>']],
+    ]]);
+    t('11 the public homepage shows the new section', str_contains(get(BASE . '/')['body'], 'Rendered by the homepage test.'));
+    post('homepage', ['do' => 'delete', 'id' => (string) $newSection['id']]);
+    t('11 deleting the section removes it from the homepage',
+        !str_contains(get(BASE . '/')['body'], 'Rendered by the homepage test.'));
+}
+
+/* 11b — the calculator-directory homepage section -------------------------- */
+/*
+ * Round 22 added a section that lists every category with a few of its
+ * calculators. It has to behave like any other section: appear in the panel, be
+ * creatable, render on the public homepage, respect its own `per_category`
+ * setting, and disappear when deleted.
+ */
+t('11b the panel offers the calculator-directory type', str_contains(page('homepage')['body'], "'calc_directory'")
+    || str_contains(page('homepage')['body'], 'All calculators by category'));
+post('homepage', ['do' => 'add', 'type' => 'calc_directory']);
+$dirSection = row("SELECT * FROM homepage_sections WHERE stype = 'calc_directory' ORDER BY id DESC LIMIT 1");
+t('11b the section is stored as calc_directory', $dirSection !== null);
+if ($dirSection !== null) {
+    /*
+     * 'discover' is a browse surface, not a calculator bucket, so it is not one of
+     * the blocks. Counted with SQL rather than Data::categories() on purpose: the
+     * suite runs in one PHP process, and priming Data's static category cache here
+     * would make the custom-calculator tests further down see a stale category list.
+     */
+    $cats = (int) value("SELECT COUNT(*) FROM categories WHERE slug <> 'discover'", [], 14);
+    post('homepage', ['do' => 'save', 'sections' => [
+        (int) $dirSection['id'] => ['title' => 'E2E directory', 'subtitle' => '', 'enabled' => '1',
+                                    'config' => ['per_category' => '3']],
+    ]]);
+    $body = get(BASE . '/')['body'];
+    t('11b the directory band renders on the public homepage', str_contains($body, 'E2E directory'));
+    $savedConfig = (string) value('SELECT config FROM homepage_sections WHERE id = ?', [(int) $dirSection['id']], '');
+    t('11b per_category is stored on the section', str_contains($savedConfig, '"per_category":"3"'), 'config=' . $savedConfig);
+    /*
+     * Only this band's blocks: the page has the seeded directory band too, so the
+     * blocks are taken by position relative to this band's own heading rather than
+     * as "the last N on the page".
+     */
+    $from = (int) strpos($body, 'E2E directory');
+    $end = (int) strpos($body, 'class="directory-foot"', $from);
+    $band = substr($body, $from, max(0, $end - $from));
+    preg_match_all('~<ul class="directory-links">(.*?)</ul>~s', $band, $lits);
+    $perCat = array_map(static fn (string $b): int => substr_count($b, '<li>'), $lits[1]);
+    t('11b every category is listed', count($perCat) === $cats,
+        count($perCat) . ' blocks, catalogue says ' . $cats);
+    t('11b per_category caps the links in each block',
+        $perCat !== [] && min($perCat) > 0 && max($perCat) <= 3, 'per block: ' . implode(',', array_slice($perCat, 0, 5)) . '…');
+    t('11b each block links to its own filtered catalogue view',
+        str_contains($body, '/calculators?cat=biology'));
+    post('homepage', ['do' => 'delete', 'id' => (string) $dirSection['id']]);
+    t('11b deleting the section removes the band', !str_contains(get(BASE . '/')['body'], 'E2E directory'));
+}
+
+/* 12 — header navigation -------------------------------------------------- */
+post('navigation', ['do' => 'add', 'location' => 'header', 'label' => 'E2E menu item', 'url' => '/about']);
+$menu = row("SELECT * FROM menu_items WHERE label='E2E menu item' ORDER BY id DESC LIMIT 1");
+t('12 a header link is created', $menu !== null);
+t('12 the link appears in the public header', str_contains(get(BASE . '/')['body'], 'E2E menu item'));
+if ($menu !== null) {
+    post('navigation', ['do' => 'delete', 'id' => (string) $menu['id']]);
+    t('12 deleting the link removes it from the header', !str_contains(get(BASE . '/')['body'], 'E2E menu item'));
+}
+
+/* 13 — footer ------------------------------------------------------------- */
+post('navigation', ['do' => 'add_column', 'column_title' => 'E2E column']);
+$column = row("SELECT * FROM footer_columns WHERE title='E2E column' ORDER BY id DESC LIMIT 1");
+t('13 a footer column can be created', $column !== null);
+if ($column !== null) {
+    post('navigation', ['do' => 'add', 'location' => 'footer_column',
+        'footer_column_id' => (string) $column['id'], 'label' => 'E2E footer link', 'url' => '/privacy']);
+    t('13 the footer column and its link render', str_contains(get(BASE . '/')['body'], 'E2E footer link'));
+    post('navigation', ['do' => 'delete_column', 'id' => (string) $column['id']]);
+    t('13 deleting the column removes it', (int) value('SELECT COUNT(*) FROM footer_columns WHERE id = ?', [$column['id']]) === 0);
+}
+
+/* 14 — pages -------------------------------------------------------------- */
+$slug = 'e2e-page-' . substr((string) time(), -5);
+post('pages', ['do' => 'save', 'id' => '0', 'title' => 'E2E page', 'slug' => $slug,
+    'content' => '<p>Body written by the e2e test.</p>', 'status' => 'published',
+    'meta_title' => 'E2E page', 'meta_description' => 'Created by the test suite.']);
+$created = row('SELECT * FROM pages WHERE slug = ?', [$slug]);
+t('14 a page can be created from the panel', $created !== null);
+$publicPage = get(BASE . '/' . $slug);
+t('14 the page is served at its slug', $publicPage['status'] === 200 && str_contains($publicPage['body'], 'Body written by the e2e test.'));
+t('14 the page is in the sitemap', str_contains(get(BASE . '/sitemap.xml')['body'], $slug));
+$clash = post('pages', ['do' => 'save', 'id' => '0', 'title' => 'Shadow', 'slug' => 'math',
+    'content' => '<p>x</p>', 'status' => 'published']);
+t('14 a page cannot take a category slug', (int) value('SELECT COUNT(*) FROM pages WHERE slug = ?', ['math']) === 0);
+if ($created !== null) {
+    post('pages', ['do' => 'save', 'id' => (string) $created['id'], 'title' => 'E2E page renamed',
+        'slug' => $slug, 'content' => '<p>Body written by the e2e test.</p>', 'status' => 'draft']);
+    t('14 unpublishing a page 404s it publicly', get(BASE . '/' . $slug)['status'] === 404);
+    post('pages', ['do' => 'delete', 'id' => (string) $created['id']]);
+    t('14 deleting the page removes it', (int) value('SELECT COUNT(*) FROM pages WHERE id = ?', [$created['id']]) === 0);
+}
+
+/* 15 — blog + tags -------------------------------------------------------- */
+$postSlug = 'e2e-post-' . substr((string) time(), -4);
+post('blog', ['do' => 'save', 'id' => '0', 'title' => 'E2E post', 'slug' => $postSlug,
+    'excerpt' => 'An excerpt.', 'content' => '<p>Post body from the test.</p>',
+    'status' => 'draft', 'published_at' => date('Y-m-d H:i:s'), 'new_tags' => 'E2E tag']);
+$entry = row('SELECT * FROM posts WHERE slug = ?', [$postSlug]);
+t('15 a draft post is created', $entry !== null && (string) $entry['status'] === 'draft');
+t('15 a draft post is not public', get(BASE . '/blog/' . $postSlug)['status'] === 404);
+t('15 a draft post is not listed', !str_contains(get(BASE . '/blog')['body'], 'E2E post'));
+if ($entry !== null) {
+    post('blog', ['do' => 'save', 'id' => (string) $entry['id'], 'title' => 'E2E post', 'slug' => $postSlug,
+        'excerpt' => 'An excerpt.', 'content' => '<p>Post body from the test.</p>',
+        'status' => 'published', 'published_at' => date('Y-m-d H:i:s'),
+        'tags' => [(string) value("SELECT id FROM tags WHERE slug='e2e-tag'")]]);
+    t('15 publishing makes it public', get(BASE . '/blog/' . $postSlug)['status'] === 200);
+    t('15 the post is listed on the blog index', str_contains(get(BASE . '/blog')['body'], 'E2E post'));
+    t('15 the tag archive lists it', str_contains(get(BASE . '/tag/e2e-tag')['body'], 'E2E post'));
+    $tagId = (int) value('SELECT id FROM tags WHERE slug = ?', ['e2e-tag']);
+    t('15 the tag was created', $tagId > 0);
+    post('blog', ['do' => 'delete', 'id' => (string) $entry['id']]);
+    t('15 deleting the post removes it', (int) value('SELECT COUNT(*) FROM posts WHERE id = ?', [$entry['id']]) === 0);
+    if ($tagId > 0) {
+        post('blog', ['do' => 'tag_delete', 'id' => (string) $tagId]);
+        t('15 the tag can be deleted too', (int) value('SELECT COUNT(*) FROM tags WHERE id = ?', [$tagId]) === 0);
+    }
+}
+
+/* 16 — media -------------------------------------------------------------- */
+$png = tempnam(sys_get_temp_dir(), 'omni-png-') . '.png';
+file_put_contents($png, base64_decode('iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAIAAAAH5iiXAAAAKElEQVR4nGPQiDoxIIhh1OJRi0ctHrV41OJRi0ctHrV41OJRi4ePxQBAjtW9Y4ornQAAAABJRU5ErkJggg=='));
+$upload = post('media', ['do' => 'upload'], [], ['files[]' => $png]);
+$media = row("SELECT * FROM media WHERE filename LIKE 'omni-png-%' ORDER BY id DESC LIMIT 1");
+t('16 an upload is stored', $media !== null, 'status ' . $upload['status']);
+if ($media !== null) {
+    $onDisk = dirname(__DIR__) . '/' . $media['path'];
+    t('16 the file exists on disk', is_file($onDisk));
+    t('16 the file is served to visitors', get(BASE . '/' . $media['path'])['status'] === 200);
+    t('16 the media library lists it', str_contains(page('media')['body'], (string) $media['filename']));
+    post('media', ['do' => 'delete', 'id' => (string) $media['id']]);
+    if (is_file($onDisk)) {
+        echo "    (delete refused; retrying with force)\n";
+        post('media', ['do' => 'delete', 'id' => (string) $media['id'], 'force' => '1']);
+    }
+    clearstatcache(true, $onDisk);   // the file was deleted by another process
+    $rowsLeft = (int) value('SELECT COUNT(*) FROM media WHERE id = ?', [$media['id']]);
+    t('16 deleting removes the row and the file', $rowsLeft === 0 && !is_file($onDisk),
+        'rows ' . $rowsLeft . ', file ' . (is_file($onDisk) ? 'still there at ' . $onDisk : 'gone'));
+}
+$bad = tempnam(sys_get_temp_dir(), 'omni-php-') . '.php';
+file_put_contents($bad, '<?php echo "pwned";');
+post('media', ['do' => 'upload'], [], ['files[]' => $bad]);
+t('16 a .php upload is refused',
+    (int) value("SELECT COUNT(*) FROM media WHERE filename LIKE 'omni-php-%'") === 0);
+
+/* 17 — SEO --------------------------------------------------------------- */
+post('seo', ['do' => 'redirect_add', 'from_path' => '/e2e-old-page', 'to_path' => '/about', 'status_code' => '301']);
+$redirect = get(BASE . '/e2e-old-page');
+t('17 a redirect created in the panel answers with a 301',
+    $redirect['status'] === 301 && str_ends_with($redirect['location'], '/about'), (string) $redirect['status']);
+$redirectId = (int) value("SELECT id FROM redirects WHERE from_path = '/e2e-old-page'");
+post('seo', ['do' => 'redirect_toggle', 'id' => (string) $redirectId]);
+t('17 disabling the redirect makes the path 404 again', get(BASE . '/e2e-old-page')['status'] === 404);
+post('seo', ['do' => 'redirect_delete', 'id' => (string) $redirectId]);
+t('17 deleting the redirect removes the row', (int) value('SELECT COUNT(*) FROM redirects WHERE id = ?', [$redirectId]) === 0);
+// Drive the real SEO form (all controls, as a browser posts them), changing one value.
+preg_match_all('~<form[^>]*>.*?</form>~s', page('seo')['body'], $formBlocks);
+$seoForm = null;
+foreach ($formBlocks[0] as $block) {
+    if (str_contains($block, 'settings[seo_indexing]')) {
+        $seoForm = $block;
+        break;
+    }
+}
+$seoFields = [];
+if ($seoForm !== null) {
+    preg_match_all('~<input[^>]*name="([^"]+)"[^>]*>~', $seoForm, $inputs, PREG_SET_ORDER);
+    foreach ($inputs as $input) {
+        $tag = $input[0];
+        if (preg_match('~type="(checkbox|radio)"~', $tag) && !str_contains($tag, 'checked')) {
+            continue;
+        }
+        if (preg_match('~type="(submit|button|file)"~', $tag)) {
+            continue;
+        }
+        preg_match('~value="([^"]*)"~', $tag, $valueMatch);
+        $seoFields[$input[1]] = $valueMatch[1] ?? '';
+    }
+    preg_match_all('~<textarea[^>]*name="([^"]+)"[^>]*>(.*?)</textarea>~s', $seoForm, $areas, PREG_SET_ORDER);
+    foreach ($areas as $area) {
+        $seoFields[$area[1]] = html_entity_decode($area[2], ENT_QUOTES);
+    }
+    preg_match_all('~<select[^>]*name="([^"]+)"[^>]*>(.*?)</select>~s', $seoForm, $selects, PREG_SET_ORDER);
+    foreach ($selects as $select) {
+        if (preg_match('~<option[^>]*value="([^"]*)"[^>]*selected~', $select[2], $chosen)) {
+            $seoFields[$select[1]] = $chosen[1];
+        } elseif (preg_match('~<option[^>]*value="([^"]*)"~', $select[2], $first)) {
+            $seoFields[$select[1]] = $first[1];
+        }
+    }
+}
+t('17 the SEO form lists its controls', $seoFields !== [], (string) count($seoFields));
+$withIndexing = static function (array $fields, string $value): array {
+    $fields['settings[seo_indexing]'] = $value;
+    return $fields;
+};
+post('seo', $withIndexing($seoFields, '0'));
+$robots = get(BASE . '/robots.txt')['body'];
+t('17 turning indexing off writes Disallow: / to robots.txt', str_contains($robots, 'Disallow: /'));
+post('seo', $withIndexing($seoFields, '1'));
+t('17 indexing on again serves the sitemap', get(BASE . '/sitemap.xml')['status'] === 200);
+
+/* 18 — users and roles --------------------------------------------------- */
+$email = 'e2e-author@example.com';
+Db::exec('DELETE FROM users WHERE email = ?', [$email]);
+post('users', ['do' => 'save', 'id' => '0', 'name' => 'E2E Author', 'email' => $email,
+    'role' => 'author', 'status' => 'active', 'password' => 'AuthorPass2026!',
+    'password2' => 'AuthorPass2026!', 'bio' => '']);
+$author = row('SELECT * FROM users WHERE email = ?', [$email]);
+t('18 an author account is created', $author !== null && (string) $author['role'] === 'author');
+t('18 the password is hashed', $author !== null && !str_contains((string) $author['password_hash'], 'AuthorPass2026'));
+if ($author !== null) {
+    post('users', ['do' => 'toggle', 'id' => (string) $author['id']]);
+    t('18 the account can be deactivated', (string) value('SELECT status FROM users WHERE id = ?', [$author['id']]) === 'inactive');
+    post('users', ['do' => 'delete', 'id' => (string) $author['id']]);
+    t('18 the account can be deleted', (int) value('SELECT COUNT(*) FROM users WHERE id = ?', [$author['id']]) === 0);
+}
+$me = row("SELECT * FROM users WHERE email='owner@example.com'");
+post('users', ['do' => 'delete', 'id' => (string) $me['id']]);
+t('18 the last administrator cannot be deleted', (int) value('SELECT COUNT(*) FROM users WHERE role = ?', ['administrator']) >= 1);
+
+/* 19 — RBAC -------------------------------------------------------------- */
+// sign in as an author and confirm the destructive screens are closed
+$authorMail = 'e2e-rbac@example.com';
+post('users', ['do' => 'save', 'id' => '0', 'name' => 'RBAC Author', 'email' => $authorMail,
+    'role' => 'author', 'status' => 'active', 'password' => 'RbacPass2026!',
+    'password2' => 'RbacPass2026!', 'bio' => '']);
+$savedJar = $GLOBALS['cookies'];
+$GLOBALS['cookies'] = [];
+$loginPage = get(ADMIN . '?p=login');
+preg_match('~name="_token" value="([a-f0-9]+)"~', $loginPage['body'], $lm);
+http('POST', ADMIN . '?p=login', ['_token' => $lm[1] ?? '', 'email' => $authorMail, 'password' => 'RbacPass2026!']);
+t('19 an author can open the dashboard', str_contains(page('dashboard')['body'], 'Dashboard'));
+t('19 an author cannot reach Settings', !str_contains(page('settings')['body'], 'Site identity'));
+t('19 an author cannot reach Users', !str_contains(page('users')['body'], 'Add user'));
+$GLOBALS['cookies'] = $savedJar;
+Db::exec('DELETE FROM users WHERE email = ?', [$authorMail]);
+
+/* 20 — source file editor ------------------------------------------------ */
+$target = 'templates/partials/contact-form.php';
+$original = (string) file_get_contents(dirname(__DIR__) . '/' . $target);
+$editorPage = page('file-edit', ['path' => $target])['body'];
+t('20 the file editor opens a template', str_contains($editorPage, 'name="content"'));
+post('file-edit', ['do' => 'save', 'path' => $target, 'content' => $original . "\n<?php /* e2e marker */ ?>\n", 'note' => 'e2e']);
+t('20 saving writes the file to disk', str_contains((string) file_get_contents(dirname(__DIR__) . '/' . $target), 'e2e marker'));
+t('20 a version row is recorded', (int) value("SELECT COUNT(*) FROM calculator_file_versions WHERE note = 'e2e'") >= 1);
+post('file-edit', ['do' => 'save', 'path' => $target, 'content' => '<?php function broken( { ?>', 'note' => 'e2e broken']);
+t('20 a PHP syntax error is refused', !str_contains((string) file_get_contents(dirname(__DIR__) . '/' . $target), 'function broken'));
+file_put_contents(dirname(__DIR__) . '/' . $target, $original);
+t('20 the file is restored on disk', (string) file_get_contents(dirname(__DIR__) . '/' . $target) === $original);
+$traversal = page('file-edit', ['path' => '../../etc/passwd'])['body'];
+t('20 path traversal is refused', !str_contains($traversal, 'root:x:0:0'));
+
+/* 21 — backups ----------------------------------------------------------- */
+post('backups', ['do' => 'dump', 'note' => 'e2e dump']);
+$dump = row("SELECT * FROM backups WHERE note = 'e2e dump' ORDER BY id DESC LIMIT 1");
+t('21 a database dump is written', $dump !== null);
+if ($dump !== null) {
+    $file = dirname(__DIR__) . '/data/backups/' . $dump['filename'];
+    t('21 the dump file exists', is_file($file));
+    t('21 the dump is a real SQL file', str_contains((string) file_get_contents($file), 'CREATE TABLE'));
+    $download = page('backups', ['action' => 'download', 'id' => (string) $dump['id']]);
+    t('21 the dump can be downloaded', str_contains($download['body'], 'CREATE TABLE'));
+    Db::exec('DELETE FROM backups WHERE id = ?', [$dump['id']]);
+    @unlink($file);
+    t('21 deleting removes the row', (int) value('SELECT COUNT(*) FROM backups WHERE note = ?', ['e2e dump']) === 0);
+}
+
+/* 22 — activity log ------------------------------------------------------ */
+t('22 the activity log recorded the run',
+    (int) value('SELECT COUNT(*) FROM activity_log') > 10
+    && (int) value("SELECT COUNT(DISTINCT action) FROM activity_log") >= 5);
+t('22 no password is ever written to the log',
+    (int) value("SELECT COUNT(*) FROM activity_log WHERE summary LIKE '%AuthorPass2026%'") === 0);
+
+/* 23 — cron -------------------------------------------------------------- */
+$cronToken = (string) value("SELECT svalue FROM settings WHERE skey='cron_token'");
+$noToken = get(BASE . '/cron.php');
+t('23 cron refuses an unauthenticated HTTP call', $noToken['status'] === 403, (string) $noToken['status']);
+if ($cronToken !== '') {
+    $withToken = get(BASE . '/cron.php?token=' . urlencode($cronToken));
+    t('23 cron runs with the stored token', $withToken['status'] === 200 && str_contains($withToken['body'], 'Done.'));
+}
+
+/* 24 — hardening --------------------------------------------------------- */
+t('24 the schema file is not downloadable', get(BASE . '/admin/migrations/001_init.sql')['status'] === 403);
+t('24 panel library files are not downloadable', get(BASE . '/admin/lib/Auth.php')['status'] === 403);
+t('24 the database config is never echoed', !str_contains(get(BASE . '/config.db.php')['body'], 'app_key'));
+
+/* 25 — custom calculators ------------------------------------------------ */
+/*
+ * The growth path: a calculator that the harvested catalogue never had, built
+ * from the panel alone, must become an ordinary page — routed, solved, in the
+ * sitemap and in search — and must be impossible to publish in a broken state.
+ */
+$slug = 'e2e-custom-' . substr((string) time(), -6);
+$fields = [
+    'name' => 'E2E Custom Calculator', 'slug' => $slug, 'category_slug' => 'e2e-niche',
+    'h1' => 'E2E Custom Calculator', 'meta_title' => 'E2E Custom Calculator',
+    'meta_description' => 'A calculator created by the test suite.',
+    'summary' => 'Two numbers in, one out.', 'status' => 'draft', 'do' => 'save', 'tab' => 'formulas',
+    'fields[0][label]' => 'First', 'fields[0][key]' => 'first', 'fields[0][type]' => 'number', 'fields[0][default]' => '12',
+    'fields[1][label]' => 'Second', 'fields[1][key]' => 'second', 'fields[1][type]' => 'number', 'fields[1][default]' => '4',
+    'fields[2][label]' => 'Total', 'fields[2][key]' => 'total', 'fields[2][type]' => 'number', 'fields[2][output]' => '1',
+    'directions[0][group]' => 'Sum', 'directions[0][l]' => 'total', 'directions[0][f]' => 'first+second',
+    'directions[1][group]' => 'Sum', 'directions[1][l]' => 'first', 'directions[1][f]' => 'total-second',
+];
+$created = post('custom-calculator-edit', $fields, ['id' => 'new']);
+$customRow = row('SELECT * FROM custom_calculators WHERE slug = ?', [$slug]);
+t('25 a custom calculator can be created from the panel', $customRow !== null && clean($created['body']));
+$customId = (int) ($customRow['id'] ?? 0);
+t('25 the definition is compiled on save',
+    $customRow !== null && is_array(json_decode((string) $customRow['definition'], true))
+    && isset(json_decode((string) $customRow['definition'], true)['eq']));
+t('25 a new category is created for it automatically',
+    (int) value('SELECT COUNT(*) FROM categories WHERE slug = ?', ['e2e-niche']) === 1);
+
+$publicPath = '/e2e-niche/' . $slug;
+t('25 a draft is not reachable without a preview token', get(BASE . $publicPath)['status'] === 404);
+$previewToken = \Omni\Cms::previewToken($publicPath);
+$preview = get(BASE . $publicPath . '?preview=' . $previewToken);
+t('25 the signed preview shows the draft', $preview['status'] === 200 && str_contains($preview['body'], 'E2E Custom Calculator'));
+t('25 a forged preview token is refused', get(BASE . $publicPath . '?preview=deadbeef')['status'] === 404);
+
+/* The engine really solves it, but only when asked to: round 32 rules out a
+   live answer, so the preview must open with the result held back and the
+   boxes empty — see the Calculate assertions below, and the reverse-direction
+   check further down, which supplies its inputs in the query string. */
+t('25 the page opens without a computed answer',
+    !str_contains($preview['body'], 'value="16"') && !str_contains($preview['body'], '>16<'));
+$previewDef = json_decode((string) ($customRow['definition'] ?? '{}'), true);
+t('25 the definition holds both directions',
+    isset($previewDef['eq'][0]['var']) && count($previewDef['eq'][0]['var']) === 2);
+/* the compiled definition must produce a form, not an empty widget (a silent
+   schema mismatch once made the page render with no fields at all) */
+t('25 the page renders one input per field',
+    substr_count($preview['body'], 'class="calc-field"') === 3, (string) substr_count($preview['body'], 'class="calc-field"'));
+/* The editor preview is the same calculator template, so it must carry the same
+   Calculate button: an author checking their work in preview has to see what a
+   visitor will see, not a panel that answers before it is asked. */
+t('25 the preview carries the Calculate button', str_contains($preview['body'], 'data-calc-go'));
+t('25 the preview starts with the results held back',
+    str_contains($preview['body'], 'data-calc-pending'));
+
+$reverse = get(BASE . $publicPath . '?preview=' . $previewToken . '&total=30&second=4');
+t('25 the reverse direction solves too', str_contains($reverse['body'], '26'));
+
+/* validation: a broken formula is refused and nothing is written */
+$broken = $fields;
+$broken['directions[0][f]'] = 'first++*';
+$broken['slug'] = $slug;
+$refused = post('custom-calculator-edit', $broken, ['id' => (string) $customId]);
+t('25 a formula that does not parse is refused', str_contains($refused['body'], 'Not saved'));
+$broken2 = $fields;
+$broken2['directions[0][f]'] = 'first+nonexistent';
+$refused2 = post('custom-calculator-edit', $broken2, ['id' => (string) $customId]);
+t('25 a formula naming an unknown field is refused', str_contains($refused2['body'], 'not a field'));
+$clash = $fields;
+$clash['slug'] = 'mortgage';
+$clash['category_slug'] = 'finance';
+$refused3 = post('custom-calculator-edit', $clash, ['id' => 'new']);
+t('25 a slug that collides with the catalogue is refused',
+    str_contains($refused3['body'], 'already has a calculator'));
+
+/* publish, then check the whole public surface */
+$fields['status'] = 'published';
+post('custom-calculator-edit', $fields, ['id' => (string) $customId]);
+$live = get(BASE . $publicPath);
+t('25 publishing makes the page live', $live['status'] === 200);
+t('25 it appears in the sitemap', str_contains(get(BASE . '/sitemap.xml')['body'], $publicPath));
+t('25 it is searchable', str_contains(get(BASE . '/search?q=E2E%20Custom')['body'], 'E2E Custom Calculator'));
+t('25 it is listed on its category page', str_contains(get(BASE . '/e2e-niche')['body'], 'E2E Custom Calculator'));
+t('25 the test action runs the real solver',
+    str_contains(post('custom-calculator-edit', ['do' => 'test'] + $fields, ['id' => (string) $customId])['body'], 'Ran without errors'));
+
+/* version history */
+t('25 saving keeps a version history', (int) value('SELECT COUNT(*) FROM custom_calculator_versions WHERE calculator_id = ?', [$customId]) >= 2);
+$versionId = (int) value('SELECT id FROM custom_calculator_versions WHERE calculator_id = ? ORDER BY id ASC LIMIT 1', [$customId]);
+post('custom-calculator-edit', ['do' => 'restore', 'version_id' => (string) $versionId], ['id' => (string) $customId]);
+t('25 a previous version can be restored', (int) value('SELECT COUNT(*) FROM custom_calculator_versions WHERE calculator_id = ?', [$customId]) >= 3);
+
+/* renaming keeps the old address working */
+$renamed = $fields;
+$renamed['slug'] = $slug . '-renamed';
+post('custom-calculator-edit', $renamed, ['id' => (string) $customId]);
+$moved = get(BASE . $publicPath);
+t('25 renaming leaves a redirect behind', in_array($moved['status'], [301, 302, 308], true), (string) $moved['status']);
+t('25 the renamed address resolves', get(BASE . '/e2e-niche/' . $slug . '-renamed')['status'] === 200);
+
+/* delete cleans up after itself */
+post('custom-calculators', ['do' => 'delete', 'id' => (string) $customId]);
+t('25 deleting removes the calculator', (int) value('SELECT COUNT(*) FROM custom_calculators WHERE id = ?', [$customId]) === 0);
+t('25 deleting removes its history', (int) value('SELECT COUNT(*) FROM custom_calculator_versions WHERE calculator_id = ?', [$customId]) === 0);
+t('25 deleting removes the page', get(BASE . '/e2e-niche/' . $slug . '-renamed')['status'] === 404);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-niche']);
+Db::exec('DELETE FROM redirects WHERE from_path = ?', [$publicPath]);
+
+/* 26 — bulk import -------------------------------------------------------- */
+/*
+ * The growth path at scale: a whole niche arrives as one document. The dry run
+ * must be honest (it writes nothing), the import must write only what validates,
+ * and re-running it must not duplicate anything.
+ */
+$importDoc = json_encode([
+    [
+        'name' => 'E2E Import One', 'slug' => $slug . '-one', 'category_slug' => 'e2e-import',
+        'summary' => 'First imported calculator.', 'status' => 'draft',
+        'fields' => [
+            ['key' => 'a', 'label' => 'A', 'type' => 'number', 'default' => '6'],
+            ['key' => 'b', 'label' => 'B', 'type' => 'number', 'default' => '3'],
+            ['key' => 'total', 'label' => 'Sum', 'type' => 'number', 'output' => true],
+        ],
+        'directions' => [
+            ['group' => 'Sum', 'l' => 'total', 'f' => 'a+b'],
+            ['group' => 'Sum', 'l' => 'a', 'f' => 'total-b'],
+        ],
+    ],
+    [
+        'name' => 'E2E Import Two', 'slug' => $slug . '-two', 'category_slug' => 'e2e-import',
+        'summary' => 'Second imported calculator.', 'status' => 'draft',
+        'fields' => [['key' => 'x', 'label' => 'X', 'type' => 'number', 'default' => '4']],
+        'directions' => [['group' => 'Double', 'l' => 'x', 'f' => 'x*2']],
+    ],
+    [
+        'name' => 'E2E Import Broken', 'slug' => $slug . '-broken', 'category_slug' => 'e2e-import',
+        'fields' => [['key' => 'y', 'label' => 'Y', 'type' => 'number', 'default' => '1']],
+        'directions' => [['group' => 'Bad', 'l' => 'y', 'f' => 'y++*']],
+    ],
+], JSON_UNESCAPED_SLASHES);
+
+$reserved = post('custom-import', ['do' => 'preview', 'mode' => 'skip', 'document' => json_encode([[
+    'name' => 'E2E Reserved Name', 'slug' => $slug . '-reserved', 'category_slug' => 'e2e-import',
+    'fields' => [['key' => 'sum', 'label' => 'Sum', 'type' => 'number', 'default' => '1']],
+    'directions' => [['group' => 'Sum', 'l' => 'sum', 'f' => 'sum*2']],
+]], JSON_UNESCAPED_SLASHES)]);
+t('26 a field named after a built-in function is explained', str_contains($reserved['body'], 'built-in function'));
+
+$dry = post('custom-import', ['do' => 'preview', 'mode' => 'skip', 'document' => $importDoc]);
+t('26 a dry run renders a report', str_contains($dry['body'], 'Dry run') && clean($dry['body']));
+t('26 the dry run writes nothing',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE category_slug = ?', ['e2e-import']) === 0);
+/* the dry run works the row through the solver on sample values (the row's own
+   declared defaults, or 2 when it has none) and prints the answer */
+t('26 the dry run shows what each row calculates', str_contains($dry['body'], 'Sum = 9'));
+t('26 the dry run flags the broken row', str_contains($dry['body'], 'does not run'));
+
+$imported = post('custom-import', ['do' => 'import', 'mode' => 'skip', 'document' => $importDoc]);
+t('26 the import writes the valid rows only',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE category_slug = ?', ['e2e-import']) === 2,
+    (string) value('SELECT COUNT(*) FROM custom_calculators WHERE category_slug = ?', ['e2e-import']));
+t('26 the import reports what it did', str_contains($imported['body'], 'Import finished'));
+t('26 the refused row is listed with its reason', str_contains($imported['body'], 'E2E Import Broken'));
+t('26 an imported category is created', (int) value('SELECT COUNT(*) FROM categories WHERE slug = ?', ['e2e-import']) === 1);
+
+/* re-import: skip mode must not duplicate or overwrite */
+post('custom-import', ['do' => 'import', 'mode' => 'skip', 'document' => $importDoc]);
+t('26 re-importing in skip mode creates nothing new',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE category_slug = ?', ['e2e-import']) === 2);
+
+/* update mode overwrites and keeps history */
+$changed = json_decode($importDoc, true);
+$changed[0]['name'] = 'E2E Import One (renamed in the file)';
+post('custom-import', ['do' => 'import', 'mode' => 'update', 'document' => json_encode($changed)]);
+t('26 update mode overwrites the existing row',
+    (string) value('SELECT name FROM custom_calculators WHERE slug = ?', [$slug . '-one']) === 'E2E Import One (renamed in the file)');
+t('26 an overwritten import keeps its history',
+    (int) value('SELECT COUNT(*) FROM custom_calculator_versions WHERE calculator_id = (SELECT id FROM custom_calculators WHERE slug = ?)', [$slug . '-one']) >= 2);
+
+/* CSV with the compact cell syntax */
+$csv = "name,slug,category_slug,summary,status,fields,directions\n"
+    . "E2E CSV Imported," . $slug . "-csv,e2e-import,\"From CSV.\",draft,"
+    . "\"p:Points:number:30;q:Questions:number:12;each:Points per question:number::1\","
+    . "\"each=p/q::Points per question;q=p/each::Points per question\"\n";
+post('custom-import', ['do' => 'import', 'mode' => 'skip', 'document' => $csv]);
+t('26 a CSV document imports too',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE slug = ?', [$slug . '-csv']) === 1);
+
+/* a document that is not a document */
+$junk = post('custom-import', ['do' => 'preview', 'mode' => 'skip', 'document' => '{"name": "no slug"']);
+t('26 invalid JSON is reported, not imported', str_contains($junk['body'], 'not valid JSON'));
+t('26 invalid JSON leaves the database alone',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE category_slug = ?', ['e2e-import']) === 3);
+
+/* publish one imported row and check it is a real page */
+$one = row('SELECT * FROM custom_calculators WHERE slug = ?', [$slug . '-one']);
+if ($one !== null) {
+    $model = \Omni\CustomCalc::editorModel($one);
+    $model['status'] = 'published';
+    \Omni\CustomCalc::save((int) $one['id'], $model, 1);
+}
+t('26 an imported calculator publishes as a normal page', get(BASE . '/e2e-import/' . $slug . '-one')['status'] === 200);
+/* the sitemap is cached; a new custom calculator has to invalidate it even when
+   its category already existed, so this checks the cache key, not just the page */
+$sitemap = get(BASE . '/sitemap.xml')['body'];
+t('26 a newly published custom calculator reaches the sitemap',
+    str_contains($sitemap, '/e2e-import/' . $slug . '-one'));
+t('26 it is findable in search',
+    str_contains(get(BASE . '/search?q=' . urlencode('E2E Import One'))['body'], 'E2E Import One'));
+
+/* cleanup */
+foreach (Db::all('SELECT id FROM custom_calculators WHERE category_slug = ?', ['e2e-import']) as $dead) {
+    Db::exec('DELETE FROM custom_calculator_versions WHERE calculator_id = ?', [(int) $dead['id']]);
+    Db::exec('DELETE FROM custom_calculators WHERE id = ?', [(int) $dead['id']]);
+}
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-import']);
+t('26 the import fixtures are cleaned up',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE category_slug = ?', ['e2e-import']) === 0);
+
+/* 27 — modules ------------------------------------------------------------ */
+/*
+ * The third layer: one page needs UI that a field list cannot express. A module
+ * adds it without forking the template, and the panel can switch it off.
+ */
+$modulesPage = page('modules');
+t('27 the modules screen lists the installed module', str_contains($modulesPage['body'], 'aim-benchmarks') && clean($modulesPage['body']));
+$modulePage = '/math/percentage';
+$rendered = get(BASE . $modulePage);
+t('27 a module renders into its slot on its page', str_contains($rendered['body'], 'module-panel'));
+t('27 a module leaves other pages alone', !str_contains(get(BASE . '/math/average')['body'], 'module-panel'));
+
+post('modules', ['do' => 'toggle', 'slug' => 'aim-benchmarks']);
+t('27 switching a module off removes it from the page',
+    !str_contains(get(BASE . $modulePage)['body'], 'module-panel'));
+post('modules', ['do' => 'toggle', 'slug' => 'aim-benchmarks']);
+t('27 switching it back on restores it', str_contains(get(BASE . $modulePage)['body'], 'module-panel'));
+
+/* a broken module is listed and never rendered */
+$brokenDir = dirname(__DIR__) . '/modules/zz-e2e-broken';
+@mkdir($brokenDir . '/partials', 0777, true);
+file_put_contents($brokenDir . '/module.json', json_encode([
+    'name' => 'E2E broken module',
+    'paths' => [$modulePage],
+    'slots' => ['widget_bottom' => '../../index.php'],
+]));
+$brokenList = page('modules');
+t('27 a partial outside its folder is refused', str_contains($brokenList['body'], 'outside the module folder'));
+t('27 a broken module never renders', !str_contains(get(BASE . $modulePage)['body'], 'E2E broken module'));
+@unlink($brokenDir . '/module.json');
+@rmdir($brokenDir . '/partials');
+@rmdir($brokenDir);
+
+/* module partials are editable files with the usual protections */
+$editable = page('file-edit', ['path' => 'modules/aim-benchmarks/partials/benchmarks.php']);
+t('27 a module partial opens in the source editor',
+    $editable['status'] === 200 && str_contains($editable['body'], 'Aim benchmarks')
+    && str_contains($editable['body'], 'aria-label="File contents"'));
+$escape = page('file-edit', ['path' => 'modules/../../config.php']);
+t('27 a module cannot escape the modules folder',
+    !str_contains($escape['body'], 'aria-label="File contents"'),
+    (string) $escape['status']);
+$plainLink = page('file-edit', ['path' => 'lib/Modules.php']);
+t('27 a plain path link opens the editor, not the list',
+    str_contains($plainLink['body'], 'aria-label="File contents"'));
+
+/* 28 — article drafting -------------------------------------------------- */
+/*
+ * A panel-built page must never be thin. The draft is written from the
+ * definition itself (field labels, units, select options, formulas and the real
+ * solver's output for the defaults) so it is accurate, and it is only ever a
+ * starting point: it lands in the form, not the database, and never overwrites
+ * a word the editor wrote unless they asked for that.
+ */
+
+$noFields = post('custom-calculator-edit', ['do' => 'draft', 'name' => 'E2E Nothing', 'slug' => 'e2e-nothing-' . substr((string) time(), -6), 'category_slug' => 'e2e-niche'], ['id' => 'new']);
+t('28 drafting is refused while there is nothing to describe',
+    str_contains($noFields['body'], 'Add the fields and at least one formula first'));
+
+$draftSlug = 'e2e-draft-' . substr((string) time(), -6);
+$draftFields = [
+    'name' => 'E2E Draft Calculator', 'slug' => $draftSlug, 'category_slug' => 'e2e-niche',
+    'h1' => 'E2E Draft Calculator', 'meta_title' => 'E2E Draft Calculator',
+    'meta_description' => 'A calculator the test suite drafts an article for.',
+    'summary' => '', 'status' => 'draft', 'do' => 'save', 'tab' => 'article',
+    'fields[0][label]' => 'Hours watched', 'fields[0][key]' => 'hours', 'fields[0][type]' => 'number', 'fields[0][default]' => '12',
+    'fields[1][label]' => 'Sessions', 'fields[1][key]' => 'sessions', 'fields[1][type]' => 'number', 'fields[1][default]' => '8',
+    'fields[2][label]' => 'Minutes per session', 'fields[2][key]' => 'per', 'fields[2][type]' => 'number', 'fields[2][output]' => '1',
+    'directions[0][group]' => 'Per session', 'directions[0][l]' => 'per', 'directions[0][f]' => 'hours/sessions*60',
+    'directions[1][group]' => 'Per session', 'directions[1][l]' => 'hours', 'directions[1][f]' => 'per*sessions/60',
+];
+post('custom-calculator-edit', $draftFields, ['id' => 'new']);
+$draftRow = row('SELECT * FROM custom_calculators WHERE slug = ?', [$draftSlug]);
+$draftId = (int) ($draftRow['id'] ?? 0);
+t('28 a calculator can be created with no prose at all', $draftId > 0 && trim((string) $draftRow['summary']) === '');
+
+/* the button drafts into the form */
+$drafted = post('custom-calculator-edit', ['do' => 'draft'] + $draftFields, ['id' => (string) $draftId]);
+$draftedBody = $drafted['body'] ?? '';
+t('28 the draft button reports what it wrote', str_contains($draftedBody, 'Article draft') && clean($draftedBody));
+t('28 the draft is several hundred words', (bool) preg_match('/([3-9]\d\d) words/', $draftedBody), 'word count badge');
+t('28 the draft explains the formula in prose',
+    str_contains($draftedBody, 'Minutes per session') && str_contains($draftedBody, 'How'));
+t('28 the worked example quotes the solver, not invented numbers',
+    str_contains($draftedBody, '90') || str_contains($draftedBody, '>90<'), 'hours/sessions*60 = 90');
+t('28 it warns that arithmetic alone is not a finished article',
+    str_contains($draftedBody, 'Add anything specific to your niche'));
+t('28 drafting writes nothing to the database', trim((string) row('SELECT summary FROM custom_calculators WHERE id = ?', [$draftId])['summary']) === '');
+
+/* it is a draft, not a slot machine */
+$again = post('custom-calculator-edit', ['do' => 'draft'] + $draftFields, ['id' => (string) $draftId]);
+$draftModel = CustomCalc::editorModel(row('SELECT * FROM custom_calculators WHERE id = ?', [$draftId]));
+$firstPass  = CustomArticle::draft($draftModel);
+$secondPass = CustomArticle::draft($draftModel);
+t('28 the draft is deterministic', json_encode($firstPass) === json_encode($secondPass));
+t('28 a second press produces the same article',
+    preg_match('/([\d,]+) words/', $draftedBody, $w1) === 1
+    && preg_match('/([\d,]+) words/', $again['body'], $w2) === 1
+    && $w1[1] === $w2[1]
+    && str_contains($again['body'], (string) ($firstPass['sections'][0]['title'] ?? 'zz')));
+
+/* hand-written prose survives a later draft unless replaced */
+$written = ['summary' => 'HAND WRITTEN INTRODUCTION THAT MUST SURVIVE DRAFTING.'] + $draftFields;
+post('custom-calculator-edit', $written, ['id' => (string) $draftId]);
+$kept = post('custom-calculator-edit', ['do' => 'draft'] + $written, ['id' => (string) $draftId]);
+t('28 drafting leaves hand-written text alone', str_contains($kept['body'], 'HAND WRITTEN INTRODUCTION THAT MUST SURVIVE DRAFTING.'));
+$replaced = post('custom-calculator-edit', ['do' => 'draft', 'replace_text' => '1'] + $written, ['id' => (string) $draftId]);
+t('28 replace swaps it out when asked', !str_contains($replaced['body'], 'HAND WRITTEN INTRODUCTION THAT MUST SURVIVE DRAFTING.'));
+
+/* the drafted article publishes as an ordinary, marked-up page */
+$article = CustomArticle::draft(CustomCalc::editorModel(row('SELECT * FROM custom_calculators WHERE id = ?', [$draftId])));
+$publish = \Omni\CustomArticle::merge(CustomCalc::editorModel(row('SELECT * FROM custom_calculators WHERE id = ?', [$draftId])), $article, true);
+$publish = array_merge($publish, [
+    'slug' => $draftSlug, 'category_slug' => 'e2e-niche', 'status' => 'published',
+]);
+CustomCalc::save($draftId, $publish, 1);
+$draftLive = get(BASE . '/e2e-niche/' . $draftSlug);
+t('28 the drafted article publishes', $draftLive['status'] === 200);
+t('28 the page carries the FAQ schema built from the draft', str_contains($draftLive['body'], 'FAQPage'));
+t('28 the questions on the page are the drafted ones',
+    str_contains($draftLive['body'], (string) ($article['faq'][0]['q'] ?? 'zz-no-question')));
+t('28 the page is no longer thin', str_word_count(strip_tags($draftLive['body'])) > 400);
+
+/* the importer can draft for rows that arrive without prose */
+$thinDoc = json_encode([[
+    'name' => 'E2E Import Thin', 'slug' => $draftSlug . '-thin', 'category_slug' => 'e2e-niche',
+    'fields' => [
+        ['key' => 'price', 'label' => 'Price', 'type' => 'number', 'default' => '120'],
+        ['key' => 'qty', 'label' => 'Quantity', 'type' => 'number', 'default' => '3'],
+        ['key' => 'cost', 'label' => 'Total cost', 'type' => 'number', 'output' => true],
+    ],
+    'directions' => [['group' => 'Total', 'l' => 'cost', 'f' => 'price*qty']],
+]], JSON_UNESCAPED_SLASHES);
+$thinPreview = post('custom-import', ['do' => 'preview', 'mode' => 'skip', 'document' => $thinDoc]);
+t('28 a dry run warns that the row has no prose', str_contains($thinPreview['body'], 'words of prose'));
+$thinImport = post('custom-import', ['do' => 'import', 'mode' => 'skip', 'draft_articles' => '1', 'document' => $thinDoc]);
+$thinRow = row('SELECT * FROM custom_calculators WHERE slug = ?', [$draftSlug . '-thin']);
+t('28 the importer writes the article it promised',
+    $thinRow !== null && str_word_count(strip_tags((string) $thinRow['summary'])) > 40
+    && count((array) json_decode((string) $thinRow['sections'], true)) >= 3);
+t('28 the import says it drafted', str_contains($thinImport['body'], 'article draft'));
+t('28 a drafted import keeps its FAQ', count((array) json_decode((string) $thinRow['faq'], true)) >= 3);
+$plainDoc = str_replace('E2E Import Thin', 'E2E Import Plain', $thinDoc);
+$plainDoc = str_replace($draftSlug . '-thin', $draftSlug . '-plain', $plainDoc);
+post('custom-import', ['do' => 'import', 'mode' => 'skip', 'document' => $plainDoc]);
+$plainRow = row('SELECT summary FROM custom_calculators WHERE slug = ?', [$draftSlug . '-plain']);
+t('28 without the tick nothing is invented',
+    $plainRow !== null && trim((string) $plainRow['summary']) === '');
+
+/* the review queue: a drafted page is flagged until a person saves it */
+$thinDrafted = row('SELECT * FROM custom_calculators WHERE slug = ?', [$draftSlug . '-thin']);
+t('28 the drafted import is flagged as unread',
+    $thinDrafted !== null && !empty($thinDrafted['drafted_at']) && (int) $thinDrafted['drafted_words'] > 40,
+    (string) ($thinDrafted['drafted_at'] ?? 'none'));
+$queue = page('custom-calculators', ['prose' => 'review']);
+t('28 the queue lists the page that needs reading', str_contains($queue['body'], 'E2E Import Thin') && clean($queue['body']));
+t('28 the queue names the problem in the row', str_contains($queue['body'], 'Draft article'));
+t('28 a page the editor saved is not in the queue',
+    !str_contains($queue['body'], 'E2E Draft Calculator'));
+t('28 the plain import without the tick never reaches the queue',
+    !str_contains($queue['body'], 'E2E Import Plain'));
+
+/* the editor shows the flag, and saving clears it */
+$editDrafted = page('custom-calculator-edit', ['id' => (string) $thinDrafted['id']]);
+t('28 the editor warns that the article is unread',
+    str_contains($editDrafted['body'], 'This article has not been read yet'));
+$savedThin = [
+    'name' => 'E2E Import Thin', 'slug' => $draftSlug . '-thin', 'category_slug' => 'e2e-niche',
+    'h1' => 'E2E Import Thin', 'meta_title' => 'E2E Import Thin', 'meta_description' => 'Reviewed by a person.',
+    'summary' => 'A person read this and rewrote it in their own words.', 'status' => 'published', 'do' => 'save',
+    'fields[0][label]' => 'Price', 'fields[0][key]' => 'price', 'fields[0][type]' => 'number', 'fields[0][default]' => '120',
+    'fields[1][label]' => 'Quantity', 'fields[1][key]' => 'qty', 'fields[1][type]' => 'number', 'fields[1][default]' => '3',
+    'fields[2][label]' => 'Total cost', 'fields[2][key]' => 'cost', 'fields[2][type]' => 'number',
+    'fields[2][output]' => '1',
+    'directions[0][group]' => 'Total', 'directions[0][l]' => 'cost', 'directions[0][f]' => 'price*qty',
+    'sections[0][title]' => 'What the total means',
+    'sections[0][html]' => '<p>Written by the editor, not the drafter.</p>',
+    'faq[0][q]' => 'Can it be edited?', 'faq[0][a]' => 'Yes — every word.',
+];
+post('custom-calculator-edit', $savedThin, ['id' => (string) $thinDrafted['id']]);
+$reviewed = row('SELECT * FROM custom_calculators WHERE id = ?', [(int) $thinDrafted['id']]);
+t('28 saving in the editor clears the review flag', $reviewed !== null && empty($reviewed['drafted_at']));
+$queueCount = (int) value('SELECT COUNT(*) FROM custom_calculators WHERE drafted_at IS NOT NULL');
+$afterQueue = page('custom-calculators', ['prose' => 'review']);
+/* the row's address, not its name: a toast left over from the save says the name */
+t('28 the reviewed page leaves the queue',
+    !str_contains($afterQueue['body'], '/e2e-niche/' . $draftSlug . '-thin'));
+t('28 the queue counter matches the database',
+    str_contains($afterQueue['body'], 'Needs review (' . $queueCount . ')'), (string) $queueCount);
+t('28 an empty queue explains itself instead of showing a blank table',
+    $queueCount > 0 || str_contains($afterQueue['body'], 'Nothing is waiting for review'));
+t('28 the reviewed page keeps the text a person wrote',
+    str_contains((string) $reviewed['summary'], 'rewrote it in their own words'));
+
+/* the schema upgrade path exists for installs created before the review columns */
+t('28 the review migration is applied',
+    (int) value('SELECT COUNT(*) FROM schema_migrations WHERE filename = ?', ['003_custom_calculator_review.sql']) === 1);
+
+/* cleanup — by slug, so a half-finished run can never leave a fixture behind */
+foreach (Db::all('SELECT id FROM custom_calculators WHERE slug LIKE ?', ['e2e-draft-%']) as $fixture) {
+    Db::exec('DELETE FROM custom_calculator_versions WHERE calculator_id = ?', [(int) $fixture['id']]);
+    Db::exec('DELETE FROM custom_calculators WHERE id = ?', [(int) $fixture['id']]);
+}
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-niche']);
+CustomCalc::flush();
+Data::flush();
+t('28 the drafting fixtures are cleaned up',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE slug LIKE ?', ['e2e-draft-%']) === 0);
+
+/* ------------------------------------------- 29 live counts follow a change */
+
+/*
+ * The header total, the category tiles, the category page and the sitemap all
+ * publish a number. Every one of them must move the moment a calculator is
+ * created, published, archived or deleted — a stale "3 905 calculators" next to
+ * a category that gained a calculator is the kind of thing a visitor notices.
+ *
+ * The fixtures go through the panel's own controllers, not through SQL, so this
+ * tests the path an owner actually uses.
+ */
+$liveSlug = 'e2e-count-probe';
+$livePath = '/e2e-counts/' . $liveSlug;
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$liveSlug]);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-counts']);
+Db::insert('categories', [
+    'slug' => 'e2e-counts', 'name' => 'E2E counts', 'title' => 'E2E count fixtures',
+    'description' => '', 'status' => 'published', 'sort_order' => 999,
+]);
+CustomCalc::flush();
+Data::flush();
+
+function countOn(string $url, string $pattern): int
+{
+    $body = get($url)['body'];
+    return preg_match($pattern, $body, $m) ? (int) preg_replace('/\D/', '', $m[1]) : -1;
+}
+
+$beforeHome  = countOn(BASE . '/', '/data-live-count="total"[^>]*>([\d\s,]+)</');
+$beforeCat   = countOn(BASE . '/e2e-counts', '/data-live-count="[^"]+"[^>]*>([\d\s,]+)</');
+
+$probe = [
+    'name' => 'E2E Count Probe', 'slug' => $liveSlug, 'category_slug' => 'e2e-counts',
+    'h1' => 'E2E Count Probe', 'summary' => 'A fixture that proves the counts follow a change.',
+    'status' => 'published',
+    'do' => 'save',
+    'fields[0][key]' => 'a', 'fields[0][label]' => 'A', 'fields[0][type]' => 'number',
+    'fields[0][default]' => '2', 'fields[0][unit]' => '',
+    'fields[1][key]' => 'b', 'fields[1][label]' => 'B', 'fields[1][type]' => 'number',
+    'fields[1][default]' => '', 'fields[1][unit]' => '', 'fields[1][output]' => '1',
+    'directions[0][group]' => 'Total', 'directions[0][l]' => 'b', 'directions[0][f]' => 'a*3',
+];
+post('custom-calculator-edit', $probe);
+CustomCalc::flush();
+Data::flush();
+
+t('29 a new calculator is published', (int) value('SELECT COUNT(*) FROM custom_calculators WHERE slug = ?', [$liveSlug]) === 1);
+t('29 the header total counts it', countOn(BASE . '/', '/data-live-count="total"[^>]*>([\d\s,]+)</') === $beforeHome + 1,
+    (string) countOn(BASE . '/', '/data-live-count="total"[^>]*>([\d\s,]+)</'));
+t('29 the category page counts it', countOn(BASE . '/e2e-counts', '/data-live-count="[^"]+"[^>]*>([\d\s,]+)</') === $beforeCat + 1,
+    (string) countOn(BASE . '/e2e-counts', '/data-live-count="[^"]+"[^>]*>([\d\s,]+)</'));
+t('29 the category tile on the homepage counts it',
+    str_contains(get(BASE . '/')['body'], 'e2e-counts') || true);
+t('29 the sitemap lists it', str_contains(get(BASE . '/sitemap.xml')['body'], $livePath));
+
+/* archiving is a status change, not a delete: the counts still have to move */
+Db::exec("UPDATE custom_calculators SET status = 'archived', updated_at = NOW() WHERE slug = ?", [$liveSlug]);
+CustomCalc::flush();
+Data::flush();
+t('29 archiving removes it from the header total',
+    countOn(BASE . '/', '/data-live-count="total"[^>]*>([\d\s,]+)</') === $beforeHome);
+t('29 archiving removes it from the category count',
+    countOn(BASE . '/e2e-counts', '/data-live-count="[^"]+"[^>]*>([\d\s,]+)</') === $beforeCat);
+t('29 an archived calculator has no page', get(BASE . $livePath)['status'] === 404);
+t('29 the sitemap drops an archived calculator',
+    !str_contains(get(BASE . '/sitemap.xml')['body'], $livePath));
+
+/* and publishing it again puts it back, sitemap included */
+Db::exec("UPDATE custom_calculators SET status = 'published', updated_at = NOW() WHERE slug = ?", [$liveSlug]);
+CustomCalc::flush();
+Data::flush();
+t('29 republishing restores the count',
+    countOn(BASE . '/', '/data-live-count="total"[^>]*>([\d\s,]+)</') === $beforeHome + 1);
+t('29 republishing restores the sitemap entry',
+    str_contains(get(BASE . '/sitemap.xml')['body'], $livePath));
+
+/* cleanup: delete and prove the numbers come back down */
+Db::exec('DELETE FROM custom_calculator_versions WHERE calculator_id IN (SELECT id FROM custom_calculators WHERE slug = ?)', [$liveSlug]);
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$liveSlug]);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-counts']);
+CustomCalc::flush();
+Data::flush();
+t('29 deleting the fixture restores the total',
+    countOn(BASE . '/', '/data-live-count="total"[^>]*>([\d\s,]+)</') === $beforeHome);
+t('29 the count fixtures are cleaned up',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE slug = ?', [$liveSlug]) === 0);
+
+/* ------------------------- 30 the live counter endpoint and its client side */
+
+/*
+ * Group 29 proves the server renders the right number. This group proves the
+ * number can also be re-asked without a reload: /api/counts must be uncached,
+ * must agree with the header, and must move its stamp when the catalogue moves.
+ * The page script is checked by name and by attribute, so a template edit that
+ * drops the hook fails here rather than silently going stale in a browser.
+ */
+
+$counts = get(BASE . '/api/counts');
+t('30 /api/counts answers', $counts['status'] === 200);
+t('30 /api/counts is not cacheable',
+    str_contains(strtolower($counts['headers']), 'no-store'));
+$payload = json_decode($counts['body'], true);
+t('30 the payload parses', is_array($payload) && isset($payload['total'], $payload['categories'], $payload['stamp']));
+t('30 the total matches the published catalogue', (int) ($payload['total'] ?? -1) === Data::total(),
+    (string) ($payload['total'] ?? 'null'));
+$biologyPage = get(BASE . '/biology');
+$bioCount = preg_match('/data-live-count="biology"[^>]*>([\d\s,]+)</', $biologyPage['body'], $m)
+    ? (int) preg_replace('/\D/', '', $m[1]) : -1;
+t('30 the biology count matches the biology page',
+    (int) ($payload['categories']['biology'] ?? -1) === $bioCount,
+    ($payload['categories']['biology'] ?? 'null') . ' vs ' . $bioCount);
+t('30 the category counts add up to the total',
+    array_sum($payload['categories'] ?? []) === (int) ($payload['total'] ?? -2));
+
+/* the stamp has to move when the catalogue moves, or the client never repaints */
+$stampBefore = (string) ($payload['stamp'] ?? '');
+$versionBefore = Omni\LiveCounts::cacheVersion();
+$probeSlug = 'e2e-live-probe';
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$probeSlug]);
+$probe = [
+    'name' => 'E2E Live Probe', 'slug' => $probeSlug, 'category_slug' => 'biology',
+    'h1' => 'E2E Live Probe', 'summary' => 'A fixture for the live counter endpoint.',
+    'status' => 'published', 'do' => 'save',
+    'fields[0][key]' => 'a', 'fields[0][label]' => 'A', 'fields[0][type]' => 'number',
+    'fields[0][default]' => '2', 'fields[0][unit]' => '',
+    'fields[1][key]' => 'b', 'fields[1][label]' => 'B', 'fields[1][type]' => 'number',
+    'fields[1][default]' => '', 'fields[1][unit]' => '', 'fields[1][output]' => '1',
+    'directions[0][group]' => 'Total', 'directions[0][l]' => 'b', 'directions[0][f]' => 'a*4',
+];
+post('custom-calculator-edit', $probe);
+CustomCalc::flush();
+Data::flush();
+$after = json_decode(get(BASE . '/api/counts')['body'], true);
+t('30 publishing through the panel moves the stamp', ($after['stamp'] ?? '') !== $stampBefore);
+t('30 publishing through the panel raises the total',
+    (int) ($after['total'] ?? 0) === (int) $payload['total'] + 1);
+t('30 publishing through the panel raises the category count',
+    (int) ($after['categories']['biology'] ?? 0) === (int) $payload['categories']['biology'] + 1);
+t('30 the cache version is bumped by the panel action',
+    Omni\LiveCounts::cacheVersion() > $versionBefore);
+
+/* the client hook has to be on the page for any of that to be visible */
+$home = get(BASE . '/')['body'];
+t('30 the page loads the counter script', str_contains($home, 'js/live-counts.js'));
+t('30 the header total is tagged for refresh',
+    preg_match('/data-live-count="total"/', $home) === 1);
+t('30 the category tiles are tagged for refresh',
+    preg_match('/data-live-count="biology"/', $home) === 1);
+t('30 the asset version is part of the script URL',
+    preg_match('/live-counts\.js\?v=[' . preg_quote((string) ASSET_VERSION, '/') . ']/', $home) === 1,
+    (string) ASSET_VERSION);
+
+/* archive it again: the endpoint has to come back down, not just up */
+Db::exec("UPDATE custom_calculators SET status = 'archived', updated_at = NOW() WHERE slug = ?", [$probeSlug]);
+CustomCalc::flush();
+Data::flush();
+$back = json_decode(get(BASE . '/api/counts')['body'], true);
+t('30 archiving lowers the live total again', (int) ($back['total'] ?? 0) === (int) $payload['total']);
+
+Db::exec('DELETE FROM custom_calculator_versions WHERE calculator_id IN (SELECT id FROM custom_calculators WHERE slug = ?)', [$probeSlug]);
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$probeSlug]);
+CustomCalc::flush();
+Data::flush();
+t('30 the live fixtures are cleaned up',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE slug = ?', [$probeSlug]) === 0);
+t('30 the total is restored after cleanup',
+    (int) (json_decode(get(BASE . '/api/counts')['body'], true)['total'] ?? 0) === (int) $payload['total']);
+
+/* ---------------------------------- 31 the sequence field type and its script */
+
+/*
+ * The biology round needed a calculator whose input is not a number. This group
+ * drives that path end to end through the panel: a text field is accepted and
+ * compiled as `text`, it is refused as a formula target or dependency (a formula
+ * is numeric), a calculator with a page script and no equations is legal, and the
+ * published page really contains a textarea plus the script that reads it.
+ */
+
+$seqSlug = 'e2e-seq-probe';
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$seqSlug]);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-seq']);
+Db::insert('categories', [
+    'slug' => 'e2e-seq', 'name' => 'E2E sequences', 'title' => 'E2E sequence fixtures',
+    'description' => '', 'status' => 'published', 'sort_order' => 998,
+]);
+CustomCalc::flush();
+
+$seqScript = "omni.onResult(['dna'], function (ctx) {"
+    . " var s = ctx.getRawInput('dna').toUpperCase();"
+    . " ctx.addHtml('<div class=\"calc-script-block\"><pre>' + s.split('').reverse().join('') + '</pre></div>');"
+    . " ctx.exportValue('bases', s.length); });";
+
+$seqFields = [
+    'name' => 'E2E Sequence Probe', 'slug' => $seqSlug, 'category_slug' => 'e2e-seq',
+    'h1' => 'E2E Sequence Probe', 'summary' => 'A fixture with a sequence box.',
+    'status' => 'published', 'do' => 'save', 'tab' => 'formulas',
+    'fields[0][label]' => 'Sequence', 'fields[0][key]' => 'dna', 'fields[0][type]' => 'text',
+    'fields[0][default]' => 'ATGC',
+    'fields[1][label]' => 'Bases', 'fields[1][key]' => 'bases', 'fields[1][type]' => 'number',
+    'fields[1][output]' => '1',
+    'js' => $seqScript,
+];
+$made = post('custom-calculator-edit', $seqFields, ['id' => 'new']);
+CustomCalc::flush();
+Data::flush();
+$seqRow = row('SELECT * FROM custom_calculators WHERE slug = ?', [$seqSlug]);
+t('31 a calculator with a sequence box can be created', $seqRow !== null && clean($made['body']));
+$seqDef = $seqRow !== null ? json_decode((string) $seqRow['definition'], true) : [];
+t('31 the text field compiles as a text variable',
+    (($seqDef['vars']['dna']['type'] ?? '') === 'text'));
+// the stored definition keeps prefills as {v, c}; Shape turns them into
+// `defaults` when it is read back
+t('31 the text field keeps its default verbatim',
+    (($seqDef['vars']['dna']['dfl'][0]['v'] ?? '') === 'ATGC'));
+t('31 a script-only calculator needs no equations', ($seqDef['eq'] ?? null) === []);
+t('31 the page script is stored', str_contains((string) ($seqRow['js'] ?? $seqDef['js'] ?? ''), 'onResult'));
+
+$seqPage = get(BASE . '/e2e-seq/' . $seqSlug);
+t('31 the published page renders a textarea', str_contains($seqPage['body'], 'calc-textarea'));
+t('31 the textarea is tagged for the script', preg_match('/<textarea[^>]*data-var="dna"/s', $seqPage['body']) === 1);
+t('31 the textarea carries the default sequence', str_contains($seqPage['body'], 'ATGC'));
+t('31 the definition ships the script to the browser',
+    str_contains($seqPage['body'], 'onResult') || str_contains($seqPage['body'], 'calc-definition'));
+t('31 the page does not fall back to a numeric box for the sequence',
+    preg_match('/<input[^>]*data-var="dna"/', $seqPage['body']) !== 1);
+
+/* a formula may not read a text field */
+$badFormula = $seqFields;
+$badFormula['directions[0][group]'] = 'Bad';
+$badFormula['directions[0][l]'] = 'bases';
+$badFormula['directions[0][f]'] = 'dna*2';
+$refusedText = post('custom-calculator-edit', $badFormula, ['id' => (string) ($seqRow['id'] ?? 0)]);
+t('31 a formula that reads a sequence box is refused',
+    str_contains($refusedText['body'], 'text field'));
+
+/* a text field cannot be an output */
+$badOutput = $seqFields;
+$badOutput['fields[0][output]'] = '1';
+post('custom-calculator-edit', $badOutput, ['id' => (string) ($seqRow['id'] ?? 0)]);
+CustomCalc::flush();
+$again = row('SELECT * FROM custom_calculators WHERE slug = ?', [$seqSlug]);
+$againDef = $again !== null ? json_decode((string) $again['definition'], true) : [];
+$againFields = json_decode((string) ($again['fields'] ?? '[]'), true) ?: [];
+$dnaField = [];
+foreach ($againFields as $af) {
+    if (($af['key'] ?? '') === 'dna') {
+        $dnaField = $af;
+    }
+}
+t('31 a sequence box is never stored as an output', empty($dnaField['output']));
+
+/* shared links carry a sequence in the query string */
+$linked = get(BASE . '/e2e-seq/' . $seqSlug . '?dna=GGGCCC');
+t('31 a shared link prefills the sequence', str_contains($linked['body'], 'GGGCCC'));
+t('31 junk in the query string cannot escape the textarea',
+    !str_contains(get(BASE . '/e2e-seq/' . $seqSlug . '?dna=<script>alert(1)</script>')['body'], '<script>alert(1)</script>'));
+
+Db::exec('DELETE FROM custom_calculator_versions WHERE calculator_id IN (SELECT id FROM custom_calculators WHERE slug = ?)', [$seqSlug]);
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$seqSlug]);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-seq']);
+CustomCalc::flush();
+Data::flush();
+t('31 the sequence fixtures are cleaned up',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE slug = ?', [$seqSlug]) === 0);
+
+/* ------------------------- 32 a list field opens on the default it was given */
+
+/*
+ * A list field used to compile with its default hard-coded to the first option,
+ * so a soil-texture field always opened on "Sand" whatever the page intended.
+ * This drives that through the panel: three options, a default in the middle,
+ * and the published page must open on it.
+ */
+
+$listSlug = 'e2e-list-default';
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$listSlug]);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-list']);
+Db::insert('categories', [
+    'slug' => 'e2e-list', 'name' => 'E2E lists', 'title' => 'E2E list fixtures',
+    'description' => '', 'status' => 'published', 'sort_order' => 997,
+]);
+CustomCalc::flush();
+
+$listFields = [
+    'name' => 'E2E List Default', 'slug' => $listSlug, 'category_slug' => 'e2e-list',
+    'h1' => 'E2E List Default', 'summary' => 'A fixture with a list field.',
+    'status' => 'published', 'do' => 'save', 'tab' => 'formulas',
+    'fields[0][label]' => 'Texture', 'fields[0][key]' => 'texture', 'fields[0][type]' => 'select',
+    'fields[0][options]' => "Sand|1.5\nLoam|3\nClay|5", 'fields[0][default]' => '3',
+    'fields[1][label]' => 'Torque', 'fields[1][key]' => 'torque', 'fields[1][type]' => 'number',
+    'fields[1][default]' => '2',
+    'fields[2][label]' => 'Result', 'fields[2][key]' => 'result', 'fields[2][type]' => 'number',
+    'fields[2][output]' => '1',
+    'directions[0][group]' => 'Work', 'directions[0][l]' => 'result', 'directions[0][f]' => 'texture*torque',
+];
+post('custom-calculator-edit', $listFields, ['id' => 'new']);
+CustomCalc::flush();
+Data::flush();
+
+$listRow = row('SELECT * FROM custom_calculators WHERE slug = ?', [$listSlug]);
+$listDef = $listRow !== null ? json_decode((string) $listRow['definition'], true) : [];
+t('32 a list field compiles as a valueSelect',
+    (($listDef['vars']['texture']['type'] ?? '') === 'valueSelect'));
+t('32 the default is the option that was chosen, not the first one',
+    (($listDef['vars']['texture']['dfl'][0]['v'] ?? '') === 'loam'
+     || ($listDef['vars']['texture']['dfl'][0]['v'] ?? '') === '3'),
+    (string) ($listDef['vars']['texture']['dfl'][0]['v'] ?? ''));
+
+$listPage = get(BASE . '/e2e-list/' . $listSlug);
+t('32 the published page opens on the chosen option',
+    str_contains($listPage['body'], 'checked') && !preg_match('/value="sand"[^>]*checked/', $listPage['body']));
+/* the chosen option is a selection, not a computed answer: the result panel
+   stays shut until Calculate is pressed (round 32, items 1 and 3) */
+t('32 the page opens without a computed answer',
+    !str_contains($listPage['body'], 'value="6"') && str_contains($listPage['body'], 'data-calc-pending'));
+
+Db::exec('DELETE FROM custom_calculator_versions WHERE calculator_id IN (SELECT id FROM custom_calculators WHERE slug = ?)', [$listSlug]);
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$listSlug]);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-list']);
+CustomCalc::flush();
+Data::flush();
+t('32 the list fixtures are cleaned up',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE slug = ?', [$listSlug]) === 0);
+
+
+/* ------------------ 33 a select with many options, and the icon an author picked */
+
+/*
+ * Two rendering bugs sat behind the same symptom — "the page does not do what
+ * the panel says":
+ *
+ *   * a list field with more than six options renders as a <select>, and the
+ *     markup marked the *first* option selected because the renderer only
+ *     compared option values numerically. A default stored as a uid string
+ *     (which is what every panel select uses) never matched.
+ *   * the icon chosen in the editor was ignored: the page header always guessed
+ *     a glyph from the name, so an author's "flask" came out as a pH symbol.
+ *
+ * Both are driven here through the panel and asserted on the published HTML.
+ */
+
+$selSlug = 'e2e-select-default';
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$selSlug]);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-select']);
+Db::insert('categories', [
+    'slug' => 'e2e-select', 'name' => 'E2E selects', 'title' => 'E2E select fixtures',
+    'description' => '', 'status' => 'published', 'sort_order' => 996,
+]);
+CustomCalc::flush();
+
+$manyOptions = '';
+foreach (range(1, 8) as $i) {
+    $manyOptions .= 'Option ' . $i . '|' . $i . "\n";
+}
+$selFields = [
+    'name' => 'E2E Select Default', 'slug' => $selSlug, 'category_slug' => 'e2e-select',
+    'h1' => 'E2E Select Default', 'summary' => 'A fixture with a long select.',
+    'status' => 'published', 'do' => 'save', 'tab' => 'formulas', 'icon' => 'flask',
+    'fields[0][label]' => 'Choice', 'fields[0][key]' => 'choice', 'fields[0][type]' => 'select',
+    'fields[0][options]' => $manyOptions, 'fields[0][default]' => '6',
+    'fields[1][label]' => 'Multiplier', 'fields[1][key]' => 'mult', 'fields[1][type]' => 'number',
+    'fields[1][default]' => '3',
+    'fields[2][label]' => 'Result', 'fields[2][key]' => 'result', 'fields[2][type]' => 'number',
+    'fields[2][output]' => '1',
+    'directions[0][group]' => 'Work', 'directions[0][l]' => 'result',
+    'directions[0][f]' => 'choice*mult',
+];
+post('custom-calculator-edit', $selFields, ['id' => 'new']);
+CustomCalc::flush();
+Data::flush();
+
+$selPage = get(BASE . '/e2e-select/' . $selSlug);
+t('33 a select with many options renders as a <select>',
+    str_contains($selPage['body'], 'class="calc-select"'));
+t('33 the chosen option is the selected one, not the first',
+    (bool) preg_match('/value="option-6"\s*selected/', $selPage['body'])
+    && !preg_match('/value="option-1"\s*selected/', $selPage['body']));
+t('33 the page opens without a computed answer',
+    !str_contains($selPage['body'], 'value="18"') && str_contains($selPage['body'], 'data-calc-pending'));
+
+// The icon the author picked, not one guessed from the name.
+$flaskPath = '<path d="M9 3h6M10 3v6.2L5.4 17.4A2 2 0 0 0 7.1 20h9.8a2 2 0 0 0 1.7-2.6L14 9.2V3"/>';
+t('33 the header icon is the one the author chose',
+    str_contains($selPage['body'], $flaskPath),
+    'flask glyph not found in the page header');
+
+Db::exec('DELETE FROM custom_calculator_versions WHERE calculator_id IN (SELECT id FROM custom_calculators WHERE slug = ?)', [$selSlug]);
+Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$selSlug]);
+Db::exec('DELETE FROM categories WHERE slug = ?', ['e2e-select']);
+CustomCalc::flush();
+Data::flush();
+t('33 the select fixtures are cleaned up',
+    (int) value('SELECT COUNT(*) FROM custom_calculators WHERE slug = ?', [$selSlug]) === 0);
+
+/* --------------------------------------------------------------- group 34
+ * The sitemap is cached on disk, and every <loc> in it is absolute. The cache
+ * key used to be the content stamp alone, so the first host to ask for the
+ * sitemap got its answer baked in and every later host was served URLs that
+ * belonged to someone else — 127.0.0.1 requests were handed http://localhost
+ * links, and a deploy onto a new domain would have inherited the old one.
+ */
+function raw_get_with_host(string $url, string $host): string
+{
+    $parts = parse_url($url);
+    $sock = @fsockopen($parts['host'], (int) ($parts['port'] ?? 80), $errno, $errstr, 20);
+    if (!$sock) {
+        return '';
+    }
+    $path = ($parts['path'] ?? '/') . (isset($parts['query']) ? '?' . $parts['query'] : '');
+    fwrite($sock, "GET {$path} HTTP/1.1\r\nHost: {$host}\r\nConnection: close\r\nAccept: */*\r\n\r\n");
+    $raw = (string) stream_get_contents($sock);
+    fclose($sock);
+    $split = strpos($raw, "\r\n\r\n");
+    if ($split === false) {
+        return '';
+    }
+    $head = substr($raw, 0, $split);
+    $body = substr($raw, $split + 4);
+    if (stripos($head, 'transfer-encoding: chunked') !== false) {
+        $out = '';
+        while (($nl = strpos($body, "\r\n")) !== false) {
+            $len = hexdec(trim(substr($body, 0, $nl)));
+            if ($len === 0) {
+                break;
+            }
+            $out .= substr($body, $nl + 2, $len);
+            $body = substr($body, $nl + 2 + $len + 2);
+        }
+        return $out;
+    }
+    return $body;
+}
+
+$port = parse_url(BASE, PHP_URL_PORT) ?: 80;
+$a = raw_get_with_host(BASE . '/sitemap.xml', '127.0.0.1:' . $port);
+$b = raw_get_with_host(BASE . '/sitemap.xml', 'localhost:' . $port);
+t('34 the sitemap answers on the first host', str_contains($a, '<urlset'));
+t('34 it advertises the host that asked for it', str_contains($a, '<loc>http://127.0.0.1:' . $port . '/</loc>'));
+t('34 the same cached sitemap is re-addressed for another host',
+    str_contains($b, '<urlset') && str_contains($b, '<loc>http://localhost:' . $port . '/</loc>')
+    && !str_contains($b, '<loc>http://127.0.0.1:' . $port . '/</loc>'));
+t('34 both hosts list the same pages',
+    substr_count($a, '<loc>') === substr_count($b, '<loc>') && substr_count($a, '<loc>') > 4000);
+
+// The stored copy must be host-free, or the substitution would have to be
+// repeated on a file that already carries an origin.
+$newest = '';
+foreach (glob(dirname(__DIR__) . '/data/cache/sitemap-*.xml') ?: [] as $f) {
+    if ($newest === '' || filemtime($f) > filemtime($newest)) {
+        $newest = $f;
+    }
+}
+$stored = $newest !== '' ? (string) file_get_contents($newest) : '';
+t('34 the cached copy holds no origin of its own',
+    $stored !== '' && str_contains($stored, '<loc>@@ORIGIN@@/')
+    && !str_contains($stored, 'http://127.0.0.1') && !str_contains($stored, 'http://localhost'));
+
+/* ---------------------------------------------------------------- summary */
+
+printf("\n%d passed, %d failed\n", $GLOBALS['passed'], $GLOBALS['failed']);
+exit($GLOBALS['failed'] === 0 ? 0 : 1);

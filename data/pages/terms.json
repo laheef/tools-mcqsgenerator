@@ -1,0 +1,14 @@
+{
+    "slug": "terms",
+    "title": "Terms of use",
+    "excerpt": "The short version: use the calculators freely, check anything important, and do not abuse the service.",
+    "content": "<p>By using this site you agree to these terms. They are deliberately short.</p>\n<h2>The calculators are a tool, not advice</h2>\n<p>Results are produced by the formulas documented on each page. They are general-purpose: they do not know your tax residency, your lender's fees, your medical history or your local building code. For decisions with money, health or safety consequences, confirm the result with a qualified professional or with the primary source (the tax office, the lender, the clinician, the code).</p>\n<h2>Accuracy and availability</h2>\n<p>We test every calculator and fix disagreements between the documented formula and the result. We cannot promise the site will never be wrong or never be down, and we do not accept liability for decisions taken on the strength of a result alone.</p>\n<h2>Acceptable use</h2>\n<p>Do not scrape the site at a rate that degrades it for other people, do not use the contact form to send unsolicited advertising, and do not attempt to reach the administration area or other users' data.</p>\n<h2>Content</h2>\n<p>The explanatory text on this site was written for it. You may quote a passage with a link back; you may not republish whole articles. Calculator definitions and interface patterns are provided for study and reuse by their respective authors.</p>\n<h2>Changes</h2>\n<p>These terms may change as the site does. The current version is always this page.</p>",
+    "status": "published",
+    "template": "default",
+    "meta_title": "Terms of use",
+    "meta_description": "The terms that apply to using these free calculators and the content on this site.",
+    "canonical_url": "",
+    "noindex": 0,
+    "show_in_header": 0,
+    "show_in_footer": 1
+}

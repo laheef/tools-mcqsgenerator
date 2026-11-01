@@ -1,0 +1,93 @@
+{
+  "path": "/chemistry/rate-constant",
+  "slug": "rate-constant",
+  "cat": "chemistry",
+  "name": "Rate constant",
+  "seoTitle": "Rate constant Calculator: Free, With Steps",
+  "seoDesc": "Rate constant: work out rate of reaction (Results) from the half life (T½) and the rate of reaction. A free chemistry calculator with the formula, units…",
+  "h1": "Rate constant Calculator",
+  "summary": "The Rate constant calculator turns the half life (T½) and the rate of reaction into <strong>rate of reaction (Results)</strong>. It suits a bench calculation involving amounts, concentrations or reaction ratios.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Rate constant calculator work?",
+      "html": "<p>The Rate constant calculator takes the values in the form, applies the relationship described below and reports <strong>rate of reaction (Results)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the elementary step, the order of reaction (Molecule A) and the order of reaction (Molecule A)); then you type in the half life (T½) (Molecule A), the rate of reaction (Results), the rate of reaction (Results) and the rate of reaction (Results).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as unimolecular, bimolecular and trimolecular. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as zero, first and second. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as first and second. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in seconds. The unit chip switches it to any of the 27 supported units.</li><li>Pick the option that matches your case — 2 options, such as first and second. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as first and second. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in M s⁻¹.</li><li>A number, expressed in M s⁻¹.</li><li>A number, expressed in M s⁻¹.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Elementary step</strong></td><td>One of 3 options, such as unimolecular, bimolecular and trimolecular.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Order of reaction (Molecule A)</strong></td><td>One of 3 options, such as zero, first and second.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Order of reaction (Molecule A)</strong></td><td>One of 2 options, such as first and second.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Concentration [A]</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>Calculated</td></tr><tr><td><strong>Half life (T½) (Molecule A)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>You supply it</td></tr><tr><td><strong>Half life (T½) (Molecule A)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Half life (T½) (Molecule A)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Order of reaction (Molecule B)</strong></td><td>One of 2 options, such as first and second.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Concentration [B]</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>Calculated</td></tr><tr><td><strong>Half life (T½) (Molecule B)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Half life (T½) (Molecule B)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Order of reaction (Molecule C)</strong></td><td>One of 2 options, such as first and second.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Concentration [C]</strong></td><td>A measured quantity, 9 units available.</td><td>molars</td><td>Calculated</td></tr><tr><td><strong>Half life (T½) (Molecule C)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Half life (T½) (Molecule C)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Total order of reaction</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Reaction constant (k)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Rate of reaction (Results)</strong></td><td>A number stated in M s⁻¹.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rate of reaction (Results)</strong></td><td>A number stated in M s⁻¹.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Rate of reaction (Results)</strong></td><td>A number stated in M s⁻¹.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rate of reaction (Results)</strong></td><td>A number stated in M s⁻¹.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rate of reaction (Results)</strong></td><td>A number stated in M s⁻¹.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Rate of reaction (Results)</strong></td><td>A number stated in M s⁻¹.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rate of reaction (Results)</strong></td><td>A number stated in M s⁻¹.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 32 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Rate constant calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Rate of reaction</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">reaction constant (k)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Concentration [A]</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rate of reaction ÷ reaction constant (k)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Rate of reaction</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(concentration [A] ^ 2) × reaction constant (k)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Reaction constant (k)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × concentration [A] ÷ half life (T½)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Half life (T½)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(693 ÷ 1000) ÷ reaction constant (k)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Half life (T½)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 ÷ (concentration [A] × reaction constant (k))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in molars, and convertible to any of the 9 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in molars, and convertible to any of the 9 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Molar concentration, opening in molars</li><li>Time, opening in seconds</li><li>Time, opening in seconds</li><li>Time, opening in seconds</li><li>Molar concentration, opening in molars</li><li>Time, opening in seconds</li><li>Time, opening in seconds</li><li>Molar concentration, opening in molars</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Rate constant calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting between the units a protocol and your bench equipment use</li><li>Working through a stoichiometry problem</li><li>Preparing a solution and checking the numbers first</li><li>Any time the same 2 figures keep coming back — the half life (T½) and the rate of reaction — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/resuspension\">Resuspension</a>, <a href=\"/chemistry/saponification-value\">Saponification value</a> and <a href=\"/chemistry/serial-dilution\">Serial dilution</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Rate constant calculator work out?",
+      "a": "It returns rate of reaction (Results), derived from the half life (T½) and the rate of reaction. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Rate constant calculator?",
+      "a": "The form asks for the half life (T½) and the rate of reaction, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter concentration [A] in a different unit?",
+      "a": "Yes. Concentration [A] opens in molars and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Rate constant calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/resuspension",
+      "name": "Resuspension"
+    },
+    {
+      "path": "/chemistry/saponification-value",
+      "name": "Saponification value"
+    },
+    {
+      "path": "/chemistry/serial-dilution",
+      "name": "Serial dilution"
+    }
+  ],
+  "words": 1885
+}

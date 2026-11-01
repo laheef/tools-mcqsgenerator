@@ -1,0 +1,97 @@
+{
+  "path": "/health/90-minute-sleep-cycle",
+  "slug": "90-minute-sleep-cycle",
+  "cat": "health",
+  "name": "90 minute sleep cycle",
+  "seoTitle": "90 minute sleep cycle Calculator",
+  "seoDesc": "90 minute sleep cycle: work out increase in mortality risk and ampm from 73 values. A free health calculator with the formula and a worked example.",
+  "h1": "90 minute sleep cycle Calculator",
+  "summary": "The 90 minute sleep cycle calculator takes the numbers you enter and reports <strong>length of your first sleep cycle</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt suits an informed starting point to take to a clinician, not a diagnosis. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the 90 minute sleep cycle calculator work?",
+      "html": "<p>The 90 minute sleep cycle calculator takes the values in the form, applies the relationship described below and reports <strong>length of your first sleep cycle</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the night-time sleep duration); then you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A single on/off switch — tick it for &ldquo;Enter custom sleep cycle lengths&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 8 options, such as 4 hours, 5 hours and 6 hours. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>4 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Time to fall asleep</strong></td><td>A number stated in minutes.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Length of your first sleep cycle</strong></td><td>A number stated in minutes.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Length of your succeeding sleep cycles</strong></td><td>A number stated in minutes.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sleeping time</strong></td><td>One of 96 options, such as 9:00 PM, 9:15 PM and 9:30 PM.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Waking up time</strong></td><td>One of 96 options, such as 5:00 AM, 5:15 AM and 5:30 AM.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Night-time sleep duration</strong></td><td>One of 8 options, such as 4 hours, 5 hours and 6 hours.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Increase in mortality risk</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Ampm</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the 90 minute sleep cycle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">St6</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-time to fall asleep − length of your first sleep cycle − 5 × length of your succeeding sleep cycles + waking up time</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">St5</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-time to fall asleep − length of your first sleep cycle − 4 × length of your succeeding sleep cycles + waking up time</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length of your first sleep cycle</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-time to fall asleep − 3 × length of your succeeding sleep cycles − St4 + waking up time</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Length of your first sleep cycle</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-time to fall asleep − 2 × length of your succeeding sleep cycles − St3 + waking up time</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">St2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-time to fall asleep − length of your first sleep cycle − length of your succeeding sleep cycles + waking up time</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Waking up time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">time to fall asleep + length of your first sleep cycle + St1</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>%, opening in percent</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The 90 minute sleep cycle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/timi-stemi\">TIMI Score for STEMI</a>, <a href=\"/health/timi-ua-nstemi\">TIMI Score for UA/NSTEMI</a> and <a href=\"/health/tinetti\">Tinetti</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the 90 minute sleep cycle calculator work out?",
+      "a": "It returns length of your first sleep cycle. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the 90 minute sleep cycle calculator?",
+      "a": "The form asks for a few values, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter increase in mortality risk in a different unit?",
+      "a": "Yes. Increase in mortality risk opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Increase in mortality risk = 0 %. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the 90 minute sleep cycle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/timi-stemi",
+      "name": "TIMI Score for STEMI"
+    },
+    {
+      "path": "/health/timi-ua-nstemi",
+      "name": "TIMI Score for UA/NSTEMI"
+    },
+    {
+      "path": "/health/tinetti",
+      "name": "Tinetti"
+    }
+  ],
+  "words": 1585
+}

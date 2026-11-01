@@ -1,0 +1,93 @@
+{
+  "path": "/other/nether-portal",
+  "slug": "nether-portal",
+  "cat": "other",
+  "name": "Nether portal",
+  "seoTitle": "Nether portal Calculator — Formula, Units & Example",
+  "seoDesc": "Nether portal: work out your result from the portal width and the portal height. A free other calculator with the formula, units and a worked example.",
+  "h1": "Nether portal Calculator",
+  "summary": "The Nether portal calculator turns the portal width and the portal height into the answer. Think of it as a shortcut for whatever you happen to be working on.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Nether portal calculator work?",
+      "html": "<p>The Nether portal calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (with or without corners?); then you type in the portal width and the portal height.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as coordinates and blocks. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A number, expressed in blocks.</li><li>A number, expressed in blocks.</li><li>Pick the option that matches your case — 2 options, such as with and without. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Portal width</strong></td><td>A number stated in blocks.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Portal height</strong></td><td>A number stated in blocks.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>With or without corners?</strong></td><td>One of 2 options, such as with and without.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Obsidian required</strong></td><td>A number stated in blocks.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Nether portal calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">X</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 8) × X</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">Y</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Z</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 8) × Z</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Obsidian required</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(with or without corners? + 2 × portal height + 2 × portal width − 8)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>I want to calculate</strong> set to coordinates, <strong>Portal width</strong> = 10, <strong>Portal height</strong> = 10 and <strong>With or without corners?</strong> set to With. The calculator returns <strong>Obsidian required</strong> = 36.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Obsidian required</strong> = 36 should be roughly the size you expected from <strong>I want to calculate</strong> set to coordinates and <strong>Portal width</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Nether portal calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 2 figures keep coming back — the portal width and the portal height — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/weekday\">Day of the week</a>, <a href=\"/other/what-grade-was-i-in-year\">What grade was I in year</a> and <a href=\"/other/white-christmas\">White christmas</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Nether portal calculator?",
+      "a": "The form asks for the portal width and the portal height, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Obsidian required = 36. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Nether portal calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/weekday",
+      "name": "Day of the week"
+    },
+    {
+      "path": "/other/what-grade-was-i-in-year",
+      "name": "What grade was I in year"
+    },
+    {
+      "path": "/other/white-christmas",
+      "name": "White christmas"
+    }
+  ],
+  "words": 1242
+}

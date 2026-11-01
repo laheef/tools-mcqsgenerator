@@ -1,0 +1,97 @@
+{
+  "path": "/ecology/phev-economy",
+  "slug": "phev-economy",
+  "cat": "ecology",
+  "name": "Plug-in hybrid economy",
+  "seoTitle": "Plug-in hybrid economy Calculator: Free, With Steps",
+  "seoDesc": "Plug-in hybrid economy: work out trips per month (Trips shorter than battery range) from the car cost and the average distance traveled. A free ecology…",
+  "h1": "Plug-in hybrid economy Calculator",
+  "summary": "Supply the car cost, the average distance traveled and the distance traveled and the Plug-in hybrid economy calculator solves for <strong>trips per month (Trips shorter than battery range)</strong>. It is built for a footprint, a resource or an environmental change you want to size up.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Plug-in hybrid economy calculator work?",
+      "html": "<p>The Plug-in hybrid economy calculator takes the values in the form, applies the relationship described below and reports <strong>trips per month (Trips shorter than battery range)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the car model); then you type in the car cost, the average distance traveled (Trips shorter than battery range), the distance traveled (Trips shorter than battery range) and the average distance traveled (Trips longer than battery range).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 22 options, such as audi A3 E-Tron, BMW 330e and BMW 740e. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A single on/off switch — tick it for &ldquo;Show distances traveled&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in kilometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A single on/off switch — tick it for &ldquo;Tiered electricity pricing&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Show total energy cost split&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in liters per 100 kilometers. The unit chip switches it to any of the 10 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in years / months. The unit chip switches it to any of the 27 supported units.</li></ul><p>4 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Car model</strong></td><td>One of 22 options, such as audi A3 E-Tron, BMW 330e and BMW 740e.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Range on battery</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Car cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Consumption rate</strong></td><td>A measured quantity, 34 units available.</td><td>miles</td><td>Calculated</td></tr><tr><td><strong>MPG (gas only)</strong></td><td>A measured quantity, 10 units available.</td><td>liters per 100 kilometers</td><td>Calculated</td></tr><tr><td><strong>Average distance traveled (Trips shorter than battery range)</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>You supply it</td></tr><tr><td><strong>Trips per month (Trips shorter than battery range)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Distance traveled (Trips shorter than battery range)</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>You supply it</td></tr><tr><td><strong>Average distance traveled (Trips longer than battery range)</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>You supply it</td></tr><tr><td><strong>Trips per month (Trips longer than battery range)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Distance traveled (Trips longer than battery range)</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>You supply it</td></tr><tr><td><strong>Distance on battery</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Distance on gas</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Total distance traveled</strong></td><td>A measured quantity, 34 units available.</td><td>kilometers</td><td>Calculated</td></tr><tr><td><strong>Your MPG</strong></td><td>A measured quantity, 10 units available.</td><td>liters per 100 kilometers</td><td>Calculated</td></tr><tr><td><strong>Gas price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Electricity price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Electricity price (tier 2)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Charging at basic price</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Charging at tier 2 price</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Costs of gas</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Costs of electricity</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Total energy costs</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>MPG of a regular car</strong></td><td>A measured quantity, 10 units available.</td><td>liters per 100 kilometers</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 30 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Plug-in hybrid economy calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Trips per month</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance traveled ÷ average distance traveled</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total distance traveled</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance traveled + distance traveled</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Distance on battery</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance traveled + trips per month × range on battery</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total distance traveled</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">distance on battery + distance on gas</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Your MPG</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">3370 × MPG (gas only) × total distance traveled ÷ (consumption rate × MPG (gas only) × distance on battery + 3370 × distance on gas)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Gas price</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">expenses (gas) × MPG of a regular car ÷ total distance traveled</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>Shown in kilometers, and convertible to any of the 34 units on that chip.</li><li>Shown in liters per 100 kilometers, and convertible to any of the 10 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in liters per 100 kilometers, and convertible to any of the 10 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in kilometers</li><li>Currency, opening in US Dollar</li><li>Length, opening in miles</li><li>Fuel economy, opening in liters per 100 kilometers</li><li>Length, opening in kilometers</li><li>Length, opening in kilometers</li><li>Length, opening in kilometers</li><li>Length, opening in kilometers</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Plug-in hybrid economy calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two options on the same basis</li><li>Sizing an environmental impact in familiar units</li><li>Putting a headline figure into context</li><li>Any time the same 3 figures keep coming back — the car cost, the average distance traveled and the distance traveled — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these ecology calculators cover the neighbouring steps: <a href=\"/ecology/shannon-index\">Shannon diversity index</a>, <a href=\"/ecology/solar-panel\">Solar panel</a> and <a href=\"/ecology/solar-panel-wattage\">Solar panel wattage</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Plug-in hybrid economy calculator work out?",
+      "a": "It returns trips per month (Trips shorter than battery range), derived from the car cost, the average distance traveled and the distance traveled. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Plug-in hybrid economy calculator?",
+      "a": "The form asks for the car cost, the average distance traveled and the distance traveled, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter range on battery in a different unit?",
+      "a": "Yes. Range on battery opens in kilometers and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Range on battery = 0 km. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Plug-in hybrid economy calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/ecology/shannon-index",
+      "name": "Shannon diversity index"
+    },
+    {
+      "path": "/ecology/solar-panel",
+      "name": "Solar panel"
+    },
+    {
+      "path": "/ecology/solar-panel-wattage",
+      "name": "Solar panel wattage"
+    }
+  ],
+  "words": 2242
+}

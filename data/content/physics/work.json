@@ -1,0 +1,101 @@
+{
+  "path": "/physics/work",
+  "slug": "work",
+  "cat": "physics",
+  "name": "Work",
+  "seoTitle": "Work Calculator",
+  "seoDesc": "Work: work out angle of force (θ) from the final speed and the acceleration. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Work Calculator",
+  "summary": "Give the Work calculator the final speed, the acceleration, the work (W) and the power and it returns <strong>angle of force (θ)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the Work calculator work?",
+      "html": "<p>The Work calculator takes the values in the form, applies the relationship described below and reports <strong>angle of force (θ)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the final speed (v₁), the acceleration, the work (W) (Power calculation) and the power (P).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as force and displacement and velocity change. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second squared. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in joules. The unit chip switches it to any of the 33 supported units.</li><li>A measured quantity, entered by default in watts. The unit chip switches it to any of the 21 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Force (F) (Work calculation)</strong></td><td>A measured quantity, 16 units available.</td><td>newtons</td><td>Calculated</td></tr><tr><td><strong>Angle of force (θ)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Mass (m) (Work calculation)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Initial Speed (v₀)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Final speed (v₁)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Displacement (d)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Work (W) (Work calculation)</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>Calculated</td></tr><tr><td><strong>Acceleration</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>You supply it</td></tr><tr><td><strong>Mass (m) (Force calculation)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Force (F) (Force calculation)</strong></td><td>A measured quantity, 16 units available.</td><td>newtons</td><td>Calculated</td></tr><tr><td><strong>Work (W) (Power calculation)</strong></td><td>A measured quantity, 33 units available.</td><td>joules</td><td>You supply it</td></tr><tr><td><strong>Time (t)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Power (P)</strong></td><td>A measured quantity, 21 units available.</td><td>watts</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Work calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Angle of force (θ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(work (W) ÷ (displacement (d) × force (F)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Force (F)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">acceleration × mass (m)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time (t)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">work (W) ÷ power (P)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Work (W)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">work (W)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time (t)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(final speed (v₁) − initial Speed (v₀)) ÷ acceleration</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Force (F)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">force (F)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Calculate from</strong> set to force and displacement, <strong>Force (F)</strong> = 10 N, <strong>Angle of force (θ)</strong> = 0 deg and <strong>Displacement (d)</strong> = 30 m. Working through the relationship above gives <strong>Force (F)</strong> = 10 N and <strong>Work (W)</strong> = 10 J.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Force (F)</strong> = 10 N and <strong>Work (W)</strong> = 10 J should be roughly the size you expected from <strong>Calculate from</strong> set to force and displacement and <strong>Force (F)</strong> = 10 N.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in newtons, and convertible to any of the 16 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in joules, and convertible to any of the 33 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in newtons, and convertible to any of the 16 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Force, opening in newtons</li><li>Angle, opening in degrees</li><li>Mass, opening in kilograms</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Length, opening in meters</li><li>Energy, opening in joules</li><li>Acceleration, opening in meters per second squared</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Work calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 4 figures keep coming back — the final speed, the acceleration and the work (W) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/moa\">MOA (minute of angle)</a>, <a href=\"/physics/modulation\">Modulation</a> and <a href=\"/physics/mohr-circle\">Mohr's circle</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Work calculator work out?",
+      "a": "It returns angle of force (θ), derived from the final speed, the acceleration and the work (W). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Work calculator?",
+      "a": "The form asks for the final speed, the acceleration, the work (W) and the power, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter force (F) (Work calculation) in a different unit?",
+      "a": "Yes. Force (F) (Work calculation) opens in newtons and the chip beside it offers 16 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Force (F) = 10 N. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Work calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/moa",
+      "name": "MOA (minute of angle)"
+    },
+    {
+      "path": "/physics/modulation",
+      "name": "Modulation"
+    },
+    {
+      "path": "/physics/mohr-circle",
+      "name": "Mohr's circle"
+    }
+  ],
+  "words": 1744
+}

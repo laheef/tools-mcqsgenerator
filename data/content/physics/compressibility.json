@@ -1,0 +1,97 @@
+{
+  "path": "/physics/compressibility",
+  "slug": "compressibility",
+  "cat": "physics",
+  "name": "Compressibility factor",
+  "seoTitle": "Compressibility factor Calculator",
+  "seoDesc": "Compressibility factor: work out pressure (P) from the volume and number of moles. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Compressibility factor Calculator",
+  "summary": "Supply the volume, number of moles, the gas constant and the temperature and the Compressibility factor calculator solves for <strong>pressure (P)</strong>. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Compressibility factor calculator work?",
+      "html": "<p>The Compressibility factor calculator takes the values in the form, applies the relationship described below and reports <strong>pressure (P)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the volume (V), number of moles (n), the gas constant (R) and the temperature (T).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in moles. The unit chip switches it to any of the 5 supported units.</li><li>A number, expressed in J⋅K⁻¹⋅mol⁻¹.</li><li>A measured quantity, entered by default in kelvins. The unit chip switches it to any of the 28 supported units.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Pressure (P)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>Calculated</td></tr><tr><td><strong>Volume (V)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>Number of moles (n)</strong></td><td>A measured quantity, 5 units available.</td><td>moles</td><td>You supply it</td></tr><tr><td><strong>Gas constant (R)</strong></td><td>A number stated in J⋅K⁻¹⋅mol⁻¹.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Temperature (T)</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>You supply it</td></tr><tr><td><strong>Compressibility factor (Z)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Compressibility factor calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Pressure (P)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">compressibility factor (Z) × gas constant (R) × number of moles (n) × temperature (T) ÷ volume (V)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in bars, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Pressure, opening in bars</li><li>Volume, opening in cubic meters</li><li>Mole, opening in moles</li><li>Temperature, opening in kelvins</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Compressibility factor calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the volume, number of moles and the gas constant — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Compressibility factor calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/reynolds-number\">Reynolds number</a>, <a href=\"/physics/rlc-circuit\">RLC circuit</a> and <a href=\"/physics/rlc-impedance\">RLC impedance</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Compressibility factor calculator work out?",
+      "a": "It returns pressure (P), derived from the volume, number of moles and the gas constant. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Compressibility factor calculator?",
+      "a": "The form asks for the volume, number of moles, the gas constant and the temperature, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter pressure (P) in a different unit?",
+      "a": "Yes. Pressure (P) opens in bars and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Compressibility factor calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/reynolds-number",
+      "name": "Reynolds number"
+    },
+    {
+      "path": "/physics/rlc-circuit",
+      "name": "RLC circuit"
+    },
+    {
+      "path": "/physics/rlc-impedance",
+      "name": "RLC impedance"
+    }
+  ],
+  "words": 1218
+}

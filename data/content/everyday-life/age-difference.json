@@ -1,0 +1,93 @@
+{
+  "path": "/everyday-life/age-difference",
+  "slug": "age-difference",
+  "cat": "everyday-life",
+  "name": "Age difference",
+  "seoTitle": "Age difference Calculator: Free, With Steps",
+  "seoDesc": "Age difference: work out age difference from the date of birth 1 and the date of birth 2. A free everyday life calculator with the formula, units and a…",
+  "h1": "Age difference Calculator",
+  "summary": "Supply the date of birth 1, the date of birth 2, the year of birth 1 and the year of birth 2 and the <strong>age difference</strong> calculator solves for age difference. It suits a practical question that turns up in daily life.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Age difference calculator work?",
+      "html": "<p>The Age difference calculator takes the values in the form, applies the relationship described below and reports <strong>age difference</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the method); then you give the date of birth 1 and the date of birth 2; then you type in the year of birth 1, the year of birth 2, the age 1 and the age 2.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as from age, from dates of birth and from years of birth. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Method</strong></td><td>One of 3 options, such as from age, from dates of birth and from years of birth.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Date of birth 1</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Date of birth 2</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Age difference</strong></td><td>A measured quantity, 27 units available.</td><td>years / months / days</td><td>Calculated</td></tr><tr><td><strong>Year of birth 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Year of birth 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Age difference (2)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Age 1</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Age 2</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Age difference (3)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Age difference calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Age difference</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the absolute value of (86400 × date of birth 1 − 86400 × date of birth 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Age difference</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the absolute value of (year of birth 1 − year of birth 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Age difference</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the absolute value of (age 1 − age 2)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in years / months / days, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in years / months / days</li><li>Time, opening in years</li><li>Time, opening in years</li><li>Time, opening in years</li><li>Time, opening in years</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Age difference calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 4 figures keep coming back — the date of birth 1, the date of birth 2 and the year of birth 1 — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these everyday life calculators cover the neighbouring steps: <a href=\"/everyday-life/olga-tokarczuk-books\">Olga Tokarczuk books</a>, <a href=\"/everyday-life/palindrome-date\">Palindrome date</a> and <a href=\"/everyday-life/paper-thickness\">Paper thickness</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Age difference calculator work out?",
+      "a": "It returns age difference, derived from the date of birth 1, the date of birth 2 and the year of birth 1. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Age difference calculator?",
+      "a": "The form asks for the date of birth 1, the date of birth 2, the year of birth 1 and the year of birth 2, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter age difference in a different unit?",
+      "a": "Yes. Age difference opens in years / months / days and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Age difference calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/everyday-life/olga-tokarczuk-books",
+      "name": "Olga Tokarczuk books"
+    },
+    {
+      "path": "/everyday-life/palindrome-date",
+      "name": "Palindrome date"
+    },
+    {
+      "path": "/everyday-life/paper-thickness",
+      "name": "Paper thickness"
+    }
+  ],
+  "words": 1423
+}

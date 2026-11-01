@@ -1,0 +1,122 @@
+[
+ {
+  "slug": "biology",
+  "name": "Biology",
+  "icon": "biology",
+  "title": "Biology Calculators",
+  "description": "Biology calculators for cell growth, genetics, populations and lab work. Work through the numbers behind living systems.",
+  "originalCount": 112
+ },
+ {
+  "slug": "chemistry",
+  "name": "Chemistry",
+  "icon": "chemistry",
+  "title": "Chemistry Calculators",
+  "description": "Chemistry calculators for molarity, dilutions, pH and stoichiometry. Get the arithmetic of reactions right the first time.",
+  "originalCount": 109
+ },
+ {
+  "slug": "construction",
+  "name": "Construction",
+  "icon": "construction",
+  "title": "Construction Calculators",
+  "description": "Construction calculators for area, materials and cost estimates. Plan square footage, concrete and paint before you buy.",
+  "originalCount": 161
+ },
+ {
+  "slug": "conversion",
+  "name": "Conversion",
+  "icon": "conversion",
+  "title": "Conversion Calculators",
+  "description": "Unit conversion calculators for length, mass, area, volume, time, speed and more, with the exact factor behind every result.",
+  "originalCount": 330
+ },
+ {
+  "slug": "ecology",
+  "name": "Ecology",
+  "icon": "ecology",
+  "title": "Ecology Calculators",
+  "description": "Ecology calculators for populations, biodiversity and environmental footprint. Turn field observations into usable figures.",
+  "originalCount": 34
+ },
+ {
+  "slug": "everyday-life",
+  "name": "Everyday life",
+  "icon": "life",
+  "title": "Everyday Life Calculators",
+  "description": "Everyday life calculators for time, speed, tips, cooking and travel. The small sums you make several times a week.",
+  "originalCount": 295
+ },
+ {
+  "slug": "finance",
+  "name": "Finance",
+  "icon": "finance",
+  "title": "Finance Calculators",
+  "description": "Finance calculators for loans, mortgages, interest, tax and salary. See the full cost of a decision before you commit to it.",
+  "originalCount": 618
+ },
+ {
+  "slug": "food",
+  "name": "Food",
+  "icon": "food",
+  "title": "Food Calculators",
+  "description": "Food calculators for portions, recipes and nutrition. Scale a dish for any number of people and keep the ratios exact.",
+  "originalCount": 71
+ },
+ {
+  "slug": "health",
+  "name": "Health",
+  "icon": "health",
+  "title": "Health Calculators",
+  "description": "Health calculators for BMI, ideal weight, calories and body composition. Understand the numbers behind the guidelines.",
+  "originalCount": 440
+ },
+ {
+  "slug": "math",
+  "name": "Math",
+  "icon": "math",
+  "title": "Math Calculators",
+  "description": "Math calculators for percentages, roots, powers, geometry and trigonometry, each with the formula and a worked example.",
+  "originalCount": 687
+ },
+ {
+  "slug": "physics",
+  "name": "Physics",
+  "icon": "physics",
+  "title": "Physics Calculators",
+  "description": "Physics calculators for mechanics, electricity, optics and thermodynamics. Solve for any variable in a known law.",
+  "originalCount": 546
+ },
+ {
+  "slug": "sports",
+  "name": "Sports",
+  "icon": "sports",
+  "title": "Sports Calculators",
+  "description": "Sports calculators for pace, VO₂ max, one-rep max and handicap. Measure performance with numbers you can compare.",
+  "originalCount": 111
+ },
+ {
+  "slug": "statistics",
+  "name": "Statistics",
+  "icon": "statistics",
+  "title": "Statistics Calculators",
+  "description": "Statistics calculators for p-values, confidence intervals, averages and distributions, with the reasoning spelled out.",
+  "originalCount": 196
+ },
+ {
+  "slug": "other",
+  "name": "Other",
+  "icon": "other",
+  "title": "Other Calculators",
+  "description": "Calculators that do not fit a single category, from test grades to date arithmetic.",
+  "originalCount": 228
+ },
+ {
+  "slug": "discover",
+  "name": "Discover Omni",
+  "icon": "discover",
+  "title": "Discover Omni Calculator",
+  "description": "Amazing truths about the world revealed with calculators.",
+  "originalCount": 42
+ }
+]

@@ -1,0 +1,93 @@
+{
+  "path": "/physics/effectiveness-ntu",
+  "slug": "effectiveness-ntu",
+  "cat": "physics",
+  "name": "Effectiveness NTU",
+  "seoTitle": "Effectiveness NTU Calculator — Formula, Units & Example",
+  "seoDesc": "Effectiveness NTU: work out heat capacity (C꜀) from number of shell passes and the mass flow rate. A free physics calculator with the formula, units and a…",
+  "h1": "Effectiveness NTU Calculator",
+  "summary": "Give the Effectiveness NTU calculator number of shell passes, the mass flow rate, the specific heat capacity and the heat capacity and it returns <strong>heat capacity (C꜀)</strong>. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Effectiveness NTU calculator work?",
+      "html": "<p>The Effectiveness NTU calculator takes the values in the form, applies the relationship described below and reports <strong>heat capacity (C꜀)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the type of calculation, the heat exchanger and the heat exchanger (2)); then you type in number of shell passes (n), the mass flow rate (m꜀), the specific heat capacity (cₚ꜀) and the heat capacity (Cₕ).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as design problem and performance calculation. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 6 options, such as parallel flow, counter flow and shell and tube (one pass). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as parallel flow, counter flow and shell and tube (one pass). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilograms per second. The unit chip switches it to any of the 16 supported units.</li><li>A measured quantity, entered by default in joules per kilogram per kelvin. The unit chip switches it to any of the 11 supported units.</li><li>A measured quantity, entered by default in joules per kelvin. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in kelvins. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in kelvins. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in watts. The unit chip switches it to any of the 21 supported units.</li><li>A measured quantity, entered by default in watts per square meter-kelvin. The unit chip switches it to any of the 2 supported units.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Type of calculation</strong></td><td>One of 2 options, such as design problem and performance calculation.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Heat exchanger</strong></td><td>One of 6 options, such as parallel flow, counter flow and shell and tube (one pass).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Heat exchanger (2)</strong></td><td>One of 7 options, such as parallel flow, counter flow and shell and tube (one pass).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Number of shell passes (n)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mass flow rate (m꜀)</strong></td><td>A measured quantity, 16 units available.</td><td>kilograms per second</td><td>You supply it</td></tr><tr><td><strong>Specific heat capacity (cₚ꜀)</strong></td><td>A measured quantity, 11 units available.</td><td>joules per kilogram per kelvin</td><td>You supply it</td></tr><tr><td><strong>Heat capacity (C꜀)</strong></td><td>A measured quantity, 9 units available.</td><td>joules per kelvin</td><td>Calculated</td></tr><tr><td><strong>Inlet temperature (T꜀ᵢ)</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>Calculated</td></tr><tr><td><strong>Outlet temperature (T꜀ₒ)</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>Calculated</td></tr><tr><td><strong>Mass flow rate (mₕ)</strong></td><td>A measured quantity, 16 units available.</td><td>kilograms per second</td><td>Calculated</td></tr><tr><td><strong>Specific heat capacity (cₚₕ)</strong></td><td>A measured quantity, 11 units available.</td><td>joules per kilogram per kelvin</td><td>Calculated</td></tr><tr><td><strong>Heat capacity (Cₕ)</strong></td><td>A measured quantity, 9 units available.</td><td>joules per kelvin</td><td>You supply it</td></tr><tr><td><strong>Inlet temperature (Tₕᵢ)</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>You supply it</td></tr><tr><td><strong>Outlet temperature (Tₕₒ)</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>You supply it</td></tr><tr><td><strong>Actual heat rate (q)</strong></td><td>A measured quantity, 21 units available.</td><td>watts</td><td>You supply it</td></tr><tr><td><strong>Overall heat transfer coeff. (U)</strong></td><td>A measured quantity, 2 units available.</td><td>watts per square meter-kelvin</td><td>You supply it</td></tr><tr><td><strong>Area of heat transfer (A)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Effectiveness NTU calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Heat capacity (C꜀)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">specific heat capacity (cₚ꜀) × mass flow rate (m꜀)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mass flow rate (mₕ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">heat capacity (Cₕ) ÷ specific heat capacity (cₚₕ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mass flow rate (mₕ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">actual heat rate (q) ÷ (specific heat capacity (cₚₕ) × (inlet temperature (Tₕᵢ) − outlet temperature (Tₕₒ)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Outlet temperature (T꜀ₒ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">inlet temperature (T꜀ᵢ) + actual heat rate (q) ÷ (specific heat capacity (cₚ꜀) × mass flow rate (m꜀))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Outlet temperature (T꜀ₒ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(heat capacity (C꜀) × inlet temperature (T꜀ᵢ) + heat capacity (Cₕ) × inlet temperature (Tₕᵢ) − heat capacity (Cₕ) × outlet temperature (Tₕₒ)) ÷ heat capacity (C꜀)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in joules per kelvin, and convertible to any of the 9 units on that chip.</li><li>Shown in kilograms per second, and convertible to any of the 16 units on that chip.</li><li>Shown in joules per kilogram per kelvin, and convertible to any of the 11 units on that chip.</li><li>Shown in kelvins, and convertible to any of the 28 units on that chip.</li><li>Shown in kelvins, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Flow rate mass, opening in kilograms per second</li><li>Specific heat capacity, opening in joules per kilogram per kelvin</li><li>Heat capacity, opening in joules per kelvin</li><li>Temperature, opening in kelvins</li><li>Temperature, opening in kelvins</li><li>Flow rate mass, opening in kilograms per second</li><li>Specific heat capacity, opening in joules per kilogram per kelvin</li><li>Heat capacity, opening in joules per kelvin</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Effectiveness NTU calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — number of shell passes, the mass flow rate and the specific heat capacity — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/stokes-law\">Stokes' law</a>, <a href=\"/physics/stopping-distance\">Stopping distance</a> and <a href=\"/physics/stress\">Stress</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Effectiveness NTU calculator work out?",
+      "a": "It returns heat capacity (C꜀), derived from number of shell passes, the mass flow rate and the specific heat capacity. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Effectiveness NTU calculator?",
+      "a": "The form asks for number of shell passes, the mass flow rate, the specific heat capacity and the heat capacity, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter mass flow rate (m꜀) in a different unit?",
+      "a": "Yes. Mass flow rate (m꜀) opens in kilograms per second and the chip beside it offers 16 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Effectiveness NTU calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/stokes-law",
+      "name": "Stokes' law"
+    },
+    {
+      "path": "/physics/stopping-distance",
+      "name": "Stopping distance"
+    },
+    {
+      "path": "/physics/stress",
+      "name": "Stress"
+    }
+  ],
+  "words": 1921
+}

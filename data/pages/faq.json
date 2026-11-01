@@ -1,0 +1,14 @@
+{
+    "slug": "faq",
+    "title": "Frequently asked questions",
+    "excerpt": "How the calculators work, why a field is blank, and what to do when a result looks wrong.",
+    "content": "<h2>Why is one field blank?</h2>\n<p>Most calculators work out whichever value you leave empty. Fill in the ones you know, leave the one you want, and the result appears. If every field is filled, the page still shows the result for the equation you selected.</p>\n<h2>Do the units matter?</h2>\n<p>Yes, and they are handled for you. The chip next to each field changes the unit without changing the number you typed — 5 inches stays 5 as a number and becomes 12.7 cm internally. Mixed units in one form are fine.</p>\n<h2>Why does the result differ from another site?</h2>\n<p>Usually because of a different assumption: a different day count in a date calculation, a different rounding step, or a different definition of the same word (a \"month\" of 30 days rather than a calendar month). Each page states its assumptions.</p>\n<h2>Can I link to a result?</h2>\n<p>Yes. The address bar holds the whole form state, so a copied URL opens the page with the same values and the same answer.</p>\n<h2>How do I report a wrong answer?</h2>\n<p>Use the contact form, include the calculator's name, the values you entered and the answer you expected. A wrong result is a bug and gets fixed.</p>",
+    "status": "published",
+    "template": "faq",
+    "meta_title": "Frequently asked questions",
+    "meta_description": "Answers about units, blank fields, accuracy, privacy and reporting a wrong result on this calculator site.",
+    "canonical_url": "",
+    "noindex": 0,
+    "show_in_header": 0,
+    "show_in_footer": 1
+}

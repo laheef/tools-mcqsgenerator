@@ -1,0 +1,97 @@
+{
+  "path": "/physics/snells-law",
+  "slug": "snells-law",
+  "cat": "physics",
+  "name": "Snell's law",
+  "seoTitle": "Snell's law Calculator: Free, With Steps",
+  "seoDesc": "Snell's law: work out refractive index 1 (n₁) from the angle of incidence and the angle of refraction. A free physics calculator with the formula, units…",
+  "h1": "Snell's law Calculator",
+  "summary": "Give the Snell's law calculator the angle of incidence and the angle of refraction and it returns <strong>refractive index 1 (n₁)</strong>. It suits a lab report, a problem set or a sanity check on a physical situation.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Snell's law calculator work?",
+      "html": "<p>The Snell's law calculator takes the values in the form, applies the relationship described below and reports <strong>refractive index 1 (n₁)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the medium 1 and the medium 2); then you type in the angle of incidence (θ₁) and the angle of refraction (θ₂).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 9 options, such as vacuum, air and water at 20°C. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 9 options, such as vacuum, air and water at 20°C. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Medium 1</strong></td><td>One of 9 options, such as vacuum, air and water at 20°C.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Refractive index 1 (n₁)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Medium 2</strong></td><td>One of 9 options, such as vacuum, air and water at 20°C.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Refractive index 2 (n₂)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Angle of incidence (θ₁)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Angle of refraction (θ₂)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Snell's law calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Refractive index 1 (n₁)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">refractive index 2 (n₂) × the sine of (angle of refraction (θ₂)) ÷ the sine of (angle of incidence (θ₁))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Angle, opening in degrees</li><li>Angle, opening in degrees</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Snell's law calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 2 figures keep coming back — the angle of incidence and the angle of refraction — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/g-force\">G force</a>, <a href=\"/physics/gas-density\">Gas density</a> and <a href=\"/physics/gauss-law\">Gauss's law</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Snell's law calculator work out?",
+      "a": "It returns refractive index 1 (n₁), derived from the angle of incidence and the angle of refraction. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Snell's law calculator?",
+      "a": "The form asks for the angle of incidence and the angle of refraction, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter angle of incidence (θ₁) in a different unit?",
+      "a": "Yes. Angle of incidence (θ₁) opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Refractive index 1 (n₁) = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Snell's law calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/g-force",
+      "name": "G force"
+    },
+    {
+      "path": "/physics/gas-density",
+      "name": "Gas density"
+    },
+    {
+      "path": "/physics/gauss-law",
+      "name": "Gauss's law"
+    }
+  ],
+  "words": 1368
+}

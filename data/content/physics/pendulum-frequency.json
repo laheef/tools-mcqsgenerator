@@ -1,0 +1,93 @@
+{
+  "path": "/physics/pendulum-frequency",
+  "slug": "pendulum-frequency",
+  "cat": "physics",
+  "name": "Pendulum frequency",
+  "seoTitle": "Pendulum frequency Calculator: Free, With Steps",
+  "seoDesc": "Pendulum frequency: work out pendulum period (T) from the acceleration of gravity and the initial angle. A free physics calculator with the formula, units…",
+  "h1": "Pendulum frequency Calculator",
+  "summary": "Give the Pendulum frequency calculator the acceleration of gravity and the initial angle and it returns <strong>pendulum period (T)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Pendulum frequency calculator work?",
+      "html": "<p>The Pendulum frequency calculator takes the values in the form, applies the relationship described below and reports <strong>pendulum period (T)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the acceleration of gravity (g) and the initial angle (θ₀).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in gravitational acc. on Earth. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Acceleration of gravity (g)</strong></td><td>A measured quantity, 5 units available.</td><td>gravitational acc. on Earth</td><td>You supply it</td></tr><tr><td><strong>Pendulum length (L)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Initial angle (θ₀)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>Pendulum period (T)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Pendulum frequency (f) — small angles</strong></td><td>A measured quantity, 21 units available.</td><td>hertz</td><td>Calculated</td></tr><tr><td><strong>Pendulum frequency (f) — nonlinear</strong></td><td>A measured quantity, 21 units available.</td><td>hertz</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Pendulum frequency calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Pendulum period (T)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">2 × PI × the square root of (pendulum length (L) ÷ acceleration of gravity (g))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pendulum frequency (f) — small angles</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 ÷ pendulum period (T)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pendulum length (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">16777216 × (Freq 2temp ^ 2) × acceleration of gravity (g) ÷ ((PI ^ 2) × (-1975 × the cosine of (initial angle (θ₀)) + 294 × the cosine of (2 × initial angle (θ₀)) − 25 × the cosine of (3 × initial angle (θ₀)) + 9898, 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pendulum frequency (f) — nonlinear</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 ÷ freq2temp</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in hertz, and convertible to any of the 21 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in hertz, and convertible to any of the 21 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Acceleration, opening in gravitational acc. on Earth</li><li>Length, opening in meters</li><li>Angle, opening in degrees</li><li>Time, opening in seconds</li><li>Frequency, opening in hertz</li><li>Frequency, opening in hertz</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Pendulum frequency calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 2 figures keep coming back — the acceleration of gravity and the initial angle — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/damping-ratio\">Damping ratio</a>, <a href=\"/physics/darcy-weisbach\">Darcy weisbach</a> and <a href=\"/physics/darcys-law\">Darcy's law</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Pendulum frequency calculator work out?",
+      "a": "It returns pendulum period (T), derived from the acceleration of gravity and the initial angle. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Pendulum frequency calculator?",
+      "a": "The form asks for the acceleration of gravity and the initial angle, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter acceleration of gravity (g) in a different unit?",
+      "a": "Yes. Acceleration of gravity (g) opens in gravitational acc. on Earth and the chip beside it offers 5 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Pendulum frequency calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/damping-ratio",
+      "name": "Damping ratio"
+    },
+    {
+      "path": "/physics/darcy-weisbach",
+      "name": "Darcy weisbach"
+    },
+    {
+      "path": "/physics/darcys-law",
+      "name": "Darcy's law"
+    }
+  ],
+  "words": 1237
+}

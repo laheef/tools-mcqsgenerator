@@ -1,0 +1,97 @@
+{
+  "path": "/ecology/plastic-footprint",
+  "slug": "plastic-footprint",
+  "cat": "ecology",
+  "name": "Plastic footprint",
+  "seoTitle": "Plastic footprint Calculator — Formula, Units & Example",
+  "seoDesc": "Plastic footprint: work out refill packets from the PET bottles and the plastic bags. A free ecology calculator with the formula, units and a worked example.",
+  "h1": "Plastic footprint Calculator",
+  "summary": "Give the Plastic footprint calculator the PET bottles, the plastic bags, the food wrappers and the yogurt containers and it returns <strong>refill packets</strong>. It is built for a footprint, a resource or an environmental change you want to size up.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Plastic footprint calculator work?",
+      "html": "<p>The Plastic footprint calculator takes the values in the form, applies the relationship described below and reports <strong>refill packets</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the PET bottles, the plastic bags, the food wrappers and the yogurt containers.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in halves a year. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in halves a year. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in weeks. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>PET bottles</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Plastic bags</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Food wrappers</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Yogurt containers</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Cotton swabs</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Detergent, cleaning products bottles</strong></td><td>A measured quantity, 27 units available.</td><td>halves a year</td><td>You supply it</td></tr><tr><td><strong>Shampoo / shower gel / cosmetics bottles</strong></td><td>A measured quantity, 27 units available.</td><td>halves a year</td><td>You supply it</td></tr><tr><td><strong>Refill packets</strong></td><td>A measured quantity, 27 units available.</td><td>halves a year</td><td>Calculated</td></tr><tr><td><strong>Toothbrushes</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Toothpastes</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Take-away plastic box</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Take-away plastic cup</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Straws</strong></td><td>A measured quantity, 27 units available.</td><td>months</td><td>You supply it</td></tr><tr><td><strong>Disposable cutlery</strong></td><td>A measured quantity, 27 units available.</td><td>months</td><td>You supply it</td></tr><tr><td><strong>Plastic plates</strong></td><td>A measured quantity, 27 units available.</td><td>months</td><td>You supply it</td></tr><tr><td><strong>Toys, furnitures etc.</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Total</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Plastic footprint calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Refill packets</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-36 ÷ 17 × PET bottles − 8 ÷ 17 × plastic bags − 80 ÷ 17 × shampoo ÷ shower gel ÷ cosmetics bottles − 1 ÷ 17 × cotton swabs − 4 ÷ 17 × disposable cutlery − 120 ÷ 17 × detergent, cleaning products bottles − 15 ÷ 17 × food wrappers − 4 ÷ 24837 × toys, furnitures etc. − 24 ÷ 17 × plastic plates − 1 ÷ 34 × straws + (4 ÷ 24837) × total − 32 ÷ 17 × take-away plastic box − 20 ÷ 17 × take-away plastic cup − 20 ÷ 17 × toothbrushes − 15 ÷ 17 × toothpastes − 15 ÷ 17 × yogurt containers</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Which is</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">75 × total</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>PET bottles</strong> = 0 wks, <strong>Plastic bags</strong> = 0 wks, <strong>Food wrappers</strong> = 0 wks and <strong>Yogurt containers</strong> = 0 wks. Working through the relationship above gives <strong>Which is</strong> = 750 kg.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Which is</strong> = 750 kg should be roughly the size you expected from <strong>PET bottles</strong> = 0 wks and <strong>Plastic bags</strong> = 0 wks.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in halves a year, and convertible to any of the 27 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in weeks</li><li>Time, opening in halves a year</li><li>Time, opening in halves a year</li><li>Time, opening in halves a year</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Plastic footprint calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing an environmental impact in familiar units</li><li>Comparing two options on the same basis</li><li>Putting a headline figure into context</li><li>Any time the same 4 figures keep coming back — the PET bottles, the plastic bags and the food wrappers — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these ecology calculators cover the neighbouring steps: <a href=\"/ecology/solar-panel\">Solar panel</a>, <a href=\"/ecology/solar-panel-wattage\">Solar panel wattage</a> and <a href=\"/ecology/tap-water\">Tap water</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Plastic footprint calculator work out?",
+      "a": "It returns refill packets, derived from the PET bottles, the plastic bags and the food wrappers. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Plastic footprint calculator?",
+      "a": "The form asks for the PET bottles, the plastic bags, the food wrappers and the yogurt containers, which is 16 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter PET bottles in a different unit?",
+      "a": "Yes. PET bottles opens in weeks and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Which is = 750 kg. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Plastic footprint calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/ecology/solar-panel",
+      "name": "Solar panel"
+    },
+    {
+      "path": "/ecology/solar-panel-wattage",
+      "name": "Solar panel wattage"
+    },
+    {
+      "path": "/ecology/tap-water",
+      "name": "Tap water"
+    }
+  ],
+  "words": 1794
+}

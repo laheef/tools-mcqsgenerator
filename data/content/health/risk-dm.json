@@ -1,0 +1,97 @@
+{
+  "path": "/health/risk-dm",
+  "slug": "risk-dm",
+  "cat": "health",
+  "name": "Diabetes risk",
+  "seoTitle": "Diabetes risk Calculator — Formula, Units & Example",
+  "seoDesc": "Diabetes risk: work out your result from the age and the height. A free health calculator with the formula, units and a worked example.",
+  "h1": "Diabetes risk Calculator",
+  "summary": "The answer is what the Diabetes risk calculator works out, and it gets there from the age, the height, the fasting glucose and the systolic Blood Pressure. It suits an informed starting point to take to a clinician, not a diagnosis.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Diabetes risk calculator work?",
+      "html": "<p>The Diabetes risk calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the sex and the ethnicity); then you type in the age, the height, the fasting glucose and the systolic Blood Pressure.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in years.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 2 options, such as latin American and non-Hispanic white. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in milligrams per decilitre. The unit chip switches it to any of the 2 supported units.</li><li>A number, expressed in mmHg.</li><li>A measured quantity, entered by default in milligrams per deciliter. The unit chip switches it to any of the 2 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Sex</strong></td><td>One of 2 options, such as female and male.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Age</strong></td><td>A number stated in years.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Family history</strong></td><td>One of 2 options, such as at least one parent or sibling has diabetes and no family history of diabetes.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Ethnicity</strong></td><td>One of 2 options, such as latin American and non-Hispanic white.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Fasting glucose</strong></td><td>A measured quantity, 2 units available.</td><td>milligrams per decilitre</td><td>You supply it</td></tr><tr><td><strong>Systolic Blood Pressure</strong></td><td>A number stated in mmHg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>HDL cholesterol</strong></td><td>A measured quantity, 2 units available.</td><td>milligrams per deciliter</td><td>You supply it</td></tr><tr><td><strong>Bmi</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Diabetes risk calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">7.5-year-risk of Diabetes</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">100 × (2718281828459 ^ X) ÷ ((1000000000000 ^ X) + (2718281828459 ^ X))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Family history</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-70 ÷ 481 × bmi − 79 ÷ 481 × fasting glucose + (3 ÷ 37) × HDL cholesterol − 412 ÷ 481 × ethnicity − 18 ÷ 481 × systolic Blood Pressure − 28 ÷ 481 × age − 661 ÷ 481 × sex + (1000 ÷ 481) × X + 13415 ÷ 481</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Weight</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 10000) × bmi × (height ^ 2)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Sex</strong> set to Male, <strong>Family history</strong> set to No family history of diabetes and <strong>Ethnicity</strong> set to Non-Hispanic white. Working through the relationship above gives <strong>7.5-year-risk of Diabetes</strong> = 99.9955.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>7.5-year-risk of Diabetes</strong> = 99.9955 should be roughly the size you expected from <strong>Sex</strong> set to Male and <strong>Family history</strong> set to No family history of diabetes.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Mass, opening in kilograms</li><li>Glucose levels, opening in milligrams per decilitre</li><li>Cholesterol – for HDL or LDL, opening in milligrams per deciliter</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Diabetes risk calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 4 figures keep coming back — the age, the height and the fasting glucose — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/opioid\">Opioid conversion</a>, <a href=\"/health/osteoporosis-risk-score\">Osteoporosis risk score</a> and <a href=\"/health/overweight\">Overweight</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Diabetes risk calculator?",
+      "a": "The form asks for the age, the height, the fasting glucose and the systolic Blood Pressure, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter height in a different unit?",
+      "a": "Yes. Height opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports 7.5-year-risk of Diabetes = 99.9955. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Diabetes risk calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/opioid",
+      "name": "Opioid conversion"
+    },
+    {
+      "path": "/health/osteoporosis-risk-score",
+      "name": "Osteoporosis risk score"
+    },
+    {
+      "path": "/health/overweight",
+      "name": "Overweight"
+    }
+  ],
+  "words": 1581
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/finance/deferred-payment-loan",
+  "slug": "deferred-payment-loan",
+  "cat": "finance",
+  "name": "Deferred payment loan",
+  "seoTitle": "Deferred payment loan Calculator — Formula, Units & Example",
+  "seoDesc": "Deferred payment loan: work out original monthly payment from the date of balance and the monthly payment. A free finance calculator with the formula,…",
+  "h1": "Deferred payment loan Calculator",
+  "summary": "Give the Deferred payment loan calculator the date of balance, the monthly payment, the loan term and the interest rate and it returns <strong>original monthly payment</strong>. Think of it as a shortcut for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Deferred payment loan calculator work?",
+      "html": "<p>The Deferred payment loan calculator takes the values in the form, applies the relationship described below and reports <strong>original monthly payment</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the compounding frequency, the interest treatment and the payment frequency); then you give the date of balance and the deferment from; then you type in the monthly payment, the loan term, the interest rate and the fee.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as loan term and monthly payment. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in years / months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>Pick the option that matches your case — 5 options, such as annually, semi-annually and quarterly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as capitalized (added to principal), paid monthly during deferment and paid in equal parts (accum. separately). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as increased payment - original term, increased payment - extended term and original payment - extended term. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A number, expressed in months.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as monthly, bi-weekly and weekly. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Date of balance</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Monthly payment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Loan term</strong></td><td>A measured quantity, 27 units available.</td><td>years / months</td><td>You supply it</td></tr><tr><td><strong>Interest rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Compounding frequency</strong></td><td>One of 5 options, such as annually, semi-annually and quarterly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Original monthly payment</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Original loan term</strong></td><td>A measured quantity, 27 units available.</td><td>years / months</td><td>Calculated</td></tr><tr><td><strong>Interest treatment</strong></td><td>One of 4 options, such as capitalized (added to principal), paid monthly during deferment and paid in equal parts (accum. separately).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Deferment from</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Fee</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Vartable</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Payment frequency</strong></td><td>One of 3 options, such as monthly, bi-weekly and weekly.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Varrep</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Display</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Show</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Var def</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Var int</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Var mode</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Payoff date without</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Payoff date with</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Deferred payment loan calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Original monthly payment</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(loan amount, payment frequency, loan term, M, interest rate, fee)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Original loan term</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(loan amount, payment frequency, monthly payment, M, interest rate, fee)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Payoff date without</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((((estimation based on..., loan amount, interest treatment, date of balance, deferment from, payments deferred for..., M, interest rate, loan term, monthly payment, repayment by...))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Payoff date with</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((((estimation based on..., loan amount, interest treatment, date of balance, deferment from, payments deferred for..., M, interest rate, loan term, monthly payment, repayment by...))))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in years / months, and convertible to any of the 27 units on that chip.</li><li>A calendar date.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Time, opening in years / months</li><li>%, opening in percent</li><li>Currency, opening in US Dollar</li><li>Time, opening in years / months</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Deferred payment loan calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing questions for a lender, an accountant or an adviser</li><li>Sizing up a purchase before you commit to it</li><li>Comparing two offers that quote their costs in different ways</li><li>Any time the same 4 figures keep coming back — the date of balance, the monthly payment and the loan term — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/altman-z-score\">Altman Z-Score</a>, <a href=\"/finance/american-rescue-plan\">Stimulus check - American Rescue Plan</a> and <a href=\"/finance/amortization\">Amortization</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Deferred payment loan calculator work out?",
+      "a": "It returns original monthly payment, derived from the date of balance, the monthly payment and the loan term. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Deferred payment loan calculator?",
+      "a": "The form asks for the date of balance, the monthly payment, the loan term and the interest rate, which is 21 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter loan amount in a different unit?",
+      "a": "Yes. Loan amount opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports M = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Deferred payment loan calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/altman-z-score",
+      "name": "Altman Z-Score"
+    },
+    {
+      "path": "/finance/american-rescue-plan",
+      "name": "Stimulus check - American Rescue Plan"
+    },
+    {
+      "path": "/finance/amortization",
+      "name": "Amortization"
+    }
+  ],
+  "words": 1869
+}

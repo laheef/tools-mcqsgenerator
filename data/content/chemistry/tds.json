@@ -1,0 +1,97 @@
+{
+  "path": "/chemistry/tds",
+  "slug": "tds",
+  "cat": "chemistry",
+  "name": "TDS",
+  "seoTitle": "TDS Calculator — Formula, Units & Example",
+  "seoDesc": "TDS: work out sulfite (SO₃²⁻) from the chloride and the phosphate. A free chemistry calculator with the formula, units and a worked example.",
+  "h1": "TDS Calculator",
+  "summary": "The TDS calculator turns the chloride, the phosphate and more into <strong>sulfite (SO₃²⁻)</strong>. It suits a bench calculation involving amounts, concentrations or reaction ratios.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the TDS calculator work?",
+      "html": "<p>The TDS calculator takes the values in the form, applies the relationship described below and reports <strong>sulfite (SO₃²⁻)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (select the method to calculate TDS); then you type in the chloride (Cl⁻), the phosphate (H₂PO₄⁻), the sulfate (SO₄²⁻) and the carbonate (CO₃²⁻).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li><strong>Select the method to calculate TDS</strong>: pick the option that matches your case — 2 options, such as water analysis and electrical conductivity. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li><strong>Chloride (Cl⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Phosphate (H₂PO₄⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Sulfate (SO₄²⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Carbonate (CO₃²⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Bicarbonate (HCO₃⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Fluoride (F⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Nitrite (NO₂⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Nitrate (NO₃⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Silicate (SiO₄⁴⁻)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Sodium (Na⁺)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Calcium (Ca²⁺)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Magnesium (Mg²⁺)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Iron (Fe²⁺)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Barium (Ba²⁺)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Manganese (Mn²⁺)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Aluminium (Al³⁺)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Lithium (Li⁺)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Total dissolved solids (TDS)</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>TDS anions</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>TDS cations</strong>: a measured quantity, entered by default in milligrams per liter. The unit chip switches it to any of the 28 supported units.</li><li><strong>Conversion factor (k)</strong>: a plain number with no unit attached.</li><li><strong>Electrical conductivity (EC)</strong>: a measured quantity, entered by default in microsiemens per centimeter. The unit chip switches it to any of the 6 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Select the method to calculate TDS</strong></td><td>One of 2 options, such as water analysis and electrical conductivity.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Chloride (Cl⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Phosphate (H₂PO₄⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Sulfite (SO₃²⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>Calculated</td></tr><tr><td><strong>Sulfate (SO₄²⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Carbonate (CO₃²⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Bicarbonate (HCO₃⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Fluoride (F⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Nitrite (NO₂⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Nitrate (NO₃⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Silicate (SiO₄⁴⁻)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Sodium (Na⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Calcium (Ca²⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Magnesium (Mg²⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Iron (Fe²⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Barium (Ba²⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Potassium (K⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>Calculated</td></tr><tr><td><strong>Strontium (Sr²⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>Calculated</td></tr><tr><td><strong>Manganese (Mn²⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Aluminium (Al³⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Lithium (Li⁺)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>Total dissolved solids (TDS)</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>TDS anions</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr><tr><td><strong>TDS cations</strong></td><td>A measured quantity, 28 units available.</td><td>milligrams per liter</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 27 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the TDS calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Sulfite (SO₃²⁻)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">TDS anions − chloride (Cl⁻) − silicate (SiO₄⁴⁻) − phosphate (H₂PO₄⁻) − sulfate (SO₄²⁻) − carbonate (CO₃²⁻) − bicarbonate (HCO₃⁻) − fluoride (F⁻) − nitrite (NO₂⁻) − nitrate (NO₃⁻)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Potassium (K⁺)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">TDS cations − sodium (Na⁺) − lithium (Li⁺) − calcium (Ca²⁺) − magnesium (Mg²⁺) − iron (Fe²⁺) − barium (Ba²⁺) − strontium (Sr²⁺) − manganese (Mn²⁺) − aluminium (Al³⁺)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Potassium (K⁺)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total dissolved solids (TDS) − chloride (Cl⁻) − silicate (SiO₄⁴⁻) − phosphate (H₂PO₄⁻) − sulfite (SO₃²⁻) − sulfate (SO₄²⁻) − carbonate (CO₃²⁻) − bicarbonate (HCO₃⁻) − fluoride (F⁻) − nitrite (NO₂⁻) − nitrate (NO₃⁻) − sodium (Na⁺) − lithium (Li⁺) − calcium (Ca²⁺) − magnesium (Mg²⁺) − iron (Fe²⁺) − barium (Ba²⁺) − strontium (Sr²⁺) − manganese (Mn²⁺) − aluminium (Al³⁺)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total dissolved solids (TDS)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">electrical conductivity (EC) × conversion factor (k)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li><strong>Sulfite (SO₃²⁻)</strong>: shown in milligrams per liter, and convertible to any of the 28 units on that chip.</li><li><strong>Potassium (K⁺)</strong>: shown in milligrams per liter, and convertible to any of the 28 units on that chip.</li><li><strong>Strontium (Sr²⁺)</strong>: shown in milligrams per liter, and convertible to any of the 28 units on that chip.</li><li><strong>Total dissolved solids (TDS) (Electrical conductivity)</strong>: shown in milligrams per liter, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li><strong>Chloride (Cl⁻)</strong>: Density, opening in milligrams per liter</li><li><strong>Phosphate (H₂PO₄⁻)</strong>: Density, opening in milligrams per liter</li><li><strong>Sulfite (SO₃²⁻)</strong>: Density, opening in milligrams per liter</li><li><strong>Sulfate (SO₄²⁻)</strong>: Density, opening in milligrams per liter</li><li><strong>Carbonate (CO₃²⁻)</strong>: Density, opening in milligrams per liter</li><li><strong>Bicarbonate (HCO₃⁻)</strong>: Density, opening in milligrams per liter</li><li><strong>Fluoride (F⁻)</strong>: Density, opening in milligrams per liter</li><li><strong>Nitrite (NO₂⁻)</strong>: Density, opening in milligrams per liter</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The TDS calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing a solution and checking the numbers first</li><li>Converting between the units a protocol and your bench equipment use</li><li>Working through a stoichiometry problem</li><li>Any time the same 4 figures keep coming back — the chloride, the phosphate and the sulfate — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/vapor-pressure\">Vapor pressure</a>, <a href=\"/chemistry/vapour-pressure-of-water\">Vapor pressure of water</a> and <a href=\"/chemistry/water-hardness\">Water hardness</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the TDS calculator work out?",
+      "a": "It returns sulfite (SO₃²⁻), derived from the chloride, the phosphate and the sulfate. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the TDS calculator?",
+      "a": "The form asks for the chloride, the phosphate, the sulfate and the carbonate, which is 23 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter chloride (Cl⁻) in a different unit?",
+      "a": "Yes. Chloride (Cl⁻) opens in milligrams per liter and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Total dissolved solids (TDS) = 0 mg/L. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the TDS calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/vapor-pressure",
+      "name": "Vapor pressure"
+    },
+    {
+      "path": "/chemistry/vapour-pressure-of-water",
+      "name": "Vapor pressure of water"
+    },
+    {
+      "path": "/chemistry/water-hardness",
+      "name": "Water hardness"
+    }
+  ],
+  "words": 2175
+}

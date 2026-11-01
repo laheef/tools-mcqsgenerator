@@ -1,0 +1,93 @@
+{
+  "path": "/chemistry/ionic-strength",
+  "slug": "ionic-strength",
+  "cat": "chemistry",
+  "name": "Ionic strength",
+  "seoTitle": "Ionic strength — Free Online Calculator",
+  "seoDesc": "Ionic strength: work out ionic strength from the ionic concentration of 1st ion and the charge number of 1st ion. A free chemistry calculator with the…",
+  "h1": "Ionic strength Calculator",
+  "summary": "The Ionic strength calculator returns <strong>ionic strength</strong>. The inputs are the ionic concentration of 1st ion, the charge number of 1st ion, the ionic concentration of 2nd ion and the charge number of 2nd ion.\n\nIt is built for a bench calculation involving amounts, concentrations or reaction ratios. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Ionic strength calculator work?",
+      "html": "<p>The Ionic strength calculator takes the values in the form, applies the relationship described below and reports <strong>ionic strength</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (number of ions); then you type in the ionic concentration of 1st ion, the charge number of 1st ion, the ionic concentration of 2nd ion and the charge number of 2nd ion.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li><li>A number, expressed in mol/L or mol/kg.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Number of ions</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 1st ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 1st ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 2nd ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 2nd ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 3rd ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 3rd ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 4th ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 4th ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 5th ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 5th ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 6th ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 6th ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 7th ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 7th ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 8th ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 8th ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 9th ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 9th ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic concentration of 10th ion</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Charge number of 10th ion</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ionic strength</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ionic strength (2)</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ionic strength (3)</strong></td><td>A number stated in mol/L or mol/kg.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 31 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Ionic strength calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Ionic strength</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × (charge number of 1st ion ^ 2) × ionic concentration of 1st ion)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ionic strength</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × (charge number of 1st ion ^ 2) × ionic concentration of 1st ion + (1 ÷ 2) × (charge number of 2nd ion ^ 2) × ionic concentration of 2nd ion)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ionic strength</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × (charge number of 1st ion ^ 2) × ionic concentration of 1st ion + (1 ÷ 2) × (charge number of 2nd ion ^ 2) × ionic concentration of 2nd ion + (1 ÷ 2) × (charge number of 3rd ion ^ 2) × ionic concentration of 3rd ion)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ionic strength</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × (charge number of 1st ion ^ 2) × ionic concentration of 1st ion + (1 ÷ 2) × (charge number of 2nd ion ^ 2) × ionic concentration of 2nd ion + (1 ÷ 2) × (charge number of 3rd ion ^ 2) × ionic concentration of 3rd ion + (1 ÷ 2) × (charge number of 4th ion ^ 2) × ionic concentration of 4th ion)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ionic strength</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × (charge number of 1st ion ^ 2) × ionic concentration of 1st ion + (1 ÷ 2) × (charge number of 2nd ion ^ 2) × ionic concentration of 2nd ion + (1 ÷ 2) × (charge number of 3rd ion ^ 2) × ionic concentration of 3rd ion + (1 ÷ 2) × (charge number of 4th ion ^ 2) × ionic concentration of 4th ion + (1 ÷ 2) × (charge number of 5th ion ^ 2) × ionic concentration of 5th ion)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ionic strength</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × (charge number of 1st ion ^ 2) × ionic concentration of 1st ion + (1 ÷ 2) × (charge number of 2nd ion ^ 2) × ionic concentration of 2nd ion + (1 ÷ 2) × (charge number of 3rd ion ^ 2) × ionic concentration of 3rd ion + (1 ÷ 2) × (charge number of 4th ion ^ 2) × ionic concentration of 4th ion + (1 ÷ 2) × (charge number of 5th ion ^ 2) × ionic concentration of 5th ion + (1 ÷ 2) × (charge number of 6th ion ^ 2) × ionic concentration of 6th ion)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Number of ions</strong> set to 2, <strong>Ionic concentration of 1st ion</strong> = 10, <strong>Charge number of 1st ion</strong> = 10 and <strong>Ionic concentration of 2nd ion</strong> = 10. Working through the relationship above gives <strong>Ionic strength</strong> = 500.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Ionic strength</strong> = 500 should be roughly the size you expected from <strong>Number of ions</strong> set to 2 and <strong>Ionic concentration of 1st ion</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Ionic strength calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting between the units a protocol and your bench equipment use</li><li>Preparing a solution and checking the numbers first</li><li>Working through a stoichiometry problem</li><li>Any time the same 4 figures keep coming back — the ionic concentration of 1st ion, the charge number of 1st ion and the ionic concentration of 2nd ion — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/lattice-energy\">Lattice energy</a>, <a href=\"/chemistry/liquid-ethylene-density\">Liquid ethylene density</a> and <a href=\"/chemistry/mass-concentration-to-molar-concentration\">Mass concentration to molar concentration</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Ionic strength calculator work out?",
+      "a": "It returns ionic strength, derived from the ionic concentration of 1st ion, the charge number of 1st ion and the ionic concentration of 2nd ion. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Ionic strength calculator?",
+      "a": "The form has 21 fields, each listed with its unit in the article above. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Ionic strength = 500. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Ionic strength calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/lattice-energy",
+      "name": "Lattice energy"
+    },
+    {
+      "path": "/chemistry/liquid-ethylene-density",
+      "name": "Liquid ethylene density"
+    },
+    {
+      "path": "/chemistry/mass-concentration-to-molar-concentration",
+      "name": "Mass concentration to molar concentration"
+    }
+  ],
+  "words": 2077
+}

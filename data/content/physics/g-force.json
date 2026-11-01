@@ -1,0 +1,93 @@
+{
+  "path": "/physics/g-force",
+  "slug": "g-force",
+  "cat": "physics",
+  "name": "G force",
+  "seoTitle": "G force Calculator — Formula, Units & Example",
+  "seoDesc": "G force: work out distance (r) from the mass and the gravitational constant. A free physics calculator with the formula, units and a worked example.",
+  "h1": "G force Calculator",
+  "summary": "<strong>distance (r)</strong> is what the G force calculator works out, and it gets there from the mass, the gravitational constant, the acceleration due to gravity and the initial velocity. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the G force calculator work?",
+      "html": "<p>The G force calculator takes the values in the form, applies the relationship described below and reports <strong>distance (r)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the mass (M), the gravitational constant (G), the acceleration due to gravity (g) and the initial velocity (V₀).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in masses of the Earth. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in times 10 to the minus 11. The unit chip switches it to any of the 69 supported units.</li><li>A measured quantity, entered by default in meters per second squared. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in gravitational acc. on Earth. The unit chip switches it to any of the 5 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mass (M)</strong></td><td>A measured quantity, 29 units available.</td><td>masses of the Earth</td><td>You supply it</td></tr><tr><td><strong>Distance (r)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Gravitational constant (G)</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the minus 11</td><td>You supply it</td></tr><tr><td><strong>Acceleration due to gravity (g)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>You supply it</td></tr><tr><td><strong>Initial velocity (V₀)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Final velocity (V₁)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Time (t)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>G force</strong></td><td>A measured quantity, 5 units available.</td><td>gravitational acc. on Earth</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the G force calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Distance (r)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (gravitational constant (G) × mass (M) ÷ acceleration due to gravity (g))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time (t)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-initial velocity (V₀) + final velocity (V₁)) ÷ (g force × acceleration due to gravity (g))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Mass, opening in masses of the Earth</li><li>Length, opening in meters</li><li>Scientific notation, opening in times 10 to the minus 11</li><li>Acceleration, opening in meters per second squared</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Time, opening in seconds</li><li>Acceleration, opening in gravitational acc. on Earth</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The G force calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 4 figures keep coming back — the mass, the gravitational constant and the acceleration due to gravity — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/voltage-regulation\">Voltage regulation</a>, <a href=\"/physics/volts-to-electron-volts\">Volts to electron volts</a> and <a href=\"/physics/volume-to-density\">Volume to density</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the G force calculator work out?",
+      "a": "It returns distance (r), derived from the mass, the gravitational constant and the acceleration due to gravity. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the G force calculator?",
+      "a": "The form asks for the mass, the gravitational constant, the acceleration due to gravity and the initial velocity, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter mass (M) in a different unit?",
+      "a": "Yes. Mass (M) opens in masses of the Earth and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Gravitational constant (G) = 0 × 10⁻¹¹. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the G force calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/voltage-regulation",
+      "name": "Voltage regulation"
+    },
+    {
+      "path": "/physics/volts-to-electron-volts",
+      "name": "Volts to electron volts"
+    },
+    {
+      "path": "/physics/volume-to-density",
+      "name": "Volume to density"
+    }
+  ],
+  "words": 1391
+}

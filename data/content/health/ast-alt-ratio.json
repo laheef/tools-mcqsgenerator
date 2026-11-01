@@ -1,0 +1,101 @@
+{
+  "path": "/health/ast-alt-ratio",
+  "slug": "ast-alt-ratio",
+  "cat": "health",
+  "name": "AST ALT ratio",
+  "seoTitle": "AST ALT ratio Calculator — Formula, Units & Example",
+  "seoDesc": "AST ALT ratio: work out ALT from the AST and the ratio. A free health calculator with the formula, units and a worked example.",
+  "h1": "AST ALT ratio Calculator",
+  "summary": "The AST ALT ratio calculator turns the AST and the ratio into <strong>ALT</strong>. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the AST ALT ratio calculator work?",
+      "html": "<p>The AST ALT ratio calculator takes the values in the form, applies the relationship described below and reports <strong>ALT</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the AST and the ratio.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>AST</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>You supply it</td></tr><tr><td><strong>ALT</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Ratio</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>AST omni.define result</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>ALT omni.define result</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ratio omni.define result</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the AST ALT ratio calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">ALT</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">AST ÷ ratio</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">AST omni.define result</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(AST)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">ALT omni.define result</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(ALT)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ratio omni.define result</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(ratio)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>AST</strong> = 10 L and <strong>Ratio</strong> = 10. Working through the relationship above gives <strong>ALT</strong> = 1 L.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>ALT</strong> = 1 L should be roughly the size you expected from <strong>AST</strong> = 10 L and <strong>Ratio</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in liters, and convertible to any of the 40 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Volume, opening in liters</li><li>Volume, opening in liters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The AST ALT ratio calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Deciding whether a reading is worth a second look</li><li>Any time the same 2 figures keep coming back — the AST and the ratio — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the AST ALT ratio calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/viral-infection-sir\">Infectious disease and epidemic (SIR model)</a>, <a href=\"/health/vital-capacity\">Vital capacity</a> and <a href=\"/health/vitamin\">Vitamin</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the AST ALT ratio calculator work out?",
+      "a": "It returns ALT, derived from the AST and the ratio. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the AST ALT ratio calculator?",
+      "a": "The form asks for the AST and the ratio, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter AST in a different unit?",
+      "a": "Yes. AST opens in liters and the chip beside it offers 40 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports ALT = 1 L. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the AST ALT ratio calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/viral-infection-sir",
+      "name": "Infectious disease and epidemic (SIR model)"
+    },
+    {
+      "path": "/health/vital-capacity",
+      "name": "Vital capacity"
+    },
+    {
+      "path": "/health/vitamin",
+      "name": "Vitamin"
+    }
+  ],
+  "words": 1267
+}

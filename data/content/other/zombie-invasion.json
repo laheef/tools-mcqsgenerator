@@ -1,0 +1,89 @@
+{
+  "path": "/other/zombie-invasion",
+  "slug": "zombie-invasion",
+  "cat": "other",
+  "name": "Zombie invasion",
+  "seoTitle": "Zombie invasion Calculator — Formula, Units & Example",
+  "seoDesc": "Zombie invasion: work out your result from the initial number of humans and the initial number of zombies. A free other calculator with the formula, units…",
+  "h1": "Zombie invasion Calculator",
+  "summary": "The Zombie invasion calculator turns the initial number of humans, the initial number of zombies and more into the answer. Think of it as a shortcut for whatever you happen to be working on.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Zombie invasion calculator work?",
+      "html": "<p>The Zombie invasion calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the human defense stance, the zombie fighting skills and the zombie speed); then you type in the initial number of humans, the initial number of zombies, the transformation probability and a zombie attack frequency.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as always flee, mostly flee and flee half the time. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as alice: 10/10, joel: 9.5/10 and tallahassee: 9/10. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A number, expressed in %.</li><li>A number, expressed in /day.</li><li>A number, expressed in %.</li><li>Pick the option that matches your case — 3 options, such as fast, moderate and slow. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as yes (quickly), yes (slowly) and no. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Repeat the simulation with the same inputs — can be done multiple times&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Initial number of humans</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Human defense stance</strong></td><td>One of 5 options, such as always flee, mostly flee and flee half the time.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Zombie fighting skills</strong></td><td>One of 13 options, such as alice: 10/10, joel: 9.5/10 and tallahassee: 9/10.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Initial number of zombies</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Transformation probability</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A zombie attack frequency</strong></td><td>A number stated in /day.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Zombie resurrection rate</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Zombie speed</strong></td><td>One of 3 options, such as fast, moderate and slow.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Can zombies starve to death?</strong></td><td>One of 3 options, such as yes (quickly), yes (slowly) and no.</td><td>choice</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Zombie invasion calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Zombie invasion calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 4 figures keep coming back — the initial number of humans, the initial number of zombies and the transformation probability — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Zombie invasion calculator, these are the ones that matter:</p>\n<ul><li>The 5 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/focal-length\">Focal length</a>, <a href=\"/other/frames-to-timecode\">Frames to timecode</a> and <a href=\"/other/freight-class\">Freight class</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Zombie invasion calculator?",
+      "a": "The form asks for the initial number of humans, the initial number of zombies, the transformation probability and a zombie attack frequency, which is 10 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Zombie invasion calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/focal-length",
+      "name": "Focal length"
+    },
+    {
+      "path": "/other/frames-to-timecode",
+      "name": "Frames to timecode"
+    },
+    {
+      "path": "/other/freight-class",
+      "name": "Freight class"
+    }
+  ],
+  "words": 1222
+}

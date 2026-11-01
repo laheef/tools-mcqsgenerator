@@ -1,0 +1,93 @@
+{
+  "path": "/health/plasma-volume",
+  "slug": "plasma-volume",
+  "cat": "health",
+  "name": "Plasma volume",
+  "seoTitle": "Plasma volume Calculator: Free, With Steps",
+  "seoDesc": "Plasma volume: work out plasma volume for males from the weight and the plasma volume for females. A free health calculator with the formula, units and a…",
+  "h1": "Plasma volume Calculator",
+  "summary": "<strong>plasma volume for males</strong> is what the Plasma volume calculator works out, and it gets there from the weight, the plasma volume for females and the height. Think of it as a shortcut for an informed starting point to take to a clinician, not a diagnosis.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Plasma volume calculator work?",
+      "html": "<p>The Plasma volume calculator takes the values in the form, applies the relationship described below and reports <strong>plasma volume for males</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the weight, the plasma volume for females and the height.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Hematocrit</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Plasma volume for females</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>Plasma volume for males</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Plasma volume for females (Nadler's formula)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Plasma volume for males (Nadler's formula)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Plasma volume for males (Lemmens-Bernstein-Brodsky formula)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Plasma volume calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Plasma volume for males</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">70 × weight × (1 − hematocrit)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Hematocrit</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-1 ÷ 65 × plasma volume for females + weight) ÷ weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Hematocrit</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(36690 × (height ^ 3) − 100000 × plasma volume for males + 3219 × weight + 60410) ÷ (36690 × (height ^ 3) + 3219 × weight + 60410)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Hematocrit</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(17805 × (height ^ 3) − 50000 × plasma volume for females + 1654 × weight + 9165) ÷ (17805 × (height ^ 3) + 1654 × weight + 9165)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Hematocrit</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-1 ÷ 1540 × the square root of (22) × plasma volume for males × the square root of (weight ÷ (height ^ 2)) + weight) ÷ weight</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Plasma volume for females</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">65 × the square root of (22) × weight × (1 − hematocrit) ÷ the square root of (weight ÷ (height ^ 2))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Mass, opening in kilograms</li><li>%, opening in percent</li><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li><li>Length, opening in centimeters</li><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Plasma volume calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Any time the same 3 figures keep coming back — the weight, the plasma volume for females and the height — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/meal-calorie\">Meal calorie</a>, <a href=\"/health/mean-airway-pressure\">Mean airway pressure</a> and <a href=\"/health/mean-arterial-pressure\">MAP (mean arterial pressure)</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Plasma volume calculator work out?",
+      "a": "It returns plasma volume for males, derived from the weight, the plasma volume for females and the height. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Plasma volume calculator?",
+      "a": "The form asks for the weight, the plasma volume for females and the height, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter weight in a different unit?",
+      "a": "Yes. Weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Plasma volume calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/meal-calorie",
+      "name": "Meal calorie"
+    },
+    {
+      "path": "/health/mean-airway-pressure",
+      "name": "Mean airway pressure"
+    },
+    {
+      "path": "/health/mean-arterial-pressure",
+      "name": "MAP (mean arterial pressure)"
+    }
+  ],
+  "words": 1385
+}

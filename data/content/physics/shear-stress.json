@@ -1,0 +1,93 @@
+{
+  "path": "/physics/shear-stress",
+  "slug": "shear-stress",
+  "cat": "physics",
+  "name": "Shear stress",
+  "seoTitle": "Shear stress Calculator — Formula, Units & Example",
+  "seoDesc": "Shear stress: work out moment of inertia (I) from the shear force magnitude and the width. A free physics calculator with the formula, units and a worked…",
+  "h1": "Shear stress Calculator",
+  "summary": "<strong>moment of inertia (I)</strong> is what the Shear stress calculator works out, and it gets there from the shear force magnitude, the width, the first moment of area and the square height. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Shear stress calculator work?",
+      "html": "<p>The Shear stress calculator takes the values in the form, applies the relationship described below and reports <strong>moment of inertia (I)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the type of load, the beam cross-section and the shaft cross-section); then you type in the shear force magnitude (V), the width (t), the first moment of area (Q = ȳ'A') and the square height (d).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as transverse and torsional. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as arbitrary cross-section, rectangular and hollow circular. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as solid circular and hollow circular. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in newtons. The unit chip switches it to any of the 16 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in newton meters. The unit chip switches it to any of the 18 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in quartic meters. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in pascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in pascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in quartic meters. The unit chip switches it to any of the 5 supported units.</li><li>A measured quantity, entered by default in pascals. The unit chip switches it to any of the 28 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Type of load</strong></td><td>One of 2 options, such as transverse and torsional.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Beam cross-section</strong></td><td>One of 4 options, such as arbitrary cross-section, rectangular and hollow circular.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Shaft cross-section</strong></td><td>One of 2 options, such as solid circular and hollow circular.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Shear force magnitude (V)</strong></td><td>A measured quantity, 16 units available.</td><td>newtons</td><td>You supply it</td></tr><tr><td><strong>Width (t)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>First moment of area (Q = ȳ'A')</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>Moment of inertia (I)</strong></td><td>A measured quantity, 5 units available.</td><td>quartic meters</td><td>Calculated</td></tr><tr><td><strong>Base width (b)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Square height (d)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Distance to the neutral axis (y)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Applied torque (T)</strong></td><td>A measured quantity, 18 units available.</td><td>newton meters</td><td>You supply it</td></tr><tr><td><strong>Outer radius (R)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Inner radius (Rᵢ)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Area (A)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Flange/web thickness (t)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Web length (d)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Polar moment of inertia (J)</strong></td><td>A measured quantity, 5 units available.</td><td>quartic meters</td><td>You supply it</td></tr><tr><td><strong>Shear stress magnitude (𝜏)</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>You supply it</td></tr><tr><td><strong>Shear stress magnitude at distance y (𝜏)</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>Calculated</td></tr><tr><td><strong>Maximum shear stress magnitude (𝜏ₘₐₓ) (Hollow circle stress)</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>Calculated</td></tr><tr><td><strong>A hollow circle</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Maximum shear stress magnitude (𝜏ₘₐₓ) (I-beam stress)</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>Calculated</td></tr><tr><td><strong>Minimum stress (𝜏ₘiₙ)</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>Calculated</td></tr><tr><td><strong>I wide flange</strong></td><td>A measured quantity, 5 units available.</td><td>quartic meters</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 26 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Shear stress calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Moment of inertia (I)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">shear force magnitude (V) × first moment of area (Q = ȳ&#x27;A&#x27;) ÷ (shear stress magnitude (𝜏) × width (t))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area (A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(3 ÷ 2) × shear force magnitude (V) ÷ maximum shear stress magnitude (𝜏ₘₐₓ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Shear stress magnitude at distance y (𝜏)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(3 ÷ 2) × shear force magnitude (V) × ((square height (d) ^ 2) − 4 × (distance to the neutral axis (y) ^ 2)) ÷ (area (A) × (square height (d) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area (A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">base width (b) × square height (d)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Maximum shear stress magnitude (𝜏ₘₐₓ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((4 ÷ 3) × shear force magnitude (V) × ((outer radius (R) ^ 2) + outer radius (R) × inner radius (Rᵢ) + (inner radius (Rᵢ) ^ 2)) ÷ (a hollow circle × ((outer radius (R) ^ 2) + (inner radius (Rᵢ) ^ 2))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A hollow circle</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">PI × ((outer radius (R) ^ 2) − (inner radius (Rᵢ) ^ 2))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in quartic meters, and convertible to any of the 5 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in pascals, and convertible to any of the 28 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in pascals, and convertible to any of the 28 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in pascals, and convertible to any of the 28 units on that chip.</li><li>Shown in pascals, and convertible to any of the 28 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in pascals, and convertible to any of the 28 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Force, opening in newtons</li><li>Length, opening in meters</li><li>Volume, opening in cubic meters</li><li>Second moment of area, opening in quartic meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Torque, opening in newton meters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Shear stress calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 4 figures keep coming back — the shear force magnitude, the width and the first moment of area — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/frequency-of-light\">Frequency of light</a>, <a href=\"/physics/frequency-to-wavelength\">Frequency to wavelength</a> and <a href=\"/physics/fresnel-zone\">Fresnel zone</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Shear stress calculator work out?",
+      "a": "It returns moment of inertia (I), derived from the shear force magnitude, the width and the first moment of area. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Shear stress calculator?",
+      "a": "The form asks for the shear force magnitude, the width, the first moment of area and the square height, which is 15 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter shear force magnitude (V) in a different unit?",
+      "a": "Yes. Shear force magnitude (V) opens in newtons and the chip beside it offers 16 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Shear stress calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/frequency-of-light",
+      "name": "Frequency of light"
+    },
+    {
+      "path": "/physics/frequency-to-wavelength",
+      "name": "Frequency to wavelength"
+    },
+    {
+      "path": "/physics/fresnel-zone",
+      "name": "Fresnel zone"
+    }
+  ],
+  "words": 2187
+}

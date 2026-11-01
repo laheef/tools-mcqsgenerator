@@ -1,0 +1,93 @@
+{
+  "path": "/math/square-of-a-binomial",
+  "slug": "square-of-a-binomial",
+  "cat": "math",
+  "name": "Square of a binomial",
+  "seoTitle": "Square of a binomial Calculator",
+  "seoDesc": "Square of a binomial: work out insert the result (Simple binomial expansion) from the insert your · b (Expansion of (ax ± b)2 given a and b) and the…",
+  "h1": "Square of a binomial Calculator",
+  "summary": "The Square of a binomial calculator returns <strong>insert the result (Simple binomial expansion)</strong>. The inputs are the insert your · b (Expansion of (ax ± b)2 given a and b), the atimes 2 and the b pos.\n\nThat makes it useful for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Square of a binomial calculator work?",
+      "html": "<p>The Square of a binomial calculator takes the values in the form, applies the relationship described below and reports <strong>insert the result (Simple binomial expansion)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (choose the calculation that you would like to perform); then you type in the insert your · b (Expansion of (ax ± b)2 given a and b), the atimes 2, the b pos and the subt binomial hide.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as simple binomial expansion and expansion of (ax ± b)^2 given · a · and · b. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as (a + b)² and (a − b)². The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as a and b. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Solve for the unknown variable&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A plain number with no unit attached.</li><li>A single on/off switch — tick it for &ldquo;Solve for a given · y&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Choose the calculation that you would like to perform</strong></td><td>One of 2 options, such as simple binomial expansion and expansion of (ax ± b)^2 given · a · and · b.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Insert your · a (Simple binomial expansion)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Insert your · b (Simple binomial expansion)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Insert your · a (Simple binomial expansion)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Insert your · b (Simple binomial expansion)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Insert the result (Simple binomial expansion)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Insert the result (Simple binomial expansion)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Insert your · a (Expansion of (ax ± b)2 given a and b)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Insert your · b (Expansion of (ax ± b)2 given a and b)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Atimes 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Atimes 2 pos</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>B pos</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Btimes 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Btimes 2 pos</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ctimes 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Ctimes 2 pos</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>D pos</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dtimes 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dtimes 2 pos</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>B other result</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>A other result</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>D other result</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>C other result</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Subt binomial hide</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 33 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Square of a binomial calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Insert the result</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(insert your · a ^ 2) + 2 × insert your · a × insert your · b + (insert your · b ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Insert your · a</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">insert your · b + the square root of (insert the result)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Insert your · a</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × atimes 2</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Atimes 2 pos</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-atimes 2</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Insert your · a</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (a sq)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Insert your · b</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-b pos</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Choose the calculation that you would like to perform</strong> set to Simple binomial expansion, <strong>What is the form of your binomial?</strong> set to (a + b)², <strong>Which term is known?</strong> set to a and <strong>Insert your · a</strong> = 10. Working through the relationship above gives <strong>Insert the result</strong> = 400.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Insert the result</strong> = 400 should be roughly the size you expected from <strong>Choose the calculation that you would like to perform</strong> set to Simple binomial expansion and <strong>What is the form of your binomial?</strong> set to (a + b)².</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Square of a binomial calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Settling an argument about a number with a quick, traceable result</li><li>Any time the same 3 figures keep coming back — the insert your · b (Expansion of (ax ± b)2 given a and b), the atimes 2 and the b pos — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/average\">Average</a>, <a href=\"/math/average-percentage\">Average percentage</a> and <a href=\"/math/average-rate-of-change\">Average rate of change</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Square of a binomial calculator work out?",
+      "a": "It returns insert the result (Simple binomial expansion), derived from the insert your · b (Expansion of (ax ± b)2 given a and b), the atimes 2 and the b pos. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Square of a binomial calculator?",
+      "a": "The form asks for the insert your · b (Expansion of (ax ± b)2 given a and b), the atimes 2 and the b pos, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Insert the result = 400. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Square of a binomial calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/average",
+      "name": "Average"
+    },
+    {
+      "path": "/math/average-percentage",
+      "name": "Average percentage"
+    },
+    {
+      "path": "/math/average-rate-of-change",
+      "name": "Average rate of change"
+    }
+  ],
+  "words": 2007
+}

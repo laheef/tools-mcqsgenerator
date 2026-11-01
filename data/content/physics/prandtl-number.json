@@ -1,0 +1,97 @@
+{
+  "path": "/physics/prandtl-number",
+  "slug": "prandtl-number",
+  "cat": "physics",
+  "name": "Prandtl number",
+  "seoTitle": "Prandtl number Calculator — Formula, Units & Example",
+  "seoDesc": "Prandtl number: work out specific heat (Cₚ) (Properties of fluid) from the thermal conductivity (k) and the momentum diffusivity (ν). A free physics…",
+  "h1": "Prandtl number Calculator",
+  "summary": "<strong>specific heat (Cₚ) (Properties of fluid)</strong> is what the Prandtl number calculator works out, and it gets there from the thermal conductivity (k), the momentum diffusivity (ν) and the thermal diffusivity (α). It suits a lab report, a problem set or a sanity check on a physical situation.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Prandtl number calculator work?",
+      "html": "<p>The Prandtl number calculator takes the values in the form, applies the relationship described below and reports <strong>specific heat (Cₚ) (Properties of fluid)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the fluid); then you type in the thermal conductivity (k) (Properties of fluid), the momentum diffusivity (ν) (Diffusivity), the thermal diffusivity (α) (Diffusivity) and the thermal diffusivity (α) (Diffusivity).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 7 options, such as air, water and sodium. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in watts per meter-kelvin. The unit chip switches it to any of the 2 supported units.</li><li>A measured quantity, entered by default in square millimeters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in square millimeters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in square millimeters. The unit chip switches it to any of the 24 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Fluid</strong></td><td>One of 7 options, such as air, water and sodium.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Density (ρ) (Properties of fluid)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Density (ρ) (Properties of fluid)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Dynamic viscosity (μ) (Properties of fluid)</strong></td><td>A measured quantity, 28 units available.</td><td>millipascals</td><td>Calculated</td></tr><tr><td><strong>Dynamic viscosity (μ) (Properties of fluid)</strong></td><td>A measured quantity, 28 units available.</td><td>millipascals</td><td>Calculated</td></tr><tr><td><strong>Specific heat (Cₚ) (Properties of fluid)</strong></td><td>A measured quantity, 11 units available.</td><td>joules per kilogram per kelvin</td><td>Calculated</td></tr><tr><td><strong>Specific heat (Cₚ) (Properties of fluid)</strong></td><td>A measured quantity, 11 units available.</td><td>joules per kilogram per kelvin</td><td>Calculated</td></tr><tr><td><strong>Thermal conductivity (k) (Properties of fluid)</strong></td><td>A measured quantity, 2 units available.</td><td>watts per meter-kelvin</td><td>Calculated</td></tr><tr><td><strong>Thermal conductivity (k) (Properties of fluid)</strong></td><td>A measured quantity, 2 units available.</td><td>watts per meter-kelvin</td><td>You supply it</td></tr><tr><td><strong>Momentum diffusivity (ν) (Diffusivity)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>Calculated</td></tr><tr><td><strong>Momentum diffusivity (ν) (Diffusivity)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>You supply it</td></tr><tr><td><strong>Thermal diffusivity (α) (Diffusivity)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>You supply it</td></tr><tr><td><strong>Thermal diffusivity (α) (Diffusivity)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>You supply it</td></tr><tr><td><strong>Prandtl number (Pr) (Dimensionless number)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Prandtl number (Pr) (Dimensionless number)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Prandtl number calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Specific heat (Cₚ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">prandtl number (Pr) × thermal conductivity (k) ÷ dynamic viscosity (μ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Momentum diffusivity (ν)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">dynamic viscosity (μ) ÷ density (ρ)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Dynamic viscosity (μ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">density (ρ) × momentum diffusivity (ν)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Specific heat (Cₚ)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">thermal conductivity (k) ÷ (density (ρ) × thermal diffusivity (α))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in joules per kilogram per kelvin, and convertible to any of the 11 units on that chip.</li><li>Shown in joules per kilogram per kelvin, and convertible to any of the 11 units on that chip.</li><li>Shown in square millimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in millipascals, and convertible to any of the 28 units on that chip.</li><li>Shown in watts per meter-kelvin, and convertible to any of the 2 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 9 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 9 units on that chip.</li><li>Shown in millipascals, and convertible to any of the 28 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Density, opening in kilograms per cubic meter</li><li>Density, opening in kilograms per cubic meter</li><li>Pressure, opening in millipascals</li><li>Pressure, opening in millipascals</li><li>Specific heat capacity, opening in joules per kilogram per kelvin</li><li>Specific heat capacity, opening in joules per kilogram per kelvin</li><li>Thermal conductivity, opening in watts per meter-kelvin</li><li>Thermal conductivity, opening in watts per meter-kelvin</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Prandtl number calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 3 figures keep coming back — the thermal conductivity (k), the momentum diffusivity (ν) and the thermal diffusivity (α) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/displacement\">Displacement</a>, <a href=\"/physics/distance-attenuation\">Distance attenuation</a> and <a href=\"/physics/distance-to-horizon\">Distance to horizon</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Prandtl number calculator work out?",
+      "a": "It returns specific heat (Cₚ) (Properties of fluid), derived from the thermal conductivity (k), the momentum diffusivity (ν) and the thermal diffusivity (α). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Prandtl number calculator?",
+      "a": "The form asks for the thermal conductivity (k), the momentum diffusivity (ν) and the thermal diffusivity (α), which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter density (ρ) (Properties of fluid) in a different unit?",
+      "a": "Yes. Density (ρ) (Properties of fluid) opens in kilograms per cubic meter and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Density (ρ) = 0 kg/m³. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Prandtl number calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/displacement",
+      "name": "Displacement"
+    },
+    {
+      "path": "/physics/distance-attenuation",
+      "name": "Distance attenuation"
+    },
+    {
+      "path": "/physics/distance-to-horizon",
+      "name": "Distance to horizon"
+    }
+  ],
+  "words": 1787
+}

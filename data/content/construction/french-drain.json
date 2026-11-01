@@ -1,0 +1,97 @@
+{
+  "path": "/construction/french-drain",
+  "slug": "french-drain",
+  "cat": "construction",
+  "name": "French drain",
+  "seoTitle": "French drain Calculator — Formula, Units & Example",
+  "seoDesc": "French drain: work out trench length (L) from the trench width and the trench depth. A free construction calculator with the formula, units and a worked…",
+  "h1": "French drain Calculator",
+  "summary": "<strong>trench length (L)</strong> is what the French drain calculator works out, and it gets there from the trench width, the trench depth, the filter fabric overlap (o) and the trench volume. It suits a materials order or a planning estimate you want to get roughly right first time.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the French drain calculator work?",
+      "html": "<p>The French drain calculator takes the values in the form, applies the relationship described below and reports <strong>trench length (L)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (with fabric filter?, with filter? and the pipe size (Drain pipe details)); then you type in the trench width (w), the trench depth (d), the filter fabric overlap (o) (French drain details) and the trench volume.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A single on/off switch — tick it for &ldquo;Use perforated drain pipe&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 4 options, such as no, yes, for the entire trench and yes, around the pipe. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no, yes, for the entire trench and yes, but only on top of the gravel. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>Pick the option that matches your case — 20 options, such as 2\", 2 1/2\" and 3\". The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 15 options, such as 4\", 6\" and 8\". The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Display more pipe details&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 5 options, such as 10 ft (3 m), 20 ft (6 m) and 30 ft (9 m). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A single on/off switch — tick it for &ldquo;Display gravel density and weight&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>9 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>With fabric filter?</strong></td><td>One of 4 options, such as no, yes, for the entire trench and yes, around the pipe.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>With filter?</strong></td><td>One of 3 options, such as no, yes, for the entire trench and yes, but only on top of the gravel.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trench width (w)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Trench depth (d)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Filter fabric overlap (o) (French drain details)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Filter fabric overlap (o) (French drain details)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Trench length (L)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Trench volume</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>Pipe option</strong></td><td>One of 2 options, such as schedule 40 perforated PVC and SDR35 PVC sewer drain.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Pipe size (Drain pipe details)</strong></td><td>One of 20 options, such as 2\", 2 1/2\" and 3\".</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Pipe size (Drain pipe details)</strong></td><td>One of 15 options, such as 4\", 6\" and 8\".</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Outside diameter (Dₒ) (Drain pipe details)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Outside diameter (Dₒ) (Drain pipe details)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Outside diameter (Dₒ) (Drain pipe details)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Minimum pipe slope (s) (Drain pipe details)</strong></td><td>A number stated in inches per foot.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Minimum pipe slope (s) (Drain pipe details)</strong></td><td>A number stated in inches per foot.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Pipe drop</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Volume displaced by drain pipe</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Total drain pipe length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Standard pipe length</strong></td><td>One of 5 options, such as 10 ft (3 m), 20 ft (6 m) and 30 ft (9 m).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length of available pipes</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Quantity of pipes needed</strong></td><td>A number stated in pipes.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Gravel volume</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Wastage</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 42 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the French drain calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Trench length (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">trench volume ÷ (trench depth (d) × trench width (w))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Volume displaced by drain pipe</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × PI × (outside diameter (Dₒ) ^ 2) × total drain pipe length</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pipe option</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-outside diameter (Dₒ) + outside diameter (Dₒ)) ÷ (outside diameter (Dₒ) − outside diameter (Dₒ))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Trench length (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">12 × pipe drop ÷ (-pipe option × (outside diameter (Dₒ)) + pipe option × (outside diameter (Dₒ)) + (outside diameter (Dₒ)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Trench length (L)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (-(pipe drop ^ 2) + (total drain pipe length ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Quantity of pipes needed</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, ((1 ÷ 100) × total drain pipe length ÷ length of available pipes)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>The option the calculation settles on.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 28 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in meters</li><li>Volume, opening in cubic meters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The French drain calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Quoting a job where areas and quantities drive the price</li><li>Checking a supplier's figure against your own measurements</li><li>Ordering material and not wanting a second trip</li><li>Any time the same 4 figures keep coming back — the trench width, the trench depth and the filter fabric overlap (o) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/siding\">Siding</a>, <a href=\"/construction/size-to-weight-rectangular-cuboid\">Size to weight (rectangular box)</a> and <a href=\"/construction/snow-load\">Snow load</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the French drain calculator work out?",
+      "a": "It returns trench length (L), derived from the trench width, the trench depth and the filter fabric overlap (o). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the French drain calculator?",
+      "a": "The form asks for the trench width, the trench depth, the filter fabric overlap (o) and the trench volume, which is 19 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter trench width (w) in a different unit?",
+      "a": "Yes. Trench width (w) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (9 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Outside diameter (Dₒ) = 0 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the French drain calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/siding",
+      "name": "Siding"
+    },
+    {
+      "path": "/construction/size-to-weight-rectangular-cuboid",
+      "name": "Size to weight (rectangular box)"
+    },
+    {
+      "path": "/construction/snow-load",
+      "name": "Snow load"
+    }
+  ],
+  "words": 2416
+}

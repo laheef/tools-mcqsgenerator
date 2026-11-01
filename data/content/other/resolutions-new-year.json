@@ -1,0 +1,97 @@
+{
+  "path": "/other/resolutions-new-year",
+  "slug": "resolutions-new-year",
+  "cat": "other",
+  "name": "New Year's resolutions",
+  "seoTitle": "New Year's resolutions Calculator: Free, With Steps",
+  "seoDesc": "New Year's resolutions: work out age from the height and to maintain your current weight. A free other calculator with the formula, units and a worked…",
+  "h1": "New Year's resolutions Calculator",
+  "summary": "Supply the height, to maintain your current weight, the target weight and the start date and the New Year's resolutions calculator solves for <strong>age</strong>. It suits whatever you happen to be working on.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the New Year's resolutions calculator work?",
+      "html": "<p>The New Year's resolutions calculator takes the values in the form, applies the relationship described below and reports <strong>age</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the resolution, the sex and the activity now); then you give the start date and the finish date; then you type in the height, to maintain your current weight, the target weight and the cigarettes smoked.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 7 options, such as exercise more, eat healthier and quit or reduce smoking. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as female and male. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 6 options, such as little/no exercise, exercise 1-2 times/week and exercise 2-3 times/week. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in kcal/day.</li><li>Pick the option that matches your case — 6 options, such as little/no exercise, exercise 1-2 times/week and exercise 2-3 times/week. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 2 options, such as quit and reduce. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 6 options, such as travel, TV and bike. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in months. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in minutes. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in years. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 7 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li></ul><p>The form has 51 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>19 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Resolution</strong></td><td>One of 7 options, such as exercise more, eat healthier and quit or reduce smoking.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Sex</strong></td><td>One of 2 options, such as female and male.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Age</strong></td><td>A number stated in years.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Your weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Activity now</strong></td><td>One of 6 options, such as little/no exercise, exercise 1-2 times/week and exercise 2-3 times/week.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>To maintain your current weight</strong></td><td>A number stated in kcal/day.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Resolution (Resolution)</strong></td><td>One of 6 options, such as little/no exercise, exercise 1-2 times/week and exercise 2-3 times/week.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Target weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Start date</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Finish date</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Cigarettes smoked</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Pack cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Pack size</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Packs smoked</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Money spent</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Quit or reduce smoking?</strong></td><td>One of 2 options, such as quit and reduce.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Money saved</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>My dream (Dreams come true!)</strong></td><td>One of 6 options, such as travel, TV and bike.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Dream value (Dreams come true!)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Social media visits (Time online now)</strong></td><td>A measured quantity, 7 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>With (Time online now)</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>Youtube / series (Time online now)</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Games (Time online now)</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 71 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the New Year's resolutions calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Age</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 5) × (activity now × (625 × height − 166 × sex + 10 × your weight + 5) − to maintain your current weight) ÷ activity now</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Packs smoked</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">cigarettes smoked ÷ pack size</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Packs smoked</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">money spent ÷ pack cost</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pack size</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">pack cost × quit or reduce smoking? × (-cigarettes smoked reduced to + cigarettes smoked) ÷ (money saved + money spent × quit or reduce smoking? − money spent)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Dream value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">money saved × thanks to saved money, you&#x27;ll get it in...</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Youtube / series</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-social media visits × with + time wasted − games − other</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in minutes, and convertible to any of the 27 units on that chip.</li><li>Shown in months, and convertible to any of the 7 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in months, and convertible to any of the 7 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Time, opening in days</li><li>Currency, opening in US Dollar</li><li>Time, opening in years</li><li>Currency, opening in US Dollar</li><li>Time, opening in days</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The New Year's resolutions calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 4 figures keep coming back — the height, to maintain your current weight and the target weight — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/caesar-cipher-shifter\">Caesar cipher shifter</a>, <a href=\"/other/camera-field-of-view\">Camera field of view</a> and <a href=\"/other/capital-case-converter\">Capital case converter</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the New Year's resolutions calculator work out?",
+      "a": "It returns age, derived from the height, to maintain your current weight and the target weight. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the New Year's resolutions calculator?",
+      "a": "The form asks for the height, to maintain your current weight, the target weight and the start date, which is 51 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter height in a different unit?",
+      "a": "Yes. Height opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (19 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Dream value = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the New Year's resolutions calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/caesar-cipher-shifter",
+      "name": "Caesar cipher shifter"
+    },
+    {
+      "path": "/other/camera-field-of-view",
+      "name": "Camera field of view"
+    },
+    {
+      "path": "/other/capital-case-converter",
+      "name": "Capital case converter"
+    }
+  ],
+  "words": 2407
+}

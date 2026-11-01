@@ -1,0 +1,89 @@
+{
+  "path": "/health/scorad",
+  "slug": "scorad",
+  "cat": "health",
+  "name": "SCORAD",
+  "seoTitle": "SCORAD Calculator: Free, With Steps",
+  "seoDesc": "SCORAD: work out scorad from the head and neck and the upper extremities. A free health calculator with the formula, units and a worked example.",
+  "h1": "SCORAD Calculator",
+  "summary": "The SCORAD calculator turns the head, neck and more into <strong>scorad</strong>. It suits an informed starting point to take to a clinician, not a diagnosis.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the SCORAD calculator work?",
+      "html": "<p>The SCORAD calculator takes the values in the form, applies the relationship described below and reports <strong>scorad</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the redness, the dryness and the oozing); then you type in the head and neck, the upper extremities, the anterior trunk and the back.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>A number, expressed in %.</li><li>Pick the option that matches your case — 4 options, such as none, mild and moderate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild and moderate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild and moderate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild and moderate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild and moderate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as none, mild and moderate. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 11 options, such as none, 1 and 2. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 11 options, such as none, 1 and 2. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>8 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Head and neck</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Upper extremities</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Anterior trunk</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Back</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Lower limbs</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Genitals</strong></td><td>A number stated in %.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Redness</strong></td><td>One of 4 options, such as none, mild and moderate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Dryness</strong></td><td>One of 4 options, such as none, mild and moderate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Oozing</strong></td><td>One of 4 options, such as none, mild and moderate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Thickening</strong></td><td>One of 4 options, such as none, mild and moderate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Swelling</strong></td><td>One of 4 options, such as none, mild and moderate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Scratch marks</strong></td><td>One of 4 options, such as none, mild and moderate.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Pruritus</strong></td><td>One of 11 options, such as none, 1 and 2.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Insomnia</strong></td><td>One of 11 options, such as none, 1 and 2.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Scorad</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the SCORAD calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Scorad</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((insomnia + pruritus) + (1 ÷ 5) × (anterior trunk + back + genitals + head and neck + lower limbs + upper extremities) + (7 ÷ 2) × (dryness + oozing + redness + scratch marks + swelling + thickening))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(anterior trunk + back + genitals + head and neck + lower limbs + upper extremities)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">B</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(dryness + oozing + redness + scratch marks + swelling + thickening)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">C</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(insomnia + pruritus)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The SCORAD calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Any time the same 4 figures keep coming back — the head and neck, the upper extremities and the anterior trunk — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/pack-years\">Pack year</a>, <a href=\"/health/padua-score\">Padua score</a> and <a href=\"/health/pao2-fio2-ratio\">PF ratio</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the SCORAD calculator work out?",
+      "a": "It returns scorad, derived from the head and neck, the upper extremities and the anterior trunk. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the SCORAD calculator?",
+      "a": "The form asks for the head and neck, the upper extremities, the anterior trunk and the back, which is 14 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (8 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the SCORAD calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/pack-years",
+      "name": "Pack year"
+    },
+    {
+      "path": "/health/padua-score",
+      "name": "Padua score"
+    },
+    {
+      "path": "/health/pao2-fio2-ratio",
+      "name": "PF ratio"
+    }
+  ],
+  "words": 1376
+}

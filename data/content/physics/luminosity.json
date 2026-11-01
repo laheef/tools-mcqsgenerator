@@ -1,0 +1,97 @@
+{
+  "path": "/physics/luminosity",
+  "slug": "luminosity",
+  "cat": "physics",
+  "name": "Luminosity",
+  "seoTitle": "Luminosity Calculator: Free, With Steps",
+  "seoDesc": "Luminosity: work out star radius from the star temperature and the luminosity. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Luminosity Calculator",
+  "summary": "Supply the star temperature, the luminosity and the distance and the Luminosity calculator solves for <strong>star radius</strong>. It suits a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Luminosity calculator work?",
+      "html": "<p>The Luminosity calculator takes the values in the form, applies the relationship described below and reports <strong>star radius</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the star temperature, the luminosity and the distance.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in kelvins. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in solar luminosities. The unit chip switches it to any of the 21 supported units.</li><li>A measured quantity, entered by default in parsecs. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Star radius</strong></td><td>A measured quantity, 34 units available.</td><td>Sun radii</td><td>Calculated</td></tr><tr><td><strong>Star temperature</strong></td><td>A measured quantity, 28 units available.</td><td>kelvins</td><td>You supply it</td></tr><tr><td><strong>Luminosity</strong></td><td>A measured quantity, 21 units available.</td><td>solar luminosities</td><td>You supply it</td></tr><tr><td><strong>Absolute magnitude</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Distance</strong></td><td>A measured quantity, 34 units available.</td><td>parsecs</td><td>You supply it</td></tr><tr><td><strong>Apparent magnitude</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Luminosity calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Star radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(19355118399 ÷ 1595000000000) × the square root of (9570) × the square root of (luminosity) ÷ (star temperature ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Absolute magnitude</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-5 ÷ 2 × the natural log of ((1 ÷ 30128000000000000000000000000) × luminosity) ÷ the natural log of (10)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Apparent magnitude</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">absolute magnitude + 5 × the natural log of (distance) ÷ the natural log of (10) − 5</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Star temperature</strong> = 10 K and <strong>Luminosity</strong> = 10 L☉. The calculator returns <strong>Star radius</strong> = 3.754 R☉ and <strong>Absolute magnitude</strong> = 68.697.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Star radius</strong> = 3.754 R☉ and <strong>Absolute magnitude</strong> = 68.697 should be roughly the size you expected from <strong>Star temperature</strong> = 10 K and <strong>Luminosity</strong> = 10 L☉.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in Sun radii, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in Sun radii</li><li>Temperature, opening in kelvins</li><li>Power, opening in solar luminosities</li><li>Length, opening in parsecs</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Luminosity calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 3 figures keep coming back — the star temperature, the luminosity and the distance — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/boltzmann-factor\">Boltzmann factor</a>, <a href=\"/physics/boost-converter\">Boost converter</a> and <a href=\"/physics/boyles-law\">Boyle's law</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Luminosity calculator work out?",
+      "a": "It returns star radius, derived from the star temperature, the luminosity and the distance. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Luminosity calculator?",
+      "a": "The form asks for the star temperature, the luminosity and the distance, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter star radius in a different unit?",
+      "a": "Yes. Star radius opens in Sun radii and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Star radius = 3.754 R☉. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Luminosity calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/boltzmann-factor",
+      "name": "Boltzmann factor"
+    },
+    {
+      "path": "/physics/boost-converter",
+      "name": "Boost converter"
+    },
+    {
+      "path": "/physics/boyles-law",
+      "name": "Boyle's law"
+    }
+  ],
+  "words": 1299
+}

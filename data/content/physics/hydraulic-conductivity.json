@@ -1,0 +1,97 @@
+{
+  "path": "/physics/hydraulic-conductivity",
+  "slug": "hydraulic-conductivity",
+  "cat": "physics",
+  "name": "Hydraulic conductivity",
+  "seoTitle": "Hydraulic conductivity Calculator — Formula, Units & Example",
+  "seoDesc": "Hydraulic conductivity: work out kinematic viscosity of the fluid (ν) (Parameters) from the initial head and the final head. A free physics calculator…",
+  "h1": "Hydraulic conductivity Calculator",
+  "summary": "The Hydraulic conductivity calculator works out <strong>kinematic viscosity of the fluid (ν) (Parameters)</strong> from the initial head, the final head, the length of specimen and the grain diameter. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nChange one value and the results step aside until you press Calculate again, which is what makes it easy to see how much the answer really depends on that one input.",
+  "sections": [
+    {
+      "title": "How does the Hydraulic conductivity calculator work?",
+      "html": "<p>The Hydraulic conductivity calculator takes the values in the form, applies the relationship described below and reports <strong>kinematic viscosity of the fluid (ν) (Parameters)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the method, the fluid and the temperature); then you type in the initial head (h₁), the final head (h₂), the length of specimen (L) and the grain diameter (d₂₀).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 7 options, such as kozeny-Carman, darcy's Law and constant head. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as water and others. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 8 options, such as 0 °C, 4 °C and 5 °C. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in cubic meters per second. The unit chip switches it to any of the 39 supported units.</li><li>A measured quantity, entered by default in square millimeters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in seconds. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in millipascal seconds. The unit chip switches it to any of the 11 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Method</strong></td><td>One of 7 options, such as kozeny-Carman, darcy's Law and constant head.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Fluid</strong></td><td>One of 2 options, such as water and others.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Temperature</strong></td><td>One of 8 options, such as 0 °C, 4 °C and 5 °C.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Kinematic viscosity of the fluid (ν) (Parameters)</strong></td><td>A measured quantity, 9 units available.</td><td>square millimeters per second</td><td>Calculated</td></tr><tr><td><strong>Kinematic viscosity of the fluid (ν) (Parameters)</strong></td><td>A measured quantity, 9 units available.</td><td>square millimeters per second</td><td>Calculated</td></tr><tr><td><strong>Acceleration due to gravity (g)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>Calculated</td></tr><tr><td><strong>Initial head (h₁)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Final head (h₂)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Head (h)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Length of specimen (L)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Grain diameter (d₁₀)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Grain diameter (d₂₀)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Hydraulic gradient (i)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Porosity (n)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Uniformity coefficient (U)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume of fluid (V)</strong></td><td>A measured quantity, 40 units available.</td><td>cubic millimeters</td><td>Calculated</td></tr><tr><td><strong>Flow rate (Q)</strong></td><td>A measured quantity, 39 units available.</td><td>cubic meters per second</td><td>You supply it</td></tr><tr><td><strong>Cross sectional area (A) (Parameters)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>Calculated</td></tr><tr><td><strong>Cross sectional area (A) (Parameters)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>Calculated</td></tr><tr><td><strong>Area of standpipe (a)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>You supply it</td></tr><tr><td><strong>Time interval (t)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>You supply it</td></tr><tr><td><strong>Fluid density (ρ) (Fluid dynamic viscosity and density)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Fluid density (ρ) (Fluid dynamic viscosity and density)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Hydraulic conductivity (K) (Result)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 30 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Hydraulic conductivity calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Kinematic viscosity of the fluid (ν)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 180) × (grain diameter (d₁₀) ^ 2) × acceleration due to gravity (g) × (porosity (n) ^ 3) ÷ (hydraulic conductivity (K) × (porosity (n) − 1 ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cross sectional area (A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">flow rate (Q) ÷ (hydraulic conductivity (K) × hydraulic gradient (i))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cross sectional area (A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length of specimen (L) × volume of fluid (V) ÷ (hydraulic conductivity (K) × head (h) × time interval (t))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Cross sectional area (A)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">length of specimen (L) × area of standpipe (a) × the natural log of (final head (h₂) ÷ initial head (h₁)) ÷ (hydraulic conductivity (K) × time interval (t))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Kinematic viscosity of the fluid (ν)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(3 ÷ 12500) × (grain diameter (d₁₀) ^ 2) × acceleration due to gravity (g) × (25 × porosity (n) − 4) ÷ hydraulic conductivity (K)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Grain diameter (d₁₀)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(50 ÷ 3) × the square root of (15) × the square root of (hydraulic conductivity (K) × kinematic viscosity of the fluid (ν) ÷ (acceleration due to gravity (g) × (25 × porosity (n) − 4)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in square millimeters per second, and convertible to any of the 9 units on that chip.</li><li>Shown in square millimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in cubic millimeters, and convertible to any of the 40 units on that chip.</li><li>Shown in square millimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in meters per second squared, and convertible to any of the 5 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in square millimeters per second, and convertible to any of the 9 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 9 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 9 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Viscosity – kinematic, opening in square millimeters per second</li><li>Viscosity – kinematic, opening in square millimeters per second</li><li>Acceleration, opening in meters per second squared</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in millimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Hydraulic conductivity calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the initial head, the final head and the length of specimen — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/wing-loading\">Wing loading</a>, <a href=\"/physics/wire-gauge\">Wire gauge</a> and <a href=\"/physics/wire-resistance\">Wire resistance</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Hydraulic conductivity calculator work out?",
+      "a": "It returns kinematic viscosity of the fluid (ν) (Parameters), derived from the initial head, the final head and the length of specimen. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Hydraulic conductivity calculator?",
+      "a": "The form asks for the initial head, the final head, the length of specimen and the grain diameter, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter kinematic viscosity of the fluid (ν) (Parameters) in a different unit?",
+      "a": "Yes. Kinematic viscosity of the fluid (ν) (Parameters) opens in square millimeters per second and the chip beside it offers 9 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Fluid dynamic viscosity (µ) = 0 mPa⋅s. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Hydraulic conductivity calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/wing-loading",
+      "name": "Wing loading"
+    },
+    {
+      "path": "/physics/wire-gauge",
+      "name": "Wire gauge"
+    },
+    {
+      "path": "/physics/wire-resistance",
+      "name": "Wire resistance"
+    }
+  ],
+  "words": 2384
+}

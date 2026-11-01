@@ -1,0 +1,14 @@
+{
+    "slug": "privacy",
+    "title": "Privacy policy",
+    "excerpt": "What this site collects, why, and how to have it removed.",
+    "content": "<p>This policy explains what this site does with data. It applies to the calculator pages, the blog and the contact form.</p>\n<h2>Calculator pages</h2>\n<p>Values you type into a calculator are used to compute your result. They are not written to a database and they are not attached to you in any way. When you reload the page, they are gone.</p>\n<h2>Server logs</h2>\n<p>The web server records requests in the standard way: IP address, timestamp, requested URL and browser identifier. Logs exist to keep the service running and to spot abuse, and they are rotated on a short schedule.</p>\n<h2>Aggregate page counts</h2>\n<p>To know which calculators are worth improving, the site keeps a daily counter per page — a number, not a person. It stores the page path and the date. There is no visitor identifier, no cookie and no cross-site tracking.</p>\n<h2>Contact form</h2>\n<p>When you send a message we store the name, email address and text you submit, plus the IP address used to send it, so we can answer you and block spam. Messages are kept until the question is settled and then deleted on request. Message content is never used for marketing.</p>\n<h2>Cookies</h2>\n<p>The public site sets no tracking cookies. The admin area sets one session cookie, which is required to stay signed in and is not used for anything else.</p>\n<h2>Third parties</h2>\n<p>If the site owner enables an analytics provider or advertising network, that provider may set its own cookies and is named in the consent banner the owner enables. This deployment runs its own counters and nothing else unless the owner changes that.</p>\n<h2>Your rights</h2>\n<p>Write to the contact address on the contact page to ask what we hold about you, to correct it, or to have it deleted. You do not need to give a reason.</p>",
+    "status": "published",
+    "template": "default",
+    "meta_title": "Privacy policy",
+    "meta_description": "The data this calculator site collects, how long it is kept, and how to request deletion.",
+    "canonical_url": "",
+    "noindex": 0,
+    "show_in_header": 0,
+    "show_in_footer": 1
+}

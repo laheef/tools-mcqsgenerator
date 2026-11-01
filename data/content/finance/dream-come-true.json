@@ -1,0 +1,93 @@
+{
+  "path": "/finance/dream-come-true",
+  "slug": "dream-come-true",
+  "cat": "finance",
+  "name": "Dream come true",
+  "seoTitle": "Dream come true Calculator",
+  "seoDesc": "Dream come true: work out time you need from the price tag on your dream and the initial savings. A free finance calculator with the formula, units and a…",
+  "h1": "Dream come true Calculator",
+  "summary": "Give the Dream come true calculator the price tag on your dream, the initial savings, the monthly savings and the interest rate and it returns <strong>time you need</strong>. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nThe panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.",
+  "sections": [
+    {
+      "title": "How does the Dream come true calculator work?",
+      "html": "<p>The Dream come true calculator takes the values in the form, applies the relationship described below and reports <strong>time you need</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the price tag on your dream, the initial savings, the monthly savings and the interest rate (per year).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in interest rate per year. The unit chip switches it to any of the 6 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Price tag on your dream</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Initial savings</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Monthly savings</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Interest rate (per year)</strong></td><td>A measured quantity, 6 units available.</td><td>interest rate per year</td><td>You supply it</td></tr><tr><td><strong>Time you need</strong></td><td>A measured quantity, 27 units available.</td><td>years / months</td><td>Calculated</td></tr><tr><td><strong>Fake</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Initial</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Dream come true calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Time you need</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the natural log of ((price tag on your dream × interest rate (per year) + monthly savings) ÷ (initial savings × interest rate (per year) + monthly savings)) ÷ the natural log of (interest rate (per year) + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Initial</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded, (initial savings)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in years / months, and convertible to any of the 27 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>%, opening in interest rate per year</li><li>Time, opening in years / months</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Dream come true calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two offers that quote their costs in different ways</li><li>Sizing up a purchase before you commit to it</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Any time the same 4 figures keep coming back — the price tag on your dream, the initial savings and the monthly savings — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/apc\">APC</a>, <a href=\"/finance/appreciation\">Appreciation</a> and <a href=\"/finance/apr\">APR</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Dream come true calculator work out?",
+      "a": "It returns time you need, derived from the price tag on your dream, the initial savings and the monthly savings. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Dream come true calculator?",
+      "a": "The form asks for the price tag on your dream, the initial savings, the monthly savings and the interest rate, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter price tag on your dream in a different unit?",
+      "a": "Yes. Price tag on your dream opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Initial = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Dream come true calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/apc",
+      "name": "APC"
+    },
+    {
+      "path": "/finance/appreciation",
+      "name": "Appreciation"
+    },
+    {
+      "path": "/finance/apr",
+      "name": "APR"
+    }
+  ],
+  "words": 1320
+}

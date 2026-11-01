@@ -1,0 +1,93 @@
+{
+  "path": "/health/car-heat",
+  "slug": "car-heat",
+  "cat": "health",
+  "name": "Car heat",
+  "seoTitle": "Car heat Calculator: Free, With Steps",
+  "seoDesc": "Car heat: work out average daily solar irradiance from the outside temperature and the day of the year. A free health calculator with the formula, units…",
+  "h1": "Car heat Calculator",
+  "summary": "Give the Car heat calculator the outside temperature and the day of the year and it returns <strong>average daily solar irradiance</strong>. It suits an informed starting point to take to a clinician, not a diagnosis.\n\nNothing repaints underneath you: edit a field, press Calculate, and the new answer appears. That is how you find out which input the result is sensitive to.",
+  "sections": [
+    {
+      "title": "How does the Car heat calculator work?",
+      "html": "<p>The Car heat calculator takes the values in the form, applies the relationship described below and reports <strong>average daily solar irradiance</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the cloud sky coverage (Outside situation), the country and the state (city)); then you give the day of the year; then you type in the outside temperature.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>Pick the option that matches your case — 2 options, such as cloud cover and solar radiation. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 6 options, such as clear sky (0%), few clouds (20%) and scattered (40%). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A calendar date. Use the picker; the answer is recalculated the moment the date changes, and the count is done date-to-date rather than by subtracting timestamps.</li><li>Pick the option that matches your case — 200 options, such as afghanistan (Kabul), albania (Tirane) and algeria (Algiers). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Enter custom latitude&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 115 options, such as alaska (Anchorage), alaska (Juneau) and alaska (Sitka). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 19 options, such as alberta (Calgary), alberta (Edmonton) and british Columbia (Nelson). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Show solar irradiance&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 2 options, such as light and dark. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as closed and partly open (~ 2 in / 4.5 cm). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as celsius (°C) and fahrenheit (°F). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>10 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Outside temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Cloud sky coverage (Outside situation)</strong></td><td>One of 6 options, such as clear sky (0%), few clouds (20%) and scattered (40%).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cloud sky coverage (Outside situation)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Day of the year</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Country</strong></td><td>One of 200 options, such as afghanistan (Kabul), albania (Tirane) and algeria (Algiers).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>State (city)</strong></td><td>One of 115 options, such as alaska (Anchorage), alaska (Juneau) and alaska (Sitka).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Lattitude</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Average daily solar irradiance</strong></td><td>A number stated in W/m².</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Car color</strong></td><td>One of 2 options, such as light and dark.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Windows</strong></td><td>One of 2 options, such as closed and partly open (~ 2 in / 4.5 cm).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Graph temperature scale</strong></td><td>One of 2 options, such as celsius (°C) and fahrenheit (°F).</td><td>choice</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Car heat calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Average daily solar irradiance</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(lattitude, country, province ÷ territory (city), state (city), day of the year, enter custom latitude)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Temperature, opening in Celsius</li><li>%, opening in percent</li><li>Angle, opening in degrees</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Car heat calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Deciding whether a reading is worth a second look</li><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Any time the same 2 figures keep coming back — the outside temperature and the day of the year — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/audit-test\">Audit test</a>, <a href=\"/health/baby-eye-color\">Baby eye color</a> and <a href=\"/health/baby-formula\">Baby formula</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Car heat calculator work out?",
+      "a": "It returns average daily solar irradiance, derived from the outside temperature and the day of the year. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Car heat calculator?",
+      "a": "The form asks for the outside temperature and the day of the year, which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter outside temperature in a different unit?",
+      "a": "Yes. Outside temperature opens in Celsius and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (10 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Cloud sky coverage = 0 %. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Car heat calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/audit-test",
+      "name": "Audit test"
+    },
+    {
+      "path": "/health/baby-eye-color",
+      "name": "Baby eye color"
+    },
+    {
+      "path": "/health/baby-formula",
+      "name": "Baby formula"
+    }
+  ],
+  "words": 1657
+}

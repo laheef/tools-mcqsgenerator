@@ -1,0 +1,93 @@
+{
+  "path": "/physics/physical-pendulum",
+  "slug": "physical-pendulum",
+  "cat": "physics",
+  "name": "Physical pendulum",
+  "seoTitle": "Physical pendulum Calculator: Free, With Steps",
+  "seoDesc": "Physical pendulum: work out mass (m) from the moment of inertia and the distance from center of mass to pivot. A free physics calculator with the formula,…",
+  "h1": "Physical pendulum Calculator",
+  "summary": "The Physical pendulum calculator turns the moment of inertia, the distance from center of mass to pivot, the radius of oscillations and the period into <strong>mass (m)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Physical pendulum calculator work?",
+      "html": "<p>The Physical pendulum calculator takes the values in the form, applies the relationship described below and reports <strong>mass (m)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the moment of inertia (I), the distance from center of mass to pivot (R), the radius of oscillations (L) and the period (T).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in kilogram meters squared. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in seconds. The unit chip switches it to any of the 27 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Moment of inertia (I)</strong></td><td>A measured quantity, 3 units available.</td><td>kilogram meters squared</td><td>You supply it</td></tr><tr><td><strong>Mass (m)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Distance from center of mass to pivot (R)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Radius of oscillations (L)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Acceleration due to gravity (g)</strong></td><td>A measured quantity, 5 units available.</td><td>meters per second squared</td><td>Calculated</td></tr><tr><td><strong>Period (T)</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>You supply it</td></tr><tr><td><strong>Frequency (f)</strong></td><td>A measured quantity, 21 units available.</td><td>hertz</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Physical pendulum calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Mass (m)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">moment of inertia (I) ÷ (distance from center of mass to pivot (R) × radius of oscillations (L))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Acceleration due to gravity (g)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">4 × (PI ^ 2) × radius of oscillations (L) ÷ (period (T) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Frequency (f)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">1 ÷ period (T)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in meters per second squared, and convertible to any of the 5 units on that chip.</li><li>Shown in hertz, and convertible to any of the 21 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Moment of inertia, opening in kilogram meters squared</li><li>Mass, opening in kilograms</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Acceleration, opening in meters per second squared</li><li>Time, opening in seconds</li><li>Frequency, opening in hertz</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Physical pendulum calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 4 figures keep coming back — the moment of inertia, the distance from center of mass to pivot and the radius of oscillations — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/dc-wire-size\">DC wire size</a>, <a href=\"/physics/de-broglie-wavelength\">De Broglie wavelength</a> and <a href=\"/physics/debye-length\">Debye length</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Physical pendulum calculator work out?",
+      "a": "It returns mass (m), derived from the moment of inertia, the distance from center of mass to pivot and the radius of oscillations. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Physical pendulum calculator?",
+      "a": "The form asks for the moment of inertia, the distance from center of mass to pivot, the radius of oscillations and the period, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter moment of inertia (I) in a different unit?",
+      "a": "Yes. Moment of inertia (I) opens in kilogram meters squared and the chip beside it offers 3 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Physical pendulum calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/dc-wire-size",
+      "name": "DC wire size"
+    },
+    {
+      "path": "/physics/de-broglie-wavelength",
+      "name": "De Broglie wavelength"
+    },
+    {
+      "path": "/physics/debye-length",
+      "name": "Debye length"
+    }
+  ],
+  "words": 1311
+}

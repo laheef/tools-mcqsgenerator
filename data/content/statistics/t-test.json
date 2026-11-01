@@ -1,0 +1,93 @@
+{
+  "path": "/statistics/t-test",
+  "slug": "t-test",
+  "cat": "statistics",
+  "name": "t-test",
+  "seoTitle": "t-test — Free Online Calculator",
+  "seoDesc": "t-test: work out your result from the significance level α and the sample standard deviation s. A free statistics calculator with the formula, units and a…",
+  "h1": "t-test Calculator",
+  "summary": "Give the t-test calculator the significance level α and the sample standard deviation s and it returns the answer. It is built for an assignment, a report or a data discussion where you need a defensible number.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the t-test calculator work?",
+      "html": "<p>The t-test calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (choose test type, the alternative hypothesis H₁ (Test setup) and the alternative hypothesis H₁ (Test setup)); then you type in the significance level α, the sample standard deviation s, the mean x̄₁ and the std. s₁.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 3 options, such as one-sample, two-sample and paired-sample. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as μ ≠ μ₀, μ &lt; μ₀ and μ &gt; μ₀. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as μ₁ − μ₂ ≠ Δ, μ₁ − μ₂ &gt; Δ and μ₁ − μ₂ &lt; Δ. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as p-value and critical values. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A single on/off switch — tick it for &ldquo;I don't know the t-score&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 2 options, such as yes and no / I don't know. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Choose test type</strong></td><td>One of 3 options, such as one-sample, two-sample and paired-sample.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Alternative hypothesis H₁ (Test setup)</strong></td><td>One of 3 options, such as μ ≠ μ₀, μ &lt; μ₀ and μ &gt; μ₀.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Alternative hypothesis H₁ (Test setup)</strong></td><td>One of 3 options, such as μ₁ − μ₂ ≠ Δ, μ₁ − μ₂ &gt; Δ and μ₁ − μ₂ &lt; Δ.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Approach</strong></td><td>One of 2 options, such as p-value and critical values.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Significance level α</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sample mean x̄</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Sample standard deviation s</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mean x̄₁</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mean x̄₂</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Std. s₁</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Std. s₂</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Size n₁</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Size n₂</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Hypothesised mean μ₀</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Hypothesised mean difference Δ = μ₁ − μ₂</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Degrees of freedom (Test details)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Degrees of freedom (Test details)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Degrees of freedom (Test details)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Degrees of freedom (Test details)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Precision for critical values</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Critical region left tailed one</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Critical region two tailed one</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Critical region left tailed two</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Critical region two tailed two</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 26 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the t-test calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">P-value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(t-score, degrees of freedom, (((choose test type &lt; 2) ? ( alternative hypothesis H₁ ) : ( alternative hypothesis H₁ ))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">P-value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(t-score, degrees of freedom, alternative hypothesis H₁)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">P-value</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(t-score, (rounded down, ((size n₁ − 1) × (size n₂ − 1) × (size n₁ × std. s₂ + std. s₁ × size n₂ ^ 2) ÷ ((size n₁ ^ 2) × (std. s₂ ^ 2) × (size n₁ − 1) + (std. s₁ ^ 2) × (size n₂ ^ 2) × (size n₂ − 1)))), alternative hypothesis H₁)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sample mean x̄</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">hypothesised mean μ₀ + sample standard deviation s × t-score ÷ the square root of (sample size n)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mean x̄₂</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">mean x̄₁ − hypothesised mean difference Δ = μ₁ − μ₂ − t-score × (the square root of (-(-size n₁ × size n₂ × ((std. s₁ ^ 2) + (std. s₂ ^ 2)) + size n₁ × (-size n₁ × (std. s₁ ^ 2) + (std. s₁ ^ 2) + (std. s₂ ^ 2)) + size n₂ × ((std. s₁ ^ 2) − size n₂ × (std. s₂ ^ 2) + (std. s₂ ^ 2))) ÷ (size n₁ × size n₂ × (size n₁ + size n₂ − 2))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Sample mean x̄</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">hypothesised mean difference Δ = μ₁ − μ₂ + sample standard deviation s × t-score ÷ the square root of (sample size n)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Choose test type</strong> set to one-sample, <strong>Alternative hypothesis H₁</strong> set to μ ≠ μ₀, <strong>Approach</strong> set to p-value and <strong>Significance level α</strong> = 0.05. The calculator returns <strong>Sample mean x̄</strong> = 41.6228 and <strong>Degrees of freedom</strong> = 9.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Sample mean x̄</strong> = 41.6228 and <strong>Degrees of freedom</strong> = 9 should be roughly the size you expected from <strong>Choose test type</strong> set to one-sample and <strong>Alternative hypothesis H₁</strong> set to μ ≠ μ₀.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The t-test calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning raw numbers into something you can quote</li><li>Checking a result a piece of software produced</li><li>Deciding how much confidence a sample really supports</li><li>Any time the same 2 figures keep coming back — the significance level α and the sample standard deviation s — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/mean-median-mode\">Mean median mode</a>, <a href=\"/statistics/median\">Median</a> and <a href=\"/statistics/median-absolute-deviation\">Median absolute deviation</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the t-test calculator?",
+      "a": "The form asks for the significance level α and the sample standard deviation s, which is 19 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Sample mean x̄ = 41.6228. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the t-test calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/mean-median-mode",
+      "name": "Mean median mode"
+    },
+    {
+      "path": "/statistics/median",
+      "name": "Median"
+    },
+    {
+      "path": "/statistics/median-absolute-deviation",
+      "name": "Median absolute deviation"
+    }
+  ],
+  "words": 2120
+}

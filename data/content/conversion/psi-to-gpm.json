@@ -1,0 +1,93 @@
+{
+  "path": "/conversion/psi-to-gpm",
+  "slug": "psi-to-gpm",
+  "cat": "conversion",
+  "name": "PSI to GPM",
+  "seoTitle": "PSI to GPM Calculator — Formula, Units & Example",
+  "seoDesc": "PSI to GPM: work out cross sectional area of the pipe from the pressure at the exit and the diameter of the pipe. A free conversion calculator with the…",
+  "h1": "PSI to GPM Calculator",
+  "summary": "Give the PSI to GPM calculator the pressure at the exit, the diameter of the pipe and the flow rate in gpm and it returns <strong>cross sectional area of the pipe</strong>. That makes it useful for a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the PSI to GPM calculator work?",
+      "html": "<p>The PSI to GPM calculator takes the values in the form, applies the relationship described below and reports <strong>cross sectional area of the pipe</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the pressure at the exit, the diameter of the pipe and the flow rate in gpm.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in pounds per square inch. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in inches. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in gallons (US) per minute. The unit chip switches it to any of the 39 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Pressure inside the tank</strong></td><td>A measured quantity, 28 units available.</td><td>pounds per square inch</td><td>Calculated</td></tr><tr><td><strong>Pressure at the exit</strong></td><td>A measured quantity, 28 units available.</td><td>pounds per square inch</td><td>You supply it</td></tr><tr><td><strong>Diameter of the pipe</strong></td><td>A measured quantity, 34 units available.</td><td>inches</td><td>You supply it</td></tr><tr><td><strong>Cross sectional area of the pipe</strong></td><td>A measured quantity, 24 units available.</td><td>square inches</td><td>Calculated</td></tr><tr><td><strong>Flow rate in gpm</strong></td><td>A measured quantity, 39 units available.</td><td>gallons (US) per minute</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the PSI to GPM calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Cross sectional area of the pipe</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × PI × (diameter of the pipe ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Pressure inside the tank</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">pressure at the exit + (3250000 ÷ 97220997314829) × (flow rate in gpm ^ 2) ÷ (cross sectional area of the pipe ^ 2)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in square inches, and convertible to any of the 24 units on that chip.</li><li>Shown in pounds per square inch, and convertible to any of the 28 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Pressure, opening in pounds per square inch</li><li>Pressure, opening in pounds per square inch</li><li>Length, opening in inches</li><li>Area, opening in square inches</li><li>Flow rate, opening in gallons (US) per minute</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The PSI to GPM calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Reading a recipe written in units you do not use</li><li>Checking a product listing against the measurements you work with</li><li>Converting a figure someone quoted you so you can compare it</li><li>Any time the same 3 figures keep coming back — the pressure at the exit, the diameter of the pipe and the flow rate in gpm — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/weird-units\">Weird units</a>, <a href=\"/conversion/yard-conversion\">Yard conversion</a> and <a href=\"/conversion/yard-to-meter-conversion\">Yard to meter conversion</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the PSI to GPM calculator work out?",
+      "a": "It returns cross sectional area of the pipe, derived from the pressure at the exit, the diameter of the pipe and the flow rate in gpm. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the PSI to GPM calculator?",
+      "a": "The form asks for the pressure at the exit, the diameter of the pipe and the flow rate in gpm, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter pressure inside the tank in a different unit?",
+      "a": "Yes. Pressure inside the tank opens in pounds per square inch and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the PSI to GPM calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/weird-units",
+      "name": "Weird units"
+    },
+    {
+      "path": "/conversion/yard-conversion",
+      "name": "Yard conversion"
+    },
+    {
+      "path": "/conversion/yard-to-meter-conversion",
+      "name": "Yard to meter conversion"
+    }
+  ],
+  "words": 1271
+}

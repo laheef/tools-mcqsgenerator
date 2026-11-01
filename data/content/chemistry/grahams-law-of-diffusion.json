@@ -1,0 +1,93 @@
+{
+  "path": "/chemistry/grahams-law-of-diffusion",
+  "slug": "grahams-law-of-diffusion",
+  "cat": "chemistry",
+  "name": "Graham's law of diffusion",
+  "seoTitle": "Graham's law of diffusion Calculator",
+  "seoDesc": "Graham's law of diffusion: answer 7 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Graham's law of diffusion Calculator",
+  "summary": "The Graham's law of diffusion calculator is a free, no-sign-up chemistry tool. Fill in the 1 field it asks for and it works out <strong>rate of diffusion of Gas 1</strong> straight away, with the formula shown underneath.\n\nThink of it as a shortcut for a bench calculation involving amounts, concentrations or reaction ratios. Change one value and the results step aside until you press Calculate again, which is what makes it easy to see how much the answer really depends on that one input.",
+  "sections": [
+    {
+      "title": "How does the Graham's law of diffusion calculator work?",
+      "html": "<p>The Graham's law of diffusion calculator takes the values in the form, applies the relationship described below and reports <strong>rate of diffusion of Gas 1</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (effusion or Diffusion?).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as effusion and diffusion. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Effusion or Diffusion?</strong></td><td>One of 2 options, such as effusion and diffusion.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Rate of diffusion of Gas 1</strong></td><td>A number stated in mol/s.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rate of diffusion of Gas 2</strong></td><td>A number stated in mol/s.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rate of effusion of Gas 1</strong></td><td>A number stated in mol/s.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rate of effusion of Gas 2</strong></td><td>A number stated in mol/s.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Molar mass of Gas 1</strong></td><td>A number stated in g/mol.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Molar mass of Gas 2</strong></td><td>A number stated in g/mol.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Graham's law of diffusion calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Rate of diffusion of Gas 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rate of diffusion of Gas 2 × the square root of (molar mass of Gas 2 ÷ molar mass of Gas 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Rate of diffusion of Gas 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((rate of diffusion of Gas 2 ^ 2) × molar mass of Gas 2 ÷ molar mass of Gas 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Molar mass of Gas 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(rate of effusion of Gas 2 ^ 2) × molar mass of Gas 2 ÷ (rate of effusion of Gas 1 ^ 2)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Effusion or Diffusion?</strong> set to Effusion, <strong>Rate of diffusion of Gas</strong> = 10, <strong>Molar mass of Gas 1</strong> = 10 and <strong>Molar mass of Gas</strong> = 10. The calculator returns <strong>Rate of diffusion of Gas 1</strong> = 10.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Rate of diffusion of Gas 1</strong> = 10 should be roughly the size you expected from <strong>Effusion or Diffusion?</strong> set to Effusion and <strong>Rate of diffusion of Gas</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Graham's law of diffusion calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting between the units a protocol and your bench equipment use</li><li>Working through a stoichiometry problem</li><li>Preparing a solution and checking the numbers first</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/henderson-hasselbalch\">Henderson Hasselbalch</a>, <a href=\"/chemistry/hydraulic-retention-time\">Hydraulic retention time</a> and <a href=\"/chemistry/hydrogen-ion-concentration\">Hydrogen ion concentration</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Graham's law of diffusion calculator work out?",
+      "a": "It returns rate of diffusion of Gas 1. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Graham's law of diffusion calculator?",
+      "a": "The form asks for a few values, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Rate of diffusion of Gas 1 = 10. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Graham's law of diffusion calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/henderson-hasselbalch",
+      "name": "Henderson Hasselbalch"
+    },
+    {
+      "path": "/chemistry/hydraulic-retention-time",
+      "name": "Hydraulic retention time"
+    },
+    {
+      "path": "/chemistry/hydrogen-ion-concentration",
+      "name": "Hydrogen ion concentration"
+    }
+  ],
+  "words": 1355
+}

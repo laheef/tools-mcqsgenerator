@@ -1,0 +1,89 @@
+{
+  "path": "/other/middle-school-gpa",
+  "slug": "middle-school-gpa",
+  "cat": "other",
+  "name": "Middle school GPA",
+  "seoTitle": "Middle school GPA Calculator",
+  "seoDesc": "Middle school GPA: convert #1 Credits to #1 Course type instantly — the exact factor, a conversion table and no sign-up.",
+  "h1": "Middle school GPA Calculator",
+  "summary": "The Middle school GPA converter is a two-way unit swap: #1 Credits on one side, #1 Course type on the other. Whatever you enter is converted through a single base unit, so the answer arrives as soon as you press Calculate and the same factor works in either direction.\n\nIt is built for whatever you happen to be working on. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Middle school GPA calculator work?",
+      "html": "<p>The Middle school GPA calculator takes the values in the form, applies the relationship described below and reports <strong>sum of previous credits</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the #1 Course type, the #2 Course type and the #3 Course type); then you type in the #1 Credits, the #2 Credits, the #3 Credits and the #4 Credits.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A single on/off switch — tick it for &ldquo;Use different credits for each course&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Include Honors / AP / IB / College&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 13 options, such as A+, A and A-. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as regular, honors (+0.5) and AP / IB / College (+1). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as A+, A and A-. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as regular, honors (+0.5) and AP / IB / College (+1). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as A+, A and A-. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as regular, honors (+0.5) and AP / IB / College (+1). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as A+, A and A-. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as regular, honors (+0.5) and AP / IB / College (+1). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as A+, A and A-. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as regular, honors (+0.5) and AP / IB / College (+1). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as A+, A and A-. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as regular, honors (+0.5) and AP / IB / College (+1). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as A+, A and A-. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 3 options, such as regular, honors (+0.5) and AP / IB / College (+1). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as A+, A and A-. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>The form has 92 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>There is no direction to choose: enter the figure you have in whichever box matches its unit and read the equivalent from the other. Both fields are editable for that reason, and the chips beside them change the unit a box speaks without touching the number inside it.</p><p>70 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>#1 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#1 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#2 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#2 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#3 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#3 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#4 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#4 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#5 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#5 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#6 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#6 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#7 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#7 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#8 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#8 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>↳ #9 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#9 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#10 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#10 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#11 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#11 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>#12 Credits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>#12 Course type</strong></td><td>One of 3 options, such as regular, honors (+0.5) and AP / IB / College (+1).</td><td>choice</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 43 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Middle school GPA calculator",
+      "html": "<p>This is a conversion rather than a calculation. Sum of previous credits and previous number of courses completed describe the same quantity, so the arithmetic underneath is a simple identity: whatever you type in one box is converted to a common base unit, and the other box is rendered from that base in its own unit.</p>\n<p>That is why changing the unit chip does not change the underlying value, only the way it is written — and why you can enter a figure in either box and read the answer from the other.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Middle school GPA calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Checking a figure someone else quoted</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 2 figures keep coming back — the #1 Credits and the #2 Credits — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/trick-or-treat\">Trick-or-treat</a>, <a href=\"/other/tv-mounting-height\">TV mounting height</a> and <a href=\"/other/tv-size-distance\">TV size and distance</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Middle school GPA calculator work out?",
+      "a": "It returns sum of previous credits, derived from the #1 Credits and the #2 Credits. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Middle school GPA calculator?",
+      "a": "The form asks for the #1 Credits and the #2 Credits, which is 92 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (70 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Middle school GPA calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/trick-or-treat",
+      "name": "Trick-or-treat"
+    },
+    {
+      "path": "/other/tv-mounting-height",
+      "name": "TV mounting height"
+    },
+    {
+      "path": "/other/tv-size-distance",
+      "name": "TV size and distance"
+    }
+  ],
+  "words": 2216
+}

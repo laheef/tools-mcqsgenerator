@@ -1,0 +1,101 @@
+{
+  "path": "/construction/rafter-length",
+  "slug": "rafter-length",
+  "cat": "construction",
+  "name": "Rafter length",
+  "seoTitle": "Rafter length Calculator: Free, With Steps",
+  "seoDesc": "Rafter length: work out run from the roof length and the on-center spacing. A free construction calculator with the formula, units and a worked example.",
+  "h1": "Rafter length Calculator",
+  "summary": "<strong>run</strong> is what the Rafter length calculator works out, and it gets there from the roof length, the on-center spacing, the installation cost and the installation duration. It is built for a materials order or a planning estimate you want to get roughly right first time.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Rafter length calculator work?",
+      "html": "<p>The Rafter length calculator takes the values in the form, applies the relationship described below and reports <strong>run</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (include installation costs?); then you type in the roof length, the on-center spacing, the installation cost and the installation duration.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as rafter length and truss count. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 2 options, such as roof rise and roof pitch. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Roof length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>On-center spacing</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Truss count</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Include installation costs?</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Single truss cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Installation cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Installation duration</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Total expenses (Expenses)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Total expenses (Expenses)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Rise</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Run</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Rafter length (Rafter length)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Roof pitch (Rafter length)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Roof pitch (Rafter length)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Roof pitch (Rafter length)</strong></td><td>A number stated in :12.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rafter length (Rafter length)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Risefrompitch</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Rafter length calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Run</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((rafter length − rise) × (rafter length + rise))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Truss count</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">rounded up, ((12 × roof length + on-center spacing) ÷ on-center spacing)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Risefrompitch</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">roof pitch × run</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Rafter length</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">run × the square root of ((roof pitch ^ 2) + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Roof pitch</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">12 × roof pitch</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Single truss cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-installation duration × installation cost + total expenses) ÷ rounded up, ((12 × roof length + on-center spacing) ÷ on-center spacing)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>I want to calculate</strong> set to rafter length, <strong>Roof length</strong> = 30 m, <strong>On-center spacing</strong> = 30 cm and <strong>Include installation costs?</strong> set to No. Working through the relationship above gives <strong>Truss count</strong> = 13.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Truss count</strong> = 13 should be roughly the size you expected from <strong>I want to calculate</strong> set to rafter length and <strong>Roof length</strong> = 30 m.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in meters</li><li>Length, opening in centimeters</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Time, opening in hours</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Length, opening in meters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Rafter length calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a supplier's figure against your own measurements</li><li>Quoting a job where areas and quantities drive the price</li><li>Ordering material and not wanting a second trip</li><li>Any time the same 4 figures keep coming back — the roof length, the on-center spacing and the installation cost — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/asphalt\">Asphalt</a>, <a href=\"/construction/baluster\">Baluster</a> and <a href=\"/construction/beam-deflection\">Beam deflection</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Rafter length calculator work out?",
+      "a": "It returns run, derived from the roof length, the on-center spacing and the installation cost. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Rafter length calculator?",
+      "a": "The form asks for the roof length, the on-center spacing, the installation cost and the installation duration, which is 11 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter roof length in a different unit?",
+      "a": "Yes. Roof length opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Truss count = 13. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Rafter length calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/asphalt",
+      "name": "Asphalt"
+    },
+    {
+      "path": "/construction/baluster",
+      "name": "Baluster"
+    },
+    {
+      "path": "/construction/beam-deflection",
+      "name": "Beam deflection"
+    }
+  ],
+  "words": 1919
+}

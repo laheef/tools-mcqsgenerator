@@ -1,0 +1,89 @@
+{
+  "path": "/math/linear-independence",
+  "slug": "linear-independence",
+  "cat": "math",
+  "name": "Linear independence",
+  "seoTitle": "Linear independence — Free Online Calculator",
+  "seoDesc": "Linear independence: answer 19 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Linear independence Calculator",
+  "summary": "The Linear independence calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt is built for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Every field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Linear independence calculator work?",
+      "html": "<p>The Linear independence calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (number of vectors and number of coordinates); then you type in the figures it asks for.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Number of vectors</td><td>pick the option that matches your case — 3 options, such as 2, 3 and 4. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>Number of coordinates</td><td>pick the option that matches your case — 3 options, such as 2, 3 and 4. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr><tr><td>A₁</td><td>a plain number with no unit attached.</td></tr><tr><td>A₂</td><td>a plain number with no unit attached.</td></tr><tr><td>A₃</td><td>a plain number with no unit attached.</td></tr><tr><td>A₄</td><td>a plain number with no unit attached.</td></tr><tr><td>B₁</td><td>a plain number with no unit attached.</td></tr><tr><td>B₂</td><td>a plain number with no unit attached.</td></tr><tr><td>B₃</td><td>a plain number with no unit attached.</td></tr><tr><td>B₄</td><td>a plain number with no unit attached.</td></tr><tr><td>C₁</td><td>a plain number with no unit attached.</td></tr><tr><td>C₂</td><td>a plain number with no unit attached.</td></tr><tr><td>C₃</td><td>a plain number with no unit attached.</td></tr><tr><td>C₄</td><td>a plain number with no unit attached.</td></tr><tr><td>D₁</td><td>a plain number with no unit attached.</td></tr><tr><td>D₂</td><td>a plain number with no unit attached.</td></tr><tr><td>D₃</td><td>a plain number with no unit attached.</td></tr><tr><td>D₄</td><td>a plain number with no unit attached.</td></tr></tbody></table><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "The formula behind the Linear independence calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Linear independence calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Linear independence calculator, these are the ones that matter:</p>\n<ul><li>The 2 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — number of vectors for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/relatively-prime\">Relatively prime</a>, <a href=\"/math/remainder\">Remainder</a> and <a href=\"/math/reverse-foil\">Reverse FOIL</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Linear independence calculator?",
+      "a": "The form asks for a few values, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Linear independence calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/relatively-prime",
+      "name": "Relatively prime"
+    },
+    {
+      "path": "/math/remainder",
+      "name": "Remainder"
+    },
+    {
+      "path": "/math/reverse-foil",
+      "name": "Reverse FOIL"
+    }
+  ],
+  "words": 1059
+}

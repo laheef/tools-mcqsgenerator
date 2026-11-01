@@ -1,0 +1,97 @@
+{
+  "path": "/physics/thin-film-optics",
+  "slug": "thin-film-optics",
+  "cat": "physics",
+  "name": "Thin film optics",
+  "seoTitle": "Thin film optics Calculator — Formula, Units & Example",
+  "seoDesc": "Thin film optics: work out optical film thickness (d) from the wavelength and the optical path difference. A free physics calculator with the formula,…",
+  "h1": "Thin film optics Calculator",
+  "summary": "Supply the wavelength, the optical path difference, the s-polarized reflectivity and the refraction angle in substrate and the Thin film optics calculator solves for <strong>optical film thickness (d)</strong>. That makes it useful for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Thin film optics calculator work?",
+      "html": "<p>The Thin film optics calculator takes the values in the form, applies the relationship described below and reports <strong>optical film thickness (d)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the wavelength (λ), the optical path difference (OPD), the s-polarized reflectivity (Rₛ) and the refraction angle in substrate (θ₃).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in nanometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in nanometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in degrees. The unit chip switches it to any of the 12 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Incident Angle (θ₁)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Optical film thickness (d)</strong></td><td>A measured quantity, 34 units available.</td><td>nanometers</td><td>Calculated</td></tr><tr><td><strong>Wavelength (λ)</strong></td><td>A measured quantity, 34 units available.</td><td>nanometers</td><td>You supply it</td></tr><tr><td><strong>Refractive index of first medium (n₁)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Refractive index of optical film (n₂)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Refractive index of substrate (n₃)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Optical path difference (OPD)</strong></td><td>A measured quantity, 34 units available.</td><td>nanometers</td><td>You supply it</td></tr><tr><td><strong>S-polarized reflectivity (Rₛ)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>P-polarized reflectivity (Rₚ)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Min anti-reflection coating thickness</strong></td><td>A measured quantity, 34 units available.</td><td>nanometers</td><td>Calculated</td></tr><tr><td><strong>Interference type</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Refraction angle in optical film (θ₂)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>Calculated</td></tr><tr><td><strong>Refraction angle in substrate (θ₃)</strong></td><td>A measured quantity, 12 units available.</td><td>degrees</td><td>You supply it</td></tr><tr><td><strong>P-polarized reflectivity at first interface</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>P-polarized reflectivity at second interface</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>P-polarized transmissivity at first interface</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>S-polarized reflectivity at first interface</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>S-polarized reflectivity at second interface</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>S-polarized transmissivity at first interface</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Thin film optics calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Optical film thickness (d)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × optical path difference (OPD) ÷ (refractive index of optical film (n₂) × the cosine of (refraction angle in optical film (θ₂)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Refractive index of optical film (n₂)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">refractive index of first medium (n₁) × the sine of (incident Angle (θ₁)) ÷ the sine of (refraction angle in optical film (θ₂))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Refractive index of substrate (n₃)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">refractive index of optical film (n₂) × the sine of (refraction angle in optical film (θ₂)) ÷ the sine of (refraction angle in substrate (θ₃))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Refraction angle in optical film (θ₂)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(refractive index of first medium (n₁) × (20 × the square root of (s-polarized reflectivity at first interface) − s-polarized reflectivity at first interface − 100) × the cosine of (incident Angle (θ₁)) ÷ (refractive index of optical film (n₂) × (s-polarized reflectivity at first interface − 100)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Refraction angle in optical film (θ₂)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(refractive index of optical film (n₂) × (20 × the square root of (p-polarized reflectivity at first interface) − p-polarized reflectivity at first interface − 100) × the cosine of (incident Angle (θ₁)) ÷ (refractive index of first medium (n₁) × (p-polarized reflectivity at first interface − 100)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Refraction angle in optical film (θ₂)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(refractive index of substrate (n₃) × (20 × the square root of (s-polarized reflectivity at second interface) − s-polarized reflectivity at second interface − 100) × the cosine of (refraction angle in substrate (θ₃)) ÷ (refractive index of optical film (n₂) × (s-polarized reflectivity at second interface − 100)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Wavelength (λ)</strong> = 0 nm, <strong>Refractive index of optical film (n₂)</strong> = 10 and <strong>Optical path difference (OPD)</strong> = 30 nm. The calculator returns <strong>Optical film thickness (d)</strong> = 1.5231 nm.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Optical film thickness (d)</strong> = 1.5231 nm should be roughly the size you expected from <strong>Wavelength (λ)</strong> = 0 nm and <strong>Refractive index of optical film (n₂)</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in nanometers, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>Shown in degrees, and convertible to any of the 12 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Angle, opening in degrees</li><li>Length, opening in nanometers</li><li>Length, opening in nanometers</li><li>Length, opening in nanometers</li><li>%, opening in percent</li><li>%, opening in percent</li><li>Length, opening in nanometers</li><li>Angle, opening in degrees</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Thin film optics calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 4 figures keep coming back — the wavelength, the optical path difference and the s-polarized reflectivity — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/impact-energy\">Impact energy</a>, <a href=\"/physics/impact-test\">Impact test</a> and <a href=\"/physics/impulse-and-momentum\">Impulse and momentum</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Thin film optics calculator work out?",
+      "a": "It returns optical film thickness (d), derived from the wavelength, the optical path difference and the s-polarized reflectivity. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Thin film optics calculator?",
+      "a": "The form asks for the wavelength, the optical path difference, the s-polarized reflectivity and the refraction angle in substrate, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter incident Angle (θ₁) in a different unit?",
+      "a": "Yes. Incident Angle (θ₁) opens in degrees and the chip beside it offers 12 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Optical film thickness (d) = 1.5231 nm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Thin film optics calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/impact-energy",
+      "name": "Impact energy"
+    },
+    {
+      "path": "/physics/impact-test",
+      "name": "Impact test"
+    },
+    {
+      "path": "/physics/impulse-and-momentum",
+      "name": "Impulse and momentum"
+    }
+  ],
+  "words": 1922
+}

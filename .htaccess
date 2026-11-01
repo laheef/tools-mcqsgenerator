@@ -1,0 +1,53 @@
+# Apache / LiteSpeed config for a site served from /tool
+# (https://mcqsgenerator.com/tool). If you rename the folder, change the three
+# "/tool" paths below: RewriteBase, ErrorDocument 404.
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /tool/
+
+    # ---- blocked before anything else is served -------------------------
+    # The panel keeps its own front controller.
+    RewriteRule ^admin/(lib|views|controllers|migrations)/ - [F,L]
+    # Data, caches, backups, tests and the build notes are not public.
+    RewriteRule ^(data|tests|tools|docs|install)/ - [F,L]
+    RewriteRule ^config\.(db|local|db\.sample)\.php - [F,L]
+    # Nothing in uploads/ is ever executed; uploaded files are media only.
+    RewriteRule ^uploads/.*\.(php|phtml|phar|php[0-9]+)$ - [F,L]
+
+    # ---- real files are served as-is -------------------------------------
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # ---- everything else is a pretty URL for the front controller --------
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|woff2|svg|png|jpg|jpeg|webp|gif|ico)$">
+        Header set Cache-Control "public, max-age=2592000, immutable"
+    </FilesMatch>
+    # HTML must revalidate so published edits show up immediately.
+    <FilesMatch "\.(php|html)$">
+        Header set Cache-Control "private, no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# Never serve credentials, dumps or the internals through the web server.
+<FilesMatch "^(config\.db\.php|config\.local\.php|config\.db\.sample\.php|\.htaccess|\.gitignore|.*\.sql)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+ErrorDocument 404 /tool/index.php

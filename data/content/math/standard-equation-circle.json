@@ -1,0 +1,93 @@
+{
+  "path": "/math/standard-equation-circle",
+  "slug": "standard-equation-circle",
+  "cat": "math",
+  "name": "Standard equation of a circle",
+  "seoTitle": "Standard equation of a circle Calculator: Free, With Steps",
+  "seoDesc": "Standard equation of a circle: work out a (Standard form: (x - A)² + (y - B)² = C) from the b (Standard form: (x - A)² + (y - B)² = C). A free math…",
+  "h1": "Standard equation of a circle Calculator",
+  "summary": "The Standard equation of a circle calculator is a free, no-sign-up math tool. Fill in the 3 fields it asks for and it works out <strong>a (Standard form: (x - A)² + (y - B)² = C)</strong> straight away, with the formula shown underneath.\n\nThat makes it useful for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Nothing repaints underneath you: edit a field, press Calculate, and the new answer appears. That is how you find out which input the result is sensitive to.",
+  "sections": [
+    {
+      "title": "How does the Standard equation of a circle calculator work?",
+      "html": "<p>The Standard equation of a circle calculator takes the values in the form, applies the relationship described below and reports <strong>a (Standard form: (x - A)² + (y - B)² = C)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the b (Standard form: (x - A)² + (y - B)² = C).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Radius (Center coordinates and radius)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>A (Standard form: (x - A)² + (y - B)² = C)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>B (Standard form: (x - A)² + (y - B)² = C)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>A (Parametric form: x = A + r cos(α), y = B +…)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>B (Parametric form: x = A + r cos(α), y = B +…)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Radius (Other circle properties)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Diameter</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Area</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Circumference</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Standard equation of a circle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">A</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">x-coordinate</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Y-coordinate</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">B</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (C)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × diameter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × circumference ÷ PI</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Radius</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (area) ÷ the square root of (PI)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>C</strong> = 10. Working through the relationship above gives <strong>Radius</strong> = 3.162, <strong>r</strong> = 3.1623, <strong>Diameter</strong> = 6.325 and <strong>Area</strong> = 31.416.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Radius</strong> = 3.162, <strong>r</strong> = 3.1623, <strong>Diameter</strong> = 6.325 and <strong>Area</strong> = 31.416 should be roughly the size you expected from <strong>C</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Standard equation of a circle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Building the same calculation into a spreadsheet and wanting a reference value</li><li>Settling an argument about a number with a quick, traceable result</li><li>Any time the same 1 figures keep coming back — the b (Standard form: (x - A)² + (y - B)² = C) — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/binary-division\">Binary division</a>, <a href=\"/math/binary-fraction\">Binary fraction</a> and <a href=\"/math/binary-multiplication\">Binary multiplication</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Standard equation of a circle calculator work out?",
+      "a": "It returns a (Standard form: (x - A)² + (y - B)² = C), derived from the b (Standard form: (x - A)² + (y - B)² = C). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Standard equation of a circle calculator?",
+      "a": "The form asks for the b (Standard form: (x - A)² + (y - B)² = C), which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Radius = 3.162. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Standard equation of a circle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/binary-division",
+      "name": "Binary division"
+    },
+    {
+      "path": "/math/binary-fraction",
+      "name": "Binary fraction"
+    },
+    {
+      "path": "/math/binary-multiplication",
+      "name": "Binary multiplication"
+    }
+  ],
+  "words": 1370
+}

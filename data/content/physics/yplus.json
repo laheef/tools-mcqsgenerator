@@ -1,0 +1,93 @@
+{
+  "path": "/physics/yplus",
+  "slug": "yplus",
+  "cat": "physics",
+  "name": "Y+",
+  "seoTitle": "Y+ Calculator — Formula, Units & Example",
+  "seoDesc": "Y+: work out freestream velocity (Uf) from the density and the dynamic viscosity. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Y+ Calculator",
+  "summary": "Give the Y+ calculator the density, the dynamic viscosity, the length of boundary layer and the dimensionless distance and it returns <strong>freestream velocity (Uf)</strong>. It is built for a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the Y+ calculator work?",
+      "html": "<p>The Y+ calculator takes the values in the form, applies the relationship described below and reports <strong>freestream velocity (Uf)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the skin friction coefficient approximation); then you type in the density (ρ), the dynamic viscosity (μ), the length of boundary layer (L) and the dimensionless distance (y+).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in kilograms per cubic meter. The unit chip switches it to any of the 9 supported units.</li><li>A measured quantity, entered by default in millipascals. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as schlichting, granville and kempf-Karman. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Freestream velocity (Uf)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Density (ρ)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>You supply it</td></tr><tr><td><strong>Dynamic viscosity (μ)</strong></td><td>A measured quantity, 28 units available.</td><td>millipascals</td><td>You supply it</td></tr><tr><td><strong>Length of boundary layer (L)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Dimensionless distance (y+)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Skin friction coefficient approximation</strong></td><td>One of 5 options, such as schlichting, granville and kempf-Karman.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Skin friction coefficient (Cf)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Shear stress (𝜏w)</strong></td><td>A measured quantity, 28 units available.</td><td>pascals</td><td>Calculated</td></tr><tr><td><strong>Friction velocity (u)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Wall distance (y)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Y+ calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Freestream velocity (Uf)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">dynamic viscosity (μ) × reynold&#x27;s number (Re) ÷ (density (ρ) × length of boundary layer (L))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Skin friction coefficient (Cf)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(reynold&#x27;s number (Re), skin friction coefficient approximation)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Shear stress (𝜏w)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 2) × density (ρ) × (freestream velocity (Uf) ^ 2) × (reynold&#x27;s number (Re), skin friction coefficient approximation))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Friction velocity (u)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(the square root of (((1 ÷ 2) × density (ρ) × (freestream velocity (Uf) ^ 2) × (reynold&#x27;s number (Re), skin friction coefficient approximation)) ÷ density (ρ)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wall distance (y)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(dynamic viscosity (μ) × dimensionless distance (y+) ÷ (density (ρ) × (the square root of (((1 ÷ 2) × density (ρ) × (freestream velocity (Uf) ^ 2) × (reynold&#x27;s number (Re), skin friction coefficient approximation)) ÷ density (ρ)))))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in pascals, and convertible to any of the 28 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Speed, opening in meters per second</li><li>Density, opening in kilograms per cubic meter</li><li>Pressure, opening in millipascals</li><li>Length, opening in meters</li><li>Pressure, opening in pascals</li><li>Speed, opening in meters per second</li><li>Length, opening in millimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Y+ calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the density, the dynamic viscosity and the length of boundary layer — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/moisture-content\">Moisture content</a>, <a href=\"/physics/momentum\">Momentum</a> and <a href=\"/physics/mosfet\">MOSFET</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Y+ calculator work out?",
+      "a": "It returns freestream velocity (Uf), derived from the density, the dynamic viscosity and the length of boundary layer. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Y+ calculator?",
+      "a": "The form asks for the density, the dynamic viscosity, the length of boundary layer and the dimensionless distance, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter freestream velocity (Uf) in a different unit?",
+      "a": "Yes. Freestream velocity (Uf) opens in meters per second and the chip beside it offers 25 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Y+ calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/moisture-content",
+      "name": "Moisture content"
+    },
+    {
+      "path": "/physics/momentum",
+      "name": "Momentum"
+    },
+    {
+      "path": "/physics/mosfet",
+      "name": "MOSFET"
+    }
+  ],
+  "words": 1559
+}

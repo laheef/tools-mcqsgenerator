@@ -1,0 +1,93 @@
+{
+  "path": "/health/tinetti",
+  "slug": "tinetti",
+  "cat": "health",
+  "name": "Tinetti",
+  "seoTitle": "Tinetti Calculator — Formula, Units & Example",
+  "seoDesc": "Tinetti: answer 23 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Tinetti Calculator",
+  "summary": "The Tinetti calculator takes the numbers you enter and reports <strong>rise from chair</strong> immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThat makes it useful for an informed starting point to take to a clinician, not a diagnosis. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Tinetti calculator work?",
+      "html": "<p>The Tinetti calculator takes the values in the form, applies the relationship described below and reports <strong>rise from chair</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the sitting balance, the attempts and the standing balance (5s)); then you type in the gait section and the total.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as leans or slides in chair and steady, safe. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as unable to without help, able, requires &gt; 1 attempt and able to rise, 1 attempt. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as unsteady, steady but with support and steady without support. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as unsteady, steady, wide stance/support and narrow stance, no support. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as begins to fall, staggers, grabs, catches self and steady. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as unsteady and steady. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as discontinuous and continuous. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as unsteady (grabs, staggers) and steady. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as unsafe, uses arms/no smooth motion and safe, smooth motion. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as any hesitancy, &gt;1 attempts and no hesitancy. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as step to and step through R. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as step to and step through L. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as foot drop and r foot clears floor. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as foot drop and l foot clears floor. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as r and L step are not equal and r and L step length are equal. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as stopping or discontinuity and steps appear continuous. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as marked sway/ uses aid, no sway but flex. etc for stability and no sway/flex/use of arms/aid. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as heels apart and heels almost touching. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in /12.</li><li>A number, expressed in /28.</li></ul><p>20 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Sitting balance</strong></td><td>One of 2 options, such as leans or slides in chair and steady, safe.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Rise from chair</strong></td><td>One of 3 options, such as unable to without help, able, uses arms to help and able without use of arms.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Attempts</strong></td><td>One of 3 options, such as unable to without help, able, requires &gt; 1 attempt and able to rise, 1 attempt.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Standing balance (5s)</strong></td><td>One of 3 options, such as unsteady, steady but with support and steady without support.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Standing balance</strong></td><td>One of 3 options, such as unsteady, steady, wide stance/support and narrow stance, no support.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Nudged</strong></td><td>One of 3 options, such as begins to fall, staggers, grabs, catches self and steady.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Eyes closed</strong></td><td>One of 2 options, such as unsteady and steady.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Turning steps</strong></td><td>One of 2 options, such as discontinuous and continuous.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Turning steadiness</strong></td><td>One of 2 options, such as unsteady (grabs, staggers) and steady.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Sitting down</strong></td><td>One of 3 options, such as unsafe, uses arms/no smooth motion and safe, smooth motion.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Indication</strong></td><td>One of 2 options, such as any hesitancy, &gt;1 attempts and no hesitancy.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Step (right)</strong></td><td>One of 2 options, such as step to and step through R.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Step (left)</strong></td><td>One of 2 options, such as step to and step through L.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Foot (right)</strong></td><td>One of 2 options, such as foot drop and r foot clears floor.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Foot (left)</strong></td><td>One of 2 options, such as foot drop and l foot clears floor.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Symmetry</strong></td><td>One of 2 options, such as r and L step are not equal and r and L step length are equal.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Continuity</strong></td><td>One of 2 options, such as stopping or discontinuity and steps appear continuous.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Path</strong></td><td>One of 3 options, such as marked deviation, mild/moderate deviation/aid and straight without aid.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Trunk</strong></td><td>One of 3 options, such as marked sway/ uses aid, no sway but flex. etc for stability and no sway/flex/use of arms/aid.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Walking</strong></td><td>One of 2 options, such as heels apart and heels almost touching.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Balance section</strong></td><td>A number stated in /16.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Gait section</strong></td><td>A number stated in /12.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total</strong></td><td>A number stated in /28.</td><td>—</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Tinetti calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Rise from chair</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-attempts + balance section − eyes closed − standing balance (5s) − nudged − sitting balance − sitting down − standing balance − turning steadiness − turning steps</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Path</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-continuity − foot (left) − foot (right) + gait section − indication − step (left) − step (right) − symmetry − trunk − walking</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Balance section</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-gait section + total</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Open the page and it is already filled in. With the values it starts from — <strong>Sitting balance</strong> set to Steady, safe, <strong>Rise from chair</strong> set to Able, uses arms to help, <strong>Attempts</strong> set to Able, requires &gt; 1 attempt and <strong>Standing balance (5s)</strong> set to Steady but with support — it reports <strong>Balance section</strong> = 10, <strong>Gait section</strong> = 10 and <strong>Total</strong> = 20.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Balance section</strong> = 10, <strong>Gait section</strong> = 10 and <strong>Total</strong> = 20 should be roughly the size you expected from <strong>Sitting balance</strong> set to Steady, safe and <strong>Rise from chair</strong> set to Able, uses arms to help.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>The option the calculation settles on.</li><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Tinetti calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Tracking a measurement over time and understanding what changed</li><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Deciding whether a reading is worth a second look</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/psa-doubling-time\">PSA doubling time</a>, <a href=\"/health/psi\">PSI</a> and <a href=\"/health/pvr\">Pulmonary vascular resistance</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Tinetti calculator work out?",
+      "a": "It returns rise from chair. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Tinetti calculator?",
+      "a": "The form asks for a few values, which is 20 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (20 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Balance section = 10. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Tinetti calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/psa-doubling-time",
+      "name": "PSA doubling time"
+    },
+    {
+      "path": "/health/psi",
+      "name": "PSI"
+    },
+    {
+      "path": "/health/pvr",
+      "name": "Pulmonary vascular resistance"
+    }
+  ],
+  "words": 2226
+}

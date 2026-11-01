@@ -1,0 +1,93 @@
+{
+  "path": "/physics/mosfet",
+  "slug": "mosfet",
+  "cat": "physics",
+  "name": "MOSFET",
+  "seoTitle": "MOSFET Calculator — Formula, Units & Example",
+  "seoDesc": "MOSFET: work out k parameter from the threshold voltage and the gate-source voltage. A free physics calculator with the formula, units and a worked example.",
+  "h1": "MOSFET Calculator",
+  "summary": "The MOSFET calculator turns the threshold voltage, the gate-source voltage and more into <strong>k parameter</strong>. It suits a lab report, a problem set or a sanity check on a physical situation.\n\nEvery field is labelled the way you would say it out loud, so you can usually fill the form from memory and only look up the numbers you genuinely do not know.",
+  "sections": [
+    {
+      "title": "How does the MOSFET calculator work?",
+      "html": "<p>The MOSFET calculator takes the values in the form, applies the relationship described below and reports <strong>k parameter</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the threshold voltage (VT), the gate-source voltage (Vgs), the source-drain current (ID) and the source-drain current (ID) (2).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in amperes. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in amperes. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in amperes. The unit chip switches it to any of the 3 supported units.</li><li>A measured quantity, entered by default in micrometers. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in farads. The unit chip switches it to any of the 5 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in ohms. The unit chip switches it to any of the 5 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Threshold voltage (VT)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>K parameter</strong></td><td>A number stated in V⁻¹Ω⁻¹.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Drain-source voltage (Vds)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>Gate-source voltage (Vgs)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>Source-drain current (ID)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>You supply it</td></tr><tr><td><strong>Source-drain current (ID) (2)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>You supply it</td></tr><tr><td><strong>Source-drain current (ID) (3)</strong></td><td>A measured quantity, 3 units available.</td><td>amperes</td><td>You supply it</td></tr><tr><td><strong>Length (L)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>Calculated</td></tr><tr><td><strong>Width (W)</strong></td><td>A measured quantity, 34 units available.</td><td>micrometers</td><td>You supply it</td></tr><tr><td><strong>Capacitance per unit area</strong></td><td>A measured quantity, 5 units available.</td><td>farads</td><td>You supply it</td></tr><tr><td><strong>Electron mobility (µN)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr><tr><td><strong>Time in seconds</strong></td><td>A measured quantity, 27 units available.</td><td>seconds</td><td>Calculated</td></tr><tr><td><strong>Voltage in volts</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>Electron mobility (μN)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Resistance</strong></td><td>A measured quantity, 5 units available.</td><td>ohms</td><td>You supply it</td></tr><tr><td><strong>Check I saturation</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Check I triode</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Check I cut-off</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the MOSFET calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">K parameter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">source-drain current (ID) ÷ (gate-source voltage (Vgs) − threshold voltage (VT) ^ 2)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Drain-source voltage (Vds)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(k parameter × (gate-source voltage (Vgs) − threshold voltage (VT)) + the square root of (-k parameter × (source-drain current (ID) − k parameter × (gate-source voltage (Vgs) ^ 2) + 2 × k parameter × gate-source voltage (Vgs) × threshold voltage (VT) − k parameter × (threshold voltage (VT) ^ 2)))) ÷ k parameter</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Time in seconds</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">area × electron mobility (μN) ÷ (electron mobility (µN) × voltage in volts)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">K parameter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × capacitance per unit area × electron mobility (µN) × width (W) ÷ (length (L) × resistance × voltage in volts)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Check I cut-off</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(threshold voltage (VT), gate-source voltage (Vgs), source-drain current (ID))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Check I triode</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(threshold voltage (VT), gate-source voltage (Vgs), drain-source voltage (Vds), source-drain current (ID))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in seconds, and convertible to any of the 27 units on that chip.</li><li>Shown in micrometers, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Electric current – ampere, opening in amperes</li><li>Electric current – ampere, opening in amperes</li><li>Electric current – ampere, opening in amperes</li><li>Length, opening in micrometers</li><li>Length, opening in micrometers</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The MOSFET calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Any time the same 4 figures keep coming back — the threshold voltage, the gate-source voltage and the source-drain current — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/car-crash-force\">Car crash force</a>, <a href=\"/physics/car-jump-distance\">Car jump distance</a> and <a href=\"/physics/car-mass-center\">Car center of mass</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the MOSFET calculator work out?",
+      "a": "It returns k parameter, derived from the threshold voltage, the gate-source voltage and the source-drain current. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the MOSFET calculator?",
+      "a": "The form asks for the threshold voltage, the gate-source voltage, the source-drain current and the source-drain current (ID), which is 12 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter threshold voltage (VT) in a different unit?",
+      "a": "Yes. Threshold voltage (VT) opens in volts and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the MOSFET calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/car-crash-force",
+      "name": "Car crash force"
+    },
+    {
+      "path": "/physics/car-jump-distance",
+      "name": "Car jump distance"
+    },
+    {
+      "path": "/physics/car-mass-center",
+      "name": "Car center of mass"
+    }
+  ],
+  "words": 1641
+}

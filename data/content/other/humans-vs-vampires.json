@@ -1,0 +1,93 @@
+{
+  "path": "/other/humans-vs-vampires",
+  "slug": "humans-vs-vampires",
+  "cat": "other",
+  "name": "Humans vs vampires",
+  "seoTitle": "Humans vs vampires Calculator — Formula, Units & Example",
+  "seoDesc": "Humans vs vampires: work out how many humans to leave? from the initial population and the transformation probability. A free other calculator with the…",
+  "h1": "Humans vs vampires Calculator",
+  "summary": "The Humans vs vampires calculator turns the initial population and the transformation probability into <strong>how many humans to leave?</strong>. It suits whatever you happen to be working on.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Humans vs vampires calculator work?",
+      "html": "<p>The Humans vs vampires calculator takes the values in the form, applies the relationship described below and reports <strong>how many humans to leave?</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (select a scenario, the annual population growth and the vs. humans); then you type in the initial population (Humans), the transformation probability (Humans), the initial population (Vampires) and the initial population (Vampire slayers).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 6 options, such as stoker-King model, rice model and harris-Meyer-Kostova model. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Show scenario details&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;Manually specify all numerical values (advanced mode)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>Pick the option that matches your case — 4 options, such as no growth, current (1% per year) and quick (10% per year). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Let smaller populations grow faster&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 5 options, such as hunting, frequent attacks and common attacks. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as slayers annihilation, aggressive attacks and constant attacks. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Let vampires stop attacts to prevent human extinction&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 4 options, such as no recruitment, slow (1% per year) and mobilization (10% per year). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as devote life to kill vampires, hunting and regular attacks. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A single on/off switch — tick it for &ldquo;Set the maximum number of vampire slayers&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 6 options, such as days, weeks and months. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A single on/off switch — tick it for &ldquo;Logarithmic scale&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>13 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Select a scenario</strong></td><td>One of 6 options, such as stoker-King model, rice model and harris-Meyer-Kostova model.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Initial population (Humans)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Transformation probability (Humans)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Annual population growth</strong></td><td>One of 4 options, such as no growth, current (1% per year) and quick (10% per year).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>How many times faster?</strong></td><td>A number stated in times.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Initial population (Vampires)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Vs. humans</strong></td><td>One of 5 options, such as hunting, frequent attacks and common attacks.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>How many % of humans one vampire kills?</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Vs. slayers</strong></td><td>One of 5 options, such as slayers annihilation, aggressive attacks and constant attacks.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>How many % of slayers one vampire kills?</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>How many humans to leave?</strong></td><td>A number stated in humans.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Initial population (Vampire slayers)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Annual recruitment speed</strong></td><td>One of 4 options, such as no recruitment, slow (1% per year) and mobilization (10% per year).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Vs. vampires</strong></td><td>One of 5 options, such as devote life to kill vampires, hunting and regular attacks.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>How many % of vampires one slayer kills?</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Transformation probability (Vampire slayers)</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Time scale</strong></td><td>One of 6 options, such as days, weeks and months.</td><td>choice</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Humans vs vampires calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Humans vs vampires calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li><li>Any time the same 2 figures keep coming back — the initial population and the transformation probability — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/speaker-box\">Speaker box</a>, <a href=\"/other/streaming-bitrate\">Streaming bitrate</a> and <a href=\"/other/streaming-royalties\">Streaming royalties</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Humans vs vampires calculator work out?",
+      "a": "It returns how many humans to leave?, derived from the initial population and the transformation probability. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Humans vs vampires calculator?",
+      "a": "The form asks for the initial population and the transformation probability, which is 18 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter transformation probability (Humans) in a different unit?",
+      "a": "Yes. Transformation probability (Humans) opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (13 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports How fast does the humans' population grow? = 0 %. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Humans vs vampires calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/speaker-box",
+      "name": "Speaker box"
+    },
+    {
+      "path": "/other/streaming-bitrate",
+      "name": "Streaming bitrate"
+    },
+    {
+      "path": "/other/streaming-royalties",
+      "name": "Streaming royalties"
+    }
+  ],
+  "words": 2018
+}

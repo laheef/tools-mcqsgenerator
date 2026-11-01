@@ -1,0 +1,101 @@
+{
+  "path": "/physics/rms-voltage",
+  "slug": "rms-voltage",
+  "cat": "physics",
+  "name": "RMS voltage",
+  "seoTitle": "RMS voltage — Free Online Calculator",
+  "seoDesc": "RMS voltage: work out RMS voltage (Voltage) from the RMS voltage. A free physics calculator with the formula, units and a worked example.",
+  "h1": "RMS voltage Calculator",
+  "summary": "The RMS voltage calculator is a free, no-sign-up physics tool. Fill in the 4 fields it asks for and it works out <strong>RMS voltage (Voltage)</strong> straight away, with the formula shown underneath.\n\nIt suits a lab report, a problem set or a sanity check on a physical situation. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the RMS voltage calculator work?",
+      "html": "<p>The RMS voltage calculator takes the values in the form, applies the relationship described below and reports <strong>RMS voltage (Voltage)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the waveform shape and the characteristic voltage); then you type in the RMS voltage (Voltage) and the RMS voltage (Voltage).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 6 options, such as sine wave, square wave and triangle wave. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as peak voltage (Vp), peak-to-peak voltage (Vpp) and average voltage (Vavg). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in volts. The unit chip switches it to any of the 6 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Waveform shape</strong></td><td>One of 6 options, such as sine wave, square wave and triangle wave.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Characteristic voltage</strong></td><td>One of 3 options, such as peak voltage (Vp), peak-to-peak voltage (Vpp) and average voltage (Vavg).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Voltage</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>Wave offset (V₀)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>You supply it</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr><tr><td><strong>RMS voltage (Voltage)</strong></td><td>A measured quantity, 6 units available.</td><td>volts</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the RMS voltage calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">RMS voltage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × the square root of (2 × (voltage ^ 2) + 4 × (wave offset (V₀) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">RMS voltage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × the square root of (2 × (voltage ^ 2) + 16 × (wave offset (V₀) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">RMS voltage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 4) × the square root of (2 × (PI ^ 2) × (voltage ^ 2) + 16 × (wave offset (V₀) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">RMS voltage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((voltage ^ 2) + (wave offset (V₀) ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Wave offset (V₀)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 2) × the square root of (-(voltage ^ 2) + 4 × (RMS voltage ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Voltage</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of (-(wave offset (V₀) ^ 2) + (RMS voltage ^ 2))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Waveform shape</strong> set to Sine wave, <strong>Characteristic voltage</strong> set to Peak voltage (Vp), <strong>Voltage</strong> = 10 V and <strong>Wave offset (V₀)</strong> = 10 V. The calculator returns <strong>RMS voltage</strong> = 12.2474 V.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>RMS voltage</strong> = 12.2474 V should be roughly the size you expected from <strong>Waveform shape</strong> set to Sine wave and <strong>Characteristic voltage</strong> set to Peak voltage (Vp).</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li><li>Shown in volts, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li><li>Voltage, opening in volts</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The RMS voltage calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 1 figures keep coming back — the RMS voltage — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/flat-vs-round-earth\">Flat vs. round Earth</a>, <a href=\"/physics/flow-rate\">Flow rate</a> and <a href=\"/physics/flyback-converter\">Flyback converter</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the RMS voltage calculator work out?",
+      "a": "It returns RMS voltage (Voltage), derived from the RMS voltage. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the RMS voltage calculator?",
+      "a": "The form asks for the RMS voltage, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter voltage in a different unit?",
+      "a": "Yes. Voltage opens in volts and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports RMS voltage = 12.2474 V. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the RMS voltage calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/flat-vs-round-earth",
+      "name": "Flat vs. round Earth"
+    },
+    {
+      "path": "/physics/flow-rate",
+      "name": "Flow rate"
+    },
+    {
+      "path": "/physics/flyback-converter",
+      "name": "Flyback converter"
+    }
+  ],
+  "words": 1865
+}

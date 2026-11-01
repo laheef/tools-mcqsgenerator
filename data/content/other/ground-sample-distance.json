@@ -1,0 +1,101 @@
+{
+  "path": "/other/ground-sample-distance",
+  "slug": "ground-sample-distance",
+  "cat": "other",
+  "name": "GSD (ground sample distance)",
+  "seoTitle": "GSD (ground sample distance) Calculator: Free, With Steps",
+  "seoDesc": "GSD (ground sample distance): work out sensor width (S) from the altitude and the focal length of camera. A free other calculator with the formula, units…",
+  "h1": "GSD (ground sample distance) Calculator",
+  "summary": "Give the GSD (ground sample distance) calculator the altitude, the focal length of camera, the image width and the ground sample distance and it returns <strong>sensor width (S)</strong>. It suits whatever you happen to be working on.\n\nEditing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.",
+  "sections": [
+    {
+      "title": "How does the GSD (ground sample distance) calculator work?",
+      "html": "<p>The GSD (ground sample distance) calculator takes the values in the form, applies the relationship described below and reports <strong>sensor width (S)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the altitude (A), the focal length of camera (f), the image width (I) and the ground sample distance (GSD).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A number, expressed in pixels.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Altitude (A)</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Focal length of camera (f)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Image width (I)</strong></td><td>A number stated in pixels.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Sensor width (S)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Ground sample distance (GSD)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the GSD (ground sample distance) calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Sensor width (S)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">focal length of camera (f) × ground sample distance (GSD) × image width (I) ÷ altitude (A)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Altitude (A)</strong> = 30 m, <strong>Focal length of camera (f)</strong> = 30 mm, <strong>Image width (I)</strong> = 10 and <strong>Ground sample distance (GSD)</strong> = 30 cm. Working through the relationship above gives <strong>Sensor width (S)</strong> = 300 cm.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Sensor width (S)</strong> = 300 cm should be roughly the size you expected from <strong>Altitude (A)</strong> = 30 m and <strong>Focal length of camera (f)</strong> = 30 mm.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in meters</li><li>Length, opening in millimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The GSD (ground sample distance) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing how sensitive an answer is to one input</li><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Any time the same 4 figures keep coming back — the altitude, the focal length of camera and the image width — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the GSD (ground sample distance) calculator, these are the ones that matter:</p>\n<ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/sandbox\">Sandbox</a>, <a href=\"/other/school-age\">School age</a> and <a href=\"/other/screen-ratio\">Screen ratio</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the GSD (ground sample distance) calculator work out?",
+      "a": "It returns sensor width (S), derived from the altitude, the focal length of camera and the image width. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the GSD (ground sample distance) calculator?",
+      "a": "The form asks for the altitude, the focal length of camera, the image width and the ground sample distance, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter altitude (A) in a different unit?",
+      "a": "Yes. Altitude (A) opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Sensor width (S) = 300 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the GSD (ground sample distance) calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/sandbox",
+      "name": "Sandbox"
+    },
+    {
+      "path": "/other/school-age",
+      "name": "School age"
+    },
+    {
+      "path": "/other/screen-ratio",
+      "name": "Screen ratio"
+    }
+  ],
+  "words": 1361
+}

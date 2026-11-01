@@ -1,0 +1,93 @@
+{
+  "path": "/construction/lumber",
+  "slug": "lumber",
+  "cat": "construction",
+  "name": "Lumber",
+  "seoTitle": "Lumber Calculator — Formula, Units & Example",
+  "seoDesc": "Lumber: work out length of a single piece from the width of a single piece and the thickness of a single piece. A free construction calculator with the…",
+  "h1": "Lumber Calculator",
+  "summary": "The total volume of your lumber and the Lumber calculator solves for <strong>length of a single piece</strong>. The inputs are the width of a single piece, the thickness of a single piece, the volume of a single piece.\n\nIt is built for a materials order or a planning estimate you want to get roughly right first time. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Lumber calculator work?",
+      "html": "<p>The Lumber calculator takes the values in the form, applies the relationship described below and reports <strong>length of a single piece</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the width of a single piece, the thickness of a single piece, the volume of a single piece and the total volume of your lumber.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in meters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Length of a single piece</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Width of a single piece</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Thickness of a single piece</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Volume of a single piece</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>How many lumber pieces?</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total volume of your lumber</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>Total length of your lumber</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Price of one piece</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total price of your lumber</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Lumber calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Length of a single piece</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">volume of a single piece ÷ (thickness of a single piece × width of a single piece)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">How many lumber pieces?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total volume of your lumber ÷ volume of a single piece</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">How many lumber pieces?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total price of your lumber ÷ price of one piece</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">How many lumber pieces?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">total length of your lumber ÷ length of a single piece</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Volume, opening in cubic meters</li><li>Volume, opening in cubic meters</li><li>Length, opening in meters</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Lumber calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Ordering material and not wanting a second trip</li><li>Quoting a job where areas and quantities drive the price</li><li>Checking a supplier's figure against your own measurements</li><li>Any time the same 4 figures keep coming back — the width of a single piece, the thickness of a single piece and the volume of a single piece — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these construction calculators cover the neighbouring steps: <a href=\"/construction/tile\">Tile</a>, <a href=\"/construction/tonnage\">Tonnage</a> and <a href=\"/construction/true-position\">True position</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Lumber calculator work out?",
+      "a": "It returns length of a single piece, derived from the width of a single piece, the thickness of a single piece and the volume of a single piece. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Lumber calculator?",
+      "a": "The form has 5 fields, each listed with its unit in the article above. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter length of a single piece in a different unit?",
+      "a": "Yes. Length of a single piece opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Lumber calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/construction/tile",
+      "name": "Tile"
+    },
+    {
+      "path": "/construction/tonnage",
+      "name": "Tonnage"
+    },
+    {
+      "path": "/construction/true-position",
+      "name": "True position"
+    }
+  ],
+  "words": 1388
+}

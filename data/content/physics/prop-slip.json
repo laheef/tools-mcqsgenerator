@@ -1,0 +1,97 @@
+{
+  "path": "/physics/prop-slip",
+  "slug": "prop-slip",
+  "cat": "physics",
+  "name": "Prop slip",
+  "seoTitle": "Prop slip Calculator: Free, With Steps",
+  "seoDesc": "Prop slip: work out theoretical boat speed from the gear ratio and the propeller pitch. A free physics calculator with the formula, units and a worked…",
+  "h1": "Prop slip Calculator",
+  "summary": "Give the Prop slip calculator the gear ratio, the propeller pitch, the actual boat speed and the propeller slip and it returns <strong>theoretical boat speed</strong>. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Prop slip calculator work?",
+      "html": "<p>The Prop slip calculator takes the values in the form, applies the relationship described below and reports <strong>theoretical boat speed</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the gear ratio, the propeller pitch, the actual boat speed and the propeller slip.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in : 1.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilometers per hour. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Engine/crankcase rpm</strong></td><td>A measured quantity, 3 units available.</td><td>rotations per minute</td><td>Calculated</td></tr><tr><td><strong>Gear ratio</strong></td><td>A number stated in : 1.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Propeller pitch</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>Theoretical boat speed</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>Calculated</td></tr><tr><td><strong>Actual boat speed</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>You supply it</td></tr><tr><td><strong>Propeller slip</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Prop slip calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Theoretical boat speed</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-actual boat speed ÷ (propeller slip − 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Theoretical boat speed</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(1 ÷ 1056) × engine ÷ crankcase rpm × propeller pitch ÷ gear ratio</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Actual boat speed</strong> = 10 km/h and <strong>Propeller slip</strong> = 10 %. The calculator returns <strong>Theoretical boat speed</strong> = 11.1111 km/h.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Theoretical boat speed</strong> = 11.1111 km/h should be roughly the size you expected from <strong>Actual boat speed</strong> = 10 km/h and <strong>Propeller slip</strong> = 10 %.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilometers per hour, and convertible to any of the 25 units on that chip.</li><li>Shown in rotations per minute, and convertible to any of the 3 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Rotational speed, opening in rotations per minute</li><li>Length, opening in millimeters</li><li>Speed, opening in kilometers per hour</li><li>Speed, opening in kilometers per hour</li><li>%, opening in percent</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Prop slip calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 4 figures keep coming back — the gear ratio, the propeller pitch and the actual boat speed — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/drift-velocity\">Drift velocity</a>, <a href=\"/physics/earth-curvature\">Earth curvature</a> and <a href=\"/physics/earth-orbit\">Earth orbit</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Prop slip calculator work out?",
+      "a": "It returns theoretical boat speed, derived from the gear ratio, the propeller pitch and the actual boat speed. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Prop slip calculator?",
+      "a": "The form asks for the gear ratio, the propeller pitch, the actual boat speed and the propeller slip, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter engine/crankcase rpm in a different unit?",
+      "a": "Yes. Engine/crankcase rpm opens in rotations per minute and the chip beside it offers 3 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Theoretical boat speed = 11.1111 km/h. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Prop slip calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/drift-velocity",
+      "name": "Drift velocity"
+    },
+    {
+      "path": "/physics/earth-curvature",
+      "name": "Earth curvature"
+    },
+    {
+      "path": "/physics/earth-orbit",
+      "name": "Earth orbit"
+    }
+  ],
+  "words": 1309
+}

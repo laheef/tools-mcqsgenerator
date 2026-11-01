@@ -1,0 +1,101 @@
+{
+  "path": "/other/speaker-box",
+  "slug": "speaker-box",
+  "cat": "other",
+  "name": "Speaker box",
+  "seoTitle": "Speaker box — Free Online Calculator",
+  "seoDesc": "Speaker box: work out • Total port volume from the height and the width. A free other calculator with the formula, units and a worked example.",
+  "h1": "Speaker box Calculator",
+  "summary": "Give the Speaker box calculator the height, the width, the depth and the board thickness and it returns <strong>• Total port volume</strong>. That makes it useful for whatever you happen to be working on.\n\nNothing repaints underneath you: edit a field, press Calculate, and the new answer appears. That is how you find out which input the result is sensitive to.",
+  "sections": [
+    {
+      "title": "How does the Speaker box calculator work?",
+      "html": "<p>The Speaker box calculator takes the values in the form, applies the relationship described below and reports <strong>• Total port volume</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the assembly case, with recess? and already have a speaker driver?); then you type in the height (h), the width (w), the depth (d) and the board thickness (t).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 6 options, such as case 1, case 2 and case 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic centimeters. The unit chip switches it to any of the 40 supported units.</li><li>Pick the option that matches your case — 2 options, such as yes and no. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in cubic centimeters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in cubic centimeters. The unit chip switches it to any of the 40 supported units.</li><li>Pick the option that matches your case — 4 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li></ul><p>6 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Assembly case</strong></td><td>One of 6 options, such as case 1, case 2 and case 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Height (h)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Width (w)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Depth (d)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Board thickness (t)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>You supply it</td></tr><tr><td><strong>With recess?</strong></td><td>One of 2 options, such as no and yes.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>• Port diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>• Port length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>• Port volume</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>You supply it</td></tr><tr><td><strong>• Port quantity</strong></td><td>One of 4 options, such as 1, 2 and 3.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>• Total port volume</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>Calculated</td></tr><tr><td><strong>Already have a speaker driver?</strong></td><td>One of 2 options, such as yes and no.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hidden speaker</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Cone diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Mounting depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Magnet diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Magnet depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Small radius</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Truncated cone displacement</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>You supply it</td></tr><tr><td><strong>Driver displacement</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>You supply it</td></tr><tr><td><strong>Driver quantity</strong></td><td>One of 4 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Total driver displacement</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>Calculated</td></tr><tr><td><strong>Side panels' width (C) (Output volume and panel dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Side panels' width (C) (Output volume and panel dimensions)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 26 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Speaker box calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">• Total port volume</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-2 × depth (d) × height (h) × board thickness (t) + depth (d) × height (h) × width (w) + 4 × depth (d) × (board thickness (t) ^ 2) − 2 × depth (d) × board thickness (t) × width (w) + 4 × height (h) × (board thickness (t) ^ 2) − 2 × height (h) × board thickness (t) × width (w) − 8 × (board thickness (t) ^ 3) + 4 × (board thickness (t) ^ 2) × width (w) − internal air volume of the box) ÷ are you making a ported speaker box?</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Internal air volume of the box</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(internal air volume of the box − (driver displacement × driver quantity))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Are you making a ported speaker box?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">4 × • Port volume ÷ (PI × (• Port diameter ^ 2) × • Port length)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">• Port quantity</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">• Total port volume ÷ • Port volume</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Magnet depth</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">4 × (driver displacement − truncated cone displacement) ÷ (PI × (magnet diameter ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total driver displacement</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(driver displacement × driver quantity)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Assembly case</strong> set to Case 1, <strong>With recess?</strong> set to No, <strong>Are you making a ported speaker box?</strong> set to No and <strong>• Port diameter</strong> = 30 cm. Working through the relationship above gives <strong>• Total port volume</strong> = 10 cm³.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>• Total port volume</strong> = 10 cm³ should be roughly the size you expected from <strong>Assembly case</strong> set to Case 1 and <strong>With recess?</strong> set to No.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in cubic centimeters, and convertible to any of the 40 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>The option the calculation settles on.</li><li>The option the calculation settles on.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic centimeters, and convertible to any of the 40 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in millimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Volume, opening in cubic centimeters</li><li>Volume, opening in cubic centimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Speaker box calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a figure someone else quoted</li><li>Turning a rough idea into a number you can act on</li><li>Testing how sensitive an answer is to one input</li><li>Any time the same 4 figures keep coming back — the height, the width and the depth — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these other calculators cover the neighbouring steps: <a href=\"/other/contrast-ratio\">Contrast ratio</a>, <a href=\"/other/crop-factor\">Crop factor</a> and <a href=\"/other/crosstalk\">Crosstalk</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Speaker box calculator work out?",
+      "a": "It returns • Total port volume, derived from the height, the width and the depth. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Speaker box calculator?",
+      "a": "The form asks for the height, the width, the depth and the board thickness, which is 17 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter height (h) in a different unit?",
+      "a": "Yes. Height (h) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports • Total port volume = 10 cm³. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Speaker box calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/other/contrast-ratio",
+      "name": "Contrast ratio"
+    },
+    {
+      "path": "/other/crop-factor",
+      "name": "Crop factor"
+    },
+    {
+      "path": "/other/crosstalk",
+      "name": "Crosstalk"
+    }
+  ],
+  "words": 2364
+}

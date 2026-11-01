@@ -1,0 +1,97 @@
+{
+  "path": "/health/hcg-levels",
+  "slug": "hcg-levels",
+  "cat": "health",
+  "name": "hCG levels",
+  "seoTitle": "hCG levels Calculator",
+  "seoDesc": "hCG levels: work out second β-hCG level from the first β-hCG level and the time between measurements. A free health calculator with the formula, units and…",
+  "h1": "hCG levels Calculator",
+  "summary": "Give the hCG levels calculator the first β-hCG level, the time between measurements and the difference and it returns <strong>second β-hCG level</strong>. That makes it useful for an informed starting point to take to a clinician, not a diagnosis.\n\nThe unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the hCG levels calculator work?",
+      "html": "<p>The hCG levels calculator takes the values in the form, applies the relationship described below and reports <strong>second β-hCG level</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the first β-hCG level, the time between measurements and the difference.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A number, expressed in mIU/ml.</li><li>A measured quantity, entered by default in days. The unit chip switches it to any of the 27 supported units.</li><li>A number, expressed in mIU/ml.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>First β-hCG level</strong></td><td>A number stated in mIU/ml.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Second β-hCG level</strong></td><td>A number stated in mIU/ml.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Time between measurements</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Difference</strong></td><td>A number stated in mIU/ml.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Percentage change</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Doubling time</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>One-day increase</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Two-day increase</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the hCG levels calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Second β-hCG level</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">difference + first β-hCG level</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Second β-hCG level</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">first β-hCG level × (percentage change + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Second β-hCG level</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">first β-hCG level × the exponential of (time between measurements × the natural log of (2) ÷ doubling time)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Doubling time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the natural log of (2) ÷ the natural log of (one-day increase + 1)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Doubling time</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the natural log of (4) ÷ the natural log of (two-day increase + 1)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>First β-hCG level</strong> = 10 and <strong>Difference</strong> = 10. The calculator returns <strong>Second β-hCG level</strong> = 20 and <strong>Percentage change</strong> = 100 %.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Second β-hCG level</strong> = 20 and <strong>Percentage change</strong> = 100 % should be roughly the size you expected from <strong>First β-hCG level</strong> = 10 and <strong>Difference</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Units are handled by conversion rather than by convention. Whatever chip you choose, the number is turned into a single base unit before the calculation and rendered back afterwards, so a form filled with a mixture of systems still gives the right answer.</p>\n<ul><li>Time, opening in days</li><li>%, opening in percent</li><li>Time, opening in days</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The hCG levels calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing for an appointment so you can describe your numbers clearly</li><li>Tracking a measurement over time and understanding what changed</li><li>Deciding whether a reading is worth a second look</li><li>Any time the same 3 figures keep coming back — the first β-hCG level, the time between measurements and the difference — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these health calculators cover the neighbouring steps: <a href=\"/health/duke-score\">Duke treadmill score</a>, <a href=\"/health/easi-score\">EASI score</a> and <a href=\"/health/ecg-boxes-seconds\">ECG boxes to seconds</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the hCG levels calculator work out?",
+      "a": "It returns second β-hCG level, derived from the first β-hCG level, the time between measurements and the difference. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the hCG levels calculator?",
+      "a": "The form asks for the first β-hCG level, the time between measurements and the difference, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter time between measurements in a different unit?",
+      "a": "Yes. Time between measurements opens in days and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Second β-hCG level = 20. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the hCG levels calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/health/duke-score",
+      "name": "Duke treadmill score"
+    },
+    {
+      "path": "/health/easi-score",
+      "name": "EASI score"
+    },
+    {
+      "path": "/health/ecg-boxes-seconds",
+      "name": "ECG boxes to seconds"
+    }
+  ],
+  "words": 1325
+}

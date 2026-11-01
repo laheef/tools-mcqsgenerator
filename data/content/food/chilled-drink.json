@@ -1,0 +1,93 @@
+{
+  "path": "/food/chilled-drink",
+  "slug": "chilled-drink",
+  "cat": "food",
+  "name": "Chilled drink",
+  "seoTitle": "Chilled drink Calculator: Free, With Steps",
+  "seoDesc": "Chilled drink: work out initial temperature and ambient temperature from 26 values. A free food calculator with the formula and a worked example.",
+  "h1": "Chilled drink Calculator",
+  "summary": "The Chilled drink calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nThink of it as a shortcut for portioning, timing or nutrition. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Chilled drink calculator work?",
+      "html": "<p>The Chilled drink calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the desired temperature, the desired temperature (2) and the desired temperature (3)).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 6 options, such as water, soft drinks and iced coffee / Juice / Tea. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 16 options, such as magnum Glass Bottle (1.5L), standard wine glass bottle (0.75L) and glass bottle (16.9 oz / 0.5L). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 13 options, such as glass bottle (16.9 oz / 0.5L), small glass bottle (8.5 oz / 0.25L) and european Big can (0.5L). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as magnum Glass Bottle (1.5L), standard wine glass bottle (0.75L) and demi/Half glass bottle (0.375L). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 12 options, such as glass bottle (16.9 oz / 0.5L), small glass bottle (8.5 oz / 0.25L) and european Big can (0.5L). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as spirit Glass Bottle (0.7L), jagermeister Square Bottle (0.75L) and glass bottle (16.9 oz / 0.5L). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as hot summer day (30 °C/86 °F), cloudy day (20 °C/68 °F) and room temperature (16.5 °C/61.7 °F). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as fridge (4 °C/39 °F), freezer (-18 °C/-0.4 °F) and wine cellar/basement (15 °C/59 °F). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as warm (22 °C/72 °F), optimal for hydration (16 °C/61 °F) and refreshing (6 °C/43 °F). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as optimal (4.5 °C/40 °F), very cold (2 °C/36 °F) and custom. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as optimal for taste (14 °C/57 °F), refreshing (4 °C/39 °F) and very cold (2 °C/36 °F). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as optimal for red wine (16 °C/61 °F), optimal for white and rose wines (10 °C/50 °F) and optimal for sparkling wines and Champagne(9 °C/48 °F). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as optimal for Stout (13 °C/55 °F), optimal for Ale (10 °C/50 °F) and optimal for Lager (6 °C/43 °F). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 4 options, such as optimal for taste (16 °C/60.8 °F), optimal for shots (2 °C/35.6 °F) and cold (6 °C/42.8 °F). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>14 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Initial temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Ambient temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Desired temperature</strong></td><td>One of 5 options, such as warm (22 °C/72 °F), optimal for hydration (16 °C/61 °F) and refreshing (6 °C/43 °F).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Desired temperature (2)</strong></td><td>One of 3 options, such as optimal (4.5 °C/40 °F), very cold (2 °C/36 °F) and custom.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Desired temperature (3)</strong></td><td>One of 4 options, such as optimal for taste (14 °C/57 °F), refreshing (4 °C/39 °F) and very cold (2 °C/36 °F).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Desired temperature (4)</strong></td><td>One of 5 options, such as optimal for red wine (16 °C/61 °F), optimal for white and rose wines (10 °C/50 °F) and optimal for sparkling wines and Champagne(9 °C/48 °F).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Desired temperature (5)</strong></td><td>One of 5 options, such as optimal for Stout (13 °C/55 °F), optimal for Ale (10 °C/50 °F) and optimal for Lager (6 °C/43 °F).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Desired temperature (6)</strong></td><td>One of 4 options, such as optimal for taste (16 °C/60.8 °F), optimal for shots (2 °C/35.6 °F) and cold (6 °C/42.8 °F).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Desired temperature (7)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Desired temperature (8)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Desired temperature (9)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Desired temperature (10)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Desired temperature (11)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Desired temperature (12)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Alcohol Content</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume (Hidden variables)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Thickness (Hidden variables)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Area (Hidden variables)</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr><tr><td><strong>Conductivity (interface) (Hidden variables)</strong></td><td>A number stated in W / (m² · K).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume (Hidden variables)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr><tr><td><strong>Thickness (Hidden variables)</strong></td><td>A measured quantity, 34 units available.</td><td>millimeters</td><td>Calculated</td></tr><tr><td><strong>Area (Hidden variables)</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr><tr><td><strong>Conductivity (interface) (Hidden variables)</strong></td><td>A number stated in W / (m² · K).</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume (Hidden variables)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 39 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Chilled drink calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in liters, and convertible to any of the 40 units on that chip.</li><li>Shown in millimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Chilled drink calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Working out timing so everything finishes together</li><li>Checking portions before you shop</li><li>Scaling a recipe up or down</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/coffee-kick\">Coffee kick</a>, <a href=\"/food/coffee-ratio\">Coffee ratio</a> and <a href=\"/food/coffee-to-water-ratio\">Coffee to water ratio</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Chilled drink calculator?",
+      "a": "The form asks for a few values, which is 14 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter initial temperature in a different unit?",
+      "a": "Yes. Initial temperature opens in Celsius and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (14 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Initial temperature = 0 °C. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Chilled drink calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/coffee-kick",
+      "name": "Coffee kick"
+    },
+    {
+      "path": "/food/coffee-ratio",
+      "name": "Coffee ratio"
+    },
+    {
+      "path": "/food/coffee-to-water-ratio",
+      "name": "Coffee to water ratio"
+    }
+  ],
+  "words": 2139
+}

@@ -1,0 +1,97 @@
+{
+  "path": "/physics/thermal-diffusivity",
+  "slug": "thermal-diffusivity",
+  "cat": "physics",
+  "name": "Thermal diffusivity",
+  "seoTitle": "Thermal diffusivity Calculator — Formula, Units & Example",
+  "seoDesc": "Thermal diffusivity: work out thermal conductivity (k) from the thermal diffusivity. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Thermal diffusivity Calculator",
+  "summary": "The Thermal diffusivity calculator is a free, no-sign-up physics tool. Fill in the 2 fields it asks for and it works out <strong>thermal conductivity (k)</strong> straight away, with the formula shown underneath.\n\nThat makes it useful for a lab report, a problem set or a sanity check on a physical situation. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the Thermal diffusivity calculator work?",
+      "html": "<p>The Thermal diffusivity calculator takes the values in the form, applies the relationship described below and reports <strong>thermal conductivity (k)</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the substance); then you type in the thermal diffusivity (α).</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 11 options, such as air (0 °C), water and copper. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in square millimeters. The unit chip switches it to any of the 24 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Substance</strong></td><td>One of 11 options, such as air (0 °C), water and copper.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Thermal conductivity (k)</strong></td><td>A measured quantity, 2 units available.</td><td>watts per meter-kelvin</td><td>Calculated</td></tr><tr><td><strong>Density (ρ)</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>Calculated</td></tr><tr><td><strong>Specific heat capacity (Cₚ)</strong></td><td>A measured quantity, 11 units available.</td><td>joules per kilogram per kelvin</td><td>Calculated</td></tr><tr><td><strong>Thermal diffusivity (α)</strong></td><td>A measured quantity, 24 units available.</td><td>square millimeters</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Thermal diffusivity calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Thermal conductivity (k)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">density (ρ) × specific heat capacity (Cₚ) × thermal diffusivity (α)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in watts per meter-kelvin, and convertible to any of the 2 units on that chip.</li><li>Shown in kilograms per cubic meter, and convertible to any of the 9 units on that chip.</li><li>Shown in joules per kilogram per kelvin, and convertible to any of the 11 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Thermal conductivity, opening in watts per meter-kelvin</li><li>Density, opening in kilograms per cubic meter</li><li>Specific heat capacity, opening in joules per kilogram per kelvin</li><li>Area, opening in square millimeters</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Thermal diffusivity calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Testing whether an answer is physically plausible before you trust it</li><li>Writing up a lab result and needing a quick cross-check</li><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Any time the same 1 figures keep coming back — the thermal diffusivity — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/ideal-gas-density\">Ideal gas density</a>, <a href=\"/physics/ideal-gas-law\">Ideal gas law</a> and <a href=\"/physics/ideal-gas-pressure\">Ideal gas pressure</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Thermal diffusivity calculator work out?",
+      "a": "It returns thermal conductivity (k), derived from the thermal diffusivity. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Thermal diffusivity calculator?",
+      "a": "The form asks for the thermal diffusivity, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter thermal conductivity (k) in a different unit?",
+      "a": "Yes. Thermal conductivity (k) opens in watts per meter-kelvin and the chip beside it offers 2 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Thermal conductivity (k) = 0 W/(m·K). Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Thermal diffusivity calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/ideal-gas-density",
+      "name": "Ideal gas density"
+    },
+    {
+      "path": "/physics/ideal-gas-law",
+      "name": "Ideal gas law"
+    },
+    {
+      "path": "/physics/ideal-gas-pressure",
+      "name": "Ideal gas pressure"
+    }
+  ],
+  "words": 1341
+}

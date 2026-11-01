@@ -1,0 +1,101 @@
+{
+  "path": "/food/coffee-to-water-ratio",
+  "slug": "coffee-to-water-ratio",
+  "cat": "food",
+  "name": "Coffee to water ratio",
+  "seoTitle": "Coffee to water ratio — Free Online Calculator",
+  "seoDesc": "Coffee to water ratio: work out amount of water from amount of water and amount of coffee. A free food calculator with the formula, units and a worked…",
+  "h1": "Coffee to water ratio Calculator",
+  "summary": "Supply <strong>amount of water</strong> and amount of coffee and the Coffee to water ratio calculator solves for amount of water. It is built for portioning, timing or nutrition.\n\nThe formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Coffee to water ratio calculator work?",
+      "html": "<p>The Coffee to water ratio calculator takes the values in the form, applies the relationship described below and reports <strong>amount of water</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the brew type, the strength and the strength (2)); then you type in which means 1 part coffee to (3), which means 1 part coffee to (4), amount of water and amount of coffee (2).</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 4 options, such as general formula, french press and drip or pour over. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as regular and strong. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as regular and strong. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in parts water.</li><li>A number, expressed in parts water.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in grams. The unit chip switches it to any of the 29 supported units.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Brew type</strong></td><td>One of 4 options, such as general formula, french press and drip or pour over.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Strength</strong></td><td>One of 2 options, such as regular and strong.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Strength (2)</strong></td><td>One of 2 options, such as regular and strong.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Strength (3)</strong></td><td>One of 2 options, such as regular and strong.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Strength (4)</strong></td><td>One of 2 options, such as regular and strong.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Which means 1 part coffee to (2)</strong></td><td>A number stated in parts water.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Which means 1 part coffee to (3)</strong></td><td>A number stated in parts water.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Which means 1 part coffee to (4)</strong></td><td>A number stated in parts water.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Amount of water</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>Amount of water (2)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Amount of water (3)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Amount of water (4)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Amount of coffee</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Amount of coffee (2)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Amount of coffee (3)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Amount of coffee (4)</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Coffee to water ratio calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Which means 1 part coffee to</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">strength</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Strength</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">which means 1 part coffee to</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Amount of coffee</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">amount of water ÷ which means 1 part coffee to</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Amount of water</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">amount of coffee × which means 1 part coffee to</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>The form opens with a complete set of values: <strong>Brew type</strong> set to general formula and <strong>Strength</strong> set to regular. Straight away the calculator returns <strong>which means 1 part coffee to</strong> = 18.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>which means 1 part coffee to</strong> = 18 should be roughly the size you expected from <strong>Brew type</strong> set to general formula and <strong>Strength</strong> set to regular.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>The option the calculation settles on.</li><li>The option the calculation settles on.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li><li>Mass, opening in grams</li><li>Mass, opening in grams</li><li>Mass, opening in grams</li><li>Mass, opening in grams</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Coffee to water ratio calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking portions before you shop</li><li>Scaling a recipe up or down</li><li>Working out timing so everything finishes together</li><li>Any time the same 2 figures keep coming back — amount of water and amount of coffee — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these food calculators cover the neighbouring steps: <a href=\"/food/donut\">Donut</a>, <a href=\"/food/dry-to-cooked-pasta\">Dry to cooked pasta</a> and <a href=\"/food/egg-boiling\">Ideal egg boiling</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Coffee to water ratio calculator work out?",
+      "a": "It returns amount of water, derived from amount of water and amount of coffee. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Coffee to water ratio calculator?",
+      "a": "The form asks for amount of water and amount of coffee, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter amount of water in a different unit?",
+      "a": "Yes. Amount of water opens in milliliters and the chip beside it offers 40 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports which means 1 part coffee to = 18. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Coffee to water ratio calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/food/donut",
+      "name": "Donut"
+    },
+    {
+      "path": "/food/dry-to-cooked-pasta",
+      "name": "Dry to cooked pasta"
+    },
+    {
+      "path": "/food/egg-boiling",
+      "name": "Ideal egg boiling"
+    }
+  ],
+  "words": 1842
+}

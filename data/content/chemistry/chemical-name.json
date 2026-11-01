@@ -1,0 +1,89 @@
+{
+  "path": "/chemistry/chemical-name",
+  "slug": "chemical-name",
+  "cat": "chemistry",
+  "name": "Chemical name",
+  "seoTitle": "Chemical name Calculator",
+  "seoDesc": "Chemical name: a chemistry calculator with 9 values in and 10 results out, plus the formula and a worked example.",
+  "h1": "Chemical name Calculator",
+  "summary": "The Chemical name calculator returns <strong>first subscript</strong> from the 5 fields on the form. No sign-up, no page reload, and the relationship behind it is printed below.\n\nThink of it as a shortcut for a bench calculation involving amounts, concentrations or reaction ratios. The formula is printed further down, so you can check the answer by hand if you want to.",
+  "sections": [
+    {
+      "title": "How does the Chemical name calculator work?",
+      "html": "<p>The Chemical name calculator takes the values in the form, applies the relationship described below and reports <strong>first subscript</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the cation symbol, the anion symbol and the cation name).</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as formula and name. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 33 options, such as Al³⁺, Ba²⁺ and Be²⁺. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 38 options, such as N₃⁻, br⁻ and C⁻. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 33 options, such as aluminum, barium and beryllium. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 38 options, such as azide, bromide and carbide. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>5 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Cation symbol</strong></td><td>One of 33 options, such as Al³⁺, Ba²⁺ and Be²⁺.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Anion symbol</strong></td><td>One of 38 options, such as N₃⁻, br⁻ and C⁻.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cation name</strong></td><td>One of 33 options, such as aluminum, barium and beryllium.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Anion name</strong></td><td>One of 38 options, such as azide, bromide and carbide.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>First subscript</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>First subscript name</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Second subscript</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Second subscript name</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Chemical name calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">First subscript</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cation symbol, anion symbol)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Second subscript</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cation symbol, anion symbol)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">First subscript name</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cation name, anion name)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Second subscript name</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(cation name, anion name)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Chemical name calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Working through a stoichiometry problem</li><li>Preparing a solution and checking the numbers first</li><li>Converting between the units a protocol and your bench equipment use</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these chemistry calculators cover the neighbouring steps: <a href=\"/chemistry/concentration\">Concentration</a>, <a href=\"/chemistry/crude-protein\">Crude protein</a> and <a href=\"/chemistry/cubic-cell\">Cubic cell</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Chemical name calculator work out?",
+      "a": "It returns first subscript. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Chemical name calculator?",
+      "a": "The form asks for a few values, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Chemical name calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/chemistry/concentration",
+      "name": "Concentration"
+    },
+    {
+      "path": "/chemistry/crude-protein",
+      "name": "Crude protein"
+    },
+    {
+      "path": "/chemistry/cubic-cell",
+      "name": "Cubic cell"
+    }
+  ],
+  "words": 1181
+}

@@ -1,0 +1,93 @@
+{
+  "path": "/statistics/midrange",
+  "slug": "midrange",
+  "cat": "statistics",
+  "name": "Midrange",
+  "seoTitle": "Midrange Calculator: Free, With Steps",
+  "seoDesc": "Midrange: a free statistics calculator that walks you through 31 values, with the formula spelled out and a worked example.",
+  "h1": "Midrange Calculator",
+  "summary": "The Midrange calculator is a free, no-sign-up statistics tool. Fill in the 30 fields it asks for and it works out the answer straight away, with the formula shown underneath.\n\nIt suits an assignment, a report or a data discussion where you need a defensible number. Nothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Midrange calculator work?",
+      "html": "<p>The Midrange calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you type in the figures it asks for.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>X₁</td><td>a plain number with no unit attached.</td></tr><tr><td>X₂</td><td>a plain number with no unit attached.</td></tr><tr><td>X₃</td><td>a plain number with no unit attached.</td></tr><tr><td>X₄</td><td>a plain number with no unit attached.</td></tr><tr><td>X₅</td><td>a plain number with no unit attached.</td></tr><tr><td>X₆</td><td>a plain number with no unit attached.</td></tr><tr><td>X₇</td><td>a plain number with no unit attached.</td></tr><tr><td>X₈</td><td>a plain number with no unit attached.</td></tr><tr><td>X₉</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₀</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₁</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₂</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₃</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₄</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₅</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₆</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₇</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₈</td><td>a plain number with no unit attached.</td></tr><tr><td>X₁₉</td><td>a plain number with no unit attached.</td></tr><tr><td>X₂₀</td><td>a plain number with no unit attached.</td></tr><tr><td>X₂₁</td><td>a plain number with no unit attached.</td></tr><tr><td>X₂₂</td><td>a plain number with no unit attached.</td></tr><tr><td>X₂₃</td><td>a plain number with no unit attached.</td></tr><tr><td>X₂₄</td><td>a plain number with no unit attached.</td></tr></tbody></table><p>The form has 30 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p>"
+    },
+    {
+      "title": "The formula behind the Midrange calculator",
+      "html": "<p>One relationship drives the whole page:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">X₂₆</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">-X₁ − X₁₀ − X₁₁ − X₁₂ − X₁₃ − X₁₄ − X₁₅ − X₁₆ − X₁₇ − X₁₈ − X₁₉ − X₂ − X₂₀ − X₂₁ − X₂₂ − X₂₃ − X₂₄ − X₂₅ − X₂₇ − X₂₈ − X₂₉ − X₃ − X₃₀ − X₄ − X₅ − X₆ − X₇ − X₈ − X₉ + range</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Midrange calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Turning raw numbers into something you can quote</li><li>Deciding how much confidence a sample really supports</li><li>Checking a result a piece of software produced</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Midrange calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — X₁ for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these statistics calculators cover the neighbouring steps: <a href=\"/statistics/boy-or-girl-paradox\">Boy or girl paradox</a>, <a href=\"/statistics/central-limit-theorem\">Central limit theorem</a> and <a href=\"/statistics/chebyshevs-theorem\">Chebyshev's theorem</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Midrange calculator?",
+      "a": "The form asks for a few values, which is 30 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "Is the Midrange calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    }
+  ],
+  "related": [
+    {
+      "path": "/statistics/boy-or-girl-paradox",
+      "name": "Boy or girl paradox"
+    },
+    {
+      "path": "/statistics/central-limit-theorem",
+      "name": "Central limit theorem"
+    },
+    {
+      "path": "/statistics/chebyshevs-theorem",
+      "name": "Chebyshev's theorem"
+    }
+  ],
+  "words": 1039
+}

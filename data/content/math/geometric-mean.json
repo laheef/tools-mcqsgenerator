@@ -1,0 +1,89 @@
+{
+  "path": "/math/geometric-mean",
+  "slug": "geometric-mean",
+  "cat": "math",
+  "name": "Geometric mean",
+  "seoTitle": "Geometric mean Calculator — Formula, Units & Example",
+  "seoDesc": "Geometric mean: answer 30 values and the page computes the result when you press Calculate — formula and worked example included.",
+  "h1": "Geometric mean Calculator",
+  "summary": "The Geometric mean calculator takes the numbers you enter and reports the result immediately. It is free to use, needs no account, and shows the working rather than just the answer.\n\nIt suits a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm. Nothing repaints underneath you: edit a field, press Calculate, and the new answer appears. That is how you find out which input the result is sensitive to.",
+  "sections": [
+    {
+      "title": "How does the Geometric mean calculator work?",
+      "html": "<p>The Geometric mean calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>\n<p>Working from the top of the form: you type in the figures it asks for.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>#1</td><td>a plain number with no unit attached.</td></tr><tr><td>#2</td><td>a plain number with no unit attached.</td></tr><tr><td>#3</td><td>a plain number with no unit attached.</td></tr><tr><td>#4</td><td>a plain number with no unit attached.</td></tr><tr><td>#5</td><td>a plain number with no unit attached.</td></tr><tr><td>#6</td><td>a plain number with no unit attached.</td></tr><tr><td>#7</td><td>a plain number with no unit attached.</td></tr><tr><td>#8</td><td>a plain number with no unit attached.</td></tr><tr><td>#9</td><td>a plain number with no unit attached.</td></tr><tr><td>#10</td><td>a plain number with no unit attached.</td></tr><tr><td>#11</td><td>a plain number with no unit attached.</td></tr><tr><td>#12</td><td>a plain number with no unit attached.</td></tr><tr><td>#13</td><td>a plain number with no unit attached.</td></tr><tr><td>#14</td><td>a plain number with no unit attached.</td></tr><tr><td>#15</td><td>a plain number with no unit attached.</td></tr><tr><td>#16</td><td>a plain number with no unit attached.</td></tr><tr><td>#17</td><td>a plain number with no unit attached.</td></tr><tr><td>#18</td><td>a plain number with no unit attached.</td></tr><tr><td>#19</td><td>a plain number with no unit attached.</td></tr><tr><td>#20</td><td>a plain number with no unit attached.</td></tr><tr><td>#21</td><td>a plain number with no unit attached.</td></tr><tr><td>#22</td><td>a plain number with no unit attached.</td></tr><tr><td>#23</td><td>a plain number with no unit attached.</td></tr><tr><td>#24</td><td>a plain number with no unit attached.</td></tr></tbody></table><p>The form has 30 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p>"
+    },
+    {
+      "title": "The formula behind the Geometric mean calculator",
+      "html": "<p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>\n<p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Geometric mean calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Settling an argument about a number with a quick, traceable result</li><li>Checking a homework answer before you hand it in</li><li>Splitting a bill, a measurement or a shape problem between several people</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Geometric mean calculator, these are the ones that matter:</p>\n<ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>"
+    },
+    {
+      "title": "How do you check the answer yourself?",
+      "html": "<ul><li>Change one input at a time — #1 for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/percent-time\">Percent time</a>, <a href=\"/math/percent-to-goal\">Percent to goal</a> and <a href=\"/math/percentage\">Percentage</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What do I need to enter to use the Geometric mean calculator?",
+      "a": "The form asks for a few values, which is 30 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Is the Geometric mean calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    },
+    {
+      "q": "Can I use the numbers straight from a datasheet?",
+      "a": "Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed."
+    },
+    {
+      "q": "Does it work in both directions?",
+      "a": "Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/percent-time",
+      "name": "Percent time"
+    },
+    {
+      "path": "/math/percent-to-goal",
+      "name": "Percent to goal"
+    },
+    {
+      "path": "/math/percentage",
+      "name": "Percentage"
+    }
+  ],
+  "words": 905
+}

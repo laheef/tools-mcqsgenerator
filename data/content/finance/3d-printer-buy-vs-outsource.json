@@ -1,0 +1,97 @@
+{
+  "path": "/finance/3d-printer-buy-vs-outsource",
+  "slug": "3d-printer-buy-vs-outsource",
+  "cat": "finance",
+  "name": "3D printer - buy vs outsource",
+  "seoTitle": "3D printer - buy vs outsource Calculator: Free, With Steps",
+  "seoDesc": "3D printer - buy vs outsource: work out total buying cost from the volume of your 3D model and the slicing software cost. A free finance calculator with…",
+  "h1": "3D printer - buy vs outsource Calculator",
+  "summary": "The extra 3D printer accessories and the 3D printer - buy vs outsource calculator solves for <strong>total buying cost</strong>. The inputs are the volume of your 3D model, the slicing software cost, the total labor cost.\n\nThink of it as a shortcut for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender. The unit chips sit next to the boxes, which is where most hand-calculation mistakes start.",
+  "sections": [
+    {
+      "title": "How does the 3D printer - buy vs outsource calculator work?",
+      "html": "<p>The 3D printer - buy vs outsource calculator takes the values in the form, applies the relationship described below and reports <strong>total buying cost</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the printer model and the filament); then you type in the volume of your 3D model, the slicing software cost, the total labor cost and the extra 3D printer accessories.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as educational/personal use and commercial use. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 16 options, such as anet 8, voxelab Aquila and da Vinci mini w+. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 10 options, such as enter your own, PLA and ABS. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in cubic centimeters. The unit chip switches it to any of the 40 supported units.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in $.</li><li>A number, expressed in $.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A number, expressed in Watts.</li><li>A measured quantity, entered by default in hours. The unit chip switches it to any of the 27 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 2 options, such as no and yes. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in $.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A number, expressed in models.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 2 options, such as buying costs and outsourcing costs. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>The form has 26 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>7 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Printer model</strong></td><td>One of 16 options, such as anet 8, voxelab Aquila and da Vinci mini w+.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Printer price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Filament</strong></td><td>One of 10 options, such as enter your own, PLA and ABS.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Filament price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Filament density</strong></td><td>A number stated in kg/m3.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume of your 3D model</strong></td><td>A measured quantity, 40 units available.</td><td>cubic centimeters</td><td>You supply it</td></tr><tr><td><strong>Slicing software cost</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total labor cost</strong></td><td>A number stated in $.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Extra 3D printer accessories</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Equipment power consumption</strong></td><td>A measured quantity, 21 units available.</td><td>watts</td><td>Calculated</td></tr><tr><td><strong>Electricity cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Usage time</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Heated bed</strong></td><td>A number stated in Watts.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Time using heated bed mode</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Total electrical cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Total buying cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total manufacturing cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Outsourcing price per model</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Shipping outsourcing cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Total outsourcing cost (Total outsourcing service cost)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Shipping cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Total outsourcing cost (Total outsourcing service cost)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total shipping cost to your clients</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Your selling price per model</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 26 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the 3D printer - buy vs outsource calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Total buying cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(extra 3D printer accessories + total electrical cost + filament density × filament price × volume of your 3D model × how many models do you want to print? + slicing software cost + 3D modeling cost + printer price)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Equipment power consumption</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-electricity cost × heated bed × time using heated bed mode + 1000 × total electrical cost) ÷ (electricity cost × usage time)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total outsourcing cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">3D modeling cost + how many models do you want to print? × outsourcing price per model + shipping cost</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total manufacturing cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(extra 3D printer accessories + total electrical cost + filament density × filament price × volume of your 3D model × how many models do you want to print? + total labor cost + slicing software cost + 3D modeling cost + printer price)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Total outsourcing cost</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(3D modeling cost + how many models do you want to print? × outsourcing price per model + shipping outsourcing cost)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">How many models do you want to print?</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(-total shipping cost to your clients + total selling price) ÷ your selling price per model</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in watts, and convertible to any of the 21 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Volume, opening in cubic centimeters</li><li>Currency, opening in US Dollar</li><li>Power, opening in watts</li><li>Currency, opening in US Dollar</li><li>Time, opening in hours</li><li>Time, opening in hours</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The 3D printer - buy vs outsource calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Preparing questions for a lender, an accountant or an adviser</li><li>Comparing two offers that quote their costs in different ways</li><li>Sizing up a purchase before you commit to it</li><li>Any time the same 4 figures keep coming back — the volume of your 3D model, the slicing software cost and the total labor cost — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/prorated-salary\">Prorated salary</a>, <a href=\"/finance/put-call-parity\">Put-call parity</a> and <a href=\"/finance/pvgo\">Present value of growth opportunities (PVGO)</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the 3D printer - buy vs outsource calculator work out?",
+      "a": "It returns total buying cost, derived from the volume of your 3D model, the slicing software cost and the total labor cost. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the 3D printer - buy vs outsource calculator?",
+      "a": "The form asks for the volume of your 3D model, the slicing software cost, the total labor cost and the extra 3D printer accessories, which is 26 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter printer price in a different unit?",
+      "a": "Yes. Printer price opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (7 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Printer price = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the 3D printer - buy vs outsource calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/prorated-salary",
+      "name": "Prorated salary"
+    },
+    {
+      "path": "/finance/put-call-parity",
+      "name": "Put-call parity"
+    },
+    {
+      "path": "/finance/pvgo",
+      "name": "Present value of growth opportunities (PVGO)"
+    }
+  ],
+  "words": 2487
+}

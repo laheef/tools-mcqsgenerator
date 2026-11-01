@@ -1,0 +1,97 @@
+{
+  "path": "/physics/momentum",
+  "slug": "momentum",
+  "cat": "physics",
+  "name": "Momentum",
+  "seoTitle": "Momentum Calculator",
+  "seoDesc": "Momentum: work out momentum (p) from the mass and the velocity. A free physics calculator with the formula, units and a worked example.",
+  "h1": "Momentum Calculator",
+  "summary": "Supply the mass, the velocity, the velocity in y-direction and the velocity in z-direction and the Momentum calculator solves for <strong>momentum (p)</strong>. Think of it as a shortcut for a lab report, a problem set or a sanity check on a physical situation.\n\nThe results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.",
+  "sections": [
+    {
+      "title": "How does the Momentum calculator work?",
+      "html": "<p>The Momentum calculator takes the values in the form, applies the relationship described below and reports <strong>momentum (p)</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the mass (m), the velocity (v), the velocity in y-direction and the velocity in z-direction.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>\n<p>Because the equation can be rearranged for each of its variables, the page also runs backwards. Leave the box you want to know empty, fill in the rest, and it solves for the missing one instead. That is useful when you know the answer you need rather than the inputs you have.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in kilograms. The unit chip switches it to any of the 29 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in meters per second. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in kilogram meters per second. The unit chip switches it to any of the 11 supported units.</li><li>A measured quantity, entered by default in kilogram meters per second. The unit chip switches it to any of the 11 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mass (m)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Velocity (v)</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Momentum (p)</strong></td><td>A measured quantity, 11 units available.</td><td>kilogram meters per second</td><td>Calculated</td></tr><tr><td><strong>Mass of the body</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Velocity in x-direction</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Velocity in y-direction</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Velocity in z-direction</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>You supply it</td></tr><tr><td><strong>Velocity magnitude</strong></td><td>A measured quantity, 25 units available.</td><td>meters per second</td><td>Calculated</td></tr><tr><td><strong>Momentum in x-direction</strong></td><td>A measured quantity, 11 units available.</td><td>kilogram meters per second</td><td>Calculated</td></tr><tr><td><strong>Momentum in y-direction</strong></td><td>A measured quantity, 11 units available.</td><td>kilogram meters per second</td><td>You supply it</td></tr><tr><td><strong>Momentum in z-direction</strong></td><td>A measured quantity, 11 units available.</td><td>kilogram meters per second</td><td>Calculated</td></tr><tr><td><strong>Momentum magnitude</strong></td><td>A measured quantity, 11 units available.</td><td>kilogram meters per second</td><td>You supply it</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Momentum calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Momentum (p)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">mass (m) × velocity (v)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Velocity in x-direction</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">momentum in x-direction ÷ mass of the body</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mass of the body</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">momentum in y-direction ÷ velocity in y-direction</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Mass of the body</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">momentum in z-direction ÷ velocity in z-direction</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Velocity in x-direction</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((velocity magnitude ^ 2) − (velocity in y-direction ^ 2) − (velocity in z-direction ^ 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Momentum in x-direction</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">the square root of ((momentum magnitude ^ 2) − (momentum in y-direction ^ 2) − (momentum in z-direction ^ 2))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Suppose <strong>Mass (m)</strong> = 10 kg and <strong>Velocity (v)</strong> = 10 m/s. Working through the relationship above gives <strong>Momentum (p)</strong> = 27.7778 kg⋅m/s.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Momentum (p)</strong> = 27.7778 kg⋅m/s should be roughly the size you expected from <strong>Mass (m)</strong> = 10 kg and <strong>Velocity (v)</strong> = 10 m/s.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in kilogram meters per second, and convertible to any of the 11 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilogram meters per second, and convertible to any of the 11 units on that chip.</li><li>Shown in meters per second, and convertible to any of the 25 units on that chip.</li><li>Shown in kilogram meters per second, and convertible to any of the 11 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Mass, opening in kilograms</li><li>Speed, opening in meters per second</li><li>Newton-seconds, opening in kilogram meters per second</li><li>Mass, opening in kilograms</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li><li>Speed, opening in meters per second</li></ul>\n<p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. Very large and very small numbers switch to scientific notation rather than printing a run of zeros.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Momentum calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Solving a problem set where the algebra is more interesting than the arithmetic</li><li>Writing up a lab result and needing a quick cross-check</li><li>Testing whether an answer is physically plausible before you trust it</li><li>Any time the same 4 figures keep coming back — the mass, the velocity and the velocity in y-direction — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>Keep the units you enter consistent. Mixing centimetres into a field that expects metres is the single most common way to get an answer that is out by a factor of a hundred.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Filling in more than one box is fine. The most recently edited field is the one treated as known, so you can switch direction without reloading.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these physics calculators cover the neighbouring steps: <a href=\"/physics/capacitors-in-series\">Capacitors in series</a>, <a href=\"/physics/car-crash-force\">Car crash force</a> and <a href=\"/physics/car-jump-distance\">Car jump distance</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Momentum calculator work out?",
+      "a": "It returns momentum (p), derived from the mass, the velocity and the velocity in y-direction. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Momentum calculator?",
+      "a": "The form asks for the mass, the velocity, the velocity in y-direction and the velocity in z-direction, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter mass (m) in a different unit?",
+      "a": "Yes. Mass (m) opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Can I use it backwards?",
+      "a": "Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Momentum (p) = 27.7778 kg⋅m/s. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Momentum calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    }
+  ],
+  "related": [
+    {
+      "path": "/physics/capacitors-in-series",
+      "name": "Capacitors in series"
+    },
+    {
+      "path": "/physics/car-crash-force",
+      "name": "Car crash force"
+    },
+    {
+      "path": "/physics/car-jump-distance",
+      "name": "Car jump distance"
+    }
+  ],
+  "words": 1610
+}

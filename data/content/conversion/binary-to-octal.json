@@ -1,0 +1,97 @@
+{
+  "path": "/conversion/binary-to-octal",
+  "slug": "binary-to-octal",
+  "cat": "conversion",
+  "name": "Binary to octal",
+  "seoTitle": "Binary to octal Calculator",
+  "seoDesc": "Binary to octal: work out octal representation from the binary input and the octal input. A free conversion calculator with the formula, units and a…",
+  "h1": "Binary to octal Calculator",
+  "summary": "<strong>octal representation</strong> is what the Binary to octal calculator works out, and it gets there from the binary input and the octal input. It suits a recipe, a shopping list, a travel plan or a form that asks for a unit you do not use.\n\nNothing is submitted anywhere: the arithmetic runs in the page you are looking at.",
+  "sections": [
+    {
+      "title": "How does the Binary to octal calculator work?",
+      "html": "<p>The Binary to octal calculator takes the values in the form, applies the relationship described below and reports <strong>octal representation</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case; then you type in the binary input and the octal input.</p>\n<p>The arithmetic runs locally each time an input changes. The page knows which values you have given it and which it still has to derive, so the results panel is never stale.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>Pick the option that matches your case — 2 options, such as binary to octal and octal to binary. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Binary input</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Octal representation</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Check if binary</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Octal input</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Binary representation</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Check if octal</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Num bits</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Binary to octal calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Octal representation</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(binary input)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Binary representation</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(octal input)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Check if binary</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(binary input)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Check if octal</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(octal input)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Num bits</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((the absolute value of (binary input)))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What is a worked example?",
+      "html": "<p>Take <strong>Convert</strong> set to binary to octal, <strong>Binary input</strong> = 10 and <strong>Octal input</strong> = 10. The calculator returns <strong>Check if binary</strong> = 1, <strong>Check if octal</strong> = 1 and <strong>Num bits</strong> = 2.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Check if binary</strong> = 1, <strong>Check if octal</strong> = 1 and <strong>Num bits</strong> = 2 should be roughly the size you expected from <strong>Convert</strong> set to binary to octal and <strong>Binary input</strong> = 10.</li></ol>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Binary to octal calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Converting a figure someone quoted you so you can compare it</li><li>Checking a product listing against the measurements you work with</li><li>Filling in a form that asks for imperial or metric values</li><li>Any time the same 2 figures keep coming back — the binary input and the octal input — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Write the answer down with its unit. A bare number copied into a report later is exactly where units get lost.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "What are the limits worth knowing?",
+      "html": "<p>Every tool draws a boundary somewhere. For the Binary to octal calculator, these are the ones that matter:</p>\n<ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these conversion calculators cover the neighbouring steps: <a href=\"/conversion/decimal-to-octal\">Decimal to octal</a>, <a href=\"/conversion/decimeter-to-meter\">Decimeter to meter</a> and <a href=\"/conversion/degrees-minutes-seconds\">Degrees minutes seconds</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Binary to octal calculator work out?",
+      "a": "It returns octal representation, derived from the binary input and the octal input. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Binary to octal calculator?",
+      "a": "The form asks for the binary input and the octal input, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "What is a typical result?",
+      "a": "With the values the page starts from, the calculator reports Check if binary = 1. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale."
+    },
+    {
+      "q": "Is the Binary to octal calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/conversion/decimal-to-octal",
+      "name": "Decimal to octal"
+    },
+    {
+      "path": "/conversion/decimeter-to-meter",
+      "name": "Decimeter to meter"
+    },
+    {
+      "path": "/conversion/degrees-minutes-seconds",
+      "name": "Degrees minutes seconds"
+    }
+  ],
+  "words": 1269
+}

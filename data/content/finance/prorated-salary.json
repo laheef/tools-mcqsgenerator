@@ -1,0 +1,93 @@
+{
+  "path": "/finance/prorated-salary",
+  "slug": "prorated-salary",
+  "cat": "finance",
+  "name": "Prorated salary",
+  "seoTitle": "Prorated salary — Free Online Calculator",
+  "seoDesc": "Prorated salary: work out num wking days 0 from the year and the gross salary. A free finance calculator with the formula, units and a worked example.",
+  "h1": "Prorated salary Calculator",
+  "summary": "<strong>num wking days 0</strong> is what the Prorated salary calculator works out, and it gets there from the year, the gross salary, number of days worked and number of holidays. It is built for a budget, a loan conversation, a payslip check or a what-if before you talk to a lender.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Prorated salary calculator work?",
+      "html": "<p>The Prorated salary calculator takes the values in the form, applies the relationship described below and reports <strong>num wking days 0</strong> in the results panel.</p>\n<p>Working from the top of the form: you choose the option that describes your case (the month of the year, the days worked per week and the first day off); then you type in the year, the gross salary, number of days worked and number of holidays.</p>\n<p>Press Calculate once and the page holds the relationship, tracking which boxes you filled and working out everything else; from that point on it follows every edit you make.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 12 options, such as january, february and march. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 7 options, such as seven, six and five. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as sunday, monday and tuesday. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as sunday, monday and tuesday. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as sunday, monday and tuesday. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as sunday, monday and tuesday. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as sunday, monday and tuesday. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 7 options, such as sunday, monday and tuesday. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>8 fields on this form are a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Year</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Month of the year</strong></td><td>One of 12 options, such as january, february and march.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Gross salary</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Number of days worked</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of holidays</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of approved leave</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Days worked per week</strong></td><td>One of 7 options, such as seven, six and five.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>First day off</strong></td><td>One of 7 options, such as sunday, monday and tuesday.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Second day off</strong></td><td>One of 7 options, such as sunday, monday and tuesday.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Third day off</strong></td><td>One of 7 options, such as sunday, monday and tuesday.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Fourth day off</strong></td><td>One of 7 options, such as sunday, monday and tuesday.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Fifth day off</strong></td><td>One of 7 options, such as sunday, monday and tuesday.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Sixth day off</strong></td><td>One of 7 options, such as sunday, monday and tuesday.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Num wking days 0</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Num wking days 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number wking days off 2</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Num wking days 3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Num wking days 4</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Num wking days 5</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Num wking days 6</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>To be paid for 0</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>To be paid for 1</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>To be paid for 2off</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>To be paid for 3</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 39 fields; the rest follow the same pattern.</p>"
+    },
+    {
+      "title": "The formula behind the Prorated salary calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Num wking days 0</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(year, month of the year, gross salary, number of days worked, number of holidays, number of approved leave, days worked per week, 10, 11, 12, 13, 14, 15)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Num wking days 1</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(year, month of the year, gross salary, number of days worked, number of holidays, number of approved leave, days worked per week, first day off, 11, 12, 13, 14, 15)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Number wking days off 2</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(year, month of the year, gross salary, number of days worked, number of holidays, number of approved leave, days worked per week, first day off, second day off, 12, 13, 14, 15)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Num wking days 3</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(year, month of the year, gross salary, number of days worked, number of holidays, number of approved leave, days worked per week, first day off, second day off, third day off, 13, 14, 15)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Num wking days 4</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(year, month of the year, gross salary, number of days worked, number of holidays, number of approved leave, days worked per week, first day off, second day off, third day off, fourth day off, 14, 15)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Num wking days 5</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(year, month of the year, gross salary, number of days worked, number of holidays, number of approved leave, days worked per week, first day off, second day off, third day off, fourth day off, fifth day off, 15)</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Prorated salary calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Sizing up a purchase before you commit to it</li><li>Preparing questions for a lender, an accountant or an adviser</li><li>Building a monthly budget and testing how one number shifts the rest</li><li>Any time the same 4 figures keep coming back — the year, the gross salary and number of days worked — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Answers that depend on a drop-down reflect the option you picked, not a range. Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these finance calculators cover the neighbouring steps: <a href=\"/finance/lerner-index\">Lerner index</a>, <a href=\"/finance/levered-free-cash-flow\">Levered free cash flow</a> and <a href=\"/finance/lgd\">Loss given default</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Prorated salary calculator work out?",
+      "a": "It returns num wking days 0, derived from the year, the gross salary and number of days worked. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Prorated salary calculator?",
+      "a": "The form asks for the year, the gross salary, number of days worked and number of holidays, which is 13 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter gross salary in a different unit?",
+      "a": "Yes. Gross salary opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "How much do the drop-down choices change the answer?",
+      "a": "There are several choices to make (8 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth."
+    },
+    {
+      "q": "Is the Prorated salary calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    }
+  ],
+  "related": [
+    {
+      "path": "/finance/lerner-index",
+      "name": "Lerner index"
+    },
+    {
+      "path": "/finance/levered-free-cash-flow",
+      "name": "Levered free cash flow"
+    },
+    {
+      "path": "/finance/lgd",
+      "name": "Loss given default"
+    }
+  ],
+  "words": 2033
+}

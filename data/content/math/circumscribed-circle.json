@@ -1,0 +1,93 @@
+{
+  "path": "/math/circumscribed-circle",
+  "slug": "circumscribed-circle",
+  "cat": "math",
+  "name": "Circumscribed circle",
+  "seoTitle": "Circumscribed circle Calculator — Formula, Units & Example",
+  "seoDesc": "Circumscribed circle: work out triangle area from the side b and the side c. A free math calculator with the formula, units and a worked example.",
+  "h1": "Circumscribed circle Calculator",
+  "summary": "Give the Circumscribed circle calculator the side b and the side c and it returns <strong>triangle area</strong>. That makes it useful for a homework check, a spreadsheet build or a bit of mental arithmetic you want to confirm.\n\nPress Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.",
+  "sections": [
+    {
+      "title": "How does the Circumscribed circle calculator work?",
+      "html": "<p>The Circumscribed circle calculator takes the values in the form, applies the relationship described below and reports <strong>triangle area</strong> in the results panel.</p>\n<p>Working from the top of the form: you type in the side b and the side c.</p>\n<p>Press Calculate and the page works through the equation with the values you supplied and derives the rest; it then keeps up with you as you correct a typo.</p>"
+    },
+    {
+      "title": "What do you need to enter?",
+      "html": "<ul><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul>"
+    },
+    {
+      "title": "What are the variables at a glance?",
+      "html": "<p>Everything the page asks for and everything it reports, side by side. The roles matter: a value you supply is read from the form, a calculated value is derived from the others and cannot be set directly.</p>\n<table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Side b</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Side c</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Radius (R)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Circumference</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr><tr><td><strong>Triangle perimeter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Triangle area</strong></td><td>A measured quantity, 24 units available.</td><td>square centimeters</td><td>Calculated</td></tr><tr><td><strong>Ratio of areas</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Inradius (r)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr></tbody></table>"
+    },
+    {
+      "title": "The formula behind the Circumscribed circle calculator",
+      "html": "<p>The page rests on a handful of relationships. Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class=\"formula-block\"><div class=\"formula-row\"><span class=\"formula-lhs\">Triangle area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 4) × the square root of (-(side a ^ 4) + 2 × (side a ^ 2) × (side b ^ 2) + 2 × (side a ^ 2) × (side c ^ 2) − (side b ^ 4) + 2 × (side b ^ 2) × (side c ^ 2) − (side c ^ 4)))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Triangle perimeter</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(side a + side b + side c)</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Radius (R)</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((1 ÷ 4) × side a × side b × side c ÷ ((1 ÷ 4) × the square root of (-(side a ^ 4) + 2 × (side a ^ 2) × (side b ^ 2) + 2 × (side a ^ 2) × (side c ^ 2) − (side b ^ 4) + 2 × (side b ^ 2) × (side c ^ 2) − (side c ^ 4))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Area</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(PI × (((1 ÷ 4) × side a × side b × side c ÷ ((1 ÷ 4) × the square root of (-(side a ^ 4) + 2 × (side a ^ 2) × (side b ^ 2) + 2 × (side a ^ 2) × (side c ^ 2) − (side b ^ 4) + 2 × (side b ^ 2) × (side c ^ 2) − (side c ^ 4)))), 2))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Circumference</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">(2 × PI × ((1 ÷ 4) × side a × side b × side c ÷ ((1 ÷ 4) × the square root of (-(side a ^ 4) + 2 × (side a ^ 2) × (side b ^ 2) + 2 × (side a ^ 2) × (side c ^ 2) − (side b ^ 4) + 2 × (side b ^ 2) × (side c ^ 2) − (side c ^ 4)))))</span></div><div class=\"formula-row\"><span class=\"formula-lhs\">Ratio of areas</span><span class=\"formula-eq\">=</span><span class=\"formula-rhs\">((PI × (((1 ÷ 4) × side a × side b × side c ÷ ((1 ÷ 4) × the square root of (-(side a ^ 4) + 2 × (side a ^ 2) × (side b ^ 2) + 2 × (side a ^ 2) × (side c ^ 2) − (side b ^ 4) + 2 × (side b ^ 2) × (side c ^ 2) − (side c ^ 4)))), 2)) ÷ ((1 ÷ 4) × the square root of (-(side a ^ 4) + 2 × (side a ^ 2) × (side b ^ 2) + 2 × (side a ^ 2) × (side c ^ 2) − (side b ^ 4) + 2 × (side b ^ 2) × (side c ^ 2) − (side c ^ 4))))</span></div></div><p>Read it as an ordinary equation. Where a word appears instead of a letter, it is the label of one of the boxes in the form; where a function appears, it is the usual mathematical meaning of that function.</p>"
+    },
+    {
+      "title": "What does the result mean?",
+      "html": "<ul><li>Shown in square centimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in square centimeters, and convertible to any of the 24 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>"
+    },
+    {
+      "title": "How are units and precision handled?",
+      "html": "<p>Every quantity with units carries a chip beside its box. Switching the chip does not change what you know, only how it is written: values are converted to a common internal base, the arithmetic happens there, and the answer is converted back for display. Mixing metres with feet in one calculation is therefore safe.</p>\n<ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Area, opening in square centimeters</li><li>Length, opening in centimeters</li></ul>\n<p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. Numbers far from everyday size are shown in scientific notation so the significant digits stay readable.</p>"
+    },
+    {
+      "title": "When should you use it?",
+      "html": "<p>The Circumscribed circle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Checking a homework answer before you hand it in</li><li>Settling an argument about a number with a quick, traceable result</li><li>Splitting a bill, a measurement or a shape problem between several people</li><li>Any time the same 2 figures keep coming back — the side b and the side c — and you would rather not repeat the arithmetic by hand each time.</li></ul>"
+    },
+    {
+      "title": "How do you get a reliable answer?",
+      "html": "<ul><li>Leave the field you want solved for empty rather than guessing at it. Filling every box tells the calculator you already know the answer.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. The calculator carries full precision internally, so re-entering a value you already rounded is the fastest way to introduce drift.</li><li>Change one input at a time when you are exploring. Two simultaneous changes make it impossible to tell which one moved the result.</li></ul>"
+    },
+    {
+      "title": "What else is worth knowing?",
+      "html": "<ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>"
+    },
+    {
+      "title": "Which calculators go with this one?",
+      "html": "<p>If this one is part of a bigger problem, these math calculators cover the neighbouring steps: <a href=\"/math/gcd\">GCD</a>, <a href=\"/math/gcf\">GCF</a> and <a href=\"/math/gcf-and-lcm\">GCF and LCM</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the Circumscribed circle calculator work out?",
+      "a": "It returns triangle area, derived from the side b and the side c. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload."
+    },
+    {
+      "q": "What do I need to enter to use the Circumscribed circle calculator?",
+      "a": "The form asks for the side b and the side c, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+    },
+    {
+      "q": "Can I enter side a in a different unit?",
+      "a": "Yes. Side a opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe."
+    },
+    {
+      "q": "Is the Circumscribed circle calculator free to use?",
+      "a": "Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere."
+    },
+    {
+      "q": "Do I have to fill in every box?",
+      "a": "Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together."
+    },
+    {
+      "q": "Why is the answer different from the one in my protocol?",
+      "a": "Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit."
+    }
+  ],
+  "related": [
+    {
+      "path": "/math/gcd",
+      "name": "GCD"
+    },
+    {
+      "path": "/math/gcf",
+      "name": "GCF"
+    },
+    {
+      "path": "/math/gcf-and-lcm",
+      "name": "GCF and LCM"
+    }
+  ],
+  "words": 1514
+}
