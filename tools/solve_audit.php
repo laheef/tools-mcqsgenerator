@@ -22,10 +22,10 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../php-clone/config.php';
 
-use Omni\Data;
-use Omni\Format;
-use Omni\Solver;
-use Omni\Widget;
+use Onim\Data;
+use Onim\Format;
+use Onim\Solver;
+use Onim\Widget;
 
 $limit = 0;
 $verbose = false;

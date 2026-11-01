@@ -479,9 +479,9 @@ def workflows(panel: Panel) -> None:
         check("backups: the dump file exists", os.path.isfile(fpath))
         with open(fpath, "rb") as fh:
             head = fh.readline().decode()
-        check("backups: the dump carries the panel signature", head.startswith("-- Omni Calculator admin panel"))
+        check("backups: the dump carries the panel signature", head.startswith("-- Onim Calculator admin panel"))
         dl = panel.get("backups", action="download", id=str(dump["id"]))
-        check("backups: download streams the file", dl.status_code == 200 and dl.content.startswith(b"-- Omni Calculator"))
+        check("backups: download streams the file", dl.status_code == 200 and dl.content.startswith(b"-- Onim Calculator"))
         # a foreign .sql must be refused
         foreign = "foreign-" + dump["filename"]
         with open("/home/user/php-clone/data/backups/" + foreign, "w") as fh:
@@ -972,12 +972,12 @@ def main() -> int:
         check("settings form found", False)
     else:
         original = scalar("SELECT svalue FROM settings WHERE skey='site_name'")
-        data = form_data(general, **{"settings[site_name]": "Omni Calculator Test"})
+        data = form_data(general, **{"settings[site_name]": "Onim Calculator Test"})
         panel.post("settings", data, group="general")
         saved = scalar("SELECT svalue FROM settings WHERE skey='site_name'")
         home = public("/").text
-        check("settings save persists to MySQL", saved == "Omni Calculator Test", str(saved))
-        check("settings change appears on the public site", "Omni Calculator Test" in home)
+        check("settings save persists to MySQL", saved == "Onim Calculator Test", str(saved))
+        check("settings change appears on the public site", "Onim Calculator Test" in home)
         panel.post("settings", form_data(general, **{"settings[site_name]": original}), group="general")
         check("settings revert cleanly", scalar("SELECT svalue FROM settings WHERE skey='site_name'") == original)
 
@@ -996,7 +996,7 @@ def main() -> int:
         check("SMTP password is stored encrypted, never plaintext",
               stored is not None and stored.startswith("v1:") and "p@ss" not in stored,
               str(stored)[:16])
-        viaphp = php('require "/home/user/php-clone/config.php"; echo Omni\\Cms::decryptSecret((string)$p->query("SELECT svalue FROM settings WHERE skey=\'smtp_pass\'")->fetchColumn());')
+        viaphp = php('require "/home/user/php-clone/config.php"; echo Onim\\Cms::decryptSecret((string)$p->query("SELECT svalue FROM settings WHERE skey=\'smtp_pass\'")->fetchColumn());')
         check("stored secret decrypts back to the same value", viaphp == "p@ss word!", viaphp)
 
     # 6 — appearance -------------------------------------------------------

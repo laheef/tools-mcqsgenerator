@@ -9,19 +9,19 @@
 
 declare(strict_types=1);
 
-use Omni\Data;
-use Omni\Engagement;
-use Omni\InternalLinks;
-use Omni\Format;
-use Omni\Seo;
-use Omni\Solver;
-use Omni\View;
-use Omni\Widget;
+use Onim\Data;
+use Onim\Engagement;
+use Onim\InternalLinks;
+use Onim\Format;
+use Onim\Seo;
+use Onim\Solver;
+use Onim\View;
+use Onim\Widget;
 
 /** @var array $calc */
 
 /** ISO date / time query value -> epoch milliseconds (UTC). */
-function omni_parse_date(string $value, string $type): ?float
+function onim_parse_date(string $value, string $type): ?float
 {
     $value = trim($value);
     if ($value === '') {
@@ -105,7 +105,7 @@ foreach ($calc['groups'] as $group) {
                     $varType = (string) ($varDef['type'] ?? '');
                     if (in_array($varType, ['date', 'datetime', 'time'], true)) {
                         // dates arrive as ISO strings in a shared link
-                        $ms = omni_parse_date((string) $_GET[$name], $varType);
+                        $ms = onim_parse_date((string) $_GET[$name], $varType);
                         if ($ms !== null) {
                             $inputs[$name] = $ms;
                         }

@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------------
--- Omni Calculator clone — admin panel schema (migration 002)
+-- Onim — admin panel schema (migration 002)
 --
 -- Custom calculators: tools that are NOT in the harvested catalogue.
 --

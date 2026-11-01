@@ -156,7 +156,7 @@ INSERT INTO `categories` (`id`, `slug`, `name`, `title`, `description`, `icon`, 
 (12, 'sports', 'Sports', 'Sports Calculators', 'Sports calculators for pace, VO₂ max, one-rep max and handicap. Measure performance with numbers you can compare.', 'sports', 'Sports Calculators', 'Sports calculators for pace, VO₂ max, one-rep max and handicap. Measure performance with numbers you can compare.', 0, 11, 'published', '2026-10-29 14:08:39', '2026-10-29 14:08:39'),
 (13, 'statistics', 'Statistics', 'Statistics Calculators', 'Statistics calculators for p-values, confidence intervals, averages and distributions, with the reasoning spelled out.', 'statistics', 'Statistics Calculators', 'Statistics calculators for p-values, confidence intervals, averages and distributions, with the reasoning spelled out.', 0, 12, 'published', '2026-10-29 14:08:39', '2026-10-29 14:08:39'),
 (14, 'other', 'Other', 'Other Calculators', 'Calculators that do not fit a single category, from test grades to date arithmetic.', 'other', 'Other Calculators', 'Calculators that do not fit a single category, from test grades to date arithmetic.', 0, 13, 'published', '2026-10-29 14:08:39', '2026-10-29 14:08:39'),
-(15, 'discover', 'Discover Omni', 'Discover Omni Calculator', 'Amazing truths about the world revealed with calculators.', 'discover', 'Discover Omni Calculator', 'Amazing truths about the world revealed with calculators.', 0, 14, 'published', '2026-10-29 14:08:39', '2026-10-29 14:08:39');
+(15, 'discover', 'Discover Onim', 'Discover Onim', 'Amazing truths about the world revealed with calculators.', 'discover', 'Discover Onim', 'Amazing truths about the world revealed with calculators.', 0, 14, 'published', '2026-10-29 14:08:39', '2026-10-29 14:08:39');
 
 -- ------------------------------------------------------------ contact_fields
 DROP TABLE IF EXISTS `contact_fields`;
@@ -848,7 +848,7 @@ INSERT INTO `settings` (`skey`, `svalue`, `sgroup`, `is_secret`, `updated_at`) V
 ('locale', 'en_US', 'general', 0, '2026-10-29 16:29:45'),
 ('logo_path', '', 'general', 0, '2026-10-29 16:29:45'),
 ('mail_from_email', 'noreply@example.com', 'email', 0, '2026-10-29 16:30:25'),
-('mail_from_name', 'Omni Calculator', 'email', 0, '2026-10-29 16:30:05'),
+('mail_from_name', 'Onim', 'email', 0, '2026-10-29 16:30:05'),
 ('mail_to', 'owner@example.com', 'email', 0, '2026-10-29 16:30:05'),
 ('mail_transport', 'mail', 'email', 0, '2026-10-29 16:30:25'),
 ('modules_off', '', 'system', 0, '2026-10-29 15:39:06'),
@@ -865,10 +865,10 @@ INSERT INTO `settings` (`skey`, `svalue`, `sgroup`, `is_secret`, `updated_at`) V
 ('seo_robots_extra', '', 'seo', 0, '2026-10-29 16:30:33'),
 ('seo_sitemap_blog', '1', 'seo', 0, '2026-10-29 16:30:33'),
 ('seo_structured_data', '1', 'seo', 0, '2026-10-29 16:30:33'),
-('seo_title_suffix', '| Omni Calculator', 'seo', 0, '2026-10-29 16:30:33'),
+('seo_title_suffix', '| Onim', 'seo', 0, '2026-10-29 16:30:33'),
 ('seo_twitter_handle', '', 'seo', 0, '2026-10-29 16:30:33'),
 ('site_description', '', 'general', 0, '2026-10-29 16:29:45'),
-('site_name', 'Omni Calculator', 'general', 0, '2026-10-29 16:30:25'),
+('site_name', 'Onim', 'general', 0, '2026-10-29 16:30:25'),
 ('site_tagline', 'Free online calculators for everyday problems', 'general', 0, '2026-10-29 16:30:25'),
 ('site_url', '', 'general', 0, '2026-10-29 16:29:45'),
 ('smtp_host', 'smtp.example.com', 'email', 0, '2026-10-29 16:30:25'),

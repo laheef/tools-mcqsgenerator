@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
+use Onim\Admin\Csrf;
 
 ?>
 <div class="grid grid-5" style="margin-bottom:18px">
@@ -120,7 +120,7 @@ use Omni\Admin\Csrf;
                             <?php if ((int) $row['is_featured'] === 1): ?>
                                 <span class="badge badge-brand"><?= admin_icon('star', 10) ?> Featured</span>
                             <?php endif; ?>
-                            <?php if (\Omni\CustomCalc::needsReview($row)): ?>
+                            <?php if (\Onim\CustomCalc::needsReview($row)): ?>
                                 <span class="badge badge-warn"
                                       title="The article was drafted from the definition and has not been read yet">Draft article · unread</span>
                             <?php elseif (trim((string) $row['summary']) === ''): ?>
@@ -135,12 +135,12 @@ use Omni\Admin\Csrf;
                         <td><span class="badge <?= $statusClass ?>"><?= e(ucfirst((string) $row['status'])) ?></span></td>
                         <td class="muted small"><?= e((string) $row['updated_at']) ?></td>
                         <td class="actions">
-                            <a class="btn btn-sm <?= \Omni\CustomCalc::needsReview($row) ? 'btn-primary' : '' ?>"
+                            <a class="btn btn-sm <?= \Onim\CustomCalc::needsReview($row) ? 'btn-primary' : '' ?>"
                                href="<?= e(admin_url('custom-calculator-edit', ['id' => (int) $row['id'], 'tab' => 'article'])) ?>">
-                                <?= admin_icon('edit', 14) ?> <?= \Omni\CustomCalc::needsReview($row) ? 'Review' : 'Edit' ?>
+                                <?= admin_icon('edit', 14) ?> <?= \Onim\CustomCalc::needsReview($row) ? 'Review' : 'Edit' ?>
                             </a>
                             <a class="btn btn-sm btn-ghost" target="_blank" rel="noopener"
-                               href="<?= e(site_link($row['status'] === 'published' ? $path : \Omni\Cms::previewUrl($path))) ?>">
+                               href="<?= e(site_link($row['status'] === 'published' ? $path : \Onim\Cms::previewUrl($path))) ?>">
                                 <?= admin_icon('eye', 14) ?> <?= $row['status'] === 'published' ? 'View' : 'Preview' ?>
                             </a>
                             <form method="post" action="<?= e(admin_url('custom-calculators')) ?>" style="display:inline">

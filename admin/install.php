@@ -15,18 +15,18 @@
 
 declare(strict_types=1);
 
-define('OMNI_PANEL', true);
+define('ONIM_PANEL', true);
 
 require_once __DIR__ . '/bootstrap.php';
 
-use Omni\Admin\Activity;
-use Omni\Admin\Auth;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
-use Omni\Admin\Migrator;
-use Omni\Admin\Seed;
-use Omni\Cms;
-use Omni\Db;
+use Onim\Admin\Activity;
+use Onim\Admin\Auth;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
+use Onim\Admin\Migrator;
+use Onim\Admin\Seed;
+use Onim\Cms;
+use Onim\Db;
 
 $cli = PHP_SAPI === 'cli';
 $errors = [];
@@ -151,20 +151,20 @@ function installer_requirements(): array
 
 if ($cli) {
     $cfg = [
-        'host' => getenv('OMNI_DB_HOST') ?: '127.0.0.1',
-        'port' => (int) (getenv('OMNI_DB_PORT') ?: 3306),
-        'name' => getenv('OMNI_DB_NAME') ?: '',
-        'user' => getenv('OMNI_DB_USER') ?: '',
-        'pass' => getenv('OMNI_DB_PASS') ?: '',
-        'app_key' => getenv('OMNI_APP_KEY') ?: bin2hex(random_bytes(32)),
+        'host' => getenv('ONIM_DB_HOST') ?: '127.0.0.1',
+        'port' => (int) (getenv('ONIM_DB_PORT') ?: 3306),
+        'name' => getenv('ONIM_DB_NAME') ?: '',
+        'user' => getenv('ONIM_DB_USER') ?: '',
+        'pass' => getenv('ONIM_DB_PASS') ?: '',
+        'app_key' => getenv('ONIM_APP_KEY') ?: bin2hex(random_bytes(32)),
     ];
     $admin = [
-        'name'  => getenv('OMNI_ADMIN_NAME') ?: 'Administrator',
-        'email' => getenv('OMNI_ADMIN_EMAIL') ?: '',
-        'pass'  => getenv('OMNI_ADMIN_PASS') ?: '',
+        'name'  => getenv('ONIM_ADMIN_NAME') ?: 'Administrator',
+        'email' => getenv('ONIM_ADMIN_EMAIL') ?: '',
+        'pass'  => getenv('ONIM_ADMIN_PASS') ?: '',
     ];
     if ($cfg['name'] === '' || $cfg['user'] === '' || $admin['email'] === '' || $admin['pass'] === '') {
-        fwrite(STDERR, "Set OMNI_DB_NAME, OMNI_DB_USER, OMNI_ADMIN_EMAIL and OMNI_ADMIN_PASS (and OMNI_DB_PASS if needed).\n");
+        fwrite(STDERR, "Set ONIM_DB_NAME, ONIM_DB_USER, ONIM_ADMIN_EMAIL and ONIM_ADMIN_PASS (and ONIM_DB_PASS if needed).\n");
         exit(1);
     }
     $problem = installer_test($cfg);

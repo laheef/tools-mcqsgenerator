@@ -1,15 +1,15 @@
 <?php
-/** @var array $rows @var \Omni\Admin\Pagination $paginator @var array $counts @var string $q @var string $status */
+/** @var array $rows @var \Onim\Admin\Pagination $paginator @var array $counts @var string $q @var string $status */
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
+use Onim\Admin\Csrf;
 ?>
 <div class="grid grid-4" style="margin-bottom:18px">
     <div class="stat is-brand"><div class="label">Unread</div><div class="value"><?= number_format($counts['unread']) ?></div><div class="hint">waiting for an answer</div></div>

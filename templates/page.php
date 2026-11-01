@@ -6,15 +6,15 @@
  * the contact form appended, so the Contact page can be a normal page with a
  * real working form underneath it.
  *
- * @var \Omni\Seo $seo
+ * @var \Onim\Seo $seo
  * @var array $page
  * @var array $categories
  */
 
 declare(strict_types=1);
 
-use Omni\Data;
-use Omni\View;
+use Onim\Data;
+use Onim\View;
 
 $page = $page ?? [];
 $template = (string) ($page['template'] ?? 'default');
@@ -46,14 +46,14 @@ $updated = (string) ($page['updated_at'] ?? '');
 
     <?php if ($template === 'contact'): ?>
         <?= View::render('partials/contact-form', [
-            'fields' => \Omni\Cms::contactFields(),
+            'fields' => \Onim\Cms::contactFields(),
             'contactError' => $contactError ?? '',
             'contactOld' => $contactOld ?? [],
         ]) ?>
     <?php endif; ?>
 
     <?php if ($template === 'faq'): ?>
-        <?php $faq = \Omni\Cms::decode((string) ($page['faq'] ?? '')); ?>
+        <?php $faq = \Onim\Cms::decode((string) ($page['faq'] ?? '')); ?>
         <?php if ($faq !== []): ?>
             <section class="faq" aria-labelledby="page-faq">
                 <h2 class="section-title" id="page-faq">Frequently asked questions</h2>

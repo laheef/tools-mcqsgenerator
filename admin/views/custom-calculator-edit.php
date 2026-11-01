@@ -15,14 +15,14 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
-use Omni\CustomCalc;
+use Onim\Admin\Csrf;
+use Onim\CustomCalc;
 
 $fields     = is_array($values['fields'] ?? null) ? $values['fields'] : [];
 $directions = is_array($values['directions'] ?? null) ? $values['directions'] : [];
@@ -338,7 +338,7 @@ $unitLabel = static function (array $group, string $key): string {
                                             <div class="field" style="margin:0" data-row-options>
                                                 <label for="f<?= $i ?>-options">Options</label>
                                                 <textarea id="f<?= $i ?>-options" name="fields[<?= $i ?>][options]" rows="3"
-                                                          class="mono" placeholder="Option label|value"><?= e(\Omni\CustomCalc::optionsToText($field['options'] ?? '')) ?></textarea>
+                                                          class="mono" placeholder="Option label|value"><?= e(\Onim\CustomCalc::optionsToText($field['options'] ?? '')) ?></textarea>
                                                 <div class="hint">One per line, <code>Label|value</code>. The value is what formulas see.</div>
                                             </div>
 

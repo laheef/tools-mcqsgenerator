@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 /**
  * Hand-written repairs for harvested calculators that came back without a

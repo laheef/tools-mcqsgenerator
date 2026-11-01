@@ -1,12 +1,12 @@
 <?php
 /**
  * Turns a calculator definition + solver state into a simple view model that
- * the templates can loop over without knowing anything about Omni's schema.
+ * the templates can loop over without knowing anything about Onim's schema.
  */
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Widget
 {

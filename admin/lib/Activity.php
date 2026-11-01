@@ -10,15 +10,15 @@
 declare(strict_types=1);
 
 
-namespace Omni\Admin;
+namespace Onim\Admin;
 
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
-use Omni\Db;
+use Onim\Db;
 
 final class Activity
 {

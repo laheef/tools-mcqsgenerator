@@ -54,7 +54,7 @@ def custom_index() -> dict[str, str]:
     out = subprocess.run(
         ["bash", f"{ROOT}/../tools/php.sh", "-r",
          'require "php-clone/config.php";'
-         'foreach (Omni\\Db::all("SELECT slug, name FROM custom_calculators") as $r)'
+         'foreach (Onim\\Db::all("SELECT slug, name FROM custom_calculators") as $r)'
          ' echo $r["slug"], "\\t", $r["name"], "\\n";'],
         capture_output=True, text=True, cwd=ROOT + "/..")
     index: dict[str, str] = {}

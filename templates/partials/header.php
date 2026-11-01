@@ -14,10 +14,10 @@
 
 declare(strict_types=1);
 
-use Omni\Cms;
-use Omni\Data;
-use Omni\Format;
-use Omni\View;
+use Onim\Cms;
+use Onim\Data;
+use Onim\Format;
+use Onim\View;
 
 $active = $active ?? '';
 $siteName = $siteName ?? SITE_NAME;
@@ -53,7 +53,7 @@ $isActive = static function (array $item) use ($active): bool {
     <div class="header-top">
         <div class="shell header-top-inner">
             <a class="logo" href="<?= View::escape(View::url('/')) ?>" aria-label="<?= View::escape($siteName) ?> — home">
-                <img src="<?= View::escape($logo) ?>" width="198" height="30" alt="<?= View::escape($siteName) ?>"
+                <img src="<?= View::escape($logo) ?>" width="132" height="40" alt="<?= View::escape($siteName) ?>"
                      fetchpriority="high" decoding="async">
             </a>
 

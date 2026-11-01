@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class View
 {
@@ -60,6 +60,41 @@ final class View
     public static function asset(string $path): string
     {
         return site_base() . '/assets/' . ltrim($path, '/') . '?v=' . ASSET_VERSION;
+    }
+
+    /**
+     * One advertising slot.
+     *
+     * The page reserves the column whether or not an ad exists, so a slot that
+     * appears later never shifts the article under the reader's eyes. The tag
+     * itself lives in Settings (Advertising → rail slots) and is printed only when
+     * advertising is switched on — an empty slot renders as nothing at all, not
+     * as a dashed "your ad here" box.
+     *
+     * Output is raw on purpose: an ad tag is HTML (usually a <script>), and it is
+     * written by an administrator, not by a visitor. Nothing else on this page
+     * is ever printed unescaped.
+     */
+    public static function adSlot(string $name): string
+    {
+        if (!class_exists(Cms::class) || !Cms::settingBool('ads_enabled', false)) {
+            return '';
+        }
+        /* Named slots map to settings, so the panel stays the only place an ad
+           tag is ever written: no template edit needed to go live. */
+        $key = [
+            'calculator-left'  => 'ads_rail_left',
+            'calculator-right' => 'ads_rail_right',
+        ][$name] ?? ('ad_slot_' . $name);
+        $html = (string) (Cms::setting($key, '') ?? '');
+        if ($html === '') {
+            return '';
+        }
+        /* A published ad tag that is literally empty markup is still nothing. */
+        if (trim(strip_tags($html)) === '' && !str_contains($html, '<script') && !str_contains($html, '<ins')) {
+            return '';
+        }
+        return $html;
     }
 
     /** Absolute-or-relative site path. */
@@ -279,7 +314,7 @@ final class View
      * linking a page to itself. Pass '' to disable link insertion (e.g. for FAQ
      * answers that already sit next to the full article).
      */
-    public static function rewriteArticleHtml(string $html, string $selfPath = '', int $budget = \Omni\InternalLinks::MAX_PER_PAGE): string
+    public static function rewriteArticleHtml(string $html, string $selfPath = '', int $budget = \Onim\InternalLinks::MAX_PER_PAGE): string
     {
         $html = self::sanitize($html);
         // The reference's own interpolation slots occasionally survive in body
@@ -292,7 +327,7 @@ final class View
         $html = self::wrapTables($html);
         $html = self::rewriteLinks($html);
         if ($selfPath !== '') {
-            [$html] = \Omni\InternalLinks::linkify($html, $selfPath, $budget);
+            [$html] = \Onim\InternalLinks::linkify($html, $selfPath, $budget);
         }
         return $html;
     }
@@ -401,9 +436,9 @@ final class View
                     ? 'https://www.omnicalculator.com' . $href
                     : $href;
                 $host = parse_url($abs, PHP_URL_HOST) ?: '';
-                $isOmni = str_contains($host, 'omnicalculator.com');
+                $isReferenceHost = str_contains($host, 'omnicalculator.com');
 
-                if (!$isOmni) {
+                if (!$isReferenceHost) {
                     $rel = str_contains($m[1] . $m[3], 'rel=') ? '' : ' rel="noopener nofollow"';
                     return '<a href="' . htmlspecialchars($href, ENT_QUOTES) . '"' . $rel . ' target="_blank">' . $text . '</a>';
                 }

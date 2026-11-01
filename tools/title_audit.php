@@ -15,8 +15,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../php-clone/config.php';
 
-use Omni\Data;
-use Omni\Seo;
+use Onim\Data;
+use Onim\Seo;
 
 $verbose = in_array('--verbose', $argv, true);
 $min = 45;      // rendered, brand suffix included

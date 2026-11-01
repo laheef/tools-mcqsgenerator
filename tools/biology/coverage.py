@@ -152,7 +152,7 @@ def custom_paths() -> set[str]:
     out = subprocess.run(
         ["bash", f"{ROOT}/tools/php.sh", "-r",
          'require "php-clone/config.php";'
-         'foreach (Omni\\Db::all("SELECT slug, category_slug FROM custom_calculators") as $r)'
+         'foreach (Onim\\Db::all("SELECT slug, category_slug FROM custom_calculators") as $r)'
          ' echo "/", $r["category_slug"], "/", $r["slug"], "\\n";'],
         capture_output=True, text=True, cwd=ROOT)
     return {line.strip() for line in out.stdout.splitlines() if line.startswith("/")}
@@ -168,7 +168,7 @@ def inventory() -> list[tuple[str, str]]:
     out = subprocess.run(
         ["bash", f"{ROOT}/tools/php.sh", "-r",
          'require "php-clone/config.php";'
-         'foreach (Omni\\Db::all("SELECT slug, name, category_slug FROM custom_calculators") as $r)'
+         'foreach (Onim\\Db::all("SELECT slug, name, category_slug FROM custom_calculators") as $r)'
          ' echo "/", $r["category_slug"], "/", $r["slug"], "\\t", $r["name"], "\\n";'],
         capture_output=True, text=True, cwd=ROOT)
     for line in out.stdout.splitlines():

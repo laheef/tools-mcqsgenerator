@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 use PDO;
 use PDOException;
@@ -34,8 +34,8 @@ final class Db
         }
         self::$tried = true;
 
-        if (!omni_db_configured()) {
-            self::$error = 'No database credentials found (config.db.php or OMNI_DB_* environment variables).';
+        if (!onim_db_configured()) {
+            self::$error = 'No database credentials found (config.db.php or ONIM_DB_* environment variables).';
             return null;
         }
         if (!in_array('mysql', PDO::getAvailableDrivers(), true)) {
@@ -43,7 +43,7 @@ final class Db
             return null;
         }
 
-        $c = omni_db_config();
+        $c = onim_db_config();
         $dsn = sprintf('mysql:host=%s;port=%d;dbname=%s;charset=%s', $c['host'], $c['port'], $c['name'], $c['charset']);
         try {
             self::$pdo = new PDO($dsn, $c['user'], $c['pass'], [

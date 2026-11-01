@@ -5,14 +5,14 @@
  * critical styling lives in assets/css/app.css so the page looks correct even
  * when the CDN is unreachable (offline, sandboxed preview, locked-down network).
  *
- * @var \Omni\Seo $seo
+ * @var \Onim\Seo $seo
  * @var string    $content
  */
 
 declare(strict_types=1);
 
-use Omni\Cms;
-use Omni\View;
+use Onim\Cms;
+use Onim\View;
 
 $bodyClass = $bodyClass ?? '';
 

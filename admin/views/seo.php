@@ -1,19 +1,19 @@
 <?php
 /**
  * @var string $tab @var array $values @var array $duplicates @var array $redirects
- * @var \Omni\Admin\Pagination $paginator @var string $sitemapPreview @var string $robotsPreview
+ * @var \Onim\Admin\Pagination $paginator @var string $sitemapPreview @var string $robotsPreview
  */
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
-use Omni\Cms;
+use Onim\Admin\Csrf;
+use Onim\Cms;
 
 $v = static fn (string $key, string $default = ''): string => (string) ($values[$key] ?? $default);
 $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($key, $default);

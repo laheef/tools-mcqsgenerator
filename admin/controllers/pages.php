@@ -9,19 +9,19 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Activity;
-use Omni\Admin\Auth;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
-use Omni\Cms;
-use Omni\Data;
-use Omni\Db;
+use Onim\Admin\Activity;
+use Onim\Admin\Auth;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
+use Onim\Cms;
+use Onim\Data;
+use Onim\Db;
 
 /** Slugs the router owns. */
 function page_reserved(): array
@@ -99,7 +99,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         $old = Db::one('SELECT slug FROM pages WHERE id = ?', [$id]);
         Db::update('pages', $data, 'id = :id', [':id' => $id]);
         if ($old !== null && $old['slug'] !== $slug) {
-            \Omni\Admin\CalcRepo::upsertRedirect('/' . $old['slug'], '/' . $slug, 301, 'Page slug changed');
+            \Onim\Admin\CalcRepo::upsertRedirect('/' . $old['slug'], '/' . $slug, 301, 'Page slug changed');
         }
         Db::delete('redirects', 'from_path = ?', ['/' . $slug]);
         Activity::log('page_updated', 'page', (string) $id, 'Saved page ' . $slug);

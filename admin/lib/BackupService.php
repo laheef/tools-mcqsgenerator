@@ -19,20 +19,20 @@
 declare(strict_types=1);
 
 
-namespace Omni\Admin;
+namespace Onim\Admin;
 
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
-use Omni\Db;
+use Onim\Db;
 
 final class BackupService
 {
     /** First line of every dump this class writes. */
-    public const SIGNATURE = '-- Omni Calculator admin panel database dump';
+    public const SIGNATURE = '-- Onim Calculator admin panel database dump';
 
     public const ROWS_PER_INSERT = 200;
 
@@ -205,7 +205,7 @@ final class BackupService
                 $added++;
             }
         }
-        $zip->addFromString('MANIFEST.txt', "Omni Calculator content archive\nCreated: " . date('c') . "\nFiles: " . $added . "\nUploads included: " . ($withUploads ? 'yes' : 'no') . "\n");
+        $zip->addFromString('MANIFEST.txt', "Onim Calculator content archive\nCreated: " . date('c') . "\nFiles: " . $added . "\nUploads included: " . ($withUploads ? 'yes' : 'no') . "\n");
         $zip->close();
 
         $size = (int) @filesize($path);

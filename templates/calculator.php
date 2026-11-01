@@ -4,11 +4,11 @@
  * article on the left. Both are server-rendered; assets/js/calc.js takes over
  * the widget once loaded.
  *
- * @var \Omni\Seo $seo
+ * @var \Onim\Seo $seo
  * @var array $calc
  * @var array $groups   prepared widget view model
- * @var \Omni\Solver $solver
- * @var \Omni\Widget $widget
+ * @var \Onim\Solver $solver
+ * @var \Onim\Widget $widget
  * @var string $articleHtml
  * @var array $toc
  * @var array $related
@@ -16,12 +16,12 @@
 
 declare(strict_types=1);
 
-use Omni\Data;
-use Omni\Engagement;
-use Omni\Format;
-use Omni\Icons;
-use Omni\Modules;
-use Omni\View;
+use Onim\Data;
+use Onim\Engagement;
+use Onim\Format;
+use Onim\Icons;
+use Onim\Modules;
+use Onim\View;
 
 if (!function_exists('initials')) {
     function initials(string $name): string
@@ -255,7 +255,7 @@ $clientPayload = [
     'precision' => null,
 ];
 ?>
-<div class="shell calc-shell">
+<div class="calc-shell">
     <?= View::breadcrumbs([
         ['name' => 'Home', 'url' => '/'],
         ['name' => $catName, 'url' => '/' . $calc['cat']],
@@ -269,7 +269,16 @@ $clientPayload = [
         </p>
     <?php endif; ?>
 
-    <div class="calc-layout">
+    <div class="calc-frame">
+        <?php /* Advertising rails. Kept empty on purpose: the column is reserved
+                 so that a future slot cannot reflow the page when it appears.
+                 Fill them from the panel (Settings -> Advertising) or drop the
+                 ad tag straight into the container. */ ?>
+        <aside class="ad-rail ad-rail--left" aria-hidden="true">
+            <?= View::adSlot('calculator-left') ?>
+        </aside>
+
+        <div class="calc-layout">
         <div class="calc-widget-column">
             <div class="calc-widget" data-calculator="<?= View::escape($calc['file']) ?>">
                 <?php if ($groups === []): ?>
@@ -789,6 +798,11 @@ $clientPayload = [
                 <pre class="cite-box" id="cite-text"><?= View::escape(($calc['title'] ?: $calc['name']) . '. ' . SITE_NAME . '. Retrieved ' . date('F j, Y') . ', from ' . SITE_URL . $calc['path']) ?></pre>
             </section>
         </article>
+        </div>
+
+        <aside class="ad-rail ad-rail--right" aria-hidden="true">
+            <?= View::adSlot('calculator-right') ?>
+        </aside>
     </div>
 
     <?php foreach (Modules::partials((string) $calc['path'], 'page_foot') as $module): ?>

@@ -3,16 +3,16 @@
  * Site configuration.
  *
  * SITE_URL is auto-detected so the clone works from any host/port (php -S,
- * Apache, a subdirectory) without touching code. Set OMNI_SITE_URL in the
+ * Apache, a subdirectory) without touching code. Set ONIM_SITE_URL in the
  * environment to pin it — important for canonical URLs in production and for
  * the sitemap.
  */
 
 declare(strict_types=1);
 
-const SITE_NAME        = 'Omni Calculator';
-const SITE_TAGLINE     = 'Free online calculators for everyday problems';
-const SITE_DESCRIPTION = 'Omni Calculator provides solutions for a wide range of problems, from finance and business to health. It’s so fast and easy you won’t want to do the math again!';
+const SITE_NAME        = 'Onim';
+const SITE_TAGLINE     = '4 041 free calculators, each one with its formula spelled out';
+const SITE_DESCRIPTION = 'Onim is a free calculator library: 4 041 tools for maths, money, health, physics and the everyday problems in between. Every page shows the formula, the units and a worked example, and every answer is calculated in full — no rounded guesswork.';
 
 /** Data extracted from the reference site (see tools/extract.py). */
 define('DATA_PATH', __DIR__ . '/data');
@@ -33,7 +33,7 @@ define('DATA_PATH', __DIR__ . '/data');
  * sitemap, robots.txt, every asset and every link then use exactly the prefix
  * the site is really served from, whatever SCRIPT_NAME the rewrite leaves behind.
  */
-function omni_local_config(): array
+function onim_local_config(): array
 {
     static $cfg = null;
     if ($cfg !== null) {
@@ -60,7 +60,7 @@ function omni_local_config(): array
  * /tool/math instead of /tool — the prefix test rejects that and the second
  * source wins.
  */
-function omni_detect_base_path(): string
+function onim_detect_base_path(): string
 {
     $request = (string) (parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/');
     $script  = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? '/index.php'));
@@ -102,7 +102,7 @@ function omni_detect_base_path(): string
  * original file-based data and the admin panel simply reports that it is not
  * installed yet.
  */
-function omni_db_config(): array
+function onim_db_config(): array
 {
     static $cfg = null;
     if ($cfg !== null) {
@@ -116,39 +116,39 @@ function omni_db_config(): array
         }
     }
     return $cfg = [
-        'host'    => getenv('OMNI_DB_HOST') ?: 'localhost',
-        'port'    => (int) (getenv('OMNI_DB_PORT') ?: 3306),
-        'name'    => getenv('OMNI_DB_NAME') ?: '',
-        'user'    => getenv('OMNI_DB_USER') ?: '',
-        'pass'    => getenv('OMNI_DB_PASS') ?: '',
+        'host'    => getenv('ONIM_DB_HOST') ?: 'localhost',
+        'port'    => (int) (getenv('ONIM_DB_PORT') ?: 3306),
+        'name'    => getenv('ONIM_DB_NAME') ?: '',
+        'user'    => getenv('ONIM_DB_USER') ?: '',
+        'pass'    => getenv('ONIM_DB_PASS') ?: '',
         'charset' => 'utf8mb4',
     ];
 }
 
 /** True when database credentials exist (the panel can run). */
-function omni_db_configured(): bool
+function onim_db_configured(): bool
 {
-    $c = omni_db_config();
+    $c = onim_db_config();
     return $c['name'] !== '' && $c['user'] !== '';
 }
 
 /** Bump to bust asset caches after editing css/js. */
-const ASSET_VERSION = '1.1.09';
+const ASSET_VERSION = '1.2.00';
 
 /** Unit/category reference data lives under data/calc/ (see tools/harvest_all.py). */
 const RATES_CAPTURED = '2026-10-23';
 
-/** Show the "clone / rebuild" notice in the footer. */
-const SHOW_CLONE_NOTICE = true;
+/** Footer notice line. Off: a live site does not advertise how it was built. */
+const SHOW_CLONE_NOTICE = false;
 
 /** Absolute site URL, no trailing slash. */
 function site_url(): string
 {
-    $local = omni_local_config();
+    $local = onim_local_config();
     if (isset($local['site_url']) && is_string($local['site_url']) && $local['site_url'] !== '') {
         return rtrim($local['site_url'], '/');
     }
-    $env = getenv('OMNI_SITE_URL');
+    $env = getenv('ONIM_SITE_URL');
     if (is_string($env) && $env !== '') {
         return rtrim($env, '/');
     }
@@ -157,22 +157,22 @@ function site_url(): string
         || (($_SERVER['SERVER_PORT'] ?? '') === '443');
     $scheme = $https ? 'https' : 'http';
     $host   = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
-    return $scheme . '://' . $host . omni_detect_base_path();
+    return $scheme . '://' . $host . onim_detect_base_path();
 }
 
 define('SITE_URL', site_url());
 
 /** Base path ('' or '/subdir') used by the router and asset URLs. */
 define('BASE_PATH', (static function (): string {
-    $local = omni_local_config();
+    $local = onim_local_config();
     if (isset($local['base_path']) && is_string($local['base_path'])) {
         return rtrim($local['base_path'], '/');
     }
-    $env = getenv('OMNI_BASE_PATH');
+    $env = getenv('ONIM_BASE_PATH');
     if (is_string($env)) {
         return rtrim($env, '/');
     }
-    return omni_detect_base_path();
+    return onim_detect_base_path();
 })());
 
 /**
@@ -180,20 +180,20 @@ define('BASE_PATH', (static function (): string {
  *
  * On a live site a PHP notice must never break the page, so display_errors
  * stays off; when something does break, set 'debug' => true in
- * config.local.php (or OMNI_DEBUG=1 in the environment) and the real message
+ * config.local.php (or ONIM_DEBUG=1 in the environment) and the real message
  * appears instead of a blank page. Turn it off again afterwards.
  */
-function omni_debug(): bool
+function onim_debug(): bool
 {
     static $on = null;
     if ($on !== null) {
         return $on;
     }
-    $local = omni_local_config();
-    return $on = (bool) ($local['debug'] ?? (getenv('OMNI_DEBUG') === '1'));
+    $local = onim_local_config();
+    return $on = (bool) ($local['debug'] ?? (getenv('ONIM_DEBUG') === '1'));
 }
 
-if (omni_debug()) {
+if (onim_debug()) {
     @ini_set('display_errors', '1');
     @ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
@@ -209,7 +209,7 @@ if (omni_debug()) {
  */
 function site_base(): string
 {
-    $override = $GLOBALS['OMNI_BASE_PATH'] ?? null;
+    $override = $GLOBALS['ONIM_BASE_PATH'] ?? null;
     return is_string($override) ? $override : BASE_PATH;
 }
 

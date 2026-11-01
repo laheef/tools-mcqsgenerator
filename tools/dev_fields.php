@@ -9,7 +9,7 @@
  */
 require_once '/home/user/php-clone/config.php';
 
-use Omni\Data;
+use Onim\Data;
 
 $path = $argv[1] ?? '';
 $what = $argv[2] ?? '';

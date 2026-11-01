@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Omni Calculator rebuild — design system
+   Onim — design system
    Reverse-engineered from computed styles of the reference site (SPEC.md §2).
    Written by hand; no framework needed. Tailwind is loaded in parallel for
    utility classes, but nothing here depends on it.
@@ -46,6 +46,9 @@
   --radius-pill: 999px;
 
   --shell: 1286px;
+  /* calculator pages run wider: two 160px ad rails plus a ~940px column */
+  --calc-shell: 1340px;
+  --ad-rail: 160px;
   --gutter: 16px;
   --header-h: 110px;
 
@@ -138,7 +141,7 @@ button { font: inherit; color: inherit; }
   .logo img { height: 24px; }
 }
 .logo { display: inline-flex; align-items: center; flex: 0 0 auto; padding-block: 5px; }
-.logo img { display: block; height: 27px; width: auto; max-width: 200px; object-fit: contain; }
+.logo img { display: block; height: 34px; width: auto; max-width: 200px; object-fit: contain; }
 
 .search {
   position: relative; flex: 1 1 auto; display: flex; align-items: center;
@@ -402,22 +405,68 @@ button { font: inherit; color: inherit; }
 .empty-state { padding: 24px 0; color: var(--ink-3); }
 
 /* ============================================================ CALCULATOR */
-.calc-shell { padding-bottom: 64px; }
-.calc-layout {
-  display: grid; gap: 32px; margin-top: 10px;
+/*
+ * One column, tool first, article under it, both the same width.
+ *
+ * The page used to be the reverse of this — a 724px article on the left with a
+ * 396px sticky widget rail on the right — which meant a reader who came for the
+ * calculator had to find it in a sidebar, and the article was squeezed to the
+ * width of a phone. Now the calculator owns the full column and the article
+ * reads underneath at exactly the same measure, so the two sections line up on
+ * both edges.
+ *
+ * The frame keeps an empty 160px rail on each side. Nothing is drawn there
+ * today; the space is reserved (not reclaimed) so an ad slot can be switched on
+ * without the article jumping horizontally — the most common cause of a bad
+ * CLS on a calculator site.
+ */
+.calc-shell {
+  width: 100%; max-width: var(--calc-shell); margin-inline: auto;
+  padding-inline: var(--gutter); padding-bottom: 64px;
+}
+.calc-frame {
+  display: grid; gap: 24px; margin-top: 10px;
   grid-template-columns: minmax(0, 1fr);
 }
-/* Mobile: the calculator goes first, the long article follows — same order as
-   the reference site, so a phone user sees the tool without scrolling. */
-@media (max-width: 1145px) {
-  .calc-widget-column { order: 1; }
-  .calc-article { order: 2; }
+.calc-layout {
+  display: grid; gap: 32px; min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
 }
-@media (min-width: 1146px) {
-  .calc-layout { grid-template-columns: minmax(0, 1fr) 396px; gap: 48px; align-items: start; }
-  .calc-widget-column { order: 2; position: sticky; top: 20px; }
-  .calc-article { order: 1; }
+/* the calculator is the page: it comes first at every width */
+.calc-widget-column { order: 1; min-width: 0; }
+.calc-article { order: 2; min-width: 0; }
+
+@media (min-width: 1200px) {
+  .calc-frame {
+    grid-template-columns: var(--ad-rail) minmax(0, 1fr) var(--ad-rail);
+    gap: 24px; align-items: start;
+  }
+  .ad-rail { position: sticky; top: 24px; min-height: 600px; }
 }
+/* Reserved advertising columns. Empty until a slot is filled. */
+.ad-rail { min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.ad-rail:empty { min-height: 0; }
+
+/* Below the rail breakpoint the columns fold away and the frame is one column;
+   the slots stay in the DOM so nothing has to change when they come back.
+   Declared after the base rule on purpose — same specificity, so order decides. */
+@media (max-width: 1199px) {
+  .ad-rail { display: none; }
+}
+.ad-slot { display: block; }
+
+/* A hairline between the tool and the write-up. Without it the article head
+   reads as another row of the calculator card. */
+@media (min-width: 900px) {
+  .calc-article { border-top: 1px solid var(--border); margin-top: 10px; padding-top: 36px; }
+}
+
+/* The article runs the full width of the column, but a 60-character line is
+   still the comfortable measure, so running text is capped while figures,
+   tables and code keep the whole width. */
+.calc-article .article-body > p,
+.calc-article .article-body > ul,
+.calc-article .article-body > ol { max-width: 74ch; }
 
 /* --- widget */
 .calc-widget {
@@ -674,7 +723,9 @@ button { font: inherit; color: inherit; }
 
 .toc { margin: 22px 0 26px; padding: 18px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); }
 .toc-title { font-size: 18.6px; font-weight: 600; color: var(--ink-2); margin-bottom: 10px; }
-.toc-list { margin: 0; padding-left: 20px; display: grid; gap: 7px; font-size: 14px; }
+.toc-list { margin: 0; padding-left: 20px; display: grid; gap: 7px 32px; font-size: 14px; }
+/* two columns inside the calculator page only: the blog's side rail keeps one */
+@media (min-width: 900px) { .toc:not(.toc--side) .toc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .toc-list a { color: var(--brand); }
 .toc-list a:hover { color: var(--brand-ink); }
 
@@ -802,26 +853,53 @@ button { font: inherit; color: inherit; }
 }
 
 /* -------------------------------------------------------------- footer */
-.site-footer { background: var(--surface); border-top: 1px solid var(--border); margin-top: 48px; padding-block: 40px 28px; }
-.footer-grid { display: grid; gap: 28px; }
-@media (min-width: 724px) { .footer-grid { grid-template-columns: 1fr; } }
-.footer-brand img { height: 25px; width: auto; display: block; margin-bottom: 10px; }
-.footer-tagline { margin: 0 0 6px; font-size: 13.4px; color: var(--ink-3); }
-.footer-count { margin: 0; font-size: 13px; color: var(--ink-4); }
-.footer-count a { color: var(--ink-3); text-decoration: underline; text-underline-offset: 2px; }
+.site-footer {
+  background: var(--surface); border-top: 1px solid var(--border);
+  margin-top: 56px; padding-block: 48px 26px; color: var(--ink-3);
+}
+.footer-grid { display: grid; gap: 36px 48px; }
+@media (min-width: 900px) {
+  .footer-grid { grid-template-columns: minmax(240px, 300px) minmax(0, 1fr); }
+}
+.footer-logo { display: inline-block; margin-bottom: 12px; }
+.footer-brand img { height: 34px; width: auto; display: block; }
+.footer-tagline { margin: 0 0 10px; font-size: 13.4px; line-height: 1.6; color: var(--ink-3); max-width: 34ch; }
+.footer-count { margin: 14px 0 0; font-size: 13px; line-height: 1.65; color: var(--ink-4); max-width: 34ch; }
+.footer-count a { color: var(--ink-2); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .footer-count a:hover { color: var(--brand-ink); }
-.footer-columns { display: grid; gap: 20px 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (min-width: 724px) { .footer-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (min-width: 1146px) { .footer-columns { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-.footer-heading { font-size: 13.4px; font-weight: 600; color: var(--ink-2); margin-bottom: 8px; }
-.footer-heading a { color: var(--ink-2); display: inline-block; padding-block: 6px; }
-.footer-heading a:hover { color: var(--brand); }
-.footer-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
-.footer-list a { font-size: 12.8px; color: var(--ink-3); display: inline-block; padding-block: 6px; }
-.footer-list a:hover { color: var(--brand); }
-.footer-bottom { margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--border); display: grid; gap: 6px; }
-.footer-bottom p { margin: 0; font-size: 12px; color: var(--ink-4); max-width: 90ch; }
-.footer-note { color: var(--ink-4); }
+.footer-contact { margin: 16px 0 0; padding: 0; font-style: normal; display: grid; gap: 4px; font-size: 13.4px; }
+.footer-contact a { color: var(--ink-3); }
+.footer-contact a:hover { color: var(--brand); }
+.footer-social { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px; }
+.footer-social a { color: var(--ink-3); }
+.footer-social a:hover { color: var(--brand); }
+
+.footer-columns { display: grid; gap: 28px 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 640px) { .footer-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1146px) { .footer-columns { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.footer-column { min-width: 0; }
+.footer-heading {
+  font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-4); margin: 0 0 10px;
+}
+.footer-heading a { color: inherit; }
+.footer-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.footer-list a { font-size: 13.4px; color: var(--ink-2); display: inline-block; padding-block: 6px; }
+.footer-list a:hover { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+
+.footer-newsletter { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); }
+.footer-newsletter-form { display: flex; flex-wrap: wrap; gap: 10px; max-width: 520px; }
+.footer-newsletter-form input { flex: 1 1 180px; }
+
+.footer-bottom {
+  margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px;
+}
+.footer-copyright { margin: 0; font-size: 12.8px; color: var(--ink-4); }
+.footer-legal { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-left: auto; }
+.footer-legal a { font-size: 12.8px; color: var(--ink-3); }
+.footer-legal a:hover { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+.footer-note { margin: 0; font-size: 12.4px; color: var(--ink-4); flex-basis: 100%; max-width: 90ch; }
 
 /* ------------------------------------------------------- print styles */
 @media print {
@@ -2090,4 +2168,94 @@ a:focus-visible > .calc-glyph,
   font-weight: 650;
   color: var(--brand-ink);
   font-variant-numeric: tabular-nums;
+}
+
+/* ========================================================== BLOG POST PAGE */
+/*
+ * Three columns: contents · the post · calculators.
+ *
+ * Reading order is the DOM order, so a phone gets the headline, the body and
+ * then the sidebar; the two rails only exist at ≥1100px, where they are sticky
+ * and the middle column is capped at a 70-character measure.
+ */
+.post-shell { max-width: 1340px; }
+.post-frame {
+  display: grid; gap: 32px; align-items: start;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 6px;
+}
+.post-main { min-width: 0; }
+.post-main .page-head { display: block; margin-block: 0 22px; max-width: 72ch; }
+.post-main .page-title { margin-bottom: 10px; }
+.post-main .post-cover { margin: 0 0 24px; max-width: 72ch; }
+
+@media (min-width: 1100px) {
+  .post-frame { grid-template-columns: 240px minmax(0, 1fr) 300px; gap: 40px; }
+  .post-toc, .post-aside { position: sticky; top: 24px; }
+}
+/* Between 720 and 1100 the contents box sits above the post instead of beside it. */
+@media (max-width: 1099px) and (min-width: 720px) {
+  .post-toc .toc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ------------------------------------------------------------- contents rail */
+.toc--side {
+  margin: 0; padding: 0; background: none; border: 0; border-radius: 0;
+}
+.toc--side .toc-title {
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-4); margin: 0 0 10px;
+}
+.toc--side .toc-list {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 13.4px;
+  border-left: 1px solid var(--border);
+}
+.toc--side .toc-list li { padding-left: 12px; margin-left: -1px; border-left: 2px solid transparent; }
+.toc--side .toc-list li:hover { border-left-color: var(--brand); }
+.toc--side .toc-list a { display: block; padding-block: 5px; color: var(--ink-3); line-height: 1.45; }
+.toc--side .toc-list a:hover { color: var(--brand-ink); text-decoration: none; }
+.post-readtime { margin: 14px 0 0; font-size: 12.4px; color: var(--ink-4); }
+
+/* under 1100 the contents become a card above the article */
+@media (max-width: 1099px) {
+  .toc--side { padding: 16px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+  .toc--side .toc-list { list-style: none; padding-left: 0; border: 0; gap: 4px; }
+  .toc--side .toc-list li { padding: 0; border: 0; }
+}
+
+/* ------------------------------------------------------------- the article */
+.post-body { max-width: 72ch; }
+.post-body h2 { scroll-margin-top: 130px; }
+.post-body > * + h2 { margin-top: 40px; }
+
+/* ------------------------------------------------------------- side rail */
+.post-aside { display: grid; gap: 18px; }
+.aside-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 18px 18px 16px;
+}
+.aside-title {
+  margin: 0 0 12px; font-size: 12.5px; font-weight: 700; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--ink-4);
+}
+.aside-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.aside-list a { display: block; padding-block: 7px; color: var(--ink-2); font-size: 13.8px; line-height: 1.4; }
+.aside-list a:hover { color: var(--brand); text-decoration: none; }
+.aside-name { display: block; font-weight: 500; }
+.aside-meta { display: block; font-size: 11.8px; color: var(--ink-4); margin-top: 2px; }
+.aside-more {
+  display: inline-block; margin-top: 12px; font-size: 12.8px; font-weight: 600; color: var(--brand-ink);
+}
+.aside-cats { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.aside-cats a {
+  display: flex; justify-content: space-between; gap: 8px; align-items: baseline;
+  padding-block: 6px; font-size: 13.4px; color: var(--ink-2);
+}
+.aside-cats a:hover { color: var(--brand); text-decoration: none; }
+.aside-count { font-size: 12px; color: var(--ink-4); font-variant-numeric: tabular-nums; }
+
+/* print: the two rails are navigation, the body is the page */
+@media print {
+  .post-toc, .post-aside { display: none !important; }
+  .post-frame { display: block; }
 }

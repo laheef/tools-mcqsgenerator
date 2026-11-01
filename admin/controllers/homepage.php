@@ -9,18 +9,18 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Activity;
-use Omni\Admin\Auth;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
-use Omni\Cms;
-use Omni\Db;
+use Onim\Admin\Activity;
+use Onim\Admin\Auth;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
+use Onim\Cms;
+use Onim\Db;
 
 /** Config fields each section type understands. */
 const HOME_TYPES = [

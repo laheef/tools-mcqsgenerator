@@ -17,14 +17,14 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/config.php';
 
-use Omni\Browse;
-use Omni\Contact;
-use Omni\Cms;
-use Omni\Data;
-use Omni\LiveCounts;
-use Omni\Db;
-use Omni\Seo;
-use Omni\View;
+use Onim\Browse;
+use Onim\Contact;
+use Onim\Cms;
+use Onim\Data;
+use Onim\LiveCounts;
+use Onim\Db;
+use Onim\Seo;
+use Onim\View;
 
 $path = View::currentPath();
 $segments = array_values(array_filter(explode('/', $path), static fn ($s) => $s !== ''));

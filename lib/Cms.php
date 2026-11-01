@@ -17,7 +17,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Cms
 {
@@ -616,7 +616,7 @@ final class Cms
 
     private static function appKey(): string
     {
-        $cfg = omni_db_config();
+        $cfg = onim_db_config();
         $key = (string) ($cfg['app_key'] ?? '');
         if ($key === '') {
             // Deterministic fallback so a missing key degrades to obfuscation

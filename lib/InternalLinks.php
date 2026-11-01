@@ -23,7 +23,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class InternalLinks
 {
@@ -319,7 +319,7 @@ final class InternalLinks
          * covers every table the panel can write, so a new, renamed, archived or
          * deleted calculator invalidates this index on the very next request.
          */
-        $stamp = class_exists('Omni\\Cms') ? \Omni\Cms::stamp() : 'nocms';
+        $stamp = class_exists('Onim\\Cms') ? \Onim\Cms::stamp() : 'nocms';
         if (is_file($cache) && is_file($manifest) && filemtime($cache) >= filemtime($manifest)
             && is_file($stampFile) && trim((string) file_get_contents($stampFile)) === $stamp) {
             $raw = json_decode((string) file_get_contents($cache), true);

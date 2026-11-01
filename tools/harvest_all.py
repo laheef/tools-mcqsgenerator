@@ -75,7 +75,7 @@ def label_of(field) -> str:
 
 
 # Unit switchers repeat verbatim on thousands of fields (the currency switcher
-# alone is ~260 units). They are stored once, keyed by Omni's own switcher id,
+# alone is ~260 units). They are stored once, keyed by Onim's own switcher id,
 # and fields reference the key.
 UNIT_TABLE: dict[str, dict] = {}
 

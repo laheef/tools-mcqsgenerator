@@ -5,14 +5,14 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
-use Omni\Cms;
+use Onim\Admin\Csrf;
+use Onim\Cms;
 
 $v = static fn (string $key, string $default = ''): string => (string) ($values[$key] ?? $default);
 $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($key, $default);
@@ -163,7 +163,7 @@ $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($k
                         <div class="hint">One per line, <code>Label|https://url</code>.</div>
                     </div>
                     <div class="field-row">
-                        <label class="check"><input type="checkbox" name="settings[footer_show_notice]" value="1" <?= $b('footer_show_notice', true) ? 'checked' : '' ?>> <span>Show the rebuild notice</span></label>
+                        <label class="check"><input type="checkbox" name="settings[footer_show_notice]" value="1" <?= $b('footer_show_notice', false) ? 'checked' : '' ?>> <span>Show a one-line privacy note beside the copyright</span></label>
                         <label class="check"><input type="checkbox" name="settings[newsletter_enabled]" value="1" <?= $b('newsletter_enabled') ? 'checked' : '' ?>> <span>Newsletter sign-up</span></label>
                     </div>
                     <div class="field" style="margin-top:14px">
@@ -351,6 +351,16 @@ $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($k
                         <label for="ads_inline_code">In-article slot</label>
                         <textarea id="ads_inline_code" name="settings[ads_inline_code]" rows="3" class="code"><?= e($v('ads_inline_code')) ?></textarea>
                         <div class="hint">Rendered after the first article section on calculator pages.</div>
+                    </div>
+                    <div class="field">
+                        <label for="ads_rail_left">Left rail on calculator pages</label>
+                        <textarea id="ads_rail_left" name="settings[ads_rail_left]" rows="3" class="code" placeholder="<ins class=&quot;adsbygoogle&quot; ...></ins>"><?= e($v('ads_rail_left')) ?></textarea>
+                        <div class="hint">160px wide, sticky, beside the calculator. The column is reserved whether or not this is filled, so switching an ad on never moves the page.</div>
+                    </div>
+                    <div class="field">
+                        <label for="ads_rail_right">Right rail on calculator pages</label>
+                        <textarea id="ads_rail_right" name="settings[ads_rail_right]" rows="3" class="code"><?= e($v('ads_rail_right')) ?></textarea>
+                        <div class="hint">Same as the left rail. Below 1200px wide both rails fold away and the calculator gets the full width.</div>
                     </div>
                     <div class="field">
                         <label for="ads_txt">ads.txt</label>

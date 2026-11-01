@@ -19,7 +19,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Csrf
 {
@@ -63,7 +63,7 @@ final class Csrf
 
     private static function key(): string
     {
-        $cfg = omni_db_config();
+        $cfg = onim_db_config();
         $key = (string) ($cfg['app_key'] ?? '');
         if ($key === '') {
             // Deterministic fallback so a site without credentials still has

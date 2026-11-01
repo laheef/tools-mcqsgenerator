@@ -11,14 +11,14 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\CalcRepo;
-use Omni\Admin\Csrf;
+use Onim\Admin\CalcRepo;
+use Onim\Admin\Csrf;
 
 $err = static fn (string $key): string => isset($errors[$key]) ? ' has-error' : '';
 $errText = static fn (string $key): string => isset($errors[$key])
@@ -396,7 +396,7 @@ $tab = (string) (request('tab') ?? 'content');
                                     <button class="btn" type="button" data-media-pick="thumbnail">Choose from media</button>
                                 </div>
                                 <?php if (!empty($values['thumbnail'])): ?>
-                                    <img src="<?= e(\Omni\Cms::mediaUrl((string) $values['thumbnail'])) ?>" alt="" class="thumbnail" style="width:120px;height:auto;margin-top:10px"
+                                    <img src="<?= e(\Onim\Cms::mediaUrl((string) $values['thumbnail'])) ?>" alt="" class="thumbnail" style="width:120px;height:auto;margin-top:10px"
                                          data-preview-for="thumbnail">
                                 <?php else: ?>
                                     <img alt="" class="thumbnail" style="width:120px;height:auto;margin-top:10px" hidden data-preview-for="thumbnail">
@@ -418,7 +418,7 @@ $tab = (string) (request('tab') ?? 'content');
                             <?= admin_icon('external', 16) ?> Open live page
                         </a>
                     <?php else: ?>
-                        <a class="btn" href="<?= e(site_link(\Omni\Cms::previewUrl('/' . ltrim($publicUrl, '/')))) ?>" target="_blank" rel="noopener">
+                        <a class="btn" href="<?= e(site_link(\Onim\Cms::previewUrl('/' . ltrim($publicUrl, '/')))) ?>" target="_blank" rel="noopener">
                             <?= admin_icon('eye', 16) ?> Preview unpublished (signed link)
                         </a>
                     <?php endif; ?>
@@ -462,7 +462,7 @@ $tab = (string) (request('tab') ?? 'content');
                     <p class="small muted">The automatic similarity picks, for inspiration when choosing related links.</p>
                     <ul class="small" style="padding-left:16px;margin:0">
                         <?php
-                        $auto = \Omni\Data::related($row['sourcePath'], $row['cat'], 5);
+                        $auto = \Onim\Data::related($row['sourcePath'], $row['cat'], 5);
                         foreach ($auto as $item): ?>
                             <li style="margin-bottom:4px">
                                 <a href="<?= e(admin_url('calculator-edit', ['path' => (string) ($item['sourcePath'] ?? $item['path'] ?? '')])) ?>"><?= e((string) $item['name']) ?></a>

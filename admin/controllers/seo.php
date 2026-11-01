@@ -9,20 +9,20 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Activity;
-use Omni\Admin\CalcRepo;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
-use Omni\Admin\Pagination;
-use Omni\Cms;
-use Omni\Db;
-use Omni\Seo;
+use Onim\Admin\Activity;
+use Onim\Admin\CalcRepo;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
+use Onim\Admin\Pagination;
+use Onim\Cms;
+use Onim\Db;
+use Onim\Seo;
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     Csrf::requirePost();
@@ -74,7 +74,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     }
 
     if ($do === 'save_settings') {
-        $result = \Omni\Admin\Settings::save('seo', post_deep('settings'));
+        $result = \Onim\Admin\Settings::save('seo', post_deep('settings'));
         foreach ($result['errors'] as $error) {
             Flash::error($error);
         }

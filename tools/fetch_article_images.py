@@ -2,7 +2,7 @@
 """
 Mirror the images referenced by the extracted article HTML.
 
-Omni serves article figures from uploads-cdn.omnicalculator.com. To keep the
+Onim serves article figures from uploads-cdn.omnicalculator.com. To keep the
 clone self-contained (and identical offline), every referenced image is
 downloaded into php-clone/assets/img/article/ and mapped in
 php-clone/data/article-images.json, which View::rewriteArticleHtml() uses to

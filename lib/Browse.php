@@ -24,7 +24,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Browse
 {

@@ -49,9 +49,9 @@ foreach (array_slice($argv, 1) as $arg) {
     }
 }
 
-$pdo = Omni\Db::pdo();
+$pdo = Onim\Db::pdo();
 if ($pdo === null) {
-    fwrite(STDERR, "No database: " . Omni\Db::error() . "\n");
+    fwrite(STDERR, "No database: " . Onim\Db::error() . "\n");
     exit(1);
 }
 

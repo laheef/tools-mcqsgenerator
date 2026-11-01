@@ -1,7 +1,7 @@
 <?php
 /**
  * @var array $rows
- * @var \Omni\Admin\Pagination $pagination
+ * @var \Onim\Admin\Pagination $pagination
  * @var array $filters
  * @var array $stats
  * @var array $categories   slug => ['slug','name',…] entries from the catalogue
@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
+use Onim\Admin\Csrf;
 
 $base = ['p' => 'calculators'];
 $keep = array_filter($filters, static fn ($v) => $v !== '' && $v !== 'name');
@@ -154,9 +154,9 @@ foreach ($categories as $categoryRow) {
                 <?php foreach ($rows as $row): ?>
                     <tr>
                         <td><input type="checkbox" name="ids[]" value="<?= e($row['sourcePath']) ?>"
-                                   aria-label="Select <?= e(\Omni\Data::cleanName((string) $row['name'])) ?>"></td>
+                                   aria-label="Select <?= e(\Onim\Data::cleanName((string) $row['name'])) ?>"></td>
                         <td>
-                            <a class="primary" href="<?= e(admin_url('calculator-edit', ['path' => $row['sourcePath']])) ?>"><?= e(\Omni\Data::cleanName((string) $row['name'])) ?></a>
+                            <a class="primary" href="<?= e(admin_url('calculator-edit', ['path' => $row['sourcePath']])) ?>"><?= e(\Onim\Data::cleanName((string) $row['name'])) ?></a>
                             <span class="sub mono"><?= e($row['path']) ?></span>
                         </td>
                         <td class="small"><?= e($categoryNames[$row['cat']] ?? $row['cat']) ?></td>
@@ -182,7 +182,7 @@ foreach ($categories as $categoryRow) {
                             <?php if (($row['status'] ?? 'published') === 'published'): ?>
                                 <a class="btn btn-sm btn-ghost" href="<?= e(site_link((string) $row['path'])) ?>" target="_blank" rel="noopener" title="Open the public page"><?= admin_icon('external', 15) ?></a>
                             <?php else: ?>
-                                <a class="btn btn-sm btn-ghost" href="<?= e(site_link(\Omni\Cms::previewUrl((string) $row['path']))) ?>" target="_blank" rel="noopener" title="Preview this unpublished calculator (signed link)"><?= admin_icon('eye', 15) ?></a>
+                                <a class="btn btn-sm btn-ghost" href="<?= e(site_link(\Onim\Cms::previewUrl((string) $row['path']))) ?>" target="_blank" rel="noopener" title="Preview this unpublished calculator (signed link)"><?= admin_icon('eye', 15) ?></a>
                             <?php endif; ?>
                             <button class="btn btn-sm btn-ghost" type="submit" name="path" value="<?= e($row['sourcePath']) ?>"
                                     formnovalidate title="<?= $row['status'] === 'published' ? 'Unpublish' : 'Publish' ?>"

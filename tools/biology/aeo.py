@@ -63,7 +63,7 @@ def slugs(category: str = "biology", harvested: bool = False) -> list[str]:
     out = subprocess.run(
         ["bash", f"{ROOT}/tools/php.sh", "-r",
          'require "php-clone/config.php";'
-         'foreach (Omni\\Db::all("SELECT slug FROM custom_calculators '
+         'foreach (Onim\\Db::all("SELECT slug FROM custom_calculators '
          'WHERE category_slug = \'' + category + '\' AND status = \'published\' ORDER BY slug") as $r)'
          ' echo $r["slug"], "\\n";'],
         capture_output=True, text=True, cwd=ROOT)

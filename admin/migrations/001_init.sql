@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------------
--- Omni Calculator clone — admin panel schema (migration 001)
+-- Onim — admin panel schema (migration 001)
 --
 -- Target: MySQL 8.0 / MariaDB 10.3+ on ordinary shared hosting (Hostinger).
 -- Portable choices, all deliberate:

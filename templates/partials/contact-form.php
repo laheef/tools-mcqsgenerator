@@ -15,8 +15,8 @@
 
 declare(strict_types=1);
 
-use Omni\Cms;
-use Omni\View;
+use Onim\Cms;
+use Onim\View;
 
 $fields = $fields ?? [];
 $enabled = Cms::settingBool('contact_form_enabled', true);
@@ -55,7 +55,7 @@ foreach ($fields as $field) {
         <?php endif; ?>
 
         <form class="contact-form" method="post" action="<?= View::escape(View::url('/contact')) ?>" novalidate>
-            <?= \Omni\Csrf::field() ?>
+            <?= \Onim\Csrf::field() ?>
             <input type="hidden" name="action" value="contact">
             <input type="hidden" name="started" value="<?= (int) time() ?>">
             <div class="form-hp" aria-hidden="true">

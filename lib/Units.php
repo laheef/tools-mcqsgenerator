@@ -2,7 +2,7 @@
 /**
  * Unit registry.
  *
- * Every Omni unit is declared as a *linear* expression in `v`, mapping the
+ * Every Onim unit is declared as a *linear* expression in `v`, mapping the
  * value the user typed onto the base unit:
  *
  *   cm    -> 100*v      (1 m = 100 cm, base is metre)
@@ -18,7 +18,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Units
 {

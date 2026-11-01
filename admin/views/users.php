@@ -3,13 +3,13 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
+use Onim\Admin\Csrf;
 
 $showForm = request('edit') !== null;
 $row = $editing ?? ['id' => 0, 'name' => '', 'email' => '', 'role' => 'author', 'status' => 'active', 'bio' => '', 'last_login_at' => null];
@@ -25,7 +25,7 @@ $row = $editing ?? ['id' => 0, 'name' => '', 'email' => '', 'role' => 'author', 
                     <tr>
                         <td class="primary">
                             <?= e((string) $user['name']) ?>
-                            <?php if ((int) $user['id'] === \Omni\Admin\Auth::id()): ?><span class="badge badge-brand">you</span><?php endif; ?>
+                            <?php if ((int) $user['id'] === \Onim\Admin\Auth::id()): ?><span class="badge badge-brand">you</span><?php endif; ?>
                             <span class="sub"><?= e((string) $user['email']) ?></span>
                         </td>
                         <td><span class="badge badge-muted"><?= e((string) $user['role']) ?></span></td>

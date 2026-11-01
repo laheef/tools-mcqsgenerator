@@ -7,22 +7,22 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Activity;
-use Omni\Admin\Auth;
-use Omni\Admin\CalcRepo;
-use Omni\Admin\Flash;
-use Omni\Admin\MediaRepo;
-use Omni\Admin\Csrf;
-use Omni\Admin\Migrator;
-use Omni\Cms;
-use Omni\Data;
-use Omni\Db;
+use Onim\Admin\Activity;
+use Onim\Admin\Auth;
+use Onim\Admin\CalcRepo;
+use Onim\Admin\Flash;
+use Onim\Admin\MediaRepo;
+use Onim\Admin\Csrf;
+use Onim\Admin\Migrator;
+use Onim\Cms;
+use Onim\Data;
+use Onim\Db;
 
 /*
  * An upgraded install can be running one release of the files against a
@@ -110,7 +110,7 @@ $system = [
     'php'        => PHP_VERSION,
     'mysql'      => (string) Db::value('SELECT VERSION()', [], 'unknown'),
     'db_size'    => $dbSize,
-    'db_name'    => (string) (omni_db_config()['name'] ?? ''),
+    'db_name'    => (string) (onim_db_config()['name'] ?? ''),
     'server'     => (string) ($_SERVER['SERVER_SOFTWARE'] ?? 'unknown'),
     'limits'     => ini_get('memory_limit'),
     'uploads'    => ini_get('upload_max_filesize'),

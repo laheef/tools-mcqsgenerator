@@ -81,11 +81,11 @@ def card(title: str, subtitle: str, footnote: str) -> Image.Image:
     img = Image.blend(img, wash, 0.85)
     d = ImageDraw.Draw(img)
 
-    # brand mark: a rounded square with a percent sign, drawn rather than pasted
+    # brand mark: the Onim ring, drawn rather than pasted
     d.rounded_rectangle((80, 74, 156, 150), radius=22, fill=BRAND)
-    f_mark = font(BOLD, 46)
-    d.text((118, 112), "%", font=f_mark, fill=WHITE, anchor="mm")
-    d.text((176, 96), "Omni Calculator", font=font(BOLD, 34), fill=INK_2)
+    d.ellipse((98, 92, 138, 132), outline=WHITE, width=8)
+    d.ellipse((113, 107, 123, 117), fill=WHITE)
+    d.text((176, 96), "Onim", font=font(BOLD, 34), fill=INK_2)
 
     # Title and subtitle are fitted together: try the big title first and step
     # down until both fit above the footnote strip, so a long title never
@@ -122,7 +122,7 @@ def card(title: str, subtitle: str, footnote: str) -> Image.Image:
     d.line((80, H - 118, W - 80, H - 118), fill=(223, 226, 235), width=2)
     f_note = font(REGULAR, 28)
     f_dom = font(BOLD, 28)
-    domain = "omnicalculator.com"
+    domain = "mcqsgenerator.com"
     # measure the domain rather than guessing at it, or the two lines collide
     limit = W - 80 - d.textlength(domain, font=f_dom) - 56
     note = footnote
@@ -147,7 +147,7 @@ def main() -> int:
 
     card(
         "Your life in free calculators",
-        "3,831 unit-aware calculators, each with the formula and a worked example.",
+        "4,041 unit-aware calculators, each with the formula and a worked example.",
         "Fourteen categories, from math to ecology",
     ).save(OUT / "default.png", optimize=True)
 

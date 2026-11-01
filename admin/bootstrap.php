@@ -14,16 +14,16 @@
 declare(strict_types=1);
 
 /** Marks a request that came through the panel's own front controller. */
-if (!defined('OMNI_PANEL')) {
-    define('OMNI_PANEL', true);
+if (!defined('ONIM_PANEL')) {
+    define('ONIM_PANEL', true);
 }
 
 require_once dirname(__DIR__) . '/config.php';
 
-use Omni\Admin\Auth;
-use Omni\Admin\Flash;
-use Omni\Cms;
-use Omni\Db;
+use Onim\Admin\Auth;
+use Onim\Admin\Flash;
+use Onim\Cms;
+use Onim\Db;
 
 const ADMIN_VERSION = '1.0.0';
 
@@ -41,13 +41,13 @@ if (!defined('ADMIN_UPLOADS')) {
  * suffix is stripped here, once.
  */
 if (BASE_PATH !== '' && (BASE_PATH === '/admin' || str_ends_with(BASE_PATH, '/admin'))) {
-    $GLOBALS['OMNI_BASE_PATH'] = substr(BASE_PATH, 0, -strlen('/admin'));
+    $GLOBALS['ONIM_BASE_PATH'] = substr(BASE_PATH, 0, -strlen('/admin'));
 } elseif (BASE_PATH === '') {
-    $GLOBALS['OMNI_BASE_PATH'] = '';
+    $GLOBALS['ONIM_BASE_PATH'] = '';
 }
 
 spl_autoload_register(static function (string $class): void {
-    $prefix = 'Omni\\Admin\\';
+    $prefix = 'Onim\\Admin\\';
     if (!str_starts_with($class, $prefix)) {
         return;
     }
@@ -93,7 +93,7 @@ function admin_asset(string $path): string
 function upload_url(string $relative): string
 {
     $rel  = (string) preg_replace('~^/+~', '', $relative);
-    $base = (string) ($GLOBALS['OMNI_BASE_PATH'] ?? '');
+    $base = (string) ($GLOBALS['ONIM_BASE_PATH'] ?? '');
     return $base . '/' . $rel;
 }
 
@@ -106,7 +106,7 @@ function upload_url(string $relative): string
  */
 function site_link(string $path = '/'): string
 {
-    $base = (string) ($GLOBALS['OMNI_BASE_PATH'] ?? '');
+    $base = (string) ($GLOBALS['ONIM_BASE_PATH'] ?? '');
     $path = '/' . ltrim($path, '/');
     return $path === '/' ? ($base === '' ? '/' : $base . '/') : $base . rtrim($path, '/');
 }
@@ -131,7 +131,7 @@ function admin_session_start(): void
         return;
     }
     $dir = admin_base();
-    session_name('omni_sid');
+    session_name('onim_sid');
     session_set_cookie_params([
         'lifetime' => 0,
         'path'     => $dir === '' ? '/' : $dir,

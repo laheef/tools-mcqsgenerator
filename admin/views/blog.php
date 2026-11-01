@@ -3,19 +3,19 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
+use Onim\Admin\Csrf;
 ?>
 <div class="grid grid-4" style="margin-bottom:18px">
     <div class="stat"><div class="label">Published</div><div class="value"><?= number_format($counts['published']) ?></div><div class="hint">live on /blog</div></div>
     <div class="stat"><div class="label">Scheduled</div><div class="value"><?= number_format($counts['scheduled']) ?></div><div class="hint">hidden until their publish time</div></div>
     <div class="stat"><div class="label">Drafts</div><div class="value"><?= number_format($counts['draft']) ?></div><div class="hint">visible only here</div></div>
-    <div class="stat"><div class="label">Tags</div><div class="value"><?= number_format((int) \Omni\Db::value('SELECT COUNT(*) FROM tags', [], 0)) ?></div><div class="hint"><a href="<?= e(admin_url('tags')) ?>">manage tags</a></div></div>
+    <div class="stat"><div class="label">Tags</div><div class="value"><?= number_format((int) \Onim\Db::value('SELECT COUNT(*) FROM tags', [], 0)) ?></div><div class="hint"><a href="<?= e(admin_url('tags')) ?>">manage tags</a></div></div>
 </div>
 
 <div class="card">
@@ -71,7 +71,7 @@ use Omni\Admin\Csrf;
                         <?php if ($row['status'] === 'published' && strtotime((string) $row['published_at']) <= time()): ?>
                             <a class="btn btn-sm btn-ghost" href="<?= e(site_link('blog/' . (string) $row['slug'])) ?>" target="_blank" rel="noopener" title="Open the live post"><?= admin_icon('eye', 15) ?></a>
                         <?php else: ?>
-                            <a class="btn btn-sm btn-ghost" href="<?= e(site_link(\Omni\Cms::previewUrl('/blog/' . (string) $row['slug']))) ?>" target="_blank" rel="noopener" title="Preview this <?= e($label) ?> post (signed link, noindex)"><?= admin_icon('eye', 15) ?></a>
+                            <a class="btn btn-sm btn-ghost" href="<?= e(site_link(\Onim\Cms::previewUrl('/blog/' . (string) $row['slug']))) ?>" target="_blank" rel="noopener" title="Preview this <?= e($label) ?> post (signed link, noindex)"><?= admin_icon('eye', 15) ?></a>
                         <?php endif; ?>
                         <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('blog-edit', ['id' => (int) $row['id']])) ?>" title="Edit"><?= admin_icon('edit', 15) ?></a>
                         <form method="post" action="<?= e(admin_url('blog')) ?>" style="display:inline"

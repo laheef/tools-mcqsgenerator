@@ -43,7 +43,7 @@ your own script at the panel's download URL while signed in.
 
 **Panel → Backups → Restore** (POST, confirmation required).
 
-The panel only restores files it wrote itself: it verifies the `-- Omni Calculator
+The panel only restores files it wrote itself: it verifies the `-- Onim Calculator
 admin panel` signature line and the checksum in the `backups` row. A foreign `.sql`
 dropped into `data/backups/` is refused, because restoring an arbitrary script means
 running arbitrary SQL as the database user.

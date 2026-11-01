@@ -237,6 +237,25 @@ If the new code expects a column or table the database does not have yet, the
 it once. The site keeps working meanwhile (new queries are guarded), but the upgrade
 is what finishes the job. Nothing else on the site needs a "run this script" step.
 
+Two migrations are pending after this release and both are safe to repeat:
+
+| File | What it does |
+| --- | --- |
+| `006_footer_cleanup.sql` | Throws away the 57 seeded calculator-name footer links, keeps a **Calculators** column (four real category indexes) and adds **Company** / **Resources** / **Legal**. Only deletes rows that match the seeded pattern, so links you added by hand survive. |
+| `007_brand_rename.sql` | Moves `site_name`, `seo_title_suffix`, `mail_from_name` from the old brand to **Onim**. These three live in the database and win over the code, so without this the tab title and every outgoing email would still say the old name. |
+
+Click **Upgrade** once on the dashboard after the deploy lands, then hard-refresh
+the homepage and confirm the tab title reads *Onim*.
+
+### Putting ads on the calculator pages
+
+**admin → Settings → Advertising**. Two boxes, **left rail** and **right rail**: paste
+the ad tag (AdSense `<ins>` + script, or anything else) and tick *Advertising is
+enabled*. The columns are already reserved at 160px on both sides of the calculator,
+so switching an ad on does not move the page — and switching it off leaves the space
+exactly where it was. Below 1200px wide the rails fold away and the calculator gets
+the full width, which is the right trade on a phone.
+
 ### If something looks stale
 
 - PHP page cache: **admin → Settings → System** → save, or run `cron.php`

@@ -18,7 +18,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Mailer
 {
@@ -60,7 +60,7 @@ final class Mailer
             'MIME-Version' => '1.0',
             'Date' => date('r'),
             'Message-ID' => '<' . bin2hex(random_bytes(12)) . '@' . self::hostname() . '>',
-            'X-Mailer' => 'Omni Calculator panel',
+            'X-Mailer' => 'Onim Calculator panel',
         ];
         $replyTo = trim((string) ($message['reply_to'] ?? ''));
         if ($replyTo !== '' && filter_var($replyTo, FILTER_VALIDATE_EMAIL) !== false) {

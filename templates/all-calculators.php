@@ -7,7 +7,7 @@
  * off, in a crawler, and from a pasted URL. `assets/js/browse.js` upgrades it to
  * filter-as-you-type, but the server-rendered list is the source of truth.
  *
- * @var \Omni\Seo $seo
+ * @var \Onim\Seo $seo
  * @var array $state      q, cat, letter, sort, page, pages, total, per, rows
  * @var array $params     the validated request parameters
  * @var array $letterCounts
@@ -16,11 +16,11 @@
 
 declare(strict_types=1);
 
-use Omni\Browse;
-use Omni\Data;
-use Omni\Format;
-use Omni\Icons;
-use Omni\View;
+use Onim\Browse;
+use Onim\Data;
+use Onim\Format;
+use Onim\Icons;
+use Onim\View;
 
 $filtersActive = $state['q'] !== '' || $state['cat'] !== '' || $state['letter'] !== '';
 $from = $state['total'] === 0 ? 0 : ($state['page'] - 1) * $state['per'] + 1;

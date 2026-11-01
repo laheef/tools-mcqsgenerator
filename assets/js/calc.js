@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Omni Calculator rebuild — client solver
+   Onim Calculator rebuild — client solver
    A faithful mirror of lib/Expr.php, lib/Solver.php, lib/Units.php and
    lib/Format.php. The page is already solved server-side; this file takes over
    so every keystroke re-solves locally with no network round-trip.

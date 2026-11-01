@@ -5,14 +5,14 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\BackupService;
-use Omni\Admin\Csrf;
+use Onim\Admin\BackupService;
+use Onim\Admin\Csrf;
 ?>
 <div class="grid grid-4" style="margin-bottom:18px">
     <div class="stat"><div class="label">Backups</div><div class="value"><?= count($backups) ?></div><div class="hint">database dumps and archives</div></div>

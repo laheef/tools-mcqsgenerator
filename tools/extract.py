@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Omni Calculator clone — reference data extractor.
+Onim Calculator clone — reference data extractor.
 
 Reads the raw captured payloads in ./php-clone/docs/reference-payloads/*.json
 (each is the `calculatorV2` object out of the Next.js __NEXT_DATA__ blob) and
 emits a compact, framework-free schema into ./php-clone/data/.
 
 The point of this file is documentation of the reverse engineering: it shows
-exactly which fields of Omni's calculator definition drive the UI, the solver
+exactly which fields of Onim's calculator definition drive the UI, the solver
 and the SEO metadata.
 
 Usage:  python3 tools/extract.py
@@ -38,7 +38,7 @@ OUT = os.path.join(ROOT, "php-clone", "data")
 
 
 def txt(node, default=""):
-    """Omni wraps every user-facing string in {uid, html, value}."""
+    """Onim wraps every user-facing string in {uid, html, value}."""
     if node is None:
         return default
     if isinstance(node, str):
@@ -69,7 +69,7 @@ def strip_tags(s):
 
 def unescape_html_field(s: str) -> str:
     """
-    Omni ships article HTML as a *doubly* encoded string: the payload value
+    Onim ships article HTML as a *doubly* encoded string: the payload value
     already contains JSON escapes, so it arrives as `<div class=\"textBlock\">`.
     Decode exactly one more layer so the markup is real HTML again.
     """
@@ -97,7 +97,7 @@ def unescape_html_field(s: str) -> str:
 
 
 class UnitRegistry:
-    """Omni units are linear: base_value = eval(expr, v = unit_value)."""
+    """Onim units are linear: base_value = eval(expr, v = unit_value)."""
 
     def __init__(self):
         self.by_sig = {}

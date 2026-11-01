@@ -6,13 +6,13 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\FileRepo;
+use Onim\Admin\FileRepo;
 ?>
 <div class="grid grid-4" style="margin-bottom:18px">
     <div class="stat">
@@ -113,7 +113,7 @@ $showCreate = (($_GET['action'] ?? '') === 'new');
             PHP files are parsed before they are written, so a broken file is refused rather than saved.
         </p>
         <form method="post" action="<?= e(admin_url('files')) ?>" data-track-dirty>
-            <?= \Omni\Admin\Csrf::field() ?>
+            <?= \Onim\Admin\Csrf::field() ?>
             <input type="hidden" name="do" value="create">
             <div class="field-row">
                 <div class="field">

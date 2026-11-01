@@ -11,8 +11,8 @@
 
 declare(strict_types=1);
 
-use Omni\Format;
-use Omni\View;
+use Onim\Format;
+use Onim\View;
 
 $from = $state['total'] === 0 ? 0 : ($state['page'] - 1) * $state['per'] + 1;
 $to = min($state['total'], $state['page'] * $state['per']);

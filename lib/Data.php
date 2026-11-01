@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Data
 {
@@ -576,8 +576,8 @@ final class Data
             '~\s*:\s*Free Calculator with Units\s*$~iu',
             '~\s*[—–-]\s*Free Online Calculator\s*$~iu',
             '~\s*:\s*Free Online Calculator\s*$~iu',
-            '~\s*[—–-]\s*Omni Calculator\s*$~iu',
-            '~\s*\|\s*Omni Calculator\s*$~iu',
+            '~\s*[—–-]\s*Onim Calculator\s*$~iu',
+            '~\s*\|\s*Onim Calculator\s*$~iu',
         ];
         foreach ($patterns as $p) {
             $name = (string) preg_replace($p, '', $name);

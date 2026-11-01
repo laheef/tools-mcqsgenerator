@@ -19,7 +19,7 @@ if (PHP_SAPI !== 'cli') {
     require_once __DIR__ . '/config.php';
 
     $token = (string) ($_GET['token'] ?? '');
-    $expected = (string) (Omni\Cms::enabled() ? Omni\Cms::setting('cron_token', '') : '');
+    $expected = (string) (Onim\Cms::enabled() ? Onim\Cms::setting('cron_token', '') : '');
     if ($token === '' || $expected === '' || !hash_equals($expected, $token)) {
         http_response_code(403);
         header('Content-Type: text/plain; charset=utf-8');
@@ -31,16 +31,16 @@ if (PHP_SAPI !== 'cli') {
     require_once __DIR__ . '/config.php';
 }
 
-use Omni\Admin\BackupService;
-use Omni\Cms;
-use Omni\Db;
+use Onim\Admin\BackupService;
+use Onim\Cms;
+use Onim\Db;
 
 $dryRun = in_array('--dry-run', $argv ?? [], true);
 $out    = static function (string $line): void {
     echo $line, "\n";
 };
 
-$out('Omni maintenance — ' . date('Y-m-d H:i:s'));
+$out('Onim maintenance — ' . date('Y-m-d H:i:s'));
 if (!Db::available()) {
     $out('No database connection: nothing to do.');
     exit(0);

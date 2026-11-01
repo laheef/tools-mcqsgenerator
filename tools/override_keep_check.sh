@@ -22,7 +22,7 @@ cat > /tmp/_ovr_phase.php <<'PHP'
 <?php
 require '/home/user/php-clone/admin/bootstrap.php';
 $mode = $argv[1] ?? 'partial';
-$row  = \Omni\Data::calculator('/math/average');
+$row  = \Onim\Data::calculator('/math/average');
 $input = [
     'slug' => 'average', 'category_slug' => 'math',
     'name' => $row['name'], 'h1' => $row['h1'] ?? $row['name'],
@@ -35,7 +35,7 @@ $input = [
     'faq_submitted' => $mode === 'clear',
     'sections_submitted' => $mode === 'clear',
 ];
-$res = \Omni\Admin\CalcRepo::save('/math/average', $input, 1);
+$res = \Onim\Admin\CalcRepo::save('/math/average', $input, 1);
 echo empty($res['ok']) ? 'error' : 'ok', "\n";
 PHP
 

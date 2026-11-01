@@ -1,18 +1,18 @@
 <?php
 /**
- * @var array $rows @var \Omni\Admin\Pagination $paginator @var array $actions @var array $users
+ * @var array $rows @var \Onim\Admin\Pagination $paginator @var array $actions @var array $users
  * @var string $q @var string $action @var string $user @var int $total
  */
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
+use Onim\Admin\Csrf;
 ?>
 <div class="card">
     <form method="get" action="<?= e(admin_base() . '/index.php') ?>" class="filters" data-auto-submit>

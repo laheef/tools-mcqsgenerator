@@ -12,14 +12,14 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
-use Omni\Cms;
+use Onim\Admin\Csrf;
+use Onim\Cms;
 
 $blocking = array_values(array_filter($requirements, static fn (array $r): bool => !$r['ok']));
 $hardBlockers = array_filter($blocking, static fn (array $r): bool => in_array($r['label'], ['PHP 8.1 or newer', 'pdo_mysql extension'], true));
@@ -153,7 +153,7 @@ $hardBlockers = array_filter($blocking, static fn (array $r): bool => in_array($
     </div>
 
     <p class="small" style="color:#8fa2bb;text-align:center;margin-top:16px">
-        Prefer the command line? <code>php admin/install.php</code> reads OMNI_DB_* and OMNI_ADMIN_* environment variables.
+        Prefer the command line? <code>php admin/install.php</code> reads ONIM_DB_* and ONIM_ADMIN_* environment variables.
     </p>
 </div>
 </div>

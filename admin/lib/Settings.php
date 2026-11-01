@@ -11,16 +11,16 @@
 declare(strict_types=1);
 
 
-namespace Omni\Admin;
+namespace Onim\Admin;
 
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
-use Omni\Cms;
-use Omni\Db;
+use Onim\Cms;
+use Onim\Db;
 
 final class Settings
 {
@@ -88,6 +88,8 @@ final class Settings
         'ads_enabled'                 => ['analytics', 'bool'],
         'ads_head_code'               => ['analytics', 'code'],
         'ads_inline_code'             => ['analytics', 'code'],
+        'ads_rail_left'               => ['analytics', 'code'],
+        'ads_rail_right'              => ['analytics', 'code'],
         'ads_txt'                     => ['analytics', 'code'],
 
         /* email */

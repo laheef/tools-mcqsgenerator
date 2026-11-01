@@ -15,10 +15,10 @@
 
 declare(strict_types=1);
 
-use Omni\Browse;
-use Omni\Data;
-use Omni\Icons;
-use Omni\View;
+use Onim\Browse;
+use Onim\Data;
+use Onim\Icons;
+use Onim\View;
 ?>
 <?php if ($filtersActive): ?>
     <p class="browse-active">

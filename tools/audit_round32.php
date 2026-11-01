@@ -19,10 +19,10 @@ declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/php-clone/config.php';
 
-use Omni\Data;
-use Omni\Solver;
-use Omni\Units;
-use Omni\Widget;
+use Onim\Data;
+use Onim\Solver;
+use Onim\Units;
+use Onim\Widget;
 
 $units = Data::units();
 

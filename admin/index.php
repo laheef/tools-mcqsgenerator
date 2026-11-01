@@ -22,14 +22,14 @@ header('Cache-Control: no-store, max-age=0');
 
 require_once __DIR__ . '/bootstrap.php';
 
-use Omni\Admin\Activity;
-use Omni\Admin\Auth;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
-use Omni\Admin\RateLimit;
-use Omni\Admin\Reset;
-use Omni\Cms;
-use Omni\Db;
+use Onim\Admin\Activity;
+use Onim\Admin\Auth;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
+use Onim\Admin\RateLimit;
+use Onim\Admin\Reset;
+use Onim\Cms;
+use Onim\Db;
 
 $page = (string) ($_GET['p'] ?? 'dashboard');
 $page = preg_replace('~[^a-z0-9-]~', '', strtolower($page)) ?: 'dashboard';
@@ -37,7 +37,7 @@ $page = preg_replace('~[^a-z0-9-]~', '', strtolower($page)) ?: 'dashboard';
 /* --------------------------------------------------------- not installed */
 
 if (!is_installed()) {
-    if (Db::available() === false && omni_db_configured() && Db::error() !== null) {
+    if (Db::available() === false && onim_db_configured() && Db::error() !== null) {
         // credentials exist but the server refused them
         http_response_code(500);
         render_plain('error', ['code' => 500, 'message' => 'The database is unreachable: ' . (Db::error() ?? '')]);

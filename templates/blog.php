@@ -6,7 +6,7 @@
  * listed — a scheduled post stays invisible until its moment, which is the
  * behaviour the panel advertises.
  *
- * @var \Omni\Seo $seo
+ * @var \Onim\Seo $seo
  * @var array $posts
  * @var array $tags
  * @var int   $page
@@ -16,7 +16,7 @@
 
 declare(strict_types=1);
 
-use Omni\View;
+use Onim\View;
 
 $posts = $posts ?? [];
 $tags = $tags ?? [];

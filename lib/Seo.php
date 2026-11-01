@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Seo
 {
@@ -71,7 +71,7 @@ final class Seo
         if ($title === '') {
             return $title;
         }
-        // " | Omni Calculator" is 18 characters, so 62 - 18 is all a title gets
+        // " | Onim Calculator" is 18 characters, so 62 - 18 is all a title gets
         $budget = 44;
 
         // "X Calculator Calculator"
@@ -167,7 +167,7 @@ final class Seo
         return $this;
     }
 
-    /** Page <title>: "X | Omni Calculator" unless it already is the site name. */
+    /** Page <title>: "X | Onim Calculator" unless it already is the site name. */
     public function fullTitle(): string
     {
         $t = trim($this->title);

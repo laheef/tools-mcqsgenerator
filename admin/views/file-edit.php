@@ -8,14 +8,14 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
-use Omni\Admin\FileRepo;
+use Onim\Admin\Csrf;
+use Onim\Admin\FileRepo;
 
 $tab = (string) (request('tab') ?? 'code');
 $language = (string) ($file['language'] ?? FileRepo::language((string) $file['path']));

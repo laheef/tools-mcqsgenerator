@@ -14,21 +14,21 @@ declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/config.php';
 
-use Omni\CustomArticle;
-use Omni\CustomCalc;
-use Omni\Data;
-use Omni\Db;
+use Onim\CustomArticle;
+use Onim\CustomCalc;
+use Onim\Data;
+use Onim\Db;
 
 /*
  * Where the site under test answers. Default is a root install on :8080; set
- * OMNI_TEST_BASE to exercise a subdirectory deployment, e.g.
+ * ONIM_TEST_BASE to exercise a subdirectory deployment, e.g.
  *
- *   OMNI_TEST_BASE=http://127.0.0.1:8097/tool php tests/e2e_panel.php
+ *   ONIM_TEST_BASE=http://127.0.0.1:8097/tool php tests/e2e_panel.php
  *
  * Everything below derives the URL prefix from it, so the same suite proves
  * mcqsgenerator.com/tool as well as a copy served from the domain root.
  */
-define('BASE', getenv('OMNI_TEST_BASE') ?: 'http://127.0.0.1:8080');
+define('BASE', getenv('ONIM_TEST_BASE') ?: 'http://127.0.0.1:8080');
 const ADMIN = BASE . '/admin/index.php';
 
 $GLOBALS['passed'] = 0;
@@ -206,11 +206,11 @@ t('2 a POST without a CSRF token is refused',
 
 /* 3 — settings round trip ------------------------------------------------- */
 $before = (string) value("SELECT svalue FROM settings WHERE skey='site_name'");
-post('settings', ['do' => 'save', 'group' => 'general', 'settings[site_name]' => 'Omni Panel Test',
+post('settings', ['do' => 'save', 'group' => 'general', 'settings[site_name]' => 'Onim Panel Test',
     'settings[site_tagline]' => (string) value("SELECT svalue FROM settings WHERE skey='site_tagline'")]);
 $after = (string) value("SELECT svalue FROM settings WHERE skey='site_name'");
-t('3 a settings save reaches MySQL', $after === 'Omni Panel Test', $after);
-t('3 the change is visible on the public homepage', str_contains(get(BASE . '/')['body'], 'Omni Panel Test'));
+t('3 a settings save reaches MySQL', $after === 'Onim Panel Test', $after);
+t('3 the change is visible on the public homepage', str_contains(get(BASE . '/')['body'], 'Onim Panel Test'));
 post('settings', ['do' => 'save', 'group' => 'general', 'settings[site_name]' => $before,
     'settings[site_tagline]' => (string) value("SELECT svalue FROM settings WHERE skey='site_tagline'")]);
 t('3 reverting restores the original name', (string) value("SELECT svalue FROM settings WHERE skey='site_name'") === $before);
@@ -223,7 +223,7 @@ post('settings', ['do' => 'save', 'group' => 'email',
 $stored = (string) value("SELECT svalue FROM settings WHERE skey='smtp_pass'");
 t('4 the SMTP password is stored encrypted', str_starts_with($stored, 'v1:') && !str_contains($stored, 'sup3r'), substr($stored, 0, 12));
 t('4 the encrypted secret decrypts back to the same value',
-    \Omni\Cms::decryptSecret($stored) === 'sup3r secret');
+    \Onim\Cms::decryptSecret($stored) === 'sup3r secret');
 
 /* 5 — appearance ---------------------------------------------------------- */
 post('appearance', ['do' => 'save', 'settings[brand_primary]' => '#ff0055', 'settings[brand_accent]' => '#111111']);
@@ -661,7 +661,7 @@ t('25 a new category is created for it automatically',
 
 $publicPath = '/e2e-niche/' . $slug;
 t('25 a draft is not reachable without a preview token', get(BASE . $publicPath)['status'] === 404);
-$previewToken = \Omni\Cms::previewToken($publicPath);
+$previewToken = \Onim\Cms::previewToken($publicPath);
 $preview = get(BASE . $publicPath . '?preview=' . $previewToken);
 t('25 the signed preview shows the draft', $preview['status'] === 200 && str_contains($preview['body'], 'E2E Custom Calculator'));
 t('25 a forged preview token is refused', get(BASE . $publicPath . '?preview=deadbeef')['status'] === 404);
@@ -828,9 +828,9 @@ t('26 invalid JSON leaves the database alone',
 /* publish one imported row and check it is a real page */
 $one = row('SELECT * FROM custom_calculators WHERE slug = ?', [$slug . '-one']);
 if ($one !== null) {
-    $model = \Omni\CustomCalc::editorModel($one);
+    $model = \Onim\CustomCalc::editorModel($one);
     $model['status'] = 'published';
-    \Omni\CustomCalc::save((int) $one['id'], $model, 1);
+    \Onim\CustomCalc::save((int) $one['id'], $model, 1);
 }
 t('26 an imported calculator publishes as a normal page', get(BASE . '/e2e-import/' . $slug . '-one')['status'] === 200);
 /* the sitemap is cached; a new custom calculator has to invalidate it even when
@@ -855,18 +855,35 @@ t('26 the import fixtures are cleaned up',
  * The third layer: one page needs UI that a field list cannot express. A module
  * adds it without forking the template, and the panel can switch it off.
  */
+/* Start from a known state: the two panel lists outlive a suite run, so a
+   previous run's leftovers would decide which way this one toggles. */
+Db::exec("DELETE FROM settings WHERE skey IN ('modules_off', 'modules_on')");
 $modulesPage = page('modules');
 t('27 the modules screen lists the installed module', str_contains($modulesPage['body'], 'aim-benchmarks') && clean($modulesPage['body']));
 $modulePage = '/math/percentage';
-$rendered = get(BASE . $modulePage);
-t('27 a module renders into its slot on its page', str_contains($rendered['body'], 'module-panel'));
+/* The reference module ships switched off: its wording is written for a
+   headshot-rate calculator and reads as nonsense on a general percentage page.
+   The suite switches it on for the duration of this check, then off again. */
+t('27 a manifest-disabled module starts off', !str_contains(get(BASE . $modulePage)['body'], 'module-panel'));
+
+post('modules', ['do' => 'toggle', 'slug' => 'aim-benchmarks']);
+t('27 a module renders into its slot on its page', str_contains(get(BASE . $modulePage)['body'], 'module-panel'));
 t('27 a module leaves other pages alone', !str_contains(get(BASE . '/math/average')['body'], 'module-panel'));
 
 post('modules', ['do' => 'toggle', 'slug' => 'aim-benchmarks']);
 t('27 switching a module off removes it from the page',
     !str_contains(get(BASE . $modulePage)['body'], 'module-panel'));
+
+/* A manifest that says enabled:false must not win over the panel: a single
+   "off" list cannot express "on, despite the manifest", so this is the case
+   that catches a one-list implementation. */
 post('modules', ['do' => 'toggle', 'slug' => 'aim-benchmarks']);
 t('27 switching it back on restores it', str_contains(get(BASE . $modulePage)['body'], 'module-panel'));
+
+/* leave it off, which is how it ships */
+post('modules', ['do' => 'toggle', 'slug' => 'aim-benchmarks']);
+t('27 the suite leaves the reference module switched off',
+    !str_contains(get(BASE . $modulePage)['body'], 'module-panel'));
 
 /* a broken module is listed and never rendered */
 $brokenDir = dirname(__DIR__) . '/modules/zz-e2e-broken';
@@ -961,7 +978,7 @@ t('28 replace swaps it out when asked', !str_contains($replaced['body'], 'HAND W
 
 /* the drafted article publishes as an ordinary, marked-up page */
 $article = CustomArticle::draft(CustomCalc::editorModel(row('SELECT * FROM custom_calculators WHERE id = ?', [$draftId])));
-$publish = \Omni\CustomArticle::merge(CustomCalc::editorModel(row('SELECT * FROM custom_calculators WHERE id = ?', [$draftId])), $article, true);
+$publish = \Onim\CustomArticle::merge(CustomCalc::editorModel(row('SELECT * FROM custom_calculators WHERE id = ?', [$draftId])), $article, true);
 $publish = array_merge($publish, [
     'slug' => $draftSlug, 'category_slug' => 'e2e-niche', 'status' => 'published',
 ]);
@@ -1175,7 +1192,7 @@ t('30 the category counts add up to the total',
 
 /* the stamp has to move when the catalogue moves, or the client never repaints */
 $stampBefore = (string) ($payload['stamp'] ?? '');
-$versionBefore = Omni\LiveCounts::cacheVersion();
+$versionBefore = Onim\LiveCounts::cacheVersion();
 $probeSlug = 'e2e-live-probe';
 Db::exec('DELETE FROM custom_calculators WHERE slug = ?', [$probeSlug]);
 $probe = [
@@ -1198,7 +1215,7 @@ t('30 publishing through the panel raises the total',
 t('30 publishing through the panel raises the category count',
     (int) ($after['categories']['biology'] ?? 0) === (int) $payload['categories']['biology'] + 1);
 t('30 the cache version is bumped by the panel action',
-    Omni\LiveCounts::cacheVersion() > $versionBefore);
+    Onim\LiveCounts::cacheVersion() > $versionBefore);
 
 /* the client hook has to be on the page for any of that to be visible */
 $home = get(BASE . '/')['body'];

@@ -10,7 +10,7 @@
  * The fallback list from Cms::homepageSections() (hero, category grid, popular)
  * keeps the page identical when the database is not installed.
  *
- * @var \Omni\Seo $seo
+ * @var \Onim\Seo $seo
  * @var array $categories
  * @var array $featured
  * @var int   $total
@@ -18,11 +18,11 @@
 
 declare(strict_types=1);
 
-use Omni\Cms;
-use Omni\Data;
-use Omni\Format;
-use Omni\Icons;
-use Omni\View;
+use Onim\Cms;
+use Onim\Data;
+use Onim\Format;
+use Onim\Icons;
+use Onim\View;
 
 $total = $total ?? Data::total();
 $sections = Cms::homepageSections();

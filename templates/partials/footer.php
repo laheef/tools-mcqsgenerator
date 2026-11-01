@@ -1,11 +1,17 @@
 <?php
 /**
- * Footer, assembled from what the Footer screen says.
+ * Footer: brand block, link columns, legal bar.
  *
- * Columns and links come from `footer_columns` + `menu_items`; the contact
- * block, social links, newsletter note and copyright line come from Settings.
- * With no database the footer falls back to the category matrix the site shipped
- * with, so nothing here can leave a visitor staring at an empty foot.
+ * Columns and links come from `footer_columns` + `menu_items`; the tagline, the
+ * contact details and the copyright line come from Settings. With no database
+ * the footer falls back to the category matrix the site shipped with, so nothing
+ * here can leave a visitor staring at an empty foot.
+ *
+ * What this template does NOT do any more: print a paragraph about the site
+ * being a rebuild of somebody else's, or a second and third copyright row. A
+ * footer is navigation and attribution, in that order — one brand block, three
+ * or four columns of real links, then a single bar with the copyright and the
+ * legal pages.
  *
  * @var array  $categories
  * @var string $siteName
@@ -13,27 +19,38 @@
 
 declare(strict_types=1);
 
-use Omni\Cms;
-use Omni\Data;
-use Omni\Format;
-use Omni\View;
+use Onim\Cms;
+use Onim\Data;
+use Onim\Format;
+use Onim\View;
 
 $siteName = $siteName ?? SITE_NAME;
 $columns = Cms::footerColumns();
 
 if ($columns === []) {
-    foreach (array_slice($categories ?? [], 0, 5) as $cat) {
-        $links = [];
-        foreach (array_slice(Data::byCategory((string) $cat['slug']), 0, 4) as $row) {
-            $links[] = ['label' => $row['name'], 'url' => $row['path'], 'target' => '_self'];
-        }
-        $columns[] = ['title' => $cat['name'], 'links' => $links];
+    /* No database: four category columns built from the catalogue itself. */
+    $links = [];
+    foreach (array_slice($categories ?? [], 0, 4) as $cat) {
+        $links[] = [
+            'title' => (string) $cat['name'],
+            'links' => [['label' => 'All ' . mb_strtolower((string) $cat['name']) . ' calculators', 'url' => '/' . $cat['slug'], 'target' => '_self']],
+        ];
     }
+    $links[] = [
+        'title' => 'Site',
+        'links' => [
+            ['label' => 'All calculators', 'url' => '/calculators', 'target' => '_self'],
+            ['label' => 'Blog', 'url' => '/blog', 'target' => '_self'],
+            ['label' => 'About us', 'url' => '/about', 'target' => '_self'],
+            ['label' => 'Contact', 'url' => '/contact', 'target' => '_self'],
+        ],
+    ];
+    $columns = $links;
 }
 
 $about = (string) (Cms::setting('footer_about', '') ?? '');
 $copyright = (string) (Cms::setting('footer_copyright', '') ?? '');
-$showNotice = Cms::enabled() ? Cms::settingBool('footer_show_notice', true) : SHOW_CLONE_NOTICE;
+$showNotice = Cms::enabled() ? Cms::settingBool('footer_show_notice', false) : SHOW_CLONE_NOTICE;
 $newsletter = Cms::settingBool('newsletter_enabled', false);
 $newsletterNote = (string) (Cms::setting('newsletter_note', '') ?? '');
 $contactEmail = (string) (Cms::setting('contact_email', '') ?? '');
@@ -46,15 +63,17 @@ $legal = Cms::menu('legal');
     <div class="shell">
         <div class="footer-grid">
             <div class="footer-brand">
-                <img src="<?= View::escape(Cms::logoUrl()) ?>" width="165" height="25" alt="<?= View::escape($siteName) ?>"
-                     loading="lazy" decoding="async">
+                <a class="footer-logo" href="<?= View::escape(View::url('/')) ?>" aria-label="<?= View::escape($siteName) ?> — home">
+                    <img src="<?= View::escape(Cms::logoUrl()) ?>" width="112" height="34" alt="<?= View::escape($siteName) ?>"
+                         loading="lazy" decoding="async">
+                </a>
                 <p class="footer-tagline"><?= View::escape(Cms::tagline()) ?></p>
                 <?php if ($about !== ''): ?>
                     <p class="footer-tagline"><?= View::escape($about) ?></p>
                 <?php endif; ?>
-                <?php /* Every page links to the catalogue: it is the one URL that reaches everything, and before round 22 the footer was the only place on the site that did not mention it. */ ?>
-                <p class="footer-count"><a href="<?= View::escape(View::url('/calculators')) ?>"><span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators across
-                    <?= View::escape((string) count($categories ?? [])) ?> categories</a> — browse the whole list.
+                <p class="footer-count">
+                    <a href="<?= View::escape(View::url('/calculators')) ?>"><span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators</a>
+                    across <?= View::escape((string) count($categories ?? [])) ?> categories, free and without an account.
                 </p>
 
                 <?php if ($contactEmail !== '' || $contactPhone !== '' || $contactAddress !== ''): ?>
@@ -87,6 +106,7 @@ $legal = Cms::menu('legal');
 
             <nav class="footer-columns" aria-label="Footer">
                 <?php foreach ($columns as $column): ?>
+                    <?php if (empty($column['links'])) { continue; } ?>
                     <div class="footer-column">
                         <h2 class="footer-heading"><?= View::escape((string) $column['title']) ?></h2>
                         <ul class="footer-list">
@@ -107,7 +127,7 @@ $legal = Cms::menu('legal');
         <?php if ($newsletter): ?>
             <div class="footer-newsletter">
                 <form action="<?= View::escape(View::url('/contact')) ?>" method="post" class="footer-newsletter-form">
-                    <?= \Omni\Csrf::field() ?>
+                    <?= \Onim\Csrf::field() ?>
                     <input type="hidden" name="action" value="contact">
                     <input type="hidden" name="subject" value="Newsletter sign-up">
                     <input type="hidden" name="message" value="Please add me to the newsletter.">
@@ -125,17 +145,23 @@ $legal = Cms::menu('legal');
         <?php endif; ?>
 
         <div class="footer-bottom">
-            <p><?= View::escape($copyright !== '' ? $copyright : '© ' . date('Y') . ' ' . $siteName . '. All calculations run in your browser and on this server — nothing is sent to a third party.') ?></p>
-            <?php foreach ($legal as $item): ?>
-                <p class="footer-note">
-                    <a href="<?= View::escape(View::url((string) $item['url'])) ?>"><?= View::escape((string) $item['label']) ?></a>
-                </p>
-            <?php endforeach; ?>
+            <p class="footer-copyright"><?= View::escape($copyright !== '' ? $copyright : '© ' . date('Y') . ' ' . $siteName . '. All rights reserved.') ?></p>
+            <?php if ($legal !== []): ?>
+                <nav class="footer-legal" aria-label="Legal">
+                    <?php foreach ($legal as $item): ?>
+                        <a href="<?= View::escape(View::url((string) $item['url'])) ?>"><?= View::escape((string) $item['label']) ?></a>
+                    <?php endforeach; ?>
+                </nav>
+            <?php else: ?>
+                <nav class="footer-legal" aria-label="Legal">
+                    <a href="<?= View::escape(View::url('/privacy')) ?>">Privacy</a>
+                    <a href="<?= View::escape(View::url('/terms')) ?>">Terms</a>
+                    <a href="<?= View::escape(View::url('/disclaimer')) ?>">Disclaimer</a>
+                    <a href="<?= View::escape(View::url('/faq')) ?>">FAQ</a>
+                </nav>
+            <?php endif; ?>
             <?php if ($showNotice): ?>
-                <p class="footer-note">
-                    An educational rebuild of the Omni Calculator interface: PHP + hand-authored CSS,
-                    calculator definitions extracted from the public site. Not affiliated with Omni Calculator.
-                </p>
+                <p class="footer-note">Every calculation runs on this site — nothing you type is sent to a third party.</p>
             <?php endif; ?>
         </div>
     </div>

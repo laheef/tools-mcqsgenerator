@@ -15,16 +15,16 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Activity;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
-use Omni\Modules;
+use Onim\Admin\Activity;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
+use Onim\Modules;
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     Csrf::requirePost();
@@ -38,14 +38,24 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             Flash::error('There is no module called “' . $slug . '”.');
             redirect_to(admin_url('modules'));
         }
-        $off = Modules::switchedOff();
+        /*
+         * Two lists, because a manifest can ship a module disabled. Switching a
+         * module on has to be recorded as an explicit "on", otherwise the next
+         * page load falls straight back to the manifest default and the button
+         * appears to do nothing.
+         */
         $wasEnabled = Modules::isEnabled($slug, $module);
+        $off = Modules::switchedOff();
+        $on  = Modules::forcedOn();
         if ($wasEnabled) {
             $off[] = $slug;
+            $on = array_values(array_diff($on, [$slug]));
         } else {
             $off = array_values(array_diff($off, [$slug]));
+            $on[] = $slug;
         }
         Modules::setSwitchedOff($off);
+        Modules::setForcedOn($on);
         Activity::log(
             $wasEnabled ? 'module_disabled' : 'module_enabled',
             'module',

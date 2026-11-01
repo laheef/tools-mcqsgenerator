@@ -2,7 +2,7 @@
 /**
  * Safe arithmetic expression parser / evaluator.
  *
- * Omni's calculator definitions express every equation direction as a plain
+ * Onim's calculator definitions express every equation direction as a plain
  * string, e.g. "2*PI*r" or "log(-payment_gen/(eq_p*loan_amount - payment_gen))/log(eq_p + 1)".
  * We evaluate those with a small recursive-descent parser instead of eval(),
  * so untrusted/odd data can never execute code.
@@ -28,7 +28,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class ExprException extends \RuntimeException
 {

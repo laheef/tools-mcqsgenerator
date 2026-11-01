@@ -16,21 +16,21 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Activity;
-use Omni\Admin\Auth;
-use Omni\Admin\CalcRepo;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
-use Omni\Cms;
-use Omni\CustomArticle;
-use Omni\CustomCalc;
-use Omni\Data;
+use Onim\Admin\Activity;
+use Onim\Admin\Auth;
+use Onim\Admin\CalcRepo;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
+use Onim\Cms;
+use Onim\CustomArticle;
+use Onim\CustomCalc;
+use Onim\Data;
 
 if (!CustomCalc::enabled()) {
     Flash::error('Custom calculators need the database. Configure MySQL in config.db.php and run the installer.');

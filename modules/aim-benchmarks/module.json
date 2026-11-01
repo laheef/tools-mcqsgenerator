@@ -1,6 +1,6 @@
 {
   "name": "Aim benchmarks",
-  "description": "A strip under the percentage calculator that bands the number the visitor entered and says what the next band costs. Ships as the reference module for the panel's module system.",
+  "description": "A strip under a percentage calculator that bands the number the visitor entered. Ships as the reference module for the panel's module system — switched off by default, because its wording is written for a headshot-rate calculator, not a general one.",
   "version": "1.0.0",
   "paths": [
     "/math/percentage"
@@ -8,6 +8,6 @@
   "slots": {
     "widget_bottom": "partials/benchmarks.php"
   },
-  "enabled": true,
+  "enabled": false,
   "priority": 10
 }

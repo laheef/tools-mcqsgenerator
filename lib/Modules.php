@@ -44,7 +44,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Modules
 {
@@ -236,32 +236,70 @@ final class Modules
     }
 
     /**
-     * Is this module switched on? The panel stores its decision as a list of
-     * slugs in one setting, so a module added by a deploy keeps its manifest
-     * default until someone flips it.
+     * Is this module switched on?
+     *
+     * The panel stores its decision as two lists, not as an edit to the
+     * manifest: `modules_off` (switched off here) and `modules_on` (switched on
+     * here). Two lists are needed because a manifest can ship a module disabled
+     * — the reference module does, since it is written for one calculator and
+     * reads as nonsense everywhere else — and one list of "off" slugs cannot
+     * express "on, despite the manifest".
+     *
+     * Order of authority: an explicit switch in the panel, then the manifest
+     * default. A module added by a deploy therefore keeps whatever the deploy
+     * chose until an administrator says otherwise.
      */
     public static function isEnabled(string $slug, ?array $module = null): bool
     {
         $module ??= self::all()[$slug] ?? null;
-        $default = $module['enabled'] ?? true;
+        $default = (bool) ($module['enabled'] ?? true);
 
-        $raw = class_exists(Cms::class) ? (string) (Cms::setting('modules_off', '') ?? '') : '';
-        if ($raw === '') {
-            return (bool) $default;
-        }
-        $off = array_filter(array_map('trim', explode(',', $raw)), static fn (string $s): bool => $s !== '');
-        return !in_array($slug, $off, true);
+        return self::listedOn($slug) || ($default && !self::listedOff($slug));
     }
 
-    /** @return array<int,string> slugs currently switched off in the panel */
+    /** @return array<int,string> slugs the panel has switched off */
     public static function switchedOff(): array
     {
-        $raw = class_exists(Cms::class) ? (string) (Cms::setting('modules_off', '') ?? '') : '';
+        return self::slugList('modules_off');
+    }
+
+    /** @return array<int,string> slugs the panel has switched on against the manifest */
+    public static function forcedOn(): array
+    {
+        return self::slugList('modules_on');
+    }
+
+    private static function listedOff(string $slug): bool
+    {
+        return in_array($slug, self::slugList('modules_off'), true);
+    }
+
+    private static function listedOn(string $slug): bool
+    {
+        return in_array($slug, self::slugList('modules_on'), true);
+    }
+
+    /** @return array<int,string> */
+    private static function slugList(string $key): array
+    {
+        $raw = class_exists(Cms::class) ? (string) (Cms::setting($key, '') ?? '') : '';
         return array_values(array_filter(array_map('trim', explode(',', $raw)), static fn (string $s): bool => $s !== ''));
     }
 
     /** Record a switch. Keeps disabled slugs even if the folder is later removed. */
     public static function setSwitchedOff(array $slugs): void
+    {
+        self::writeList('modules_off', $slugs);
+    }
+
+    /** Record modules switched on against their manifest default. */
+    public static function setForcedOn(array $slugs): void
+    {
+        self::writeList('modules_on', $slugs);
+    }
+
+    /** @param array<int,string> $slugs */
+    private static function writeList(string $key, array $slugs): void
     {
         $slugs = array_values(array_unique(array_filter(array_map(
             static fn (string $s): string => preg_replace('~[^a-z0-9._-]~i', '', $s) ?? '',
@@ -273,7 +311,7 @@ final class Modules
         Db::exec(
             'INSERT INTO settings (skey, svalue, sgroup) VALUES (?, ?, ?)
              ON DUPLICATE KEY UPDATE svalue = VALUES(svalue), updated_at = NOW()',
-            ['modules_off', implode(',', $slugs), 'system']
+            [$key, implode(',', $slugs), 'system']
         );
         if (class_exists(Cms::class)) {
             Cms::flush();

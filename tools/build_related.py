@@ -37,7 +37,7 @@ OUT = ROOT / "php-clone" / "data" / "cache" / "related-index.json"
 CUSTOM_DUMP = ROOT / "php-clone" / "data" / "cache" / "custom-articles.json"
 PHP_DUMP = r"""
 require "php-clone/config.php";
-$rows = Omni\Db::all("SELECT slug, category_slug, name, h1, summary, sections, faq FROM custom_calculators WHERE status='published'");
+$rows = Onim\Db::all("SELECT slug, category_slug, name, h1, summary, sections, faq FROM custom_calculators WHERE status='published'");
 $out = [];
 foreach ($rows as $r) {
     $out[] = [

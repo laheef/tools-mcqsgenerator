@@ -10,16 +10,16 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Auth;
-use Omni\Admin\Csrf;
-use Omni\Cms;
-use Omni\Db;
+use Onim\Admin\Auth;
+use Onim\Admin\Csrf;
+use Onim\Cms;
+use Onim\Db;
 
 require_once __DIR__ . '/partials/icons.php';
 

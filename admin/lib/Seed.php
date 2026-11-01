@@ -11,17 +11,17 @@
 declare(strict_types=1);
 
 
-namespace Omni\Admin;
+namespace Onim\Admin;
 
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
-use Omni\Cms;
-use Omni\Data;
-use Omni\Db;
+use Onim\Cms;
+use Onim\Data;
+use Onim\Db;
 
 final class Seed
 {
@@ -305,6 +305,8 @@ final class Seed
             'ads_enabled'               => '0',
             'ads_head_code'             => '',
             'ads_inline_code'           => '',
+            'ads_rail_left'             => '',
+            'ads_rail_right'            => '',
             'ads_txt'                   => '',
             /* mail */
             'mail_transport'      => 'mail',

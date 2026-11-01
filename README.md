@@ -3,7 +3,12 @@
 The calculator site served at **mcqsgenerator.com/tool**.
 
 
-A self-contained rebuild of the Omni Calculator catalogue, packaged to run from
+The brand is **Onim** — name, logo and all 16 social-card images — after a rename
+from the original Omni name, which carried a trademark the site should not lean on.
+`007_brand_rename.sql` moves the same name in the database, because three settings
+(`site_name`, `seo_title_suffix`, `mail_from_name`) override the code.
+
+A self-contained rebuild of the Onim Calculator catalogue, packaged to run from
 **https://mcqsgenerator.com/tool** (a folder under the domain root, not a separate
 vhost). Plain PHP 8.1+, hand-written CSS, vanilla JS: no framework, no build step,
 no Composer, no Node, and no third-party call at runtime — Tailwind is a vendored
@@ -16,7 +21,7 @@ build in `assets/js/vendor/`, fonts are system fonts.
 | Engine | one declarative equation solver (PHP + JS) drives every page |
 | Repairs | 378 hand-written supplements where the harvested equations were incomplete |
 | Admin | PHP + MySQL panel: pages, posts, calculators, media, menu, SEO, settings, backups, contact inbox |
-| Tests | `tests/solver.php` (70) and `tests/e2e_panel.php` (252) — both green |
+| Tests | `tests/solver.php` (70) and `tests/e2e_panel.php` (254) — both green |
 
 Every calculator renders real inputs and computes on demand: **no field is
 prefilled**, and **nothing is calculated until you press Calculate**. Results are
@@ -393,6 +398,66 @@ example and writes `data/content/<category>/<slug>.json`:
 
 Current corpus: **min 509 / median 1,312 / max 3,737 words**, 0 duplicate meta
 descriptions, 0 identical article bodies.
+
+---
+
+## Page layouts
+
+Two page shapes carry the site, and they are deliberately different from each
+other because the two kinds of visitor are doing different things.
+
+### A calculator page: the tool first
+
+```
+┌──────────┬────────────────────────────────────┬──────────┐
+│ 160px    │  calculator (inputs, results)      │ 160px    │
+│ reserved │  ─────────────────────────────     │ reserved │
+│ for an   │  article, same width as the tool   │ for an   │
+│ ad       │  (breadcrumb, h1, TOC, prose, FAQ) │ ad       │
+└──────────┴────────────────────────────────────┴──────────┘
+```
+
+The calculator now starts the page. It used to sit in a 396px sticky rail on the
+right while a 724px article took the left, which meant a reader who came to
+calculate had to find the tool, and the article was squeezed narrow. Now the tool
+spans the column and the article reads underneath at exactly the same measure, so
+both sections line up on both edges.
+
+The two 160px side columns are **reserved and empty**. They are not reclaimed when
+there is no ad, because a slot that appears later must not shift the article
+sideways while someone is reading. Fill them in **admin → Settings → Advertising**
+(left rail / right rail); the tags go out verbatim, and `ads_enabled` switches both
+off without touching the settings. Below 1200px the rails fold away and the
+calculator takes the full width.
+
+### A blog post: contents, post, calculators
+
+```
+┌──────────────┬──────────────────────────┬───────────────┐
+│ On this page │ headline, cover, body    │ Latest        │
+│ (from the    │ tags, author             │ Popular       │
+│ post's own   │                          │ Categories    │
+│ h2s)         │                          │               │
+└──────────────┴──────────────────────────┴───────────────┘
+```
+
+The contents list is generated from the headings that are **actually in the
+post**, at render time: every `h2` gets an anchor id if it has none, and a leading
+"1." in a heading is dropped from the label so the list does not read "1. 1. Name
+the quantity". A post with no `h2`s gets no contents block rather than an empty
+one. Under 1100px the contents become a card above the body and the sidebar
+(one entry per category for "Latest", most-visited paths for "Popular", live
+counts for the categories) drops below the article.
+
+### The footer
+
+Rebuilt in `templates/partials/footer.php` and driven entirely from the menu
+tables: a brand block (logo, tagline, "N calculators in M categories"), a column
+grid — **Calculators** (four real category indexes), **Company**, **Resources** —
+and one bottom bar with the copyright and four legal links. Migration
+`006_footer_cleanup.sql` removed the 57 seeded calculator-name links that padded
+the old columns and switched off the paragraph explaining that the site is a
+rebuild of another one.
 
 ---
 

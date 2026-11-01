@@ -14,11 +14,11 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../config.php';
 
-use Omni\Data;
-use Omni\Expr;
-use Omni\Format;
-use Omni\Solver;
-use Omni\Units;
+use Onim\Data;
+use Onim\Expr;
+use Onim\Format;
+use Onim\Solver;
+use Onim\Units;
 
 $units = Data::units();
 
@@ -258,10 +258,10 @@ $renderCases = [
     [0.049995, '0.0001', 'omni', '0.05'],
     [1500.0, '0', 'standard', '1500'],
 ];
-$plain = new ReflectionMethod(Omni\Widget::class, 'plainNumber');
+$plain = new ReflectionMethod(Onim\Widget::class, 'plainNumber');
 $plain->setAccessible(true);
 foreach ($renderCases as [$value, $precision, $algo, $want]) {
-    $widget = new Omni\Widget(Data::calculator('math--percentage.json'), $units,
+    $widget = new Onim\Widget(Data::calculator('math--percentage.json'), $units,
         Solver::solve(Data::calculator('math--percentage.json'), [], $units), []);
     $got = (string) $plain->invoke($widget, (float) $value, $precision, $algo);
     $ok = $got === $want;
@@ -274,7 +274,7 @@ foreach ($renderCases as [$value, $precision, $algo, $want]) {
    nothing at all. A helper the form does not show keeps its constant. */
 $gravel = Data::calculator('construction--gravel.json');
 $gs = Solver::solve($gravel, [], $units);
-$gw = new Omni\Widget($gravel, $units, $gs, []);
+$gw = new Onim\Widget($gravel, $units, $gs, []);
 $density = $gw->shown['density'] ?? null;
 $ok = $density === null;
 printf("  %s  gravel density opens blank, not at its harvested 1680 kg/m3\n", $ok ? 'PASS' : 'FAIL');

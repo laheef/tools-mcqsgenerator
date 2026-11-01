@@ -12,8 +12,8 @@
 
 declare(strict_types=1);
 
-use Omni\Data;
-use Omni\Engagement;
+use Onim\Data;
+use Onim\Engagement;
 
 /** Read a JSON body, falling back to form encoding. */
 function api_input(): array
@@ -42,7 +42,7 @@ function api_json(array $payload, int $status = 200): never
 /** Stable, anonymous visitor token kept in a first-party cookie. */
 function api_visitor(): string
 {
-    $name = 'omni_vid';
+    $name = 'onim_vid';
     $existing = $_COOKIE[$name] ?? '';
     if (is_string($existing) && preg_match('/^[a-f0-9]{16,64}$/', $existing) === 1) {
         return $existing;
@@ -125,7 +125,7 @@ if ($action === 'reviews' && $method === 'GET') {
             'body'   => $r['body'],
             'rating' => (int) $r['rating'],
             'ts'     => (int) $r['ts'],
-            'ago'    => \Omni\Format::ago((int) $r['ts']),
+            'ago'    => \Onim\Format::ago((int) $r['ts']),
             'initials' => Engagement::initials((string) $r['name']),
         ], $reviews),
     ]);
@@ -197,7 +197,7 @@ if ($action === 'review') {
             'body'     => $row['body'],
             'rating'   => (int) $row['rating'],
             'ts'       => (int) $row['ts'],
-            'ago'      => \Omni\Format::ago((int) $row['ts']),
+            'ago'      => \Onim\Format::ago((int) $row['ts']),
             'initials' => Engagement::initials($row['name']),
         ],
     ], 201);

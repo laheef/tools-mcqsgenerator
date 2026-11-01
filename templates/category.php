@@ -2,16 +2,16 @@
 /**
  * Category index: A–Z of every calculator in the category.
  *
- * @var \Omni\Seo $seo
+ * @var \Onim\Seo $seo
  * @var array $category
  * @var array $rows
  */
 
 declare(strict_types=1);
 
-use Omni\Data;
-use Omni\Icons;
-use Omni\View;
+use Onim\Data;
+use Onim\Icons;
+use Onim\View;
 
 /*
  * The A-Z is grouped for the jump nav, but a group holding one calculator should

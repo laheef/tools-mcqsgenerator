@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-use Omni\View;
+use Onim\View;
 
 $f = $field;
 $id = 'f-' . preg_replace('/[^A-Za-z0-9_-]/', '-', (string) ($f['name'] ?? 'field'));
@@ -118,7 +118,7 @@ $id = 'f-' . preg_replace('/[^A-Za-z0-9_-]/', '-', (string) ($f['name'] ?? 'fiel
                 <?php endif; ?>
                 <?php foreach ($f['options'] as $opt): ?>
                     <option value="<?= View::escape($opt['uid']) ?>"
-                        <?= $opt['uid'] === $f['value'] ? 'selected' : '' ?>><?= View::escape(Omni\Widget::cleanText((string) $opt['label'])) ?></option>
+                        <?= $opt['uid'] === $f['value'] ? 'selected' : '' ?>><?= View::escape(Onim\Widget::cleanText((string) $opt['label'])) ?></option>
                 <?php endforeach; ?>
             </select>
         <?php else: ?>
@@ -127,7 +127,7 @@ $id = 'f-' . preg_replace('/[^A-Za-z0-9_-]/', '-', (string) ($f['name'] ?? 'fiel
                     <label class="calc-radio">
                         <input type="radio" name="<?= View::escape($f['name']) ?>" value="<?= View::escape($opt['uid']) ?>"
                             <?= $opt['uid'] === $f['value'] ? 'checked' : '' ?>>
-                        <span><?= View::escape(Omni\Widget::cleanText((string) $opt['label'])) ?></span>
+                        <span><?= View::escape(Onim\Widget::cleanText((string) $opt['label'])) ?></span>
                     </label>
                 <?php endforeach; ?>
             </div>

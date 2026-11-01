@@ -5,17 +5,17 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Activity;
-use Omni\Admin\Auth;
-use Omni\Admin\BackupService;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
+use Onim\Admin\Activity;
+use Onim\Admin\Auth;
+use Onim\Admin\BackupService;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     Csrf::requirePost();

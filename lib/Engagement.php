@@ -17,7 +17,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Engagement
 {
@@ -241,7 +241,7 @@ final class Engagement
     /** Paths this visitor has already liked (cookie-identified, anonymous). */
     public static function visitorLikes(): array
     {
-        $token = $_COOKIE['omni_vid'] ?? '';
+        $token = $_COOKIE['onim_vid'] ?? '';
         if (!is_string($token) || preg_match('/^[a-f0-9]{16,64}$/', $token) !== 1) {
             return [];
         }

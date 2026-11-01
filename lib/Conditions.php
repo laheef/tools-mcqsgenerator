@@ -14,7 +14,7 @@
 
 declare(strict_types=1);
 
-namespace Omni;
+namespace Onim;
 
 final class Conditions
 {
@@ -120,7 +120,7 @@ final class Conditions
     }
 
     /**
-     * Substitute Omni's template placeholders: {{n.value}} -> formatted number.
+     * Substitute Onim's template placeholders: {{n.value}} -> formatted number.
      *
      * @param array<string,string> $rendered var => already formatted display string
      */

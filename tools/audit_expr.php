@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../php-clone/config.php';
 
-use Omni\Data;
-use Omni\Expr;
-use Omni\Shape;
+use Onim\Data;
+use Onim\Expr;
+use Onim\Shape;
 
 $limit   = 0;
 $verbose = false;

@@ -21,12 +21,12 @@
 declare(strict_types=1);
 
 // A partial must not run on its own.
-if (!defined('OMNI_PANEL') && !isset($calc)) {
+if (!defined('ONIM_PANEL') && !isset($calc)) {
     return;
 }
 
-use Omni\Format;
-use Omni\View;
+use Onim\Format;
+use Onim\View;
 
 /* Which value does the page have right now? Query input first, then the solver,
    then the definition's default. */

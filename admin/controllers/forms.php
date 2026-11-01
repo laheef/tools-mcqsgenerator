@@ -9,16 +9,16 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Activity;
-use Omni\Admin\Csrf;
-use Omni\Admin\Flash;
-use Omni\Db;
+use Onim\Admin\Activity;
+use Onim\Admin\Csrf;
+use Onim\Admin\Flash;
+use Onim\Db;
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     Csrf::requirePost();
@@ -43,7 +43,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         if (!in_array($type, ['text', 'email', 'tel', 'textarea', 'select', 'checkbox'], true)) {
             $type = 'text';
         }
-        $key = \Omni\Cms::slugify($label);
+        $key = \Onim\Cms::slugify($label);
         $key = str_replace('-', '_', $key);
         if ($key === '') {
             $key = 'field_' . substr(bin2hex(random_bytes(3)), 0, 5);

@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
+use Onim\Admin\Csrf;
 
 $isNew = $post === null;
 $publishedValue = $form['published_at'] ? date('Y-m-d\TH:i', strtotime((string) $form['published_at'])) : '';
@@ -115,7 +115,7 @@ $publishedValue = $form['published_at'] ? date('Y-m-d\TH:i', strtotime((string) 
                         <?php if (($form['status'] ?? 'draft') === 'published'): ?>
                             <a class="btn" href="<?= e(site_link('blog/' . (string) $form['slug'])) ?>" target="_blank" rel="noopener"><?= admin_icon('eye', 16) ?> View on the site</a>
                         <?php else: ?>
-                            <a class="btn" href="<?= e(site_link(\Omni\Cms::previewUrl('/blog/' . (string) $form['slug']))) ?>" target="_blank" rel="noopener"><?= admin_icon('eye', 16) ?> Preview draft (signed link)</a>
+                            <a class="btn" href="<?= e(site_link(\Onim\Cms::previewUrl('/blog/' . (string) $form['slug']))) ?>" target="_blank" rel="noopener"><?= admin_icon('eye', 16) ?> Preview draft (signed link)</a>
                         <?php endif; ?>
                     <?php endif; ?>
                     <div class="field" style="margin:0">
@@ -154,7 +154,7 @@ $publishedValue = $form['published_at'] ? date('Y-m-d\TH:i', strtotime((string) 
                         <button class="btn btn-sm" type="button" data-media-pick="cover_image">Pick</button>
                     </div>
                     <?php if (!empty($form['cover_image'])): ?>
-                        <img src="<?= e(\Omni\Cms::mediaUrl((string) $form['cover_image'])) ?>" alt="" class="thumbnail" style="width:100%;height:auto" data-preview-for="cover_image">
+                        <img src="<?= e(\Onim\Cms::mediaUrl((string) $form['cover_image'])) ?>" alt="" class="thumbnail" style="width:100%;height:auto" data-preview-for="cover_image">
                     <?php else: ?>
                         <img alt="" class="thumbnail" style="width:100%;height:auto" hidden data-preview-for="cover_image">
                     <?php endif; ?>

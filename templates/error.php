@@ -2,13 +2,13 @@
 /**
  * 404 page.
  *
- * @var \Omni\Seo $seo
+ * @var \Onim\Seo $seo
  */
 
 declare(strict_types=1);
 
-use Omni\Data;
-use Omni\View;
+use Onim\Data;
+use Onim\View;
 ?>
 <div class="shell page-shell">
     <header class="page-head">

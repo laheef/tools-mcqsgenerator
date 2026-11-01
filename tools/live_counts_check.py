@@ -33,7 +33,7 @@ SLUG = "live-count-check-probe"
 
 def php(code: str) -> str:
     """Run a snippet inside the site's own bootstrap (Db, Data, CustomCalc)."""
-    script = f"<?php\nrequire '{SITE}/config.php';\nuse Omni\\Db;\nuse Omni\\CustomCalc;\nuse Omni\\Data;\n{code}\n"
+    script = f"<?php\nrequire '{SITE}/config.php';\nuse Onim\\Db;\nuse Onim\\CustomCalc;\nuse Onim\\Data;\n{code}\n"
     out = subprocess.run(
         ["bash", f"{ROOT}/tools/php.sh"], input=script.encode(),
         capture_output=True, check=False,
@@ -59,7 +59,7 @@ def publish() -> None:
         "  'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s'),\n"
         "]);\n"
         "if (!$id) { echo 'INSERT FAILED: ' . implode(' ', Db::lastError()); }\n"
-        "Omni\\LiveCounts::invalidate();\necho 'published ' . $id;"
+        "Onim\\LiveCounts::invalidate();\necho 'published ' . $id;"
     )
 
 
@@ -75,7 +75,7 @@ def cleanup() -> None:
         "Db::exec('DELETE FROM custom_calculator_versions WHERE calculator_id IN (SELECT id FROM custom_calculators WHERE slug = ?)', ['"
         + SLUG + "']);\n"
         "Db::exec('DELETE FROM custom_calculators WHERE slug = ?', ['" + SLUG + "']);\n"
-        "Omni\\LiveCounts::invalidate();\necho 'cleaned';"
+        "Onim\\LiveCounts::invalidate();\necho 'cleaned';"
     )
 
 

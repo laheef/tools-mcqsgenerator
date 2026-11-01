@@ -1,19 +1,19 @@
 <?php
 /**
- * @var array $items @var \Omni\Admin\Pagination $paginator @var array $stats
+ * @var array $items @var \Onim\Admin\Pagination $paginator @var array $stats
  * @var string $q @var string $type @var array|null $editing @var array $editingUsage @var string $maxUpload
  */
 
 declare(strict_types=1);
 // Refuse direct HTTP requests: this file is only ever included by the panel.
-if (!defined('OMNI_PANEL')) {
+if (!defined('ONIM_PANEL')) {
     http_response_code(403);
     exit('Forbidden');
 }
 
 
-use Omni\Admin\Csrf;
-use Omni\Admin\MediaRepo;
+use Onim\Admin\Csrf;
+use Onim\Admin\MediaRepo;
 ?>
 <div class="grid grid-4" style="margin-bottom:18px">
     <div class="stat"><div class="label">Files</div><div class="value"><?= number_format($stats['count']) ?></div><div class="hint">images, documents, video</div></div>
