@@ -19,7 +19,16 @@ use Omni\CustomCalc;
 use Omni\Data;
 use Omni\Db;
 
-const BASE  = 'http://127.0.0.1:8080';
+/*
+ * Where the site under test answers. Default is a root install on :8080; set
+ * OMNI_TEST_BASE to exercise a subdirectory deployment, e.g.
+ *
+ *   OMNI_TEST_BASE=http://127.0.0.1:8097/tool php tests/e2e_panel.php
+ *
+ * Everything below derives the URL prefix from it, so the same suite proves
+ * mcqsgenerator.com/tool as well as a copy served from the domain root.
+ */
+define('BASE', getenv('OMNI_TEST_BASE') ?: 'http://127.0.0.1:8080');
 const ADMIN = BASE . '/admin/index.php';
 
 $GLOBALS['passed'] = 0;
@@ -1484,13 +1493,18 @@ function raw_get_with_host(string $url, string $host): string
 }
 
 $port = parse_url(BASE, PHP_URL_PORT) ?: 80;
+/* The site always advertises its own install path: '' at a domain root, '/tool'
+   in a subdirectory. Hard-coding the root form made these two checks fail —
+   correctly — on the deployment they are most needed for. */
+$prefix = rtrim((string) (parse_url(BASE, PHP_URL_PATH) ?: ''), '/');
 $a = raw_get_with_host(BASE . '/sitemap.xml', '127.0.0.1:' . $port);
 $b = raw_get_with_host(BASE . '/sitemap.xml', 'localhost:' . $port);
 t('34 the sitemap answers on the first host', str_contains($a, '<urlset'));
-t('34 it advertises the host that asked for it', str_contains($a, '<loc>http://127.0.0.1:' . $port . '/</loc>'));
+t('34 it advertises the host that asked for it',
+    str_contains($a, '<loc>http://127.0.0.1:' . $port . $prefix . '/</loc>'));
 t('34 the same cached sitemap is re-addressed for another host',
-    str_contains($b, '<urlset') && str_contains($b, '<loc>http://localhost:' . $port . '/</loc>')
-    && !str_contains($b, '<loc>http://127.0.0.1:' . $port . '/</loc>'));
+    str_contains($b, '<urlset') && str_contains($b, '<loc>http://localhost:' . $port . $prefix . '/</loc>')
+    && !str_contains($b, '<loc>http://127.0.0.1:' . $port . $prefix . '/</loc>'));
 t('34 both hosts list the same pages',
     substr_count($a, '<loc>') === substr_count($b, '<loc>') && substr_count($a, '<loc>') > 4000);
 
