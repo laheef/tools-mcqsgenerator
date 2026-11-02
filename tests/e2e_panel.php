@@ -2027,14 +2027,14 @@ t('42 the calculator name is above the tool',
 $appCss = (string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css');
 t('42 the tool column has no scrollbar of its own',
     !preg_match('~\.calc-widget-column\s*\{[^}]*overflow-y:\s*auto~', $appCss));
-t('42 a column too tall for the screen scrolls with the page',
-    str_contains($appCss, '.calc-widget-column.is-tall { position: static; }')
+t('42 the tool column pins whatever its height — ads included',
+    !str_contains($appCss, '.calc-widget-column.is-tall')
     && str_contains($appCss, 'top: var(--calc-pin, 0px);'));
 $appJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js');
-t('42 a column that fits the screen pins, one that does not is released',
-    str_contains($appJs, 'var fits = height <= room + SLACK;')
-    && str_contains($appJs, 'var SLACK = 96;')
-    && str_contains($appJs, "classList.toggle('is-tall', !fits)"));
+t('42 height never releases the column any more',
+    !str_contains($appJs, 'is-tall')
+    && !str_contains($appJs, 'viewport - height')
+    && str_contains($appJs, "'--calc-pin', clear + 'px'"));
 t('46 the pin is never negative, so no card starts above the header line',
     str_contains($appJs, "column.style.setProperty('--calc-pin', clear + 'px')")
     && !str_contains($appJs, 'viewport - height'));
@@ -2105,7 +2105,7 @@ t('46 every card carries a link and an arrow',
  */
 t('47 the column no longer flips under the header',
     !str_contains($appJs, "var next = delta > 0 ? 'down' : 'up';")
-    && str_contains($appJs, "column.classList.toggle('is-head-pinned', fits)"));
+    && !str_contains($appJs, 'is-head-pinned'));
 t('47 the pin keeps its distance from the header in both scroll directions',
     str_contains($appJs, "getPropertyValue('--header-h')")
     && str_contains($appJs, "'--calc-pin', clear + 'px'"));

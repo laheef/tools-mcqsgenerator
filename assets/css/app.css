@@ -725,14 +725,15 @@ button { font: inherit; color: inherit; }
  *
  * A calculator page is read top-down but used at the bottom: the reader scrolls
  * to the write-up, then back up to change a value. The column therefore sticks
- * — with its head held clear of the sticky header, never sliding under it —
- * because a card whose first field is hidden behind the header reads as a
- * broken page. `--calc-pin` is that measured offset, written by app.js.
+ * for the whole page, with its head held clear of the sticky header — never
+ * sliding under it, because a card whose first field is hidden behind the
+ * header reads as a broken page. `--calc-pin` is that measured offset, written
+ * by app.js.
  *
- * A column too tall for the space between header and fold cannot keep both
- * edges on screen, so it does not stick at all (`.is-tall`): it scrolls with
- * the page, and its fields, its button and its results are all reachable in
- * one scroll. There is one scrollbar on a page.
+ * The column is often much taller than the screen: it carries the ad slots
+ * below the tool. That is fine — the column pins by its head, so the tool is
+ * what stays on screen and the slots below it are what scrolls out of the
+ * pinned column. Height no longer decides whether the column pins at all.
  */
 .calc-widget-column {
   order: 1;
@@ -766,14 +767,6 @@ button { font: inherit; color: inherit; }
     align-self: start;
   }
 }
-
-/* A column taller than the space between header and fold cannot hold both
-   edges: pinning it by its foot would slide its first field under the header,
-   and pinning it by its head would leave the Calculate button permanently
-   below the fold. So it does neither — it scrolls with the page, which keeps
-   every field, the button and the results reachable in one scroll. app.js sets
-   the class from the measured height. */
-.calc-widget-column.is-tall { position: static; }
 
 /* Three columns, only when the rail has a tag in it. */
 @media (min-width: 1240px) {

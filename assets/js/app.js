@@ -411,31 +411,31 @@
   (function pinCalculatorColumn() {
     var column = document.querySelector('.calc-widget-column');
     if (!column) return;
-    var GAP = 24;        // breathing room between the column and the fold
     var MIN_TOP = 72;    // never tuck the column's head closer than this
-    var SLACK = 96;      // overhang allowed before the column stops pinning
 
     /*
-     * The tool column sticks, and its head always sits clear of the header.
+     * The tool column stays with the reader, and its head always sits clear of
+     * the header.
      *
-     * That "always" is the whole rule. An earlier version pinned a tall column
-     * by its FOOT so the Calculate button stayed in reach, and let the head
-     * slide up under the sticky header — on a 13-inch laptop the card's first
-     * field ended up behind the header, which reads as a broken page rather
-     * than a pinned one. Both edges cannot be held at once: a column taller
-     * than the space between header and fold has to lose one of them.
+     * Two earlier versions got one half of that and lost the other. Pinning the
+     * column by its FOOT (so Calculate stayed in reach) dragged the top of the
+     * card up under the sticky header, and — because the column also carries
+     * the ad slots below the tool — the "foot" was the bottom of a 600px
+     * skyscraper, so the card's heading was the first thing to disappear.
+     * Releasing the column when it did not fit the screen cured that and cost
+     * the stickiness altogether: with ads on, the column is 1,400–1,800px tall
+     * on every calculator, so it never fitted and never pinned.
      *
-     * So the head wins. A column may overhang the fold by one footer row — the
-     * share bar and the rounding note, SLACK below — and still pin: that is
-     * the part a reader can do without while the form is in view. Miss by
-     * more than that and the column does not stick at all (`.is-tall`): it
-     * scrolls with the page, so every field, the button and the results stay
-     * reachable in one scroll, and nothing is sliced by the header.
+     * The rule now is the simple one: the column pins, by its head, at the
+     * measured clearance, whatever its height — the tool stays on screen and
+     * its first field is never behind the header. What hangs below the fold is
+     * whatever the owner put below the tool: the ad slots scroll out of the
+     * pinned column, which is where they belong.
      *
-     * The offset is measured from the header rather than hard-coded: the
-     * header is ~119px at rest, shrinks to 59px when it sticks, and is a
-     * different height again on a phone. A fixed 88px put the top of the card
-     * under the header at some widths, which is what "the name is hidden" was.
+     * The offset is measured from the header rather than hard-coded: the header
+     * is ~119px at rest, shrinks to 59px when it sticks, and is a different
+     * height again on a phone. A fixed 88px put the top of the card under the
+     * header at some widths, which is what "the name is hidden" was.
      */
     function headerClearance() {
       var root = getComputedStyle(document.documentElement).getPropertyValue('--header-h');
@@ -452,29 +452,17 @@
     function paint() {
       var clear = headerClearance();
       lastClear = clear;
-      var viewport = window.innerHeight;
-      var height = column.getBoundingClientRect().height;
-      if (!height) return;
-
-      /* Does the column fit between the header and the fold, with a gap —
-         allowing one footer row to hang below the fold? */
-      var room = viewport - clear - GAP;
-      var fits = height <= room + SLACK;
-
-      /* The pin is never negative: the head rests `clear` from the top of the
+      /* The pin is never negative: the head rests `clear` below the top of the
          viewport in both scroll directions, so the first field and the tool's
          own heading never disappear under the header. */
       column.style.setProperty('--calc-pin', clear + 'px');
-      column.classList.toggle('is-tall', !fits);
-      column.classList.toggle('is-head-pinned', fits);
     }
 
     function onScroll() {
       /* The header shrinks from ~119px to 59px the moment it sticks, so the
          clearance genuinely changes early in the scroll. Recompute once per
-         change rather than leaving a stale 60px gap. */
-      var clear = headerClearance();
-      if (clear !== lastClear) {
+         change rather than leaving a stale gap. */
+      if (headerClearance() !== lastClear) {
         paint();
       }
     }
@@ -483,9 +471,6 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', paint);
     window.addEventListener('load', paint);
-    if (typeof ResizeObserver === 'function') {
-      new ResizeObserver(paint).observe(column);
-    }
   })();
 
   /* ------------------------------------------------------- ad slot fitting */
