@@ -415,6 +415,11 @@
        slots below the tool, and measuring those was what made a 480px form
        behave like a 1,600px one. */
     var card = column.querySelector('.calc-widget') || column;
+    /* The button the reader is scrolling towards. Everything above it — the
+       tool's name, its fields — is what the card is; this is the end of it. */
+    var action = card.querySelector('[data-calc-go]')
+      || card.querySelector('button[type="submit"]')
+      || card;
     var GAP = 24;        // breathing room between the card and the fold
     var MIN_TOP = 72;    // never tuck the card's head closer than this
     var FLIP = 6;        // scroll this far against the last direction to flip
@@ -429,11 +434,13 @@
      * pins by its HEAD, `clear` below the sticky header, and the tool's own
      * heading and first fields come back into view.
      *
-     * Both pins keep their distance from the header: the foot pin is clamped
-     * to the header line, so a card taller than the space between header and
-     * fold never slides its first field under the header — it stops at the
-     * clearance and the rest hangs below the fold, which is the only thing
-     * geometry leaves to choose when a card cannot fit the screen.
+     * The two pins are the two halves of the same card: its name and first
+     * fields at the top, its last field, Calculate and the results at the foot.
+     * A card that fits the window shows both, whichever edge is holding. A card
+     * taller than the window cannot — and there the foot wins on the way down,
+     * because the reason a reader is scrolling a long form is to reach the
+     * button at the bottom of it. Scrolling back up brings the name and the
+     * first fields down again.
      *
      * The offset is measured from the header rather than hard-coded: the header
      * is ~119px at rest, shrinks to 59px when it sticks, and is a different
@@ -471,16 +478,27 @@
       /* Head pin: the column's top — the tool's name — rests `clear` below the
          header, with the card directly under it. */
       var pinHead = Math.round(clear);
-      /* The floor for the foot pin: the card, not the name, keeps its distance
-         from the header. Reading down the page the card is what the reader is
-         using, and the name above it is allowed to slide up out of the way —
-         but the card's first field never goes behind the header. */
-      var footFloor = Math.round(clear) - offset;
-
-      var pin = mode === 'down' ? Math.max(pinFoot, footFloor) : pinHead;
+      /*
+       * Which edge holds on the way down.
+       *
+       * If the card's Calculate button is on screen with the head pin, the head
+       * holds: the name, the fields and the button are all visible and only the
+       * card's foot (the share row) may run under the fold. Preferring the head
+       * whenever it is enough is what keeps the name where it belongs.
+       *
+       * When it is not enough — a long form, or a card with an ad slot in the
+       * middle of it — the foot takes over, so the button and the results sit
+       * just above the fold. The top of that card is then above the header,
+       * which is the price of a form taller than the window; scrolling back up
+       * flips to the head and brings the name down again.
+       */
+      var actionOffset = Math.round(action.getBoundingClientRect().bottom - columnBox.top);
+      var buttonOnScreen = pinHead + actionOffset <= viewport - 8;
+      var pin = mode === 'up' ? pinHead
+        : (buttonOnScreen ? Math.max(pinFoot, pinHead) : pinFoot);
 
       column.style.setProperty('--calc-pin', pin + 'px');
-      column.classList.toggle('is-foot-pinned', mode === 'down' && pinFoot > pinHead);
+      column.classList.toggle('is-foot-pinned', mode === 'down' && pin !== pinHead);
     }
 
     function onScroll() {

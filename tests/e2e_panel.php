@@ -2035,9 +2035,9 @@ t('42 height never releases the column any more',
     !str_contains($appJs, 'is-tall')
     && !str_contains($appJs, 'viewport - height')
     && str_contains($appJs, "column.style.setProperty('--calc-pin', pin + 'px')"));
-t('46 the pin is never negative, so no card starts above the header line',
+t('46 the foot pin puts the Calculate button above the fold going down',
     str_contains($appJs, 'var pinFoot = Math.round(viewport - GAP - cardBox.height - offset);')
-    && str_contains($appJs, "var pin = mode === 'down' ? Math.max(pinFoot, footFloor) : pinHead;"));
+    && str_contains($appJs, "var pin = mode === 'up' ? pinHead"));
 
 /* 46 — the page that keeps up with the reader --------------------------------- */
 /*
@@ -2107,9 +2107,12 @@ t('47 the column pins by its foot going down and by its head coming back',
     str_contains($appJs, "var next = delta > 0 ? 'down' : 'up';")
     && str_contains($appJs, "column.classList.toggle('is-foot-pinned'")
     && str_contains($appJs, 'var pinHead = Math.round(clear);'));
-t('47 the card keeps its distance from the header in both scroll directions',
+t('47 the card keeps its distance from the header when it can',
     str_contains($appJs, "getPropertyValue('--header-h')")
-    && str_contains($appJs, 'var footFloor = Math.round(clear) - offset;'));
+    && str_contains($appJs, 'var buttonOnScreen = pinHead + actionOffset <= viewport - 8;'));
+t('47 the button decides the edge: head while it fits, foot when it does not',
+    str_contains($appJs, "card.querySelector('[data-calc-go]')")
+    && str_contains($appJs, 'var pin = mode === \'up\' ? pinHead'));
 t('47 the top offset is measured from the sticky header, not fixed',
     !str_contains($appJs, 'var TOP_GAP = 88;')
     && str_contains($appJs, 'function headerClearance()')
