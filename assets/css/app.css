@@ -167,6 +167,7 @@ button { font: inherit; color: inherit; }
 .site-header.is-stuck { --header-h: 58px; }
 @media (prefers-reduced-motion: reduce) {
   .site-header { transition: none; }
+  .calc-widget-column { transition: none; }
 }
 .header-top-inner {
   display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
@@ -750,12 +751,18 @@ button { font: inherit; color: inherit; }
   }
   .calc-widget-column {
     position: sticky;
-    /* app.js writes --calc-pin. Positive for a column short enough to pin by its
-       top; negative for a taller one, which then travels up with the page until
-       its last field and the Calculate button reach the bottom edge — and holds
-       there. Either way nothing moves on load: sticky only applies once the
-       page has scrolled past the column's own place in the document. */
+    /* app.js writes --calc-pin and flips it between two edges: scrolling down
+       a tall column is pinned by its bottom (negative offset, so its last field
+       and Calculate stay in reach); scrolling up it is pinned by its top,
+       clear of the sticky header, so the form's heading and first fields come
+       back into view. A short column pins by its top either way. Either way
+       nothing moves on load: sticky only applies once the page has scrolled
+       past the column's own place in the document. */
     top: var(--calc-pin, 0px);
+    /* The flip is a 600px slide on a long form, so let it glide rather than
+       teleport. Nothing animates during ordinary scrolling — the offset only
+       changes when the direction does. */
+    transition: top .18s ease-out;
     /* The column is taller than the grid row in some layouts; without this the
        grid would stretch it to the article's height and `align-self` would be
        ignored, making the sticky box as tall as its own containing block and
@@ -2818,8 +2825,10 @@ a:focus-visible > .calc-glyph,
 @media (min-width: 1100px) {
   .post-frame { grid-template-columns: minmax(0, 1fr) clamp(300px, 26vw, 340px); gap: 44px; }
   .post-rail {
-    position: sticky; top: 22px;
-    max-height: calc(100vh - 44px); overflow-y: auto;
+    /* Under the sticky header, the same measurement every other sticky box
+       uses — the header is 119px at rest and 59px once it sticks. */
+    position: sticky; top: calc(var(--header-h, 110px) + 22px);
+    max-height: calc(100vh - var(--header-h, 110px) - 44px); overflow-y: auto;
     overscroll-behavior: contain; scrollbar-width: thin;
     padding-bottom: 8px;
   }

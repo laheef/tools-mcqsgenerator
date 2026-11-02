@@ -402,79 +402,118 @@
       queued = true;
       window.requestAnimationFrame(update);
     }, { passive: true });
+    /* Publish the resting height straight away: the sticky offsets elsewhere on
+       the page read this variable before the first scroll happens. */
+    document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
     update();
   })();
 
   (function pinCalculatorColumn() {
     var column = document.querySelector('.calc-widget-column');
     if (!column) return;
-    var TOP_GAP = 88;   // where a top-pinned column rests, clear of the header
-    var GAP = 24;       // breathing room under a column pinned by its bottom
+    var GAP = 24;        // breathing room under a column pinned by its bottom
+    var MIN_TOP = 72;    // never tuck the column's head closer than this
+    var FLIP = 6;        // scroll this far against the last direction to flip
 
     /*
-     * The tool column never scrolls away. It stops.
+     * The tool column never scrolls away, and which of its edges holds depends
+     * on which way the reader is going.
      *
-     * A calculator page is read downwards and used at the bottom: you read the
-     * write-up, then come back to change a value. So the column is always
-     * sticky — which edge it pins to is the only decision, and the column's own
-     * height makes it:
+     * Down the page, the reader is reading; the form they need is the one they
+     * are about to fill in, so a column taller than the viewport is pinned by
+     * its BOTTOM: it travels up until the last field, the Calculate button and
+     * the results reach the bottom edge, and holds there.
      *
-     *   short enough to fit under the header  ->  it pins by its TOP at
-     *   `TOP_GAP`. The whole form stays readable while the article scrolls
-     *   beside it, which is what a reader wants from a compact tool.
+     * Up the page, the reader is going back to change a number, and what they
+     * need is the top of the form — the tool's own heading bar and the first
+     * fields. So the column flips and pins by its TOP, clear of the sticky
+     * header. Continuing up eventually returns it to its place in the flow;
+     * turning round again flips it back to the bottom.
      *
-     *   taller than that  ->  it pins by its BOTTOM. It travels up with the page
-     *   until its last field, the Calculate button and the results reach the
-     *   bottom of the viewport, and then it stops there. Pinning such a column
-     *   by its top instead would park a 1,200px form at 88px from the top and
-     *   put Calculate permanently below the fold — the one control the page
-     *   exists for, unreachable.
+     * The top offset is measured from the header rather than hard-coded: the
+     * header is ~119px at rest, shrinks to 59px when it sticks, and is a
+     * different height again on a phone. A fixed 88px put the top of the card
+     * under the header at some widths, which is what "the name is hidden" was.
      *
-     * The bottom pin is a *negative* `top`: sticky only begins to hold the
-     * column once its top would pass that line, which is exactly the moment its
-     * bottom meets the viewport's bottom edge. That also means nothing moves on
-     * load — the column sits where the document put it until the reader
-     * scrolls — and it cannot slide under the header, because it never pins
-     * above the fold at all.
-     *
-     * Columns were previously dropped to `position: static` when they were
-     * taller than the viewport, on the grounds that a sticky box taller than
-     * its scrollport "just covers the page". It does not: it scrolls normally
-     * until its bottom arrives, and then it holds. Dropping them was the bug —
-     * the majority of the catalogue is that tall, so most calculator pages had
-     * a column that simply scrolled off.
+     * A column short enough to fit under the header never needs the flip: it
+     * pins at the top either way, and its bottom is always on screen.
      */
-    function place() {
+    function headerClearance() {
+      var root = getComputedStyle(document.documentElement).getPropertyValue('--header-h');
+      var measured = parseFloat(root);
+      if (!measured || isNaN(measured)) {
+        var header = document.querySelector('.site-header');
+        measured = header ? header.offsetHeight : 0;
+      }
+      return Math.max(Math.round(measured) + 18, MIN_TOP);
+    }
+
+    function naturalTopOf(el) {
+      var top = 0;
+      var node = el;
+      while (node) {
+        top += node.offsetTop || 0;
+        node = node.offsetParent;
+      }
+      return top;
+    }
+
+    var mode = 'down';              // 'down' = pinned by the bottom, 'up' = by the top
+    var lastY = window.pageYOffset;
+    var naturalTop = naturalTopOf(column);
+
+    function paint() {
+      lastClear = headerClearance();
       var viewport = window.innerHeight;
       var height = column.getBoundingClientRect().height;
       if (!height) return;
-
-      // The column's place in the document, independent of the scroll position.
-      // Read from offsetTop, never from getBoundingClientRect(): the rect would
-      // report the already-shifted position the sticky offset produced.
-      var naturalTop = 0;
-      var node = column;
-      while (node) {
-        naturalTop += node.offsetTop || 0;
-        node = node.offsetParent;
-      }
-
-      var fitsUnderHeader = height <= viewport - TOP_GAP - GAP;
+      var clear = headerClearance();
+      var fits = height <= viewport - clear - GAP;
       var pin;
-      if (fitsUnderHeader) {
-        // Top-pinned. Never below the column's own resting place, or applying
-        // the offset on load would shove a column that starts high on the page
-        // down to the header line.
-        pin = Math.min(TOP_GAP, Math.round(naturalTop));
+      if (fits || mode === 'up') {
+        // Top-hung. `min` keeps a column that starts high on the page from
+        // being pushed down to the header line on load.
+        pin = Math.min(clear, Math.round(naturalTop));
       } else {
-        // Bottom-pinned: negative, so the column travels until its foot reaches
-        // the bottom of the viewport and stops there.
+        // Bottom-hung: negative, so the column travels up with the page until
+        // its foot reaches the bottom of the viewport, and stops.
         pin = Math.round(viewport - height - GAP);
       }
       column.style.setProperty('--calc-pin', pin + 'px');
+      column.classList.toggle('is-head-pinned', fits || mode === 'up');
+    }
+
+    function place() {
+      naturalTop = naturalTopOf(column);
+      paint();
+    }
+
+    var lastClear = -1;
+
+    function onScroll() {
+      var y = window.pageYOffset;
+      var delta = y - lastY;
+      lastY = y;
+
+      /* The header shrinks from ~119px to 59px the moment it sticks, so the
+         clearance a top-pinned column rests at genuinely changes early in the
+         scroll. The pin was computed against the resting height, so recompute
+         once per change rather than leaving a stale 60px gap. */
+      var clear = headerClearance();
+      if (clear !== lastClear) {
+        lastClear = clear;
+        paint();
+      }
+
+      if (Math.abs(delta) < FLIP) return;
+      var next = delta > 0 ? 'down' : 'up';
+      if (next === mode) return;
+      mode = next;
+      paint();
     }
 
     place();
+    window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', place);
     window.addEventListener('load', place);
     if (typeof ResizeObserver === 'function') {

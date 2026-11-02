@@ -1699,8 +1699,8 @@ t('36 the post has one rail, not a contents strip and a sidebar',
     && !str_contains($postTpl, 'post-toc'));
 t('36 the post contents live inside the rail',
     strpos($postTpl, 'class="post-rail"') < strpos($postTpl, 'post-rail-contents'));
-t('36 the post rail is sticky from the top on a desktop',
-    (bool) preg_match('~\.post-rail \{[^}]*position: sticky; top: \d+px~s', $css));
+t('36 the post rail is sticky from the top on a desktop, clear of the header',
+    (bool) preg_match('~\.post-rail \{[^}]*position: sticky; top: calc\(var\(--header-h~s', $css));
 
 /* 37 — the form grid ------------------------------------------------------- */
 /*
@@ -2032,7 +2032,7 @@ t('42 a tall column is pinned by its foot, never dropped to static',
     && str_contains($appCss, 'top: var(--calc-pin, 0px);'));
 $appJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js');
 t('42 every column pins, whichever edge its height allows',
-    str_contains($appJs, 'fitsUnderHeader')
+    str_contains($appJs, 'var fits = height <= viewport - clear - GAP;')
     && str_contains($appJs, 'Math.round(viewport - height - GAP)')
     && !str_contains($appJs, "classList.toggle('is-tall'"));
 t('46 a tall column pins with a negative offset, so its Calculate button reaches the fold',
@@ -2093,6 +2093,29 @@ $catPage = get(BASE . '/chemistry')['body'];
 t('46 the category index is made of cards', substr_count($catPage, 'class="index-item"') > 50);
 t('46 every card carries a link and an arrow',
     substr_count($catPage, 'class="index-link"') === substr_count($catPage, 'class="index-go"'));
+
+/* 47 — the column follows the reader's direction ---------------------------- */
+/*
+ * Scrolling down, a tall column hangs from its bottom so the Calculate button
+ * stays in reach. Scrolling back up, it flips and hangs from its top so the
+ * form's own heading and first fields come back into view — and it never tucks
+ * under the sticky header, because the offset is measured from the header
+ * rather than hard-coded.
+ */
+t('47 the column flips its pinned edge with the scroll direction',
+    str_contains($appJs, "var next = delta > 0 ? 'down' : 'up';")
+    && str_contains($appJs, "column.classList.toggle('is-head-pinned'"));
+t('47 the top offset is measured from the sticky header, not fixed',
+    !str_contains($appJs, 'var TOP_GAP = 88;')
+    && str_contains($appJs, 'function headerClearance()')
+    && str_contains($appJs, '--header-h'));
+t('47 a top-pinned column keeps a real gap under the header',
+    str_contains($appJs, 'Math.max(Math.round(measured) + 18, MIN_TOP)'));
+t('47 the header publishes its height before the first scroll',
+    (bool) preg_match('~document\.documentElement\.style\.setProperty\(.--header-h., header\.offsetHeight~', $appJs));
+t('47 the pinned edge is animated, and not when motion is reduced',
+    str_contains($appCss, 'transition: top .18s ease-out;')
+    && (bool) preg_match('~prefers-reduced-motion: reduce\)\s*\{.*?\.calc-widget-column \{ transition: none; \}~s', $appCss));
 
 /* ---------------------------------------------------------------- summary */
 
