@@ -26,7 +26,7 @@
     },
     {
       "title": "What does the result mean?",
-      "html": "<ul><li>Shown in cubic centimeters, and convertible to any of the 40 units on that chip.</li><li>Shown in nanograms per milliliter, and convertible to any of the 1 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
+      "html": "<ul><li>Shown in cubic centimeters, and convertible to any of the 40 units on that chip.</li><li>Shown in nanograms per milliliter, and convertible to any of the units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. Those three account for almost every answer that is out by a factor.</p>"
     },
     {
       "title": "How are units and precision handled?",
