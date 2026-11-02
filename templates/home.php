@@ -110,6 +110,12 @@ foreach ($sections as $section) {
                     <?php endif; ?>
                 </div>
 
+                <div class="hero-side">
+                    <?php /* A worked example, drawn: the promise in the lede, shown
+                             once before a word of it is read. Decorative — the
+                             numbers are illustrative and the copy says the same
+                             thing in words. */ ?>
+                    <div class="hero-figure" aria-hidden="true"><?= Figures::svg('worked-example', 'hero-figure-art') ?></div>
                 <form class="hero-search" role="search" action="<?= View::escape(View::url('/search')) ?>" method="get" autocomplete="off">
                     <label class="sr-only" for="hero-search">Search calculator</label>
                     <input id="hero-search" type="search" name="q" placeholder="Search calculator…" data-search-input
@@ -119,6 +125,7 @@ foreach ($sections as $section) {
                     </button>
                     <div class="search-suggestions" id="search-suggestions-hero" role="listbox" hidden></div>
                 </form>
+                </div>
             </div>
         </section>
     <?php elseif ($type === 'search'): ?>

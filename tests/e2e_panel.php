@@ -2078,6 +2078,8 @@ t('46 the homepage draws its how-it-works figures',
     substr_count($homeBody, 'howto-figure') >= 4 && substr_count($homeBody, 'how-figure') >= 2);
 t('46 figures are inline SVG, not image files',
     !str_contains($homeBody, '<img') || substr_count($homeBody, 'figure-art') >= 1);
+t('46 the hero shows a worked example, drawn',
+    str_contains($homeBody, 'hero-figure-art') && str_contains($homeBody, 'fg-grad-worked-example'));
 
 /* Category index: real cards, each a link with its own arrow. */
 $catPage = get(BASE . '/chemistry')['body'];

@@ -214,6 +214,36 @@ SVG,
              * The catalogue: nine cards, three of them lit — a directory of
              * thousands that still starts with one row you can scan.
              */
+            /*
+             * The hero's worked example: a result card that shows the whole
+             * promise at a glance — the values you typed, the equation they
+             * went through, the answer with its unit. Deliberately the only
+             * figure with words in it, because "prints the formula it used" is
+             * the claim the whole site rests on.
+             */
+            'worked-example' => <<<'SVG'
+<rect x="18" y="30" width="272" height="128" rx="16" fill="#DDE3F4" opacity=".55"/>
+<rect x="14" y="22" width="272" height="128" rx="16" fill="#FFFFFF" stroke="#DDE3F4"/>
+<g font-family="inherit">
+    <rect x="34" y="40" width="86" height="30" rx="8" fill="#F7F9FF" stroke="#E3E8F6"/>
+    <text x="44" y="59" font-size="11" fill="#8A96B4">a</text>
+    <text x="62" y="60" font-size="13" font-weight="600" fill="#2B3A66">3</text>
+    <text x="94" y="59" font-size="9" fill="#8A96B4">cm</text>
+    <rect x="128" y="40" width="86" height="30" rx="8" fill="#F7F9FF" stroke="#E3E8F6"/>
+    <text x="138" y="59" font-size="11" fill="#8A96B4">b</text>
+    <text x="156" y="60" font-size="13" font-weight="600" fill="#2B3A66">4</text>
+    <text x="188" y="59" font-size="9" fill="#8A96B4">cm</text>
+    <circle cx="252" cy="55" r="13" fill="#ECF3EC"/>
+    <path d="m246 55 4 4.5 7.5-8.5" stroke="#2E7D4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="34" y="97" font-size="12.5" fill="#77839F">a&#178; + b&#178; = c&#178;</text>
+    <line x1="34" y1="108" x2="266" y2="108" stroke="#EDF0F9"/>
+    <text x="34" y="132" font-size="17" font-weight="700" fill="#2B3A66">c = 5 cm</text>
+    <circle cx="252" cy="124" r="15" fill="#3B68FC"/>
+    <rect x="249.1" y="116.6" width="9.2" height="9.2" rx="2.4" stroke="#FFFFFF" stroke-width="1.8"/>
+    <rect x="245.7" y="120.2" width="9.2" height="9.2" rx="2.4" fill="#FFFFFF"/>
+</g>
+SVG,
+
             'catalogue' => <<<'SVG'
 <rect x="0" y="0" width="320" height="180" rx="16" fill="url(#fg-grad-catalogue)"/>
 <g stroke="#DDE3F4" fill="#FFFFFF">

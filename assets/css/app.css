@@ -337,8 +337,17 @@ button { font: inherit; color: inherit; }
 
 /* On phones the header search is already on screen, so the hero repeats it. */
 @media (max-width: 723px) { .hero-search { display: none; } }
+/* The right half of the hero: a drawn worked example over the search box. The
+   figure is the first thing a visitor sees that explains the product without
+   being read, so it sits above the search on every width big enough to draw it
+   at a readable size; below that the hero stays copy-only. */
+.hero-side { flex: 1 1 420px; min-width: 280px; display: flex; flex-direction: column; gap: 18px; }
+.hero-figure { display: none; }
+.hero-figure-art { display: block; width: 100%; max-width: 430px; height: auto; margin-right: auto; }
+@media (min-width: 900px) { .hero-figure { display: block; } }
+
 .hero-search {
-  position: relative; flex: 1 1 420px; display: flex; align-items: center; min-width: 280px;
+  position: relative; flex: 0 0 auto; display: flex; align-items: center; min-width: 280px;
   max-width: 990px;
 }
 .hero-search input[type="search"] {
