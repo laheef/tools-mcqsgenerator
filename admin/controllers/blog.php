@@ -121,7 +121,6 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     }
 
     $data = [
-        'category_id'      => $categoryId > 0 ? $categoryId : null,
         'slug'             => $slug,
         'title'            => $title,
         'excerpt'          => mb_substr(trim((string) (post('excerpt', '') ?? '')), 0, 400),
@@ -140,6 +139,10 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         'noindex'          => post_bool('noindex') ? 1 : 0,
         'updated_at'       => date('Y-m-d H:i:s'),
     ];
+
+    if (Db::hasColumn('posts', 'category_id')) {
+        $data['category_id'] = $categoryId > 0 ? $categoryId : null;
+    }
 
     if ($id > 0) {
         Db::update('posts', $data, 'id = :id', [':id' => $id]);
@@ -192,9 +195,14 @@ if ($page === 'blog-edit') {
 $q = (string) (request('q') ?? '');
 $status = (string) (request('status') ?? '');
 $categoryFilter = (string) (request('category') ?? '');
-$sql = 'SELECT p.*, u.name AS author, c.name AS category, c.slug AS category_slug
-        FROM posts p LEFT JOIN users u ON u.id = p.author_id
-        LEFT JOIN post_categories c ON c.id = p.category_id WHERE 1 = 1';
+/* Migration 008 adds the category column; until the owner applies it the list
+   must still work, so the join is only built when it can be. */
+$catJoin = Cms::hasCategories() && Db::hasColumn('posts', 'category_id');
+$sql = 'SELECT p.*, u.name AS author'
+    . ($catJoin ? ', c.name AS category, c.slug AS category_slug' : ', NULL AS category, NULL AS category_slug')
+    . ' FROM posts p LEFT JOIN users u ON u.id = p.author_id'
+    . ($catJoin ? ' LEFT JOIN post_categories c ON c.id = p.category_id' : '')
+    . ' WHERE 1 = 1';
 $params = [];
 if (!$canManageOthers) {
     $sql .= ' AND p.author_id = ?';
@@ -209,7 +217,7 @@ if ($status !== '') {
     $sql .= ' AND p.status = ?';
     $params[] = $status;
 }
-if ($categoryFilter !== '') {
+if ($categoryFilter !== '' && $catJoin) {
     $sql .= ' AND c.slug = ?';
     $params[] = $categoryFilter;
 }

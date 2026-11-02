@@ -22,6 +22,15 @@ use Onim\Admin\Flash;
 use Onim\Cms;
 use Onim\Db;
 
+/*
+ * The table arrives with migration 008. If the owner has not applied the pending
+ * update yet, this screen says so instead of throwing a 500 at them.
+ */
+if (!Cms::hasCategories()) {
+    \Onim\Admin\Flash::error('The blog categories table is not there yet. Open the dashboard and apply the pending database update, then come back.');
+    redirect_to(admin_url('dashboard'));
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     Csrf::requirePost();
     Csrf::assert();
