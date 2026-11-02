@@ -19,7 +19,7 @@ AddDefaultCharset UTF-8
     # The panel keeps its own front controller.
     RewriteRule ^admin/(lib|views|controllers|migrations)/ - [F,L]
     # Data, caches, backups, tests and the build notes are not public.
-    RewriteRule ^(data|tests|tools|docs|install)/ - [F,L]
+    RewriteRule ^(data|tests|tools|docs|install|plugins)/ - [F,L]
     RewriteRule ^config\.(db|local|db\.sample)\.php - [F,L]
     # Nothing in uploads/ is ever executed; uploaded files are media only.
     RewriteRule ^uploads/.*\.(php|phtml|phar|php[0-9]+)$ - [F,L]

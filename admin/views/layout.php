@@ -50,6 +50,7 @@ $navGroups = [
         'items' => [
             ['page' => 'calculators', 'label' => 'Calculators', 'icon' => 'calculator'],
             ['page' => 'custom-calculators', 'label' => 'Custom calculators', 'icon' => 'star'],
+            ['page' => 'tool-plugins', 'label' => 'Tool plugins', 'icon' => 'code'],
             ['page' => 'categories', 'label' => 'Categories', 'icon' => 'grid'],
             ['page' => 'files', 'label' => 'Source files', 'icon' => 'code'],
             ['page' => 'modules', 'label' => 'Modules', 'icon' => 'layout'],

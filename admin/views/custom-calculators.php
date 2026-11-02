@@ -120,6 +120,11 @@ use Onim\Admin\Csrf;
                             <?php if ((int) $row['is_featured'] === 1): ?>
                                 <span class="badge badge-brand"><?= admin_icon('star', 10) ?> Featured</span>
                             <?php endif; ?>
+                            <?php if ((string) ($row['kind'] ?? 'builder') === 'tool'): ?>
+                                <span class="badge badge-brand" title="The widget is a PHP file in plugins/">
+                                    <?= admin_icon('code', 10) ?> Tool file
+                                </span>
+                            <?php endif; ?>
                             <?php if (\Onim\CustomCalc::needsReview($row)): ?>
                                 <span class="badge badge-warn"
                                       title="The article was drafted from the definition and has not been read yet">Draft article · unread</span>

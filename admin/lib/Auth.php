@@ -39,6 +39,7 @@ final class Auth
         'custom-calculators'     => ['administrator', 'editor'],
         'custom-calculator-edit' => ['administrator', 'editor'],
         'custom-import'          => ['administrator', 'editor'],
+        'tool-plugins'           => ['administrator'],
         'modules'                => ['administrator'],
         'categories'       => ['administrator', 'editor'],
         'files'            => ['administrator', 'editor'],

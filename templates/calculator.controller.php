@@ -367,7 +367,9 @@ usort($crossCategory, static fn ($a, $b) => ((int) $b['count']) <=> ((int) $a['c
 $crossCategory = array_slice($crossCategory, 0, 6);
 
 echo View::page('calculator', [
-    'withCalculatorJs' => true,
+    /* A tool-backed page owns its own script; calc.js would only find an
+       empty form and no payload. */
+    'withCalculatorJs' => empty($calc['tool']['shortcode']),
     /* Body class: the layout uses it to stand the sitewide leaderboard down,
        so a calculator page does not stack two of them. */
     'bodyClass' => 'is-calculator',

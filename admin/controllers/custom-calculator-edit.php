@@ -77,6 +77,16 @@ $modelFromRequest = static function () use ($row): array {
         'fields'           => $fields,
         'directions'       => $directions,
         'js'               => post('js', '') ?? '',
+        /*
+         * Which of the two kinds of widget this page has. The value is on the
+         * form (Advanced → Widget source), so a formula page can be switched
+         * to a tool file and back without losing its fields.
+         */
+        'kind'           => in_array((string) (post('kind', 'builder') ?? 'builder'), ['builder', 'tool'], true)
+            ? (string) (post('kind', 'builder') ?? 'builder')
+            : 'builder',
+        'tool_shortcode' => trim((string) (post('tool_shortcode', '') ?? '')),
+        'tool_version'   => (string) ($row['tool_version'] ?? ''),
     ];
 };
 
@@ -105,7 +115,10 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     $model = $modelFromRequest();
     $tab   = (string) (post('tab', 'basics') ?? 'basics');
 
-    if ($action === 'draft' && ($model['fields'] ?? []) === [] && ($model['directions'] ?? []) === []) {
+    if ($action === 'draft' && (string) ($model['kind'] ?? 'builder') === 'tool') {
+        Flash::error('A tool-backed page has no fields to draft from. Write the article yourself — you know what the tool does better than a generator does.');
+        $tab = 'article';
+    } elseif ($action === 'draft' && ($model['fields'] ?? []) === [] && ($model['directions'] ?? []) === []) {
         /* there is nothing to describe yet: drafting here would invent a page */
         Flash::error('Add the fields and at least one formula first — the draft is written from them, so there is nothing to say yet.');
         $tab = 'basics';
@@ -186,6 +199,21 @@ if ((int) ($row['id'] ?? 0) > 0 && (string) $values['slug'] !== '') {
 }
 
 $unitGroups = CustomCalc::unitGroups();
+
+/* The tool files the Advanced tab offers, and the one this page currently
+   renders. A page may point at a tool that has since been deleted: the list
+   says so instead of hiding the fact. */
+$toolChoices = [];
+foreach (\Onim\Toolkit::valid() as $shortcode => $tool) {
+    $toolChoices[$shortcode] = $tool['name'] . '  ·  [' . $shortcode . ']';
+}
+$toolMissing = '';
+if ((string) ($values['kind'] ?? 'builder') === 'tool' && (string) ($values['tool_shortcode'] ?? '') !== '') {
+    $current = (string) $values['tool_shortcode'];
+    if (!isset($toolChoices[$current])) {
+        $toolMissing = 'The file for [' . $current . '] is not in plugins/ any more. Upload it again or point this page at another tool.';
+    }
+}
 $versions   = $row === null ? [] : CustomCalc::versions((int) $row['id']);
 
 $pageTitle = $row === null ? 'New custom calculator' : (string) $row['name'];
@@ -204,6 +232,6 @@ if ($publicUrl !== null) {
 
 render('custom-calculator-edit', compact(
     'row', 'values', 'errors', 'test', 'tab', 'categoryOptions', 'unitGroups', 'draftReport',
-    'versions', 'previewUrl', 'publicUrl', 'publicPath',
+    'versions', 'previewUrl', 'publicUrl', 'publicPath', 'toolChoices', 'toolMissing',
     'pageTitle', 'title', 'breadcrumbs', 'topbarActions'
 ));

@@ -2117,6 +2117,177 @@ t('47 the pinned edge is animated, and not when motion is reduced',
     str_contains($appCss, 'transition: top .18s ease-out;')
     && (bool) preg_match('~prefers-reduced-motion: reduce\)\s*\{.*?\.calc-widget-column \{ transition: none; \}~s', $appCss));
 
+
+/* 48 — tool plugins: a calculator whose widget is a PHP file ---------------- */
+/*
+ * The whole lifecycle, over HTTP, on the real panel: a bad file is refused, a
+ * good one is stored, a draft page is created from it, the page renders the
+ * tool in the public tool column (with the article and related grid intact and
+ * no client solver payload), a file still in use cannot be deleted, and once
+ * the page is gone it can be.
+ */
+$tmpDir = sys_get_temp_dir() . '/onim-tool-e2e-' . bin2hex(random_bytes(4));
+@mkdir($tmpDir, 0775, true);
+
+$fixture = static function (string $name, string $body) use ($tmpDir): string {
+    $path = $tmpDir . '/' . $name;
+    file_put_contents($path, $body);
+    return $path;
+};
+
+/* Follow a panel redirect and return the page it landed on, so a Flash message
+   can be read the way an editor reads it. */
+$afterPost = static function (array $response): string {
+    $location = (string) ($response['location'] ?? '');
+    if ($location === '') {
+        return (string) $response['body'];
+    }
+    /* The panel redirects with a path ("/admin/index.php?p=…"), not a URL. */
+    if (str_starts_with($location, '/')) {
+        $location = BASE . $location;
+    }
+    return (string) get($location)['body'];
+};
+
+$toolScreen = page('tool-plugins');
+t('48 the Tool plugins screen lists the shipped tools',
+    $toolScreen['status'] === 200
+    && str_contains($toolScreen['body'], 'tool_percentage_of')
+    && str_contains($toolScreen['body'], 'tool_tip_split'));
+t('48 it says which folder a tool lives in',
+    str_contains($toolScreen['body'], 'plugins/math/'));
+t('48 it explains the four steps from file to page',
+    str_contains($toolScreen['body'], 'How a tool becomes a page')
+    && str_contains($toolScreen['body'], 'Create the page'));
+
+/* -- a file that is not PHP is refused ------------------------------------ */
+$notPhp = $fixture('notes.txt', "just some notes\n");
+post('tool-plugins', ['do' => 'upload', 'category' => 'math'], [], ['file' => $notPhp]);
+t('48 a non-PHP upload is refused', !is_file(dirname(__DIR__) . '/plugins/math/qm-tool-notes.php'));
+
+/* -- a PHP file with no header block is refused --------------------------- */
+$noHeader = $fixture('qm-tool-no-header.php', "<?php\necho 'hello';\n");
+post('tool-plugins', ['do' => 'upload', 'category' => 'math'], [], ['file' => $noHeader]);
+t('48 a file with no header block is refused',
+    !is_file(dirname(__DIR__) . '/plugins/math/qm-tool-no-header.php'));
+
+/* -- a file that does not parse is refused -------------------------------- */
+$broken = $fixture('qm-tool-broken.php', "<?php\n/**\n * Tool Name: Broken\n * Shortcode: tool_broken\n */\nfunction broken( {\n");
+$brokenResult = $afterPost(post('tool-plugins', ['do' => 'upload', 'category' => 'math'], [], ['file' => $broken]));
+t('48 a file that does not parse is refused, and says so',
+    !is_file(dirname(__DIR__) . '/plugins/math/qm-tool-broken.php')
+    && str_contains($brokenResult, 'does not parse'));
+
+/* -- a good file is stored ------------------------------------------------ */
+$good = $fixture('qm-tool-e2e.php', <<<'PHP'
+<?php
+/**
+ * Tool Name: E2E Scratch Tool
+ * Shortcode: tool_e2e_scratch
+ * Category: math
+ * Version: 9.9
+ * Description: Written by the test suite, deleted by the test suite.
+ */
+
+declare(strict_types=1);
+
+if (!defined('ONIM_TOOLKIT')) {
+    http_response_code(403);
+    exit('no');
+}
+
+use Onim\Toolkit;
+
+Toolkit::addShortcode('tool_e2e_scratch', static function (array $atts, ?string $inner, array $ctx): string {
+    return '<div class="e2e-scratch" id="' . Toolkit::e((string) $ctx['uid']) . '">scratch tool works</div>';
+});
+PHP);
+$uploaded = $afterPost(post('tool-plugins', ['do' => 'upload', 'category' => 'math'], [], ['file' => $good]));
+/* The panel names the stored file after the shortcode, not after whatever the
+   upload happened to be called: qm-tool-e2e-scratch.php. */
+$storedFile    = dirname(__DIR__) . '/plugins/math/qm-tool-e2e-scratch.php';
+$storedRelative = 'math/qm-tool-e2e-scratch.php';
+t('48 a valid tool file is stored in its category folder', is_file($storedFile));
+t('48 the screen confirms the upload and names the shortcode',
+    str_contains($uploaded, 'tool_e2e_scratch') && str_contains($uploaded, 'Just uploaded'));
+
+/* -- the same shortcode from a file placed by hand is refused ------------- */
+/*
+ * The panel names uploads after their shortcode, so two uploads of the same
+ * shortcode collide on the file name. The interesting case is a file added
+ * another way — FTP, a deployment — that claims a shortcode already taken:
+ * that must be refused on the shortcode, not on the file name.
+ */
+$handmade = dirname(__DIR__) . '/plugins/math/qm-tool-e2e-handmade.php';
+file_put_contents($handmade, (string) file_get_contents($good));
+$duplicate = $fixture('qm-tool-e2e-copy.php', (string) file_get_contents($good));
+$dupeResult = $afterPost(post('tool-plugins', ['do' => 'upload', 'category' => 'math'], [], ['file' => $duplicate]));
+t('48 a second file claiming a shortcode that is already taken is refused',
+    str_contains($dupeResult, 'already used by'));
+@unlink($handmade);
+\Onim\Toolkit::forget();
+
+/* -- create the page ------------------------------------------------------ */
+$created = post('tool-plugins', ['do' => 'create', 'shortcode' => 'tool_e2e_scratch', 'category' => 'math']);
+$row = row('SELECT * FROM custom_calculators WHERE tool_shortcode = ?', ['tool_e2e_scratch']);
+t('48 one click creates a draft page bound to the tool',
+    $row !== null && (string) $row['kind'] === 'tool' && (string) $row['status'] === 'draft',
+    $row === null ? 'no row' : (string) $row['kind'] . '/' . (string) $row['status']);
+t('48 the created page keeps the file path', $row !== null && (string) $row['tool_file'] === $storedRelative);
+t('48 creating the page opens its editor', $created['status'] === 303);
+
+$toolId = $row !== null ? (int) $row['id'] : 0;
+$path   = $row !== null ? '/' . $row['category_slug'] . '/' . $row['slug'] : '';
+
+if ($toolId > 0) {
+    Db::exec('UPDATE custom_calculators SET status = ? WHERE id = ?', ['published', $toolId]);
+    \Onim\CustomCalc::flush();
+    \Onim\Data::flush();
+
+    $publicPage = get(BASE . $path);
+    t('48 the published page renders with 200', $publicPage['status'] === 200, (string) $publicPage['status']);
+    t('48 the tool\'s own markup is in the tool column',
+        str_contains($publicPage['body'], 'calc-tool-frame') && str_contains($publicPage['body'], 'scratch tool works'));
+    t('48 the page still has its article column', str_contains($publicPage['body'], 'calc-article'));
+    t('48 no form-builder residue: no client payload, no calc.js',
+        !str_contains($publicPage['body'], 'id="calc-definition"')
+        && !str_contains($publicPage['body'], '/assets/js/calc.js'));
+    t('48 the share row is offered, but without a result to share',
+        str_contains($publicPage['body'], 'data-calc-share')
+        && !str_contains($publicPage['body'], 'value="result"'));
+    t('48 the page is in the sitemap',
+        str_contains(get(BASE . '/sitemap.xml')['body'], $path));
+
+    $editor = page('custom-calculator-edit', ['id' => $toolId]);
+    t('48 the editor shows the tool card instead of the field builder',
+        str_contains($editor['body'], 'This page is a tool file')
+        && !str_contains($editor['body'], 'What the visitor types in'));
+
+    /* -- a file in use cannot be deleted --------------------------------- */
+    post('tool-plugins', ['do' => 'delete', 'tool_file' => $storedRelative]);
+    t('48 a file a page still uses is not deleted', is_file($storedFile));
+
+    /* -- the page goes, then the file can go ----------------------------- */
+    \Onim\CustomCalc::delete($toolId);
+    \Onim\Data::flush();
+    post('tool-plugins', ['do' => 'delete', 'tool_file' => $storedRelative]);
+    t('48 with the page gone the file can be deleted', !is_file($storedFile));
+    t('48 the deleted page no longer answers', get(BASE . $path)['status'] === 404);
+}
+
+/* -- the folder is not served -------------------------------------------- */
+t('48 a tool file is not fetchable over HTTP',
+    get(BASE . '/plugins/math/qm-tool-percentage-of.php')['status'] === 404);
+t('48 the folder index is not fetchable either',
+    get(BASE . '/plugins/')['status'] === 404);
+
+/* leftovers from a failed run */
+foreach (glob($tmpDir . '/*') ?: [] as $leftover) {
+    @unlink($leftover);
+}
+@rmdir($tmpDir);
+
+
 /* ---------------------------------------------------------------- summary */
 
 printf("\n%d passed, %d failed\n", $GLOBALS['passed'], $GLOBALS['failed']);

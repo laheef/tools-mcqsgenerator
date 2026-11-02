@@ -91,7 +91,7 @@ hPanel → **Files** → **File Manager** → `public_html/tool` should now cont
 
 ```
 .htaccess   index.php   config.php   config.db.sample.php
-admin/  assets/  data/  install/  lib/  templates/  uploads/
+admin/  assets/  data/  install/  lib/  plugins/  templates/  uploads/
 HOSTINGER-GUIDE.md  INSTALL.txt  README.md
 ```
 
@@ -110,6 +110,7 @@ The site will not work yet — there is no database connection. That is Step 6.
 | `data/cache/*` | Regenerated caches (only `.gitkeep` is tracked) | Recreated on demand |
 | `data/backups/*` | SQL dumps contain password hashes (only `.gitkeep` is tracked) | Cron/panel backups stay on the server |
 | `uploads/media/*` | Images you upload in the panel (only `.gitkeep` is tracked) | Stay on the server |
+| `plugins/<category>/qm-tool-*.php` added from the panel | Tool files uploaded in **Tool plugins** | The ones in the repository ship with a deploy; a file you upload on the server lives only there — download it from the panel before you reconnect the repository |
 
 **Consequence to remember:** anything in that table exists *only* on the server.
 A redeploy normally leaves untracked files alone, but if you ever

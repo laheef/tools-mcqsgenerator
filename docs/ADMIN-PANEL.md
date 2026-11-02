@@ -36,6 +36,7 @@ degrade the panel, not the 3,831 pages that earn the traffic.
 | **Custom calculators** | build a calculator the catalogue never had — fields, units, formulas, article, FAQ, SEO — and publish it as an ordinary page, with a one-click draft of the article written from the definition |
 | **Bulk import** | create a whole niche from one JSON or CSV document, with a dry run that writes nothing and says what each row would do |
 | **Modules** | extra UI and logic for individual calculator pages (charts, sliders, benchmark strips) — install, inspect, switch off |
+| **Tool plugins** | upload one PHP file per calculator widget, bind it to a page by shortcode, download, rescan the folder, delete (refused while a page still uses it) |
 | **Categories** | rename, re-describe, re-icon, reorder, hide a category (its calculators follow) |
 | **Source files** | browse and edit the site's PHP/CSS/JS with a syntax check before save, full version history, one-click restore, delete refused while a file is in use |
 | **Homepage** | add/remove/reorder/enable sections (hero, category grid, popular, latest, blog, search, rich text, CTA, stats) |
@@ -205,7 +206,9 @@ depend on the upgrade having happened: `CustomCalc::tracksReview()` asks
 Two things make this scale to hundreds of new tools without code:
 
 * **Definition as data.** Adding a calculator is an editor task, not a deploy.
-  There is no per-calculator PHP file, so 1,000 more calculators are 1,000 rows.
+  A definition-built calculator is a row, not a file, so 1,000 more of them are
+  1,000 rows. (A calculator whose widget is a PHP file is the exception and is
+  described in the next section; it is for the tools a field list cannot express.)
 * **Bulk import** (Calculators → Custom calculators → Bulk import). One JSON or
   CSV document becomes many calculators:
 
@@ -236,6 +239,103 @@ Two things make this scale to hundreds of new tools without code:
   writes every row that validates and reports the rest — one bad row never blocks
   the file. Re-running in *skip* mode is idempotent; *update* mode overwrites and
   keeps the previous state in the version history.
+
+## Calculator widgets from a PHP file
+
+Everything above describes a calculator whose maths is a definition in the
+database. There is a third path, for the tools a definition cannot express:
+**one PHP file per tool**, uploaded from the panel, bound to a page, rendered by
+its shortcode exactly where the widget sits on every other calculator page.
+
+### What a tool file is
+
+A single file with a header block and one shortcode:
+
+```php
+<?php
+/**
+ * Tool Name: Percentage of a Number
+ * Shortcode: tool_percentage_of
+ * Category: math
+ * Version: 1.0.0
+ * Description: What one number is as a percentage of another.
+ * Language: en
+ */
+
+if (!defined('ONIM_TOOLKIT')) { http_response_code(403); exit; }
+
+Toolkit::addShortcode('tool_percentage_of', static function (array $atts, ?string $inner, array $ctx): string {
+    /* build the widget, return its HTML */
+});
+```
+
+The header is what the panel reads: it names the tool, its shortcode, the
+category it belongs in and its version. The callback is the whole widget — form,
+working, answer. Three rules make them safe to stack:
+
+* the answer is printed on the server, so a crawler and a visitor with
+  JavaScript off see the same number;
+* every element id is built from `$ctx['uid']`, so the same tool twice on one
+  page does not collide;
+* styles and script are inline and scoped to that uid — no CDN, no build step,
+  nothing to enqueue.
+
+`plugins/README.md` is the full author's guide; `plugins/math/qm-tool-percentage-of.php`
+is the worked example, and `plugins/PROMPT-TEMPLATE.md` is the brief to hand to
+whoever writes the next one.
+
+### Uploading one
+
+**Tool plugins** (`?p=tool-plugins`) lists every file in `plugins/`, grouped by
+folder, with its shortcode, version, size and the page it is bound to.
+
+| Action | What happens |
+| --- | --- |
+| **Upload** | Pick a `.php` file and a category. The file is refused if it is not PHP, is larger than 2 MB, does not parse, has no header block, or claims a shortcode another file already owns. A valid file is stored as `plugins/<category>/qm-tool-<shortcode>.php`, replacing the previous version only if *overwrite* is ticked — and the version it replaces is copied to `data/backups/tools/` first |
+| **Create page** | Makes a draft calculator page for the tool: slug from the shortcode, category from the file, widget source `tool`. You then write the article and publish as usual |
+| **Download** | Fetches the file back out of the panel |
+| **Rescan** | Re-reads the folder after a file was added by FTP or a deploy |
+| **Delete** | Removes the file. If a page still uses the shortcode the delete is refused unless *delete anyway* is ticked, because that page would then render the "could not run" box |
+
+Files under `plugins/` are never served over HTTP: `.htaccess` and `router.php`
+both refuse the path, and every tool file starts by refusing to run unless the
+toolkit booted it. A stray PHP file dropped in the folder without a header is
+listed as **invalid** and never executed.
+
+### Binding it to a page
+
+A calculator has a `kind`: `builder` (the definition editor described above) or
+`tool` (a PHP file). Choosing **Tool file** in the editor changes what the panel
+shows:
+
+* **Basics** gains a card naming the file and its version; the slug defaults to
+  the shortcode;
+* **Fields** and **Formulas** disappear — the maths is in the file;
+* the optional page script disappears, and so does the *replace the article*
+  option;
+* **Advanced** gains **Widget source**, where the shortcode is chosen;
+* there is no **Save draft**: a tool page is published, or it is not.
+
+Below the widget nothing changes. The article, the table of contents, the FAQ,
+the share row, related calculators, the sitemap, the category pages and search
+all work exactly as they do for a definition-built calculator — the template
+renders `Toolkit::render($tool['shortcode'], ['calc' => $calc])` into the same
+slot, and the rest of the page never learns which kind it is.
+
+A page whose shortcode is missing, invalid or removed renders a short box saying
+the tool could not run, with the page still intact — a broken file costs one
+widget, not one page.
+
+### Translating the widgets
+
+Every visitor-visible string in a tool goes through `Toolkit::t('Bill', 'Bill')`,
+and the map that answers is `plugins/i18n/<locale>.php`. Set **Settings →
+General → Locale** to `de_DE` and the tools speak German; the article around
+them is translated by the CMS. A missing row falls back to the English default,
+never to an empty box, and a tool written without `t()` is simply English-only.
+
+`plugins/i18n/de.php` ships as the worked example, and `tests/toolkit.php`
+fails if a tool prints a string the German map does not carry.
 
 ## Modules — extra UI for one page
 
@@ -320,12 +420,14 @@ job, accepts `--dry-run`, and refuses HTTP calls without the token (403).
 
 ## What has actually been tested
 
-Two suites, both run against a live server and a real MySQL database, both
-cleaning up after themselves:
+Four suites. The two HTTP ones run against a live server and a real MySQL
+database; all of them clean up after themselves.
 
 ```bash
-python3 tools/admin_e2e.py                     # 140 checks — UI, security, cron
-/home/user/tools/php.sh tests/e2e_panel.php    # 181 checks — every screen, every write
+python3 tools/admin_e2e.py                          # UI, security, cron (browser)
+bash /home/user/tools/php.sh tests/e2e_panel.php    # 398 checks — every screen, every write
+bash /home/user/tools/php.sh tests/solver.php       #  70 checks — the expression parser and solver
+bash /home/user/tools/php.sh tests/toolkit.php      #  40 checks — tool files, shortcodes, translations
 ```
 
 They cover: login/rejection/throttling, CSRF rejection, settings save → public
@@ -348,7 +450,13 @@ bulk importer (dry run writes nothing, only valid rows are written, skip is
 idempotent, update keeps history, CSV with the compact syntax, invalid JSON
 reported, a field named after a built-in function explained) and modules (renders in
 its slot, other pages untouched, switch off/on, a partial outside the folder
-refused, a broken module never renders, partials open in the source editor).
+refused, a broken module never renders, partials open in the source editor), and the PHP tool files: the panel lists them,
+refuses a file that is not PHP, has no header or does not parse, stores a valid
+one, refuses a shortcode another file already owns, creates a draft page for it,
+publishes it and renders the widget on the public page with the article, share row
+and sitemap intact and the builder's client solver absent, refuses to delete a file
+a page still uses, and answers 404 for `/plugins/…`; plus 40 unit checks on the
+registry, the shortcode engine, the path guard and the translation fallbacks.
 
 ## Known limitations
 

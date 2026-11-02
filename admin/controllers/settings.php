@@ -91,6 +91,20 @@ if (!isset($groups[$tab])) {
 }
 
 $values = Cms::settings();
+
+/* Locales that have a tool translation file, offered in the Locale field so the
+   owner picks from what exists instead of typing a code from memory. */
+$toolLocales = [];
+foreach (\Onim\Toolkit::locales() as $code) {
+    $name = $code;
+    if (class_exists(\Locale::class)) {
+        $display = \Locale::getDisplayName(str_replace('-', '_', $code), 'en');
+        if (is_string($display) && $display !== '' && $display !== $code) {
+            $name = $display . ' (' . $code . ')';
+        }
+    }
+    $toolLocales[] = ['locale' => $code, 'label' => $name];
+}
 $dbInfo = [
     'driver' => 'MySQL / MariaDB',
     'host' => (string) (onim_db_config()['host'] ?? ''),
@@ -102,4 +116,4 @@ $pageTitle = 'Settings';
 $title = $pageTitle;
 $wide = true;
 
-render('settings', compact('tab', 'groups', 'values', 'dbInfo', 'pageTitle', 'title', 'wide'));
+render('settings', compact('tab', 'groups', 'values', 'dbInfo', 'toolLocales', 'pageTitle', 'title', 'wide'));

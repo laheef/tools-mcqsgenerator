@@ -109,6 +109,9 @@ final class CustomCalc
             'sourceCat'   => (string) $row['category_slug'],
             'sourceSlug'  => (string) $row['slug'],
             'status'      => (string) $row['status'],
+            'kind'        => (string) ($row['kind'] ?? 'builder'),
+            'toolShortcode' => (string) ($row['tool_shortcode'] ?? ''),
+            'toolFile'      => (string) ($row['tool_file'] ?? ''),
             'sortOrder'   => (int) $row['sort_order'],
             'featured'    => (int) $row['is_featured'] === 1,
             'icon'        => (string) $row['icon'],
@@ -119,12 +122,65 @@ final class CustomCalc
     /** The compiled engine record (what Data::readRecord returns for shards). */
     public static function record(array $row): array
     {
+        /*
+         * A tool-backed page has no formula to compile: its widget is the
+         * shortcode's output. The record still has to look like every other
+         * record, because the router, the sitemap, the search index, the
+         * related grid and the share panel all read it — so it carries the
+         * identity and an empty field set, plus the one key the page template
+         * branches on.
+         */
+        if (self::isToolRow($row)) {
+            $shortcode = (string) ($row['tool_shortcode'] ?? '');
+            $tool      = class_exists(Toolkit::class) ? Toolkit::find($shortcode) : null;
+            $path      = '/' . (string) $row['category_slug'] . '/' . (string) $row['slug'];
+            return [
+                'path'  => $path,
+                'cat'   => (string) $row['category_slug'],
+                'slug'  => (string) $row['slug'],
+                'name'  => (string) $row['name'],
+                'desc'  => (string) ($row['meta_description'] ?? ''),
+                'title' => (string) ($row['meta_title'] ?? ''),
+                'groups' => [],
+                'vars'   => [],
+                'eq'     => [],
+                'datasets' => [],
+                'kind'   => 'tool',
+                'tool'   => [
+                    'shortcode' => $shortcode,
+                    'file'      => (string) ($row['tool_file'] ?? ''),
+                    'version'   => (string) ($row['tool_version'] ?? ''),
+                    /* live state of the file behind the page */
+                    'name'      => (string) ($tool['name'] ?? ''),
+                    'available' => $shortcode !== '' && class_exists(Toolkit::class) && Toolkit::has($shortcode),
+                ],
+            ];
+        }
+
         $decoded = json_decode((string) ($row['definition'] ?? ''), true);
         if (is_array($decoded) && $decoded !== []) {
             return $decoded;
         }
         $compiled = self::compile(self::editorModel($row));
         return $compiled['record'] ?? [];
+    }
+
+    /** Is this row a tool-backed page rather than a compiled definition? */
+    public static function isToolRow(array $row): bool
+    {
+        return (string) ($row['kind'] ?? 'builder') === 'tool';
+    }
+
+    /**
+     * Does this install have the tool columns from migration 009?
+     *
+     * Same pattern as tracksReview(): a row saved before the upgrade is still
+     * perfectly valid, so every read of the new columns asks first.
+     */
+    public static function tracksTools(): bool
+    {
+        static $has = null;
+        return $has ??= Db::hasColumn('custom_calculators', 'kind');
     }
 
     /** Article prose for the page (summary, sections, FAQ). */
@@ -187,7 +243,9 @@ final class CustomCalc
     public static function editorModel(?array $row = null): array
     {
         $empty = [
-            'name' => '', 'slug' => '', 'category_slug' => 'other', 'h1' => '',
+            'name' => '', 'slug' => '', 'category_slug' => 'other', 'kind' => 'builder',
+            'tool_file' => '', 'tool_shortcode' => '', 'tool_version' => '',
+            'h1' => '',
             'meta_title' => '', 'meta_description' => '', 'summary' => '',
             'icon' => '', 'status' => 'draft', 'is_featured' => 0, 'sort_order' => 0,
             'noindex' => 0, 'sections' => [], 'faq' => [], 'fields' => [],
@@ -201,6 +259,10 @@ final class CustomCalc
             'name'             => (string) $row['name'],
             'slug'             => (string) $row['slug'],
             'category_slug'    => (string) $row['category_slug'],
+            'kind'             => (string) ($row['kind'] ?? 'builder'),
+            'tool_file'        => (string) ($row['tool_file'] ?? ''),
+            'tool_shortcode'   => (string) ($row['tool_shortcode'] ?? ''),
+            'tool_version'     => (string) ($row['tool_version'] ?? ''),
             'h1'               => (string) $row['h1'],
             'meta_title'       => (string) $row['meta_title'],
             'meta_description' => (string) $row['meta_description'],
@@ -491,6 +553,37 @@ final class CustomCalc
      */
     public static function testModel(array $model, array $supplied = []): array
     {
+        /*
+         * A tool-backed page cannot be solved: its answer comes from the tool
+         * file, in the browser. What *can* be checked is that the file is
+         * still there and still registers the shortcode the page names —
+         * which is the failure that actually happens (a file renamed, or a
+         * shortcode edited out of it).
+         */
+        if ((string) ($model['kind'] ?? 'builder') === 'tool') {
+            $shortcode = trim((string) ($model['tool_shortcode'] ?? ''), " []");
+            $tool      = class_exists(Toolkit::class) ? Toolkit::find($shortcode) : null;
+            if ($shortcode === '') {
+                return ['ok' => false, 'outputs' => [], 'unknown' => [], 'warnings' => [],
+                        'errors' => ['This page names no shortcode yet.']];
+            }
+            if ($tool === null) {
+                return ['ok' => false, 'outputs' => [], 'unknown' => [], 'warnings' => [],
+                        'errors' => ['No tool file registers [' . $shortcode . '].']];
+            }
+            if (!$tool['valid']) {
+                return ['ok' => false, 'outputs' => [], 'unknown' => [], 'warnings' => [],
+                        'errors' => ['[' . $shortcode . '] cannot be used: ' . $tool['error']]];
+            }
+            $warnings = [];
+            if ($tool['version'] !== '' && (string) ($model['tool_version'] ?? '') !== ''
+                && $tool['version'] !== (string) $model['tool_version']) {
+                $warnings[] = 'The file is at version ' . $tool['version'] . ' and the page was saved against '
+                    . $model['tool_version'] . '. Save the page to record the new version.';
+            }
+            return ['ok' => true, 'outputs' => [], 'unknown' => [], 'errors' => [], 'warnings' => $warnings];
+        }
+
         $compiled = self::compile($model);
         $errors   = $compiled['errors'];
         $record   = $compiled['record'];
@@ -689,8 +782,39 @@ final class CustomCalc
             $errors[] = $conflict;
         }
 
-        $compiled = self::compile($model);
-        $errors   = array_merge($errors, $compiled['errors']);
+        /*
+         * A tool-backed page is not compiled: there are no fields and no
+         * equations to check. What it does need is a shortcode that exists —
+         * a page pointing at a shortcode nothing registers would render an
+         * empty column, which is exactly the failure this whole design is
+         * meant to make impossible.
+         */
+        $kind = (string) ($model['kind'] ?? 'builder') === 'tool' ? 'tool' : 'builder';
+        $shortcode = '';
+        $toolFile  = '';
+        $toolVersion = '';
+
+        if ($kind === 'tool') {
+            $shortcode = strtolower(trim((string) ($model['tool_shortcode'] ?? '')));
+            $shortcode = trim($shortcode, ' []');
+            if ($shortcode === '') {
+                $errors[] = 'Choose the tool this page should show — the shortcode is what binds the page to the file.';
+            } elseif (class_exists(Toolkit::class)) {
+                $tool = Toolkit::find($shortcode);
+                if ($tool === null) {
+                    $errors[] = 'No tool file registers [' . $shortcode . ']. Upload it under Tool plugins first.';
+                } elseif (!$tool['valid']) {
+                    $errors[] = 'The tool file for [' . $shortcode . '] cannot be used: ' . $tool['error'];
+                } else {
+                    $toolFile    = $tool['file'];
+                    $toolVersion = $tool['version'];
+                }
+            }
+            $compiled = ['record' => [], 'errors' => []];
+        } else {
+            $compiled = self::compile($model);
+            $errors   = array_merge($errors, $compiled['errors']);
+        }
 
         if ($errors !== []) {
             return ['ok' => false, 'id' => (int) $id, 'errors' => array_values(array_unique($errors)), 'message' => 'Not saved — fix the highlighted problems.'];
@@ -709,7 +833,17 @@ final class CustomCalc
             'faq'              => json_encode(array_values(self::cleanFaq($model['faq'] ?? [])), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
             'fields'           => json_encode(array_values(self::normaliseFields($model['fields'] ?? [], $fieldErrors)), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
             'equations'        => json_encode(array_values(self::groupDirections($model['directions'] ?? [])), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-            'definition'       => json_encode($compiled['record'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            'definition'       => $kind === 'tool'
+                ? json_encode([
+                    'path' => '/' . $cat . '/' . $slug,
+                    'cat'  => $cat,
+                    'slug' => $slug,
+                    'name' => trim((string) $model['name']),
+                    'groups' => [], 'vars' => [], 'eq' => [], 'datasets' => [],
+                    'kind' => 'tool',
+                    'tool' => ['shortcode' => $shortcode, 'file' => $toolFile, 'version' => $toolVersion],
+                ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
+                : json_encode($compiled['record'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
             'icon'             => trim((string) ($model['icon'] ?? '')),
             'status'           => in_array($model['status'] ?? 'draft', ['published', 'draft', 'archived'], true) ? (string) $model['status'] : 'draft',
             'is_featured'      => !empty($model['is_featured']) ? 1 : 0,
@@ -722,6 +856,12 @@ final class CustomCalc
         if (self::tracksReview()) {
             $row['drafted_at']    = $draftedWords === null ? null : date('Y-m-d H:i:s');
             $row['drafted_words'] = $draftedWords ?? 0;
+        }
+        if (self::tracksTools()) {
+            $row['kind']           = $kind;
+            $row['tool_file']      = $toolFile;
+            $row['tool_shortcode'] = $shortcode;
+            $row['tool_version']   = $toolVersion;
         }
 
         if ($id !== null && $id > 0) {
@@ -742,6 +882,61 @@ final class CustomCalc
         self::ensureCategory($cat, (string) $row['name']);
         LiveCounts::invalidate();
         return ['ok' => true, 'id' => (int) $id, 'errors' => [], 'message' => 'Saved.'];
+    }
+
+    /* ------------------------------------------------------- tool plugins */
+
+    /**
+     * Calculator pages that render a given shortcode.
+     *
+     * The panel asks before deleting or replacing a tool file: a published
+     * page pointing at a file that is gone would render an empty widget.
+     *
+     * @return array<int,array> id, name, slug, category_slug, status
+     */
+    public static function toolUsage(string $shortcode): array
+    {
+        if (!self::enabled() || !self::tracksTools()) {
+            return [];
+        }
+        $shortcode = trim($shortcode);
+        if ($shortcode === '') {
+            return [];
+        }
+        return Db::all(
+            'SELECT id, name, slug, category_slug, status FROM custom_calculators
+             WHERE kind = "tool" AND tool_shortcode = ? ORDER BY name',
+            [$shortcode]
+        );
+    }
+
+    /**
+     * Create a draft calculator page for a tool file.
+     *
+     * This is the "add the shortcode and it renders" step: one call turns a
+     * file that is already in plugins/ into a row the catalogue can route,
+     * search and list. The article is left empty on purpose — the page is a
+     * draft until a person writes what the tool is for.
+     *
+     * @return array{ok:bool,id:int,errors:array<int,string>,message:string}
+     */
+    public static function createFromTool(array $tool, string $category, int $userId): array
+    {
+        $slug = (string) pathinfo((string) ($tool['file'] ?? 'tool.php'), PATHINFO_FILENAME);
+        $slug = preg_replace('~^qm-tool-~', '', $slug) ?: (string) ($tool['shortcode'] ?? 'tool');
+
+        $model = self::editorModel(null);
+        $model['name']             = (string) ($tool['name'] ?? 'Tool');
+        $model['h1']               = (string) ($tool['name'] ?? 'Tool');
+        $model['slug']             = self::slugify($slug);
+        $model['category_slug']    = $category !== '' ? $category : (string) ($tool['category'] ?? 'other');
+        $model['kind']             = 'tool';
+        $model['tool_shortcode']   = (string) ($tool['shortcode'] ?? '');
+        $model['tool_version']     = (string) ($tool['version'] ?? '');
+        $model['summary']          = (string) ($tool['description'] ?? '');
+        $model['status']           = 'draft';
+
+        return self::save(null, $model, $userId);
     }
 
     public static function delete(int $id): bool

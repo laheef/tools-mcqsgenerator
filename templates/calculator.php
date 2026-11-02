@@ -38,6 +38,16 @@ if (!function_exists('initials')) {
 $category = Data::category($calc['cat']);
 $catName  = $category['name'] ?? $calc['category']['name'];
 
+/*
+ * A page whose widget is a tool file rather than a formula.
+ *
+ * Same page, same article, same related grid — but the box in the tool column
+ * is printed by the shortcode in lib/Toolkit.php instead of by the form
+ * builder. Everything the form would draw (fields, results panel, Calculate
+ * button, the calc.js payload) is skipped, because the tool owns its own UI.
+ */
+$toolMode = !empty($calc['tool']['shortcode']);
+
 /* client payload: everything calc.js needs to re-solve locally */
 $fieldsMeta = [];
 $unitExprs  = [];
@@ -569,7 +579,17 @@ $clientPayload = [
             </header>
 
             <div class="calc-widget" data-calculator="<?= View::escape($calc['file']) ?>">
-                <?php if ($groups === []): ?>
+                <?php if ($toolMode): ?>
+                    <?php /* The tool's own markup, its own styles and its own script,
+                             scoped to the uid the toolkit hands it. A tool that
+                             throws is caught there and leaves a short note in this
+                             box — it cannot take the page down with it. */ ?>
+                    <div class="calc-tool-frame" data-tool="<?= View::escape((string) $calc['tool']['shortcode']) ?>">
+                        <?= \Onim\Toolkit::render((string) $calc['tool']['shortcode'], ['calc' => $calc]) ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($groups === [] && !$toolMode): ?>
                     <p class="calc-empty">This calculator has no interactive fields.</p>
                 <?php endif; ?>
 
@@ -588,7 +608,7 @@ $clientPayload = [
                     notice until the visitor presses Calculate. Without JavaScript the
                     attribute is never set, nothing is hidden and the page behaves
                     exactly as before. */ ?>
-                <?php if ($noControls): ?>
+                <?php if ($noControls && !$toolMode): ?>
                     <div class="calc-empty-widget" role="note">
                         <p class="calc-empty-title">This calculator is written up, not wired up.</p>
                         <p>
@@ -597,7 +617,7 @@ $clientPayload = [
                             nothing here to type into.
                         </p>
                     </div>
-                <?php elseif (!$solvable): ?>
+                <?php elseif (!$solvable && !$toolMode): ?>
                     <div class="calc-empty-widget" role="note">
                         <p class="calc-empty-title">Nothing to calculate here.</p>
                         <p>
@@ -858,7 +878,7 @@ $clientPayload = [
                     </section>
                 <?php endif; ?>
 
-                <?php if (!$noControls && $solvable): ?>
+                <?php if ((!$noControls && $solvable) || $toolMode): ?>
                     <?php
                     /* Share, directly under the Calculate button and the results.
                        Two things to share, because they are different documents:
@@ -885,6 +905,11 @@ $clientPayload = [
                              aria-labelledby="calc-share-title">
                         <h2 class="sr-only" id="calc-share-title">Share this calculator</h2>
                         <div class="calc-share-row">
+                            <?php /* A tool page has no result to share: the answer
+                                     lives in the tool's own markup, not in a results
+                                     panel, so offering "Result" would be a promise
+                                     the page cannot keep. */ ?>
+                            <?php if (!$toolMode): ?>
                             <div class="calc-share-scope" role="group" aria-label="What to share">
                                 <label class="calc-share-radio">
                                     <input type="radio" name="share-scope" value="calc" checked>
@@ -895,6 +920,7 @@ $clientPayload = [
                                     <span>Result</span>
                                 </label>
                             </div>
+                            <?php endif; ?>
                             <ul class="calc-share-networks">
                                 <?php foreach ($nets as $key => [$label, $tpl, $icon]): ?>
                                     <li>
@@ -907,12 +933,14 @@ $clientPayload = [
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
+                                <?php if (!$toolMode): ?>
                                 <li>
                                     <button type="button" class="share-net share-net--copy" data-share-copy
                                             title="Copy the link" aria-label="Copy the link">
                                         <?= View::icon('link', 17) ?><span class="sr-only" data-share-copy-label>Copy</span>
                                     </button>
                                 </li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                         <p class="calc-share-text" data-share-preview hidden></p>
@@ -925,7 +953,12 @@ $clientPayload = [
                 <?php endforeach; ?>
             </div>
 
+            <?php /* The client solver is only for formula pages. A tool page emits
+                     no payload, so calc.js exits at its first line instead of
+                     trying to build a form that is not there. */ ?>
+            <?php if (!$toolMode): ?>
             <script type="application/json" id="calc-definition"><?= json_encode($clientPayload, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?></script>
+            <?php endif; ?>
 
             <?php /* Under the result: where a visitor stops reading the tool and
                      starts reading the write-up. Inside the column on purpose —

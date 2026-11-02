@@ -16,6 +16,13 @@ $file = __DIR__ . $path;
  * Admin internals are never served directly — the same folders .htaccess blocks
  * on Apache. The PHP files inside also refuse a direct hit on their own.
  */
+if (preg_match('~^/(plugins|data|tests|tools|docs|install)/~', $path)) {
+    http_response_code(404);
+    header('Content-Type: text/plain; charset=utf-8');
+    echo "404 Not found\n";
+    return true;
+}
+
 if (preg_match('~^/admin/(lib|views|controllers|migrations)/~', $path)) {
     http_response_code(403);
     header('Content-Type: text/plain; charset=utf-8');

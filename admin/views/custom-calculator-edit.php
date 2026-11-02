@@ -30,6 +30,19 @@ $sections   = is_array($values['sections'] ?? null) ? $values['sections'] : [];
 $faqs       = is_array($values['faq'] ?? null) ? $values['faq'] : [];
 $types      = CustomCalc::TYPES;
 $isNew      = $row === null;
+/*
+ * Two kinds of page, one editor.
+ *
+ *   builder — fields + formulas (the original custom calculator)
+ *   tool    — a calculator whose widget is a PHP file in plugins/, bound by
+ *             its shortcode. It has an article, an FAQ, related links and SEO
+ *             like any other page; it has no field list, because the tool
+ *             owns its own inputs.
+ */
+$isTool        = (string) ($values['kind'] ?? 'builder') === 'tool';
+$toolChoices   = is_array($toolChoices ?? null) ? $toolChoices : [];
+$toolMissing   = (string) ($toolMissing ?? '');
+$currentTool   = (string) ($values['tool_shortcode'] ?? '');
 
 $fieldRows = $fields === [] ? [[
     'key' => '', 'label' => '', 'type' => 'number', 'default' => '', 'unit_group' => '',
@@ -174,8 +187,10 @@ $unitLabel = static function (array $group, string $key): string {
 
             <div class="tabs" data-tabs="cc-panels">
                 <button type="button" data-tab="basics">Basics</button>
+                <?php if (!$isTool): ?>
                 <button type="button" data-tab="fields">Fields (<?= count($fieldRows) ?>)</button>
                 <button type="button" data-tab="formulas">Formulas (<?= count($directionRows) ?>)</button>
+                <?php endif; ?>
                 <button type="button" data-tab="article">Article</button>
                 <button type="button" data-tab="seo">SEO</button>
                 <button type="button" data-tab="advanced">Advanced</button>
@@ -184,6 +199,35 @@ $unitLabel = static function (array $group, string $key): string {
             <div id="cc-panels">
                 <!-- --------------------------------------------------- basics -->
                 <div data-tab-panel="basics" class="stack" style="gap:18px">
+                    <?php if ($isTool): ?>
+                        <div class="card" style="border-color:var(--brand)">
+                            <div class="card-head">
+                                <h2><?= admin_icon('code', 15) ?> This page is a tool file</h2>
+                                <span class="spacer"></span>
+                                <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-plugins')) ?>">Tool plugins</a>
+                            </div>
+                            <div class="card-body stack">
+                                <p class="small" style="margin:0">
+                                    The box in the tool column is printed by
+                                    <code>[<?= e($currentTool !== '' ? $currentTool : 'no shortcode') ?>]</code>
+                                    <?php if ((string) ($values['tool_file'] ?? '') !== ''): ?>
+                                        from <code>plugins/<?= e((string) $values['tool_file']) ?></code>
+                                    <?php endif; ?>.
+                                    The article, the FAQ, the related grid and the SEO below are this page's own —
+                                    the tool only owns the widget.
+                                </p>
+                                <?php if ($toolMissing !== ''): ?>
+                                    <p class="small" style="margin:0;color:var(--err)">
+                                        <?= admin_icon('warning', 13) ?> <?= e($toolMissing) ?>
+                                    </p>
+                                <?php endif; ?>
+                                <?php if ((string) ($values['tool_version'] ?? '') !== ''): ?>
+                                    <p class="small muted" style="margin:0">Saved against file version <?= e((string) $values['tool_version']) ?>.</p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
                     <div class="card">
                         <div class="card-head"><h2>Identity</h2></div>
                         <div class="card-body stack">
@@ -255,6 +299,7 @@ $unitLabel = static function (array $group, string $key): string {
                 </div>
 
                 <!-- --------------------------------------------------- fields -->
+                <?php if (!$isTool): ?>
                 <div data-tab-panel="fields" class="stack" style="gap:18px">
                     <div class="card">
                         <div class="card-head">
@@ -449,7 +494,10 @@ $unitLabel = static function (array $group, string $key): string {
                     </div>
                 </div>
 
+                <?php endif; /* !$isTool — fields */ ?>
+
                 <!-- ------------------------------------------------- formulas -->
+                <?php if (!$isTool): ?>
                 <div data-tab-panel="formulas" class="stack" style="gap:18px">
                     <div class="card">
                         <div class="card-head">
@@ -559,6 +607,7 @@ $unitLabel = static function (array $group, string $key): string {
                         </div>
                     </div>
                 </div>
+                <?php endif; /* !$isTool — formulas */ ?>
 
                 <!-- -------------------------------------------------- article -->
                 <div data-tab-panel="article" class="stack" style="gap:18px">
@@ -715,6 +764,63 @@ $unitLabel = static function (array $group, string $key): string {
                 <!-- ------------------------------------------------- advanced -->
                 <div data-tab-panel="advanced" class="stack" style="gap:18px">
                     <div class="card">
+                        <div class="card-head">
+                            <h2>Widget source</h2>
+                            <span class="spacer"></span>
+                            <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-plugins')) ?>">
+                                <?= admin_icon('code', 13) ?> Manage tool files
+                            </a>
+                        </div>
+                        <div class="card-body stack">
+                            <label class="check" style="display:flex;gap:9px;align-items:flex-start">
+                                <input type="radio" name="kind" value="builder" <?= $isTool ? '' : 'checked' ?>>
+                                <span>
+                                    <strong>Formula</strong>
+                                    <span class="small muted" style="display:block">
+                                        The fields and formulas above, solved on the server and again in the browser.
+                                        This is what every catalogue calculator uses.
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="check" style="display:flex;gap:9px;align-items:flex-start">
+                                <input type="radio" name="kind" value="tool" <?= $isTool ? 'checked' : '' ?>>
+                                <span>
+                                    <strong>Tool file</strong>
+                                    <span class="small muted" style="display:block">
+                                        A PHP file in <code>plugins/</code> that prints its own widget. Use it when the
+                                        answer is not a formula — a file, a count, a chart.
+                                    </span>
+                                </span>
+                            </label>
+
+                            <div class="field" style="margin:0">
+                                <div class="label-row">
+                                    <label for="tool_shortcode">Shortcode</label>
+                                    <span class="hint">used when “Tool file” is selected</span>
+                                </div>
+                                <select id="tool_shortcode" name="tool_shortcode">
+                                    <option value="">— choose a tool —</option>
+                                    <?php foreach ($toolChoices as $shortcode => $label): ?>
+                                        <option value="<?= e((string) $shortcode) ?>" <?= $shortcode === $currentTool ? 'selected' : '' ?>>
+                                            <?= e((string) $label) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                    <?php if ($currentTool !== '' && !isset($toolChoices[$currentTool])): ?>
+                                        <option value="<?= e($currentTool) ?>" selected>
+                                            [<?= e($currentTool) ?>] — file missing
+                                        </option>
+                                    <?php endif; ?>
+                                </select>
+                                <div class="hint">
+                                    The file's header block declares its shortcode. Switching a page to a tool keeps its
+                                    fields saved, so you can switch back.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php if (!$isTool): ?>
+                    <div class="card">
                         <div class="card-head"><h2>Optional page script</h2></div>
                         <div class="card-body">
                             <div class="field" style="margin:0">
@@ -726,6 +832,7 @@ $unitLabel = static function (array $group, string $key): string {
                             </div>
                         </div>
                     </div>
+                    <?php endif; /* !$isTool — page script */ ?>
                 </div>
             </div>
         </div>
@@ -759,16 +866,23 @@ $unitLabel = static function (array $group, string $key): string {
                             <?= admin_icon('check', 14) ?> <?= $isNew ? 'Create calculator' : 'Save changes' ?>
                         </button>
                         <button class="btn" type="submit" name="do" value="test" style="width:100%">
-                            <?= admin_icon('chart', 14) ?> Test the formulas
+                            <?= admin_icon('chart', 14) ?> <?= $isTool ? 'Check the tool file' : 'Test the formulas' ?>
                         </button>
+                        <?php /* Drafting reads the fields to work out what the page is
+                                 about. A tool page has none, so the button would invent a
+                                 description of a tool it has never seen. */ ?>
+                        <?php if (!$isTool): ?>
                         <button class="btn" type="submit" name="do" value="draft" style="width:100%"
                                 formnovalidate>
                             <?= admin_icon('blog', 14) ?> Draft the article
                         </button>
+                        <?php endif; ?>
+                        <?php if (!$isTool): ?>
                         <label class="check small" style="margin-top:2px">
                             <input type="checkbox" name="replace_text" value="1">
                             <span>Replace the existing article instead of only filling the empty parts</span>
                         </label>
+                        <?php endif; ?>
                     </div>
 
                     <div class="muted small">

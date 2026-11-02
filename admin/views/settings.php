@@ -82,7 +82,20 @@ $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($k
                         </div>
                         <div class="field">
                             <label for="locale">Locale</label>
-                            <input id="locale" name="settings[locale]" value="<?= e($v('locale', 'en_US')) ?>">
+                            <input id="locale" name="settings[locale]" value="<?= e($v('locale', 'en_US')) ?>" list="locale-choices">
+                            <datalist id="locale-choices">
+                                <?php foreach ($toolLocales ?? [] as $entry): ?>
+                                    <option value="<?= e($entry['locale']) ?>"><?= e($entry['label']) ?></option>
+                                <?php endforeach; ?>
+                            </datalist>
+                            <div class="hint">
+                                Used for dates, numbers, and the language of calculator widgets.
+                                <?php if (($toolLocales ?? []) === []): ?>
+                                    A tool speaks English until a <code>plugins/i18n/&lt;locale&gt;.php</code> file exists.
+                                <?php else: ?>
+                                    Tool labels available in: <?= e(implode(', ', array_column($toolLocales, 'locale'))) ?>.
+                                <?php endif; ?>
+                            </div>
                         </div>
                         <div class="field">
                             <label for="timezone">Timezone</label>

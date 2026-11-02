@@ -95,6 +95,14 @@ final class Shape
             /* Which boxes a page shows depends on another field ("how many
                groups?"): a map of variable → condition, honoured by the client. */
             'showIf'      => is_array($rec['showIf'] ?? null) ? $rec['showIf'] : [],
+            /*
+             * Not every widget is a formula. A tool-backed page carries the
+             * shortcode that renders it instead of a field set; the template
+             * branches on `kind`, and everything else on the page (article,
+             * FAQ, related, ads) is untouched either way.
+             */
+            'kind'        => (string) ($rec['kind'] ?? 'formula'),
+            'tool'        => is_array($rec['tool'] ?? null) ? $rec['tool'] : null,
         ];
     }
 
