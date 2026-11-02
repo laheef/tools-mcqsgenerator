@@ -368,6 +368,9 @@ $crossCategory = array_slice($crossCategory, 0, 6);
 
 echo View::page('calculator', [
     'withCalculatorJs' => true,
+    /* Body class: the layout uses it to stand the sitewide leaderboard down,
+       so a calculator page does not stack two of them. */
+    'bodyClass' => 'is-calculator',
     'seo' => $seo,
     'calc' => $calc,
     'row' => $row,

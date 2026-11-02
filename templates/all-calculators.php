@@ -45,6 +45,8 @@ $catName = $state['cat'] !== '' ? (Data::category($state['cat'])['name'] ?? '') 
         </div>
     </header>
 
+    <?= \Onim\Ads::slot('category_top', 'ad-slot--page-top') ?>
+
     <form class="browse-search" role="search" action="<?= View::escape(View::url('/calculators')) ?>" method="get"
           data-browse-form autocomplete="off">
         <label class="sr-only" for="browse-q">Search the catalogue</label>

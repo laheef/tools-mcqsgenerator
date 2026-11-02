@@ -88,9 +88,12 @@ final class Settings
         'ads_enabled'                 => ['analytics', 'bool'],
         'ads_head_code'               => ['analytics', 'code'],
         'ads_inline_code'             => ['analytics', 'code'],
-        'ads_rail_left'               => ['analytics', 'code'],
-        'ads_rail_right'              => ['analytics', 'code'],
         'ads_txt'                     => ['analytics', 'code'],
+        /* The two 160px rails are gone: the calculator grid no longer reserves
+           empty columns, and `calc_side` sits at the foot of the tool column
+           instead. Their settings rows are left in the database (a retired key
+           is harmless) but are no longer writable, so the panel cannot claim a
+           slot the templates do not render. */
 
         /* email */
         'mail_transport'  => ['email', 'text'],
@@ -121,11 +124,30 @@ final class Settings
         'activity_retention_rows'   => ['system', 'int'],
     ];
 
+    /**
+     * The full field list: the fixed settings above plus one `ads_slot_<key>`
+     * row per slot the site can render.
+     *
+     * Generated rather than typed out, because a slot that exists in a template
+     * but not in this list cannot be saved from the panel — which is exactly how
+     * the first pair of ad rails ended up permanently empty.
+     *
+     * @return array<string,array{0:string,1:string}>
+     */
+    public static function fields(): array
+    {
+        $fields = self::FIELDS;
+        foreach (\Onim\Ads::slots() as $key => $meta) {
+            $fields['ads_slot_' . $key] = ['analytics', 'code'];
+        }
+        return $fields;
+    }
+
     /** @return array<int,string> keys in a group */
     public static function group(string $group): array
     {
         $keys = [];
-        foreach (self::FIELDS as $key => [$grp, $type]) {
+        foreach (self::fields() as $key => [$grp, $type]) {
             if ($grp === $group) {
                 $keys[$key] = $type;
             }

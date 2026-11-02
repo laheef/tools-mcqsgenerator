@@ -78,21 +78,13 @@ $readMinutes = max(1, (int) round(str_word_count(strip_tags($bodyHtml)) / 220));
         ['name' => View::excerpt((string) $post['title'], 42), 'url' => '/blog/' . $post['slug']],
     ]) ?>
 
+    <?php /* Article on the left, everything else on the right — the same shape
+             as a calculator page, for the same reason: the reading column is the
+             page, and the rail can follow the reader down. The contents used to
+             be a third column on the left, costing the article 240px and leaving
+             the sidebar a strip; as a sticky card at the top of the rail it does
+             the same job in space that already existed. */ ?>
     <div class="post-frame">
-        <aside class="post-toc" aria-labelledby="toc-heading">
-            <?php if ($toc !== []): ?>
-                <nav class="toc toc--side">
-                    <h2 id="toc-heading" class="toc-title">On this page</h2>
-                    <ol class="toc-list">
-                        <?php foreach ($toc as $entry): ?>
-                            <li><a href="#<?= View::escape($entry['slug']) ?>"><?= View::escape($entry['text']) ?></a></li>
-                        <?php endforeach; ?>
-                    </ol>
-                </nav>
-            <?php endif; ?>
-            <p class="post-readtime"><?= (int) $readMinutes ?> min read</p>
-        </aside>
-
         <div class="post-main">
         <header class="page-head">
             <h1 class="page-title"><?= View::escape((string) $post['title']) ?></h1>
@@ -114,6 +106,10 @@ $readMinutes = max(1, (int) round(str_word_count(strip_tags($bodyHtml)) / 220));
             </p>
         </header>
 
+        <?php /* Under the headline: above the <h1> it pushed the title down the
+                 page — the one position a reader is most likely to bounce from. */ ?>
+        <?= \Onim\Ads::slot('blog_top', 'ad-slot--page-top') ?>
+
         <?php if ((string) ($post['cover_image'] ?? '') !== ''): ?>
             <figure class="post-cover">
                 <img src="<?= View::escape(View::url((string) $post['cover_image'])) ?>"
@@ -126,7 +122,7 @@ $readMinutes = max(1, (int) round(str_word_count(strip_tags($bodyHtml)) / 220));
         <?php endif; ?>
 
             <div class="article-body post-body">
-                <?= $bodyHtml ?>
+                <?= \Onim\Ads::inject($bodyHtml, 'blog_inline', 2) ?>
             </div>
 
             <?php if ($tags !== []): ?>
@@ -151,7 +147,27 @@ $readMinutes = max(1, (int) round(str_word_count(strip_tags($bodyHtml)) / 220));
             <?php endif; ?>
         </div>
 
-        <?= View::render('partials/post-aside', ['categories' => $categories]) ?>
+        <aside class="post-rail" aria-label="On this page and more from Onim">
+            <?= \Onim\Ads::slot('blog_side_top') ?>
+
+            <div class="post-rail-contents">
+                <?php if ($toc !== []): ?>
+                    <nav class="toc toc--side" aria-labelledby="toc-heading">
+                        <h2 id="toc-heading" class="toc-title">On this page</h2>
+                        <ol class="toc-list">
+                            <?php foreach ($toc as $entry): ?>
+                                <li><a href="#<?= View::escape($entry['slug']) ?>"><?= View::escape($entry['text']) ?></a></li>
+                            <?php endforeach; ?>
+                        </ol>
+                    </nav>
+                <?php endif; ?>
+                <p class="post-readtime"><?= (int) $readMinutes ?> min read</p>
+            </div>
+
+            <?= View::render('partials/post-aside', ['categories' => $categories]) ?>
+
+            <?= \Onim\Ads::slot('blog_side_bottom') ?>
+        </aside>
     </div>
 </div>
 

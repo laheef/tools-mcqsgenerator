@@ -336,6 +336,11 @@ foreach ($sections as $section) {
     <?php endif;
 } ?>
 
+<?php /* Between the sections and the footer: the homepage's own slot. It sits at
+         the end of the page rather than between two configured sections, so it
+         appears whatever the owner has switched on. */ ?>
+<div class="shell home-ad"><?= \Onim\Ads::slot('home_mid') ?></div>
+
 <?php
 /*
  * Every page needs exactly one h1. The hero supplies it, but a site owner is

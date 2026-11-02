@@ -301,6 +301,7 @@ if ($count === 2 && $segments[0] === 'blog') {
         ];
         echo View::page('post', [
             'seo' => $seo,
+            'bodyClass' => 'is-post',
             'post' => $post,
             'tags' => $tags,
             'related' => array_values(array_filter(Cms::posts(4), static fn (array $p): bool => (int) $p['id'] !== (int) $post['id'])),

@@ -339,28 +339,88 @@ $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($k
             <div class="card">
                 <div class="card-head"><h2>Advertising</h2></div>
                 <div class="card-body">
-                    <label class="check" style="margin-bottom:14px">
+                    <label class="check" style="margin-bottom:6px">
                         <input type="checkbox" name="settings[ads_enabled]" value="1" <?= $b('ads_enabled') ? 'checked' : '' ?>>
                         <span>Advertising is enabled on this site</span>
                     </label>
+                    <p class="hint" style="margin:0 0 16px">
+                        One switch for every slot below. With this off nothing renders anywhere, whatever is saved —
+                        which is what you want while an ad network reviews the site.
+                    </p>
+
+                    <?php
+                    /* Calculators and posts have their own slot sets, and only a
+                       real page of each kind shows them. Link both, so the map
+                       can be checked without hunting for a URL. */
+                    $sampleCalc = (string) (\Onim\Data::all()[0]['path'] ?? '/calculators');
+                    $postSlug = \Onim\Db::value(
+                        "SELECT slug FROM posts WHERE status = 'published' AND published_at <= NOW()
+                         ORDER BY published_at DESC LIMIT 1",
+                        [],
+                        ''
+                    );
+                    $samplePost = ($postSlug !== '' && $postSlug !== null) ? '/blog/' . $postSlug : '';
+                    ?>
+                    <div class="ad-preview-row">
+                        <div class="ad-preview-links">
+                            <a class="btn btn-sm" href="<?= e(\Onim\Ads::previewUrl($sampleCalc)) ?>" target="_blank" rel="noopener">
+                                Preview a calculator page &rarr;
+                            </a>
+                            <?php if ($samplePost !== ''): ?>
+                                <a class="btn btn-sm" href="<?= e(\Onim\Ads::previewUrl($samplePost)) ?>" target="_blank" rel="noopener">
+                                    Preview a blog post &rarr;
+                                </a>
+                            <?php endif; ?>
+                            <a class="btn btn-sm" href="<?= e(\Onim\Ads::previewUrl('/')) ?>" target="_blank" rel="noopener">
+                                Preview the home page &rarr;
+                            </a>
+                        </div>
+                        <p class="hint" style="margin:0">
+                            Each link opens the page as a map: a dashed, labelled box in every slot, and no real
+                            tags — the saved code is not printed, so nothing loads and no impression is counted.
+                            Works with advertising switched off, which is when you most want the map. The links
+                            are signed and expire at midnight; visitors can never see them.
+                        </p>
+                    </div>
+
+                    <h3 class="settings-subhead">Where the ads go</h3>
+                    <p class="hint" style="margin-top:-4px;margin-bottom:18px">
+                        Every place that can hold an ad is listed below. Paste the tag from your ad network into a
+                        box and it appears in that position on the next page load — the panel is the only place ad
+                        code lives. An empty box renders nothing at all: no gap, no placeholder, no reserved height.
+                    </p>
+
+                    <?php foreach (\Onim\Ads::slots() as $slotKey => $slotMeta):
+                        $slotSetting = 'ads_slot_' . $slotKey;
+                        $slotValue = (string) (\Onim\Cms::setting($slotSetting, '') ?? '');
+                        $slotHas = trim($slotValue) !== '';
+                        ?>
+                        <div class="field ad-slot-field<?= $slotHas ? ' has-code' : '' ?>">
+                            <label for="<?= e($slotSetting) ?>">
+                                <strong><?= e($slotMeta['label']) ?></strong>
+                                <span class="badge <?= $slotHas ? 'badge-ok' : 'badge-muted' ?>"><?= $slotHas ? 'filled' : 'empty' ?></span>
+                                <span class="badge badge-brand"><?= e($slotMeta['size']) ?></span>
+                            </label>
+                            <textarea id="<?= e($slotSetting) ?>" name="settings[<?= e($slotSetting) ?>]" rows="3"
+                                      class="code" spellcheck="false"
+                                      placeholder="&lt;ins class=&quot;adsbygoogle&quot; ...&gt;&lt;/ins&gt;"><?= e($slotValue) ?></textarea>
+                            <div class="hint"><?= e($slotMeta['where']) ?></div>
+                        </div>
+                    <?php endforeach; ?>
+
+                    <h3 class="settings-subhead">Site-wide code</h3>
                     <div class="field">
                         <label for="ads_head_code">Head code</label>
                         <textarea id="ads_head_code" name="settings[ads_head_code]" rows="3" class="code"><?= e($v('ads_head_code')) ?></textarea>
+                        <div class="hint">Printed in &lt;head&gt; on every page — the loader script an ad network asks
+                            for once (AdSense's <code>adsbygoogle.js</code>, for example). Not printed while
+                            advertising is switched off.</div>
                     </div>
                     <div class="field">
-                        <label for="ads_inline_code">In-article slot</label>
+                        <label for="ads_inline_code">Legacy in-article slot</label>
                         <textarea id="ads_inline_code" name="settings[ads_inline_code]" rows="3" class="code"><?= e($v('ads_inline_code')) ?></textarea>
-                        <div class="hint">Rendered after the first article section on calculator pages.</div>
-                    </div>
-                    <div class="field">
-                        <label for="ads_rail_left">Left rail on calculator pages</label>
-                        <textarea id="ads_rail_left" name="settings[ads_rail_left]" rows="3" class="code" placeholder="<ins class=&quot;adsbygoogle&quot; ...></ins>"><?= e($v('ads_rail_left')) ?></textarea>
-                        <div class="hint">160px wide, sticky, beside the calculator. The column is reserved whether or not this is filled, so switching an ad on never moves the page.</div>
-                    </div>
-                    <div class="field">
-                        <label for="ads_rail_right">Right rail on calculator pages</label>
-                        <textarea id="ads_rail_right" name="settings[ads_rail_right]" rows="3" class="code"><?= e($v('ads_rail_right')) ?></textarea>
-                        <div class="hint">Same as the left rail. Below 1200px wide both rails fold away and the calculator gets the full width.</div>
+                        <div class="hint">Kept so an existing tag keeps working. New placements belong in the named
+                            slots above, which say exactly where they appear.</div>
                     </div>
                     <div class="field">
                         <label for="ads_txt">ads.txt</label>

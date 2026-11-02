@@ -358,6 +358,47 @@
     });
   });
 
+  /* ------------------------------------------ calculator column pinning */
+  /*
+   * The tool column sticks from the bottom, not the top: it stops moving when
+   * its own bottom edge reaches the bottom of the viewport, so the results and
+   * the last fields stay on screen while the article scrolls past on the left.
+   *
+   * CSS alone cannot express that. `position: sticky; bottom: 0` does not pin
+   * anything (sticky only holds an edge against the direction of scrolling),
+   * and a viewport-tall box pinned at `top: 0` gets the bottom edge right only
+   * once it has been reached — before that the card hangs off the bottom of the
+   * screen. So the pin line is measured: the offset that leaves the card's
+   * bottom on the viewport's bottom edge, or 0 when the card is taller than the
+   * viewport (it then pins at the top and scrolls inside itself).
+   *
+   * Without this script the CSS default (`top: 0`) still works — the column
+   * sticks, just from the top like every other sticky sidebar.
+   */
+  (function pinCalculatorColumn() {
+    var column = document.querySelector('.calc-widget-column');
+    if (!column) return;
+    var GAP = 24;
+
+    function place() {
+      /* The tool itself is what gets anchored. The slots below it are allowed
+         to run past the fold — they are the last thing in the column and the
+         column scrolls — so counting them would push the tool up for no reason
+         and, with both filled, unpin it entirely. */
+      var card = column.querySelector('.calc-widget');
+      var height = card ? card.getBoundingClientRect().height : 0;
+      if (!height) height = column.getBoundingClientRect().height;
+      var top = window.innerHeight - height - GAP;
+      column.style.setProperty('--calc-pin', Math.max(0, Math.round(top)) + 'px');
+    }
+
+    place();
+    window.addEventListener('resize', place);
+    if (typeof ResizeObserver === 'function') {
+      new ResizeObserver(place).observe(column);
+    }
+  })();
+
   /* --------------------------------------------------------- print */
   [].slice.call(document.querySelectorAll('[data-print]')).forEach(function (btn) {
     btn.addEventListener('click', function () { window.print(); });

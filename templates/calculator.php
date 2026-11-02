@@ -269,280 +269,18 @@ $clientPayload = [
         </p>
     <?php endif; ?>
 
-    <div class="calc-frame">
-        <?php /* Advertising rails. Kept empty on purpose: the column is reserved
-                 so that a future slot cannot reflow the page when it appears.
-                 Fill them from the panel (Settings -> Advertising) or drop the
-                 ad tag straight into the container. */ ?>
-        <aside class="ad-rail ad-rail--left" aria-hidden="true">
-            <?= View::adSlot('calculator-left') ?>
-        </aside>
+    <?php /* The page is one grid: the write-up on the left, the tool on the
+             right. Two empty 160px rails used to bracket this page and turned
+             the middle into a 640px corridor; the space they held is now the
+             tool column, which carries a real slot at its foot.
 
-        <div class="calc-layout">
-        <div class="calc-widget-column">
-            <div class="calc-widget" data-calculator="<?= View::escape($calc['file']) ?>">
-                <?php if ($groups === []): ?>
-                    <p class="calc-empty">This calculator has no interactive fields.</p>
-                <?php endif; ?>
+             The article comes first in the markup because that is the order a
+             phone reads it in — but on a desktop the tool is what a visitor
+             came for, so the grid puts it in the right-hand column and the CSS
+             pins that column to the bottom of the viewport as you scroll. */ ?>
+    <?= \Onim\Ads::slot('calc_top', 'ad-slot--page-top') ?>
 
-                <?php /* Script-driven pages now run their ported page script in the browser,
-                    so no "not calculated here" notice is needed. If a script throws at
-                    runtime the client engine shows a short fallback note instead. */ ?>
-
-                <?php /* Module slot: extra UI above the form. Partials are ordinary PHP
-                    included right here, so they see $calc, $groups, $solver and the
-                    rest of this template's scope. See lib/Modules.php. */ ?>
-                <?php foreach (Modules::partials((string) $calc['path'], 'widget_top') as $module): ?>
-                    <?php require $module['file']; ?>
-                <?php endforeach; ?>
-
-                <?php /* The results are computed on load but held back behind this
-                    notice until the visitor presses Calculate. Without JavaScript the
-                    attribute is never set, nothing is hidden and the page behaves
-                    exactly as before. */ ?>
-                <?php if ($noControls): ?>
-                    <div class="calc-empty-widget" role="note">
-                        <p class="calc-empty-title">This calculator is written up, not wired up.</p>
-                        <p>
-                            The method, the formula and a worked example are below in full — the
-                            interactive form for this one has not been built yet, so there is
-                            nothing here to type into.
-                        </p>
-                    </div>
-                <?php elseif (!$solvable): ?>
-                    <div class="calc-empty-widget" role="note">
-                        <p class="calc-empty-title">Nothing to calculate here.</p>
-                        <p>
-                            The answer for this one is set out in the article below — the values,
-                            the table they sit in and the method behind them. No formula was
-                            captured for this page, so there is no form to fill in and nothing to
-                            press.
-                        </p>
-                    </div>
-                <?php endif; ?>
-
-                <?php if ($solvable && !$noControls): ?>
-                <p class="calc-pending" data-calc-pending>
-                    <span class="calc-pending-icon" aria-hidden="true"><?= View::icon('chevron', 18) ?></span>
-                    <span data-calc-pending-text>Fill in the values, then press <strong>Calculate</strong> — your results appear below.</span>
-                </p>
-                <?php endif; ?>
-
-                <?php /* A page with no formula gets the note and the article, not a
-                    wall of boxes nobody can fill: those fields are the blank,
-                    meaningless placeholders the brief asks to be rid of. */ ?>
-                <?php $renderedTextIndexes = []; ?>
-                <?php foreach (($noControls || !$solvable) ? [] : $groups as $i => $group): ?>
-                    <?php
-                    $hasInput = false;
-                    $hasContent = false;
-                    foreach ($group['matrices'] as $mm) {
-                        foreach ($mm['columns'] as $cc) {
-                            foreach ($cc as $ff) {
-                                $kind = $ff['kind'] ?? '';
-                                if ($kind === 'text' && trim((string) ($ff['html'] ?? '')) === '') {
-                                    continue;      // an empty sentence is not content
-                                }
-                                /*
-                                 * A sentence is content. Treating it as invisible
-                                 * dropped every group that held nothing else — a
-                                 * page whose answer is one line of prose had its
-                                 * only line removed at load, and the answer then
-                                 * had no node to appear in.
-                                 */
-                                $hasContent = true;
-                                /*
-                                 * Anything the visitor can change counts as an input here. This
-                                 * list used to be just numbers and selects, so a form made
-                                 * entirely of date pickers — or of a row of radios — was
-                                 * classed as "empty" and hidden behind the results gate: the
-                                 * page showed a Calculate button and nothing to press it for.
-                                 */
-                                if (in_array($kind, ['number', 'select', 'date', 'datetime', 'time',
-                                                     'radio', 'checkbox', 'choice', 'textbox'], true)) {
-                                    $hasInput = true;
-                                }
-                            }
-                        }
-                    }
-                    /* A group with nothing in it is a stray rule and a blank gap
-                       between the form and the button; it is not rendered. */
-                    if (!$hasContent) {
-                        continue;
-                    }
-                    /* Every sentence this group prints, so the answers container
-                       below knows which lines have a node already. */
-                    foreach ($group['matrices'] as $mm) {
-                        foreach ($mm['columns'] as $cc) {
-                            foreach ($cc as $ff) {
-                                if (($ff['kind'] ?? '') === 'text' && isset($ff['index'])) {
-                                    $renderedTextIndexes[(int) $ff['index']] = true;
-                                }
-                            }
-                        }
-                    }
-                    ?>
-                    <section class="calc-group<?= $hasInput ? '' : ' is-empty' ?>" data-group>
-                        <?php /* An untitled group gets no header. It used to render a
-                            bare chevron over nothing, which reads as a blank label
-                            sitting above the fields — one of the rows the brief calls
-                            out. The fields below speak for themselves. */ ?>
-                        <?php if ($group['title'] !== ''): ?>
-                        <h2 class="calc-group-head">
-                            <button type="button" class="calc-group-toggle" aria-expanded="true"
-                                    aria-controls="calc-group-<?= (int) $i ?>" data-group-toggle
-                                    <?= $group['title'] === '' ? 'aria-label="Calculator inputs"' : '' ?>
-                                    <?= $hasInput ? '' : 'data-static' ?>>
-                                <span class="calc-chevron" aria-hidden="true"><?= View::icon('chevron', 20) ?></span>
-                                <?php if ($group['title'] !== ''): ?>
-                                    <span class="calc-group-title"><?= View::escape($group['title']) ?></span>
-                                <?php endif; ?>
-                            </button>
-                        </h2>
-                        <?php endif; ?>
-
-                        <div class="calc-group-body" id="calc-group-<?= (int) $i ?>">
-                            <?php if (!empty($group['description'])): ?>
-                                <p class="calc-group-desc"><?= View::escape($group['description']) ?></p>
-                            <?php endif; ?>
-
-                            <?php foreach ($group['matrices'] as $matrix):
-                                $cols = count($matrix['columns']);
-                                ?>
-                                <div class="calc-matrix" style="--cols:<?= (int) max(1, $cols) ?>">
-                                    <?php foreach ($matrix['columns'] as $column): ?>
-                                        <div class="calc-col">
-                                            <?php foreach ($column as $field): ?>
-                                                <?php if (($field['kind'] ?? '') === 'number'): ?>
-                                                    <?php
-                                                    /*
-                                                     * A numeric field can be an input or a
-                                                     * result, and which one changes as the
-                                                     * visitor types. The placeholder below is
-                                                     * where it lives while it is an input;
-                                                     * while it is a result the same node is
-                                                     * moved into the results panel, and this
-                                                     * stays empty. One node either way, so no
-                                                     * value is ever on the page twice.
-                                                     */
-                                                    ?>
-                                                    <div class="calc-field-home" data-home="<?= View::escape((string) $field['name']) ?>">
-                                                        <?php
-                                                        /*
-                                                         * An unlabelled box that the page works out is a
-                                                         * result with no name, so it is not printed in the
-                                                         * form — an empty box with no label above the
-                                                         * Calculate button is the meaningless row the brief
-                                                         * asks to be rid of. It still reaches the results
-                                                         * panel; the panel is where a nameless value can sit
-                                                         * without looking like something to fill in.
-                                                         */
-                                                        $namelessResult = trim((string) ($field['label'] ?? '')) === ''
-                                                            && !empty($field['declaredOutput'])
-                                                            && $typeableInputs > 0;
-                                                        ?>
-                                                        <?php if (!$namelessResult && empty($field['computed'])
-                                                            && empty($field['outputOnly'])
-                                                            && (empty($field['declaredOutput']) || $outputsStayInForm)): ?>
-                                                            <?php
-                                                            /* In the fallback case the field really is an
-                                                               input, so it must not be marked as a result
-                                                               — calc.js would move it back out again. */
-                                                            $formField = $field;
-                                                            if ($outputsStayInForm) {
-                                                                $formField['declaredOutput'] = false;
-                                                            }
-                                                            ?>
-                                                            <?= View::render('partials/calc-field', ['field' => $formField]) ?>
-                                                        <?php endif; ?>
-                                                    </div>
-                                                <?php else: ?>
-                                                    <?= View::render('partials/calc-field', ['field' => $field]) ?>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </section>
-                <?php endforeach; ?>
-
-                <?php /* A sentence that answers the question can live in a group
-                         of its own, with no field beside it. If that group is
-                         dropped — "nothing to show", which is right when every
-                         fragment's condition is false at load and the line is
-                         empty — the answer would have nowhere to appear:
-                         Calculate would say "Results updated" over an empty
-                         panel. Keep an anchor for every text line the page did
-                         not print, and let the client fill it. */ ?>
-                <?php if (!$noControls && $solvable): ?>
-                    <div class="calc-answers" data-calc-answers>
-                        <?php foreach ($widget->texts as $i => $line): ?>
-                            <?php if (isset($renderedTextIndexes[$i])) { continue; } ?>
-                            <div class="calc-formula" data-formula-index="<?= (int) $i ?>"></div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-
-                <?php if ($groups !== [] && !$noControls && $solvable): ?>
-                    <div class="calc-actions" data-calc-actions>
-                        <button type="button" class="calc-go" data-calc-go>
-                            <span class="calc-go-label" data-calc-go-label>Calculate</span>
-                        </button>
-                        <p class="calc-hint" data-calc-hint>
-                            <span class="calc-hint-icon" aria-hidden="true">ⓘ</span>
-                            <span data-calc-hint-text>Enter your values, then press Calculate to see the results.</span>
-                        </p>
-                        <p class="calc-announce" role="status" aria-live="polite" data-calc-status></p>
-                    </div>
-                <?php endif; ?>
-
-                <?php if ($hasResultSpace && !$noControls && $solvable): ?>
-                    <section class="calc-results<?= $resultRows === [] ? ' is-empty' : '' ?>" data-calc-results aria-labelledby="calc-results-title">
-                        <header class="calc-results-head">
-                            <h2 class="calc-results-title" id="calc-results-title">
-                                <span class="calc-results-icon" aria-hidden="true"><?= View::icon('equals', 18) ?></span>
-                                Results
-                            </h2>
-                            <button type="button" class="calc-copy-all" data-copy-all>
-                                <?= View::icon('copy', 15) ?><span data-copy-all-label>Copy all</span>
-                            </button>
-                        </header>
-
-                        <?php /* One row per solved value. Each row carries the field
-                                 itself, so the value stays editable (solve backwards by
-                                 typing a result) and the whole row is one target: the
-                                 number, its unit chip, and a copy button. */ ?>
-                        <ul class="calc-results-list" data-results-list>
-                            <?php foreach ($resultRows as $r): ?>
-                                <li class="calc-result" data-result-row="<?= View::escape((string) $r['name']) ?>">
-                                    <div class="calc-result-field" data-result-slot="<?= View::escape((string) $r['name']) ?>">
-                                        <?= View::render('partials/calc-field', ['field' => $r, 'inResult' => true]) ?>
-                                    </div>
-                                    <button type="button" class="calc-copy" data-copy="<?= View::escape((string) $r['name']) ?>"
-                                            aria-label="Copy <?= View::escape((string) ($r['label'] !== '' ? $r['label'] : $r['name'])) ?>"
-                                            title="Copy <?= View::escape((string) ($r['label'] !== '' ? $r['label'] : $r['name'])) ?>">
-                                        <?= View::icon('copy', 16) ?>
-                                        <span class="calc-copy-note" aria-hidden="true">Copy</span>
-                                    </button>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-
-                        <p class="calc-results-pending" data-results-empty>Press <strong>Calculate</strong> and the results appear here.</p>
-                        <p class="sr-only" role="status" aria-live="polite" data-copy-status></p>
-                    </section>
-                <?php endif; ?>
-
-                <?php foreach (Modules::partials((string) $calc['path'], 'widget_bottom') as $module): ?>
-                    <?php require $module['file']; ?>
-                <?php endforeach; ?>
-            </div>
-
-            <script type="application/json" id="calc-definition"><?= json_encode($clientPayload, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?></script>
-        </div>
-
+    <div class="calc-layout">
         <article class="calc-article">
             <header class="article-head">
                 <?php if ($calc['updatedAt']): ?>
@@ -634,14 +372,21 @@ $clientPayload = [
             <?php endforeach; ?>
 
             <div class="article-body">
-                <?php foreach ($articleBlocks as $block): ?>
-                    <?php if ($block['kind'] === 'section'): ?>
-                        <h2<?= $block['id'] !== '' ? ' id="' . View::escape($block['id']) . '"' : '' ?>><?= View::escape($block['title']) ?></h2>
-                        <?= View::rewriteRootUrls($block['html']) ?>
-                    <?php else: ?>
-                        <?= View::rewriteRootUrls($block['html']) ?>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+                <?php
+                /* The in-article slot is inserted into the rendered body rather
+                   than between two block elements: the body arrives as a run of
+                   sections and the only honest position is "after the second
+                   section", which is a fact about the rendered headings. */
+                $articleHtml = '';
+                foreach ($articleBlocks as $block) {
+                    if ($block['kind'] === 'section') {
+                        $articleHtml .= '<h2' . ($block['id'] !== '' ? ' id="' . View::escape($block['id']) . '"' : '') . '>'
+                            . View::escape($block['title']) . '</h2>';
+                    }
+                    $articleHtml .= View::rewriteRootUrls($block['html']);
+                }
+                echo \Onim\Ads::inject($articleHtml, 'calc_inline', 2);
+                ?>
             </div>
 
             <?php foreach (Modules::partials((string) $calc['path'], 'article_foot') as $module): ?>
@@ -798,11 +543,315 @@ $clientPayload = [
                 <pre class="cite-box" id="cite-text"><?= View::escape(($calc['title'] ?: $calc['name']) . '. ' . SITE_NAME . '. Retrieved ' . date('F j, Y') . ', from ' . SITE_URL . $calc['path']) ?></pre>
             </section>
         </article>
-        </div>
 
-        <aside class="ad-rail ad-rail--right" aria-hidden="true">
-            <?= View::adSlot('calculator-right') ?>
-        </aside>
+        <?php /* The tool column. Second in the markup, first in the right-hand
+                 column on a desktop; on a phone the CSS lifts it above the
+                 write-up, because someone who lands on a calculator came for
+                 the calculator. */ ?>
+        <div class="calc-widget-column">
+            <div class="calc-widget" data-calculator="<?= View::escape($calc['file']) ?>">
+                <?php if ($groups === []): ?>
+                    <p class="calc-empty">This calculator has no interactive fields.</p>
+                <?php endif; ?>
+
+                <?php /* Script-driven pages now run their ported page script in the browser,
+                    so no "not calculated here" notice is needed. If a script throws at
+                    runtime the client engine shows a short fallback note instead. */ ?>
+
+                <?php /* Module slot: extra UI above the form. Partials are ordinary PHP
+                    included right here, so they see $calc, $groups, $solver and the
+                    rest of this template's scope. See lib/Modules.php. */ ?>
+                <?php foreach (Modules::partials((string) $calc['path'], 'widget_top') as $module): ?>
+                    <?php require $module['file']; ?>
+                <?php endforeach; ?>
+
+                <?php /* The results are computed on load but held back behind this
+                    notice until the visitor presses Calculate. Without JavaScript the
+                    attribute is never set, nothing is hidden and the page behaves
+                    exactly as before. */ ?>
+                <?php if ($noControls): ?>
+                    <div class="calc-empty-widget" role="note">
+                        <p class="calc-empty-title">This calculator is written up, not wired up.</p>
+                        <p>
+                            The method, the formula and a worked example are below in full — the
+                            interactive form for this one has not been built yet, so there is
+                            nothing here to type into.
+                        </p>
+                    </div>
+                <?php elseif (!$solvable): ?>
+                    <div class="calc-empty-widget" role="note">
+                        <p class="calc-empty-title">Nothing to calculate here.</p>
+                        <p>
+                            The answer for this one is set out in the article below — the values,
+                            the table they sit in and the method behind them. No formula was
+                            captured for this page, so there is no form to fill in and nothing to
+                            press.
+                        </p>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($solvable && !$noControls): ?>
+                <p class="calc-pending" data-calc-pending>
+                    <span class="calc-pending-icon" aria-hidden="true"><?= View::icon('chevron', 18) ?></span>
+                    <span data-calc-pending-text>Fill in the values, then press <strong>Calculate</strong> — your results appear below.</span>
+                </p>
+                <?php endif; ?>
+
+                <?php /* A page with no formula gets the note and the article, not a
+                    wall of boxes nobody can fill: those fields are the blank,
+                    meaningless placeholders the brief asks to be rid of. */ ?>
+                <?php $renderedTextIndexes = []; ?>
+                <?php foreach (($noControls || !$solvable) ? [] : $groups as $i => $group): ?>
+                    <?php
+                    $hasInput = false;
+                    $hasContent = false;
+                    foreach ($group['matrices'] as $mm) {
+                        foreach ($mm['columns'] as $cc) {
+                            foreach ($cc as $ff) {
+                                $kind = $ff['kind'] ?? '';
+                                if ($kind === 'text' && trim((string) ($ff['html'] ?? '')) === '') {
+                                    continue;      // an empty sentence is not content
+                                }
+                                /*
+                                 * A sentence is content. Treating it as invisible
+                                 * dropped every group that held nothing else — a
+                                 * page whose answer is one line of prose had its
+                                 * only line removed at load, and the answer then
+                                 * had no node to appear in.
+                                 */
+                                $hasContent = true;
+                                /*
+                                 * Anything the visitor can change counts as an input here. This
+                                 * list used to be just numbers and selects, so a form made
+                                 * entirely of date pickers — or of a row of radios — was
+                                 * classed as "empty" and hidden behind the results gate: the
+                                 * page showed a Calculate button and nothing to press it for.
+                                 */
+                                if (in_array($kind, ['number', 'select', 'date', 'datetime', 'time',
+                                                     'radio', 'checkbox', 'choice', 'textbox'], true)) {
+                                    $hasInput = true;
+                                }
+                            }
+                        }
+                    }
+                    /* A group with nothing in it is a stray rule and a blank gap
+                       between the form and the button; it is not rendered. */
+                    if (!$hasContent) {
+                        continue;
+                    }
+                    /* Every sentence this group prints, so the answers container
+                       below knows which lines have a node already. */
+                    foreach ($group['matrices'] as $mm) {
+                        foreach ($mm['columns'] as $cc) {
+                            foreach ($cc as $ff) {
+                                if (($ff['kind'] ?? '') === 'text' && isset($ff['index'])) {
+                                    $renderedTextIndexes[(int) $ff['index']] = true;
+                                }
+                            }
+                        }
+                    }
+                    ?>
+                    <section class="calc-group<?= $hasInput ? '' : ' is-empty' ?>" data-group>
+                        <?php /* An untitled group gets no header. It used to render a
+                            bare chevron over nothing, which reads as a blank label
+                            sitting above the fields — one of the rows the brief calls
+                            out. The fields below speak for themselves. */ ?>
+                        <?php if ($group['title'] !== ''): ?>
+                        <h2 class="calc-group-head">
+                            <button type="button" class="calc-group-toggle" aria-expanded="true"
+                                    aria-controls="calc-group-<?= (int) $i ?>" data-group-toggle
+                                    <?= $group['title'] === '' ? 'aria-label="Calculator inputs"' : '' ?>
+                                    <?= $hasInput ? '' : 'data-static' ?>>
+                                <span class="calc-chevron" aria-hidden="true"><?= View::icon('chevron', 20) ?></span>
+                                <?php if ($group['title'] !== ''): ?>
+                                    <span class="calc-group-title"><?= View::escape($group['title']) ?></span>
+                                <?php endif; ?>
+                            </button>
+                        </h2>
+                        <?php endif; ?>
+
+                        <div class="calc-group-body" id="calc-group-<?= (int) $i ?>">
+                            <?php if (!empty($group['description'])): ?>
+                                <p class="calc-group-desc"><?= View::escape($group['description']) ?></p>
+                            <?php endif; ?>
+
+                            <?php foreach ($group['matrices'] as $matrix):
+                                /*
+                                 * A harvested matrix declares its columns, but the columns
+                                 * are not what the page shows: a computed field is moved
+                                 * out of the form and into the results panel, so a group
+                                 * whose second column held only results rendered as a
+                                 * column of inputs beside half a card of white (agarose
+                                 * gel: 400px of fields, 400px of nothing).
+                                 *
+                                 * Each column is buffered and an empty one is dropped;
+                                 * what is left decides the grid. Two columns stay two,
+                                 * one column flows into as many 200px tracks as fit.
+                                 *
+                                 * (The wrapper div was also opened and never closed,
+                                 * which the browser silently repaired by nesting every
+                                 * later matrix inside the first.)
+                                 */
+                                $colHtml = [];
+                                foreach ($matrix['columns'] as $column) {
+                                    ob_start();
+                                    ?>
+                                        <div class="calc-col">
+                                            <?php foreach ($column as $field): ?>
+                                                <?php if (($field['kind'] ?? '') === 'number'): ?>
+                                                    <?php
+                                                    /*
+                                                     * A numeric field can be an input or a
+                                                     * result, and which one changes as the
+                                                     * visitor types. The placeholder below is
+                                                     * where it lives while it is an input;
+                                                     * while it is a result the same node is
+                                                     * moved into the results panel, and this
+                                                     * stays empty. One node either way, so no
+                                                     * value is ever on the page twice.
+                                                     */
+                                                    ?>
+                                                    <div class="calc-field-home" data-home="<?= View::escape((string) $field['name']) ?>">
+                                                        <?php
+                                                        /*
+                                                         * An unlabelled box that the page works out is a
+                                                         * result with no name, so it is not printed in the
+                                                         * form — an empty box with no label above the
+                                                         * Calculate button is the meaningless row the brief
+                                                         * asks to be rid of. It still reaches the results
+                                                         * panel; the panel is where a nameless value can sit
+                                                         * without looking like something to fill in.
+                                                         */
+                                                        $namelessResult = trim((string) ($field['label'] ?? '')) === ''
+                                                            && !empty($field['declaredOutput'])
+                                                            && $typeableInputs > 0;
+                                                        ?>
+                                                        <?php if (!$namelessResult && empty($field['computed'])
+                                                            && empty($field['outputOnly'])
+                                                            && (empty($field['declaredOutput']) || $outputsStayInForm)): ?>
+                                                            <?php
+                                                            /* In the fallback case the field really is an
+                                                               input, so it must not be marked as a result
+                                                               — calc.js would move it back out again. */
+                                                            $formField = $field;
+                                                            if ($outputsStayInForm) {
+                                                                $formField['declaredOutput'] = false;
+                                                            }
+                                                            ?>
+                                                            <?= View::render('partials/calc-field', ['field' => $formField]) ?>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                <?php else: ?>
+                                                    <?= View::render('partials/calc-field', ['field' => $field]) ?>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php
+                                    $buffer = (string) ob_get_clean();
+                                    if (preg_match('~class="(?:calc-field|calc-note|calc-formula|calc-figure)(?=[ "])~', $buffer) === 1) {
+                                        $colHtml[] = $buffer;
+                                    }
+                                }
+                                $cols = count($colHtml);
+                                if ($cols === 0) {
+                                    continue;
+                                }
+                                ?>
+                                <div class="calc-matrix<?= $cols === 1 ? ' calc-matrix--flow' : '' ?>" style="--cols:<?= (int) $cols ?>">
+                                    <?= implode('', $colHtml) ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </section>
+                <?php endforeach; ?>
+
+                <?php /* A sentence that answers the question can live in a group
+                         of its own, with no field beside it. If that group is
+                         dropped — "nothing to show", which is right when every
+                         fragment's condition is false at load and the line is
+                         empty — the answer would have nowhere to appear:
+                         Calculate would say "Results updated" over an empty
+                         panel. Keep an anchor for every text line the page did
+                         not print, and let the client fill it. */ ?>
+                <?php if (!$noControls && $solvable): ?>
+                    <div class="calc-answers" data-calc-answers>
+                        <?php foreach ($widget->texts as $i => $line): ?>
+                            <?php if (isset($renderedTextIndexes[$i])) { continue; } ?>
+                            <div class="calc-formula" data-formula-index="<?= (int) $i ?>"></div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($groups !== [] && !$noControls && $solvable): ?>
+                    <div class="calc-actions" data-calc-actions>
+                        <button type="button" class="calc-go" data-calc-go>
+                            <span class="calc-go-label" data-calc-go-label>Calculate</span>
+                        </button>
+                        <p class="calc-hint" data-calc-hint>
+                            <span class="calc-hint-icon" aria-hidden="true">ⓘ</span>
+                            <span data-calc-hint-text>Enter your values, then press Calculate to see the results.</span>
+                        </p>
+                        <p class="calc-announce" role="status" aria-live="polite" data-calc-status></p>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($hasResultSpace && !$noControls && $solvable): ?>
+                    <section class="calc-results<?= $resultRows === [] ? ' is-empty' : '' ?>" data-calc-results aria-labelledby="calc-results-title">
+                        <header class="calc-results-head">
+                            <h2 class="calc-results-title" id="calc-results-title">
+                                <span class="calc-results-icon" aria-hidden="true"><?= View::icon('equals', 18) ?></span>
+                                Results
+                            </h2>
+                            <button type="button" class="calc-copy-all" data-copy-all>
+                                <?= View::icon('copy', 15) ?><span data-copy-all-label>Copy all</span>
+                            </button>
+                        </header>
+
+                        <?php /* One row per solved value. Each row carries the field
+                                 itself, so the value stays editable (solve backwards by
+                                 typing a result) and the whole row is one target: the
+                                 number, its unit chip, and a copy button. */ ?>
+                        <ul class="calc-results-list" data-results-list>
+                            <?php foreach ($resultRows as $r): ?>
+                                <li class="calc-result" data-result-row="<?= View::escape((string) $r['name']) ?>">
+                                    <div class="calc-result-field" data-result-slot="<?= View::escape((string) $r['name']) ?>">
+                                        <?= View::render('partials/calc-field', ['field' => $r, 'inResult' => true]) ?>
+                                    </div>
+                                    <button type="button" class="calc-copy" data-copy="<?= View::escape((string) $r['name']) ?>"
+                                            aria-label="Copy <?= View::escape((string) ($r['label'] !== '' ? $r['label'] : $r['name'])) ?>"
+                                            title="Copy <?= View::escape((string) ($r['label'] !== '' ? $r['label'] : $r['name'])) ?>">
+                                        <?= View::icon('copy', 16) ?>
+                                        <span class="calc-copy-note" aria-hidden="true">Copy</span>
+                                    </button>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+
+                        <p class="calc-results-pending" data-results-empty>Press <strong>Calculate</strong> and the results appear here.</p>
+                        <p class="sr-only" role="status" aria-live="polite" data-copy-status></p>
+                    </section>
+                <?php endif; ?>
+
+                <?php foreach (Modules::partials((string) $calc['path'], 'widget_bottom') as $module): ?>
+                    <?php require $module['file']; ?>
+                <?php endforeach; ?>
+            </div>
+
+            <script type="application/json" id="calc-definition"><?= json_encode($clientPayload, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?></script>
+
+            <?php /* Under the result: where a visitor stops reading the tool and
+                     starts reading the write-up. Inside the column on purpose —
+                     as a sibling of the columns it would be the first grid item
+                     (order 0 beats the columns' 1 and 2) and the whole page
+                     would start one row lower. */ ?>
+            <?= \Onim\Ads::slot('calc_below') ?>
+
+            <?php /* The foot of the sticky column, reachable when the tool is
+                     shorter than the viewport — the case this column exists for. */ ?>
+            <div class="calc-tool-extra">
+                <?= \Onim\Ads::slot('calc_side') ?>
+            </div>
+        </div>
     </div>
 
     <?php foreach (Modules::partials((string) $calc['path'], 'page_foot') as $module): ?>

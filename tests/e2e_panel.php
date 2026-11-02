@@ -1538,6 +1538,190 @@ t('34 the cached copy holds no origin of its own',
     $stored !== '' && str_contains($stored, '<loc>@@ORIGIN@@/')
     && !str_contains($stored, 'http://127.0.0.1') && !str_contains($stored, 'http://localhost'));
 
+/* 35 — advertising --------------------------------------------------------- */
+/*
+ * The advertising feature is one registry (lib/Ads.php) and one switch. These
+ * checks are the contract that makes it usable: every slot the site can render
+ * is writable from the panel, every slot renders on the page that owns it and
+ * nowhere else, the master switch is absolute, and the admin preview shows the
+ * map without printing a single real tag.
+ *
+ * The suite writes settings with plain SQL rather than Settings::save(): that
+ * method logs to the activity feed, which needs a panel session and an Auth
+ * class this process does not load.
+ */
+$slots = \Onim\Ads::slots();
+t('35 the slot registry has every position', count($slots) === 13, (string) count($slots));
+
+/* Every slot must be a real, writable setting — the check that would have
+   caught the first set of rails, which no form ever posted. */
+$panel = page('settings', ['tab' => 'analytics'])['body'];
+$missing = [];
+foreach (array_keys($slots) as $slotKey) {
+    if (!str_contains($panel, 'name="settings[ads_slot_' . $slotKey . ']"')) {
+        $missing[] = $slotKey;
+    }
+}
+t('35 every slot is writable from the panel', $missing === [], implode(',', $missing));
+
+$adsSet = static function (string $key, string $val): void {
+    Db::exec(
+        'INSERT INTO settings (skey, svalue, sgroup) VALUES (?, ?, ?)
+         ON DUPLICATE KEY UPDATE svalue = ?',
+        [$key, $val, 'analytics', $val]
+    );
+};
+$adsReset = static function () use ($adsSet, $slots): void {
+    foreach (array_keys($slots) as $slotKey) {
+        $adsSet('ads_slot_' . $slotKey, '');
+    }
+    $adsSet('ads_enabled', '0');
+    \Onim\Ads::reset();
+    \Onim\Cms::flush();
+};
+
+$adsReset();
+$adsSet('ads_enabled', '1');
+foreach (array_keys($slots) as $slotKey) {
+    $adsSet('ads_slot_' . $slotKey, '<div id="e2e-' . $slotKey . '">AD</div>');
+}
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+
+$calcPage = get(BASE . '/math/percentage')['body'];
+$postPage = get(BASE . '/blog/how-to-read-a-calculator-result')['body'];
+
+/* Each page renders exactly its own set, and the sitewide header stands down
+   where the page carries its own top slot. */
+$expectCalc = ['calc_top', 'calc_inline', 'calc_below', 'calc_side', 'footer'];
+$expectPost = ['blog_top', 'blog_inline', 'blog_side_top', 'blog_side_bottom', 'footer'];
+$found = static function (string $html, string $key): bool {
+    return str_contains($html, 'id="e2e-' . $key . '"');
+};
+$calcOk = true;
+foreach (array_keys($slots) as $slotKey) {
+    $should = in_array($slotKey, $expectCalc, true);
+    if ($found($calcPage, $slotKey) !== $should) {
+        $calcOk = false;
+    }
+}
+t('35 a calculator page renders exactly its own slots', $calcOk);
+
+$postOk = true;
+foreach (array_keys($slots) as $slotKey) {
+    $should = in_array($slotKey, $expectPost, true);
+    if ($found($postPage, $slotKey) !== $should) {
+        $postOk = false;
+    }
+}
+t('35 a blog post renders exactly its own slots', $postOk);
+
+t('35 a calculator page does not stack two top leaderboards',
+    !$found($calcPage, 'header') && $found($calcPage, 'calc_top'));
+
+$homePage = get(BASE . '/')['body'];
+t('35 the homepage renders its own slot plus the sitewide pair',
+    $found($homePage, 'home_mid') && $found($homePage, 'header') && $found($homePage, 'footer'));
+t('35 a catalogue page carries the category slot',
+    $found(get(BASE . '/math')['body'], 'category_top'));
+t('35 the blog index carries the list slot',
+    $found(get(BASE . '/blog')['body'], 'blog_list'));
+
+/* The master switch is absolute: with it off nothing renders, whatever is
+   stored. This is the bug that hid in slot() for a whole round. */
+$adsSet('ads_enabled', '0');
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+$off = get(BASE . '/math/percentage')['body'];
+t('35 the master switch turns every slot off',
+    !str_contains($off, 'data-ad-slot') && !$found($off, 'calc_top'));
+
+/* The preview: token-only, boxes only. It must work with advertising off —
+   mapping the slots before switching them on is the normal case. */
+$token = \Onim\Ads::previewToken();
+$preview = get(BASE . '/math/percentage?ads=preview&ads_token=' . $token)['body'];
+t('35 the preview draws a box in every slot', substr_count($preview, 'ad-slot--preview') === count($expectCalc),
+    (string) substr_count($preview, 'ad-slot--preview'));
+t('35 the preview prints no real tags', !$found($preview, 'calc_top') && !str_contains($preview, 'id="e2e-'));
+t('35 a forged preview token draws nothing',
+    !str_contains(get(BASE . '/math/percentage?ads=preview&ads_token=' . str_repeat('a', 32))['body'], 'ad-slot--preview'));
+t('35 the preview link the panel prints actually works',
+    (bool) preg_match('~href="[^"]*\?ads=preview&amp;ads_token=[a-f0-9]{32}"~', $panel));
+
+/* Advertising off and slots empty, as the site ships. */
+$adsReset();
+t('35 the suite leaves advertising switched off',
+    !str_contains(get(BASE . '/math/percentage')['body'], 'data-ad-slot'));
+
+/* 36 — the two page layouts ------------------------------------------------ */
+/*
+ * Both pages are built from one grid each, and the arrangement is the point:
+ * the article leads on the left, the tool/rail sits on the right, and the tool
+ * column sticks from the bottom. Those are CSS facts, so the checks read the
+ * stylesheet — a page-level check cannot see them without a browser.
+ */
+$css = (string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css');
+
+$calcTpl = (string) file_get_contents(dirname(__DIR__) . '/templates/calculator.php');
+t('36 the calculator is one grid, not three columns',
+    substr_count($calcTpl, 'class="calc-layout"') === 1
+    && !str_contains($calcTpl, 'ad-rail'));
+t('36 the article comes before the tool in the domestic order',
+    strpos($calcTpl, 'class="calc-article"') < strpos($calcTpl, 'class="calc-widget-column"'));
+
+preg_match('~\.calc-layout \{[^}]*\}~', $css, $mLayout);
+t('36 the calculator grid is a single-column base with a desktop split',
+    isset($mLayout[0]) && str_contains($mLayout[0], 'display: grid')
+    && str_contains($mLayout[0], 'minmax(0, 1fr)'));
+t('36 the desktop grid puts the tool on the right',
+    (bool) preg_match('~grid-template-columns: minmax\(0, 1fr\) clamp\(~', $css));
+/* The desktop block, not the mobile-first rule: the same selector appears in
+   both, and only the media query carries the sticky behaviour. */
+preg_match('~@media \(min-width: 1100px\) \{(.*?)\n\}~s', $css, $mDesktop);
+$desktopCss = $mDesktop[1] ?? '';
+preg_match('~\.calc-widget-column \{[^}]*\}~', $desktopCss, $mSticky);
+t('36 the tool column sticks from the bottom',
+    isset($mSticky[0]) && str_contains($mSticky[0], 'position: sticky')
+    && str_contains($mSticky[0], '--calc-pin')
+    && !str_contains($mSticky[0], 'top: 24px'));
+t('36 the pin offset is measured so the tool bottom rests on the viewport bottom',
+    str_contains((string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js'), 'calc-pin'));
+
+$postTpl = (string) file_get_contents(dirname(__DIR__) . '/templates/post.php');
+t('36 the post has one rail, not a contents strip and a sidebar',
+    substr_count($postTpl, 'class="post-main"') === 1
+    && substr_count($postTpl, 'class="post-rail"') === 1
+    && !str_contains($postTpl, 'post-toc'));
+t('36 the post contents live inside the rail',
+    strpos($postTpl, 'class="post-rail"') < strpos($postTpl, 'post-rail-contents'));
+t('36 the post rail is sticky from the top on a desktop',
+    (bool) preg_match('~\.post-rail \{[^}]*position: sticky; top: \d+px~s', $css));
+
+/* 37 — the form grid ------------------------------------------------------- */
+/*
+ * A harvested matrix can declare two columns where the second holds only
+ * results; the second then renders empty and used to leave half a card blank.
+ * The template now buffers each column and drops the empty ones.
+ */
+t('37 an empty matrix column is dropped', str_contains($calcTpl, 'calc-matrix--flow'));
+$agarose = get(BASE . '/biology/agarose-gel-calculator')['body'];
+t('37 the agarose page renders one column, not two',
+    substr_count($agarose, 'class="calc-col"') === 1
+    && !str_contains($agarose, 'style="--cols:2"'));
+$pct = get(BASE . '/math/percentage')['body'];
+t('37 a genuine two-column group keeps its two columns',
+    str_contains($pct, 'style="--cols:2"'));
+t('37 the matrix grid follows the widget, not the viewport',
+    str_contains($css, 'container-type: inline-size') && str_contains($css, '@container'));
+/* A wrapper that is opened and never closed is repaired by the browser by
+   nesting every later matrix inside the first — invisible in a screenshot,
+   destructive to the form. Declared columns must therefore add up to the
+   columns actually rendered. */
+preg_match_all('~<div class="calc-matrix[^"]*" style="--cols:(\d+)"~', $pct, $mCols);
+$declared = array_sum(array_map('intval', $mCols[1]));
+t('37 every declared matrix column is rendered', $declared === substr_count($pct, 'class="calc-col"'),
+    $declared . ' declared / ' . substr_count($pct, 'class="calc-col"') . ' rendered');
+
 /* ---------------------------------------------------------------- summary */
 
 printf("\n%d passed, %d failed\n", $GLOBALS['passed'], $GLOBALS['failed']);

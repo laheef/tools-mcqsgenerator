@@ -97,6 +97,8 @@ $pageUrl = static function (int $n) use ($base): string {
             <?php endforeach; ?>
         </ul>
 
+        <?= \Onim\Ads::slot('blog_list') ?>
+
         <?php if ($pages > 1): ?>
             <nav class="pagination" aria-label="Blog pages">
                 <?php if ($page > 1): ?>

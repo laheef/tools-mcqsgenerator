@@ -62,40 +62,12 @@ final class View
         return site_base() . '/assets/' . ltrim($path, '/') . '?v=' . ASSET_VERSION;
     }
 
-    /**
-     * One advertising slot.
-     *
-     * The page reserves the column whether or not an ad exists, so a slot that
-     * appears later never shifts the article under the reader's eyes. The tag
-     * itself lives in Settings (Advertising → rail slots) and is printed only when
-     * advertising is switched on — an empty slot renders as nothing at all, not
-     * as a dashed "your ad here" box.
-     *
-     * Output is raw on purpose: an ad tag is HTML (usually a <script>), and it is
-     * written by an administrator, not by a visitor. Nothing else on this page
-     * is ever printed unescaped.
+    /*
+     * Advertising used to print here, through a name switch that hid the
+     * setting key. It now lives in lib/Ads.php, which owns the slot registry
+     * the panel lists. Nothing calls adSlot() any more; it is gone rather than
+     * kept as an alias, so there is exactly one way to print an ad.
      */
-    public static function adSlot(string $name): string
-    {
-        if (!class_exists(Cms::class) || !Cms::settingBool('ads_enabled', false)) {
-            return '';
-        }
-        /* Named slots map to settings, so the panel stays the only place an ad
-           tag is ever written: no template edit needed to go live. */
-        $key = [
-            'calculator-left'  => 'ads_rail_left',
-            'calculator-right' => 'ads_rail_right',
-        ][$name] ?? ('ad_slot_' . $name);
-        $html = (string) (Cms::setting($key, '') ?? '');
-        if ($html === '') {
-            return '';
-        }
-        /* A published ad tag that is literally empty markup is still nothing. */
-        if (trim(strip_tags($html)) === '' && !str_contains($html, '<script') && !str_contains($html, '<ins')) {
-            return '';
-        }
-        return $html;
-    }
 
     /** Absolute-or-relative site path. */
     public static function url(string $path = '/'): string

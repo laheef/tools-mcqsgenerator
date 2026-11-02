@@ -41,7 +41,12 @@ $themeAttr   = $colorMode === 'dark' ? 'dark' : ($colorMode === 'auto' ? 'auto' 
 $analyticsProvider = (string) Cms::setting('analytics_provider', 'none');
 $analyticsId       = (string) Cms::setting('analytics_id', '');
 $analyticsCustom   = (string) Cms::setting('analytics_custom_head', '');
-$adsHead           = Cms::settingBool('ads_enabled') ? (string) Cms::setting('ads_head_code', '') : '';
+/* The network's loader script, printed once in <head>. Suppressed in the
+   slot preview: the preview exists to show the map, and loading a live tag
+   while mapping would count impressions on an unfinished page. */
+$adsHead           = (Cms::settingBool('ads_enabled') && !\Onim\Ads::showOutlines())
+    ? (string) Cms::setting('ads_head_code', '')
+    : '';
 $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
 ?>
 <!DOCTYPE html>
@@ -145,9 +150,18 @@ $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
     <a class="skip-link" href="#main">Skip to content</a>
     <?= View::render('partials/header', ['navCategories' => $navCategories ?? [], 'active' => $active ?? '', 'siteName' => $brandName]) ?>
 
+    <?php /* Sitewide slots. The header leaderboard stands down on calculator and
+             blog pages, which print their own top-of-page slot: two leaderboards
+             stacked is the one arrangement every ad guide agrees is a mistake. */ ?>
+    <?php if (!str_contains($bodyClass, 'is-calculator') && !str_contains($bodyClass, 'is-post')): ?>
+        <?= \Onim\Ads::slot('header', 'ad-slot--page-top') ?>
+    <?php endif; ?>
+
     <main id="main" class="site-main">
         <?= $content ?>
     </main>
+
+    <?= \Onim\Ads::slot('footer', 'ad-slot--page-bottom') ?>
 
     <?= View::render('partials/footer', ['categories' => $categories ?? [], 'siteName' => $brandName]) ?>
 

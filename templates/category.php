@@ -48,6 +48,10 @@ foreach ($groups as $k => $v) {
         </div>
     </header>
 
+    <?php /* Under the heading, above the grid: the slot a category page can
+             carry without pushing the first calculator below the fold. */ ?>
+    <?= \Onim\Ads::slot('category_top', 'ad-slot--page-top') ?>
+
     <nav class="alpha-nav" aria-label="Jump to letter">
         <?php foreach (array_keys($groups) as $letter): ?>
             <a href="#letter-<?= View::escape($letter === '#' ? 'num' : $letter) ?>"><?= View::escape($letter) ?></a>

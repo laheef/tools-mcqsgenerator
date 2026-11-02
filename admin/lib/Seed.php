@@ -64,6 +64,21 @@ final class Seed
                     'is_secret' => 0,
                 ]);
             }
+            /* Every named ad slot starts empty, one row each. Seeding them means
+               the panel shows "empty" from a real row and a slot added to the
+               registry later is picked up by the next install. */
+            foreach (\Onim\Ads::slots() as $slotKey => $slotMeta) {
+                $key = 'ads_slot_' . $slotKey;
+                if (Db::value('SELECT COUNT(*) FROM settings WHERE skey = ?', [$key], 0) > 0) {
+                    continue;
+                }
+                Db::insert('settings', [
+                    'skey'      => $key,
+                    'svalue'    => '',
+                    'sgroup'    => 'analytics',
+                    'is_secret' => 0,
+                ]);
+            }
             $created[] = 'settings';
 
             /* -------------------------------------------------- categories */
@@ -305,9 +320,10 @@ final class Seed
             'ads_enabled'               => '0',
             'ads_head_code'             => '',
             'ads_inline_code'           => '',
-            'ads_rail_left'             => '',
-            'ads_rail_right'            => '',
             'ads_txt'                   => '',
+            /* One empty row per named slot, so the panel's "empty" badge is a
+               stored fact rather than a missing key. Generated from the
+               registry: see Ads::slots(). */
             /* mail */
             'mail_transport'      => 'mail',
             'mail_from_name'      => SITE_NAME,

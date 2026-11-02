@@ -46,9 +46,9 @@
   --radius-pill: 999px;
 
   --shell: 1286px;
-  /* calculator pages run wider: two 160px ad rails plus a ~940px column */
+  /* calculator pages run a little wider than the rest: article plus a ~400px
+     tool column, with room for a 728px leaderboard above both */
   --calc-shell: 1340px;
-  --ad-rail: 160px;
   --gutter: 16px;
   --header-h: 110px;
 
@@ -328,7 +328,17 @@ button { font: inherit; color: inherit; }
 /* ---------------------------------------------------------- page shells */
 .site-main { min-height: 60vh; }
 .page-shell { padding-block: 24px 64px; }
-.page-head { display: flex; gap: 18px; align-items: flex-start; margin-block: 8px 28px; }
+/*
+ * The page header is a flex row only when there is an icon to sit beside the
+ * text; without one the title, lede and meta are three flex items in a row and
+ * the title has nowhere to wrap. `flex-wrap` plus a wrapping text block makes
+ * the icon optional and lets the text take the full width when it is absent.
+ */
+.page-head { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; margin-block: 8px 28px; }
+.page-head > :not(.page-head-icon) { flex: 1 1 240px; min-width: 0; }
+.page-head > .page-title, .page-head > .page-lede, .page-head > .page-meta { flex-basis: 100%; margin-top: 0; }
+.page-head:has(.page-head-icon) > .page-title { flex-basis: auto; }
+.page-head > .page-meta { margin-top: -6px; }
 .page-head-icon {
   flex: 0 0 auto; width: 60px; height: 60px; display: grid; place-items: center;
   border-radius: var(--radius-lg); background: var(--brand-soft); color: var(--brand);
@@ -424,36 +434,139 @@ button { font: inherit; color: inherit; }
   width: 100%; max-width: var(--calc-shell); margin-inline: auto;
   padding-inline: var(--gutter); padding-bottom: 64px;
 }
-.calc-frame {
-  display: grid; gap: 24px; margin-top: 10px;
-  grid-template-columns: minmax(0, 1fr);
-}
+/*
+ * One grid for the page: the write-up on the left, the tool on the right.
+ *
+ * This replaces the two 160px ad rails that used to bracket the page. They
+ * were reserved-but-empty, so on every calculator the article sat in a 640px
+ * corridor with 320px of nothing beside it, and the tool — the reason the page
+ * exists — was the first thing in that corridor. The width the rails held is
+ * now the tool column, and the rails' job is done by named slots.
+ */
 .calc-layout {
   display: grid; gap: 32px; min-width: 0;
   grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  margin-top: 10px;
 }
-/* the calculator is the page: it comes first at every width */
+/* Single column: the tool leads. Someone who lands on a calculator came for
+   the calculator; the write-up is the answer to "why is that the number". */
 .calc-widget-column { order: 1; min-width: 0; }
 .calc-article { order: 2; min-width: 0; }
 
-@media (min-width: 1200px) {
-  .calc-frame {
-    grid-template-columns: var(--ad-rail) minmax(0, 1fr) var(--ad-rail);
-    gap: 24px; align-items: start;
+@media (min-width: 1100px) {
+  .calc-layout {
+    grid-template-columns: minmax(0, 1fr) clamp(360px, 31vw, 420px);
+    gap: 40px;
   }
-  .ad-rail { position: sticky; top: 24px; min-height: 600px; }
+  .calc-article { order: 1; }
+  /*
+   * The tool column, sticky *from the bottom*.
+   *
+   * `position: sticky; bottom: 0` does not pin anything — sticky only ever
+   * offsets the edge you name from the start of the scroll container, so a
+   * bottom-stuck element scrolls away and never comes back. What does work is
+   * a box exactly one viewport tall that pins at `top: 0`: its bottom edge is
+   * therefore always on the bottom edge of the viewport, and the tool sits at
+   * the bottom of that box. That is the arrangement a calculator wants — the
+   * fields stay in reach while the article scrolls behind them — and it is
+   * what the previous `top: 24px` got wrong by pinning the tool's *top*.
+   */
+  .calc-widget-column {
+    order: 2;
+    position: sticky;
+    /* Set from app.js to "viewport − column height − gap", so the column's own
+       bottom edge is what comes to rest on the bottom of the screen. The 0px
+       default keeps the column pinned at the top when the script is absent. */
+    top: var(--calc-pin, 0px);
+    align-self: start;
+    display: flex; flex-direction: column;
+    /*
+     * The column scrolls, not the card.
+     *
+     * Capping the column at one viewport and letting the card shrink inside it
+     * was wrong: the two 250px rail slots below the tool then squeezed the tool
+     * — a 900px-tall form rendered in the 330px that was left. The children are
+     * fixed-size and the column itself scrolls when there is more than a screen
+     * of it, so a long form keeps its full height and the slots are still
+     * reachable.
+     */
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    overscroll-behavior: auto;
+    scrollbar-width: thin;
+  }
+  .calc-widget-column::-webkit-scrollbar { width: 8px; }
+  .calc-widget-column::-webkit-scrollbar-thumb { background: #d7dde7; border-radius: 8px; }
+  .calc-widget-column > * { flex: 0 0 auto; }
+  /* The column's own slots are the last things in it, under the card. */
+  .calc-widget-column > .ad-slot,
+  .calc-widget-column > .calc-tool-extra { flex: 0 0 auto; }
 }
-/* Reserved advertising columns. Empty until a slot is filled. */
-.ad-rail { min-width: 0; display: flex; flex-direction: column; gap: 24px; }
-.ad-rail:empty { min-height: 0; }
 
-/* Below the rail breakpoint the columns fold away and the frame is one column;
-   the slots stay in the DOM so nothing has to change when they come back.
-   Declared after the base rule on purpose — same specificity, so order decides. */
-@media (max-width: 1199px) {
-  .ad-rail { display: none; }
+/* Under the tool card: an ad that only the sticky column renders. Collapsing
+   margins here would slide it under the card's shadow. */
+.calc-tool-extra { margin-top: 18px; }
+.calc-tool-extra:empty { display: none; }
+/*
+ * ---------------------------------------------------------------- ad slots
+ *
+ * Every ad position on the site is one of these. The shape sets a reserved
+ * height so a slow tag does not push the article down as it loads — that shift
+ * is the measurable cost of advertising, and it is avoidable when the shape is
+ * known in advance.
+ *
+ * `--ad-w` / `--ad-h` are the shape, not a promise: a tag that renders taller
+ * simply grows its slot, because a fixed height would clip it.
+ */
+.ad-slot {
+  display: block; margin: 22px auto; clear: both;
+  min-height: var(--ad-h, 0); max-width: var(--ad-w, 100%);
+  overflow: hidden;
 }
-.ad-slot { display: block; }
+.ad-slot iframe, .ad-slot ins, .ad-slot img { max-width: 100%; }
+.ad-slot--leaderboard { --ad-w: 728px;  --ad-h: 90px; }
+.ad-slot--billboard  { --ad-w: 970px;  --ad-h: 250px; }
+.ad-slot--rectangle  { --ad-w: 300px;  --ad-h: 250px; }
+.ad-slot--inline     { --ad-w: 468px;  --ad-h: 120px; margin-block: 26px; }
+
+/* Under the header and above the tool: a leaderboard that must not collide
+   with the breadcrumb, so it gets the page's own width and no side margins. */
+.ad-slot--page-top { margin: 6px auto 18px; }
+
+/* Inside the sticky tool column the slot is size-constrained, so it centres
+   in what is left of the column rather than forcing it wider. width:100% plus
+   a max of the ad's own width is deliberate: a slot is a grid/flex item there,
+   and `margin-inline:auto` on a grid item makes it shrink-to-fit instead of
+   stretching — a 300x250 rail ad rendered 144px wide, and a real 300px iframe
+   would have been clipped by the slot's overflow. */
+.calc-widget-column .ad-slot,
+.post-rail .ad-slot,
+.post-aside .ad-slot,
+.calc-tool-extra .ad-slot {
+  width: 100%; max-width: var(--ad-w, 100%);
+  margin: 0 auto 18px; justify-self: center;
+}
+.post-rail .ad-slot:last-child,
+.post-aside .ad-slot:last-child,
+.calc-widget-column .ad-slot:last-child { margin-bottom: 0; }
+
+/* The administrator's view of an empty slot: shaped, labelled, dashed. Never
+   rendered for a visitor (see Ads::showOutlines). */
+.ad-slot--preview {
+  display: grid; place-content: center; gap: 4px; text-align: center;
+  height: var(--ad-h, 90px);
+  border: 1px dashed #c3ccda; border-radius: 10px; background: #f7f9fc;
+  color: #7a8798; font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase;
+}
+.ad-slot--preview .ad-slot-label { font-weight: 700; }
+.ad-slot--preview .ad-slot-note { text-transform: none; letter-spacing: 0; color: #93a0b1; }
+
+/* The homepage slot sits in a shell wrapper, not in a rail. */
+.home-ad { min-height: 0; }
+.home-ad .ad-slot:only-child { margin-bottom: 8px; }
+
+@media print { .ad-slot { display: none !important; } }
 
 /* A hairline between the tool and the write-up. Without it the article head
    reads as another row of the calculator card. */
@@ -493,9 +606,30 @@ button { font: inherit; color: inherit; }
 .calc-group-toggle[aria-expanded="false"] + .calc-group-body { display: none; }
 .calc-group-desc { margin: 0; font-size: 13px; color: var(--ink-3); }
 
+/*
+ * The form grid.
+ *
+ * It used to split into `--cols` columns from a 480px *viewport* query, which
+ * is the wrong measurement: on a desktop the tool column is ~400px wide, so a
+ * two-column matrix became two 190px cells inside a 400px card, and the labels
+ * and unit chips in them were clipped. The widget is now a container and the
+ * columns follow its own width, so the same markup is two columns in a wide
+ * card and one column in a narrow one.
+ */
+.calc-widget { container-type: inline-size; }
 .calc-matrix { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 480px) {
+
+/* Each cell needs ~205px before a label, an input and a unit chip fit without
+   clipping; below that a two-column group is a worse read than a stack. */
+@container (min-width: 430px) {
   .calc-matrix { grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr)); }
+}
+/* A group whose other column was dropped leaves one column of fields. It flows
+   into as many 200px tracks as the card can hold instead of stretching one
+   field across the whole width. */
+.calc-matrix--flow { grid-template-columns: minmax(0, 1fr); }
+@container (min-width: 430px) {
+  .calc-matrix--flow { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 }
 .calc-col { display: grid; gap: 10px; min-width: 0; }
 
@@ -1215,7 +1349,9 @@ a:focus-visible > .calc-glyph,
   outline: none; border-color: var(--brand);
   box-shadow: 0 0 0 3px rgba(59, 104, 252, .14);
 }
-.field-textarea { resize: vertical; min-height: 110px; line-height: 1.55; }
+/* A textarea's intrinsic width comes from its `cols` attribute (20 by default,
+   which is ~320px), so it needs the same shrink allowance as an input. */
+.field-textarea { resize: vertical; min-height: 110px; line-height: 1.55; min-width: 0; max-width: 100%; }
 .field-hint { font-size: 11.5px; color: var(--ink-4); }
 .review-form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 .review-form-status { margin: 0; font-size: 13px; color: var(--ink-4); }
@@ -1400,9 +1536,16 @@ a:focus-visible > .calc-glyph,
     padding-top: 28px;
 }
 
+/* A grid item's automatic minimum is its content's min-content width, and for
+   an <input> that is the ~320px default — so the form's own grid pushed the
+   rows wider than the phone. min-width:0 is what lets them shrink. */
 .contact-form { display: grid; gap: 16px; max-width: 720px; }
+.contact-form > * { min-width: 0; }
 
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+/* `1fr` is `minmax(auto, 1fr)`, and auto is the widest word inside — which for
+   an input is its default width, so the pair never went below ~320px and the
+   form scrolled sideways on a 320px phone. minmax(0, …) lets the tracks shrink. */
+.form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; min-width: 0; }
 
 .field-check-label { display: flex; gap: 8px; align-items: flex-start; font-size: 0.95rem; }
 
@@ -1436,7 +1579,7 @@ a:focus-visible > .calc-glyph,
 
 @media (max-width: 860px) {
     .post-card { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Preview banner: shown on a signed preview link for unpublished content. */
@@ -2173,31 +2316,51 @@ a:focus-visible > .calc-glyph,
 
 /* ========================================================== BLOG POST PAGE */
 /*
- * Three columns: contents · the post · calculators.
+ * Two columns: the post, then one rail.
  *
- * Reading order is the DOM order, so a phone gets the headline, the body and
- * then the sidebar; the two rails only exist at ≥1100px, where they are sticky
- * and the middle column is capped at a 70-character measure.
+ * The post used to be three columns (contents | article | sidebar), which left
+ * the article at 648px between two rails and made the sidebar a strip. Two
+ * columns give the text room and put everything that is not the article —
+ * contents, ads, latest, popular, categories — in a single rail that sticks as
+ * the reader scrolls.
  */
-.post-shell { max-width: 1340px; }
+.post-shell { max-width: var(--shell); }
 .post-frame {
   display: grid; gap: 32px; align-items: start;
   grid-template-columns: minmax(0, 1fr);
   margin-top: 6px;
 }
-.post-main { min-width: 0; }
+.post-main { min-width: 0; order: 1; }
+.post-rail { min-width: 0; order: 2; display: grid; gap: 18px; align-content: start; }
 .post-main .page-head { display: block; margin-block: 0 22px; max-width: 72ch; }
 .post-main .page-title { margin-bottom: 10px; }
 .post-main .post-cover { margin: 0 0 24px; max-width: 72ch; }
 
 @media (min-width: 1100px) {
-  .post-frame { grid-template-columns: 240px minmax(0, 1fr) 300px; gap: 40px; }
-  .post-toc, .post-aside { position: sticky; top: 24px; }
+  .post-frame { grid-template-columns: minmax(0, 1fr) clamp(300px, 26vw, 340px); gap: 44px; }
+  .post-rail {
+    position: sticky; top: 22px;
+    max-height: calc(100vh - 44px); overflow-y: auto;
+    overscroll-behavior: contain; scrollbar-width: thin;
+    padding-bottom: 8px;
+  }
+  .post-rail::-webkit-scrollbar { width: 8px; }
+  .post-rail::-webkit-scrollbar-thumb { background: #d7dde7; border-radius: 8px; }
 }
-/* Between 720 and 1100 the contents box sits above the post instead of beside it. */
+/* Below the rail breakpoint the contents sit above the post as a card, which is
+   where a reader on a phone wants them, and the rail's ads fold away. */
+@media (max-width: 1099px) {
+  .post-rail { order: 2; }
+  .post-rail-contents { order: -1; }
+  .post-rail .ad-slot { display: none; }
+}
+/* Between 720 and 1100 the contents list is a two-column card. */
 @media (max-width: 1099px) and (min-width: 720px) {
-  .post-toc .toc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .toc--side .toc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ------------------------------------------------------------- contents rail */
+.post-rail-contents { min-width: 0; }
 
 /* ------------------------------------------------------------- contents rail */
 .toc--side {
@@ -2255,8 +2418,8 @@ a:focus-visible > .calc-glyph,
 .aside-cats a:hover { color: var(--brand); text-decoration: none; }
 .aside-count { font-size: 12px; color: var(--ink-4); font-variant-numeric: tabular-nums; }
 
-/* print: the two rails are navigation, the body is the page */
+/* print: the rail is navigation, the body is the page */
 @media print {
-  .post-toc, .post-aside { display: none !important; }
+  .post-rail, .post-aside { display: none !important; }
   .post-frame { display: block; }
 }
