@@ -2034,10 +2034,10 @@ $appJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js');
 t('42 height never releases the column any more',
     !str_contains($appJs, 'is-tall')
     && !str_contains($appJs, 'viewport - height')
-    && str_contains($appJs, "'--calc-pin', clear + 'px'"));
+    && str_contains($appJs, "column.style.setProperty('--calc-pin', pin + 'px')"));
 t('46 the pin is never negative, so no card starts above the header line',
-    str_contains($appJs, "column.style.setProperty('--calc-pin', clear + 'px')")
-    && !str_contains($appJs, 'viewport - height'));
+    str_contains($appJs, 'var pinFoot = Math.round(viewport - GAP - cardBox.height - offset);')
+    && str_contains($appJs, "var pin = mode === 'down' ? Math.max(pinFoot, footFloor) : pinHead;"));
 
 /* 46 — the page that keeps up with the reader --------------------------------- */
 /*
@@ -2097,18 +2097,19 @@ t('46 every card carries a link and an arrow',
 
 /* 47 — the column keeps its distance from the header ----------------------- */
 /*
- * Round 47 flipped the pinned edge with the scroll direction: pinned by the
- * foot going down, by the head coming back. Foot-pinning slid the head of a
- * tall card under the sticky header on a laptop, so the flip is gone: the head
- * is now held clear of the header in both directions, and a column too tall
- * for the space between header and fold scrolls with the page instead.
+ * The column holds to whichever edge the reader is working towards: pinned by
+ * the foot of the card going down the page (so its last row and the Calculate
+ * button stay near the fold), by the head coming back (so the tool's name and
+ * first fields are in view). Both pins are floored so the card itself never
+ * starts above the header line.
  */
-t('47 the column no longer flips under the header',
-    !str_contains($appJs, "var next = delta > 0 ? 'down' : 'up';")
-    && !str_contains($appJs, 'is-head-pinned'));
-t('47 the pin keeps its distance from the header in both scroll directions',
+t('47 the column pins by its foot going down and by its head coming back',
+    str_contains($appJs, "var next = delta > 0 ? 'down' : 'up';")
+    && str_contains($appJs, "column.classList.toggle('is-foot-pinned'")
+    && str_contains($appJs, 'var pinHead = Math.round(clear);'));
+t('47 the card keeps its distance from the header in both scroll directions',
     str_contains($appJs, "getPropertyValue('--header-h')")
-    && str_contains($appJs, "'--calc-pin', clear + 'px'"));
+    && str_contains($appJs, 'var footFloor = Math.round(clear) - offset;'));
 t('47 the top offset is measured from the sticky header, not fixed',
     !str_contains($appJs, 'var TOP_GAP = 88;')
     && str_contains($appJs, 'function headerClearance()')

@@ -411,26 +411,29 @@
   (function pinCalculatorColumn() {
     var column = document.querySelector('.calc-widget-column');
     if (!column) return;
-    var MIN_TOP = 72;    // never tuck the column's head closer than this
+    /* The widget card, not the whole column: the column also carries the ad
+       slots below the tool, and measuring those was what made a 480px form
+       behave like a 1,600px one. */
+    var card = column.querySelector('.calc-widget') || column;
+    var GAP = 24;        // breathing room between the card and the fold
+    var MIN_TOP = 72;    // never tuck the card's head closer than this
+    var FLIP = 6;        // scroll this far against the last direction to flip
 
     /*
-     * The tool column stays with the reader, and its head always sits clear of
-     * the header.
+     * The card holds to whichever edge the reader is working towards.
      *
-     * Two earlier versions got one half of that and lost the other. Pinning the
-     * column by its FOOT (so Calculate stayed in reach) dragged the top of the
-     * card up under the sticky header, and — because the column also carries
-     * the ad slots below the tool — the "foot" was the bottom of a 600px
-     * skyscraper, so the card's heading was the first thing to disappear.
-     * Releasing the column when it did not fit the screen cured that and cost
-     * the stickiness altogether: with ads on, the column is 1,400–1,800px tall
-     * on every calculator, so it never fitted and never pinned.
+     * Down the page the reader is reading toward the results, so the card is
+     * pinned by its FOOT: its last row and the Calculate button sit just above
+     * the fold, and the card travels up with the page until they get there.
+     * Up the page the reader is going back to change a number, so it flips and
+     * pins by its HEAD, `clear` below the sticky header, and the tool's own
+     * heading and first fields come back into view.
      *
-     * The rule now is the simple one: the column pins, by its head, at the
-     * measured clearance, whatever its height — the tool stays on screen and
-     * its first field is never behind the header. What hangs below the fold is
-     * whatever the owner put below the tool: the ad slots scroll out of the
-     * pinned column, which is where they belong.
+     * Both pins keep their distance from the header: the foot pin is clamped
+     * to the header line, so a card taller than the space between header and
+     * fold never slides its first field under the header — it stops at the
+     * clearance and the rest hangs below the fold, which is the only thing
+     * geometry leaves to choose when a card cannot fit the screen.
      *
      * The offset is measured from the header rather than hard-coded: the header
      * is ~119px at rest, shrinks to 59px when it sticks, and is a different
@@ -447,30 +450,69 @@
       return Math.max(Math.round(measured) + 18, MIN_TOP);
     }
 
+    var mode = 'down';              // 'down' = pinned by the foot, 'up' = by the head
+    var lastY = window.pageYOffset;
     var lastClear = -1;
 
     function paint() {
       var clear = headerClearance();
       lastClear = clear;
-      /* The pin is never negative: the head rests `clear` below the top of the
-         viewport in both scroll directions, so the first field and the tool's
-         own heading never disappear under the header. */
-      column.style.setProperty('--calc-pin', clear + 'px');
+      var viewport = window.innerHeight;
+      var cardBox = card.getBoundingClientRect();
+      var columnBox = column.getBoundingClientRect();
+      if (!cardBox.height) return;
+
+      /* The name sits inside the column, above the card: the pin has to allow
+         for it, or "the foot of the card" lands wherever the name puts it. */
+      var offset = Math.round(cardBox.top - columnBox.top);
+
+      /* Foot pin: the card's bottom edge rests GAP above the fold. */
+      var pinFoot = Math.round(viewport - GAP - cardBox.height - offset);
+      /* Head pin: the column's top — the tool's name — rests `clear` below the
+         header, with the card directly under it. */
+      var pinHead = Math.round(clear);
+      /* The floor for the foot pin: the card, not the name, keeps its distance
+         from the header. Reading down the page the card is what the reader is
+         using, and the name above it is allowed to slide up out of the way —
+         but the card's first field never goes behind the header. */
+      var footFloor = Math.round(clear) - offset;
+
+      var pin = mode === 'down' ? Math.max(pinFoot, footFloor) : pinHead;
+
+      column.style.setProperty('--calc-pin', pin + 'px');
+      column.classList.toggle('is-foot-pinned', mode === 'down' && pinFoot > pinHead);
     }
 
     function onScroll() {
+      var y = window.pageYOffset;
+      var delta = y - lastY;
+      lastY = y;
+
       /* The header shrinks from ~119px to 59px the moment it sticks, so the
-         clearance genuinely changes early in the scroll. Recompute once per
-         change rather than leaving a stale gap. */
+         clearance genuinely changes early in the scroll. Recompute rather than
+         leaving a stale gap. */
       if (headerClearance() !== lastClear) {
         paint();
       }
+
+      if (Math.abs(delta) < FLIP) {
+        return;
+      }
+      var next = delta > 0 ? 'down' : 'up';
+      if (next === mode) {
+        return;
+      }
+      mode = next;
+      paint();
     }
 
     paint();
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', paint);
     window.addEventListener('load', paint);
+    if (typeof ResizeObserver === 'function') {
+      new ResizeObserver(paint).observe(card);
+    }
   })();
 
   /* ------------------------------------------------------- ad slot fitting */
