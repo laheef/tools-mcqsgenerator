@@ -41,6 +41,27 @@ if ($count === 1 && $segments[0] === 'robots.txt') {
     echo Seo::robots();
     exit;
 }
+/*
+ * ads.txt, straight from the panel (Settings -> Advertising).
+ *
+ * The panel has offered this box since the first advertising pass and told the
+ * owner it is "served at /ads.txt when not empty" — but nothing routed the
+ * path, so the file 404'd and an ad network that checks it saw an unverified
+ * seller. 404 while the box is empty is deliberate: the file must not exist
+ * until there is something true to put in it.
+ */
+if ($count === 1 && $segments[0] === 'ads.txt') {
+    $adsTxt = trim((string) (Cms::setting('ads_txt', '') ?? ''));
+    header('Content-Type: text/plain; charset=utf-8');
+    header('Cache-Control: public, max-age=3600');
+    if ($adsTxt === '') {
+        http_response_code(404);
+        echo "# No ads.txt is published on this site.\n";
+        exit;
+    }
+    echo $adsTxt . "\n";
+    exit;
+}
 
 /* -------------------------------------------------- search index (json) */
 if ($count === 1 && $segments[0] === 'search-index.json') {

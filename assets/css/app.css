@@ -525,6 +525,9 @@ button { font: inherit; color: inherit; }
   overflow: hidden;
 }
 .ad-slot iframe, .ad-slot ins, .ad-slot img { max-width: 100%; }
+/* A tag wider than the slot is scaled down by app.js (never cropped): the slot
+   becomes the frame and the creative keeps its shape inside it. */
+.ad-slot > * { transform-origin: top left; }
 .ad-slot--leaderboard { --ad-w: 728px;  --ad-h: 90px; }
 .ad-slot--billboard  { --ad-w: 970px;  --ad-h: 250px; }
 .ad-slot--rectangle  { --ad-w: 300px;  --ad-h: 250px; }

@@ -399,6 +399,59 @@
     }
   })();
 
+  /* ------------------------------------------------------- ad slot fitting */
+  /*
+   * An ad tag is written for one width: 728x90, 300x250, 970x250. On a phone
+   * none of those fit, and the slot was `overflow: hidden`, so a leaderboard
+   * simply had its right half sliced off — the same clipped-content bug the
+   * form had, in a worse place, because a half-visible ad is worthless to the
+   * advertiser and looks broken to the reader.
+   *
+   * The fix is to scale the whole tag down instead of cropping it: the slot
+   * keeps the ad's own shape, every pixel of the creative is on screen, and
+   * the reserved height shrinks with it so the page does not carry a blank
+   * band. A tag that already fits is left completely alone.
+   */
+  (function fitAdSlots() {
+    var slots = [].slice.call(document.querySelectorAll('.ad-slot:not(.ad-slot--preview)'));
+    if (!slots.length) return;
+
+    function fit(slot) {
+      var inner = slot.firstElementChild;
+      if (!inner) return;
+      inner.style.transform = '';
+      inner.style.transformOrigin = '';
+      slot.style.height = '';
+      slot.style.minHeight = '';
+
+      var avail = slot.clientWidth;
+      var box = inner.getBoundingClientRect();
+      /* scrollWidth catches content wider than the box it was put in (an
+         iframe with its own width attribute, a 970px div); the rect catches a
+         box already squeezed by max-width but holding wider content. */
+      var natural = Math.max(box.width, inner.scrollWidth);
+      if (!avail || !natural || natural <= avail + 1) return;
+
+      var scale = avail / natural;
+      /* Left edge, not centre: the tag is wider than the slot, so its own
+         centre is to the right of the slot's centre and centring the transform
+         would push the scaled copy off to the right — it fitted in width and
+         still hung 325px over the edge of the page. */
+      inner.style.transformOrigin = 'top left';
+      inner.style.transform = 'scale(' + scale.toFixed(4) + ')';
+      slot.style.minHeight = '0px';
+      slot.style.height = Math.round(box.height * scale) + 'px';
+    }
+
+    function fitAll() { slots.forEach(fit); }
+    fitAll();
+    window.addEventListener('resize', fitAll);
+    window.addEventListener('load', fitAll);
+    /* Ad networks fill slots after load; measure again once they have. */
+    setTimeout(fitAll, 1200);
+    setTimeout(fitAll, 3000);
+  })();
+
   /* --------------------------------------------------------- print */
   [].slice.call(document.querySelectorAll('[data-print]')).forEach(function (btn) {
     btn.addEventListener('click', function () { window.print(); });

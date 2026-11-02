@@ -112,33 +112,14 @@ $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
     <?php endif; ?>
     <link rel="stylesheet" href="<?= View::escape(View::asset('css/app.css')) ?>">
 
-    <?php /* The utility-class engine is served from this host, not from a CDN:
-        a calculator that cannot paint because a third party is slow (or blocked)
-        is a broken calculator. The file is the same build the CDN serves, forms
-        plugin included. */ ?>
-    <script src="<?= View::escape(View::asset('js/vendor/tailwind.js')) ?>"></script>
-    <script>
-    // Tailwind is available for utility classes; the design tokens match app.css.
-    if (window.tailwind) {
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { DEFAULT: '#3B68FC', dark: '#294CC2', soft: '#EBEFFF' },
-                        ink: { DEFAULT: '#0A0A0A', 2: '#212427', 3: '#4B5259', 4: '#748091' },
-                        line: '#DFE2EB',
-                        canvas: '#F7F9FF'
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'Verdana', 'sans-serif'],
-                        mono: ['"DM Mono"', 'ui-monospace', 'monospace']
-                    },
-                    maxWidth: { shell: '1286px' }
-                }
-            }
-        };
-    }
-    </script>
+    <?php /* The element/form reset (Tailwind's preflight, vendored as CSS).
+        It used to arrive as 408 KB of JavaScript — the whole Tailwind compiler,
+        run on every page to generate the same ~10 KB of rules, warning in the
+        console that it was not for production. The rules are now a file the
+        browser caches, loaded after app.css so it sits at the same point in the
+        cascade the injected style did. */ ?>
+    <link rel="stylesheet" href="<?= View::escape(View::asset('css/base.css')) ?>">
+
     <?php /* Mark the document as scripted before the first paint. The calculator
         widget holds its results back until Calculate is pressed, and without
         this the server-rendered numbers would flash on screen for one frame and

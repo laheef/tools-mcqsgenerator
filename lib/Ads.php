@@ -176,6 +176,14 @@ final class Ads
             return '';
         }
         $html = trim((string) (Cms::setting(self::settingKey($key), '') ?? ''));
+        /* `ads_inline_code` was the in-article tag before the slots had names.
+           An install that already filled it in keeps its ad: the named slot
+           wins, and the old key is the fallback, which is exactly what the
+           panel's hint promises. Without this the textarea was a control that
+           saved a value nothing ever read. */
+        if ($html === '' && $key === 'calc_inline') {
+            $html = trim((string) (Cms::setting('ads_inline_code', '') ?? ''));
+        }
         if ($html === '') {
             return '';
         }

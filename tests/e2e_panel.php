@@ -1722,6 +1722,75 @@ $declared = array_sum(array_map('intval', $mCols[1]));
 t('37 every declared matrix column is rendered', $declared === substr_count($pct, 'class="calc-col"'),
     $declared . ' declared / ' . substr_count($pct, 'class="calc-col"') . ' rendered');
 
+/* 38 — the panel tells the truth ------------------------------------------ */
+/*
+ * Round 40's bug was a panel field that rendered nowhere. These checks exist so
+ * the same class of bug cannot come back quietly: every control either does
+ * something the site does, or is not offered.
+ */
+
+/* ads.txt: offered by the panel, so it must be served — and only when set. */
+Db::exec("DELETE FROM settings WHERE skey = 'ads_txt'");
+\Onim\Cms::flush();
+$emptyTxt = get(BASE . '/ads.txt');
+t('38 ads.txt 404s while the box is empty', $emptyTxt['status'] === 404);
+
+Db::exec("INSERT INTO settings (skey, svalue, sgroup) VALUES ('ads_txt', ?, 'analytics')
+          ON DUPLICATE KEY UPDATE svalue = VALUES(svalue)",
+    ['google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0']);
+\Onim\Cms::flush();
+$liveTxt = get(BASE . '/ads.txt');
+t('38 ads.txt serves the stored line', $liveTxt['status'] === 200
+    && str_contains($liveTxt['body'], 'pub-1234567890123456'));
+t('38 ads.txt is plain text', stripos($liveTxt['headers'], 'text/plain') !== false);
+
+Db::exec("DELETE FROM settings WHERE skey = 'ads_txt'");
+\Onim\Cms::flush();
+
+/* The pre-slot in-article tag keeps working, and never outranks the named slot. */
+$adsSet('ads_enabled', '1');
+foreach (array_keys($slots) as $slotKey) {
+    $adsSet('ads_slot_' . $slotKey, '');
+}
+$adsSet('ads_inline_code', '<div id="e2e-legacy">LEGACY</div>');
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+t('38 the legacy in-article tag still renders',
+    str_contains(get(BASE . '/math/percentage')['body'], 'e2e-legacy'));
+
+$adsSet('ads_slot_calc_inline', '<div id="e2e-named">NAMED</div>');
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+$both = get(BASE . '/math/percentage')['body'];
+t('38 a named slot wins over the legacy tag',
+    str_contains($both, 'e2e-named') && !str_contains($both, 'e2e-legacy'));
+
+$adsSet('ads_slot_calc_inline', '');
+$adsSet('ads_inline_code', '');
+$adsSet('ads_enabled', '0');
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+
+/* The utility engine: no 408 KB compiler on any page, one cached stylesheet. */
+$home = get(BASE . '/')['body'];
+$calc = get(BASE . '/math/percentage')['body'];
+t('38 no page loads the Tailwind compiler',
+    !str_contains($home, 'vendor/tailwind.js') && !str_contains($calc, 'vendor/tailwind.js')
+    && !is_file(dirname(__DIR__) . '/assets/js/vendor/tailwind.js'));
+t('38 every page links the vendored reset',
+    str_contains($home, 'css/base.css') && str_contains($calc, 'css/base.css'));
+$baseCss = (string) @file_get_contents(dirname(__DIR__) . '/assets/css/base.css');
+t('38 the reset stylesheet carries the element rules',
+    str_contains($baseCss, 'box-sizing: border-box') && str_contains($baseCss, 'margin: 0')
+    && strlen($baseCss) > 5000 && strlen($baseCss) < 30000);
+t('38 the reset is served', get(BASE . '/assets/css/base.css')['status'] === 200);
+
+/* An ad wider than its slot is scaled, never cropped. */
+$appJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js');
+t('38 ad slots scale an oversized tag instead of clipping it',
+    str_contains($appJs, 'fitAdSlots') && str_contains($appJs, 'transformOrigin')
+    && str_contains((string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css'), '.ad-slot > *'));
+
 /* ---------------------------------------------------------------- summary */
 
 printf("\n%d passed, %d failed\n", $GLOBALS['passed'], $GLOBALS['failed']);

@@ -417,10 +417,11 @@ $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($k
                             advertising is switched off.</div>
                     </div>
                     <div class="field">
-                        <label for="ads_inline_code">Legacy in-article slot</label>
+                        <label for="ads_inline_code">Legacy in-article tag</label>
                         <textarea id="ads_inline_code" name="settings[ads_inline_code]" rows="3" class="code"><?= e($v('ads_inline_code')) ?></textarea>
-                        <div class="hint">Kept so an existing tag keeps working. New placements belong in the named
-                            slots above, which say exactly where they appear.</div>
+                        <div class="hint">The in-article tag from before the slots were named. It still prints in the
+                            <strong>Calculator — inside the article</strong> position, but only while that slot above is
+                            empty — a tag in the named slot always wins. Move it up there when you get a moment.</div>
                     </div>
                     <div class="field">
                         <label for="ads_txt">ads.txt</label>
