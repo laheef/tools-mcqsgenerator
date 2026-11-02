@@ -750,12 +750,18 @@ button { font: inherit; color: inherit; }
   }
   .calc-widget-column {
     position: sticky;
-    /* app.js writes --calc-pin (the bottom-hung offset). While the page is still
-       near the top the column uses its natural offset instead, so it sits where
-       the document put it and nothing shifts on load. */
+    /* app.js writes --calc-pin. Positive for a column short enough to pin by its
+       top; negative for a taller one, which then travels up with the page until
+       its last field and the Calculate button reach the bottom edge — and holds
+       there. Either way nothing moves on load: sticky only applies once the
+       page has scrolled past the column's own place in the document. */
     top: var(--calc-pin, 0px);
+    /* The column is taller than the grid row in some layouts; without this the
+       grid would stretch it to the article's height and `align-self` would be
+       ignored, making the sticky box as tall as its own containing block and
+       therefore unable to move inside it. */
+    align-self: start;
   }
-  .calc-widget-column.is-tall { position: static; }
 }
 
 /* Three columns, only when the rail has a tag in it. */

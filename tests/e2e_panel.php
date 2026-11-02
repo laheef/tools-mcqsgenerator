@@ -2027,9 +2027,16 @@ t('42 the calculator name is above the tool',
 $appCss = (string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css');
 t('42 the tool column has no scrollbar of its own',
     !preg_match('~\.calc-widget-column\s*\{[^}]*overflow-y:\s*auto~', $appCss));
-t('42 a column taller than the screen is not pinned', str_contains($appCss, '.calc-widget-column.is-tall { position: static; }'));
+t('42 a tall column is pinned by its foot, never dropped to static',
+    !str_contains($appCss, '.calc-widget-column.is-tall { position: static; }')
+    && str_contains($appCss, 'top: var(--calc-pin, 0px);'));
 $appJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js');
-t('42 only what fits is pinned', str_contains($appJs, "classList.toggle('is-tall', tall)"));
+t('42 every column pins, whichever edge its height allows',
+    str_contains($appJs, 'fitsUnderHeader')
+    && str_contains($appJs, 'Math.round(viewport - height - GAP)')
+    && !str_contains($appJs, "classList.toggle('is-tall'"));
+t('46 a tall column pins with a negative offset, so its Calculate button reaches the fold',
+    str_contains($appJs, 'pin = Math.round(viewport - height - GAP);'));
 
 /* 46 — the page that keeps up with the reader --------------------------------- */
 /*

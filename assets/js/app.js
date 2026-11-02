@@ -412,54 +412,65 @@
     var GAP = 24;       // breathing room under a column pinned by its bottom
 
     /*
-     * Two ways to stick, and the column picks the one its height allows.
+     * The tool column never scrolls away. It stops.
      *
      * A calculator page is read downwards and used at the bottom: you read the
-     * write-up, then come back to change a value. A column pinned by its top
-     * keeps the name and the first field on screen and lets the Calculate
-     * button fall off the bottom; one pinned by its bottom keeps the results on
-     * screen and lets the first field fall off the top.
+     * write-up, then come back to change a value. So the column is always
+     * sticky — which edge it pins to is the only decision, and the column's own
+     * height makes it:
      *
-     * So:
+     *   short enough to fit under the header  ->  it pins by its TOP at
+     *   `TOP_GAP`. The whole form stays readable while the article scrolls
+     *   beside it, which is what a reader wants from a compact tool.
      *
-     *   short column (its bottom is already above the fold when the page
-     *   loads)  ->  pinned at the top once the page scrolls, exactly like a
-     *               normal sticky heading. Nothing moves on load.
+     *   taller than that  ->  it pins by its BOTTOM. It travels up with the page
+     *   until its last field, the Calculate button and the results reach the
+     *   bottom of the viewport, and then it stops there. Pinning such a column
+     *   by its top instead would park a 1,200px form at 88px from the top and
+     *   put Calculate permanently below the fold — the one control the page
+     *   exists for, unreachable.
      *
-     *   taller column (its bottom would sit below the fold)  ->  pinned by its
-     *               bottom edge, so scrolling down slides the column up only as
-     *               far as the viewport bottom and then leaves the results and
-     *               the Calculate button in reach; scrolling back up returns it
-     *               to its place in the flow.
+     * The bottom pin is a *negative* `top`: sticky only begins to hold the
+     * column once its top would pass that line, which is exactly the moment its
+     * bottom meets the viewport's bottom edge. That also means nothing moves on
+     * load — the column sits where the document put it until the reader
+     * scrolls — and it cannot slide under the header, because it never pins
+     * above the fold at all.
      *
-     * A column taller than the viewport itself cannot be pinned usefully — a
-     * sticky box taller than its scrollport just covers the page — so it keeps
-     * `is-tall`, the CSS drops `position: sticky`, and it scrolls with the page
-     * like everything else. There is one scrollbar on a page.
+     * Columns were previously dropped to `position: static` when they were
+     * taller than the viewport, on the grounds that a sticky box taller than
+     * its scrollport "just covers the page". It does not: it scrolls normally
+     * until its bottom arrives, and then it holds. Dropping them was the bug —
+     * the majority of the catalogue is that tall, so most calculator pages had
+     * a column that simply scrolled off.
      */
     function place() {
       var viewport = window.innerHeight;
       var height = column.getBoundingClientRect().height;
+      if (!height) return;
+
+      // The column's place in the document, independent of the scroll position.
+      // Read from offsetTop, never from getBoundingClientRect(): the rect would
+      // report the already-shifted position the sticky offset produced.
       var naturalTop = 0;
       var node = column;
       while (node) {
         naturalTop += node.offsetTop || 0;
         node = node.offsetParent;
       }
-      // Whether, on a page that has not been scrolled, the whole column is
-      // already above the fold — a property of the document, not of the reader.
-      var loadsAboveFold = naturalTop + height <= viewport - GAP;
-      var fits = height <= viewport - TOP_GAP;
-      var tall = !fits && height > viewport - GAP;
 
-      column.classList.toggle('is-tall', tall);
-      if (tall) {
-        column.style.removeProperty('--calc-pin');
-        return;
+      var fitsUnderHeader = height <= viewport - TOP_GAP - GAP;
+      var pin;
+      if (fitsUnderHeader) {
+        // Top-pinned. Never below the column's own resting place, or applying
+        // the offset on load would shove a column that starts high on the page
+        // down to the header line.
+        pin = Math.min(TOP_GAP, Math.round(naturalTop));
+      } else {
+        // Bottom-pinned: negative, so the column travels until its foot reaches
+        // the bottom of the viewport and stops there.
+        pin = Math.round(viewport - height - GAP);
       }
-      // The offset only matters once the page has scrolled past the column's
-      // own position; before that the column sits where the document put it.
-      var pin = loadsAboveFold ? TOP_GAP : Math.max(TOP_GAP, Math.round(viewport - height - GAP));
       column.style.setProperty('--calc-pin', pin + 'px');
     }
 
