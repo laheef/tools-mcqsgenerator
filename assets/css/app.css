@@ -67,7 +67,7 @@
 
 /* -------------------------------------------------------------- reset */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 130px; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h, 110px) + 22px); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
@@ -126,7 +126,48 @@ button { font: inherit; color: inherit; }
 .btn-soft:hover { background: var(--brand-soft); border-color: var(--brand-soft); color: var(--brand-ink); }
 
 /* -------------------------------------------------------------- header */
-.site-header { background: var(--surface); position: relative; z-index: 40; border-bottom: 1px solid transparent; }
+/*
+ * The header sticks, and gets smaller once the page moves.
+ *
+ * It used to be `position: relative`, so the search box and the category row
+ * scrolled away and the only way back to either was the browser's top button —
+ * on a site whose navigation *is* the search box. Both rows now stay, and after
+ * 120px of scroll the header loses its padding, its shadow appears and the
+ * category row slides away, so a reader deep in an article gives up 56px of
+ * viewport rather than 110.
+ *
+ * `--header-h` is what the rest of the page uses to keep clear of it: the
+ * in-page anchors (a letter in the A–Z, a heading in the table of contents) add
+ * it as scroll margin, and the tool column's sticky offset is measured against
+ * it too.
+ */
+.site-header {
+  background: var(--surface);
+  position: relative; z-index: 60;
+  border-bottom: 1px solid transparent;
+  transition: box-shadow .2s var(--ease), border-color .2s var(--ease);
+}
+/* The owner's Header setting still decides whether it sticks at all. */
+.site-header.is-sticky { position: sticky; top: 0; }
+.site-header.is-stuck {
+  box-shadow: 0 6px 20px rgba(16, 24, 40, .08);
+  border-bottom-color: var(--border);
+}
+.site-header.is-stuck .header-top-inner { min-height: 58px; padding-block: 6px; }
+.site-header.is-stuck .logo img { height: 28px; }
+.site-header.is-stuck .category-nav { display: none; }
+/* The count pill is a welcome, not a control: once the header is following the
+   reader it is the first thing to go, and dropping it is what lets the row stay
+   on one line at tablet widths. */
+.site-header.is-stuck .header-count { display: none; }
+/* The header keeps its own height variable honest for the sticky offsets below.
+   app.js overwrites it with the measured height whenever the state changes, so
+   the anchors and the sticky column stay clear of the header at every width. */
+.site-header { --header-h: 110px; }
+.site-header.is-stuck { --header-h: 58px; }
+@media (prefers-reduced-motion: reduce) {
+  .site-header { transition: none; }
+}
 .header-top-inner {
   display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
   min-height: 72px; padding-block: 12px;
@@ -143,6 +184,11 @@ button { font: inherit; color: inherit; }
   .search { order: 3; flex: 1 0 100%; max-width: none; }
   .search input[type="search"] { height: 40px; font-size: 13px; }
   .logo img { height: 24px; }
+  /* A stuck header on a phone is a way back to the logo and the menu, not a
+     second toolbar: the search row is what makes it 105px tall, and 105px of a
+     640px-tall viewport is a tenth of the screen spent on chrome. It comes back
+     the moment the reader scrolls up. */
+  .site-header.is-stuck .search { display: none; }
 }
 .logo { display: inline-flex; align-items: center; flex: 0 0 auto; padding-block: 5px; }
 .logo img { display: block; height: 34px; width: auto; max-width: 200px; object-fit: contain; }
@@ -374,7 +420,9 @@ button { font: inherit; color: inherit; }
 }
 @media (min-width: 724px) { .builder-promo { grid-column: span 2; } }
 @media (min-width: 1146px) { .builder-promo { grid-column: span 3; } }
-.builder-promo-art { color: var(--brand); flex: 0 0 auto; }
+.builder-promo-art { color: var(--brand); flex: 0 0 200px; max-width: 200px; }
+.builder-promo-art .figure-art { width: 100%; height: auto; display: block; }
+@media (max-width: 723px) { .builder-promo { flex-wrap: wrap; } .builder-promo-art { flex-basis: 100%; max-width: 260px; } }
 .builder-promo-copy p { margin: 0 0 10px; font-size: 13.4px; color: var(--ink-3); }
 
 /* ------------------------------------------------------------- popular */
@@ -408,6 +456,14 @@ button { font: inherit; color: inherit; }
 }
 .how-step h3 { font-size: 15.8px; font-weight: 600; margin-bottom: 6px; }
 .how-step p { margin: 0; font-size: 13.4px; color: var(--ink-3); }
+
+/* A numbered walk-through written in the panel (rich text) gets one drawing per
+   step, dropped in front of the step's own content by home.php. */
+.sheet--how .how-steps { margin-top: 22px; }
+.sheet--how .how-step { background: var(--surface); display: flex; flex-direction: column; }
+.how-figure { display: block; margin: -4px 0 16px; }
+.how-figure .figure-art { width: 100%; max-width: 320px; height: auto; display: block; }
+.sheet--how .how-step .how-num { margin-bottom: 10px; }
 
 /* ---------------------------------------------------------- page shells */
 .site-main { min-height: 60vh; }
@@ -448,7 +504,7 @@ button { font: inherit; color: inherit; }
 
 .calc-index { display: grid; gap: 18px; }
 /* each letter group is a block that flows its items in a responsive grid */
-.index-letter { scroll-margin-top: 90px; }
+.index-letter { scroll-margin-top: calc(var(--header-h, 110px) + 16px); }
 .index-letter-head {
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 26px; height: 26px; padding: 0 8px; margin: 0 0 8px;
@@ -459,10 +515,57 @@ button { font: inherit; color: inherit; }
 .index-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
 @media (min-width: 724px) { .index-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 24px; } }
 @media (min-width: 1146px) { .index-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.index-link { display: block; padding: 9px 10px; border-radius: var(--radius-sm); color: var(--ink-2); }
-.index-link:hover { background: var(--brand-soft); text-decoration: none; }
-.index-name { display: block; font-size: 14px; font-weight: 500; }
-.index-desc { display: block; font-size: 12.5px; color: var(--ink-4); }
+@media (min-width: 1340px) { .index-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/*
+ * A card per calculator, white on the page's tinted background.
+ *
+ * The list used to be plain text on the page colour with a pale blue wash on
+ * hover — which on a category page with a hundred entries read as a wall of
+ * words rather than a thing you could open. These are cards now: white, with a
+ * border that takes the brand colour and a lift on hover, matching the cards on
+ * the rest of the site. The arrow is the affordance the text never had.
+ */
+.index-list { gap: 10px; }
+@media (min-width: 724px) { .index-list { gap: 12px 14px; } }
+.index-item { min-width: 0; }
+.index-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 4px 12px;
+  height: 100%;
+  padding: 14px 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--ink-2);
+  box-shadow: var(--shadow-card);
+  transition: border-color .18s var(--ease), box-shadow .18s var(--ease),
+              transform .18s var(--ease), background-color .18s var(--ease);
+}
+.index-link .index-name, .index-link .index-desc { grid-column: 2; }
+.index-link .calc-glyph { grid-row: 1; align-self: center; }
+.index-go { grid-column: 3; grid-row: 1 / span 2; align-self: center; color: var(--border-strong); transition: color .18s var(--ease), transform .18s var(--ease); }
+.index-link:hover,
+.index-link:focus-visible {
+  text-decoration: none;
+  border-color: var(--brand);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+  background: #FCFDFF;
+}
+.index-link:hover .index-go,
+.index-link:focus-visible .index-go { color: var(--brand); transform: translateX(2px); }
+.index-link:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.index-link:active { transform: translateY(0); box-shadow: var(--shadow-card); }
+.index-name { display: block; font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--ink-2); }
+.index-link:hover .index-name { color: var(--brand-ink); }
+.index-desc { display: block; font-size: 12.5px; color: var(--ink-4); line-height: 1.45; }
+@media (prefers-reduced-motion: reduce) {
+  .index-link, .index-go { transition: none; }
+  .index-link:hover, .index-link:focus-visible { transform: none; }
+  .index-link:hover .index-go, .index-link:focus-visible .index-go { transform: none; }
+}
 
 .cross-links { margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--border); }
 .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -473,6 +576,62 @@ button { font: inherit; color: inherit; }
 }
 .chip:hover { border-color: var(--brand); color: var(--brand); text-decoration: none; }
 .chip-count { color: var(--ink-4); font-weight: 400; }
+
+/*
+ * Share, under the Calculate button.
+ *
+ * One row: the two scopes, then the networks as round logo buttons. Every pixel
+ * here is a pixel of the calculator column, and a column taller than the
+ * viewport cannot pin — so this block is deliberately as short as it can be
+ * while still saying what it does.
+ *
+ * The network links are ordinary anchors with a server-built href, so they work
+ * before JavaScript runs and stay copyable; app.js rewrites the href when the
+ * scope or the results change.
+ */
+.calc-share { padding: 10px 16px 12px; border-top: 1px solid var(--border); background: var(--surface); }
+.calc-share-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+
+.calc-share-scope { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: var(--surface-2); border: 1px solid var(--border); }
+.calc-share-radio { display: inline-flex; }
+.calc-share-radio input { position: absolute; opacity: 0; width: 0; height: 0; }
+.calc-share-radio span {
+  display: inline-flex; padding: 4px 9px; border-radius: var(--radius-pill);
+  font-size: 11.5px; font-weight: 600; color: var(--ink-4); cursor: pointer;
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.calc-share-radio input:checked + span { background: var(--surface); color: var(--brand-ink); box-shadow: var(--shadow-card); }
+.calc-share-radio input:disabled + span { opacity: .45; cursor: not-allowed; }
+.calc-share-radio input:focus-visible + span { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+.calc-share-networks { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.share-net {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; padding: 0;
+  border: 1px solid var(--border); border-radius: 50%;
+  background: var(--surface); color: var(--ink-3);
+  cursor: pointer; text-decoration: none;
+  transition: border-color .16s var(--ease), color .16s var(--ease), background .16s var(--ease), transform .16s var(--ease);
+}
+.share-net:hover { text-decoration: none; transform: translateY(-1px); background: var(--surface-2); }
+.share-net:active { transform: translateY(0); }
+.share-net:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.share-net svg { flex: 0 0 auto; }
+.share-net--whatsapp:hover { color: #0B7D3E; border-color: #9AD7B5; }
+.share-net--facebook:hover { color: #1B5CC0; border-color: #A8C4EE; }
+.share-net--x:hover, .share-net--email:hover { color: var(--ink); border-color: var(--border-strong); }
+.share-net--linkedin:hover { color: #0A5FA8; border-color: #A5C9E6; }
+.share-net--reddit:hover { color: #B4430E; border-color: #EDBBA1; }
+.share-net--copy:hover { color: var(--brand-ink); border-color: #AABCF7; }
+.share-net.is-copied { color: #0B7D3E; border-color: #9AD7B5; }
+.calc-share-text {
+  margin: 8px 0 0; padding: 8px 10px; border-radius: var(--radius);
+  background: var(--surface-2); border: 1px dashed var(--border-strong);
+  font-family: var(--font-mono); font-size: 11px; line-height: 1.5; color: var(--ink-3);
+  white-space: pre-wrap; word-break: break-word; max-height: 92px; overflow: auto;
+}
+.calc-share-text[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .share-net { transition: none; } .share-net:hover { transform: none; } }
 
 /* ------------------------------------------------------------- results */
 .result-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -526,6 +685,16 @@ button { font: inherit; color: inherit; }
  * (form fields, the unit chips, the results panel), so it gets the wider of
  * the two and the reading column takes what is left.
  */
+/*
+ * The calculator page: tool, write-up, and an optional rail.
+ *
+ * The tool column keeps the width it has always had — it is the form, its
+ * field matrix and its result panel, and it is the side that runs out of room
+ * first. The rail is taken out of the *article's* width, not the tool's: a
+ * 160px skyscraper plus its gutter, and the write-up reflows to what is left.
+ * That is why .calc-layout--rail exists as a separate arrangement rather than
+ * a narrower column for everything.
+ */
 .calc-layout {
   display: grid; gap: 32px; min-width: 0;
   grid-template-columns: minmax(0, 1fr);
@@ -536,46 +705,71 @@ button { font: inherit; color: inherit; }
    the calculator; the write-up is the answer to "why is that the number". */
 .calc-widget-column { order: 1; min-width: 0; }
 .calc-article { order: 2; min-width: 0; }
+.calc-rail { order: 3; min-width: 0; }
+
+/*
+ * The tool column pins itself, and app.js decides from which edge.
+ *
+ * A calculator page is read top-down but used at the bottom: the reader scrolls
+ * to the write-up, then back up to change a value. Pinning the head of the
+ * column to the top of the viewport scrolls the Calculate button off the bottom
+ * of the screen on a long form; pinning its foot to the bottom scrolls the
+ * first field off the top on the way back. So the column does both, by where
+ * the page is: while the page is still near the top the column rests with its
+ * head at the top (its natural place), and once a reader has scrolled past it
+ * the column's *bottom* is what sticks, so the last field and the result panel
+ * stay on screen. `--calc-pin` is that bottom-pinned offset; `is-tall` means
+ * the column does not fit the viewport at all, and then it simply scrolls with
+ * the page — there is one scrollbar on a page.
+ */
+.calc-widget-column {
+  order: 1;
+  align-self: start;
+  display: flex; flex-direction: column;
+}
+.calc-widget-column > * { flex: 0 0 auto; }
+.calc-widget-column > .ad-slot,
+.calc-widget-column > .calc-tool-extra { flex: 0 0 auto; }
 
 @media (min-width: 1100px) {
   .calc-layout {
-    /* Tool on the left, write-up on the right, and the tool column is a little
-       wider than the article column was in the previous arrangement: it holds
-       the form, its two-column field matrix and the result panel, so it is the
-       side that actually runs out of room at 900–1200px. */
     grid-template-columns: clamp(400px, 37vw, 540px) minmax(0, 1fr);
     gap: 40px;
   }
-  .calc-article { order: 2; }
-  /*
-   * The tool column, sticky *from the bottom* — and never with a scrollbar of
-   * its own.
-   *
-   * The column used to be capped at one viewport and given `overflow-y: auto`,
-   * which put a second scrollbar inside the page: the reader scrolled the page
-   * to reach the calculator, then had to find and scroll *the calculator* to
-   * reach its last field. There is one scrollbar on a page.
-   *
-   * What the column does instead: if it fits the screen, `top` is set from
-   * app.js to "viewport − column height", so its own bottom edge is what comes
-   * to rest on the bottom of the screen and the fields stay in reach while the
-   * article scrolls past. If it does not fit — a long form, or two filled ad
-   * slots — the class `is-tall` drops the stickiness and the column simply
-   * scrolls with the page like everything else.
-   */
   .calc-widget-column {
-    order: 1;
     position: sticky;
+    /* app.js writes --calc-pin (the bottom-hung offset). While the page is still
+       near the top the column uses its natural offset instead, so it sits where
+       the document put it and nothing shifts on load. */
     top: var(--calc-pin, 0px);
-    align-self: start;
-    display: flex; flex-direction: column;
   }
   .calc-widget-column.is-tall { position: static; }
-  .calc-widget-column > * { flex: 0 0 auto; }
-  /* The column's own slots are the last things in it, under the card. */
-  .calc-widget-column > .ad-slot,
-  .calc-widget-column > .calc-tool-extra { flex: 0 0 auto; }
 }
+
+/* Three columns, only when the rail has a tag in it. */
+@media (min-width: 1240px) {
+  .calc-layout--rail {
+    /* The tool column keeps exactly the width it has in the two-column layout —
+       the rail takes its space from the write-up, never from the calculator. */
+    grid-template-columns: clamp(400px, 37vw, 540px) minmax(0, 1fr) 180px;
+    gap: 28px;
+  }
+  .calc-rail {
+    position: sticky;
+    /* Under the stuck header, which is 58px once the page has moved. */
+    top: calc(var(--header-h, 110px) + 30px);
+    align-self: start;
+    display: flex; justify-content: center;
+  }
+}
+/*
+ * Below 1240 the tower has nowhere honest to go. Squeezing a third column in
+ * would take the width out of the write-up, and dropping it under the article
+ * would put a 600px ad at the foot of a 7,000px page — an impression nobody
+ * ever sees. So the rail is simply not shown until there is room for it.
+ */
+@media (max-width: 1239px) {
+  .calc-rail { display: none; }
 }
 
 /* Under the tool card: an ad that only the sticky column renders. Collapsing
@@ -638,6 +832,11 @@ button { font: inherit; color: inherit; }
 .ad-slot--billboard  { --ad-w: 970px;  --ad-h: 250px; }
 .ad-slot--rectangle  { --ad-w: 300px;  --ad-h: 250px; }
 .ad-slot--inline     { --ad-w: 468px;  --ad-h: 120px; margin-block: 26px; }
+/* The rail's skyscraper: tall, narrow, and flush rather than centred, so a
+   160px creative sits against the page edge the way the column expects. */
+.ad-slot--skyscraper { --ad-w: 160px;  --ad-h: 600px; margin: 0; }
+.calc-rail .ad-slot { margin: 0; width: 100%; max-width: 100%; }
+.calc-rail .ad-slot > * { max-width: 100%; }
 /* Inside the tool, between calculator sections: the card's own padding is the
    gutter, so the slot sits flush rather than as a banner in a form. */
 .ad-slot--in-widget { margin: 4px 0 18px; }
@@ -977,7 +1176,7 @@ button { font: inherit; color: inherit; }
 .toc-list a:hover { color: var(--brand-ink); }
 
 .article-body { font-size: 15px; color: var(--ink-2); line-height: 1.62; }
-.article-body h2 { font-size: 22px; font-weight: 700; color: var(--ink-2); line-height: 1.45; margin: 34px 0 12px; scroll-margin-top: 130px; }
+.article-body h2 { font-size: 22px; font-weight: 700; color: var(--ink-2); line-height: 1.45; margin: 34px 0 12px; scroll-margin-top: calc(var(--header-h, 110px) + 22px); }
 .article-body h3 { font-size: 18px; font-weight: 600; margin: 24px 0 10px; }
 .article-body p { margin: 0 0 14px; }
 .article-body ul, .article-body ol { margin: 0 0 14px; padding-left: 24px; }
@@ -1187,8 +1386,8 @@ a:focus-visible > .calc-glyph,
 .popular-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .popular-head .popular-cat { margin-bottom: 0; }
 
-.index-link { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 10px; }
-.index-link .index-name, .index-link .index-desc { grid-column: 2; }
+/* (the index card's own grid is defined with the rest of .index-link above —
+   this later rule used to override it with two columns and no arrow) */
 
 .result-link { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: start; }
 .result-link > .result-cat, .result-link > .result-name, .result-link > .result-desc { grid-column: 2; }
@@ -2393,6 +2592,9 @@ a:focus-visible > .calc-glyph,
   box-shadow: var(--shadow-card);
 }
 
+.howto-figure { display: block; margin: -4px -6px 14px; }
+.howto-figure .figure-art { width: 100%; height: auto; display: block; }
+
 .howto-icon {
   display: grid;
   place-items: center;
@@ -2648,7 +2850,7 @@ a:focus-visible > .calc-glyph,
 
 /* ------------------------------------------------------------- the article */
 .post-body { max-width: 72ch; }
-.post-body h2 { scroll-margin-top: 130px; }
+.post-body h2 { scroll-margin-top: calc(var(--header-h, 110px) + 22px); }
 .post-body > * + h2 { margin-top: 40px; }
 
 /* ------------------------------------------------------------- side rail */

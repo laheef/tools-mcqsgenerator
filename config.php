@@ -133,7 +133,7 @@ function onim_db_configured(): bool
 }
 
 /** Bump to bust asset caches after editing css/js. */
-const ASSET_VERSION = '1.2.09';
+const ASSET_VERSION = '1.2.10';
 
 /** Unit/category reference data lives under data/calc/ (see tools/harvest_all.py). */
 const RATES_CAPTURED = '2026-10-23';
@@ -238,6 +238,7 @@ require_once __DIR__ . '/lib/Data.php';
 require_once __DIR__ . '/lib/Seo.php';
 require_once __DIR__ . '/lib/Widget.php';
 require_once __DIR__ . '/lib/Icons.php';
+require_once __DIR__ . '/lib/Figures.php';
 require_once __DIR__ . '/lib/Shape.php';
 require_once __DIR__ . '/lib/Browse.php';
 require_once __DIR__ . '/lib/View.php';

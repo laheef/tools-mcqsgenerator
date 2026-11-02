@@ -1964,9 +1964,145 @@
    * supplies is moved back to the form. Nodes are moved, never cloned, so there
    * is exactly one input per variable and no value is ever on the page twice.
    */
+  /* ---------------------------------------------------------------- share */
+  /*
+   * The share bar under Calculate.
+   *
+   * "The calculator" shares a URL — same for everybody, always correct.
+   * "The result" shares the numbers currently on screen, read from the same
+   * rows the results panel printed, so the text can never disagree with the
+   * page. Until something has been calculated there is no result to share, so
+   * the result scope stays disabled instead of sharing an empty promise.
+   */
+  var Share = (function () {
+    var box = document.querySelector('[data-calc-share]');
+    if (!box) return { refresh: function () {}, resultReady: function () {} };
+
+    var scopeRadios = [].slice.call(box.querySelectorAll('input[name="share-scope"]'));
+    var links = [].slice.call(box.querySelectorAll('[data-share-net]'));
+    var copyBtn = box.querySelector('[data-share-copy]');
+    var copyLabel = box.querySelector('[data-share-copy-label]');
+    var status = box.querySelector('[data-share-status]');
+    var preview = box.querySelector('[data-share-preview]');
+    var scopeLabel = box.querySelector('[data-share-scope-label]');
+    var note = box.querySelector('.calc-share-note');
+    var resultRadio = scopeRadios.filter(function (r) { return r.value === 'result'; })[0];
+    var calcUrl = box.getAttribute('data-share-url') || location.href;
+    var calcText = box.getAttribute('data-share-text') || document.title;
+
+    var say = function (message) { if (status) status.textContent = message; };
+
+    function scope() {
+      var picked = scopeRadios.filter(function (r) { return r.checked; })[0];
+      return picked ? picked.value : 'calc';
+    }
+
+    function resultLines() {
+      var data = [];
+      try { data = Results.rows() || []; } catch (e) { data = []; }
+      return data;
+    }
+
+    function resultText() {
+      var data = resultLines();
+      if (!data.length) return '';
+      return data.map(function (row) { return Results.line(row); }).join('\n');
+    }
+
+    /* The link a visitor actually sends. Result shares get the numbers folded
+       into the text and keep the URL, so the reader can open the tool too. */
+    function payload() {
+      var url = calcUrl;
+      var text = calcText;
+      if (scope() === 'result') {
+        var lines = resultText();
+        if (lines) {
+          text = calcText + '\n\n' + lines + '\n';
+        }
+      }
+      return { url: url, text: text };
+    }
+
+    function build(template, data) {
+      return template
+        .replace('{url}', encodeURIComponent(data.url))
+        .replace('{text}', encodeURIComponent(data.text));
+    }
+
+    function sync() {
+      var hasResult = resultLines().length > 0;
+      if (resultRadio) {
+        resultRadio.disabled = !hasResult;
+        if (!hasResult && resultRadio.checked) {
+          scopeRadios[0].checked = true;
+        }
+      }
+      var data = payload();
+      links.forEach(function (link) {
+        var template = link.getAttribute('data-href-template');
+        if (template) link.setAttribute('href', build(template, data));
+      });
+      if (scopeLabel) {
+        scopeLabel.textContent = (scope() === 'result' && hasResult)
+          ? 'Sharing the numbers on screen, with a link to the calculator.'
+          : 'Send the calculator, or just the numbers you got.';
+      }
+      if (preview) {
+        if (scope() === 'result' && hasResult) {
+          preview.textContent = resultText();
+          preview.hidden = false;
+        } else {
+          preview.textContent = '';
+          preview.hidden = true;
+        }
+      }
+      if (note) note.hidden = !(scope() === 'result' && hasResult);
+    }
+
+    scopeRadios.forEach(function (radio) { radio.addEventListener('change', sync); });
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var data = payload();
+        var body = scope() === 'result' ? data.text + data.url : data.url;
+        var done = function () {
+          copyBtn.classList.add('is-copied');
+          copyBtn.setAttribute('aria-label', 'Copied');
+          say(scope() === 'result' ? 'Result copied to the clipboard.' : 'Link copied to the clipboard.');
+          setTimeout(function () {
+            copyBtn.classList.remove('is-copied');
+            copyBtn.setAttribute('aria-label', 'Copy the link');
+          }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(body).then(done, function () { fallbackCopy(body, done); });
+        } else {
+          fallbackCopy(body, done);
+        }
+      });
+    }
+
+    function fallbackCopy(text, done) {
+      var area = document.createElement('textarea');
+      area.value = text;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.top = '-1000px';
+      document.body.appendChild(area);
+      area.select();
+      try { document.execCommand('copy'); done(); }
+      catch (e) { say('Could not copy — select the link and copy it by hand.'); }
+      document.body.removeChild(area);
+    }
+
+    sync();
+
+    return { refresh: sync, resultReady: sync };
+  })();
+
   var Results = (function () {
     var panel = document.querySelector('[data-calc-results]');
-    if (!panel) return { render: function () {}, rows: function () { return []; }, moveBack: function () {} };
+    if (!panel) return { render: function () {}, rows: function () { return []; }, moveBack: function () {}, line: line };
     var list = panel.querySelector('[data-results-list]');
     var empty = panel.querySelector('[data-results-empty]');
     var copyAll = panel.querySelector('[data-copy-all]');
@@ -2216,7 +2352,14 @@
       button.addEventListener('click', function () { copyRow(button.getAttribute('data-copy')); });
     });
 
-    return { render: partition, rows: rows };
+    return { render: partition, rows: rows, line: line };
+  })();
+
+  /* Results changed, so the shareable text changed with them. Wrapping the one
+     render call keeps every path (button, live typing, pre-solved rows) honest. */
+  (function () {
+    var render = Results.render;
+    Results.render = function () { render.apply(Results, arguments); Share.refresh(); };
   })();
 
   /* ------------------------------------------------------- calculate button

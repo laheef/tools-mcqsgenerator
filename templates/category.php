@@ -65,11 +65,12 @@ foreach ($groups as $k => $v) {
                 <h2 id="letter-<?= View::escape($anchor) ?>-h" class="index-letter-head"><?= View::escape($letter) ?></h2>
                 <ul class="index-list">
                     <?php foreach ($items as $row): ?>
-                        <li>
+                        <li class="index-item">
                             <a class="index-link" href="<?= View::escape(View::url($row['path'])) ?>">
                                 <?= Icons::forCalculator($row, 18, 'calc-glyph calc-glyph-sm') ?>
                                 <span class="index-name"><?= View::escape($row['name']) ?></span>
                                 <span class="index-desc"><?= View::escape(View::excerpt((string) $row['description'], 110)) ?></span>
+                                <span class="index-go" aria-hidden="true"><?= View::icon('arrow-right', 15) ?></span>
                             </a>
                         </li>
                     <?php endforeach; ?>

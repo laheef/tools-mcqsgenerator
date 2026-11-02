@@ -1552,7 +1552,7 @@ t('34 the cached copy holds no origin of its own',
  * class this process does not load.
  */
 $slots = \Onim\Ads::slots();
-t('35 the slot registry has every position', count($slots) === 17, (string) count($slots));
+t('35 the slot registry has every position', count($slots) === 18, (string) count($slots));
 
 /* Every slot must be a real, writable setting — the check that would have
    caught the first set of rails, which no form ever posted. */
@@ -1594,7 +1594,7 @@ $postPage = get(BASE . '/blog/how-to-read-a-calculator-result')['body'];
 
 /* Each page renders exactly its own set, and the sitewide header stands down
    where the page carries its own top slot. */
-$expectCalc = ['calc_top', 'calc_mid', 'calc_inline', 'calc_below', 'calc_side', 'calc_reviews_top', 'calc_reviews_bottom', 'footer', 'anchor'];
+$expectCalc = ['calc_top', 'calc_mid', 'calc_inline', 'calc_below', 'calc_side', 'calc_rail', 'calc_reviews_top', 'calc_reviews_bottom', 'footer', 'anchor'];
 $expectPost = ['blog_top', 'blog_inline', 'blog_side_top', 'blog_side_bottom', 'footer', 'anchor'];
 $found = static function (string $html, string $key): bool {
     return str_contains($html, 'id="e2e-' . $key . '"');
@@ -1665,8 +1665,12 @@ $css = (string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css');
 
 $calcTpl = (string) file_get_contents(dirname(__DIR__) . '/templates/calculator.php');
 t('36 the calculator is one grid, not three columns',
-    substr_count($calcTpl, 'class="calc-layout"') === 1
-    && !str_contains($calcTpl, 'ad-rail'));
+    substr_count($calcTpl, 'class="calc-layout') === 1
+    && !str_contains($calcTpl, 'ad-rail')
+    /* The rail column exists, but only when it has a tag in it: the class is
+       conditional and the aside is rendered behind the same flag. */
+    && str_contains($calcTpl, "' calc-layout--rail' : ''")
+    && str_contains($calcTpl, 'class="calc-rail"'));
 t('36 the article comes before the tool in the domestic order',
     strpos($calcTpl, 'class="calc-article"') < strpos($calcTpl, 'class="calc-widget-column"'));
 
@@ -1820,7 +1824,7 @@ t('40 the calculator column comes first in the layout',
     str_contains($css, 'grid-template-columns: clamp(400px, 37vw, 540px) minmax(0, 1fr)')
     && str_contains($css, '.calc-widget-column { order: 1;'));
 t('40 the article is the second column',
-    str_contains($css, '.calc-article { order: 2; }'));
+    (bool) preg_match('~\.calc-article \{[^}]*order: 2;~', $css));
 
 /* Blog, About and Contact sit beside the search box. */
 foreach (['/blog' => 'Blog', '/about' => 'About', '/contact' => 'Contact'] as $href => $label) {
@@ -1842,7 +1846,7 @@ t('40 the anchor slot is in the registry', isset(\Onim\Ads::slots()['anchor']));
 
 t('40 the panel says whether ads are live and how much is filled',
     isset($panel) && str_contains($panel, 'ad-status-state')
-    && (bool) preg_match('~\d+ of 17 positions have code~', $panel));
+    && (bool) preg_match('~\d+ of 18 positions have code~', $panel));
 
 $adsSet('ads_enabled', '1');
 $adsSet('ads_slot_anchor', '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="1"></ins>');
@@ -2026,6 +2030,60 @@ t('42 the tool column has no scrollbar of its own',
 t('42 a column taller than the screen is not pinned', str_contains($appCss, '.calc-widget-column.is-tall { position: static; }'));
 $appJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js');
 t('42 only what fits is pinned', str_contains($appJs, "classList.toggle('is-tall', tall)"));
+
+/* 46 — the page that keeps up with the reader --------------------------------- */
+/*
+ * Round 46 changed how a page behaves while it is being read: the header stays,
+ * the tool column pins from whichever edge makes sense, a third column appears
+ * when there is a tower to put in it, and the results can be shared. These
+ * checks are content and stylesheet facts — the geometry was measured in a real
+ * browser, and these keep the pieces wired together.
+ */
+
+/* The share bar: under Calculate, one line, with a real link in every button. */
+$sharePage = get(BASE . '/math/pythagorean-theorem')['body'];
+t('46 a calculator offers sharing', str_contains($sharePage, 'data-calc-share'));
+t('46 share sits under the Calculate button',
+    strpos($sharePage, 'data-calc-go') < strpos($sharePage, 'data-calc-share')
+    && strpos($sharePage, 'data-calc-share') > strpos($sharePage, 'data-calc-results') - 1);
+t('46 every network is a real link, built on the server',
+    substr_count($sharePage, 'data-share-net=') === 6
+    && str_contains($sharePage, 'https://wa.me/?text=')
+    && str_contains($sharePage, 'sharer.php?u='));
+t('46 copying the link is a button, not a link', str_contains($sharePage, 'data-share-copy'));
+t('46 the share link points at this calculator, not at the site root',
+    (bool) preg_match('~data-share-url="[^"]*/math/pythagorean-theorem"~', $sharePage));
+
+/* The sticky header: shipped as an opt-in class the owner's setting drives. */
+t('46 the header can stick', str_contains($appCss, '.site-header.is-sticky { position: sticky; top: 0; }'));
+t('46 the stuck header is shorter than the resting one',
+    str_contains($appCss, '.site-header.is-stuck .category-nav { display: none; }')
+    && str_contains($appCss, '.site-header.is-stuck .header-count { display: none; }')
+    && str_contains($appCss, '.site-header.is-stuck .search { display: none; }'));
+t('46 app.js decides when the header is stuck', str_contains($appJs, "classList.toggle('is-stuck'"));
+t('46 the scroll padding follows the header height',
+    !str_contains($appCss, 'scroll-padding-top: 130px'));
+
+/* The rail: a tower slot, its own shape, and a column that keeps the tool's width. */
+$railSlot = \Onim\Ads::slots()['calc_rail'] ?? null;
+t('46 the rail slot is a skyscraper', $railSlot !== null && ($railSlot['size'] ?? '') === 'skyscraper');
+t('46 the rail keeps the calculator column at its two-column width',
+    (bool) preg_match('~\.calc-layout--rail \{[^}]*grid-template-columns: clamp\(400px, 37vw, 540px\)~', $appCss));
+t('46 the rail is hidden where a tower has no room',
+    (bool) preg_match('~@media \(max-width: 1239px\) \{\s*\.calc-rail \{ display: none; \}~', $appCss));
+
+/* Homepage illustrations: drawn in the page, so they cost no request. */
+$homeBody = get(BASE . '/')['body'];
+t('46 the homepage draws its how-it-works figures',
+    substr_count($homeBody, 'howto-figure') >= 4 && substr_count($homeBody, 'how-figure') >= 2);
+t('46 figures are inline SVG, not image files',
+    !str_contains($homeBody, '<img') || substr_count($homeBody, 'figure-art') >= 1);
+
+/* Category index: real cards, each a link with its own arrow. */
+$catPage = get(BASE . '/chemistry')['body'];
+t('46 the category index is made of cards', substr_count($catPage, 'class="index-item"') > 50);
+t('46 every card carries a link and an arrow',
+    substr_count($catPage, 'class="index-link"') === substr_count($catPage, 'class="index-go"'));
 
 /* ---------------------------------------------------------------- summary */
 

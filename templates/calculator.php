@@ -280,7 +280,15 @@ $clientPayload = [
              pins that column to the bottom of the viewport as you scroll. */ ?>
     <?= \Onim\Ads::slot('calc_top', 'ad-slot--page-top') ?>
 
-    <div class="calc-layout">
+    <?php
+    /* The right-hand rail exists only when it has something to show. An empty
+       third column is 200px of white on every calculator page, and the article
+       needs that width more than the layout needs the symmetry — so the column
+       appears with a filled rail slot and folds away without one. */
+    $railAd = \Onim\Ads::slot('calc_rail');
+    $hasRail = trim($railAd) !== '';
+    ?>
+    <div class="calc-layout<?= $hasRail ? ' calc-layout--rail' : '' ?>">
         <article class="calc-article">
             <header class="article-head">
                 <?php if ($calc['updatedAt']): ?>
@@ -850,6 +858,68 @@ $clientPayload = [
                     </section>
                 <?php endif; ?>
 
+                <?php if (!$noControls && $solvable): ?>
+                    <?php
+                    /* Share, directly under the Calculate button and the results.
+                       Two things to share, because they are different documents:
+                       the calculator (a URL, which is what "share this tool"
+                       means) and the result (the numbers on screen right now,
+                       which is what "look what I got" means). The second is
+                       built in the browser from what was actually calculated —
+                       see app.js — so it can never share a number the page did
+                       not print. */
+                    $shareUrl = SITE_URL . $calc['path'];
+                    $shareText = trim((string) ($calc['title'] ?: $calc['name'])) . ' — ' . SITE_NAME;
+                    $nets = [
+                        'whatsapp' => ['WhatsApp', 'https://wa.me/?text={text}%0A{url}', 'whatsapp'],
+                        'facebook' => ['Facebook', 'https://www.facebook.com/sharer/sharer.php?u={url}', 'facebook'],
+                        'x'        => ['X', 'https://twitter.com/intent/tweet?text={text}&url={url}', 'x'],
+                        'linkedin' => ['LinkedIn', 'https://www.linkedin.com/sharing/share-offsite/?url={url}', 'linkedin'],
+                        'reddit'   => ['Reddit', 'https://www.reddit.com/submit?url={url}&title={text}', 'reddit'],
+                        'email'    => ['Email', 'mailto:?subject={text}&body={url}', 'mail'],
+                    ];
+                    ?>
+                    <section class="calc-share" data-calc-share
+                             data-share-url="<?= View::escape($shareUrl) ?>"
+                             data-share-text="<?= View::escape($shareText) ?>"
+                             aria-labelledby="calc-share-title">
+                        <h2 class="sr-only" id="calc-share-title">Share this calculator</h2>
+                        <div class="calc-share-row">
+                            <div class="calc-share-scope" role="group" aria-label="What to share">
+                                <label class="calc-share-radio">
+                                    <input type="radio" name="share-scope" value="calc" checked>
+                                    <span>Calculator</span>
+                                </label>
+                                <label class="calc-share-radio">
+                                    <input type="radio" name="share-scope" value="result">
+                                    <span>Result</span>
+                                </label>
+                            </div>
+                            <ul class="calc-share-networks">
+                                <?php foreach ($nets as $key => [$label, $tpl, $icon]): ?>
+                                    <li>
+                                        <a class="share-net share-net--<?= $key ?>" data-share-net="<?= $key ?>"
+                                           data-href-template="<?= View::escape($tpl) ?>"
+                                           href="<?= View::escape(str_replace(['{text}', '{url}'], [rawurlencode($shareText), rawurlencode($shareUrl)], $tpl)) ?>"
+                                           target="_blank" rel="noopener nofollow" title="Share on <?= View::escape($label) ?>"
+                                           aria-label="Share on <?= View::escape($label) ?>">
+                                            <?= View::icon($icon, 17) ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                                <li>
+                                    <button type="button" class="share-net share-net--copy" data-share-copy
+                                            title="Copy the link" aria-label="Copy the link">
+                                        <?= View::icon('link', 17) ?><span class="sr-only" data-share-copy-label>Copy</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="calc-share-text" data-share-preview hidden></p>
+                        <p class="sr-only" role="status" aria-live="polite" data-share-status></p>
+                    </section>
+                <?php endif; ?>
+
                 <?php foreach (Modules::partials((string) $calc['path'], 'widget_bottom') as $module): ?>
                     <?php require $module['file']; ?>
                 <?php endforeach; ?>
@@ -870,6 +940,15 @@ $clientPayload = [
                 <?= \Onim\Ads::slot('calc_side') ?>
             </div>
         </div>
+
+        <?php if ($hasRail): ?>
+            <?php /* The third column: the skyscraper rail. Empty on most sites
+                     until an owner pastes a 160x600 into it, which is why the
+                     whole column is conditional rather than reserved. */ ?>
+            <aside class="calc-rail" aria-label="Advertisement">
+                <?= $railAd ?>
+            </aside>
+        <?php endif; ?>
     </div>
 
     <?php foreach (Modules::partials((string) $calc['path'], 'page_foot') as $module): ?>

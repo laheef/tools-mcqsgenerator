@@ -81,6 +81,12 @@ final class Ads
             'size'  => 'rectangle',
             'pages' => 'calculator',
         ],
+        'calc_rail' => [
+            'label' => 'Calculator — right rail skyscraper',
+            'where' => 'Calculator pages, in the narrow third column on the right. Leave it empty and the column folds away, giving the space back to the article.',
+            'size'  => 'skyscraper',
+            'pages' => 'calculator',
+        ],
         'calc_side' => [
             'label' => 'Calculator — under the tool column',
             'where' => 'Calculator pages, at the bottom of the sticky right-hand column (below the tool).',
@@ -170,6 +176,7 @@ final class Ads
         'rectangle'   => [300, 250],
         'inline'      => [468, 120],
         'anchor'      => [320, 50],
+        'skyscraper'  => [160, 600],
     ];
 
     /**

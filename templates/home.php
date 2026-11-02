@@ -20,6 +20,7 @@ declare(strict_types=1);
 
 use Onim\Cms;
 use Onim\Data;
+use Onim\Figures;
 use Onim\Format;
 use Onim\Icons;
 use Onim\View;
@@ -158,7 +159,7 @@ foreach ($sections as $section) {
                     <?php endforeach; ?>
 
                     <aside class="builder-promo">
-                        <div class="builder-promo-art" aria-hidden="true"><?= View::icon('math', 40) ?></div>
+                        <div class="builder-promo-art" aria-hidden="true"><?= Figures::svg('catalogue', 'figure-art') ?></div>
                         <div class="builder-promo-copy">
                             <p>Looking for something specific? Every calculator here solves in
                                 any direction — fill the boxes you know.</p>
@@ -238,19 +239,27 @@ foreach ($sections as $section) {
          * citable page behind. It is a CMS section, so an owner who disagrees
          * with a word of it can edit or delete it in the panel.
          */
+        /*
+         * Each panel carries a drawing as well as an icon. The four claims here
+         * are the site's whole argument, and a page that makes them in nothing
+         * but paragraphs asks the reader to take them on trust — which is the
+         * one thing a site about showing its working should not do. The figures
+         * are inline SVG (lib/Figures.php): no request, no layout shift, and
+         * they follow the brand colour set in the panel.
+         */
         $panels = [
             ['Solve in any direction',
              'Every calculator is a set of equations rather than a fixed form. Type the values you know and the empty one is solved for — the same tool answers "what is my BMI" and "what weight gives me a BMI of 22".',
-             'equals'],
+             'equals', 'solve-both-ways'],
             ['The formula, with your numbers in it',
              'Under each section the page prints the equation it just used, with your own values substituted. Nothing is a black box and no result is invented.',
-             'check'],
+             'check', 'formula'],
             ['Units stated, and swappable',
              'Metric and imperial, percent and decimal, currencies and prefix scales. Change the unit chip and the value is converted rather than retyped.',
-             'link'],
+             'link', 'unit-swap'],
             ['Free, no sign-up, no paywall',
              'The whole catalogue is open, including the working. Pages can be cited with an access date, and every result can be copied in one press.',
-             'bookmark'],
+             'bookmark', 'free-open'],
         ]; ?>
         <section class="sheet home-howto" id="<?= View::escape($anchor) ?>">
             <div class="shell">
@@ -259,6 +268,7 @@ foreach ($sections as $section) {
                 <ul class="howto-grid">
                     <?php foreach ($panels as $panel): ?>
                         <li class="howto-card">
+                            <span class="howto-figure"><?= Figures::svg($panel[3], 'figure-art figure-art--card') ?></span>
                             <span class="howto-icon" aria-hidden="true"><?= View::icon($panel[2], 20) ?></span>
                             <h3 class="howto-title"><?= View::escape($panel[0]) ?></h3>
                             <p class="howto-text"><?= View::escape($panel[1]) ?></p>
@@ -329,19 +339,48 @@ foreach ($sections as $section) {
             </section>
         <?php endif;
     elseif ($type === 'rich_text'):
-        if (trim(strip_tags((string) ($config['html'] ?? ''))) !== '' || $title !== ''): ?>
-            <section class="sheet" id="<?= View::escape($anchor) ?>">
+        if (trim(strip_tags((string) ($config['html'] ?? ''))) !== '' || $title !== ''):
+            $html = (string) ($config['html'] ?? '');
+            /*
+             * A rich-text band is whatever the owner typed. When what they typed
+             * is a numbered walk-through (an <ol> of steps), the band gets the
+             * same treatment as the how-to band below it: a drawing per step,
+             * lifted out of the markup by its number. An owner who writes
+             * something else gets exactly the article body they always got.
+             */
+            $stepFigures = ['fill-values', 'units', 'formula', 'results', 'catalogue'];
+            $stepCount = preg_match_all('~<li[^>]*class="[^"]*how-step~i', $html) ?: 0;
+            if ($stepCount === 0) {
+                $stepCount = preg_match_all('~<li~i', $html) ?: 0;
+            }
+            $isWalkthrough = $stepCount >= 2 && $stepCount <= 5 && str_contains($html, '<ol');
+            if ($isWalkthrough) {
+                $n = -1;
+                $html = (string) preg_replace_callback(
+                    '~<li([^>]*)>~i',
+                    static function (array $m) use (&$n, $stepFigures): string {
+                        $n++;
+                        $fig = $stepFigures[$n % count($stepFigures)];
+                        return '<li' . $m[1] . '><span class="how-figure">' . Figures::svg($fig, 'figure-art figure-art--step') . '</span>';
+                    },
+                    $html,
+                    $stepCount
+                );
+            }
+            ?>
+            <section class="sheet<?= $isWalkthrough ? ' sheet--how' : '' ?>" id="<?= View::escape($anchor) ?>">
                 <div class="shell">
                     <?php if ($title !== ''): ?><h2 class="section-title"><?= View::escape($title) ?></h2><?php endif; ?>
                     <?php if ($subtitle !== ''): ?><p class="section-lede"><?= View::escape($subtitle) ?></p><?php endif; ?>
-                    <div class="article-body"><?= (string) ($config['html'] ?? '') ?></div>
+                    <div class="article-body"><?= $html ?></div>
                 </div>
             </section>
         <?php endif;
     elseif ($type === 'cta'): ?>
         <section class="sheet" id="<?= View::escape($anchor) ?>">
             <div class="shell">
-                <div class="builder-promo" style="max-width:760px;margin-inline:auto">
+                <div class="builder-promo" style="max-width:820px;margin-inline:auto">
+                    <div class="builder-promo-art" aria-hidden="true"><?= Figures::svg('results', 'figure-art') ?></div>
                     <div class="builder-promo-copy">
                         <?php if ($title !== ''): ?><h2 class="section-title" style="margin-top:0"><?= View::escape($title) ?></h2><?php endif; ?>
                         <?php if ($subtitle !== ''): ?><p><?= View::escape($subtitle) ?></p><?php endif; ?>
