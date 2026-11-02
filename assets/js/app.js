@@ -460,6 +460,12 @@
     var mode = 'down';              // 'down' = pinned by the foot, 'up' = by the head
     var lastY = window.pageYOffset;
     var lastClear = -1;
+    /* Where an upward run began, and the pin it began from: the card comes back
+       down from there, a pixel per pixel scrolled, until its name reaches the
+       line. Both are re-taken every time the reader turns around. */
+    var upAnchorY = lastY;
+    var upAnchorPin = null;
+    var sliding = false;            // the card is on its way back down to the line
 
     function paint() {
       var clear = headerClearance();
@@ -490,12 +496,41 @@
        * middle of it — the foot takes over, so the button and the results sit
        * just above the fold. The top of that card is then above the header,
        * which is the price of a form taller than the window; scrolling back up
-       * flips to the head and brings the name down again.
+       * lets it down again until its name reaches the line.
        */
       var actionOffset = Math.round(action.getBoundingClientRect().bottom - columnBox.top);
       var buttonOnScreen = pinHead + actionOffset <= viewport - 8;
-      var pin = mode === 'up' ? pinHead
-        : (buttonOnScreen ? Math.max(pinFoot, pinHead) : pinFoot);
+      /* The pin going down the page: the foot, unless the head is enough to keep
+         the button on screen — then the name stays where it belongs. */
+      var pinDown = buttonOnScreen ? Math.max(pinFoot, pinHead) : pinFoot;
+
+      var pin;
+      if (mode === 'down' || pinDown >= pinHead) {
+        /* Going down, and any card whose foot pin already leaves the name at or
+           below the header line: the pin simply holds. There is nothing to fix,
+           and moving the card towards the head here is what the jump was. */
+        pin = pinDown;
+      } else {
+        /*
+         * The card is taller than the window, so its foot pin going down put its
+         * name above the line. Coming back up it is let down again: the card
+         * travels with the page, a pixel per pixel scrolled, and fixes itself at
+         * the line only once its name gets there. Lifting it to the line in one
+         * move — which is what this did — read as a jump the moment the wheel
+         * turned, on every card that did not need fixing at all.
+         */
+        if (upAnchorPin === null) {
+          upAnchorPin = pinDown;
+          upAnchorY = Math.round(window.pageYOffset);
+        }
+        var target = upAnchorPin + (upAnchorY - Math.round(window.pageYOffset));
+        pin = Math.min(pinHead, target);
+        /* Still short of the line: the next scroll tick has to move it again. */
+        sliding = target < pinHead;
+      }
+      if (mode !== 'up' || pinDown >= pinHead) {
+        sliding = false;
+      }
 
       column.style.setProperty('--calc-pin', pin + 'px');
       column.classList.toggle('is-foot-pinned', mode === 'down' && pin !== pinHead);
@@ -509,19 +544,25 @@
       /* The header shrinks from ~119px to 59px the moment it sticks, so the
          clearance genuinely changes early in the scroll. Recompute rather than
          leaving a stale gap. */
-      if (headerClearance() !== lastClear) {
-        paint();
+      var clearanceChanged = headerClearance() !== lastClear;
+
+      var flipped = false;
+      if (Math.abs(delta) >= FLIP) {
+        var next = delta > 0 ? 'down' : 'up';
+        if (next !== mode) {
+          mode = next;
+          upAnchorPin = null;
+          upAnchorY = y;
+          flipped = true;
+        }
       }
 
-      if (Math.abs(delta) < FLIP) {
-        return;
+      /* Repaint when the choice changes: a turn of direction, a header that has
+         just shrunk, or a card sliding back down to its name's line. Otherwise
+         the pin is already right and the scroll is left alone. */
+      if (flipped || sliding || clearanceChanged) {
+        paint();
       }
-      var next = delta > 0 ? 'down' : 'up';
-      if (next === mode) {
-        return;
-      }
-      mode = next;
-      paint();
     }
 
     paint();

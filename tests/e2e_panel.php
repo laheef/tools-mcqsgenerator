@@ -2037,7 +2037,7 @@ t('42 height never releases the column any more',
     && str_contains($appJs, "column.style.setProperty('--calc-pin', pin + 'px')"));
 t('46 the foot pin puts the Calculate button above the fold going down',
     str_contains($appJs, 'var pinFoot = Math.round(viewport - GAP - cardBox.height - offset);')
-    && str_contains($appJs, "var pin = mode === 'up' ? pinHead"));
+    && str_contains($appJs, 'var pinDown = buttonOnScreen ? Math.max(pinFoot, pinHead) : pinFoot;'));
 
 /* 46 — the page that keeps up with the reader --------------------------------- */
 /*
@@ -2112,7 +2112,29 @@ t('47 the card keeps its distance from the header when it can',
     && str_contains($appJs, 'var buttonOnScreen = pinHead + actionOffset <= viewport - 8;'));
 t('47 the button decides the edge: head while it fits, foot when it does not',
     str_contains($appJs, "card.querySelector('[data-calc-go]')")
-    && str_contains($appJs, 'var pin = mode === \'up\' ? pinHead'));
+    && str_contains($appJs, 'var buttonOnScreen = pinHead + actionOffset <= viewport - 8;')
+    && str_contains($appJs, 'var pinDown = buttonOnScreen ? Math.max(pinFoot, pinHead) : pinFoot;'));
+/*
+ * 53 — scrolling back up does not jump the card to the line -----------------
+ *
+ * Round 52 lifted the card to the head the moment the wheel turned upwards, so
+ * a card that was already showing its name lurched 100-odd pixels for no
+ * reason. Now the head pin only takes over where the foot pin left the name
+ * above the line, and there the card is let down with the page — a pixel per
+ * pixel — until the name arrives at the line and fixes there.
+ */
+t('53 a card that already shows its name is left alone on the way up',
+    !str_contains($appJs, "var pin = mode === 'up' ? pinHead")
+    && str_contains($appJs, "if (mode === 'down' || pinDown >= pinHead) {")
+    && str_contains($appJs, 'pin = pinDown;'));
+t('53 a card whose name is above the line comes back down to it, not to a jump',
+    str_contains($appJs, 'var target = upAnchorPin + (upAnchorY - Math.round(window.pageYOffset));')
+    && str_contains($appJs, 'pin = Math.min(pinHead, target);')
+    && str_contains($appJs, 'upAnchorPin = null;'));
+t('53 the slide is recomputed while it is running and stops when it lands',
+    str_contains($appJs, 'if (flipped || sliding || clearanceChanged) {')
+    && str_contains($appJs, 'sliding = target < pinHead;'));
+
 t('47 the top offset is measured from the sticky header, not fixed',
     !str_contains($appJs, 'var TOP_GAP = 88;')
     && str_contains($appJs, 'function headerClearance()')
