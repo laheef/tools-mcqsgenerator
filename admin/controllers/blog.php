@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog — posts (draft / scheduled / published / archived), tags, authors.
+ * Blog — posts (draft / scheduled / published / archived), categories, authors.
  *
  * Authors may only touch their own posts: the list is filtered and the editor
  * re-checks ownership on every request, so the permission is enforced by the
@@ -45,40 +45,6 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             Flash::success('Post deleted.');
         }
         redirect_to(admin_url('blog'));
-    }
-
-    if ($do === 'tag_save') {
-        $id = post_int('id');
-        $name = trim((string) (post('name', '') ?? ''));
-        $slug = Cms::slugify(post('slug', '') ?: $name);
-        if ($name === '' || $slug === '') {
-            Flash::error('A tag needs a name.');
-            redirect_to(admin_url('tags'));
-        }
-        $clash = Db::one('SELECT id FROM tags WHERE slug = ? AND id <> ?', [$slug, $id]);
-        if ($clash !== null) {
-            Flash::error('Another tag already uses that slug.');
-            redirect_to(admin_url('tags'));
-        }
-        $data = ['name' => mb_substr($name, 0, 80), 'slug' => $slug, 'description' => mb_substr(trim((string) (post('description', '') ?? '')), 0, 320)];
-        if ($id > 0) {
-            Db::update('tags', $data, 'id = :id', [':id' => $id]);
-            Flash::success('Tag updated.');
-        } else {
-            Db::insert('tags', $data);
-            Flash::success('Tag created.');
-        }
-        Activity::log('tag_saved', 'tag', (string) $id, 'Saved tag ' . $slug);
-        redirect_to(admin_url('tags'));
-    }
-
-    if ($do === 'tag_delete') {
-        $id = post_int('id');
-        $used = (int) Db::value('SELECT COUNT(*) FROM post_tags WHERE tag_id = ?', [$id], 0);
-        Db::delete('tags', 'id = ?', [$id]); // post_tags rows cascade
-        Activity::log('tag_deleted', 'tag', (string) $id, 'Deleted a tag used by ' . $used . ' post(s)');
-        Flash::success('Tag removed' . ($used > 0 ? ' from ' . $used . ' post(s)' : '') . '. The posts themselves are untouched.');
-        redirect_to(admin_url('tags'));
     }
 
     /* ------------------------------------------------------------ post save */
@@ -132,7 +98,30 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         redirect_to(admin_url('blog-edit', $id > 0 ? ['id' => $id] : []));
     }
 
+    // One category per post: the index filters by it and /category/<slug> is its
+    // page. A new category can be created from the editor without leaving the post.
+    $categoryId = post_int('category_id');
+    $newCategory = trim((string) (post('new_category', '') ?? ''));
+    if ($newCategory !== '') {
+        $newSlug = Cms::slugify($newCategory);
+        if ($newSlug !== '') {
+            $found = Db::one('SELECT id FROM post_categories WHERE slug = ?', [$newSlug]);
+            $categoryId = $found !== null
+                ? (int) $found['id']
+                : Db::insert('post_categories', [
+                    'slug' => $newSlug,
+                    'name' => mb_substr($newCategory, 0, 120),
+                    'description' => '',
+                    'sort_order' => (int) Db::value('SELECT COALESCE(MAX(sort_order), 0) + 10 FROM post_categories', [], 10),
+                ]);
+        }
+    }
+    if ($categoryId > 0 && Db::one('SELECT id FROM post_categories WHERE id = ?', [$categoryId]) === null) {
+        $categoryId = 0;
+    }
+
     $data = [
+        'category_id'      => $categoryId > 0 ? $categoryId : null,
         'slug'             => $slug,
         'title'            => $title,
         'excerpt'          => mb_substr(trim((string) (post('excerpt', '') ?? '')), 0, 400),
@@ -159,30 +148,6 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         $id = Db::insert('posts', $data);
     }
 
-    // tags
-    $tagIds = array_map('intval', post_array('tags'));
-    Db::delete('post_tags', 'post_id = ?', [$id]);
-    foreach (array_unique($tagIds) as $tagId) {
-        if ($tagId > 0 && Db::one('SELECT id FROM tags WHERE id = ?', [$tagId]) !== null) {
-            Db::insert('post_tags', ['post_id' => $id, 'tag_id' => $tagId]);
-        }
-    }
-    $newTags = trim((string) (post('new_tags', '') ?? ''));
-    if ($newTags !== '') {
-        foreach (explode(',', $newTags) as $name) {
-            $name = trim($name);
-            $slug = Cms::slugify($name);
-            if ($name === '' || $slug === '') {
-                continue;
-            }
-            $tagId = (int) Db::value('SELECT id FROM tags WHERE slug = ?', [$slug], 0);
-            if ($tagId === 0) {
-                $tagId = Db::insert('tags', ['slug' => $slug, 'name' => mb_substr($name, 0, 80), 'description' => '']);
-            }
-            Db::insert('post_tags', ['post_id' => $id, 'tag_id' => $tagId]);
-        }
-    }
-
     Activity::log($existing === null ? 'post_created' : 'post_updated', 'post', (string) $id, ucfirst($status) . ' post ' . $slug);
     Flash::success($status === 'scheduled'
         ? 'Post scheduled for ' . date('j M Y H:i', (int) strtotime((string) $publishedAt)) . '.'
@@ -192,13 +157,9 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 
 /* ------------------------------------------------------------- tag screen */
 
+/* the old tag screen is gone; anything pointing at it lands on its replacement */
 if ($page === 'tags') {
-    $tags = Db::all('SELECT t.*, COUNT(pt.post_id) AS posts FROM tags t LEFT JOIN post_tags pt ON pt.tag_id = t.id GROUP BY t.id ORDER BY t.name');
-    $editing = request_int('edit', 0) > 0 ? Db::one('SELECT * FROM tags WHERE id = ?', [request_int('edit', 0)]) : null;
-    $pageTitle = 'Tags';
-    $title = $pageTitle;
-    render('tags', compact('tags', 'editing', 'pageTitle', 'title'));
-    exit;
+    redirect_to(admin_url('blog-categories'));
 }
 
 /* ------------------------------------------------------------ post editor */
@@ -215,14 +176,14 @@ if ($page === 'blog-edit') {
         'status' => 'draft', 'published_at' => '', 'author_id' => Auth::id(), 'meta_title' => '', 'meta_description' => '',
         'canonical_url' => '', 'og_title' => '', 'og_description' => '', 'og_image' => '', 'noindex' => 0,
     ];
-    $form['tags'] = $id > 0 ? array_map(static fn (array $t): int => (int) $t['id'], Cms::postTags($id)) : [];
-    $allTags = Db::all('SELECT * FROM tags ORDER BY name');
+    $form['category_id'] = $form['category_id'] ?? 0;
+    $postCategories = Cms::postCategories(false);
     $authors = $canManageOthers ? Db::all("SELECT id, name, role FROM users WHERE status = 'active' ORDER BY name") : [];
     $pageTitle = $post === null ? 'New post' : 'Edit post';
     $title = $pageTitle;
     $wide = true;
     $breadcrumbs = [['label' => 'Blog', 'url' => admin_url('blog')], ['label' => $post === null ? 'New post' : str_limit((string) $post['title'], 40)]];
-    render('blog-edit', compact('form', 'post', 'allTags', 'authors', 'canManageOthers', 'pageTitle', 'title', 'wide', 'breadcrumbs'));
+    render('blog-edit', compact('form', 'post', 'postCategories', 'authors', 'canManageOthers', 'pageTitle', 'title', 'wide', 'breadcrumbs'));
     exit;
 }
 
@@ -230,8 +191,10 @@ if ($page === 'blog-edit') {
 
 $q = (string) (request('q') ?? '');
 $status = (string) (request('status') ?? '');
-$sql = 'SELECT p.*, u.name AS author, (SELECT COUNT(*) FROM post_tags pt WHERE pt.post_id = p.id) AS tag_count
-        FROM posts p LEFT JOIN users u ON u.id = p.author_id WHERE 1 = 1';
+$categoryFilter = (string) (request('category') ?? '');
+$sql = 'SELECT p.*, u.name AS author, c.name AS category, c.slug AS category_slug
+        FROM posts p LEFT JOIN users u ON u.id = p.author_id
+        LEFT JOIN post_categories c ON c.id = p.category_id WHERE 1 = 1';
 $params = [];
 if (!$canManageOthers) {
     $sql .= ' AND p.author_id = ?';
@@ -245,6 +208,10 @@ if ($q !== '') {
 if ($status !== '') {
     $sql .= ' AND p.status = ?';
     $params[] = $status;
+}
+if ($categoryFilter !== '') {
+    $sql .= ' AND c.slug = ?';
+    $params[] = $categoryFilter;
 }
 $sql .= ' ORDER BY COALESCE(p.published_at, p.updated_at) DESC';
 $rows = Db::all($sql, $params);
@@ -260,4 +227,5 @@ $title = $pageTitle;
 $wide = true;
 $topbarActions = [['label' => 'New post', 'url' => admin_url('blog-edit'), 'icon' => 'plus', 'class' => 'btn-primary']];
 
-render('blog', compact('rows', 'counts', 'q', 'status', 'pageTitle', 'title', 'wide', 'topbarActions'));
+$listCategories = Cms::postCategories(false);
+render('blog', compact('rows', 'counts', 'q', 'status', 'categoryFilter', 'listCategories', 'pageTitle', 'title', 'wide', 'topbarActions'));

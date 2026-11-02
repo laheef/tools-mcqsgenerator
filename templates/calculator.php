@@ -287,10 +287,6 @@ $clientPayload = [
                     <p class="article-updated">Last updated: <time datetime="<?= View::escape(Format::isoDate($calc['updatedAt'])) ?>"><?= View::escape(Format::date($calc['updatedAt'])) ?></time></p>
                 <?php endif; ?>
 
-                <div class="article-head-row">
-                    <?= Icons::forCalculator(['path' => $calc['path'], 'name' => $calc['name'], 'cat' => $calc['cat'], 'icon' => $calc['icon'] ?? ''], 34, 'calc-glyph calc-glyph-lg') ?>
-                    <h1 class="article-title"><?= View::escape($calc['title'] ?: $calc['name']) ?></h1>
-                </div>
 
                 <?php if (!empty($calc['authors']) || !empty($calc['reviewers'])): ?>
                     <div class="credits-row">
@@ -463,6 +459,8 @@ $clientPayload = [
                 </section>
             <?php endif; ?>
 
+            <?= \Onim\Ads::slot('calc_reviews_top', 'ad-slot--in-article') ?>
+
             <section class="reviews" id="reviews" aria-labelledby="reviews-heading">
                 <h2 id="reviews-heading">Reader reviews</h2>
                 <p class="section-lede">
@@ -537,6 +535,8 @@ $clientPayload = [
                 </form>
             </section>
 
+            <?= \Onim\Ads::slot('calc_reviews_bottom', 'ad-slot--in-article') ?>
+
             <section class="cite" aria-labelledby="cite-heading">
                 <h2 id="cite-heading">Cite this calculator</h2>
                 <p>If you use this calculator in academic work, cite the page and the date you accessed it:</p>
@@ -549,6 +549,17 @@ $clientPayload = [
                  write-up, because someone who lands on a calculator came for
                  the calculator. */ ?>
         <div class="calc-widget-column">
+            <?php /* The name sits above the tool, not across the other column.
+                     It is the page's answer ("12 Volt Wire Size Calculator") and
+                     the form under it is the thing that does the answering — put
+                     them together and the eye has one place to start. */ ?>
+            <header class="calc-page-head">
+                <div class="article-head-row">
+                    <?= Icons::forCalculator(['path' => $calc['path'], 'name' => $calc['name'], 'cat' => $calc['cat'], 'icon' => $calc['icon'] ?? ''], 34, 'calc-glyph calc-glyph-lg') ?>
+                    <h1 class="article-title"><?= View::escape($calc['title'] ?: $calc['name']) ?></h1>
+                </div>
+            </header>
+
             <div class="calc-widget" data-calculator="<?= View::escape($calc['file']) ?>">
                 <?php if ($groups === []): ?>
                     <p class="calc-empty">This calculator has no interactive fields.</p>
@@ -651,6 +662,13 @@ $clientPayload = [
                         }
                     }
                     ?>
+                    <?php /* Between the second and third section: the reader has
+                        filled something in, the answer is not yet on screen, and
+                        the ad sits where the eye already is — inside the tool, not
+                        in a rail nobody looks at. */ ?>
+                    <?php if ($i === 2): ?>
+                        <?= \Onim\Ads::slot('calc_mid', 'ad-slot--in-widget') ?>
+                    <?php endif; ?>
                     <section class="calc-group<?= $hasInput ? '' : ' is-empty' ?>" data-group>
                         <?php /* An untitled group gets no header. It used to render a
                             bare chevron over nothing, which reads as a blank label

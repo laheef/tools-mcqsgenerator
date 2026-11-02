@@ -139,6 +139,10 @@ final class Settings
         $fields = self::FIELDS;
         foreach (\Onim\Ads::slots() as $key => $meta) {
             $fields['ads_slot_' . $key] = ['analytics', 'code'];
+            // The box a publisher's creative is drawn into. Without a size the
+            // slot has to guess, the creative fills a wrong-shaped hole and the
+            // layout shifts when the network's script lands.
+            $fields['ads_size_' . $key] = ['analytics', 'text'];
         }
         return $fields;
     }

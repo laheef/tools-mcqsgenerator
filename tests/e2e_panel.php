@@ -433,30 +433,31 @@ if ($created !== null) {
     t('14 deleting the page removes it', (int) value('SELECT COUNT(*) FROM pages WHERE id = ?', [$created['id']]) === 0);
 }
 
-/* 15 — blog + tags -------------------------------------------------------- */
+/* 15 — blog + categories -------------------------------------------------- */
 $postSlug = 'e2e-post-' . substr((string) time(), -4);
 post('blog', ['do' => 'save', 'id' => '0', 'title' => 'E2E post', 'slug' => $postSlug,
     'excerpt' => 'An excerpt.', 'content' => '<p>Post body from the test.</p>',
-    'status' => 'draft', 'published_at' => date('Y-m-d H:i:s'), 'new_tags' => 'E2E tag']);
+    'status' => 'draft', 'published_at' => date('Y-m-d H:i:s'), 'new_category' => 'E2E category']);
 $entry = row('SELECT * FROM posts WHERE slug = ?', [$postSlug]);
 t('15 a draft post is created', $entry !== null && (string) $entry['status'] === 'draft');
 t('15 a draft post is not public', get(BASE . '/blog/' . $postSlug)['status'] === 404);
 t('15 a draft post is not listed', !str_contains(get(BASE . '/blog')['body'], 'E2E post'));
 if ($entry !== null) {
+    $categoryId = (int) value('SELECT id FROM post_categories WHERE slug = ?', ['e2e-category']);
+    t('15 the category was created with the post', $categoryId > 0);
     post('blog', ['do' => 'save', 'id' => (string) $entry['id'], 'title' => 'E2E post', 'slug' => $postSlug,
         'excerpt' => 'An excerpt.', 'content' => '<p>Post body from the test.</p>',
         'status' => 'published', 'published_at' => date('Y-m-d H:i:s'),
-        'tags' => [(string) value("SELECT id FROM tags WHERE slug='e2e-tag'")]]);
+        'category_id' => (string) $categoryId]);
     t('15 publishing makes it public', get(BASE . '/blog/' . $postSlug)['status'] === 200);
     t('15 the post is listed on the blog index', str_contains(get(BASE . '/blog')['body'], 'E2E post'));
-    t('15 the tag archive lists it', str_contains(get(BASE . '/tag/e2e-tag')['body'], 'E2E post'));
-    $tagId = (int) value('SELECT id FROM tags WHERE slug = ?', ['e2e-tag']);
-    t('15 the tag was created', $tagId > 0);
+    t('15 the category page lists it', str_contains(get(BASE . '/category/e2e-category')['body'], 'E2E post'));
+    t('15 the post names its category', str_contains(get(BASE . '/blog/' . $postSlug)['body'], '/category/e2e-category'));
     post('blog', ['do' => 'delete', 'id' => (string) $entry['id']]);
     t('15 deleting the post removes it', (int) value('SELECT COUNT(*) FROM posts WHERE id = ?', [$entry['id']]) === 0);
-    if ($tagId > 0) {
-        post('blog', ['do' => 'tag_delete', 'id' => (string) $tagId]);
-        t('15 the tag can be deleted too', (int) value('SELECT COUNT(*) FROM tags WHERE id = ?', [$tagId]) === 0);
+    if ($categoryId > 0) {
+        post('blog-categories', ['do' => 'delete', 'id' => (string) $categoryId]);
+        t('15 the category can be deleted too', (int) value('SELECT COUNT(*) FROM post_categories WHERE id = ?', [$categoryId]) === 0);
     }
 }
 
@@ -1551,7 +1552,7 @@ t('34 the cached copy holds no origin of its own',
  * class this process does not load.
  */
 $slots = \Onim\Ads::slots();
-t('35 the slot registry has every position', count($slots) === 14, (string) count($slots));
+t('35 the slot registry has every position', count($slots) === 17, (string) count($slots));
 
 /* Every slot must be a real, writable setting — the check that would have
    caught the first set of rails, which no form ever posted. */
@@ -1593,7 +1594,7 @@ $postPage = get(BASE . '/blog/how-to-read-a-calculator-result')['body'];
 
 /* Each page renders exactly its own set, and the sitewide header stands down
    where the page carries its own top slot. */
-$expectCalc = ['calc_top', 'calc_inline', 'calc_below', 'calc_side', 'footer', 'anchor'];
+$expectCalc = ['calc_top', 'calc_mid', 'calc_inline', 'calc_below', 'calc_side', 'calc_reviews_top', 'calc_reviews_bottom', 'footer', 'anchor'];
 $expectPost = ['blog_top', 'blog_inline', 'blog_side_top', 'blog_side_bottom', 'footer', 'anchor'];
 $found = static function (string $html, string $key): bool {
     return str_contains($html, 'id="e2e-' . $key . '"');
@@ -1841,7 +1842,7 @@ t('40 the anchor slot is in the registry', isset(\Onim\Ads::slots()['anchor']));
 
 t('40 the panel says whether ads are live and how much is filled',
     isset($panel) && str_contains($panel, 'ad-status-state')
-    && (bool) preg_match('~\d+ of 14 positions have code~', $panel));
+    && (bool) preg_match('~\d+ of 17 positions have code~', $panel));
 
 $adsSet('ads_enabled', '1');
 $adsSet('ads_slot_anchor', '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="1"></ins>');
@@ -1924,6 +1925,107 @@ foreach (['pages.php', 'calculator-edit.php', 'blog-edit.php'] as $viewFile) {
     t('41 ' . $viewFile . ' uses the shared toolbar',
         str_contains($view, "partials/editor-toolbar.php"));
 }
+
+/* 42 — the blog files itself, and an ad knows how big it is ------------------ */
+/*
+ * Round 45 replaced tags with categories: one per post, with its own page, its
+ * own line in the panel and its own filter on the index. The old /tag/ URLs are
+ * permanent redirects, because they were in the sitemap and may be in a
+ * bookmark. The ad positions gained a size, so an empty box already occupies the
+ * shape its creative will take and the article does not jump when it loads.
+ */
+$catRow = row("SELECT c.* FROM post_categories c JOIN posts p ON p.category_id = c.id
+               WHERE p.status = 'published' LIMIT 1");
+t('42 a published post is filed under a category', $catRow !== null);
+
+if ($catRow !== null) {
+    $catPage = get(BASE . '/category/' . $catRow['slug']);
+    t('42 the category page renders', $catPage['status'] === 200, 'status ' . $catPage['status']);
+    t('42 the category page names the category', str_contains($catPage['body'], (string) $catRow['name']));
+    t('42 the category page states its own canonical URL',
+        (bool) preg_match('~rel="canonical" href="[^"]*/category/' . preg_quote((string) $catRow['slug'], '~') . '"~', $catPage['body']));
+
+    $moved = get(BASE . '/tag/' . $catRow['slug']);
+    t('42 the old tag URL is a permanent redirect',
+        $moved['status'] === 301 && str_contains($moved['location'], '/category/' . $catRow['slug']),
+        'status ' . $moved['status']);
+}
+
+$blogIndex = get(BASE . '/blog')['body'];
+t('42 the index filters by category', str_contains($blogIndex, 'class="cat-chip') && str_contains($blogIndex, '/category/'));
+t('42 the index offers no tag filters', !str_contains($blogIndex, '/tag/'));
+t('42 a card names its category', str_contains($blogIndex, 'class="post-cat'));
+t('42 a card states a reading time', (bool) preg_match('~\d+ min read~', $blogIndex));
+
+if ($catRow !== null) {
+    $filed = row("SELECT p.slug FROM posts p WHERE p.category_id = ? AND p.status = 'published' LIMIT 1", [(int) $catRow['id']]);
+    if ($filed !== null) {
+        t('42 the post page names its category',
+            str_contains(get(BASE . '/blog/' . $filed['slug'])['body'], '/category/' . $catRow['slug']));
+    }
+}
+
+/* The panel: its own screen, a tag and a size per position, and a labelled list. */
+$adsPanel = page('ads')['body'];
+$slotCount = count(\Onim\Ads::slots());
+t('42 advertising has a screen of its own',
+    str_contains($adsPanel, 'Advertising') && str_contains($adsPanel, 'name="ads_enabled"'));
+t('42 every position takes a tag', substr_count($adsPanel, 'name="slot"') === $slotCount * 2,
+    substr_count($adsPanel, 'name="slot"') . '/' . ($slotCount * 2));
+t('42 every position takes a size', substr_count($adsPanel, 'name="size"') === $slotCount,
+    substr_count($adsPanel, 'name="size"') . '/' . $slotCount);
+/* the button only exists once a position has code, so the handler is the check */
+$adsController = (string) file_get_contents(dirname(__DIR__) . '/admin/controllers/ads.php');
+t('42 a position can be emptied', str_contains($adsController, "=== 'clear'"));
+t('42 the sidebar links to it', str_contains(page('dashboard')['body'], 'p=ads'));
+
+/* A size is stored as "300x250" and rendered as custom properties on the slot. */
+$adsSet('ads_enabled', '1');
+$adsSet('ads_slot_calc_mid', '<div id="e2e-mid">AD</div>');
+$adsSet('ads_size_calc_mid', '300x250');
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+$sized = get(BASE . '/math/percentage')['body'];
+t('42 a sized position reserves its box',
+    str_contains($sized, '--ad-w:300px') && str_contains($sized, '--ad-h:250px'));
+t('42 the between-the-sections position renders inside the tool',
+    str_contains($sized, 'id="e2e-mid"') && str_contains($sized, 'ad-slot--in-widget'));
+$adsReset();
+$adsSet('ads_size_calc_mid', '');
+\Onim\Cms::flush();
+
+/* The panel writes that size through its own form, not SQL. */
+post('ads', ['do' => 'size', 'slot' => 'calc_top', 'size' => '728 x 90']);
+t('42 the panel saves a size', (string) value("SELECT svalue FROM settings WHERE skey = 'ads_size_calc_top'") === '728x90',
+    (string) value("SELECT svalue FROM settings WHERE skey = 'ads_size_calc_top'"));
+post('ads', ['do' => 'size', 'slot' => 'calc_top', 'size' => 'nonsense']);
+t('42 a nonsense size is refused', (string) value("SELECT svalue FROM settings WHERE skey = 'ads_size_calc_top'") === '728x90');
+$adsSet('ads_size_calc_top', '');
+
+/* Categories: create, list, assign, delete — all through the panel. */
+post('blog-categories', ['do' => 'save', 'id' => '0', 'name' => 'E2E panel category',
+    'slug' => 'e2e-panel-cat', 'description' => 'A category the suite made.', 'sort_order' => '999']);
+$madeCat = row("SELECT * FROM post_categories WHERE slug = 'e2e-panel-cat'");
+t('42 a category can be created from the panel', $madeCat !== null);
+t('42 it shows up in the panel list', str_contains(page('blog-categories')['body'], 'E2E panel category'));
+t('42 the editor offers a category select', str_contains(page('blog-edit')['body'], 'name="category_id"'));
+if ($madeCat !== null) {
+    post('blog-categories', ['do' => 'delete', 'id' => (string) $madeCat['id']]);
+    t('42 a category can be deleted from the panel',
+        (int) value('SELECT COUNT(*) FROM post_categories WHERE id = ?', [(int) $madeCat['id']]) === 0);
+}
+
+/* The calculator's name sits above the tool, and the column never scrolls inside. */
+$calcTpl = (string) file_get_contents(dirname(__DIR__) . '/templates/calculator.php');
+t('42 the calculator name is above the tool',
+    strpos($calcTpl, 'calc-page-head') !== false
+    && strpos($calcTpl, 'calc-page-head') < strpos($calcTpl, 'class="calc-widget"'));
+$appCss = (string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css');
+t('42 the tool column has no scrollbar of its own',
+    !preg_match('~\.calc-widget-column\s*\{[^}]*overflow-y:\s*auto~', $appCss));
+t('42 a column taller than the screen is not pinned', str_contains($appCss, '.calc-widget-column.is-tall { position: static; }'));
+$appJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js');
+t('42 only what fits is pinned', str_contains($appJs, "classList.toggle('is-tall', tall)"));
 
 /* ---------------------------------------------------------------- summary */
 

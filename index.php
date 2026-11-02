@@ -281,10 +281,10 @@ if ($count === 1 && $segments[0] === 'blog') {
     echo View::page('blog', [
         'seo' => $seo,
         'posts' => $posts,
-        'tags' => Cms::tags(),
+        'postCategories' => Cms::postCategories(),
         'page' => $pageNo,
         'pages' => $pages,
-        'activeTag' => '',
+        'activeCategory' => '',
         'categories' => Data::categories(),
         'navCategories' => Data::categories(),
     ]);
@@ -303,7 +303,9 @@ if ($count === 2 && $segments[0] === 'blog') {
     }
     if ($post !== null) {
         Db::exec('UPDATE posts SET views = views + 1 WHERE id = ?', [(int) $post['id']]);
-        $tags = Cms::postTags((int) $post['id']);
+        $postCategory = (string) ($post['category_slug'] ?? '') !== ''
+            ? ['slug' => (string) $post['category_slug'], 'name' => (string) $post['category_name']]
+            : null;
         $seo = new Seo((string) ($post['meta_title'] !== '' ? $post['meta_title'] : $post['title']),
             (string) ($post['meta_description'] !== '' ? $post['meta_description'] : $post['excerpt']));
         $seo->canonical = (string) ($post['canonical_url'] !== '' ? $post['canonical_url'] : SITE_URL . '/blog/' . $post['slug']);
@@ -318,13 +320,16 @@ if ($count === 2 && $segments[0] === 'blog') {
         $seo->breadcrumbs = [
             ['name' => 'Home', 'url' => '/'],
             ['name' => 'Blog', 'url' => '/blog'],
-            ['name' => (string) $post['title'], 'url' => '/blog/' . $post['slug']],
         ];
+        if ($postCategory !== null) {
+            $seo->breadcrumbs[] = ['name' => $postCategory['name'], 'url' => '/category/' . $postCategory['slug']];
+        }
+        $seo->breadcrumbs[] = ['name' => (string) $post['title'], 'url' => '/blog/' . $post['slug']];
         echo View::page('post', [
             'seo' => $seo,
             'bodyClass' => 'is-post',
             'post' => $post,
-            'tags' => $tags,
+            'postCategory' => $postCategory,
             'related' => array_values(array_filter(Cms::posts(4), static fn (array $p): bool => (int) $p['id'] !== (int) $post['id'])),
             'categories' => Data::categories(),
             'navCategories' => Data::categories(),
@@ -333,29 +338,50 @@ if ($count === 2 && $segments[0] === 'blog') {
     }
 }
 
+/*
+ * Blog categories.
+ *
+ * /category/<slug> is the canonical address. /tag/<slug> was the old one and is
+ * kept as a permanent redirect: those URLs were in the sitemap and may be in
+ * someone's bookmarks, and a 301 costs nothing where a 404 costs the page.
+ */
 if ($count === 2 && $segments[0] === 'tag') {
-    $tagSlug = $segments[1];
-    $tag = null;
-    foreach (Cms::tags() as $candidate) {
-        if ((string) $candidate['slug'] === $tagSlug) {
-            $tag = $candidate;
-            break;
-        }
+    $moved = Cms::postCategory($segments[1]);
+    if ($moved !== null) {
+        header('Location: ' . SITE_URL . '/category/' . $moved['slug'], true, 301);
+        exit;
     }
-    if ($tag !== null) {
-        $perPage = 12;
+}
+
+if ($count === 2 && $segments[0] === 'category') {
+    $blogCategory = Cms::postCategory($segments[1]);
+    if ($blogCategory !== null) {
+        $perPage = max(3, min(36, (int) (Cms::setting('posts_per_page', '9') ?: 9)));
         $pageNo = max(1, (int) ($_GET['page'] ?? 1));
-        $posts = Cms::posts($perPage, ($pageNo - 1) * $perPage, $tagSlug);
-        $seo = new Seo('Posts tagged “' . $tag['name'] . '”', (string) ($tag['description'] ?? ''));
-        $seo->canonical = SITE_URL . '/tag/' . $tagSlug;
-        $seo->breadcrumbs = [['name' => 'Home', 'url' => '/'], ['name' => 'Blog', 'url' => '/blog'], ['name' => (string) $tag['name'], 'url' => '/tag/' . $tagSlug]];
+        $total = Cms::blogCount((string) $blogCategory['slug'])['total'];
+        $pages = max(1, (int) ceil($total / $perPage));
+        $pageNo = min($pageNo, $pages);
+        $posts = Cms::posts($perPage, ($pageNo - 1) * $perPage, (string) $blogCategory['slug']);
+        $seo = new Seo(
+            (string) $blogCategory['name'] . ' — the calculator blog',
+            (string) ($blogCategory['description'] !== '' ? $blogCategory['description'] : 'Posts filed under ' . $blogCategory['name'] . '.')
+        );
+        $seo->canonical = SITE_URL . '/category/' . $blogCategory['slug'] . ($pageNo > 1 ? '?page=' . $pageNo : '');
+        $seo->type = 'website';
+        $seo->breadcrumbs = [
+            ['name' => 'Home', 'url' => '/'],
+            ['name' => 'Blog', 'url' => '/blog'],
+            ['name' => (string) $blogCategory['name'], 'url' => '/category/' . $blogCategory['slug']],
+        ];
         echo View::page('blog', [
             'seo' => $seo,
             'posts' => $posts,
-            'tags' => Cms::tags(),
+            'postCategories' => Cms::postCategories(),
             'page' => $pageNo,
-            'pages' => max(1, (int) ceil(((int) $tag['post_count']) / $perPage)),
-            'activeTag' => $tagSlug,
+            'pages' => $pages,
+            'activeCategory' => (string) $blogCategory['slug'],
+            'categoryHeading' => (string) $blogCategory['name'],
+            'categoryLede' => (string) $blogCategory['description'],
             'categories' => Data::categories(),
             'navCategories' => Data::categories(),
         ]);

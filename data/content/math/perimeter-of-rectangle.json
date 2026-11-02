@@ -60,7 +60,7 @@
     },
     {
       "q": "What do I need to enter to use the Perimeter of a rectangle calculator?",
-      "a": "The form asks for the circumcircle radius, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+      "a": "The form asks for the circumcircle radius, which is a single field. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
     },
     {
       "q": "Can I enter width (a) in a different unit?",

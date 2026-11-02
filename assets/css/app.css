@@ -548,47 +548,34 @@ button { font: inherit; color: inherit; }
   }
   .calc-article { order: 2; }
   /*
-   * The tool column, sticky *from the bottom*.
+   * The tool column, sticky *from the bottom* — and never with a scrollbar of
+   * its own.
    *
-   * `position: sticky; bottom: 0` does not pin anything — sticky only ever
-   * offsets the edge you name from the start of the scroll container, so a
-   * bottom-stuck element scrolls away and never comes back. What does work is
-   * a box exactly one viewport tall that pins at `top: 0`: its bottom edge is
-   * therefore always on the bottom edge of the viewport, and the tool sits at
-   * the bottom of that box. That is the arrangement a calculator wants — the
-   * fields stay in reach while the article scrolls behind them — and it is
-   * what the previous `top: 24px` got wrong by pinning the tool's *top*.
+   * The column used to be capped at one viewport and given `overflow-y: auto`,
+   * which put a second scrollbar inside the page: the reader scrolled the page
+   * to reach the calculator, then had to find and scroll *the calculator* to
+   * reach its last field. There is one scrollbar on a page.
+   *
+   * What the column does instead: if it fits the screen, `top` is set from
+   * app.js to "viewport − column height", so its own bottom edge is what comes
+   * to rest on the bottom of the screen and the fields stay in reach while the
+   * article scrolls past. If it does not fit — a long form, or two filled ad
+   * slots — the class `is-tall` drops the stickiness and the column simply
+   * scrolls with the page like everything else.
    */
   .calc-widget-column {
     order: 1;
     position: sticky;
-    /* Set from app.js to "viewport − column height − gap", so the column's own
-       bottom edge is what comes to rest on the bottom of the screen. The 0px
-       default keeps the column pinned at the top when the script is absent. */
     top: var(--calc-pin, 0px);
     align-self: start;
     display: flex; flex-direction: column;
-    /*
-     * The column scrolls, not the card.
-     *
-     * Capping the column at one viewport and letting the card shrink inside it
-     * was wrong: the two 250px rail slots below the tool then squeezed the tool
-     * — a 900px-tall form rendered in the 330px that was left. The children are
-     * fixed-size and the column itself scrolls when there is more than a screen
-     * of it, so a long form keeps its full height and the slots are still
-     * reachable.
-     */
-    max-height: calc(100vh - 32px);
-    overflow-y: auto;
-    overscroll-behavior: auto;
-    scrollbar-width: thin;
   }
-  .calc-widget-column::-webkit-scrollbar { width: 8px; }
-  .calc-widget-column::-webkit-scrollbar-thumb { background: #d7dde7; border-radius: 8px; }
+  .calc-widget-column.is-tall { position: static; }
   .calc-widget-column > * { flex: 0 0 auto; }
   /* The column's own slots are the last things in it, under the card. */
   .calc-widget-column > .ad-slot,
   .calc-widget-column > .calc-tool-extra { flex: 0 0 auto; }
+}
 }
 
 /* Under the tool card: an ad that only the sticky column renders. Collapsing
@@ -651,6 +638,10 @@ button { font: inherit; color: inherit; }
 .ad-slot--billboard  { --ad-w: 970px;  --ad-h: 250px; }
 .ad-slot--rectangle  { --ad-w: 300px;  --ad-h: 250px; }
 .ad-slot--inline     { --ad-w: 468px;  --ad-h: 120px; margin-block: 26px; }
+/* Inside the tool, between calculator sections: the card's own padding is the
+   gutter, so the slot sits flush rather than as a banner in a form. */
+.ad-slot--in-widget { margin: 4px 0 18px; }
+.ad-slot--in-article { margin-block: 28px; }
 
 /* Under the header and above the tool: a leaderboard that must not collide
    with the breadcrumb, so it gets the page's own width and no side margins. */
@@ -1206,6 +1197,20 @@ a:focus-visible > .calc-glyph,
 .article-head-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
 .article-head-row .article-title { margin-bottom: 0; }
 
+/*
+ * The calculator's own name, above the calculator.
+ *
+ * It used to head the article column, which meant the first thing a reader saw
+ * in the left column was a form with no name on it, and the name was across a
+ * 40px gutter. Title and tool are one unit now; the article column starts with
+ * the date and the write-up.
+ */
+.calc-page-head { margin: 0 0 18px; }
+.calc-page-head .article-head-row { margin-bottom: 0; align-items: flex-start; }
+.calc-page-head .article-title { font-size: 25px; line-height: 1.25; }
+@media (min-width: 900px) { .calc-page-head .article-title { font-size: 28px; } }
+.calc-page-head .calc-glyph { flex: 0 0 auto; }
+
 /* Where a numeric field sits while it is an input. Empty (and therefore zero
    height) while that field is showing as a result in the panel. */
 /* A home whose field has moved into the results panel holds nothing but the
@@ -1578,47 +1583,179 @@ a:focus-visible > .calc-glyph,
 
 /* --- blog ----------------------------------------------------------------- */
 
-.post-list {
-    list-style: none;
-    margin: 24px 0 0;
-    padding: 0;
-    display: grid;
-    gap: 20px;
+/* ============================================================== the blog
+   An index reads as one column of headlines, so it is set as one: a quiet hero,
+   a row of category filters, then the newest post given the width of the page
+   and the rest in a two-column feed. Cards have no imagery yet — the layout is
+   built so a card without a cover still has something to lead with (its
+   category, its headline, the reading time) instead of a grey hole.
+   ========================================================================== */
+.blog-shell { max-width: 1080px; }
+
+.blog-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  padding: 6px 0 22px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 22px;
 }
+@media (min-width: 900px) {
+  .blog-hero { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+}
+.blog-hero-text { max-width: 62ch; }
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+.blog-title {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.blog-lede { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-3); }
+
+.blog-stats { display: none; margin: 0; gap: 26px; }
+@media (min-width: 900px) { .blog-stats { display: flex; } }
+.blog-stats > div { display: flex; flex-direction: column-reverse; }
+.blog-stats dt { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-4); }
+.blog-stats dd { margin: 0; font-size: 22px; font-weight: 700; color: var(--ink); }
+
+/* filters: one row, scrollable rather than wrapping into a block of pills */
+.cat-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 0 0 12px;
+  margin: 0 0 18px;
+  scrollbar-width: none;
+}
+.cat-row::-webkit-scrollbar { display: none; }
+.cat-chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.cat-chip:hover { border-color: var(--border-strong); background: var(--surface-2); text-decoration: none; }
+.cat-chip.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.cat-chip-count {
+  font-size: 11.5px;
+  font-weight: 700;
+  min-width: 18px;
+  text-align: center;
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--ink-4);
+}
+.cat-chip.is-active .cat-chip-count { background: rgba(255, 255, 255, .18); color: #fff; }
+
+.post-feed { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 780px) { .post-feed { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.post-feed.has-lead > .post-card--lead { grid-column: 1 / -1; }
 
 .post-card {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 20px;
-    background: var(--surface, #fff);
-    border: 1px solid var(--border, #e4e7ec);
-    border-radius: var(--radius, 12px);
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: border-color .16s, box-shadow .16s, transform .16s;
 }
+.post-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-lift); transform: translateY(-1px); }
 
-.post-card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    aspect-ratio: 16 / 10;
+.post-card-media { display: block; background: var(--surface-2); }
+.post-card-media img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+
+.post-card-body { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px 18px; flex: 1; }
+
+.post-card-kicker { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.post-cat {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+  text-decoration: none;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  background: var(--brand-soft);
 }
+.post-cat:hover { text-decoration: none; background: #DFE6FF; }
+.post-cat.is-plain { background: var(--surface-2); color: var(--ink-4); }
+.post-card-time { font-size: 12.5px; color: var(--ink-4); }
 
-.post-card-body { padding: 18px 20px; }
+.post-card-title { margin: 0; font-size: 19px; line-height: 1.32; letter-spacing: -.01em; }
+.post-card-title a { color: var(--ink); text-decoration: none; }
+.post-card-title a:hover { color: var(--brand-ink); text-decoration: none; }
+.post-card-excerpt { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-3); }
 
+.post-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
 .post-card-meta {
-    margin: 0 0 6px;
-    font-size: 0.82rem;
-    color: var(--muted, #64748b);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-4);
+}
+.post-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brand-ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.post-card-link:hover { text-decoration: none; gap: 9px; transition: gap .16s; }
+
+/* the lead card: headline at page width, excerpt beside the details */
+.post-card--lead .post-card-body { padding: 26px 28px 22px; gap: 12px; }
+.post-card--lead .post-card-title { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.2; letter-spacing: -.02em; }
+.post-card--lead .post-card-excerpt { font-size: 15.5px; max-width: 70ch; }
+@media (min-width: 780px) {
+  .post-card--lead { flex-direction: row; }
+  .post-card--lead .post-card-media { flex: 0 0 42%; }
+  .post-card--lead .post-card-media img { height: 100%; aspect-ratio: auto; }
 }
 
-.post-card-title { margin: 0 0 8px; font-size: 1.3rem; line-height: 1.3; }
-.post-card-title a { color: inherit; text-decoration: none; }
-.post-card-title a:hover { text-decoration: underline; }
-.post-card-excerpt { margin: 0 0 12px; color: var(--muted, #4b5563); }
-.post-card-link { font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.blog-empty {
+  padding: 42px 26px;
+  text-align: center;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.blog-empty-title { margin: 0 0 6px; font-size: 18px; font-weight: 700; color: var(--ink); }
+.blog-empty-text { margin: 0 0 14px; color: var(--ink-3); }
 
 .post-cover { margin: 24px 0; }
 .post-cover img { width: 100%; height: auto; border-radius: var(--radius, 12px); display: block; }
@@ -2545,3 +2682,5 @@ a:focus-visible > .calc-glyph,
   .post-rail, .post-aside { display: none !important; }
   .post-frame { display: block; }
 }
+
+.post-filed { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: 13px; color: var(--ink-4); }

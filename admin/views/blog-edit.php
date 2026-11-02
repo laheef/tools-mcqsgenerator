@@ -2,7 +2,7 @@
 /**
  * @var array $form
  * @var array|null $post
- * @var array $allTags
+ * @var array $postCategories
  * @var array $authors
  * @var bool $canManageOthers
  */
@@ -153,26 +153,32 @@ $publishedValue = $form['published_at'] ? date('Y-m-d\TH:i', strtotime((string) 
             </div>
 
             <div class="card">
-                <div class="card-head"><h2>Tags</h2></div>
-                <div class="card-body stack" style="gap:8px">
-                    <?php if ($allTags === []): ?>
-                        <p class="small muted" style="margin:0">No tags yet — add some below, comma separated.</p>
-                    <?php else: ?>
-                        <div class="pill-list">
-                            <?php foreach ($allTags as $tag): ?>
-                                <label class="check" style="font-weight:500">
-                                    <input type="checkbox" name="tags[]" value="<?= (int) $tag['id'] ?>"
-                                           <?= in_array((int) $tag['id'], $form['tags'] ?? [], true) ? 'checked' : '' ?>>
-                                    <span><?= e((string) $tag['name']) ?></span>
-                                </label>
+                <div class="card-head"><h2>Category</h2></div>
+                <div class="card-body">
+                    <div class="field">
+                        <label for="category_id">Filed under</label>
+                        <select id="category_id" name="category_id">
+                            <option value="0">— No category —</option>
+                            <?php foreach ($postCategories as $cat): ?>
+                                <option value="<?= (int) $cat['id'] ?>"
+                                    <?= (int) ($form['category_id'] ?? 0) === (int) $cat['id'] ? 'selected' : '' ?>>
+                                    <?= e((string) $cat['name']) ?><?= (int) $cat['post_count'] > 0 ? ' (' . (int) $cat['post_count'] . ')' : '' ?>
+                                </option>
                             <?php endforeach; ?>
+                        </select>
+                        <div class="hint">
+                            One category per post. It shows on the card, filters the blog index and gets its own
+                            page at <code>/category/&lt;slug&gt;</code>.
                         </div>
-                    <?php endif; ?>
-                    <div class="field" style="margin:6px 0 0">
-                        <label for="new_tags">Add tags</label>
-                        <input id="new_tags" name="new_tags" placeholder="mortgage, how-to, units">
-                        <div class="hint">Comma separated; new ones are created.</div>
                     </div>
+                    <div class="field" style="margin-bottom:0">
+                        <label for="new_category">Or create one</label>
+                        <input id="new_category" name="new_category" placeholder="Money, Health, Home &amp; DIY">
+                        <div class="hint">Typing a name here files the post under it and creates it if it is new.</div>
+                    </div>
+                    <p class="small" style="margin:12px 0 0">
+                        <a href="<?= e(admin_url('blog-categories')) ?>">Manage categories</a> — rename, describe or delete.
+                    </p>
                 </div>
             </div>
 

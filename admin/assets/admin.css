@@ -605,3 +605,43 @@ body.editor-locked { overflow: hidden; }
 .ad-status-state { font-weight: 700; font-size: 13px; color: #8A5A00; }
 .ad-status.is-on .ad-status-state { color: #14724B; }
 .ad-status-count { font-size: 13px; color: var(--ink-3, #4B5259); }
+
+/* ------------------------------------------------ advertising (its own screen)
+   One card per position. The tag box is the widest thing on the card, the size
+   sits under it, and a filled card gets a coloured edge so a long list can be
+   scanned for the empty ones at a glance. */
+.ad-summary { margin: 0 0 14px; }
+.ad-summary p { margin: 0; font-size: 13.5px; }
+.ad-switch { display: flex; align-items: center; gap: 14px; }
+.ad-switch .spacer { margin-left: auto; }
+.ad-switch .hint { margin-top: 3px; }
+
+.section-title {
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted); margin: 26px 0 10px;
+}
+.section-title:first-of-type { margin-top: 6px; }
+
+.ad-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); align-items: start; }
+@media (max-width: 760px) { .ad-grid { grid-template-columns: minmax(0, 1fr); } }
+.ad-card { scroll-margin-top: 80px; }
+.ad-card.has-code { border-color: color-mix(in srgb, var(--ok) 30%, var(--border)); }
+.ad-card .card-head h2 { font-size: 14px; }
+.ad-card-body { display: flex; flex-direction: column; gap: 10px; }
+.ad-where { margin: 0; }
+.ad-code {
+  width: 100%; font-family: var(--mono); font-size: 12.5px; line-height: 1.5;
+  min-height: 78px; resize: vertical;
+}
+.ad-card-actions { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.ad-size-form {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding-top: 10px; border-top: 1px dashed var(--border);
+}
+.ad-size-form label { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.ad-size-form input { width: 92px; }
+.ad-clear { margin-left: auto; color: var(--err); }
+
+.kv-row { display: flex; gap: 14px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+.kv-row:last-of-type { border-bottom: 0; }
+.kv-key { min-width: 150px; font-weight: 600; }

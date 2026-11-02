@@ -464,6 +464,19 @@ final class Seo
             }
             if (Cms::settingBool('seo_sitemap_blog', true)) {
                 $urls[] = ['loc' => '@@ORIGIN@@' . '/blog', 'lastmod' => date('Y-m-d'), 'priority' => '0.6'];
+                // Category pages are real, indexable lists — they belong here for
+                // the same reason /blog does.
+                if (Cms::hasCategories()) {
+                    foreach (Db::all('SELECT c.slug FROM post_categories c
+                                      WHERE EXISTS (SELECT 1 FROM posts p WHERE p.category_id = c.id
+                                                    AND p.status = \'published\' AND p.published_at <= NOW())') as $cat) {
+                        $urls[] = [
+                            'loc' => '@@ORIGIN@@' . '/category/' . $cat['slug'],
+                            'lastmod' => date('Y-m-d'),
+                            'priority' => '0.5',
+                        ];
+                    }
+                }
                 foreach (Db::all("SELECT slug, updated_at FROM posts WHERE status = 'published' AND published_at <= NOW() AND noindex = 0") as $post) {
                     $urls[] = [
                         'loc' => '@@ORIGIN@@' . '/blog/' . $post['slug'],

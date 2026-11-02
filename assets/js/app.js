@@ -381,19 +381,30 @@
     var GAP = 24;
 
     function place() {
-      /* The tool itself is what gets anchored. The slots below it are allowed
-         to run past the fold — they are the last thing in the column and the
-         column scrolls — so counting them would push the tool up for no reason
-         and, with both filled, unpin it entirely. */
-      var card = column.querySelector('.calc-widget');
-      var height = card ? card.getBoundingClientRect().height : 0;
-      if (!height) height = column.getBoundingClientRect().height;
-      var top = window.innerHeight - height - GAP;
-      column.style.setProperty('--calc-pin', Math.max(0, Math.round(top)) + 'px');
+      /*
+       * One scrollbar on the page.
+       *
+       * If the whole column — name, tool, any slots under it — fits on screen,
+       * pin it with `top` = viewport − height, so its bottom edge is what rests
+       * on the bottom of the viewport and the article scrolls past it. If it is
+       * taller than the screen, there is nothing useful to pin: a sticky box
+       * taller than its scrollport just covers the page. It gets `is-tall`, the
+       * CSS drops `position: sticky`, and the column scrolls normally.
+       */
+      var height = column.getBoundingClientRect().height;
+      var viewport = window.innerHeight;
+      var tall = height > viewport - GAP * 2;
+      column.classList.toggle('is-tall', tall);
+      if (tall) {
+        column.style.removeProperty('--calc-pin');
+        return;
+      }
+      column.style.setProperty('--calc-pin', Math.max(0, Math.round(viewport - height - GAP)) + 'px');
     }
 
     place();
     window.addEventListener('resize', place);
+    window.addEventListener('load', place);
     if (typeof ResizeObserver === 'function') {
       new ResizeObserver(place).observe(column);
     }

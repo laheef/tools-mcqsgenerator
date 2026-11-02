@@ -15,7 +15,7 @@ use Onim\Admin\Csrf;
     <div class="stat"><div class="label">Published</div><div class="value"><?= number_format($counts['published']) ?></div><div class="hint">live on /blog</div></div>
     <div class="stat"><div class="label">Scheduled</div><div class="value"><?= number_format($counts['scheduled']) ?></div><div class="hint">hidden until their publish time</div></div>
     <div class="stat"><div class="label">Drafts</div><div class="value"><?= number_format($counts['draft']) ?></div><div class="hint">visible only here</div></div>
-    <div class="stat"><div class="label">Tags</div><div class="value"><?= number_format((int) \Onim\Db::value('SELECT COUNT(*) FROM tags', [], 0)) ?></div><div class="hint"><a href="<?= e(admin_url('tags')) ?>">manage tags</a></div></div>
+    <div class="stat"><div class="label">Categories</div><div class="value"><?= number_format(count($listCategories)) ?></div><div class="hint"><a href="<?= e(admin_url('blog-categories')) ?>">manage categories</a></div></div>
 </div>
 
 <div class="card">
@@ -34,11 +34,22 @@ use Onim\Admin\Csrf;
                 <?php endforeach; ?>
             </select>
         </div>
+        <div class="field">
+            <label for="category">Category</label>
+            <select id="category" name="category">
+                <option value="">Any</option>
+                <?php foreach ($listCategories as $cat): ?>
+                    <option value="<?= e((string) $cat['slug']) ?>" <?= $categoryFilter === (string) $cat['slug'] ? 'selected' : '' ?>>
+                        <?= e((string) $cat['name']) ?> (<?= (int) $cat['post_count'] ?>)
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
         <div class="field"><button class="btn btn-primary" type="submit">Filter</button></div>
     </form>
     <div class="table-wrap">
         <table class="data">
-            <thead><tr><th>Title</th><th>Author</th><th>Status</th><th>Publish date</th><th class="num">Tags</th><th class="actions">Actions</th></tr></thead>
+            <thead><tr><th>Title</th><th>Category</th><th>Author</th><th>Status</th><th>Publish date</th><th class="actions">Actions</th></tr></thead>
             <tbody>
             <?php if ($rows === []): ?>
                 <tr><td colspan="6"><div class="empty">
@@ -53,6 +64,15 @@ use Onim\Admin\Csrf;
                         <a href="<?= e(admin_url('blog-edit', ['id' => (int) $row['id']])) ?>"><?= e((string) $row['title']) ?></a>
                         <span class="sub"><?= e(str_limit((string) $row['excerpt'], 100)) ?></span>
                     </td>
+                    <td class="small">
+                        <?php if ((string) ($row['category'] ?? '') !== ''): ?>
+                            <a class="badge badge-brand" href="<?= e(admin_url('blog', ['category' => (string) $row['category_slug']])) ?>">
+                                <?= e((string) $row['category']) ?>
+                            </a>
+                        <?php else: ?>
+                            <span class="muted small">unfiled</span>
+                        <?php endif; ?>
+                    </td>
                     <td class="small"><?= e((string) ($row['author'] ?? 'unknown')) ?></td>
                     <td>
                         <?php
@@ -66,7 +86,6 @@ use Onim\Admin\Csrf;
                         <span class="badge <?= $badge ?>"><?= e($label) ?></span>
                     </td>
                     <td class="small muted nowrap"><?= $row['published_at'] ? e(date('j M Y H:i', strtotime((string) $row['published_at']))) : '—' ?></td>
-                    <td class="num small"><?= (int) $row['tag_count'] ?></td>
                     <td class="actions">
                         <?php if ($row['status'] === 'published' && strtotime((string) $row['published_at']) <= time()): ?>
                             <a class="btn btn-sm btn-ghost" href="<?= e(site_link('blog/' . (string) $row['slug'])) ?>" target="_blank" rel="noopener" title="Open the live post"><?= admin_icon('eye', 15) ?></a>

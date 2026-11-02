@@ -134,6 +134,26 @@ final class Ads
             'pages' => 'home',
         ],
 
+        /* ---- inside the calculator ------------------------------------ */
+        'calc_mid' => [
+            'label' => 'Calculator — between the sections',
+            'where' => 'Calculator pages, between the second and third group of fields, inside the tool itself.',
+            'size'  => 'inline',
+            'pages' => 'calculator',
+        ],
+        'calc_reviews_top' => [
+            'label' => 'Calculator — above the reviews',
+            'where' => 'Calculator pages, directly above the reader reviews section, in the article column.',
+            'size'  => 'inline',
+            'pages' => 'calculator',
+        ],
+        'calc_reviews_bottom' => [
+            'label' => 'Calculator — below the reviews',
+            'where' => 'Calculator pages, between the review form and “Cite this calculator”.',
+            'size'  => 'inline',
+            'pages' => 'calculator',
+        ],
+
         /* ---- sticky footer bar ---------------------------------------- */
         'anchor' => [
             'label' => 'Sticky anchor (phones and tablets)',
@@ -142,6 +162,40 @@ final class Ads
             'pages' => 'all',
         ],
     ];
+
+    /** The default box for each shape, in CSS pixels. */
+    private const SHAPES = [
+        'leaderboard' => [728, 90],
+        'billboard'   => [970, 250],
+        'rectangle'   => [300, 250],
+        'inline'      => [468, 120],
+        'anchor'      => [320, 50],
+    ];
+
+    /**
+     * The box a slot reserves, in pixels.
+     *
+     * The panel lets an owner set the exact size for a slot (`ads_size_<key>`,
+     * "300x250"), because the tag they paste has a shape of its own and the
+     * reserved space should match it — a 336x280 unit in a box sized 300x250
+     * reserves the wrong height and the page still jumps.
+     *
+     * @return array{w:int,h:int,shape:string}
+     */
+    public static function dimensions(string $key): array
+    {
+        $meta = self::SLOTS[$key] ?? null;
+        $shape = $meta['size'] ?? 'leaderboard';
+        [$w, $h] = self::SHAPES[$shape] ?? [728, 90];
+        if (class_exists(Cms::class)) {
+            $raw = trim((string) (Cms::setting('ads_size_' . $key, '') ?? ''));
+            if (preg_match('~^\s*(\d{2,4})\s*[x×*]\s*(\d{2,4})\s*$~i', $raw, $m)) {
+                $w = (int) $m[1];
+                $h = (int) $m[2];
+            }
+        }
+        return ['w' => $w, 'h' => $h, 'shape' => $shape];
+    }
 
     /** Memoised master switch for the life of one request. */
     private static ?bool $enabled = null;
@@ -244,8 +298,10 @@ final class Ads
             return '';
         }
         $classes = 'ad-slot ad-slot--' . $meta['size'] . ($class !== '' ? ' ' . $class : '');
+        $box = self::dimensions($key);
         return '<div class="' . htmlspecialchars($classes, ENT_QUOTES) . '" data-ad-slot="'
-            . htmlspecialchars($key, ENT_QUOTES) . '" role="complementary" aria-label="Advertisement">'
+            . htmlspecialchars($key, ENT_QUOTES) . '" role="complementary" aria-label="Advertisement"'
+            . ' style="--ad-w:' . $box['w'] . 'px;--ad-h:' . $box['h'] . 'px">'
             . $code
             . self::autoPush($key, $code)
             . '</div>';
@@ -296,9 +352,11 @@ final class Ads
             return '';
         }
         $classes = 'ad-slot ad-slot--' . $meta['size'] . ' ad-slot--preview' . ($class !== '' ? ' ' . $class : '');
+        $box = self::dimensions($key);
         return '<div class="' . htmlspecialchars($classes, ENT_QUOTES) . '" data-ad-slot="'
-            . htmlspecialchars($key, ENT_QUOTES) . '" role="complementary" aria-label="Empty advertisement slot">'
-            . '<span class="ad-slot-label">Ad slot &middot; ' . htmlspecialchars($meta['size'], ENT_QUOTES) . '</span>'
+            . htmlspecialchars($key, ENT_QUOTES) . '" role="complementary" aria-label="Empty advertisement slot"'
+            . ' style="--ad-w:' . $box['w'] . 'px;--ad-h:' . $box['h'] . 'px">'
+            . '<span class="ad-slot-label">Ad slot &middot; ' . $box['w'] . '&times;' . $box['h'] . '</span>'
             . '<span class="ad-slot-note">' . htmlspecialchars($meta['label'], ENT_QUOTES) . '</span>'
             . '</div>';
     }

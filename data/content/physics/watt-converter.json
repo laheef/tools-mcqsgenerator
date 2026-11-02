@@ -64,7 +64,7 @@
     },
     {
       "q": "What do I need to enter to use the Watt converter calculator?",
-      "a": "The form asks for the mechanical horsepower, which is 1 field in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
+      "a": "The form asks for the mechanical horsepower, which is a single field. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for."
     },
     {
       "q": "Can I enter milliwatts in a different unit?",

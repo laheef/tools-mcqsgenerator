@@ -5,7 +5,7 @@
  * Three columns, left to right:
  *
  *   contents    the post's own h2 headings, sticky, plus its reading time
- *   the post    cover, headline, body, tags, author
+ *   the post    cover, headline, body, category, author
  *   sidebar     latest calculators, popular calculators, category counts
  *
  * The middle column is the reading column and keeps a ~70-character measure at
@@ -14,7 +14,7 @@
  *
  * @var \Onim\Seo $seo
  * @var array $post
- * @var array $tags
+ * @var array|null $postCategory
  * @var array $categories
  */
 
@@ -23,7 +23,7 @@ declare(strict_types=1);
 use Onim\View;
 
 $post = $post ?? [];
-$tags = $tags ?? [];
+$postCategory = $postCategory ?? null;
 $categories = $categories ?? [];
 $published = (string) ($post['published_at'] ?? '');
 $updated = (string) ($post['updated_at'] ?? '');
@@ -125,26 +125,25 @@ $readMinutes = max(1, (int) round(str_word_count(strip_tags($bodyHtml)) / 220));
                 <?= \Onim\Ads::inject($bodyHtml, 'blog_inline', 2) ?>
             </div>
 
-            <?php if ($tags !== []): ?>
-                <footer class="post-footer">
-                    <div class="chip-row" aria-label="Tags">
-                        <?php foreach ($tags as $tag): ?>
-                            <a class="chip" href="<?= View::escape(View::url('/tag/' . $tag['slug'])) ?>">
-                                <?= View::escape((string) $tag['name']) ?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
+            <footer class="post-footer">
+                <?php if ($postCategory !== null): ?>
+                    <p class="post-filed">
+                        Filed under
+                        <a class="post-cat" href="<?= View::escape(View::url('/category/' . $postCategory['slug'])) ?>">
+                            <?= View::escape((string) $postCategory['name']) ?>
+                        </a>
+                    </p>
+                <?php endif; ?>
 
-                    <?php if ((string) ($post['author_bio'] ?? '') !== ''): ?>
-                        <div class="credit-person post-author-box">
-                            <div>
-                                <p class="credit-name"><?= View::escape((string) $post['author_name']) ?></p>
-                                <p class="page-meta"><?= View::escape((string) $post['author_bio']) ?></p>
-                            </div>
+                <?php if ((string) ($post['author_bio'] ?? '') !== ''): ?>
+                    <div class="credit-person post-author-box">
+                        <div>
+                            <p class="credit-name"><?= View::escape((string) $post['author_name']) ?></p>
+                            <p class="page-meta"><?= View::escape((string) $post['author_bio']) ?></p>
                         </div>
-                    <?php endif; ?>
-                </footer>
-            <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+            </footer>
         </div>
 
         <aside class="post-rail" aria-label="On this page and more from Onim">

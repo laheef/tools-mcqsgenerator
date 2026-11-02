@@ -66,6 +66,28 @@ final class Cms
         return $default;
     }
 
+    /**
+     * Write one setting, creating the row if it does not exist yet.
+     *
+     * The panel's own settings screen saves a whole group at a time; a single
+     * value written from somewhere narrower — one ad slot, say — must not have
+     * to repost every other field in the group to avoid blanking them.
+     */
+    public static function setSetting(string $key, string $value, string $group = 'general'): void
+    {
+        if (!self::enabled()) {
+            return;
+        }
+        $exists = Db::one('SELECT skey FROM settings WHERE skey = ?', [$key]);
+        $data = ['svalue' => $value, 'sgroup' => $group, 'updated_at' => date('Y-m-d H:i:s')];
+        if ($exists === null) {
+            Db::insert('settings', array_merge(['skey' => $key], $data));
+        } else {
+            Db::update('settings', $data, 'skey = :k', [':k' => $key]);
+        }
+        self::flush();
+    }
+
     public static function settingBool(string $key, bool $default = false): bool
     {
         $v = self::setting($key);
@@ -383,29 +405,48 @@ final class Cms
 
     /* ------------------------------------------------------------- blog */
 
-    /** @return array{pages:int,total:int} */
-    public static function blogCount(): array
+    /**
+     * Published, past-their-date posts only — a scheduled post stays invisible
+     * until its moment, which is the behaviour the panel advertises.
+     *
+     * @return array{pages:int,total:int}
+     */
+    public static function blogCount(string $category = ''): array
     {
         if (!self::enabled() || !Db::hasTable('posts')) {
             return ['pages' => 0, 'total' => 0];
         }
-        $total = (int) Db::value("SELECT COUNT(*) FROM posts WHERE status = 'published' AND published_at <= NOW()", [], 0);
+        $sql = "SELECT COUNT(*) FROM posts p WHERE p.status = 'published' AND p.published_at <= NOW()";
+        $params = [];
+        if ($category !== '' && self::hasCategories()) {
+            $sql .= ' AND p.category_id = (SELECT id FROM post_categories WHERE slug = ?)';
+            $params[] = $category;
+        }
+        $total = (int) Db::value($sql, $params, 0);
         return ['pages' => $total, 'total' => $total];
     }
 
-    /** @return array<int,array<string,mixed>> */
-    public static function posts(int $limit = 12, int $offset = 0, string $tag = ''): array
+    /**
+     * @return array<int,array<string,mixed>> rows carry `category_name`/`category_slug`
+     */
+    public static function posts(int $limit = 12, int $offset = 0, string $category = ''): array
     {
         if (!self::enabled() || !Db::hasTable('posts')) {
             return [];
         }
-        $sql = "SELECT p.*, u.name AS author_name FROM posts p
-                LEFT JOIN users u ON u.id = p.author_id
-                WHERE p.status = 'published' AND p.published_at <= NOW()";
+        $hasCats = self::hasCategories();
+        $sql = "SELECT p.*, u.name AS author_name, u.avatar AS author_avatar";
+        $sql .= $hasCats ? ', c.name AS category_name, c.slug AS category_slug' : ', NULL AS category_name, NULL AS category_slug';
+        $sql .= " FROM posts p
+                LEFT JOIN users u ON u.id = p.author_id";
+        if ($hasCats) {
+            $sql .= ' LEFT JOIN post_categories c ON c.id = p.category_id';
+        }
+        $sql .= " WHERE p.status = 'published' AND p.published_at <= NOW()";
         $params = [];
-        if ($tag !== '') {
-            $sql .= ' AND EXISTS (SELECT 1 FROM post_tags pt JOIN tags t ON t.id = pt.tag_id WHERE pt.post_id = p.id AND t.slug = ?)';
-            $params[] = $tag;
+        if ($category !== '' && $hasCats) {
+            $sql .= ' AND c.slug = ?';
+            $params[] = $category;
         }
         $sql .= ' ORDER BY p.published_at DESC LIMIT ' . max(1, min(200, $limit)) . ' OFFSET ' . max(0, $offset);
         return Db::all($sql, $params);
@@ -416,12 +457,17 @@ final class Cms
         if (!self::enabled() || !Db::hasTable('posts')) {
             return null;
         }
-        return Db::one(
-            "SELECT p.*, u.name AS author_name, u.bio AS author_bio, u.avatar AS author_avatar
-             FROM posts p LEFT JOIN users u ON u.id = p.author_id
-             WHERE p.slug = ? AND p.status = 'published' AND p.published_at <= NOW() LIMIT 1",
-            [trim($slug, '/')]
-        );
+        $sql = "SELECT p.*, u.name AS author_name, u.bio AS author_bio, u.avatar AS author_avatar";
+        $hasCats = self::hasCategories();
+        $sql .= $hasCats
+            ? ', c.name AS category_name, c.slug AS category_slug, c.description AS category_description'
+            : ', NULL AS category_name, NULL AS category_slug, NULL AS category_description';
+        $sql .= ' FROM posts p LEFT JOIN users u ON u.id = p.author_id';
+        if ($hasCats) {
+            $sql .= ' LEFT JOIN post_categories c ON c.id = p.category_id';
+        }
+        $sql .= " WHERE p.slug = ? AND p.status = 'published' AND p.published_at <= NOW() LIMIT 1";
+        return Db::one($sql, [trim($slug, '/')]);
     }
 
     /**
@@ -441,22 +487,84 @@ final class Cms
         );
     }
 
-    /** @return array<int,array<string,mixed>> */
+    /* -------------------------------------------------- blog categories */
+
+    /** True once migration 008 has run. Everything category-shaped checks this. */
+    public static function hasCategories(): bool
+    {
+        static $has = null;
+        if ($has === null) {
+            $has = self::enabled() && Db::hasTable('post_categories');
+        }
+        return $has;
+    }
+
+    /**
+     * Categories in display order, each with the number of published posts.
+     *
+     * @param bool $onlyUsed drop categories nothing is filed under — a chip
+     *                       that leads to an empty page is worse than no chip
+     * @return array<int,array<string,mixed>>
+     */
+    public static function postCategories(bool $onlyUsed = true): array
+    {
+        if (!self::hasCategories()) {
+            return [];
+        }
+        $rows = Db::all(
+            "SELECT c.*, COUNT(p.id) AS post_count FROM post_categories c
+             LEFT JOIN posts p ON p.category_id = c.id AND p.status = 'published' AND p.published_at <= NOW()
+             GROUP BY c.id ORDER BY c.sort_order, c.name"
+        );
+        foreach ($rows as &$row) {
+            $row['post_count'] = (int) $row['post_count'];
+        }
+        unset($row);
+        if ($onlyUsed) {
+            $rows = array_values(array_filter($rows, static fn (array $r): bool => $r['post_count'] > 0));
+        }
+        return $rows;
+    }
+
+    public static function postCategory(string $slug): ?array
+    {
+        if (!self::hasCategories()) {
+            return null;
+        }
+        return Db::one('SELECT * FROM post_categories WHERE slug = ? LIMIT 1', [trim($slug, '/')]);
+    }
+
+    /** @return array<int,array<string,mixed>> the legacy labels, still readable */
     public static function postTags(int $postId): array
     {
+        if (!Db::hasTable('tags') || !Db::hasTable('post_tags')) {
+            return [];
+        }
         return Db::all('SELECT t.* FROM tags t JOIN post_tags pt ON pt.tag_id = t.id WHERE pt.post_id = ? ORDER BY t.name', [$postId]);
     }
 
     /** @return array<int,array<string,mixed>> */
     public static function tags(): array
     {
-        if (!self::enabled() || !Db::hasTable('tags')) {
+        if (!self::enabled() || !Db::hasTable('tags') || !Db::hasTable('post_tags')) {
             return [];
         }
-        return Db::all('SELECT t.*, COUNT(pt.post_id) AS post_count FROM tags t
+        return Db::all('SELECT t.*, COUNT(p.id) AS post_count FROM tags t
                         LEFT JOIN post_tags pt ON pt.tag_id = t.id
                         LEFT JOIN posts p ON p.id = pt.post_id AND p.status = \'published\'
                         GROUP BY t.id ORDER BY t.name');
+    }
+
+    /**
+     * Rough reading time, at 220 words a minute and never under a minute.
+     *
+     * Computed rather than stored: the body is HTML an editor can change at any
+     * time, and a stored value would drift from the text it describes.
+     */
+    public static function readingMinutes(string $html): int
+    {
+        $words = str_word_count(strip_tags($html));
+        return max(1, (int) round($words / 220));
     }
 
     /* ------------------------------------------------------- contact form */
