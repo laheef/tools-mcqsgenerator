@@ -14,7 +14,7 @@
     },
     {
       "title": "What do you need to enter?",
-      "html": "<ul><li>Pick the option that matches your case — 7 options, such as slow (100 WPM), lecture (120 WPM) and presentation (140 WPM). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in WPM.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+      "html": "<ul><li>Pick the option that matches your case — 7 options, such as slow (100 WPM), lecture (120 WPM) and presentation (140 WPM). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in WPM.</li></ul><p>One field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
     },
     {
       "title": "What are the variables at a glance?",

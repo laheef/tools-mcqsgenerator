@@ -51,25 +51,59 @@ foreach ($sections as $section) {
     $anchor = 'section-' . preg_replace('~[^a-z0-9-]~', '', (string) ($section['skey'] ?? $type));
 
     if ($type === 'hero'):
-        $eyebrow = trim((string) ($config['eyebrow'] ?? '')) ?: 'Your life in';
-        $headline = trim((string) ($config['title'] ?? '')) ?: '{count} free calculators';
+        $eyebrow = trim((string) ($config['eyebrow'] ?? ''));
+        $headline = trim((string) ($config['title'] ?? ''));
         $note = trim((string) ($config['note'] ?? ''));
+        /* An installed database still holds the seeded wording — "Your life in"
+           over "{count} free calculators" — so changing the default here would
+           have changed nothing on the live site. Those two strings are the seed,
+           not a decision, so they are treated as "not customised"; anything an
+           editor typed is kept exactly as typed. */
+        if ($eyebrow === '' || $eyebrow === 'Your life in') {
+            $eyebrow = 'Onim — calculators that show their working';
+        }
+        if ($headline === '' || $headline === '{count} free calculators' || $headline === '{count} calculators') {
+            $headline = 'Your life, in {rotate}';
+        }
+        if ($note === '') {
+            $note = '{count} calculators, free, no sign-up — and every one of them prints the formula it used.';
+        }
         $ctaLabel = trim((string) ($config['cta_label'] ?? ''));
         $ctaUrl = trim((string) ($config['cta_url'] ?? ''));
+        /* The rotating word. It is a little loop, not a claim: the categories
+           below cover far more than these eight words, and a reader who watches
+           it for ten seconds has seen the range of the site without reading a
+           paragraph about it. Overridable from the homepage builder. */
+        $wordsRaw = trim((string) ($config['words'] ?? ''));
+        $words = $wordsRaw !== ''
+            ? array_values(array_filter(array_map('trim', preg_split('~[,|]~', $wordsRaw) ?: [])))
+            : ['percentages', 'mortgages', 'dosages', 'unit conversions', 'compound interest', 'BMI bands', 'tax brackets', 'tips'];
         // The count placeholder becomes a refreshable span, formatted the same way
         // as every other counter on the page ("3 985", not "3985").
         $countSpan = '<span data-live-count="total">' . View::escape(Format::count((int) $total)) . '</span>';
-        $headline = View::escape($headline);   // then put the span back below
+        $rotator = '<span class="hero-rotate" data-hero-rotate>';
+        foreach ($words as $i => $word) {
+            $rotator .= '<span class="hero-rotate-word' . ($i === 0 ? ' is-on' : '') . '" aria-hidden="true">'
+                . View::escape($word) . '</span>';
+        }
+        $rotator .= '<span class="sr-only">' . View::escape(implode(', ', $words)) . '</span></span>';
+        /* {count} works in the eyebrow and the note too — a reference into a
+           temporary array would have written to the copy, not the variable. */
+        $eyebrow = str_replace(['{count}', View::escape('{count}')], $countSpan, View::escape($eyebrow));
+        $note = str_replace(['{count}', View::escape('{count}')], $countSpan, View::escape($note));
+        $headline = View::escape($headline);
         $headline = str_replace(View::escape((string) $total), $countSpan, $headline);
         $headline = str_replace(['{count}', View::escape('{count}')], $countSpan, $headline);
+        $headline = str_replace(['{rotate}', View::escape('{rotate}')], $rotator, $headline);
         ?>
         <section class="hero" id="<?= View::escape($anchor) ?>">
+            <div class="hero-wash" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="shell hero-inner">
                 <div class="hero-copy">
-                    <?php if ($eyebrow !== ''): ?><p class="hero-eyebrow"><?= View::escape($eyebrow) ?></p><?php endif; ?>
+                    <?php if ($eyebrow !== ''): ?><p class="hero-eyebrow"><span class="hero-pulse" aria-hidden="true"></span><?= $eyebrow ?></p><?php endif; ?>
                     <h1 class="hero-title"><span class="hero-count"><?= $headline /* built above from escaped parts + config text */ ?></span></h1>
                     <?php $headingEmitted = true; ?>
-                    <?php if ($note !== ''): ?><p class="page-lede"><?= View::escape($note) ?></p><?php endif; ?>
+                    <?php if ($note !== ''): ?><p class="page-lede"><?= $note ?></p><?php endif; ?>
                     <?php if ($ctaLabel !== '' && $ctaUrl !== ''): ?>
                         <p style="margin-top:14px"><a class="btn btn-primary" href="<?= View::escape(View::url($ctaUrl)) ?>"><?= View::escape($ctaLabel) ?></a></p>
                     <?php endif; ?>

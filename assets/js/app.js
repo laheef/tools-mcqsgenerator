@@ -452,6 +452,49 @@
     setTimeout(fitAll, 3000);
   })();
 
+  /* ---------------------------------------------------- anchor ad close */
+  /*
+   * One tap and it is gone for this page view. The bar is the most intrusive
+   * thing on the site, so the close button is not decoration: it removes the
+   * padding the layout reserved for it as well, otherwise the page keeps a
+   * band of white where the ad used to be.
+   */
+  (function () {
+    var bar = document.querySelector('[data-ad-anchor]');
+    if (!bar) return;
+    var close = bar.querySelector('[data-ad-anchor-close]');
+    if (!close) return;
+    close.addEventListener('click', function () {
+      bar.classList.add('is-closed');
+      bar.setAttribute('hidden', '');
+      document.body.classList.remove('has-ad-anchor');
+    });
+  })();
+
+  /* ------------------------------------------------- hero word loop */
+  /*
+   * "Your life, in percentages" → mortgages → dosages → …
+   *
+   * The words are all in the markup, so the page says something useful with
+   * JavaScript disabled and with the animation suppressed. This only moves the
+   * `is-on` class: no timers are started, and nothing is written, when the
+   * visitor asked for reduced motion.
+   */
+  (function () {
+    var rot = document.querySelector('[data-hero-rotate]');
+    if (!rot) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var words = [].slice.call(rot.querySelectorAll('.hero-rotate-word'));
+    if (words.length < 2) return;
+    var i = 0;
+    setInterval(function () {
+      if (document.hidden) return;
+      words[i].classList.remove('is-on');
+      i = (i + 1) % words.length;
+      words[i].classList.add('is-on');
+    }, 2600);
+  })();
+
   /* --------------------------------------------------------- print */
   [].slice.call(document.querySelectorAll('[data-print]')).forEach(function (btn) {
     btn.addEventListener('click', function () { window.print(); });

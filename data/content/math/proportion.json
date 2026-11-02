@@ -14,7 +14,7 @@
     },
     {
       "title": "What do you need to enter?",
-      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>C</td><td>a plain number with no unit attached.</td></tr><tr><td>B</td><td>a plain number with no unit attached.</td></tr><tr><td>D</td><td>a plain number with no unit attached.</td></tr><tr><td>Show solution</td><td>a single on/off switch — tick it for &ldquo;Show step-by-step solution&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</td></tr></tbody></table><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>C</td><td>a plain number with no unit attached.</td></tr><tr><td>B</td><td>a plain number with no unit attached.</td></tr><tr><td>D</td><td>a plain number with no unit attached.</td></tr><tr><td>Show solution</td><td>a single on/off switch — tick it for &ldquo;Show step-by-step solution&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</td></tr></tbody></table><p>One field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
     },
     {
       "title": "The formula behind the Proportion calculator",

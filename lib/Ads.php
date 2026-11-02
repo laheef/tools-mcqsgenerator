@@ -133,6 +133,14 @@ final class Ads
             'size'  => 'leaderboard',
             'pages' => 'home',
         ],
+
+        /* ---- sticky footer bar ---------------------------------------- */
+        'anchor' => [
+            'label' => 'Sticky anchor (phones and tablets)',
+            'where' => 'A bar fixed to the bottom of the screen on phones and tablets, with a close button. Hidden from 1100px up, where the tool column is sticky and would sit underneath it.',
+            'size'  => 'anchor',
+            'pages' => 'all',
+        ],
     ];
 
     /** Memoised master switch for the life of one request. */
@@ -239,7 +247,40 @@ final class Ads
         return '<div class="' . htmlspecialchars($classes, ENT_QUOTES) . '" data-ad-slot="'
             . htmlspecialchars($key, ENT_QUOTES) . '" role="complementary" aria-label="Advertisement">'
             . $code
+            . self::autoPush($key, $code)
             . '</div>';
+    }
+
+    /**
+     * Fill an AdSense unit that was pasted without its push.
+     *
+     * An AdSense tag is two pieces: the `<ins class="adsbygoogle">` and, after
+     * it, `(adsbygoogle = window.adsbygoogle || []).push({})`. Copying the unit
+     * out of AdSense gives both, but every other source — a plugin's export, a
+     * screenshot of the dashboard, an operator copying only the visible half —
+     * gives the `<ins>` and nothing else, and an `<ins>` that is never pushed
+     * stays collapsed and blank. The slot looks empty and the conclusion is
+     * "the ad code does not work", which is exactly the report this change is
+     * answering.
+     *
+     * So: if the saved tag contains an `.adsbygoogle` element and no push of
+     * its own, push it once, scoped to this slot. A tag that already carries
+     * its push is left exactly as saved — no double request, no double count.
+     */
+    private static function autoPush(string $key, string $code): string
+    {
+        if (stripos($code, 'adsbygoogle') === false || stripos($code, 'push(') !== false) {
+            return '';
+        }
+        if (preg_match('~<ins[^>]*class="[^"]*adsbygoogle~i', $code) !== 1) {
+            return '';
+        }
+        $sel = '[data-ad-slot="' . $key . '"] ins.adsbygoogle';
+        return '<script>(function(){try{var n=document.querySelectorAll('
+            . json_encode($sel) . ');for(var i=0;i<n.length;i++){'
+            . 'if(!n[i].getAttribute("data-adsbygoogle-status")){'
+            . '(window.adsbygoogle=window.adsbygoogle||[]).push({});'
+            . '}}}catch(e){}})();</script>';
     }
 
     /**

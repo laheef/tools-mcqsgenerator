@@ -14,7 +14,7 @@
     },
     {
       "title": "What do you need to enter?",
-      "html": "<ul><li>Pick the option that matches your case — 10 options, such as 1-bit (monochrome), 8-bit (grayscale) and 8-bit (256 colors). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in pixels.</li><li>A number, expressed in pixels.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+      "html": "<ul><li>Pick the option that matches your case — 10 options, such as 1-bit (monochrome), 8-bit (grayscale) and 8-bit (256 colors). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in pixels.</li><li>A number, expressed in pixels.</li></ul><p>One field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
     },
     {
       "title": "What are the variables at a glance?",

@@ -14,7 +14,7 @@
     },
     {
       "title": "What do you need to enter?",
-      "html": "<ul><li>Pick the option that matches your case — 9 options, such as 34 to 45 °F (1 to 7 °C) + Special Case, 27 to 34 °F (-3 to 1 °C) and 20 to 27 °F (-6 to -3 °C). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+      "html": "<ul><li>Pick the option that matches your case — 9 options, such as 34 to 45 °F (1 to 7 °C) + Special Case, 27 to 34 °F (-3 to 1 °C) and 20 to 27 °F (-6 to -3 °C). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in millimeters. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in centimeters. The unit chip switches it to any of the 34 supported units.</li></ul><p>One field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
     },
     {
       "title": "What are the variables at a glance?",

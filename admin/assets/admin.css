@@ -524,3 +524,14 @@ input[type="color"] { padding: 3px; height: 40px; }
     .admin { grid-template-columns: minmax(0, 1fr); }
     .card { box-shadow: none; }
 }
+
+/* Advertising status strip: is it on, and how much of the page earns. */
+.ad-status {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+  margin: 0 0 18px; padding: 12px 14px; border-radius: 12px;
+  border: 1px solid var(--border, #e3e6ee); background: #F8FAFF;
+}
+.ad-status.is-on { border-color: #BFE6D2; background: #F2FBF7; }
+.ad-status-state { font-weight: 700; font-size: 13px; color: #8A5A00; }
+.ad-status.is-on .ad-status-state { color: #14724B; }
+.ad-status-count { font-size: 13px; color: var(--ink-3, #4B5259); }

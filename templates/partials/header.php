@@ -31,6 +31,16 @@ $logo = Cms::logoUrl();
 
 $menu = Cms::menuTree('header');
 $actions = Cms::menu('header_actions');
+/* Blog, About and Contact sit next to the search box, where a reader looks
+   for them. The panel's Header & menu screen replaces this list when it has
+   entries of its own, so an install that manages the header still wins. */
+if ($actions === []) {
+    $actions = [
+        ['label' => 'Blog', 'url' => '/blog', 'target' => '_self'],
+        ['label' => 'About', 'url' => '/about', 'target' => '_self'],
+        ['label' => 'Contact', 'url' => '/contact', 'target' => '_self'],
+    ];
+}
 if ($menu === []) {
     foreach ($navCategories as $cat) {
         $menu[] = [
@@ -82,8 +92,11 @@ $isActive = static function (array $item) use ($active): bool {
                     </a>
                 <?php endforeach; ?>
                 <?php if ($showCount): ?>
-                    <a class="header-link" href="<?= View::escape(View::url('/calculators')) ?>" title="Browse every calculator">
-                        <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators
+                    <a class="header-count" href="<?= View::escape(View::url('/calculators')) ?>"
+                       title="Browse every calculator — the number updates live">
+                        <span class="header-count-dot" aria-hidden="true"></span>
+                        <span class="header-count-number" data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span>
+                        <span class="header-count-label">calculators, ready</span>
                     </a>
                 <?php endif; ?>
             </div>

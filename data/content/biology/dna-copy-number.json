@@ -14,7 +14,7 @@
     },
     {
       "title": "What do you need to enter?",
-      "html": "<ul><li>A number, expressed in ng/µl.</li><li>A measured quantity, entered by default in base pairs. The unit chip switches it to any of the 2 supported units.</li><li>Pick the option that matches your case — 3 options, such as ssDNA (330 Da), ssRNA (340 Da) and dsDNA (660 Da). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in times 10 to the 7. The unit chip switches it to any of the 69 supported units.</li></ul><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+      "html": "<ul><li>A number, expressed in ng/µl.</li><li>A measured quantity, entered by default in base pairs. The unit chip switches it to any of the 2 supported units.</li><li>Pick the option that matches your case — 3 options, such as ssDNA (330 Da), ssRNA (340 Da) and dsDNA (660 Da). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in times 10 to the 7. The unit chip switches it to any of the 69 supported units.</li></ul><p>One field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
     },
     {
       "title": "What are the variables at a glance?",

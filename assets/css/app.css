@@ -135,7 +135,11 @@ button { font: inherit; color: inherit; }
 @media (max-width: 723px) {
   .header-top-inner { gap: 10px; }
   .logo { order: 1; }
-  .header-actions { order: 2; margin-left: auto; }
+  .header-actions { order: 2; margin-left: auto; display: flex; align-items: center; gap: 6px; }
+  /* Blog · About · Contact and the count pill share the logo's row on a phone;
+     they only wrapped onto a second one because their default padding was wide
+     enough to push the logo's own row apart. */
+  .header-link { padding: 6px 7px; font-size: 13px; }
   .search { order: 3; flex: 1 0 100%; max-width: none; }
   .search input[type="search"] { height: 40px; font-size: 13px; }
   .logo img { height: 24px; }
@@ -165,6 +169,26 @@ button { font: inherit; color: inherit; }
 .search-submit:hover { background: var(--brand-soft); }
 
 .header-actions { flex: 0 0 auto; }
+.header-count {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 13px 7px 11px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border); background: var(--surface);
+  font-size: 13px; font-weight: 600; color: var(--ink-2); text-decoration: none;
+  white-space: nowrap; transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.header-count:hover { color: var(--brand); border-color: #C9D5FF; background: var(--brand-soft); text-decoration: none; }
+.header-count-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: #16A46A; flex: 0 0 auto;
+  animation: heroPulse 2.6s ease-out infinite;
+}
+.header-count-number { color: var(--brand); font-variant-numeric: tabular-nums; }
+.header-count-label { font-weight: 500; color: var(--ink-3); }
+.header-count:hover .header-count-label { color: var(--brand); }
+/* 79px the phone row does not have; the hero below states the same number. */
+@media (max-width: 723px) { .header-count { display: none; } }
+@media (max-width: 640px) { .header-count-label { display: none; } }
+@media (prefers-reduced-motion: reduce) { .header-count-dot { animation: none; } }
+
 .header-link {
   font-size: 13.4px; font-weight: 500; color: var(--ink-3);
   padding: 8px 12px; border-radius: var(--radius);
@@ -200,10 +224,70 @@ button { font: inherit; color: inherit; }
   display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px;
 }
 .hero-copy { flex: 1 1 300px; min-width: 260px; }
-.hero-eyebrow { margin: 0 0 6px; font-size: 15px; font-weight: 500; color: var(--ink-2); }
-.hero-title { font-size: 30px; font-weight: 700; line-height: 1.18; color: var(--ink); letter-spacing: -.2px; }
-.hero-count { display: block; color: var(--brand); }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  margin: 0 0 10px; font-size: 14px; font-weight: 600; letter-spacing: .01em; color: var(--ink-2);
+}
+/* The one moving dot on the page. It says "this is live" without a sentence. */
+.hero-pulse {
+  width: 8px; height: 8px; border-radius: 50%; background: #16A46A; flex: 0 0 auto;
+  box-shadow: 0 0 0 0 rgba(22, 164, 106, .5);
+  animation: heroPulse 2.6s ease-out infinite;
+}
+@keyframes heroPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(22, 164, 106, .45); }
+  60%  { box-shadow: 0 0 0 9px rgba(22, 164, 106, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 164, 106, 0); }
+}
+/* Scales with the viewport so the longest rotating word ("compound interest")
+   still fits a 320px phone without the line breaking out of the page. */
+.hero-title {
+  font-size: clamp(23px, 7.1vw, 40px); font-weight: 700; line-height: 1.22;
+  color: var(--ink); letter-spacing: -.4px; margin: 0 0 12px;
+}
+.hero-count { display: block; color: var(--ink); }
 .hero-word { display: block; color: var(--ink); }
+
+/*
+ * The rotating word.
+ *
+ * All the words sit in the same grid cell, so the line does not reflow as they
+ * change — the cell is as wide as the longest one and the h1 keeps its height.
+ * The first word is visible without JavaScript; app.js only adds `is-on` to the
+ * next one and lets the transition do the rest. Under prefers-reduced-motion the
+ * transition is off and the loop never starts, so the line simply reads as
+ * "Your life, in percentages".
+ */
+.hero-rotate {
+  display: inline-grid; vertical-align: bottom; max-width: 100%;
+  color: var(--brand); font-weight: 700;
+}
+.hero-rotate-word {
+  grid-area: 1 / 1; opacity: 0; transform: translateY(.32em);
+  transition: opacity .42s ease, transform .42s ease;
+  white-space: nowrap;
+}
+.hero-rotate-word.is-on { opacity: 1; transform: translateY(0); }
+
+/* Slow, transform-only drift behind the hero copy: three soft shapes, 28s loop. */
+.hero-wash { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.hero-wash span {
+  position: absolute; display: block; border-radius: 50%; filter: blur(42px); opacity: .5;
+  will-change: transform;
+}
+.hero-wash span:nth-child(1) { width: 340px; height: 340px; left: -60px; top: -120px; background: #FBE3D6; animation: heroDrift 28s ease-in-out infinite; }
+.hero-wash span:nth-child(2) { width: 300px; height: 300px; right: 8%; top: -90px; background: #DCE5FF; animation: heroDrift 34s ease-in-out infinite reverse; }
+.hero-wash span:nth-child(3) { width: 260px; height: 260px; right: 28%; bottom: -140px; background: #E7E2FA; animation: heroDrift 40s ease-in-out infinite; }
+@keyframes heroDrift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33%      { transform: translate3d(36px, 22px, 0) scale(1.08); }
+  66%      { transform: translate3d(-24px, 14px, 0) scale(.96); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-wash span { animation: none; }
+  .hero-pulse { animation: none; }
+  .hero-rotate-word { transition: none; }
+}
 
 /* On phones the header search is already on screen, so the hero repeats it. */
 @media (max-width: 723px) { .hero-search { display: none; } }
@@ -437,11 +521,10 @@ button { font: inherit; color: inherit; }
 /*
  * One grid for the page: the write-up on the left, the tool on the right.
  *
- * This replaces the two 160px ad rails that used to bracket the page. They
- * were reserved-but-empty, so on every calculator the article sat in a 640px
- * corridor with 320px of nothing beside it, and the tool — the reason the page
- * exists — was the first thing in that corridor. The width the rails held is
- * now the tool column, and the rails' job is done by named slots.
+ * Two columns: the tool on the left, the write-up on the right. The tool is
+ * the reason the page exists and it is the column that runs out of room first
+ * (form fields, the unit chips, the results panel), so it gets the wider of
+ * the two and the reading column takes what is left.
  */
 .calc-layout {
   display: grid; gap: 32px; min-width: 0;
@@ -456,10 +539,14 @@ button { font: inherit; color: inherit; }
 
 @media (min-width: 1100px) {
   .calc-layout {
-    grid-template-columns: minmax(0, 1fr) clamp(360px, 31vw, 420px);
+    /* Tool on the left, write-up on the right, and the tool column is a little
+       wider than the article column was in the previous arrangement: it holds
+       the form, its two-column field matrix and the result panel, so it is the
+       side that actually runs out of room at 900–1200px. */
+    grid-template-columns: clamp(400px, 37vw, 540px) minmax(0, 1fr);
     gap: 40px;
   }
-  .calc-article { order: 1; }
+  .calc-article { order: 2; }
   /*
    * The tool column, sticky *from the bottom*.
    *
@@ -473,7 +560,7 @@ button { font: inherit; color: inherit; }
    * what the previous `top: 24px` got wrong by pinning the tool's *top*.
    */
   .calc-widget-column {
-    order: 2;
+    order: 1;
     position: sticky;
     /* Set from app.js to "viewport − column height − gap", so the column's own
        bottom edge is what comes to rest on the bottom of the screen. The 0px
@@ -508,6 +595,38 @@ button { font: inherit; color: inherit; }
    margins here would slide it under the card's shadow. */
 .calc-tool-extra { margin-top: 18px; }
 .calc-tool-extra:empty { display: none; }
+/*
+ * ------------------------------------------------------- sticky anchor ad
+ *
+ * The bar a phone reader sees at the bottom. Deliberately not shown from
+ * 1100px up: that is where the tool column becomes sticky and comes to rest on
+ * the bottom edge, and the two would overlap — one of the reasons ad-heavy
+ * calculator sites feel broken on a laptop.
+ */
+.ad-anchor { display: none; }
+@media (max-width: 1099px) {
+  .ad-anchor {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    padding: 8px 44px 8px 8px;
+    background: rgba(255, 255, 255, .97);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -8px 24px rgba(16, 24, 40, .10);
+    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+  .ad-anchor.is-closed { display: none; }
+  .ad-anchor-body { display: flex; justify-content: center; max-width: 728px; margin: 0 auto; }
+  .ad-anchor-body .ad-slot { width: 100%; margin: 0; }
+  .ad-anchor-close {
+    position: absolute; top: 6px; right: 6px;
+    width: 30px; height: 30px; display: grid; place-items: center;
+    border: 1px solid var(--border); border-radius: 50%;
+    background: var(--surface); color: var(--ink-3); cursor: pointer;
+  }
+  .ad-anchor-close:hover { color: var(--ink); border-color: #C9D5FF; }
+  /* The bar covers the last 80-odd pixels of the page otherwise. */
+  body.has-ad-anchor { padding-bottom: 84px; }
+}
+
 /*
  * ---------------------------------------------------------------- ad slots
  *

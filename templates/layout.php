@@ -127,6 +127,14 @@ $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
         results stay visible for them. */ ?>
     <script>document.documentElement.className += ' js';</script>
 </head>
+<?php
+/* The anchor is rendered at the very end of the document, but whether it will
+   be there decides the body padding, so it is resolved once, here. */
+$anchorAd = \Onim\Ads::slot('anchor');
+if ($anchorAd !== '') {
+    $bodyClass .= ' has-ad-anchor';
+}
+?>
 <body class="<?= View::escape($bodyClass) ?>">
     <a class="skip-link" href="#main">Skip to content</a>
     <?= View::render('partials/header', ['navCategories' => $navCategories ?? [], 'active' => $active ?? '', 'siteName' => $brandName]) ?>
@@ -145,6 +153,20 @@ $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
     <?= \Onim\Ads::slot('footer', 'ad-slot--page-bottom') ?>
 
     <?= View::render('partials/footer', ['categories' => $categories ?? [], 'siteName' => $brandName]) ?>
+
+    <?php /* Sticky anchor. A wrapper, because the bar has to stay put while the
+        document scrolls and the close button must not be inside the ad slot —
+        the slot's contents are the network's HTML, and a button there would be
+        click-jacking material. Rendered only below 1100px, where the sticky
+        tool column does not exist. */ ?>
+    <?php if ($anchorAd !== ''): ?>
+        <div class="ad-anchor" data-ad-anchor>
+            <button type="button" class="ad-anchor-close" data-ad-anchor-close aria-label="Close this advertisement">
+                <?= View::icon('x', 16) ?>
+            </button>
+            <div class="ad-anchor-body"><?= $anchorAd ?></div>
+        </div>
+    <?php endif; ?>
 
     <script>window.BASE_PATH = <?= json_encode(BASE_PATH) ?>;</script>
     <script src="<?= View::escape(View::asset('js/app.js')) ?>" defer></script>

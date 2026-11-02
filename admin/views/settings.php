@@ -349,6 +349,32 @@ $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($k
                     </p>
 
                     <?php
+                    /* One line that answers the two questions an owner actually
+                       asks: is it on, and how much of the page is earning. */
+                    $slotCount = count(\Onim\Ads::slots());
+                    $slotFilled = 0;
+                    foreach (array_keys(\Onim\Ads::slots()) as $slotKey) {
+                        if (trim((string) (\Onim\Cms::setting('ads_slot_' . $slotKey, '') ?? '')) !== '') {
+                            $slotFilled++;
+                        }
+                    }
+                    $adsOn = $b('ads_enabled');
+                    ?>
+                    <div class="ad-status<?= $adsOn ? ' is-on' : '' ?>">
+                        <span class="ad-status-state">
+                            <?= $adsOn ? 'Advertising is live' : 'Advertising is switched off' ?>
+                        </span>
+                        <span class="ad-status-count">
+                            <?= $slotFilled ?> of <?= $slotCount ?> positions have code
+                            <?php if ($adsOn && $slotFilled === 0): ?>
+                                — the switch is on, but every box is empty, so nothing shows yet
+                            <?php elseif (!$adsOn && $slotFilled > 0): ?>
+                                — <?= $slotFilled ?> saved tag<?= $slotFilled === 1 ? '' : 's' ?> will appear as soon as you switch it on
+                            <?php endif; ?>
+                        </span>
+                    </div>
+
+                    <?php
                     /* Calculators and posts have their own slot sets, and only a
                        real page of each kind shows them. Link both, so the map
                        can be checked without hunting for a URL. */
@@ -388,6 +414,9 @@ $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($k
                         Every place that can hold an ad is listed below. Paste the tag from your ad network into a
                         box and it appears in that position on the next page load — the panel is the only place ad
                         code lives. An empty box renders nothing at all: no gap, no placeholder, no reserved height.
+                        AdSense units work exactly as pasted, with or without the <code>push()</code> line: a bare
+                        <code>&lt;ins class="adsbygoogle"&gt;</code> is filled for you, and a tag that already carries
+                        its own push is left alone.
                     </p>
 
                     <?php foreach (\Onim\Ads::slots() as $slotKey => $slotMeta):

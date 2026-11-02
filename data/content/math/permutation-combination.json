@@ -14,7 +14,7 @@
     },
     {
       "title": "What do you need to enter?",
-      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Total number of objects n</td><td>a plain number with no unit attached.</td></tr><tr><td>Sample size r</td><td>a plain number with no unit attached.</td></tr><tr><td>What do you want to generate?</td><td>pick the option that matches your case — 2 options, such as combinations and permutations. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr></tbody></table><p>1 field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
+      "html": "<table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Total number of objects n</td><td>a plain number with no unit attached.</td></tr><tr><td>Sample size r</td><td>a plain number with no unit attached.</td></tr><tr><td>What do you want to generate?</td><td>pick the option that matches your case — 2 options, such as combinations and permutations. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</td></tr></tbody></table><p>One field on this form is a choice rather than a number. Those choices decide which version of the calculation applies, so they are worth setting before you worry about the digits.</p>"
     },
     {
       "title": "The formula behind the Permutation and combination calculator",

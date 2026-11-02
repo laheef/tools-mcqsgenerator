@@ -1551,7 +1551,7 @@ t('34 the cached copy holds no origin of its own',
  * class this process does not load.
  */
 $slots = \Onim\Ads::slots();
-t('35 the slot registry has every position', count($slots) === 13, (string) count($slots));
+t('35 the slot registry has every position', count($slots) === 14, (string) count($slots));
 
 /* Every slot must be a real, writable setting — the check that would have
    caught the first set of rails, which no form ever posted. */
@@ -1593,8 +1593,8 @@ $postPage = get(BASE . '/blog/how-to-read-a-calculator-result')['body'];
 
 /* Each page renders exactly its own set, and the sitewide header stands down
    where the page carries its own top slot. */
-$expectCalc = ['calc_top', 'calc_inline', 'calc_below', 'calc_side', 'footer'];
-$expectPost = ['blog_top', 'blog_inline', 'blog_side_top', 'blog_side_bottom', 'footer'];
+$expectCalc = ['calc_top', 'calc_inline', 'calc_below', 'calc_side', 'footer', 'anchor'];
+$expectPost = ['blog_top', 'blog_inline', 'blog_side_top', 'blog_side_bottom', 'footer', 'anchor'];
 $found = static function (string $html, string $key): bool {
     return str_contains($html, 'id="e2e-' . $key . '"');
 };
@@ -1803,6 +1803,80 @@ t('39 the engine file is served where the page looks for it',
     get(BASE . '/assets/js/vendor/math.min.js')['status'] === 200);
 t('39 a scripted calculator ships the base path to the browser',
     (bool) preg_match('~window\.BASE_PATH = "([^"]*)"~', get(BASE . '/math/percentage')['body']));
+
+/* 40 — the layout the readers asked for, and the ads that pay for it -------- */
+/*
+ * Round 43 changed the page shape (tool left, article right), added the header
+ * links and the hero loop, and gave advertising the two things it was missing
+ * against a site like Omnicalculator: a mobile anchor unit, and a bare AdSense
+ * <ins> that fills without its push script.
+ */
+
+/* Calculator left, article right, tool column the wider of the two. */
+$calc = get(BASE . '/math/percentage')['body'];
+$css  = (string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css');
+t('40 the calculator column comes first in the layout',
+    str_contains($css, 'grid-template-columns: clamp(400px, 37vw, 540px) minmax(0, 1fr)')
+    && str_contains($css, '.calc-widget-column { order: 1;'));
+t('40 the article is the second column',
+    str_contains($css, '.calc-article { order: 2; }'));
+
+/* Blog, About and Contact sit beside the search box. */
+foreach (['/blog' => 'Blog', '/about' => 'About', '/contact' => 'Contact'] as $href => $label) {
+    t('40 the header links to ' . $href,
+        (bool) preg_match('~<a class="header-link" href="[^"]*' . preg_quote($href, '~')
+            . '[^"]*"[^>]*>\s*' . $label . '~', $calc));
+}
+
+/* The hero: a rotating word, and the count in a live pill. */
+$home = get(BASE . '/')['body'];
+t('40 the hero rotates a word', str_contains($home, 'data-hero-rotate')
+    && substr_count($home, 'hero-rotate-word') >= 3);
+t('40 the hero no longer reads "4 041 free calculators"', !str_contains($home, 'free calculators</span>'));
+t('40 the header count is a live pill', str_contains($calc, 'header-count-number')
+    && str_contains($calc, 'header-count-dot'));
+
+/* The anchor slot: registered, rendered below 1100px, and closable. */
+t('40 the anchor slot is in the registry', isset(\Onim\Ads::slots()['anchor']));
+
+t('40 the panel says whether ads are live and how much is filled',
+    isset($panel) && str_contains($panel, 'ad-status-state')
+    && (bool) preg_match('~\d+ of 14 positions have code~', $panel));
+
+$adsSet('ads_enabled', '1');
+$adsSet('ads_slot_anchor', '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="1"></ins>');
+$adsSet('ads_slot_calc_top', '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="2"></ins>');
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+$anchored = get(BASE . '/math/percentage')['body'];
+t('40 a filled anchor renders with a close button',
+    str_contains($anchored, 'data-ad-anchor') && str_contains($anchored, 'data-ad-anchor-close'));
+t('40 the body reserves room for the anchor', str_contains($anchored, 'has-ad-anchor'));
+t('40 a bare AdSense unit is pushed for the owner',
+    substr_count($anchored, 'adsbygoogle=window.adsbygoogle||[]') === 2);
+
+/* A tag that already carries its push is not pushed twice. */
+$adsSet('ads_slot_calc_top', '<ins class="adsbygoogle" data-ad-slot="2"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>');
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+t('40 a tag with its own push is left alone',
+    substr_count(get(BASE . '/math/percentage')['body'], 'adsbygoogle=window.adsbygoogle||[]') === 1);
+
+$adsSet('ads_slot_calc_top', '');
+$adsSet('ads_slot_anchor', '');
+$adsSet('ads_enabled', '0');
+\Onim\Ads::reset();
+\Onim\Cms::flush();
+
+/* No "1 field" left anywhere in the copy. */
+$one = 0;
+foreach (glob(dirname(__DIR__) . '/data/content/*/*.json') as $f) {
+    $body = (string) file_get_contents($f);
+    if (str_contains($body, '>1 field on this form') || str_contains($body, 'the 1 field')) {
+        $one++;
+    }
+}
+t('40 no content file starts a sentence with "1 field"', $one === 0, (string) $one);
 
 /* ---------------------------------------------------------------- summary */
 
