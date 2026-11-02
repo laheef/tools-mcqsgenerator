@@ -816,6 +816,42 @@ $unitLabel = static function (array $group, string $key): string {
                                     fields saved, so you can switch back.
                                 </div>
                             </div>
+
+                            <?php /* No file on the list? Upload one from here.
+                                     The inputs live in this card but belong to the form
+                                     after the editor (a form inside a form is not
+                                     allowed), which is what the `form` attribute is
+                                     for. */ ?>
+                            <div class="tool-upload">
+                                <div class="label-row" style="margin-bottom:8px">
+                                    <strong class="small">Upload a tool file</strong>
+                                    <span class="hint">stored in <code>plugins/</code>, ready to select above</span>
+                                </div>
+                                <input type="file" name="file" accept=".php" form="tool-upload-form" required>
+                                <div class="grid grid-2" style="margin-top:8px">
+                                    <div class="field" style="margin:0">
+                                        <label for="upload_folder" class="small">Folder</label>
+                                        <input id="upload_folder" name="folder" form="tool-upload-form"
+                                               value="audio" pattern="[a-z0-9][a-z0-9-]*" required>
+                                    </div>
+                                    <div class="field" style="margin:0">
+                                        <label for="upload_section" class="small">Section</label>
+                                        <select id="upload_section" name="section" form="tool-upload-form">
+                                            <?php foreach (\Onim\Groups::assignable() as $slug => $label): ?>
+                                                <option value="<?= e((string) $slug) ?>"><?= e((string) $label) ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-primary" form="tool-upload-form"
+                                        style="margin-top:10px;justify-content:center">
+                                    <?= admin_icon('upload', 14) ?> Upload and come back here
+                                </button>
+                                <div class="hint" style="margin-top:6px">
+                                    The folder is created if it does not exist. A new tool appears in the list above
+                                    as soon as it is uploaded — pick it, then save the page.
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -924,6 +960,16 @@ $unitLabel = static function (array $group, string $key): string {
             <?php endif; ?>
         </div>
     </div>
+</form>
+
+<?php /* The tool-upload form that the Widget-source card's inputs belong to.
+         It sits outside the editor form because forms cannot nest. */ ?>
+<form id="tool-upload-form" method="post" enctype="multipart/form-data"
+      action="<?= e(admin_url('tool-plugins')) ?>" hidden>
+    <?= \Onim\Admin\Csrf::field() ?>
+    <input type="hidden" name="do" value="upload">
+    <input type="hidden" name="back" value="editor">
+    <input type="hidden" name="back_id" value="<?= (int) ($values['id'] ?? 0) ?>">
 </form>
 
 <script>

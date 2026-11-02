@@ -1034,6 +1034,13 @@ final class CustomCalc
         if ($slug === '' || !Db::hasTable('categories')) {
             return;
         }
+        /* A tool group is not a calculator category. Filing a page under
+           /audio must not invent an empty "Audio" bucket in the calculator
+           directory — /audio is a section of the tool site, and the page it
+           holds is listed there by its category_slug. */
+        if (Groups::findAny($slug) !== null) {
+            return;
+        }
         if (Db::value('SELECT COUNT(*) FROM categories WHERE slug = ?', [$slug]) > 0) {
             return;
         }

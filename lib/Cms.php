@@ -314,6 +314,7 @@ final class Cms
         if (!self::enabled() || !Db::hasTable('homepage_sections')) {
             return [['skey' => 'hero', 'stype' => 'hero', 'title' => '', 'subtitle' => '', 'config' => '{}'],
                    ['skey' => 'categories', 'stype' => 'category_grid', 'title' => '', 'subtitle' => '', 'config' => '{}'],
+                   ['skey' => 'tools', 'stype' => 'tool_groups', 'title' => 'Tools, by category', 'subtitle' => '', 'config' => '[]'],
                    ['skey' => 'directory', 'stype' => 'calc_directory', 'title' => 'All calculators, by category', 'subtitle' => '', 'config' => '{"per_category":6}'],
                    ['skey' => 'popular', 'stype' => 'popular', 'title' => 'Most popular', 'subtitle' => '', 'config' => '{}'],
                    ['skey' => 'howitworks', 'stype' => 'howto', 'title' => 'What every calculator on this site actually does', 'subtitle' => '', 'config' => '{}']];

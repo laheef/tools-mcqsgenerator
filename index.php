@@ -23,6 +23,7 @@ use Onim\Cms;
 use Onim\Data;
 use Onim\LiveCounts;
 use Onim\Db;
+use Onim\Groups;
 use Onim\Seo;
 use Onim\View;
 
@@ -177,7 +178,7 @@ if ($count === 1 && $segments[0] === 'search') {
  * with JavaScript off; `assets/js/browse.js` only makes the same filters apply
  * without a round trip.
  */
-if ($count === 1 && $segments[0] === 'calculators') {
+if ($count === 1 && $segments[0] === 'all-calculators') {
     $params = Browse::params();
     $state = Browse::query($params);
     $filtered = Browse::describe($state);
@@ -197,7 +198,7 @@ if ($count === 1 && $segments[0] === 'calculators') {
           . 'Every page shows the formula, the units and a worked example.';
 
     $seo = new Seo($title, $description);
-    $seo->canonical = SITE_URL . '/calculators';
+    $seo->canonical = SITE_URL . '/all-calculators';
     $seo->breadcrumbs = [
         ['name' => 'Home', 'url' => '/'],
         ['name' => 'All calculators', 'url' => '/calculators'],
@@ -384,6 +385,107 @@ if ($count === 2 && $segments[0] === 'category') {
             'categoryLede' => (string) $blogCategory['description'],
             'categories' => Data::categories(),
             'navCategories' => Data::categories(),
+        ]);
+        exit;
+    }
+}
+
+/* The singular spelling of the calculator group, for anyone who types it. */
+if ($count === 1 && $segments[0] === 'calculator') {
+    header('Location: ' . rtrim(SITE_URL, '/') . '/' . 'calculators', true, 301);
+    exit;
+}
+
+/* ---------------------------------------------------------- tool group */
+/*
+ * A top-level section: /audio, /image, /calculator.
+ *
+ * The Calculators group is the old site — the home page as it stands — because
+ * that is what "navigate to the calculator category" means now: the same page,
+ * at an address of its own, instead of the whole site being that page. Every
+ * other group lists the tools filed under it, with its subgroups as chips.
+ *
+ * Groups are resolved before categories so a group slug can never be swallowed
+ * by the category lookup; the calculator categories themselves keep their old
+ * one-segment addresses (/math, /finance) untouched.
+ */
+if ($count === 1) {
+    $section = Groups::find($segments[0]);
+    if ($section !== null) {
+        $slug = (string) $section['slug'];
+
+        if ($slug === Groups::CALCULATORS) {
+            /* /calculators used to be the filterable catalogue. The catalogue
+               moved to /all-calculators and this address became the group page;
+               a filtered view that was bookmarked or crawled still means what it
+               meant, so it is redirected rather than quietly emptied. */
+            $browseKeys = ['q', 'cat', 'letter', 'sort', 'page'];
+            foreach ($browseKeys as $key) {
+                if (isset($_GET[$key]) && (string) $_GET[$key] !== '') {
+                    $query = http_build_query(array_intersect_key($_GET, array_flip($browseKeys)));
+                    header('Location: ' . rtrim(SITE_URL, '/') . '/all-calculators' . ($query !== '' ? '?' . $query : ''), true, 301);
+                    exit;
+                }
+            }
+            $seo = new Seo(
+                'Calculators — ' . SITE_NAME,
+                'Every formula calculator on ' . SITE_NAME . ' — the whole catalogue, by category, '
+                . 'with the formula and a worked example on every page.'
+            );
+            $seo->canonical = SITE_URL . '/' . Groups::CALCULATORS;
+            $seo->schema[] = $seo->websiteSchema();
+            $seo->breadcrumbs = [
+                ['name' => 'Home', 'url' => '/'],
+                ['name' => (string) $section['name'], 'url' => '/' . Groups::CALCULATORS],
+            ];
+            echo View::page('home', [
+                'seo' => $seo,
+                'group' => $section,
+                'categories' => Data::categories(),
+                'navCategories' => Data::categories(),
+                'featured' => Data::featured(12),
+                'total' => Data::total(),
+                'active' => Groups::CALCULATORS,
+            ]);
+            exit;
+        }
+
+        $isSub = (string) $section['parent'] !== '';
+        $parent = $isSub ? Groups::find((string) $section['parent']) : null;
+        $rows = Groups::tools($slug);
+        $countIn = $isSub ? count($rows) : Groups::countGroup($slug);
+
+        $seo = new Seo(
+            (string) ($section['title'] ?? $section['name']),
+            (string) ($section['description'] ?? '')
+        );
+        $seo->canonical = SITE_URL . '/' . $slug;
+        $seo->schema[] = $seo->websiteSchema();
+        $seo->schema[] = $seo->collectionSchema(
+            (string) $section['name'],
+            (string) ($section['description'] ?? ''),
+            $rows,
+            count($rows)
+        );
+        $seo->breadcrumbs = array_values(array_filter([
+            ['name' => 'Home', 'url' => '/'],
+            $parent !== null ? ['name' => (string) $parent['name'], 'url' => '/' . $parent['slug']] : null,
+            ['name' => (string) $section['name'], 'url' => '/' . $slug],
+        ]));
+        /* A section with nothing in it is honest, not useful: keep it out of the
+           index until its first tool arrives. */
+        $seo->noindex = $countIn === 0;
+
+        echo View::page('group', [
+            'seo' => $seo,
+            'section' => $section,
+            'parent' => $parent,
+            'rows' => $rows,
+            'subs' => $isSub ? [] : Groups::subs($slug),
+            'groups' => Groups::all(),
+            'categories' => Data::categories(),
+            'navCategories' => Data::categories(),
+            'active' => $slug,
         ]);
         exit;
     }

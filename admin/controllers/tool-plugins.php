@@ -30,6 +30,7 @@ use Onim\Admin\Csrf;
 use Onim\Admin\Flash;
 use Onim\CustomCalc;
 use Onim\Data;
+use Onim\Groups;
 use Onim\Toolkit;
 
 /* ------------------------------------------------------------ download */
@@ -61,13 +62,32 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 
     /* ------------------------------------------------------------ upload */
     if ($action === 'upload') {
-        $category  = (string) (post('category', '') ?? '');
-        $replace   = post_bool('replace');
-        $upload    = $_FILES['file'] ?? [];
-        $error     = '';
+        /* Two different things, two different fields.
+         *
+         *   folder   where the file is *stored* — plugins/<folder>/tool.php.
+         *            Existing folders are listed; "new" takes a typed name and
+         *            Toolkit::install() makes the directory.
+         *   section  where the tool *appears* — a group, a subgroup or one of
+         *            the calculator categories. It becomes the page's address.
+         *
+         * They used to be one field, which is why a tool could only ever be
+         * filed where a folder happened to exist. */
+        $folder = trim((string) (post('folder', '') ?? ''));
+        if ($folder === 'new') {
+            $folder = trim((string) (post('folder_new', '') ?? ''));
+        }
+        if ($folder === '') {
+            $folder = (string) (post('category', '') ?? '');
+        }
+        $section  = trim((string) (post('section', '') ?? ''));
+        $back     = (string) (post('back', '') ?? '');
+        $backId   = post_int('back_id');
+        $replace  = post_bool('replace');
+        $upload   = $_FILES['file'] ?? [];
+        $error    = '';
 
         $stored = is_array($upload)
-            ? Toolkit::install($upload, $category, $replace, $error)
+            ? Toolkit::install($upload, $folder, $replace, $error)
             : null;
 
         if ($stored === null) {
@@ -87,7 +107,17 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 
         Activity::log('tool_uploaded', 'tool', $stored, 'Uploaded tool file ' . $stored);
         Flash::success('Uploaded ' . $stored . ($tool !== null ? ' — [' . $tool['shortcode'] . '] is ready to bind to a page.' : '.'));
-        redirect_to(admin_url('tool-plugins', $tool !== null ? ['highlight' => $tool['shortcode']] : []));
+        /* Back to the editor, when the upload started there: the owner was
+           halfway through choosing a widget source and should not lose the page
+           they were editing. */
+        if ($back === 'editor' && $backId > 0) {
+            redirect_to(admin_url('custom-calculator-edit', ['id' => $backId, 'tab' => 'advanced']));
+        }
+        $params = $tool !== null ? ['highlight' => $tool['shortcode']] : [];
+        if ($section !== '') {
+            $params['section'] = $section;
+        }
+        redirect_to(admin_url('tool-plugins', $params));
     }
 
     /* ------------------------------------------------------------ create */
@@ -98,7 +128,19 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             Flash::error('That tool cannot be used: ' . ($tool['error'] ?? 'it is not in the folder.'));
             redirect_to(admin_url('tool-plugins'));
         }
-        $category = (string) (post('category', '') ?? '');
+        /* Where the page lives: the section picked on this form wins, then the
+           folder it was uploaded to, then the file's own header. A section has
+           to be a real group, subgroup or calculator category — anything else
+           would produce a page at an address no page lists. */
+        $section = trim((string) (post('section', '') ?? ''));
+        if ($section === '') {
+            $section = (string) (post('category', '') ?? '');
+        }
+        $known = Groups::isSection($section) || Data::category($section) !== null;
+        $category = $known ? $section : (string) ($tool['category'] ?? 'other');
+        if (!Groups::isSection($category) && Data::category($category) === null) {
+            $category = 'other';
+        }
         $result   = CustomCalc::createFromTool($tool, $category, (int) Auth::id());
         if (!$result['ok']) {
             foreach ($result['errors'] as $problem) {
@@ -187,6 +229,7 @@ foreach (Toolkit::categoryNames() as $slug => $label) {
 }
 
 $highlight = (string) (request('highlight', '') ?? '');
+$pickedSection = (string) (request('section', '') ?? '');
 $missingMigration = !CustomCalc::enabled() || !CustomCalc::tracksTools();
 
 $pageTitle = 'Tool plugins';
@@ -194,7 +237,15 @@ $title = 'Tool plugins';
 $breadcrumbs = [['label' => 'Tool plugins']];
 $topbarActions = [];
 
+/* Every folder on disk, for the storage picker — the categories are only a
+   subset of what a tool site needs (audio, video, pdf…). */
+$folderOptions = array_keys(Toolkit::categoryNames());
+sort($folderOptions);
+
+$sectionOptions = Groups::assignable();
+
 render('tool-plugins', compact(
     'tools', 'byCategory', 'usage', 'stats', 'errors', 'categoryOptions',
+    'folderOptions', 'sectionOptions', 'pickedSection',
     'highlight', 'missingMigration', 'pageTitle', 'title', 'breadcrumbs', 'topbarActions'
 ));

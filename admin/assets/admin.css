@@ -645,3 +645,22 @@ body.editor-locked { overflow: hidden; }
 .kv-row { display: flex; gap: 14px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
 .kv-row:last-of-type { border-bottom: 0; }
 .kv-key { min-width: 150px; font-weight: 600; }
+
+/* ---------------------------------------------------------- tool upload card
+   The "Upload a tool file" block inside the page editor's Widget-source card.
+   It shares the card's padding, so it only needs a divider and a little air. */
+.tool-upload {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line, #e3e7ee);
+}
+.tool-upload input[type="file"] {
+    width: 100%;
+    font-size: 0.86rem;
+    padding: 8px 10px;
+    border: 1px solid var(--line, #e3e7ee);
+    border-radius: 8px;
+    background: var(--field, #fff);
+    color: inherit;
+}
+.tool-upload .grid-2 { gap: 10px; }

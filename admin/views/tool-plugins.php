@@ -168,6 +168,7 @@ $size = static function (int $bytes): string {
                                             <input type="hidden" name="do" value="create">
                                             <input type="hidden" name="shortcode" value="<?= e($shortcode) ?>">
                                             <input type="hidden" name="category" value="<?= e((string) $category) ?>">
+                                            <input type="hidden" name="section" value="<?= e((string) ($pickedSection !== '' ? $pickedSection : $category)) ?>">
                                             <button type="submit" class="btn btn-sm btn-primary" title="Create a draft calculator page for this tool">
                                                 <?= admin_icon('plus', 14) ?> Create page
                                             </button>
@@ -247,16 +248,40 @@ $size = static function (int $bytes): string {
 
                 <div class="field">
                     <div class="label-row">
-                        <label for="category">Category folder</label>
+                        <label for="folder">Folder</label>
                         <span class="hint">where the file is stored</span>
                     </div>
-                    <select id="category" name="category" required>
-                        <option value="">— choose a category —</option>
-                        <?php foreach ($categoryOptions as $slug => $label): ?>
-                            <option value="<?= e((string) $slug) ?>"><?= e((string) $label) ?></option>
+                    <select id="folder" name="folder" required data-folder-select>
+                        <option value="">— choose a folder —</option>
+                        <?php foreach ($folderOptions as $slug): ?>
+                            <option value="<?= e((string) $slug) ?>">plugins/<?= e((string) $slug) ?>/</option>
+                        <?php endforeach; ?>
+                        <option value="new">＋ New folder…</option>
+                    </select>
+                    <input id="folder_new" name="folder_new" placeholder="new-folder-name" data-folder-new hidden
+                           pattern="[a-z0-9][a-z0-9-]*" title="Lowercase letters, digits and dashes">
+                    <div class="hint">
+                        Storage only. Pick an existing folder or create one here — a new folder is made on
+                        upload, no FTP needed.
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="label-row">
+                        <label for="section">Section</label>
+                        <span class="hint">where the tool appears</span>
+                    </div>
+                    <select id="section" name="section">
+                        <?php foreach ($sectionOptions as $slug => $label): ?>
+                            <option value="<?= e((string) $slug) ?>" <?= $pickedSection === (string) $slug ? 'selected' : '' ?>>
+                                <?= e((string) $label) ?>
+                            </option>
                         <?php endforeach; ?>
                     </select>
-                    <div class="hint">The page created from the tool defaults to this category; you can move it later.</div>
+                    <div class="hint">
+                        A group (Audio Tools), one of its subgroups, or a calculator category. The page created
+                        from this tool is addressed <code>/{section}/{tool}</code> and listed on that section’s page.
+                    </div>
                 </div>
 
                 <label class="check" style="display:flex;gap:8px;align-items:flex-start">
@@ -311,3 +336,20 @@ Toolkit::addShortcode('tool_tip_split',
         </div>
     </div>
 </div>
+
+<script>
+/* Show the folder name box only when "New folder" is chosen. */
+(function () {
+    var select = document.querySelector('[data-folder-select]');
+    var input = document.querySelector('[data-folder-new]');
+    if (!select || !input) { return; }
+    function sync() {
+        var isNew = select.value === 'new';
+        input.hidden = !isNew;
+        input.required = isNew;
+        if (isNew) { input.focus(); }
+    }
+    select.addEventListener('change', sync);
+    sync();
+})();
+</script>

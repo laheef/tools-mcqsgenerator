@@ -21,7 +21,7 @@ build in `assets/js/vendor/`, fonts are system fonts.
 | Engine | one declarative equation solver (PHP + JS) drives every page |
 | Repairs | 378 hand-written supplements where the harvested equations were incomplete |
 | Admin | PHP + MySQL panel: pages, posts, calculators, media, menu, SEO, settings, backups, contact inbox |
-| Tests | `tests/solver.php` (70) and `tests/e2e_panel.php` (254) — both green |
+| Tests | `tests/toolkit.php` (40), `tests/solver.php` (70) and `tests/e2e_panel.php` (403) — all green |
 
 Every calculator renders real inputs and computes on demand: **no field is
 prefilled**, and **nothing is calculated until you press Calculate**. Results are
@@ -36,6 +36,7 @@ admin/                            the panel (own front controller + assets)
 lib/  templates/  modules/        the engine, views, page modules
 assets/                           css, js, vendored Tailwind, images
 data/calc/                        catalogue: sharded NDJSON + manifest + supplements
+data/groups.json                  the sixteen tool groups (header order, icons, subsections)
 data/content/                     one article per calculator
 data/pages/                       file-based fallback for the static pages
 install/database.sql              schema + content import (no user accounts)
@@ -171,6 +172,39 @@ the queue when a person opens it and presses Save. Adding that column to an
 existing database is a panel button (Dashboard → *Database update available*), not
 an SSH session.
 
+### Tool groups: the sixteen sections
+
+The site is a tool site, not only a calculator site. Above the calculator
+categories sits one more layer, and it is the layer the header shows:
+
+```
+Calculators            the whole formula catalogue — the fourteen categories
+Audio Tools            converters, trimmers, meters
+Video Tools            …            Image Tools    …      PDF Tools    …
+Developer Tools        Converters   Security Tools Gaming Compressors
+Productivity Tools     Design & CSS Tools   Text & Writing   Art & Color
+Social & Community     Fun & Random
+```
+
+Each one has a page (`/audio`, `/image`, `/design-css`), an entry in the
+secondary header, and — under Image, PDF and Developer — subgroups
+(`/img-converters`, `/pdf-converters`, `/seo-tools`) that are pages too and
+appear in that group's dropdown. A tool is filed under a group or a subgroup
+and is addressed `/{section}/{tool}`; the fourteen calculator categories keep
+their old addresses (`/math/mortgage`), because they are simply what the
+Calculators group holds.
+
+The list ships in `data/groups.json` and the panel's **Tool groups** screen
+writes overrides into the `tool_groups` table — rename, re-order, hide, add,
+or reset a row to the shipped wording. Nothing about the site depends on the
+table existing, so a fresh install shows the shipped list before MySQL is up.
+
+`/calculators` renders the home page for the Calculators group: the same
+sections as `/`, minus the bands for the other groups, with the group's name
+in `aria-current` in the header. The full catalogue browse lives at
+`/all-calculators`, `/calculators?cat=…` redirects there, and `/calculator`
+redirects to `/calculators`.
+
 ### The escape hatch: modules
 
 For the rare page whose interface is not a list of fields, `modules/<name>/`
@@ -286,7 +320,7 @@ the live site now reads 4 041.
 
 | Suite | Command | Result |
 | --- | --- | --- |
-| Solver regression (hand-checked values, formatting, defaults) | `php php-clone/tests/solver.php` | **67 passed, 0 failed** |
+| Solver regression (hand-checked values, formatting, defaults) | `php tests/solver.php` | **70 passed, 0 failed** |
 | PHP↔JS agreement — server render vs client re-solve | `python3 tools/agreement_test.py --all --jobs 6` | **3,831 pages, 5,932 rendered fields, 0 conflicts** (+57 script-only fields the browser alone can fill) |
 | Solve audit — defaults in place, nothing left blank | `php tools/solve_audit.php` | 3,831 calculators: **3,622 clean, 209 flagged** — every flag explained in `php-clone/docs/solve-audit.json` (page-script helpers the server cannot run, divisors that are 0 in the page's own defaults) |
 | Expression coverage of every harvested formula | `php tools/audit_expr.php` | 50,615 variants: 47,352 evaluate; 126 rejected as domain errors; `full 3,474 · script 298 · partial 10 · none 49` |
@@ -303,7 +337,7 @@ the live site now reads 4 041.
 | Contextual internal links | `python3 tools/link_audit.py` | 3,831 pages, avg 3.8 body links (min 2), 0 violations |
 | Related-calculator relevance | `python3 tools/build_related.py` + `Data::related()` | 3,831 pages, 6 cards each, 0 self-references, 0 duplicates, ranked by TF-IDF article similarity |
 | **Admin panel — UI, security, cron** | `python3 tools/admin_e2e.py` | **140 passed, 0 failed** — forms driven as a browser drives them, assertions against MySQL and the public HTML |
-| **Admin panel — every screen, every write** | `php php-clone/tests/e2e_panel.php` | **94 passed, 0 failed** — settings, overrides, previews, menus, pages, blog, media, inbox, redirects, roles, source editor, backups, cron |
+| **Admin panel — every screen, every write** | `php tests/e2e_panel.php` | **403 passed, 0 failed** — settings, overrides, previews, menus, pages, blog, media, inbox, redirects, roles, source editor, backups, cron |
 | Structural HTML | `python3 tools/html_audit.py --all` | **3,835 pages, 0 problems** — no duplicate ids, no dangling `label[for]`/ARIA/anchor references, balanced tags, image dimensions everywhere |
 | Colour contrast, WCAG 2.1 AA | `python3 tools/contrast_audit.py --all` | **3,835 pages, 0 failures** — every text node measured against its real background in Chromium |
 | Mobile / touch audit at 390 × 844 | `python3 tools/mobile_audit.py --all --jobs 5` | **3,836 pages, 0 problems** — no horizontal overflow, no tap target under 28 px, no unlabelled control, no heading jump |
@@ -491,13 +525,15 @@ php-clone/
 │   ├── calc/support.json      per-calculator evaluability
 │   ├── calc/redirects.json    33 sitemap aliases → canonical path
 │   ├── content/<cat>/<slug>.json  generated article prose, sections, FAQ
-│   └── categories.json        category metadata
+│   ├── categories.json        category metadata
+│   └── groups.json            the sixteen tool groups (order, icons, subsections)
+├── plugins/<section>/         tool files: one self-contained PHP file per tool
 ├── docs/                      reference payloads, screenshots, audit output
-└── tests/solver.php           60 assertions
+└── tests/                     toolkit.php (40) · solver.php (70) · e2e_panel.php (403)
 ```
 
 `tools/` (repo root) holds the pipeline: `harvest_all.py` → `build_manifest.py` →
-`generate_content.py` → `audit_expr.php`, plus the four test suites.
+`generate_content.py` → `audit_expr.php`, plus the test suites.
 
 ---
 

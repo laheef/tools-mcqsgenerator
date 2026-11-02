@@ -175,6 +175,28 @@ final class View
     {
         return [
             'chevron-down' => '<path d="m6 9.5 6 6 6-6"/>',
+            /* The tool groups' own shapes: until the site became a tool site
+               every icon on it was a topic, so nothing drew a speaker, a
+               picture, a PDF or a padlock. */
+            'gauge'        => '<path d="M4 17.2a8 8 0 1 1 16 0"/><path d="M12 17.2 15.7 11"/><circle cx="12" cy="17.4" r="1.3"/>',
+            'plug'         => '<path d="M9 3.5v4M15 3.5v4"/><path d="M6.8 7.5h10.4v4.1a5.2 5.2 0 0 1-10.4 0z"/><path d="M12 16.8v3.7"/>',
+            'clock'        => '<circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/>',
+            'paint'        => '<path d="M4.5 20.5c3.4.6 5.2-1.2 5.2-3.2 0-1.7-1.2-2.6-2.6-2.6-1.9 0-2.6 1.5-2.6 3.1 0 .9-.3 1.7-1 2.7z"/><path d="M9.7 14.7 18 6.4a2.1 2.1 0 0 1 3 3l-8.3 8.3"/>',
+            'people'       => '<circle cx="9" cy="8.4" r="3.2"/><path d="M3.2 20c0-3.1 2.6-5.2 5.8-5.2s5.8 2.1 5.8 5.2"/><path d="M16 5.6a3 3 0 0 1 0 5.7M17.6 14.9c2 .6 3.4 2.3 3.4 4.6"/>',
+            'dice'         => '<rect x="3.5" y="3.5" width="17" height="17" rx="3.4"/><path d="M8.4 8.4h.01M15.6 8.4h.01M12 12h.01M8.4 15.6h.01M15.6 15.6h.01"/>',
+            'calculator'   => '<rect x="4" y="2.8" width="16" height="18.4" rx="2.6"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/>',
+            'audio'        => '<path d="M4 10v4M8 7v10M12 4.5v15M16 7v10M20 10v4"/>',
+            'video'        => '<rect x="3" y="5.5" width="13" height="13" rx="2.5"/><path d="m16 11 5-3v8l-5-3z"/>',
+            'image'        => '<rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="8.6" cy="10" r="1.7"/><path d="m4 18 5.2-5.2a2 2 0 0 1 2.8 0L21 19"/>',
+            'pdf'          => '<path d="M7 2.5h7l4.5 4.5v14.5H7z"/><path d="M14 2.5V7h4.5"/><path d="M9.6 16.5v-4h1.2a1.2 1.2 0 0 1 0 2.4H9.6"/><path d="M14.4 12.5H16a1.5 1.5 0 0 1 0 4h-1.6z"/>',
+            'code'         => '<path d="m9 8-4 4 4 4M15 8l4 4-4 4"/>',
+            'shield'       => '<path d="M12 3 5 6v6c0 4.2 3 7.4 7 9 4-1.6 7-4.8 7-9V6z"/><path d="m9.2 12 2 2 3.6-3.8"/>',
+            'gamepad'      => '<rect x="2.5" y="7" width="19" height="10" rx="4.5"/><path d="M7 10v4M5 12h4M15.5 11h.01M18 13.5h.01"/>',
+            'zip'          => '<rect x="4" y="3" width="16" height="18" rx="2.4"/><path d="M11 3v3M11 8v2M11 12v2M11 16h2"/>',
+            'text'         => '<path d="M5 6.5V4.5h14v2M12 4.5v15M9 19.5h6"/>',
+            'swap'         => '<path d="M4 8h13l-3-3M20 16H7l3 3"/>',
+            'palette'      => '<path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-.9 2-1.9 0-1.4 1-2.1 2.3-2.1H18a3.4 3.4 0 0 0 3-3.4A8.8 8.8 0 0 0 12 3Z"/><path d="M8 10h.01M9.5 6.6h.01M14 6.5h.01M16.5 9.5h.01"/>',
+
             'menu'         => '<path d="M3.5 7h17M3.5 12h17M3.5 17h17"/>',
             'close'        => '<path d="M6 6l12 12M18 6 6 18"/>',
             'arrow-right'  => '<path d="M4.5 12h15"/><path d="m13.5 6 6 6-6 6"/>',

@@ -433,7 +433,7 @@ final class Seo
         $urls[] = ['loc' => '@@ORIGIN@@' . '/', 'lastmod' => date('Y-m-d'), 'priority' => '1.0'];
         /* The full catalogue, one click from the home page. Filtered views are
            noindex and canonicalise here, so only the bare URL is listed. */
-        $urls[] = ['loc' => '@@ORIGIN@@' . '/calculators', 'lastmod' => date('Y-m-d'), 'priority' => '0.9'];
+        $urls[] = ['loc' => '@@ORIGIN@@' . '/all-calculators', 'lastmod' => date('Y-m-d'), 'priority' => '0.9'];
         foreach (Data::categories() as $c) {
             $urls[] = [
                 'loc' => '@@ORIGIN@@' . '/' . $c['slug'],

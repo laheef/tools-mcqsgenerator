@@ -385,7 +385,7 @@ if ($dirSection !== null) {
     t('11b per_category caps the links in each block',
         $perCat !== [] && min($perCat) > 0 && max($perCat) <= 3, 'per block: ' . implode(',', array_slice($perCat, 0, 5)) . '…');
     t('11b each block links to its own filtered catalogue view',
-        str_contains($body, '/calculators?cat=biology'));
+        str_contains($body, '/all-calculators?cat=biology'));
     post('homepage', ['do' => 'delete', 'id' => (string) $dirSection['id']]);
     t('11b deleting the section removes the band', !str_contains(get(BASE . '/')['body'], 'E2E directory'));
 }

@@ -574,6 +574,63 @@
     }
   })();
 
+  /* ------------------------------------------------ tool-category dropdowns */
+  /*
+   * The second header row scrolls sideways, so a menu rendered inside it would
+   * be clipped the moment it opened. Each dropdown is therefore `fixed` and
+   * placed from its own link's rectangle, one at a time, and it closes on any
+   * scroll, resize, outside click or Escape.
+   */
+  (function groupMenu() {
+    var nav = document.querySelector('.category-nav');
+    if (!nav) return;
+    var groups = [].slice.call(nav.querySelectorAll('.category-nav-group'));
+    if (!groups.length) return;
+
+    function close(except) {
+      groups.forEach(function (group) {
+        var menu = group.querySelector('.category-dropdown');
+        if (!menu || group === except) return;
+        menu.classList.remove('is-open');
+        var link = group.querySelector('.category-nav-link');
+        if (link) link.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    function open(group) {
+      var menu = group.querySelector('.category-dropdown');
+      var link = group.querySelector('.category-nav-link');
+      if (!menu || !link) return;
+      close(group);
+      var box = link.getBoundingClientRect();
+      menu.style.left = Math.round(Math.min(box.left, window.innerWidth - 250)) + 'px';
+      menu.style.top = Math.round(box.bottom) + 'px';
+      menu.classList.add('is-open');
+      link.setAttribute('aria-expanded', 'true');
+    }
+
+    groups.forEach(function (group) {
+      var link = group.querySelector('.category-nav-link');
+      group.addEventListener('mouseenter', function () { open(group); });
+      group.addEventListener('mouseleave', function () { close(group); });
+      if (link) {
+        link.addEventListener('focus', function () { open(group); });
+        link.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') { close(group); link.blur(); }
+        });
+      }
+    });
+
+    window.addEventListener('scroll', function () { close(null); }, { passive: true });
+    window.addEventListener('resize', function () { close(null); });
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest || !event.target.closest('.category-nav-group')) close(null);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') close(null);
+    });
+  })();
+
   /* ------------------------------------------------------- ad slot fitting */
   /*
    * An ad tag is written for one width: 728x90, 300x250, 970x250. On a phone

@@ -17,6 +17,7 @@ declare(strict_types=1);
 use Onim\Cms;
 use Onim\Data;
 use Onim\Format;
+use Onim\Groups;
 use Onim\View;
 
 $active = $active ?? '';
@@ -41,23 +42,58 @@ if ($actions === []) {
         ['label' => 'Contact', 'url' => '/contact', 'target' => '_self'],
     ];
 }
-if ($menu === []) {
-    foreach ($navCategories as $cat) {
-        $menu[] = [
-            'label' => (string) $cat['name'],
-            'url' => '/' . $cat['slug'],
-            'target' => '_self',
-            'children' => [],
-            'is_active' => $active === $cat['slug'],
-        ];
-    }
-}
 $isActive = static function (array $item) use ($active): bool {
     if (isset($item['is_active'])) {
         return (bool) $item['is_active'];
     }
     return $active !== '' && trim((string) $item['url'], '/') === $active;
 };
+
+/*
+ * The second bar is the tool categories, in the order the panel gives them:
+ * Calculators (with the fourteen calculator categories inside it), Audio Tools,
+ * Video Tools, and the rest. It is one row with dropdowns, the way a tool site
+ * is navigated — a flat strip of fourteen calculator topics was right when the
+ * site *was* a calculator site and is wrong now.
+ *
+ * The panel's own menu, when it has one, is appended after the groups as plain
+ * links, so a custom entry can never displace the categories.
+ */
+$groupMenu = Groups::menu();
+/*
+ * The panel's own header menu is still honoured, but only for entries that are
+ * not already in the bar. It used to hold the fourteen category links; those
+ * now live inside the Calculators dropdown, and appending them again would have
+ * printed every category twice and pushed the bar three rows tall.
+ */
+$alreadyInBar = [];
+foreach ($groupMenu as $barItem) {
+    $alreadyInBar[trim((string) $barItem['url'], '/')] = true;
+    foreach ($barItem['children'] as $barChild) {
+        $alreadyInBar[trim((string) $barChild['url'], '/')] = true;
+    }
+}
+$extraMenu = [];
+foreach ($menu as $item) {
+    $path = trim((string) parse_url((string) $item['url'], PHP_URL_PATH), '/');
+    if ($path === '' || isset($alreadyInBar[$path])) {
+        continue;
+    }
+    $extraMenu[] = $item;
+}
+/* A site without the group file still has to navigate: fall back to the
+   categories as a flat row, exactly as it used to be. */
+if ($groupMenu === []) {
+    foreach ($navCategories as $cat) {
+        $groupMenu[] = [
+            'slug' => (string) $cat['slug'],
+            'name' => (string) $cat['name'],
+            'url' => '/' . $cat['slug'],
+            'icon' => (string) ($cat['icon'] ?? 'grid'),
+            'children' => [],
+        ];
+    }
+}
 ?>
 <header class="site-header<?= $sticky ? ' is-sticky' : '' ?>">
     <div class="header-top">
@@ -69,9 +105,9 @@ $isActive = static function (array $item) use ($active): bool {
 
             <?php if ($showSearch): ?>
                 <form class="search" role="search" action="<?= View::escape(View::url('/search')) ?>" method="get" autocomplete="off">
-                    <label class="sr-only" for="site-search">Search calculator</label>
+                    <label class="sr-only" for="site-search">Search tools</label>
                     <input id="site-search" type="search" name="q" value="<?= View::escape($q) ?>"
-                           placeholder="Search calculator…" data-search-input
+                           placeholder="Search tools…" data-search-input
                            aria-describedby="search-hint" aria-autocomplete="list" aria-controls="search-suggestions">
                     <span id="search-hint" class="sr-only">Type to see matching calculators</span>
                     <button type="submit" class="search-submit" aria-label="Search">
@@ -92,34 +128,34 @@ $isActive = static function (array $item) use ($active): bool {
                     </a>
                 <?php endforeach; ?>
                 <?php if ($showCount): ?>
-                    <a class="header-count" href="<?= View::escape(View::url('/calculators')) ?>"
-                       title="Browse every calculator — the number updates live">
+                    <a class="header-count" href="<?= View::escape(View::url('/all-calculators')) ?>"
+                       title="Browse every tool — the number updates live">
                         <span class="header-count-dot" aria-hidden="true"></span>
                         <span class="header-count-number" data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span>
-                        <span class="header-count-label">calculators, ready</span>
+                        <span class="header-count-label">tools, ready</span>
                     </a>
                 <?php endif; ?>
             </div>
         </div>
     </div>
 
-    <nav class="category-nav" aria-label="Calculator categories">
+    <nav class="category-nav" aria-label="Tool categories">
         <div class="shell category-nav-inner">
-            <?php foreach ($menu as $item): ?>
-                <?php $isActiveItem = $isActive($item); ?>
+            <?php foreach ($groupMenu as $item): ?>
+                <?php $isActiveItem = $active === (string) $item['slug']; ?>
                 <?php if (!empty($item['children'])): ?>
                     <div class="category-nav-group">
                         <a class="category-nav-link<?= $isActiveItem ? ' is-active' : '' ?>"
                            href="<?= View::escape(View::url((string) $item['url'])) ?>"
                            aria-haspopup="true" aria-expanded="false">
-                            <?= View::escape((string) $item['label']) ?>
+                            <?= View::icon((string) $item['icon'], 15) ?>
+                            <?= View::escape((string) $item['name']) ?>
                             <?= View::icon('chevron-down', 14) ?>
                         </a>
-                        <div class="category-dropdown" role="group" aria-label="<?= View::escape((string) $item['label']) ?>">
+                        <div class="category-dropdown" role="group" aria-label="<?= View::escape((string) $item['name']) ?>">
                             <?php foreach ($item['children'] as $child): ?>
-                                <a href="<?= View::escape(View::url((string) $child['url'])) ?>"
-                                   <?= ($child['target'] ?? '_self') === '_blank' ? 'target="_blank" rel="noopener"' : '' ?>>
-                                    <?= View::escape((string) $child['label']) ?>
+                                <a href="<?= View::escape(View::url((string) $child['url'])) ?>">
+                                    <?= View::escape((string) $child['name']) ?>
                                 </a>
                             <?php endforeach; ?>
                         </div>
@@ -127,11 +163,20 @@ $isActive = static function (array $item) use ($active): bool {
                 <?php else: ?>
                     <a class="category-nav-link<?= $isActiveItem ? ' is-active' : '' ?>"
                        href="<?= View::escape(View::url((string) $item['url'])) ?>"
-                       <?= ($item['target'] ?? '_self') === '_blank' ? 'target="_blank" rel="noopener"' : '' ?>
                        <?= $isActiveItem ? 'aria-current="page"' : '' ?>>
-                        <?= View::escape((string) $item['label']) ?>
+                        <?= View::icon((string) $item['icon'], 15) ?>
+                        <?= View::escape((string) $item['name']) ?>
                     </a>
                 <?php endif; ?>
+            <?php endforeach; ?>
+
+            <?php foreach ($extraMenu as $item): ?>
+                <?php $isActiveItem = $isActive($item); ?>
+                <a class="category-nav-link category-nav-link--extra<?= $isActiveItem ? ' is-active' : '' ?>"
+                   href="<?= View::escape(View::url((string) $item['url'])) ?>"
+                   <?= ($item['target'] ?? '_self') === '_blank' ? 'target="_blank" rel="noopener"' : '' ?>>
+                    <?= View::escape((string) $item['label']) ?>
+                </a>
             <?php endforeach; ?>
         </div>
     </nav>

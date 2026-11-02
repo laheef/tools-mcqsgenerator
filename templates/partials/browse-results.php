@@ -39,7 +39,7 @@ use Onim\View;
                 <span aria-hidden="true">×</span><span class="sr-only">clear letter</span>
             </a>
         <?php endif; ?>
-        <a class="browse-reset" href="<?= View::escape(View::url('/calculators')) ?>">Clear all</a>
+        <a class="browse-reset" href="<?= View::escape(View::url('/all-calculators')) ?>">Clear all</a>
     </p>
 <?php endif; ?>
 
@@ -51,7 +51,7 @@ use Onim\View;
             <?php foreach (array_slice($categories, 0, 8) as $cat): ?>
                 <a class="chip" href="<?= View::escape(Browse::url($params, ['cat' => (string) $cat['slug'], 'q' => '', 'letter' => '', 'page' => 1])) ?>"><?= View::escape($cat['name']) ?></a>
             <?php endforeach; ?>
-            <a class="chip" href="<?= View::escape(View::url('/calculators')) ?>">All calculators</a>
+            <a class="chip" href="<?= View::escape(View::url('/all-calculators')) ?>">All calculators</a>
         </div>
     </div>
 <?php else: ?>
@@ -117,7 +117,7 @@ use Onim\View;
             <?php if ($pageNow < $pageCount): ?>
                 <a class="btn btn-soft" rel="next" href="<?= View::escape(Browse::url($params, ['page' => $pageNow + 1])) ?>">Next →</a>
             <?php endif; ?>
-            <form class="browse-jump" method="get" action="<?= View::escape(View::url('/calculators')) ?>">
+            <form class="browse-jump" method="get" action="<?= View::escape(View::url('/all-calculators')) ?>">
                 <?php foreach (['q', 'cat', 'letter', 'sort'] as $keep): ?>
                     <?php if (($state[$keep] ?? '') !== ''): ?>
                         <input type="hidden" name="<?= View::escape($keep) ?>" value="<?= View::escape((string) $state[$keep]) ?>">

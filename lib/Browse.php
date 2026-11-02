@@ -204,7 +204,7 @@ final class Browse
             $qs['page'] = (string) $page;
         }
         $query = http_build_query($qs);
-        return View::url('/calculators') . ($query !== '' ? '?' . $query : '');
+        return View::url('/all-calculators') . ($query !== '' ? '?' . $query : '');
     }
 
     /** Human description of what is being filtered, for the page's status line. */

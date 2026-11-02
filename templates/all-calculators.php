@@ -30,7 +30,7 @@ $catName = $state['cat'] !== '' ? (Data::category($state['cat'])['name'] ?? '') 
 <div class="shell page-shell browse-shell">
     <?= View::breadcrumbs([
         ['name' => 'Home', 'url' => '/'],
-        ['name' => 'All calculators', 'url' => '/calculators'],
+        ['name' => 'All calculators', 'url' => '/all-calculators'],
     ]) ?>
 
     <header class="page-head">
@@ -47,7 +47,7 @@ $catName = $state['cat'] !== '' ? (Data::category($state['cat'])['name'] ?? '') 
 
     <?= \Onim\Ads::slot('category_top', 'ad-slot--page-top') ?>
 
-    <form class="browse-search" role="search" action="<?= View::escape(View::url('/calculators')) ?>" method="get"
+    <form class="browse-search" role="search" action="<?= View::escape(View::url('/all-calculators')) ?>" method="get"
           data-browse-form autocomplete="off">
         <label class="sr-only" for="browse-q">Search the catalogue</label>
         <div class="browse-search-field">

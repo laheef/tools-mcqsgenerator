@@ -478,7 +478,7 @@ DROP TABLE IF EXISTS `homepage_sections`;
 CREATE TABLE `homepage_sections` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `skey` varchar(60) NOT NULL,
-  `stype` enum('hero','category_grid','popular','latest','search','rich_text','cta','blog','stats','calc_directory','howto') NOT NULL DEFAULT 'rich_text',
+  `stype` enum('hero','category_grid','tool_groups','popular','latest','search','rich_text','cta','blog','stats','calc_directory','howto') NOT NULL DEFAULT 'rich_text',
   `title` varchar(190) NOT NULL DEFAULT '',
   `subtitle` varchar(320) NOT NULL DEFAULT '',
   `config` longtext DEFAULT NULL,
@@ -493,6 +493,7 @@ CREATE TABLE `homepage_sections` (
 INSERT INTO `homepage_sections` (`id`, `skey`, `stype`, `title`, `subtitle`, `config`, `sort_order`, `enabled`, `created_at`, `updated_at`) VALUES
 (1, 'hero', 'hero', '', '', '{\"eyebrow\":\"Your life in\",\"title\":\"{count} free calculators\"}', 10, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
 (2, 'categories', 'category_grid', '', '', '{\"heading\":\"Browse calculators by category\"}', 20, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
+(7, 'tools', 'tool_groups', 'Tools, by category', '', '', 22, 1, '2026-11-03 09:00:00', '2026-11-03 09:00:00'),
 (3, 'directory', 'calc_directory', 'All calculators, by category', 'Every category on the site, with a few of its calculators — or open the full catalogue and filter it.', '{\"per_category\":\"6\"}', 25, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
 (4, 'popular', 'popular', 'Most popular calculators', 'The ones people open most often', '{\"limit\":\"12\"}', 30, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
 (5, 'howitworks', 'howto', 'What every calculator on this site actually does', 'Not a form with a number at the end — an equation you can turn around, with the working shown.', '[]', 45, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),

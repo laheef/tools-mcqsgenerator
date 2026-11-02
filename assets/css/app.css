@@ -250,7 +250,7 @@ button { font: inherit; color: inherit; }
 .category-nav-inner::-webkit-scrollbar { display: none; }
 .category-nav-link {
   position: relative; flex: 0 0 auto;
-  padding: 11px 14px; font-size: 13.4px; font-weight: 500; color: var(--ink-2);
+  padding: 10px 11px; font-size: 13px; font-weight: 500; color: var(--ink-2);
   white-space: nowrap; border-bottom: 3px solid transparent;
 }
 .category-nav-link:hover { color: var(--brand); text-decoration: none; }
@@ -2971,4 +2971,86 @@ a:focus-visible > .calc-glyph,
 .calc-tool-missing {
   padding: 16px; border: 1px dashed var(--border-strong); border-radius: var(--radius);
   color: var(--ink-3); font-size: 13.6px; background: var(--surface-2);
+}
+
+/* -------------------------------------------------------- tool groups */
+/*
+ * The second navigation row became a tool-category bar: sixteen groups instead
+ * of fourteen calculator topics, each with an icon and — where it has children —
+ * a dropdown. The row already scrolled horizontally; these rules only give the
+ * new contents room to breathe.
+ */
+.category-nav-link svg { display: inline-block; vertical-align: -2px; margin-right: 6px; }
+.category-nav-link svg + svg { margin-right: 0; margin-left: 5px; color: var(--ink-4); }
+.category-nav-link--extra { color: var(--ink-3); }
+.category-nav-link--extra::before {
+  content: ""; display: inline-block; width: 1px; height: 13px;
+  margin-right: 13px; vertical-align: -2px; background: var(--border);
+}
+
+/* A tool card: the same shape as a calculator card, with the group's glyph
+   where a calculator puts its category glyph. */
+.tool-card .popular-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.tool-card .popular-head .category-icon {
+  width: 34px; height: 34px; border-radius: 10px;
+  background: var(--brand-soft); color: var(--brand-ink);
+}
+.tool-card .popular-cat { margin-bottom: 0; }
+
+.tool-band { margin-top: 34px; }
+.tool-band .directory-cat-head { margin-bottom: 14px; }
+.tool-band-more { margin: 14px 0 0; }
+
+.section-title--sm { font-size: 19px; letter-spacing: -.1px; margin-bottom: 14px; }
+.tool-subsection { margin-top: 8px; }
+
+.empty-state {
+  padding: 26px 28px 28px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+/* The group page's head sits under the second bar; keep the icon block from
+   collapsing when the description is long. */
+.page-head-icon { flex: 0 0 auto; }
+
+/* ------------------------------------------------- tool-category dropdowns */
+/*
+ * The second bar scrolls horizontally, and a menu inside a scroller is clipped
+ * by it. So the dropdown is positioned `fixed` and placed by the script from the
+ * link's own rectangle — the same trick the reference theme uses, and the reason
+ * its menus escape the row instead of being cut in half.
+ */
+.category-nav-group { display: flex; }
+.category-dropdown {
+  position: fixed;
+  display: none;
+  z-index: 120;
+  min-width: 232px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-lift);
+}
+.category-dropdown.is-open { display: block; }
+.category-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13.6px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.category-dropdown a:hover { background: var(--brand-soft); color: var(--brand-ink); text-decoration: none; }
+@media (max-width: 620px) { .category-dropdown { display: none !important; } }
+
+/* On a wide screen there is no reason to hide half the bar behind a sideways
+   scroll: sixteen groups wrap onto a second line, and the whole set is one
+   glance. Below 1240px it stays a scroller, as before. */
+@media (min-width: 1240px) {
+  .category-nav-inner { flex-wrap: wrap; overflow: visible; row-gap: 0; }
 }

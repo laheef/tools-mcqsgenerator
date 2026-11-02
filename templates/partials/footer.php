@@ -84,7 +84,7 @@ $designed = static fn (): array => [
         ['label' => 'Discover Onim', 'url' => '/discover', 'target' => '_self'],
     ]],
     ['title' => 'Resources', 'links' => [
-        ['label' => 'All calculators', 'url' => '/calculators', 'target' => '_self'],
+        ['label' => 'All calculators', 'url' => '/all-calculators', 'target' => '_self'],
         ['label' => 'Search', 'url' => '/search', 'target' => '_self'],
         ['label' => 'Blog', 'url' => '/blog', 'target' => '_self'],
     ]],
@@ -98,7 +98,7 @@ $catLinks = [];
 foreach (array_slice($bySize, 0, 4) as $cat) {
     $catLinks[] = ['label' => (string) $cat['name'], 'url' => '/' . $cat['slug'], 'target' => '_self'];
 }
-$catLinks[] = ['label' => 'All calculators', 'url' => '/calculators', 'target' => '_self'];
+$catLinks[] = ['label' => 'All calculators', 'url' => '/all-calculators', 'target' => '_self'];
 
 $have = array_map(static fn (array $c): string => mb_strtolower(trim((string) $c['title'])), $columns);
 if (!in_array('calculators', $have, true)) {
@@ -156,7 +156,7 @@ $legal = Cms::menu('legal');
                     <p class="footer-tagline"><?= View::escape($about) ?></p>
                 <?php endif; ?>
                 <p class="footer-count">
-                    <a href="<?= View::escape(View::url('/calculators')) ?>"><span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators</a>
+                    <a href="<?= View::escape(View::url('/all-calculators')) ?>"><span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators</a>
                     across <?= View::escape((string) count($categories ?? [])) ?> categories, free and without an account.
                 </p>
 

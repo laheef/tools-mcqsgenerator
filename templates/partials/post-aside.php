@@ -86,7 +86,7 @@ if (count($popular) < 5) {
                 </li>
             <?php endforeach; ?>
         </ul>
-        <a class="aside-more" href="<?= View::escape(View::url('/calculators')) ?>">All <?= View::escape(Format::count(Data::total())) ?> calculators</a>
+        <a class="aside-more" href="<?= View::escape(View::url('/all-calculators')) ?>">All <?= View::escape(Format::count(Data::total())) ?> calculators</a>
     </section>
 
     <section class="aside-card">
