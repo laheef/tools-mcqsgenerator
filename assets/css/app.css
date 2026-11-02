@@ -343,7 +343,10 @@ button { font: inherit; color: inherit; }
    at a readable size; below that the hero stays copy-only. */
 .hero-side { flex: 1 1 420px; min-width: 280px; display: flex; flex-direction: column; gap: 18px; }
 .hero-figure { display: none; }
-.hero-figure-art { display: block; width: 100%; max-width: 430px; height: auto; margin-right: auto; }
+/* Stretched to the search box's width below it, so the two share their edges
+   and read as one column. */
+.hero-figure { align-self: stretch; }
+.hero-figure-art { display: block; width: 100%; height: auto; }
 @media (min-width: 900px) { .hero-figure { display: block; } }
 
 .hero-search {
