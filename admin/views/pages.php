@@ -104,23 +104,10 @@ $form = $editing ?? [
                     </div>
 
                     <div class="editor" data-editor>
-                        <div class="editor-toolbar">
-                            <button type="button" data-cmd="bold" title="Bold"><strong>B</strong></button>
-                            <button type="button" data-cmd="italic" title="Italic"><em>I</em></button>
-                            <button type="button" data-cmd="formatBlock" data-value="h2" title="Heading 2">H2</button>
-                            <button type="button" data-cmd="formatBlock" data-value="h3" title="Heading 3">H3</button>
-                            <button type="button" data-cmd="formatBlock" data-value="p" title="Paragraph">P</button>
-                            <span class="sep"></span>
-                            <button type="button" data-cmd="insertUnorderedList" title="Bulleted list">• List</button>
-                            <button type="button" data-cmd="insertOrderedList" title="Numbered list">1. List</button>
-                            <button type="button" data-cmd="createLink" title="Link">Link</button>
-                            <button type="button" data-cmd="unlink" title="Remove link">Unlink</button>
-                            <span class="sep"></span>
-                            <button type="button" data-cmd="removeFormat" title="Clear formatting">Clear</button>
-                            <button type="button" data-toggle-source title="Edit HTML">HTML</button>
-                        </div>
+                        <?php require __DIR__ . '/partials/editor-toolbar.php'; ?>
                         <div class="editor-area" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Page content"><?= (string) $form['content'] ?></div>
                         <textarea class="editor-source" hidden aria-label="Page HTML"></textarea>
+                        <input type="hidden" class="editor-media" aria-hidden="true" tabindex="-1" value="">
                         <input type="hidden" name="content" value="<?= e((string) $form['content']) ?>" data-editor-value>
                         <div class="editor-foot"><span data-editor-count></span></div>
                     </div>

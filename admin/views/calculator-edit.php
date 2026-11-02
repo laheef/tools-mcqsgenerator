@@ -90,21 +90,11 @@ $tab = (string) (request('tab') ?? 'content');
                                                     <input id="sec-<?= $i ?>-title" name="sections[<?= $i ?>][title]" value="<?= e((string) $section['title']) ?>" maxlength="190">
                                                 </div>
                                                 <div class="editor" data-editor>
-                                                    <div class="editor-toolbar">
-                                                        <button type="button" data-cmd="bold" title="Bold"><strong>B</strong></button>
-                                                        <button type="button" data-cmd="italic" title="Italic"><em>I</em></button>
-                                                        <button type="button" data-cmd="formatBlock" data-value="h3" title="Subheading">H3</button>
-                                                        <span class="sep"></span>
-                                                        <button type="button" data-cmd="insertUnorderedList" title="Bulleted list">• List</button>
-                                                        <button type="button" data-cmd="insertOrderedList" title="Numbered list">1. List</button>
-                                                        <button type="button" data-cmd="createLink" title="Link">Link</button>
-                                                        <span class="sep"></span>
-                                                        <button type="button" data-cmd="removeFormat" title="Clear formatting">Clear</button>
-                                                        <button type="button" data-toggle-source title="Edit HTML">HTML</button>
-                                                    </div>
+                                                    <?php require __DIR__ . '/partials/editor-toolbar.php'; ?>
                                                     <div class="editor-area" contenteditable="true" role="textbox" aria-multiline="true"
                                                          aria-label="Section body <?= $i + 1 ?>"><?= (string) $section['html'] ?></div>
                                                     <textarea class="editor-source" hidden aria-label="Section HTML"></textarea>
+                                                    <input type="hidden" class="editor-media" aria-hidden="true" tabindex="-1" value="">
                                                     <input type="hidden" name="sections[<?= $i ?>][html]" value="<?= e((string) $section['html']) ?>">
                                                     <div class="editor-foot"><span data-editor-count></span></div>
                                                 </div>
@@ -127,20 +117,10 @@ $tab = (string) (request('tab') ?? 'content');
                                                     <input name="sections[__INDEX__][title]" maxlength="190">
                                                 </div>
                                                 <div class="editor" data-editor>
-                                                    <div class="editor-toolbar">
-                                                        <button type="button" data-cmd="bold" title="Bold"><strong>B</strong></button>
-                                                        <button type="button" data-cmd="italic" title="Italic"><em>I</em></button>
-                                                        <button type="button" data-cmd="formatBlock" data-value="h3" title="Subheading">H3</button>
-                                                        <span class="sep"></span>
-                                                        <button type="button" data-cmd="insertUnorderedList" title="Bulleted list">• List</button>
-                                                        <button type="button" data-cmd="insertOrderedList" title="Numbered list">1. List</button>
-                                                        <button type="button" data-cmd="createLink" title="Link">Link</button>
-                                                        <span class="sep"></span>
-                                                        <button type="button" data-cmd="removeFormat" title="Clear formatting">Clear</button>
-                                                        <button type="button" data-toggle-source title="Edit HTML">HTML</button>
-                                                    </div>
+                                                    <?php require __DIR__ . '/partials/editor-toolbar.php'; ?>
                                                     <div class="editor-area" contenteditable="true" role="textbox" aria-multiline="true"></div>
                                                     <textarea class="editor-source" hidden aria-label="Section HTML"></textarea>
+                                                    <input type="hidden" class="editor-media" aria-hidden="true" tabindex="-1" value="">
                                                     <input type="hidden" name="sections[__INDEX__][html]" value="">
                                                     <div class="editor-foot"><span data-editor-count></span></div>
                                                 </div>

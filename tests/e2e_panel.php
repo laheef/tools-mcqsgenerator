@@ -1878,6 +1878,53 @@ foreach (glob(dirname(__DIR__) . '/data/content/*/*.json') as $f) {
 }
 t('40 no content file starts a sentence with "1 field"', $one === 0, (string) $one);
 
+/* 41 — the rich text editor the blog is written in --------------------------- */
+/*
+ * The editor is JavaScript, so these checks are about the contract around it:
+ * the toolbar the blog form ships, the field the form posts, and the editor
+ * code's own guarantees (paste cleaning, tidy-on-save, the media hook).
+ */
+$editorPage = page('blog-edit')['body'];
+
+t('41 the blog form carries the rich text editor',
+    str_contains($editorPage, 'class="editor" data-editor')
+    && str_contains($editorPage, 'class="editor-area" contenteditable="true"'));
+t('41 the toolbar offers block styles from a real dropdown',
+    str_contains($editorPage, 'data-block-select')
+    && substr_count($editorPage, '<option value=') >= 6);
+t('41 the toolbar has the inline commands',
+    substr_count($editorPage, 'data-cmd="') >= 10
+    && str_contains($editorPage, 'data-cmd="bold"')
+    && str_contains($editorPage, 'data-cmd="insertUnorderedList"'));
+t('41 the toolbar has link, image, divider and source view',
+    str_contains($editorPage, 'data-action="link"')
+    && str_contains($editorPage, 'data-action="image"')
+    && str_contains($editorPage, 'data-action="hr"')
+    && str_contains($editorPage, 'data-toggle-source'));
+t('41 the editor can reach the media library',
+    str_contains($editorPage, 'class="editor-media"')
+    && str_contains($editorPage, 'data-action="fullscreen"'));
+t('41 the form still posts the body in one field',
+    (bool) preg_match('~<input type="hidden" name="content"[^>]*data-editor-value~', $editorPage));
+
+$adminJs = (string) file_get_contents(dirname(__DIR__) . '/admin/assets/admin.js');
+t('41 pasted content is cleaned before it lands',
+    str_contains($adminJs, 'function cleanHtml')
+    && str_contains($adminJs, 'ALLOWED_PASTE')
+    && str_contains($adminJs, "addEventListener('paste'"));
+t('41 the body is tidied and synced before the form posts',
+    str_contains($adminJs, 'function tidyHtml')
+    && str_contains($adminJs, "form.addEventListener('submit', sync)"));
+t('41 the media picker hands the chosen file to the editor',
+    str_contains($adminJs, 'media:picked'));
+
+/* The three editors share one toolbar, so they cannot drift apart. */
+foreach (['pages.php', 'calculator-edit.php', 'blog-edit.php'] as $viewFile) {
+    $view = (string) file_get_contents(dirname(__DIR__) . '/admin/views/' . $viewFile);
+    t('41 ' . $viewFile . ' uses the shared toolbar',
+        str_contains($view, "partials/editor-toolbar.php"));
+}
+
 /* ---------------------------------------------------------------- summary */
 
 printf("\n%d passed, %d failed\n", $GLOBALS['passed'], $GLOBALS['failed']);
