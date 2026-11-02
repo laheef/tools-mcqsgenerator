@@ -2767,11 +2767,29 @@
 
   // Page script: load the vendored mathjs first, then evaluate it and re-solve
   // so script-driven calculators produce their first result on load.
+  //
+  // The path was written as a root-absolute string, so on the deployed site —
+  // which lives in /tool — every script-driven calculator asked for
+  // /assets/js/vendor/math.min.js, got a 404, and ran with `mathjs` set to null.
+  // 2111 pages load this file; 358 calculators call mathjs.* inside their
+  // scripts. Everything else on the site resolves through window.BASE_PATH, so
+  // this does too, and derives the directory from its own <script> tag if the
+  // global is ever missing (a cached copy of an older layout, say).
+  function vendorBase() {
+    if (window.CALC_ASSET_BASE) return window.CALC_ASSET_BASE;
+    var me = document.currentScript || document.querySelector('script[src*="calc.js"]');
+    var src = me ? (me.getAttribute('src') || '') : '';
+    if (src.indexOf('calc.js') !== -1) {
+      return src.replace(/calc\.js(\?.*)?$/, 'vendor/');
+    }
+    return (window.BASE_PATH || '') + '/assets/js/vendor/';
+  }
+
   function bootScript() {
     if (!DEF.js) { recompute(null); return; }
     if (window.math) { initScript(DEF.js); recompute(null); return; }
     var tag = document.createElement('script');
-    tag.src = (window.CALC_ASSET_BASE || '/assets/js/vendor/') + 'math.min.js';
+    tag.src = vendorBase() + 'math.min.js';
     tag.async = true;
     tag.onload = function () { initScript(DEF.js); recompute(null); };
     tag.onerror = function () { SCRIPT.failed = true; recompute(null); };

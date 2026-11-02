@@ -1791,6 +1791,19 @@ t('38 ad slots scale an oversized tag instead of clipping it',
     str_contains($appJs, 'fitAdSlots') && str_contains($appJs, 'transformOrigin')
     && str_contains((string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css'), '.ad-slot > *'));
 
+/* The deployment lives in a subdirectory; a root-absolute path in JS is a 404. */
+$calcJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/calc.js');
+t('39 no script points a URL at the domain root',
+    !str_contains($calcJs, "src = '/assets/") && !str_contains($calcJs, 'src = "/assets/')
+    && !preg_match('~=\\s*[\'"]/(assets|api)/~', $calcJs));
+t('39 the script engine resolves its vendor directory from the page',
+    str_contains($calcJs, 'vendorBase') && str_contains($calcJs, 'window.BASE_PATH')
+    && str_contains($calcJs, "'math.min.js'"));
+t('39 the engine file is served where the page looks for it',
+    get(BASE . '/assets/js/vendor/math.min.js')['status'] === 200);
+t('39 a scripted calculator ships the base path to the browser',
+    (bool) preg_match('~window\.BASE_PATH = "([^"]*)"~', get(BASE . '/math/percentage')['body']));
+
 /* ---------------------------------------------------------------- summary */
 
 printf("\n%d passed, %d failed\n", $GLOBALS['passed'], $GLOBALS['failed']);
