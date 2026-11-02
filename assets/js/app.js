@@ -411,32 +411,31 @@
   (function pinCalculatorColumn() {
     var column = document.querySelector('.calc-widget-column');
     if (!column) return;
-    var GAP = 24;        // breathing room under a column pinned by its bottom
+    var GAP = 24;        // breathing room between the column and the fold
     var MIN_TOP = 72;    // never tuck the column's head closer than this
-    var FLIP = 6;        // scroll this far against the last direction to flip
+    var SLACK = 96;      // overhang allowed before the column stops pinning
 
     /*
-     * The tool column never scrolls away, and which of its edges holds depends
-     * on which way the reader is going.
+     * The tool column sticks, and its head always sits clear of the header.
      *
-     * Down the page, the reader is reading; the form they need is the one they
-     * are about to fill in, so a column taller than the viewport is pinned by
-     * its BOTTOM: it travels up until the last field, the Calculate button and
-     * the results reach the bottom edge, and holds there.
+     * That "always" is the whole rule. An earlier version pinned a tall column
+     * by its FOOT so the Calculate button stayed in reach, and let the head
+     * slide up under the sticky header — on a 13-inch laptop the card's first
+     * field ended up behind the header, which reads as a broken page rather
+     * than a pinned one. Both edges cannot be held at once: a column taller
+     * than the space between header and fold has to lose one of them.
      *
-     * Up the page, the reader is going back to change a number, and what they
-     * need is the top of the form — the tool's own heading bar and the first
-     * fields. So the column flips and pins by its TOP, clear of the sticky
-     * header. Continuing up eventually returns it to its place in the flow;
-     * turning round again flips it back to the bottom.
+     * So the head wins. A column may overhang the fold by one footer row — the
+     * share bar and the rounding note, SLACK below — and still pin: that is
+     * the part a reader can do without while the form is in view. Miss by
+     * more than that and the column does not stick at all (`.is-tall`): it
+     * scrolls with the page, so every field, the button and the results stay
+     * reachable in one scroll, and nothing is sliced by the header.
      *
-     * The top offset is measured from the header rather than hard-coded: the
+     * The offset is measured from the header rather than hard-coded: the
      * header is ~119px at rest, shrinks to 59px when it sticks, and is a
      * different height again on a phone. A fixed 88px put the top of the card
      * under the header at some widths, which is what "the name is hidden" was.
-     *
-     * A column short enough to fit under the header never needs the flip: it
-     * pins at the top either way, and its bottom is always on screen.
      */
     function headerClearance() {
       var root = getComputedStyle(document.documentElement).getPropertyValue('--header-h');
@@ -448,76 +447,44 @@
       return Math.max(Math.round(measured) + 18, MIN_TOP);
     }
 
-    function naturalTopOf(el) {
-      var top = 0;
-      var node = el;
-      while (node) {
-        top += node.offsetTop || 0;
-        node = node.offsetParent;
-      }
-      return top;
-    }
-
-    var mode = 'down';              // 'down' = pinned by the bottom, 'up' = by the top
-    var lastY = window.pageYOffset;
-    var naturalTop = naturalTopOf(column);
+    var lastClear = -1;
 
     function paint() {
-      lastClear = headerClearance();
+      var clear = headerClearance();
+      lastClear = clear;
       var viewport = window.innerHeight;
       var height = column.getBoundingClientRect().height;
       if (!height) return;
-      var clear = headerClearance();
-      var fits = height <= viewport - clear - GAP;
-      var pin;
-      if (fits || mode === 'up') {
-        // Top-hung. `min` keeps a column that starts high on the page from
-        // being pushed down to the header line on load.
-        pin = Math.min(clear, Math.round(naturalTop));
-      } else {
-        // Bottom-hung: negative, so the column travels up with the page until
-        // its foot reaches the bottom of the viewport, and stops.
-        pin = Math.round(viewport - height - GAP);
-      }
-      column.style.setProperty('--calc-pin', pin + 'px');
-      column.classList.toggle('is-head-pinned', fits || mode === 'up');
-    }
 
-    function place() {
-      naturalTop = naturalTopOf(column);
-      paint();
-    }
+      /* Does the column fit between the header and the fold, with a gap —
+         allowing one footer row to hang below the fold? */
+      var room = viewport - clear - GAP;
+      var fits = height <= room + SLACK;
 
-    var lastClear = -1;
+      /* The pin is never negative: the head rests `clear` from the top of the
+         viewport in both scroll directions, so the first field and the tool's
+         own heading never disappear under the header. */
+      column.style.setProperty('--calc-pin', clear + 'px');
+      column.classList.toggle('is-tall', !fits);
+      column.classList.toggle('is-head-pinned', fits);
+    }
 
     function onScroll() {
-      var y = window.pageYOffset;
-      var delta = y - lastY;
-      lastY = y;
-
       /* The header shrinks from ~119px to 59px the moment it sticks, so the
-         clearance a top-pinned column rests at genuinely changes early in the
-         scroll. The pin was computed against the resting height, so recompute
-         once per change rather than leaving a stale 60px gap. */
+         clearance genuinely changes early in the scroll. Recompute once per
+         change rather than leaving a stale 60px gap. */
       var clear = headerClearance();
       if (clear !== lastClear) {
-        lastClear = clear;
         paint();
       }
-
-      if (Math.abs(delta) < FLIP) return;
-      var next = delta > 0 ? 'down' : 'up';
-      if (next === mode) return;
-      mode = next;
-      paint();
     }
 
-    place();
+    paint();
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', place);
-    window.addEventListener('load', place);
+    window.addEventListener('resize', paint);
+    window.addEventListener('load', paint);
     if (typeof ResizeObserver === 'function') {
-      new ResizeObserver(place).observe(column);
+      new ResizeObserver(paint).observe(column);
     }
   })();
 

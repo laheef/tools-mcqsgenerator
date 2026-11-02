@@ -2027,16 +2027,17 @@ t('42 the calculator name is above the tool',
 $appCss = (string) file_get_contents(dirname(__DIR__) . '/assets/css/app.css');
 t('42 the tool column has no scrollbar of its own',
     !preg_match('~\.calc-widget-column\s*\{[^}]*overflow-y:\s*auto~', $appCss));
-t('42 a tall column is pinned by its foot, never dropped to static',
-    !str_contains($appCss, '.calc-widget-column.is-tall { position: static; }')
+t('42 a column too tall for the screen scrolls with the page',
+    str_contains($appCss, '.calc-widget-column.is-tall { position: static; }')
     && str_contains($appCss, 'top: var(--calc-pin, 0px);'));
 $appJs = (string) file_get_contents(dirname(__DIR__) . '/assets/js/app.js');
-t('42 every column pins, whichever edge its height allows',
-    str_contains($appJs, 'var fits = height <= viewport - clear - GAP;')
-    && str_contains($appJs, 'Math.round(viewport - height - GAP)')
-    && !str_contains($appJs, "classList.toggle('is-tall'"));
-t('46 a tall column pins with a negative offset, so its Calculate button reaches the fold',
-    str_contains($appJs, 'pin = Math.round(viewport - height - GAP);'));
+t('42 a column that fits the screen pins, one that does not is released',
+    str_contains($appJs, 'var fits = height <= room + SLACK;')
+    && str_contains($appJs, 'var SLACK = 96;')
+    && str_contains($appJs, "classList.toggle('is-tall', !fits)"));
+t('46 the pin is never negative, so no card starts above the header line',
+    str_contains($appJs, "column.style.setProperty('--calc-pin', clear + 'px')")
+    && !str_contains($appJs, 'viewport - height'));
 
 /* 46 — the page that keeps up with the reader --------------------------------- */
 /*
@@ -2094,17 +2095,20 @@ t('46 the category index is made of cards', substr_count($catPage, 'class="index
 t('46 every card carries a link and an arrow',
     substr_count($catPage, 'class="index-link"') === substr_count($catPage, 'class="index-go"'));
 
-/* 47 — the column follows the reader's direction ---------------------------- */
+/* 47 — the column keeps its distance from the header ----------------------- */
 /*
- * Scrolling down, a tall column hangs from its bottom so the Calculate button
- * stays in reach. Scrolling back up, it flips and hangs from its top so the
- * form's own heading and first fields come back into view — and it never tucks
- * under the sticky header, because the offset is measured from the header
- * rather than hard-coded.
+ * Round 47 flipped the pinned edge with the scroll direction: pinned by the
+ * foot going down, by the head coming back. Foot-pinning slid the head of a
+ * tall card under the sticky header on a laptop, so the flip is gone: the head
+ * is now held clear of the header in both directions, and a column too tall
+ * for the space between header and fold scrolls with the page instead.
  */
-t('47 the column flips its pinned edge with the scroll direction',
-    str_contains($appJs, "var next = delta > 0 ? 'down' : 'up';")
-    && str_contains($appJs, "column.classList.toggle('is-head-pinned'"));
+t('47 the column no longer flips under the header',
+    !str_contains($appJs, "var next = delta > 0 ? 'down' : 'up';")
+    && str_contains($appJs, "column.classList.toggle('is-head-pinned', fits)"));
+t('47 the pin keeps its distance from the header in both scroll directions',
+    str_contains($appJs, "getPropertyValue('--header-h')")
+    && str_contains($appJs, "'--calc-pin', clear + 'px'"));
 t('47 the top offset is measured from the sticky header, not fixed',
     !str_contains($appJs, 'var TOP_GAP = 88;')
     && str_contains($appJs, 'function headerClearance()')

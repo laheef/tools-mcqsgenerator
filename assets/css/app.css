@@ -724,16 +724,15 @@ button { font: inherit; color: inherit; }
  * The tool column pins itself, and app.js decides from which edge.
  *
  * A calculator page is read top-down but used at the bottom: the reader scrolls
- * to the write-up, then back up to change a value. Pinning the head of the
- * column to the top of the viewport scrolls the Calculate button off the bottom
- * of the screen on a long form; pinning its foot to the bottom scrolls the
- * first field off the top on the way back. So the column does both, by where
- * the page is: while the page is still near the top the column rests with its
- * head at the top (its natural place), and once a reader has scrolled past it
- * the column's *bottom* is what sticks, so the last field and the result panel
- * stay on screen. `--calc-pin` is that bottom-pinned offset; `is-tall` means
- * the column does not fit the viewport at all, and then it simply scrolls with
- * the page — there is one scrollbar on a page.
+ * to the write-up, then back up to change a value. The column therefore sticks
+ * — with its head held clear of the sticky header, never sliding under it —
+ * because a card whose first field is hidden behind the header reads as a
+ * broken page. `--calc-pin` is that measured offset, written by app.js.
+ *
+ * A column too tall for the space between header and fold cannot keep both
+ * edges on screen, so it does not stick at all (`.is-tall`): it scrolls with
+ * the page, and its fields, its button and its results are all reachable in
+ * one scroll. There is one scrollbar on a page.
  */
 .calc-widget-column {
   order: 1;
@@ -751,17 +750,14 @@ button { font: inherit; color: inherit; }
   }
   .calc-widget-column {
     position: sticky;
-    /* app.js writes --calc-pin and flips it between two edges: scrolling down
-       a tall column is pinned by its bottom (negative offset, so its last field
-       and Calculate stay in reach); scrolling up it is pinned by its top,
-       clear of the sticky header, so the form's heading and first fields come
-       back into view. A short column pins by its top either way. Either way
-       nothing moves on load: sticky only applies once the page has scrolled
-       past the column's own place in the document. */
+    /* app.js writes --calc-pin: the column's head sits just below the sticky
+       header, in every scroll direction and at every width. The offset is
+       measured from the header, so it follows a header that shrinks when it
+       sticks. Nothing moves on load — sticky only applies once the page has
+       scrolled past the column's own place in the document. */
     top: var(--calc-pin, 0px);
-    /* The flip is a 600px slide on a long form, so let it glide rather than
-       teleport. Nothing animates during ordinary scrolling — the offset only
-       changes when the direction does. */
+    /* The offset changes when the header shrinks, so let that one slide rather
+       than jump. Ordinary scrolling never changes it. */
     transition: top .18s ease-out;
     /* The column is taller than the grid row in some layouts; without this the
        grid would stretch it to the article's height and `align-self` would be
@@ -770,6 +766,14 @@ button { font: inherit; color: inherit; }
     align-self: start;
   }
 }
+
+/* A column taller than the space between header and fold cannot hold both
+   edges: pinning it by its foot would slide its first field under the header,
+   and pinning it by its head would leave the Calculate button permanently
+   below the fold. So it does neither — it scrolls with the page, which keeps
+   every field, the button and the results reachable in one scroll. app.js sets
+   the class from the measured height. */
+.calc-widget-column.is-tall { position: static; }
 
 /* Three columns, only when the rail has a tag in it. */
 @media (min-width: 1240px) {
