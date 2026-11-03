@@ -152,7 +152,7 @@ final class View
     }
 
     /** Inline SVG icon by name (line icons, currentColor). */
-    public static function icon(string $name, int $size = 24, string $class = ''): string
+    public static function icon(string $name, int $size = 24, string $class = '', ?int $hue = null): string
     {
         $icons = self::icons();
         $paths = (string) ($icons[$name] ?? '');
@@ -163,8 +163,12 @@ final class View
             $paths = (string) ($icons['star'] ?? '<circle cx="12" cy="12" r="9"/>');
         }
         return sprintf(
-            '<svg class="%s" width="%d" height="%d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">%s</svg>',
+            '<svg class="%s"%s width="%d" height="%d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">%s</svg>',
             self::escape($class),
+            /* The accent travels as a custom property, so one stylesheet rule
+               (`.calc-glyph`) turns it into a tinted chip for every icon that
+               asks for one — the same mechanism the calculator cards use. */
+            $hue === null ? '' : ' style="--icon-hue:' . (int) $hue . '"',
             $size,
             $size,
             $paths
@@ -187,11 +191,17 @@ final class View
      * tools used to show a row of identical stars. The section's own glyph is
      * at least true: everything in the Audio shelf is an audio tool.
      */
-    public static function toolIcon(array $row, string $fallback, int $size = 13, string $class = 'calc-glyph'): string
+    public static function toolIcon(array $row, string $fallback, int $size = 13, string $class = 'calc-glyph', ?int $hue = null): string
     {
         $own = trim((string) ($row['icon'] ?? ''));
         $name = self::hasIcon($own) ? $own : (self::hasIcon($fallback) ? $fallback : 'star');
-        return self::icon($name, $size, $class);
+        /* A tool with its own glyph keeps the accent of the page it lives on; a
+           tool wearing its section's glyph takes an accent of its own, so two
+           cards in the same band are not the same colour twice. */
+        if ($hue === null) {
+            $hue = $own !== '' ? null : Icons::hueFor((string) ($row['path'] ?? ''));
+        }
+        return self::icon($name, $size, $class, $hue);
     }
 
     public static function icons(): array

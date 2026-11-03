@@ -194,8 +194,11 @@ $legal = Cms::menu('legal');
                     <p class="footer-tagline"><?= View::escape($about) ?></p>
                 <?php endif; ?>
                 <p class="footer-count">
-                    <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators
-                    across <?= View::escape((string) count($categories ?? [])) ?> topics, plus
+                    <?php /* The total counts calculators and file tools alike, so the
+                             sentence says "tools" — it said "calculators" and quietly
+                             claimed nineteen file tools were calculators. */ ?>
+                    <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> tools
+                    across <?= View::escape((string) count($categories ?? [])) ?> calculator topics and
                     <?= View::escape((string) max(0, count(\Onim\Groups::all()) - 1)) ?> tool sections —
                     free and without an account.
                 </p>
@@ -272,7 +275,7 @@ $legal = Cms::menu('legal');
             <div class="footer-bottom-left">
                 <p class="footer-copyright"><?= View::escape($copyright !== '' ? $copyright : '© ' . date('Y') . ' ' . $siteName . '. All rights reserved.') ?></p>
                 <p class="footer-note">
-                    <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators ·
+                    <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> tools ·
                     <?= View::escape((string) max(0, count($allGroups) - 1)) ?> tool sections ·
                     <?= View::escape((string) count($categories ?? [])) ?> calculator topics — no account needed.
                 </p>

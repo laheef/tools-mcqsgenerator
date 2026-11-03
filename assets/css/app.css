@@ -257,15 +257,77 @@ button { font: inherit; color: inherit; }
 .category-nav-link.is-active { color: var(--brand); border-bottom-color: var(--brand); }
 
 /* ---------------------------------------------------------------- hero */
+/*
+ * The opening wash.
+ *
+ * It used to be four nearly-white radials over a near-white ramp, which read as
+ * a slightly dirty page rather than as a hero — nothing about it said "this is
+ * the top of the site". It is still light enough to keep black text at AA, but
+ * the colours now carry: warm at the top left, brand blue behind the headline,
+ * violet under the drawing, a warm bounce on the right edge, closing on a band
+ * of brand tint instead of white.
+ *
+ * Motion is three cheap, transform-only layers (the sweep, the orbs, the halo
+ * behind the drawing) plus a short rise on the copy. Nothing animates layout,
+ * and every one of them stops under prefers-reduced-motion.
+ */
 .hero {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background:
-    radial-gradient(1100px 380px at 12% -10%, #FDF3EE 0%, rgba(253, 243, 238, 0) 60%),
-    radial-gradient(900px 420px at 78% 4%, #E7EDFF 0%, rgba(231, 237, 255, 0) 62%),
-    radial-gradient(760px 460px at 96% 40%, #F1EEFB 0%, rgba(241, 238, 251, 0) 60%),
-    linear-gradient(160deg, #FBFCFE 0%, #F4F7FF 52%, #EEF2FE 100%);
+    radial-gradient(980px 460px at 4% -16%, #FFE0CF 0%, rgba(255, 224, 207, 0) 62%),
+    radial-gradient(1040px 540px at 58% -22%, #B7C9FF 0%, rgba(183, 201, 255, 0) 66%),
+    radial-gradient(860px 520px at 104% 58%, #D6C9FF 0%, rgba(214, 201, 255, 0) 62%),
+    radial-gradient(720px 420px at 30% 118%, #FFF0E4 0%, rgba(255, 240, 228, 0) 64%),
+    linear-gradient(118deg, #F4F7FF 0%, #E9EFFF 34%, #EFE9FF 68%, #F6EFFF 100%);
   padding-block: 26px 34px;
 }
+/* The wash used to stop on a hard line where the first band began. A short
+   fade at the bottom hands the page over to the surface colour instead. */
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 76px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--surface));
+  pointer-events: none;
+}
+/* One slow band of light crossing the wash. Transform only, so the browser
+   moves a finished layer instead of repainting four gradients. */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -40% -20%;
+  background: linear-gradient(104deg,
+      rgba(255, 255, 255, 0) 38%,
+      rgba(255, 255, 255, .55) 50%,
+      rgba(255, 255, 255, 0) 62%);
+  transform: translate3d(-28%, -6%, 0) rotate(3deg);
+  animation: heroSweep 22s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes heroSweep {
+  0%, 100% { transform: translate3d(-30%, -6%, 0) rotate(3deg); }
+  50%      { transform: translate3d(26%, 4%, 0) rotate(3deg); }
+}
+/* The copy arrives rather than appears. Short, staggered, once. */
+@keyframes heroRise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.hero-copy > * {
+  animation: heroRise .62s cubic-bezier(.22, .68, .28, 1) both;
+}
+.hero-copy > :nth-child(1) { animation-delay: .02s; }
+.hero-copy > :nth-child(2) { animation-delay: .08s; }
+.hero-copy > :nth-child(3) { animation-delay: .14s; }
+.hero-copy > :nth-child(4) { animation-delay: .2s; }
+.hero-copy > :nth-child(5) { animation-delay: .26s; }
 @media (min-width: 724px) { .hero { padding-block: 52px 78px; } }
 /*
  * Two columns, both aligned to the same baseline grid: the words and their
@@ -334,17 +396,22 @@ button { font: inherit; color: inherit; }
   position: absolute; display: block; border-radius: 50%; filter: blur(42px); opacity: .5;
   will-change: transform;
 }
-.hero-wash span:nth-child(1) { width: 340px; height: 340px; left: -60px; top: -120px; background: #FBE3D6; animation: heroDrift 28s ease-in-out infinite; }
-.hero-wash span:nth-child(2) { width: 300px; height: 300px; right: 8%; top: -90px; background: #DCE5FF; animation: heroDrift 34s ease-in-out infinite reverse; }
-.hero-wash span:nth-child(3) { width: 260px; height: 260px; right: 28%; bottom: -140px; background: #E7E2FA; animation: heroDrift 40s ease-in-out infinite; }
+.hero-wash span:nth-child(1) { width: 380px; height: 380px; left: -70px; top: -130px; background: #FFD9C2; opacity: .62; animation: heroDrift 28s ease-in-out infinite; }
+.hero-wash span:nth-child(2) { width: 340px; height: 340px; right: 6%; top: -110px; background: #C9D8FF; opacity: .62; animation: heroDrift 34s ease-in-out infinite reverse; }
+.hero-wash span:nth-child(3) { width: 300px; height: 300px; right: 26%; bottom: -150px; background: #DDD2FF; opacity: .58; animation: heroDrift 40s ease-in-out infinite; }
+.hero-wash span:nth-child(4) { width: 240px; height: 240px; left: 34%; top: 46%; background: #E4F0FF; opacity: .5; animation: heroDrift 46s ease-in-out infinite reverse; }
 @keyframes heroDrift {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
   33%      { transform: translate3d(36px, 22px, 0) scale(1.08); }
   66%      { transform: translate3d(-24px, 14px, 0) scale(.96); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-wash span { animation: none; }
-  .hero-pulse { animation: none; }
+  .hero-wash span,
+  .hero-pulse,
+  .hero::before,
+  .hero-side::before,
+  .hero-figure,
+  .hero-copy > * { animation: none; }
   .hero-rotate-word { transition: none; }
 }
 
@@ -360,6 +427,28 @@ button { font: inherit; color: inherit; }
    and read as one column. */
 .hero-figure { align-self: stretch; }
 .hero-figure-art { display: block; width: 100%; height: auto; }
+/* The drawing lifts and settles, and a slow conic halo turns behind it — the
+   only two things in the hero that move in place rather than drifting. */
+.hero-side { position: relative; }
+.hero-side::before {
+  content: "";
+  position: absolute;
+  inset: 6% -4% 2% 6%;
+  z-index: -1;
+  border-radius: 48px;
+  background: conic-gradient(from 0deg, #C9D8FF, #E4D9FF, #FFE2D3, #C9D8FF);
+  filter: blur(34px);
+  opacity: .55;
+  animation: heroHalo 26s linear infinite;
+}
+@keyframes heroHalo {
+  to { transform: rotate(360deg); }
+}
+.hero-figure { animation: heroFloat 7.5s ease-in-out infinite; }
+@keyframes heroFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -9px, 0); }
+}
 @media (min-width: 900px) { .hero-figure { display: block; } }
 
 .hero-note {
@@ -525,6 +614,22 @@ button { font: inherit; color: inherit; }
 .page-head-icon {
   flex: 0 0 auto; width: 60px; height: 60px; display: grid; place-items: center;
   border-radius: var(--radius-lg); background: var(--brand-soft); color: var(--brand);
+}
+/* A page head that also carries a button: the icon, the words, then the action
+   pushed to the far edge, the same order the home bands use. */
+.page-head--actions { align-items: center; }
+.page-head--actions > .page-head-copy { flex: 1 1 320px; min-width: 0; }
+.page-head-action { flex: 0 0 auto; margin: 0; }
+@media (max-width: 723px) {
+  .page-head--actions > .page-head-action { flex-basis: 100%; }
+  .page-head-action .btn { width: 100%; }
+}
+/* The section's own accent reaches these tiles too, so the group page and the
+   catalogue row of the same section are the same colour. */
+.page-head-icon[style*="--icon-hue"] {
+  background: hsl(var(--icon-hue) 88% 95%);
+  color: hsl(var(--icon-hue) 58% 45%);
+  box-shadow: inset 0 0 0 1px hsl(var(--icon-hue) 70% 90%);
 }
 .page-title { font-size: 28px; font-weight: 700; color: var(--ink); line-height: 1.28; margin-bottom: 8px; }
 .page-lede { margin: 0 0 8px; max-width: 72ch; color: var(--ink-3); font-size: 14px; }
@@ -3203,6 +3308,10 @@ a:focus-visible > .calc-glyph,
  * one endless page.
  */
 .directory-title { display: flex; align-items: flex-start; gap: 14px; min-width: 0; }
+/* Each section brings its own accent (Groups::hue): the tile is the section's
+   colour, not the brand's, so fifteen bands read as fifteen sections the way
+   the calculator cards read as fourteen topics. The hue arrives as a custom
+   property, so this one rule colours every band. */
 .directory-icon {
   flex: 0 0 auto;
   display: grid;
@@ -3210,8 +3319,9 @@ a:focus-visible > .calc-glyph,
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: var(--brand-soft);
-  color: var(--brand-ink);
+  background: hsl(var(--icon-hue, 221) 88% 95%);
+  color: hsl(var(--icon-hue, 221) 58% 45%);
+  box-shadow: inset 0 0 0 1px hsl(var(--icon-hue, 221) 70% 90%);
 }
 .directory-title .section-title { margin: 0 0 4px; }
 .directory-title .section-lede { margin: 0; }

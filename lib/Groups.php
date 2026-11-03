@@ -375,4 +375,47 @@ final class Groups
     {
         return '/' . ltrim($slug, '/');
     }
+
+    /**
+     * Accent hue for a section.
+     *
+     * The fifteen bands used to wear the same blue tile, so a page of them read
+     * as one long section with fifteen headings. The calculator categories have
+     * always given each card its own accent (Icons::hueFor); this is the same
+     * idea with the wheel spaced by hand, because these fifteen icons sit on one
+     * page and two neighbouring hues that collide read as a bug rather than as a
+     * palette. A section that is not in the list — a sub-category, or one an
+     * owner invented — inherits its parent's accent, and anything else falls back
+     * to the hashed hue the calculator icons use.
+     */
+    private const HUES = [
+        'audio'            => 268,
+        'video'            => 212,
+        'image'            => 158,
+        'pdf'              => 6,
+        'developer'        => 196,
+        'converters'       => 282,
+        'security'         => 348,
+        'gaming'           => 128,
+        'compressors'      => 32,
+        'productivity'     => 186,
+        'design-css'       => 306,
+        'text-writing'     => 232,
+        'art-color'        => 338,
+        'social-community' => 20,
+        'fun-random'       => 50,
+    ];
+
+    public static function hue(string $slug): int
+    {
+        $slug = trim($slug, '/');
+        if (isset(self::HUES[$slug])) {
+            return self::HUES[$slug];
+        }
+        $parent = self::groupOf($slug);
+        if ($parent !== '' && isset(self::HUES[$parent])) {
+            return self::HUES[$parent];
+        }
+        return Icons::hueFor('/' . $slug);
+    }
 }

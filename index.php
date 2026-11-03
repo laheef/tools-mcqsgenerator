@@ -250,6 +250,105 @@ if ($count === 1 && $segments[0] === 'all-calculators') {
     exit;
 }
 
+/*
+ * --------------------------------------------------------------- all tools
+ *
+ * /all-tools lists every tool the site ships; /all-tools/audio lists one
+ * section's. The calculator catalogue has had an address of its own for two
+ * rounds, but the tool sections did not: the only way to see all of them was to
+ * walk each band on the home page or open a section page that mixed its blurb
+ * with a handful of links. Every band's button points here now.
+ *
+ * Search and sort live in the query string, like /all-calculators, so a filtered
+ * view is a link that still works when it is pasted, crawled or opened with the
+ * script off. Nineteen tools do not need pagination; the day one section has a
+ * hundred, this page will.
+ */
+if (($count === 1 || $count === 2) && $segments[0] === 'all-tools') {
+    $toolGroup = $count === 2 ? (string) $segments[1] : '';
+    $toolSection = $toolGroup !== '' ? Groups::find($toolGroup) : null;
+    if ($toolGroup !== '' && ($toolSection === null || (string) $toolSection['slug'] === Groups::CALCULATORS)) {
+        /* Not a tool section — fall through to the 404 below rather than
+           pretending an empty catalogue is the answer. */
+        $toolSection = null;
+    } else {
+        $toolSections = [];
+        foreach (Groups::all() as $toolG) {
+            if ((string) $toolG['slug'] === Groups::CALCULATORS || (string) ($toolG['parent'] ?? '') !== '') {
+                continue;
+            }
+            $toolSections[] = [
+                'slug'  => (string) $toolG['slug'],
+                'name'  => (string) $toolG['name'],
+                'icon'  => (string) $toolG['icon'],
+                'count' => Groups::countGroup((string) $toolG['slug']),
+            ];
+        }
+
+        $toolRows = $toolSection !== null
+            ? Groups::toolsOfGroup((string) $toolSection['slug'])
+            : (static function (array $sections): array {
+                $all = [];
+                foreach ($sections as $sec) {
+                    foreach (Groups::toolsOfGroup((string) $sec['slug']) as $row) {
+                        $all[] = $row;
+                    }
+                }
+                return $all;
+            })($toolSections);
+
+        $toolTotal = count($toolRows);
+        $toolQ = trim((string) ($_GET['q'] ?? ''));
+        $toolSort = (string) ($_GET['sort'] ?? 'az') === 'za' ? 'za' : 'az';
+        if ($toolQ !== '') {
+            $toolRows = array_values(array_filter($toolRows, static function (array $row) use ($toolQ): bool {
+                $hay = (string) ($row['name'] ?? '') . ' ' . (string) ($row['description'] ?? '');
+                return mb_stripos($hay, $toolQ) !== false;
+            }));
+        }
+        usort($toolRows, static function (array $a, array $b) use ($toolSort): int {
+            $cmp = strcasecmp((string) $a['name'], (string) $b['name']);
+            return $toolSort === 'za' ? -$cmp : $cmp;
+        });
+
+        $toolTitle = $toolSection !== null ? 'All ' . $toolSection['name'] : 'All tools';
+        $toolPath = $toolSection !== null ? '/all-tools/' . (string) $toolSection['slug'] : '/all-tools';
+        $toolLede = $toolSection !== null
+            ? ((string) ($toolSection['description'] ?? '') !== ''
+                ? (string) $toolSection['description']
+                : 'Every tool in ' . $toolSection['name'] . ', in one list.')
+            : 'Every file tool on the site, section by section, in one list. '
+              . 'Each one runs in your browser and says what it did.';
+
+        $seo = new Seo($toolTitle, $toolLede);
+        $seo->canonical = SITE_URL . $toolPath;
+        $seo->schema[] = $seo->websiteSchema();
+        $seo->schema[] = $seo->collectionSchema($toolTitle, $toolLede, $toolRows, count($toolRows));
+        $seo->breadcrumbs = array_values(array_filter([
+            ['name' => 'Home', 'url' => '/'],
+            $toolSection !== null ? ['name' => (string) $toolSection['name'], 'url' => '/' . (string) $toolSection['slug']] : null,
+            ['name' => $toolTitle, 'url' => $toolPath],
+        ]));
+        $seo->noindex = $toolQ !== '';
+        $seo->setShareCard(null);
+
+        echo View::page('all-tools', [
+            'seo'         => $seo,
+            'section'     => $toolSection,
+            'sections'    => $toolSections,
+            'rows'        => $toolRows,
+            'total'       => $toolTotal,
+            'q'           => $toolQ,
+            'sort'        => $toolSort,
+            'path'        => $toolPath,
+            'categories'  => Data::categories(),
+            'navCategories' => Data::categories(),
+            'active'      => $toolSection !== null ? (string) $toolSection['slug'] : 'tools',
+        ]);
+        exit;
+    }
+}
+
 /* ---------------------------------------------------------------- home */
 if ($count === 0) {
     $seo = (new Seo(SITE_NAME, SITE_DESCRIPTION))->setShareCard(null);

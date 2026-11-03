@@ -63,13 +63,22 @@ $card = static function (array $row) use ($icon, $section): string {
         ['name' => (string) $section['name'], 'url' => '/' . $section['slug']],
     ]))) ?>
 
-    <header class="page-head">
-        <div class="page-head-icon"><?= View::icon($icon, 40) ?></div>
-        <div>
+    <header class="page-head page-head--actions">
+        <div class="page-head-icon" style="--icon-hue: <?= (int) Groups::hue((string) $section['slug']) ?>"><?= View::icon($icon, 40) ?></div>
+        <div class="page-head-copy">
             <h1 class="page-title"><?= View::escape($title) ?></h1>
             <?php if ($lede !== ''): ?><p class="page-lede"><?= View::escape($lede) ?></p><?php endif; ?>
             <p class="page-meta"><?= View::escape(Format::count($count)) ?> tool<?= $count === 1 ? '' : 's' ?><?= $isSub ? ' in this subcategory' : ' in this group' ?></p>
         </div>
+        <?php if ($count > 0): ?>
+            <?php /* The same button the home band wears, so a visitor who arrived
+                      from the band can go back to the list they came from. */ ?>
+            <p class="page-head-action">
+                <a class="btn btn-primary" href="<?= View::escape(View::url('/all-tools/' . (string) $section['slug'])) ?>">
+                    Browse all <?= View::escape(Format::count($count)) ?> <?= $count === 1 ? 'tool' : 'tools' ?>
+                </a>
+            </p>
+        <?php endif; ?>
     </header>
 
     <?= \Onim\Ads::slot('category_top', 'ad-slot--page-top') ?>

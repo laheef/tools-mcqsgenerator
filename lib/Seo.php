@@ -441,6 +441,24 @@ final class Seo
                 'priority' => '0.8',
             ];
         }
+        /* The file tools: one catalogue for all of them and one page per
+           section, because those are the addresses the bands link to. A section
+           with nothing in it is left out — an empty list is not a landing
+           page. */
+        $urls[] = ['loc' => '@@ORIGIN@@' . '/all-tools', 'lastmod' => date('Y-m-d'), 'priority' => '0.8'];
+        foreach (Groups::all() as $group) {
+            if ((string) $group['slug'] === Groups::CALCULATORS || (string) ($group['parent'] ?? '') !== '') {
+                continue;
+            }
+            if (Groups::countGroup((string) $group['slug']) === 0) {
+                continue;
+            }
+            $urls[] = [
+                'loc' => '@@ORIGIN@@' . '/all-tools/' . (string) $group['slug'],
+                'lastmod' => date('Y-m-d'),
+                'priority' => '0.7',
+            ];
+        }
         /* One <lastmod> per calculator, read without building the widget:
            see Data::updatedMap(). Building all 4 041 definitions here cost
            450 MB and died on any host with a 128-256 MB memory_limit. */

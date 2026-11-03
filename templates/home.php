@@ -175,7 +175,7 @@ foreach ($sections as $section) {
         $headline = str_replace(['{rotate}', View::escape('{rotate}')], $rotator, $headline);
         ?>
         <section class="hero" id="<?= View::escape($anchor) ?>">
-            <div class="hero-wash" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="hero-wash" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             <div class="shell hero-inner">
                 <div class="hero-copy">
                     <?php if ($eyebrow !== ''): ?>
@@ -400,7 +400,7 @@ foreach ($sections as $section) {
                     <div class="shell">
                         <div class="directory-head">
                             <div class="directory-title">
-                                <span class="directory-icon"><?= View::icon((string) $g['icon'], 26) ?></span>
+                                <span class="directory-icon" style="--icon-hue: <?= (int) Groups::hue($gSlug) ?>"><?= View::icon((string) $g['icon'], 26) ?></span>
                                 <div>
                                     <h2 id="<?= View::escape($anchorId) ?>-heading" class="section-title"><?= View::escape((string) $g['name']) ?>, by category</h2>
                                     <p class="section-lede">
@@ -409,14 +409,19 @@ foreach ($sections as $section) {
                                 </div>
                             </div>
                             <div class="directory-actions">
-                                <span class="directory-total">
-                                    <?= $totalInSection > 0
-                                        ? View::escape(Format::count($totalInSection)) . ' tool' . ($totalInSection === 1 ? '' : 's')
-                                        : 'Opening soon' ?>
-                                </span>
-                                <a class="btn btn-soft" href="<?= View::escape(View::url('/' . $gSlug)) ?>">
-                                    Open <?= View::escape((string) $g['name']) ?>
-                                </a>
+                                <?php /* One button, the same one the calculator band
+                                          wears: a primary control that counts what is
+                                          behind it and opens the list of every tool in
+                                          this section. A pill and a quiet link said the
+                                          same thing twice in two different styles. */ ?>
+                                <?php if ($totalInSection > 0): ?>
+                                    <a class="btn btn-primary" href="<?= View::escape(View::url('/all-tools/' . $gSlug)) ?>">
+                                        Browse all <?= View::escape(Format::count($totalInSection)) ?>
+                                        <?= $totalInSection === 1 ? 'tool' : 'tools' ?>
+                                    </a>
+                                <?php else: ?>
+                                    <span class="directory-total">Opening soon</span>
+                                <?php endif; ?>
                             </div>
                         </div>
 
@@ -436,7 +441,7 @@ foreach ($sections as $section) {
                                             <?php foreach (array_slice($tile['rows'], 0, $perGroup) as $row): ?>
                                                 <li>
                                                     <a href="<?= View::escape(View::url((string) $row['path'])) ?>">
-                                                        <?= View::toolIcon($row, (string) $tile['icon'], 13, 'calc-glyph') ?>
+                                                        <?= View::toolIcon($row, (string) $tile['icon'], 13, 'calc-glyph', (int) Groups::hue($gSlug)) ?>
                                                         <span class="dir-name"><?= View::escape((string) $row['name']) ?></span>
                                                     </a>
                                                 </li>
