@@ -166,7 +166,7 @@ use Onim\Admin\Csrf;
         </div>
     <?php else: ?>
         <div class="table-wrap">
-            <table class="data">
+            <table class="data tool-pages-table">
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -184,7 +184,7 @@ use Onim\Admin\Csrf;
                     $statusClass = $row['status'] === 'published' ? 'badge-ok' : ($row['status'] === 'draft' ? 'badge-warn' : 'badge-muted');
                     ?>
                     <tr>
-                        <td>
+                        <td class="primary" data-label="Name">
                             <a href="<?= e(admin_url('custom-calculator-edit', ['id' => (int) $row['id']])) ?>">
                                 <strong><?= e((string) $row['name']) ?></strong>
                             </a>
@@ -206,10 +206,10 @@ use Onim\Admin\Csrf;
                                 <span class="badge badge-muted">noindex</span>
                             <?php endif; ?>
                         </td>
-                        <td><code><?= e($path) ?></code></td>
-                        <td><?= e($categoryNames[(string) $row['category_slug']] ?? (string) $row['category_slug']) ?></td>
-                        <td><span class="badge <?= $statusClass ?>"><?= e(ucfirst((string) $row['status'])) ?></span></td>
-                        <td class="muted small"><?= e((string) $row['updated_at']) ?></td>
+                        <td data-label="Address"><code><?= e($path) ?></code></td>
+                        <td data-label="Category"><?= e($categoryNames[(string) $row['category_slug']] ?? (string) $row['category_slug']) ?></td>
+                        <td data-label="Status"><span class="badge <?= $statusClass ?>"><?= e(ucfirst((string) $row['status'])) ?></span></td>
+                        <td class="muted small" data-label="Updated"><?= e((string) $row['updated_at']) ?></td>
                         <td class="actions">
                             <a class="btn btn-sm <?= \Onim\CustomCalc::needsReview($row) ? 'btn-primary' : '' ?>"
                                href="<?= e(admin_url('custom-calculator-edit', ['id' => (int) $row['id'], 'tab' => 'article'])) ?>">
@@ -219,6 +219,14 @@ use Onim\Admin\Csrf;
                                href="<?= e(site_link($row['status'] === 'published' ? $path : \Onim\Cms::previewUrl($path))) ?>">
                                 <?= admin_icon('eye', 14) ?> <?= $row['status'] === 'published' ? 'View' : 'Preview' ?>
                             </a>
+                            <?php /* A tool page's widget can be run on its own, without the page around it. */ ?>
+                            <?php if ((string) ($row['kind'] ?? 'builder') === 'tool' && trim((string) ($row['tool_file'] ?? '')) !== ''): ?>
+                                <a class="btn btn-sm btn-ghost" target="_blank" rel="noopener"
+                                   title="Run the widget on its own"
+                                   href="<?= e(admin_url('tool-preview', ['file' => (string) $row['tool_file']])) ?>">
+                                    <?= admin_icon('code', 14) ?>
+                                </a>
+                            <?php endif; ?>
                             <form method="post" action="<?= e(admin_url('custom-calculators')) ?>" style="display:inline">
                                 <?= Csrf::field() ?>
                                 <input type="hidden" name="do" value="duplicate">

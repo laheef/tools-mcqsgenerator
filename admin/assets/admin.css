@@ -892,19 +892,23 @@ body.editor-locked { overflow: hidden; }
  * column name in front of each value — the same markup, read top to bottom.
  */
 @media (max-width: 900px) {
-  .tool-files-table thead { display: none; }
-  .tool-files-table, .tool-files-table tbody, .tool-files-table tr, .tool-files-table td {
+  .tool-files-table thead,
+  .tool-pages-table thead { display: none; }
+  .tool-files-table, .tool-pages-table,
+  .tool-files-table tbody, .tool-pages-table tbody,
+  .tool-files-table tr, .tool-pages-table tr,
+  .tool-files-table td, .tool-pages-table td {
     display: block;
     width: 100%;
   }
-  .tool-files-table tr {
+  .tool-files-table tr, .tool-pages-table tr {
     border: 1px solid var(--border, #E5E9F2);
     border-radius: 12px;
     margin: 0 0 12px;
     padding: 6px 2px;
     background: var(--surface, #fff);
   }
-  .tool-files-table td {
+  .tool-files-table td, .tool-pages-table td {
     border: 0;
     padding: 8px 14px;
     display: flex;
@@ -913,7 +917,7 @@ body.editor-locked { overflow: hidden; }
     justify-content: space-between;
     text-align: right;
   }
-  .tool-files-table td::before {
+  .tool-files-table td::before, .tool-pages-table td::before {
     content: attr(data-label);
     flex: 0 0 auto;
     font-size: 11.5px;
@@ -922,14 +926,14 @@ body.editor-locked { overflow: hidden; }
     color: var(--muted);
     text-align: left;
   }
-  .tool-files-table td.primary { display: block; text-align: left; }
-  .tool-files-table td.primary::before { display: none; }
-  .tool-files-table td.actions {
+  .tool-files-table td.primary, .tool-pages-table td.primary { display: block; text-align: left; }
+  .tool-files-table td.primary::before, .tool-pages-table td.primary::before { display: none; }
+  .tool-files-table td.actions, .tool-pages-table td.actions {
     justify-content: flex-end;
     flex-wrap: wrap;
     border-top: 1px solid var(--border, #E5E9F2);
     margin-top: 4px;
     padding-top: 12px;
   }
-  .tool-files-table td.actions::before { content: ""; }
+  .tool-files-table td.actions::before, .tool-pages-table td.actions::before { content: ""; }
 }

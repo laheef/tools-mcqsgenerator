@@ -58,9 +58,17 @@ final class ToolLibraries
     /** @var array<int,array>|null */
     private static ?array $rows = null;
 
+    /**
+     * Both halves of migration 015 must be in place before anything here runs:
+     * the table that holds the addresses, and the column that points a page at
+     * them. Half a migration is the one state that would fatal, so it is checked
+     * as one fact.
+     */
     public static function enabled(): bool
     {
-        return class_exists(Db::class) && Db::hasTable('tool_libraries');
+        return class_exists(Db::class)
+            && Db::hasTable('tool_libraries')
+            && Db::hasColumn('custom_calculators', 'libraries');
     }
 
     /** @return array<int,array> every row, by name */

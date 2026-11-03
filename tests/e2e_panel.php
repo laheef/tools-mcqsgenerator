@@ -2424,6 +2424,25 @@ if (\Onim\ToolLibraries::enabled()) {
     t('49 the throwaway library is gone', \Onim\ToolLibraries::findBySlug($libSlug) === null);
 }
 
+/* ------------------------------------- 49 the screens the round-64 work made */
+$newTool = page('tool-new');
+t('49 the new tool screen asks for one article, not a list',
+    str_contains($newTool['body'], 'name="article"') && !str_contains($newTool['body'], 'name="sections[0]')
+    && clean($newTool['body']));
+
+$toolsList = page('custom-calculators');
+t('64 the tools list becomes cards on a narrow screen',
+    str_contains($toolsList['body'], 'tool-pages-table') && substr_count($toolsList['body'], 'data-label=') > 5,
+    (string) substr_count($toolsList['body'], 'data-label='));
+
+$filesList = page('tool-plugins');
+t('64 the file list carries its column names for the card layout',
+    str_contains($filesList['body'], 'tool-files-table') && substr_count($filesList['body'], 'data-label=') > 5);
+
+$libsPage = page('libraries');
+t('64 the libraries screen explains the header line',
+    str_contains($libsPage['body'], 'Libraries:') && clean($libsPage['body']));
+
 /* leftovers from a failed run */
 foreach (glob($tmpDir . '/*') ?: [] as $leftover) {
     @unlink($leftover);
