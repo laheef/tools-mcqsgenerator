@@ -446,17 +446,65 @@ final class Groups
      * "image tools", "audio tool", "converter tool" — the noun a browse button
      * ends with. A section called "Converters" holding one tool should not say
      * "1 converters tool", so a plural name loses its s for a count of one.
+     *
+     * English plurals are not "anything ending in s". The first version of this
+     * method was exactly that, and a section named "Audio Loudness" produced
+     * "Browse all 1 audio loudnes tool" — the word is singular and ends in -ss.
+     * So the last word is only treated as plural when it ends the way an English
+     * plural does:
+     *
+     *   -ies  → -y      utilities → utility, binaries → binary
+     *   -ss   → unchanged   loudness, business, accessibility
+     *   -us   → unchanged   status, syllabus
+     *   -is   → unchanged   analysis, basis
+     *   -ics  → unchanged   analytics, physics, statistics
+     *   -ous  → unchanged   (adjectives never take the plural)
+     *   -s    → strip       converters → converter, compressors → compressor
+     *
+     * A name that is not a plural noun at all — "Gaming", "Audio", "CSS" — is
+     * left exactly as it is, which is what a reader expects.
      */
     public static function toolNoun(string $slug, int $count): string
     {
         $name = self::shortName($slug);
-        if ($count !== 1) {
-            return $name . ' tools';
+        $last = (string) preg_replace('~^.*\s~', '', $name);
+        $head = mb_substr($name, 0, mb_strlen($name) - mb_strlen($last));
+        $singular = self::singular($last);
+        $isPlural = $singular !== $last;
+
+        if ($count === 1) {
+            return $head . $singular . ' tool';
         }
-        if (mb_strlen($name) > 3 && str_ends_with($name, 's')) {
-            $name = mb_substr($name, 0, -1);
+        /* "Browse all 5 converters" — a section already named in the plural
+           does not need the word again ("converters tools"). */
+        return $isPlural ? $name : $name . ' tools';
+    }
+
+    /**
+     * The singular of one English noun, as far as a section name needs it.
+     *
+     * Separate from toolNoun() so it can be tested on words no section uses
+     * yet: "Loudness" is the word that caught the first version out.
+     */
+    public static function singular(string $word): string
+    {
+        $lower = mb_strtolower($word);
+        /* The -es family first: classes → class, boxes → box. Without this,
+           "sses" would hit the "already singular" rule below and print
+           "classe" — which is how this was found. */
+        if (mb_strlen($word) > 4 && preg_match('~(?:sses|ches|shes|xes|zes)$~', $lower) === 1) {
+            return mb_substr($word, 0, -2);
         }
-        return $name . ' tool';
+        if (mb_strlen($word) > 3 && str_ends_with($lower, 'ies')) {
+            return mb_substr($word, 0, -3) . 'y';
+        }
+        if (preg_match('~(?:ss|us|is|ics|ous)$~', $lower) === 1) {
+            return $word;
+        }
+        if (mb_strlen($word) > 3 && str_ends_with($lower, 's')) {
+            return mb_substr($word, 0, -1);
+        }
+        return $word;
     }
 
     public static function hue(string $slug): int
