@@ -578,8 +578,18 @@
   /*
    * The second header row scrolls sideways, so a menu rendered inside it would
    * be clipped the moment it opened. Each dropdown is therefore `fixed` and
-   * placed from its own link's rectangle, one at a time, and it closes on any
-   * scroll, resize, outside click or Escape.
+   * placed from its own link's rectangle, one at a time.
+   *
+   * Closing is the part that was wrong. `mouseleave` called close(group), and
+   * close() skips the group it is given — so leaving a menu never closed that
+   * menu, and it stayed on screen while the visitor scrolled away. The rule is
+   * now explicit, and it is the rule a menu is supposed to follow:
+   *
+   *   - the pointer leaving the link *and* its menu closes it, after a short
+   *     grace period so a diagonal move across the gap does not flicker;
+   *   - moving between the link and its own menu keeps it open;
+   *   - scroll, resize, an outside click, Escape, or focusing away closes it;
+   *   - on a touch screen a tap toggles it, because there is no hover to end.
    */
   (function groupMenu() {
     var nav = document.querySelector('.category-nav');
@@ -587,42 +597,79 @@
     var groups = [].slice.call(nav.querySelectorAll('.category-nav-group'));
     if (!groups.length) return;
 
+    var timer = null;
+    var openGroup = null;
+
+    function setOpen(group, open) {
+      var menu = group.querySelector('.category-dropdown');
+      var link = group.querySelector('.category-nav-link');
+      if (!menu || !link) return;
+      if (open) {
+        close(null);
+        openGroup = group;
+        var box = link.getBoundingClientRect();
+        menu.style.left = Math.round(Math.max(8, Math.min(box.left, window.innerWidth - 250))) + 'px';
+        menu.style.top = Math.round(box.bottom) + 'px';
+        menu.classList.add('is-open');
+        link.setAttribute('aria-expanded', 'true');
+      } else {
+        menu.classList.remove('is-open');
+        link.setAttribute('aria-expanded', 'false');
+        if (openGroup === group) openGroup = null;
+      }
+    }
+
     function close(except) {
       groups.forEach(function (group) {
         var menu = group.querySelector('.category-dropdown');
         if (!menu || group === except) return;
-        menu.classList.remove('is-open');
-        var link = group.querySelector('.category-nav-link');
-        if (link) link.setAttribute('aria-expanded', 'false');
+        setOpen(group, false);
       });
     }
 
-    function open(group) {
-      var menu = group.querySelector('.category-dropdown');
-      var link = group.querySelector('.category-nav-link');
-      if (!menu || !link) return;
-      close(group);
-      var box = link.getBoundingClientRect();
-      menu.style.left = Math.round(Math.min(box.left, window.innerWidth - 250)) + 'px';
-      menu.style.top = Math.round(box.bottom) + 'px';
-      menu.classList.add('is-open');
-      link.setAttribute('aria-expanded', 'true');
+    function cancel() {
+      if (timer) { clearTimeout(timer); timer = null; }
+    }
+
+    function scheduleClose(group) {
+      cancel();
+      timer = setTimeout(function () {
+        timer = null;
+        /* Still under the pointer, or focus is inside the menu: keep it. */
+        if (group.matches(':hover') || group.contains(document.activeElement)) return;
+        setOpen(group, false);
+      }, 140);
     }
 
     groups.forEach(function (group) {
       var link = group.querySelector('.category-nav-link');
-      group.addEventListener('mouseenter', function () { open(group); });
-      group.addEventListener('mouseleave', function () { close(group); });
-      if (link) {
-        link.addEventListener('focus', function () { open(group); });
-        link.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') { close(group); link.blur(); }
-        });
-      }
+      var menu = group.querySelector('.category-dropdown');
+      if (!link || !menu) return;
+
+      group.addEventListener('mouseenter', function () { cancel(); setOpen(group, true); });
+      group.addEventListener('mouseleave', function () { scheduleClose(group); });
+
+      /* A touch device never fires mouseleave after the tap that opened the
+         menu, so the tap itself is the toggle. */
+      link.addEventListener('click', function (event) {
+        if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
+          event.preventDefault();
+          setOpen(group, !menu.classList.contains('is-open'));
+        }
+      });
+
+      link.addEventListener('focus', function () { cancel(); setOpen(group, true); });
+      link.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') { setOpen(group, false); link.blur(); }
+      });
+      /* Tabbing out of the menu closes it, the way the pointer leaving does. */
+      group.addEventListener('focusout', function (event) {
+        if (!group.contains(event.relatedTarget)) scheduleClose(group);
+      });
     });
 
-    window.addEventListener('scroll', function () { close(null); }, { passive: true });
-    window.addEventListener('resize', function () { close(null); });
+    window.addEventListener('scroll', function () { cancel(); close(null); }, { passive: true });
+    window.addEventListener('resize', function () { cancel(); close(null); });
     document.addEventListener('click', function (event) {
       if (!event.target.closest || !event.target.closest('.category-nav-group')) close(null);
     });

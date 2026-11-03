@@ -236,7 +236,10 @@ table.data tr.is-selected { background: var(--brand-soft); }
 label { display: block; font-weight: 600; font-size: 13.5px; margin-bottom: 5px; }
 .label-row { display: flex; align-items: baseline; gap: 8px; }
 .label-row .hint { margin-left: auto; font-weight: 400; color: var(--muted); font-size: 12px; }
-input[type="text"], input[type="email"], input[type="password"], input[type="url"],
+/* `input:not([type])` is here on purpose: a bare <input> has no type attribute,
+   so the list below never matched it and every untyped field fell back to the
+   browser's default 20-character box — a narrow input in a wide form. */
+input:not([type]), input[type="text"], input[type="email"], input[type="password"], input[type="url"],
 input[type="number"], input[type="search"], input[type="tel"], input[type="datetime-local"],
 input[type="date"], input[type="time"], input[type="color"], select, textarea {
     width: 100%; padding: 9px 11px; font: inherit; font-size: 14px;
@@ -664,3 +667,165 @@ body.editor-locked { overflow: hidden; }
     color: inherit;
 }
 .tool-upload .grid-2 { gap: 10px; }
+
+/* --------------------------------------------------------------- tools area */
+/*
+ * Tools, Sections and Tool files are one job in three steps, so they share a
+ * tab bar and one visual language. These rules are for that area only.
+ */
+
+/* The section/sub-category switch at the top of the create form. Two options,
+   each stating what it makes, because the difference between "a heading of its
+   own" and "a page inside a heading" is the thing an owner needs to know before
+   they type a name. */
+.tools-kind {
+  display: grid;
+  gap: 10px;
+  margin: 0 18px 4px;
+}
+
+@media (min-width: 560px) {
+  .tools-kind { grid-template-columns: 1fr 1fr; }
+}
+
+.tools-kind-option {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--border, #E5E9F2);
+  border-radius: 10px;
+  background: var(--surface, #fff);
+  color: inherit;
+}
+
+.tools-kind-option strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 13.4px;
+  color: var(--ink, #111827);
+}
+
+.tools-kind-option span {
+  display: block;
+  font-size: 12.4px;
+  line-height: 1.45;
+  color: var(--ink-4, #7A849B);
+}
+
+.tools-kind-option:hover {
+  border-color: var(--brand, #3B68FC);
+  text-decoration: none;
+}
+
+.tools-kind-option.is-active {
+  border-color: var(--brand, #3B68FC);
+  background: var(--brand-soft, #EBEFFF);
+  box-shadow: inset 0 0 0 1px var(--brand, #3B68FC);
+}
+
+.tools-kind-option.is-active strong { color: var(--brand-ink, #2C4BD8); }
+
+/* The per-row "Sub-category" action: an icon alone in a row of rail icons is
+   the reason this feature was reported as missing. */
+.tools-sub-add span {
+  margin-left: 5px;
+  font-size: 12.4px;
+}
+
+.data .tools-sub-add {
+  white-space: nowrap;
+}
+
+/* The sections table is the map of the site: six columns plus a named action
+   per row. Give the sidebar less and the list more, and let the table scroll
+   rather than crush the section names into three lines. */
+.grid-sidebar--wide { grid-template-columns: minmax(0, 1fr) 380px; }
+@media (max-width: 1180px) { .grid-sidebar--wide { grid-template-columns: minmax(0, 1fr); } }
+
+/* No min-width: the table fits its card. What it gives up instead is column
+   width that carries no information — the description is one ellipsised line
+   with the full text in its title, and the address and counts never wrap. */
+.sections-table { width: 100%; }
+.sections-table td.primary .sub {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 34ch;
+}
+.sections-table th:nth-child(4),
+.sections-table td:nth-child(4) { display: none; }
+@media (min-width: 1400px) {
+  .sections-table th:nth-child(4),
+  .sections-table td:nth-child(4) { display: table-cell; }
+}
+.sections-table .badge { white-space: nowrap; }
+.sections-table td.num,
+.sections-table td.small { white-space: nowrap; }
+.sections-table .mono { white-space: nowrap; }
+
+/* The two (or three) things an owner actually comes to the Tools screen to do.
+   Each is a link with a verb on it, not a counter. */
+.tools-start {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+@media (min-width: 760px) { .tools-start { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.tools-start-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 15px 16px;
+  border: 1px solid var(--border, #E5E9F2);
+  border-radius: 12px;
+  background: var(--surface, #fff);
+  color: inherit;
+}
+.tools-start-card:hover {
+  border-color: var(--brand, #3B68FC);
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .06);
+}
+.tools-start-card--primary {
+  border-color: var(--brand, #3B68FC);
+  background: var(--brand-soft, #EBEFFF);
+}
+.tools-start-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 auto; width: 34px; height: 34px; border-radius: 9px;
+  background: var(--brand-soft, #EBEFFF); color: var(--brand-ink, #2C4BD8);
+}
+.tools-start-card--primary .tools-start-icon { background: var(--brand, #3B68FC); color: #fff; }
+.tools-start-copy { display: block; min-width: 0; }
+.tools-start-copy strong { display: block; margin-bottom: 3px; font-size: 13.6px; color: var(--ink, #111827); }
+.tools-start-copy span { display: block; font-size: 12.6px; line-height: 1.45; color: var(--ink-4, #7A849B); }
+
+/* The counters are context, not the job: quieter than the actions above them. */
+.tools-stats .stat { background: var(--surface-2, #F7F9FC); }
+.tools-stats .value { font-size: 20px; }
+
+/* The explanation cards that used to fill a screen now open on request. */
+.tools-help summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 18px;
+  font-size: 13.4px;
+  font-weight: 600;
+  color: var(--ink-2, #374151);
+  cursor: pointer;
+  list-style: none;
+}
+.tools-help summary::-webkit-details-marker { display: none; }
+.tools-help summary::after {
+  content: "▾";
+  margin-left: auto;
+  color: var(--ink-4, #7A849B);
+  transition: transform .15s ease;
+}
+.tools-help[open] summary::after { transform: rotate(180deg); }
+.tools-help summary:hover { color: var(--brand-ink, #2C4BD8); }
+
+/* One short form, so it reads down a column instead of across the window. */
+.tool-group-form { max-width: 720px; }

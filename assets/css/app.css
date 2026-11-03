@@ -3184,9 +3184,41 @@ a:focus-visible > .calc-glyph,
 .category-nav-link svg { display: inline-block; vertical-align: -2px; margin-right: 6px; }
 .category-nav-link svg + svg { margin-right: 0; margin-left: 5px; color: var(--ink-4); }
 .category-nav-link--extra { color: var(--ink-3); }
-.category-nav-link--extra::before {
-  content: ""; display: inline-block; width: 1px; height: 13px;
-  margin-right: 13px; vertical-align: -2px; background: var(--border);
+
+/*
+ * A hairline between one section and the next.
+ *
+ * Fifteen names in a row read as one long sentence — "Audio Video Image PDF
+ * Developer Converters" — and the only thing marking where one ends and the
+ * next begins was a space. Each item now carries a rule on its own left edge.
+ *
+ * It costs no width: the line is drawn inside the padding the link already has,
+ * so the row still fits on one line at 1440 px instead of starting to scroll.
+ * The first item has no rule in front of it, and a section that is currently
+ * open keeps its brand-coloured underline, which sits below the rule.
+ */
+.category-nav-inner > * { position: relative; }
+.category-nav-inner > * + *::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 14px;
+  margin-top: -7px;
+  background: var(--border);
+  pointer-events: none;
+}
+/* The rule is decoration; the active item's underline and the open menu's
+   shadow stay above it. */
+.category-nav-inner > * + *.is-active::before,
+.category-nav-group:has(.category-nav-link.is-active)::before { background: var(--brand-soft); }
+.category-nav-inner > *:hover::before,
+.category-nav-inner > *:hover + *::before { background: transparent; }
+
+@media (hover: none) {
+  /* On a phone the row scrolls under the thumb; the rules stay, but shorter. */
+  .category-nav-inner > * + *::before { height: 12px; margin-top: -6px; }
 }
 
 /* A tool card: the same shape as a calculator card, with the group's glyph
@@ -3201,6 +3233,21 @@ a:focus-visible > .calc-glyph,
 .tool-band { margin-top: 34px; }
 .tool-band .directory-cat-head { margin-bottom: 14px; }
 .tool-band-more { margin: 14px 0 0; }
+
+/*
+ * The home page's own scale.
+ *
+ * Every band carried the same 34 px heading, and fifteen of them down one page
+ * read as fifteen page titles rather than as one page's sections. The page now
+ * has two steps: the calculator directory — the thing the page is about — at
+ * 26 px, and each tool band at 21 px, which is a section heading next to a 15 px
+ * card title. Other pages keep the 34 px .section-title.
+ */
+.section-title--lead { font-size: 26px; margin-bottom: 6px; }
+@media (min-width: 724px) { .section-title--lead { font-size: 28px; } }
+
+.section-title--band { font-size: 21px; letter-spacing: -.1px; margin-bottom: 4px; }
+@media (min-width: 724px) { .section-title--band { font-size: 22px; line-height: 1.3; } }
 
 .section-title--sm { font-size: 19px; letter-spacing: -.1px; margin-bottom: 14px; }
 .tool-subsection { margin-top: 8px; }

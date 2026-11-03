@@ -22,10 +22,36 @@ from html.parser import HTMLParser
 
 import requests
 
-BASE = "http://127.0.0.1:8080"
+BASE = os.environ.get("ONIM_BASE", "http://127.0.0.1:8080")
 ADMIN = BASE + "/admin/index.php"
-PHP = "/home/user/tools/php.sh"
+# The interpreter and the database are read from this checkout, not hardcoded:
+# a sandbox reset moves both, and a test that cannot start is not a test.
+PHP = os.environ.get("ONIM_PHP", "php")
+# This checkout. Older revisions of this script pointed at /home/user/php-clone,
+# which only ever existed in one sandbox; every path below is derived from here.
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB_NAME = "omni_cms"
+
+
+def _db_config() -> dict:
+    """Read config.db.php the way the site does, without starting the site."""
+    cfg = {}
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config.db.php")
+    if os.path.isfile(path):
+        text = open(path, encoding="utf-8").read()
+        for key in ("host", "port", "name", "user", "pass", "password"):
+            m = re.search(r"'" + key + r"'\s*=>\s*'((?:[^'\\]|\\.)*)'", text)
+            if m:
+                cfg[key] = m.group(1)
+    return cfg
+
+
+_DB = _db_config()
+DB_NAME = _DB.get("name", DB_NAME)
+DB_DSN = "mysql:host={h};port={p};dbname={n}".format(
+    h=_DB.get("host", "127.0.0.1"), p=_DB.get("port", "3306"), n=DB_NAME)
+DB_USER = _DB.get("user", "root")
+DB_PASS = _DB.get("password", "")
 
 results = []
 
@@ -34,8 +60,11 @@ results = []
 
 def php(code: str) -> str:
     out = subprocess.run(
-        [PHP, "-r", f'$p=new PDO("mysql:host=127.0.0.1;port=3307;dbname={DB_NAME}","root","");{code}'],
+        [PHP, "-r", '$c = require "config.db.php"; '
+                    '$p = new PDO("mysql:host=" . $c["host"] . ";port=" . $c["port"] . ";dbname=" . $c["name"],'
+                    ' $c["user"], $c["pass"] ?? ""); ' + code],
         capture_output=True, text=True, timeout=120,
+        cwd=os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     )
     if out.returncode != 0:
         raise RuntimeError(out.stderr.strip() or out.stdout.strip())
@@ -375,7 +404,7 @@ def workflows(panel: Panel) -> None:
     check("media: an upload is stored and recorded", bool(media))
     if media:
         import os
-        path = "/home/user/php-clone/" + media["path"]
+        path = ROOT + "/" + media["path"]
         check("media: the file exists on disk", os.path.isfile(path))
         check("media: the file is served over HTTP", public("/" + media["path"]).status_code == 200)
         js = panel.get("media", action="json").text
@@ -475,7 +504,7 @@ def workflows(panel: Panel) -> None:
     check("backups: a dump row is written", bool(dump))
     if dump:
         import os
-        fpath = "/home/user/php-clone/data/backups/" + dump["filename"]
+        fpath = ROOT + "/data/backups/" + dump["filename"]
         check("backups: the dump file exists", os.path.isfile(fpath))
         with open(fpath, "rb") as fh:
             head = fh.readline().decode()
@@ -484,7 +513,7 @@ def workflows(panel: Panel) -> None:
         check("backups: download streams the file", dl.status_code == 200 and dl.content.startswith(b"-- Onim Calculator"))
         # a foreign .sql must be refused
         foreign = "foreign-" + dump["filename"]
-        with open("/home/user/php-clone/data/backups/" + foreign, "w") as fh:
+        with open(ROOT + "/data/backups/" + foreign, "w") as fh:
             fh.write("-- someone else's dump\nDROP TABLE users;\n")
         execute(f"INSERT INTO backups (btype,filename,size,checksum,note,created_at) VALUES ('database','{foreign}',10,'','foreign',NOW())")
         fid = scalar(f"SELECT id FROM backups WHERE filename='{foreign}'")
@@ -493,7 +522,7 @@ def workflows(panel: Panel) -> None:
               scalar("SELECT COUNT(*) FROM users") >= 1)
         panel.post("backups", {"do": "restore", "id": str(dump["id"])})
         execute(f"DELETE FROM backups WHERE filename='{foreign}'")
-        os.unlink("/home/user/php-clone/data/backups/" + foreign)
+        os.unlink(ROOT + "/data/backups/" + foreign)
         check("backups: restoring the panel's own dump works",
               scalar("SELECT COUNT(*) FROM users") >= 1)
         panel.post("backups", {"do": "delete", "id": str(dump["id"])})
@@ -546,7 +575,7 @@ def workflows(panel: Panel) -> None:
 
     # 19 — source file editor ---------------------------------------------
     target = "templates/partials/calc-field.php"
-    orig = open("/home/user/php-clone/" + target).read()
+    orig = open(ROOT + "/" + target).read()
     forms, resp = panel.forms("file-edit", action="edit", path=target)
     fileform = None
     for form in forms:
@@ -555,15 +584,15 @@ def workflows(panel: Panel) -> None:
             break
     touched = orig + "\n<?php /* e2e marker */ ?>\n"
     panel.post("file-edit", form_data(fileform, path=target, content=touched, note="e2e edit"))
-    on_disk = open("/home/user/php-clone/" + target).read()
+    on_disk = open(ROOT + "/" + target).read()
     check("files: a save writes the file", "e2e marker" in on_disk)
     check("files: a version row is stored",
           int(scalar("SELECT COUNT(*) FROM calculator_file_versions") or 0) >= 1)
     broken = "<?php function broken( { ?>"
     panel.post("file-edit", form_data(fileform, path=target, content=broken, note="e2e broken"))
     check("files: a PHP syntax error is refused",
-          "e2e marker" in open("/home/user/php-clone/" + target).read()
-          and "broken" not in open("/home/user/php-clone/" + target).read())
+          "e2e marker" in open(ROOT + "/" + target).read()
+          and "broken" not in open(ROOT + "/" + target).read())
     forms, resp = panel.forms("file-edit", action="edit", path=target)
     restore = None
     for form in forms:
@@ -573,8 +602,8 @@ def workflows(panel: Panel) -> None:
             break
     panel.post("file-edit", form_data(restore, do="restore", path=target))
     check("files: restoring a version puts the previous body back",
-          open("/home/user/php-clone/" + target).read() == orig)
-    open("/home/user/php-clone/" + target, "w").write(orig)
+          open(ROOT + "/" + target).read() == orig)
+    open(ROOT + "/" + target, "w").write(orig)
 
     # 20 — activity log ----------------------------------------------------
     logged = scalar("SELECT COUNT(*) FROM activity_log")
@@ -650,20 +679,20 @@ def extras(panel: Panel) -> None:
     check("files: a library file opens in the editor", "class Shape" in in_use.text)
     panel.post("file-edit", {"do": "delete", "path": "lib/Shape.php"})
     check("files: a file in use cannot be deleted",
-          True is not False and subprocess.run(["test", "-f", "/home/user/php-clone/lib/Shape.php"]).returncode == 0)
+          True is not False and subprocess.run(["test", "-f", ROOT + "/lib/Shape.php"]).returncode == 0)
 
     # 24 — creating a file ------------------------------------------------
     before = scalar("SELECT COUNT(*) FROM calculator_file_versions")
     panel.post("files", {"do": "create", "new_path": "docs/e2e-created.md", "content": "# created by the test\n"})
-    created = subprocess.run(["test", "-f", "/home/user/php-clone/docs/e2e-created.md"]).returncode == 0
+    created = subprocess.run(["test", "-f", ROOT + "/docs/e2e-created.md"]).returncode == 0
     check("files: a new file can be created from the panel", created)
     if created:
         panel.post("file-edit", {"do": "delete", "path": "docs/e2e-created.md"})
         check("files: the created file can be deleted",
-              subprocess.run(["test", "-f", "/home/user/php-clone/docs/e2e-created.md"]).returncode != 0)
+              subprocess.run(["test", "-f", ROOT + "/docs/e2e-created.md"]).returncode != 0)
     escaped = panel.post("files", {"do": "create", "new_path": "../outside.php", "content": "<?php"})
     check("files: creating a file outside the roots is refused",
-          subprocess.run(["test", "-f", "/home/user/outside.php"]).returncode != 0)
+          subprocess.run(["test", "-f", os.path.join(os.path.dirname(ROOT), "outside.php")]).returncode != 0)
 
     # 25 — account ---------------------------------------------------------
     forms, _ = panel.forms("account")
@@ -698,7 +727,7 @@ def extras(panel: Panel) -> None:
                       cookies=panel.s.cookies.get_dict(), timeout=30)
     reset_row = scalar("SELECT COUNT(*) FROM password_resets WHERE used_at IS NULL")
     check("account: a reset request writes a hashed token", int(reset_row or 0) >= 1, f"status {r.status_code}")
-    log = subprocess.run(["bash", "-c", "cat /home/user/php-clone/data/cache/mail-*.log 2>/dev/null | tail -40"],
+    log = subprocess.run(["bash", "-c", "cat " + ROOT + "/data/cache/mail-*.log 2>/dev/null | tail -40"],
                          capture_output=True, text=True).stdout
     check("account: the reset email is written by the log transport (no SMTP configured)",
           "reset" in log.lower() and "token=" in log.lower(), log[-140:].replace("\n", " "))
@@ -776,7 +805,7 @@ def previews(panel: Panel) -> None:
               f"{r.status_code} -> {r.headers.get('Location')}")
 
     # 32 — the bundled pages serve even with no database configured
-    config = "/home/user/php-clone/config.db.php"
+    config = ROOT + "/config.db.php"
     moved = subprocess.run(["bash", "-c", f"mv {config} {config}.off"], capture_output=True)
     try:
         served = ["/about", "/privacy", "/terms", "/faq", "/contact"]
@@ -878,7 +907,7 @@ def hardening(panel: Panel) -> None:
     execute("DELETE FROM rate_limits WHERE rkey LIKE 'contact:%'")
 
     # 36 — cron ------------------------------------------------------------
-    run = subprocess.run([PHP, "/home/user/php-clone/cron.php", "--dry-run"],
+    run = subprocess.run([PHP, ROOT + "/cron.php", "--dry-run"],
                          capture_output=True, text=True, timeout=120)
     check("cron: the CLI entry point runs a dry pass",
           run.returncode == 0 and "Dry run" in run.stdout and "Done." in run.stdout,
@@ -903,7 +932,7 @@ def hardening(panel: Panel) -> None:
               'echo json_encode($r);')
     for row_ in (json.loads(raw) if raw else []):
         execute(f"DELETE FROM backups WHERE id={int(row_['id'])}")
-        path_ = "/home/user/php-clone/data/backups/" + str(row_["filename"])
+        path_ = ROOT + "/data/backups/" + str(row_["filename"])
         if os.path.isfile(path_):
             os.unlink(path_)
 
@@ -996,7 +1025,7 @@ def main() -> int:
         check("SMTP password is stored encrypted, never plaintext",
               stored is not None and stored.startswith("v1:") and "p@ss" not in stored,
               str(stored)[:16])
-        viaphp = php('require "/home/user/php-clone/config.php"; echo Onim\\Cms::decryptSecret((string)$p->query("SELECT svalue FROM settings WHERE skey=\'smtp_pass\'")->fetchColumn());')
+        viaphp = php('require "config.php"; echo Onim\\Cms::decryptSecret((string)$p->query("SELECT svalue FROM settings WHERE skey=\'smtp_pass\'")->fetchColumn());')
         check("stored secret decrypts back to the same value", viaphp == "p@ss word!", viaphp)
 
     # 6 — appearance -------------------------------------------------------

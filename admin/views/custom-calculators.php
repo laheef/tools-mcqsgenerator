@@ -18,11 +18,40 @@ if (!defined('ONIM_PANEL')) {
 use Onim\Admin\Csrf;
 
 ?>
-<div class="grid grid-5" style="margin-bottom:18px">
+<?php require ADMIN_ROOT . '/views/partials/tools-tabs.php'; ?>
+<?php /* The screen used to open on five counters, and the counters were the
+         loudest thing on it. A tool owner comes here to do one of two things:
+         add a tool, or find the one they already have. Those two lead now; the
+         counters are a footnote under the filter row. */ ?>
+<div class="tools-start">
+    <a class="tools-start-card tools-start-card--primary" href="<?= e(admin_url('tool-plugins', ['upload' => '1'])) ?>">
+        <span class="tools-start-icon"><?= admin_icon('plus', 18) ?></span>
+        <span class="tools-start-copy">
+            <strong>Add a tool from a file</strong>
+            <span>Upload a <code>.php</code> tool, pick its section, and the page is created for you.</span>
+        </span>
+    </a>
+    <a class="tools-start-card" href="<?= e(admin_url('custom-calculator-edit', ['id' => 'new'])) ?>">
+        <span class="tools-start-icon"><?= admin_icon('calculator', 18) ?></span>
+        <span class="tools-start-copy">
+            <strong>Build a calculator by hand</strong>
+            <span>Fields, a formula and an article — no file needed.</span>
+        </span>
+    </a>
+    <a class="tools-start-card" href="<?= e(admin_url('tool-groups')) ?>">
+        <span class="tools-start-icon"><?= admin_icon('grid', 18) ?></span>
+        <span class="tools-start-copy">
+            <strong>Organise the sections</strong>
+            <span>Add a section or a sub-category, rename one, change its order.</span>
+        </span>
+    </a>
+</div>
+
+<div class="grid grid-5 tools-stats" style="margin-bottom:18px">
     <div class="stat">
-        <div class="label">Custom calculators</div>
+        <div class="label">Tools</div>
         <div class="value"><?= number_format((int) $stats['total']) ?></div>
-        <div class="hint">built in the panel, not harvested</div>
+        <div class="hint">pages built in the panel</div>
     </div>
     <div class="stat">
         <div class="label">Published</div>
@@ -54,7 +83,7 @@ use Onim\Admin\Csrf;
 
 <div class="card">
     <div class="card-head">
-        <h2><?= $filter === 'review' ? 'Articles waiting to be reviewed' : 'All custom calculators' ?></h2>
+        <h2><?= $filter === 'review' ? 'Tools whose article has not been read' : 'Every tool' ?></h2>
         <span class="spacer"></span>
         <?php if ((int) ($stats['review'] ?? 0) > 0 || $filter === 'review'): ?>
             <a class="btn btn-sm <?= $filter === 'review' ? 'btn-primary' : '' ?>"
@@ -71,7 +100,7 @@ use Onim\Admin\Csrf;
             <?= admin_icon('upload', 14) ?> Bulk import
         </a>
         <a class="btn btn-sm btn-primary" href="<?= e(admin_url('custom-calculator-edit', ['id' => 'new'])) ?>">
-            <?= admin_icon('plus', 14) ?> New calculator
+            <?= admin_icon('plus', 14) ?> New tool
         </a>
     </div>
 

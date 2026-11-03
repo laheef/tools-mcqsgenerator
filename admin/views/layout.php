@@ -49,10 +49,16 @@ $navGroups = [
         'label' => 'Content',
         'items' => [
             ['page' => 'calculators', 'label' => 'Calculators', 'icon' => 'calculator'],
-            ['page' => 'custom-calculators', 'label' => 'Custom calculators', 'icon' => 'star'],
-            ['page' => 'tool-plugins', 'label' => 'Tool plugins', 'icon' => 'code'],
-            ['page' => 'tool-groups', 'label' => 'Tool groups', 'icon' => 'grid'],
-            ['page' => 'categories', 'label' => 'Categories', 'icon' => 'grid'],
+            /* One entry, not four.
+             *
+             * "Custom calculators", "Tool plugins" and "Tool groups" were three
+             * sidebar items for one job — a tool is a page, the page is filed
+             * in a section, the section's page renders from a file — and
+             * "Categories" listed tool sections a fourth time. They are tabs
+             * inside this one screen now, which is also where the "+" for each
+             * of them lives. */
+            ['page' => 'custom-calculators', 'label' => 'Tools', 'icon' => 'star'],
+            ['page' => 'categories', 'label' => 'Calculator categories', 'icon' => 'grid'],
             ['page' => 'files', 'label' => 'Source files', 'icon' => 'code'],
             ['page' => 'modules', 'label' => 'Modules', 'icon' => 'layout'],
             ['page' => 'pages', 'label' => 'Pages', 'icon' => 'page'],
@@ -120,6 +126,9 @@ $navGroups = [
                 'custom-calculator-edit' => 'custom-calculators',
                 'blog-edit'              => 'blog',
                 'file-edit'              => 'files',
+                /* The tools area is one sidebar entry with three tabs. */
+                'tool-plugins'           => 'custom-calculators',
+                'tool-groups'            => 'custom-calculators',
             ][$page] ?? $page;
             ?>
             <?php foreach ($navGroups as $group): ?>

@@ -13,6 +13,9 @@
  */
 
 declare(strict_types=1);
+
+/** Which tab of the tools area this screen is. */
+$toolsTab = 'tools';
 // Refuse direct HTTP requests: this file is only ever included by the panel.
 if (!defined('ONIM_PANEL')) {
     http_response_code(403);
@@ -102,14 +105,13 @@ foreach (\Onim\Data::categories() as $cat) {
 
 usort($rows, static fn (array $a, array $b): int => strcasecmp((string) $a['name'], (string) $b['name']));
 
-$pageTitle = 'Custom calculators';
+$pageTitle = 'Tools';
+$subtitle = 'Every tool page on the site — add one from a file, or build a calculator by hand.';
 $title = $pageTitle;
 $topbarActions = [
-    /* Both ways in, side by side: a page written in the editor, or a tool file
-       uploaded from the panel. The second was only reachable from a screen
-       called "Tool plugins", which is not where anyone looks for "add a tool". */
-    ['label' => 'Upload a tool file', 'url' => admin_url('tool-plugins'), 'icon' => 'upload'],
-    ['label' => 'New calculator', 'url' => admin_url('custom-calculator-edit', ['id' => 'new']), 'icon' => 'plus', 'class' => 'btn-primary'],
+    /* Nothing here on purpose. The three ways in are cards at the top of the
+       page, each with a verb; repeating them as two buttons in the title bar
+       was the fourth and fifth place to click for the same two jobs. */
 ];
 
-render('custom-calculators', compact('rows', 'allRows', 'stats', 'categoryNames', 'filter', 'pageTitle', 'title', 'topbarActions'));
+render('custom-calculators', compact('rows', 'allRows', 'stats', 'categoryNames', 'filter', 'pageTitle', 'title', 'topbarActions', 'toolsTab'));

@@ -111,6 +111,7 @@ final class Groups
                 'status' => (string) ($row['status'] ?? 'published'),
                 'categories' => !empty($row['categories']),
                 'source' => 'file',
+                'shipped' => true,
             ];
         }
         foreach (self::overrides() as $slug => $r) {
@@ -126,6 +127,7 @@ final class Groups
                 'status' => 'published',
                 'categories' => false,
                 'source' => 'panel',
+                'shipped' => false,
             ];
             foreach (['name', 'short', 'title', 'description', 'icon', 'parent', 'status'] as $col) {
                 if (trim((string) ($r[$col] ?? '')) !== '') {
@@ -196,6 +198,21 @@ final class Groups
     {
         $row = self::bySlug()[$slug] ?? null;
         return $row !== null && (string) $row['status'] === 'published' ? $row : null;
+    }
+
+    /**
+     * Does the site ship this section? A shipped one cannot be deleted, only
+     * hidden — deleting it would take a page that is in the header out of it.
+     * Sections the panel created can go, once nothing is filed under them.
+     */
+    public static function isShipped(string $slug): bool
+    {
+        foreach (self::seed() as $row) {
+            if ((string) ($row['slug'] ?? '') === $slug) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** Any row including disabled ones — what the panel edits. */

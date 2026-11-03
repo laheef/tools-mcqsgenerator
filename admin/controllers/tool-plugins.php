@@ -18,6 +18,9 @@
  */
 
 declare(strict_types=1);
+
+/** Which tab of the tools area this screen is. */
+$toolsTab = 'files';
 // Refuse direct HTTP requests: this file is only ever included by the panel.
 if (!defined('ONIM_PANEL')) {
     http_response_code(403);
@@ -232,9 +235,9 @@ $highlight = (string) (request('highlight', '') ?? '');
 $pickedSection = (string) (request('section', '') ?? '');
 $missingMigration = !CustomCalc::enabled() || !CustomCalc::tracksTools();
 
-$pageTitle = 'Tool plugins';
-$title = 'Tool plugins';
-$breadcrumbs = [['label' => 'Tool plugins']];
+$pageTitle = 'Tools · Tool files';
+$title = $pageTitle;
+$breadcrumbs = [['label' => 'Tools', 'url' => admin_url('custom-calculators')], ['label' => 'Tool files']];
 $topbarActions = [];
 
 /* Every folder on disk, for the storage picker — the categories are only a
@@ -245,6 +248,7 @@ sort($folderOptions);
 $sectionOptions = Groups::assignable();
 
 render('tool-plugins', compact(
+    'toolsTab',
     'tools', 'byCategory', 'usage', 'stats', 'errors', 'categoryOptions',
     'folderOptions', 'sectionOptions', 'pickedSection',
     'highlight', 'missingMigration', 'pageTitle', 'title', 'breadcrumbs', 'topbarActions'

@@ -402,7 +402,7 @@ foreach ($sections as $section) {
                             <div class="directory-title">
                                 <span class="directory-icon" style="--icon-hue: <?= (int) Groups::hue($gSlug) ?>"><?= View::icon((string) $g['icon'], 26) ?></span>
                                 <div>
-                                    <h2 id="<?= View::escape($anchorId) ?>-heading" class="section-title"><?= View::escape((string) $g['name']) ?>, by category</h2>
+                                    <h2 id="<?= View::escape($anchorId) ?>-heading" class="section-title section-title--band"><?= View::escape((string) $g['name']) ?>, by category</h2>
                                     <p class="section-lede">
                                         <?= View::escape((string) ($g['description'] !== '' ? $g['description'] : 'Every tool in this section, filed under the sub-category it belongs to.')) ?>
                                     </p>
@@ -488,7 +488,7 @@ foreach ($sections as $section) {
             <div class="shell">
                 <div class="directory-head">
                     <div>
-                        <h2 id="<?= View::escape($anchor) ?>-heading" class="section-title"><?= View::escape($title ?: 'Calculators, by category') ?></h2>
+                        <h2 id="<?= View::escape($anchor) ?>-heading" class="section-title section-title--lead"><?= View::escape($title ?: 'Calculators, by category') ?></h2>
                         <p class="section-lede">
                             <?= $subtitle !== ''
                                 ? View::escape($subtitle)

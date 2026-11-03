@@ -30,6 +30,8 @@ $size = static function (int $bytes): string {
     return number_format($bytes / 1048576, 1) . ' MB';
 };
 ?>
+<?php require ADMIN_ROOT . '/views/partials/tools-tabs.php'; ?>
+
 <?php if ($missingMigration): ?>
     <div class="card" style="border-color:var(--warn,#d97706);margin-bottom:18px">
         <div class="card-body">
@@ -79,7 +81,70 @@ $size = static function (int $bytes): string {
 <?php endforeach; ?>
 
 <div class="grid grid-sidebar">
+
     <div class="stack" style="gap:18px">
+            <div class="card">
+                <div class="card-head"><h2><?= admin_icon('upload', 15) ?> Add a tool file</h2>
+                    <span class="spacer"></span>
+                    <span class="muted small">uploads and creates nothing else</span></div>
+                <form method="post" action="<?= e(admin_url('tool-plugins')) ?>" enctype="multipart/form-data" class="card-body stack">
+                    <?= Csrf::field() ?>
+                    <input type="hidden" name="do" value="upload">
+
+                    <div class="field">
+                        <div class="label-row"><label for="file">PHP file</label></div>
+                        <input type="file" id="file" name="file" accept=".php" required>
+                        <div class="hint">One self-contained file, up to 2 MB, with a header block naming its shortcode.</div>
+                    </div>
+
+                    <div class="field">
+                        <div class="label-row">
+                            <label for="folder">Folder</label>
+                            <span class="hint">where the file is stored</span>
+                        </div>
+                        <select id="folder" name="folder" required data-folder-select>
+                            <option value="">— choose a folder —</option>
+                            <?php foreach ($folderOptions as $slug): ?>
+                                <option value="<?= e((string) $slug) ?>">plugins/<?= e((string) $slug) ?>/</option>
+                            <?php endforeach; ?>
+                            <option value="new">＋ New folder…</option>
+                        </select>
+                        <input id="folder_new" name="folder_new" placeholder="new-folder-name" data-folder-new hidden
+                               pattern="[a-z0-9][a-z0-9-]*" title="Lowercase letters, digits and dashes">
+                        <div class="hint">
+                            Storage only. Pick an existing folder or create one here — a new folder is made on
+                            upload, no FTP needed.
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="label-row">
+                            <label for="section">Section</label>
+                            <span class="hint">where the tool appears</span>
+                        </div>
+                        <select id="section" name="section">
+                            <?php foreach ($sectionOptions as $slug => $label): ?>
+                                <option value="<?= e((string) $slug) ?>" <?= $pickedSection === (string) $slug ? 'selected' : '' ?>>
+                                    <?= e((string) $label) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <div class="hint">
+                            A group (Audio Tools), one of its subgroups, or a calculator category. The page created
+                            from this tool is addressed <code>/{section}/{tool}</code> and listed on that section’s page.
+                        </div>
+                    </div>
+
+                    <label class="check" style="display:flex;gap:8px;align-items:flex-start">
+                        <input type="checkbox" name="replace" value="1">
+                        <span class="small">Replace the file if it already exists (the previous version is backed up)</span>
+                    </label>
+
+                    <button type="submit" class="btn btn-primary" style="justify-content:center">
+                        <?= admin_icon('upload', 15) ?> Upload
+                    </button>
+                </form>
+            </div>
 
         <?php if ($tools === []): ?>
             <div class="card">
@@ -203,98 +268,29 @@ $size = static function (int $bytes): string {
             </div>
         <?php endforeach; ?>
 
-        <div class="card">
-            <div class="card-head"><h2>How a tool becomes a page</h2></div>
-            <div class="card-body stack small" style="line-height:1.65">
-                <p style="margin:0">
-                    <strong>1. Upload</strong> — the panel parses the header block, checks the file parses with
-                    <code>php -l</code>, and writes it to <code>plugins/&lt;category&gt;/qm-tool-&lt;slug&gt;.php</code>.
-                    A file that fails any check is refused before it reaches disk.
-                </p>
-                <p style="margin:0">
-                    <strong>2. Create the page</strong> — a draft calculator appears with the shortcode already bound,
-                    its name, slug and category taken from the file. The article is empty on purpose.
-                </p>
-                <p style="margin:0">
-                    <strong>3. Write and publish</strong> — the page behaves like any other: summary, sections, FAQ,
-                    related, SEO, sitemap, search, category counts, reviews and every ad slot.
-                </p>
-                <p style="margin:0">
-                    <strong>Replace</strong> — upload a new version of the file with the same shortcode and tick
-                    “replace”. Every page using it updates at once; the old file is kept in
-                    <code>data/backups/tools/</code>.
-                </p>
-                <p style="margin:0" class="muted">
-                    The same file may be used by more than one page — for example with different attributes
-                    (<code>[tool_tip_split currency="€"]</code>). Deleting a file that a page still uses is refused
-                    unless you insist.
-                </p>
+        <?php /* Five dense paragraphs of explanation under a list of files is
+                 the "too much ambiguity" this screen was reported for. It is
+                 still here, in a details block that is closed until asked —
+                 the three steps, one line each. */ ?>
+        <details class="card tools-help">
+            <summary><?= admin_icon('activity', 15) ?> How a file becomes a page — the three steps</summary>
+            <div class="card-body stack small" style="line-height:1.6">
+                <p style="margin:0"><strong>1. Add the file</strong> above. The panel parses its header, runs
+                    <code>php -l</code>, and stores it as <code>plugins/&lt;folder&gt;/qm-tool-&lt;slug&gt;.php</code>.
+                    A file that fails either check never reaches disk.</p>
+                <p style="margin:0"><strong>2. Create the page</strong> — the button on the file’s row makes a
+                    draft with its name, address and section taken from the file.</p>
+                <p style="margin:0"><strong>3. Write and publish</strong> it like any other page: summary,
+                    sections, FAQ, SEO, sitemap, ad slots.</p>
+                <p style="margin:0" class="muted">Replacing a file: upload it again with the same shortcode and
+                    tick “replace”. Every page using it updates at once; the old copy stays in
+                    <code>data/backups/tools/</code>. A file that a published page still uses cannot be deleted
+                    unless you insist.</p>
             </div>
-        </div>
+        </details>
     </div>
 
     <div class="stack" style="gap:18px">
-        <div class="card">
-            <div class="card-head"><h2><?= admin_icon('upload', 15) ?> Upload a tool file</h2></div>
-            <form method="post" action="<?= e(admin_url('tool-plugins')) ?>" enctype="multipart/form-data" class="card-body stack">
-                <?= Csrf::field() ?>
-                <input type="hidden" name="do" value="upload">
-
-                <div class="field">
-                    <div class="label-row"><label for="file">PHP file</label></div>
-                    <input type="file" id="file" name="file" accept=".php" required>
-                    <div class="hint">One self-contained file, up to 2 MB, with a header block naming its shortcode.</div>
-                </div>
-
-                <div class="field">
-                    <div class="label-row">
-                        <label for="folder">Folder</label>
-                        <span class="hint">where the file is stored</span>
-                    </div>
-                    <select id="folder" name="folder" required data-folder-select>
-                        <option value="">— choose a folder —</option>
-                        <?php foreach ($folderOptions as $slug): ?>
-                            <option value="<?= e((string) $slug) ?>">plugins/<?= e((string) $slug) ?>/</option>
-                        <?php endforeach; ?>
-                        <option value="new">＋ New folder…</option>
-                    </select>
-                    <input id="folder_new" name="folder_new" placeholder="new-folder-name" data-folder-new hidden
-                           pattern="[a-z0-9][a-z0-9-]*" title="Lowercase letters, digits and dashes">
-                    <div class="hint">
-                        Storage only. Pick an existing folder or create one here — a new folder is made on
-                        upload, no FTP needed.
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="label-row">
-                        <label for="section">Section</label>
-                        <span class="hint">where the tool appears</span>
-                    </div>
-                    <select id="section" name="section">
-                        <?php foreach ($sectionOptions as $slug => $label): ?>
-                            <option value="<?= e((string) $slug) ?>" <?= $pickedSection === (string) $slug ? 'selected' : '' ?>>
-                                <?= e((string) $label) ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <div class="hint">
-                        A group (Audio Tools), one of its subgroups, or a calculator category. The page created
-                        from this tool is addressed <code>/{section}/{tool}</code> and listed on that section’s page.
-                    </div>
-                </div>
-
-                <label class="check" style="display:flex;gap:8px;align-items:flex-start">
-                    <input type="checkbox" name="replace" value="1">
-                    <span class="small">Replace the file if it already exists (the previous version is backed up)</span>
-                </label>
-
-                <button type="submit" class="btn btn-primary" style="justify-content:center">
-                    <?= admin_icon('upload', 15) ?> Upload
-                </button>
-            </form>
-        </div>
-
         <div class="card">
             <div class="card-head"><h2><?= admin_icon('code', 15) ?> The file, in short</h2></div>
             <div class="card-body small" style="line-height:1.7">

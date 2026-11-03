@@ -18,6 +18,9 @@
  */
 
 declare(strict_types=1);
+
+/** Which tab of the tools area this screen is. */
+$toolsTab = 'sections';
 // Refuse direct HTTP requests: this file is only ever included by the panel.
 if (!defined('ONIM_PANEL')) {
     http_response_code(403);
@@ -32,14 +35,14 @@ use Onim\Db;
 use Onim\Groups;
 
 if (!Db::hasTable('tool_groups')) {
-    $pageTitle = 'Tool groups';
-    $title = 'Tool groups';
-    $breadcrumbs = [['label' => 'Tool groups']];
+    $pageTitle = 'Tools · Sections & sub-categories';
+    $title = $pageTitle;
+    $breadcrumbs = [['label' => 'Tools', 'url' => admin_url('custom-calculators')], ['label' => 'Sections']];
     $topbarActions = [];
     render('tool-groups', [
         'groups' => [], 'subs' => [], 'counts' => [], 'missingMigration' => true,
         'pageTitle' => $pageTitle, 'title' => $title, 'breadcrumbs' => $breadcrumbs,
-        'topbarActions' => [], 'groupOptions' => [],
+        'topbarActions' => [], 'groupOptions' => [], 'newMode' => '', 'parentPreset' => '', 'toolsTab' => 'sections',
     ]);
     return;
 }
@@ -57,6 +60,36 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         Cms::flush();
         Activity::log('group_reset', 'group', $slug, 'Reset tool group ' . $slug);
         Flash::success('“' . $slug . '” is back to the wording the site ships with.');
+        redirect_to(admin_url('tool-groups'));
+    }
+
+    if ($action === 'delete') {
+        /* Only a section the panel created, and only when nothing is filed
+           under it. A shipped section is never deleted — hiding it is the
+           reversible move, and the row for it is a wording override. */
+        $slug = (string) (post('slug', '') ?? '');
+        if ($slug === '') {
+            Flash::error('Which section?');
+            redirect_to(admin_url('tool-groups'));
+        }
+        if (\Onim\Groups::isShipped($slug)) {
+            Flash::error('“' . $slug . '” ships with the site and cannot be deleted. Hide it instead — that takes it out of the header and keeps its tools online.');
+            redirect_to(admin_url('tool-groups'));
+        }
+        $tools = \Onim\Groups::count($slug);
+        $children = (int) (Db::one('SELECT COUNT(*) AS n FROM tool_groups WHERE parent = ?', [$slug])['n'] ?? 0);
+        if ($tools > 0 || $children > 0) {
+            $why = $tools > 0
+                ? $tools . ' tool' . ($tools === 1 ? ' is' : 's are') . ' filed under it'
+                : $children . ' sub-categor' . ($children === 1 ? 'y is' : 'ies are') . ' inside it';
+            Flash::error('“' . $slug . '” was not deleted: ' . $why . '. Move or delete ' . ($tools > 0 ? 'them' : 'those') . ' first.');
+            redirect_to(admin_url('tool-groups'));
+        }
+        Db::exec('DELETE FROM tool_groups WHERE slug = ?', [$slug]);
+        Groups::flush();
+        Cms::flush();
+        Activity::log('group_deleted', 'group', $slug, 'Deleted tool group ' . $slug);
+        Flash::success('“' . $slug . '” is gone from the header.');
         redirect_to(admin_url('tool-groups'));
     }
 
@@ -138,18 +171,23 @@ foreach ($groups as $group) {
 }
 
 $edit = (string) (request('edit', '') ?? '');
+/* ?new=section or ?new=sub: the screen opens on the form for that kind of
+   thing, with the mode chosen. Without it the right-hand card shows the choice
+   instead of a form that could go either way. */
+$newMode = (string) (request('new', '') ?? '');
+$newMode = in_array($newMode, ['section', 'sub'], true) ? $newMode : '';
 /* "Add a subgroup" on a row arrives as ?edit=new&parent=audio: the form opens
    empty with that group already chosen as the parent. */
 $parentPreset = (string) (request('parent', '') ?? '');
 if ($parentPreset !== '' && !isset($groupOptions[$parentPreset])) {
     $parentPreset = '';
 }
-$pageTitle = 'Tool groups';
-$title = 'Tool groups';
-$breadcrumbs = [['label' => 'Tool groups']];
+$pageTitle = 'Tools · Sections & sub-categories';
+$title = $pageTitle;
+$breadcrumbs = [['label' => 'Tools', 'url' => admin_url('custom-calculators')], ['label' => 'Sections']];
 $topbarActions = [];
 
 render('tool-groups', compact(
-    'groups', 'subs', 'counts', 'groupOptions', 'edit', 'parentPreset',
+    'groups', 'subs', 'counts', 'groupOptions', 'edit', 'parentPreset', 'newMode', 'toolsTab',
     'pageTitle', 'title', 'breadcrumbs', 'topbarActions'
 ));

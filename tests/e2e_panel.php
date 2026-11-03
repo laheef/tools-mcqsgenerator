@@ -2188,9 +2188,12 @@ t('48 the Tool plugins screen lists the shipped tools',
     && str_contains($toolScreen['body'], 'tool_tip_split'));
 t('48 it says which folder a tool lives in',
     str_contains($toolScreen['body'], 'plugins/math/'));
-t('48 it explains the four steps from file to page',
-    str_contains($toolScreen['body'], 'How a tool becomes a page')
-    && str_contains($toolScreen['body'], 'Create the page'));
+/* The explanation is one collapsed <details> now, not five paragraphs of
+   prose between the list and the fold — the steps still have to be there. */
+t('48 it explains the steps from file to page',
+    str_contains($toolScreen['body'], 'How a file becomes a page')
+    && str_contains($toolScreen['body'], 'Create the page')
+    && str_contains($toolScreen['body'], 'Replacing a file'));
 
 /* -- a file that is not PHP is refused ------------------------------------ */
 $notPhp = $fixture('notes.txt', "just some notes\n");
