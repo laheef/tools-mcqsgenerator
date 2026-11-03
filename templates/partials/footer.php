@@ -85,6 +85,10 @@ $designed = static fn (): array => [
     ]],
     ['title' => 'Resources', 'links' => [
         ['label' => 'All calculators', 'url' => '/all-calculators', 'target' => '_self'],
+        /* Every band on the home page and every section page ends in a
+           "Browse all …" button that lands here, and the sitemap lists all
+           sixteen addresses — the one place that did not was this column. */
+        ['label' => 'All tools', 'url' => '/all-tools', 'target' => '_self'],
         ['label' => 'Search', 'url' => '/search', 'target' => '_self'],
         ['label' => 'Blog', 'url' => '/blog', 'target' => '_self'],
     ]],
