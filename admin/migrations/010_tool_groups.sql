@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `tool_groups` (
     `slug` varchar(80) NOT NULL,
     `parent` varchar(80) NOT NULL DEFAULT '' COMMENT 'empty for a top-level group',
     `name` varchar(120) NOT NULL DEFAULT '',
+    `short` varchar(60) NOT NULL DEFAULT '' COMMENT 'the header bar; empty = use name',
     `title` varchar(190) NOT NULL DEFAULT '',
     `description` varchar(400) NOT NULL DEFAULT '',
     `icon` varchar(60) NOT NULL DEFAULT 'grid',
