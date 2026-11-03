@@ -207,6 +207,17 @@ foreach ($sections as $section) {
          * it always had: a visitor who asked for calculators came for topics.
          */
         $showGroups = $group === null;
+        /* The band as the installer seeded it — sixteen tiles saying what the two
+           category grids below already say — is skipped on the front page rather
+           than waited for a migration to switch off. An owner who edits the row
+           (a heading of their own, some config) gets it back exactly as they set
+           it, and /calculators still renders it as the topic grid. */
+        $seededTiles = $skeyRow === 'categories'
+            && $title === ''
+            && ($config === [] || (string) ($config['heading'] ?? '') === 'Browse calculators by category');
+        if ($showGroups && $seededTiles) {
+            continue;
+        }
         ?>
         <section class="sheet" id="all-calculators">
             <div class="shell">
