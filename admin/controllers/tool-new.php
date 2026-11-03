@@ -53,8 +53,11 @@ if (!CustomCalc::enabled()) {
  * in the same order.
  */
 $editingId = request_int('id', 0);
-$editing   = $editingId > 0 ? CustomCalc::find($editingId) : null;
-if ($editingId > 0 && $editing === null) {
+/* A negative id is a seed — a tool page listed in data/tools.json that has not
+   been saved from the panel yet. It edits like any other; saving writes the row
+   that shadows it. */
+$editing   = $editingId !== 0 ? CustomCalc::find($editingId) : null;
+if ($editingId !== 0 && $editing === null) {
     Flash::error('That page no longer exists.');
     redirect_to(admin_url('custom-calculators'));
 }

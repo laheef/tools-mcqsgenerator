@@ -2493,6 +2493,20 @@ if (\Onim\ToolLibraries::enabled()) {
     @unlink($tmpLib);
 }
 
+/* a seed tool page (data/tools.json) edits like a saved one, and saving it
+   writes the row that shadows the seed — the listing must not show it twice */
+$seedRow = null;
+foreach (\Onim\CustomCalc::rows() as $candidate) {
+    if ((int) $candidate['id'] < 0) { $seedRow = $candidate; break; }
+}
+if ($seedRow !== null) {
+    $seedEditor = page('tool-edit', ['id' => (int) $seedRow['id']]);
+    t('65 a catalogue tool page opens in the tool editor',
+        $seedEditor['status'] === 200 && str_contains($seedEditor['body'], 'Edit tool')
+        && str_contains($seedEditor['body'], 'name="' . 'article"'),
+        'id ' . $seedRow['id']);
+}
+
 /* the tool editor is where a tool row's Edit button goes */
 $toolRow = row('SELECT id FROM custom_calculators WHERE kind = "tool" ORDER BY id LIMIT 1');
 if ($toolRow !== null) {

@@ -159,6 +159,18 @@ final class CustomCalc
             if (self::enabled()) {
                 foreach (Db::all('SELECT * FROM custom_calculators ORDER BY category_slug, name') as $row) {
                     $row['id'] = (int) $row['id'];
+                    /*
+                     * A row saved from the panel shadows the seed it was edited
+                     * from: same address, so the seed stops being a second
+                     * listing of the same page.
+                     */
+                    foreach (self::$rows as $seedId => $seed) {
+                        if ($seedId < 0
+                            && (string) $seed['slug'] === (string) $row['slug']
+                            && (string) $seed['category_slug'] === (string) $row['category_slug']) {
+                            unset(self::$rows[$seedId]);
+                        }
+                    }
                     self::$rows[$row['id']] = $row;
                     self::$byPath[(string) $row['category_slug'] . '/' . $row['slug']] = $row;
                     self::$byPath['/' . $row['category_slug'] . '/' . $row['slug']] = $row;
@@ -1181,6 +1193,15 @@ final class CustomCalc
             foreach (Data::allRows() as $row) {
                 if ($ignoreId > 0 && (int) ($row['customId'] ?? 0) === $ignoreId) {
                     continue;           // editing this calculator: it may keep its own address
+                }
+                /*
+                 * A seed (a tool page listed in data/tools.json) is not a
+                 * catalogue entry the owner cannot touch: editing one writes a
+                 * row that shadows it. Only a real catalogue page — a hand-written
+                 * calculator the site ships — blocks the address.
+                 */
+                if ((int) ($row['customId'] ?? 0) < 0) {
+                    continue;
                 }
                 if ($row['path'] === $path) {
                     $out[] = 'The catalogue already has a calculator at ' . $path . '. Choose another slug or category.';
