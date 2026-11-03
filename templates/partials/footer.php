@@ -103,24 +103,48 @@ $catLinks[] = ['label' => 'All calculators', 'url' => '/all-calculators', 'targe
 /* The tool sections. The site is bigger than its calculator column now, and a
    footer that lists only categories says otherwise. Built from Groups, so a
    section renamed in the panel follows here too. */
+$allGroups = \Onim\Groups::all();
 $toolLinks = [];
-foreach (\Onim\Groups::all() as $groupRow) {
+foreach ($allGroups as $groupRow) {
     if ((string) $groupRow['slug'] === \Onim\Groups::CALCULATORS) {
         continue;
     }
     $toolLinks[] = ['label' => (string) $groupRow['name'], 'url' => '/' . $groupRow['slug'], 'target' => '_self'];
+}
+/* Fifteen sections in one column is a ladder. The column is laid out in two
+   halves — one heading, the links flowing in two columns — so the footer keeps a
+   readable shape as sections are added in the panel. */
+$toolColumns = [];
+if ($toolLinks !== []) {
+    $toolColumns = [[
+        'title' => 'Tool sections',
+        'links' => $toolLinks,
+        'wide'  => count($toolLinks) > 9,
+    ]];
 }
 
 $have = array_map(static fn (array $c): string => mb_strtolower(trim((string) $c['title'])), $columns);
 if (!in_array('calculators', $have, true)) {
     $columns = array_merge([['title' => 'Calculators', 'links' => $catLinks]], $columns);
 }
-if ($toolLinks !== [] && !in_array('tool sections', $have, true)) {
-    $columns[] = ['title' => 'Tool sections', 'links' => $toolLinks];
-}
 foreach ($designed() as $wanted) {
     if (!in_array(mb_strtolower($wanted['title']), $have, true)) {
         $columns[] = $wanted;
+    }
+}
+/* The sections go straight after the calculators: the two halves of the site
+   read in the order the header shows them. */
+foreach (array_reverse($toolColumns) as $toolColumn) {
+    if (!in_array(mb_strtolower($toolColumn['title']), $have, true)) {
+        $at = 1;
+        foreach ($columns as $i => $existing) {
+            if (mb_strtolower(trim((string) $existing['title'])) === 'calculators') {
+                $at = $i + 1;
+                break;
+            }
+        }
+        array_splice($columns, $at, 0, [$toolColumn]);
+        $have[] = mb_strtolower($toolColumn['title']);
     }
 }
 
@@ -207,7 +231,7 @@ $legal = Cms::menu('legal');
             <nav class="footer-columns" aria-label="Footer">
                 <?php foreach ($columns as $column): ?>
                     <?php if (empty($column['links'])) { continue; } ?>
-                    <div class="footer-column">
+                    <div class="footer-column<?= !empty($column['wide']) ? ' footer-column--wide' : '' ?>">
                         <h2 class="footer-heading"><?= View::escape((string) $column['title']) ?></h2>
                         <ul class="footer-list">
                             <?php foreach (($column['links'] ?? []) as $link): ?>
@@ -247,6 +271,11 @@ $legal = Cms::menu('legal');
         <div class="footer-bottom">
             <div class="footer-bottom-left">
                 <p class="footer-copyright"><?= View::escape($copyright !== '' ? $copyright : '© ' . date('Y') . ' ' . $siteName . '. All rights reserved.') ?></p>
+                <p class="footer-note">
+                    <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators ·
+                    <?= View::escape((string) max(0, count($allGroups) - 1)) ?> tool sections ·
+                    <?= View::escape((string) count($categories ?? [])) ?> calculator topics — no account needed.
+                </p>
                 <?php if ($showNotice): ?>
                     <p class="footer-note">Every calculation runs on this site — nothing you type is sent to a third party.</p>
                 <?php endif; ?>

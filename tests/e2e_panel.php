@@ -2086,8 +2086,10 @@ t('46 the homepage draws its how-it-works figures',
     substr_count($homeBody, 'howto-figure') >= 4 && substr_count($homeBody, 'how-figure') >= 2);
 t('46 figures are inline SVG, not image files',
     !str_contains($homeBody, '<img') || substr_count($homeBody, 'figure-art') >= 1);
-t('46 the hero shows a worked example, drawn',
-    str_contains($homeBody, 'hero-figure-art') && str_contains($homeBody, 'fg-grad-worked-example'));
+/* Round 56: the front page is a tool site, so the hero draws a tool — a file
+   going in, the tool, a result coming out — instead of a worked sum. */
+t('46 the hero shows a drawing of the tool site',
+    str_contains($homeBody, 'hero-figure-art') && str_contains($homeBody, 'fg-grad-tool-file'));
 
 /* Category index: real cards, each a link with its own arrow. */
 $catPage = get(BASE . '/chemistry')['body'];

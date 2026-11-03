@@ -1344,7 +1344,11 @@ button { font: inherit; color: inherit; }
 
 .footer-columns { display: grid; gap: 28px 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (min-width: 640px) { .footer-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (min-width: 1146px) { .footer-columns { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* Five tracks on a desktop: Calculators, Tool sections, Company, Resources —
+   the tool sections joined the footer, and four tracks left every second label
+   wrapping. */
+@media (min-width: 1024px) { .footer-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1146px) { .footer-columns { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 .footer-column { min-width: 0; }
 .footer-heading {
   font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
@@ -2673,33 +2677,20 @@ a:focus-visible > .calc-glyph,
 .directory-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 
 /*
- * The shelf cards ride in one row that scrolls sideways, with a small pair of
- * arrows at its ends — the same control the second header row uses. A grid of
- * three columns worked while a category held six links; a section with forty
- * tools turned the band into a wall, and the arrows are how the reference tools
- * site handles a row that outgrows its width.
+ * The category cards sit in a plain grid — three across on a desktop, one on a
+ * phone. They are the page's table of contents, and a table of contents reads
+ * left-to-right, top-to-bottom; a sideways scroller hides most of it behind a
+ * gesture nobody asked for.
  *
- * minmax(0, …) rather than 1fr inside the cards: a single 55-character tool name
- * sets the min-content width of its column, and on a 375 px screen that pushed
- * the whole band past the viewport. The links ellipsise instead.
+ * minmax(0, …) rather than 1fr: a single 55-character tool name sets the
+ * min-content width of its column, and on a 375 px screen that pushed the whole
+ * band past the viewport. The links ellipsise instead.
  */
 .directory-grid {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(0, 1fr);
   gap: 14px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
-  scrollbar-width: thin;
-  scrollbar-color: #D5DBE7 transparent;
-  padding-bottom: 6px;
-  scroll-padding-left: 2px;
+  grid-template-columns: minmax(0, 1fr);
 }
-.directory-grid > * { scroll-snap-align: start; }
-.directory-grid::-webkit-scrollbar { height: 8px; }
-.directory-grid::-webkit-scrollbar-thumb { background: #D5DBE7; border-radius: 8px; }
-.directory-grid::-webkit-scrollbar-track { background: transparent; }
 
 .directory-cat {
   min-width: 0;
@@ -2793,15 +2784,13 @@ a:focus-visible > .calc-glyph,
 }
 
 .directory-foot a { font-weight: 600; }
+@media (min-width: 724px) {
+  .directory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
-/* How wide one shelf card is at each breakpoint. Fixed widths, not minmax(): a
-   constrained grid with auto columns will happily squeeze fourteen cards into
-   the visible width and leave a row of slivers, which is exactly what happened
-   the first time. Before 724 px a card takes most of the screen so the next one
-   peeks in and says "there is more". */
-.directory-grid { grid-auto-columns: min(84vw, 320px); }
-@media (min-width: 724px) { .directory-grid { grid-auto-columns: 300px; } }
-@media (min-width: 1146px) { .directory-grid { grid-auto-columns: 320px; } }
+@media (min-width: 1146px) {
+  .directory-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 
 /* A value the page computed but never printed: the harvest kept the sentence and
    dropped the slot inside it, so the number is listed under the results instead
@@ -3076,88 +3065,87 @@ a:focus-visible > .calc-glyph,
   .category-nav-inner { flex-wrap: wrap; overflow: visible; row-gap: 0; }
 }
 
-/* ------------------------------------------------------------- scroll rows */
+/* --------------------------------------------------------- the header button */
 /*
- * A row that scrolls sideways only when it has to, with a small pair of arrows
- * at its ends — the same control the reference tools site puts on its second
- * bar, and the reason a section with forty tools stays one tidy row instead of
- * a wall of links.
- *
- * The buttons are in the markup, so they are reachable by keyboard and visible
- * to a screen reader, but they only appear once the script has measured the row
- * and found it wider than its box (`[data-overflow]`). A row that fits shows no
- * arrows at all, which is the honest answer: there is nothing to scroll.
+ * One button at the end of the second header row, and only when the sixteen
+ * sections no longer fit: press it and the row walks rightwards; press it at the
+ * end and it returns to the start. A row that fits shows nothing at all, which
+ * is the honest answer — there is nothing to scroll.
  */
-.scrollrow { position: relative; }
-
-.scrollrow-btn {
-  position: absolute;
-  top: 50%;
-  z-index: 4;
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  margin-top: -16px;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--ink-2);
-  box-shadow: var(--shadow-card);
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .15s var(--ease), visibility .15s var(--ease),
-              background .15s var(--ease), color .15s var(--ease);
-}
-.scrollrow-btn--prev { left: -12px; }
-.scrollrow-btn--next { right: -12px; }
-.scrollrow-btn:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
-.scrollrow-btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
-
-.scrollrow[data-overflow] .scrollrow-btn { opacity: 1; visibility: visible; }
-.scrollrow-btn[disabled] { opacity: .28; pointer-events: none; }
-
-@media (max-width: 723px) {
-  /* On a phone there are no arrows: the card row is dragged with a thumb, the
-     next card already peeks in to say there is more, and a 32 px circle parked
-     on the edge would sit on top of the card being read. The thin scrollbar
-     stays, so the row still says where it is. */
-  .scrollrow-btn { display: none; }
-  .directory-grid { scrollbar-width: thin; }
-}
-
-/* The second header row uses the same arrows, drawn as edge fades so they sit
-   on the bar itself rather than floating over the page. */
 .category-nav { position: relative; }
 .category-nav-wrap { position: relative; }
 
 .category-nav-arrow {
   position: absolute;
   top: 0;
+  right: 0;
   bottom: 1px;
   z-index: 6;
   display: none;
   place-items: center;
-  width: 40px;
+  width: 38px;
   padding: 0;
   border: 0;
   color: var(--ink-3);
   cursor: pointer;
+  background: linear-gradient(270deg, var(--surface) 46%, rgba(255, 255, 255, 0));
 }
 .category-nav-arrow:hover { color: var(--brand); }
+.category-nav-arrow:focus-visible { outline: 2px solid var(--brand); outline-offset: -4px; }
 .category-nav[data-overflow] .category-nav-arrow { display: grid; }
-/* Room for the arrows to sit in: at rest the first and last section start clear
-   of them, and the fade over a scrolled edge has something to fade. */
-.category-nav[data-overflow] .category-nav-inner { padding-inline: 34px; scroll-padding-inline: 34px; }
-.category-nav-arrow--prev {
-  left: 0;
-  background: linear-gradient(90deg, var(--surface) 42%, rgba(255, 255, 255, 0));
+/* Room for the button to sit in, so the last section is never underneath it. */
+.category-nav[data-overflow] .category-nav-inner { padding-right: 40px; scroll-padding-right: 40px; }
+
+/* ------------------------------------------------- footer: every section */
+/*
+ * The footer grew a row: sixteen sections as chips, above the link columns. A
+ * column of fifteen entries is a ladder; a strip of chips is a map, and it is
+ * the only place on the page that shows the whole site at once without a scroll.
+ */
+.footer-sections { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--border); }
+.footer-sections .footer-heading { margin-bottom: 12px; }
+.footer-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.footer-chips .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 11px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 12.8px;
+  color: var(--ink-2);
 }
-.category-nav-arrow--prev svg { transform: rotate(180deg); }
-.category-nav-arrow { width: 34px; }
-.category-nav-arrow--next {
-  right: 0;
-  background: linear-gradient(270deg, var(--surface) 42%, rgba(255, 255, 255, 0));
+.footer-chips .chip:hover {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  color: var(--brand-ink);
+  text-decoration: none;
+}
+.footer-chips .muted { font-size: 11.6px; color: var(--ink-4); }
+
+/* A card with nothing in it yet: a dashed edge, so it reads as an open room
+   rather than a broken card. */
+.directory-cat--empty { border-style: dashed; box-shadow: none; background: var(--surface-2); }
+.directory-empty { margin: 2px 0 0; font-size: 12.8px; line-height: 1.55; color: var(--ink-4); }
+.directory-cat-eyebrow {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+/* A footer column with more links than fit one ladder: one heading, links
+   flowing in two columns, and the block takes two grid tracks so the shorter
+   columns beside it do not leave a hole. */
+/* One column, one track: fifteen entries read as a list of sections, and at five
+   tracks a desktop has room for the longest name ("Design & CSS Tools") on one
+   line. Two sub-columns inside a narrow track broke every second label. */
+
+/* The hero drawing is decoration; on a phone the search box matters more. */
+@media (max-width: 723px) {
+  .hero-figure--wide { display: none; }
 }

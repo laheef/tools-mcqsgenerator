@@ -667,8 +667,13 @@
           prev.disabled = track.scrollLeft <= 2;
           prev.tabIndex = max > 2 ? 0 : -1;
         }
-        if (next) {
+        if (next && prev) {
           next.disabled = track.scrollLeft >= max - 2;
+          next.tabIndex = max > 2 ? 0 : -1;
+        } else if (next) {
+          /* A single end button never disables: at the end it goes back to the
+             start, so there is no state in which clicking does nothing. */
+          next.disabled = false;
           next.tabIndex = max > 2 ? 0 : -1;
         }
       }
@@ -680,7 +685,16 @@
       }
       if (next) {
         next.addEventListener('click', function () {
-          track.scrollBy({ left: step(), behavior: 'smooth' });
+          /* One button, at the end of the row. It walks the row rightwards and,
+             once the last entry is in view, returns to the start — so a single
+             control keeps working however many sections the site grows to,
+             instead of stranding a visitor at the end with a dead arrow. */
+          var max = track.scrollWidth - track.clientWidth;
+          if (track.scrollLeft >= max - 4) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            track.scrollBy({ left: step(), behavior: 'smooth' });
+          }
         });
       }
 

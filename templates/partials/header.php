@@ -141,10 +141,6 @@ if ($groupMenu === []) {
 
     <nav class="category-nav" aria-label="Tool categories" data-scrollrow>
       <div class="shell category-nav-wrap">
-        <button class="category-nav-arrow category-nav-arrow--prev" type="button"
-                data-scroll-prev aria-label="Scroll sections left" tabindex="-1">
-            <?= View::icon('arrow', 17) ?>
-        </button>
         <div class="category-nav-inner" data-scroll-track>
             <?php foreach ($groupMenu as $item): ?>
                 <?php $isActiveItem = $active === (string) $item['slug']; ?>
@@ -184,8 +180,8 @@ if ($groupMenu === []) {
                 </a>
             <?php endforeach; ?>
         </div>
-        <button class="category-nav-arrow category-nav-arrow--next" type="button"
-                data-scroll-next aria-label="Scroll sections right" tabindex="-1">
+        <button class="category-nav-arrow" type="button" data-scroll-next
+                aria-label="Scroll the sections" tabindex="-1">
             <?= View::icon('arrow', 17) ?>
         </button>
       </div>

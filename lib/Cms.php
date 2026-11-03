@@ -313,9 +313,8 @@ final class Cms
     {
         if (!self::enabled() || !Db::hasTable('homepage_sections')) {
             return [['skey' => 'hero', 'stype' => 'hero', 'title' => '', 'subtitle' => '', 'config' => '{}'],
-                   ['skey' => 'categories', 'stype' => 'category_grid', 'title' => '', 'subtitle' => '', 'config' => '{}'],
                    ['skey' => 'directory', 'stype' => 'calc_directory', 'title' => 'Calculators, by category', 'subtitle' => 'Every calculator topic on the site, with a few of its tools — or open the full catalogue and filter it.', 'config' => '{"per_category":6}'],
-                   ['skey' => 'tools', 'stype' => 'tool_groups', 'title' => 'Tools, by section', 'subtitle' => '', 'config' => '[]'],
+                   ['skey' => 'tools', 'stype' => 'tool_groups', 'title' => 'Tools, by category', 'subtitle' => 'Everything on the site that is not a calculator, filed under the section it belongs to.', 'config' => '[]'],
                    ['skey' => 'popular', 'stype' => 'popular', 'title' => 'Most opened tools', 'subtitle' => '', 'config' => '{}'],
                    ['skey' => 'howitworks', 'stype' => 'howto', 'title' => 'What every tool here actually does', 'subtitle' => '', 'config' => '{}']];
         }

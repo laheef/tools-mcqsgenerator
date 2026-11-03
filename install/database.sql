@@ -492,7 +492,7 @@ CREATE TABLE `homepage_sections` (
 
 INSERT INTO `homepage_sections` (`id`, `skey`, `stype`, `title`, `subtitle`, `config`, `sort_order`, `enabled`, `created_at`, `updated_at`) VALUES
 (1, 'hero', 'hero', '', '', '{\"eyebrow\":\"Your life in\",\"title\":\"{count} free calculators\"}', 10, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
-(2, 'categories', 'category_grid', '', '', '{\"heading\":\"Browse calculators by category\"}', 20, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
+(2, 'categories', 'category_grid', '', '', '{\"heading\":\"Browse calculators by category\"}', 15, 0, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
 (7, 'tools', 'tool_groups', 'Tools, by section', '', '', 25, 1, '2026-11-03 09:00:00', '2026-11-03 09:00:00'),
 (3, 'directory', 'calc_directory', 'Calculators, by category', 'Every calculator topic on the site, with a few of its tools — or open the full catalogue and filter it.', '{\"per_category\":\"6\"}', 22, 1, '2026-10-29 14:08:39', '2026-11-03 09:00:00'),
 (4, 'popular', 'popular', 'Most opened tools', 'The pages people open most often — calculators and file tools together', '{\"limit\":\"12\"}', 30, 1, '2026-10-29 14:08:39', '2026-11-03 09:00:00'),

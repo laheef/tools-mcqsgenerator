@@ -244,6 +244,40 @@ SVG,
 </g>
 SVG,
 
+            /*
+             * A file going into a tool and coming out the other side: the hero's
+             * claim in one picture, for a site whose tools now outnumber its
+             * calculators. The file on the left is a document, the box in the
+             * middle is labelled with a cog, and the result on the right is the
+             * same document, smaller and checked.
+             */
+            'tool-file' => <<<'SVG'
+<rect x="0" y="0" width="320" height="180" rx="16" fill="url(#fg-grad-tool-file)"/>
+<g stroke="#C9D3EE" fill="#FFFFFF">
+  <rect x="26" y="52" width="72" height="78" rx="10"/>
+  <rect x="222" y="52" width="72" height="78" rx="10"/>
+</g>
+<g fill="#D8E0F6">
+  <rect x="38" y="70" width="44" height="6" rx="3"/>
+  <rect x="38" y="84" width="34" height="6" rx="3"/>
+  <rect x="38" y="98" width="40" height="6" rx="3"/>
+  <rect x="234" y="70" width="44" height="6" rx="3"/>
+  <rect x="234" y="84" width="28" height="6" rx="3"/>
+</g>
+<rect x="124" y="46" width="72" height="88" rx="14" fill="#FFFFFF" stroke="#8FA6F2" stroke-width="2"/>
+<circle cx="160" cy="74" r="10" stroke="#5B7CFA" stroke-width="2" fill="none"/>
+<path d="M160 63v4M160 81v4M149 74h4M167 74h4" stroke="#5B7CFA" stroke-width="2" stroke-linecap="round"/>
+<rect x="142" y="96" width="36" height="6" rx="3" fill="#CBD7FA"/>
+<rect x="142" y="108" width="24" height="6" rx="3" fill="#DDE4F8"/>
+<g stroke="#9DB0EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M108 90h10"/>
+  <path d="m114 86 4 4-4 4"/>
+  <path d="M202 90h10"/>
+  <path d="m208 86 4 4-4 4"/>
+</g>
+<circle cx="286" cy="118" r="12" fill="#FFFFFF" stroke="#5B7CFA" stroke-width="2"/>
+<path d="m281 118 4 4 7-8" stroke="#5B7CFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+SVG,
             'catalogue' => <<<'SVG'
 <rect x="0" y="0" width="320" height="180" rx="16" fill="url(#fg-grad-catalogue)"/>
 <g stroke="#DDE3F4" fill="#FFFFFF">
