@@ -164,9 +164,12 @@ if (Cms::enabled() ? Cms::settingBool('footer_tools_link', true) : true) {
             $links[] = $link;
         }
         if (!$hasTools) {
+            /* Straight after the calculator catalogue, wherever that link is
+               filed: the live database still points at /calculators, the
+               current default, while a newer install uses /all-calculators. */
             $at = count($links);
             foreach ($links as $j => $link) {
-                if (trim((string) ($link['url'] ?? '')) === '/all-calculators') {
+                if (in_array(trim((string) ($link['url'] ?? '')), ['/calculators', '/all-calculators'], true)) {
                     $at = $j + 1;
                     break;
                 }
