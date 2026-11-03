@@ -314,10 +314,10 @@ final class Cms
         if (!self::enabled() || !Db::hasTable('homepage_sections')) {
             return [['skey' => 'hero', 'stype' => 'hero', 'title' => '', 'subtitle' => '', 'config' => '{}'],
                    ['skey' => 'categories', 'stype' => 'category_grid', 'title' => '', 'subtitle' => '', 'config' => '{}'],
-                   ['skey' => 'tools', 'stype' => 'tool_groups', 'title' => 'Tools, by category', 'subtitle' => '', 'config' => '[]'],
-                   ['skey' => 'directory', 'stype' => 'calc_directory', 'title' => 'All calculators, by category', 'subtitle' => '', 'config' => '{"per_category":6}'],
-                   ['skey' => 'popular', 'stype' => 'popular', 'title' => 'Most popular', 'subtitle' => '', 'config' => '{}'],
-                   ['skey' => 'howitworks', 'stype' => 'howto', 'title' => 'What every calculator on this site actually does', 'subtitle' => '', 'config' => '{}']];
+                   ['skey' => 'directory', 'stype' => 'calc_directory', 'title' => 'Calculators, by category', 'subtitle' => 'Every calculator topic on the site, with a few of its tools — or open the full catalogue and filter it.', 'config' => '{"per_category":6}'],
+                   ['skey' => 'tools', 'stype' => 'tool_groups', 'title' => 'Tools, by section', 'subtitle' => '', 'config' => '[]'],
+                   ['skey' => 'popular', 'stype' => 'popular', 'title' => 'Most opened tools', 'subtitle' => '', 'config' => '{}'],
+                   ['skey' => 'howitworks', 'stype' => 'howto', 'title' => 'What every tool here actually does', 'subtitle' => '', 'config' => '{}']];
         }
         $rows = Db::all('SELECT * FROM homepage_sections WHERE enabled = 1 ORDER BY sort_order, id');
         foreach ($rows as &$r) {

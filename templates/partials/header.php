@@ -139,8 +139,13 @@ if ($groupMenu === []) {
         </div>
     </div>
 
-    <nav class="category-nav" aria-label="Tool categories">
-        <div class="shell category-nav-inner">
+    <nav class="category-nav" aria-label="Tool categories" data-scrollrow>
+      <div class="shell category-nav-wrap">
+        <button class="category-nav-arrow category-nav-arrow--prev" type="button"
+                data-scroll-prev aria-label="Scroll sections left" tabindex="-1">
+            <?= View::icon('arrow', 17) ?>
+        </button>
+        <div class="category-nav-inner" data-scroll-track>
             <?php foreach ($groupMenu as $item): ?>
                 <?php $isActiveItem = $active === (string) $item['slug']; ?>
                 <?php if (!empty($item['children'])): ?>
@@ -148,9 +153,9 @@ if ($groupMenu === []) {
                         <a class="category-nav-link<?= $isActiveItem ? ' is-active' : '' ?>"
                            href="<?= View::escape(View::url((string) $item['url'])) ?>"
                            aria-haspopup="true" aria-expanded="false">
-                            <?= View::icon((string) $item['icon'], 15) ?>
+                            <?= View::icon((string) $item['icon'], 13) ?>
                             <?= View::escape((string) $item['name']) ?>
-                            <?= View::icon('chevron-down', 14) ?>
+                            <?= View::icon('chevron-down', 12) ?>
                         </a>
                         <div class="category-dropdown" role="group" aria-label="<?= View::escape((string) $item['name']) ?>">
                             <?php foreach ($item['children'] as $child): ?>
@@ -164,7 +169,7 @@ if ($groupMenu === []) {
                     <a class="category-nav-link<?= $isActiveItem ? ' is-active' : '' ?>"
                        href="<?= View::escape(View::url((string) $item['url'])) ?>"
                        <?= $isActiveItem ? 'aria-current="page"' : '' ?>>
-                        <?= View::icon((string) $item['icon'], 15) ?>
+                        <?= View::icon((string) $item['icon'], 13) ?>
                         <?= View::escape((string) $item['name']) ?>
                     </a>
                 <?php endif; ?>
@@ -179,5 +184,10 @@ if ($groupMenu === []) {
                 </a>
             <?php endforeach; ?>
         </div>
+        <button class="category-nav-arrow category-nav-arrow--next" type="button"
+                data-scroll-next aria-label="Scroll sections right" tabindex="-1">
+            <?= View::icon('arrow', 17) ?>
+        </button>
+      </div>
     </nav>
 </header>

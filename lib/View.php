@@ -171,6 +171,29 @@ final class View
         );
     }
 
+    /** Does this name have a shape in the icon map? */
+    public static function hasIcon(string $name): bool
+    {
+        return (string) (self::icons()[$name] ?? '') !== '';
+    }
+
+    /**
+     * The glyph for a tool: its own icon when it names one, the section's icon
+     * otherwise.
+     *
+     * A calculator built in the panel carries the author's glyph; a file tool
+     * uploaded as a PHP file often carries none, and "MP3 to WAV Converter"
+     * matches no keyword rule in Icons::keyFor() — which is why a shelf of
+     * tools used to show a row of identical stars. The section's own glyph is
+     * at least true: everything in the Audio shelf is an audio tool.
+     */
+    public static function toolIcon(array $row, string $fallback, int $size = 13, string $class = 'calc-glyph'): string
+    {
+        $own = trim((string) ($row['icon'] ?? ''));
+        $name = self::hasIcon($own) ? $own : (self::hasIcon($fallback) ? $fallback : 'star');
+        return self::icon($name, $size, $class);
+    }
+
     public static function icons(): array
     {
         return [
@@ -179,6 +202,8 @@ final class View
                every icon on it was a topic, so nothing drew a speaker, a
                picture, a PDF or a padlock. */
             'gauge'        => '<path d="M4 17.2a8 8 0 1 1 16 0"/><path d="M12 17.2 15.7 11"/><circle cx="12" cy="17.4" r="1.3"/>',
+            'lock'         => '<rect x="4.6" y="10.4" width="14.8" height="10.2" rx="2.6"/><path d="M8.2 10.4V7.6a3.8 3.8 0 0 1 7.6 0v2.8"/><path d="M12 14.4v2.4"/>',
+            'file'         => '<path d="M13.6 3.2H7a2 2 0 0 0-2 2v13.6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.6z"/><path d="M13.4 3.4v5.2h5.2"/>',
             'plug'         => '<path d="M9 3.5v4M15 3.5v4"/><path d="M6.8 7.5h10.4v4.1a5.2 5.2 0 0 1-10.4 0z"/><path d="M12 16.8v3.7"/>',
             'clock'        => '<circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/>',
             'paint'        => '<path d="M4.5 20.5c3.4.6 5.2-1.2 5.2-3.2 0-1.7-1.2-2.6-2.6-2.6-1.9 0-2.6 1.5-2.6 3.1 0 .9-.3 1.7-1 2.7z"/><path d="M9.7 14.7 18 6.4a2.1 2.1 0 0 1 3 3l-8.3 8.3"/>',

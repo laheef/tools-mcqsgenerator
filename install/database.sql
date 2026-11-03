@@ -493,10 +493,10 @@ CREATE TABLE `homepage_sections` (
 INSERT INTO `homepage_sections` (`id`, `skey`, `stype`, `title`, `subtitle`, `config`, `sort_order`, `enabled`, `created_at`, `updated_at`) VALUES
 (1, 'hero', 'hero', '', '', '{\"eyebrow\":\"Your life in\",\"title\":\"{count} free calculators\"}', 10, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
 (2, 'categories', 'category_grid', '', '', '{\"heading\":\"Browse calculators by category\"}', 20, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
-(7, 'tools', 'tool_groups', 'Tools, by category', '', '', 22, 1, '2026-11-03 09:00:00', '2026-11-03 09:00:00'),
-(3, 'directory', 'calc_directory', 'All calculators, by category', 'Every category on the site, with a few of its calculators — or open the full catalogue and filter it.', '{\"per_category\":\"6\"}', 25, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
-(4, 'popular', 'popular', 'Most popular calculators', 'The ones people open most often', '{\"limit\":\"12\"}', 30, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
-(5, 'howitworks', 'howto', 'What every calculator on this site actually does', 'Not a form with a number at the end — an equation you can turn around, with the working shown.', '[]', 45, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46'),
+(7, 'tools', 'tool_groups', 'Tools, by section', '', '', 25, 1, '2026-11-03 09:00:00', '2026-11-03 09:00:00'),
+(3, 'directory', 'calc_directory', 'Calculators, by category', 'Every calculator topic on the site, with a few of its tools — or open the full catalogue and filter it.', '{\"per_category\":\"6\"}', 22, 1, '2026-10-29 14:08:39', '2026-11-03 09:00:00'),
+(4, 'popular', 'popular', 'Most opened tools', 'The pages people open most often — calculators and file tools together', '{\"limit\":\"12\"}', 30, 1, '2026-10-29 14:08:39', '2026-11-03 09:00:00'),
+(5, 'howitworks', 'howto', 'What every tool here actually does', 'Calculators turn an equation around. File tools run on your machine. Both show their working.', '[]', 45, 1, '2026-10-29 14:08:39', '2026-11-03 09:00:00'),
 (6, 'how', 'rich_text', 'How these calculators work', '', '{\"html\":\"<ol class=\\\"how-steps\\\"><li class=\\\"how-step\\\"><span class=\\\"how-num\\\">1</span><h3>Fill the values you know</h3><p>Every calculator is a set of equations rather than a fixed form. Type into any field — the empty ones are solved for you.</p></li><li class=\\\"how-step\\\"><span class=\\\"how-num\\\">2</span><h3>Read the units you work in</h3><p>Switch between metric and imperial, percent and decimal, currencies and prefix scales without retyping a number.</p></li><li class=\\\"how-step\\\"><span class=\\\"how-num\\\">3</span><h3>Check the formula</h3><p>The live formula line under each section shows the equation that produced your result, with your own values substituted in.</p></li></ol>\"}', 40, 1, '2026-10-29 14:08:39', '2026-10-29 16:29:46');
 
 -- ------------------------------------------------------------ media

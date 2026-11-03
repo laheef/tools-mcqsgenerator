@@ -631,6 +631,68 @@
     });
   })();
 
+  /* --------------------------------------------------------- scroll rows */
+  /*
+   * A row wider than its box gets a pair of arrows at its ends, and a row that
+   * fits gets none — the buttons exist in the markup (keyboard reachable, named
+   * for a screen reader) but stay hidden until this measures the overflow.
+   *
+   * Used by the second header row, which carries sixteen sections, and by the
+   * home page's shelf rows, which carry one card per category. Both are wired
+   * the same way: [data-scrollrow] wraps [data-scroll-track] and the two
+   * buttons, so a page can add a third without touching this code.
+   */
+  (function scrollRows() {
+    var rows = [].slice.call(document.querySelectorAll('[data-scrollrow]'));
+    if (!rows.length) return;
+
+    rows.forEach(function (row) {
+      var track = row.querySelector('[data-scroll-track]');
+      var prev = row.querySelector('[data-scroll-prev]');
+      var next = row.querySelector('[data-scroll-next]');
+      if (!track) return;
+
+      function step() {
+        return Math.max(180, Math.round(track.clientWidth * 0.8));
+      }
+
+      function paint() {
+        var max = track.scrollWidth - track.clientWidth;
+        if (max > 2) {
+          row.setAttribute('data-overflow', '1');
+        } else {
+          row.removeAttribute('data-overflow');
+        }
+        if (prev) {
+          prev.disabled = track.scrollLeft <= 2;
+          prev.tabIndex = max > 2 ? 0 : -1;
+        }
+        if (next) {
+          next.disabled = track.scrollLeft >= max - 2;
+          next.tabIndex = max > 2 ? 0 : -1;
+        }
+      }
+
+      if (prev) {
+        prev.addEventListener('click', function () {
+          track.scrollBy({ left: -step(), behavior: 'smooth' });
+        });
+      }
+      if (next) {
+        next.addEventListener('click', function () {
+          track.scrollBy({ left: step(), behavior: 'smooth' });
+        });
+      }
+
+      track.addEventListener('scroll', paint, { passive: true });
+      window.addEventListener('resize', paint);
+      if (window.ResizeObserver) {
+        new ResizeObserver(paint).observe(track);
+      }
+      paint();
+    });
+  })();
+
   /* ------------------------------------------------------- ad slot fitting */
   /*
    * An ad tag is written for one width: 728x90, 300x250, 970x250. On a phone

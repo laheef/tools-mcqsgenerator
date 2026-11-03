@@ -100,9 +100,23 @@ foreach (array_slice($bySize, 0, 4) as $cat) {
 }
 $catLinks[] = ['label' => 'All calculators', 'url' => '/all-calculators', 'target' => '_self'];
 
+/* The tool sections. The site is bigger than its calculator column now, and a
+   footer that lists only categories says otherwise. Built from Groups, so a
+   section renamed in the panel follows here too. */
+$toolLinks = [];
+foreach (\Onim\Groups::all() as $groupRow) {
+    if ((string) $groupRow['slug'] === \Onim\Groups::CALCULATORS) {
+        continue;
+    }
+    $toolLinks[] = ['label' => (string) $groupRow['name'], 'url' => '/' . $groupRow['slug'], 'target' => '_self'];
+}
+
 $have = array_map(static fn (array $c): string => mb_strtolower(trim((string) $c['title'])), $columns);
 if (!in_array('calculators', $have, true)) {
     $columns = array_merge([['title' => 'Calculators', 'links' => $catLinks]], $columns);
+}
+if ($toolLinks !== [] && !in_array('tool sections', $have, true)) {
+    $columns[] = ['title' => 'Tool sections', 'links' => $toolLinks];
 }
 foreach ($designed() as $wanted) {
     if (!in_array(mb_strtolower($wanted['title']), $have, true)) {
@@ -156,8 +170,10 @@ $legal = Cms::menu('legal');
                     <p class="footer-tagline"><?= View::escape($about) ?></p>
                 <?php endif; ?>
                 <p class="footer-count">
-                    <a href="<?= View::escape(View::url('/all-calculators')) ?>"><span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators</a>
-                    across <?= View::escape((string) count($categories ?? [])) ?> categories, free and without an account.
+                    <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> calculators
+                    across <?= View::escape((string) count($categories ?? [])) ?> topics, plus
+                    <?= View::escape((string) max(0, count(\Onim\Groups::all()) - 1)) ?> tool sections —
+                    free and without an account.
                 </p>
 
                 <?php if ($contactEmail !== '' || $contactPhone !== '' || $contactAddress !== ''): ?>

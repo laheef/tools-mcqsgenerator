@@ -25,7 +25,7 @@ use Onim\Admin\Flash;
 use Onim\Cms;
 use Onim\Db;
 
-const ADMIN_VERSION = '1.1.2';
+const ADMIN_VERSION = '1.1.3';
 
 if (!defined('ADMIN_ROOT')) {
     define('ADMIN_ROOT', __DIR__);

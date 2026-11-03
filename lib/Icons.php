@@ -481,6 +481,26 @@ final class Icons
     }
 
     /** Render a calculator's icon as inline SVG. */
+    /**
+     * The glyph for a tool row, with the caller's own glyph as the fallback.
+     *
+     * A tool uploaded by the owner has no category keyword to guess from — "MP3
+     * to WAV Converter" matches none of the rules, so the guess is the neutral
+     * star. Passing the section's icon in means an Audio tool shows the audio
+     * glyph instead, which is at least true.
+     */
+    public static function forTool(array $row, string $fallback, int $size = 24, string $class = 'calc-glyph'): string
+    {
+        $stored = trim((string) ($row['icon'] ?? ''));
+        $key = ($stored !== '' && self::has($stored))
+            ? $stored
+            : self::keyFor((string) ($row['path'] ?? ''), (string) ($row['name'] ?? ''), (string) ($row['cat'] ?? ''));
+        if ($key === 'star' && self::has($fallback)) {
+            $key = $fallback;
+        }
+        return self::svg($key, $size, $class, $key === $fallback ? null : self::hueFor((string) ($row['path'] ?? '')));
+    }
+
     public static function forCalculator(array $row, int $size = 24, string $class = 'calc-glyph'): string
     {
         /*
