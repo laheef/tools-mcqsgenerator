@@ -32,6 +32,34 @@ $total = $total ?? Data::total();
 $group = $group ?? null;
 $sections = Cms::homepageSections();
 
+/*
+ * Calculators first, then everything else.
+ *
+ * The two category bands are the page's table of contents, and the calculators
+ * are the site's centre of gravity — four thousand pages against a section that
+ * has not been filled yet. A site whose stored order still puts the sections
+ * first (the order an older release seeded) gets them swapped here, so the rule
+ * holds the moment the file is deployed instead of the moment an owner presses
+ * Upgrade. Any section between the two keeps its place: only the two bands move.
+ */
+if ($group === null) {
+    $dirAt = null;
+    $toolsAt = null;
+    foreach ($sections as $i => $row) {
+        if ((string) ($row['stype'] ?? '') === 'calc_directory' && $dirAt === null) {
+            $dirAt = $i;
+        }
+        if ((string) ($row['stype'] ?? '') === 'tool_groups' && $toolsAt === null) {
+            $toolsAt = $i;
+        }
+    }
+    if ($dirAt !== null && $toolsAt !== null && $toolsAt < $dirAt) {
+        $dirRow = $sections[$dirAt];
+        array_splice($sections, $dirAt, 1);
+        array_splice($sections, $toolsAt, 0, [$dirRow]);
+    }
+}
+
 /** Draw one calculator card (used by the popular and latest sections). */
 $card = static function (array $row): string {
     $catName = Data::category((string) $row['cat'])['name'] ?? '';
