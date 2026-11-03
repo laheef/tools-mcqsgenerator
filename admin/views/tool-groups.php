@@ -21,11 +21,15 @@ $missingMigration = $missingMigration ?? false;
 $edit = $edit ?? '';
 $editing = $edit !== '' ? \Onim\Groups::findAny($edit) : null;
 
+$parentPreset = $parentPreset ?? '';
 $form = $editing ?? [
-    'slug' => '', 'parent' => '', 'name' => '', 'short' => '', 'title' => '',
-    'description' => '', 'icon' => 'grid', 'sort_order' => (count($groups) + 1) * 10,
+    'slug' => '', 'parent' => $parentPreset, 'name' => '', 'short' => '', 'title' => '',
+    'description' => '', 'icon' => 'grid',
+    /* A subgroup is ordered inside its parent, not after every group. */
+    'sort_order' => $parentPreset !== '' ? 10 : (count($groups) + 1) * 10,
     'status' => 'published', 'source' => 'file',
 ];
+$parentName = $parentPreset !== '' ? (string) ($groupOptions[$parentPreset] ?? '') : '';
 ?>
 <?php if ($missingMigration): ?>
     <div class="card" style="border-color:var(--warn,#d97706);margin-bottom:18px">
@@ -78,6 +82,10 @@ $form = $editing ?? [
                         <td><span class="badge <?= (string) $group['status'] === 'published' ? 'badge-ok' : 'badge-warn' ?>"><?= e((string) $group['status']) ?></span></td>
                         <td class="actions">
                             <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-groups', ['edit' => $slug])) ?>" title="Edit"><?= admin_icon('edit', 15) ?></a>
+                            <?php if ((string) $group['parent'] === '' && (string) $group['slug'] !== \Onim\Groups::CALCULATORS): ?>
+                                <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-groups', ['edit' => 'new', 'parent' => $slug])) ?>"
+                                   title="Add a subcategory under <?= e((string) $group['name']) ?>"><?= admin_icon('plus', 15) ?></a>
+                            <?php endif; ?>
                             <a class="btn btn-sm btn-ghost" href="<?= e(site_link($slug)) ?>" target="_blank" rel="noopener" title="Open"><?= admin_icon('external', 15) ?></a>
                             <?php if ((string) $group['source'] === 'panel'): ?>
                                 <form method="post" action="<?= e(admin_url('tool-groups')) ?>" style="display:inline"
@@ -123,7 +131,9 @@ $form = $editing ?? [
     <div class="stack" style="gap:18px">
         <div class="card">
             <div class="card-head">
-                <h2><?= $editing !== null ? 'Edit “' . e((string) $form['name']) . '”' : 'New group' ?></h2>
+                <h2><?= $editing !== null
+                    ? 'Edit “' . e((string) $form['name']) . '”'
+                    : ($parentName !== '' ? 'New subgroup of “' . e($parentName) . '”' : 'New group') ?></h2>
                 <span class="spacer"></span>
                 <?php if ($editing !== null): ?>
                     <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-groups')) ?>" aria-label="Close"><?= admin_icon('x', 15) ?></a>

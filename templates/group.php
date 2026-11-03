@@ -14,6 +14,9 @@
  * @var array $rows     tools filed directly here
  * @var array $subs     subgroups (empty for a subgroup)
  * @var array $groups   every group, for the "other categories" row
+ * @var int   $total    how many this section holds before a search
+ * @var string $q       the search the server applied
+ * @var string $path    the section's own path
  */
 
 declare(strict_types=1);
@@ -31,8 +34,23 @@ $lede = (string) ($section['description'] ?? '');
 /* What sits under this section: a group shows its own tools plus every
    subgroup's; a subgroup shows only what is filed in it. */
 $allTools = $isSub ? $rows : Groups::toolsOfGroup((string) $section['slug']);
-$shown = $isSub ? $rows : $rows;
-$count = $isSub ? count($rows) : Groups::countGroup((string) $section['slug']);
+$count = (int) ($total ?? ($isSub ? count($rows) : Groups::countGroup((string) $section['slug'])));
+
+/* The search narrows what the page actually shows — for a group that includes
+   the tools filed under its subgroups, which is what the page lists. */
+$q = trim((string) ($q ?? ''));
+$matches = static function (array $list) use ($q): array {
+    if ($q === '') {
+        return $list;
+    }
+    return array_values(array_filter($list, static function (array $row) use ($q): bool {
+        $hay = (string) ($row['name'] ?? '') . ' ' . (string) ($row['description'] ?? '');
+        return mb_stripos($hay, $q) !== false;
+    }));
+};
+$rows = $matches($rows);
+$shown = $rows;
+$found = $isSub ? count($rows) : count($matches(Groups::toolsOfGroup((string) $section['slug'])));
 
 $card = static function (array $row) use ($icon, $section): string {
     $desc = View::excerpt((string) ($row['description'] ?? ''), 120);
@@ -45,7 +63,7 @@ $card = static function (array $row) use ($icon, $section): string {
         $label = Groups::label((string) $row['cat']);
     }
     ob_start(); ?>
-    <a class="popular-card tool-card" href="<?= View::escape($href) ?>">
+    <a class="popular-card tool-card" href="<?= View::escape($href) ?>" data-search-item>
         <span class="popular-head">
             <span class="category-icon"><?= View::icon($icon, 22) ?></span>
             <span class="popular-cat"><?= View::escape($label !== '' ? $label : $sectionName) ?></span>
@@ -75,7 +93,7 @@ $card = static function (array $row) use ($icon, $section): string {
                       from the band can go back to the list they came from. */ ?>
             <p class="page-head-action">
                 <a class="btn btn-primary" href="<?= View::escape(View::url('/all-tools/' . (string) $section['slug'])) ?>">
-                    Browse all <?= View::escape(Format::count($count)) ?> <?= $count === 1 ? 'tool' : 'tools' ?>
+                    Browse all <?= View::escape(Format::count($count)) ?> <?= View::escape(Groups::toolNoun((string) $section['slug'], $count)) ?>
                 </a>
             </p>
         <?php endif; ?>
@@ -94,26 +112,56 @@ $card = static function (array $row) use ($icon, $section): string {
         </div>
     <?php endif; ?>
 
+    <?php /* Every tool in this section is on the page, so the search can be
+             answered here — no round trip, and the count updates as you type.
+             The form still carries ?q= for the script-off case. */ ?>
+    <?php if ($allTools !== []): ?>
+        <?= View::render('partials/list-search', [
+            'action' => $path ?? ('/' . $section['slug']),
+            'q' => $q ?? '',
+            'total' => $count,
+            'shown' => $found,
+            'noun' => 'tools',
+            'scope' => (string) $section['name'],
+        ]) ?>
+    <?php endif; ?>
+
     <?php if ($shown !== []): ?>
         <div class="popular-grid">
             <?php foreach ($shown as $row) { echo $card($row); } ?>
         </div>
+    <?php endif; ?>
 
-        <?php if (!$isSub && count($allTools) > count($shown)): ?>
-            <section class="tool-subsection">
-                <?php foreach ($subs as $sub): ?>
-                    <?php $subRows = Groups::tools((string) $sub['slug']); ?>
-                    <?php if ($subRows === []) { continue; } ?>
+    <?php
+    /* A group's tools mostly live in its subgroups, which is why the group page
+       draws them in labelled sections. A search keeps only the subgroups that
+       still hold a match. */
+    $subBlocks = [];
+    if (!$isSub && $subs !== [] && count($allTools) > count($rows)) {
+        foreach ($subs as $sub) {
+            $subRows = $matches(Groups::tools((string) $sub['slug']));
+            if ($subRows !== []) {
+                $subBlocks[] = [$sub, $subRows];
+            }
+        }
+    }
+    ?>
+    <?php if ($subBlocks !== []): ?>
+        <section class="tool-subsection">
+            <?php foreach ($subBlocks as [$sub, $subRows]): ?>
+                <div class="tool-subsection-block" data-search-group>
                     <h2 class="section-title section-title--sm">
                         <a href="<?= View::escape(View::url('/' . $sub['slug'])) ?>"><?= View::escape((string) $sub['name']) ?></a>
                     </h2>
                     <div class="popular-grid">
                         <?php foreach ($subRows as $row) { echo $card($row); } ?>
                     </div>
-                <?php endforeach; ?>
-            </section>
-        <?php endif; ?>
-    <?php else: ?>
+                </div>
+            <?php endforeach; ?>
+        </section>
+    <?php endif; ?>
+
+    <?php if ($count === 0): ?>
         <div class="card empty-state">
             <h2 class="section-title section-title--sm">Nothing here yet</h2>
             <p class="page-lede" style="margin-top:8px">
@@ -125,6 +173,17 @@ $card = static function (array $row) use ($icon, $section): string {
                 <a class="btn btn-primary" href="<?= View::escape(View::url('/' . Groups::CALCULATORS)) ?>">
                     Browse the calculators
                 </a>
+            </p>
+        </div>
+    <?php elseif ($found === 0): ?>
+        <div class="card empty-state list-search-empty">
+            <h2 class="section-title section-title--sm">Nothing matched “<?= View::escape($q) ?>”</h2>
+            <p class="page-lede" style="margin-top:8px">
+                No tool in <?= View::escape((string) $section['name']) ?> mentions that.
+                Try a shorter word, or browse the whole section.
+            </p>
+            <p style="margin-top:16px">
+                <a class="btn btn-soft" href="<?= View::escape(View::url('/' . $section['slug'])) ?>">Clear the search</a>
             </p>
         </div>
     <?php endif; ?>

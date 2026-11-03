@@ -138,12 +138,18 @@ foreach ($groups as $group) {
 }
 
 $edit = (string) (request('edit', '') ?? '');
+/* "Add a subgroup" on a row arrives as ?edit=new&parent=audio: the form opens
+   empty with that group already chosen as the parent. */
+$parentPreset = (string) (request('parent', '') ?? '');
+if ($parentPreset !== '' && !isset($groupOptions[$parentPreset])) {
+    $parentPreset = '';
+}
 $pageTitle = 'Tool groups';
 $title = 'Tool groups';
 $breadcrumbs = [['label' => 'Tool groups']];
 $topbarActions = [];
 
 render('tool-groups', compact(
-    'groups', 'subs', 'counts', 'groupOptions', 'edit',
+    'groups', 'subs', 'counts', 'groupOptions', 'edit', 'parentPreset',
     'pageTitle', 'title', 'breadcrumbs', 'topbarActions'
 ));

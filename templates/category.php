@@ -4,12 +4,16 @@
  *
  * @var \Onim\Seo $seo
  * @var array $category
- * @var array $rows
+ * @var array $rows    the calculators on screen, already narrowed by ?q
+ * @var int   $total   how many the category holds before the search
+ * @var string $q      the search the server applied
+ * @var string $path   the category's own path
  */
 
 declare(strict_types=1);
 
 use Onim\Data;
+use Onim\Format;
 use Onim\Icons;
 use Onim\View;
 
@@ -48,10 +52,46 @@ foreach ($groups as $k => $v) {
         </div>
     </header>
 
+    <?php /* The search the category was missing: every calculator in this
+             category, findable without knowing the alphabet. */ ?>
+    <?php if (($total ?? count($rows)) > 0): ?>
+    <?= View::render('partials/list-search', [
+        'action' => $path ?? ('/' . $category['slug']),
+        'q' => $q ?? '',
+        'total' => $total ?? count($rows),
+        'shown' => count($rows),
+        'noun' => 'calculators',
+        'scope' => 'this category',
+    ]) ?>
+    <?php endif; ?>
+
     <?php /* Under the heading, above the grid: the slot a category page can
              carry without pushing the first calculator below the fold. */ ?>
     <?= \Onim\Ads::slot('category_top', 'ad-slot--page-top') ?>
 
+    <?php if ($rows === []): ?>
+        <div class="card empty-state list-search-empty">
+            <?php if (($q ?? '') !== ''): ?>
+                <h2 class="section-title section-title--sm">Nothing matched “<?= View::escape($q) ?>”</h2>
+                <p class="page-lede" style="margin-top:8px">
+                    <?= View::escape(Format::count((int) ($total ?? 0))) ?> calculators in
+                    <?= View::escape((string) $category['name']) ?>, and none of them mention that.
+                    Try a shorter word, or see every category.
+                </p>
+                <p style="margin-top:16px">
+                    <a class="btn btn-soft" href="<?= View::escape(View::url('/' . $category['slug'])) ?>">Clear the search</a>
+                    <a class="btn btn-soft" href="<?= View::escape(View::url('/all-calculators')) ?>">All calculators</a>
+                </p>
+            <?php else: ?>
+                <h2 class="section-title section-title--sm">Nothing here yet</h2>
+                <p class="page-lede" style="margin-top:8px">
+                    <?= View::escape((string) $category['name']) ?> is waiting for its first calculator.
+                </p>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($rows !== []): ?>
     <nav class="alpha-nav" aria-label="Jump to letter">
         <?php foreach (array_keys($groups) as $letter): ?>
             <a href="#letter-<?= View::escape($letter === '#' ? 'num' : $letter) ?>"><?= View::escape($letter) ?></a>
@@ -61,11 +101,11 @@ foreach ($groups as $k => $v) {
     <div class="calc-index">
         <?php foreach ($groups as $letter => $items): ?>
             <?php $anchor = $letter === '#' ? 'num' : $letter; ?>
-            <section class="index-letter" id="letter-<?= View::escape($anchor) ?>" aria-labelledby="letter-<?= View::escape($anchor) ?>-h">
+            <section class="index-letter" id="letter-<?= View::escape($anchor) ?>" data-search-group aria-labelledby="letter-<?= View::escape($anchor) ?>-h">
                 <h2 id="letter-<?= View::escape($anchor) ?>-h" class="index-letter-head"><?= View::escape($letter) ?></h2>
                 <ul class="index-list">
                     <?php foreach ($items as $row): ?>
-                        <li class="index-item">
+                        <li class="index-item" data-search-item>
                             <a class="index-link" href="<?= View::escape(View::url($row['path'])) ?>">
                                 <?= Icons::forCalculator($row, 18, 'calc-glyph calc-glyph-sm') ?>
                                 <span class="index-name"><?= View::escape($row['name']) ?></span>
@@ -78,6 +118,7 @@ foreach ($groups as $k => $v) {
             </section>
         <?php endforeach; ?>
     </div>
+    <?php endif; ?>
 
     <aside class="cross-links">
         <h2 class="section-title">Other categories</h2>

@@ -406,6 +406,59 @@ final class Groups
         'fun-random'       => 50,
     ];
 
+    /**
+     * The section's own word for its tools: "Audio Tools" -> "audio",
+     * "PDF Tools" -> "PDF", "Design & CSS Tools" -> "design & CSS".
+     *
+     * Used where a sentence names the section rather than letting the heading
+     * do it: the browse buttons read "Browse all 1 audio tool" instead of a
+     * fifteenth "Browse all 1 tool" down the same page.
+     */
+    public static function shortName(string $slug): string
+    {
+        /* The heading, not the panel's "Short name": that field exists to fit
+           the header bar, and "Social" for "Social & Community" would make the
+           button say "Browse all 1 social tool". Renaming a section still moves
+           the button, because the button reads the name. */
+        $name = trim(self::label($slug));
+        $name = preg_replace('~\s+tools$~i', '', $name) ?? $name;
+        $name = trim($name);
+        if ($name === '') {
+            return trim(self::label($slug));
+        }
+        /* Acronyms keep their capitals; every other word reads as a word in the
+           middle of a sentence ("text & writing", "design & CSS"). */
+        $keep = ['PDF', 'CSS', 'SEO', 'API', 'HTML', 'URL', 'DPI', 'CSV', 'IP'];
+        $words = preg_split('~\s+~', $name) ?: [$name];
+        foreach ($words as $i => $word) {
+            if (in_array(mb_strtoupper($word), $keep, true)) {
+                $words[$i] = mb_strtoupper($word);
+            } elseif ($i === 0) {
+                $words[$i] = mb_strtolower(mb_substr($word, 0, 1)) . mb_substr($word, 1);
+            } elseif (!ctype_upper((string) preg_replace('~[^A-Za-z]~', '', $word))) {
+                $words[$i] = mb_strtolower($word);
+            }
+        }
+        return implode(' ', $words);
+    }
+
+    /**
+     * "image tools", "audio tool", "converter tool" — the noun a browse button
+     * ends with. A section called "Converters" holding one tool should not say
+     * "1 converters tool", so a plural name loses its s for a count of one.
+     */
+    public static function toolNoun(string $slug, int $count): string
+    {
+        $name = self::shortName($slug);
+        if ($count !== 1) {
+            return $name . ' tools';
+        }
+        if (mb_strlen($name) > 3 && str_ends_with($name, 's')) {
+            $name = mb_substr($name, 0, -1);
+        }
+        return $name . ' tool';
+    }
+
     public static function hue(string $slug): int
     {
         $slug = trim($slug, '/');

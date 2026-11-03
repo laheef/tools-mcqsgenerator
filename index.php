@@ -554,6 +554,11 @@ if ($count === 1) {
         $rows = Groups::tools($slug);
         $countIn = $isSub ? count($rows) : Groups::countGroup($slug);
 
+        /* The section's own search. A parent section lists its subgroups' tools
+           as well as its own, so the template filters what it actually renders
+           rather than this list; here the query only decides indexing. */
+        $secQ = trim((string) ($_GET['q'] ?? ''));
+
         $seo = new Seo(
             (string) ($section['title'] ?? $section['name']),
             (string) ($section['description'] ?? '')
@@ -572,14 +577,18 @@ if ($count === 1) {
             ['name' => (string) $section['name'], 'url' => '/' . $slug],
         ]));
         /* A section with nothing in it is honest, not useful: keep it out of the
-           index until its first tool arrives. */
-        $seo->noindex = $countIn === 0;
+           index until its first tool arrives. A filtered view is not a page of
+           its own either. */
+        $seo->noindex = $countIn === 0 || $secQ !== '';
 
         echo View::page('group', [
             'seo' => $seo,
             'section' => $section,
             'parent' => $parent,
             'rows' => $rows,
+            'total' => $countIn,
+            'q' => $secQ,
+            'path' => '/' . $slug,
             'subs' => $isSub ? [] : Groups::subs($slug),
             'groups' => Groups::all(),
             'categories' => Data::categories(),
@@ -595,9 +604,22 @@ if ($count === 1) {
     $cat = Data::category($segments[0]);
     if ($cat !== null) {
         $rows = Data::byCategory($cat['slug']);
+        /* A category page lists everything in it — 320 calculators in one
+           category is a wall, so the page carries its own search. The query is
+           applied here rather than in the browser so a filtered category is a
+           link that survives a reload, a share and a crawler. */
+        $catTotal = count($rows);
+        $catQ = trim((string) ($_GET['q'] ?? ''));
+        if ($catQ !== '') {
+            $rows = array_values(array_filter($rows, static function (array $row) use ($catQ): bool {
+                $hay = (string) ($row['name'] ?? '') . ' ' . (string) ($row['description'] ?? '');
+                return mb_stripos($hay, $catQ) !== false;
+            }));
+        }
         $seo = (new Seo($cat['title'] ?? ($cat['name'] . ' Calculators'), $cat['description'] ?? ''))
             ->setShareCard((string) ($cat['slug'] ?? $slug));
         $seo->canonical = SITE_URL . '/' . $cat['slug'];
+        $seo->noindex = $catQ !== '';
         $seo->breadcrumbs = [
             ['name' => 'Home', 'url' => '/'],
             ['name' => $cat['name'], 'url' => '/' . $cat['slug']],
@@ -606,6 +628,9 @@ if ($count === 1) {
             'seo' => $seo,
             'category' => $cat,
             'rows' => $rows,
+            'total' => $catTotal,
+            'q' => $catQ,
+            'path' => '/' . (string) $cat['slug'],
             'categories' => Data::categories(),
             'navCategories' => Data::categories(),
         ]);

@@ -14,6 +14,7 @@ if (!defined('ONIM_PANEL')) {
 
 
 use Onim\Admin\Csrf;
+use Onim\Groups;
 
 $showForm = request('edit') !== null;
 $isNew = $editing === null;
@@ -151,4 +152,66 @@ $form = $editing ?? [
             </div>
         </div>
     <?php endif; ?>
+</div>
+
+<?php /* Tool sections live in their own table, so they are edited in their own
+         screen — but they are categories to everyone reading the site, so this
+         page has to say where they are. */ ?>
+<div class="card" style="margin-top:18px">
+    <div class="card-head">
+        <h2>Tool sections</h2>
+        <span class="spacer"></span>
+        <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-groups')) ?>">Open tool groups</a>
+        <a class="btn btn-sm btn-primary" href="<?= e(admin_url('tool-groups', ['edit' => 'new'])) ?>">
+            <?= admin_icon('plus', 14) ?> New tool section
+        </a>
+    </div>
+    <div class="table-wrap">
+        <table class="data">
+            <thead>
+            <tr><th>Section</th><th>Address</th><th class="num">Tools</th><th>Status</th><th class="actions">Actions</th></tr>
+            </thead>
+            <tbody>
+            <?php foreach ($toolSections as $section): ?>
+                <tr>
+                    <td class="primary">
+                        <?= e($section['name']) ?>
+                        <?php if ($section['subs'] !== []): ?>
+                            <span class="sub"><?= e(implode(' · ', array_map(static fn ($s) => (string) $s['name'], $section['subs']))) ?></span>
+                        <?php endif; ?>
+                    </td>
+                    <td class="mono small">/<?= e($section['slug']) ?></td>
+                    <td class="num"><?= number_format((int) $section['count']) ?></td>
+                    <td><span class="badge <?= $section['status'] === 'published' ? 'badge-ok' : 'badge-warn' ?>"><?= e($section['status']) ?></span></td>
+                    <td class="actions">
+                        <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-groups', ['edit' => $section['slug']])) ?>" title="Edit this section"><?= admin_icon('edit', 15) ?></a>
+                        <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-groups', ['edit' => 'new', 'parent' => $section['slug']])) ?>"
+                           title="Add a subcategory under <?= e($section['name']) ?>"><?= admin_icon('plus', 15) ?></a>
+                        <a class="btn btn-sm btn-ghost" href="<?= e(site_link($section['slug'])) ?>" target="_blank" rel="noopener" title="Open"><?= admin_icon('external', 15) ?></a>
+                    </td>
+                </tr>
+                <?php foreach ($section['subs'] as $sub): ?>
+                    <tr>
+                        <td class="primary" style="padding-left:34px"><span class="muted">↳</span> <?= e($sub['name']) ?></td>
+                        <td class="mono small">/<?= e($sub['slug']) ?></td>
+                        <td class="num"><?= number_format((int) $sub['count']) ?></td>
+                        <td><span class="badge badge-muted">subcategory</span></td>
+                        <td class="actions">
+                            <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-groups', ['edit' => $sub['slug']])) ?>" title="Edit"><?= admin_icon('edit', 15) ?></a>
+                            <a class="btn btn-sm btn-ghost" href="<?= e(site_link($sub['slug'])) ?>" target="_blank" rel="noopener" title="Open"><?= admin_icon('external', 15) ?></a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-body small muted">
+        <p style="margin:0">
+            A tool section is a page of tools (<code>/audio</code>) and an entry in the secondary header.
+            A subcategory under it (<code>/img-converters</code>) is a page too. Tools are filed under
+            either one — <a href="<?= e(admin_url('tool-plugins')) ?>">upload a tool file</a> and pick the
+            section it belongs to.
+        </p>
+    </div>
 </div>

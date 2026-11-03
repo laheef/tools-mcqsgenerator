@@ -415,9 +415,14 @@ foreach ($sections as $section) {
                                           this section. A pill and a quiet link said the
                                           same thing twice in two different styles. */ ?>
                                 <?php if ($totalInSection > 0): ?>
+                                    <?php
+                                    /* The section's own word, so fifteen bands do not
+                                       all end with the same five words: "Browse all 1
+                                       audio tool", "Browse all 4 image tools". */
+                                    $noun = Groups::toolNoun($gSlug, $totalInSection);
+                                    ?>
                                     <a class="btn btn-primary" href="<?= View::escape(View::url('/all-tools/' . $gSlug)) ?>">
-                                        Browse all <?= View::escape(Format::count($totalInSection)) ?>
-                                        <?= $totalInSection === 1 ? 'tool' : 'tools' ?>
+                                        Browse all <?= View::escape(Format::count($totalInSection)) ?> <?= View::escape($noun) ?>
                                     </a>
                                 <?php else: ?>
                                     <span class="directory-total">Opening soon</span>

@@ -23,6 +23,7 @@ use Onim\Admin\Flash;
 use Onim\Cms;
 use Onim\Data;
 use Onim\Db;
+use Onim\Groups;
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     Csrf::requirePost();
@@ -130,8 +131,31 @@ foreach (Data::categories() as $cat) {
 }
 usort($rows, static fn (array $a, array $b): int => ((int) $a['sort_order'] <=> (int) $b['sort_order']) ?: strcasecmp($a['name'], $b['name']));
 
+/* Tool sections look like categories to a reader — "Audio Tools" is a heading
+   with a list under it — but they are stored as tool groups. Listing them here,
+   with a link to the screen that edits them, is the difference between "I cannot
+   edit the tool category" and one click. */
+$toolSections = [];
+foreach (Groups::all() as $group) {
+    if ((string) $group['slug'] === Groups::CALCULATORS) {
+        continue;
+    }
+    $subs = Groups::subs((string) $group['slug']);
+    $toolSections[] = [
+        'slug' => (string) $group['slug'],
+        'name' => (string) $group['name'],
+        'count' => Groups::countGroup((string) $group['slug']),
+        'status' => (string) $group['status'],
+        'subs' => array_map(static fn (array $sub): array => [
+            'slug' => (string) $sub['slug'],
+            'name' => (string) $sub['name'],
+            'count' => Groups::count((string) $sub['slug']),
+        ], $subs),
+    ];
+}
+
 $pageTitle = 'Categories';
 $title = $pageTitle;
 $topbarActions = [['label' => 'New category', 'url' => admin_url('categories', ['edit' => 'new']), 'icon' => 'plus', 'class' => 'btn-primary']];
 
-render('categories', compact('rows', 'editing', 'editId', 'pageTitle', 'title', 'topbarActions'));
+render('categories', compact('rows', 'editing', 'editId', 'toolSections', 'pageTitle', 'title', 'topbarActions'));

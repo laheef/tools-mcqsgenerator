@@ -2329,6 +2329,62 @@ a:focus-visible > .calc-glyph,
 .browse-search-field input[type="search"]::-webkit-search-cancel-button { cursor: pointer; }
 
 /*
+ * The search a category and a tool-section page carry. Lighter than the
+ * catalogue's search card: it sits under a page head that already has a title
+ * and a count, so a second framed box would read as a second page start. It
+ * reuses .browse-search-field for the input itself, which keeps the focus ring,
+ * the icon and the clear button identical to the catalogue.
+ */
+.list-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+.list-search .browse-search-field {
+  flex: 1 1 300px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+}
+
+.list-search .btn { flex: 0 0 auto; border-radius: var(--radius-pill); }
+
+.list-search-clear {
+  font-size: 13px;
+  color: var(--ink-3);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.list-search-clear:hover { color: var(--brand-ink); }
+
+.list-search-count {
+  flex: 1 1 100%;
+  margin: -2px 0 0;
+  font-size: 13px;
+  color: var(--ink-4);
+}
+
+.list-search-empty { margin-top: 4px; }
+
+/* The live filter hides rows with [hidden]; a card that sets its own display
+   would otherwise stay on screen. */
+[data-search-item][hidden],
+[data-search-group][hidden],
+.alpha-nav a[hidden],
+.list-search [hidden] { display: none !important; }
+
+@media (max-width: 560px) {
+  .list-search { gap: 8px; }
+  .list-search .browse-search-field { flex: 1 1 100%; }
+  /* On a phone the list filters as you type, so a full-width Search button
+     under the field is a second row for nothing. Enter still submits. */
+  .list-search .btn { display: none; }
+}
+
+/*
  * Inside the search card the controls take the card's own corner language — a
  * nested 8 px inside a 12 px container — instead of the site-wide pill. A pill
  * inside a rounded rectangle reads as two different designs stacked; a nested

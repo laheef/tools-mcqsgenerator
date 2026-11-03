@@ -79,7 +79,7 @@ foreach ($sections as $sec) {
         <div class="browse-search-field">
             <?= View::icon('search', 20) ?>
             <input id="tools-q" type="search" name="q" value="<?= View::escape($q) ?>"
-                   placeholder="Search <?= View::escape(Format::count($total)) ?> <?= $total === 1 ? 'tool' : 'tools' ?> by name…"
+                   placeholder="Search <?= View::escape(Format::count($total)) ?> <?= View::escape($section !== null ? Groups::toolNoun($sectionSlug, $total) : ($total === 1 ? 'tool' : 'tools')) ?> by name…"
                    autocomplete="off">
         </div>
         <label class="sr-only" for="tools-sort">Sort by</label>

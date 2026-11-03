@@ -105,6 +105,10 @@ usort($rows, static fn (array $a, array $b): int => strcasecmp((string) $a['name
 $pageTitle = 'Custom calculators';
 $title = $pageTitle;
 $topbarActions = [
+    /* Both ways in, side by side: a page written in the editor, or a tool file
+       uploaded from the panel. The second was only reachable from a screen
+       called "Tool plugins", which is not where anyone looks for "add a tool". */
+    ['label' => 'Upload a tool file', 'url' => admin_url('tool-plugins'), 'icon' => 'upload'],
     ['label' => 'New calculator', 'url' => admin_url('custom-calculator-edit', ['id' => 'new']), 'icon' => 'plus', 'class' => 'btn-primary'],
 ];
 
