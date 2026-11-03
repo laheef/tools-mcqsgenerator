@@ -98,7 +98,10 @@ $parentName = $parentPreset !== '' ? (string) ($groupOptions[$parentPreset] ?? '
                 </div>
             <?php endif; ?>
 
-            <?php if ($editing === null && $newMode === ''): ?>
+            <?php /* The chooser only when nothing has been chosen. Reaching this
+                     card from a section's "+ Sub-category" link sets a parent,
+                     so the form — not the chooser — has to be what opens. */ ?>
+            <?php if ($editing === null && !$isSubForm && $newMode === ''): ?>
                 <div class="card-body">
                     <p class="small muted" style="margin:0">
                         Pick one above, or use

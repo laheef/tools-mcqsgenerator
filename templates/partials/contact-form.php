@@ -24,15 +24,24 @@ $sent = isset($_GET['sent']);
 $problem = (string) ($contactError ?? '');
 $old = is_array($contactOld ?? null) ? $contactOld : [];
 $privacy = (string) (Cms::setting('contact_privacy_note', '') ?? '');
-// The message box is drawn once: from the panel's field list when it defines
-// one, otherwise from the built-in fallback below.
-$hasBodyField = false;
+// Every field is drawn once, never twice.
+//
+// The form has a built-in name, email, subject and message. The panel's field
+// list is drawn after them — and when it configures a field with the same key
+// (it usually does: name and email are on every contact form), the page used
+// to print both: two inputs called "name", two called "email", both required,
+// and the first pair silently overwritten on submit. A visitor had to fill in
+// four boxes and only two of them counted.
+//
+// So: a built-in field is skipped when a configured field already owns its key.
+$configured = [];
 foreach ($fields as $field) {
-    if (in_array((string) $field['fkey'], ['body', 'message'], true)) {
-        $hasBodyField = true;
-        break;
-    }
+    $configured[(string) $field['fkey']] = true;
 }
+$hasBodyField = isset($configured['body']) || isset($configured['message']);
+$hasName = isset($configured['name']);
+$hasEmail = isset($configured['email']);
+$hasSubject = isset($configured['subject']);
 ?>
 <section class="contact-block" id="contact-form" aria-labelledby="contact-heading">
     <h2 class="section-title" id="contact-heading">Send a message</h2>
@@ -63,24 +72,32 @@ foreach ($fields as $field) {
                 <input id="contact-website" type="text" name="website" tabindex="-1" autocomplete="off">
             </div>
 
-            <div class="form-row">
-                <div class="field">
-                    <label class="field-label" for="contact-name">Your name <span class="field-optional">required</span></label>
-                    <input class="field-input" id="contact-name" type="text" name="name" required maxlength="120"
-                           value="<?= View::escape((string) ($old['name'] ?? '')) ?>" autocomplete="name">
+            <?php if (!$hasName || !$hasEmail): ?>
+                <div class="form-row">
+                    <?php if (!$hasName): ?>
+                        <div class="field">
+                            <label class="field-label" for="contact-name">Your name <span class="field-optional">required</span></label>
+                            <input class="field-input" id="contact-name" type="text" name="name" required maxlength="120"
+                                   value="<?= View::escape((string) ($old['name'] ?? '')) ?>" autocomplete="name">
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!$hasEmail): ?>
+                        <div class="field">
+                            <label class="field-label" for="contact-email">Email address <span class="field-optional">required</span></label>
+                            <input class="field-input" id="contact-email" type="email" name="email" required maxlength="190"
+                                   value="<?= View::escape((string) ($old['email'] ?? '')) ?>" autocomplete="email">
+                        </div>
+                    <?php endif; ?>
                 </div>
-                <div class="field">
-                    <label class="field-label" for="contact-email">Email address <span class="field-optional">required</span></label>
-                    <input class="field-input" id="contact-email" type="email" name="email" required maxlength="190"
-                           value="<?= View::escape((string) ($old['email'] ?? '')) ?>" autocomplete="email">
-                </div>
-            </div>
+            <?php endif; ?>
 
-            <div class="field">
-                <label class="field-label" for="contact-subject">Subject</label>
-                <input class="field-input" id="contact-subject" type="text" name="subject" maxlength="190"
-                       value="<?= View::escape((string) ($old['subject'] ?? '')) ?>">
-            </div>
+            <?php if (!$hasSubject): ?>
+                <div class="field">
+                    <label class="field-label" for="contact-subject">Subject</label>
+                    <input class="field-input" id="contact-subject" type="text" name="subject" maxlength="190"
+                           value="<?= View::escape((string) ($old['subject'] ?? '')) ?>">
+                </div>
+            <?php endif; ?>
 
             <?php foreach ($fields as $field): ?>
                 <?php

@@ -297,6 +297,24 @@ foreach (Db::all("SELECT fkey, ftype, required FROM contact_fields WHERE enabled
         default => 'A message sent by the automated panel test.',
     };
 }
+/* Every field once. The form has a built-in name/email/subject and the panel
+   adds its own on top; when both carry the same key the page printed four
+   required boxes and two identical ids, and only the second pair was read. */
+$dupes = [];
+foreach (['name', 'email', 'subject'] as $key) {
+    $n = preg_match_all('~name="' . $key . '"~', $contactPage);
+    if ($n > 1) {
+        $dupes[] = $key . ' x' . $n;
+    }
+}
+t('10 no contact field is printed twice', $dupes === [], implode(', ', $dupes));
+$ids = [];
+preg_match_all('~id="(contact-[a-z-]+)"~', $contactPage, $idm);
+foreach ($idm[1] as $id) {
+    $ids[$id] = ($ids[$id] ?? 0) + 1;
+}
+t('10 no contact element shares an id', array_filter($ids, static fn (int $n): bool => $n > 1) === []);
+
 $sent = http('POST', BASE . '/contact', $contactFields);
 $message = row("SELECT * FROM messages WHERE email='panel-test@example.com' ORDER BY id DESC LIMIT 1");
 t('10 a contact submission is stored', $message !== null && $sent['status'] === 303, (string) $sent['status']);

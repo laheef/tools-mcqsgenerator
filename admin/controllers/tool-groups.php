@@ -85,11 +85,14 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             Flash::error('“' . $slug . '” was not deleted: ' . $why . '. Move or delete ' . ($tools > 0 ? 'them' : 'those') . ' first.');
             redirect_to(admin_url('tool-groups'));
         }
+        /* Read the name before the row goes: the toast should say “Audio
+           Loudness”, not “audio-loudness”. */
+        $name = (string) (\Onim\Groups::findAny($slug)['name'] ?? $slug);
         Db::exec('DELETE FROM tool_groups WHERE slug = ?', [$slug]);
         Groups::flush();
         Cms::flush();
         Activity::log('group_deleted', 'group', $slug, 'Deleted tool group ' . $slug);
-        Flash::success('“' . $slug . '” is gone from the header.');
+        Flash::success('“' . $name . '” is gone from the header.');
         redirect_to(admin_url('tool-groups'));
     }
 
