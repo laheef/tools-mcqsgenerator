@@ -345,7 +345,7 @@ final class CustomCalc
             'h1' => '',
             'meta_title' => '', 'meta_description' => '', 'summary' => '',
             'icon' => '', 'status' => 'draft', 'is_featured' => 0, 'sort_order' => 0,
-            'noindex' => 0, 'sections' => [], 'faq' => [], 'fields' => [],
+            'noindex' => 0, 'sections' => [], 'faq' => [], 'fields' => [], 'libraries' => '',
             'equations' => [], 'js' => '',
         ];
         if ($row === null) {
@@ -374,6 +374,9 @@ final class CustomCalc
             'fields'           => self::decode((string) ($row['fields'] ?? ''), []),
             'directions'       => self::flattenEquations(self::decode((string) ($row['equations'] ?? ''), [])),
             'js'              => (string) ($row['js'] ?? ''),
+            /* Without this the picker repaints unticked and the next save
+               silently unloads every library the page had. */
+            'libraries'       => (string) ($row['libraries'] ?? ''),
         ];
     }
 
@@ -960,6 +963,18 @@ final class CustomCalc
             $row['tool_shortcode'] = $shortcode;
             $row['tool_version']   = $toolVersion;
         }
+        if (Db::hasColumn('custom_calculators', 'libraries')) {
+            /* Only slugs that still exist survive the save: a row deleted from
+               the library list must not leave a dead reference behind. */
+            $picked = ToolLibraries::enabled() ? ToolLibraries::bySlug() : [];
+            $keep = [];
+            foreach (ToolLibraries::split((string) ($model['libraries'] ?? '')) as $slug) {
+                if (isset($picked[$slug])) {
+                    $keep[] = $slug;
+                }
+            }
+            $row['libraries'] = implode(',', array_values(array_unique($keep)));
+        }
 
         if ($id !== null && $id > 0) {
             $existing = self::find($id);
@@ -979,6 +994,65 @@ final class CustomCalc
         self::ensureCategory($cat, (string) $row['name']);
         LiveCounts::invalidate();
         return ['ok' => true, 'id' => (int) $id, 'errors' => [], 'message' => 'Saved.'];
+    }
+
+    /* ------------------------------------------------------------- article */
+
+    /**
+     * Split one HTML article into the section list the page renders.
+     *
+     * The editor is a single rich-text box — that is what the owner asked for —
+     * while the template wants a list, because each entry becomes an <h2> and a
+     * table-of-contents link. The two are the same document seen two ways: any
+     * <h2> in the box starts a new section, and whatever comes before the first
+     * one is the lead.
+     *
+     * Markup inside a section is kept as it stands. Only the heading tags are
+     * consumed, and an <h2> is re-created from the title by the template, so a
+     * heading cannot drift out of the table of contents.
+     *
+     * @return array<int,array{title:string,html:string}>
+     */
+    public static function articleToSections(string $html): array
+    {
+        $html = trim($html);
+        if ($html === '') {
+            return [];
+        }
+        /* An <h2 …>…</h2>, wherever it sits. */
+        $parts = preg_split('~<h2\b[^>]*>(.*?)</h2>~is', $html, -1, PREG_SPLIT_DELIM_CAPTURE) ?: [$html];
+        $sections = [];
+        $lead = trim((string) array_shift($parts));
+        /* `<p>   </p>` is not a lead: strip the tags, then look for a word. */
+        if ($lead !== '' && trim(strip_tags($lead)) !== '') {
+            $sections[] = ['title' => '', 'html' => $lead];
+        } elseif (preg_match('~<(img|hr|table|figure)\b~i', $lead)) {
+            $sections[] = ['title' => '', 'html' => $lead];
+        }
+        /* After the split the array alternates: title, body, title, body … */
+        for ($i = 0; $i + 1 < count($parts); $i += 2) {
+            $title = trim(strip_tags((string) $parts[$i]));
+            $body  = trim((string) $parts[$i + 1]);
+            if ($title === '' && $body === '') {
+                continue;
+            }
+            $sections[] = ['title' => $title, 'html' => $body];
+        }
+        return $sections;
+    }
+
+    /** The inverse: the section list as one editable HTML document. */
+    public static function sectionsToArticle(array $sections): string
+    {
+        $out = '';
+        foreach ($sections as $section) {
+            $title = trim((string) ($section['title'] ?? ''));
+            if ($title !== '') {
+                $out .= '<h2>' . htmlspecialchars($title, ENT_NOQUOTES, 'UTF-8') . '</h2>';
+            }
+            $out .= (string) ($section['html'] ?? '');
+        }
+        return trim($out);
     }
 
     /* ------------------------------------------------------- tool plugins */
@@ -1277,7 +1351,13 @@ final class CustomCalc
             }
             $title = trim((string) ($section['title'] ?? ''));
             $html  = trim((string) ($section['html'] ?? ''));
-            if ($title === '' || $html === '') {
+            /*
+             * A section with no heading is the article's opening paragraph: the
+             * one-box editor turns everything before the first <h2> into it, and
+             * the template prints it as a lead, outside the table of contents.
+             * Only an empty body is dropped.
+             */
+            if ($html === '' || strip_tags($html) === '' && !preg_match('~<(img|hr|table|figure)\b~i', $html)) {
                 continue;
             }
             $out[] = ['title' => $title, 'html' => $html];

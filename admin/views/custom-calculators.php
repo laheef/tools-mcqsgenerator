@@ -18,40 +18,74 @@ if (!defined('ONIM_PANEL')) {
 use Onim\Admin\Csrf;
 
 ?>
-<?php require ADMIN_ROOT . '/views/partials/tools-tabs.php'; ?>
+<?php /* The tools tab bar belongs to the tool library; the calculator builder is
+        a separate catalogue with its own sidebar entry, so it does not wear it. */ ?>
+<?php if ($kind === 'tool'): ?>
+    <?php require ADMIN_ROOT . '/views/partials/tools-tabs.php'; ?>
+<?php endif; ?>
 <?php /* The screen used to open on five counters, and the counters were the
          loudest thing on it. A tool owner comes here to do one of two things:
          add a tool, or find the one they already have. Those two lead now; the
          counters are a footnote under the filter row. */ ?>
+<?php /* Two different catalogues, two different jobs.
+         *
+         * A tool page is a .php file plus an article; a calculator is fields and
+         * a formula. They used to share this screen and this row of cards, which
+         * is how "New tool" ended up opening a calculator editor. Each screen
+         * now offers only its own kind. */ ?>
 <div class="tools-start">
-    <a class="tools-start-card tools-start-card--primary" href="<?= e(admin_url('tool-plugins', ['upload' => '1'])) ?>">
-        <span class="tools-start-icon"><?= admin_icon('plus', 18) ?></span>
-        <span class="tools-start-copy">
-            <strong>Add a tool from a file</strong>
-            <span>Upload a <code>.php</code> tool, pick its section, and the page is created for you.</span>
-        </span>
-    </a>
-    <a class="tools-start-card" href="<?= e(admin_url('custom-calculator-edit', ['id' => 'new'])) ?>">
-        <span class="tools-start-icon"><?= admin_icon('calculator', 18) ?></span>
-        <span class="tools-start-copy">
-            <strong>Build a calculator by hand</strong>
-            <span>Fields, a formula and an article — no file needed.</span>
-        </span>
-    </a>
-    <a class="tools-start-card" href="<?= e(admin_url('tool-groups')) ?>">
-        <span class="tools-start-icon"><?= admin_icon('grid', 18) ?></span>
-        <span class="tools-start-copy">
-            <strong>Organise the sections</strong>
-            <span>Add a section or a sub-category, rename one, change its order.</span>
-        </span>
-    </a>
+    <?php if ($kind === 'tool'): ?>
+        <a class="tools-start-card tools-start-card--primary" href="<?= e(admin_url('tool-new')) ?>">
+            <span class="tools-start-icon"><?= admin_icon('plus', 18) ?></span>
+            <span class="tools-start-copy">
+                <strong>New tool</strong>
+                <span>Upload the <code>.php</code> file, pick its section, write the article — one screen.</span>
+            </span>
+        </a>
+        <a class="tools-start-card" href="<?= e(admin_url('tool-plugins')) ?>">
+            <span class="tools-start-icon"><?= admin_icon('code', 18) ?></span>
+            <span class="tools-start-copy">
+                <strong>Tool files</strong>
+                <span>Preview, download, replace or delete the files themselves.</span>
+            </span>
+        </a>
+        <a class="tools-start-card" href="<?= e(admin_url('libraries')) ?>">
+            <span class="tools-start-icon"><?= admin_icon('download', 18) ?></span>
+            <span class="tools-start-copy">
+                <strong>Libraries</strong>
+                <span>The scripts and stylesheets a widget can load, e.g. Chart.js.</span>
+            </span>
+        </a>
+    <?php else: ?>
+        <a class="tools-start-card tools-start-card--primary" href="<?= e(admin_url('custom-calculator-edit', ['id' => 'new'])) ?>">
+            <span class="tools-start-icon"><?= admin_icon('plus', 18) ?></span>
+            <span class="tools-start-copy">
+                <strong>New calculator</strong>
+                <span>Fields, a formula and an article — no file needed.</span>
+            </span>
+        </a>
+        <a class="tools-start-card" href="<?= e(admin_url('custom-import')) ?>">
+            <span class="tools-start-icon"><?= admin_icon('upload', 18) ?></span>
+            <span class="tools-start-copy">
+                <strong>Bulk import</strong>
+                <span>Many calculators from one file, each validated before it is written.</span>
+            </span>
+        </a>
+        <a class="tools-start-card" href="<?= e(admin_url('categories')) ?>">
+            <span class="tools-start-icon"><?= admin_icon('grid', 18) ?></span>
+            <span class="tools-start-copy">
+                <strong>Categories</strong>
+                <span>The catalogue's categories, and how they are ordered.</span>
+            </span>
+        </a>
+    <?php endif; ?>
 </div>
 
 <div class="grid grid-5 tools-stats" style="margin-bottom:18px">
     <div class="stat">
-        <div class="label">Tools</div>
+        <div class="label"><?= $kind === 'tool' ? 'Tools' : 'Calculators' ?></div>
         <div class="value"><?= number_format((int) $stats['total']) ?></div>
-        <div class="hint">pages built in the panel</div>
+        <div class="hint"><?= $kind === 'tool' ? 'pages rendered from a .php file' : 'built in the panel from fields' ?></div>
     </div>
     <div class="stat">
         <div class="label">Published</div>
@@ -73,7 +107,7 @@ use Onim\Admin\Csrf;
         <div class="value"><?= number_format((int) ($stats['review'] ?? 0)) ?></div>
         <div class="hint">
             <?php if ((int) ($stats['review'] ?? 0) > 0): ?>
-                <a href="<?= e(admin_url('custom-calculators', ['prose' => 'review'])) ?>">article drafted, not yet read</a>
+                <a href="<?= e(admin_url($kind === 'tool' ? 'custom-calculators' : 'calculator-builder', ['prose' => 'review'])) ?>">article drafted, not yet read</a>
             <?php else: ?>
                 every article has been read by a person
             <?php endif; ?>
@@ -83,25 +117,33 @@ use Onim\Admin\Csrf;
 
 <div class="card">
     <div class="card-head">
-        <h2><?= $filter === 'review' ? 'Tools whose article has not been read' : 'Every tool' ?></h2>
+        <h2><?= $kind === 'tool'
+            ? ($filter === 'review' ? 'Tools whose article has not been read' : 'Every tool')
+            : ($filter === 'review' ? 'Calculators whose article has not been read' : 'Every calculator') ?></h2>
         <span class="spacer"></span>
         <?php if ((int) ($stats['review'] ?? 0) > 0 || $filter === 'review'): ?>
             <a class="btn btn-sm <?= $filter === 'review' ? 'btn-primary' : '' ?>"
-               href="<?= e(admin_url('custom-calculators', ['prose' => 'review'])) ?>">
+               href="<?= e(admin_url($kind === 'tool' ? 'custom-calculators' : 'calculator-builder', ['prose' => 'review'])) ?>">
                 <?= admin_icon('blog', 14) ?> Needs review (<?= (int) ($stats['review'] ?? 0) ?>)
             </a>
         <?php endif; ?>
         <?php if ($filter === 'review'): ?>
-            <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('custom-calculators')) ?>">
+            <a class="btn btn-sm btn-ghost" href="<?= e(admin_url($kind === 'tool' ? 'custom-calculators' : 'calculator-builder')) ?>">
                 Show all (<?= (int) ($stats['total'] ?? 0) ?>)
             </a>
         <?php endif; ?>
-        <a class="btn btn-sm" href="<?= e(admin_url('custom-import')) ?>">
-            <?= admin_icon('upload', 14) ?> Bulk import
-        </a>
-        <a class="btn btn-sm btn-primary" href="<?= e(admin_url('custom-calculator-edit', ['id' => 'new'])) ?>">
-            <?= admin_icon('plus', 14) ?> New tool
-        </a>
+        <?php if ($kind === 'tool'): ?>
+            <a class="btn btn-sm btn-primary" href="<?= e(admin_url('tool-new')) ?>">
+                <?= admin_icon('plus', 14) ?> New tool
+            </a>
+        <?php else: ?>
+            <a class="btn btn-sm" href="<?= e(admin_url('custom-import')) ?>">
+                <?= admin_icon('upload', 14) ?> Bulk import
+            </a>
+            <a class="btn btn-sm btn-primary" href="<?= e(admin_url('custom-calculator-edit', ['id' => 'new'])) ?>">
+                <?= admin_icon('plus', 14) ?> New calculator
+            </a>
+        <?php endif; ?>
     </div>
 
     <?php if ($rows === [] && ($filter ?? 'all') === 'review'): ?>

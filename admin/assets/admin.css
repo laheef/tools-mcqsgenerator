@@ -829,3 +829,107 @@ body.editor-locked { overflow: hidden; }
 
 /* One short form, so it reads down a column instead of across the window. */
 .tool-group-form { max-width: 720px; }
+
+/* Libraries: the list on the left, the form on the right, stacked on narrow. */
+.library-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 1180px) {
+  .library-grid { grid-template-columns: minmax(0, 1fr) 380px; align-items: start; }
+}
+.libraries-table td.primary { max-width: 320px; }
+
+/* The New tool page: one column of steps, a rail that holds Save. */
+.tool-new-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+@media (min-width: 1100px) {
+  .tool-new-grid { grid-template-columns: minmax(0, 1fr) 340px; }
+}
+.step-dot {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; margin-right: 8px; border-radius: 50%;
+  background: var(--brand-soft, #EBEFFF); color: var(--brand-ink, #2C4BD8);
+  font-size: 12px; font-weight: 700;
+}
+.tool-file-summary {
+  display: flex; gap: 12px; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border: 1px solid var(--border, #E5E9F2); border-radius: 10px;
+  background: var(--surface-2, #F7F9FC);
+  flex-wrap: wrap;
+}
+.tool-file-summary strong { display: block; font-size: 13.4px; }
+.tool-file-summary .mono { display: block; word-break: break-all; }
+.library-picks { display: grid; gap: 10px; }
+.tool-new .field-row { gap: 14px; }
+
+/* ---------------------------------------------------------------- preview */
+.preview-meta {
+  display: grid; gap: 14px 24px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.preview-meta > div { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.preview-meta code { font-size: 12.5px; word-break: break-all; }
+/* The widget runs in its own frame of reference: a tool stylesheet cannot
+   repaint the panel around it. */
+.tool-preview-frame {
+  border: 1px solid var(--border, #E5E9F2);
+  border-radius: 12px;
+  padding: 18px;
+  background: var(--surface, #fff);
+  overflow-x: auto;
+}
+
+/* --------------------------------------------------- narrow screens: lists */
+/*
+ * The file list is six columns wide; below 900px that is a horizontal scroll
+ * bar pretending to be a table. Each row becomes a card instead, with the
+ * column name in front of each value — the same markup, read top to bottom.
+ */
+@media (max-width: 900px) {
+  .tool-files-table thead { display: none; }
+  .tool-files-table, .tool-files-table tbody, .tool-files-table tr, .tool-files-table td {
+    display: block;
+    width: 100%;
+  }
+  .tool-files-table tr {
+    border: 1px solid var(--border, #E5E9F2);
+    border-radius: 12px;
+    margin: 0 0 12px;
+    padding: 6px 2px;
+    background: var(--surface, #fff);
+  }
+  .tool-files-table td {
+    border: 0;
+    padding: 8px 14px;
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    justify-content: space-between;
+    text-align: right;
+  }
+  .tool-files-table td::before {
+    content: attr(data-label);
+    flex: 0 0 auto;
+    font-size: 11.5px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+  }
+  .tool-files-table td.primary { display: block; text-align: left; }
+  .tool-files-table td.primary::before { display: none; }
+  .tool-files-table td.actions {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border, #E5E9F2);
+    margin-top: 4px;
+    padding-top: 12px;
+  }
+  .tool-files-table td.actions::before { content: ""; }
+}

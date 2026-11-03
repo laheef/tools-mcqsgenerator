@@ -244,7 +244,10 @@ button { font: inherit; color: inherit; }
 
 .category-nav { border-top: 1px solid #F0F2F8; }
 .category-nav-inner {
-  display: flex; align-items: stretch; gap: 1px;
+  /* A real gap between the sections, not a hairline. The rules below sit in
+     the middle of it, so each name has air on both sides. */
+  --nav-gap: 10px;
+  display: flex; align-items: stretch; gap: var(--nav-gap);
   overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
 }
 .category-nav-inner::-webkit-scrollbar { display: none; }
@@ -3201,11 +3204,13 @@ a:focus-visible > .calc-glyph,
 .category-nav-inner > * + *::before {
   content: "";
   position: absolute;
-  left: 0;
+  /* Half the gap back: the rule floats in the middle of the air between two
+     names instead of hugging the left edge of the next one. */
+  left: calc(var(--nav-gap) / -2);
   top: 50%;
   width: 1px;
-  height: 14px;
-  margin-top: -7px;
+  height: 16px;
+  margin-top: -8px;
   background: var(--border);
   pointer-events: none;
 }
@@ -3307,7 +3312,11 @@ a:focus-visible > .calc-glyph,
 .category-nav-inner { flex-wrap: nowrap; }
 .category-nav { height: 44px; }
 .category-nav-inner { height: 44px; align-items: center; }
-.category-nav-link { display: inline-flex; align-items: center; gap: 5px; height: 44px; padding-block: 0; }
+.category-nav-link { display: inline-flex; align-items: center; gap: 5px; height: 44px; padding-block: 0; padding-inline: 2px; }
+/* Wide screens can afford more padding on each name; the gap stays the same, so
+   the row still fits in one line. */
+@media (min-width: 1560px) { .category-nav-link { padding-inline: 6px; } }
+@media (max-width: 620px) { .category-nav-inner { --nav-gap: 8px; } .category-nav-link { padding-inline: 1px; } }
 .category-nav-link svg { margin-right: 0; }
 .category-nav-link svg + svg { margin-left: 1px; }
 

@@ -54,10 +54,21 @@ final class Shape
             }
             foreach ($content['sections'] ?? [] as $section) {
                 $title = (string) ($section['title'] ?? '');
-                if ($title === '' || empty($section['html'])) {
+                $body  = (string) ($section['html'] ?? '');
+                if (trim($body) === '') {
                     continue;
                 }
-                $article[] = ['type' => 'regular', 'title' => $title, 'html' => (string) $section['html']];
+                /*
+                 * A section with no heading is the article's opening prose: the
+                 * one-box editor turns everything before the first <h2> into it.
+                 * It is printed as a lead and gets no table-of-contents entry,
+                 * because there is no heading to point at.
+                 */
+                if ($title === '') {
+                    $article[] = ['type' => 'lead', 'title' => '', 'html' => $body];
+                    continue;
+                }
+                $article[] = ['type' => 'regular', 'title' => $title, 'html' => $body];
                 $toc[] = ['slug' => self::slugify($title), 'text' => $title];
             }
             if ($faq !== []) {

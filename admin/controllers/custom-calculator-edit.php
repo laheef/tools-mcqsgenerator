@@ -73,6 +73,14 @@ $modelFromRequest = static function () use ($row): array {
         'sort_order'       => post_int('sort_order', 0),
         'noindex'          => post_bool('noindex') ? 1 : 0,
         'sections'         => array_values(post_deep('sections')),
+        /*
+         * A tool page writes its article in one HTML box. The box is posted as
+         * `article`; the section list the template renders is derived from it
+         * below, so both kinds of page keep working from one table.
+         */
+        'article'          => isset($_POST['article']) && is_string($_POST['article']) ? (string) $_POST['article'] : null,
+        /* `libraries[slug]` posts an array, which post() (string only) drops. */
+        'libraries'        => implode(',', array_map('strval', array_keys((array) ($_POST['libraries'] ?? [])))),
         'faq'              => array_values(post_deep('faq')),
         'fields'           => $fields,
         'directions'       => $directions,
@@ -114,6 +122,11 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 
     $model = $modelFromRequest();
     $tab   = (string) (post('tab', 'basics') ?? 'basics');
+
+    /* The article box wins over the section list when both were posted. */
+    if (is_string($model['article'] ?? null)) {
+        $model['sections'] = CustomCalc::articleToSections((string) $model['article']);
+    }
 
     if ($action === 'draft' && (string) ($model['kind'] ?? 'builder') === 'tool') {
         Flash::error('A tool-backed page has no fields to draft from. Write the article yourself — you know what the tool does better than a generator does.');

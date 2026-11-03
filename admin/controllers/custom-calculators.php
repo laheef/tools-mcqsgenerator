@@ -14,8 +14,8 @@
 
 declare(strict_types=1);
 
-/** Which tab of the tools area this screen is. */
-$toolsTab = 'tools';
+/** Which tab of the tools area this screen is — only the tool library has tabs. */
+$toolsTab = ($page ?? '') === 'calculator-builder' ? '' : 'tools';
 // Refuse direct HTTP requests: this file is only ever included by the panel.
 if (!defined('ONIM_PANEL')) {
     http_response_code(403);
@@ -49,14 +49,14 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             Activity::log('custom_calculator_deleted', 'calculator', (string) $id, 'Deleted custom calculator ' . $row['slug']);
             Flash::success('“' . $row['name'] . '” was deleted, along with its version history.');
         }
-        redirect_to(admin_url('custom-calculators'));
+        redirect_to(admin_url($kind === 'tool' ? 'custom-calculators' : 'calculator-builder'));
     }
 
     if ($action === 'duplicate') {
         $row = CustomCalc::find($id);
         if ($row === null) {
             Flash::error('That calculator no longer exists.');
-            redirect_to(admin_url('custom-calculators'));
+            redirect_to(admin_url($kind === 'tool' ? 'custom-calculators' : 'calculator-builder'));
         }
         $model = CustomCalc::editorModel($row);
         unset($model['id']);
@@ -72,13 +72,28 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         foreach ($result['errors'] as $error) {
             Flash::error($error);
         }
-        redirect_to(admin_url('custom-calculators'));
+        redirect_to(admin_url($kind === 'tool' ? 'custom-calculators' : 'calculator-builder'));
     }
 
-    redirect_to(admin_url('custom-calculators'));
+    redirect_to(admin_url($kind === 'tool' ? 'custom-calculators' : 'calculator-builder'));
 }
 
-$allRows = array_values(CustomCalc::rows());
+/*
+ * One page list, two catalogues.
+ *
+ * `?p=custom-calculators` is the tool library: pages whose widget is a .php
+ * file. `?p=calculator-builder` is the other kind — fields and a formula, no
+ * file. They were one table with a kind badge until the owner pointed out that
+ * a screen called "Tools" was opening on a list of hand-built calculators.
+ *
+ * The keep filter is applied before the counters so every number on the screen
+ * describes what is below it.
+ */
+$kind = ($page ?? '') === 'calculator-builder' ? 'builder' : 'tool';
+$allRows = array_values(array_filter(
+    CustomCalc::rows(),
+    static fn (array $row): bool => (string) ($row['kind'] ?? 'builder') === $kind
+));
 
 $stats = ['total' => count($allRows), 'published' => 0, 'draft' => 0, 'archived' => 0, 'review' => 0];
 foreach ($allRows as $row) {
@@ -105,8 +120,10 @@ foreach (\Onim\Data::categories() as $cat) {
 
 usort($rows, static fn (array $a, array $b): int => strcasecmp((string) $a['name'], (string) $b['name']));
 
-$pageTitle = 'Tools';
-$subtitle = 'Every tool page on the site — add one from a file, or build a calculator by hand.';
+$pageTitle = $kind === 'tool' ? 'Tools' : 'Calculator builder';
+$subtitle = $kind === 'tool'
+    ? 'Tool pages: a .php file does the maths, the article around it is written here.'
+    : 'Calculators built in the panel — fields, a formula and an article, no file.';
 $title = $pageTitle;
 $topbarActions = [
     /* Nothing here on purpose. The three ways in are cards at the top of the
@@ -114,4 +131,4 @@ $topbarActions = [
        was the fourth and fifth place to click for the same two jobs. */
 ];
 
-render('custom-calculators', compact('rows', 'allRows', 'stats', 'categoryNames', 'filter', 'pageTitle', 'title', 'topbarActions', 'toolsTab'));
+render('custom-calculators', compact('rows', 'allRows', 'stats', 'categoryNames', 'filter', 'pageTitle', 'title', 'topbarActions', 'toolsTab', 'kind'));

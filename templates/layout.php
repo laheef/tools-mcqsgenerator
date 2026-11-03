@@ -126,6 +126,12 @@ $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
         then vanish. A visitor without JavaScript never gets the class, so the
         results stay visible for them. */ ?>
     <script>document.documentElement.className += ' js';</script>
+
+    <?php /* The scripts and stylesheets this page's tool asks for (Chart.js,
+        KaTeX, …). They are chosen per page in the panel and printed here, in
+        <head>, so a widget never races its own library. Empty for every page
+        that does not need one. */ ?>
+    <?= \Onim\ToolLibraries::headForPath((string) ($path ?? View::currentPath())) ?>
 </head>
 <?php
 /* The anchor is rendered at the very end of the document, but whether it will

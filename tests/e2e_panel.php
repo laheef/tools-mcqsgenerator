@@ -1040,7 +1040,9 @@ $thinDrafted = row('SELECT * FROM custom_calculators WHERE slug = ?', [$draftSlu
 t('28 the drafted import is flagged as unread',
     $thinDrafted !== null && !empty($thinDrafted['drafted_at']) && (int) $thinDrafted['drafted_words'] > 40,
     (string) ($thinDrafted['drafted_at'] ?? 'none'));
-$queue = page('custom-calculators', ['prose' => 'review']);
+/* The queue lives on the screen that owns the row: an imported formula page is
+   a calculator, and calculators moved to their own screen in round 64. */
+$queue = page('calculator-builder', ['prose' => 'review']);
 t('28 the queue lists the page that needs reading', str_contains($queue['body'], 'E2E Import Thin') && clean($queue['body']));
 t('28 the queue names the problem in the row', str_contains($queue['body'], 'Draft article'));
 t('28 a page the editor saved is not in the queue',
@@ -2333,6 +2335,94 @@ t('48 a tool file is not fetchable over HTTP',
     get(BASE . '/plugins/math/qm-tool-percentage-of.php')['status'] === 404);
 t('48 the folder index is not fetchable either',
     get(BASE . '/plugins/')['status'] === 404);
+
+/* ------------------------------------------------- 49 the one-box article */
+/*
+ * A tool page has one HTML box. The template still wants a section list, so the
+ * two conversions in CustomCalc are what make the box safe: split on <h2>, and
+ * put it back together without changing a byte.
+ */
+$boxHtml = "<p>Opening paragraph with <strong>markup</strong>.</p>\n"
+    . "<h2>First heading</h2><p>Body one.</p>"
+    . "<h2>Second heading</h2><ul><li>Body two</li></ul>";
+$split = CustomCalc::articleToSections($boxHtml);
+t('49 the article splits into a lead and two sections',
+    count($split) === 3 && $split[0]['title'] === '' && $split[1]['title'] === 'First heading'
+    && $split[2]['title'] === 'Second heading',
+    count($split) . ' sections');
+t('49 the lead is the text before the first h2',
+    str_contains($split[0]['html'] ?? '', 'Opening paragraph'), (string) ($split[0]['html'] ?? ''));
+/* The rebuild normalises the whitespace *between* blocks — an <h2> is
+   re-created from its title — so the comparison ignores line breaks only. */
+$flat = static fn (string $html): string => preg_replace('~\s*\n\s*~', '', trim($html));
+$rebuilt = CustomCalc::sectionsToArticle($split);
+t('49 the article rebuilds as it was written', $flat($rebuilt) === $flat($boxHtml), $rebuilt);
+t('49 the rebuild is stable', CustomCalc::sectionsToArticle(CustomCalc::articleToSections($rebuilt)) === $rebuilt);
+
+$emptyBox = CustomCalc::articleToSections("<p>   </p><h2>Only</h2><p>body</p>");
+t('49 a blank lead is dropped', count($emptyBox) === 1 && $emptyBox[0]['title'] === 'Only');
+
+/* -- a lead survives the save, and so do the libraries ------------------- */
+if (\Onim\ToolLibraries::enabled()) {
+    /* a row left behind by an interrupted run would collide with this one */
+    $stale = row('SELECT id FROM custom_calculators WHERE slug = ?', ['e2e-one-box-tool']);
+    if ($stale !== null) {
+        CustomCalc::delete((int) $stale['id']);
+        \Onim\Data::flush();
+    }
+
+    $libSlug = 'e2e-chart';
+    \Onim\ToolLibraries::save([
+        'name' => 'E2E Chart', 'slug' => $libSlug, 'kind' => 'js',
+        'url' => 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js',
+        'integrity' => '', 'crossorigin' => '', 'notes' => 'created by the test suite',
+    ]);
+
+    $model = CustomCalc::editorModel(null);
+    $model['name'] = 'E2E One Box Tool';
+    $model['slug'] = 'e2e-one-box-tool';
+    $model['category_slug'] = 'other';
+    $model['h1'] = 'E2E One Box Tool';
+    $model['status'] = 'published';
+    /* A formula page, so the check needs no plugin file to exist. */
+    $model['fields'] = [[
+        'key' => 'amount', 'label' => 'Amount', 'type' => 'number', 'default' => '1',
+        'unit_group' => '', 'unit_default' => '', 'help' => '', 'prefix' => '', 'suffix' => '',
+        'options' => '', 'output' => false,
+    ], [
+        'key' => 'doubled', 'label' => 'Doubled', 'type' => 'number', 'default' => '',
+        'unit_group' => '', 'unit_default' => '', 'help' => '', 'prefix' => '', 'suffix' => '',
+        'options' => '', 'output' => true,
+    ]];
+    $model['directions'] = [['group' => 'Result', 'l' => 'doubled', 'f' => 'amount * 2']];
+    $model['sections'] = $split;
+    $model['libraries'] = $libSlug;
+    $saved = CustomCalc::save(null, $model, 1);
+
+    t('49 a page with a lead section saves', $saved['ok'], implode(' ', $saved['errors']));
+    $stored = $saved['ok'] ? CustomCalc::find((int) $saved['id']) : null;
+    t('49 the lead is kept in storage',
+        $stored !== null && (json_decode((string) $stored['sections'], true)[0]['title'] ?? 'x') === '');
+    t('49 the library is written to the row', $stored !== null && (string) $stored['libraries'] === $libSlug);
+
+    /* re-saving from the edit screen must not unload it */
+    $again = CustomCalc::editorModel($stored);
+    CustomCalc::save((int) $saved['id'], $again, 1);
+    $after = CustomCalc::find((int) $saved['id']);
+    t('49 a re-save from the editor keeps the library',
+        $after !== null && (string) $after['libraries'] === $libSlug, (string) ($after['libraries'] ?? ''));
+
+    $pageHead = \Onim\ToolLibraries::headForPath('/other/e2e-one-box-tool');
+    t('49 the library prints into the head', str_contains($pageHead, 'chart.umd.min.js'), $pageHead);
+
+    CustomCalc::delete((int) $saved['id']);
+    \Onim\Data::flush();
+    $libRow = \Onim\ToolLibraries::findBySlug($libSlug);
+    if ($libRow !== null) {
+        \Onim\ToolLibraries::delete((int) $libRow['id']);
+    }
+    t('49 the throwaway library is gone', \Onim\ToolLibraries::findBySlug($libSlug) === null);
+}
 
 /* leftovers from a failed run */
 foreach (glob($tmpDir . '/*') ?: [] as $leftover) {

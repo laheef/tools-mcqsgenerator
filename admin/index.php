@@ -150,6 +150,10 @@ $controllers = [
     'custom-import'          => 'custom-import.php',
     'tool-plugins'           => 'tool-plugins.php',
     'tool-groups'            => 'tool-groups.php',
+    'tool-new'               => 'tool-new.php',
+    'tool-preview'           => 'tool-preview.php',
+    'libraries'              => 'libraries.php',
+    'calculator-builder'     => 'custom-calculators.php',
     'modules'                => 'modules.php',
     'categories'      => 'categories.php',
     'files'           => 'files.php',
@@ -192,6 +196,9 @@ $roleFor = [
     'custom-import'          => 'custom-calculators',
     'tool-plugins'           => 'custom-calculators',
     'tool-groups'            => 'tool-groups',
+    'tool-new'               => 'custom-calculators',
+    'tool-preview'           => 'custom-calculators',
+    'libraries'              => 'custom-calculators',
 ];
 Auth::requireRole($roleFor[$page] ?? $page);
 

@@ -168,7 +168,7 @@ $size = static function (int $bytes): string {
                     <span class="muted small"><?= count($group) ?> file<?= count($group) === 1 ? '' : 's' ?> · <code>plugins/<?= e((string) $category) ?>/</code></span>
                 </div>
                 <div class="table-wrap">
-                    <table class="data">
+                    <table class="data tool-files-table">
                         <thead>
                         <tr>
                             <th>Tool</th>
@@ -186,7 +186,7 @@ $size = static function (int $bytes): string {
                             $isNew     = $highlight !== '' && $highlight === $shortcode;
                             ?>
                             <tr<?= $isNew ? ' style="background:var(--brand-soft,#EBEFFF)"' : '' ?>>
-                                <td>
+                                <td class="primary">
                                     <strong><?= e((string) $tool['name']) ?></strong>
                                     <?php if ($tool['version'] !== ''): ?>
                                         <span class="badge badge-muted">v<?= e((string) $tool['version']) ?></span>
@@ -204,9 +204,9 @@ $size = static function (int $bytes): string {
                                         <div class="small muted" style="margin-top:4px"><?= e((string) $tool['description']) ?></div>
                                     <?php endif; ?>
                                 </td>
-                                <td class="mono small" style="white-space:nowrap">[<?= e($shortcode) ?>]</td>
-                                <td class="num mono small" style="white-space:nowrap"><?= e($size((int) $tool['bytes'])) ?></td>
-                                <td>
+                                <td class="mono small" data-label="Shortcode" style="white-space:nowrap">[<?= e($shortcode) ?>]</td>
+                                <td class="num mono small" data-label="Size" style="white-space:nowrap"><?= e($size((int) $tool['bytes'])) ?></td>
+                                <td data-label="On a page">
                                     <?php if ($pages === []): ?>
                                         <span class="muted small">—</span>
                                     <?php else: ?>
@@ -228,7 +228,11 @@ $size = static function (int $bytes): string {
                                 </td>
                                 <td class="actions">
                                     <?php if ($tool['valid'] && $pages === []): ?>
-                                        <form method="post" action="<?= e(admin_url('tool-plugins')) ?>" style="display:inline">
+                                        <?php if ($tool['valid']): ?>
+                                        <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-preview', ['file' => (string) $tool['file']])) ?>"
+                                           title="Run this file and look at the widget"><?= admin_icon('eye', 15) ?> Preview</a>
+                                    <?php endif; ?>
+                                    <form method="post" action="<?= e(admin_url('tool-plugins')) ?>" style="display:inline">
                                             <?= Csrf::field() ?>
                                             <input type="hidden" name="do" value="create">
                                             <input type="hidden" name="shortcode" value="<?= e($shortcode) ?>">

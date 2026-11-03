@@ -44,6 +44,12 @@ $toolChoices   = is_array($toolChoices ?? null) ? $toolChoices : [];
 $toolMissing   = (string) ($toolMissing ?? '');
 $currentTool   = (string) ($values['tool_shortcode'] ?? '');
 
+/* Libraries this page loads: a tool that draws a chart needs Chart.js on the
+   page. The picker posts `libraries[slug]`, so a re-save never clears the
+   column that the New tool screen filled in. */
+$libraryRows    = \Onim\ToolLibraries::enabled() ? \Onim\ToolLibraries::rows(true) : [];
+$pickedLibraries = array_values(array_filter(array_map('trim', explode(',', (string) ($values['libraries'] ?? '')))));
+
 $fieldRows = $fields === [] ? [[
     'key' => '', 'label' => '', 'type' => 'number', 'default' => '', 'unit_group' => '',
     'unit_default' => '', 'help' => '', 'prefix' => '', 'suffix' => '', 'options' => '', 'output' => false,
@@ -611,6 +617,38 @@ $unitLabel = static function (array $group, string $key): string {
 
                 <!-- -------------------------------------------------- article -->
                 <div data-tab-panel="article" class="stack" style="gap:18px">
+                    <?php /* A tool page writes one HTML article, exactly like the New tool
+                             screen. A formula page keeps the section repeater, because
+                             its draft writer produces sections. */ ?>
+                    <?php if ($isTool): ?>
+                    <?php $articleHtml = (string) ($values['article'] ?? \Onim\CustomCalc::sectionsToArticle($sections)); ?>
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>The article</h2>
+                            <span class="spacer"></span>
+                            <span class="muted small">HTML is allowed and renders as written</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="editor" data-editor>
+                                <?php $editorLabel = 'Article'; require ADMIN_ROOT . '/views/partials/editor-toolbar.php'; ?>
+                                <div class="editor-area" contenteditable="true" role="textbox" aria-multiline="true"
+                                     aria-label="Article"><?= $articleHtml ?></div>
+                                <textarea class="editor-source" hidden aria-label="Article HTML"></textarea>
+                                <input type="hidden" class="editor-media" aria-hidden="true" tabindex="-1" value="">
+                                <input type="hidden" name="article" value="<?= e($articleHtml) ?>" data-editor-value>
+                                <div class="editor-foot">
+                                    <span data-editor-count></span>
+                                    <span class="muted small" style="margin-left:auto">Each &lt;h2&gt; becomes a section and a table-of-contents entry.</span>
+                                </div>
+                            </div>
+                            <p class="small muted" style="margin:12px 0 0">
+                                A lead paragraph, then <code>H2</code> sections. The page prints this HTML as it is —
+                                tables, figures and inline SVG included. The <code>HTML</code> button shows the source
+                                when you need to paste markup.
+                            </p>
+                        </div>
+                    </div>
+                    <?php else: ?>
                     <div class="card">
                         <div class="card-head">
                             <h2>Sections</h2>
@@ -671,6 +709,7 @@ $unitLabel = static function (array $group, string $key): string {
                             </button>
                         </div>
                     </div>
+                    <?php endif; /* $isTool — one box instead of the repeater */ ?>
 
                     <div class="card">
                         <div class="card-head">
@@ -930,6 +969,42 @@ $unitLabel = static function (array $group, string $key): string {
                             Save once to get a preview link.
                         <?php endif; ?>
                     </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <h2>Libraries</h2>
+                    <span class="spacer"></span>
+                    <a class="hint" href="<?= e(admin_url('libraries')) ?>">manage</a>
+                </div>
+                <div class="card-body">
+                    <?php if ($libraryRows === []): ?>
+                        <p class="small muted" style="margin:0">
+                            No libraries yet. A script or stylesheet added on the
+                            <a href="<?= e(admin_url('libraries')) ?>">libraries screen</a> shows up here, and so does
+                            anything a tool file declares in its <code>Libraries:</code> header.
+                        </p>
+                    <?php else: ?>
+                        <div class="library-picks">
+                            <?php foreach ($libraryRows as $library): ?>
+                                <?php $slug = (string) $library['slug']; ?>
+                                <label class="check">
+                                    <input type="checkbox" name="libraries[<?= e($slug) ?>]" value="1"
+                                           <?= in_array($slug, $pickedLibraries, true) ? 'checked' : '' ?>>
+                                    <span>
+                                        <?= e((string) $library['name']) ?>
+                                        <span class="hint" style="display:block">
+                                            <?= e((string) $library['kind']) ?> · <?= e((string) $library['url']) ?>
+                                        </span>
+                                    </span>
+                                </label>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="hint" style="margin-top:10px">
+                            Printed into <code>&lt;head&gt;</code> on this page only — stylesheets first, then scripts.
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 

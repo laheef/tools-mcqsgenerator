@@ -23,9 +23,10 @@ if (!defined('ONIM_PANEL')) {
 
 $toolsTab = (string) ($toolsTab ?? 'tools');
 $tabs = [
-    'tools'    => ['label' => 'Tools', 'page' => 'custom-calculators', 'icon' => 'star'],
-    'sections' => ['label' => 'Sections & sub-categories', 'page' => 'tool-groups', 'icon' => 'grid'],
-    'files'    => ['label' => 'Tool files', 'page' => 'tool-plugins', 'icon' => 'code'],
+    'tools'     => ['label' => 'Tools', 'page' => 'custom-calculators', 'icon' => 'star'],
+    'files'     => ['label' => 'Tool files', 'page' => 'tool-plugins', 'icon' => 'code'],
+    'libraries' => ['label' => 'Libraries', 'page' => 'libraries', 'icon' => 'download'],
+    'sections'  => ['label' => 'Sections', 'page' => 'tool-groups', 'icon' => 'grid'],
 ];
 ?>
 <nav class="tools-tabs" aria-label="Tools">

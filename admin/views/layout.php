@@ -49,15 +49,16 @@ $navGroups = [
         'label' => 'Content',
         'items' => [
             ['page' => 'calculators', 'label' => 'Calculators', 'icon' => 'calculator'],
-            /* One entry, not four.
+            /* Two catalogues, two doors, and they no longer mix.
              *
-             * "Custom calculators", "Tool plugins" and "Tool groups" were three
-             * sidebar items for one job — a tool is a page, the page is filed
-             * in a section, the section's page renders from a file — and
-             * "Categories" listed tool sections a fourth time. They are tabs
-             * inside this one screen now, which is also where the "+" for each
-             * of them lives. */
+             * "Tools" is the tool library: pages whose widget is a .php file
+             * uploaded here. "Calculator builder" is the other kind of page —
+             * fields, a formula, no file. They used to be one list with a kind
+             * badge, which is exactly the ambiguity the owner kept running into:
+             * a screen called Tools opened on a table of built calculators. */
             ['page' => 'custom-calculators', 'label' => 'Tools', 'icon' => 'star'],
+            ['page' => 'calculator-builder', 'label' => 'Calculator builder', 'icon' => 'grid'],
+            ['page' => 'libraries', 'label' => 'Tool libraries', 'icon' => 'code'],
             ['page' => 'categories', 'label' => 'Calculator categories', 'icon' => 'grid'],
             ['page' => 'files', 'label' => 'Source files', 'icon' => 'code'],
             ['page' => 'modules', 'label' => 'Modules', 'icon' => 'layout'],
@@ -129,6 +130,10 @@ $navGroups = [
                 /* The tools area is one sidebar entry with three tabs. */
                 'tool-plugins'           => 'custom-calculators',
                 'tool-groups'            => 'custom-calculators',
+                'tool-new'               => 'custom-calculators',
+                'tool-preview'           => 'custom-calculators',
+                /* Libraries is its own sidebar entry, so it keeps its own dot. */
+                'libraries'              => 'libraries',
             ][$page] ?? $page;
             ?>
             <?php foreach ($navGroups as $group): ?>
