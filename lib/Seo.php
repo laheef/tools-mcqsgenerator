@@ -411,7 +411,13 @@ final class Seo
            origin is substituted on the way out — one cache file, always the
            right URLs, and no risk of the substitution itself being cached. */
         $stamp = class_exists(Cms::class) ? Cms::stamp() : 'nocms';
-        $cache = Data::path('cache/sitemap-' . $stamp . '.xml');
+        /* The stamp tracks content, not code — so a change to *what the sitemap
+           contains* (a new kind of URL, a new section of the site) used to leave
+           the old file in place until somebody deleted it by hand. Bump this when
+           the shape of the sitemap changes; the filename carries it, so the next
+           request rebuilds and the old file ages out. */
+        $cacheVersion = 2;
+        $cache = Data::path('cache/sitemap-v' . $cacheVersion . '-' . $stamp . '.xml');
         $origin = rtrim(SITE_URL, '/');
         $host = static fn (string $xml): string => str_replace('@@ORIGIN@@', $origin, $xml);
         /* Older generations are dead files. One is kept until it is replaced,
