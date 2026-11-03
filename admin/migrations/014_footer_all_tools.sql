@@ -14,6 +14,14 @@
 -- only when that column exists and does not already carry it — running this on
 -- a site that has the link by hand does nothing. The footer stays editable in
 -- the panel: this adds one row to `menu_items`, it does not lock the column.
+--
+-- The front end does not wait for this file. templates/partials/footer.php adds
+-- the same link at render time when the column has no row for it, so the page
+-- is right on a database that has not run migrations yet; this migration is
+-- what puts it in front of the owner in Header & footer, where it can be
+-- renamed, moved or deleted. Deleting it there is respected only together with
+-- Settings → Footer → "Link the tools index", which is the switch that decides
+-- whether a missing link is restored.
 -- ---------------------------------------------------------------------------
 
 SET NAMES utf8mb4;

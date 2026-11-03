@@ -51,6 +51,10 @@ final class Settings
         'footer_about'          => ['layout', 'text'],
         'footer_copyright'      => ['layout', 'text'],
         'footer_show_notice'    => ['layout', 'bool'],
+        /* The tools index link in the footer. On by default: every band and
+           every section page ends in "Browse all …" and lands on /all-tools,
+           so the footer has to reach it too. Off is one untick. */
+        'footer_tools_link'     => ['layout', 'bool'],
         'newsletter_enabled'    => ['layout', 'bool'],
         'newsletter_note'       => ['layout', 'text'],
         'social_links'          => ['layout', 'json'],

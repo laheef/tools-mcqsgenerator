@@ -136,19 +136,47 @@ foreach ($designed() as $wanted) {
         $columns[] = $wanted;
     }
 }
-/* The sections go straight after the calculators: the two halves of the site
-   read in the order the header shows them. */
-foreach (array_reverse($toolColumns) as $toolColumn) {
-    if (!in_array(mb_strtolower($toolColumn['title']), $have, true)) {
-        $at = 1;
-        foreach ($columns as $i => $existing) {
-            if (mb_strtolower(trim((string) $existing['title'])) === 'calculators') {
-                $at = $i + 1;
-                break;
-            }
+
+/*
+ * The tools index in the footer.
+ *
+ * Every band on the home page and every section page ends in a "Browse all 4
+ * image tools" button that lands on /all-tools, and the sitemap lists all
+ * sixteen of those addresses — the footer is the one navigation surface that
+ * would otherwise offer no way through to them. A footer saved before that page
+ * existed has no row for it, so the link is added here, after "All calculators",
+ * unless the column already links it or the owner has switched it off in
+ * Settings → Footer (footer_tools_link, on by default). Migration 014 puts the
+ * same row into menu_items, so the panel's footer editor shows it as an ordinary
+ * link that can be renamed, moved or deleted like the rest.
+ */
+if (Cms::enabled() ? Cms::settingBool('footer_tools_link', true) : true) {
+    foreach ($columns as $i => $column) {
+        if (mb_strtolower(trim((string) $column['title'])) !== 'resources') {
+            continue;
         }
-        array_splice($columns, $at, 0, [$toolColumn]);
-        $have[] = mb_strtolower($toolColumn['title']);
+        $links = [];
+        $hasTools = false;
+        foreach ((array) $column['links'] as $link) {
+            if (trim((string) ($link['url'] ?? '')) === '/all-tools') {
+                $hasTools = true;
+            }
+            $links[] = $link;
+        }
+        if (!$hasTools) {
+            $at = count($links);
+            foreach ($links as $j => $link) {
+                if (trim((string) ($link['url'] ?? '')) === '/all-calculators') {
+                    $at = $j + 1;
+                    break;
+                }
+            }
+            array_splice($links, $at, 0, [[
+                'label' => 'All tools', 'url' => '/all-tools', 'target' => '_self',
+            ]]);
+        }
+        $columns[$i]['links'] = $links;
+        break;
     }
 }
 

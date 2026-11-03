@@ -177,6 +177,7 @@ $b = static fn (string $key, bool $default = false): bool => Cms::settingBool($k
                     </div>
                     <div class="field-row">
                         <label class="check"><input type="checkbox" name="settings[footer_show_notice]" value="1" <?= $b('footer_show_notice', false) ? 'checked' : '' ?>> <span>Show a one-line privacy note beside the copyright</span></label>
+                        <label class="check"><input type="checkbox" name="settings[footer_tools_link]" value="1" <?= $b('footer_tools_link', true) ? 'checked' : '' ?>> <span>Link the tools index (“All tools”) in the footer</span></label>
                         <label class="check"><input type="checkbox" name="settings[newsletter_enabled]" value="1" <?= $b('newsletter_enabled') ? 'checked' : '' ?>> <span>Newsletter sign-up</span></label>
                     </div>
                     <div class="field" style="margin-top:14px">
