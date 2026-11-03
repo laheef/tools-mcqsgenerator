@@ -244,13 +244,13 @@ button { font: inherit; color: inherit; }
 
 .category-nav { border-top: 1px solid #F0F2F8; }
 .category-nav-inner {
-  display: flex; align-items: stretch; gap: 4px;
+  display: flex; align-items: stretch; gap: 1px;
   overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
 }
 .category-nav-inner::-webkit-scrollbar { display: none; }
 .category-nav-link {
   position: relative; flex: 0 0 auto;
-  padding: 10px 11px; font-size: 13px; font-weight: 500; color: var(--ink-2);
+  padding: 10px 7px; font-size: 12.5px; font-weight: 500; color: var(--ink-2);
   white-space: nowrap; border-bottom: 3px solid transparent;
 }
 .category-nav-link:hover { color: var(--brand); text-decoration: none; }
@@ -264,13 +264,25 @@ button { font: inherit; color: inherit; }
     radial-gradient(900px 420px at 78% 4%, #E7EDFF 0%, rgba(231, 237, 255, 0) 62%),
     radial-gradient(760px 460px at 96% 40%, #F1EEFB 0%, rgba(241, 238, 251, 0) 60%),
     linear-gradient(160deg, #FBFCFE 0%, #F4F7FF 52%, #EEF2FE 100%);
-  padding-block: 28px 72px;
+  padding-block: 34px 56px;
 }
-@media (min-width: 724px) { .hero { padding-block: 44px 96px; } }
+@media (min-width: 724px) { .hero { padding-block: 52px 84px; } }
+/*
+ * Two columns, both aligned to the same baseline grid: the words and their
+ * search box on the left, the drawing on the right. The search box belongs under
+ * the headline it answers, at the width of that column — it spent a round
+ * floating under the drawing, half a page from its own label.
+ */
 .hero-inner {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 30px;
 }
-.hero-copy { flex: 1 1 300px; min-width: 260px; }
+@media (min-width: 980px) {
+  .hero-inner { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 30px 56px; }
+}
+.hero-copy { min-width: 0; max-width: 640px; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 9px;
   margin: 0 0 10px; font-size: 14px; font-weight: 600; letter-spacing: .01em; color: var(--ink-2);
@@ -336,13 +348,13 @@ button { font: inherit; color: inherit; }
   .hero-rotate-word { transition: none; }
 }
 
-/* On phones the header search is already on screen, so the hero repeats it. */
-@media (max-width: 723px) { .hero-search { display: none; } }
+/* The hero's search box is shown at every width: on a phone it is the largest
+   target on the page, and hiding it left a band of empty gradient. */
 /* The right half of the hero: a drawn worked example over the search box. The
    figure is the first thing a visitor sees that explains the product without
    being read, so it sits above the search on every width big enough to draw it
    at a readable size; below that the hero stays copy-only. */
-.hero-side { flex: 1 1 420px; min-width: 280px; display: flex; flex-direction: column; gap: 18px; }
+.hero-side { min-width: 0; display: flex; flex-direction: column; gap: 18px; }
 .hero-figure { display: none; }
 /* Stretched to the search box's width below it, so the two share their edges
    and read as one column. */
@@ -350,12 +362,30 @@ button { font: inherit; color: inherit; }
 .hero-figure-art { display: block; width: 100%; height: auto; }
 @media (min-width: 900px) { .hero-figure { display: block; } }
 
+.hero-note {
+  margin: 0 0 22px; max-width: 56ch;
+  font-size: 15.4px; line-height: 1.62; color: var(--ink-3);
+}
+.hero-note a { color: var(--brand-ink); }
+
+.hero-quick {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px;
+  margin: 14px 0 0; font-size: 13px; color: var(--ink-4);
+}
+.hero-quick span { font-weight: 600; color: var(--ink-4); }
+.hero-quick a {
+  padding: 3px 9px; border: 1px solid var(--border); border-radius: 999px;
+  background: rgba(255, 255, 255, .7); color: var(--ink-2); font-weight: 500;
+}
+.hero-quick a:hover { border-color: var(--brand); color: var(--brand-ink); text-decoration: none; }
+.hero-actions { margin: 18px 0 0; }
+
 .hero-search {
-  position: relative; flex: 0 0 auto; display: flex; align-items: center; min-width: 280px;
-  max-width: 990px;
+  position: relative; display: flex; align-items: center;
+  width: 100%; max-width: 540px;
 }
 .hero-search input[type="search"] {
-  width: 100%; height: 60px; padding: 0 70px 0 28px;
+  width: 100%; height: 56px; padding: 0 62px 0 22px;
   border: 1px solid var(--border); border-radius: var(--radius-pill);
   background: var(--surface); font-family: var(--font); font-size: 15px; color: var(--ink-2);
   box-shadow: 0 6px 18px rgba(16, 24, 40, .06);
@@ -365,8 +395,8 @@ button { font: inherit; color: inherit; }
 .hero-search input[type="search"]:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 4px rgba(59, 104, 252, .14); }
 .hero-search input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 .hero-search-submit {
-  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
-  width: 42px; height: 42px; display: grid; place-items: center;
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; display: grid; place-items: center;
   border: 0; border-radius: 50%; background: transparent; color: var(--brand); cursor: pointer;
 }
 
@@ -3058,12 +3088,20 @@ a:focus-visible > .calc-glyph,
 .category-dropdown a:hover { background: var(--brand-soft); color: var(--brand-ink); text-decoration: none; }
 @media (max-width: 620px) { .category-dropdown { display: none !important; } }
 
-/* On a wide screen there is no reason to hide half the bar behind a sideways
-   scroll: sixteen groups wrap onto a second line, and the whole set is one
-   glance. Below 1240px it stays a scroller, as before. */
-@media (min-width: 1240px) {
-  .category-nav-inner { flex-wrap: wrap; overflow: visible; row-gap: 0; }
-}
+/* One row, always.
+ *
+ * The bar used to wrap onto a second line above 1240px, which made the header
+ * grow a row on exactly the screens with the most room for content — and a
+ * visitor who added a section in the panel saw the page jump. The row is now
+ * a single line at every width: what does not fit is reached with the button at
+ * its end.
+ */
+.category-nav-inner { flex-wrap: nowrap; }
+.category-nav { height: 44px; }
+.category-nav-inner { height: 44px; align-items: center; }
+.category-nav-link { display: inline-flex; align-items: center; gap: 5px; height: 44px; padding-block: 0; }
+.category-nav-link svg { margin-right: 0; }
+.category-nav-link svg + svg { margin-left: 1px; }
 
 /* --------------------------------------------------------- the header button */
 /*
@@ -3072,7 +3110,14 @@ a:focus-visible > .calc-glyph,
  * end and it returns to the start. A row that fits shows nothing at all, which
  * is the honest answer — there is nothing to scroll.
  */
+/* The bar spans the window, not the content column — the way the reference tools
+   site draws its sub-header. Sixteen sections are thirteen hundred pixels of
+   text; inside a 1286 px shell they never fit a 1440 px screen, and the bar would
+   always be cut. Full width with the same 44 px inset the reference uses, they
+   fit at 1440 and above, and the button appears only below that. */
 .category-nav { position: relative; }
+.category-nav .category-nav-wrap { max-width: none; padding-inline: 0; }
+.category-nav .category-nav-inner { max-width: none; padding-inline: 44px; }
 .category-nav-wrap { position: relative; }
 
 .category-nav-arrow {
@@ -3148,4 +3193,48 @@ a:focus-visible > .calc-glyph,
 /* The hero drawing is decoration; on a phone the search box matters more. */
 @media (max-width: 723px) {
   .hero-figure--wide { display: none; }
+}
+
+/* ------------------------------------------- section bands on the home page */
+/*
+ * Each section gets the calculator band's shape: a heading with its glyph and
+ * count on the left, its action on the right, then cards in the same grid. The
+ * bands alternate their background so sixteen of them read as sixteen, not as
+ * one endless page.
+ */
+.directory-title { display: flex; align-items: flex-start; gap: 14px; min-width: 0; }
+.directory-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--brand-soft);
+  color: var(--brand-ink);
+}
+.directory-title .section-title { margin: 0 0 4px; }
+.directory-title .section-lede { margin: 0; }
+.directory-total {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 12.4px;
+  font-weight: 600;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.directory--first { padding-top: 46px; }
+/* Alternating bands: every second section sits on the soft background, so
+   sixteen of them read as sixteen sections rather than one long page. */
+.directory + .directory { padding-top: 40px; }
+.directory.sheet-band { background: var(--surface); }
+.directory.directory--alt { background: var(--surface-2); }
+
+@media (max-width: 723px) {
+  .directory-title { gap: 10px; }
+  .directory-icon { width: 38px; height: 38px; border-radius: 11px; }
+  .directory-icon svg { width: 20px; height: 20px; }
+  .directory-actions { width: 100%; justify-content: flex-start; }
 }

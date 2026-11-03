@@ -178,12 +178,40 @@ foreach ($sections as $section) {
             <div class="hero-wash" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="shell hero-inner">
                 <div class="hero-copy">
-                    <?php if ($eyebrow !== ''): ?><p class="hero-eyebrow"><span class="hero-pulse" aria-hidden="true"></span><?= $eyebrow ?></p><?php endif; ?>
+                    <?php if ($eyebrow !== ''): ?>
+                        <p class="hero-eyebrow"><span class="hero-pulse" aria-hidden="true"></span><?= $eyebrow ?></p>
+                    <?php endif; ?>
                     <h1 class="hero-title"><span class="hero-count"><?= $headline /* built above from escaped parts + config text */ ?></span></h1>
                     <?php $headingEmitted = true; ?>
-                    <?php if ($note !== ''): ?><p class="page-lede"><?= $note ?></p><?php endif; ?>
+                    <?php if ($note !== ''): ?><p class="hero-note"><?= $note ?></p><?php endif; ?>
+
+                    <?php /* The search sits in the copy column, under the words it is
+                             the answer to, at exactly the width of the headline
+                             block. It used to hang off the right-hand column under
+                             the drawing, which on a 1440 screen left it floating
+                             half a page away from its own label. */ ?>
+                    <form class="hero-search" role="search" action="<?= View::escape(View::url('/search')) ?>" method="get" autocomplete="off">
+                        <label class="sr-only" for="hero-search">Search tools</label>
+                        <input id="hero-search" type="search" name="q" placeholder="Search <?= View::escape(Format::count((int) $total)) ?> tools — a calculator, a converter, a checker…" data-search-input
+                               aria-autocomplete="list" aria-controls="search-suggestions-hero">
+                        <button type="submit" class="hero-search-submit" aria-label="Search">
+                            <?= View::icon('search', 22) ?>
+                        </button>
+                        <div class="search-suggestions" id="search-suggestions-hero" role="listbox" hidden></div>
+                    </form>
+
                     <?php if ($ctaLabel !== '' && $ctaUrl !== ''): ?>
-                        <p style="margin-top:14px"><a class="btn btn-primary" href="<?= View::escape(View::url($ctaUrl)) ?>"><?= View::escape($ctaLabel) ?></a></p>
+                        <p class="hero-actions">
+                            <a class="btn btn-primary" href="<?= View::escape(View::url($ctaUrl)) ?>"><?= View::escape($ctaLabel) ?></a>
+                        </p>
+                    <?php else: ?>
+                        <p class="hero-quick">
+                            <span>Popular:</span>
+                            <a href="<?= View::escape(View::url('/all-calculators')) ?>">percentages</a>
+                            <a href="<?= View::escape(View::url('/finance')) ?>">mortgages</a>
+                            <a href="<?= View::escape(View::url('/math')) ?>">units</a>
+                            <a href="<?= View::escape(View::url('/converters')) ?>">converters</a>
+                        </p>
                     <?php endif; ?>
                 </div>
 
@@ -192,20 +220,7 @@ foreach ($sections as $section) {
                              once before a word of it is read. Decorative — the
                              numbers are illustrative and the copy says the same
                              thing in words. */ ?>
-                    <?php /* The drawing is the hero's claim in one picture, and on a
-                             phone it was pushing the search box — the one thing a
-                             visitor came to use — below the fold. It is decorative,
-                             so it steps aside on the small screen. */ ?>
                     <div class="hero-figure hero-figure--wide" aria-hidden="true"><?= Figures::svg('tool-file', 'hero-figure-art') ?></div>
-                <form class="hero-search" role="search" action="<?= View::escape(View::url('/search')) ?>" method="get" autocomplete="off">
-                    <label class="sr-only" for="hero-search">Search tools</label>
-                    <input id="hero-search" type="search" name="q" placeholder="Search tools…" data-search-input
-                           aria-autocomplete="list" aria-controls="search-suggestions-hero">
-                    <button type="submit" class="hero-search-submit" aria-label="Search">
-                        <?= View::icon('search', 26) ?>
-                    </button>
-                    <div class="search-suggestions" id="search-suggestions-hero" role="listbox" hidden></div>
-                </form>
                 </div>
             </div>
         </section>
@@ -311,147 +326,136 @@ foreach ($sections as $section) {
         </section>
     <?php elseif ($type === 'tool_groups'):
         /*
-         * The sections beyond the calculators, listed the way the calculators are
-         * listed below: a card per category, three across, each with a few of its
-         * tools as real links and an "All N in …" foot. No sideways scrolling —
-         * a table of contents reads down the page.
+         * One band per section, drawn exactly like the calculator band above it:
+         * "Audio Tools, by category" with a card per subsection, the number of
+         * tools on each, a few of them as real links and an "All N in …" foot.
          *
-         * A section that holds tools directly gets its own card; a section with
-         * subgroups gets one card per subgroup, because that is the level a
-         * visitor actually browses at (Image → Converters). A section with
-         * nothing in it yet still gets a card, marked "No tools yet" and linking
-         * to its page: the section exists, and hiding it would make the front
-         * page a smaller site than it is.
+         * That is what the page had for the calculators and what the reference
+         * tools site has for every section — the same grid, repeated, so a
+         * visitor learns the shape once. The card a section with no tools gets is
+         * greyed and says so, rather than disappearing.
          *
          * On /calculators the same sections are rendered with $group set, and
-         * this band stands down — that page is the calculator catalogue.
+         * these bands stand down — that page is the calculator catalogue.
          */
         if ($group === null):
             $perGroup = max(3, min(12, (int) ($config['per_group'] ?? 6)));
-            $tiles = [];
-            $emptySections = 0;
+            $sections = [];
             foreach (Groups::all() as $g) {
                 $gSlug = (string) $g['slug'];
                 if ($gSlug === Groups::CALCULATORS) {
                     continue;
                 }
-                $made = 0;
+                $cards = [];
+                $totalInSection = 0;
+                /* A section's own tools come first, in a card titled after the
+                   section, then one card per subsection — the same order the
+                   group page lists them in. */
                 $direct = Groups::tools($gSlug);
                 if ($direct !== []) {
-                    $tiles[] = [
+                    usort($direct, static fn (array $a, array $b): int => strcasecmp((string) $a['name'], (string) $b['name']));
+                    $cards[] = [
                         'name' => (string) $g['name'],
                         'url' => '/' . $gSlug,
-                        'eyebrow' => '',
-                        'icon' => (string) $g['icon'],
                         'rows' => $direct,
                         'count' => count($direct),
+                        'icon' => (string) $g['icon'],
                     ];
-                    $made++;
+                    $totalInSection += count($direct);
                 }
                 foreach (Groups::subs($gSlug) as $sub) {
                     $rows = Groups::tools((string) $sub['slug']);
-                    if ($rows === []) {
-                        continue;
+                    usort($rows, static fn (array $a, array $b): int => strcasecmp((string) $a['name'], (string) $b['name']));
+                    if ($rows !== []) {
+                        $totalInSection += count($rows);
                     }
-                    $tiles[] = [
+                    $cards[] = [
                         'name' => (string) $sub['name'],
                         'url' => '/' . (string) $sub['slug'],
-                        'eyebrow' => (string) $g['name'],
-                        'icon' => (string) $sub['icon'],
                         'rows' => $rows,
                         'count' => count($rows),
+                        'icon' => (string) $sub['icon'],
                     ];
-                    $made++;
                 }
-                if ($made === 0) {
-                    $tiles[] = [
+                if ($cards === []) {
+                    $cards[] = [
                         'name' => (string) $g['name'],
                         'url' => '/' . $gSlug,
-                        'eyebrow' => '',
-                        'icon' => (string) $g['icon'],
                         'rows' => [],
                         'count' => 0,
+                        'icon' => (string) $g['icon'],
                     ];
-                    $emptySections++;
                 }
-            }
-            /* Every card lists its tools by name: a category that holds 300 of
-               them still reads as a category, not as an unsorted pile. */
-            /* Sorted through a named row, never through $card: $card is the
-               calculator-card closure every section below uses, and a
-               `foreach ($cards as &$card)` silently replaced it — which is how
-               the popular band started throwing "Array callback must have
-               exactly two elements". */
-            foreach ($tiles as $tileIndex => $tileItem) {
-                if ($tileItem['rows'] !== []) {
-                    usort($tiles[$tileIndex]['rows'], static fn (array $a, array $b): int => strcasecmp((string) $a['name'], (string) $b['name']));
-                }
+                $sections[] = ['group' => $g, 'cards' => $cards, 'total' => $totalInSection];
             }
             ?>
-            <section class="directory" id="<?= View::escape($anchor) ?>" aria-labelledby="<?= View::escape($anchor) ?>-heading">
-                <div class="shell">
-                    <div class="directory-head">
-                        <div>
-                            <h2 id="<?= View::escape($anchor) ?>-heading" class="section-title"><?= View::escape($title ?: 'Tools, by category') ?></h2>
-                            <p class="section-lede">
-                                <?= $subtitle !== ''
-                                    ? View::escape($subtitle)
-                                    : 'Everything on the site that is not a calculator, filed under the section it belongs to.' ?>
-                            </p>
-                        </div>
-                        <div class="directory-actions">
-                            <a class="btn btn-soft" href="<?= View::escape(View::url('/' . Groups::CALCULATORS)) ?>">
-                                Calculators, by category
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="directory-grid">
-                        <?php foreach ($tiles as $tile): ?>
-                            <section class="directory-cat<?= $tile['count'] === 0 ? ' directory-cat--empty' : '' ?>">
-                                <div class="directory-cat-head">
-                                    <h3 class="directory-cat-name">
-                                        <?php if ($tile['eyebrow'] !== ''): ?>
-                                            <span class="directory-cat-eyebrow"><?= View::escape($tile['eyebrow']) ?></span>
-                                        <?php endif; ?>
-                                        <a href="<?= View::escape(View::url($tile['url'])) ?>"><?= View::escape($tile['name']) ?></a>
-                                    </h3>
-                                    <span class="directory-cat-count"><?= View::escape(Format::count((int) $tile['count'])) ?></span>
+            <?php foreach ($sections as $index => $block):
+                $g = $block['group'];
+                $gSlug = (string) $g['slug'];
+                $totalInSection = (int) $block['total'];
+                $anchorId = $anchor . '-' . $gSlug;
+                ?>
+                <section class="directory<?= $index === 0 ? ' directory--first' : '' ?><?= $index % 2 === 1 ? ' directory--alt' : '' ?>" id="<?= View::escape($anchorId) ?>"
+                         aria-labelledby="<?= View::escape($anchorId) ?>-heading">
+                    <div class="shell">
+                        <div class="directory-head">
+                            <div class="directory-title">
+                                <span class="directory-icon"><?= View::icon((string) $g['icon'], 26) ?></span>
+                                <div>
+                                    <h2 id="<?= View::escape($anchorId) ?>-heading" class="section-title"><?= View::escape((string) $g['name']) ?>, by category</h2>
+                                    <p class="section-lede">
+                                        <?= View::escape((string) ($g['description'] !== '' ? $g['description'] : 'Every tool in this section, filed under the sub-category it belongs to.')) ?>
+                                    </p>
                                 </div>
-                                <?php if ($tile['count'] === 0): ?>
-                                    <p class="directory-empty">No tools yet — this section opens with its first upload.</p>
-                                <?php else: ?>
-                                    <ul class="directory-links">
-                                        <?php foreach (array_slice($tile['rows'], 0, $perGroup) as $row): ?>
-                                            <li>
-                                                <a href="<?= View::escape(View::url((string) $row['path'])) ?>">
-                                                    <?= View::toolIcon($row, (string) $tile['icon'], 13, 'calc-glyph') ?>
-                                                    <span class="dir-name"><?= View::escape((string) $row['name']) ?></span>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endif; ?>
-                                <a class="directory-more" href="<?= View::escape(View::url($tile['url'])) ?>">
-                                    <?php if ($tile['count'] === 0): ?>
-                                        Open <?= View::escape($tile['name']) ?> →
-                                    <?php else: ?>
-                                        All <?= View::escape(Format::count((int) $tile['count'])) ?> in <?= View::escape($tile['name']) ?> →
-                                    <?php endif; ?>
+                            </div>
+                            <div class="directory-actions">
+                                <span class="directory-total">
+                                    <?= $totalInSection > 0
+                                        ? View::escape(Format::count($totalInSection)) . ' tool' . ($totalInSection === 1 ? '' : 's')
+                                        : 'Opening soon' ?>
+                                </span>
+                                <a class="btn btn-soft" href="<?= View::escape(View::url('/' . $gSlug)) ?>">
+                                    Open <?= View::escape((string) $g['name']) ?>
                                 </a>
-                            </section>
-                        <?php endforeach; ?>
-                    </div>
+                            </div>
+                        </div>
 
-                    <?php if ($emptySections > 0): ?>
-                        <p class="directory-foot" style="margin-top:22px">
-                            <?= $emptySections === 1 ? 'One section is' : $emptySections . ' sections are' ?> still opening —
-                            each has its page and its place in the header, and its card fills in as tools are uploaded.
-                            The <?= View::escape(Format::count((int) $total)) ?> calculators are all here already.
-                        </p>
-                    <?php endif; ?>
-                </div>
-            </section>
+                        <div class="directory-grid">
+                            <?php foreach ($block['cards'] as $tile): ?>
+                                <section class="directory-cat<?= $tile['count'] === 0 ? ' directory-cat--empty' : '' ?>">
+                                    <div class="directory-cat-head">
+                                        <h3 class="directory-cat-name">
+                                            <a href="<?= View::escape(View::url($tile['url'])) ?>"><?= View::escape($tile['name']) ?></a>
+                                        </h3>
+                                        <span class="directory-cat-count"><?= View::escape(Format::count((int) $tile['count'])) ?></span>
+                                    </div>
+                                    <?php if ($tile['count'] === 0): ?>
+                                        <p class="directory-empty">No tools yet — this opens with its first upload.</p>
+                                    <?php else: ?>
+                                        <ul class="directory-links">
+                                            <?php foreach (array_slice($tile['rows'], 0, $perGroup) as $row): ?>
+                                                <li>
+                                                    <a href="<?= View::escape(View::url((string) $row['path'])) ?>">
+                                                        <?= View::toolIcon($row, (string) $tile['icon'], 13, 'calc-glyph') ?>
+                                                        <span class="dir-name"><?= View::escape((string) $row['name']) ?></span>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                    <a class="directory-more" href="<?= View::escape(View::url($tile['url'])) ?>">
+                                        <?php if ($tile['count'] === 0): ?>
+                                            Open <?= View::escape($tile['name']) ?> →
+                                        <?php else: ?>
+                                            All <?= View::escape(Format::count((int) $tile['count'])) ?> in <?= View::escape($tile['name']) ?> →
+                                        <?php endif; ?>
+                                    </a>
+                                </section>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </section>
+            <?php endforeach; ?>
         <?php endif; ?>
 
     <?php elseif ($type === 'calc_directory'):

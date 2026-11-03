@@ -149,7 +149,6 @@ if ($groupMenu === []) {
                         <a class="category-nav-link<?= $isActiveItem ? ' is-active' : '' ?>"
                            href="<?= View::escape(View::url((string) $item['url'])) ?>"
                            aria-haspopup="true" aria-expanded="false">
-                            <?= View::icon((string) $item['icon'], 13) ?>
                             <?= View::escape((string) $item['name']) ?>
                             <?= View::icon('chevron-down', 12) ?>
                         </a>
@@ -165,7 +164,6 @@ if ($groupMenu === []) {
                     <a class="category-nav-link<?= $isActiveItem ? ' is-active' : '' ?>"
                        href="<?= View::escape(View::url((string) $item['url'])) ?>"
                        <?= $isActiveItem ? 'aria-current="page"' : '' ?>>
-                        <?= View::icon((string) $item['icon'], 13) ?>
                         <?= View::escape((string) $item['name']) ?>
                     </a>
                 <?php endif; ?>
