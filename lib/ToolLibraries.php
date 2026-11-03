@@ -71,6 +71,82 @@ final class ToolLibraries
             && Db::hasColumn('custom_calculators', 'libraries');
     }
 
+    /**
+     * Take an uploaded .js/.css and put it where the site can serve it.
+     *
+     * Not every library comes from a CDN: a plugin the owner bought, or a build
+     * they made themselves, arrives as a file. It is stored under
+     * assets/libraries/ and the row points at that path, so swapping the file
+     * later is a new upload and nothing else changes.
+     *
+     * @return string the public path, or '' on failure (with $error set)
+     */
+    public static function storeUpload(array $file, string $kind, string &$error = ''): string
+    {
+        $error = '';
+        $code  = (int) ($file['error'] ?? UPLOAD_ERR_NO_FILE);
+        if ($code === UPLOAD_ERR_NO_FILE) {
+            return '';
+        }
+        if ($code !== UPLOAD_ERR_OK) {
+            $error = $code === UPLOAD_ERR_INI_SIZE || $code === UPLOAD_ERR_FORM_SIZE
+                ? 'That file is larger than the server accepts.'
+                : 'The upload failed (error ' . $code . ').';
+            return '';
+        }
+        $tmp = (string) ($file['tmp_name'] ?? '');
+        if ($tmp === '' || !is_uploaded_file($tmp)) {
+            $error = 'That file did not arrive through an upload.';
+            return '';
+        }
+        if ((int) ($file['size'] ?? 0) <= 0) {
+            $error = 'The file is empty.';
+            return '';
+        }
+        if ((int) $file['size'] > 4 * 1024 * 1024) {
+            $error = 'Library files over 4 MB are not allowed.';
+            return '';
+        }
+
+        $ext = strtolower(pathinfo((string) ($file['name'] ?? ''), PATHINFO_EXTENSION));
+        if (!in_array($ext, ['js', 'css'], true)) {
+            $error = 'A library is a .js or a .css file.';
+            return '';
+        }
+        if ($ext !== $kind) {
+            /* The type says how it is printed: a stylesheet must not be marked as a script. */
+            $kind = $ext;
+        }
+
+        /* A .js is served as text; PHP in it would be a way to run code. */
+        $head = (string) file_get_contents($tmp, false, null, 0, 8192);
+        if (stripos($head, '<?php') !== false || stripos($head, '<?=') !== false) {
+            $error = 'That file contains PHP. A library is plain JavaScript or CSS.';
+            return '';
+        }
+
+        $dir = dirname(__DIR__) . '/assets/libraries';
+        if (!is_dir($dir) && !@mkdir($dir, 0755, true)) {
+            $error = 'The assets/libraries folder could not be created.';
+            return '';
+        }
+        if (!is_writable($dir)) {
+            $error = 'The assets/libraries folder is not writable.';
+            return '';
+        }
+
+        $base = preg_replace('~[^a-z0-9]+~i', '-', pathinfo((string) $file['name'], PATHINFO_FILENAME)) ?: 'library';
+        $name = strtolower(trim((string) $base, '-')) . '-' . bin2hex(random_bytes(4)) . '.' . $ext;
+        $target = $dir . '/' . $name;
+        if (!@move_uploaded_file($tmp, $target)) {
+            $error = 'The file could not be saved. Check the folder permissions.';
+            return '';
+        }
+        @chmod($target, 0644);
+
+        return '/assets/libraries/' . $name;
+    }
+
     /** @return array<int,array> every row, by name */
     public static function rows(bool $refresh = false): array
     {

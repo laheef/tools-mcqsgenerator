@@ -131,6 +131,7 @@ $navGroups = [
                 'tool-plugins'           => 'custom-calculators',
                 'tool-groups'            => 'custom-calculators',
                 'tool-new'               => 'custom-calculators',
+                'tool-edit'              => 'custom-calculators',
                 'tool-preview'           => 'custom-calculators',
                 /* Libraries is its own sidebar entry, so it keeps its own dot. */
                 'libraries'              => 'libraries',

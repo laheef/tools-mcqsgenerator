@@ -45,6 +45,26 @@ if (!CustomCalc::enabled()) {
     redirect_to(admin_url('dashboard'));
 }
 
+/*
+ * The same screen creates and edits. `?p=tool-new` makes a page, `?p=tool-edit`
+ * (or `?p=tool-new&id=N`) opens an existing one — the owner's complaint was that
+ * Edit on a tool row dropped them into the formula-calculator editor, so a tool
+ * page now opens where it was made, with the file, the article and the libraries
+ * in the same order.
+ */
+$editingId = request_int('id', 0);
+$editing   = $editingId > 0 ? CustomCalc::find($editingId) : null;
+if ($editingId > 0 && $editing === null) {
+    Flash::error('That page no longer exists.');
+    redirect_to(admin_url('custom-calculators'));
+}
+if ($editing !== null && (string) ($editing['kind'] ?? 'builder') !== 'tool') {
+    /* A formula page has fields and equations; that is the other editor. */
+    redirect_to(admin_url('custom-calculator-edit', ['id' => $editingId]));
+}
+$formAction = $editing === null ? admin_url('tool-new') : admin_url('tool-edit', ['id' => (int) $editing['id']]);
+$failUrl    = $editing === null ? admin_url('tool-new') : admin_url('tool-edit', ['id' => (int) $editing['id']]);
+
 /** Every section a tool page can be filed under: groups, their children, calculator categories. */
 $sectionOptions = [];
 foreach (Groups::rows() as $group) {
@@ -97,13 +117,13 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 
     if ($shortcode === '') {
         Flash::error('Choose the .php file for this tool — upload one or pick one you have already added.');
-        redirect_to(admin_url('tool-new'));
+        redirect_to($failUrl);
     }
 
     $tool = Toolkit::find($shortcode);
     if ($tool === null || !$tool['valid']) {
         Flash::error('That file cannot be used: ' . ($tool['error'] ?? 'it is not in the plugins folder.'));
-        redirect_to(admin_url('tool-new'));
+        redirect_to($failUrl);
     }
 
     /* ---------------------------------------------------------- the page */
@@ -134,7 +154,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     /* `libraries[slug]` posts an array; post() only returns strings. */
     $model['libraries'] = implode(',', array_map('strval', array_keys((array) ($_POST['libraries'] ?? []))));
 
-    $result = CustomCalc::save(null, $model, (int) Auth::id());
+    $result = CustomCalc::save($editing === null ? null : (int) $editing['id'], $model, (int) Auth::id());
     if (!$result['ok']) {
         foreach ($result['errors'] as $problem) {
             Flash::error($problem);
@@ -145,15 +165,21 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             'article' => (string) (post('article', '') ?? ''), 'summary' => $model['summary'],
             'meta_title' => $model['meta_title'], 'meta_description' => $model['meta_description'],
             'shortcode' => (string) $tool['shortcode'],
+            'libraries' => $model['libraries'],
         ];
-        redirect_to(admin_url('tool-new'));
+        redirect_to($failUrl);
     }
 
     $id = (int) $result['id'];
     /* What the file declares, attached now that the page exists. */
     $found = ToolLibraries::discoverForPage($id, $tool);
 
-    Activity::log('tool_page_created', 'calculator', (string) $id, 'Created a tool page for [' . $shortcode . ']');
+    Activity::log(
+        $editing === null ? 'tool_page_created' : 'tool_page_updated',
+        'calculator',
+        (string) $id,
+        ($editing === null ? 'Created' : 'Updated') . ' a tool page for [' . $shortcode . ']'
+    );
     $message = '“' . $model['name'] . '” saved';
     $message .= $model['status'] === 'published' ? ' and published.' : ' as a draft.';
     if ($uploaded) {
@@ -191,26 +217,59 @@ foreach ($files as $file) {
     }
 }
 
-$form = [
-    'name'             => (string) ($draft['name'] ?? ($preset['name'] ?? '')),
-    'slug'             => (string) ($draft['slug'] ?? ($preset !== null ? CustomCalc::slugify((string) $preset['name']) : '')),
-    'section'          => (string) ($draft['section'] ?? ($preset['category'] ?? '')),
-    'article'          => (string) ($draft['article'] ?? ''),
-    'summary'          => (string) ($draft['summary'] ?? ($preset['description'] ?? '')),
-    'meta_title'       => (string) ($draft['meta_title'] ?? ''),
-    'meta_description' => (string) ($draft['meta_description'] ?? ''),
-    'shortcode'        => (string) ($draft['shortcode'] ?? ($preset['shortcode'] ?? '')),
-];
+if ($editing !== null) {
+    /* Editing: the row is the source of truth, and the article box is the
+       section list put back together the way the editor wrote it. */
+    $model = CustomCalc::editorModel($editing);
+    $form = [
+        'name'             => (string) $model['name'],
+        'slug'             => (string) $model['slug'],
+        'section'          => (string) $model['category_slug'],
+        'article'          => $draft['article'] ?? CustomCalc::sectionsToArticle(is_array($model['sections']) ? $model['sections'] : []),
+        'summary'          => (string) ($draft['summary'] ?? $model['summary']),
+        'meta_title'       => (string) ($draft['meta_title'] ?? $model['meta_title']),
+        'meta_description' => (string) ($draft['meta_description'] ?? $model['meta_description']),
+        'shortcode'        => (string) ($draft['shortcode'] ?? $model['tool_shortcode']),
+        'status'           => (string) $model['status'],
+        'noindex'          => (int) $model['noindex'],
+    ];
+    $pickedLibraries = $draft['libraries'] ?? (string) ($model['libraries'] ?? '');
+    $currentTool = null;
+    foreach ($files as $file) {
+        if ($file['shortcode'] === $form['shortcode'] || $file['file'] === (string) ($editing['tool_file'] ?? '')) {
+            $currentTool = $file;
+            $preset = $file;
+            break;
+        }
+    }
+} else {
+    $form = [
+        'name'             => (string) ($draft['name'] ?? ($preset['name'] ?? '')),
+        'slug'             => (string) ($draft['slug'] ?? ($preset !== null ? CustomCalc::slugify((string) $preset['name']) : '')),
+        'section'          => (string) ($draft['section'] ?? ($preset['category'] ?? '')),
+        'article'          => (string) ($draft['article'] ?? ''),
+        'summary'          => (string) ($draft['summary'] ?? ($preset['description'] ?? '')),
+        'meta_title'       => (string) ($draft['meta_title'] ?? ''),
+        'meta_description' => (string) ($draft['meta_description'] ?? ''),
+        'shortcode'        => (string) ($draft['shortcode'] ?? ($preset['shortcode'] ?? '')),
+        'status'           => 'draft',
+        'noindex'          => 0,
+    ];
+    $pickedLibraries = $draft['libraries'] ?? '';
+    $currentTool = $preset;
+}
+$pickedLibraries = array_values(array_filter(array_map('trim', explode(',', (string) $pickedLibraries))));
 $declared = $preset !== null ? ToolLibraries::forTool($preset) : [];
 
-$pageTitle = 'New tool';
+$pageTitle = $editing === null ? 'New tool' : 'Edit tool';
 $title = $pageTitle;
 $breadcrumbs = [
     ['label' => 'Tools', 'url' => admin_url('custom-calculators')],
-    ['label' => 'New tool'],
+    ['label' => $editing === null ? 'New tool' : (string) $editing['name']],
 ];
 
 render('tool-new', compact(
     'files', 'folders', 'libraries', 'form', 'preset', 'declared',
-    'sectionOptions', 'categoryOptions', 'pageTitle', 'title', 'breadcrumbs', 'toolsTab'
+    'sectionOptions', 'categoryOptions', 'pageTitle', 'title', 'breadcrumbs', 'toolsTab',
+    'editing', 'formAction', 'pickedLibraries'
 ));

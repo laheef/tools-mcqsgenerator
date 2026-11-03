@@ -151,6 +151,8 @@ $controllers = [
     'tool-plugins'           => 'tool-plugins.php',
     'tool-groups'            => 'tool-groups.php',
     'tool-new'               => 'tool-new.php',
+    /* Editing a tool page opens the same one-screen form that created it. */
+    'tool-edit'              => 'tool-new.php',
     'tool-preview'           => 'tool-preview.php',
     'libraries'              => 'libraries.php',
     'calculator-builder'     => 'custom-calculators.php',
@@ -197,6 +199,7 @@ $roleFor = [
     'tool-plugins'           => 'custom-calculators',
     'tool-groups'            => 'tool-groups',
     'tool-new'               => 'custom-calculators',
+    'tool-edit'              => 'custom-calculators',
     'tool-preview'           => 'custom-calculators',
     'libraries'              => 'custom-calculators',
 ];

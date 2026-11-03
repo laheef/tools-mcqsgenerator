@@ -126,7 +126,8 @@ use Onim\Admin\Csrf;
                     <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('libraries')) ?>" aria-label="Close"><?= admin_icon('x', 15) ?></a>
                 <?php endif; ?>
             </div>
-            <form method="post" action="<?= e(admin_url('libraries')) ?>" class="card-body stack">
+            <form method="post" action="<?= e(admin_url('libraries')) ?>" class="card-body stack" id="library-form"
+                  enctype="multipart/form-data">
                 <?= Csrf::field() ?>
                 <input type="hidden" name="do" value="save">
                 <input type="hidden" name="id" value="<?= (int) ($editing['id'] ?? 0) ?>">
@@ -144,9 +145,24 @@ use Onim\Admin\Csrf;
 
                 <div class="field">
                     <div class="label-row"><label for="lib-url">Address</label></div>
-                    <input id="lib-url" name="url" value="<?= e((string) $form['url']) ?>" required
+                    <input id="lib-url" name="url" value="<?= e((string) $form['url']) ?>"
                            placeholder="https://cdn.jsdelivr.net/npm/chart.js@4/chart.umd.min.js">
-                    <div class="hint">A CDN address, or <code>/assets/js/…</code> for a file you host yourself.</div>
+                    <div class="hint">
+                        A CDN address, or <code>/assets/js/…</code> for a file you host yourself.
+                        Leave it empty if you upload the file below.
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="label-row">
+                        <label for="library_file">…or upload the file</label>
+                        <span class="hint">.js or .css, up to 4 MB</span>
+                    </div>
+                    <input type="file" id="library_file" name="library_file" accept=".js,.css">
+                    <div class="hint">
+                        Stored in <code>assets/libraries/</code> and used as the address above — for a library
+                        you host yourself instead of one from a CDN.
+                    </div>
                 </div>
 
                 <div class="field">
@@ -173,6 +189,68 @@ use Onim\Admin\Csrf;
                 </button>
             </form>
         </div>
+
+        <?php if ($editing !== null): ?>
+        <?php $slugNow = (string) $editing['slug']; ?>
+        <div class="card">
+            <div class="card-head">
+                <h2>Where it loads</h2>
+                <span class="spacer"></span>
+                <span class="muted small"><?= count($assignable) ?> pages</span>
+            </div>
+            <div class="card-body stack">
+                <p class="small muted" style="margin:0">
+                    Tick the tools and calculators that need <strong><?= e((string) $editing['name']) ?></strong>.
+                    It is added to their <code>&lt;head&gt;</code> and nowhere else. Untick to stop loading it there.
+                </p>
+                <?php if ($assignable === []): ?>
+                    <p class="small muted" style="margin:0">No pages yet.</p>
+                <?php else: ?>
+                    <input type="text" id="assign-filter" placeholder="Filter pages by name or address…"
+                           autocomplete="off" style="width:100%">
+                    <div class="library-assign" id="assign-list">
+                        <?php foreach ($assignable as $libPage): ?>
+                            <?php
+                            /* Not `$page`: the layout reads that name for the current screen. */
+                            $libPath    = '/' . (string) $libPage['category_slug'] . '/' . (string) $libPage['slug'];
+                            $libKinds   = (string) ($libPage['kind'] ?? 'builder');
+                            $selected   = in_array($slugNow, \Onim\ToolLibraries::split((string) $libPage['libraries']), true);
+                            ?>
+                            <label class="check">
+                                <input type="checkbox" form="library-form" name="assign[<?= (int) $libPage['id'] ?>]" value="1"
+                                       <?= $selected ? 'checked' : '' ?>>
+                                <span class="small">
+                                    <?= e((string) $libPage['name']) ?>
+                                    <span class="badge <?= $libKinds === 'tool' ? 'badge-brand' : 'badge-muted' ?>">
+                                        <?= $libKinds === 'tool' ? 'Tool' : 'Calculator' ?>
+                                    </span>
+                                    <span class="mono muted" style="display:block;font-size:11px"><?= e($libPath) ?></span>
+                                </span>
+                            </label>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+                <button type="submit" form="library-form" class="btn btn-primary" style="justify-content:center">
+                    <?= admin_icon('check', 15) ?> Save this library and its pages
+                </button>
+                <script>
+                /* Two hundred pages is a list, four thousand is a haystack. */
+                (function () {
+                    var box = document.getElementById('assign-filter');
+                    var list = document.getElementById('assign-list');
+                    if (!box || !list) { return; }
+                    var labels = [].slice.call(list.querySelectorAll('label.check'));
+                    box.addEventListener('input', function () {
+                        var q = box.value.trim().toLowerCase();
+                        labels.forEach(function (label) {
+                            label.hidden = q !== '' && label.textContent.toLowerCase().indexOf(q) === -1;
+                        });
+                    });
+                })();
+                </script>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
 </div>
 

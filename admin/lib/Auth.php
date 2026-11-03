@@ -41,6 +41,7 @@ final class Auth
         'custom-import'          => ['administrator', 'editor'],
         'tool-plugins'           => ['administrator'],
         'tool-new'               => ['administrator', 'editor'],
+        'tool-edit'              => ['administrator', 'editor'],
         'tool-preview'           => ['administrator', 'editor'],
         'libraries'              => ['administrator', 'editor'],
         'tool-groups'            => ['administrator', 'editor'],

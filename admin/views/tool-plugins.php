@@ -219,7 +219,7 @@ $size = static function (int $bytes): string {
                                                 : ((string) $boundPage['status'] === 'draft' ? 'badge-warn' : 'badge-muted');
                                             ?>
                                             <a class="badge <?= $statusClass ?>" style="text-decoration:none"
-                                               href="<?= e(admin_url('custom-calculator-edit', ['id' => (int) $boundPage['id']])) ?>"
+                                               href="<?= e(admin_url('tool-edit', ['id' => (int) $boundPage['id']])) ?>"
                                                title="<?= e(ucfirst((string) $boundPage['status'])) ?> — edit this page">
                                                 <?= e((string) $boundPage['name']) ?>
                                             </a>
@@ -244,7 +244,7 @@ $size = static function (int $bytes): string {
                                         </form>
                                     <?php endif; ?>
                                     <?php if ($pages !== []): ?>
-                                        <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('custom-calculator-edit', ['id' => (int) $pages[0]['id']])) ?>" title="Edit the page">
+                                        <a class="btn btn-sm btn-ghost" href="<?= e(admin_url('tool-edit', ['id' => (int) $pages[0]['id']])) ?>" title="Edit the page">
                                             <?= admin_icon('edit', 15) ?>
                                         </a>
                                     <?php endif; ?>

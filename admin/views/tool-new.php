@@ -16,6 +16,9 @@
  * @var array             $form            values to paint
  * @var array|null        $preset          the file chosen with ?file=
  * @var array<int,string> $declared        libraries the preset declares
+ * @var array|null        $editing         the row being edited (null when new)
+ * @var string            $formAction      where the form posts
+ * @var array<int,string> $pickedLibraries libraries ticked on the page
  * @var array<string,string> $sectionOptions
  * @var array<string,string> $categoryOptions
  */
@@ -32,7 +35,7 @@ use Onim\Admin\Csrf;
 ?>
 <?php require ADMIN_ROOT . '/views/partials/tools-tabs.php'; ?>
 
-<form method="post" action="<?= e(admin_url('tool-new')) ?>" enctype="multipart/form-data" class="tool-new" id="tool-new-form">
+<form method="post" action="<?= e((string) $formAction) ?>" enctype="multipart/form-data" class="tool-new" id="tool-new-form">
     <?= Csrf::field() ?>
 
     <div class="tool-new-grid">
@@ -153,8 +156,9 @@ use Onim\Admin\Csrf;
                         <div class="field">
                             <label for="status">Status</label>
                             <select id="status" name="status">
-                                <option value="draft" selected>Draft — nobody can see it yet</option>
-                                <option value="published">Published — live as soon as it is saved</option>
+                                <option value="draft" <?= ($form['status'] ?? 'draft') === 'draft' ? 'selected' : '' ?>>Draft — nobody can see it yet</option>
+                                <option value="published" <?= ($form['status'] ?? '') === 'published' ? 'selected' : '' ?>>Published — live as soon as it is saved</option>
+                                <option value="archived" <?= ($form['status'] ?? '') === 'archived' ? 'selected' : '' ?>>Archived — kept, off the site</option>
                             </select>
                         </div>
                     </div>
@@ -273,7 +277,7 @@ use Onim\Admin\Csrf;
                         <textarea id="meta_description" name="meta_description" rows="2" maxlength="320"><?= e((string) $form['meta_description']) ?></textarea>
                     </div>
                     <label class="check" style="display:flex;gap:8px;align-items:center">
-                        <input type="checkbox" name="noindex" value="1">
+                        <input type="checkbox" name="noindex" value="1" <?= !empty($form['noindex']) ? 'checked' : '' ?>>
                         <span class="small">Keep this page out of search engines and the sitemap</span>
                     </label>
                 </div>
@@ -286,12 +290,23 @@ use Onim\Admin\Csrf;
                 <div class="card-head"><h2><?= admin_icon('check', 15) ?> Save</h2></div>
                 <div class="card-body stack">
                     <p class="small muted" style="margin:0">
-                        The page is created with its widget already bound to the shortcode in the file —
-                        no second step, nothing to connect afterwards.
+                        <?php if ($editing === null): ?>
+                            The page is created with its widget already bound to the shortcode in the file —
+                            no second step, nothing to connect afterwards.
+                        <?php else: ?>
+                            Changes are saved to this page. Its address, its article and the libraries it loads
+                            all live here.
+                        <?php endif; ?>
                     </p>
                     <button type="submit" class="btn btn-primary" style="justify-content:center">
-                        <?= admin_icon('check', 15) ?> Create the tool page
+                        <?= admin_icon('check', 15) ?> <?= $editing === null ? 'Create the tool page' : 'Save changes' ?>
                     </button>
+                    <?php if ($editing !== null): ?>
+                        <a class="btn" style="justify-content:center" target="_blank" rel="noopener"
+                           href="<?= e(site_link('/' . (string) $editing['category_slug'] . '/' . (string) $editing['slug'])) ?>">
+                            <?= admin_icon('external', 15) ?> Open the page
+                        </a>
+                    <?php endif; ?>
                     <a class="btn" href="<?= e(admin_url('custom-calculators')) ?>" style="justify-content:center">Cancel</a>
                 </div>
             </div>
@@ -314,7 +329,7 @@ use Onim\Admin\Csrf;
                             <?php foreach ($libraries as $library): ?>
                                 <label class="check" style="display:flex;gap:8px;align-items:flex-start">
                                     <input type="checkbox" name="libraries[<?= e((string) $library['slug']) ?>]" value="1"
-                                        <?= in_array((string) $library['slug'], $declared, true) ? 'checked' : '' ?>>
+                                        <?= in_array((string) $library['slug'], $pickedLibraries, true) ? 'checked' : '' ?>>
                                     <span class="small">
                                         <?= e((string) $library['name']) ?>
                                         <span class="badge <?= (string) $library['kind'] === 'css' ? 'badge-warn' : 'badge-ok' ?>"><?= e((string) $library['kind']) ?></span>
@@ -367,6 +382,16 @@ use Onim\Admin\Csrf;
     };
     name.addEventListener('input', setSlug);
 
+    var followFile = function (option) {
+        var dir = option && option.getAttribute('data-folder');
+        if (!folder || !dir) { return; }
+        for (var i = 0; i < folder.options.length; i++) {
+            if (folder.options[i].value === dir) { folder.selectedIndex = i; return; }
+        }
+    };
+    /* On an existing page the folder follows the file it already uses. */
+    if (pick && pick.selectedIndex > 0) { followFile(pick.options[pick.selectedIndex]); }
+
     if (pick) {
         var lastAuto = '';
         pick.addEventListener('change', function () {
@@ -380,12 +405,7 @@ use Onim\Admin\Csrf;
                 slugMine = false;
                 setSlug();
             }
-            var dir = option.getAttribute('data-folder') || '';
-            if (folder && dir) {
-                for (var i = 0; i < folder.options.length; i++) {
-                    if (folder.options[i].value === dir) { folder.selectedIndex = i; break; }
-                }
-            }
+            followFile(option);
             var sec = option.getAttribute('data-section') || '';
             if (section && sec && section.value === '') {
                 for (var j = 0; j < section.options.length; j++) {

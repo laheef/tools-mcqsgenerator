@@ -2443,6 +2443,69 @@ $libsPage = page('libraries');
 t('64 the libraries screen explains the header line',
     str_contains($libsPage['body'], 'Libraries:') && clean($libsPage['body']));
 
+/* ------------------------------- 65 a library as a file, and where it loads */
+if (\Onim\ToolLibraries::enabled()) {
+    /* a row left by an interrupted run would take the slug this check needs */
+    foreach (\Onim\ToolLibraries::rows(true) as $staleLib) {
+        if (str_starts_with((string) $staleLib['slug'], 'e2e-uploaded') || str_starts_with((string) $staleLib['slug'], 'e2e-bad')) {
+            @unlink(dirname(__DIR__) . (string) $staleLib['url']);
+            \Onim\ToolLibraries::delete((int) $staleLib['id']);
+        }
+    }
+    $tmpLib = sys_get_temp_dir() . '/qa-lib-' . bin2hex(random_bytes(4)) . '.css';
+    file_put_contents($tmpLib, "/* uploaded by the test suite */\n.qa-lib{color:red}\n");
+
+    post('libraries', ['do' => 'save', 'name' => 'E2E Uploaded', 'kind' => 'css', 'url' => ''],
+        [], ['library_file' => $tmpLib]);
+    /* the row cache is per-process; the row was written by the panel's process */
+    \Onim\ToolLibraries::rows(true);
+    $lib = \Onim\ToolLibraries::findBySlug('e2e-uploaded');
+    t('65 a library file can be uploaded instead of an address',
+        $lib !== null && str_starts_with((string) $lib['url'], '/assets/libraries/')
+        && is_file(dirname(__DIR__) . (string) $lib['url']),
+        (string) ($lib['url'] ?? 'none'));
+
+    /* the PHP guard: a .js with PHP in it is refused */
+    $tmpJs = sys_get_temp_dir() . '/qa-bad-' . bin2hex(random_bytes(4)) . '.js';
+    file_put_contents($tmpJs, "<?php echo 1; ?>\n");
+    post('libraries', ['do' => 'save', 'name' => 'E2E Bad', 'kind' => 'js', 'url' => ''],
+        [], ['library_file' => $tmpJs]);
+    \Onim\ToolLibraries::rows(true);
+    t('65 a script with PHP in it is refused', \Onim\ToolLibraries::findBySlug('e2e-bad') === null);
+    @unlink($tmpJs);
+
+    /* assignment: tick a page from the library screen */
+    if ($lib !== null) {
+        $target = row('SELECT id, libraries FROM custom_calculators ORDER BY id DESC LIMIT 1');
+        if ($target !== null) {
+            post('libraries', ['do' => 'save', 'id' => (int) $lib['id'], 'name' => (string) $lib['name'],
+                'slug' => (string) $lib['slug'], 'kind' => 'css', 'url' => (string) $lib['url'],
+                'assign' => [(int) $target['id'] => '1']]);
+            $after = row('SELECT libraries FROM custom_calculators WHERE id = ?', [(int) $target['id']]);
+            t('65 ticking a page attaches the library to it',
+                in_array('e2e-uploaded', \Onim\ToolLibraries::split((string) ($after['libraries'] ?? '')), true),
+                (string) ($after['libraries'] ?? ''));
+        }
+        /* tidy up */
+        @unlink(dirname(__DIR__) . (string) $lib['url']);
+        \Onim\ToolLibraries::delete((int) $lib['id']);
+    }
+    @unlink($tmpLib);
+}
+
+/* the tool editor is where a tool row's Edit button goes */
+$toolRow = row('SELECT id FROM custom_calculators WHERE kind = "tool" ORDER BY id LIMIT 1');
+if ($toolRow !== null) {
+    $editor = page('tool-edit', ['id' => (int) $toolRow['id']]);
+    t('65 editing a tool opens the tool editor, not the calculator editor',
+        $editor['status'] === 200 && str_contains($editor['body'], 'name="article"')
+        && clean($editor['body']));
+
+    $listing = page('custom-calculators');
+    t('65 the tools listing links Edit to that editor',
+        str_contains($listing['body'], 'p=tool-edit&amp;id=' . (int) $toolRow['id']));
+}
+
 /* leftovers from a failed run */
 foreach (glob($tmpDir . '/*') ?: [] as $leftover) {
     @unlink($leftover);

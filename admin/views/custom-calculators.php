@@ -184,8 +184,16 @@ use Onim\Admin\Csrf;
                     $statusClass = $row['status'] === 'published' ? 'badge-ok' : ($row['status'] === 'draft' ? 'badge-warn' : 'badge-muted');
                     ?>
                     <tr>
+                        <?php
+                        /* A tool page opens in the tool editor; a formula page in the
+                           calculator editor. This is the fix for "Edit took me to the
+                           custom calculator" — it now goes where the page was made. */
+                        $editUrl = (string) ($row['kind'] ?? 'builder') === 'tool'
+                            ? admin_url('tool-edit', ['id' => (int) $row['id']])
+                            : admin_url('custom-calculator-edit', ['id' => (int) $row['id']]);
+                        ?>
                         <td class="primary" data-label="Name">
-                            <a href="<?= e(admin_url('custom-calculator-edit', ['id' => (int) $row['id']])) ?>">
+                            <a href="<?= e($editUrl) ?>">
                                 <strong><?= e((string) $row['name']) ?></strong>
                             </a>
                             <?php if ((int) $row['is_featured'] === 1): ?>
@@ -212,7 +220,7 @@ use Onim\Admin\Csrf;
                         <td class="muted small" data-label="Updated"><?= e((string) $row['updated_at']) ?></td>
                         <td class="actions">
                             <a class="btn btn-sm <?= \Onim\CustomCalc::needsReview($row) ? 'btn-primary' : '' ?>"
-                               href="<?= e(admin_url('custom-calculator-edit', ['id' => (int) $row['id'], 'tab' => 'article'])) ?>">
+                               href="<?= e($editUrl) ?>">
                                 <?= admin_icon('edit', 14) ?> <?= \Onim\CustomCalc::needsReview($row) ? 'Review' : 'Edit' ?>
                             </a>
                             <a class="btn btn-sm btn-ghost" target="_blank" rel="noopener"
