@@ -192,7 +192,7 @@ foreach ($sections as $section) {
                              half a page away from its own label. */ ?>
                     <form class="hero-search" role="search" action="<?= View::escape(View::url('/search')) ?>" method="get" autocomplete="off">
                         <label class="sr-only" for="hero-search">Search tools</label>
-                        <input id="hero-search" type="search" name="q" placeholder="Search <?= View::escape(Format::count((int) $total)) ?> tools — a calculator, a converter, a checker…" data-search-input
+                        <input id="hero-search" type="search" name="q" placeholder="Search <?= View::escape(Format::count((int) $total)) ?> tools…" data-search-input
                                aria-autocomplete="list" aria-controls="search-suggestions-hero">
                         <button type="submit" class="hero-search-submit" aria-label="Search">
                             <?= View::icon('search', 22) ?>

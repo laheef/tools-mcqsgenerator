@@ -264,9 +264,9 @@ button { font: inherit; color: inherit; }
     radial-gradient(900px 420px at 78% 4%, #E7EDFF 0%, rgba(231, 237, 255, 0) 62%),
     radial-gradient(760px 460px at 96% 40%, #F1EEFB 0%, rgba(241, 238, 251, 0) 60%),
     linear-gradient(160deg, #FBFCFE 0%, #F4F7FF 52%, #EEF2FE 100%);
-  padding-block: 34px 56px;
+  padding-block: 26px 34px;
 }
-@media (min-width: 724px) { .hero { padding-block: 52px 84px; } }
+@media (min-width: 724px) { .hero { padding-block: 52px 78px; } }
 /*
  * Two columns, both aligned to the same baseline grid: the words and their
  * search box on the left, the drawing on the right. The search box belongs under
@@ -277,7 +277,7 @@ button { font: inherit; color: inherit; }
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  gap: 30px;
+  gap: 18px;
 }
 @media (min-width: 980px) {
   .hero-inner { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 30px 56px; }
