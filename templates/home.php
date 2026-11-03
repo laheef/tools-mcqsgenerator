@@ -55,6 +55,46 @@ foreach ($sections as $section) {
     $config = is_array($section['config'] ?? null) ? $section['config'] : [];
     $anchor = 'section-' . preg_replace('~[^a-z0-9-]~', '', (string) ($section['skey'] ?? $type));
 
+    /*
+     * Seeded copy is not a decision.
+     *
+     * Round 55 rewrote the home page for a site that also holds file tools, but
+     * the headings live in the database: an installed site still holds the strings
+     * the installer seeded, so a deploy alone would leave "All calculators, by
+     * category" over a page that is no longer about calculators. Rather than wait
+     * for an owner to press Upgrade — or, worse, overwrite what they typed — the
+     * exact seeded strings are read as "not customised" and replaced with the
+     * current wording here. Anything an editor actually wrote is kept verbatim.
+     *
+     * The same rule the hero section already used for its eyebrow.
+     */
+    $seedCopy = [
+        'directory'   => ['All calculators, by category', 'Calculators, by category'],
+        'tools'       => ['Tools, by category', 'Tools, by section'],
+        'popular'     => ['Most popular calculators', 'Most opened tools'],
+        'how'         => ['How these calculators work', 'How these tools work'],
+        'howitworks'  => ['What every calculator on this site actually does', 'What every tool here actually does'],
+    ];
+    $skeyRow = (string) ($section['skey'] ?? $type);
+    if (isset($seedCopy[$skeyRow]) && $title === $seedCopy[$skeyRow][0]) {
+        $title = $seedCopy[$skeyRow][1];
+    }
+    if ($title === 'Most popular') {
+        $title = 'Most opened tools';
+    }
+    /* Two subtitles were seeded with the page's old subject in them. */
+    $seedSubtitles = [
+        'Every category on the site, with a few of its calculators — or open the full catalogue and filter it.'
+            => 'Every calculator topic on the site, with a few of its tools — or open the full catalogue and filter it.',
+        'The ones people open most often'
+            => 'The pages people open most often — calculators and file tools together',
+        'Not a form with a number at the end — an equation you can turn around, with the working shown.'
+            => 'Calculators turn an equation around. File tools run on your machine. Both show their working.',
+    ];
+    if (isset($seedSubtitles[$subtitle])) {
+        $subtitle = $seedSubtitles[$subtitle];
+    }
+
     if ($type === 'hero'):
         $eyebrow = trim((string) ($config['eyebrow'] ?? ''));
         $headline = trim((string) ($config['title'] ?? ''));
