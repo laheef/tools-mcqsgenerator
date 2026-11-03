@@ -467,6 +467,12 @@ foreach ($sections as $section) {
          */
         $perCat = max(3, min(12, (int) ($config['per_category'] ?? 6)));
         $cats = Data::categories();
+        /* The button counts what this band shows — the catalogue — not every
+           tool on the site. The file tools have bands of their own below. */
+        $calcTotal = 0;
+        foreach ($cats as $catRow) {
+            $calcTotal += (int) ($catRow['count'] ?? 0);
+        }
         ?>
         <section class="directory" id="<?= View::escape($anchor) ?>" aria-labelledby="<?= View::escape($anchor) ?>-heading">
             <div class="shell">
@@ -481,7 +487,7 @@ foreach ($sections as $section) {
                     </div>
                     <div class="directory-actions">
                         <a class="btn btn-primary" href="<?= View::escape(View::url('/all-calculators')) ?>">
-                            Browse all <?= View::escape(Format::count((int) $total)) ?> calculators
+                            Browse all <?= View::escape(Format::count((int) $calcTotal)) ?> calculators
                         </a>
                     </div>
                 </div>

@@ -31,6 +31,8 @@ final class CustomCalc
     private static ?array $rows = null;
     /** @var array<string,array>|null rows keyed by path */
     private static ?array $byPath = null;
+    /** @var array<int,array>|null the shipped tool pages from data/tools.json */
+    private static ?array $seeds = null;
 
     public const TYPES = [
         'number'      => 'Number',
@@ -45,13 +47,101 @@ final class CustomCalc
         return class_exists(Db::class) && Db::available() && Db::hasTable('custom_calculators');
     }
 
+    /**
+     * Are there pages to serve at all — from MySQL or from the shipped file?
+     *
+     * A tool that only exists in a database is a tool that is missing until the
+     * owner runs an installer, and this site now ships nineteen of them. So the
+     * list also comes from `data/tools.json`, exactly the way the sixteen
+     * sections come from `data/groups.json`: the file is the baseline, the panel
+     * is the override, and an install with no MySQL still has a working site.
+     */
+    public static function available(): bool
+    {
+        return self::enabled() || self::seeds() !== [];
+    }
+
     public static function flush(): void
     {
         self::$rows = null;
         self::$byPath = null;
+        self::$seeds = null;
     }
 
     /* ------------------------------------------------------------------ read */
+
+    /**
+     * The shipped tools, in the same row shape the panel writes.
+     *
+     * They carry negative ids so they can never collide with a MySQL row and so
+     * the panel can tell at a glance that a page came from the file. Everything
+     * else — sections, FAQ, meta, the shortcode the page renders — is identical,
+     * which is what lets one page template serve both.
+     *
+     * @return array<int,array> id => row
+     */
+    public static function seeds(): array
+    {
+        if (self::$seeds !== null) {
+            return self::$seeds;
+        }
+        self::$seeds = [];
+        $file = Data::path('tools.json');
+        $raw  = is_file($file) ? json_decode((string) @file_get_contents($file), true) : null;
+        if (!is_array($raw)) {
+            return self::$seeds;
+        }
+        $id = -1;
+        foreach ($raw as $entry) {
+            if (!is_array($entry)) {
+                continue;
+            }
+            $slug = trim((string) ($entry['slug'] ?? ''));
+            $cat  = trim((string) ($entry['category_slug'] ?? ''));
+            if ($slug === '' || $cat === '') {
+                continue;
+            }
+            if (!isset($entry['tool_shortcode'], $entry['tool_file'])) {
+                continue;
+            }
+            /* A seed never wins over a file that is not there: if the tool was
+               removed, its page would be a placeholder, so it is skipped. */
+            if (class_exists(Toolkit::class) && !Toolkit::has((string) $entry['tool_shortcode'])) {
+                continue;
+            }
+            self::$seeds[$id] = [
+                'id'               => $id,
+                'slug'             => $slug,
+                'category_slug'    => $cat,
+                'kind'             => 'tool',
+                'tool_file'        => (string) $entry['tool_file'],
+                'tool_shortcode'   => (string) $entry['tool_shortcode'],
+                'tool_version'     => (string) ($entry['tool_version'] ?? ''),
+                'name'             => (string) ($entry['name'] ?? $slug),
+                'h1'               => (string) ($entry['h1'] ?? $entry['name'] ?? $slug),
+                'meta_title'       => (string) ($entry['meta_title'] ?? ''),
+                'meta_description' => (string) ($entry['meta_description'] ?? ''),
+                'summary'          => (string) ($entry['summary'] ?? ''),
+                'sections'         => json_encode($entry['sections'] ?? [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+                'faq'              => json_encode($entry['faq'] ?? [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+                'fields'           => '[]',
+                'equations'        => '[]',
+                'definition'       => '',
+                'icon'             => (string) ($entry['icon'] ?? ''),
+                'thumbnail'        => '',
+                'status'           => 'published',
+                'is_featured'      => !empty($entry['is_featured']) ? 1 : 0,
+                'sort_order'       => (int) ($entry['sort_order'] ?? 0),
+                'noindex'          => 0,
+                'js'               => null,
+                'source'           => 'file',
+                'created_at'       => '',
+                'updated_at'       => '',
+            ];
+            $id--;
+        }
+        return self::$seeds;
+    }
 
     /** @return array<int,array> every custom calculator, newest slug first */
     public static function rows(): array
@@ -59,6 +149,13 @@ final class CustomCalc
         if (self::$rows === null) {
             self::$rows = [];
             self::$byPath = [];
+            /* Seeds first, then MySQL: a row the panel saved wins over the file
+               it was cloned from, which is the same rule Groups uses. */
+            foreach (self::seeds() as $row) {
+                self::$rows[$row['id']] = $row;
+                self::$byPath[(string) $row['category_slug'] . '/' . $row['slug']] = $row;
+                self::$byPath['/' . $row['category_slug'] . '/' . $row['slug']] = $row;
+            }
             if (self::enabled()) {
                 foreach (Db::all('SELECT * FROM custom_calculators ORDER BY category_slug, name') as $row) {
                     $row['id'] = (int) $row['id'];

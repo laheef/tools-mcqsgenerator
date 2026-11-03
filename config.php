@@ -133,7 +133,7 @@ function onim_db_configured(): bool
 }
 
 /** Bump to bust asset caches after editing css/js. */
-const ASSET_VERSION = '1.2.27';
+const ASSET_VERSION = '1.2.28';
 
 /** Unit/category reference data lives under data/calc/ (see tools/harvest_all.py). */
 const RATES_CAPTURED = '2026-10-23';

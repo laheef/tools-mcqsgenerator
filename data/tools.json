@@ -1,0 +1,952 @@
+[
+  {
+    "slug": "tone-generator",
+    "category_slug": "audio",
+    "name": "Tone & Frequency Generator",
+    "h1": "Tone and Frequency Generator",
+    "meta_title": "Tone Generator — play any frequency, download a WAV",
+    "meta_description": "Play a sine, square, triangle or sawtooth tone at any frequency from 1 to 20 000 Hz, see the note it lands on, and download it as a WAV.",
+    "summary": "Set a frequency, hear it, and see which note on the piano it is — then download the same tone as a WAV file. Everything happens in your browser.",
+    "icon": "wave",
+    "tool_shortcode": "tool_tone_generator",
+    "tool_file": "audio/qm-tool-tone-generator.php",
+    "tool_version": "1.0.0",
+    "is_featured": 1,
+    "sections": [
+      {
+        "title": "What a frequency is, in one paragraph",
+        "html": "<p>A frequency is the number of times a wave repeats in one second. 440 Hz means the air pressure at your ear goes up and down 440 times a second, and middle A on a piano is that number. Every other note is a ratio away from it: an octave doubles the frequency, a fifth multiplies by 1.5, and a semitone multiplies by 1.059463 — which is 2<sup>1/12</sup>, the reason a keyboard can be tuned at all.</p><p>The tool measures your number against A4 = 440 Hz using <code>12 × log₂(f / 440)</code> semitones. The whole number is the nearest note, and the fraction, multiplied by 100, is the tuning error in cents. A cent is one hundredth of a semitone — small enough that most people cannot hear it, large enough that an instrument tuned to it sounds wrong next to one that is not.</p>"
+      },
+      {
+        "title": "How to use it",
+        "html": "<p>Type a frequency or press one of the presets — 432 Hz, 440 Hz, 528 Hz and 1 000 Hz. The note and the tuning error update as you type, and the picture underneath redraws the waveform you have chosen, so a square wave and a sine wave at the same pitch look as different as they sound.</p><p><strong>Play</strong> runs the tone for two seconds through the browser’s own audio output. <strong>Download WAV</strong> writes those same two seconds to a file you can keep, load into a DAW, or use to test a speaker somewhere without a browser.</p>"
+      },
+      {
+        "title": "What is in the WAV",
+        "html": "<p>The file is the simplest kind of audio there is: a 44-byte RIFF header followed by 16-bit signed samples, one channel, 44 100 samples a second. Two seconds is 88 200 samples and a little over 172 KB. There is no compression, no metadata and no encoder — which is also why it is the right format for a test signal: nothing has been thrown away.</p><p>Both ends of the file are faded over 20 milliseconds. A tone that starts and stops at full amplitude produces a click at each end, because a sudden jump in a waveform is a broadband transient. The fade removes the click without changing the pitch.</p>"
+      },
+      {
+        "title": "Where a generator like this is useful",
+        "html": "<ul><li><strong>Checking headphones or speakers</strong> at a specific frequency, instead of guessing from music.</li><li><strong>Tuning by ear</strong>: play a reference tone and match an instrument to it.</li><li><strong>Testing for rattles</strong>: sweep through low frequencies and listen for the buzz a loose panel makes.</li><li><strong>Hearing checks</strong>: finding the highest frequency you can still hear, at a comfortable volume.</li></ul><p>Two cautions, both practical rather than medical: keep the volume low, and do not leave a high-frequency tone running at length — high frequencies are the ones that get uncomfortable first.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is 432 Hz better than 440 Hz?",
+        "a": "There is no measurement that supports it. 440 Hz became the international standard in 1939 and is what almost every recording is tuned to; 432 Hz is a tuning choice, and a perfectly usable one, but music tuned to it is not measurably healthier, calmer or more natural. The tool offers it because people ask for it, not because the number means anything."
+      },
+      {
+        "q": "Why does the note come out a few cents off?",
+        "a": "Because most frequencies are not exactly on a note. Equal temperament divides the octave into twelve equal steps, so a frequency between two of them is genuinely between them. The number in cents is the distance — 0 is dead on, ±50 is exactly halfway to the neighbouring note."
+      },
+      {
+        "q": "Does the tone get uploaded anywhere?",
+        "a": "No. The oscillator is a WebAudio node in your browser and the WAV is assembled from its samples in the page. Nothing is sent to a server, and closing the tab discards it."
+      },
+      {
+        "q": "Why does nothing play when I press Play?",
+        "a": "Browsers only allow audio after a user gesture, so the first press should work — unless the tab is muted or the system output is set to a device that is not connected. The Download WAV button works regardless, so you can always check the file in a player."
+      }
+    ]
+  },
+  {
+    "slug": "frame-grabber",
+    "category_slug": "video",
+    "name": "Video Frame Grabber",
+    "h1": "Video Frame Grabber",
+    "meta_title": "Grab a still frame from a video — no upload",
+    "meta_description": "Open a video file, jump to any timestamp and save that exact frame as a PNG. The file is read in your browser and never uploaded.",
+    "summary": "Pull a still image out of a video at any timestamp and save it as a PNG — the file stays on your device.",
+    "icon": "device",
+    "tool_shortcode": "tool_video_frame",
+    "tool_file": "video/qm-tool-video-frame.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "How a frame is taken",
+        "html": "<p>The video file is opened with a local object URL, so the browser reads it from your disk; the server never receives a byte. The tool then seeks the hidden video element to the timestamp you typed, waits for the <code>seeked</code> event, and copies the picture into a canvas at the video’s own resolution. Saving draws that canvas out as a PNG.</p><p>That order matters. A seek only finishes when the decoder has actually produced the frame, which is why the tool waits for the event instead of taking a screenshot after a fixed delay — the usual cause of the black rectangle that other grabbers produce.</p>"
+      },
+      {
+        "title": "Choosing a timestamp",
+        "html": "<p>When the file opens, the tool reads its real duration and resolution and puts the playhead a second in — or halfway through a very short clip. Type any time in seconds, with a decimal if you need one: <code>12.4</code> means twelve and four tenths of a second. The value is clamped to the end of the file, so a typo cannot produce an empty frame.</p><p>The frame you get is the one displayed at that moment, not the nearest keyframe. A keyframe is what the compressed file stores in full; everything between them is described relative to it, and the decoder reconstructs the exact picture for the time you asked for.</p>"
+      },
+      {
+        "title": "What it does with different files",
+        "html": "<p>MP4 with H.264 or H.265, WebM with VP9 or AV1, and MOV are usual. What the browser can decode decides what works: Safari reads HEVC and Chrome usually will not, so the same file may open in one and fail in another. When it fails, the tool says the file could not be decoded rather than showing a blank picture.</p><p>An audio-only file has no picture, so there is no frame to grab and the tool reports that. A GIF is not a video track; open it as an image instead.</p>"
+      },
+      {
+        "title": "What the PNG is good for",
+        "html": "<p>A still frame makes a thumbnail, a still for an article, a reference for a colour or a composition, or a screenshot of a moment that is hard to pause on. The PNG is the video’s native resolution — grabbing from a 1920 × 1080 file gives a 1920 × 1080 image, not a screen-sized crop. It carries no metadata from the video and no audio.</p><p>If you need a smaller file, run the PNG through the image compressor afterwards; a video frame is usually a photographic subject, which is exactly what JPEG and WebP are better at.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is my video uploaded?",
+        "a": "No. The file is opened by the page itself through a local object URL and never leaves your device. There is no file input that posts anywhere, and the tool works with the network disconnected."
+      },
+      {
+        "q": "Why is the frame black or blank?",
+        "a": "Usually the browser cannot decode that codec — HEVC in Chrome is the common case. If the picture appears but the saved frame is empty, grab again after the timestamp has fully loaded; the tool waits for the seek to finish, but a very large file can still be mid-read."
+      },
+      {
+        "q": "Can it grab frames from a 4K video?",
+        "a": "Up to the limits of the browser’s canvas memory. A 3840 × 2160 frame needs about 33 MB of canvas, which is fine on most desktops and can fail on mobile. If the PNG comes out blank at that size, grab from a smaller copy of the file."
+      },
+      {
+        "q": "Does it work on protected or streaming video?",
+        "a": "No. It reads a file you choose from your own device. A video on a streaming site cannot be opened this way, and this tool does not capture a playing tab."
+      }
+    ]
+  },
+  {
+    "slug": "image-compressor",
+    "category_slug": "image-compressors",
+    "name": "Image Compressor",
+    "h1": "Image Compressor",
+    "meta_title": "Compress an image in the browser, see the bytes saved",
+    "meta_description": "Shrink a JPG, PNG or WebP without uploading it, see the exact size before and after, and download the result.",
+    "summary": "Re-encode a photo at a lower quality in this page, see exactly how many bytes that saved, and download it.",
+    "icon": "tile",
+    "tool_shortcode": "tool_image_compressor",
+    "tool_file": "image/qm-tool-image-compressor.php",
+    "tool_version": "1.0.0",
+    "is_featured": 1,
+    "sections": [
+      {
+        "title": "What compression actually changes",
+        "html": "<p>A JPEG is a description of a picture, not the picture itself. It stores brightness and colour in blocks, throws away detail the eye is unlikely to notice, and the quality setting decides how much. Dropping from 0.9 to 0.78 re-encodes the same pixels with a coarser description — the dimensions do not change, the file gets smaller, and the loss is invisible on most photographs and obvious on flat gradients and fine text.</p><p>So the honest way to choose a quality is to look at the result next to its size. The tool does both at once: the preview updates with the slider, and the three numbers underneath — original, compressed, percentage saved — are byte counts, not estimates.</p>"
+      },
+      {
+        "title": "Why a PNG does not shrink",
+        "html": "<p>PNG is lossless: there is no quality setting, and asking for 0.5 returns a file of exactly the same size because nothing about the encoder changed. If you pick PNG for a photograph you get a file several times larger than the JPEG for no visible gain.</p><p>The tool handles that by switching the output to WebP when the original is a PNG or GIF, and saying so. WebP keeps transparency and is usually smaller than both — but it is not supported by very old browsers or by some design software, which is why the format dropdown lets you force JPEG instead.</p>"
+      },
+      {
+        "title": "What is thrown away besides detail",
+        "html": "<p>Re-encoding through a canvas also drops the metadata: EXIF, the camera and lens, the date, the orientation flag and — the one that matters — GPS coordinates. A photo straight off a phone often carries the exact place it was taken, and a squashed copy of it usually does not. If the goal is to post a picture somewhere public, that is a feature.</p><p>It also flattens anything the browser does not draw. Animated GIFs keep their first frame only, and a transparent PNG saved as JPEG gets white behind it.</p>"
+      },
+      {
+        "title": "Choosing a size",
+        "html": "<p>For a photograph shown at under 1 000 pixels wide, quality 75–80 is indistinguishable at normal viewing distance and often a third of the original file. Below 60 the blocking starts to show in smooth areas such as skies. Above 90 you are usually paying twice the bytes for a difference nobody can see on a screen.</p><p>If the image is going to be displayed small, resizing removes far more bytes than compressing: a 4000-pixel photograph shown at 800 pixels is carrying 25 pixels for every one it needs. The image resizer does that part.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does this upload my image?",
+        "a": "No. The picture is decoded by your browser, redrawn into a canvas and re-encoded there. Nothing is sent anywhere, and the tool keeps working with the network disconnected."
+      },
+      {
+        "q": "Why did my file get bigger?",
+        "a": "Two usual reasons: the original was already compressed harder than the quality you chose, or it was a small image whose re-encode overhead outweighs the saving. The tool shows a negative percentage rather than hiding it."
+      },
+      {
+        "q": "Can I compress a PDF or a video?",
+        "a": "Not here. This tool re-encodes raster images (JPG, PNG, WebP, GIF, AVIF). PDFs and videos need a different tool, and a canvas cannot hold them."
+      },
+      {
+        "q": "Is the quality setting the same in every browser?",
+        "a": "Roughly, but not exactly. Each browser has its own JPEG and WebP encoder, so quality 78 in Chrome and quality 78 in Safari produce different files of slightly different sizes. Both are valid images; the number on screen is measured from the file you will actually download."
+      }
+    ]
+  },
+  {
+    "slug": "image-converter",
+    "category_slug": "img-converters",
+    "name": "Image Converter",
+    "h1": "Image Converter",
+    "meta_title": "Convert PNG, JPEG and WebP in the browser",
+    "meta_description": "Turn a PNG into a JPEG, a JPEG into a WebP or any of the three into the others, with the resulting size shown before you download.",
+    "summary": "Convert between PNG, JPEG and WebP without uploading anything, and see the size each format costs.",
+    "icon": "conversion",
+    "tool_shortcode": "tool_image_converter",
+    "tool_file": "image/qm-tool-image-converter.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "The three formats, briefly",
+        "html": "<p><strong>PNG</strong> is lossless and keeps transparency. It is the right choice for screenshots, logos, icons and anything with flat colour or text; it is the wrong choice for photographs. <strong>JPEG</strong> is lossy, has no transparency, and is built for photographs — it is what almost every camera writes. <strong>WebP</strong> does both: lossy or lossless, with transparency, and usually 25–35% smaller than a JPEG of the same quality.</p><p>Converting between them is not a matter of renaming a file. Each format stores pixels differently, so the tool decodes the picture and encodes it again — which is why a conversion always takes a moment and why the result can be larger than what you started with.</p>"
+      },
+      {
+        "title": "What happens to transparency",
+        "html": "<p>A PNG can have holes in it; a JPEG cannot. When you convert a transparent image to JPEG, the tool paints the canvas white first and then draws the picture on top, so the holes become white rather than black or a stray colour. The note under the preview says when that happened.</p><p>Going the other way — JPEG to PNG — does not add transparency. The file gains the ability to have it and none of the data, which is why a photograph in PNG is usually several times larger for no visible difference.</p>"
+      },
+      {
+        "title": "Choosing the output",
+        "html": "<p>For a photograph going on a web page: WebP if you control the page, JPEG if you do not. For a screenshot, a diagram or a logo: PNG — it keeps the sharp edges and the transparency, and it compresses those well. For an animated GIF: only the first frame survives, because the canvas draws a single picture; use a dedicated tool if the animation matters.</p><p>The quality slider only affects the lossy formats. At 90 the difference from the original is hard to see; below 70 it is not.</p>"
+      },
+      {
+        "title": "Why a format can be unavailable",
+        "html": "<p>The browser does the encoding, so the tool asks it which formats it can write before offering them and disables any it cannot — an option that quietly returns a PNG while claiming to be WebP would be worse than no option at all. On current Chrome, Edge, Firefox and Safari all three work; on older browsers WebP is usually the one missing.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is converting the same as compressing?",
+        "a": "No, though it often shrinks the file. Converting changes the container and the encoding method; compressing changes how much detail is kept. A PNG photograph converted to JPEG at quality 90 gets much smaller because JPEG is the right format for photographs, not because anything was squeezed out of it."
+      },
+      {
+        "q": "Will I lose quality converting JPEG to PNG?",
+        "a": "No further loss — but the damage already done stays. A PNG made from a JPEG is a lossless copy of a lossy picture: the file gets much bigger and looks exactly the same, including the compression artifacts it already had."
+      },
+      {
+        "q": "Does the conversion upload my file?",
+        "a": "No. The image is decoded and re-encoded inside the page. Nothing is transmitted, which also means the tool works offline."
+      },
+      {
+        "q": "Can it convert HEIC photos from an iPhone?",
+        "a": "Usually not. HEIC decoding depends on the browser and the operating system, and most desktop browsers cannot read it. Export as JPEG from the phone’s share sheet instead — the phone does that conversion well."
+      }
+    ]
+  },
+  {
+    "slug": "image-resizer",
+    "category_slug": "image-optimizers",
+    "name": "Image Resizer",
+    "h1": "Image Resizer",
+    "meta_title": "Resize an image to any width, keeping proportions",
+    "meta_description": "Resize a photo by width, height or percentage, with the proportions kept, and download a JPEG at the size you asked for.",
+    "summary": "Change the pixel dimensions of a photo — width, height or percentage — without stretching it, in this page.",
+    "icon": "ruler",
+    "tool_shortcode": "tool_image_resizer",
+    "tool_file": "image/qm-tool-image-resizer.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "Resizing is the part that removes pixels",
+        "html": "<p>Compression re-describes the same pixels more cheaply; resizing throws pixels away. A 4032 × 3024 photograph from a phone has 12.2 million pixels. At 1 200 pixels wide it has 1.1 million — nine tenths of the data is gone before any quality setting is applied, and that is almost always the bigger win.</p><p>The tool keeps the aspect ratio by default: type a width and the height is computed from the original, so the picture cannot come out squashed. Untick the box if you genuinely want non-proportional dimensions, for instance to force a square thumbnail that will be cropped later.</p>"
+      },
+      {
+        "title": "The three ways in",
+        "html": "<p><strong>Width</strong> is what most people want: a page with a 800-pixel column needs an 800-pixel image. <strong>Height</strong> works the same way in the other direction and is useful for full-height banners. <strong>Percentage</strong> halves or quarters everything at once — 50% gives exactly a quarter of the pixels, because both sides shrink.</p><p>Whichever you type, the other two fields update from the same ratio, so the numbers cannot disagree with each other.</p>"
+      },
+      {
+        "title": "How the scaling is done",
+        "html": "<p>Browsers offer two resampling modes, <code>low</code> and <code>high</code>; this tool asks for high, which is a proper averaging filter rather than dropping pixels. That is the difference between a downscale that looks sharp and one that shows a moiré pattern in fine detail.</p><p>Up-scaling works too, and you should not expect much from it: there is no information in the new pixels, so a 400-pixel image made 1 600 pixels wide is soft and slightly blurry. It is better than a browser stretching it on the fly, and it is not a substitute for a bigger original.</p>"
+      },
+      {
+        "title": "Output format",
+        "html": "<p>The download is a JPEG at the quality you picked, painted on white first so transparency does not turn black. JPEG is right for photographs, which is almost always what gets resized. If you need to keep transparency — a logo being scaled down for a social card, say — resize it, then run the result through the image converter to WebP.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does resizing upload my photo?",
+        "a": "No. The file is read by the page, drawn into a canvas at the new size and exported there. Nothing leaves your device."
+      },
+      {
+        "q": "Why does the result look soft?",
+        "a": "Two possible causes. Downscaling a very large photograph in one step can soften fine detail; resizing down in two steps (first to 200%, then to the target) is sharper, and the quality slider below 85 adds its own softness. Upscaling always looks soft, because the extra pixels are invented."
+      },
+      {
+        "q": "What size should a web image be?",
+        "a": "No wider than the widest place it will appear, and not more than twice that for high-density screens. A 800-pixel column needs 800 pixels at ordinary density and 1 600 on a retina display; anything beyond that is downloaded and never shown."
+      },
+      {
+        "q": "Can I resize several images at once?",
+        "a": "This tool takes one at a time. The image compressor handles batch-free single files too, and the PDF tool accepts many images at once when the goal is a document rather than separate files."
+      }
+    ]
+  },
+  {
+    "slug": "image-to-base64",
+    "category_slug": "image-utilities",
+    "name": "Image to Base64",
+    "h1": "Image to Base64",
+    "meta_title": "Image to base64 data URI, and back again",
+    "meta_description": "Turn an image into a data URI for CSS or HTML, or paste a data URI and get the image back, with the size overhead shown.",
+    "summary": "Convert an image to a base64 data URI for inlining in CSS or HTML, or decode one back into a file.",
+    "icon": "database",
+    "tool_shortcode": "tool_image_base64",
+    "tool_file": "image/qm-tool-base64.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "What a data URI is",
+        "html": "<p>A data URI carries a file inside a string: <code>data:image/png;base64,iVBORw0KGgo…</code>. The part before the comma names the type; the part after it is the file’s bytes written in base64, a notation that uses 64 printable characters so binary data can travel through text. Put that string in a <code>src</code> attribute or a CSS <code>url()</code> and the browser renders the picture without making a request.</p><p>The benefit is one fewer round trip and no broken image while a page loads. The cost is that the bytes travel inside the HTML or CSS, which is not compressed as well as an image file would be, and cannot be cached separately.</p>"
+      },
+      {
+        "title": "The one-third rule",
+        "html": "<p>Base64 takes three bytes and writes them as four characters, so any file grows by about 33% the moment it is encoded. A 12 KB icon becomes 16 KB of text; a 300 KB photograph becomes 400 KB inside a stylesheet that every page must download before it can render.</p><p>That is why the rule of thumb is a size limit, not a format preference: inline anything under about 2–4 KB (icons, tiny logos, bullet images, spinner graphics) and leave everything else as a file. The tool prints the original size, the encoded length and the overhead next to each other so the trade is visible.</p>"
+      },
+      {
+        "title": "Decoding the other way",
+        "html": "<p>Paste a data URI from a stylesheet, an exported SVG, a CMS field or a chat message and the tool shows the picture and offers it as a file. A bare base64 string with no <code>data:</code> prefix is accepted too — the tool assumes PNG in that case, which is what most copy-pasted snippets are.</p><p>The download keeps the image at whatever size the string holds. Nothing is re-encoded, so a decoded PNG is byte-for-byte the image the string carried.</p>"
+      },
+      {
+        "title": "Where it belongs and where it does not",
+        "html": "<ul><li><strong>Yes</strong>: small icons in CSS, a single-file HTML document that has to work offline, a tiny logo in an email template.</li><li><strong>No</strong>: hero images, photographs, anything above a few kilobytes — the page becomes slower, and the browser cannot cache the image on its own.</li><li><strong>Careful</strong>: large images in CSS block rendering, because the stylesheet has to finish downloading before the rule exists.</li></ul>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does this upload my image?",
+        "a": "No. The file is read by the browser’s own FileReader and encoded in the page. The data URI exists only in the text box until you copy it."
+      },
+      {
+        "q": "Why can copy fail?",
+        "a": "The clipboard needs a secure context and a user gesture. On an ordinary page the copy button works; inside an iframe with restricted permissions it may not, and the tool falls back to selecting the text so it can be copied by hand."
+      },
+      {
+        "q": "Is a data URI worse for SEO?",
+        "a": "For small icons it makes no difference. For large images it is worse: search engines index image files with their own URLs, and a data URI has no URL, no alt-text association in the image index and no separate caching."
+      },
+      {
+        "q": "Can I use an SVG this way?",
+        "a": "Yes, and it is one of the better uses — an SVG is already text, so base64 adds the third without removing anything. Encoding it as <code>data:image/svg+xml;utf8,</code> and escaping the characters can be smaller still."
+      }
+    ]
+  },
+  {
+    "slug": "images-to-pdf",
+    "category_slug": "pdf-converters",
+    "name": "Images to PDF",
+    "h1": "Images to PDF",
+    "meta_title": "Combine images into one PDF, without uploading",
+    "meta_description": "Put photos or scans into a single PDF, one per page, with A4 or fitted pages and a margin of your choice. Nothing is uploaded.",
+    "summary": "Build a PDF from your photos or scans — one image per page, A4 or fitted, with the margin you choose.",
+    "icon": "sequence",
+    "tool_shortcode": "tool_images_to_pdf",
+    "tool_file": "pdf/qm-tool-images-to-pdf.php",
+    "tool_version": "1.0.0",
+    "is_featured": 1,
+    "sections": [
+      {
+        "title": "How the PDF is built",
+        "html": "<p>A PDF is an ordered list of objects plus a table saying where each one starts in the file. That is all this tool writes: a catalogue, a page tree, and for every page a content stream whose only instruction is to draw one image at a computed position and size. There is no editor, no font and no text layer — just pages and pictures.</p><p>Each image is embedded with the <code>/DCTDecode</code> filter, which means “these bytes are already a JPEG”. Whatever the browser can decode is drawn into a canvas and exported as JPEG once, at quality 86, and those exact bytes are what the PDF carries. Nothing is re-encoded a second time, so a JPEG photo is not degraded twice.</p>"
+      },
+      {
+        "title": "Page size and margin",
+        "html": "<p><strong>A4 portrait</strong> is 595.28 × 841.89 points — 210 × 297 mm at 72 points to the inch. The image is scaled to fit inside the page box, whatever its shape, and centred; a landscape photo on a portrait page therefore gets white bands above and below rather than being cropped or stretched.</p><p><strong>A4 landscape</strong> swaps the sides, which suits screenshots and wide photographs. <strong>Fit the image</strong> makes each page exactly the size of its picture at 96 pixels to the inch, which is how a screenshot keeps its natural size, and is also what you want for a PDF that will only ever be read on a screen.</p><p>The margin is applied on all four sides and is taken out of the page box before the image is scaled, so a 19 mm margin on A4 gives a 172 × 259 mm picture area.</p>"
+      },
+      {
+        "title": "What it will not do",
+        "html": "<p>There is no OCR, so the PDF is pictures of text rather than text — a scanner can search it, this cannot. There is no compression choice beyond the JPEG quality it fixes at 86, no rotation control and no reordering after the fact; the order of the pages is the order you selected the files, so select them in order.</p><p>The practical limits are the browser’s memory: sixty images are accepted, and a folder of 40-megapixel scans will produce a large PDF (each page carrying a JPEG of that size). If the result is too big, resize the images first and then combine them.</p>"
+      },
+      {
+        "title": "When this is the right tool",
+        "html": "<p>Signing and sending a photographed document, turning a set of whiteboard photos into one file, assembling a portfolio page from screenshots, or combining receipts into a single attachment. In each case the pages are images, and a PDF is just the container that keeps them in order and sends as one file.</p><p>For anything that needs real text — a report, an invoice with numbers — generate the document from its own source instead; a PDF of pictures is the wrong tool for text that must stay sharp at any zoom.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Are my images uploaded?",
+        "a": "No. The PDF is assembled in the page from bytes the browser read from your disk. Closing the tab discards it, and the tool works with the network off."
+      },
+      {
+        "q": "Why is the PDF bigger than the images together?",
+        "a": "Because every image is re-encoded to JPEG at quality 86 before embedding, and a PNG screenshot re-encoded that way can be larger than the original. For screenshots, choose fewer pages per file or resize them first."
+      },
+      {
+        "q": "Can I combine PDFs, or edit an existing one?",
+        "a": "Not here. This tool creates a new PDF from images; it does not read, merge or modify existing PDFs."
+      },
+      {
+        "q": "Is the text searchable?",
+        "a": "No. Each page is a picture, so a reader can see it but a search box cannot find words in it. OCR is a different tool."
+      }
+    ]
+  },
+  {
+    "slug": "subnet-calculator",
+    "category_slug": "networking-tools",
+    "name": "Subnet Calculator",
+    "h1": "Subnet Calculator",
+    "meta_title": "CIDR subnet calculator — network, broadcast, hosts",
+    "meta_description": "Enter an address or CIDR block and get the network, broadcast, mask, wildcard, usable range and host count, with the bit arithmetic shown.",
+    "summary": "Any IPv4 address or CIDR block in, and the network, broadcast, mask and usable host range out — with the binary laid out underneath.",
+    "icon": "route",
+    "tool_shortcode": "tool_subnet_calculator",
+    "tool_file": "developer/qm-tool-subnet-calculator.php",
+    "tool_version": "1.0.0",
+    "is_featured": 1,
+    "sections": [
+      {
+        "title": "The four lines that answer the question",
+        "html": "<p>A subnet mask is a row of ones followed by a row of zeros. The ones mark the part of the address that identifies the network; the zeros mark the part that identifies the host. Writing the mask as a number of ones — <code>/26</code> — is the same information in fewer characters, and 26 ones is <code>255.255.255.192</code>.</p><p>Three operations on the 32-bit address give everything else. <strong>AND</strong> with the mask gives the network address, the first address in the block. <strong>OR</strong> with the inverted mask gives the broadcast address, the last one. The usable hosts are what lies between them, and their count is 2<sup>(32−bits)</sup> − 2.</p><p>The tool prints all three in binary, aligned, so the mask’s job is visible rather than described.</p>"
+      },
+      {
+        "title": "Where the two subtractions go",
+        "html": "<p>Classic IPv4 uses the first address for the network itself and the last for broadcast, so neither can be handed to a device: a /24 has 256 addresses and 254 usable hosts. Two exceptions are worth knowing because they surprise people.</p><p><strong>/31</strong> — a two-address block, typical of a point-to-point link — is defined by RFC 3021 to use both addresses, so it has two usable hosts and no broadcast. <strong>/32</strong> — a single address — is one host, usually written as a route rather than assigned to an interface. The tool handles both rather than printing “0 usable hosts”.</p>"
+      },
+      {
+        "title": "What the host count really means",
+        "html": "<p>A /24 holds 254 hosts, a /25 126, a /26 62, a /27 30, a /28 14, a /29 6 and a /30 2. Every extra bit in the mask halves the block and costs one more address to the network/broadcast pair, which is why small subnets waste a larger share of their addresses than big ones.</p><p>Planning is usually the other way round: count the addresses you need, add the network and broadcast, round up to the next power of two, and subtract that from 32. Twelve hosts need 14 addresses, so a /28. Two hundred hosts need 202, so a /24.</p>"
+      },
+      {
+        "title": "Private and public ranges",
+        "html": "<p>Three ranges are reserved for private use and never routed on the internet: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code> and <code>192.168.0.0/16</code>. A fourth, <code>169.254.0.0/16</code>, is link-local and usually means a device asked for an address and got no answer — the familiar “no internet, self-assigned address”. Anything outside those is public, and if it is not yours, it is somebody else’s.</p><p>The tool says which category the address falls in, because the first question after “what subnet is this” is usually “can this reach the internet”.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "What does the /26 actually mean?",
+        "a": "It is the number of leading ones in the mask: 26 ones and 6 zeros, which is 255.255.255.192. The block holds 2^6 = 64 addresses, so the networks step by 64 — .0, .64, .128, .192 in the last octet."
+      },
+      {
+        "q": "Why is 192.168.1.130 in the .128 network and not .64?",
+        "a": "Because .128/26 covers .128 to .191. The address .130 falls inside that range. The binary rows make it obvious: the first 26 bits of the address match .128’s, and the remaining six bits are the host part."
+      },
+      {
+        "q": "Does it support IPv6?",
+        "a": "No. This is an IPv4 calculator; IPv6 does not have a broadcast address, and its subnetting is done on 128 bits in hexadecimal, which needs a different tool rather than a wider input box."
+      },
+      {
+        "q": "Can it check whether two addresses are in the same subnet?",
+        "a": "Work out each one’s network address: if the two network addresses are identical, they are on the same subnet. A device considers another address local exactly when this test passes — and if the mask on one side is wrong, it will try to route to a neighbour."
+      }
+    ]
+  },
+  {
+    "slug": "serp-preview",
+    "category_slug": "seo-tools",
+    "name": "Title & Meta Length Checker",
+    "h1": "Title and Meta Description Checker",
+    "meta_title": "Title and meta description length checker with preview",
+    "meta_description": "See a title and description the way a search result shows them, with character and pixel counts against Google’s practical limits.",
+    "summary": "Paste a title and a description, see them drawn as a search result, and find out how much of each will actually be shown.",
+    "icon": "target",
+    "tool_shortcode": "tool_serp_preview",
+    "tool_file": "developer/qm-tool-serp-preview.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "Why “60 characters” is only half true",
+        "html": "<p>Search engines cut a title by its pixel width, not its length: roughly 600 pixels in most results. A character in this font averages about 7.4 pixels, so 60 characters usually fits — but a title of narrow letters fits more, and a title in capitals fits noticeably less. “WWW.MMMMM” runs out long before “iiiiiiiiii”.</p><p>The tool shows both numbers, characters and estimated pixels, because they disagree in exactly the cases that matter. It also draws the result as a search result would, which is the only reliable test: if it looks cut, it is.</p>"
+      },
+      {
+        "title": "What the title should do",
+        "html": "<p>Say what the page is, in the words someone would search for, and put the distinguishing part first. “Subnet Calculator — CIDR to hosts, with the working shown” beats “Welcome to the best networking tools site on the internet” on every axis: it names the thing, it says what makes it different, and it does not spend pixels on adjectives.</p><p>Search engines rewrite titles they consider padded, duplicated or irrelevant, and the rewrite is usually taken from the page’s own heading — so a title that matches the H1 is more likely to survive intact.</p>"
+      },
+      {
+        "title": "What the description does",
+        "html": "<p>A meta description is not a ranking factor; it is ad copy for a search result. About 155 characters or 960 pixels are shown, and the visible cut is usually mid-sentence, so the first clause has to carry the meaning. A description that repeats the title wastes the only two lines you are given.</p><p>Google also generates descriptions from page content when it thinks it can do better, which is why a page should read well in its own opening paragraph as well as in its meta tag.</p>"
+      },
+      {
+        "title": "Using the preview",
+        "html": "<p>The address bar is editable so the preview shows your real URL, breadcrumb style. The colour of the counter changes as you approach the limit and turns red past it — but the numbers matter more than the colour, and “fits with room to spare” is not a target to fill.</p><p>The word count underneath the description is there for a practical reason: a description of 20 words is rarely too long and often too vague.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How exact is the pixel count?",
+        "a": "It is an estimate. It assumes an average character width of 7.4 pixels for 14-pixel text, which is a good approximation for mixed-case English prose. All-capitals text is wider, so leave a margin at the top end; the preview clamps the title at two lines exactly as a search result does."
+      },
+      {
+        "q": "Does the meta description affect ranking?",
+        "a": "Not directly. It affects the click-through rate, which in turn affects how the page performs over time. The title matters more for ranking, and much more for the click."
+      },
+      {
+        "q": "What happens if I leave the description empty?",
+        "a": "Search engines pick a passage from the page, usually the first paragraph that matches the query. That can work well, but you lose control of which sentence is shown — which is the entire reason to write one."
+      },
+      {
+        "q": "Should the title include the site name?",
+        "a": "Only if it adds something a stranger would recognise. On a small site it costs a third of the visible title to say a name nobody is searching for; on a large brand it can be the most important part."
+      }
+    ]
+  },
+  {
+    "slug": "number-base",
+    "category_slug": "converters",
+    "name": "Number Base Converter",
+    "h1": "Number Base Converter",
+    "meta_title": "Decimal, hex, octal and binary converter",
+    "meta_description": "Convert between decimal, hexadecimal, octal, binary and any base from 2 to 36, with bits and bytes counted exactly.",
+    "summary": "One number in every base at once — decimal, hex, octal, binary and anything from base 2 to 36.",
+    "icon": "binary",
+    "tool_shortcode": "tool_number_base",
+    "tool_file": "converters/qm-tool-number-base.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "What a base is",
+        "html": "<p>A base is how many digits exist before you carry. Decimal has ten (0–9), binary has two, octal eight, hexadecimal sixteen — which needs letters for the digits after 9, so A is 10 and F is 15. Bases above sixteen keep going up the alphabet, which is why base 36 uses all of 0–9 and A–Z.</p><p>The same number looks different in each: 255 is <code>11111111</code> in binary, <code>377</code> in octal and <code>FF</code> in hex. It is the same quantity, written with different amounts of information per character.</p>"
+      },
+      {
+        "title": "Why hexadecimal exists",
+        "html": "<p>Because four binary digits fit exactly one hex digit. A byte is eight bits, so it is always two hex characters — <code>FF</code> is 255, <code>0A</code> is 10 — which makes hex a compact, byte-aligned way to write binary. That is why colours are <code>#3B68FC</code> (three bytes: red, green, blue) and why memory addresses are printed in hex.</p><p>Octal survives for the same reason with three bits per digit, mostly in file permissions: <code>chmod 755</code> is three octal digits, each one the read/write/execute flags of a permission group.</p>"
+      },
+      {
+        "title": "Bits, bytes and where numbers overflow",
+        "html": "<p>The bits row is the length of the binary form, and the bytes row rounds it up. A number that needs 8 bits fits one byte; 9 bits needs two. That is why 255 is the largest value in an unsigned byte and why 256 rolls over to 0 in a byte-sized field.</p><p>Powers of two are the numbers to keep in mind: 8 bits = 256 values, 16 bits = 65 536, 32 bits = about 4.3 billion. A 32-bit counter that reaches 4 294 967 295 does not stop; it wraps to zero, which is the cause of a whole family of bugs with memorable names.</p>"
+      },
+      {
+        "title": "Large numbers, exactly",
+        "html": "<p>JavaScript numbers are floating point and lose precision past 2<sup>53</sup>; PHP integers are 64-bit and overflow past about 9.2 × 10<sup>18</sup>. Both would round a long hex value silently. So this tool converts digit by digit on strings in the browser and on decimal strings on the server, which means a 40-bit hardware counter or a 128-bit hash prefix converts exactly, however long it is.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can it convert very large numbers?",
+        "a": "Yes, within reason. The conversion is arbitrary precision, done digit by digit, so a 64-character hex string converts exactly. What it cannot do is show you the value as a floating-point number without losing precision — that is a property of floating point, not of this tool."
+      },
+      {
+        "q": "Why is FF equal to 255?",
+        "a": "Because each hex digit is 16 possibilities. F is 15, so FF is 15 × 16 + 15 = 255. Likewise 255 in binary is eight ones, because 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255."
+      },
+      {
+        "q": "What are bases 32 and 36 used for?",
+        "a": "Short identifiers. Base 36 is the letters and digits together and is what many systems use for short URLs or user IDs, because it packs more values per character than decimal. Base 32 is used in encoding schemes such as Crockford’s, which leaves out characters that look alike."
+      },
+      {
+        "q": "How do I type a negative number?",
+        "a": "This converter handles unsigned values. A negative number in computing is usually stored as two’s complement — for 8 bits, −1 is 11111111 — and writing it that way is a representation choice rather than a base conversion, so it is left to whatever format you are working in."
+      }
+    ]
+  },
+  {
+    "slug": "password-generator",
+    "category_slug": "security",
+    "name": "Password Generator",
+    "h1": "Password Generator",
+    "meta_title": "Password generator with real entropy, made locally",
+    "meta_description": "Generate a strong random password in your browser using the cryptographic random source, with the entropy it carries and how long it would take to guess.",
+    "summary": "A password made from a cryptographic random source in this page, with the entropy behind it shown in bits.",
+    "icon": "key",
+    "tool_shortcode": "tool_password_generator",
+    "tool_file": "security/qm-tool-password-generator.php",
+    "tool_version": "1.0.0",
+    "is_featured": 1,
+    "sections": [
+      {
+        "title": "Why the bits matter more than the symbols",
+        "html": "<p>Strength is not how complicated a password looks; it is how many possibilities an attacker has to try. That number is the size of the pool raised to the length, and its logarithm base two is the entropy in bits. A 16-character password from a 68-character pool carries 16 × log₂(68) ≈ 97 bits.</p><p>Adding a symbol requirement to an 8-character password adds a few bits; adding eight characters adds about fifty. That is why length is the dial worth turning, and why the tool starts at 16 and lets you go to 48.</p><p>The bar underneath compares the result with the 128-bit mark, which is the point at which guessing stops being a question of time and becomes a question of physics.</p>"
+      },
+      {
+        "title": "Where the randomness comes from",
+        "html": "<p><code>crypto.getRandomValues()</code>, which is the browser’s cryptographically secure random number generator — the same source used for TLS keys. It is not <code>Math.random()</code>, which is fast, seeded predictably and entirely unsuitable for a password: two browsers that call it in the same state can produce the same sequence.</p><p>The generation happens in the page. There is no request, no logging and no analytics around the value; the only way it leaves your device is if you press copy.</p>"
+      },
+      {
+        "title": "Characters left out on purpose",
+        "html": "<p>The default pools omit <code>l</code>, <code>I</code>, <code>O</code>, <code>0</code> and <code>1</code>. They are the five characters people get wrong when reading a password aloud or copying it off a screen, and they cost about a bit and a half of entropy between them — a trade worth making for a password someone has to type once by hand.</p><p>Untick the symbol box if the site you are registering on rejects symbols, which some still do. That reduces the pool and the bits, and the counter says so rather than pretending the password is as strong as it was.</p>"
+      },
+      {
+        "title": "What this tool does not do",
+        "html": "<p>It does not check the password against a breach list, store it, sync it or remember it. A generated password is only as safe as where you put it next: a password manager is that place. The pattern that works is one long random password per site, all held in a manager, with a long passphrase for the manager itself.</p><p>It also cannot know whether the site you are about to use stores passwords properly. If a service emails you your password back, it is storing it in a form it can read — and the strength of what you typed stops mattering.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is the password sent anywhere?",
+        "a": "No. It is generated by the browser’s random source inside the page and displayed. Nothing is posted, logged or stored, and the page works with the network disconnected."
+      },
+      {
+        "q": "How long should a password be?",
+        "a": "16 random characters is a sensible default for a site you care about; 20 or more costs nothing when a manager is typing it. For something you have to memorise, a passphrase of five or six random words beats a short scramble of symbols."
+      },
+      {
+        "q": "Why does an 8-character password look strong?",
+        "a": "Because symbol-heavy passwords look complicated. Eight characters from a 68-character pool is only 48 bits — a well-funded attacker covers that space quickly. The bar in the tool is measured in bits, not in how messy the string looks."
+      },
+      {
+        "q": "Should I change my password every 90 days?",
+        "a": "Current guidance says no for random passwords: forced rotation produces predictable variations (“Summer2026!”) and weakens things overall. Change it when there is a reason — a breach, a shared device, a service you stopped trusting."
+      }
+    ]
+  },
+  {
+    "slug": "sensitivity-converter",
+    "category_slug": "gaming",
+    "name": "Mouse Sensitivity Converter",
+    "h1": "Mouse Sensitivity Converter",
+    "meta_title": "Convert mouse sensitivity between games with cm/360",
+    "meta_description": "Convert your sensitivity between CS2, Valorant, Apex, Overwatch 2, Rainbow Six and Rust through cm per 360°, the only comparable number.",
+    "summary": "Move your aim from one game to another by converting through cm per 360°, instead of guessing what the numbers mean.",
+    "icon": "mouse",
+    "tool_shortcode": "tool_sensitivity",
+    "tool_file": "gaming/qm-tool-sensitivity.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "Why eDPI does not travel",
+        "html": "<p>eDPI — mouse DPI multiplied by in-game sensitivity — is the number people quote, and it only means something inside one game. Every engine multiplies a mouse count by its own constant, called yaw, measured in degrees of rotation per count. A sensitivity of 2 in one game can turn twice as fast as a sensitivity of 2 in another.</p><p>So the conversion has to go through something physical. The obvious candidate is how many centimetres of mouse pad it takes to turn all the way round: cm/360. That number is comparable across every game, because it is a distance, not a setting.</p>"
+      },
+      {
+        "title": "The arithmetic",
+        "html": "<p>Two lines, and they are worth knowing because they explain the whole tool:</p><ul><li>counts per full turn = 360 ÷ (sensitivity × yaw)</li><li>centimetres per full turn = counts × 2.54 ÷ DPI</li></ul><p>So a player on 800 DPI at sensitivity 1.0 in CS2 — yaw 0.022 — needs 16 364 counts, which is 51.9 cm per turn. To get the same 51.9 cm in Valorant, whose yaw is 0.07, the sensitivity to type is about 0.31. Different number, identical feel.</p>"
+      },
+      {
+        "title": "The yaw values used here",
+        "html": "<p>These come from each game’s own input handling and are printed on the page so you can check them against your config:</p><ul><li>Counter-Strike 2, Apex Legends, Rust — 0.022° per count</li><li>Valorant — 0.07° per count</li><li>Overwatch 2 — 0.0066° per count</li><li>Rainbow Six Siege — 0.00573° per count</li></ul><p>A game with a different value simply needs a different divisor; the formula above is the same for all of them.</p>"
+      },
+      {
+        "title": "What a conversion cannot carry",
+        "html": "<p>Field of view, acceleration, the weight of the mouse and the friction of the pad all change how a number feels, and none of them are in the formula. If a game has mouse acceleration enabled, no conversion will feel right until it is off. And scoped sensitivity is often a separate multiplier — a converted hip-fire value does not automatically fix an AWP or a scope.</p><p>The tool is a starting point that removes the arithmetic, not a substitute for twenty minutes in a training range.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is cm/360 and why use it?",
+        "a": "The distance the mouse has to travel to rotate your view through a full circle. Because it is a physical distance it means the same thing in every game, which is exactly what a sensitivity number does not."
+      },
+      {
+        "q": "My converted sensitivity feels slightly different — why?",
+        "a": "Rounding first, field of view second. Sensitivity is typed to a few decimals, and a game with a different FOV changes how much of the scene moves per degree of turn. If the sliders allow it, use the four-decimal value the tool gives."
+      },
+      {
+        "q": "Does DPI matter if I convert cm/360 to cm/360?",
+        "a": "Not to the conversion — the result is the same physical distance whatever your DPI, because counts scale with DPI. It matters for everything else: a higher DPI with a lower in-game sensitivity gives the same cm/360 with finer angular resolution and a different amount of sensor smoothing."
+      },
+      {
+        "q": "What sensitivity should I use?",
+        "a": "One you can reproduce. Most competitive players sit between 30 and 60 cm per 360° for tactical shooters and lower — faster — for movement games. The right number is the one you can hit the same target with twice in a row."
+      }
+    ]
+  },
+  {
+    "slug": "text-compressor",
+    "category_slug": "compressors",
+    "name": "Text Compressor",
+    "h1": "Text Compressor",
+    "meta_title": "gzip and deflate a block of text, with the ratio",
+    "meta_description": "See how far gzip shrinks a block of text, compare it with raw deflate, and download the compressed file. Works on the server and in the page.",
+    "summary": "Paste text, see exactly how many bytes gzip and deflate save, and download the .gz if you want it.",
+    "icon": "bars",
+    "tool_shortcode": "tool_text_compressor",
+    "tool_file": "compressors/qm-tool-text-compressor.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "What gzip does",
+        "html": "<p>gzip looks back through the last 32 KB of input for a sequence it has already seen and stores a pointer to it instead of the text. Repeated words, repeated HTML tags and repeated JSON keys compress extremely well; a random hash does not compress at all, because there is nothing to point at.</p><p>The result is deflate data with a small header and a checksum around it. That is why the two sizes printed here are always within a few bytes of each other: gzip is deflate plus about 18 bytes of framing.</p>"
+      },
+      {
+        "title": "What ratio to expect",
+        "html": "<p>Ordinary English prose lands around 35–45% of its original size. HTML is usually better, because tags repeat. JSON is usually better still, because keys repeat — a file of uniform records can drop to 10%. Base64 text, already-compressed data and random hex compress to slightly more than they started with, and no level setting changes that.</p><p>The tool reports a negative saving honestly rather than hiding it. If your text grew, it was incompressible, and the right conclusion is that compression is not the answer for this file.</p>"
+      },
+      {
+        "title": "Why both sides can do it",
+        "html": "<p>PHP ships <code>gzencode()</code> and <code>gzdeflate()</code>; every current browser ships <code>CompressionStream</code>. That means the page can compress without a round trip, and it can also compress when scripting is off — press the button and the server returns the byte counts. Both paths use the same algorithm at the same level, so the numbers match.</p><p>In the browser the file is produced as a real gzip stream, which is what the download button hands you: a file that <code>gunzip</code> and every archive tool will open.</p>"
+      },
+      {
+        "title": "Where this matters in practice",
+        "html": "<p>Text over HTTP is compressed on the wire by the server, not by the page — a web server that does not gzip its HTML, CSS and JSON is sending two to three times the bytes it needs to. The ratio you measure here is roughly what that server-side compression will achieve, which makes the tool a quick way to estimate the saving before turning it on.</p><p>For a database column of JSON, compressed text is often smaller than the same data in a wider, more structured table — but it cannot be queried without decompressing, so the saving is paid for in flexibility.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is my text uploaded?",
+        "a": "Only if the script is off. With scripting on, the compression happens in the page and the text never leaves your device. Without scripting the text is posted to the same page, compressed there and the byte counts returned — which is why the answer still works, and why the page says so."
+      },
+      {
+        "q": "gzip or deflate — which should I use?",
+        "a": "gzip for anything that will be stored or sent, because it carries a checksum and its own header, so a truncated file is detectable. Raw deflate when something else provides the framing, such as a ZIP container."
+      },
+      {
+        "q": "Why did my text get bigger?",
+        "a": "The content had no repetition to exploit: base64, a random key, an already-compressed payload. Compression is a search for repeated sequences, and a random string has none. The overhead is the header plus a few bits per block."
+      },
+      {
+        "q": "Does a higher compression level always help?",
+        "a": "It explores more matches and is slower. Level 9 versus level 6 typically saves a couple of percent on prose and nothing at all on already-compressed data — which is why web servers default to 5 or 6 for dynamic pages."
+      }
+    ]
+  },
+  {
+    "slug": "pomodoro-timer",
+    "category_slug": "productivity",
+    "name": "Pomodoro Timer",
+    "h1": "Pomodoro Timer",
+    "meta_title": "Pomodoro timer with rounds that fit your time",
+    "meta_description": "A focus-and-break timer that counts real seconds, plus how many 25-minute rounds fit in the time you have before the next thing.",
+    "summary": "A focus timer that keeps time accurately in a background tab, and tells you how many rounds fit the time you actually have.",
+    "icon": "clock",
+    "tool_shortcode": "tool_pomodoro",
+    "tool_file": "productivity/qm-tool-pomodoro.php",
+    "tool_version": "1.0.0",
+    "is_featured": 1,
+    "sections": [
+      {
+        "title": "The method in three sentences",
+        "html": "<p>Pick one task. Work on it for twenty-five minutes without switching. Then take five minutes off, and after four rounds take a longer break.</p><p>Nothing about twenty-five minutes is magic — it is long enough to get past the resistance of starting and short enough that starting does not feel like a commitment. The break is not a reward; it is the part that lets the next round work.</p>"
+      },
+      {
+        "title": "Why the timer does not drift",
+        "html": "<p>Most timers subtract one from a counter every second. That breaks the moment the browser decides the tab is not worth full attention — a background tab throttles <code>setInterval</code> to roughly once a second or less, and every throttled tick is a second lost. Come back after ten minutes and the timer is minutes behind.</p><p>This one stores the timestamp when the round ends and asks, on every repaint, how far in the future that is. The interval only decides how often the display refreshes, not what it says, so a throttled tab, a sleeping laptop or a locked screen cannot make the countdown wrong.</p>"
+      },
+      {
+        "title": "Planning with rounds",
+        "html": "<p>The number under the timer answers a different question: how many rounds fit before you have to stop. It solves n × focus + (n − 1) × break ≤ minutes available, which is the honest version of the sum — the last round does not need a break after it if the break is followed by something else.</p><p>An hour of 25/5 gives two rounds and five minutes spare. Two hours gives four rounds with ten minutes left. Change the numbers and the plan updates, which makes it easy to see what a 40-minute round costs: fewer rounds, more focus time, less switching.</p>"
+      },
+      {
+        "title": "What it cannot do",
+        "html": "<p>It will not block anything, nag you or survive a page reload — there is no account, no storage and no notification. The only signal is a short tone when a phase ends, generated in the page, which is why it stops working if you close the tab.</p><p>That is deliberate for a tool that lives on a website: a timer you can shut is a timer that respects the decision to stop. If you want something enforced across days, that is a different kind of application.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does the timer keep running if I switch tabs?",
+        "a": "Yes. It measures against a fixed end time, so throttling or a sleeping screen slows how often the display updates but not what it says. The tone may be delayed until the tab is active again, because browsers suspend audio for hidden pages."
+      },
+      {
+        "q": "Can I use 50 minutes instead of 25?",
+        "a": "Set the focus field to anything from 5 to 90 minutes. Longer rounds suit deep work that has a slow start — writing, debugging — and shorter ones suit anything where you are waiting on other people."
+      },
+      {
+        "q": "Does it save my session?",
+        "a": "No. Nothing is stored: no cookies, no local storage, no account. Reloading the page resets the counter, and the completed-rounds number is only for this visit."
+      },
+      {
+        "q": "What is the “best round length here” line?",
+        "a": "It repeats the focus length currently in the form, alongside the totals, so you can compare two plans without losing your place. It is a convenience, not a recommendation."
+      }
+    ]
+  },
+  {
+    "slug": "box-shadow-generator",
+    "category_slug": "design-css",
+    "name": "CSS Box Shadow Generator",
+    "h1": "CSS Box Shadow Generator",
+    "meta_title": "CSS box-shadow generator with a live card preview",
+    "meta_description": "Build a box-shadow with sliders for offset, blur, spread and opacity, see it on a real card, and copy the CSS.",
+    "summary": "Four sliders, one card, and the exact CSS to paste — the fastest way to find a shadow that looks lifted rather than smudged.",
+    "icon": "square",
+    "tool_shortcode": "tool_box_shadow",
+    "tool_file": "design-css/qm-tool-box-shadow.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "The four numbers and their order",
+        "html": "<p><code>box-shadow: offset-x offset-y blur spread colour</code> — in that order, always. The two offsets move the shadow; a positive y pushes it down, which is the direction light falls from above. Blur softens the edge over that many pixels, and spread grows or shrinks the shape before it is blurred.</p><p>Mixing up blur and spread is the classic mistake: blur makes the edge fuzzy, spread makes the shadow bigger. A negative spread with a large blur is the shape most modern cards use — a shadow that has already been pulled in tight before it fades.</p>"
+      },
+      {
+        "title": "Why one shadow looks cheap",
+        "html": "<p>Real light produces more than one edge. A card looks lifted when it has a tight, dark shadow close to it — the contact shadow — and a wider, fainter one further away. One heavy blur tries to do both jobs and reads as a smudge.</p><p>That is why the CSS in production is usually a list:</p><pre><code>box-shadow: 0 1px 2px rgba(10,10,10,.08),\n            0 8px 24px -8px rgba(10,10,10,.18);</code></pre><p>Build the second layer here, then add the first by hand — the numbers scale, so the pair stays consistent.</p>"
+      },
+      {
+        "title": "Choosing values that hold up",
+        "html": "<p>Keep the y offset positive and small relative to the blur, or the shadow slides out sideways. Keep the opacity low — 10–20% for a card on white, higher only for a floating element over a busy background. And remember that the shadow is drawn outside the element, so a large blur on a full-width block gets clipped by the viewport edge.</p><p>Inset shadows are a different tool: they render inside the box and are how you draw a pressed button, an inner border or a subtle top highlight without adding another element.</p>"
+      },
+      {
+        "title": "The preview is the point",
+        "html": "<p>The card is not a decorative mock: it is the element the shadow is applied to, at the same border radius a real card would use. If it looks wrong there it will look wrong in the layout, and the CSS string underneath is generated from the same numbers rather than typed separately — so what you copy is what you saw.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a box-shadow affect layout?",
+        "a": "No. It is painted outside the box and does not take up space, so it can overlap neighbouring elements and be clipped by an ancestor with <code>overflow: hidden</code>. If a shadow disappears, look for an overflow rule above it."
+      },
+      {
+        "q": "Why is my shadow cut off?",
+        "a": "Something between the element and the page has <code>overflow: hidden</code>, or the element is at the edge of a container that clips. The fix is usually a little padding on the parent rather than a smaller shadow."
+      },
+      {
+        "q": "Box-shadow or filter: drop-shadow?",
+        "a": "<code>box-shadow</code> follows the border box, so it works on rectangles and respects border-radius. <code>filter: drop-shadow()</code> follows the visible shape, including the transparent parts of a PNG or SVG — which is what you want for a logo, and much slower to render."
+      },
+      {
+        "q": "Should shadows be black?",
+        "a": "Pure black at low opacity is the default and looks fine on white. On a dark theme, a black shadow is invisible; what reads as depth there is usually a lighter inner highlight plus a darker, larger outer shadow."
+      }
+    ]
+  },
+  {
+    "slug": "case-converter",
+    "category_slug": "text-writing",
+    "name": "Case Converter",
+    "h1": "Case Converter",
+    "meta_title": "Convert text case — title, sentence, camel, snake",
+    "meta_description": "Turn a sentence into title case, sentence case, UPPER, lower, camelCase, PascalCase, snake_case or kebab-case, with a copy button for each.",
+    "summary": "Ten cases from one string — prose cases and identifier cases — with the rules each one follows spelled out.",
+    "icon": "hash",
+    "tool_shortcode": "tool_case_converter",
+    "tool_file": "text-writing/qm-tool-case-converter.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "Title case is not “capitalise everything”",
+        "html": "<p>In title case, articles, short prepositions and coordinating conjunctions stay lower-case unless they open or close the title: <em>The Quick Brown Fox Jumps Over the Lazy Dog</em>, but <em>A Tale of Two Cities</em> — the “A” is capitalised because it starts the title, the “of” is not.</p><p>The tool keeps a short list of those words — a, an, the, of, and, or, to, in, for, on, at, by, with, as, but, nor, per, via — and applies both exceptions. Capitalising every word is the other common style, and it is wrong in running prose but common in headlines.</p>"
+      },
+      {
+        "title": "Sentence case, and why it is fiddly",
+        "html": "<p>Sentence case lower-cases everything and then re-capitalises the first letter and anything after a full stop, question mark or exclamation mark. The hard part is abbreviations: “Dr. smith arrived” would normally become “Dr. Smith arrived”, and a naive implementation produces “Dr. Smith” only if it knows that “Dr.” is not the end of a sentence.</p><p>This tool applies the simple rule and says so. For anything longer than a paragraph, check the result — acronyms such as “NASA” and camel-cased product names will be flattened to lower case.</p>"
+      },
+      {
+        "title": "The identifier cases",
+        "html": "<p>Programming cases are not about prose at all; they are about turning a phrase into a valid name. The important part is the split: words are separated on spaces, punctuation, underscores and the boundary between a lower-case letter and a capital, so <code>userIDNumber</code> splits into user, ID, Number rather than collapsing into one chunk.</p><ul><li><code>camelCase</code> — first word lower, the rest capitalised, no separators.</li><li><code>PascalCase</code> — every word capitalised. Classes and components.</li><li><code>snake_case</code> — lower-case words joined by underscores.</li><li><code>kebab-case</code> — lower-case words joined by hyphens. URLs and CSS names.</li><li><code>CONSTANT_CASE</code> — upper-case words joined by underscores.</li></ul>"
+      },
+      {
+        "title": "Copy without losing the original",
+        "html": "<p>Every row has its own copy button, and the input is never modified — so you can copy two versions of the same text without pasting it back and forth. The character counts under the list are there for the cases where a limit applies: a database column, a filename, a URL slug.</p><p>With the script off, the form still submits and the page returns with every case computed on the server, which is also the version search engines and screen readers see.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "What happens to accented letters and other alphabets?",
+        "a": "They are cased where the language has cases. The splitter treats accented Latin letters as letters, so “café” becomes “Café” in title case and “Cafe” is not produced. Alphabets without case — Chinese, Japanese, Arabic — pass through unchanged."
+      },
+      {
+        "q": "Does it handle multiple sentences?",
+        "a": "Yes for sentence case: a capital follows each full stop, question mark or exclamation mark. It does not detect abbreviations, so “e.g. this” gains an unexpected capital."
+      },
+      {
+        "q": "Why is my camelCase wrong for acronyms?",
+        "a": "Because “userIDNumber” is ambiguous. The tool splits it into user, ID and Number, then re-cases each part — which gives camelCase “userIDNumber” back, but PascalCase “UserIDNumber” rather than “UserIdNumber”. Both are used in the wild; the split is the honest reading."
+      },
+      {
+        "q": "Is my text uploaded?",
+        "a": "Only when the script is off and the form is submitted, in which case it goes to this same page and comes back with the results. With scripting on, everything happens locally."
+      }
+    ]
+  },
+  {
+    "slug": "color-converter",
+    "category_slug": "art-color",
+    "name": "Colour Converter & Shades",
+    "h1": "Colour Converter and Shade Generator",
+    "meta_title": "HEX, RGB and HSL converter with tints and contrast",
+    "meta_description": "Convert a colour between hex, RGB and HSL, see ten tints and shades of it, and check its contrast ratio against white and black.",
+    "summary": "One colour in hex, RGB and HSL, with a tint and shade ladder and the WCAG contrast ratio for text on top of it.",
+    "icon": "paint",
+    "tool_shortcode": "tool_color_converter",
+    "tool_file": "art-color/qm-tool-color-converter.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "Three ways to say the same colour",
+        "html": "<p><strong>Hex</strong> is three bytes written in pairs — <code>#3B68FC</code> is 59 red, 104 green and 252 blue — which is why it is exactly six characters and why every design tool speaks it. <strong>RGB</strong> is the same numbers written as a function, and it is what JavaScript and canvases use.</p><p><strong>HSL</strong> is the human one: hue in degrees around the colour wheel, saturation as a percentage of how pure it is, and lightness from black through the colour to white. It is the notation to reach for when you want “the same colour, a bit darker”, because changing lightness leaves the hue alone while changing hex does not.</p>"
+      },
+      {
+        "title": "Tints and shades",
+        "html": "<p>A tint mixes towards white, a shade towards black. The ladder under the swatch shows five of each at 15%, 30%, 50%, 70% and 90%, which is enough to build a hover state, a border, a background and a text colour from one brand hue. Each swatch is a button: tap one to load it and see its own numbers.</p><p>Mixing in RGB space tends to desaturate as it goes, which is why a tint of a saturated blue looks slightly grey rather than lighter-and-still-blue. Mixing in HSL — keeping H and S, raising L — gives a cleaner ramp, and is what a design system usually does.</p>"
+      },
+      {
+        "title": "Contrast, measured properly",
+        "html": "<p>Reading text on a background depends on relative luminance, and luminance is not the average of the three channels: each one is un-gamma-corrected first, then weighted 0.2126 red, 0.7152 green and 0.0722 blue. That is why pure green is far brighter than pure blue and why two colours that look equally vivid can have very different contrast.</p><p>The ratio is (lighter + 0.05) ÷ (darker + 0.05). WCAG asks for 4.5:1 for body text, 3:1 for large text and interface components, and 7:1 for AAA. The tool prints both ratios — against white and against black — because only one of them has to pass.</p>"
+      },
+      {
+        "title": "Using the numbers",
+        "html": "<p>The HSL values are the useful part when building a palette: keep the hue, vary lightness and saturation, and the set holds together. The contrast row is the useful part when placing text: if neither ratio reaches 4.5, the colour is a background or a large-type colour and not a body-text colour.</p><p>Swatches can be copied as hex, which is what a CSS file wants. If you need the colour as a data URI, or an image that uses it, the other tools in this section handle those.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which notation should I use in CSS?",
+        "a": "Whichever you can reason about. Hex is the most common and the shortest. <code>hsl()</code> is easier to adjust by hand because the hue stays put when you change lightness. <code>rgb()</code> with an alpha channel, or the modern space-separated syntax, is the one to use for transparency."
+      },
+      {
+        "q": "Why does my tint look grey?",
+        "a": "Because RGB mixing moves towards white along a straight line, which also reduces saturation relative to the hue. For a cleaner ramp, keep the HSL hue and saturation and raise lightness in even steps instead."
+      },
+      {
+        "q": "Is 4.5:1 the rule?",
+        "a": "It is the WCAG AA floor for normal-size body text. Large text (18.66 px bold or 24 px regular) and interface borders only need 3:1, and AAA asks for 7:1. Numbers between 3 and 4.5 are common for headings and large buttons."
+      },
+      {
+        "q": "Can it read a colour name like “tomato”?",
+        "a": "No. It takes hex input, with or without the <code>#</code>, and both the three-digit and six-digit forms. Named colours are a CSS convenience with 148 entries; converting one is a lookup, not arithmetic."
+      }
+    ]
+  },
+  {
+    "slug": "post-length-checker",
+    "category_slug": "social-community",
+    "name": "Social Post Length Checker",
+    "h1": "Social Post Length Checker",
+    "meta_title": "Post length checker for X, Instagram, LinkedIn, TikTok",
+    "meta_description": "Paste a caption once and see how it fits X, Instagram, LinkedIn, TikTok, Threads, YouTube and Pinterest, with the truncation point for each.",
+    "summary": "One caption, seven platforms, and the exact number of characters you have left on each before it gets cut.",
+    "icon": "tag",
+    "tool_shortcode": "tool_post_length",
+    "tool_file": "social-community/qm-tool-post-length.php",
+    "tool_version": "1.0.0",
+    "is_featured": 1,
+    "sections": [
+      {
+        "title": "The limits, and what they mean",
+        "html": "<p>X accepts 280 characters per post. Instagram’s caption limit is 2 200. LinkedIn allows 3 000 characters in a post. TikTok captions are 2 200, Threads 500, YouTube titles 100 and Pinterest descriptions 500. Getting them wrong is not a subtle problem: the platform rejects the post or silently cuts it.</p><p>The tool counts once and compares against all of them, with a bar per platform that turns amber near the limit and red past it, plus the exact number over or remaining.</p>"
+      },
+      {
+        "title": "The number that actually decides",
+        "html": "<p>Every one of those limits is larger than the number of characters anyone reads. Instagram shows roughly 125 characters before “more”. LinkedIn cuts at about 210. TikTok shows about 100 under the video. X shows the whole thing because the whole thing is short.</p><p>So write the first sentence as if it were the whole post, then continue for the people who stayed. A caption that opens with three hashtags and a greeting has spent the visible part on nothing.</p>"
+      },
+      {
+        "title": "Links, hashtags and emoji",
+        "html": "<p>Links are counted as characters here, because that is what the text box contains. X shortens every link to 23 characters regardless of its real length, so a long URL costs less there than in a LinkedIn post, where the full URL counts and is mostly hidden behind “see more” anyway.</p><p>Emoji count as one character in this tool; X counts most of them as two. Hashtags and links are counted separately at the bottom, because a caption with nine hashtags is a different thing from one with two, even at the same length.</p>"
+      },
+      {
+        "title": "Writing to the limit without writing badly",
+        "html": "<p>Shorten by removing, not by abbreviating: “we built a tool that shows the working” is shorter and clearer than “we built a tool w/ working shown”. Put the specific noun early — the thing being offered, not the fact that it is offered. And read the first line on its own; if it does not survive as a complete sentence, rewrite it.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Are the limits current?",
+        "a": "They are the published limits at the time this page was written, and platforms change them without much notice. X in particular has changed both the post length and how links are counted. Treat the bar as guidance and the platform’s own counter as the truth."
+      },
+      {
+        "q": "Why does X count some emoji as two?",
+        "a": "Because its counter measures code points weighted for the platform’s own character sets, and a single emoji can be several code points. This tool counts what you see; X counts what it stores. The difference only matters when you are within a few characters of 280."
+      },
+      {
+        "q": "Does a link count as its real length?",
+        "a": "In this tool, yes. On X, every link becomes 23 characters, so a long URL is effectively free there. On Instagram and LinkedIn, links in the caption are usually not clickable anyway — “link in bio” is the convention for a reason."
+      },
+      {
+        "q": "Is my draft uploaded?",
+        "a": "Only if scripting is off and you submit the form. With scripting on, the counting happens in the page and the text stays on your device."
+      }
+    ]
+  },
+  {
+    "slug": "random-picker",
+    "category_slug": "fun-random",
+    "name": "Random Picker",
+    "h1": "Random Picker",
+    "meta_title": "Random picker and shuffle that is actually fair",
+    "meta_description": "Pick winners from a list of names or entries with a Fisher–Yates shuffle from a cryptographic random source. No repeats, no bias, nothing stored.",
+    "summary": "Fair draws from a list — winners without repeats, with the method stated so the result can be trusted.",
+    "icon": "dice",
+    "tool_shortcode": "tool_random_picker",
+    "tool_file": "fun-random/qm-tool-random-picker.php",
+    "tool_version": "1.0.0",
+    "is_featured": 0,
+    "sections": [
+      {
+        "title": "Why most “random” pickers are not",
+        "html": "<p>The common one-liner is <code>list.sort(() => Math.random() - 0.5)</code>. It looks like a shuffle and is not one: it hands the comparison function garbage, and the resulting order is biased towards some positions. Worse, the bias is invisible — you get a result, and there is no way to tell that the draw was not fair.</p><p>The other common bug is picking at random with repeats, so the same name can win twice. If the draw is for a prize, that is the difference between a fair result and a complaint.</p>"
+      },
+      {
+        "title": "The method used here",
+        "html": "<p>Every line is given an index. The indices are then shuffled with Fisher–Yates, which walks from the end of the array and swaps each position with a random earlier one — every ordering is equally likely, which is what “shuffle” has to mean. The first N indices are the winners.</p><p>The random numbers come from <code>crypto.getRandomValues()</code>, with rejection sampling so that the modulo operation cannot favour the low end of the range. The server-side draw uses <code>random_int()</code> for the same reason.</p>"
+      },
+      {
+        "title": "What is shown, and why",
+        "html": "<p>Each winner is printed with the line number it came from, so a draw can be checked against a recording of the list. The entry count, the chance per entry and the number of duplicate lines are shown too — a list with three copies of one name is not a list of three entries.</p><p>Duplicates are counted but not removed: sometimes the same entry is meant to appear twice. If it is not, delete it from the text before drawing.</p>"
+      },
+      {
+        "title": "Uses beyond a prize draw",
+        "html": "<p>Choosing a restaurant, assigning review duties, picking a starting player, deciding which of two tasks to do first. In all of them the value is the same: the decision is made once, it is not yours, and everybody can see it was not rigged.</p><p>Nothing is stored and nothing is sent. Reload the page and the draw is gone — which is why the winners are printed with line numbers rather than saved.</p>"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it really random?",
+        "a": "The numbers come from the operating system’s cryptographic random source, not a formula seeded with the time. That is the same class of randomness used for encryption keys — which is more than a prize draw needs, and costs nothing."
+      },
+      {
+        "q": "Can the same name win twice?",
+        "a": "No. The shuffle moves indices and each index is used once, so N winners are N different lines. If the list itself contains the same name twice, both can be drawn, because they are two different entries."
+      },
+      {
+        "q": "Can I make the draw reproducible for a recording?",
+        "a": "This version draws fresh every time, which is the honest default. A seeded version would be reproducible — useful for verifying a recorded draw, and also for anyone who wants to pick the seed to get the result they want."
+      },
+      {
+        "q": "Is my list uploaded?",
+        "a": "Only if scripting is off and you submit the form, in which case the list goes to this page, is drawn from and is not stored. With scripting on it never leaves the page."
+      }
+    ]
+  }
+]

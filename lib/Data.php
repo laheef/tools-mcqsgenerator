@@ -141,7 +141,7 @@ final class Data
          * treats them exactly like a catalogue row. This is the one seam that
          * makes new niches possible without touching code again.
          */
-        if (class_exists(CustomCalc::class) && CustomCalc::enabled()) {
+        if (class_exists(CustomCalc::class) && CustomCalc::available()) {
             foreach (CustomCalc::rows() as $custom) {
                 if (($custom['status'] ?? '') === 'archived') {
                     continue;
@@ -393,7 +393,7 @@ final class Data
      */
     public static function content(string $cat, string $slug): ?array
     {
-        $custom = (class_exists(CustomCalc::class) && CustomCalc::enabled())
+        $custom = (class_exists(CustomCalc::class) && CustomCalc::available())
             ? CustomCalc::findByPath('/' . $cat . '/' . $slug)
             : null;
 
@@ -812,6 +812,16 @@ final class Data
                     self::$catNames[$slug] = (string) $row['name'];
                 }
             }
+            /* A tool filed under a section rather than a calculator category:
+               the breadcrumb says "Image Converters", not "Img Converters". */
+            if (class_exists(Groups::class)) {
+                foreach (Groups::rows() as $group) {
+                    $slug = (string) ($group['slug'] ?? '');
+                    if ($slug !== '' && !isset(self::$catNames[$slug])) {
+                        self::$catNames[$slug] = (string) $group['name'];
+                    }
+                }
+            }
         }
         return self::$catNames;
     }
@@ -820,6 +830,14 @@ final class Data
     public static function categories(): array
     {
         if (self::$categories === null) {
+            /* A tool filed under a section — /img-converters, /audio — uses the
+               section slug as its category. That slug is not a calculator
+               topic: it has a page of its own, it is already in the secondary
+               header, and listing it here would put "Audio Tools" inside the
+               Calculators dropdown and in the calculator grid. */
+            $isSection = static function (string $slug): bool {
+                return class_exists(Groups::class) && Groups::isSection($slug);
+            };
             $counts = [];
             foreach (self::all() as $row) {
                 $counts[$row['cat']] = ($counts[$row['cat']] ?? 0) + 1;
@@ -828,7 +846,7 @@ final class Data
             $out = [];
             foreach (self::allCategories() as $cat) {
                 $slug = (string) $cat['slug'];
-                if ($slug === 'discover') {
+                if ($slug === 'discover' || $isSection($slug)) {
                     continue;
                 }
                 $o = $overrides[$slug] ?? null;
@@ -849,7 +867,7 @@ final class Data
             }
             // categories created in the panel that the harvested list has never heard of
             foreach ($overrides as $slug => $o) {
-                if (($counts[$slug] ?? 0) === 0 || ($o['status'] ?? 'published') !== 'published') {
+                if (($counts[$slug] ?? 0) === 0 || ($o['status'] ?? 'published') !== 'published' || $isSection((string) $slug)) {
                     continue;
                 }
                 $known = false;

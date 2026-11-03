@@ -588,11 +588,24 @@ final class Toolkit
         ];
         $ctx['uid'] = preg_replace('~[^a-z0-9_\-]~i', '-', (string) $ctx['uid']) ?: $tag;
 
+        /*
+         * A tool that throws halfway through has usually already opened an
+         * output buffer and printed part of its markup. Without this, that
+         * half-written widget leaks into the page *before* the short apology
+         * below, and the visitor sees a broken form followed by a note saying
+         * the tool could not run. Unwinding to the level we found the buffer
+         * at throws the partial markup away, which is what "one broken tool
+         * cannot take another one down" has to mean in practice.
+         */
+        $level = ob_get_level();
         try {
             $html = (string) $renderer($atts, $inner, $ctx);
             unset(self::$errors[$tag]);
             return $html;
         } catch (\Throwable $e) {
+            while (ob_get_level() > $level) {
+                ob_end_clean();
+            }
             self::$errors[$tag] = $e->getMessage();
             self::log($tag, $e);
             return self::fallbackBox($tag);
