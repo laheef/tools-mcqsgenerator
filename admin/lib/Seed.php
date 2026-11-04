@@ -382,20 +382,15 @@ final class Seed
     {
         return [
             'about' => [
-                'title' => 'About this calculator site',
-                'excerpt' => 'What this site is, how the calculators are built, and what it does with your data (spoiler: it keeps it on your device).',
-                'meta_title' => 'About this calculator site',
-                'meta_description' => 'How these free calculators are built, how the maths is checked, and why every page shows its formula.',
+                'title' => 'About Onim',
+                'excerpt' => 'A free library of 4,000+ calculators and file tools, built so that every answer comes with the working that produced it.',
+                'meta_title' => 'About Onim — every tool shows its working',
+                'meta_description' => 'Who builds Onim, how the 4,000 calculators and file tools are made and checked, how the site is funded, and what it does with the data you type.',
                 'content' => <<<'HTML'
-<p>This site is a library of free online calculators. Type a number, get an answer, and see the formula that produced it. No account, no paywall, no "unlock the result" step.</p>
-<h2>How a calculator is built</h2>
-<p>Every calculator is described by the relationships between its inputs. Those relationships — the equations — are what the page runs on, both on the server and again in your browser when you press Calculate. Where a problem needs more than arithmetic (a table lookup, an iterative solve, a piecewise rule), that logic is written out as a step-by-step method instead of being hidden behind a black box.</p>
-<h2>How the maths is checked</h2>
-<p>Each calculator is tested against worked examples with results that are stated independently of the code: the answer is computed by hand, then the page has to reproduce it. A calculator that disagrees is a bug and is fixed rather than annotated.</p>
-<h2>What happens to your numbers</h2>
-<p>Calculations run in your browser and on this server while the page is being drawn. We do not store what you type, we do not build profiles, and we do not sell anything to anyone. The only data we keep is what you deliberately send us, such as a message through the contact form.</p>
-<h2>Advertising</h2>
-<p>If advertising is enabled on this deployment, it is configured by the site owner and disclosed in the privacy policy. Ads never change a result.</p>
+<p><strong>Onim</strong> is a free library of calculators and browser tools. You type a number or drop in a file, you get an answer, and the page shows the formula or the method that produced it. There is no account, no paywall and no “unlock the result” step. If a page cannot explain how it reached its answer, that page is not finished.</p><h2>What is here</h2><p>The site is organised in fifteen sections — from Biology and Chemistry to Design &amp; CSS and Text &amp; Writing — and holds two kinds of tool:</p><ul>
+<li><strong>Calculators.</strong> A page with inputs, a result and the equation it used. Roughly four thousand of them: percentages, loans, units, health, geometry, date arithmetic and a great deal of science.</li>
+<li><strong>File tools.</strong> Converters, compressors, resizers, encoders and formatters that work on a file you hand them — an image, a PDF, a spreadsheet. The file is processed in the page; it is never uploaded to a server.</li>
+</ul><h2>How a page is built</h2><p>Each calculator is described by the relationships between its inputs. Those equations are what the page runs on — once on the server while the page is drawn, and again in your browser the moment you press Calculate, so the two can be compared. Where a problem needs more than arithmetic (a table lookup, an iterative solve, a piecewise rule, a tax band), that logic is written out step by step instead of being hidden in a black box.</p><p>Every page carries the same furniture, because a result without context is not much use: the formula with its variables defined, a worked example with real numbers, the assumptions the answer rests on, a table of neighbouring results, and the questions people ask about it.</p><h2>How the answers are checked</h2><p>Each calculator is tested against worked examples whose results are stated independently of the code: the answer is computed by hand or taken from an authoritative source, then the page has to reproduce it. A calculator that disagrees with its worked example is a bug, and it is fixed rather than annotated. File tools are tested on files with known properties — a 1200 pixel image that has to come back 1200 pixels wide, a PDF whose page count must not change.</p><h2>What happens to what you type</h2><p>Calculations run in your browser and on this server while the page is being drawn. We do not store your inputs, we do not build profiles, and we do not sell data to anyone. Uploaded files are read in your browser and never leave it. The only information we keep is what you deliberately send — a message through the contact form — and we keep that only as long as it takes to answer it. The <a href="/privacy">privacy policy</a> spells this out in detail.</p><h2>How the site is paid for</h2><p>Onim is free to use and costs money to run. It is funded by advertising: a small number of clearly marked placements, never inside a result and never between you and an answer. Advertisers do not see your inputs, cannot influence a result, and get no access to the calculators. If advertising is turned off on this deployment, nothing else changes.</p><h2>Who builds it</h2><p>Onim is written and maintained by a small independent team. The calculators exist because people kept needing one more of them: a conversion no site explained, a formula buried in a textbook, a tool that wanted an account for a two-second job. If something is missing, <a href="/contact">ask for it</a> — requests from readers are where a good share of the library came from.</p><h2>Getting in touch</h2><p>Bug reports, corrections and requests all go to the same place. The <a href="/contact">contact page</a> has the form and says what makes a report easy to act on. If a result looks wrong, the calculator name, the values you entered and the answer you expected is usually enough to reproduce it.</p>
 HTML,
             ],
             'privacy' => [
@@ -478,13 +473,17 @@ HTML,
             ],
             'contact' => [
                 'title' => 'Contact',
-                'excerpt' => 'Report a bug, ask for a calculator, or say hello.',
+                'excerpt' => 'A wrong result, a missing calculator, a file format we do not handle yet — this is the page for all three.',
                 'template' => 'contact',
-                'meta_title' => 'Contact',
-                'meta_description' => 'How to reach the people behind this calculator site: bug reports, calculator requests and press.',
+                'meta_title' => 'Contact Onim — bug reports, corrections and requests',
+                'meta_description' => 'How to reach the team behind Onim: report a wrong result, ask for a calculator, request a file format, or ask about privacy and advertising.',
                 'content' => <<<'HTML'
-<p>Bug reports get priority. If a result looks wrong, include the calculator name, the values you entered and the answer you expected — that is usually enough to reproduce it.</p>
-<p>Requests for new calculators are read and, when they fit the library, built. A note on what you were trying to work out helps more than a one-line "please add X".</p>
+<p>Every message on this page is read by a person. There is no ticket robot and no autoresponder; the answer comes from whoever looked into the problem.</p><h2>What to include</h2><ul>
+<li><strong>A wrong result.</strong> Name the calculator, paste the values you entered, and say what answer you expected. If you know where the expected answer comes from — a textbook, a standard, a spreadsheet — say so, and the fix is usually quick.</li>
+<li><strong>A calculator that should exist.</strong> Say what you were trying to work out and what you had in hand. “I have a room's measurements and I want paint litres by coat” is worth more than “please add a paint calculator”.</li>
+<li><strong>A file the tools will not open.</strong> Tell us the format and, if you can, what produced it. Do not send the file itself unless we ask — the tools run in your browser and we would rather keep it that way.</li>
+<li><strong>Privacy, advertising or licensing.</strong> Ask away. The <a href="/privacy">privacy policy</a> and the <a href="/terms">terms</a> answer the usual questions first.</li>
+</ul><h2>What happens next</h2><p>Bug reports are answered first, usually with a fix rather than a reply. Requests for new calculators are collected and built in batches; when one you asked for goes live, that is the end of it. Anything about a particular page is answered by someone who has opened that page.</p><h2>Before you write</h2><p>Two things settle a good number of messages on their own: <a href="/faq">the FAQ</a> covers units, blank fields, rounding and how to cite a result, and the note under any calculator explains the assumptions behind its answer. If neither answers it, the form below is the fastest route to us.</p>
 HTML,
             ],
         ];

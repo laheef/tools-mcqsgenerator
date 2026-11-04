@@ -19,6 +19,45 @@ use Onim\View;
 $page = $page ?? [];
 $template = (string) ($page['template'] ?? 'default');
 $updated = (string) ($page['updated_at'] ?? '');
+
+/*
+ * An on-page contents list, built from the page's own <h2>s.
+ *
+ * Long pages (About, Privacy, Terms) are read by scanning headings first, and
+ * the right rail would otherwise be empty at desktop width. Headings written in
+ * the panel rarely carry an id, so one is added here — the same anchor is used
+ * by the contents list and by the link, and a repeated heading gets a suffix
+ * rather than a duplicate id.
+ */
+$body = (string) ($page['content'] ?? '');
+$contents = [];
+$seen = [];
+$body = (string) preg_replace_callback(
+    '~<h2\b([^>]*)>(.*?)</h2>~is',
+    static function (array $m) use (&$contents, &$seen): string {
+        $attrs = $m[1];
+        $label = trim((string) preg_replace('~\s+~u', ' ', html_entity_decode(strip_tags($m[2]), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+        if ($label === '') {
+            return $m[0];
+        }
+        if (preg_match('~\bid=["\']([^"\']+)["\']~i', $attrs, $id) === 1) {
+            $contents[] = ['id' => $id[1], 'label' => $label];
+            return $m[0];
+        }
+        $slug = trim((string) preg_replace('~[^a-z0-9]+~', '-', strtolower(preg_replace('~[^\p{L}\p{N}]+~u', '-', $label) ?? '')), '-');
+        $slug = $slug !== '' ? $slug : 'section';
+        $base = $slug;
+        for ($i = 2; isset($seen[$slug]); $i++) {
+            $slug = $base . '-' . $i;
+        }
+        $seen[$slug] = true;
+        $contents[] = ['id' => $slug, 'label' => $label];
+        return '<h2' . $attrs . ' id="' . View::escape($slug) . '">' . $m[2] . '</h2>';
+    },
+    $body
+);
+// Two headings is a paragraph, three is a document worth a contents list.
+$contents = count($contents) >= 3 ? $contents : [];
 ?>
 <div class="shell page-shell<?= $template === 'wide' ? ' page-shell--wide' : '' ?>">
     <?= View::breadcrumbs([
@@ -40,8 +79,20 @@ $updated = (string) ($page['updated_at'] ?? '');
         <?php endif; ?>
     </header>
 
-    <div class="article-body">
-        <?= View::rewriteRootUrls((string) ($page['content'] ?? '')) ?>
+    <div class="page-body<?= $contents !== [] ? ' page-body--toc' : '' ?>">
+        <div class="article-body">
+            <?= View::rewriteRootUrls($body) ?>
+        </div>
+        <?php if ($contents !== []): ?>
+            <nav class="page-toc" aria-labelledby="page-toc-title">
+                <h2 class="page-toc-title" id="page-toc-title">On this page</h2>
+                <ol class="page-toc-list">
+                    <?php foreach ($contents as $item): ?>
+                        <li><a href="#<?= View::escape($item['id']) ?>"><?= View::escape($item['label']) ?></a></li>
+                    <?php endforeach; ?>
+                </ol>
+            </nav>
+        <?php endif; ?>
     </div>
 
     <?php if ($template === 'contact'): ?>
