@@ -128,7 +128,11 @@ if ($groupMenu === []) {
                     </a>
                 <?php endforeach; ?>
                 <?php if ($showCount): ?>
-                    <a class="header-count" href="<?= View::escape(View::url('/all-calculators')) ?>"
+                    <?php /* The count is a door to the tool library, not to the
+                             calculator catalogue: /all-tools is where the file tools
+                             live. The calculators have their own tab in the bar
+                             below. */ ?>
+                    <a class="header-count" href="<?= View::escape(View::url('/all-tools')) ?>"
                        title="Browse every tool — the number updates live">
                         <span class="header-count-dot" aria-hidden="true"></span>
                         <span class="header-count-number" data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span>

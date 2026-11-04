@@ -127,7 +127,7 @@ $card = static function (array $row) use ($icon, $section): string {
     <?php endif; ?>
 
     <?php if ($shown !== []): ?>
-        <div class="popular-grid">
+        <div class="popular-grid popular-grid--two">
             <?php foreach ($shown as $row) { echo $card($row); } ?>
         </div>
     <?php endif; ?>
@@ -153,7 +153,7 @@ $card = static function (array $row) use ($icon, $section): string {
                     <h2 class="section-title section-title--sm">
                         <a href="<?= View::escape(View::url('/' . $sub['slug'])) ?>"><?= View::escape((string) $sub['name']) ?></a>
                     </h2>
-                    <div class="popular-grid">
+                    <div class="popular-grid popular-grid--two">
                         <?php foreach ($subRows as $row) { echo $card($row); } ?>
                     </div>
                 </div>

@@ -26,7 +26,12 @@
   var status = document.querySelector('[data-browse-status]');
   if (!form || !input || !results) return;
 
-  var BASE = (window.BASE_PATH || '') + '/calculators';
+  /* The catalogue moved from /calculators to /all-calculators, and this line
+     did not follow it. Every chip's own href failed to parse against the old
+     base, so every chip read as "the current category" and the whole filter
+     row rendered as selected. The links the script writes were also pointing
+     at the old address, which only worked because that URL redirects. */
+  var BASE = (window.BASE_PATH || '') + '/all-calculators';
   var timer = null;
   var controller = null;
   var inFlight = 0;

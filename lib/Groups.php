@@ -339,10 +339,19 @@ final class Groups
                     ];
                 }
             }
+            /*
+             * The Calculators tab opens the catalogue, not the group page.
+             * /calculators renders the home template — it is the old front page
+             * at an address of its own — so clicking the tab used to land a
+             * reader on the home page he had just left. The catalogue at
+             * /all-calculators is what the tab promises. The group page still
+             * exists at /calculators for its breadcrumb and its canonical URL.
+             */
+            $url = $slug === self::CALCULATORS ? '/all-calculators' : '/' . $slug;
             $out[] = [
                 'slug' => $slug,
                 'name' => (string) ($group['short'] ?? $group['name']),
-                'url' => '/' . $slug,
+                'url' => $url,
                 'icon' => (string) $group['icon'],
                 'children' => $children,
             ];

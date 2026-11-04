@@ -246,8 +246,11 @@ button { font: inherit; color: inherit; }
 .category-nav { border-top: 1px solid #F0F2F8; }
 .category-nav-inner {
   /* A real gap between the sections, not a hairline. The rules below sit in
-     the middle of it, so each name has air on both sides. */
-  --nav-gap: 14px;
+     the middle of it, so each name has air on both sides. 13 rather than 14:
+     the dropdown groups no longer shrink (see .category-nav-group), which costs
+     the row the width it used to steal from them, and 13 is what still leaves
+     every one of the fifteen sections on one line at 1440. */
+  --nav-gap: 13px;
   display: flex; align-items: stretch; gap: var(--nav-gap);
   overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
 }
@@ -569,6 +572,11 @@ button { font: inherit; color: inherit; }
 .popular-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
 @media (min-width: 724px) { .popular-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1146px) { .popular-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Section pages keep two columns. A group or a category is a list to read down,
+   and a tool card carries a name and a sentence of description — at three
+   across that sentence is cut to a line and a half, which is what the cards on
+   /video were doing. */
+@media (min-width: 724px) { .popular-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .popular-card {
   display: block; padding: 18px 20px; border: 1px solid var(--border); border-radius: var(--radius);
@@ -3463,21 +3471,29 @@ a:focus-visible > .calc-glyph,
 .category-nav-inner { flex-wrap: nowrap; }
 .category-nav { height: 44px; }
 .category-nav-inner { height: 44px; align-items: center; }
-.category-nav-link { display: inline-flex; align-items: center; gap: 6px; height: 44px; padding-block: 0; padding-inline: 2px; letter-spacing: -.01em; }
+.category-nav-link { display: inline-flex; align-items: center; gap: 6px; height: 44px; padding-block: 0; padding-inline: 0; letter-spacing: -.01em; }
 /*
- * The chevron of a dropdown sits six pixels clear of the rule that divides it
- * from the next section: with the rule centred in a 15px gap and the link's own
- * padding, the two never read as one mark.
+ * A dropdown group must not be allowed to shrink.
+ *
+ * The row is a flex container with fifteen items in it. When it ran out of
+ * width the groups — the only items with a shrinkable child inside them — were
+ * squeezed by the width of their own chevron, so the link overflowed its group
+ * by 12px. The divider is painted on the *next* item as `left: -gap/2`, which
+ * is measured from that group's box, so it landed 3px inside the chevron: the
+ * icon and the rule read as one mark, and the next name started 4px after the
+ * arrow instead of 13. Pinning the box fixes both at once.
  */
-.category-nav-link svg { margin-left: 1px; }
-/* Very wide screens can afford more padding on each name; the gap stays the
-   same, so the row still fits in one line. */
+.category-nav-group { flex: 0 0 auto; }
+.category-nav-group .category-nav-link { padding-right: 6px; }
+.category-nav-link svg { flex: 0 0 auto; margin-left: 1px; }
+/* Very wide screens can afford more padding on each name; the gap grows too,
+   and the row still fits in one line. */
 @media (min-width: 1700px) {
-  /* With room to spare the names get more air on both sides. */
   .category-nav-inner { --nav-gap: 18px; }
   .category-nav-link { padding-inline: 6px; }
+  .category-nav-group .category-nav-link { padding-right: 10px; }
 }
-@media (max-width: 620px) { .category-nav-inner { --nav-gap: 10px; } .category-nav-link { padding-inline: 2px; font-size: 13px; } }
+@media (max-width: 620px) { .category-nav-inner { --nav-gap: 10px; } .category-nav-link { padding-inline: 0; font-size: 13px; } }
 .category-nav-link svg { margin-right: 0; }
 .category-nav-link svg + svg { margin-left: 1px; }
 
