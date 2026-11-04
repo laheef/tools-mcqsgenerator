@@ -229,7 +229,44 @@ t('4 the encrypted secret decrypts back to the same value',
 post('appearance', ['do' => 'save', 'settings[brand_primary]' => '#ff0055', 'settings[brand_accent]' => '#111111']);
 $css = get(BASE . '/math/percentage')['body'];
 t('5 the brand colour from the panel is printed into the page', str_contains($css, '#ff0055'));
-post('appearance', ['do' => 'save', 'settings[brand_primary]' => '#3B68FC', 'settings[brand_accent]' => '#12B981']);
+
+/*
+ * Printed is not the same as applied.
+ *
+ * app.css declares --brand on :root; this block is printed before that
+ * stylesheet, so at equal specificity the stylesheet won and a colour picked in
+ * the panel changed nothing on the site. The block is now `:root:root`, which
+ * outranks it wherever it sits — the assertion below is what makes that true,
+ * not the fact that the hex is somewhere in the HTML.
+ */
+t('5 the appearance block outranks the stylesheet', str_contains($css, ':root:root'));
+$block = '';
+if (preg_match('~:root:root\s*\{(.*?)\}~s', $css, $m)) {
+    $block = (string) $m[1];
+}
+t('5 the brand colour sits inside that block', str_contains($block, '--brand: #ff0055'), trim($block) === '' ? 'no block' : 'ok');
+t('5 the hover shade is derived from it, not left blue',
+    preg_match('~--brand-ink:\s*(#[0-9A-F]{6})~i', $block, $ink) === 1
+    && strtoupper((string) ($ink[1] ?? '')) !== '#294CC2'
+    && \Onim\Palette::luminance((string) ($ink[1] ?? '#000000')) < \Onim\Palette::luminance('#ff0055'));
+
+post('appearance', ['do' => 'save', 'settings[radius_scale]' => 'pill']);
+$round = get(BASE . '/math/percentage')['body'];
+t('5 the corner setting reaches the radius tokens', str_contains($round, '--radius: 24px'));
+
+post('appearance', ['do' => 'save', 'settings[font_body]' => 'serif', 'settings[heading_weight]' => '800']);
+$type = get(BASE . '/math/percentage')['body'];
+t('5 the font setting reaches the page', str_contains($type, 'Georgia') && str_contains($type, '--heading-weight: 800'));
+
+post('appearance', ['do' => 'save', 'settings[color_mode]' => 'dark']);
+$dark = get(BASE . '/math/percentage')['body'];
+t('5 dark mode inverts the surface tokens',
+    str_contains($dark, 'data-theme="dark"') && str_contains($dark, '--bg: #0E1116'));
+
+post('appearance', ['do' => 'save', 'settings[brand_primary]' => '#3B68FC', 'settings[brand_accent]' => '#12B981',
+                    'settings[radius_scale]' => 'medium', 'settings[font_body]' => 'poppins',
+                    'settings[font_heading]' => 'poppins', 'settings[heading_weight]' => '700',
+                    'settings[color_mode]' => 'light', 'settings[button_style]' => 'solid']);
 
 /* 6 — calculator override: prose, FAQ, related ---------------------------- */
 $form = page('calculator-edit', ['path' => '/math/percentage'])['body'];
@@ -2283,6 +2320,13 @@ t('48 a second file claiming a shortcode that is already taken is refused',
 \Onim\Toolkit::forget();
 
 /* -- create the page ------------------------------------------------------ */
+/* A row left at the same address by an interrupted run would make the panel
+   refuse the new page, which looks like a bug in create. Clear it first. */
+foreach (Db::all('SELECT id FROM custom_calculators WHERE slug = ? AND category_slug = ?', ['e2e-scratch', 'math']) as $stale) {
+    \Onim\CustomCalc::delete((int) $stale['id']);
+}
+\Onim\Data::flush();
+
 $created = post('tool-plugins', ['do' => 'create', 'shortcode' => 'tool_e2e_scratch', 'category' => 'math']);
 $row = row('SELECT * FROM custom_calculators WHERE tool_shortcode = ?', ['tool_e2e_scratch']);
 t('48 one click creates a draft page bound to the tool',
@@ -2518,6 +2562,27 @@ if ($toolRow !== null) {
     $listing = page('custom-calculators');
     t('65 the tools listing links Edit to that editor',
         str_contains($listing['body'], 'p=tool-edit&amp;id=' . (int) $toolRow['id']));
+}
+
+/* ------------------------------------ 64 a tool edits where a tool lives */
+$toolRow = row("SELECT id, slug, category_slug FROM custom_calculators WHERE kind = 'tool' ORDER BY id LIMIT 1");
+if ($toolRow !== null) {
+    $list = page('custom-calculators')['body'];
+    $editHref = 'custom-calculator-edit';
+    if (preg_match('~href="([^"]*' . preg_quote((string) $toolRow['id'], '~') . '[^"]*)"[^>]*>\s*<svg[^>]*>\s*</svg>\s*Edit~', $list, $m)) {
+        $editHref = html_entity_decode((string) $m[1]);
+    }
+    t('64 a tool row does not open the formula editor',
+        !str_contains($list, 'p=custom-calculator-edit&amp;id=' . (int) $toolRow['id']) || str_contains($list, 'p=tool-edit'));
+
+    $editPage = page('tool-edit', ['id' => (int) $toolRow['id']]);
+    t('64 the tool editor opens for a tool page',
+        $editPage['status'] === 200 && str_contains($editPage['body'], 'name="article"') && clean($editPage['body']),
+        'status ' . $editPage['status']);
+    t('64 it offers the libraries picker',
+        str_contains($editPage['body'], 'name="libraries['));
+    t('64 it has no formula field list',
+        !str_contains($editPage['body'], 'name="fields[0][key]"'));
 }
 
 /* leftovers from a failed run */

@@ -133,7 +133,7 @@ function onim_db_configured(): bool
 }
 
 /** Bump to bust asset caches after editing css/js. */
-const ASSET_VERSION = '1.2.39';
+const ASSET_VERSION = '1.2.42';
 
 /** Unit/category reference data lives under data/calc/ (see tools/harvest_all.py). */
 const RATES_CAPTURED = '2026-10-23';
@@ -231,6 +231,7 @@ if (!function_exists('mb_strtolower')) {
 require_once __DIR__ . '/lib/Expr.php';
 require_once __DIR__ . '/lib/Units.php';
 require_once __DIR__ . '/lib/Format.php';
+require_once __DIR__ . '/lib/Palette.php';
 require_once __DIR__ . '/lib/Conditions.php';
 require_once __DIR__ . '/lib/Supplement.php';
 require_once __DIR__ . '/lib/Solver.php';

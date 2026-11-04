@@ -23,10 +23,27 @@ $siteName  = Cms::siteName();
 $brandName = Cms::brandName();
 $brand     = (string) Cms::setting('brand_primary', '#3B68FC');
 $accent    = (string) Cms::setting('brand_accent', '#FF6B35');
-$radiusMap = ['none' => '0', 'small' => '6px', 'medium' => '12px', 'large' => '18px', 'pill' => '28px'];
-$radius    = $radiusMap[(string) Cms::setting('radius_scale', 'medium')] ?? '12px';
+/*
+ * The stylesheet is built from four radius tokens, not one, so a shape setting
+ * scales the whole family: [--radius, --radius-sm, --radius-lg, --radius-xl].
+ * "medium" is the pair the design ships with, so an untouched panel renders
+ * exactly the stylesheet's own corners.
+ */
+$radiusMap = [
+    'none'   => [0, 0, 0, 0],
+    'small'  => [6, 4, 8, 12],
+    'medium' => [8, 6, 12, 16],
+    'large'  => [16, 10, 20, 28],
+    'pill'   => [24, 16, 28, 34],
+];
+$radiusSet = $radiusMap[(string) Cms::setting('radius_scale', 'medium')] ?? $radiusMap['medium'];
 $shell     = (int) (Cms::setting('container_width', '1286') ?: 1286);
 $weight    = (string) Cms::setting('heading_weight', '700');
+$buttonStyle = (string) Cms::setting('button_style', 'solid');
+/* Hover and tint shades follow the brand instead of staying the shipped blue. */
+$brandInk  = \Onim\Palette::shade($brand, 0.22);
+$brandSoft = \Onim\Palette::tint($brand, 0.9);
+$brandOn   = \Onim\Palette::onColor($brand);
 $fontMap   = [
     'system'  => "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif",
     'poppins' => "Poppins, Verdana, sans-serif",
@@ -62,22 +79,110 @@ $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
 
     <link rel="icon" href="<?= View::escape(Cms::faviconUrl()) ?>">
     <style>
-        /* Settings → Appearance. Printed as custom properties so the whole
-           stylesheet follows without a rebuild. */
-        :root {
+        /*
+         * Settings → Appearance.
+         *
+         * Printed as custom properties so the whole stylesheet follows without a
+         * rebuild. The selector is `:root:root`, not `:root`: app.css declares
+         * the same properties on `:root`, and this block is printed *before* the
+         * stylesheet — at equal specificity the later rule wins, which is how a
+         * colour picked in the panel used to change nothing at all. Doubling the
+         * pseudo-class makes this block win wherever it sits.
+         */
+        :root:root {
             --brand: <?= View::escape($brand) ?>;
+            --brand-ink: <?= View::escape($brandInk) ?>;
+            --brand-soft: <?= View::escape($brandSoft) ?>;
+            --brand-on: <?= View::escape($brandOn) ?>;
             --accent: <?= View::escape($accent) ?>;
-            --radius: <?= View::escape($radius) ?>;
-            --shell-max: <?= (int) $shell ?>px;
-            --font-body: <?= $fontBody ?>;
+            --accent-pink: <?= View::escape($accent) ?>;
+            --radius: <?= (int) $radiusSet[0] ?>px;
+            --radius-sm: <?= (int) $radiusSet[1] ?>px;
+            --radius-lg: <?= (int) $radiusSet[2] ?>px;
+            --radius-xl: <?= (int) $radiusSet[3] ?>px;
+            --shell: <?= $shell ?>px;
+            --calc-shell: <?= $shell + 54 ?>px;
+            --font: <?= $fontBody ?>;
             --font-heading: <?= $fontHeading ?>;
             --heading-weight: <?= View::escape($weight) ?>;
         }
+        /* Fonts and heading weight are rules, not tokens: nothing in app.css
+           reads them yet, so they are applied here. `html body …` outranks the
+           single-class rules the stylesheet uses for each of these titles. */
+        html body { font-family: var(--font); }
+        html body h1, html body h2, html body h3,
+        html body .hero-title, html body .page-title,
+        html body .article-title, html body .section-title {
+            font-family: var(--font-heading);
+            font-weight: var(--heading-weight);
+        }
+        html body .btn-primary { color: var(--brand-on); }
+        <?php if ($buttonStyle === 'outline'): ?>
+        /* Buttons drawn as an outline of the brand colour. */
+        html body .btn-primary {
+            background: transparent;
+            color: var(--brand);
+            border: 1px solid var(--brand);
+            box-shadow: none;
+        }
+        html body .btn-primary:hover {
+            background: var(--brand-soft);
+            color: var(--brand-ink);
+            border-color: var(--brand-ink);
+        }
+        <?php elseif ($buttonStyle === 'soft'): ?>
+        /* A tinted fill instead of a solid one. */
+        html body .btn-primary {
+            background: var(--brand-soft);
+            color: var(--brand-ink);
+            border: 1px solid transparent;
+            box-shadow: none;
+        }
+        html body .btn-primary:hover { background: var(--brand); color: var(--brand-on); }
+        <?php endif; ?>
+        <?php if ($themeAttr === 'dark' || $themeAttr === 'auto'): ?>
+        <?php
+        /*
+         * Dark mode is the same layout with the surface tokens inverted; every
+         * component in app.css is drawn from these tokens, so nothing else has
+         * to know that the page is dark. Printed for `dark` always and for
+         * `auto` only when the visitor's system asks for it.
+         */
+        $darkTokens = <<<CSS
+            --bg: #0E1116;
+            --surface: #151A21;
+            --surface-2: #1A2028;
+            --ink: #F4F6FA;
+            --ink-2: #E6EAF1;
+            --ink-3: #C6CDD8;
+            --ink-4: #A9B3C1;
+            --border: #2A3340;
+            --border-strong: #3B4756;
+            --brand-soft: #1C2B4A;
+            --surface-3: #1D242D;
+            --note-bg: #2A2415;
+            --note-ink: #F1E0B2;
+            --shadow-card: 0 1px 2px rgba(0, 0, 0, .5);
+            --shadow-lift: 0 8px 24px rgba(0, 0, 0, .55);
+            --shadow-pop: 0 12px 32px rgba(0, 0, 0, .6);
+        CSS;
+        ?>
         <?php if ($themeAttr === 'dark'): ?>
-        html { color-scheme: dark; }
-        <?php elseif ($themeAttr === 'auto'): ?>
-        html { color-scheme: light dark; }
-        @media (prefers-color-scheme: dark) { html { color-scheme: dark; } }
+        html[data-theme="dark"] {
+            color-scheme: dark;
+<?= $darkTokens ?>
+
+        }
+        <?php else: ?>
+        html[data-theme="auto"] { color-scheme: light dark; }
+        @media (prefers-color-scheme: dark) {
+            html[data-theme="auto"] {
+                color-scheme: dark;
+<?= $darkTokens ?>
+
+            }
+        }
+        <?php endif; ?>
         <?php endif; ?>
     </style>
     <?php if ($adsHead !== ''): ?>
