@@ -751,6 +751,20 @@
         new ResizeObserver(paint).observe(track);
       }
       paint();
+      /*
+       * Measure again once everything has actually settled.
+       *
+       * The first paint happens on a deferred script, before the web font has
+       * arrived: the row is measured in the fallback face, it says "this fits",
+       * and nothing measures it again — the track's own box never changes size,
+       * only the overflow inside it, so the ResizeObserver stays quiet. The
+       * result was a row clipped at the right edge with no arrow to reach the
+       * rest of it, which is exactly what a reader on a 1280px laptop saw.
+       */
+      window.addEventListener('load', paint);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(paint).catch(function () {});
+      }
     });
   })();
 
