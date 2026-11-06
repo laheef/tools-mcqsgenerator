@@ -153,13 +153,18 @@ if ($groupMenu === []) {
                         <a class="category-nav-link<?= $isActiveItem ? ' is-active' : '' ?>"
                            href="<?= View::escape(View::url((string) $item['url'])) ?>"
                            aria-haspopup="true" aria-expanded="false">
+                            <span class="category-nav-icon" aria-hidden="true"><?= View::icon((string) ($item['icon'] ?? 'grid'), 16) ?></span>
                             <?= View::escape((string) $item['name']) ?>
-                            <?= View::icon('chevron-down', 12) ?>
+                            <?= View::icon('chevron-down', 12, 'category-nav-caret') ?>
                         </a>
                         <div class="category-dropdown" role="group" aria-label="<?= View::escape((string) $item['name']) ?>">
                             <?php foreach ($item['children'] as $child): ?>
                                 <a href="<?= View::escape(View::url((string) $child['url'])) ?>">
+                                    <span class="category-dropdown-icon" aria-hidden="true"><?= View::icon((string) ($child['icon'] ?? 'grid'), 15) ?></span>
                                     <?= View::escape((string) $child['name']) ?>
+                                    <?php if (isset($child['count']) && (int) $child['count'] > 0): ?>
+                                        <span class="category-dropdown-count"><?= View::escape(Format::count((int) $child['count'])) ?></span>
+                                    <?php endif; ?>
                                 </a>
                             <?php endforeach; ?>
                         </div>
@@ -168,6 +173,7 @@ if ($groupMenu === []) {
                     <a class="category-nav-link<?= $isActiveItem ? ' is-active' : '' ?>"
                        href="<?= View::escape(View::url((string) $item['url'])) ?>"
                        <?= $isActiveItem ? 'aria-current="page"' : '' ?>>
+                        <span class="category-nav-icon" aria-hidden="true"><?= View::icon((string) ($item['icon'] ?? 'grid'), 16) ?></span>
                         <?= View::escape((string) $item['name']) ?>
                     </a>
                 <?php endif; ?>
@@ -178,6 +184,7 @@ if ($groupMenu === []) {
                 <a class="category-nav-link category-nav-link--extra<?= $isActiveItem ? ' is-active' : '' ?>"
                    href="<?= View::escape(View::url((string) $item['url'])) ?>"
                    <?= ($item['target'] ?? '_self') === '_blank' ? 'target="_blank" rel="noopener"' : '' ?>>
+                    <span class="category-nav-icon" aria-hidden="true"><?= View::icon('arrow', 16) ?></span>
                     <?= View::escape((string) $item['label']) ?>
                 </a>
             <?php endforeach; ?>

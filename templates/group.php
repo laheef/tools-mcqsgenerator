@@ -169,10 +169,19 @@ $card = static function (array $row) use ($icon, $section): string {
                 Every tool on this site is one self-contained file — once one is uploaded it appears here,
                 on the home page and in the secondary header.
             </p>
+            <?php /* An empty sub-category is a door into a room that is still
+                     being furnished; the useful way out is the section it
+                     belongs to, not the whole calculator catalogue. */ ?>
             <p style="margin-top:16px">
-                <a class="btn btn-primary" href="<?= View::escape(View::url('/' . Groups::CALCULATORS)) ?>">
-                    Browse the calculators
-                </a>
+                <?php if ($parent !== null): ?>
+                    <a class="btn btn-primary" href="<?= View::escape(View::url('/' . $parent['slug'])) ?>">
+                        See everything in <?= View::escape((string) $parent['name']) ?>
+                    </a>
+                <?php else: ?>
+                    <a class="btn btn-primary" href="<?= View::escape(View::url('/' . Groups::CALCULATORS)) ?>">
+                        Browse the calculators
+                    </a>
+                <?php endif; ?>
             </p>
         </div>
     <?php elseif ($found === 0): ?>

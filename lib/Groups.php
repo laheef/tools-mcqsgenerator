@@ -329,13 +329,20 @@ final class Groups
                     $children[] = [
                         'name' => (string) $cat['name'] . ' Calculators',
                         'url' => '/' . $cat['slug'],
+                        'icon' => (string) ($cat['icon'] ?? 'grid'),
+                        'count' => (int) ($cat['count'] ?? 0),
                     ];
                 }
             } else {
+                /* A section's dropdown carries the same glyph its own page
+                   uses, so a reader who opens Image Tools recognises the four
+                   entries without reading them. */
                 foreach (self::subs($slug) as $sub) {
                     $children[] = [
                         'name' => (string) $sub['name'],
                         'url' => '/' . $sub['slug'],
+                        'icon' => (string) ($sub['icon'] ?? 'grid'),
+                        'count' => self::count((string) $sub['slug']),
                     ];
                 }
             }
