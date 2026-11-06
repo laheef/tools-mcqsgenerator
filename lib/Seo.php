@@ -416,7 +416,11 @@ final class Seo
            the old file in place until somebody deleted it by hand. Bump this when
            the shape of the sitemap changes; the filename carries it, so the next
            request rebuilds and the old file ages out. */
-        $cacheVersion = 3;
+        /* v4: the tool sub-categories were rolled back, and the stamp only
+           tracks content in MySQL — a change to data/groups.json leaves it
+           untouched, so the v3 file would keep advertising addresses that now
+           404 until it aged out. */
+        $cacheVersion = 4;
         $cache = Data::path('cache/sitemap-v' . $cacheVersion . '-' . $stamp . '.xml');
         $origin = rtrim(SITE_URL, '/');
         $host = static fn (string $xml): string => str_replace('@@ORIGIN@@', $origin, $xml);
