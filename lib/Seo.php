@@ -416,7 +416,7 @@ final class Seo
            the old file in place until somebody deleted it by hand. Bump this when
            the shape of the sitemap changes; the filename carries it, so the next
            request rebuilds and the old file ages out. */
-        $cacheVersion = 2;
+        $cacheVersion = 3;
         $cache = Data::path('cache/sitemap-v' . $cacheVersion . '-' . $stamp . '.xml');
         $origin = rtrim(SITE_URL, '/');
         $host = static fn (string $xml): string => str_replace('@@ORIGIN@@', $origin, $xml);
@@ -463,6 +463,37 @@ final class Seo
                 'loc' => '@@ORIGIN@@' . '/all-tools/' . (string) $group['slug'],
                 'lastmod' => date('Y-m-d'),
                 'priority' => '0.7',
+            ];
+        }
+        /*
+         * The section pages themselves, and one per sub-category.
+         *
+         * These are the sixteen tabs in the header and the forty-odd children
+         * under them: the site's whole taxonomy, reachable from every page and
+         * listed in no sitemap at all. A crawler found them only by following
+         * the header, which put them an order of magnitude behind the
+         * calculators. An empty section is still left out — it is noindex and
+         * has nothing to rank with.
+         */
+        foreach (Groups::rows() as $group) {
+            if ((string) $group['slug'] === Groups::CALCULATORS) {
+                /* /calculators is the home template at a second address, with a
+                   canonical of its own; listing it would enter the same page
+                   twice. */
+                continue;
+            }
+            if ((string) ($group['status'] ?? 'published') !== 'published') {
+                continue;
+            }
+            $slug = (string) $group['slug'];
+            $isSub = (string) ($group['parent'] ?? '') !== '';
+            if (Groups::countGroup($slug) === 0) {
+                continue;
+            }
+            $urls[] = [
+                'loc' => '@@ORIGIN@@' . '/' . $slug,
+                'lastmod' => date('Y-m-d'),
+                'priority' => $isSub ? '0.6' : '0.8',
             ];
         }
         /* One <lastmod> per calculator, read without building the widget:
