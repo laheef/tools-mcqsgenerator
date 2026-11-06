@@ -1,7 +1,7 @@
 [
   {
     "slug": "tone-generator",
-    "category_slug": "audio-generators",
+    "category_slug": "audio",
     "name": "Tone & Frequency Generator",
     "h1": "Tone and Frequency Generator",
     "meta_title": "Tone Generator — play any frequency, download a WAV",
@@ -51,7 +51,7 @@
   },
   {
     "slug": "frame-grabber",
-    "category_slug": "video-extractors",
+    "category_slug": "video",
     "name": "Video Frame Grabber",
     "h1": "Video Frame Grabber",
     "meta_title": "Grab a still frame from a video — no upload",
@@ -451,7 +451,7 @@
   },
   {
     "slug": "number-base",
-    "category_slug": "number-converters",
+    "category_slug": "converters",
     "name": "Number Base Converter",
     "h1": "Number Base Converter",
     "meta_title": "Decimal, hex, octal and binary converter",
@@ -501,7 +501,7 @@
   },
   {
     "slug": "password-generator",
-    "category_slug": "password-tools",
+    "category_slug": "security",
     "name": "Password Generator",
     "h1": "Password Generator",
     "meta_title": "Password generator with real entropy, made locally",
@@ -551,7 +551,7 @@
   },
   {
     "slug": "sensitivity-converter",
-    "category_slug": "sensitivity-settings",
+    "category_slug": "gaming",
     "name": "Mouse Sensitivity Converter",
     "h1": "Mouse Sensitivity Converter",
     "meta_title": "Convert mouse sensitivity between games with cm/360",
@@ -601,7 +601,7 @@
   },
   {
     "slug": "text-compressor",
-    "category_slug": "text-compressors",
+    "category_slug": "compressors",
     "name": "Text Compressor",
     "h1": "Text Compressor",
     "meta_title": "gzip and deflate a block of text, with the ratio",
@@ -651,7 +651,7 @@
   },
   {
     "slug": "pomodoro-timer",
-    "category_slug": "timers-focus",
+    "category_slug": "productivity",
     "name": "Pomodoro Timer",
     "h1": "Pomodoro Timer",
     "meta_title": "Pomodoro timer with rounds that fit your time",
@@ -701,7 +701,7 @@
   },
   {
     "slug": "box-shadow-generator",
-    "category_slug": "css-generators",
+    "category_slug": "design-css",
     "name": "CSS Box Shadow Generator",
     "h1": "CSS Box Shadow Generator",
     "meta_title": "CSS box-shadow generator with a live card preview",
@@ -751,7 +751,7 @@
   },
   {
     "slug": "case-converter",
-    "category_slug": "case-converters",
+    "category_slug": "text-writing",
     "name": "Case Converter",
     "h1": "Case Converter",
     "meta_title": "Convert text case — title, sentence, camel, snake",
@@ -801,7 +801,7 @@
   },
   {
     "slug": "color-converter",
-    "category_slug": "colour-converters",
+    "category_slug": "art-color",
     "name": "Colour Converter & Shades",
     "h1": "Colour Converter and Shade Generator",
     "meta_title": "HEX, RGB and HSL converter with tints and contrast",
@@ -851,7 +851,7 @@
   },
   {
     "slug": "post-length-checker",
-    "category_slug": "post-limits",
+    "category_slug": "social-community",
     "name": "Social Post Length Checker",
     "h1": "Social Post Length Checker",
     "meta_title": "Post length checker for X, Instagram, LinkedIn, TikTok",
@@ -901,7 +901,7 @@
   },
   {
     "slug": "random-picker",
-    "category_slug": "random-pickers",
+    "category_slug": "fun-random",
     "name": "Random Picker",
     "h1": "Random Picker",
     "meta_title": "Random picker and shuffle that is actually fair",

@@ -593,30 +593,6 @@ final class Cms
      * an old bookmarked URL from a search result does not hit a 404. Anything an
      * administrator adds in SEO → Redirects takes precedence over this map.
      */
-    /*
-     * A tool that moved into a sub-category keeps its old address alive.
-     *
-     * When each section gained sub-categories, twelve of the nineteen file
-     * tools were filed one level deeper (/video/frame-grabber became
-     * /video-extractors/frame-grabber). Those old URLs are in the sitemap that
-     * has been live for weeks and in whatever anyone bookmarked, so they get a
-     * permanent redirect rather than a 404.
-     */
-    private const TOOL_MOVES = [
-        '/art-color/color-converter'           => '/colour-converters/color-converter',
-        '/audio/tone-generator'                => '/audio-generators/tone-generator',
-        '/compressors/text-compressor'         => '/text-compressors/text-compressor',
-        '/converters/number-base'              => '/number-converters/number-base',
-        '/design-css/box-shadow-generator'     => '/css-generators/box-shadow-generator',
-        '/fun-random/random-picker'            => '/random-pickers/random-picker',
-        '/gaming/sensitivity-converter'        => '/sensitivity-settings/sensitivity-converter',
-        '/productivity/pomodoro-timer'         => '/timers-focus/pomodoro-timer',
-        '/security/password-generator'         => '/password-tools/password-generator',
-        '/social-community/post-length-checker' => '/post-limits/post-length-checker',
-        '/text-writing/case-converter'         => '/case-converters/case-converter',
-        '/video/frame-grabber'                 => '/video-extractors/frame-grabber',
-    ];
-
     private const LEGACY_ALIASES = [
         '/privacy-policy'    => '/privacy',
         '/privacy.php'       => '/privacy',
@@ -631,7 +607,7 @@ final class Cms
     /** A built-in alias row, shaped like a `redirects` record. */
     public static function legacyRedirect(string $path): ?array
     {
-        $to = self::LEGACY_ALIASES[rtrim($path, '/')] ?? self::TOOL_MOVES[rtrim($path, '/')] ?? null;
+        $to = self::LEGACY_ALIASES[rtrim($path, '/')] ?? null;
         if ($to === null) {
             return null;
         }

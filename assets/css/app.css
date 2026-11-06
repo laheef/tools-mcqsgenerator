@@ -3422,7 +3422,11 @@ a:focus-visible > .calc-glyph,
  * link's own rectangle — the same trick the reference theme uses, and the reason
  * its menus escape the row instead of being cut in half.
  */
-.category-nav-group { display: flex; }
+/* A dropdown group must not shrink: it is the only item in the row whose
+   content (the link plus its chevron) is wider than its own box, so a flex
+   container short of room squeezed the box and let the link spill over the name
+   after it. */
+.category-nav-group { display: flex; flex: 0 0 auto; }
 .category-dropdown {
   position: fixed;
   display: none;
@@ -3449,56 +3453,32 @@ a:focus-visible > .calc-glyph,
 @media (max-width: 620px) { .category-dropdown { display: none !important; } }
 
 /*
- * A grid, not a scrolling line.
+ * One line, scrolled with a button.
  *
- * The bar carried fifteen words and fitted on one line. It now carries
- * sixteen sections, each with a glyph in front and a chevron after, plus the
- * sub-categories every one of them gained — twice the width, in the same
- * space. A scrolling row was the old answer and it hid a third of the site
- * behind an arrow nobody presses; two even rows show every section at once,
- * which is what a tools directory is for.
- *
- * Between 760 and 1180 px the columns go four and six at a time; below 760 the
- * row scrolls again, because four stacked rows of navigation is not a header.
+ * The bar carries sixteen sections; with a glyph in front of every name that is
+ * about 2,000px of navigation, which no screen is going to hold. It used to be
+ * spread over two rows of equal columns, and equal columns is the wrong shape
+ * for a row of words: the gap between two short names was the width of the
+ * longest one in the column. It is a single line again, each section sized by
+ * its own name, and what does not fit is reached with the arrow at the end.
  */
-.category-nav { height: auto; }
-.category-nav-inner { flex-wrap: nowrap; height: 44px; align-items: center; }
-.category-nav-link { height: 40px; }
-@media (min-width: 760px) {
-  .category-nav-inner {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    column-gap: 6px; row-gap: 0;
-    height: auto; align-items: stretch;
-    overflow: visible;
-  }
-  .category-nav-inner > * { min-width: 0; }
-  .category-nav-inner .category-nav-link { width: 100%; padding-inline: 8px; }
-  .category-nav-arrow { display: none !important; }
+.category-nav { height: 44px; }
+.category-nav-inner {
+  display: flex; flex-wrap: nowrap;
+  height: 44px; align-items: center;
+  /* The gap plus each link's own padding is the air between one section and the
+     next — 30px in all, so a boundary is visible without a rule in the row. */
+  gap: 10px;
 }
-@media (min-width: 1000px) { .category-nav-inner { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
-/* Eight columns need 143px a cell for the longest label ("Design & CSS") with
-   its glyph and chevron; below that the six-column grid runs instead of letting
-   a name spill out of the page. */
-@media (min-width: 1260px) { .category-nav-inner { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
-.category-nav-link { display: inline-flex; align-items: center; gap: 5px; height: 44px; padding-block: 0; padding-inline: 0; letter-spacing: -.01em; }
-/*
- * A dropdown group must not be allowed to shrink.
- *
- * The row is a flex container with fifteen items in it. When it ran out of
- * width the groups — the only items with a shrinkable child inside them — were
- * squeezed by the width of their own chevron, so the link overflowed its group
- * by 12px. The divider is painted on the *next* item as `left: -gap/2`, which
- * is measured from that group's box, so it landed 3px inside the chevron: the
- * icon and the rule read as one mark, and the next name started 4px after the
- * arrow instead of 13. Pinning the box fixes both at once.
- */
-.category-nav-group { flex: 0 0 auto; }
-.category-nav-group .category-nav-link { padding-right: 6px; }
-.category-nav-link svg { flex: 0 0 auto; margin-left: 1px; }
-/* Very wide screens can afford more padding on each name; the gap grows too,
-   and the row still fits in one line. */
-@media (max-width: 620px) { .category-nav-inner { --nav-gap: 10px; } .category-nav-link { padding-inline: 0; font-size: 13px; } }
+.category-nav-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 44px; padding-block: 0; padding-inline: 10px;
+  letter-spacing: -.01em;
+}
+/* The first name lines up with the breadcrumb below it; the padding of the
+   last one would otherwise leave the arrow floating. */
+.category-nav-inner > *:first-child > .category-nav-link,
+.category-nav-inner > *:first-child.category-nav-link { padding-left: 0; }
 .category-nav-link svg { margin-right: 0; }
 .category-nav-link svg + svg { margin-left: 1px; }
 
