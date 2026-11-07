@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog harness size',
-    'meta' => ['title' => 'Dog harness size — Formula, Steps & Examples', 'description' => 'Dog harness size works out min Weight Print from  Weight and  Girth. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Dog harness size Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog harness size — Formula, Steps & Examples', 'description' => 'Dog harness size from weight and chest girth: where to take the two measurements, how they map onto a maker\'s sizing chart, and what to do between two sizes.', 'h1' => 'Dog harness size Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'girth' => [

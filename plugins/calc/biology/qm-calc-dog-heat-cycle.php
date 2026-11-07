@@ -149,7 +149,7 @@ return [
                                     'c' => [
                                         [null, ' Your dog\'s cycle will last up to {{cycle1.shortValue}} - {{cycle2.shortValue}}.'],
                                         ['enter_heat_cycle==0', ' You can expect the next heat cycle between {{nextCycle1.shortValue}} and {{nextCycle2.shortValue}}.&nbsp;'],
-                                        ['enter_heat_cycle==1', ' You can expect the next heat on {{nextCycle3.shortValue}}.'],
+                                        ['enter_heat_cycle==1', ' You can expect the next heat on {{nextCycle2.shortValue}}.'],
                                     ],
                                 ],
                             ],
@@ -328,12 +328,12 @@ return [
                 ],
             ],
             [
-                'formula' => 'nextCycle3= one_way(firstDay+round(length_value*30.44)*86400000)',
+                'formula' => 'nextCycle3= one_way(firstDay+round(length*30.44))',
                 'var' => [
                     [
                         'l' => 'nextCycle3',
-                        'f' => '(firstDay + 86400000*round((761/25)*length_value))',
-                        'r' => ['firstDay', 'length_value'],
+                        'f' => '(firstDay + round((761/25)*length))',
+                        'r' => ['firstDay', 'length'],
                     ],
                 ],
             ],
@@ -382,7 +382,7 @@ return [
             <p>Treat the size of a result as part of the answer: <strong>Cycle1</strong> = 1.772e+12, <strong>Cycle2</strong> = 1.772e+12, <strong>NextCycle1</strong> = 1.772e+12, <strong>NextCycle2</strong> = 1.772e+12 and <strong>NextCycle3</strong> = 1.772e+12 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Cycle1 takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code></li><li><strong>Cycle2</strong> = <code>(First day of the cycle + twentyoneDays)</code></li><li><strong>NextCycle1</strong> = <code>(First day of the cycle + fiveMonths)</code></li><li><strong>NextCycle2</strong> = <code>(eightMonths + First day of the cycle)</code></li><li><strong>NextCycle3</strong> = <code>(First day of the cycle + 86400000 × round((761 ÷ 25) × length_value))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>Cycle2</strong> = <code>(First day of the cycle + twentyoneDays)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>NextCycle1</strong> = <code>(First day of the cycle + fiveMonths)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>NextCycle2</strong> = <code>(eightMonths + First day of the cycle)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>NextCycle3</strong> = <code>(First day of the cycle + 86400000 × round((761 ÷ 25) × length_value))</code> — the form to use when First day of the cycle are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Cycle1, Cycle2 and NextCycle1 can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code></li><li><strong>Cycle2</strong> = <code>(First day of the cycle + twentyoneDays)</code></li><li><strong>NextCycle1</strong> = <code>(First day of the cycle + fiveMonths)</code></li><li><strong>NextCycle2</strong> = <code>(eightMonths + First day of the cycle)</code></li><li><strong>NextCycle3</strong> = <code>(First day of the cycle + round((761 ÷ 25) × heat cycle length))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>Cycle2</strong> = <code>(First day of the cycle + twentyoneDays)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>NextCycle1</strong> = <code>(First day of the cycle + fiveMonths)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>NextCycle2</strong> = <code>(eightMonths + First day of the cycle)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>NextCycle3</strong> = <code>(First day of the cycle + round((761 ÷ 25) × heat cycle length))</code> — the form to use when First day of the cycle are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Cycle1, Cycle2 and NextCycle1 can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => ''],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'

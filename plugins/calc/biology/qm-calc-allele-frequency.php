@@ -87,7 +87,7 @@ return [
                                     't' => 'v',
                                     'n' => 'a_percentage',
                                     'vt' => 'numerical',
-                                    'l' => 'Occurrence of the disease: ',
+                                    'l' => 'Occurrence of the disease',
                                     'h' => 'E.g., people with cystic fibrosis constitute 0.00029% of the Caucasian population.&nbsp;',
                                     'us' => '37',
                                     'du' => 'perc',
@@ -103,7 +103,7 @@ return [
                                     't' => 'v',
                                     'n' => 'a_proportion',
                                     'vt' => 'numerical',
-                                    'l' => 'Occurrence of the disease:',
+                                    'l' => 'Affected people, as 1 in',
                                     'pre' => '1 in ',
                                     'h' => 'For example, people with cystic fibrosis constitute 1 in 3500 of the Caucasian population.&nbsp;',
                                 ],
@@ -185,10 +185,10 @@ return [
                         'FR1_FR1',
                         [
                             [
-                                ['t' => 'v', 'n' => 'truea', 'vt' => 'numerical', 'l' => 'Truea'],
+                                ['t' => 'v', 'n' => 'truea', 'vt' => 'numerical', 'l' => 'People with two mutant alleles (q²)'],
                             ],
                             [
-                                ['t' => 'v', 'n' => 'b', 'vt' => 'numerical', 'l' => 'B'],
+                                ['t' => 'v', 'n' => 'b', 'vt' => 'numerical', 'l' => 'People with two healthy alleles (p²)'],
                             ],
                         ],
                     ],
@@ -196,10 +196,10 @@ return [
                         'FR1_FR1',
                         [
                             [
-                                ['t' => 'v', 'n' => 'pq', 'vt' => 'numerical', 'l' => '2pq'],
+                                ['t' => 'v', 'n' => 'pq', 'vt' => 'numerical', 'l' => 'Carriers (2pq)'],
                             ],
                             [
-                                ['t' => 'v', 'n' => 'inv_pq', 'vt' => 'numerical', 'l' => '1/2pq'],
+                                ['t' => 'v', 'n' => 'inv_pq', 'vt' => 'numerical', 'l' => 'One carrier in ... people'],
                             ],
                         ],
                     ],
@@ -226,12 +226,12 @@ return [
                 'formula' => '1/a_percentage = a_proportion',
                 'var' => [
                     [
-                        'l' => 'a_percentage',
+                        'l' => 'Disease occurrence, as a percentage',
                         'f' => '1/a_proportion',
                         'r' => ['a_proportion'],
                     ],
                     [
-                        'l' => 'a_proportion',
+                        'l' => 'One affected person in ... (1/q²)',
                         'f' => '1/a_percentage',
                         'r' => ['a_percentage'],
                     ],

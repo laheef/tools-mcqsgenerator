@@ -454,112 +454,112 @@ return [
         ],
         'eq' => [
             [
-                'formula' => 'dryMatterProtein0 =  wetMatterProtein0*100/(100-moisture0) ',
+                'formula' => 'dryMatterProtein0 = wetMatterProtein0/(1-moisture0)',
                 'var' => [
                     [
                         'l' => 'dryMatterProtein0',
-                        'f' => '-100*wetMatterProtein0/(moisture0 - 100)',
-                        'r' => ['moisture0', 'wetMatterProtein0'],
-                    ],
-                    [
-                        'l' => 'moisture0',
-                        'f' => '100 - 100*wetMatterProtein0/dryMatterProtein0',
-                        'r' => ['dryMatterProtein0', 'wetMatterProtein0'],
+                        'f' => 'wetMatterProtein0/(1-moisture0)',
+                        'r' => ['wetMatterProtein0', 'moisture0'],
                     ],
                     [
                         'l' => 'wetMatterProtein0',
-                        'f' => '(1/100)*dryMatterProtein0*(100 - moisture0)',
+                        'f' => 'dryMatterProtein0*(1-moisture0)',
                         'r' => ['dryMatterProtein0', 'moisture0'],
+                    ],
+                    [
+                        'l' => 'moisture0',
+                        'f' => '1 - wetMatterProtein0/dryMatterProtein0',
+                        'r' => ['dryMatterProtein0', 'wetMatterProtein0'],
                     ],
                 ],
             ],
             [
-                'formula' => 'dryMatterFat0 = wetMatterFat0*100/(100-moisture0)',
+                'formula' => 'dryMatterFat0 = wetMatterFat0/(1-moisture0)',
                 'var' => [
                     [
-                        'l' => 'wetMatterFat0',
-                        'f' => '(1/100)*dryMatterFat0*(100 - moisture0)',
-                        'r' => ['dryMatterFat0', 'moisture0'],
-                    ],
-                    [
                         'l' => 'dryMatterFat0',
-                        'f' => '-100*wetMatterFat0/(moisture0 - 100)',
+                        'f' => 'wetMatterFat0/(1-moisture0)',
                         'r' => ['wetMatterFat0', 'moisture0'],
                     ],
                     [
+                        'l' => 'wetMatterFat0',
+                        'f' => 'dryMatterFat0*(1-moisture0)',
+                        'r' => ['dryMatterFat0', 'moisture0'],
+                    ],
+                    [
                         'l' => 'moisture0',
-                        'f' => '100 - 100*wetMatterFat0/dryMatterFat0',
-                        'r' => ['wetMatterFat0', 'dryMatterFat0'],
+                        'f' => '1 - wetMatterFat0/dryMatterFat0',
+                        'r' => ['dryMatterFat0', 'wetMatterFat0'],
                     ],
                 ],
             ],
             [
-                'formula' => 'dryMatterFiber0 = wetMatterFiber0*100/(100-moisture0)',
+                'formula' => 'dryMatterFiber0 = wetMatterFiber0/(1-moisture0)',
                 'var' => [
                     [
                         'l' => 'dryMatterFiber0',
-                        'f' => '-100*wetMatterFiber0/(moisture0 - 100)',
-                        'r' => ['moisture0', 'wetMatterFiber0'],
-                    ],
-                    [
-                        'l' => 'moisture0',
-                        'f' => '100 - 100*wetMatterFiber0/dryMatterFiber0',
-                        'r' => ['dryMatterFiber0', 'wetMatterFiber0'],
+                        'f' => 'wetMatterFiber0/(1-moisture0)',
+                        'r' => ['wetMatterFiber0', 'moisture0'],
                     ],
                     [
                         'l' => 'wetMatterFiber0',
-                        'f' => '(1/100)*dryMatterFiber0*(100 - moisture0)',
+                        'f' => 'dryMatterFiber0*(1-moisture0)',
                         'r' => ['dryMatterFiber0', 'moisture0'],
+                    ],
+                    [
+                        'l' => 'moisture0',
+                        'f' => '1 - wetMatterFiber0/dryMatterFiber0',
+                        'r' => ['dryMatterFiber0', 'wetMatterFiber0'],
                     ],
                 ],
             ],
             [
-                'formula' => 'dryMatterOthers0 = wetMatterOthers0*100/(100-moisture0)',
+                'formula' => 'dryMatterOthers0 = wetMatterOthers0/(1-moisture0)',
                 'var' => [
                     [
                         'l' => 'dryMatterOthers0',
-                        'f' => '-100*wetMatterOthers0/(moisture0 - 100)',
+                        'f' => 'wetMatterOthers0/(1-moisture0)',
                         'r' => ['wetMatterOthers0', 'moisture0'],
                     ],
                     [
                         'l' => 'wetMatterOthers0',
-                        'f' => '(1/100)*dryMatterOthers0*(100 - moisture0)',
+                        'f' => 'dryMatterOthers0*(1-moisture0)',
                         'r' => ['dryMatterOthers0', 'moisture0'],
                     ],
                     [
                         'l' => 'moisture0',
-                        'f' => '100 - 100*wetMatterOthers0/dryMatterOthers0',
+                        'f' => '1 - wetMatterOthers0/dryMatterOthers0',
                         'r' => ['dryMatterOthers0', 'wetMatterOthers0'],
                     ],
                 ],
             ],
             [
-                'formula' => 'wetMatterOthers0 = 100 - (wetMatterProtein0 + wetMatterFat0 + wetMatterFiber0 + moisture0)',
+                'formula' => 'wetMatterOthers0 = 1 - (wetMatterProtein0 + wetMatterFat0 + wetMatterFiber0 + moisture0)',
                 'var' => [
                     [
                         'l' => 'moisture0',
-                        'f' => '-wetMatterFat0 - wetMatterFiber0 - wetMatterOthers0 - wetMatterProtein0 + 100',
-                        'r' => ['wetMatterOthers0', 'wetMatterFiber0', 'wetMatterProtein0', 'wetMatterFat0'],
+                        'f' => '-wetMatterProtein0 - wetMatterFat0 - wetMatterFiber0 - wetMatterOthers0 + 1',
+                        'r' => ['wetMatterProtein0', 'wetMatterFat0', 'wetMatterFiber0', 'wetMatterOthers0'],
                     ],
                     [
                         'l' => 'wetMatterOthers0',
-                        'f' => '-moisture0 - wetMatterFat0 - wetMatterFiber0 - wetMatterProtein0 + 100',
-                        'r' => ['moisture0', 'wetMatterFiber0', 'wetMatterProtein0', 'wetMatterFat0'],
+                        'f' => '-wetMatterProtein0 - wetMatterFat0 - wetMatterFiber0 - moisture0 + 1',
+                        'r' => ['wetMatterProtein0', 'wetMatterFat0', 'wetMatterFiber0', 'moisture0'],
                     ],
                     [
                         'l' => 'wetMatterFiber0',
-                        'f' => '-moisture0 - wetMatterFat0 - wetMatterOthers0 - wetMatterProtein0 + 100',
-                        'r' => ['moisture0', 'wetMatterOthers0', 'wetMatterProtein0', 'wetMatterFat0'],
+                        'f' => 'wetMatterProtein0 - wetMatterFat0 - wetMatterOthers0 - moisture0 + 1',
+                        'r' => ['wetMatterProtein0', 'wetMatterFat0', 'wetMatterOthers0', 'moisture0'],
                     ],
                     [
                         'l' => 'wetMatterProtein0',
-                        'f' => '-moisture0 - wetMatterFat0 - wetMatterFiber0 - wetMatterOthers0 + 100',
-                        'r' => ['moisture0', 'wetMatterOthers0', 'wetMatterFiber0', 'wetMatterFat0'],
+                        'f' => 'wetMatterFat0 - wetMatterFiber0 - wetMatterOthers0 - moisture0 + 1',
+                        'r' => ['wetMatterFat0', 'wetMatterFiber0', 'wetMatterOthers0', 'moisture0'],
                     ],
                     [
                         'l' => 'wetMatterFat0',
-                        'f' => '-moisture0 - wetMatterFiber0 - wetMatterOthers0 - wetMatterProtein0 + 100',
-                        'r' => ['moisture0', 'wetMatterOthers0', 'wetMatterFiber0', 'wetMatterProtein0'],
+                        'f' => 'wetMatterProtein0 - wetMatterFiber0 - wetMatterOthers0 - moisture0 + 1',
+                        'r' => ['wetMatterProtein0', 'wetMatterFiber0', 'wetMatterOthers0', 'moisture0'],
                     ],
                 ],
             ],
@@ -568,163 +568,168 @@ return [
                 'var' => [
                     [
                         'l' => 'dryMatterFat0',
-                        'f' => '-dryMatterFiber0 - dryMatterOthers0 - dryMatterProtein0 + finalTotal0',
-                        'r' => ['finalTotal0', 'dryMatterOthers0', 'dryMatterFiber0', 'dryMatterProtein0'],
+                        'f' => '-dryMatterProtein0 - dryMatterFiber0 - dryMatterOthers0 + finalTotal0',
+                        'r' => ['dryMatterProtein0', 'dryMatterFiber0', 'dryMatterOthers0', 'finalTotal0'],
                     ],
                     [
                         'l' => 'finalTotal0',
-                        'f' => 'dryMatterFat0 + dryMatterFiber0 + dryMatterOthers0 + dryMatterProtein0',
-                        'r' => ['dryMatterFat0', 'dryMatterOthers0', 'dryMatterFiber0', 'dryMatterProtein0'],
+                        'f' => 'dryMatterProtein0 + dryMatterFat0 + dryMatterFiber0 + dryMatterOthers0',
+                        'r' => ['dryMatterProtein0', 'dryMatterFat0', 'dryMatterFiber0', 'dryMatterOthers0'],
                     ],
                     [
                         'l' => 'dryMatterOthers0',
-                        'f' => '-dryMatterFat0 - dryMatterFiber0 - dryMatterProtein0 + finalTotal0',
-                        'r' => ['dryMatterFat0', 'finalTotal0', 'dryMatterFiber0', 'dryMatterProtein0'],
+                        'f' => '-dryMatterProtein0 - dryMatterFat0 - dryMatterFiber0 + finalTotal0',
+                        'r' => ['dryMatterProtein0', 'dryMatterFat0', 'dryMatterFiber0', 'finalTotal0'],
                     ],
                     [
                         'l' => 'dryMatterFiber0',
-                        'f' => '-dryMatterFat0 - dryMatterOthers0 - dryMatterProtein0 + finalTotal0',
-                        'r' => ['dryMatterFat0', 'finalTotal0', 'dryMatterOthers0', 'dryMatterProtein0'],
+                        'f' => '-dryMatterProtein0 - dryMatterFat0 - dryMatterOthers0 + finalTotal0',
+                        'r' => ['dryMatterProtein0', 'dryMatterFat0', 'dryMatterOthers0', 'finalTotal0'],
                     ],
                     [
                         'l' => 'dryMatterProtein0',
                         'f' => '-dryMatterFat0 - dryMatterFiber0 - dryMatterOthers0 + finalTotal0',
-                        'r' => ['dryMatterFat0', 'finalTotal0', 'dryMatterOthers0', 'dryMatterFiber0'],
+                        'r' => ['dryMatterFat0', 'dryMatterFiber0', 'dryMatterOthers0', 'finalTotal0'],
                     ],
                 ],
             ],
             [
-                'formula' => 'dryMatterProtein1 =  wetMatterProtein1*100/(100-moisture1) ',
+                'formula' => 'dryMatterProtein1 = wetMatterProtein1/(1-moisture1)',
                 'var' => [
                     [
+                        'l' => 'dryMatterProtein1',
+                        'f' => 'wetMatterProtein1/(1-moisture1)',
+                        'r' => ['wetMatterProtein1', 'moisture1'],
+                    ],
+                    [
+                        'l' => 'wetMatterProtein1',
+                        'f' => 'dryMatterProtein1*(1-moisture1)',
+                        'r' => ['dryMatterProtein1', 'moisture1'],
+                    ],
+                    [
                         'l' => 'moisture1',
-                        'f' => '100 - 100*wetMatterProtein1/dryMatterProtein1',
+                        'f' => '1 - wetMatterProtein1/dryMatterProtein1',
                         'r' => ['dryMatterProtein1', 'wetMatterProtein1'],
                     ],
-                    [
-                        'l' => 'dryMatterProtein1',
-                        'f' => '-100*wetMatterProtein1/(moisture1 - 100)',
-                        'r' => ['moisture1', 'wetMatterProtein1'],
-                    ],
-                    [
-                        'l' => 'wetMatterProtein1',
-                        'f' => '(1/100)*dryMatterProtein1*(100 - moisture1)',
-                        'r' => ['moisture1', 'dryMatterProtein1'],
-                    ],
                 ],
             ],
             [
-                'formula' => 'dryMatterFat1 = wetMatterFat1*100/(100-moisture1)',
+                'formula' => 'dryMatterFat1 = wetMatterFat1/(1-moisture1)',
                 'var' => [
                     [
-                        'l' => 'moisture1',
-                        'f' => '100 - 100*wetMatterFat1/dryMatterFat1',
-                        'r' => ['wetMatterFat1', 'dryMatterFat1'],
+                        'l' => 'dryMatterFat1',
+                        'f' => 'wetMatterFat1/(1-moisture1)',
+                        'r' => ['wetMatterFat1', 'moisture1'],
                     ],
                     [
                         'l' => 'wetMatterFat1',
-                        'f' => '(1/100)*dryMatterFat1*(100 - moisture1)',
-                        'r' => ['moisture1', 'dryMatterFat1'],
+                        'f' => 'dryMatterFat1*(1-moisture1)',
+                        'r' => ['dryMatterFat1', 'moisture1'],
                     ],
                     [
-                        'l' => 'dryMatterFat1',
-                        'f' => '-100*wetMatterFat1/(moisture1 - 100)',
-                        'r' => ['moisture1', 'wetMatterFat1'],
+                        'l' => 'moisture1',
+                        'f' => '1 - wetMatterFat1/dryMatterFat1',
+                        'r' => ['dryMatterFat1', 'wetMatterFat1'],
                     ],
                 ],
             ],
             [
-                'formula' => 'dryMatterFiber1 = wetMatterFiber1*100/(100-moisture1)',
+                'formula' => 'dryMatterFiber1 = wetMatterFiber1/(1-moisture1)',
                 'var' => [
                     [
-                        'l' => 'moisture1',
-                        'f' => '100 - 100*wetMatterFiber1/dryMatterFiber1',
-                        'r' => ['wetMatterFiber1', 'dryMatterFiber1'],
+                        'l' => 'dryMatterFiber1',
+                        'f' => 'wetMatterFiber1/(1-moisture1)',
+                        'r' => ['wetMatterFiber1', 'moisture1'],
                     ],
                     [
                         'l' => 'wetMatterFiber1',
-                        'f' => '(1/100)*dryMatterFiber1*(100 - moisture1)',
-                        'r' => ['moisture1', 'dryMatterFiber1'],
+                        'f' => 'dryMatterFiber1*(1-moisture1)',
+                        'r' => ['dryMatterFiber1', 'moisture1'],
                     ],
                     [
-                        'l' => 'dryMatterFiber1',
-                        'f' => '-100*wetMatterFiber1/(moisture1 - 100)',
-                        'r' => ['moisture1', 'wetMatterFiber1'],
+                        'l' => 'moisture1',
+                        'f' => '1 - wetMatterFiber1/dryMatterFiber1',
+                        'r' => ['dryMatterFiber1', 'wetMatterFiber1'],
                     ],
                 ],
             ],
             [
-                'formula' => 'dryMatterOthers1 = wetMatterOthers1*100/(100-moisture1)',
+                'formula' => 'dryMatterOthers1 = wetMatterOthers1/(1-moisture1)',
                 'var' => [
-                    [
-                        'l' => 'moisture1',
-                        'f' => '100 - 100*wetMatterOthers1/dryMatterOthers1',
-                        'r' => ['wetMatterOthers1', 'dryMatterOthers1'],
-                    ],
-                    [
-                        'l' => 'wetMatterOthers1',
-                        'f' => '(1/100)*dryMatterOthers1*(100 - moisture1)',
-                        'r' => ['moisture1', 'dryMatterOthers1'],
-                    ],
                     [
                         'l' => 'dryMatterOthers1',
-                        'f' => '-100*wetMatterOthers1/(moisture1 - 100)',
-                        'r' => ['moisture1', 'wetMatterOthers1'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'wetMatterOthers1 = 100 - (wetMatterProtein1 + wetMatterFat1 + wetMatterFiber1 + moisture1)',
-                'var' => [
-                    [
-                        'l' => 'moisture1',
-                        'f' => '-wetMatterFat1 - wetMatterFiber1 - wetMatterOthers1 - wetMatterProtein1 + 100',
-                        'r' => ['wetMatterOthers1', 'wetMatterProtein1', 'wetMatterFiber1', 'wetMatterFat1'],
+                        'f' => 'wetMatterOthers1/(1-moisture1)',
+                        'r' => ['wetMatterOthers1', 'moisture1'],
                     ],
                     [
                         'l' => 'wetMatterOthers1',
-                        'f' => '-moisture1 - wetMatterFat1 - wetMatterFiber1 - wetMatterProtein1 + 100',
-                        'r' => ['moisture1', 'wetMatterProtein1', 'wetMatterFiber1', 'wetMatterFat1'],
+                        'f' => 'dryMatterOthers1*(1-moisture1)',
+                        'r' => ['dryMatterOthers1', 'moisture1'],
                     ],
                     [
-                        'l' => 'wetMatterProtein1',
-                        'f' => '-moisture1 - wetMatterFat1 - wetMatterFiber1 - wetMatterOthers1 + 100',
-                        'r' => ['moisture1', 'wetMatterOthers1', 'wetMatterFiber1', 'wetMatterFat1'],
-                    ],
-                    [
-                        'l' => 'wetMatterFiber1',
-                        'f' => '-moisture1 - wetMatterFat1 - wetMatterOthers1 - wetMatterProtein1 + 100',
-                        'r' => ['moisture1', 'wetMatterOthers1', 'wetMatterProtein1', 'wetMatterFat1'],
-                    ],
-                    [
-                        'l' => 'wetMatterFat1',
-                        'f' => '-moisture1 - wetMatterFiber1 - wetMatterOthers1 - wetMatterProtein1 + 100',
-                        'r' => ['moisture1', 'wetMatterOthers1', 'wetMatterProtein1', 'wetMatterFiber1'],
+                        'l' => 'moisture1',
+                        'f' => '1 - wetMatterOthers1/dryMatterOthers1',
+                        'r' => ['dryMatterOthers1', 'wetMatterOthers1'],
                     ],
                 ],
             ],
             [
-                'formula' => 'finalTotal1 =  dryMatterProtein1 + dryMatterFat1 + dryMatterFiber1',
+                'formula' => 'wetMatterOthers1 = 1 - (wetMatterProtein1 + wetMatterFat1 + wetMatterFiber1 + moisture1)',
                 'var' => [
                     [
-                        'l' => 'dryMatterProtein1',
-                        'f' => '-dryMatterFat1 - dryMatterFiber1 + finalTotal1',
-                        'r' => ['dryMatterFiber1', 'dryMatterFat1', 'finalTotal1'],
+                        'l' => 'moisture1',
+                        'f' => '-wetMatterProtein1 - wetMatterFat1 - wetMatterFiber1 - wetMatterOthers1 + 1',
+                        'r' => ['wetMatterProtein1', 'wetMatterFat1', 'wetMatterFiber1', 'wetMatterOthers1'],
                     ],
                     [
-                        'l' => 'dryMatterFiber1',
-                        'f' => '-dryMatterFat1 - dryMatterProtein1 + finalTotal1',
-                        'r' => ['dryMatterProtein1', 'dryMatterFat1', 'finalTotal1'],
+                        'l' => 'wetMatterOthers1',
+                        'f' => '-wetMatterProtein1 - wetMatterFat1 - wetMatterFiber1 - moisture1 + 1',
+                        'r' => ['wetMatterProtein1', 'wetMatterFat1', 'wetMatterFiber1', 'moisture1'],
                     ],
+                    [
+                        'l' => 'wetMatterFiber1',
+                        'f' => 'wetMatterProtein1 - wetMatterFat1 - wetMatterOthers1 - moisture1 + 1',
+                        'r' => ['wetMatterProtein1', 'wetMatterFat1', 'wetMatterOthers1', 'moisture1'],
+                    ],
+                    [
+                        'l' => 'wetMatterProtein1',
+                        'f' => 'wetMatterFat1 - wetMatterFiber1 - wetMatterOthers1 - moisture1 + 1',
+                        'r' => ['wetMatterFat1', 'wetMatterFiber1', 'wetMatterOthers1', 'moisture1'],
+                    ],
+                    [
+                        'l' => 'wetMatterFat1',
+                        'f' => 'wetMatterProtein1 - wetMatterFiber1 - wetMatterOthers1 - moisture1 + 1',
+                        'r' => ['wetMatterProtein1', 'wetMatterFiber1', 'wetMatterOthers1', 'moisture1'],
+                    ],
+                ],
+            ],
+            [
+                'formula' => 'finalTotal1 =  dryMatterProtein1 + dryMatterFat1 + dryMatterFiber1 + dryMatterOthers1',
+                'var' => [
                     [
                         'l' => 'dryMatterFat1',
-                        'f' => '-dryMatterFiber1 - dryMatterProtein1 + finalTotal1',
-                        'r' => ['dryMatterProtein1', 'dryMatterFiber1', 'finalTotal1'],
+                        'f' => '-dryMatterProtein1 - dryMatterFiber1 - dryMatterOthers1 + finalTotal1',
+                        'r' => ['dryMatterProtein1', 'dryMatterFiber1', 'dryMatterOthers1', 'finalTotal1'],
                     ],
                     [
                         'l' => 'finalTotal1',
-                        'f' => 'dryMatterFat1 + dryMatterFiber1 + dryMatterProtein1',
-                        'r' => ['dryMatterProtein1', 'dryMatterFiber1', 'dryMatterFat1'],
+                        'f' => 'dryMatterProtein1 + dryMatterFat1 + dryMatterFiber1 + dryMatterOthers1',
+                        'r' => ['dryMatterProtein1', 'dryMatterFat1', 'dryMatterFiber1', 'dryMatterOthers1'],
+                    ],
+                    [
+                        'l' => 'dryMatterOthers1',
+                        'f' => '-dryMatterProtein1 - dryMatterFat1 - dryMatterFiber1 + finalTotal1',
+                        'r' => ['dryMatterProtein1', 'dryMatterFat1', 'dryMatterFiber1', 'finalTotal1'],
+                    ],
+                    [
+                        'l' => 'dryMatterFiber1',
+                        'f' => '-dryMatterProtein1 - dryMatterFat1 - dryMatterOthers1 + finalTotal1',
+                        'r' => ['dryMatterProtein1', 'dryMatterFat1', 'dryMatterOthers1', 'finalTotal1'],
+                    ],
+                    [
+                        'l' => 'dryMatterProtein1',
+                        'f' => '-dryMatterFat1 - dryMatterFiber1 - dryMatterOthers1 + finalTotal1',
+                        'r' => ['dryMatterFat1', 'dryMatterFiber1', 'dryMatterOthers1', 'finalTotal1'],
                     ],
                 ],
             ],

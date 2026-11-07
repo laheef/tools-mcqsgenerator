@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Bird age',
-    'meta' => ['title' => 'Bird age Calculator: Formula, Steps & Examples', 'description' => 'Enter bird species and average bird lifespan and get bird age  back. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Bird age Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Bird age Calculator: Formula, Steps & Examples', 'description' => 'Bird age in human years: pick the species, enter the bird\'s age and the average lifespan of its kind, and read the equivalent human age on the same scale.', 'h1' => 'Bird age Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'adult' => [
