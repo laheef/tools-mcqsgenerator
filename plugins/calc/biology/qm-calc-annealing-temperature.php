@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Annealing temperature',
-    'meta' => ['title' => 'Annealing temperature: Formula, Steps & Results', 'description' => 'Annealing temperature works out annealing temperature (Tₐ) from primer melting temperature and target melting temperature. Any box can be the unknown.', 'h1' => 'Annealing temperature Calculator', 'updated' => '2026-07-23'],
+    'meta' => ['title' => 'Annealing temperature: Formula, Steps & Results', 'description' => 'Enter primer melting temperature and target melting temperature and get Annealing temperature (Tₐ) back. The formula is printed in the form\'s own words.', 'h1' => 'Annealing temperature Calculator', 'updated' => '2026-07-23'],
     'raw' => [
         'vars' => [
             'annealing_temp' => [

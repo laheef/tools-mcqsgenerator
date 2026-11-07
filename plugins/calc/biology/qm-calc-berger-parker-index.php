@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Berger–Parker Index Calculator',
-    'meta' => ['title' => 'Berger–Parker Index Calculator — Formula & Results', 'description' => 'Berger–Parker Index Calculator reports berger–Parker index d and reciprocal 1/d. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Berger–Parker Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Berger–Parker Index Calculator — Formula & Results', 'description' => 'Berger–Parker Index Calculator reports berger–Parker index d and reciprocal 1/d. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Berger–Parker Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

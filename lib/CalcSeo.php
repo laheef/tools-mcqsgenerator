@@ -483,16 +483,14 @@ final class CalcSeo
             /* When the answer is named after the page, a sentence with both in it
                says the name twice — "Annealing temperature returns annealing
                temperature (Tₐ)". The verb-first form drops it to one. */
-            if ($twoIn !== '' && (str_starts_with($oneOut, $self) || str_starts_with($self, $oneOut))) {
-                $out[] = [sprintf('Enter %s and get %s back.', $twoIn, self::inSentence($oneOut))];
-                $out[] = [sprintf('Put %s in and read %s back.', $twoIn, self::inSentence($oneOut))];
-            }
-            $out[] = [sprintf('%s works out %s.', $name, $oneOut)];
+            $outKey = mb_strtolower($oneOut, 'UTF-8');
+            $isSelf = $outKey !== '' && (str_starts_with($outKey, $self) || str_starts_with($self, $outKey));
             /* No "Work out X from Y with <name>": a page name dropped after
                "with" reads as a colleague, not a calculator. */
-            if ($twoIn !== '' && (str_starts_with($oneOut, $self) || str_starts_with($self, $oneOut))) {
+            if ($isSelf && $twoIn !== '') {
                 $out[] = [sprintf('Enter %s and get %s back.', $twoIn, self::inSentence($oneOut))];
             }
+            $out[] = [sprintf('%s works out %s.', $name, $oneOut)];
         }
         if ($outAll !== '') {
             $out[] = [sprintf('%s reports %s.', $name, $outAll)];

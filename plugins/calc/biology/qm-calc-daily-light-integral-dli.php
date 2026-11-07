@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Daily light integral (DLI)',
-    'meta' => ['title' => 'Daily light integral (DLI) — Formula & Results', 'description' => 'Enter light hours per day and Photon flux density (PPFD) and Daily light integral (DLI) returns daily light integral (DLI). Any box can be the unknown.', 'h1' => 'Daily light integral (DLI) Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Daily light integral (DLI) — Formula & Results', 'description' => 'Enter light hours per day and Photon flux density (PPFD) and get Daily light integral (DLI) back. Every box can be solved for, not only the one in the title.', 'h1' => 'Daily light integral (DLI) Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'dli' => [

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Medullary Index Calculator',
-    'meta' => ['title' => 'Medullary Index Calculator — Formula & Results', 'description' => 'Medullary Index Calculator takes medulla diameter and returns medullary index. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Medullary Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Medullary Index Calculator — Formula & Results', 'description' => 'Medullary Index Calculator works out medullary index from medulla diameter and hair shaft diameter. Every box can be solved for, not only the one in the title.', 'h1' => 'Medullary Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
