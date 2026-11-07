@@ -356,6 +356,19 @@ foreach (Data::byCategory((string) $calc['cat']) as $peer) {
     }
 }
 
+/*
+ * The shelf under the reviews.
+ *
+ * Four file tools, the same four for every page in the category, never one this
+ * page already links to. It is the last block on the page and the only one that
+ * is not a calculator: a reader who came for one answer may well want a tool
+ * that does something the calculators cannot.
+ */
+$otherTools = \Onim\OtherTools::pick($calc, array_merge(
+    array_map(static fn ($c) => (string) $c['row']['path'], $relatedCards),
+    array_map(static fn ($c) => (string) $c['path'], $categoryPeers)
+));
+
 $crossCategory = [];
 foreach (Data::categories() as $cat) {
     if ($cat['slug'] === $calc['cat']) {
@@ -390,6 +403,7 @@ echo View::page('calculator', [
     'relatedCards' => $relatedCards,
     'categoryPeers' => $categoryPeers,
     'crossCategory' => $crossCategory,
+    'otherTools'   => $otherTools,
     /* engagement: real counters, real reviews */
     'likeCount' => $likeCount,
     'likedByVisitor' => $likedByVisitor,

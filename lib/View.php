@@ -358,9 +358,22 @@ final class View
      * linking a page to itself. Pass '' to disable link insertion (e.g. for FAQ
      * answers that already sit next to the full article).
      */
-    public static function rewriteArticleHtml(string $html, string $selfPath = '', int $budget = \Onim\InternalLinks::MAX_PER_PAGE): string
-    {
+    public static function rewriteArticleHtml(
+        string $html,
+        string $selfPath = '',
+        int $budget = \Onim\InternalLinks::MAX_PER_PAGE,
+        bool $keepSlots = false
+    ): string {
         $html = self::sanitize($html);
+        if ($keepSlots) {
+            /* A widget line is different from article prose: its {{x.value}}
+               slots are live in the browser, which fills them on every
+               keystroke. Stripping them here leaves "Recommended dosage: -
+               mg." on the page — half a sentence, no numbers. */
+            $html = self::rewriteImages($html);
+            $html = self::wrapTables($html);
+            return $html;
+        }
         // The reference's own interpolation slots occasionally survive in body
         // copy ("(_{{p)"), complete or truncated; neither can be filled here.
         $html = (string) preg_replace('~\{\{[^{}]{0,60}\}\}~u', '', $html);

@@ -306,7 +306,12 @@ final class Widget
                 $groups[] = array_map(
                     static fn (array $v): array => [
                         'condition' => $v['condition'] ?? null,
-                        'html' => View::rewriteArticleHtml((string) ($v['html'] ?? '')),
+                        'html' => View::rewriteArticleHtml(
+                            (string) ($v['html'] ?? ''),
+                            '',
+                            \Onim\InternalLinks::MAX_PER_PAGE,
+                            true            // keep {{x.value}} slots: they are live
+                        ),
                     ],
                     $variants
                 );
@@ -879,6 +884,16 @@ final class Widget
         foreach ($equations as $eq) {
             $formula = trim((string) ($eq['formula'] ?? ''));
             if (preg_match('/^([A-Za-z_][A-Za-z0-9_]*)\s*=/', $formula, $m) === 1) {
+                $out[$m[1]] = true;
+                continue;
+            }
+            /*
+             * Half the harvested equations are written with the subject on the
+             * right ("(chocolateType * amount)/weight = methyl"). Reading only
+             * the left-hand side left those answers in the form as blank boxes
+             * the visitor was invited to fill in.
+             */
+            if (preg_match('/=\s*([A-Za-z_][A-Za-z0-9_]*)\s*$/', $formula, $m) === 1) {
                 $out[$m[1]] = true;
             }
         }

@@ -241,12 +241,24 @@ final class CalcExample
                     }
                 }
             }
+            /*
+             * Two passes. The first seeds only the boxes the chosen equation
+             * reads, which gives the cleanest example; the second seeds every
+             * input box except the unknown, which is what a page needs when its
+             * equations have to be chained (area and time both fall out of
+             * width, speed, area and overlap, so seeding "just the inputs of
+             * one equation" leaves the other one unsolvable).
+             */
             $ramps = [[10, 100, 1000], [2, 4, 8], [100, 250, 50], [1, 10, 5]];
+            foreach (['needs', 'all'] as $mode) {
             foreach ($ramps as $ramp) {
                 $candidate = [];
                 $i = 0;
                 foreach ($names as $name) {
-                    if ($name === $unknown || !in_array($name, $needs, true)) {
+                    if ($name === $unknown) {
+                        continue;
+                    }
+                    if ($mode === 'needs' && !in_array($name, $needs, true)) {
                         continue;
                     }
                     $type = (string) ($calc['variables'][$name]['type'] ?? 'numerical');
@@ -267,7 +279,7 @@ final class CalcExample
                         : (float) $ramp[$i % count($ramp)];
                     $i++;
                 }
-                if ($needs !== [] && array_diff($needs, array_keys($candidate)) !== []) {
+                if ($mode === 'needs' && $needs !== [] && array_diff($needs, array_keys($candidate)) !== []) {
                     continue;                   // a box the formula reads was left blank
                 }
                 $solved = Solver::solve($calc, $candidate, $units);
@@ -282,6 +294,7 @@ final class CalcExample
                 if ($good) {
                     return $candidate;
                 }
+            }
             }
         }
 

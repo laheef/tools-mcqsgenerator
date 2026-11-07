@@ -1918,10 +1918,42 @@
     var sel = unitSelects[name];
     sel.addEventListener('change', function () {
       var inp = widget.querySelector('input[data-var="' + name + '"]');
+      var prev = inp ? (inp.getAttribute('data-unit') || '') : '';
       if (inp) inp.setAttribute('data-unit', sel.value);
-      // The typed number keeps its magnitude and takes on the new unit, which
-      // is how the server reads ?x=5&x_unit=m as well.
-      markEdited(name, inp ? inp.value : '');
+
+      /*
+       * A unit chip changes the units, never the quantity.
+       *
+       * It used to do the opposite: the digits stayed put and the unit changed
+       * underneath them, so 50 °C became 50 °F the moment the chip moved, and a
+       * result reading 210.1 °C kept reading 210.1 after being switched to °F.
+       * Both numbers were wrong, and the second one was wrong in the worst way
+       * — an answer that looks like an answer.
+       *
+       * So: a computed row is repainted from the base value the solver already
+       * holds (210.1 °C reads 410.2 °F), and a row the visitor typed into is
+       * re-expressed in the new unit (50 °C reads 122 °F) before the page is
+       * solved again. The same physical quantity, whichever chip is showing.
+       */
+      var inResults = !!(inp && inp.closest('[data-calc-results]'));
+      var key = inp ? (inp.getAttribute('data-unit-key') || '') : '';
+      if (inp && !edited[name] && (inResults || inp.hasAttribute('readonly'))) {
+        if (lastState) apply(lastState, null);
+        return;
+      }
+      if (inp && edited[name] && key !== '' && prev !== '' && prev !== sel.value) {
+        var parsed = parseNumber(inp.value);
+        if (parsed !== null) {
+          var r = roundingOf(name);
+          var shown = toDisplay(toBase(parsed, key, prev), key, sel.value);
+          var text = plainNumber(shown, r && r.precision, (r && r.algorithm) || 'omni',
+                                 inp.hasAttribute('readonly'));
+          /* Small enough to read, exact enough to keep: the number on screen is
+             the converted one, and the field is still the visitor's to edit. */
+          inp.value = text === '' ? String(shown) : text;
+          densityClass(inp);
+        }
+      }
       var wrap = inp ? inp.closest('.calc-input-wrap') : null;
       if (wrap) wrap.classList.remove('is-computed');
       if (noteEdit(inp)) return;

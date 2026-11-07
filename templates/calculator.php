@@ -104,7 +104,11 @@ foreach ($groups as $g) {
     foreach ($g['matrices'] as $m) {
         foreach ($m['columns'] as $col) {
             foreach ($col as $f) {
-                if (($f['kind'] ?? '') !== 'number') {
+                /* Date pickers and drop-downs are inputs too: a page of date
+                   pickers counted zero typeable inputs, so every result was
+                   pushed back into the form and the panel stayed empty. */
+                if (!in_array($f['kind'] ?? '', ['number', 'date', 'datetime', 'time', 'select',
+                                                'radio', 'checkbox', 'choice', 'textbox'], true)) {
                     continue;
                 }
                 if (empty($f['computed']) && empty($f['declaredOutput'])) {
@@ -159,7 +163,10 @@ foreach ($groups as $g) {
                  * paint, never in the form — an empty labelled box above the
                  * Calculate button that no one is meant to type into.
                  */
-                $isResultField = ($f['kind'] ?? '') === 'number'
+                /* A date the page works out (a due date, a hatch date) is a
+                   result like any other: it belongs in the panel, not in the
+                   form as a picker the visitor is invited to fill. */
+                $isResultField = in_array($f['kind'] ?? '', ['number', 'date', 'datetime', 'time'], true)
                     && (!empty($f['computed'])
                         || !empty($f['outputOnly'])
                         || (!empty($f['declaredOutput']) && !$outputsStayInForm));
@@ -554,6 +561,31 @@ $clientPayload = [
             </section>
 
             <?= \Onim\Ads::slot('calc_reviews_bottom', 'ad-slot--in-article') ?>
+
+            <?php if (!empty($otherTools)): ?>
+                <section class="related related--tools" aria-labelledby="other-tools-heading">
+                    <h2 id="other-tools-heading">Other tools you can try</h2>
+                    <p class="section-lede">
+                        These run in the browser on your own files and show their settings, the way every
+                        calculator here shows its working. Nothing you open in them is uploaded.
+                        <a href="<?= View::escape(View::url('/all-tools')) ?>">Browse all tools</a>.
+                    </p>
+                    <ul class="card-grid card-grid--tools">
+                        <?php foreach ($otherTools as $tool): ?>
+                            <li class="card-grid-item">
+                                <a class="calc-card calc-card--tool" href="<?= View::escape(View::url($tool['path'])) ?>">
+                                    <span class="calc-card-icon" aria-hidden="true"><?= $tool['svg'] ?></span>
+                                    <span class="calc-card-body">
+                                        <span class="calc-card-name"><?= View::escape($tool['name']) ?></span>
+                                        <span class="calc-card-desc"><?= View::escape(View::excerpt((string) $tool['description'], 96)) ?></span>
+                                        <span class="calc-card-reason"><?= View::escape($tool['groupName']) ?></span>
+                                    </span>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </section>
+            <?php endif; ?>
 
             <section class="cite" aria-labelledby="cite-heading">
                 <h2 id="cite-heading">Cite this calculator</h2>

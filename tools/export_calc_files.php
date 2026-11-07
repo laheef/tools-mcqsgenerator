@@ -577,6 +577,25 @@ foreach ($rows as $row) {
     }
 
     /*
+     * A unit chip is a promise that the same quantity gives the same answer
+     * whichever unit it is shown in. On three kinds of box it cannot keep that
+     * promise — see lib/UnitGuard.php — and those boxes lose the chip rather
+     * than keep a switch that changes the answer.
+     */
+    if ($rewrite) {
+        $built  = CalcFile::compile($def + ['meta' => []], $path);
+        $shaped = \Onim\Shape::fromRecord($built, null);
+        $bad    = \Onim\UnitGuard::audit($shaped, $units);
+        if ($bad !== []) {
+            $def = \Onim\UnitGuard::drop($def, array_keys($bad));
+            foreach ($bad as $var => $info) {
+                echo '  unit chip removed: ' . $slug . ' · ' . $info['label'] . ' — ' . $info['reason'] . "\n";
+            }
+            $written['chips'] = ($written['chips'] ?? 0) + count($bad);
+        }
+    }
+
+    /*
      * A page that came out of the boilerplate filter thin gets a worked example
      * computed from its own formulas — the one paragraph nobody else can copy,
      * because the numbers are this page's numbers.
@@ -678,7 +697,7 @@ foreach ($titles as $i => $title) {
  * tidied. The pages keep their own arithmetic, their own numbers and their own
  * labels; they lose the shared furniture.
  */
-if ($rewrite && count($pending) > 4) {
+if (!$rewrite && count($pending) > 4) {
     $pool = [];
     foreach ($pending as $item) {
         $pool[] = $item['def']['article'];
