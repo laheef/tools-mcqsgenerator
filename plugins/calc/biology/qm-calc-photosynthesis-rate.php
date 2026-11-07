@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Photosynthesis Rate Calculator',
-    'meta' => ['title' => 'Photosynthesis Rate Calculator — Formula & Results', 'description' => 'Photosynthesis rate is the carbon fixed per unit leaf area per unit time. It returns carbon fixed, rate, daily carbon gain at this rate and dry matter…', 'h1' => 'Photosynthesis Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Photosynthesis Rate Calculator — Formula & Results', 'description' => 'Enter Net assimilation rate, Leaf area and Measurement period into Photosynthesis Rate and the answer comes back as Carbon fixed and Rate.', 'h1' => 'Photosynthesis Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -89,48 +89,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Photosynthesis rate is the carbon fixed per unit leaf area per unit time. It returns carbon fixed, rate, daily carbon gain at this rate and dry matter equivalent per day, and the panel shows all of them at once.
-        
-        This calculator converts between the ways it is reported — µmol CO₂ per m² per second, mg CO₂ per dm² per hour and grams of dry matter — so measurements from a gas analyser can be compared with growth data.
+        Enter Net assimilation rate, Leaf area and Measurement period into Photosynthesis Rate and the answer comes back as Carbon fixed and Rate. Nothing is looked up on this page: Carbon fixed is computed from Net assimilation rate and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Carbon fixed is opened in µmol CO₂; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Photosynthesis Rate', 'html' => <<<'TXT'
-            <p>1 µmol CO₂/m²/s ≈ 1.584 mg CO₂/dm²/h</p>
-            <figure class="calc-figure"><img src="/uploads/biology/photosynthesis-rate.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Photosynthesis Rate Calculator — Leaf-level assimilation scaled to carbon and dry matter." title="Photosynthesis Rate Calculator"><figcaption>Leaf-level assimilation scaled to carbon and dry matter.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A</code></td><td>net assimilation rate</td><td>µmol CO₂/m²/s</td></tr><tr><td><code>44</code></td><td>molar mass of CO₂, g/mol</td><td>g/mol</td></tr><tr><td><code>12</code></td><td>molar mass of carbon</td><td>g/mol</td></tr></tbody></table>
+            ['title' => 'How the Photosynthesis Rate calculator works', 'html' => <<<'TXT'
+            <p>The Photosynthesis Rate calculator applies one relationship to 3 numbers and reports Carbon fixed, Rate and Daily carbon gain at this rate.</p><p>The relationship it solves reads Carbon fixed = Net assimilation rate × Leaf area × Measurement period × 60.</p><p>What comes back is Carbon fixed, Rate, Daily carbon gain at this rate and Dry matter equivalent per day — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Photosynthesis Rate?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Net assimilation rate</strong> — in µmol CO₂/m²/s</li><li><strong>Leaf area</strong> — in m²</li><li><strong>Measurement period</strong> — in min</li></ul><p>The result boxes are Carbon fixed in µmol CO₂, Rate in mg CO₂/dm²/h, Daily carbon gain at this rate in g C/m²/day, Dry matter equivalent per day in g/m²/day; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: net assimilation rate of <strong>12</strong> µmol CO₂/m²/s, leaf area of <strong>0.02</strong> m², measurement period of <strong>10</strong> min.</p>
-            <p>Substituting them into the formula gives carbon fixed of <strong>144</strong> µmol CO₂, rate of <strong>19.01</strong> mg CO₂/dm²/h, daily carbon gain at this rate of <strong>0.1493</strong> g C/m²/day, dry matter equivalent per day of <strong>0.3285</strong> g/m²/day.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Net assimilation rate = 12 µmol CO₂/m²/s, Leaf area = 0.02 m² and Measurement period = 10 min — through the same formula and the panel reports &lt;strong&gt;Carbon fixed&lt;/strong&gt; = 144 µmol CO₂, &lt;strong&gt;Rate&lt;/strong&gt; = 19.01 mg CO₂/dm²/h, &lt;strong&gt;Daily carbon gain at this rate&lt;/strong&gt; = 0.1493 g C/m²/day and &lt;strong&gt;Dry matter equivalent per day&lt;/strong&gt; = 0.3285 g/m²/day.</p><ul><li><strong>Carbon fixed</strong> = 144 µmol CO₂</li><li><strong>Rate</strong> = 19.01 mg CO₂/dm²/h</li><li><strong>Daily carbon gain at this rate</strong> = 0.1493 g C/m²/day</li><li><strong>Dry matter equivalent per day</strong> = 0.3285 g/m²/day</li></ul><p>The line behind those figures is <strong>Carbon fixed</strong> = <code>Net assimilation rate × Leaf area × Measurement period × 60</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Net assimilation is photosynthesis minus leaf respiration; gross photosynthesis is higher, and the difference is largest in shade leaves.</p></li><li><p>The 1.584 factor converts µmol CO₂ m⁻² s⁻¹ to mg CO₂ dm⁻² h⁻¹ and is worth remembering — it is 44 ÷ 1 000 × 36.</p></li><li><p>Extrapolating a leaf-level rate to a canopy overstates it, because lower leaves are shaded and older.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Carbon fixed&lt;/strong&gt; = 144, &lt;strong&gt;Rate&lt;/strong&gt; = 19.01, &lt;strong&gt;Daily carbon gain at this rate&lt;/strong&gt; = 0.1493 and &lt;strong&gt;Dry matter equivalent per day&lt;/strong&gt; = 0.3285. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Carbon fixed is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Comparing a net rate with a gross rate.</li><li>Extrapolating a mid-morning measurement across a whole day.</li><li>Using leaf area measured flat when the leaf was held at an angle.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Carbon fixed</strong> = <code>Net assimilation rate × Leaf area × Measurement period × 60</code></li><li><strong>Rate</strong> = <code>Net assimilation rate × 1.584</code></li><li><strong>Daily carbon gain at this rate</strong> = <code>Net assimilation rate × 0.012 × 86400 ÷ 1000000 × 12</code></li><li><strong>Dry matter equivalent per day</strong> = <code>Net assimilation rate × 0.012 × 86400 ÷ 1000000 × 12 × 2.2</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Carbon fixed, Rate and Daily carbon gain at this rate can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/net-primary-productivity">Net primary productivity</a>. <a href="/biology/transpiration-rate">Transpiration rate</a>. <a href="/biology/stomatal-density">Stomatal density</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Net assimilation rate, from 12 to 24 — and the answers go from &lt;strong&gt;Carbon fixed&lt;/strong&gt; 144 µmol CO₂, &lt;strong&gt;Rate&lt;/strong&gt; 19.01 mg CO₂/dm²/h, &lt;strong&gt;Daily carbon gain at this rate&lt;/strong&gt; 0.1493 g C/m²/day and &lt;strong&gt;Dry matter equivalent per day&lt;/strong&gt; 0.3285 g/m²/day to &lt;strong&gt;Carbon fixed&lt;/strong&gt; 288 µmol CO₂, &lt;strong&gt;Rate&lt;/strong&gt; 38.02 mg CO₂/dm²/h, &lt;strong&gt;Daily carbon gain at this rate&lt;/strong&gt; 0.2986 g C/m²/day and &lt;strong&gt;Dry matter equivalent per day&lt;/strong&gt; 0.6569 g/m²/day.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Carbon fixed, Rate and Daily carbon gain at this rate are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Net assimilation rate is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Net assimilation rate, Leaf area and Measurement period measured, Carbon fixed and Rate wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/watterson-estimator">Watterson Estimator Calculator</a>, <a href="/biology/western-blot-loading">Western Blot Protein Loading Calculator</a> and <a href="/biology/absorbance-transmittance">Absorbance to Transmittance Converter Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a typical photosynthesis rate?', 'a' => '10–25 µmol CO₂/m²/s for healthy C3 crop leaves in full sun; C4 grasses can exceed 40.'],
-            ['q' => 'Why is the rate lower at midday?', 'a' => 'Stomatal closure under high vapour pressure deficit and photorespiration both reduce it.'],
-            ['q' => 'What does the Photosynthesis Rate actually calculate?', 'a' => <<<'TXT'
-            It returns carbon fixed, rate, daily carbon gain at this rate and dry matter equivalent per day. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Photosynthesis Rate calculator work out?', 'a' => <<<'TXT'
+            Carbon fixed, Rate, Daily carbon gain at this rate and Dry matter equivalent per day, from Net assimilation rate, Leaf area and Measurement period. The relationship is Carbon fixed = Net assimilation rate × Leaf area × Measurement period × 60.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Net assimilation rate (µmol CO₂/m²/s), Leaf area (m²), Measurement period (min). Fill a, area and minutes and leave Carbon fixed empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Carbon fixed, Rate, Daily carbon gain at this rate and Dry matter equivalent per day can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Carbon fixed = 144 µmol CO₂, Rate = 19.01 mg CO₂/dm²/h, Daily carbon gain at this rate = 0.1493 g C/m²/day and Dry matter equivalent per day = 0.3285 g/m²/day. Those are the defaults written into the form — move Net assimilation rate and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Carbon fixed is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Net assimilation rate left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Carbon fixed at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/watterson-estimator', 'name' => 'Watterson Estimator Calculator'],
+            ['path' => '/biology/western-blot-loading', 'name' => 'Western Blot Protein Loading Calculator'],
+            ['path' => '/biology/absorbance-transmittance', 'name' => 'Absorbance to Transmittance Converter Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

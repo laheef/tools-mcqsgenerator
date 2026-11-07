@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell dilution',
-    'meta' => ['title' => 'Cell dilution Calculator — Formula & Results', 'description' => '<strong>volume for suspension</strong> is what the Cell dilution calculator works out, and it gets there from the initial concentration, the final…', 'h1' => 'Cell dilution Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Cell dilution Calculator — Formula & Results', 'description' => 'Cell dilution: Enter Initial concentration, Final concentration and Final volume into Cell dilution and the answer comes back as Volume for suspension.', 'h1' => 'Cell dilution Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => '',
@@ -80,68 +80,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        <strong>volume for suspension</strong> is what the Cell dilution calculator works out, and it gets there from the initial concentration, the final concentration and the final volume.
+        Enter Initial concentration, Final concentration and Final volume into Cell dilution and the answer comes back as Volume for suspension. Nothing is looked up on this page: Volume for suspension is computed from Initial concentration and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Volume for suspension is opened in milliliters; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'How does the Cell dilution calculator work?', 'html' => <<<'TXT'
-            <p>The Cell dilution calculator takes the values in the form, applies the relationship described below and reports <strong>volume for suspension</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the initial concentration, the final concentration and the final volume.</p>
+            ['title' => 'How the Cell dilution calculator works', 'html' => <<<'TXT'
+            <p>The Cell dilution calculator applies one relationship to 3 numbers and reports Volume for suspension.</p><p>In the form&#039;s own words, Volume for suspension = Final concentration × Final volume ÷ Initial concentration.</p><p>The result panel carries Volume for suspension, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Initial concentration</strong> — in milliliters</li><li><strong>Final concentration</strong> — in milliliters</li><li><strong>Final volume</strong> — in milliliters</li></ul><p>The result box is Volume for suspension in milliliters. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Initial concentration</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>Volume for suspension</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Final concentration</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>Final volume</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Initial concentration = 10 ml, Final concentration = 100 ml and Final volume = 1000 ml; the answers are &lt;strong&gt;Volume for suspension&lt;/strong&gt; = 10000 ml.</p><ul><li><strong>Volume for suspension</strong> = 10000 ml</li></ul><p>That is <strong>Volume for suspension</strong> = <code>Final concentration × Final volume ÷ Initial concentration</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'The formula behind the Cell dilution calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Volume for suspension</span><span class="formula-eq">=</span><span class="formula-rhs">final concentration × final volume ÷ initial concentration</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Volume for suspension&lt;/strong&gt; = 10000. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Volume for suspension lists 40 options and opens on milliliters. </p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Suppose <strong>Initial concentration</strong> = 10 mL, <strong>Final concentration</strong> = 10 mL and <strong>Final volume</strong> = 10 mL. Working through the relationship above gives <strong>Volume for suspension</strong> = 10 mL.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Volume for suspension</strong> = 10 mL should be roughly the size you expected from <strong>Initial concentration</strong> = 10 mL and <strong>Final concentration</strong> = 10 mL.</li></ol>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Volume for suspension</strong> = <code>Final concentration × Final volume ÷ Initial concentration</code></li><li><strong>Initial concentration</strong> = <code>Final concentration × Final volume ÷ Volume for suspension</code></li><li><strong>Final volume</strong> = <code>Initial concentration × Volume for suspension ÷ Final concentration</code></li><li><strong>Final concentration</strong> = <code>Initial concentration × Volume for suspension ÷ Final volume</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Volume for suspension, Initial concentration and Final volume can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Initial concentration, from 10 to 20 — and the answers go from &lt;strong&gt;Volume for suspension&lt;/strong&gt; 10000 ml to &lt;strong&gt;Volume for suspension&lt;/strong&gt; 5000 ml.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Initial concentration, Final concentration and Final volume carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Volume for suspension is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Initial concentration and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cell dilution calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 3 figures keep coming back — the initial concentration, the final concentration and the final volume — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Cell dilution calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cell-doubling-time">Cell doubling time</a>, <a href="/biology/cephalexin-for-cats-dosage">Cephalexin for cats dosage</a> and <a href="/biology/cephalexin-for-dogs-dosage">Cephalexin for dogs dosage</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Initial concentration, Final concentration and Final volume and the number you are missing is Volume for suspension.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/medullary-index">Medullary Index Calculator</a>, <a href="/biology/metacam-dosage-cat">Metacam dosage for cats</a> and <a href="/biology/mic-zone-of-inhibition">MIC and Zone of Inhibition Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Cell dilution calculator work out?', 'a' => <<<'TXT'
-            It returns volume for suspension, derived from the initial concentration, the final concentration and the final volume. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Volume for suspension, from Final concentration, Final volume and Initial concentration. The relationship is Volume for suspension = Final concentration × Final volume ÷ Initial concentration.
             TXT],
-            ['q' => 'What do I need to enter to use the Cell dilution calculator?', 'a' => <<<'TXT'
-            The form asks for the initial concentration, the final concentration and the final volume, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Initial concentration (milliliters), Final concentration (milliliters), Final volume (milliliters). Fill concentrationInitial, concentrationFinal and volumeFinal and leave Volume for suspension empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I enter initial concentration in a different unit?', 'a' => <<<'TXT'
-            Yes. Initial concentration opens in milliliters and the chip beside it offers 40 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Volume for suspension, Initial concentration, Final volume and Final concentration can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'What answer do the default values give?', 'a' => 'Volume for suspension = 10000 ml. That comes from the page\'s own defaults, entered in Initial concentration; change one of them and the whole set is recomputed.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Volume for suspension is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Initial concentration left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Volume for suspension = 10 mL. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Cell dilution calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Volume for suspension keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/cell-doubling-time', 'name' => 'Cell doubling time'],
-            ['path' => '/biology/cephalexin-for-cats-dosage', 'name' => 'Cephalexin for cats dosage'],
-            ['path' => '/biology/cephalexin-for-dogs-dosage', 'name' => 'Cephalexin for dogs dosage'],
+            ['path' => '/biology/medullary-index', 'name' => 'Medullary Index Calculator'],
+            ['path' => '/biology/metacam-dosage-cat', 'name' => 'Metacam dosage for cats'],
+            ['path' => '/biology/mic-zone-of-inhibition', 'name' => 'MIC and Zone of Inhibition Calculator'],
         ],
+        'authors' => [],
     ],
 ];

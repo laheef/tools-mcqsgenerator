@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Cat calorie',
-    'meta' => ['title' => 'Cat calorie Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    The Cat calorie calculator returns <strong>weight</strong> from the 2 fields on the form. The Cat calorie calculator takes the values in the form, applies the…
-    TXT, 'h1' => 'Cat calorie Calculator', 'updated' => '2026-07-23'],
+    'meta' => ['title' => 'Cat calorie Calculator: Formula, Steps & Examples', 'description' => 'Enter Weight, Condition and Resting energy into Cat calorie and the answer comes back as Maintenance coefficient. The energy required to perform basic bodily…', 'h1' => 'Cat calorie Calculator', 'updated' => '2026-07-23'],
     'sections' => [
         [
             'title' => '',
@@ -116,63 +114,46 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'The Cat calorie calculator returns <strong>weight</strong> from the 2 fields on the form.',
+        'intro' => <<<'TXT'
+        Enter Weight, Condition and Resting energy into Cat calorie and the answer comes back as Maintenance coefficient. There is no hidden constant here: change Maintenance coefficient and Weight moves with it.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Cat calorie calculator work?', 'html' => <<<'TXT'
-            <p>The Cat calorie calculator takes the values in the form, applies the relationship described below and reports <strong>weight</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the condition); then you type in the maintenance energy.</p>
+            ['title' => 'How the Cat calorie calculator works', 'html' => <<<'TXT'
+            <p>The Cat calorie calculator applies one relationship to 4 numbers and reports Maintenance coefficient.</p><p>Written with the labels from the form, Weight = (1 ÷ 4900) × (70)^(2 ÷ 3) × (Resting energy)^(4 ÷ 3).</p><p>The answers are Maintenance coefficient; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 7 options, such as neutered adult, non-neutered adult and weight loss. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilocalories. The unit chip switches it to any of the 33 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Weight</strong> — in kilograms</li><li><strong>Condition</strong> — a plain number, no unit</li><li><strong>Resting energy</strong> — in kilocalories. The energy required to perform basic bodily functions, such as digestion, respiration, heart and brain functions.</li><li><strong>Maintenance energy</strong> — in kilocalories. The total number of calories required on a daily basis.&amp;nbsp;</li></ul><p>The result box is Maintenance coefficient. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Condition</strong></td><td>One of 7 options, such as neutered adult, non-neutered adult and weight loss.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Resting energy</strong></td><td>A measured quantity, 33 units available.</td><td>kilocalories</td><td>Calculated</td></tr><tr><td><strong>Maintenance energy</strong></td><td>A measured quantity, 33 units available.</td><td>kilocalories</td><td>You supply it</td></tr><tr><td><strong>Maintenance coefficient</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Weight</strong> = <code>(1 ÷ 4900) × (70)^(2 ÷ 3) × (Resting energy)^(4 ÷ 3)</code></li><li><strong>Resting energy</strong> = <code>70 × (Weight)^(3 ÷ 4)</code></li><li><strong>Maintenance coefficient</strong> = <code>Maintenance energy ÷ Resting energy</code></li><li><strong>Maintenance energy</strong> = <code>Maintenance coefficient × Resting energy</code></li></ul><p>Any one of Weight, Resting energy and Maintenance coefficient can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Cat calorie calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Weight</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 4900) × (70 ^ 2 ÷ 3) × (resting energy ^ 4 ÷ 3)</span></div><div class="formula-row"><span class="formula-lhs">Resting energy</span><span class="formula-eq">=</span><span class="formula-rhs">maintenance energy ÷ maintenance coefficient</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Weight, Resting energy and Maintenance energy carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Maintenance coefficient is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Weight is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Energy, opening in kilocalories</li><li>Energy, opening in kilocalories</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cat calorie calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 1 figures keep coming back — the maintenance energy — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cat-chocolate-toxicity">Cat chocolate toxicity</a>, <a href="/biology/cat-pregnancy">Cat pregnancy</a> and <a href="/biology/cat-quality-of-life">Cat quality of life</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Weight, Condition and Resting energy and the number you are missing is Maintenance coefficient.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dna-percentage">DNA Percentage Calculator</a>, <a href="/biology/sequence-shuffler">DNA Sequence Shuffler Calculator</a> and <a href="/biology/dna-to-mrna">DNA to mRNA</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Cat calorie calculator work out?', 'a' => <<<'TXT'
-            It returns weight, derived from the maintenance energy. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Weight (kilograms), Condition, Resting energy (kilocalories), Maintenance energy (kilocalories). Fill weight, condition and resting_energy and leave Maintenance coefficient empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'What do I need to enter to use the Cat calorie calculator?', 'a' => <<<'TXT'
-            The form asks for the maintenance energy, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Weight, Resting energy, Maintenance coefficient and Maintenance energy blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I enter weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Maintenance coefficient is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Weight left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Maintenance coefficient = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Cat calorie calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Maintenance coefficient keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/cat-chocolate-toxicity', 'name' => 'Cat chocolate toxicity'],
-            ['path' => '/biology/cat-pregnancy', 'name' => 'Cat pregnancy'],
-            ['path' => '/biology/cat-quality-of-life', 'name' => 'Cat quality of life'],
+            ['path' => '/biology/dna-percentage', 'name' => 'DNA Percentage Calculator'],
+            ['path' => '/biology/sequence-shuffler', 'name' => 'DNA Sequence Shuffler Calculator'],
+            ['path' => '/biology/dna-to-mrna', 'name' => 'DNA to mRNA'],
         ],
+        'authors' => [],
     ],
 ];

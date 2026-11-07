@@ -11,7 +11,7 @@
 
 return [
     'name' => 'GDU (growing degree units)',
-    'meta' => ['title' => 'GDU (growing degree units) — Formula & Results', 'description' => 'Give the GDU (growing degree units) calculator the maximum growing temperature for crop and the base temperature and it returns <strong>growing degree units…', 'h1' => 'GDU (growing degree units) Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'GDU (growing degree units) — Formula & Results', 'description' => 'GDU (growing degree units) takes Maximum growing temperature for crop, Base temperature and Daily maximum temperature and returns Growing degree units (GDU)…', 'h1' => 'GDU (growing degree units) Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'base_temp' => [
@@ -290,64 +290,55 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Give the GDU (growing degree units) calculator the maximum growing temperature for crop and the base temperature and it returns <strong>growing degree units (GDU)</strong>.
+        GDU (growing degree units) takes Maximum growing temperature for crop, Base temperature and Daily maximum temperature and returns Growing degree units (GDU) and Growing degree units (GDU). It is a single relationship that reads Growing degree units (GDU) out of Maximum growing temperature for crop, not a table of canned results keyed by them. Units for Growing degree units (GDU) default to Celsius and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'How does the GDU (growing degree units) calculator work?', 'html' => <<<'TXT'
-            <p>The GDU (growing degree units) calculator takes the values in the form, applies the relationship described below and reports <strong>growing degree units (GDU)</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (which temperature unit will you be using?); then you type in the maximum growing temperature for crop, the base temperature, the daily maximum temperature and the daily minimum temperature.</p>
+            ['title' => 'How the GDU (growing degree units) calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind GDU (growing degree units): it takes 4 numbers and reports Growing degree units (GDU) and Growing degree units (GDU).</p><p>The relationship it solves reads Growing degree units (GDU) = − Base temperature + (1 ÷ 2) × max(Base temperature, Daily minimum temperature) + (1 ÷ 2) × min(Maximum growing temperature for crop, Daily maximum temperature).</p><p>The answers are Growing degree units (GDU) and Growing degree units (GDU); they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 2 options, such as celsius and fahrenheit. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in Celsius. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in Fahrenheit. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in Fahrenheit. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in Fahrenheit. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in Fahrenheit. The unit chip switches it to any of the 28 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Maximum growing temperature for crop</strong> — in Celsius</li><li><strong>Base temperature</strong> — in Celsius. Minimum growing temperature for crop.</li><li><strong>Daily maximum temperature</strong> — in Celsius</li><li><strong>Daily minimum temperature</strong> — in Celsius</li></ul><p>What you get back is Growing degree units (GDU) in Celsius, Growing degree units (GDU) in Fahrenheit, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Which temperature unit will you be using?</strong></td><td>One of 2 options, such as celsius and fahrenheit.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Maximum growing temperature for crop</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Base temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Daily maximum temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Daily minimum temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>You supply it</td></tr><tr><td><strong>Growing degree units (GDU)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Maximum growing temperature for crop (2)</strong></td><td>A measured quantity, 28 units available.</td><td>Fahrenheit</td><td>You supply it</td></tr><tr><td><strong>Base temperature (2)</strong></td><td>A measured quantity, 28 units available.</td><td>Fahrenheit</td><td>You supply it</td></tr><tr><td><strong>Daily maximum temperature (2)</strong></td><td>A measured quantity, 28 units available.</td><td>Fahrenheit</td><td>You supply it</td></tr><tr><td><strong>Daily minimum temperature (2)</strong></td><td>A measured quantity, 28 units available.</td><td>Fahrenheit</td><td>You supply it</td></tr><tr><td><strong>Growing degree units (GDU) (2)</strong></td><td>A measured quantity, 28 units available.</td><td>Fahrenheit</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Which temperature unit will you be using? = 0, Maximum growing temperature for crop = 30 C, Base temperature = 10 C, Daily maximum temperature = 5 C, Daily minimum temperature = 6 C, Maximum growing temperature for crop = 86 F, Base temperature = 50 F, Daily maximum temperature = 9 F and Daily minimum temperature = 10 F; the answers are &lt;strong&gt;Growing degree units (GDU)&lt;/strong&gt; = -2.5 C and &lt;strong&gt;Growing degree units (GDU)&lt;/strong&gt; = -20.5 F.</p><ul><li><strong>Growing degree units (GDU)</strong> = -2.5 C</li><li><strong>Growing degree units (GDU)</strong> = -20.5 F</li></ul><p>That is <strong>Growing degree units (GDU)</strong> = <code>− Base temperature + (1 ÷ 2) × max(Base temperature, Daily minimum temperature) + (1 ÷ 2) × min(Maximum growing temperature for crop, Daily maximum temperature)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'The formula behind the GDU (growing degree units) calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Growing degree units (GDU)</span><span class="formula-eq">=</span><span class="formula-rhs">-base temperature + (1 ÷ 2) × the larger of (base temperature, daily minimum temperature) + (1 ÷ 2) × the smaller of (maximum growing temperature for crop, daily maximum temperature)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Growing degree units (GDU)&lt;/strong&gt; = -2.5 and &lt;strong&gt;Growing degree units (GDU)&lt;/strong&gt; = -20.5 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Growing degree units (GDU) offers 28 units and opens on Celsius, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Fahrenheit, and convertible to any of the 28 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Growing degree units (GDU)</strong> = <code>− Base temperature + (1 ÷ 2) × max(Base temperature, Daily minimum temperature) + (1 ÷ 2) × min(Maximum growing temperature for crop, Daily maximum temperature)</code></li></ul><p>Any one of Growing degree units (GDU) and Growing degree units (GDU) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Fahrenheit</li><li>Temperature, opening in Fahrenheit</li><li>Temperature, opening in Fahrenheit</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Maximum growing temperature for crop, Base temperature and Daily maximum temperature is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Growing degree units (GDU) and Growing degree units (GDU) are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Maximum growing temperature for crop to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The GDU (growing degree units) calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 2 figures keep coming back — the maximum growing temperature for crop and the base temperature — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. </li><li>Round only at the end. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/goat-gestation">Goat gestation</a>, <a href="/biology/grain-bin">Grain bin</a> and <a href="/biology/grain-conversion">Grain conversion</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Maximum growing temperature for crop, Base temperature and Daily maximum temperature is what you already know and Growing degree units (GDU) and Growing degree units (GDU) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/tajimas-d">Tajima&#039;s D Calculator</a>, <a href="/biology/tff-membrane-area">TFF Membrane Area and Flux Calculator</a> and <a href="/biology/thousand-seed-weight">Thousand Seed Weight Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the GDU (growing degree units) calculator work out?', 'a' => <<<'TXT'
-            It returns growing degree units (GDU), derived from the maximum growing temperature for crop and the base temperature. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Growing degree units (GDU) and Growing degree units (GDU), from Base temperature, Maximum growing temperature for crop, Daily maximum temperature and Daily minimum temperature. The relationship is Growing degree units (GDU) = − Base temperature + (1 ÷ 2) × max(Base temperature, Daily minimum temperature) + (1 ÷ 2) × min(Maximum growing temperature for crop, Daily maximum temperature).
             TXT],
-            ['q' => 'What do I need to enter to use the GDU (growing degree units) calculator?', 'a' => <<<'TXT'
-            The form asks for the maximum growing temperature for crop and the base temperature, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Maximum growing temperature for crop (Celsius), Base temperature (Celsius), Daily maximum temperature (Celsius), Daily minimum temperature (Celsius). Fill max_crop_temp, base_temp and max_temp and leave Growing degree units (GDU) empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I enter maximum growing temperature for crop in a different unit?', 'a' => <<<'TXT'
-            Yes. Maximum growing temperature for crop opens in Celsius and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Growing degree units (GDU) and Growing degree units (GDU) blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Growing degree units (GDU) = -2.5 C and Growing degree units (GDU) = -20.5 F. The figures come from Maximum growing temperature for crop as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Is the GDU (growing degree units) calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Growing degree units (GDU) is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave Maximum growing temperature for crop blank and the page solves for it, reporting Growing degree units (GDU) instead of the usual answer.
             TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Growing degree units (GDU) keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/goat-gestation', 'name' => 'Goat gestation'],
-            ['path' => '/biology/grain-bin', 'name' => 'Grain bin'],
-            ['path' => '/biology/grain-conversion', 'name' => 'Grain conversion'],
+            ['path' => '/biology/tajimas-d', 'name' => 'Tajima\'s D Calculator'],
+            ['path' => '/biology/tff-membrane-area', 'name' => 'TFF Membrane Area and Flux Calculator'],
+            ['path' => '/biology/thousand-seed-weight', 'name' => 'Thousand Seed Weight Calculator'],
         ],
+        'authors' => [],
     ],
 ];

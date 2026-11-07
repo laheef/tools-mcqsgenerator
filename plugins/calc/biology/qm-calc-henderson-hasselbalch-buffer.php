@@ -12,7 +12,7 @@
 return [
     'name' => 'Buffer pH Calculator (Henderson–Hasselbalch)',
     'meta' => ['title' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'description' => <<<'TXT'
-    The pH of a buffer depends on the ratio of its conjugate base to its acid, not on how concentrated it is: pH = pKa + log₁₀([A⁻]/[HA]). It returns base ÷ acid…
+    The pH of a buffer depends on the ratio of its conjugate base to its acid, not on how concentrated it is: pH = pKa + log₁₀([A⁻]/[HA]). Free buffer ph (henders
     TXT, 'h1' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'updated' => '2026-10-29'],
     'sections' => [
         [
@@ -111,44 +111,47 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The pH of a buffer depends on the ratio of its conjugate base to its acid, not on how concentrated it is: pH = pKa + log₁₀([A⁻]/[HA]). It returns base ÷ acid ratio, target pH, pH − pKa and acid share, and the panel shows all of them at once.
-        
-        This calculator gives the ratio for a target pH, the pH for a ratio you already have, and the ionic strength the mixture contributes.
+        Buffer pH Calculator (Henderson–Hasselbalch) turns pKa of the buffer, Target pH and Total buffer concentration into Base ÷ acid ratio and Acid share. Nothing is looked up on this page: Base ÷ acid ratio is computed from pKa of the buffer and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Buffer pH (Henderson–Hasselbalch)', 'html' => <<<'TXT'
-            <p>pH = pKa + log₁₀([A⁻] ÷ [HA]). Base share = 10^(pH−pKa) ÷ (1 + 10^(pH−pKa)) × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/henderson-hasselbalch-buffer.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Buffer pH Calculator (Henderson–Hasselbalch) — Base share against pH around the pKa" title="Buffer pH Calculator (Henderson–Hasselbalch)"><figcaption>Base share against pH around the pKa</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>pKa</code></td><td>negative log of the acid dissociation constant</td><td>—</td></tr><tr><td><code>[A⁻]</code></td><td>concentration of the deprotonated form</td><td>M</td></tr><tr><td><code>[HA]</code></td><td>concentration of the protonated form</td><td>M</td></tr></tbody></table>
+            ['title' => 'How the Buffer pH Calculator (Henderson–Hasselbalch) calculator works', 'html' => <<<'TXT'
+            <p>The Buffer pH Calculator (Henderson–Hasselbalch) calculator applies one relationship to 3 numbers and reports Base ÷ acid ratio, Acid share and Base share.</p><p>Written with the labels from the form, Base ÷ acid ratio = 10 ^ (Target pH − pKa of the buffer).</p><p>The answers are Base ÷ acid ratio, Acid share, Base share and pH − pKa; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Buffer pH (Henderson–Hasselbalch)?', 'html' => <<<'TXT'
-            <ol><li>Enter the pKa of the buffer you are making (phosphate 7.2, HEPES 7.55, Tris 8.06).</li><li>Enter the pH you need. The ratio and the share of each form follow.</li><li>If you know the total concentration, the amount of acid and base form is filled in too.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>pKa of the buffer</strong> — a plain number, no unit. Phosphate 7.2, Tris 8.06, HEPES 7.55 at 25 °C</li><li><strong>Target pH</strong> — in pH</li><li><strong>Total buffer concentration</strong> — in mM. Optional</li></ul><p>The answers come back as Base ÷ acid ratio, Acid share in %, Base share in %, pH − pKa in pH, Concentration of the acid form in mM, Concentration of the base form in mM. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: pka of the buffer of <strong>7.2</strong>, total buffer concentration of <strong>50</strong> mM.</p>
-            <p>Substituting them into the formula gives base ÷ acid ratio of <strong>1.58</strong>, target ph of <strong>7.4</strong> pH, ph − pka of <strong>0.2</strong> pH, acid share of <strong>38.69</strong>%, base share of <strong>61.31</strong>%, concentration of the acid form of <strong>19.34</strong> mM, concentration of the base form of <strong>30.66</strong> mM.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Base ÷ acid ratio takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>pH = pKa</td><td><strong>50 / 50</strong></td><td>maximum buffer capacity, minimum pH drift on dilution</td></tr><tr><td>within ±1 of pKa</td><td><strong>Useful buffer</strong></td><td>capacity is still good</td></tr><tr><td>more than 1 unit away</td><td><strong>Poor buffer</strong></td><td>almost all of it is one form; pick another buffer</td></tr></tbody></table>
-            <ul><li><p>Buffer capacity is highest at pH = pKa, where the two forms are equal. A buffer is only worth using within about one pH unit of its pKa.</p></li><li><p>pKa depends on temperature: Tris drops about 0.03 pH units per °C, which is why a Tris buffer made at 25 °C reads about 7.8 in a cold room at 4 °C.</p></li><li><p>This equation ignores activity coefficients. At 100 mM and above, real pH drifts by a few tenths from the calculated value — measure it.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Base ÷ acid ratio</strong> = <code>10 ^ (Target pH − pKa of the buffer)</code></li><li><strong>Target pH</strong> = <code>pKa of the buffer + log₁₀(Base ÷ acid ratio)</code></li><li><strong>pH − pKa</strong> = <code>Target pH − pKa of the buffer</code></li><li><strong>Acid share</strong> = <code>100 ÷ (1 + 10 ^ (Target pH − pKa of the buffer))</code></li><li><strong>Base share</strong> = <code>100 × 10 ^ (Target pH − pKa of the buffer) ÷ (1 + 10 ^ (Target pH − pKa of the buffer))</code></li><li><strong>Concentration of the acid form</strong> = <code>Total buffer concentration ÷ (1 + 10 ^ (Target pH − pKa of the buffer))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Base ÷ acid ratio, Target pH and pH − pKa can be the unknown.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Confusing the ratio of the two forms with the ratio of stock volumes — a 1 M stock of each is the only case where they are the same.</li><li>Making a buffer at a pH far from the pKa and expecting it to hold.</li><li>Forgetting that adding HCl or NaOH changes the volume and therefore the final concentration.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Base ÷ acid ratio, Acid share and Base share are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert pKa of the buffer to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when pKa of the buffer, Target pH and Total buffer concentration is what you already know and Base ÷ acid ratio and Acid share is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/restriction-enzyme-finder">Restriction Enzyme Finder Calculator</a>, <a href="/biology/reverse-complement">Reverse Complement Calculator</a> and <a href="/biology/reverse-translate">Reverse Translate Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What ratio gives pH = pKa?', 'a' => 'Exactly 1:1 of base to acid.'],
-            ['q' => 'How much can I dilute a buffer before the pH changes?', 'a' => 'Dilution does not change the ratio, so pH holds; capacity falls, which matters once you add acid or base.'],
-            ['q' => 'Why is my measured pH different from the calculation?', 'a' => 'Temperature, ionic strength and activity coefficients all shift it; calibrate at the temperature you will use.'],
-            ['q' => 'What does the Buffer pH (Henderson–Hasselbalch) actually calculate?', 'a' => 'It returns base ÷ acid ratio, target pH, pH − pKa and acid share. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Buffer pH Calculator (Henderson–Hasselbalch) calculator work out?', 'a' => <<<'TXT'
+            Base ÷ acid ratio, Acid share, Base share and pH − pKa, from Target pH and pKa of the buffer. The relationship is Base ÷ acid ratio = 10 ^ (Target pH − pKa of the buffer).
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            pKa of the buffer, Target pH (pH), Total buffer concentration (mM). Fill pka, ph and total_mm and leave Base ÷ acid ratio empty if you would rather have that one solved instead.
             TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Base ÷ acid ratio, Target pH, pH − pKa and Acid share can each be the answer: the page works out which box is empty and rearranges the relationship for it.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Base ÷ acid ratio is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave pKa of the buffer blank and the page solves for it, reporting Base ÷ acid ratio instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Base ÷ acid ratio keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/restriction-enzyme-finder', 'name' => 'Restriction Enzyme Finder Calculator'],
+            ['path' => '/biology/reverse-complement', 'name' => 'Reverse Complement Calculator'],
+            ['path' => '/biology/reverse-translate', 'name' => 'Reverse Translate Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

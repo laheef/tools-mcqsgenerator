@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Pine straw',
-    'meta' => ['title' => 'Pine straw Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    The Pine straw calculator turns the length, the width and number of bales needed into <strong>area</strong>. The Pine straw calculator takes the values in the…
-    TXT, 'h1' => 'Pine straw Calculator', 'updated' => '2026-06-02'],
+    'meta' => ['title' => 'Pine straw Calculator: Formula, Steps & Examples', 'description' => 'Enter Length and Width into Pine straw and the answer comes back as Area and Number of bales needed. The arithmetic is the whole method: Area is worked out…', 'h1' => 'Pine straw Calculator', 'updated' => '2026-06-02'],
     'sections' => [
         [
             'title' => '',
@@ -107,67 +105,41 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'The Pine straw calculator turns the length, the width and number of bales needed into <strong>area</strong>.',
+        'intro' => <<<'TXT'
+        Enter Length and Width into Pine straw and the answer comes back as Area and Number of bales needed. The arithmetic is the whole method: Area is worked out from Length by one formula, applied once. Area comes back in square feet unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Pine straw calculator work?', 'html' => <<<'TXT'
-            <p>The Pine straw calculator takes the values in the form, applies the relationship described below and reports <strong>area</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the length, the width and number of bales needed.</p>
+            ['title' => 'How the Pine straw calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Pine straw: it takes 2 numbers and reports Area, Number of bales needed and Number of bales.</p><p>In the form&#039;s own words, Area = Length × Width.</p><p>The result panel carries Area, Number of bales needed and Number of bales, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A measured quantity, entered by default in feet. The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in feet. The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Length</strong> — in feet</li><li><strong>Width</strong> — in feet</li></ul><p>What you get back is Area in square feet, Number of bales needed, Number of bales, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>feet</td><td>You supply it</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>feet</td><td>You supply it</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square feet</td><td>Calculated</td></tr><tr><td><strong>Number of bales needed</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of bales</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Area</strong> = <code>Length × Width</code></li><li><strong>Length</strong> = <code>Area ÷ Width</code></li><li><strong>Width</strong> = <code>Area ÷ Length</code></li><li><strong>Number of bales</strong> = <code>Area ÷ Number of bales needed</code></li><li><strong>Number of bales needed</strong> = <code>Area ÷ Number of bales</code></li></ul><p>Any one of Area, Length and Width can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Pine straw calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Area</span><span class="formula-eq">=</span><span class="formula-rhs">length × width</span></div><div class="formula-row"><span class="formula-lhs">Area</span><span class="formula-eq">=</span><span class="formula-rhs">number of bales × number of bales needed</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Length and Width carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Area, Number of bales needed and Number of bales are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Length and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in square feet, and convertible to any of the 24 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in feet</li><li>Length, opening in feet</li><li>Area, opening in square feet</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Pine straw calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 3 figures keep coming back — the length, the width and number of bales needed — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Pine straw calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — length for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/plant-population">Plant population</a>, <a href="/biology/plants">Plant spacing</a> and <a href="/biology/potting-soil-calculator">Potting soil</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Length and Width measured, Area and Number of bales needed wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/pcr-master-mix-calculator">PCR Master Mix Calculator</a>, <a href="/biology/pcr-primer-stats">PCR Primer Stats Calculator</a> and <a href="/biology/pedigree-probability">Pedigree Probability Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Pine straw calculator work out?', 'a' => <<<'TXT'
-            It returns area, derived from the length, the width and number of bales needed. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Pine straw calculator work out?', 'a' => 'Area, Number of bales needed and Number of bales, from Length and Width. The relationship is Area = Length × Width.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Length (feet), Width (feet). With length and width in place, Area can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Area, Length, Width and Number of bales blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Area is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'What do I need to enter to use the Pine straw calculator?', 'a' => <<<'TXT'
-            The form asks for the length, the width and number of bales needed, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter length in a different unit?', 'a' => <<<'TXT'
-            Yes. Length opens in feet and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the Pine straw calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Length blank and the page solves for it, reporting Area instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Area keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/plant-population', 'name' => 'Plant population'],
-            ['path' => '/biology/plants', 'name' => 'Plant spacing'],
-            ['path' => '/biology/potting-soil-calculator', 'name' => 'Potting soil'],
+            ['path' => '/biology/pcr-master-mix-calculator', 'name' => 'PCR Master Mix Calculator'],
+            ['path' => '/biology/pcr-primer-stats', 'name' => 'PCR Primer Stats Calculator'],
+            ['path' => '/biology/pedigree-probability', 'name' => 'Pedigree Probability Calculator'],
         ],
+        'authors' => [],
     ],
 ];

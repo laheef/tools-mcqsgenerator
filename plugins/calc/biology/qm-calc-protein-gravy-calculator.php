@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Protein GRAVY (Hydropathy) Calculator',
-    'meta' => ['title' => 'Protein GRAVY (Hydropathy) Calculator — Biology', 'description' => <<<'TXT'
-    GRAVY — grand average of hydropathicity — is the mean Kyte–Doolittle hydropathy of a protein's residues. It returns GRAVY and hydrophobic fraction, and the…
-    TXT, 'h1' => 'Protein GRAVY (Hydropathy) Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Protein GRAVY (Hydropathy) Calculator — Biology', 'description' => 'Protein GRAVY (Hydropathy) turns Hydrophobic residues (A V I L M F W Y), Neutral residues (G P S T C N Q) and Hydrophilic residues (D E K R H) into GRAVY and…', 'h1' => 'Protein GRAVY (Hydropathy) Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -79,45 +77,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        GRAVY — grand average of hydropathicity — is the mean Kyte–Doolittle hydropathy of a protein's residues. It returns GRAVY and hydrophobic fraction, and the panel shows all of them at once.
-        
-        Positive values mean the protein is hydrophobic, negative means hydrophilic, and the number is a quick read on solubility. This calculator computes it from residue counts.
+        Protein GRAVY (Hydropathy) turns Hydrophobic residues (A V I L M F W Y), Neutral residues (G P S T C N Q) and Hydrophilic residues (D E K R H) into GRAVY and Hydrophobic fraction. There is no hidden constant here: change GRAVY and Hydrophobic residues (A V I L M F W Y) moves with it.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Protein GRAVY (Hydropathy)', 'html' => <<<'TXT'
-            <p>GRAVY = Σ (hydropathy value of each residue) ÷ number of residues</p>
-            <figure class="calc-figure"><img src="/uploads/biology/protein-gravy-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Protein GRAVY (Hydropathy) Calculator — GRAVY on the Kyte–Doolittle scale." title="Protein GRAVY (Hydropathy) Calculator"><figcaption>GRAVY on the Kyte–Doolittle scale.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>hydrophobic</code></td><td>A, V, I, L, M, F, W, Y — positive Kyte–Doolittle values</td><td>count</td></tr><tr><td><code>neutral</code></td><td>G, P, S, T, C, N, Q — near zero</td><td>count</td></tr><tr><td><code>hydrophilic</code></td><td>D, E, K, R, H — strongly negative</td><td>count</td></tr><tr><td><code>GRAVY</code></td><td>mean hydropathy, roughly −2 to +2</td><td>—</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Kyte & Doolittle (1982), Journal of Molecular Biology 157:105–132.</p>
+            ['title' => 'How the Protein GRAVY (Hydropathy) calculator works', 'html' => <<<'TXT'
+            <p>The Protein GRAVY (Hydropathy) calculator applies one relationship to 4 numbers and reports GRAVY and Hydrophobic fraction.</p><p>The relationship it solves reads GRAVY = (1.8 × Hydrophobic residues (A V I L M F W Y) + ( − 0.9) × Neutral residues (G P S T C N Q) + ( − 2.6) × Hydrophilic residues (D E K R H)) ÷ Total residues.</p><p>The answers are GRAVY and Hydrophobic fraction; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Protein GRAVY (Hydropathy)?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Hydrophobic residues (A V I L M F W Y)</strong> — a plain number, no unit. Counted in the sequence</li><li><strong>Neutral residues (G P S T C N Q)</strong> — a plain number, no unit</li><li><strong>Hydrophilic residues (D E K R H)</strong> — a plain number, no unit</li><li><strong>Total residues</strong> — a plain number, no unit</li></ul><p>The answers come back as GRAVY, Hydrophobic fraction in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: hydrophobic residues (a v i l m f w y) of <strong>120</strong>, neutral residues (g p s t c n q) of <strong>80</strong>, hydrophilic residues (d e k r h) of <strong>100</strong>, total residues of <strong>300</strong>.</p>
-            <p>Substituting them into the formula gives gravy of <strong>-0.3867</strong>, hydrophobic fraction of <strong>40</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Hydrophobic residues (A V I L M F W Y) = 120, Neutral residues (G P S T C N Q) = 80, Hydrophilic residues (D E K R H) = 100 and Total residues = 300; the answers are &lt;strong&gt;GRAVY&lt;/strong&gt; = -0.3867 and &lt;strong&gt;Hydrophobic fraction&lt;/strong&gt; = 40 %.</p><ul><li><strong>GRAVY</strong> = -0.3867</li><li><strong>Hydrophobic fraction</strong> = 40 %</li></ul><p>That is <strong>GRAVY</strong> = <code>(1.8 × Hydrophobic residues (A V I L M F W Y) + ( − 0.9) × Neutral residues (G P S T C N Q) + ( − 2.6) × Hydrophilic residues (D E K R H)) ÷ Total residues</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below −1.0</td><td><strong>Hydrophilic</strong></td><td>soluble cytoplasmic protein</td></tr><tr><td>−1.0 to 0</td><td><strong>Mixed</strong></td><td>soluble, often with a hydrophobic core</td></tr><tr><td>0 to +0.5</td><td><strong>Hydrophobic</strong></td><td>membrane-associated or aggregation-prone</td></tr><tr><td>above +0.5</td><td><strong>Strongly hydrophobic</strong></td><td>membrane protein or a fragment of one</td></tr></tbody></table>
-            <ul><li><p>The grouped average uses representative values; residue-exact GRAVY needs the real sequence and a lookup table, which is what ProtParam does.</p></li><li><p>GRAVY is a bulk property: a soluble protein can contain a strongly hydrophobic stretch (a transmembrane helix) and still average out hydrophilic.</p></li><li><p>For aggregation risk, look at the hydrophobic fraction inside a sliding window, not the whole-protein average.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;GRAVY&lt;/strong&gt; = -0.3867 and &lt;strong&gt;Hydrophobic fraction&lt;/strong&gt; = 40 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: GRAVY takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Counting residues twice or using the sequence length instead of the counted total.</li><li>Reading GRAVY as a solubility test — it correlates with, but does not determine, solubility.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>GRAVY</strong> = <code>(1.8 × Hydrophobic residues (A V I L M F W Y) + ( − 0.9) × Neutral residues (G P S T C N Q) + ( − 2.6) × Hydrophilic residues (D E K R H)) ÷ Total residues</code></li><li><strong>Hydrophobic fraction</strong> = <code>Hydrophobic residues (A V I L M F W Y) ÷ Total residues × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of GRAVY and Hydrophobic fraction can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Hydrophobic residues (A V I L M F W Y) from 120 to 240, leaving every other box alone. The panel moves from &lt;strong&gt;GRAVY&lt;/strong&gt; -0.3867 and &lt;strong&gt;Hydrophobic fraction&lt;/strong&gt; 40 % to &lt;strong&gt;GRAVY&lt;/strong&gt; 0.3333 and &lt;strong&gt;Hydrophobic fraction&lt;/strong&gt; 80 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with GRAVY and Hydrophobic fraction are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Hydrophobic residues (A V I L M F W Y) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Hydrophobic residues (A V I L M F W Y), Neutral residues (G P S T C N Q) and Hydrophilic residues (D E K R H) and the number you are missing is GRAVY and Hydrophobic fraction.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/chicken-hatch-date">Chicken Hatch Date Calculator</a>, <a href="/biology/chicken-years-to-human-years">Chicken Years to Human Years Calculator</a> and <a href="/biology/coding-capacity-of-dna">Coding Capacity of DNA Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What GRAVY value means a protein is soluble?', 'a' => 'Usually below 0, and comfortably below −0.5. Overexpression constructs often carry a fusion tag partly to push GRAVY down.'],
-            ['q' => 'Is GRAVY the same as the hydropathy plot?', 'a' => 'No. GRAVY is one number for the whole protein; a hydropathy plot slides a window along the sequence to find transmembrane segments.'],
-            ['q' => 'What does the Protein GRAVY (Hydropathy) actually calculate?', 'a' => 'It returns GRAVY and hydrophobic fraction. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Protein GRAVY (Hydropathy) calculator work out?', 'a' => <<<'TXT'
+            GRAVY and Hydrophobic fraction, from Hydrophobic residues (A V I L M F W Y), Neutral residues (G P S T C N Q), Hydrophilic residues (D E K R H) and Total residues. The relationship is GRAVY = (1.8 × Hydrophobic residues (A V I L M F W Y) + ( − 0.9) × Neutral residues (G P S T C N Q) + ( − 2.6) × Hydrophilic residues (D E K R H)) ÷ Total residues.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Hydrophobic residues (A V I L M F W Y), Neutral residues (G P S T C N Q), Hydrophilic residues (D E K R H), Total residues. With hydrophobic, neutral and hydrophilic in place, GRAVY can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. GRAVY and Hydrophobic fraction can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            GRAVY = -0.3867 and Hydrophobic fraction = 40 %. The figures come from Hydrophobic residues (A V I L M F W Y) as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of GRAVY is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Hydrophobic residues (A V I L M F W Y) left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of GRAVY keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/chicken-hatch-date', 'name' => 'Chicken Hatch Date Calculator'],
+            ['path' => '/biology/chicken-years-to-human-years', 'name' => 'Chicken Years to Human Years Calculator'],
+            ['path' => '/biology/coding-capacity-of-dna', 'name' => 'Coding Capacity of DNA Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

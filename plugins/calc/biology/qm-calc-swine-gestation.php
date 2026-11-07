@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Swine gestation',
-    'meta' => ['title' => 'Swine gestation — Formula, Steps & Examples', 'description' => '<strong>farrowing date</strong> is what the Swine gestation calculator works out, and it gets there from the breeding date and the current date.', 'h1' => 'Swine gestation Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Swine gestation — Formula, Steps & Examples', 'description' => <<<'TXT'
+    Swine gestation takes Breeding date and returns Farrowing date. A result here can always be checked: enter it in its own box, leave a different one empty, and…
+    TXT, 'h1' => 'Swine gestation Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'SuffixCheckJ' => [
@@ -283,66 +285,43 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        <strong>farrowing date</strong> is what the Swine gestation calculator works out, and it gets there from the breeding date and the current date. 
-        
-        Editing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.
+        Swine gestation takes Breeding date and returns Farrowing date. Nothing is looked up on this page: Farrowing date is computed from Breeding date and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'How does the Swine gestation calculator work?', 'html' => <<<'TXT'
-            <p>The Swine gestation calculator takes the values in the form, applies the relationship described below and reports <strong>farrowing date</strong> in the results panel.</p>
-            <p>Working from the top of the form: you give the breeding date and the current date.</p>
+            ['title' => 'How the Swine gestation calculator works', 'html' => <<<'TXT'
+            <p>Swine gestation answers one question from 1 number, and the answer is Farrowing date.</p><p>Written with the labels from the form, Farrowing date = Breeding date + 114.</p><p>The result panel carries Farrowing date, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Breeding date</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Farrowing date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Current date</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Difference</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Negative differenceerenceerence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Pregnancy day</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Suffix check j</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Suffix check k</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Earliest due</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Latest due</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Breeding date</strong> — a plain number, no unit, entered as a date</li></ul><p>What you get back is Farrowing date, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'The formula behind the Swine gestation calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Farrowing date</span><span class="formula-eq">=</span><span class="formula-rhs">breeding date + 114</span></div><div class="formula-row"><span class="formula-lhs">Difference</span><span class="formula-eq">=</span><span class="formula-rhs">rounded, (-current date + farrowing date)</span></div><div class="formula-row"><span class="formula-lhs">Negative differenceerenceerence</span><span class="formula-eq">=</span><span class="formula-rhs">rounded, (-rounded, (-current date + farrowing date))</span></div><div class="formula-row"><span class="formula-lhs">Pregnancy day</span><span class="formula-eq">=</span><span class="formula-rhs">rounded, (current date − breeding date)</span></div><div class="formula-row"><span class="formula-lhs">Earliest due</span><span class="formula-eq">=</span><span class="formula-rhs">breeding date + 112</span></div><div class="formula-row"><span class="formula-lhs">Latest due</span><span class="formula-eq">=</span><span class="formula-rhs">breeding date + 120</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Farrowing date takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A calendar date.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Farrowing date</strong> = <code>Breeding date + 114</code></li><li><strong>Breeding date</strong> = <code>Farrowing date − 114</code></li><li><strong>difference</strong> = <code>round( − currentDate + Farrowing date)</code></li><li><strong>negativeDifference</strong> = <code>round( − round( − currentDate + Farrowing date))</code></li><li><strong>pregnancyDay</strong> = <code>round(currentDate − Breeding date)</code></li><li><strong>earliestDue</strong> = <code>Breeding date + 112</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Farrowing date, Breeding date and difference can be the unknown.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Swine gestation calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 2 figures keep coming back — the breeding date and the current date — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Farrowing date is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Breeding date and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Swine gestation calculator, these are the ones that matter:</p>
-            <ul><li>Dates are handled as whole calendar days in the time zone of the browser, so a birth date or a deadline is compared date to date rather than as a span of hours.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — breeding date for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/the-cost-of-owning-a-dog">Cost of owning a dog</a>, <a href="/biology/tramadol-for-dogs">Tramadol for dogs</a> and <a href="/biology/tree-age">Tree age</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Breeding date and the number you are missing is Farrowing date.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cell-dilution">Cell dilution Calculator</a>, <a href="/biology/cell-doubling-time">Cell doubling time Calculator</a> and <a href="/biology/cell-seeding-density">Cell Seeding Density Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Swine gestation calculator work out?', 'a' => <<<'TXT'
-            It returns farrowing date, derived from the breeding date and the current date. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Swine gestation calculator work out?', 'a' => 'Farrowing date, from Breeding date. The relationship is Farrowing date = Breeding date + 114.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Breeding date. Enter exposed; Farrowing date is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Farrowing date, Breeding date, difference and negativeDifference can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'What do I need to enter to use the Swine gestation calculator?', 'a' => <<<'TXT'
-            The form asks for the breeding date and the current date, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the Swine gestation calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Farrowing date is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Breeding date blank and the page solves for it, reporting Farrowing date instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Farrowing date keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/the-cost-of-owning-a-dog', 'name' => 'Cost of owning a dog'],
-            ['path' => '/biology/tramadol-for-dogs', 'name' => 'Tramadol for dogs'],
-            ['path' => '/biology/tree-age', 'name' => 'Tree age'],
+            ['path' => '/biology/cell-dilution', 'name' => 'Cell dilution Calculator'],
+            ['path' => '/biology/cell-doubling-time', 'name' => 'Cell doubling time Calculator'],
+            ['path' => '/biology/cell-seeding-density', 'name' => 'Cell Seeding Density Calculator'],
         ],
+        'authors' => [],
     ],
 ];

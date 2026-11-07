@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell Density Calculator',
-    'meta' => ['title' => 'Cell Density Calculator — Formula & Results', 'description' => 'Cell density is cells per millilitre of culture, and it decides when to split, how to seed and whether a culture is in log phase. It returns cell density…', 'h1' => 'Cell Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Density Calculator — Formula & Results', 'description' => 'Cell Density takes Cells counted, Squares counted and Dilution factor and returns Cell density and Density per area. The arithmetic is the whole method: Cell…', 'h1' => 'Cell Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -97,48 +97,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Cell density is cells per millilitre of culture, and it decides when to split, how to seed and whether a culture is in log phase. It returns cell density, density per area and cells/mL from OD600, and the panel shows all of them at once.
-        
-        This calculator converts counts, haemocytometer readings and OD600 values into cells/mL and cells/cm².
+        Cell Density takes Cells counted, Squares counted and Dilution factor and returns Cell density and Density per area. The arithmetic is the whole method: Cell density is worked out from Cells counted by one formula, applied once. Cell density comes back in cells/mL unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Cell Density', 'html' => <<<'TXT'
-            <p>Cells/mL = (count ÷ squares) × dilution × 10⁴; for E. coli, 1 OD600 ≈ 8 × 10⁸ cells/mL</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cell-density.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Cell Density Calculator — Counts, dilution and growth area give density per mL and per cm²." title="Cell Density Calculator"><figcaption>Counts, dilution and growth area give density per mL and per cm².</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>cells_counted</code></td><td>cells counted</td><td>cells</td></tr><tr><td><code>dilution</code></td><td>dilution before counting</td><td>×</td></tr><tr><td><code>OD600</code></td><td>optical density at 600 nm</td><td>AU</td></tr></tbody></table>
+            ['title' => 'How the Cell Density calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Cell Density: it takes 5 numbers and reports Cell density, Density per area and Cells/mL from OD600.</p><p>Written with the labels from the form, Cell density = Cells counted ÷ Squares counted × Dilution factor × 10000.</p><p>The answers are Cell density, Density per area and Cells/mL from OD600; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Cell Density?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 5 boxes, and nothing else.</p><ul><li><strong>Cells counted</strong> — in cells</li><li><strong>Squares counted</strong> — a plain number, no unit</li><li><strong>Dilution factor</strong> — in ×</li><li><strong>Growth area</strong> — in cm². T25 = 25, T75 = 75, 6-well ≈ 9.6 per well</li><li><strong>OD600</strong> — a plain number, no unit. For bacterial cultures only</li></ul><p>The result boxes are Cell density in cells/mL, Density per area in cells/cm², Cells/mL from OD600 in cells/mL; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: cells counted of <strong>300</strong> cells, squares counted of <strong>4</strong>, dilution factor of <strong>1</strong> ×, growth area of <strong>25</strong> cm², od600 of <strong>0.6</strong>.</p>
-            <p>Substituting them into the formula gives cell density of <strong>750,000</strong> cells/mL, density per area of <strong>30,000</strong> cells/cm², cells/ml from od600 of <strong>480,000,000</strong> cells/mL.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Cells counted = 300 cells, Squares counted = 4, Dilution factor = 1 ×, Growth area = 25 cm² and OD600 = 0.6 — through the same formula and the panel reports &lt;strong&gt;Cell density&lt;/strong&gt; = 750000 cells/mL, &lt;strong&gt;Density per area&lt;/strong&gt; = 30000 cells/cm² and &lt;strong&gt;Cells/mL from OD600&lt;/strong&gt; = 4.800e+8 cells/mL.</p><ul><li><strong>Cell density</strong> = 750000 cells/mL</li><li><strong>Density per area</strong> = 30000 cells/cm²</li><li><strong>Cells/mL from OD600</strong> = 4.800e+8 cells/mL</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Cell density</strong> = <code>Cells counted ÷ Squares counted × Dilution factor × 10000</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.6 – 1.0 ×10⁶/mL</td><td><strong>Low</strong></td><td>sparse; split less or seed more</td></tr><tr><td>1 – 5 ×10⁶/mL</td><td><strong>Log phase</strong></td><td>healthy adherent culture ready to passage</td></tr><tr><td>above 10⁷/mL</td><td><strong>Confluent / stationary</strong></td><td>split now</td></tr></tbody></table>
-            <ul><li><p>The OD600 conversion is species-specific: 8 × 10⁸ cells/mL per OD unit is a working figure for E. coli, and yeast is roughly 3 × 10⁷.</p></li><li><p>Adherent cultures are usually quoted per cm², suspension cultures per mL; the growth area box converts between them.</p></li><li><p>Confluence is a visual estimate; density is the measurement. They disagree most in heterogeneous cultures.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Cell density&lt;/strong&gt; = 750000, &lt;strong&gt;Density per area&lt;/strong&gt; = 30000 and &lt;strong&gt;Cells/mL from OD600&lt;/strong&gt; = 4.800e+8 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Cell density takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using OD600 for eukaryotic cells, where it means almost nothing.</li><li>Reading OD600 above 1.0 without diluting, where the relationship stops being linear.</li><li>Quoting cells/mL for an adherent culture without the area.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Cell density</strong> = <code>Cells counted ÷ Squares counted × Dilution factor × 10000</code></li><li><strong>Density per area</strong> = <code>Cells counted ÷ Squares counted × Dilution factor × 10000 ÷ Growth area</code></li><li><strong>Cells/mL from OD600</strong> = <code>OD600 × 800000000</code></li></ul><p>Any one of Cell density, Density per area and Cells/mL from OD600 can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/hemocytometer-cell-counter">Hemocytometer counter</a>. <a href="/biology/od600-to-cell-density">OD600 to cell density</a>. <a href="/biology/cell-seeding-density">Cell seeding density</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Cells counted, from 300 to 600 — and the answers go from &lt;strong&gt;Cell density&lt;/strong&gt; 750000 cells/mL, &lt;strong&gt;Density per area&lt;/strong&gt; 30000 cells/cm² and &lt;strong&gt;Cells/mL from OD600&lt;/strong&gt; 4.800e+8 cells/mL to &lt;strong&gt;Cell density&lt;/strong&gt; 1.500e+6 cells/mL, &lt;strong&gt;Density per area&lt;/strong&gt; 60000 cells/cm² and &lt;strong&gt;Cells/mL from OD600&lt;/strong&gt; 4.800e+8 cells/mL.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Cell density, Density per area and Cells/mL from OD600 are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Cells counted and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Cells counted, Squares counted and Dilution factor is what you already know and Cell density and Density per area is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/specific-productivity-qp">Specific Productivity (qP) Calculator</a>, <a href="/biology/cedar-tree-value">Standing Timber Value Calculator</a> and <a href="/biology/stems-per-hectare">Stems Per Hectare Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a normal cell density for a T75 flask?', 'a' => 'About 1–2 × 10⁶ cells/mL at 80% confluence, or roughly 8 × 10⁴ cells/cm².'],
-            ['q' => 'Why is my OD600 reading not linear?', 'a' => 'Above about 1.0 the detector saturates; dilute tenfold and multiply.'],
-            ['q' => 'What does the Cell Density actually calculate?', 'a' => 'It returns cell density, density per area and cells/mL from OD600. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Cell Density calculator work out?', 'a' => <<<'TXT'
+            Cell density, Density per area and Cells/mL from OD600, from Cells counted, Squares counted and Dilution factor. The relationship is Cell density = Cells counted ÷ Squares counted × Dilution factor × 10000.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Cells counted (cells), Squares counted, Dilution factor (×), Growth area (cm²), OD600. With cells_counted, squares and dilution in place, Cell density can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Cell density, Density per area and Cells/mL from OD600 blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Cell density = 750000 cells/mL, Density per area = 30000 cells/cm² and Cells/mL from OD600 = 4.800e+8 cells/mL. Those are the defaults written into the form — move Cells counted and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Cell density is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Cells counted left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Cell density keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/specific-productivity-qp', 'name' => 'Specific Productivity (qP) Calculator'],
+            ['path' => '/biology/cedar-tree-value', 'name' => 'Standing Timber Value Calculator'],
+            ['path' => '/biology/stems-per-hectare', 'name' => 'Stems Per Hectare Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Phenotypic Ratio Calculator',
-    'meta' => ['title' => 'Phenotypic Ratio Calculator — Formula & Results', 'description' => 'Phenotypic ratios are what you count on a bench, but the numbers that matter are the proportions they imply. It returns total scored, ratio to the smallest…', 'h1' => 'Phenotypic Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Phenotypic Ratio Calculator — Formula & Results', 'description' => 'Phenotypic Ratio works out Total scored and Ratio to the smallest class from Class 1 count, Class 2 count and Class 3 count. Total scored, Ratio to the…', 'h1' => 'Phenotypic Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -90,50 +90,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Phenotypic ratios are what you count on a bench, but the numbers that matter are the proportions they imply. It returns total scored, ratio to the smallest class, class 1 share and chi-square vs 9:3:3:1, and the panel shows all of them at once.
-        
-        This calculator turns raw counts into a ratio in lowest whole numbers, the percentage of each class and the chi-square test against an expected Mendelian ratio.
+        Phenotypic Ratio works out Total scored and Ratio to the smallest class from Class 1 count, Class 2 count and Class 3 count. There is no hidden constant here: change Total scored and Class 1 count moves with it.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Phenotypic Ratio', 'html' => <<<'TXT'
-            <p>Ratio = each class ÷ the smallest class; χ² = Σ (O − E)² ÷ E</p>
-            <figure class="calc-figure"><img src="/uploads/biology/phenotypic-ratio.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Phenotypic Ratio Calculator — Observed classes against the expected ratio." title="Phenotypic Ratio Calculator"><figcaption>Observed classes against the expected ratio.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>O</code></td><td>observed count in a class</td><td>individuals</td></tr><tr><td><code>E</code></td><td>expected count from the ratio</td><td>individuals</td></tr><tr><td><code>χ²</code></td><td>test statistic, 3 degrees of freedom for four classes</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Phenotypic Ratio calculator works', 'html' => <<<'TXT'
+            <p>Phenotypic Ratio answers one question from 4 numbers, and the answer is Total scored, Ratio to the smallest class and Class 1 share.</p><p>The relationship it solves reads Total scored = Class 1 count + Class 2 count + Class 3 count + Class 4 count.</p><p>The result panel carries Total scored, Ratio to the smallest class, Class 1 share and Chi-square vs 9:3:3:1, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Phenotypic Ratio?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Class 1 count</strong> — a plain number, no unit</li><li><strong>Class 2 count</strong> — a plain number, no unit</li><li><strong>Class 3 count</strong> — a plain number, no unit</li><li><strong>Class 4 count</strong> — a plain number, no unit</li></ul><p>The result boxes are Total scored, Ratio to the smallest class, Class 1 share in %, Chi-square vs 9:3:3:1; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: class 1 count of <strong>180</strong>, class 2 count of <strong>62</strong>, class 3 count of <strong>58</strong>, class 4 count of <strong>20</strong>.</p>
-            <p>Substituting them into the formula gives total scored of <strong>320</strong>, ratio to the smallest class of <strong>16</strong>, class 1 share of <strong>56.25</strong>%, chi-square vs 9:3:3:1 of <strong>0.1333</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Class 1 count = 180, Class 2 count = 62, Class 3 count = 58 and Class 4 count = 20 gives &lt;strong&gt;Total scored&lt;/strong&gt; = 320, &lt;strong&gt;Ratio to the smallest class&lt;/strong&gt; = 16, &lt;strong&gt;Class 1 share&lt;/strong&gt; = 56.25 % and &lt;strong&gt;Chi-square vs 9:3:3:1&lt;/strong&gt; = 0.1333.</p><ul><li><strong>Total scored</strong> = 320</li><li><strong>Ratio to the smallest class</strong> = 16</li><li><strong>Class 1 share</strong> = 56.25 %</li><li><strong>Chi-square vs 9:3:3:1</strong> = 0.1333</li></ul><p>The line behind those figures is <strong>Total scored</strong> = <code>Class 1 count + Class 2 count + Class 3 count + Class 4 count</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>χ² below 7.81</td><td><strong>Fits 9:3:3:1</strong></td><td>the 5% critical value at 3 df</td></tr><tr><td>7.81 – 11.34</td><td><strong>Marginal</strong></td><td>between the 5% and 1% critical values</td></tr><tr><td>above 11.34</td><td><strong>Does not fit</strong></td><td>linkage, lethality or scoring error</td></tr></tbody></table>
-            <ul><li><p>Ratios are only comparable when every class has the same expected weight; a cross with lethal genotypes will not give whole-number Mendelian ratios.</p></li><li><p>Chi-square assumes independent observations. Counts from the same plant or the same family are not independent, which inflates the statistic.</p></li><li><p>The 5% critical values are 3.84 (1 df), 5.99 (2 df) and 7.81 (3 df).</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Total scored&lt;/strong&gt; = 320, &lt;strong&gt;Ratio to the smallest class&lt;/strong&gt; = 16, &lt;strong&gt;Class 1 share&lt;/strong&gt; = 56.25 and &lt;strong&gt;Chi-square vs 9:3:3:1&lt;/strong&gt; = 0.1333. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Total scored is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Dividing by the largest class instead of the smallest, which gives ratios below 1.</li><li>Comparing a chi-square to a critical value with the wrong number of degrees of freedom.</li><li>Reporting a ratio from fewer than about 100 individuals.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Total scored</strong> = <code>Class 1 count + Class 2 count + Class 3 count + Class 4 count</code></li><li><strong>Ratio to the smallest class</strong> = <code>(Class 1 count + Class 2 count + Class 3 count + Class 4 count) ÷ min(min(Class 1 count,Class 2 count),min(Class 3 count,Class 4 count))</code></li><li><strong>Class 1 share</strong> = <code>Class 1 count ÷ (Class 1 count + Class 2 count + Class 3 count + Class 4 count) × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Total scored, Ratio to the smallest class and Class 1 share can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/dihybrid-cross">Dihybrid cross</a>. <a href="/biology/chi-square-genetics-test">Chi-square test for genetics</a>. <a href="/biology/recombination-frequency">Recombination frequency</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Class 1 count from 180 to 360, leaving every other box alone. The panel moves from &lt;strong&gt;Total scored&lt;/strong&gt; 320, &lt;strong&gt;Ratio to the smallest class&lt;/strong&gt; 16, &lt;strong&gt;Class 1 share&lt;/strong&gt; 56.25 % and &lt;strong&gt;Chi-square vs 9:3:3:1&lt;/strong&gt; 0.1333 to &lt;strong&gt;Total scored&lt;/strong&gt; 500, &lt;strong&gt;Ratio to the smallest class&lt;/strong&gt; 25, &lt;strong&gt;Class 1 share&lt;/strong&gt; 72 % and &lt;strong&gt;Chi-square vs 9:3:3:1&lt;/strong&gt; 50.49.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Total scored, Ratio to the smallest class and Class 1 share are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Class 1 count to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Class 1 count, Class 2 count and Class 3 count is what you already know and Total scored and Ratio to the smallest class is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/plasmid-copy-number">Plasmid Copy Number Calculator</a>, <a href="/biology/plasmid-molar-ratio">Plasmid Molar Ratio Calculator</a> and <a href="/biology/potting-soil-calculator">Potting soil Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I get a ratio like 9:3:3:1 from counts?', 'a' => 'Divide every count by the smallest, then scale to whole numbers — 180:62:58:20 is about 9:3:3:1.'],
-            ['q' => 'What does a large chi-square mean?', 'a' => 'The observations are unlikely under the expected ratio: look for linkage, lethality or a scoring error.'],
-            ['q' => 'What does the Phenotypic Ratio actually calculate?', 'a' => <<<'TXT'
-            It returns total scored, ratio to the smallest class, class 1 share and chi-square vs 9:3:3:1. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Phenotypic Ratio calculator work out?', 'a' => <<<'TXT'
+            Total scored, Ratio to the smallest class, Class 1 share and Chi-square vs 9:3:3:1, from Class 1 count, Class 2 count, Class 3 count and Class 4 count. The relationship is Total scored = Class 1 count + Class 2 count + Class 3 count + Class 4 count.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Class 1 count, Class 2 count, Class 3 count, Class 4 count. With a, b and c in place, Total scored can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Total scored, Ratio to the smallest class, Class 1 share and Chi-square vs 9:3:3:1 can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Total scored = 320, Ratio to the smallest class = 16, Class 1 share = 56.25 % and Chi-square vs 9:3:3:1 = 0.1333. That comes from the page's own defaults, entered in Class 1 count; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Total scored is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Class 1 count blank and the page solves for it, reporting Total scored instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Total scored keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/plasmid-copy-number', 'name' => 'Plasmid Copy Number Calculator'],
+            ['path' => '/biology/plasmid-molar-ratio', 'name' => 'Plasmid Molar Ratio Calculator'],
+            ['path' => '/biology/potting-soil-calculator', 'name' => 'Potting soil Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

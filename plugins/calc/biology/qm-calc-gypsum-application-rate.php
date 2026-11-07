@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Gypsum Application Rate Calculator',
-    'meta' => ['title' => 'Gypsum Application Rate Calculator — Biology', 'description' => 'Gypsum (calcium sulfate) adds calcium without raising pH, and it improves the structure of sodic clay soils. It returns gypsum rate, gypsum needed and 25 kg…', 'h1' => 'Gypsum Application Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Gypsum Application Rate Calculator — Biology', 'description' => 'Gypsum Application Rate takes Area, Soil texture and Exchangeable sodium percentage and returns Gypsum rate and Gypsum needed. There is no hidden constant…', 'h1' => 'Gypsum Application Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -90,44 +90,52 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Gypsum (calcium sulfate) adds calcium without raising pH, and it improves the structure of sodic clay soils. It returns gypsum rate, gypsum needed and 25 kg bags, and the panel shows all of them at once.
-        
-        The rate depends on the soil's exchangeable sodium and its clay content — typically 0.5–2 tonnes per acre, or 1–5 tonnes per hectare.
+        Gypsum Application Rate takes Area, Soil texture and Exchangeable sodium percentage and returns Gypsum rate and Gypsum needed. There is no hidden constant here: change Gypsum rate and Area moves with it. The main result, Gypsum rate, is reported in t/ha.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Gypsum Application Rate', 'html' => <<<'TXT'
-            <p>Gypsum (t/ha) = texture factor × (ESP − target ESP) ÷ 10, where the texture factor is 1.5 for sand, 3 for loam and 5 for clay</p>
-            <figure class="calc-figure"><img src="/uploads/biology/gypsum-application-rate.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Gypsum Application Rate Calculator — Gypsum rate (t/ha) for a loam at different ESP" title="Gypsum Application Rate Calculator"><figcaption>Gypsum rate (t/ha) for a loam at different ESP</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ESP</code></td><td>exchangeable sodium percentage, the share of cation sites holding sodium</td><td>%</td></tr><tr><td><code>gypsum</code></td><td>calcium sulfate dihydrate, CaSO₄·2H₂O</td><td>—</td></tr><tr><td><code>t/ha</code></td><td>tonnes per hectare</td><td>t/ha</td></tr></tbody></table>
+            ['title' => 'How the Gypsum Application Rate calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Gypsum Application Rate: it takes 4 numbers and reports Gypsum rate, Gypsum needed and 25 kg bags.</p><p>The relationship it solves reads Gypsum rate = Soil texture × (Exchangeable sodium percentage − Target ESP) ÷ 10.</p><p>The result panel carries Gypsum rate, Gypsum needed and 25 kg bags, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Gypsum Application Rate?', 'html' => <<<'TXT'
-            <ol><li>Enter the area and the soil texture.</li><li>Enter the exchangeable sodium percentage from a soil test and the level you are aiming for.</li><li>Read the rate in tonnes per hectare, the total and the number of bags.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Area</strong> — in ha</li><li><strong>Soil texture</strong> — a plain number, no unit. Sets the tonnes per hectare for a one-unit pH-neutral treatment</li><li><strong>Exchangeable sodium percentage</strong> — in %. Above 15% the soil is sodic</li><li><strong>Target ESP</strong> — in %. Below 7% is considered non-sodic</li></ul><p>The answers come back as Gypsum rate in t/ha, Gypsum needed in t, 25 kg bags. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: area of <strong>1</strong> ha, soil texture set to <strong>3.0</strong>, exchangeable sodium percentage of <strong>15</strong>%, target esp of <strong>5</strong>%.</p>
-            <p>Substituting them into the formula gives gypsum rate of <strong>3</strong> t/ha, gypsum needed of <strong>3</strong> t, 25 kg bags of <strong>120</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Area = 1 ha, Soil texture = 3, Exchangeable sodium percentage = 15 % and Target ESP = 5 %; the answers are &lt;strong&gt;Gypsum rate&lt;/strong&gt; = 3 t/ha, &lt;strong&gt;Gypsum needed&lt;/strong&gt; = 3 t and &lt;strong&gt;25 kg bags&lt;/strong&gt; = 120.</p><ul><li><strong>Gypsum rate</strong> = 3 t/ha</li><li><strong>Gypsum needed</strong> = 3 t</li><li><strong>25 kg bags</strong> = 120</li></ul><p>That is <strong>Gypsum rate</strong> = <code>Soil texture × (Exchangeable sodium percentage − Target ESP) ÷ 10</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 1 t/ha</td><td><strong>Light</strong></td><td>a maintenance application on a slightly sodic soil</td></tr><tr><td>1 – 3 t/ha</td><td><strong>Standard</strong></td><td>the usual correction for a loam at 15% ESP</td></tr><tr><td>over 5 t/ha</td><td><strong>Heavy</strong></td><td>split across two seasons and follow with leaching water</td></tr></tbody></table>
-            <ul><li><p>Gypsum supplies calcium and sulfur but does not change pH. If the soil is also acid, lime is the amendment you want, not gypsum.</p></li><li><p>Gypsum works by exchanging calcium for sodium on the clay, and the displaced sodium then needs water to leach away. Without drainage and leaching, the sodium stays.</p></li><li><p>It is also the standard cure for clay dispersion and for subsoil acidity at depth, where lime cannot be incorporated.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Gypsum rate&lt;/strong&gt; = 3, &lt;strong&gt;Gypsum needed&lt;/strong&gt; = 3 and &lt;strong&gt;25 kg bags&lt;/strong&gt; = 120 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Gypsum rate takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Applying gypsum to raise pH — it does not, and the mistake costs a season.</li><li>Spreading the full rate in one pass on a heavy clay with no drainage.</li><li>Ignoring the sodium: gypsum on a non-sodic soil does little for structure.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Gypsum rate</strong> = <code>Soil texture × (Exchangeable sodium percentage − Target ESP) ÷ 10</code></li><li><strong>Gypsum needed</strong> = <code>Area × Soil texture × (Exchangeable sodium percentage − Target ESP) ÷ 10</code></li><li><strong>25 kg bags</strong> = <code>Area × Soil texture × (Exchangeable sodium percentage − Target ESP) ÷ 10 × 40</code></li></ul><p>Any one of Gypsum rate, Gypsum needed and 25 kg bags can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Area from 1 to 2, leaving every other box alone. The panel moves from &lt;strong&gt;Gypsum rate&lt;/strong&gt; 3 t/ha, &lt;strong&gt;Gypsum needed&lt;/strong&gt; 3 t and &lt;strong&gt;25 kg bags&lt;/strong&gt; 120 to &lt;strong&gt;Gypsum rate&lt;/strong&gt; 3 t/ha, &lt;strong&gt;Gypsum needed&lt;/strong&gt; 6 t and &lt;strong&gt;25 kg bags&lt;/strong&gt; 240.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Gypsum rate, Gypsum needed and 25 kg bags are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Area is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Area, Soil texture and Exchangeable sodium percentage is what you already know and Gypsum rate and Gypsum needed is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cat-bmi">Cat BMI Calculator</a>, <a href="/biology/cat-calorie">Cat calorie Calculator</a> and <a href="/biology/cat-chocolate-toxicity">Cat chocolate toxicity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much gypsum per hectare?', 'a' => '1–3 t/ha for a loam at 15% ESP; up to 5 t/ha for a sodic clay.'],
-            ['q' => 'Does gypsum lower pH?', 'a' => 'No. It is pH-neutral; use elemental sulfur or aluminium sulfate to acidify.'],
-            ['q' => 'Can I apply gypsum with fertiliser?', 'a' => 'Yes, but not mixed with ammonium sulfate or superphosphate in the same hopper.'],
-            ['q' => 'What does the Gypsum Application Rate actually calculate?', 'a' => 'It returns gypsum rate, gypsum needed and 25 kg bags. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Gypsum Application Rate calculator work out?', 'a' => <<<'TXT'
+            Gypsum rate, Gypsum needed and 25 kg bags, from Soil texture, Exchangeable sodium percentage and Target ESP. The relationship is Gypsum rate = Soil texture × (Exchangeable sodium percentage − Target ESP) ÷ 10.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Area (ha), Soil texture, Exchangeable sodium percentage (%), Target ESP (%). Enter area_ha, texture and esp; Gypsum rate is the box to leave alone unless it is the value you came for.
             TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Gypsum rate, Gypsum needed and 25 kg bags blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What answer do the default values give?', 'a' => 'Gypsum rate = 3 t/ha, Gypsum needed = 3 t and 25 kg bags = 120. The figures come from Area as the page opens it; they are a starting point, not a fixed answer.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Gypsum rate is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Area blank and the page solves for it, reporting Gypsum rate instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Gypsum rate keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cat-bmi', 'name' => 'Cat BMI Calculator'],
+            ['path' => '/biology/cat-calorie', 'name' => 'Cat calorie Calculator'],
+            ['path' => '/biology/cat-chocolate-toxicity', 'name' => 'Cat chocolate toxicity Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

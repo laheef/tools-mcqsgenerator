@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Codon Usage Calculator',
-    'meta' => ['title' => 'Codon Usage Calculator: Formula, Steps & Results', 'description' => 'Codon usage is how often each of the 61 sense codons appears in a coding sequence. It returns complete codons, gc at the third position, stop codons…', 'h1' => 'Codon Usage Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Codon Usage Calculator: Formula, Steps & Results', 'description' => 'Codon Usage turns Coding sequence and Reading frame into Complete codons and GC at the third position. The arithmetic is the whole method: Complete codons is…', 'h1' => 'Codon Usage Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -265,48 +265,37 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Codon usage is how often each of the 61 sense codons appears in a coding sequence. It returns complete codons, gc at the third position, stop codons, different codons used and rare codons, and the panel shows all of them at once.
-        
-        Because several codons stand for the same amino acid, the pattern shows which synonyms a gene prefers — the first thing to check before expressing a gene in E. coli, yeast or CHO cells, where rare codons stall the ribosome.
+        Codon Usage turns Coding sequence and Reading frame into Complete codons and GC at the third position. The arithmetic is the whole method: Complete codons is worked out from Coding sequence by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Codon Usage', 'html' => <<<'TXT'
-            <p>RSCU = observed count of a codon ÷ (count of its amino acid ÷ number of its synonyms). GC3 = codons ending in G or C ÷ complete codons × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/codon-usage-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Codon Usage Calculator — Codons available for one amino acid" title="Codon Usage Calculator"><figcaption>Codons available for one amino acid</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>RSCU</code></td><td>relative synonymous codon usage; 1.0 = no preference</td><td>—</td></tr><tr><td><code>GC3</code></td><td>GC content at the third codon position</td><td>%</td></tr><tr><td><code>CDS</code></td><td>coding sequence, in frame from the start codon</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Codon Usage calculator works', 'html' => <<<'TXT'
+            <p>The Codon Usage calculator applies one relationship to 2 numbers and reports Complete codons, GC at the third position and Stop codons.</p><p>What comes back is Complete codons, GC at the third position, Stop codons and Different codons used — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Codon Usage?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Coding sequence</strong> — a plain number, no unit. Paste DNA; FASTA headers, spaces and digits are ignored</li><li><strong>Reading frame</strong> — a plain number, no unit. Frame 1 starts at the first base</li></ul><p>What you get back is Complete codons, GC at the third position in %, Stop codons, Different codons used in of 64, Rare codons, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>RSCU &gt; 1.5</td><td><strong>Strongly preferred</strong></td><td>the codon is used far more than chance in this gene</td></tr><tr><td>RSCU 0.8 – 1.5</td><td><strong>Neutral</strong></td><td>no meaningful preference</td></tr><tr><td>RSCU &lt; 0.5</td><td><strong>Avoided</strong></td><td>a candidate rare codon if the host also dislikes it</td></tr><tr><td>GC3 &gt; 70%</td><td><strong>GC-rich coding sequence</strong></td><td>common in Streptomyces, Mycobacterium, some plants</td></tr></tbody></table>
-            <ul><li><p>RSCU normalises for family size: serine has six codons, methionine and tryptophan have one, so raw counts cannot be compared without it.</p></li><li><p>The rare-codon count only looks at families that appear at least five times. In a short sequence most amino acids occur once, so every codon is trivially 100% of its family and a plain 10% cut-off would report nothing.</p></li><li><p>Codon usage is species-specific. A codon that is common in humans can be rare in E. coli, which is why a human cDNA often expresses poorly in bacteria.</p></li><li><p>Rare codons do not always slow translation — clusters of them, especially at the 5′ end, are the ones that matter.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Complete codons takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Analysing the sequence in the wrong frame, which turns every codon into noise.</li><li>Including the stop codon in the GC3 figure while excluding it from the codon table.</li><li>Comparing a gene's usage with a host table built from highly expressed genes rather than from the whole genome.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Complete codons, GC at the third position and Stop codons are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Coding sequence to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/reverse-translate">Reverse translate</a>. <a href="/biology/dna-to-protein">DNA to protein</a>. <a href="/biology/gc-content-sequence">GC content</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Coding sequence and Reading frame measured, Complete codons and GC at the third position wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/solids-retention-time">Solids Retention Time (SRT) Calculator</a>, <a href="/biology/solute-potential">Solute Potential Calculator</a> and <a href="/biology/species-richness">Species Richness Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good GC3 value?', 'a' => 'There is no good or bad value — it is a fingerprint of the organism. E. coli sits near 55%, human genes near 60%, and Plasmodium near 25%.'],
-            ['q' => 'Why does codon usage matter for expression?', 'a' => <<<'TXT'
-            Rare codons can exhaust the matching tRNA, cause ribosome stalling and lower yield. Codon optimisation replaces them with common synonyms without changing the protein.
-            TXT],
-            ['q' => 'Should I include the stop codon?', 'a' => 'Analyse it separately. Stops carry no amino acid, so they have no RSCU within a family.'],
-            ['q' => 'What does the Codon Usage actually calculate?', 'a' => <<<'TXT'
-            It returns complete codons, gc at the third position, stop codons, different codons used and rare codons. Each one is derived by the formula on this page, so you can check any figure by hand.
-            TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What does the Codon Usage calculator work out?', 'a' => 'Complete codons, GC at the third position, Stop codons and Different codons used.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Coding sequence, Reading frame. Enter sequence and frame; Complete codons is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Complete codons is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Complete codons is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Complete codons keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/solids-retention-time', 'name' => 'Solids Retention Time (SRT) Calculator'],
+            ['path' => '/biology/solute-potential', 'name' => 'Solute Potential Calculator'],
+            ['path' => '/biology/species-richness', 'name' => 'Species Richness Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Hamster age',
-    'meta' => ['title' => 'Hamster age Calculator: Formula, Steps & Examples', 'description' => 'The Hamster age calculator takes the numbers you enter and reports <strong>in human years it\'s</strong> immediately. The Hamster age calculator takes the…', 'h1' => 'Hamster age Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Hamster age Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
+    Enter 🐹 My hamster is into Hamster age and the answer comes back as 💁 In human years it's. It is a single relationship that reads 💁 In human years it's out of…
+    TXT, 'h1' => 'Hamster age Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'age' => [
@@ -80,64 +82,40 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'The Hamster age calculator takes the numbers you enter and reports <strong>in human years it\'s</strong> immediately.',
+        'intro' => <<<'TXT'
+        Enter 🐹 My hamster is into Hamster age and the answer comes back as 💁 In human years it's. It is a single relationship that reads 💁 In human years it's out of 🐹 My hamster is, not a table of canned results keyed by them. Units for 💁 In human years it's default to years and can be changed on the answer itself.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Hamster age calculator work?', 'html' => <<<'TXT'
-            <p>The Hamster age calculator takes the values in the form, applies the relationship described below and reports <strong>in human years it's</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the figures it asks for.</p>
+            ['title' => 'How the Hamster age calculator works', 'html' => <<<'TXT'
+            <p>The Hamster age calculator applies one relationship to 1 number and reports 💁 In human years it&#039;s.</p><p>In the form&#039;s own words, 💁 In human years it&#039;s = get_age(🐹 My hamster is).</p><p>What comes back is 💁 In human years it&#039;s — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'The formula behind the Hamster age calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">In human years it&#x27;s</span><span class="formula-eq">=</span><span class="formula-rhs">(my hamster is)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>🐹 My hamster is</strong> — in months</li></ul><p>The answer comes back as 💁 In human years it&#039;s in years. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in years, and convertible to any of the 27 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>💁 In human years it&#039;s</strong> = <code>get_age(🐹 My hamster is)</code></li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in months</li><li>Time, opening in years</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> 🐹 My hamster is carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> 💁 In human years it&#039;s is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in 🐹 My hamster is and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Hamster age calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Round only at the end. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Hamster age calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — my hamster is for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/hardy-weinberg-equilibrium">Hardy-Weinberg equilibrium</a>, <a href="/biology/horse-gestation">Horse gestation</a> and <a href="/biology/horse-weight">Horse weight</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when 🐹 My hamster is is what you already know and 💁 In human years it&#039;s is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/cat-age">Cat age</a>, <a href="/biology/cat-benadryl-dosage">Cat Benadryl dosage Calculator</a> and <a href="/biology/cat-bmi">Cat BMI Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Hamster age calculator work out?', 'a' => <<<'TXT'
-            It returns in human years it's. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Hamster age calculator work out?', 'a' => '💁 In human years it\'s, from 🐹 My hamster is. The relationship is 💁 In human years it\'s = get_age(🐹 My hamster is).'],
+            ['q' => 'Which values do I need before I start?', 'a' => '🐹 My hamster is (months). Enter hamster_age; 💁 In human years it\'s is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally 💁 In human years it\'s is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is 💁 In human years it's, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'What do I need to enter to use the Hamster age calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is a single field. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter my hamster is in a different unit?', 'a' => <<<'TXT'
-            Yes. My hamster is opens in months and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Is the Hamster age calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of 💁 In human years it\'s keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/hardy-weinberg-equilibrium', 'name' => 'Hardy-Weinberg equilibrium'],
-            ['path' => '/biology/horse-gestation', 'name' => 'Horse gestation'],
-            ['path' => '/biology/horse-weight', 'name' => 'Horse weight'],
+            ['path' => '/biology/cat-age', 'name' => 'Cat age'],
+            ['path' => '/biology/cat-benadryl-dosage', 'name' => 'Cat Benadryl dosage Calculator'],
+            ['path' => '/biology/cat-bmi', 'name' => 'Cat BMI Calculator'],
         ],
+        'authors' => [],
     ],
 ];

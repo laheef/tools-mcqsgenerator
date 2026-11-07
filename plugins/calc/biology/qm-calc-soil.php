@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Soil',
-    'meta' => ['title' => 'Soil Calculator — Free, With Worked Examples', 'description' => <<<'TXT'
-    Supply the length, the width, the density and the weight needed and the Soil calculator solves for <strong>area</strong>. The Soil calculator takes the values…
-    TXT, 'h1' => 'Soil Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Soil Calculator — Free, With Worked Examples', 'description' => 'Enter Length and Width into Soil and the answer comes back as Area and Depth. The arithmetic is the whole method: Area is worked out from Length by one…', 'h1' => 'Soil Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => 'How much soil do you need?',
@@ -182,63 +180,41 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Supply the length, the width, the density and the weight needed and the Soil calculator solves for <strong>area</strong>.',
+        'intro' => <<<'TXT'
+        Enter Length and Width into Soil and the answer comes back as Area and Depth. The arithmetic is the whole method: Area is worked out from Length by one formula, applied once. Area comes back in square meters unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Soil calculator work?', 'html' => <<<'TXT'
-            <p>The Soil calculator takes the values in the form, applies the relationship described below and reports <strong>area</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the length, the width, the density and the weight needed.</p>
+            ['title' => 'How the Soil calculator works', 'html' => <<<'TXT'
+            <p>Soil answers one question from 2 numbers, and the answer is Area, Depth and Volume needed.</p><p>In the form&#039;s own words, Area = Length × Width.</p><p>The result panel carries Area, Depth, Volume needed and Density, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in kilograms per cubic meter. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in metric tons. </li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Length</strong> — in meters. Length of a rectangular surface. You may enter area directly if you want.</li><li><strong>Width</strong> — in meters. Width of a rectangular surface. You may enter area directly if you want.</li></ul><p>The answers come back as Area in square meters, Depth in centimeters, Volume needed in cubic meters, Density in kilograms per cubic meter, Weight needed in metric tons, Price per unit mass in USD, Price per unit volume in USD, Total cost in USD. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Volume needed</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Density</strong></td><td>A measured quantity, 28 units available.</td><td>kilograms per cubic meter</td><td>You supply it</td></tr><tr><td><strong>Weight needed</strong></td><td>A measured quantity, 29 units available.</td><td>metric tons</td><td>You supply it</td></tr><tr><td><strong>Price per unit mass</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Price per unit volume</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Total cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Area</strong> = <code>Length × Width</code></li><li><strong>Width</strong> = <code>Area ÷ Length</code></li><li><strong>Length</strong> = <code>Area ÷ Width</code></li><li><strong>Depth</strong> = <code>Volume needed ÷ Area</code></li><li><strong>Volume needed</strong> = <code>Area × Depth</code></li><li><strong>Weight needed</strong> = <code>Density × Volume needed</code></li></ul><p>Any one of Area, Width and Length can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Soil calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Area</span><span class="formula-eq">=</span><span class="formula-rhs">length × width</span></div><div class="formula-row"><span class="formula-lhs">Depth</span><span class="formula-eq">=</span><span class="formula-rhs">volume needed ÷ area</span></div><div class="formula-row"><span class="formula-lhs">Volume needed</span><span class="formula-eq">=</span><span class="formula-rhs">weight needed ÷ density</span></div><div class="formula-row"><span class="formula-lhs">Price per unit mass</span><span class="formula-eq">=</span><span class="formula-rhs">total cost ÷ weight needed</span></div><div class="formula-row"><span class="formula-lhs">Volume needed</span><span class="formula-eq">=</span><span class="formula-rhs">total cost ÷ price per unit volume</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Length and Width carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Area, Depth and Volume needed are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Length and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li><li>Length, opening in centimeters</li><li>Volume, opening in cubic meters</li><li>Density, opening in kilograms per cubic meter</li><li>Mass, opening in metric tons</li><li>Currency, opening in US Dollar</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Soil calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 4 figures keep coming back — the length, the width and the density — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/swine-gestation">Swine gestation</a>, <a href="/biology/the-cost-of-owning-a-dog">Cost of owning a dog</a> and <a href="/biology/tramadol-for-dogs">Tramadol for dogs</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Length and Width is what you already know and Area and Depth is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a>, <a href="/biology/dog-size">Dog size Calculator</a> and <a href="/biology/dog-water-intake">Dog water intake Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Soil calculator work out?', 'a' => <<<'TXT'
-            It returns area, derived from the length, the width and the density. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Soil calculator work out?', 'a' => 'Area, Depth, Volume needed and Density, from Length and Width. The relationship is Area = Length × Width.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Length (meters), Width (meters). Enter length and width; Area is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Area, Width, Length and Depth blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Area is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'What do I need to enter to use the Soil calculator?', 'a' => <<<'TXT'
-            The form asks for the length, the width, the density and the weight needed, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter length in a different unit?', 'a' => <<<'TXT'
-            Yes. Length opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the Soil calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Length blank and the page solves for it, reporting Area instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Area keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/swine-gestation', 'name' => 'Swine gestation'],
-            ['path' => '/biology/the-cost-of-owning-a-dog', 'name' => 'Cost of owning a dog'],
-            ['path' => '/biology/tramadol-for-dogs', 'name' => 'Tramadol for dogs'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+            ['path' => '/biology/dog-size', 'name' => 'Dog size Calculator'],
+            ['path' => '/biology/dog-water-intake', 'name' => 'Dog water intake Calculator'],
         ],
+        'authors' => [],
     ],
 ];

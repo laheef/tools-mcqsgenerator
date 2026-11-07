@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ligation Molar Ratio Calculator (Insert : Vector)',
-    'meta' => ['title' => 'Ligation Molar Ratio (Insert : Vector) Calculator', 'description' => 'A ligation works when the insert outnumbers the vector enough to find it, but not so much that it ligates to itself. It returns insert mass, vector amount…', 'h1' => 'Ligation Molar Ratio Calculator (Insert : Vector)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Ligation Molar Ratio (Insert : Vector) Calculator', 'description' => 'A ligation works when the insert outnumbers the vector enough to find it, but not so much that it ligates to itself. Free ligation molar ratio (insert : vecto', 'h1' => 'Ligation Molar Ratio Calculator (Insert : Vector)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -98,44 +98,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A ligation works when the insert outnumbers the vector enough to find it, but not so much that it ligates to itself. It returns insert mass, vector amount, insert amount and total DNA in the reaction, and the panel shows all of them at once.
-        
-        The standard is a 3:1 molar ratio, and the calculation converts that ratio into nanograms using the two lengths.
+        Ligation Molar Ratio Calculator (Insert: Vector) takes Vector mass, Vector length and Insert length and returns Insert mass and Vector amount. The arithmetic is the whole method: Insert mass is worked out from Vector mass by one formula, applied once. Insert mass comes back in ng unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Ligation Molar Ratio (Insert : Vector)', 'html' => <<<'TXT'
-            <p>Insert (ng) = vector (ng) × (insert bp ÷ vector bp) × molar ratio</p>
-            <figure class="calc-figure"><img src="/uploads/biology/ligation-molar-ratio.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Ligation Molar Ratio Calculator (Insert: Vector) — Vector and insert masses that give the chosen molar ratio." title="Ligation Molar Ratio Calculator (Insert: Vector)"><figcaption>Vector and insert masses that give the chosen molar ratio.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>vector_ng</code></td><td>mass of cut vector</td><td>ng</td></tr><tr><td><code>vector_bp</code></td><td>vector length</td><td>bp</td></tr><tr><td><code>insert_bp</code></td><td>insert length</td><td>bp</td></tr><tr><td><code>ratio</code></td><td>moles of insert per mole of vector</td><td>:1</td></tr></tbody></table>
+            ['title' => 'How the Ligation Molar Ratio Calculator (Insert : Vector) calculator works', 'html' => <<<'TXT'
+            <p>The Ligation Molar Ratio Calculator (Insert: Vector) calculator applies one relationship to 4 numbers and reports Insert mass, Vector amount and Insert amount.</p><p>Written with the labels from the form, Insert mass = Vector mass × Insert length ÷ Vector length × Insert: vector molar ratio.</p><p>The answers are Insert mass, Vector amount, Insert amount and Total DNA in the reaction; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Ligation Molar Ratio (Insert : Vector)?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Vector mass</strong> — in ng</li><li><strong>Vector length</strong> — in bp</li><li><strong>Insert length</strong> — in bp</li><li><strong>Insert: vector molar ratio</strong> — in:1. 3:1 is the usual starting point</li></ul><p>The result boxes are Insert mass in ng, Vector amount in pmol, Insert amount in pmol, Total DNA in the reaction in ng; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: vector mass of <strong>100</strong> ng, vector length of <strong>4,000</strong> bp, insert length of <strong>800</strong> bp, insert: vector molar ratio of <strong>3</strong>:1.</p>
-            <p>Substituting them into the formula gives insert mass of <strong>60</strong> ng, vector amount of <strong>37.88</strong> pmol, insert amount of <strong>113.64</strong> pmol, total dna in the reaction of <strong>160</strong> ng.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Vector mass = 100 ng, Vector length = 4000 bp, Insert length = 800 bp and Insert: vector molar ratio = 3:1 — through the same formula and the panel reports &lt;strong&gt;Insert mass&lt;/strong&gt; = 60 ng, &lt;strong&gt;Vector amount&lt;/strong&gt; = 37.88 pmol, &lt;strong&gt;Insert amount&lt;/strong&gt; = 114 pmol and &lt;strong&gt;Total DNA in the reaction&lt;/strong&gt; = 160 ng.</p><ul><li><strong>Insert mass</strong> = 60 ng</li><li><strong>Vector amount</strong> = 37.88 pmol</li><li><strong>Insert amount</strong> = 114 pmol</li><li><strong>Total DNA in the reaction</strong> = 160 ng</li></ul><p>That is <strong>Insert mass</strong> = <code>Vector mass × Insert length ÷ Vector length × Insert: vector molar ratio</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>3:1 favours the desired product without starving the vector; 1:1 reduces tandem inserts, 10:1 drives short-insert ligations that otherwise fail.</p></li><li><p>Total DNA in a 20 µL ligation should stay around 100–200 ng: more DNA favours self-ligation and concatemers.</p></li><li><p>Both fragments should be clean — a ligation is exquisitely sensitive to residual phosphatase, salt and EDTA from a gel-purification kit.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Insert mass&lt;/strong&gt; = 60, &lt;strong&gt;Vector amount&lt;/strong&gt; = 37.88, &lt;strong&gt;Insert amount&lt;/strong&gt; = 114 and &lt;strong&gt;Total DNA in the reaction&lt;/strong&gt; = 160 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Insert mass takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using the insert:vector mass ratio when the two fragments are different lengths.</li><li>Phosphatasing the insert as well as the vector, which leaves nothing to ligate to.</li><li>Leaving the ligation for hours at room temperature, which favours rearrangement.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Insert mass</strong> = <code>Vector mass × Insert length ÷ Vector length × Insert: vector molar ratio</code></li><li><strong>Vector amount</strong> = <code>Vector mass × 1000000 ÷ (Vector length × 660)</code></li><li><strong>Insert amount</strong> = <code>Vector mass × 1000000 ÷ (Vector length × 660) × Insert: vector molar ratio</code></li><li><strong>Total DNA in the reaction</strong> = <code>Vector mass + Vector mass × Insert length ÷ Vector length × Insert: vector molar ratio</code></li></ul><p>Any one of Insert mass, Vector amount and Insert amount can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Vector mass, from 100 to 200 — and the answers go from &lt;strong&gt;Insert mass&lt;/strong&gt; 60 ng, &lt;strong&gt;Vector amount&lt;/strong&gt; 37.88 pmol, &lt;strong&gt;Insert amount&lt;/strong&gt; 114 pmol and &lt;strong&gt;Total DNA in the reaction&lt;/strong&gt; 160 ng to &lt;strong&gt;Insert mass&lt;/strong&gt; 120 ng, &lt;strong&gt;Vector amount&lt;/strong&gt; 75.76 pmol, &lt;strong&gt;Insert amount&lt;/strong&gt; 227 pmol and &lt;strong&gt;Total DNA in the reaction&lt;/strong&gt; 320 ng.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Insert mass, Vector amount and Insert amount are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Vector mass to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Vector mass, Vector length and Insert length is what you already know and Insert mass and Vector amount is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/fixation-index-fst">Fixation Index (Fst) Calculator</a>, <a href="/biology/fold-change">Fold Change Calculator</a> and <a href="/biology/fruit-tree-spacing">Fruit Tree Spacing Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Why 3:1?', 'a' => 'It is the ratio that maximises the chance of a vector meeting an insert while limiting vector–vector and insert–insert products.'],
-            ['q' => 'How much insert for 100 ng of a 4 kb vector and an 800 bp insert?', 'a' => '60 ng — 100 × (800/4000) × 3.'],
-            ['q' => 'What does the Ligation Molar Ratio (Insert : Vector) actually calculate?', 'a' => <<<'TXT'
-            It returns insert mass, vector amount, insert amount and total DNA in the reaction. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Ligation Molar Ratio Calculator (Insert : Vector) calculator work out?', 'a' => <<<'TXT'
+            Insert mass, Vector amount, Insert amount and Total DNA in the reaction, from Vector mass, Insert length, Vector length and Insert: vector molar ratio. The relationship is Insert mass = Vector mass × Insert length ÷ Vector length × Insert: vector molar ratio.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Vector mass (ng), Vector length (bp), Insert length (bp), Insert: vector molar ratio (:1). Enter vector_ng, vector_bp and insert_bp; Insert mass is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Insert mass, Vector amount, Insert amount and Total DNA in the reaction blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Insert mass = 60 ng, Vector amount = 37.88 pmol, Insert amount = 114 pmol and Total DNA in the reaction = 160 ng. The figures come from Vector mass as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Insert mass is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Vector mass left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Insert mass keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/fixation-index-fst', 'name' => 'Fixation Index (Fst) Calculator'],
+            ['path' => '/biology/fold-change', 'name' => 'Fold Change Calculator'],
+            ['path' => '/biology/fruit-tree-spacing', 'name' => 'Fruit Tree Spacing Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Cat pregnancy',
-    'meta' => ['title' => 'Cat pregnancy Calculator — Formula & Results', 'description' => '<strong>due date</strong> is what the Cat pregnancy calculator works out, and it gets there from the difference and the latest due. Working from the top of…', 'h1' => 'Cat pregnancy Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Cat pregnancy Calculator — Formula & Results', 'description' => <<<'TXT'
+    Cat pregnancy works out Due date from Mating date. There is no hidden constant here: change Due date and Mating date moves with it. It fills in as soon as the…
+    TXT, 'h1' => 'Cat pregnancy Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'currentDate' => ['type' => 'date', 'rnd' => null],
@@ -257,63 +259,42 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => '<strong>due date</strong> is what the Cat pregnancy calculator works out, and it gets there from the difference and the latest due.',
+        'intro' => 'Cat pregnancy works out Due date from Mating date. There is no hidden constant here: change Due date and Mating date moves with it.',
         'sections' => [
-            ['title' => 'How does the Cat pregnancy calculator work?', 'html' => <<<'TXT'
-            <p>The Cat pregnancy calculator takes the values in the form, applies the relationship described below and reports <strong>due date</strong> in the results panel.</p>
-            <p>Working from the top of the form: you give the latest due; then you type in the difference.</p>
+            ['title' => 'How the Cat pregnancy calculator works', 'html' => <<<'TXT'
+            <p>Cat pregnancy answers one question from 1 number, and the answer is Due date.</p><p>The relationship it solves reads Due date = Mating date + 63.</p><p>The answers are Due date; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mating date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Due date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Current date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Difference</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Date mili</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Due date day</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Earliest due</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Latest due</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Negative differenceerence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Mating date</strong> — a plain number, no unit, entered as a date</li></ul><p>The result box is Due date. </p>
             TXT],
-            ['title' => 'The formula behind the Cat pregnancy calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Due date</span><span class="formula-eq">=</span><span class="formula-rhs">mating date + 63</span></div><div class="formula-row"><span class="formula-lhs">Due date</span><span class="formula-eq">=</span><span class="formula-rhs">current date + difference</span></div><div class="formula-row"><span class="formula-lhs">Due date</span><span class="formula-eq">=</span><span class="formula-rhs">date mili</span></div><div class="formula-row"><span class="formula-lhs">Due date day</span><span class="formula-eq">=</span><span class="formula-rhs">(date mili)</span></div><div class="formula-row"><span class="formula-lhs">Earliest due</span><span class="formula-eq">=</span><span class="formula-rhs">mating date + 58</span></div><div class="formula-row"><span class="formula-lhs">Mating date</span><span class="formula-eq">=</span><span class="formula-rhs">latest due − 71</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Due date is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A calendar date.</li><li>A calendar date.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A calendar date.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Due date</strong> = <code>Mating date + 63</code></li><li><strong>Mating date</strong> = <code>Due date − 63</code></li><li><strong>currentDate</strong> = <code>− difference + Due date</code></li><li><strong>difference</strong> = <code>− currentDate + Due date</code></li><li><strong>dateMili</strong> = <code>Due date</code></li><li><strong>dueDateDay</strong> = <code>getDueDate(dateMili)</code></li></ul><p>Any one of Due date, Mating date and currentDate can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cat pregnancy calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 2 figures keep coming back — the difference and the latest due — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Due date is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Mating date is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Cat pregnancy calculator, these are the ones that matter:</p>
-            <ul><li>Dates are handled as whole calendar days in the time zone of the browser, so a birth date or a deadline is compared date to date rather than as a span of hours.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — difference for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cat-quality-of-life">Cat quality of life</a>, <a href="/biology/catculator">Catculator</a> and <a href="/biology/cattle-per-acre">Cattle per acre</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Mating date and the number you are missing is Due date.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/pcr-cycle-calculator">PCR Cycle Calculator</a>, <a href="/biology/pcr-master-mix-calculator">PCR Master Mix Calculator</a> and <a href="/biology/pcr-primer-stats">PCR Primer Stats Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Cat pregnancy calculator work out?', 'a' => <<<'TXT'
-            It returns due date, derived from the difference and the latest due. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Cat pregnancy calculator work out?', 'a' => 'Due date, from Mating date. The relationship is Due date = Mating date + 63.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Mating date. Fill matingDate and leave Due date empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Due date, Mating date, currentDate and difference blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Due date is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'What do I need to enter to use the Cat pregnancy calculator?', 'a' => <<<'TXT'
-            The form asks for the difference and the latest due, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the Cat pregnancy calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Mating date blank and the page solves for it, reporting Due date instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Due date keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/cat-quality-of-life', 'name' => 'Cat quality of life'],
-            ['path' => '/biology/catculator', 'name' => 'Catculator'],
-            ['path' => '/biology/cattle-per-acre', 'name' => 'Cattle per acre'],
+            ['path' => '/biology/pcr-cycle-calculator', 'name' => 'PCR Cycle Calculator'],
+            ['path' => '/biology/pcr-master-mix-calculator', 'name' => 'PCR Master Mix Calculator'],
+            ['path' => '/biology/pcr-primer-stats', 'name' => 'PCR Primer Stats Calculator'],
         ],
+        'authors' => [],
     ],
 ];

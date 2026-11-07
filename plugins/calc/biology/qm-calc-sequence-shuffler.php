@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA Sequence Shuffler',
-    'meta' => ['title' => 'DNA Sequence Shuffler Calculator — Formula & Results', 'description' => 'Shuffling preserves the exact composition of a sequence — every base, or every dinucleotide — while destroying its order. It returns length, gc content…', 'h1' => 'DNA Sequence Shuffler', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Sequence Shuffler Calculator — Formula & Results', 'description' => 'DNA Sequence Shuffler works out Length and GC content from Sequence, Shuffle by and Molecule. DNA Sequence Shuffler answers one question from 4 numbers, and…', 'h1' => 'DNA Sequence Shuffler', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -300,43 +300,39 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Shuffling preserves the exact composition of a sequence — every base, or every dinucleotide — while destroying its order. It returns length, gc content, positions changed and difference from the input, and the panel shows all of them at once.
-        
-        It is how you build the null model that tells you whether a motif count, a repeat or a codon bias is more than chance.
+        DNA Sequence Shuffler works out Length and GC content from Sequence, Shuffle by and Molecule. Nothing is looked up on this page: Length is computed from Sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the DNA Sequence Shuffler', 'html' => <<<'TXT'
-            <p>Shuffled sequence has the same base counts: A₁ = A₀, C₁ = C₀, G₁ = G₀, T₁ = T₀. Dinucleotide shuffling also preserves every dinucleotide count</p>
-            <figure class="calc-figure"><img src="/uploads/biology/sequence-shuffler.svg" width="720" height="300" loading="lazy" alt="Animated diagram: DNA Sequence Shuffler — A shuffle keeps the base counts" title="DNA Sequence Shuffler"><figcaption>A shuffle keeps the base counts</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A₀, C₀, G₀, T₀</code></td><td>base counts in the input</td><td>bases</td></tr><tr><td><code>A₁ … T₁</code></td><td>base counts in the output; identical</td><td>bases</td></tr><tr><td><code>seed</code></td><td>starting value of the pseudo-random generator</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the DNA Sequence Shuffler calculator works', 'html' => <<<'TXT'
+            <p>DNA Sequence Shuffler answers one question from 4 numbers, and the answer is Length, GC content and Positions changed.</p><p>The answers are Length, GC content, Positions changed and Difference from the input; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the DNA Sequence Shuffler?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste DNA or protein; headers, spaces and digits are ignored</li><li><strong>Shuffle by</strong> — a plain number, no unit. Dinucleotide shuffling keeps the same pairs, so dinucleotide biases survive</li><li><strong>Molecule</strong> — a plain number, no unit</li><li><strong>Random seed</strong> — a plain number, no unit. Same seed, same result — useful for reproducible nulls</li></ul><p>The answers come back as Length, GC content in %, Positions changed, Difference from the input in %. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0% changed</td><td><strong>Identical</strong></td><td>a very short or single-base sequence cannot be shuffled</td></tr><tr><td>30 – 70% changed</td><td><strong>Well shuffled</strong></td><td>what a random permutation normally looks like</td></tr><tr><td>100% changed</td><td><strong>Fully displaced</strong></td><td>possible for short sequences, unlikely for long ones</td></tr></tbody></table>
-            <ul><li><p>A mononucleotide shuffle preserves base composition but not dinucleotide composition, so it is the right null for asking whether a motif is over-represented.</p></li><li><p>For CpG or oligo-frequency questions the dinucleotide shuffle is stricter and is the better null, because it keeps the sequence's dinucleotide bias intact.</p></li><li><p>Reproducibility matters: report the seed alongside the shuffled sequence, otherwise nobody can regenerate the control you used.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Shuffling to test a property the shuffle preserves — GC content cannot be tested this way, because it is fixed by construction.</li><li>Using one shuffle as a null; a proper test needs hundreds and a distribution.</li><li>Forgetting that a dinucleotide shuffle reproduces mononucleotide composition only approximately for very short sequences.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Length, GC content and Positions changed are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Sequence to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Sequence, Shuffle by and Molecule is what you already know and Length and GC content is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/sds-page-gel">SDS-PAGE Gel Calculator</a>, <a href="/biology/seeding-rate">Seeding Rate and Plants per Hectare Calculator</a> and <a href="/biology/serial-dilution-planner">Serial Dilution Planner Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does sequence shuffling test?', 'a' => 'Whether an observed pattern — a motif count, a repeat, a codon bias — is more than the composition alone would produce.'],
-            ['q' => 'Why preserve dinucleotides?', 'a' => 'Because genomes have strong dinucleotide biases, notably CpG depletion. A mononucleotide shuffle destroys that and inflates significance.'],
-            ['q' => 'Is the output random?', 'a' => 'Pseudo-random from the seed. The same seed always gives the same sequence, which is what you want in a methods section.'],
-            ['q' => 'What does the DNA Sequence Shuffler actually calculate?', 'a' => <<<'TXT'
-            It returns length, gc content, positions changed and difference from the input. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the DNA Sequence Shuffler calculator work out?', 'a' => 'Length, GC content, Positions changed and Difference from the input.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Sequence, Shuffle by, Molecule, Random seed. Enter sequence, mode and type; Length is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Length at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/sds-page-gel', 'name' => 'SDS-PAGE Gel Calculator'],
+            ['path' => '/biology/seeding-rate', 'name' => 'Seeding Rate and Plants per Hectare Calculator'],
+            ['path' => '/biology/serial-dilution-planner', 'name' => 'Serial Dilution Planner Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

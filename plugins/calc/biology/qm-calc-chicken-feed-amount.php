@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Chicken Feed Amount Calculator',
-    'meta' => ['title' => 'Chicken Feed Amount Calculator — Formula & Results', 'description' => <<<'TXT'
-    Feed is the largest running cost of a flock, and a laying hen eats roughly 110–120 g a day. It returns feed per day, total feed, 25 kg bags and feed cost, and…
-    TXT, 'h1' => 'Chicken Feed Amount Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Feed Amount Calculator — Formula & Results', 'description' => 'Enter Number of birds, Feed per bird per day and Number of days into Chicken Feed Amount and the answer comes back as Feed per day and Total feed.', 'h1' => 'Chicken Feed Amount Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -104,48 +102,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Feed is the largest running cost of a flock, and a laying hen eats roughly 110–120 g a day. It returns feed per day, total feed, 25 kg bags and feed cost, and the panel shows all of them at once.
-        
-        This calculator turns birds, daily intake and a period into kilos of feed, bags and cost.
+        Enter Number of birds, Feed per bird per day and Number of days into Chicken Feed Amount and the answer comes back as Feed per day and Total feed. Nothing is looked up on this page: Feed per day is computed from Number of birds and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Feed per day is opened in kg; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Chicken Feed Amount', 'html' => <<<'TXT'
-            <p>Total feed (kg) = birds × grams per bird per day × days ÷ 1000</p>
-            <figure class="calc-figure"><img src="/uploads/biology/chicken-feed-amount.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Chicken Feed Amount Calculator — Birds × daily intake × days gives the feed bill." title="Chicken Feed Amount Calculator"><figcaption>Birds × daily intake × days gives the feed bill.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>birds</code></td><td>number of birds</td><td>birds</td></tr><tr><td><code>intake</code></td><td>feed eaten by one bird in a day</td><td>g/day</td></tr><tr><td><code>days</code></td><td>length of the period</td><td>days</td></tr><tr><td><code>total</code></td><td>feed needed for the period</td><td>kg</td></tr></tbody></table>
+            ['title' => 'How the Chicken Feed Amount calculator works', 'html' => <<<'TXT'
+            <p>The Chicken Feed Amount calculator applies one relationship to 4 numbers and reports Feed per day, Total feed and 25 kg bags.</p><p>Written with the labels from the form, Feed per day = Number of birds × Feed per bird per day ÷ 1000.</p><p>The answers are Feed per day, Total feed, 25 kg bags and Feed cost; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Chicken Feed Amount?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Number of birds</strong> — a plain number, no unit</li><li><strong>Feed per bird per day</strong> — in g. Layers about 120 g, broilers 100–180 g</li><li><strong>Number of days</strong> — a plain number, no unit</li><li><strong>Feed price</strong> — in per kg. Optional — leave 0 to skip the cost</li></ul><p>The answers come back as Feed per day in kg, Total feed in kg, 25 kg bags, Feed cost. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: number of birds of <strong>12</strong>, feed price of <strong>0.6</strong> per kg.</p>
-            <p>Substituting them into the formula gives feed per day of <strong>1.44</strong> kg, total feed of <strong>43.2</strong> kg, 25 kg bags of <strong>1.73</strong>, feed cost of <strong>25.92</strong>, number of days of <strong>30</strong>, feed per bird per day of <strong>120</strong> g.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Feed per day is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>100 – 130 g/day</td><td><strong>Laying hen</strong></td><td>typical layer intake at 18–20 °C</td></tr><tr><td>150 – 200 g/day</td><td><strong>Broiler, finishing</strong></td><td>fast-growing meat birds near market weight</td></tr><tr><td>80 – 100 g/day</td><td><strong>Pullet or bantam</strong></td><td>smaller body, lower intake</td></tr></tbody></table>
-            <ul><li><p>Add 5–10% for spillage and wild birds; feeding to exactly the calculated figure leaves a trough empty before the next delivery.</p></li><li><p>Intake rises with body weight and falls with ambient temperature above about 20 °C, so a winter month and a summer month are not the same calculation.</p></li><li><p>The 25 kg bag count is rounded up in the field: half a bag is a bag you have to buy.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Feed per day</strong> = <code>Number of birds × Feed per bird per day ÷ 1000</code></li><li><strong>Total feed</strong> = <code>Number of birds × Feed per bird per day × Number of days ÷ 1000</code></li><li><strong>25 kg bags</strong> = <code>Number of birds × Feed per bird per day × Number of days ÷ 1000 ÷ 25</code></li><li><strong>Feed cost</strong> = <code>Number of birds × Feed per bird per day × Number of days ÷ 1000 × Feed price</code></li><li><strong>Number of days</strong> = <code>Total feed × 1000 ÷ (Number of birds × Feed per bird per day)</code></li><li><strong>Feed per bird per day</strong> = <code>Total feed × 1000 ÷ (Number of birds × Number of days)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Feed per day, Total feed and 25 kg bags can be the unknown.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Entering the bag weight instead of the daily intake per bird.</li><li>Forgetting that chicks eat a fraction of adult intake and that the figure changes weekly.</li><li>Budgeting for feed without a wastage allowance — usually the difference between the plan and the invoice.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Feed per day, Total feed and 25 kg bags are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Number of birds is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/fcr">Feed conversion ratio</a>. <a href="/biology/chicken-density">Chicken density</a>. <a href="/biology/livestock-water-requirement">Livestock water requirement</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Number of birds, Feed per bird per day and Number of days and the number you are missing is Feed per day and Total feed.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/cfu-g-calculator">CFU/g Calculator</a>, <a href="/biology/cfu-ml-calculator">CFU/mL Calculator</a> and <a href="/biology/cheng-prusoff-equation">Cheng-Prusoff Equation Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much feed does a chicken eat a day?', 'a' => 'A laying hen eats about 110–120 g, a broiler 100 g at the start of the cycle rising to 180–200 g at finishing, and a bantam 80–90 g.'],
-            ['q' => 'How many 25 kg bags is that?', 'a' => 'The calculator divides the total by 25 for you. Order the next whole bag up.'],
-            ['q' => 'What does the Chicken Feed Amount actually calculate?', 'a' => 'It returns feed per day, total feed, 25 kg bags and feed cost. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Chicken Feed Amount calculator work out?', 'a' => <<<'TXT'
+            Feed per day, Total feed, 25 kg bags and Feed cost, from Number of birds and Feed per bird per day. The relationship is Feed per day = Number of birds × Feed per bird per day ÷ 1000.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Number of birds, Feed per bird per day (g), Number of days, Feed price (per kg). Enter birds, intake and days; Feed per day is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Feed per day, Total feed, 25 kg bags and Feed cost can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Feed per day is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Number of birds blank and the page solves for it, reporting Feed per day instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Feed per day keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cfu-g-calculator', 'name' => 'CFU/g Calculator'],
+            ['path' => '/biology/cfu-ml-calculator', 'name' => 'CFU/mL Calculator'],
+            ['path' => '/biology/cheng-prusoff-equation', 'name' => 'Cheng-Prusoff Equation Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

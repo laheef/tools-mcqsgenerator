@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Lawn mowing',
-    'meta' => ['title' => 'Lawn mowing Calculator — Formula, Units & Example', 'description' => '<strong>mower width</strong> is what the Lawn mowing calculator works out, and it gets there from the area to mow, the total costs, the mowing price and the…', 'h1' => 'Lawn mowing Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Lawn mowing Calculator — Formula, Units & Example', 'description' => 'Lawn mowing works out Mowing price and Area to mow from Mower speed, Expected mowing productivity and Your mower can mow. Mowing price is opened in USD; the…', 'h1' => 'Lawn mowing Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'area' => [
@@ -441,63 +441,46 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        <strong>mower width</strong> is what the Lawn mowing calculator works out, and it gets there from the area to mow, the total costs, the mowing price and the hours of work. 
-        
-        Editing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.
+        Lawn mowing works out Mowing price and Area to mow from Mower speed, Expected mowing productivity and Your mower can mow. Nothing is looked up on this page: Mowing price is computed from Mower speed and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Mowing price is opened in USD; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'How does the Lawn mowing calculator work?', 'html' => <<<'TXT'
-            <p>The Lawn mowing calculator takes the values in the form, applies the relationship described below and reports <strong>mower width</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case; then you type in the area to mow, the total costs (Mowing cost), the mowing price (Mowing cost) and the hours of work.</p>
+            ['title' => 'How the Lawn mowing calculator works', 'html' => <<<'TXT'
+            <p>Lawn mowing answers one question from 3 numbers, and the answer is Mowing price, Area to mow and Total costs.</p><p>The relationship it solves reads Mower width = Your mower can mow ÷ (Expected mowing productivity × Mower speed).</p><p>The result panel carries Mowing price, Area to mow, Total costs and Mowing price, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 2 options, such as lawn mowing cost and mower efficiency and time. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as per area and per hour. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in hectares. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilometers per hour. The unit chip switches it to any of the 25 supported units.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A measured quantity, entered by default in hectares. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in hours / minutes. </li></ul><p>2 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Mower speed</strong> — in kilometers per hour. At what speed does your mower move at when mowing?</li><li><strong>Expected mowing productivity</strong> — in percent. Becuase of overlap, trimming, differences in grass durability, etc., mowing is rarely a 100% successful. Typically, a mower gets about 80-90% of the grass cut perfectly.</li><li><strong>Your mower can mow</strong> — in hectares</li></ul><p>The result boxes are Mowing price in USD, Area to mow in hectares, Total costs in USD, Mowing price in /h, Hours of work, Total costs in USD, Mower width in centimeters, If you have in hectares, mowing should take in hours / minutes; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mowing price (Mowing cost)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Area to mow</strong></td><td>A measured quantity, 24 units available.</td><td>hectares</td><td>You supply it</td></tr><tr><td><strong>Total costs (Mowing cost)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Mowing price (Mowing cost)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Hours of work</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total costs (Mowing cost)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Mower speed</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>You supply it</td></tr><tr><td><strong>Mower width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Expected mowing productivity</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Your mower can mow</strong></td><td>A measured quantity, 24 units available.</td><td>hectares</td><td>You supply it</td></tr><tr><td><strong>If you have</strong></td><td>A measured quantity, 24 units available.</td><td>hectares</td><td>Calculated</td></tr><tr><td><strong>Mowing should take</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Mower width</strong> = <code>Your mower can mow ÷ (Expected mowing productivity × Mower speed)</code></li><li><strong>Your mower can mow</strong> = <code>Expected mowing productivity × Mower speed × Mower width</code></li><li><strong>Mower speed</strong> = <code>Your mower can mow ÷ (Expected mowing productivity × Mower width)</code></li><li><strong>Expected mowing productivity</strong> = <code>Your mower can mow ÷ (Mower speed × Mower width)</code></li><li><strong>Mowing price</strong> = <code>Total costs ÷ Area to mow</code></li><li><strong>Total costs</strong> = <code>Area to mow × Mowing price</code></li></ul><p>Any one of Mower width, Your mower can mow and Mower speed can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Lawn mowing calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Mower width</span><span class="formula-eq">=</span><span class="formula-rhs">your mower can mow ÷ (expected mowing productivity × mower speed)</span></div><div class="formula-row"><span class="formula-lhs">Mowing price</span><span class="formula-eq">=</span><span class="formula-rhs">total costs ÷ area to mow</span></div><div class="formula-row"><span class="formula-lhs">Total costs</span><span class="formula-eq">=</span><span class="formula-rhs">hours of work × mowing price</span></div><div class="formula-row"><span class="formula-lhs">If you have</span><span class="formula-eq">=</span><span class="formula-rhs">your mower can mow × mowing should take</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Mower speed, Expected mowing productivity and Your mower can mow carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Mowing price, Area to mow and Total costs are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Mower speed is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in hectares, and convertible to any of the 24 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Currency, opening in US Dollar</li><li>Area, opening in hectares</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Speed, opening in kilometers per hour</li><li>Length, opening in centimeters</li><li>%, opening in percent</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Lawn mowing calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 4 figures keep coming back — the area to mow, the total costs and the mowing price — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/mulch">Mulch</a>, <a href="/biology/mutation-frequency">Mutation frequency</a> and <a href="/biology/mutation-rate">Mutation rate</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Mower speed, Expected mowing productivity and Your mower can mow is what you already know and Mowing price and Area to mow is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dog-quality-of-life">Dog quality of life</a>, <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a> and <a href="/biology/dog-size">Dog size Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Lawn mowing calculator work out?', 'a' => <<<'TXT'
-            It returns mower width, derived from the area to mow, the total costs and the mowing price. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Mowing price, Area to mow, Total costs and Mowing price, from Your mower can mow, Mower speed and Expected mowing productivity. The relationship is Mower width = Your mower can mow ÷ (Expected mowing productivity × Mower speed).
             TXT],
-            ['q' => 'What do I need to enter to use the Lawn mowing calculator?', 'a' => <<<'TXT'
-            The form asks for the area to mow, the total costs, the mowing price and the hours of work, which is 10 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Mower speed (kilometers per hour), Expected mowing productivity (percent), Your mower can mow (hectares). With mowSpeed, errorMargin and mowingEff in place, Mowing price can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I enter mowing price (Mowing cost) in a different unit?', 'a' => <<<'TXT'
-            Yes. Mowing price (Mowing cost) opens in US Dollar and the chip beside it offers 113 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Mower width, Your mower can mow, Mower speed and Expected mowing productivity blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Mowing price is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Mower speed left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Lawn mowing calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Mowing price keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/mulch', 'name' => 'Mulch'],
-            ['path' => '/biology/mutation-frequency', 'name' => 'Mutation frequency'],
-            ['path' => '/biology/mutation-rate', 'name' => 'Mutation rate'],
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+            ['path' => '/biology/dog-size', 'name' => 'Dog size Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Protein Extinction Coefficient (ε280) Calculator',
-    'meta' => ['title' => 'Protein Extinction Coefficient (ε280) Calculator', 'description' => <<<'TXT'
-    A protein's extinction coefficient at 280 nm can be calculated from its amino acid composition: tryptophans and tyrosines do the absorbing, and cystines add a…
-    TXT, 'h1' => 'Protein Extinction Coefficient (ε280) Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Protein Extinction Coefficient (ε280) Calculator', 'description' => 'Protein Extinction Coefficient (ε280) turns Tryptophan residues, Tyrosine residues and Cystine (disulfide) bonds into Extinction coefficient and A280 of a 1…', 'h1' => 'Protein Extinction Coefficient (ε280) Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -83,44 +81,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A protein's extinction coefficient at 280 nm can be calculated from its amino acid composition: tryptophans and tyrosines do the absorbing, and cystines add a small amount. It returns extinction coefficient and A280 of a 1 mg/mL solution, and the panel shows all of them at once.
-        
-        Enter the counts and this returns ε in M⁻¹cm⁻¹ and the A280 of a 1 mg/mL solution.
+        Protein Extinction Coefficient (ε280) turns Tryptophan residues, Tyrosine residues and Cystine (disulfide) bonds into Extinction coefficient and A280 of a 1 mg/mL solution. Nothing is looked up on this page: Extinction coefficient is computed from Tryptophan residues and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Extinction coefficient is opened in M⁻¹cm⁻¹; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Protein Extinction Coefficient (ε280)', 'html' => <<<'TXT'
-            <p>ε₂₈₀ = 5500 × Trp + 1490 × Tyr + 125 × cystines</p>
-            <figure class="calc-figure"><img src="/uploads/biology/protein-extinction-coefficient.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Protein Extinction Coefficient (ε280) Calculator — Trp, Tyr and disulfides add up to the extinction coefficient." title="Protein Extinction Coefficient (ε280) Calculator"><figcaption>Trp, Tyr and disulfides add up to the extinction coefficient.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Trp</code></td><td>number of tryptophan residues</td><td>—</td></tr><tr><td><code>Tyr</code></td><td>number of tyrosine residues</td><td>—</td></tr><tr><td><code>cystine</code></td><td>number of disulfide bonds</td><td>—</td></tr><tr><td><code>ε</code></td><td>molar extinction coefficient</td><td>M⁻¹cm⁻¹</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Pace et al. (1995), Protein Science 4:2411–2423.</p>
+            ['title' => 'How the Protein Extinction Coefficient (ε280) calculator works', 'html' => <<<'TXT'
+            <p>Protein Extinction Coefficient (ε280) answers one question from 4 numbers, and the answer is Extinction coefficient and A280 of a 1 mg/mL solution.</p><p>The relationship it solves reads Extinction coefficient = Tryptophan residues × 5500 + Tyrosine residues × 1490 + Cystine (disulfide) bonds × 125.</p><p>The answers are Extinction coefficient and A280 of a 1 mg/mL solution; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Protein Extinction Coefficient (ε280)?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Tryptophan residues</strong> — a plain number, no unit. W</li><li><strong>Tyrosine residues</strong> — a plain number, no unit. Y</li><li><strong>Cystine (disulfide) bonds</strong> — a plain number, no unit. S–S pairs, not free cysteines</li><li><strong>Molecular weight</strong> — in Da</li></ul><p>What you get back is Extinction coefficient in M⁻¹cm⁻¹, A280 of a 1 mg/mL solution in AU, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: tryptophan residues of <strong>8</strong>, tyrosine residues of <strong>12</strong>, cystine (disulfide) bonds of <strong>4</strong>, molecular weight of <strong>55,000</strong> Da.</p>
-            <p>Substituting them into the formula gives extinction coefficient of <strong>62,380</strong> M⁻¹cm⁻¹, a280 of a 1 mg/ml solution of <strong>1.13</strong> AU.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Tryptophan residues = 8, Tyrosine residues = 12, Cystine (disulfide) bonds = 4 and Molecular weight = 55000 Da gives &lt;strong&gt;Extinction coefficient&lt;/strong&gt; = 62380 M⁻¹cm⁻¹ and &lt;strong&gt;A280 of a 1 mg/mL solution&lt;/strong&gt; = 1.13 AU.</p><ul><li><strong>Extinction coefficient</strong> = 62380 M⁻¹cm⁻¹</li><li><strong>A280 of a 1 mg/mL solution</strong> = 1.13 AU</li></ul><p>That is <strong>Extinction coefficient</strong> = <code>Tryptophan residues × 5500 + Tyrosine residues × 1490 + Cystine (disulfide) bonds × 125</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The coefficients come from Pace et al. (1995) and are what ExPASy ProtParam uses.</p></li><li><p>Count disulfide bonds, not free cysteines: reduced cysteines contribute nothing at 280 nm.</p></li><li><p>The A280 of a 1 mg/mL solution is the practical number for Beer–Lambert work, because it lets you skip the molecular weight.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Extinction coefficient&lt;/strong&gt; = 62380 and &lt;strong&gt;A280 of a 1 mg/mL solution&lt;/strong&gt; = 1.13 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Extinction coefficient takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Counting every cysteine residue instead of disulfide pairs.</li><li>Using the reduced-protein coefficient for a protein that is folded and disulfide-bonded.</li><li>Assuming the value holds in 6 M guanidine, where the spectrum shifts.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Extinction coefficient</strong> = <code>Tryptophan residues × 5500 + Tyrosine residues × 1490 + Cystine (disulfide) bonds × 125</code></li><li><strong>A280 of a 1 mg/mL solution</strong> = <code>(Tryptophan residues × 5500 + Tyrosine residues × 1490 + Cystine (disulfide) bonds × 125) ÷ Molecular weight</code></li></ul><p>Any one of Extinction coefficient and A280 of a 1 mg/mL solution can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Tryptophan residues, from 8 to 16 — and the answers go from &lt;strong&gt;Extinction coefficient&lt;/strong&gt; 62380 M⁻¹cm⁻¹ and &lt;strong&gt;A280 of a 1 mg/mL solution&lt;/strong&gt; 1.13 AU to &lt;strong&gt;Extinction coefficient&lt;/strong&gt; 106380 M⁻¹cm⁻¹ and &lt;strong&gt;A280 of a 1 mg/mL solution&lt;/strong&gt; 1.93 AU.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Extinction coefficient and A280 of a 1 mg/mL solution are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Tryptophan residues is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Tryptophan residues, Tyrosine residues and Cystine (disulfide) bonds measured, Extinction coefficient and A280 of a 1 mg/mL solution wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/bod-load">BOD Load Calculator</a>, <a href="/biology/bone-length-to-body-height">Bone Length to Body Height Calculator</a> and <a href="/biology/bradford-assay-calculator">Bradford Assay (standard curve) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What if my protein has no Trp or Tyr?', 'a' => 'Then ε₂₈₀ is very small and A280 is useless. Use a colorimetric assay or measure at 205 nm, where the peptide backbone absorbs.'],
-            ['q' => 'Does a His-tag change the coefficient?', 'a' => 'Only slightly — histidine contributes about 20 M⁻¹cm⁻¹ at 280 nm, which is negligible against a whole protein.'],
-            ['q' => 'What does the Protein Extinction Coefficient (ε280) actually calculate?', 'a' => 'It returns extinction coefficient and A280 of a 1 mg/mL solution. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Protein Extinction Coefficient (ε280) calculator work out?', 'a' => <<<'TXT'
+            Extinction coefficient and A280 of a 1 mg/mL solution, from Tryptophan residues, Tyrosine residues and Cystine (disulfide) bonds. The relationship is Extinction coefficient = Tryptophan residues × 5500 + Tyrosine residues × 1490 + Cystine (disulfide) bonds × 125.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Tryptophan residues, Tyrosine residues, Cystine (disulfide) bonds, Molecular weight (Da). With trp, tyr and cystine in place, Extinction coefficient can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Extinction coefficient and A280 of a 1 mg/mL solution blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Extinction coefficient = 62380 M⁻¹cm⁻¹ and A280 of a 1 mg/mL solution = 1.13 AU. Those are the defaults written into the form — move Tryptophan residues and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Extinction coefficient is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Tryptophan residues blank and the page solves for it, reporting Extinction coefficient instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Extinction coefficient keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/bod-load', 'name' => 'BOD Load Calculator'],
+            ['path' => '/biology/bone-length-to-body-height', 'name' => 'Bone Length to Body Height Calculator'],
+            ['path' => '/biology/bradford-assay-calculator', 'name' => 'Bradford Assay (standard curve) Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

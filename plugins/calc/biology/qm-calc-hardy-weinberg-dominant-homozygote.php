@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Hardy–Weinberg from the Dominant Homozygote Frequency',
-    'meta' => ['title' => 'Hardy–Weinberg from the Dominant Homozygote Frequency', 'description' => <<<'TXT'
-    Homozygous dominant frequency is p². It returns dominant allele frequency (p), recessive allele frequency (q), heterozygote frequency and recessive homozygote…
-    TXT, 'h1' => 'Hardy–Weinberg from the Dominant Homozygote Frequency', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Hardy–Weinberg from the Dominant Homozygote Frequency', 'description' => 'Hardy–Weinberg from the Dominant Homozygote Frequency works out Dominant allele frequency (p) and Recessive allele frequency (q) from Homozygous dominant…', 'h1' => 'Hardy–Weinberg from the Dominant Homozygote Frequency', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -70,48 +68,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Homozygous dominant frequency is p². It returns dominant allele frequency (p), recessive allele frequency (q), heterozygote frequency and recessive homozygote frequency, and the panel shows all of them at once.
-        
-        Unless you have genotype-level data — sequencing, a codominant marker, a biochemical test — you cannot see this class, so it is usually used the other way round: to predict how many homozygotes a population should contain.
+        Hardy–Weinberg from the Dominant Homozygote Frequency works out Dominant allele frequency (p) and Recessive allele frequency (q) from Homozygous dominant frequency (p²). Nothing is looked up on this page: Dominant allele frequency (p) is computed from Homozygous dominant frequency (p²) and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Hardy–Weinberg from the Dominant Homozygote Frequency', 'html' => <<<'TXT'
-            <p>p = √(p²); q = 1 − p; 2pq = 2p(1 − p)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/hardy-weinberg-dominant-homozygote.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Hardy–Weinberg from the Dominant Homozygote Frequency — p² back to p, then q, then the heterozygotes." title="Hardy–Weinberg from the Dominant Homozygote Frequency"><figcaption>p² back to p, then q, then the heterozygotes.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>p²</code></td><td>homozygous dominant frequency</td><td>0–1</td></tr><tr><td><code>p</code></td><td>dominant allele frequency</td><td>0–1</td></tr><tr><td><code>q</code></td><td>recessive allele frequency</td><td>0–1</td></tr></tbody></table>
+            ['title' => 'How the Hardy–Weinberg from the Dominant Homozygote Frequency calculator works', 'html' => <<<'TXT'
+            <p>Hardy–Weinberg from the Dominant Homozygote Frequency answers one question from 1 number, and the answer is Dominant allele frequency (p), Recessive allele frequency (q) and Heterozygote frequency.</p><p>In the form&#039;s own words, Dominant allele frequency (p) = √(Homozygous dominant frequency (p²)).</p><p>What comes back is Dominant allele frequency (p), Recessive allele frequency (q), Heterozygote frequency and Recessive homozygote frequency — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Hardy–Weinberg from the Dominant Homozygote Frequency?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Homozygous dominant frequency (p²)</strong> — a plain number, no unit</li></ul><p>The result boxes are Dominant allele frequency (p), Recessive allele frequency (q), Heterozygote frequency, Recessive homozygote frequency; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: homozygous dominant frequency (p²) of <strong>0.49</strong>.</p>
-            <p>Substituting them into the formula gives dominant allele frequency (p) of <strong>0.7</strong>, recessive allele frequency (q) of <strong>0.3</strong>, heterozygote frequency of <strong>0.42</strong>, recessive homozygote frequency of <strong>0.09</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Homozygous dominant frequency (p²) = 0.49 — through the same formula and the panel reports &lt;strong&gt;Dominant allele frequency (p)&lt;/strong&gt; = 0.7, &lt;strong&gt;Recessive allele frequency (q)&lt;/strong&gt; = 0.3, &lt;strong&gt;Heterozygote frequency&lt;/strong&gt; = 0.42 and &lt;strong&gt;Recessive homozygote frequency&lt;/strong&gt; = 0.09.</p><ul><li><strong>Dominant allele frequency (p)</strong> = 0.7</li><li><strong>Recessive allele frequency (q)</strong> = 0.3</li><li><strong>Heterozygote frequency</strong> = 0.42</li><li><strong>Recessive homozygote frequency</strong> = 0.09</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Dominant allele frequency (p)</strong> = <code>√(Homozygous dominant frequency (p²))</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>This direction needs genotype data, not phenotypes: a dominant phenotype pools AA and Aa and hides the split.</p></li><li><p>Codominant markers such as microsatellites or SNP arrays give p² directly, which is why population studies use them.</p></li><li><p>The square root is exact only at equilibrium; selection and drift both distort it.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Dominant allele frequency (p)&lt;/strong&gt; = 0.7, &lt;strong&gt;Recessive allele frequency (q)&lt;/strong&gt; = 0.3, &lt;strong&gt;Heterozygote frequency&lt;/strong&gt; = 0.42 and &lt;strong&gt;Recessive homozygote frequency&lt;/strong&gt; = 0.09. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Dominant allele frequency (p) is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using the dominant phenotype frequency as if it were p².</li><li>Forgetting that the three genotype frequencies must sum to 1.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Dominant allele frequency (p)</strong> = <code>√(Homozygous dominant frequency (p²))</code></li><li><strong>Recessive allele frequency (q)</strong> = <code>1 − √(Homozygous dominant frequency (p²))</code></li><li><strong>Heterozygote frequency</strong> = <code>2 × √(Homozygous dominant frequency (p²)) × (1 − √(Homozygous dominant frequency (p²)))</code></li><li><strong>Recessive homozygote frequency</strong> = <code>(1 − √(Homozygous dominant frequency (p²))) × (1 − √(Homozygous dominant frequency (p²)))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Dominant allele frequency (p), Recessive allele frequency (q) and Heterozygote frequency can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/hardy-weinberg-equilibrium">Hardy–Weinberg equilibrium</a>. <a href="/biology/hardy-weinberg-recessive-homozygote">Hardy–Weinberg from q²</a>. <a href="/biology/allele-frequency">Allele frequency</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Homozygous dominant frequency (p²), from 0.49 to 0.98 — and the answers go from &lt;strong&gt;Dominant allele frequency (p)&lt;/strong&gt; 0.7, &lt;strong&gt;Recessive allele frequency (q)&lt;/strong&gt; 0.3, &lt;strong&gt;Heterozygote frequency&lt;/strong&gt; 0.42 and &lt;strong&gt;Recessive homozygote frequency&lt;/strong&gt; 0.09 to &lt;strong&gt;Dominant allele frequency (p)&lt;/strong&gt; 0.9899, &lt;strong&gt;Recessive allele frequency (q)&lt;/strong&gt; 0.0101, &lt;strong&gt;Heterozygote frequency&lt;/strong&gt; 0.0199 and &lt;strong&gt;Recessive homozygote frequency&lt;/strong&gt; 1.010e-4.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Dominant allele frequency (p), Recessive allele frequency (q) and Heterozygote frequency are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Homozygous dominant frequency (p²) and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Homozygous dominant frequency (p²) and the number you are missing is Dominant allele frequency (p) and Recessive allele frequency (q).</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/mark-recapture">Mark-Recapture Population Calculator</a>, <a href="/biology/mark-recapture-population">Mark–Recapture Population (Lincoln–Petersen) Calculator</a> and <a href="/biology/mass-molarity-conversion">Mass to Molarity Converter Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is p if 49% of a population is AA?', 'a' => 'p = 0.7, so q = 0.3 and 42% should be heterozygotes.'],
-            ['q' => 'Can I get p from a dominant phenotype?', 'a' => 'Not without extra information — that is why recessive traits are the classical tool for estimating allele frequencies.'],
-            ['q' => 'What does the Hardy–Weinberg from the Dominant Homozygote Frequency actually calculate?', 'a' => <<<'TXT'
-            It returns dominant allele frequency (p), recessive allele frequency (q), heterozygote frequency and recessive homozygote frequency. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Hardy–Weinberg from the Dominant Homozygote Frequency calculator work out?', 'a' => <<<'TXT'
+            Dominant allele frequency (p), Recessive allele frequency (q), Heterozygote frequency and Recessive homozygote frequency, from Homozygous dominant frequency (p²). The relationship is Dominant allele frequency (p) = √(Homozygous dominant frequency (p²)).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Homozygous dominant frequency (p²). Fill homo_dom and leave Dominant allele frequency (p) empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Dominant allele frequency (p), Recessive allele frequency (q), Heterozygote frequency and Recessive homozygote frequency can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Dominant allele frequency (p) = 0.7, Recessive allele frequency (q) = 0.3, Heterozygote frequency = 0.42 and Recessive homozygote frequency = 0.09. The figures come from Homozygous dominant frequency (p²) as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Dominant allele frequency (p) is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Homozygous dominant frequency (p²) left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Dominant allele frequency (p) at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mark-recapture', 'name' => 'Mark-Recapture Population Calculator'],
+            ['path' => '/biology/mark-recapture-population', 'name' => 'Mark–Recapture Population (Lincoln–Petersen) Calculator'],
+            ['path' => '/biology/mass-molarity-conversion', 'name' => 'Mass to Molarity Converter Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

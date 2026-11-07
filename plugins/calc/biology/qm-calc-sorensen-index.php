@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Sørensen Similarity Index Calculator',
-    'meta' => ['title' => 'Sørensen Similarity Index Calculator — Biology', 'description' => 'The Sørensen index compares the species lists of two sites: it is twice the number of shared species divided by the total number of species records in both.', 'h1' => 'Sørensen Similarity Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Sørensen Similarity Index Calculator — Biology', 'description' => 'Sørensen Similarity Index turns Species only at site A, Species only at site B and Species at both sites into Sørensen similarity and Jaccard similarity.', 'h1' => 'Sørensen Similarity Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -86,46 +86,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Sørensen index compares the species lists of two sites: it is twice the number of shared species divided by the total number of species records in both. It returns sørensen similarity, jaccard similarity, sørensen dissimilarity and beta diversity (Sørensen), and the panel shows all of them at once.
-        
-        It runs from 0 (nothing in common) to 1 (identical communities) and is the standard beta-diversity measure.
+        Sørensen Similarity Index turns Species only at site A, Species only at site B and Species at both sites into Sørensen similarity and Jaccard similarity. It is a single relationship that reads Sørensen similarity out of Species only at site A, not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Sørensen Similarity Index', 'html' => <<<'TXT'
-            <p>Sørensen = 2C ÷ (A + B), where A + C and B + C are the two species totals</p>
-            <figure class="calc-figure"><img src="/uploads/biology/sorensen-index.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Sørensen Similarity Index Calculator — Shared and unique species between two sites." title="Sørensen Similarity Index Calculator"><figcaption>Shared and unique species between two sites.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>C</code></td><td>species present at both sites</td><td>species</td></tr><tr><td><code>A</code></td><td>species only at the first site</td><td>species</td></tr><tr><td><code>B</code></td><td>species only at the second site</td><td>species</td></tr></tbody></table>
+            ['title' => 'How the Sørensen Similarity Index calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Sørensen Similarity Index: it takes 3 numbers and reports Sørensen similarity, Jaccard similarity and Sørensen dissimilarity.</p><p>In the form&#039;s own words, Sørensen similarity = 2 × Species at both sites ÷ (2 × Species at both sites + Species only at site A + Species only at site B).</p><p>What comes back is Sørensen similarity, Jaccard similarity, Sørensen dissimilarity and Beta diversity (Sørensen) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Sørensen Similarity Index?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Species only at site A</strong> — in species</li><li><strong>Species only at site B</strong> — in species</li><li><strong>Species at both sites</strong> — in species</li></ul><p>The answers come back as Sørensen similarity, Jaccard similarity, Sørensen dissimilarity in %, Beta diversity (Sørensen). </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: species only at site a of <strong>12</strong> species, species only at site b of <strong>8</strong> species, species at both sites of <strong>20</strong> species.</p>
-            <p>Substituting them into the formula gives sørensen similarity of <strong>0.6667</strong>, jaccard similarity of <strong>0.5</strong>, sørensen dissimilarity of <strong>33.33</strong>%, beta diversity (sørensen) of <strong>0.3333</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Species only at site A = 12 species, Species only at site B = 8 species and Species at both sites = 20 species; the answers are &lt;strong&gt;Sørensen similarity&lt;/strong&gt; = 0.6667, &lt;strong&gt;Jaccard similarity&lt;/strong&gt; = 0.5, &lt;strong&gt;Sørensen dissimilarity&lt;/strong&gt; = 33.33 % and &lt;strong&gt;Beta diversity (Sørensen)&lt;/strong&gt; = 0.3333.</p><ul><li><strong>Sørensen similarity</strong> = 0.6667</li><li><strong>Jaccard similarity</strong> = 0.5</li><li><strong>Sørensen dissimilarity</strong> = 33.33 %</li><li><strong>Beta diversity (Sørensen)</strong> = 0.3333</li></ul><p>That is <strong>Sørensen similarity</strong> = <code>2 × Species at both sites ÷ (2 × Species at both sites + Species only at site A + Species only at site B)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 0.25</td><td><strong>Very different</strong></td><td>the sites share few species</td></tr><tr><td>0.25 – 0.6</td><td><strong>Moderate overlap</strong></td><td>some shared core, many local species</td></tr><tr><td>above 0.6</td><td><strong>Similar</strong></td><td>the two communities largely coincide</td></tr></tbody></table>
-            <ul><li><p>Sørensen is the same as the Dice coefficient on presence–absence data; Jaccard is always lower because it divides by the union rather than the average.</p></li><li><p>The index ignores abundance: one shared rare species counts as much as a shared dominant.</p></li><li><p>Sørensen dissimilarity, 1 − similarity, plus the species turnover between sites is beta diversity, which measures how much communities change across a landscape.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Sørensen similarity&lt;/strong&gt; = 0.6667, &lt;strong&gt;Jaccard similarity&lt;/strong&gt; = 0.5, &lt;strong&gt;Sørensen dissimilarity&lt;/strong&gt; = 33.33 and &lt;strong&gt;Beta diversity (Sørensen)&lt;/strong&gt; = 0.3333 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Sørensen similarity takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using total species per site instead of the shared and unique counts.</li><li>Comparing sites sampled with different effort, which inflates the unique lists.</li><li>Reporting Jaccard and calling it Sørensen, which overstates dissimilarity.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Sørensen similarity</strong> = <code>2 × Species at both sites ÷ (2 × Species at both sites + Species only at site A + Species only at site B)</code></li><li><strong>Jaccard similarity</strong> = <code>Species at both sites ÷ (Species only at site A + Species only at site B + Species at both sites)</code></li><li><strong>Sørensen dissimilarity</strong> = <code>(1 − 2 × Species at both sites ÷ (2 × Species at both sites + Species only at site A + Species only at site B)) × 100</code></li><li><strong>Beta diversity (Sørensen)</strong> = <code>(Species only at site A + Species only at site B) ÷ (2 × Species at both sites + Species only at site A + Species only at site B)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Sørensen similarity, Jaccard similarity and Sørensen dissimilarity can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Species only at site A from 12 to 24, leaving every other box alone. The panel moves from &lt;strong&gt;Sørensen similarity&lt;/strong&gt; 0.6667, &lt;strong&gt;Jaccard similarity&lt;/strong&gt; 0.5, &lt;strong&gt;Sørensen dissimilarity&lt;/strong&gt; 33.33 % and &lt;strong&gt;Beta diversity (Sørensen)&lt;/strong&gt; 0.3333 to &lt;strong&gt;Sørensen similarity&lt;/strong&gt; 0.5556, &lt;strong&gt;Jaccard similarity&lt;/strong&gt; 0.3846, &lt;strong&gt;Sørensen dissimilarity&lt;/strong&gt; 44.44 % and &lt;strong&gt;Beta diversity (Sørensen)&lt;/strong&gt; 0.4444.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Sørensen similarity, Jaccard similarity and Sørensen dissimilarity are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Species only at site A is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Species only at site A, Species only at site B and Species at both sites and the number you are missing is Sørensen similarity and Jaccard similarity.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/stomatal-density">Stomatal Density Calculator</a>, <a href="/biology/sulfur-soil-acidifier">Sulfur Soil Acidifier Calculator</a> and <a href="/biology/swine-gestation">Swine gestation Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Are Sørensen and Dice the same?', 'a' => 'Yes on presence–absence data — the arithmetic is identical.'],
-            ['q' => 'Why is Sørensen preferred to Jaccard in ecology?', 'a' => 'It is less sensitive to the total number of species, so it compares samples of different richness more fairly.'],
-            ['q' => 'What does the Sørensen Similarity Index actually calculate?', 'a' => <<<'TXT'
-            It returns sørensen similarity, jaccard similarity, sørensen dissimilarity and beta diversity (Sørensen). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Sørensen Similarity Index calculator work out?', 'a' => <<<'TXT'
+            Sørensen similarity, Jaccard similarity, Sørensen dissimilarity and Beta diversity (Sørensen), from Species at both sites, Species only at site A and Species only at site B. The relationship is Sørensen similarity = 2 × Species at both sites ÷ (2 × Species at both sites + Species only at site A + Species only at site B).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Species only at site A (species), Species only at site B (species), Species at both sites (species). Fill a, b and c and leave Sørensen similarity empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Sørensen similarity, Jaccard similarity, Sørensen dissimilarity and Beta diversity (Sørensen) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Sørensen similarity = 0.6667, Jaccard similarity = 0.5, Sørensen dissimilarity = 33.33 % and Beta diversity (Sørensen) = 0.3333. Those are the defaults written into the form — move Species only at site A and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Sørensen similarity is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Species only at site A blank and the page solves for it, reporting Sørensen similarity instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Sørensen similarity keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/stomatal-density', 'name' => 'Stomatal Density Calculator'],
+            ['path' => '/biology/sulfur-soil-acidifier', 'name' => 'Sulfur Soil Acidifier Calculator'],
+            ['path' => '/biology/swine-gestation', 'name' => 'Swine gestation Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

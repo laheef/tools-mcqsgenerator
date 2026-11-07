@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Hardy–Weinberg from the Heterozygote Frequency',
-    'meta' => ['title' => 'Hardy–Weinberg from the Heterozygote Frequency', 'description' => 'Heterozygote frequency 2pq is a quadratic in q, so it has two solutions — a fact that bites anyone converting a carrier rate back into an allele frequency.', 'h1' => 'Hardy–Weinberg from the Heterozygote Frequency', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Hardy–Weinberg from the Heterozygote Frequency', 'description' => 'Hardy–Weinberg from the Heterozygote Frequency works out q (lower root) and q (upper root) from Heterozygote frequency (2pq). The arithmetic is the whole…', 'h1' => 'Hardy–Weinberg from the Heterozygote Frequency', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -83,47 +83,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Heterozygote frequency 2pq is a quadratic in q, so it has two solutions — a fact that bites anyone converting a carrier rate back into an allele frequency. It returns q (lower root), q (upper root), p for the lower root and homozygote frequency, lower root, and the panel shows all of them at once.
-        
-        This calculator solves both branches and reports which one applies to your population.
+        Hardy–Weinberg from the Heterozygote Frequency works out q (lower root) and q (upper root) from Heterozygote frequency (2pq). The arithmetic is the whole method: q (lower root) is worked out from Heterozygote frequency (2pq) by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Hardy–Weinberg from the Heterozygote Frequency', 'html' => <<<'TXT'
-            <p>2q² − 2q + h = 0, so q = [1 ± √(1 − 2h)] ÷ 2</p>
-            <figure class="calc-figure"><img src="/uploads/biology/hardy-weinberg-heterozygote.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Hardy–Weinberg from the Heterozygote Frequency — 2pq peaks at 0.5 and gives two allele frequencies for every value below it." title="Hardy–Weinberg from the Heterozygote Frequency"><figcaption>2pq peaks at 0.5 and gives two allele frequencies for every value below it.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>h</code></td><td>observed heterozygote frequency</td><td>0–0.5</td></tr><tr><td><code>q</code></td><td>recessive allele frequency</td><td>0–1</td></tr><tr><td><code>1 − 2h</code></td><td>the discriminant; negative means no solution</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Hardy–Weinberg from the Heterozygote Frequency calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Hardy–Weinberg from the Heterozygote Frequency: it takes 1 number and reports q (lower root), q (upper root) and p for the lower root.</p><p>The relationship it solves reads q (lower root) = (1 − √(1 − 2 × Heterozygote frequency (2pq))) ÷ 2.</p><p>The answers are q (lower root), q (upper root), p for the lower root and Homozygote frequency, lower root; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Hardy–Weinberg from the Heterozygote Frequency?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Heterozygote frequency (2pq)</strong> — a plain number, no unit. Between 0 and 0.5</li></ul><p>What you get back is q (lower root), q (upper root), p for the lower root, Homozygote frequency, lower root, Maximum possible 2pq, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: heterozygote frequency (2pq) of <strong>0.42</strong>.</p>
-            <p>Substituting them into the formula gives q (lower root) of <strong>0.3</strong>, q (upper root) of <strong>0.7</strong>, p for the lower root of <strong>0.7</strong>, homozygote frequency, lower root of <strong>0.58</strong>, maximum possible 2pq of <strong>0.5</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Heterozygote frequency (2pq) = 0.42 — through the same formula and the panel reports &lt;strong&gt;q (lower root)&lt;/strong&gt; = 0.3, &lt;strong&gt;q (upper root)&lt;/strong&gt; = 0.7, &lt;strong&gt;p for the lower root&lt;/strong&gt; = 0.7, &lt;strong&gt;Homozygote frequency, lower root&lt;/strong&gt; = 0.58 and &lt;strong&gt;Maximum possible 2pq&lt;/strong&gt; = 0.5.</p><ul><li><strong>q (lower root)</strong> = 0.3</li><li><strong>q (upper root)</strong> = 0.7</li><li><strong>p for the lower root</strong> = 0.7</li><li><strong>Homozygote frequency, lower root</strong> = 0.58</li><li><strong>Maximum possible 2pq</strong> = 0.5</li></ul><p>That is <strong>q (lower root)</strong> = <code>(1 − √(1 − 2 × Heterozygote frequency (2pq))) ÷ 2</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>2pq never exceeds 0.5, so a reported heterozygote frequency above 50% cannot come from a two-allele locus at equilibrium — check the data before trusting the roots.</p></li><li><p>The two roots are mirror images: q and 1 − q give the same heterozygote frequency, so the data alone cannot tell you which allele is common.</p></li><li><p>Real populations often have fewer heterozygotes than 2pq predicts (a Wahlund effect from population structure), which is one reason the observed value may be the more useful input.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;q (lower root)&lt;/strong&gt; = 0.3, &lt;strong&gt;q (upper root)&lt;/strong&gt; = 0.7, &lt;strong&gt;p for the lower root&lt;/strong&gt; = 0.7, &lt;strong&gt;Homozygote frequency, lower root&lt;/strong&gt; = 0.58 and &lt;strong&gt;Maximum possible 2pq&lt;/strong&gt; = 0.5. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as q (lower root) is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Entering 42 for 42% instead of 0.42.</li><li>Taking the lower root without checking which allele is the rare one.</li><li>Using this inversion when the locus has more than two alleles.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>q (lower root)</strong> = <code>(1 − √(1 − 2 × Heterozygote frequency (2pq))) ÷ 2</code></li><li><strong>q (upper root)</strong> = <code>(1 + √(1 − 2 × Heterozygote frequency (2pq))) ÷ 2</code></li><li><strong>p for the lower root</strong> = <code>1 − (1 − √(1 − 2 × Heterozygote frequency (2pq))) ÷ 2</code></li><li><strong>Homozygote frequency, lower root</strong> = <code>(1 − (1 − √(1 − 2 × Heterozygote frequency (2pq))) ÷ 2)^(2) + ((1 − √(1 − 2 × Heterozygote frequency (2pq))) ÷ 2)^(2)</code></li><li><strong>Maximum possible 2pq</strong> = <code>0.5</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of q (lower root), q (upper root) and p for the lower root can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/hardy-weinberg-equilibrium">Hardy–Weinberg equilibrium</a>. <a href="/biology/hardy-weinberg-recessive-homozygote">Hardy–Weinberg from q²</a>. <a href="/biology/hardy-weinberg-dominant-homozygote">Hardy–Weinberg from p²</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Heterozygote frequency (2pq), from 0.42 to 0.84 — and the answers go from &lt;strong&gt;q (lower root)&lt;/strong&gt; 0.3, &lt;strong&gt;q (upper root)&lt;/strong&gt; 0.7, &lt;strong&gt;p for the lower root&lt;/strong&gt; 0.7, &lt;strong&gt;Homozygote frequency, lower root&lt;/strong&gt; 0.58 and &lt;strong&gt;Maximum possible 2pq&lt;/strong&gt; 0.5 to &lt;strong&gt;q (lower root)&lt;/strong&gt; 0.5, &lt;strong&gt;q (upper root)&lt;/strong&gt; 0.5, &lt;strong&gt;p for the lower root&lt;/strong&gt; 0.5, &lt;strong&gt;Homozygote frequency, lower root&lt;/strong&gt; 0.5 and &lt;strong&gt;Maximum possible 2pq&lt;/strong&gt; 0.5.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> q (lower root), q (upper root) and p for the lower root are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Heterozygote frequency (2pq) and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Heterozygote frequency (2pq) and the number you are missing is q (lower root) and q (upper root).</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/mushroom-yield">Mushroom Yield Calculator</a>, <a href="/biology/mutation-frequency">Mutation frequency</a> and <a href="/biology/mutation-rate">Mutation rate Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Can 2pq be greater than 0.5?', 'a' => 'No — its maximum is 0.5 at p = q = 0.5. A larger value means the population is not at equilibrium or the data are wrong.'],
-            ['q' => 'Why are there two answers?', 'a' => 'Because 2q(1 − q) is symmetric about q = 0.5; both allele frequencies produce the same heterozygote share.'],
-            ['q' => 'What does the Hardy–Weinberg from the Heterozygote Frequency actually calculate?', 'a' => <<<'TXT'
-            It returns q (lower root), q (upper root), p for the lower root and homozygote frequency, lower root. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Hardy–Weinberg from the Heterozygote Frequency calculator work out?', 'a' => <<<'TXT'
+            q (lower root), q (upper root), p for the lower root and Homozygote frequency, lower root, from Heterozygote frequency (2pq). The relationship is q (lower root) = (1 − √(1 − 2 × Heterozygote frequency (2pq))) ÷ 2.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Heterozygote frequency (2pq). Fill hetero and leave q (lower root) empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. q (lower root), q (upper root), p for the lower root and Homozygote frequency, lower root can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            q (lower root) = 0.3, q (upper root) = 0.7, p for the lower root = 0.7, Homozygote frequency, lower root = 0.58 and Maximum possible 2pq = 0.5. The figures come from Heterozygote frequency (2pq) as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            q (lower root) is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Heterozygote frequency (2pq) blank and the page solves for it, reporting q (lower root) instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. q (lower root) keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mushroom-yield', 'name' => 'Mushroom Yield Calculator'],
+            ['path' => '/biology/mutation-frequency', 'name' => 'Mutation frequency'],
+            ['path' => '/biology/mutation-rate', 'name' => 'Mutation rate Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

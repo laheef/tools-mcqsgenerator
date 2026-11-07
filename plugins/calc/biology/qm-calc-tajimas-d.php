@@ -12,7 +12,7 @@
 return [
     'name' => 'Tajima\'s D Calculator',
     'meta' => ['title' => 'Tajima\'s D Calculator: Formula, Steps & Results', 'description' => <<<'TXT'
-    Tajima's D compares two estimates of genetic diversity — the number of segregating sites and the average pairwise difference. It returns a₁, a₂, watterson's θ…
+    Tajima's D Calculator: Tajima's D takes Segregating sites (S), Sample size (chromosomes) and Nucleotide diversity (π) and returns Tajima's D and Watterson's θ.
     TXT, 'h1' => 'Tajima\'s D Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
@@ -123,44 +123,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Tajima's D compares two estimates of genetic diversity — the number of segregating sites and the average pairwise difference. It returns a₁, a₂, watterson's θ and nucleotide diversity θπ, and the panel shows all of them at once.
-        
-        When they disagree, the population is not evolving neutrally: a negative D suggests a selective sweep or recent expansion, a positive D suggests balancing selection or structure.
+        Tajima's D takes Segregating sites (S), Sample size (chromosomes) and Nucleotide diversity (π) and returns Tajima's D and Watterson's θ. The arithmetic is the whole method: Tajima's D is worked out from Segregating sites (S) by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Tajima\'s D', 'html' => <<<'TXT'
-            <p>D = (θπ − S ÷ a₁) ÷ √(e₁S + e₂S(S−1)), with a₁ = Σ 1/i for i = 1 … n−1. θπ is the average pairwise difference; S ÷ a₁ is Watterson's estimate</p>
-            <figure class="calc-figure"><img src="/uploads/biology/tajimas-d.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Tajima's D Calculator — Tajima's D across a genomic region" title="Tajima's D Calculator"><figcaption>Tajima's D across a genomic region</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>number of segregating (variable) sites</td><td>—</td></tr><tr><td><code>θπ</code></td><td>average pairwise nucleotide differences</td><td>per bp</td></tr><tr><td><code>a₁</code></td><td>1 + 1/2 + … + 1/(n−1), the harmonic number of the sample size</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Tajima\'s D calculator works', 'html' => <<<'TXT'
+            <p>Tajima&#039;s D answers one question from 4 numbers, and the answer is Tajima&#039;s D, Watterson&#039;s θ and Nucleotide diversity θπ.</p><p>The relationship it solves reads a₁ = ln(Sample size (chromosomes) − 1) + 0.5772 + 1 ÷ (2 × (Sample size (chromosomes) − 1)).</p><p>What comes back is Tajima&#039;s D, Watterson&#039;s θ, Nucleotide diversity θπ and a₁ — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Tajima\'s D?', 'html' => <<<'TXT'
-            <ol><li>Count the segregating sites and the sequences in your alignment.</li><li>Enter the average pairwise differences per site and the length analysed.</li><li>A D outside ±2 is a signal worth investigating, ideally with a simulation-based test.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Segregating sites (S)</strong> — a plain number, no unit. Positions that vary in the sample</li><li><strong>Sample size (chromosomes)</strong> — a plain number, no unit. Sequences compared</li><li><strong>Nucleotide diversity (π)</strong> — a plain number, no unit. Average pairwise difference per site</li><li><strong>Sequence length</strong> — in bp</li></ul><p>The result boxes are Tajima&#039;s D, Watterson&#039;s θ in per bp, Nucleotide diversity θπ in per bp, a₁, a₂, S ÷ a₁; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: segregating sites (s) of <strong>12</strong>, sample size (chromosomes) of <strong>20</strong>, nucleotide diversity (π) of <strong>0.004</strong>, sequence length of <strong>1,000</strong> bp.</p>
-            <p>Substituting them into the formula gives a₁ of <strong>3.55</strong>, a₂ of <strong>1.59</strong>, watterson's θ of <strong>0.0034</strong> per bp, nucleotide diversity θπ of <strong>0.004</strong> per bp, s ÷ a₁ of <strong>3.38</strong>, tajima's d of <strong>0.656</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Segregating sites (S) = 12, Sample size (chromosomes) = 20, Nucleotide diversity (π) = 0.004 and Sequence length = 1000 bp; the answers are &lt;strong&gt;a₁&lt;/strong&gt; = 3.55, &lt;strong&gt;a₂&lt;/strong&gt; = 1.59, &lt;strong&gt;Watterson&amp;#039;s θ&lt;/strong&gt; = 0.0034 per bp, &lt;strong&gt;Nucleotide diversity θπ&lt;/strong&gt; = 0.004 per bp, &lt;strong&gt;S ÷ a₁&lt;/strong&gt; = 3.38 and &lt;strong&gt;Tajima&amp;#039;s D&lt;/strong&gt; = 0.656.</p><ul><li><strong>a₁</strong> = 3.55</li><li><strong>a₂</strong> = 1.59</li><li><strong>Watterson&#039;s θ</strong> = 0.0034 per bp</li><li><strong>Nucleotide diversity θπ</strong> = 0.004 per bp</li><li><strong>S ÷ a₁</strong> = 3.38</li><li><strong>Tajima&#039;s D</strong> = 0.656</li></ul><p>The line behind those figures is <strong>a₁</strong> = <code>ln(Sample size (chromosomes) − 1) + 0.5772 + 1 ÷ (2 × (Sample size (chromosomes) − 1))</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>D below −2</td><td><strong>Significant negative</strong></td><td>recent sweep or population expansion</td></tr><tr><td>D −2 to 2</td><td><strong>Neutral</strong></td><td>consistent with a constant-size, neutrally evolving population</td></tr><tr><td>D above 2</td><td><strong>Significant positive</strong></td><td>balancing selection, structure or a bottleneck</td></tr></tbody></table>
-            <ul><li><p>The statistic is a difference of two estimates of the same quantity: under neutrality they should agree, which is why D is expected to be about zero.</p></li><li><p>The harmonic sums a₁ and a₂ are evaluated here from their asymptotic expansions, which match the exact values to about 0.1% for sample sizes between 10 and 200; the coefficients e₁ and e₂ follow Tajima's original definitions.</p></li><li><p>Significance is judged against a coalescent simulation or a standardised critical value, not against a normal distribution — D is skewed for small samples.</p></li><li><p>Window size matters: calculated across a whole chromosome, a local sweep disappears into the average.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;a₁&lt;/strong&gt; = 3.55, &lt;strong&gt;a₂&lt;/strong&gt; = 1.59, &lt;strong&gt;Watterson&amp;#039;s θ&lt;/strong&gt; = 0.0034, &lt;strong&gt;Nucleotide diversity θπ&lt;/strong&gt; = 0.004, &lt;strong&gt;S ÷ a₁&lt;/strong&gt; = 3.38 and &lt;strong&gt;Tajima&amp;#039;s D&lt;/strong&gt; = 0.656 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Tajima&#039;s D takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Feeding in the number of variable sites without the sequence length, which loses the per-base scaling.</li><li>Comparing D values from windows with very different numbers of segregating sites.</li><li>Treating a significant D as proof of selection — demography produces the same signature.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>a₁</strong> = <code>ln(Sample size (chromosomes) − 1) + 0.5772 + 1 ÷ (2 × (Sample size (chromosomes) − 1))</code></li><li><strong>a₂</strong> = <code>1.6449 − 1 ÷ (Sample size (chromosomes) − 1)</code></li><li><strong>Watterson&#039;s θ</strong> = <code>Segregating sites (S) ÷ a₁ ÷ Sequence length</code></li><li><strong>Nucleotide diversity θπ</strong> = <code>Nucleotide diversity (π)</code></li><li><strong>S ÷ a₁</strong> = <code>Segregating sites (S) ÷ a₁</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of a₁, a₂ and Watterson&#039;s θ can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Segregating sites (S), from 12 to 24 — and the answers go from &lt;strong&gt;a₁&lt;/strong&gt; 3.55, &lt;strong&gt;a₂&lt;/strong&gt; 1.59, &lt;strong&gt;Watterson&amp;#039;s θ&lt;/strong&gt; 0.0034 per bp, &lt;strong&gt;Nucleotide diversity θπ&lt;/strong&gt; 0.004 per bp, &lt;strong&gt;S ÷ a₁&lt;/strong&gt; 3.38 and &lt;strong&gt;Tajima&amp;#039;s D&lt;/strong&gt; 0.656 to &lt;strong&gt;a₁&lt;/strong&gt; 3.55, &lt;strong&gt;a₂&lt;/strong&gt; 1.59, &lt;strong&gt;Watterson&amp;#039;s θ&lt;/strong&gt; 0.0068 per bp, &lt;strong&gt;Nucleotide diversity θπ&lt;/strong&gt; 0.004 per bp, &lt;strong&gt;S ÷ a₁&lt;/strong&gt; 6.76 and &lt;strong&gt;Tajima&amp;#039;s D&lt;/strong&gt; -1.58.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Tajima&#039;s D, Watterson&#039;s θ and Nucleotide diversity θπ are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Segregating sites (S) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Segregating sites (S), Sample size (chromosomes) and Nucleotide diversity (π) and the number you are missing is Tajima&#039;s D and Watterson&#039;s θ.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/od260-nucleic-acid-concentration">OD260 to Nucleic Acid Concentration Calculator</a>, <a href="/biology/od600-to-cell-density">OD600 to Cell Density Calculator</a> and <a href="/biology/genetic-odds-ratio">Odds Ratio for Genetics Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does a negative Tajima\'s D mean?', 'a' => 'Fewer rare variants than expected: a selective sweep or a recent expansion has removed them.'],
-            ['q' => 'Is Tajima\'s D a p-value?', 'a' => 'No. It is a test statistic; you need a simulation or a critical-value table to call significance.'],
-            ['q' => 'Why do the two estimates differ?', 'a' => 'They weight rare variants differently — π includes them, S does not.'],
-            ['q' => 'What does the Tajima\'s D actually calculate?', 'a' => 'It returns a₁, a₂, watterson\'s θ and nucleotide diversity θπ. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Tajima\'s D calculator work out?', 'a' => <<<'TXT'
+            Tajima's D, Watterson's θ, Nucleotide diversity θπ and a₁, from Sample size (chromosomes). The relationship is a₁ = ln(Sample size (chromosomes) − 1) + 0.5772 + 1 ÷ (2 × (Sample size (chromosomes) − 1)).
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Segregating sites (S), Sample size (chromosomes), Nucleotide diversity (π), Sequence length (bp). Enter sites, n and pi; Tajima's D is the box to leave alone unless it is the value you came for.
             TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. a₁, a₂, Watterson's θ and Nucleotide diversity θπ can each be the answer: the page works out which box is empty and rearranges the relationship for it.
+            TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            a₁ = 3.55, a₂ = 1.59, Watterson's θ = 0.0034 per bp, Nucleotide diversity θπ = 0.004 per bp, S ÷ a₁ = 3.38 and Tajima's D = 0.656. Those are the defaults written into the form — move Segregating sites (S) and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Tajima\'s D is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Segregating sites (S) blank and the page solves for it, reporting Tajima\'s D instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Tajima\'s D at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/od260-nucleic-acid-concentration', 'name' => 'OD260 to Nucleic Acid Concentration Calculator'],
+            ['path' => '/biology/od600-to-cell-density', 'name' => 'OD600 to Cell Density Calculator'],
+            ['path' => '/biology/genetic-odds-ratio', 'name' => 'Odds Ratio for Genetics Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

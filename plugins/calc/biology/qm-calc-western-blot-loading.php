@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Western Blot Protein Loading Calculator',
-    'meta' => ['title' => 'Western Blot Protein Loading Calculator — Biology', 'description' => <<<'TXT'
-    How much lysate to load per lane, and how much of it is your protein of interest. It returns lysate volume per lane, protein needed in total, lysate needed in…
-    TXT, 'h1' => 'Western Blot Protein Loading Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Western Blot Protein Loading Calculator — Biology', 'description' => 'Western Blot Protein Loading turns Lysate concentration, Protein per lane and Number of lanes into Lysate volume per lane and Protein needed in total.', 'h1' => 'Western Blot Protein Loading Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -117,46 +115,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        How much lysate to load per lane, and how much of it is your protein of interest. It returns lysate volume per lane, protein needed in total, lysate needed in total and final loading concentration, and the panel shows all of them at once.
-        
-        It turns a protein concentration in mg/mL into the microlitres for 20 µg per lane, works out how many cells that represents, and checks that the band will be inside the linear range of the detector.
+        Western Blot Protein Loading turns Lysate concentration, Protein per lane and Number of lanes into Lysate volume per lane and Protein needed in total. The arithmetic is the whole method: Lysate volume per lane is worked out from Lysate concentration by one formula, applied once. Lysate volume per lane comes back in µL unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Western Blot Protein Loading', 'html' => <<<'TXT'
-            <p>Lysate per lane (µL) = protein per lane (µg) ÷ concentration (mg/mL). Target mass = total protein × fraction that is the target</p>
-            <figure class="calc-figure"><img src="/uploads/biology/western-blot-loading.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Western Blot Protein Loading Calculator — Lysate volume per lane from a 2 mg/mL stock" title="Western Blot Protein Loading Calculator"><figcaption>Lysate volume per lane from a 2 mg/mL stock</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>mg/mL</code></td><td>protein concentration of the lysate</td><td>g/L</td></tr><tr><td><code>µg/lane</code></td><td>total protein loaded in one well</td><td>µg</td></tr><tr><td><code>target</code></td><td>the fraction of the lysate that is the protein you are blotting</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Western Blot Protein Loading calculator works', 'html' => <<<'TXT'
+            <p>The Western Blot Protein Loading calculator applies one relationship to 4 numbers and reports Lysate volume per lane, Protein needed in total and Lysate needed in total.</p><p>In the form&#039;s own words, Lysate volume per lane = Protein per lane ÷ Lysate concentration.</p><p>The answers are Lysate volume per lane, Protein needed in total, Lysate needed in total and Final loading concentration; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Western Blot Protein Loading?', 'html' => <<<'TXT'
-            <ol><li>Enter the concentration of each lysate from the protein assay.</li><li>Set the protein you want per lane and how many lanes you will run.</li><li>Read the volume to pipette, the total lysate needed and the mass of your target protein.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Lysate concentration</strong> — in mg/mL. From a BCA or Bradford assay</li><li><strong>Protein per lane</strong> — in µg. 20–30 µg for a whole lysate</li><li><strong>Number of lanes</strong> — a plain number, no unit</li><li><strong>Share that is your target</strong> — in of total. 0.01 means 1% of the lysate</li></ul><p>The result boxes are Lysate volume per lane in µL, Protein needed in total in µg, Lysate needed in total in µL, Final loading concentration in µg/µL, Target protein per lane in ng; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: lysate concentration of <strong>2</strong> mg/mL, protein per lane of <strong>20</strong> µg, number of lanes of <strong>10</strong>, share that is your target of <strong>0.01</strong> of total.</p>
-            <p>Substituting them into the formula gives lysate volume per lane of <strong>10</strong> µL, protein needed in total of <strong>200</strong> µg, lysate needed in total of <strong>100</strong> µL, final loading concentration of <strong>1.6</strong> µg/µL, target protein per lane of <strong>200</strong> ng.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Lysate concentration = 2 mg/mL, Protein per lane = 20 µg, Number of lanes = 10 and Share that is your target = 0.01 of total gives &lt;strong&gt;Lysate volume per lane&lt;/strong&gt; = 10 µL, &lt;strong&gt;Protein needed in total&lt;/strong&gt; = 200 µg, &lt;strong&gt;Lysate needed in total&lt;/strong&gt; = 100 µL, &lt;strong&gt;Final loading concentration&lt;/strong&gt; = 1.6 µg/µL and &lt;strong&gt;Target protein per lane&lt;/strong&gt; = 200 ng.</p><ul><li><strong>Lysate volume per lane</strong> = 10 µL</li><li><strong>Protein needed in total</strong> = 200 µg</li><li><strong>Lysate needed in total</strong> = 100 µL</li><li><strong>Final loading concentration</strong> = 1.6 µg/µL</li><li><strong>Target protein per lane</strong> = 200 ng</li></ul><p>That is <strong>Lysate volume per lane</strong> = <code>Protein per lane ÷ Lysate concentration</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>10 – 30 µg/lane</td><td><strong>Whole lysate</strong></td><td>enough to see a moderately expressed protein</td></tr><tr><td>1 – 5 µg/lane</td><td><strong>Immunoprecipitation</strong></td><td>a purified or enriched sample</td></tr><tr><td>under 1 µg/lane</td><td><strong>Too little</strong></td><td>the signal disappears into the background</td></tr></tbody></table>
-            <ul><li><p>Loading equal total protein per lane is what makes a blot quantitative. Measure every sample in the same assay, on the same plate, at the same time.</p></li><li><p>A 1 mL lysate at 2 mg/mL gives 2 mg of protein — enough for 100 lanes at 20 µg, which is why a single mini-prep covers a whole experiment.</p></li><li><p>Overloading saturates the detector: bands stop being proportional above about 40 µg of a complex lysate on a mini gel.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Lysate volume per lane&lt;/strong&gt; = 10, &lt;strong&gt;Protein needed in total&lt;/strong&gt; = 200, &lt;strong&gt;Lysate needed in total&lt;/strong&gt; = 100, &lt;strong&gt;Final loading concentration&lt;/strong&gt; = 1.6 and &lt;strong&gt;Target protein per lane&lt;/strong&gt; = 200 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Lysate volume per lane takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Loading equal volume instead of equal protein, which makes a loading control meaningless.</li><li>Boiling a membrane protein for ten minutes, which aggregates it at the top of the gel.</li><li>Comparing band intensities from a blot that was stripped and reprobed twice.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Lysate volume per lane</strong> = <code>Protein per lane ÷ Lysate concentration</code></li><li><strong>Protein needed in total</strong> = <code>Protein per lane × Number of lanes</code></li><li><strong>Lysate needed in total</strong> = <code>Protein needed in total ÷ Lysate concentration</code></li><li><strong>Final loading concentration</strong> = <code>Protein per lane ÷ (Lysate volume per lane × 1.25)</code></li><li><strong>Target protein per lane</strong> = <code>Protein per lane × Share that is your target × 1000</code></li></ul><p>Any one of Lysate volume per lane, Protein needed in total and Lysate needed in total can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Lysate concentration, from 2 to 4 — and the answers go from &lt;strong&gt;Lysate volume per lane&lt;/strong&gt; 10 µL, &lt;strong&gt;Protein needed in total&lt;/strong&gt; 200 µg, &lt;strong&gt;Lysate needed in total&lt;/strong&gt; 100 µL, &lt;strong&gt;Final loading concentration&lt;/strong&gt; 1.6 µg/µL and &lt;strong&gt;Target protein per lane&lt;/strong&gt; 200 ng to &lt;strong&gt;Lysate volume per lane&lt;/strong&gt; 5 µL, &lt;strong&gt;Protein needed in total&lt;/strong&gt; 200 µg, &lt;strong&gt;Lysate needed in total&lt;/strong&gt; 50 µL, &lt;strong&gt;Final loading concentration&lt;/strong&gt; 3.2 µg/µL and &lt;strong&gt;Target protein per lane&lt;/strong&gt; 200 ng.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Lysate volume per lane, Protein needed in total and Lysate needed in total are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Lysate concentration to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Lysate concentration, Protein per lane and Number of lanes and the number you are missing is Lysate volume per lane and Protein needed in total.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/enzyme-specific-activity-yield">Enzyme Kinetics: Specific Activity and Yield Calculator</a>, <a href="/biology/enzyme-unit-converter">Enzyme Unit Converter (U/mg, kcat) Calculator</a> and <a href="/biology/exponential-population-growth">Exponential Population Growth Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much protein should I load?', 'a' => '20–30 µg of a whole lysate per lane on a mini gel; less for a purified sample.'],
-            ['q' => 'How do I load equal amounts?', 'a' => 'Divide the protein per lane by each sample\'s concentration; the volumes will differ and that is correct.'],
-            ['q' => 'How many cells is 20 µg of lysate?', 'a' => 'Roughly 200 000 cells, since a mammalian cell contains about 100 pg of protein.'],
-            ['q' => 'What does the Western Blot Protein Loading actually calculate?', 'a' => <<<'TXT'
-            It returns lysate volume per lane, protein needed in total, lysate needed in total and final loading concentration. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Western Blot Protein Loading calculator work out?', 'a' => <<<'TXT'
+            Lysate volume per lane, Protein needed in total, Lysate needed in total and Final loading concentration, from Protein per lane and Lysate concentration. The relationship is Lysate volume per lane = Protein per lane ÷ Lysate concentration.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Lysate concentration (mg/mL), Protein per lane (µg), Number of lanes, Share that is your target (of total). Fill conc_mg_ml, per_lane_ug and lanes and leave Lysate volume per lane empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Lysate volume per lane, Protein needed in total, Lysate needed in total and Final loading concentration blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Lysate volume per lane = 10 µL, Protein needed in total = 200 µg, Lysate needed in total = 100 µL, Final loading concentration = 1.6 µg/µL and Target protein per lane = 200 ng. The figures come from Lysate concentration as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Lysate volume per lane is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Lysate concentration blank and the page solves for it, reporting Lysate volume per lane instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Lysate volume per lane keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/enzyme-specific-activity-yield', 'name' => 'Enzyme Kinetics: Specific Activity and Yield Calculator'],
+            ['path' => '/biology/enzyme-unit-converter', 'name' => 'Enzyme Unit Converter (U/mg, kcat) Calculator'],
+            ['path' => '/biology/exponential-population-growth', 'name' => 'Exponential Population Growth Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

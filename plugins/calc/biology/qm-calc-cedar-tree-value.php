@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Standing Timber Value Calculator',
-    'meta' => ['title' => 'Standing Timber Value Calculator — Formula & Results', 'description' => 'What a standing tree is worth: estimate the board feet in the trunk from its diameter and merchantable height, then apply the price per board foot.', 'h1' => 'Standing Timber Value Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Standing Timber Value Calculator — Formula & Results', 'description' => 'Standing Timber Value works out Volume and Volume from Diameter at breast height, Merchantable height and Taper allowance. Local mill price for the species…', 'h1' => 'Standing Timber Value Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -119,48 +119,52 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        What a standing tree is worth: estimate the board feet in the trunk from its diameter and merchantable height, then apply the price per board foot. It returns diameter, volume, volume and value per tree, and the panel shows all of them at once.
-        
-        It is the number a landowner needs before accepting an offer, and the one a logger uses to decide whether a tree is worth felling.
+        Standing Timber Value works out Volume and Volume from Diameter at breast height, Merchantable height and Taper allowance. Nothing is looked up on this page: Volume is computed from Diameter at breast height and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Volume is opened in board feet; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Standing Timber Value', 'html' => <<<'TXT'
-            <p>Volume (m³) = π/4 × (D × taper factor)² × H × 0.42, the form factor of a mature conifer. Board feet = m³ ÷ 0.0023597. Value = board feet × price</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cedar-tree-value.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Standing Timber Value Calculator — Board feet in a 12 m merchantable trunk, by diameter" title="Standing Timber Value Calculator"><figcaption>Board feet in a 12 m merchantable trunk, by diameter</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>DBH</code></td><td>diameter at breast height, 1.3 m above the ground</td><td>cm or in</td></tr><tr><td><code>board foot</code></td><td>144 cubic inches of sawn timber, 1 ft × 1 ft × 1 in</td><td>—</td></tr><tr><td><code>merchantable height</code></td><td>the usable length of trunk</td><td>m</td></tr></tbody></table>
+            ['title' => 'How the Standing Timber Value calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Standing Timber Value: it takes 5 numbers and reports Volume, Volume and Value per tree.</p><p>In the form&#039;s own words, Diameter = Diameter at breast height ÷ 2.54.</p><p>The result panel carries Volume, Volume, Value per tree and Value of the stand, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Standing Timber Value?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Measure the diameter at 1.3 m and the merchantable height to the first major fork.</li><li>Enter the local price per board foot for the species and grade.</li><li>Read the volume in board feet and cubic metres, and the value per tree and for the stand.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Diameter at breast height</strong> — in cm. Measured 1.3 m above the ground</li><li><strong>Merchantable height</strong> — in m. Up to the first major fork or the top log</li><li><strong>Taper allowance</strong> — in %. The trunk narrows towards the top</li><li><strong>Price per board foot</strong> — a plain number, no unit. Local mill price for the species and grade</li><li><strong>Number of trees</strong> — a plain number, no unit</li></ul><p>The answers come back as Volume in board feet, Volume in m³, Value per tree, Value of the stand, Diameter in in. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: diameter at breast height of <strong>40</strong> cm, merchantable height of <strong>12</strong> m, taper allowance of <strong>10</strong>%, price per board foot of <strong>1.2</strong>, number of trees of <strong>1</strong>.</p>
-            <p>Substituting them into the formula gives diameter of <strong>15.75</strong> in, volume of <strong>0.5716</strong> m³, volume of <strong>242.23</strong> board feet, value per tree of <strong>290.67</strong>, value of the stand of <strong>290.67</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Diameter at breast height = 40 cm, Merchantable height = 12 m, Taper allowance = 10 %, Price per board foot = 1.2 and Number of trees = 1; the answers are &lt;strong&gt;Diameter&lt;/strong&gt; = 15.75 in, &lt;strong&gt;Volume&lt;/strong&gt; = 0.5716 m³, &lt;strong&gt;Volume&lt;/strong&gt; = 242 board feet, &lt;strong&gt;Value per tree&lt;/strong&gt; = 291 and &lt;strong&gt;Value of the stand&lt;/strong&gt; = 291.</p><ul><li><strong>Diameter</strong> = 15.75 in</li><li><strong>Volume</strong> = 0.5716 m³</li><li><strong>Volume</strong> = 242 board feet</li><li><strong>Value per tree</strong> = 291</li><li><strong>Value of the stand</strong> = 291</li></ul><p>The line behind those figures is <strong>Diameter</strong> = <code>Diameter at breast height ÷ 2.54</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 30 cm DBH</td><td><strong>Pole</strong></td><td>pulp or firewood value, not sawtimber</td></tr><tr><td>30 – 50 cm</td><td><strong>Small sawtimber</strong></td><td>the grade depends on knots and straightness</td></tr><tr><td>over 60 cm</td><td><strong>Mature sawtimber</strong></td><td>worth calling a forester before selling</td></tr></tbody></table>
-            <ul><li><p>Board-foot rules are regional and approximate. The International ¼-inch rule, Scribner and Doyle each give different answers for the same tree — sometimes by 30%.</p></li><li><p>Diameter is measured at breast height and inside the bark. A quick tape around the trunk gives the circumference, which divides by π to give the diameter.</p></li><li><p>A standing tree is worth much less than its sawn volume: felling, hauling and milling take the majority of the retail price.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Diameter&lt;/strong&gt; = 15.75, &lt;strong&gt;Volume&lt;/strong&gt; = 0.5716, &lt;strong&gt;Volume&lt;/strong&gt; = 242, &lt;strong&gt;Value per tree&lt;/strong&gt; = 291 and &lt;strong&gt;Value of the stand&lt;/strong&gt; = 291. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Volume is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Measuring the diameter with the bark on and not subtracting for it, which overstates the volume.</li><li>Using the total height instead of the merchantable height to the first major fork.</li><li>Comparing a stumpage (standing) price with a delivered log price, which differ severalfold.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Diameter</strong> = <code>Diameter at breast height ÷ 2.54</code></li><li><strong>Volume</strong> = <code>pi ÷ 4 × (Diameter at breast height ÷ 100 × (1 − Taper allowance ÷ 200)) ^ 2 × Merchantable height × 0.42</code></li><li><strong>Value per tree</strong> = <code>Volume × Price per board foot</code></li><li><strong>Value of the stand</strong> = <code>Volume × Price per board foot × Number of trees</code></li></ul><p>Any one of Diameter, Volume and Volume can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/fruit-tree-spacing">Fruit tree spacing</a>. <a href="/ecology/tree-benefits">Tree benefits</a>. <a href="/construction/lumber">Lumber calculator</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Diameter at breast height, from 40 to 80 — and the answers go from &lt;strong&gt;Diameter&lt;/strong&gt; 15.75 in, &lt;strong&gt;Volume&lt;/strong&gt; 0.5716 m³, &lt;strong&gt;Volume&lt;/strong&gt; 242 board feet, &lt;strong&gt;Value per tree&lt;/strong&gt; 291 and &lt;strong&gt;Value of the stand&lt;/strong&gt; 291 to &lt;strong&gt;Diameter&lt;/strong&gt; 31.5 in, &lt;strong&gt;Volume&lt;/strong&gt; 2.29 m³, &lt;strong&gt;Volume&lt;/strong&gt; 969 board feet, &lt;strong&gt;Value per tree&lt;/strong&gt; 1163 and &lt;strong&gt;Value of the stand&lt;/strong&gt; 1163.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Volume, Volume and Value per tree are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Diameter at breast height and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Diameter at breast height, Merchantable height and Taper allowance is what you already know and Volume and Volume is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/cephalexin-for-dogs-dosage">Cephalexin for dogs dosage Calculator</a>, <a href="/biology/cephalic-index">Cephalic Index Calculator</a> and <a href="/biology/cfu-g-calculator">CFU/g Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I measure DBH with a tape?', 'a' => 'Measure the circumference at 1.3 m and divide by π; a 126 cm circumference is a 40 cm diameter.'],
-            ['q' => 'What is a board foot?', 'a' => '144 cubic inches — a piece 1 ft × 1 ft × 1 in thick, the standard unit of sawn timber in North America.'],
-            ['q' => 'Why do two people get different volumes for the same tree?', 'a' => 'Different board-foot rules. State which one you used before comparing prices.'],
-            ['q' => 'What does the Standing Timber Value actually calculate?', 'a' => 'It returns diameter, volume, volume and value per tree. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Standing Timber Value calculator work out?', 'a' => 'Volume, Volume, Value per tree and Value of the stand, from Diameter at breast height. The relationship is Diameter = Diameter at breast height ÷ 2.54.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Diameter at breast height (cm), Merchantable height (m), Taper allowance (%), Price per board foot, Number of trees. With dbh, height and taper in place, Volume can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Diameter, Volume, Volume and Value per tree blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Diameter = 15.75 in, Volume = 0.5716 m³, Volume = 242 board feet, Value per tree = 291 and Value of the stand = 291. The figures come from Diameter at breast height as the page opens it; they are a starting point, not a fixed answer.
             TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Volume is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Diameter at breast height blank and the page solves for it, reporting Volume instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Volume keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cephalexin-for-dogs-dosage', 'name' => 'Cephalexin for dogs dosage Calculator'],
+            ['path' => '/biology/cephalic-index', 'name' => 'Cephalic Index Calculator'],
+            ['path' => '/biology/cfu-g-calculator', 'name' => 'CFU/g Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

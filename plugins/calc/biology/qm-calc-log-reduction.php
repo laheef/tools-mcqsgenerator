@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Log Reduction',
-    'meta' => ['title' => 'Log Reduction Calculator — Formula & Results', 'description' => <<<'TXT'
-    The Log Reduction calculator returns <strong>Percentage reduction</strong> from the 2 fields on the form. The Log Reduction calculator takes the values in the…
-    TXT, 'h1' => 'Log Reduction Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Log Reduction Calculator — Formula & Results', 'description' => 'Log Reduction works out Final CFU amount and Perecentage reduction from Initial CFU amount and Log reduction. Final CFU amount and Perecentage reduction are…', 'h1' => 'Log Reduction Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => '',
@@ -85,67 +83,57 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'The Log Reduction calculator returns <strong>Percentage reduction</strong> from the 2 fields on the form.',
+        'intro' => <<<'TXT'
+        Log Reduction works out Final CFU amount and Perecentage reduction from Initial CFU amount and Log reduction. There is no hidden constant here: change Final CFU amount and Initial CFU amount moves with it. The main result, Final CFU amount, is reported in times 10 to the 5.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Log Reduction calculator work?', 'html' => <<<'TXT'
-            <p>The Log Reduction calculator takes the values in the form, applies the relationship described below and reports <strong>Percentage reduction</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the log reduction.</p>
+            ['title' => 'How the Log Reduction calculator works', 'html' => <<<'TXT'
+            <p>Log Reduction answers one question from 2 numbers, and the answer is Final CFU amount and Perecentage reduction.</p><p>Written with the labels from the form, Final CFU amount = Initial CFU amount × e^( − Log reduction × ln(10)).</p><p>The result panel carries Final CFU amount and Perecentage reduction, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <table><caption>What you supply, field by field</caption><thead><tr><th>Field</th><th>Units and meaning</th></tr></thead><tbody><tr><td>Initial CFU amount</td><td>a measured quantity, entered by default in times 10 to the 7. The unit chip switches it to any of the 69 supported units.</td></tr><tr><td>Log reduction</td><td>a plain number with no unit attached.</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Initial CFU amount</strong> — in times 10 to the 7. Amount of Colony Forming Units in sample before treatment.</li><li><strong>Log reduction</strong> — a plain number, no unit</li></ul><p>The result boxes are Final CFU amount in times 10 to the 5, Perecentage reduction in percent; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'The formula behind the Log Reduction calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Final CFU amount</span><span class="formula-eq">=</span><span class="formula-rhs">initial CFU amount × the exponential of (-log reduction × the natural log of (10))</span></div><div class="formula-row"><span class="formula-lhs">Final CFU amount</span><span class="formula-eq">=</span><span class="formula-rhs">initial CFU amount × (1 − perecentage reduction)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Initial CFU amount = 10 x10e7 and Log reduction = 100 — through the same formula and the panel reports &lt;strong&gt;Final CFU amount&lt;/strong&gt; = 1.000e-99 x10e5 and &lt;strong&gt;Perecentage reduction&lt;/strong&gt; = 1 perc.</p><ul><li><strong>Final CFU amount</strong> = 1.000e-99 x10e5</li><li><strong>Perecentage reduction</strong> = 1 perc</li></ul><p>That is <strong>Final CFU amount</strong> = <code>Initial CFU amount × e^( − Log reduction × ln(10))</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in times 10 to the 5, and convertible to any of the 69 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Final CFU amount&lt;/strong&gt; = 1.000e-99 and &lt;strong&gt;Perecentage reduction&lt;/strong&gt; = 1. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Final CFU amount lists 69 options and opens on times 10 to the 5. </p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Scientific notation, opening in times 10 to the 7</li><li>Scientific notation, opening in times 10 to the 5</li><li>%, opening in percent</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Final CFU amount</strong> = <code>Initial CFU amount × e^( − Log reduction × ln(10))</code></li><li><strong>Log reduction</strong> = <code>ln(Initial CFU amount ÷ Final CFU amount) ÷ ln(10)</code></li><li><strong>Initial CFU amount</strong> = <code>Final CFU amount × e^(Log reduction × ln(10))</code></li><li><strong>Perecentage reduction</strong> = <code>( − Final CFU amount + Initial CFU amount) ÷ Initial CFU amount</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Final CFU amount, Log reduction and Initial CFU amount can be the unknown.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Log Reduction calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 1 figures keep coming back — the log reduction — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Initial CFU amount from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Final CFU amount&lt;/strong&gt; 1.000e-99 x10e5 and &lt;strong&gt;Perecentage reduction&lt;/strong&gt; 1 perc to &lt;strong&gt;Final CFU amount&lt;/strong&gt; 2.000e-99 x10e5 and &lt;strong&gt;Perecentage reduction&lt;/strong&gt; 1 perc.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Initial CFU amount carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Final CFU amount and Perecentage reduction are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Initial CFU amount to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Log Reduction calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — initial CFU amount for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/metacam-dosage-cat">Metacam dosage for cats</a>, <a href="/biology/mlvss">Mixed liquor volatile suspended solids</a> and <a href="/biology/mowing-cost">Lawn mowing</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Initial CFU amount and Log reduction is what you already know and Final CFU amount and Perecentage reduction is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/specimen-size-from-image">Actual Specimen Size from Image Calculator</a>, <a href="/biology/agarose-gel-calculator">Agarose Gel (gel percentage and loading) Calculator</a> and <a href="/biology/alamarblue-cell-viability">AlamarBlue Cell Viability / Percent Reduction Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Log Reduction calculator work out?', 'a' => <<<'TXT'
-            It returns perecentage reduction, derived from the log reduction. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Final CFU amount and Perecentage reduction, from Initial CFU amount and Log reduction. The relationship is Final CFU amount = Initial CFU amount × e^( − Log reduction × ln(10)).
             TXT],
-            ['q' => 'What do I need to enter to use the Log Reduction calculator?', 'a' => <<<'TXT'
-            The form asks for the log reduction, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Initial CFU amount (times 10 to the 7), Log reduction. With initial_CFU and log_reduction in place, Final CFU amount can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I enter initial CFU amount in a different unit?', 'a' => <<<'TXT'
-            Yes. Initial CFU amount opens in times 10 to the 7 and the chip beside it offers 69 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Final CFU amount, Log reduction, Initial CFU amount and Perecentage reduction can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Final CFU amount = 1.000e-99 x10e5 and Perecentage reduction = 1 perc. Those are the defaults written into the form — move Initial CFU amount and every result box follows.
             TXT],
-            ['q' => 'Is the Log Reduction calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Final CFU amount is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Initial CFU amount blank and the page solves for it, reporting Final CFU amount instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Final CFU amount keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/metacam-dosage-cat', 'name' => 'Metacam dosage for cats'],
-            ['path' => '/biology/mlvss', 'name' => 'Mixed liquor volatile suspended solids'],
-            ['path' => '/biology/mowing-cost', 'name' => 'Lawn mowing'],
+            ['path' => '/biology/specimen-size-from-image', 'name' => 'Actual Specimen Size from Image Calculator'],
+            ['path' => '/biology/agarose-gel-calculator', 'name' => 'Agarose Gel (gel percentage and loading) Calculator'],
+            ['path' => '/biology/alamarblue-cell-viability', 'name' => 'AlamarBlue Cell Viability / Percent Reduction Calculator'],
         ],
+        'authors' => [],
     ],
 ];

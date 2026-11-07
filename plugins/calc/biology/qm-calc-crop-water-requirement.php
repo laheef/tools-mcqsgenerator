@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Crop Water Requirement Calculator (ETc)',
-    'meta' => ['title' => 'Crop Water Requirement Calculator (ETc) — Biology', 'description' => 'A crop\'s water use is the reference evapotranspiration multiplied by a crop coefficient: ETc = Kc × ETo. It returns crop water use, seasonal use (120 days)…', 'h1' => 'Crop Water Requirement Calculator (ETc)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Crop Water Requirement Calculator (ETc) — Biology', 'description' => 'Crop Water Requirement Calculator (ETc) works out Crop water use and Seasonal use (120 days) from Reference evapotranspiration (ETo), Crop coefficient (Kc)…', 'h1' => 'Crop Water Requirement Calculator (ETc)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -99,44 +99,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A crop's water use is the reference evapotranspiration multiplied by a crop coefficient: ETc = Kc × ETo. It returns crop water use, seasonal use (120 days), volume to apply per hectare and hours a 10 m³/h system must run, and the panel shows all of them at once.
-        
-        This calculator gives daily and seasonal water use per hectare, the irrigation volume and how long a system must run to deliver it.
+        Crop Water Requirement Calculator (ETc) works out Crop water use and Seasonal use (120 days) from Reference evapotranspiration (ETo), Crop coefficient (Kc) and Area. It is a single relationship that reads Crop water use out of Reference evapotranspiration (ETo), not a table of canned results keyed by them. Units for Crop water use default to mm/day and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Crop Water Requirement (ETc)', 'html' => <<<'TXT'
-            <p>ETc = Kc × ETo; volume (m³/ha) = ETc (mm) × 10 ÷ efficiency</p>
-            <figure class="calc-figure"><img src="/uploads/biology/crop-water-requirement.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Crop Water Requirement Calculator (ETc) — Reference ET, the crop coefficient, and the water it implies." title="Crop Water Requirement Calculator (ETc)"><figcaption>Reference ET, the crop coefficient, and the water it implies.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ETo</code></td><td>reference evapotranspiration</td><td>mm/day</td></tr><tr><td><code>Kc</code></td><td>crop coefficient for the growth stage</td><td>—</td></tr><tr><td><code>ETc</code></td><td>crop evapotranspiration</td><td>mm/day</td></tr></tbody></table>
+            ['title' => 'How the Crop Water Requirement Calculator (ETc) calculator works', 'html' => <<<'TXT'
+            <p>The Crop Water Requirement Calculator (ETc) calculator applies one relationship to 4 numbers and reports Crop water use, Seasonal use (120 days) and Volume to apply per hectare.</p><p>The relationship it solves reads Crop water use = Reference evapotranspiration (ETo) × Crop coefficient (Kc).</p><p>The result panel carries Crop water use, Seasonal use (120 days), Volume to apply per hectare and Hours a 10 m³/h system must run, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Crop Water Requirement (ETc)?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Reference evapotranspiration (ETo)</strong> — in mm/day. From a weather station or FAO-56</li><li><strong>Crop coefficient (Kc)</strong> — a plain number, no unit. 1.05 is a typical mid-season value</li><li><strong>Area</strong> — in ha</li><li><strong>Irrigation efficiency</strong> — in %. Drip 90%, sprinkler 75%, furrow 60%</li></ul><p>What you get back is Crop water use in mm/day, Seasonal use (120 days) in mm, Volume to apply per hectare in m³/ha/day, Hours a 10 m³/h system must run in h, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: reference evapotranspiration (eto) of <strong>5.4</strong> mm/day, crop coefficient (kc) of <strong>1.05</strong>, area of <strong>1</strong> ha, irrigation efficiency of <strong>80</strong>%.</p>
-            <p>Substituting them into the formula gives crop water use of <strong>5.67</strong> mm/day, seasonal use (120 days) of <strong>680.4</strong> mm, volume to apply per hectare of <strong>70.88</strong> m³/ha/day, hours a 10 m³/h system must run of <strong>7.09</strong> h.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Reference evapotranspiration (ETo) = 5.4 mm/day, Crop coefficient (Kc) = 1.05, Area = 1 ha and Irrigation efficiency = 80 % gives &lt;strong&gt;Crop water use&lt;/strong&gt; = 5.67 mm/day, &lt;strong&gt;Seasonal use (120 days)&lt;/strong&gt; = 680 mm, &lt;strong&gt;Volume to apply per hectare&lt;/strong&gt; = 70.88 m³/ha/day and &lt;strong&gt;Hours a 10 m³/h system must run&lt;/strong&gt; = 7.09 h.</p><ul><li><strong>Crop water use</strong> = 5.67 mm/day</li><li><strong>Seasonal use (120 days)</strong> = 680 mm</li><li><strong>Volume to apply per hectare</strong> = 70.88 m³/ha/day</li><li><strong>Hours a 10 m³/h system must run</strong> = 7.09 h</li></ul><p>The line behind those figures is <strong>Crop water use</strong> = <code>Reference evapotranspiration (ETo) × Crop coefficient (Kc)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>One millimetre over one hectare is 10 m³ of water — the conversion that makes irrigation arithmetic easy.</p></li><li><p>Kc changes through the season: about 0.3 at emergence, 1.0–1.2 at mid-season, and falling as the crop senesces.</p></li><li><p>Irrigation efficiency divides the requirement: 80% efficiency means a fifth of the water never reaches the root zone.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Crop water use&lt;/strong&gt; = 5.67, &lt;strong&gt;Seasonal use (120 days)&lt;/strong&gt; = 680, &lt;strong&gt;Volume to apply per hectare&lt;/strong&gt; = 70.88 and &lt;strong&gt;Hours a 10 m³/h system must run&lt;/strong&gt; = 7.09. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Crop water use is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using a single Kc for the whole season.</li><li>Treating mm as litres per square metre — they are numerically equal, which is a help, not a licence to mix the units.</li><li>Ignoring rainfall, which reduces the irrigation requirement.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Crop water use</strong> = <code>Reference evapotranspiration (ETo) × Crop coefficient (Kc)</code></li><li><strong>Seasonal use (120 days)</strong> = <code>Reference evapotranspiration (ETo) × Crop coefficient (Kc) × 120</code></li><li><strong>Volume to apply per hectare</strong> = <code>Reference evapotranspiration (ETo) × Crop coefficient (Kc) × 10 ÷ (Irrigation efficiency ÷ 100)</code></li><li><strong>Hours a 10 m³/h system must run</strong> = <code>Reference evapotranspiration (ETo) × Crop coefficient (Kc) × 10 ÷ (Irrigation efficiency ÷ 100) ÷ Area ÷ 10</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Crop water use, Seasonal use (120 days) and Volume to apply per hectare can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Reference evapotranspiration (ETo) from 5.4 to 10.8, leaving every other box alone. The panel moves from &lt;strong&gt;Crop water use&lt;/strong&gt; 5.67 mm/day, &lt;strong&gt;Seasonal use (120 days)&lt;/strong&gt; 680 mm, &lt;strong&gt;Volume to apply per hectare&lt;/strong&gt; 70.88 m³/ha/day and &lt;strong&gt;Hours a 10 m³/h system must run&lt;/strong&gt; 7.09 h to &lt;strong&gt;Crop water use&lt;/strong&gt; 11.34 mm/day, &lt;strong&gt;Seasonal use (120 days)&lt;/strong&gt; 1361 mm, &lt;strong&gt;Volume to apply per hectare&lt;/strong&gt; 142 m³/ha/day and &lt;strong&gt;Hours a 10 m³/h system must run&lt;/strong&gt; 14.18 h.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Crop water use, Seasonal use (120 days) and Volume to apply per hectare are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Reference evapotranspiration (ETo) and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Reference evapotranspiration (ETo), Crop coefficient (Kc) and Area measured, Crop water use and Seasonal use (120 days) wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/restriction-digest-setup">Restriction Digest Reaction Setup Calculator — Formula &amp; Resul</a>, <a href="/biology/restriction-reaction-setup">Restriction Digest Recipe — Enzyme Limit</a> and <a href="/biology/restriction-enzyme-finder">Restriction Enzyme Finder Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a typical Kc?', 'a' => '0.3 for bare soil, 0.7 for early growth, 1.0–1.2 at full canopy, 0.5 at senescence.'],
-            ['q' => 'How much water is 5 mm/day per hectare?', 'a' => '50 m³ per hectare per day.'],
-            ['q' => 'What does the Crop Water Requirement (ETc) actually calculate?', 'a' => <<<'TXT'
-            It returns crop water use, seasonal use (120 days), volume to apply per hectare and hours a 10 m³/h system must run. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Crop Water Requirement Calculator (ETc) calculator work out?', 'a' => <<<'TXT'
+            Crop water use, Seasonal use (120 days), Volume to apply per hectare and Hours a 10 m³/h system must run, from Reference evapotranspiration (ETo) and Crop coefficient (Kc). The relationship is Crop water use = Reference evapotranspiration (ETo) × Crop coefficient (Kc).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Reference evapotranspiration (ETo) (mm/day), Crop coefficient (Kc), Area (ha), Irrigation efficiency (%). Enter eto, kc and area; Crop water use is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Crop water use, Seasonal use (120 days), Volume to apply per hectare and Hours a 10 m³/h system must run can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Crop water use = 5.67 mm/day, Seasonal use (120 days) = 680 mm, Volume to apply per hectare = 70.88 m³/ha/day and Hours a 10 m³/h system must run = 7.09 h. Those are the defaults written into the form — move Reference evapotranspiration (ETo) and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Crop water use is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave Reference evapotranspiration (ETo) blank and the page solves for it, reporting Crop water use instead of the usual answer.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Crop water use keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/restriction-digest-setup', 'name' => 'Restriction Digest Reaction Setup Calculator — Formula & Resul'],
+            ['path' => '/biology/restriction-reaction-setup', 'name' => 'Restriction Digest Recipe — Enzyme Limit'],
+            ['path' => '/biology/restriction-enzyme-finder', 'name' => 'Restriction Enzyme Finder Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Acres per hour',
-    'meta' => ['title' => 'Acres per hour Calculator — Formula & Results', 'description' => 'Supply the tool\'s width, the plot area, the time to complete and the overlap and the Acres per hour calculator solves for <strong>area per hour</strong>.', 'h1' => 'Acres per hour Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Acres per hour Calculator — Formula & Results', 'description' => 'Acres per hour works out Tool\'s width and Speed from Plot area and Time to complete. It is a rough estimation as the plot may have different shapes.The…', 'h1' => 'Acres per hour Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => '',
@@ -124,66 +124,41 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Supply the tool\'s width, the plot area, the time to complete and the overlap and the Acres per hour calculator solves for <strong>area per hour</strong>.',
+        'intro' => <<<'TXT'
+        Acres per hour works out Tool's width and Speed from Plot area and Time to complete. Nothing is looked up on this page: Tool's width is computed from Plot area and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Tool's width is opened in centimeters; the chip beside it switches to any unit of the same quantity.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Acres per hour calculator work?', 'html' => <<<'TXT'
-            <p>The Acres per hour calculator takes the values in the form, applies the relationship described below and reports <strong>area per hour</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the tool's width, the plot area, the time to complete and the overlap.</p>
+            ['title' => 'How the Acres per hour calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Acres per hour: it takes 2 numbers and reports Tool&#039;s width, Speed and Area per hour.</p><p>In the form&#039;s own words, Area per hour = 3600 × Plot area ÷ Time to complete.</p><p>The result panel carries Tool&#039;s width, Speed, Area per hour and Overlap, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li> The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in hectares. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in hours / minutes. </li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Plot area</strong> — in hectares</li><li><strong>Time to complete</strong> — in hours / minutes. The time to complete for chosen plot area. It is a rough estimation as the plot may have different shapes.</li></ul><p>The answers come back as Tool&#039;s width in centimeters, Speed in kilometers per hour, Area per hour in hectares, Overlap in percent. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Tool's width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Speed</strong></td><td>A measured quantity, 25 units available.</td><td>kilometers per hour</td><td>Calculated</td></tr><tr><td><strong>Area per hour</strong></td><td>A measured quantity, 24 units available.</td><td>hectares</td><td>Calculated</td></tr><tr><td><strong>Plot area</strong></td><td>A measured quantity, 24 units available.</td><td>hectares</td><td>You supply it</td></tr><tr><td><strong>Time to complete</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>You supply it</td></tr><tr><td><strong>Overlap</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Area per hour</strong> = <code>3600 × Plot area ÷ Time to complete</code></li><li><strong>Plot area</strong> = <code>(1 ÷ 3600) × Area per hour × Time to complete</code></li><li><strong>Time to complete</strong> = <code>3600 × Plot area ÷ Area per hour</code></li><li><strong>Speed</strong> = <code>− 1 ÷ 3600 × Area per hour ÷ (Tool&#039;s width × (Overlap − 1))</code></li><li><strong>Overlap</strong> = <code>− 1 ÷ 3600 × Area per hour ÷ (Speed × Tool&#039;s width) + 1</code></li><li><strong>Tool&#039;s width</strong> = <code>− 1 ÷ 3600 × Area per hour ÷ (Speed × (Overlap − 1))</code></li></ul><p>Any one of Area per hour, Plot area and Time to complete can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Acres per hour calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Area per hour</span><span class="formula-eq">=</span><span class="formula-rhs">3600 × plot area ÷ time to complete</span></div><div class="formula-row"><span class="formula-lhs">Speed</span><span class="formula-eq">=</span><span class="formula-rhs">-1 ÷ 3600 × area per hour ÷ (tool&#x27;s width × (overlap − 1))</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Plot area and Time to complete carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Tool&#039;s width, Speed and Area per hour are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Plot area and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Take <strong>Plot area</strong> = 10 ha, <strong>Time to complete</strong> = 10 hrs and <strong>Overlap</strong> = 10 %. The calculator returns <strong>Area per hour</strong> = 1 ha.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Area per hour</strong> = 1 ha should be roughly the size you expected from <strong>Plot area</strong> = 10 ha and <strong>Time to complete</strong> = 10 hrs.</li></ol>
-            TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in hectares, and convertible to any of the 24 units on that chip.</li><li>Shown in kilometers per hour, and convertible to any of the 25 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Speed, opening in kilometers per hour</li><li>Area, opening in hectares</li><li>Area, opening in hectares</li><li>Time, opening in hours / minutes</li><li>%, opening in percent</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Acres per hour calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 4 figures keep coming back — the tool's width, the plot area and the time to complete — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/allele-frequency">Allele frequency</a>, <a href="/biology/animal-mortality-rate">Animal mortality rate</a> and <a href="/biology/annealing-temperature">Annealing temperature</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Plot area and Time to complete is what you already know and Tool&#039;s width and Speed is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/animal-mortality-rate">Animal mortality rate</a>, <a href="/biology/annealing-temperature">Annealing temperature Calculator</a> and <a href="/biology/aquarium-water-volume">Aquarium Water Volume Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Acres per hour calculator work out?', 'a' => <<<'TXT'
-            It returns area per hour, derived from the tool's width, the plot area and the time to complete. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Acres per hour calculator work out?', 'a' => 'Tool\'s width, Speed, Area per hour and Overlap, from Plot area and Time to complete. The relationship is Area per hour = 3600 × Plot area ÷ Time to complete.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Plot area (hectares), Time to complete (hours / minutes). Enter area and time; Tool\'s width is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Area per hour, Plot area, Time to complete and Speed blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Tool\'s width is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Plot area left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'What do I need to enter to use the Acres per hour calculator?', 'a' => <<<'TXT'
-            The form asks for the tool's width, the plot area, the time to complete and the overlap, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter tool\'s width in a different unit?', 'a' => <<<'TXT'
-            Yes. Tool's width opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Area per hour = 1 ha. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Acres per hour calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Tool\'s width keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/allele-frequency', 'name' => 'Allele frequency'],
             ['path' => '/biology/animal-mortality-rate', 'name' => 'Animal mortality rate'],
-            ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature'],
+            ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature Calculator'],
+            ['path' => '/biology/aquarium-water-volume', 'name' => 'Aquarium Water Volume Calculator'],
         ],
+        'authors' => [],
     ],
 ];

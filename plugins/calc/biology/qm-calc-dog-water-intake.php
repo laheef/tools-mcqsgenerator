@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog water intake',
-    'meta' => ['title' => 'Dog water intake — Formula, Steps & Examples', 'description' => 'The Dog water intake calculator takes the numbers you enter and reports <strong>weight</strong> immediately. The Dog water intake calculator takes the values…', 'h1' => 'Dog water intake Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog water intake — Formula, Steps & Examples', 'description' => 'Dog water intake works out Daily water intake from Activity level and Weight. Daily water intake is opened in milliliters; the chip beside it switches to any…', 'h1' => 'Dog water intake Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'activity_level' => [
@@ -142,70 +142,41 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'The Dog water intake calculator takes the numbers you enter and reports <strong>weight</strong> immediately.',
+        'intro' => <<<'TXT'
+        Dog water intake works out Daily water intake from Activity level and Weight. Nothing is looked up on this page: Daily water intake is computed from Activity level and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Daily water intake is opened in milliliters; the chip beside it switches to any unit of the same quantity.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Dog water intake calculator work?', 'html' => <<<'TXT'
-            <p>The Dog water intake calculator takes the values in the form, applies the relationship described below and reports <strong>weight</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the activity level); then you type in the daily water intake.</p>
+            ['title' => 'How the Dog water intake calculator works', 'html' => <<<'TXT'
+            <p>The Dog water intake calculator applies one relationship to 2 numbers and reports Daily water intake.</p><p>The relationship it solves reads Weight = Daily water intake ÷ Activity level.</p><p>The answers are Daily water intake; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as low, medium and high. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Activity level</strong> — a plain number, no unit</li><li><strong>Weight</strong> — in kilograms</li></ul><p>What you get back is Daily water intake in milliliters, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Activity level</strong></td><td>One of 3 options, such as low, medium and high.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Daily water intake</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Weight</strong> = <code>Daily water intake ÷ Activity level</code></li><li><strong>Daily water intake</strong> = <code>Activity level × Weight</code></li><li><strong>Activity level</strong> = <code>Daily water intake ÷ Weight</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Weight, Daily water intake and Activity level can be the unknown.</p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Suppose <strong>Activity level</strong> set to Medium and <strong>Weight</strong> = 10 kg. Working through the relationship above gives <strong>Daily water intake</strong> = 10 mL.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Daily water intake</strong> = 10 mL should be roughly the size you expected from <strong>Activity level</strong> set to Medium and <strong>Weight</strong> = 10 kg.</li></ol>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Weight carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Daily water intake is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Activity level is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Volume, opening in milliliters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog water intake calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 1 figures keep coming back — the daily water intake — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Dog water intake calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dry-matter">Dry matter</a>, <a href="/biology/fcr">Feed conversion ratio</a> and <a href="/biology/fertilizer">Fertilizer</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Activity level and Weight measured, Daily water intake wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/how-big-will-my-cat-get">How big will my cat get Calculator</a>, <a href="/biology/huglin-index">Huglin Index Calculator</a> and <a href="/biology/hunting-tooth-ratio">Hunting Tooth Ratio Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Dog water intake calculator work out?', 'a' => <<<'TXT'
-            It returns weight, derived from the daily water intake. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Dog water intake calculator work out?', 'a' => 'Daily water intake, from Daily water intake and Activity level. The relationship is Weight = Daily water intake ÷ Activity level.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Activity level, Weight (kilograms). With activity_level and weight in place, Daily water intake can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Weight, Daily water intake and Activity level can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Daily water intake is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Activity level left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'What do I need to enter to use the Dog water intake calculator?', 'a' => <<<'TXT'
-            The form asks for the daily water intake, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Daily water intake = 10 mL. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Dog water intake calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Daily water intake at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/dry-matter', 'name' => 'Dry matter'],
-            ['path' => '/biology/fcr', 'name' => 'Feed conversion ratio'],
-            ['path' => '/biology/fertilizer', 'name' => 'Fertilizer'],
+            ['path' => '/biology/how-big-will-my-cat-get', 'name' => 'How big will my cat get Calculator'],
+            ['path' => '/biology/huglin-index', 'name' => 'Huglin Index Calculator'],
+            ['path' => '/biology/hunting-tooth-ratio', 'name' => 'Hunting Tooth Ratio Calculator'],
         ],
+        'authors' => [],
     ],
 ];

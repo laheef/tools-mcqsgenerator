@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fish Condition Factor Calculator',
-    'meta' => ['title' => 'Fish Condition Factor Calculator — Formula & Results', 'description' => 'Condition factor (K) compares a fish\'s weight with the weight you would expect for its length. It returns condition factor (K), expected weight at K = 1…', 'h1' => 'Fish Condition Factor Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fish Condition Factor Calculator — Formula & Results', 'description' => 'The arithmetic is the whole method: Condition factor (K) is worked out from Fish weight by one formula, applied once. Fish weight (g), Fork length (cm).', 'h1' => 'Fish Condition Factor Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -80,51 +80,47 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Condition factor (K) compares a fish's weight with the weight you would expect for its length. It returns condition factor (K), expected weight at K = 1, weight against K = 1 and fish weight, and the panel shows all of them at once.
-        
-        It is the standard way to describe how well-fed, how healthy or how well-shaped a fish is, and it is used in fisheries assessment, aquaculture and aquarium husbandry.
+        Fish Condition Factor takes Fish weight and Fork length and returns Condition factor (K) and Expected weight at K = 1. The arithmetic is the whole method: Condition factor (K) is worked out from Fish weight by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Fish Condition Factor', 'html' => <<<'TXT'
-            <p>K = (weight in grams ÷ fork length in cm³) × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/fish-condition-factor.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Fish Condition Factor Calculator — Where this fish sits on the usual condition scale." title="Fish Condition Factor Calculator"><figcaption>Where this fish sits on the usual condition scale.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>weight</code></td><td>total body weight</td><td>g</td></tr><tr><td><code>length</code></td><td>fork length</td><td>cm</td></tr><tr><td><code>k</code></td><td>Fulton's condition factor</td><td>—</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Fulton (1904) condition factor; ranges follow standard fisheries assessment practice.</p>
+            ['title' => 'How the Fish Condition Factor calculator works', 'html' => <<<'TXT'
+            <p>Fish Condition Factor answers one question from 2 numbers, and the answer is Condition factor (K), Expected weight at K = 1 and Weight against K = 1.</p><p>In the form&#039;s own words, Condition factor (K) = Fish weight ÷ Fork length ^ 3 × 100.</p><p>What comes back is Condition factor (K), Expected weight at K = 1 and Weight against K = 1 — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Fish Condition Factor?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Fish weight</strong> — in g. Total body weight</li><li><strong>Fork length</strong> — in cm. Fork of the tail to the snout</li></ul><p>The answers come back as Condition factor (K), Expected weight at K = 1 in g, Weight against K = 1 in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives condition factor (k) of <strong>1.6</strong>, expected weight at k = 1 of <strong>156.25</strong> g, weight against k = 1 of <strong>60</strong>%, fish weight of <strong>250</strong> g, fork length of <strong>25</strong> cm.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Condition factor (K) takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 1.0</td><td><strong>Poor condition</strong></td><td>thin fish; check feeding, disease and water quality</td></tr><tr><td>1.0 – 1.4</td><td><strong>Normal</strong></td><td>the usual range for most species</td></tr><tr><td>above 1.4</td><td><strong>Excellent</strong></td><td>well fed, often pre-spawning or a deep-bodied species</td></tr></tbody></table>
-            <ul><li><p>Fulton's K assumes the fish grows isometrically (weight ∝ length³). For species that change shape as they grow, the relative condition factor against a species-specific regression is the better measure.</p></li><li><p>K rises before spawning in females and falls after it, so single measurements taken at different times of year are not comparable.</p></li><li><p>A K below 1.0 in a well-fed tank usually means a water-quality or parasite problem, not underfeeding.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Condition factor (K)</strong> = <code>Fish weight ÷ Fork length ^ 3 × 100</code></li><li><strong>Expected weight at K = 1</strong> = <code>Fork length ^ 3 ÷ 100</code></li><li><strong>Weight against K = 1</strong> = <code>(Condition factor (K) − 1) × 100</code></li><li><strong>Fish weight</strong> = <code>Condition factor (K) × Fork length ^ 3 ÷ 100</code></li><li><strong>Fork length</strong> = <code>cbrt(Fish weight × 100 ÷ Condition factor (K))</code></li></ul><p>Any one of Condition factor (K), Expected weight at K = 1 and Weight against K = 1 can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using total length in one measurement and fork length in another — the difference is several per cent of length and 10% or more of K.</li><li>Weighing a wet fish with a wet net, or a gutted fish, without saying so.</li><li>Comparing K across species as if 1.0 meant the same thing everywhere.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Condition factor (K), Expected weight at K = 1 and Weight against K = 1 are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Fish weight is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/fish-density">Fish density</a>. <a href="/biology/farm-pond-fish-stocking">Farm pond fish stocking</a>. <a href="/biology/goldfish-years-to-human-years">Goldfish years to human years</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Fish weight and Fork length is what you already know and Condition factor (K) and Expected weight at K = 1 is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/species-richness">Species Richness Calculator</a>, <a href="/biology/specific-growth-rate-od">Specific Growth Rate from OD Calculator</a> and <a href="/biology/specific-growth-rate-from-od">Specific Growth Rate from OD Readings Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good condition factor for a fish?', 'a' => <<<'TXT'
-            Around 1.0–1.4 for most freshwater species; below 1.0 suggests the fish is thin for its length and above 1.4 that it is in good condition — but the normal band is species-specific.
+            ['q' => 'What does the Fish Condition Factor calculator work out?', 'a' => <<<'TXT'
+            Condition factor (K), Expected weight at K = 1 and Weight against K = 1, from Fish weight and Fork length. The relationship is Condition factor (K) = Fish weight ÷ Fork length ^ 3 × 100.
             TXT],
-            ['q' => 'Should I use fork length or total length?', 'a' => 'Whatever you use, use it consistently and say which. This calculator is set up for fork length, which is standard in fisheries work.'],
-            ['q' => 'What does the Fish Condition Factor actually calculate?', 'a' => <<<'TXT'
-            It returns condition factor (K), expected weight at K = 1, weight against K = 1 and fish weight. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Fish weight (g), Fork length (cm). Fill weight and length and leave Condition factor (K) empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Condition factor (K), Expected weight at K = 1, Weight against K = 1 and Fish weight blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Condition factor (K) is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Fish weight left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Condition factor (K) keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/species-richness', 'name' => 'Species Richness Calculator'],
+            ['path' => '/biology/specific-growth-rate-od', 'name' => 'Specific Growth Rate from OD Calculator'],
+            ['path' => '/biology/specific-growth-rate-from-od', 'name' => 'Specific Growth Rate from OD Readings Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

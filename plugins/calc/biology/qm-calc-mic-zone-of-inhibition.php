@@ -11,7 +11,7 @@
 
 return [
     'name' => 'MIC and Zone of Inhibition Calculator',
-    'meta' => ['title' => 'MIC and Zone of Inhibition Calculator — Biology', 'description' => 'Convert a measured zone of inhibition into a minimum inhibitory concentration, and work out how much of it you actually achieved. It returns zone per log₂…', 'h1' => 'MIC and Zone of Inhibition Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'MIC and Zone of Inhibition Calculator — Biology', 'description' => 'Convert a measured zone of inhibition into a minimum inhibitory concentration, and work out how much of it you actually achieved. Free mic and zone of inhibit', 'h1' => 'MIC and Zone of Inhibition Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -137,46 +137,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Convert a measured zone of inhibition into a minimum inhibitory concentration, and work out how much of it you actually achieved. It returns zone per log₂ MIC, estimated MIC, susceptibility ratio and drug concentration in the well, and the panel shows all of them at once.
-        
-        The zone diameter falls roughly linearly with the log of the MIC, so two calibration points from a known strain are enough to read an unknown one.
+        MIC and Zone of Inhibition turns Zone of inhibition, Antibiotic per disc and Calibration zone, low MIC into Estimated MIC and Zone per log₂ MIC. There is no hidden constant here: change Estimated MIC and Zone of inhibition moves with it. The main result, Estimated MIC, is reported in µg/mL.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the MIC and Zone of Inhibition', 'html' => <<<'TXT'
-            <p>MIC = MIC_ref × 2^((Zone_ref − Zone) ÷ slope), with slope = (Zone_ref − Zone_lo) ÷ log₂(MIC_lo ÷ MIC_ref). Concentration in a well (µg/mL) = disc µg ÷ volume (mL)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/mic-zone-of-inhibition.svg" width="720" height="300" loading="lazy" alt="Animated diagram: MIC and Zone of Inhibition Calculator — Zone of inhibition against the log of the MIC" title="MIC and Zone of Inhibition Calculator"><figcaption>Zone of inhibition against the log of the MIC</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>MIC</code></td><td>minimum inhibitory concentration</td><td>µg/mL</td></tr><tr><td><code>zone</code></td><td>diameter of the clear ring around the disc</td><td>mm</td></tr><tr><td><code>breakpoint</code></td><td>the MIC above which the organism is called resistant</td><td>µg/mL</td></tr></tbody></table>
+            ['title' => 'How the MIC and Zone of Inhibition calculator works', 'html' => <<<'TXT'
+            <p>The MIC and Zone of Inhibition calculator applies one relationship to 8 numbers and reports Estimated MIC, Zone per log₂ MIC and Susceptibility ratio.</p><p>Written with the labels from the form, Zone per log₂ MIC = (Calibration zone, low MIC − Calibration zone, high MIC) ÷ log2(Reference MIC for that zone ÷ Reference MIC for that zone).</p><p>The answers are Estimated MIC, Zone per log₂ MIC, Susceptibility ratio and Drug concentration in the well; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the MIC and Zone of Inhibition?', 'html' => <<<'TXT'
-            <ol><li>Measure the clear zone around the disc in millimetres.</li><li>Enter the two calibration points from a reference strain and the breakpoint for the organism.</li><li>Read the estimated MIC and whether it sits above or below the breakpoint.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 8 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Zone of inhibition</strong> — in mm. Diameter, including the disc</li><li><strong>Antibiotic per disc</strong> — in µg. Disk potency</li><li><strong>Calibration zone, low MIC</strong> — in mm. From a reference strain</li><li><strong>Reference MIC for that zone</strong> — in µg/mL</li><li><strong>Calibration zone, high MIC</strong> — in mm. The second reference point</li><li><strong>Reference MIC for that zone</strong> — in µg/mL</li><li><strong>Breakpoint MIC</strong> — in µg/mL. CLSI/EUCAST breakpoint for the organism</li><li><strong>Well volume</strong> — in µL. 100 µL for a 96-well MIC plate</li></ul><p>The result boxes are Estimated MIC in µg/mL, Zone per log₂ MIC in mm, Susceptibility ratio in ×, Drug concentration in the well in µg/mL; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: zone of inhibition of <strong>22</strong> mm, antibiotic per disc of <strong>30</strong> µg, calibration zone, low mic of <strong>25</strong> mm, reference mic for that zone of <strong>1</strong> µg/mL, calibration zone, high mic of <strong>15</strong> mm, reference mic for that zone of <strong>8</strong> µg/mL, breakpoint mic of <strong>4</strong> µg/mL, well volume of <strong>200</strong> µL.</p>
-            <p>Substituting them into the formula gives zone per log₂ mic of <strong>3.33</strong> mm, estimated mic of <strong>1.87</strong> µg/mL, susceptibility ratio of <strong>0.4665</strong> ×, drug concentration in the well of <strong>150</strong> µg/mL.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Zone of inhibition = 22 mm, Antibiotic per disc = 30 µg, Calibration zone, low MIC = 25 mm, Reference MIC for that zone = 1 µg/mL, Calibration zone, high MIC = 15 mm, Reference MIC for that zone = 8 µg/mL, Breakpoint MIC = 4 µg/mL and Well volume = 200 µL — through the same formula and the panel reports &lt;strong&gt;Zone per log₂ MIC&lt;/strong&gt; = 3.33 mm, &lt;strong&gt;Estimated MIC&lt;/strong&gt; = 1.87 µg/mL, &lt;strong&gt;Susceptibility ratio&lt;/strong&gt; = 0.4665 × and &lt;strong&gt;Drug concentration in the well&lt;/strong&gt; = 150 µg/mL.</p><ul><li><strong>Zone per log₂ MIC</strong> = 3.33 mm</li><li><strong>Estimated MIC</strong> = 1.87 µg/mL</li><li><strong>Susceptibility ratio</strong> = 0.4665 ×</li><li><strong>Drug concentration in the well</strong> = 150 µg/mL</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Zone per log₂ MIC</strong> = <code>(Calibration zone, low MIC − Calibration zone, high MIC) ÷ log2(Reference MIC for that zone ÷ Reference MIC for that zone)</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>ratio under 0.5</td><td><strong>Susceptible</strong></td><td>the drug works at a normal dose</td></tr><tr><td>ratio 0.5 – 2</td><td><strong>Intermediate</strong></td><td>close to the breakpoint; check the method</td></tr><tr><td>ratio above 2</td><td><strong>Resistant</strong></td><td>the MIC exceeds the breakpoint</td></tr></tbody></table>
-            <ul><li><p>The relationship is logarithmic, not linear: doubling the MIC changes the zone by a fixed number of millimetres, set by the drug's diffusion through the agar.</p></li><li><p>Zone size depends on the agar depth, the inoculum density and the diffusion rate of the drug, which is why the calibration points must come from the same protocol.</p></li><li><p>MIC is a laboratory value. Whether a dose works in a patient also depends on protein binding, tissue penetration and the drug's pharmacokinetics.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Zone per log₂ MIC&lt;/strong&gt; = 3.33, &lt;strong&gt;Estimated MIC&lt;/strong&gt; = 1.87, &lt;strong&gt;Susceptibility ratio&lt;/strong&gt; = 0.4665 and &lt;strong&gt;Drug concentration in the well&lt;/strong&gt; = 150 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Estimated MIC takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Measuring the disc itself as well as the zone, or reading the zone with a ruler laid across the wrong axis.</li><li>Comparing zones from different media — Mueller-Hinton is the standard for a reason.</li><li>Calling an organism resistant from a zone alone without the breakpoint table for that species.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Zone per log₂ MIC</strong> = <code>(Calibration zone, low MIC − Calibration zone, high MIC) ÷ log2(Reference MIC for that zone ÷ Reference MIC for that zone)</code></li><li><strong>Estimated MIC</strong> = <code>Reference MIC for that zone × 2 ^ ((Calibration zone, low MIC − Zone of inhibition) ÷ ((Calibration zone, low MIC − Calibration zone, high MIC) ÷ log2(Reference MIC for that zone ÷ Reference MIC for that zone)))</code></li><li><strong>Susceptibility ratio</strong> = <code>Reference MIC for that zone × 2 ^ ((Calibration zone, low MIC − Zone of inhibition) ÷ ((Calibration zone, low MIC − Calibration zone, high MIC) ÷ log2(Reference MIC for that zone ÷ Reference MIC for that zone))) ÷ Breakpoint MIC</code></li><li><strong>Drug concentration in the well</strong> = <code>Antibiotic per disc ÷ (Well volume ÷ 1000)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Zone per log₂ MIC, Estimated MIC and Susceptibility ratio can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Zone of inhibition from 22 to 44, leaving every other box alone. The panel moves from &lt;strong&gt;Zone per log₂ MIC&lt;/strong&gt; 3.33 mm, &lt;strong&gt;Estimated MIC&lt;/strong&gt; 1.87 µg/mL, &lt;strong&gt;Susceptibility ratio&lt;/strong&gt; 0.4665 × and &lt;strong&gt;Drug concentration in the well&lt;/strong&gt; 150 µg/mL to &lt;strong&gt;Zone per log₂ MIC&lt;/strong&gt; 3.33 mm, &lt;strong&gt;Estimated MIC&lt;/strong&gt; 0.0192 µg/mL, &lt;strong&gt;Susceptibility ratio&lt;/strong&gt; 0.0048 × and &lt;strong&gt;Drug concentration in the well&lt;/strong&gt; 150 µg/mL.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Estimated MIC, Zone per log₂ MIC and Susceptibility ratio are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Zone of inhibition is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Zone of inhibition, Antibiotic per disc and Calibration zone, low MIC measured, Estimated MIC and Zone per log₂ MIC wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/dna-pattern-finder">DNA Pattern Finder Calculator</a>, <a href="/biology/dna-percentage">DNA Percentage Calculator</a> and <a href="/biology/sequence-shuffler">DNA Sequence Shuffler Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does a 20 mm zone mean?', 'a' => 'It depends on the drug and the disc load: for a 30 µg disc of a well-diffusing antibiotic it usually means susceptible.'],
-            ['q' => 'Why is the scale logarithmic?', 'a' => 'Because diffusion creates a concentration gradient, and the zone edge marks the concentration equal to the MIC — a log relationship.'],
-            ['q' => 'Can I use this for fungi?', 'a' => 'Yes, with antifungal discs and the species-appropriate breakpoints.'],
-            ['q' => 'What does the MIC and Zone of Inhibition actually calculate?', 'a' => <<<'TXT'
-            It returns zone per log₂ MIC, estimated MIC, susceptibility ratio and drug concentration in the well. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the MIC and Zone of Inhibition calculator work out?', 'a' => <<<'TXT'
+            Estimated MIC, Zone per log₂ MIC, Susceptibility ratio and Drug concentration in the well, from Calibration zone, low MIC, Calibration zone, high MIC, Reference MIC for that zone and Reference MIC for that zone. The relationship is Zone per log₂ MIC = (Calibration zone, low MIC − Calibration zone, high MIC) ÷ log2(Reference MIC for that zone ÷ Reference MIC for that zone).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Zone of inhibition (mm), Antibiotic per disc (µg), Calibration zone, low MIC (mm), Reference MIC for that zone (µg/mL), Calibration zone, high MIC (mm). Fill zone_mm, disc_ug and cal_zone_high and leave Estimated MIC empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Zone per log₂ MIC, Estimated MIC, Susceptibility ratio and Drug concentration in the well can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Zone per log₂ MIC = 3.33 mm, Estimated MIC = 1.87 µg/mL, Susceptibility ratio = 0.4665 × and Drug concentration in the well = 150 µg/mL. Those are the defaults written into the form — move Zone of inhibition and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Estimated MIC is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Zone of inhibition left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Estimated MIC at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dna-pattern-finder', 'name' => 'DNA Pattern Finder Calculator'],
+            ['path' => '/biology/dna-percentage', 'name' => 'DNA Percentage Calculator'],
+            ['path' => '/biology/sequence-shuffler', 'name' => 'DNA Sequence Shuffler Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

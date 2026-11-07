@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Femur to Foot Ratio Calculator',
-    'meta' => ['title' => 'Femur to Foot Ratio Calculator — Formula & Results', 'description' => 'The femur-to-foot ratio compares thigh-bone length with foot length. It returns femur to foot ratio, foot length as % of femur, femur length and foot length…', 'h1' => 'Femur to Foot Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Femur to Foot Ratio Calculator — Formula & Results', 'description' => 'Femur to Foot Ratio takes Femur length and Foot length and returns Femur to foot ratio and Foot length as % of femur. The arithmetic is the whole method…', 'h1' => 'Femur to Foot Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -66,48 +66,43 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The femur-to-foot ratio compares thigh-bone length with foot length. It returns femur to foot ratio, foot length as % of femur, femur length and foot length, and the panel shows all of them at once.
-        
-        It is used in osteology to check that bones from the same individual are consistent, in forensic work when only part of a skeleton is recovered, and in comparative anatomy as a measure of how a species carries its weight.
+        Femur to Foot Ratio takes Femur length and Foot length and returns Femur to foot ratio and Foot length as % of femur. The arithmetic is the whole method: Femur to foot ratio is worked out from Femur length by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Femur to Foot Ratio', 'html' => <<<'TXT'
-            <p>Femur-to-foot ratio = femur length ÷ foot length</p>
-            <figure class="calc-figure"><img src="/uploads/biology/femur-to-foot-ratio.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Femur to Foot Ratio Calculator — Femur, foot and the gap between them, drawn to scale from your figures." title="Femur to Foot Ratio Calculator"><figcaption>Femur, foot and the gap between them, drawn to scale from your figures.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>femur</code></td><td>maximum length of the femur</td><td>cm</td></tr><tr><td><code>foot</code></td><td>heel to longest toe</td><td>cm</td></tr><tr><td><code>ratio</code></td><td>how many foot lengths fit into one femur</td><td>—</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Range follows standard osteometric practice; femur and foot lengths are both taken from the left side where available.</p>
+            ['title' => 'How the Femur to Foot Ratio calculator works', 'html' => <<<'TXT'
+            <p>The Femur to Foot Ratio calculator applies one relationship to 2 numbers and reports Femur to foot ratio and Foot length as % of femur.</p><p>The relationship it solves reads Femur to foot ratio = Femur length ÷ Foot length.</p><p>The result panel carries Femur to foot ratio and Foot length as % of femur, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Femur to Foot Ratio?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Femur length</strong> — in cm. Maximum length of the femur</li><li><strong>Foot length</strong> — in cm. Heel to the tip of the longest toe</li></ul><p>The result boxes are Femur to foot ratio, Foot length as % of femur in %; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives femur to foot ratio of <strong>1.73</strong>, foot length as % of femur of <strong>57.78</strong>%, femur length of <strong>45</strong> cm, foot length of <strong>26</strong> cm.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Femur to foot ratio takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1.55 – 1.80</td><td><strong>Typical adult</strong></td><td>the usual range for modern humans</td></tr><tr><td>below 1.55</td><td><strong>Long foot</strong></td><td>foot long relative to the thigh bone</td></tr><tr><td>above 1.80</td><td><strong>Short foot</strong></td><td>foot short relative to the thigh bone</td></tr></tbody></table>
-            <ul><li><p>For modern adults the ratio usually lands near 1.7: a 45 cm femur and a 26 cm foot give 1.73.</p></li><li><p>The ratio is a consistency check rather than an estimator. A pair of bones far outside the band more often comes from two different people than from an unusual one.</p></li><li><p>In quadrupeds the femur is long relative to the foot; in humans the foot is disproportionately large because it has to absorb the whole body's landing force.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Femur to foot ratio</strong> = <code>Femur length ÷ Foot length</code></li><li><strong>Foot length as % of femur</strong> = <code>Foot length ÷ Femur length × 100</code></li><li><strong>Femur length</strong> = <code>Femur to foot ratio × Foot length</code></li><li><strong>Foot length</strong> = <code>Femur length ÷ Femur to foot ratio</code></li></ul><p>Any one of Femur to foot ratio, Foot length as % of femur and Femur length can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Measuring foot length with shoes on, or with the foot bearing weight when the reference measurement was taken non-weight-bearing.</li><li>Mixing the anatomical femur length (with the head) with a measurement taken on an X-ray, where magnification changes it by a few per cent.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Femur to foot ratio and Foot length as % of femur are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Femur length and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Femur length and Foot length and the number you are missing is Femur to foot ratio and Foot length as % of femur.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/compost-application-rate">Compost Application Rate Calculator</a>, <a href="/biology/compost">Compost Calculator</a> and <a href="/biology/corn-yield">Corn yield Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Can I estimate height from the ratio?', 'a' => 'Not directly — the ratio cancels size. Use femur length in the bone-length-to-height calculator instead, which uses the Trotter–Gleser equations.'],
-            ['q' => 'What does the Femur to Foot Ratio actually calculate?', 'a' => <<<'TXT'
-            It returns femur to foot ratio, foot length as % of femur, femur length and foot length. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Femur to Foot Ratio calculator work out?', 'a' => 'Femur to foot ratio and Foot length as % of femur, from Femur length and Foot length. The relationship is Femur to foot ratio = Femur length ÷ Foot length.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Femur length (cm), Foot length (cm). Fill femur and foot and leave Femur to foot ratio empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Femur to foot ratio, Foot length as % of femur, Femur length and Foot length blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
-            ['q' => 'Does it work in both directions?', 'a' => <<<'TXT'
-            Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Femur to foot ratio is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Femur length blank and the page solves for it, reporting Femur to foot ratio instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Femur to foot ratio keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/compost-application-rate', 'name' => 'Compost Application Rate Calculator'],
+            ['path' => '/biology/compost', 'name' => 'Compost Calculator'],
+            ['path' => '/biology/corn-yield', 'name' => 'Corn yield Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fertilizer',
-    'meta' => ['title' => 'Fertilizer Calculator — Formula, Units & Example', 'description' => 'Supply the nitrogen, the phosphate (P₂O₅) rate, the potash (K₂O) rate and the you need and the Fertilizer calculator solves for <strong>n rate</strong>.', 'h1' => 'Fertilizer Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Fertilizer Calculator — Formula, Units & Example', 'description' => 'Fertilizer takes Nitrogen (N) and Fertilizer rate and returns Lawn area and Phosphorus (P). The chip beside Fertilizer rate is part of the input.', 'h1' => 'Fertilizer Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => '',
@@ -197,66 +197,44 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Supply the nitrogen, the phosphate (P₂O₅) rate, the potash (K₂O) rate and the you need and the Fertilizer calculator solves for <strong>n rate</strong>.',
+        'intro' => <<<'TXT'
+        Fertilizer takes Nitrogen (N) and Fertilizer rate and returns Lawn area and Phosphorus (P). The arithmetic is the whole method: Lawn area is worked out from Nitrogen (N) by one formula, applied once. Lawn area comes back in square meters unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Fertilizer calculator work?', 'html' => <<<'TXT'
-            <p>The Fertilizer calculator takes the values in the form, applies the relationship described below and reports <strong>n rate</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the nitrogen (N), the phosphate (P₂O₅) rate, the potash (K₂O) rate and the you need.</p>
+            ['title' => 'How the Fertilizer calculator works', 'html' => <<<'TXT'
+            <p>Fertilizer answers one question from 2 numbers, and the answer is Lawn area, Phosphorus (P) and Potassium (K).</p><p>Written with the labels from the form, N rate = (1 ÷ 100) × Nitrogen (N) × Fertilizer rate.</p><p>The answers are Lawn area, Phosphorus (P), Potassium (K) and N rate; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in kilograms per hectare. The unit chip switches it to any of the 11 supported units.</li><li>A measured quantity, entered by default in kilograms per hectare. The unit chip switches it to any of the 11 supported units.</li><li>A measured quantity, entered by default in kilograms per hectare. The unit chip switches it to any of the 11 supported units.</li><li>A plain number with no unit attached.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Nitrogen (N)</strong> — a plain number, no unit</li><li><strong>Fertilizer rate</strong> — in kilograms per hectare</li></ul><p>The answers come back as Lawn area in square meters, Phosphorus (P), Potassium (K), N rate in kilograms per hectare, Phosphate (P₂O₅) rate in kilograms per hectare, Potash (K₂O) rate in kilograms per hectare, You need in kilograms, Fertilizer bag weight in kilograms, Number of bags. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Lawn area</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Nitrogen (N)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Phosphorus (P)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Potassium (K)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>N rate</strong></td><td>A measured quantity, 11 units available.</td><td>kilograms per hectare</td><td>Calculated</td></tr><tr><td><strong>Phosphate (P₂O₅) rate</strong></td><td>A measured quantity, 11 units available.</td><td>kilograms per hectare</td><td>You supply it</td></tr><tr><td><strong>Potash (K₂O) rate</strong></td><td>A measured quantity, 11 units available.</td><td>kilograms per hectare</td><td>You supply it</td></tr><tr><td><strong>You need</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Fertilizer rate</strong></td><td>A measured quantity, 11 units available.</td><td>kilograms per hectare</td><td>You supply it</td></tr><tr><td><strong>Fertilizer bag weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Number of bags</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Lawn area offers 24 units and opens on square meters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Fertilizer calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">N rate</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 100) × nitrogen (N) × fertilizer rate</span></div><div class="formula-row"><span class="formula-lhs">Lawn area</span><span class="formula-eq">=</span><span class="formula-rhs">(92903 ÷ 1000) × you need ÷ fertilizer rate</span></div><div class="formula-row"><span class="formula-lhs">Phosphorus (P)</span><span class="formula-eq">=</span><span class="formula-rhs">100 × phosphate (P₂O₅) rate ÷ fertilizer rate</span></div><div class="formula-row"><span class="formula-lhs">Potassium (K)</span><span class="formula-eq">=</span><span class="formula-rhs">100 × potash (K₂O) rate ÷ fertilizer rate</span></div><div class="formula-row"><span class="formula-lhs">Fertilizer bag weight</span><span class="formula-eq">=</span><span class="formula-rhs">you need ÷ number of bags</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>N rate</strong> = <code>(1 ÷ 100) × Nitrogen (N) × Fertilizer rate</code></li><li><strong>Fertilizer rate</strong> = <code>100 × N rate ÷ Nitrogen (N)</code></li><li><strong>Nitrogen (N)</strong> = <code>100 × N rate ÷ Fertilizer rate</code></li><li><strong>Lawn area</strong> = <code>(92903 ÷ 1000) × You need ÷ Fertilizer rate</code></li><li><strong>You need</strong> = <code>(1000 ÷ 92903) × Fertilizer rate × Lawn area</code></li><li><strong>Phosphorus (P)</strong> = <code>100 × Phosphate (P₂O₅) rate ÷ Fertilizer rate</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of N rate, Fertilizer rate and Nitrogen (N) can be the unknown.</p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Suppose <strong>Nitrogen (N)</strong> = 10 and <strong>Fertilizer rate</strong> = 10 kg/ha. Working through the relationship above gives <strong>N rate</strong> = 1 kg/ha.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>N rate</strong> = 1 kg/ha should be roughly the size you expected from <strong>Nitrogen (N)</strong> = 10 and <strong>Fertilizer rate</strong> = 10 kg/ha.</li></ol>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Fertilizer rate is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Lawn area, Phosphorus (P) and Potassium (K) are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Nitrogen (N) to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilograms per hectare, and convertible to any of the 11 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Area, opening in square meters</li><li>Mass per area, opening in kilograms per hectare</li><li>Mass per area, opening in kilograms per hectare</li><li>Mass per area, opening in kilograms per hectare</li><li>Mass, opening in kilograms</li><li>Mass per area, opening in kilograms per hectare</li><li>Mass, opening in kilograms</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Fertilizer calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 4 figures keep coming back — the nitrogen, the phosphate (P₂O₅) rate and the potash (K₂O) rate — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/fish-oil-dosage-for-cats">Fish oil dosage for cats</a>, <a href="/biology/gdu">GDU (growing degree units)</a> and <a href="/biology/goat-gestation">Goat gestation</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Nitrogen (N) and Fertilizer rate is what you already know and Lawn area and Phosphorus (P) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/solute-potential">Solute Potential Calculator</a>, <a href="/biology/species-richness">Species Richness Calculator</a> and <a href="/biology/specific-growth-rate-od">Specific Growth Rate from OD Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Fertilizer calculator work out?', 'a' => <<<'TXT'
-            It returns n rate, derived from the nitrogen, the phosphate (P₂O₅) rate and the potash (K₂O) rate. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Lawn area, Phosphorus (P), Potassium (K) and N rate, from Nitrogen (N) and Fertilizer rate. The relationship is N rate = (1 ÷ 100) × Nitrogen (N) × Fertilizer rate.
             TXT],
-            ['q' => 'What do I need to enter to use the Fertilizer calculator?', 'a' => <<<'TXT'
-            The form asks for the nitrogen, the phosphate (P₂O₅) rate, the potash (K₂O) rate and the you need, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter lawn area in a different unit?', 'a' => <<<'TXT'
-            Yes. Lawn area opens in square meters and the chip beside it offers 24 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports N rate = 1 kg/ha. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Fertilizer calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Nitrogen (N), Fertilizer rate (kilograms per hectare). With N_label and fertilizer_rate in place, Lawn area can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. N rate, Fertilizer rate, Nitrogen (N) and Lawn area can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Lawn area is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Nitrogen (N) blank and the page solves for it, reporting Lawn area instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Lawn area keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/fish-oil-dosage-for-cats', 'name' => 'Fish oil dosage for cats'],
-            ['path' => '/biology/gdu', 'name' => 'GDU (growing degree units)'],
-            ['path' => '/biology/goat-gestation', 'name' => 'Goat gestation'],
+            ['path' => '/biology/solute-potential', 'name' => 'Solute Potential Calculator'],
+            ['path' => '/biology/species-richness', 'name' => 'Species Richness Calculator'],
+            ['path' => '/biology/specific-growth-rate-od', 'name' => 'Specific Growth Rate from OD Calculator'],
         ],
+        'authors' => [],
     ],
 ];

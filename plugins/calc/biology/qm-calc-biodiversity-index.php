@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Biodiversity Index Calculator (Simpson)',
-    'meta' => ['title' => 'Biodiversity Index Calculator (Simpson) — Biology', 'description' => 'The Simpson index is the probability that two individuals drawn at random belong to the same species. It returns total individuals, simpson dominance D…', 'h1' => 'Biodiversity Index Calculator (Simpson)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Biodiversity Index Calculator (Simpson) — Biology', 'description' => 'Enter Species 1 count, Species 2 count and Species 3 count into Biodiversity Index Calculator (Simpson) and the answer comes back as Simpson dominance D and…', 'h1' => 'Biodiversity Index Calculator (Simpson)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -105,52 +105,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Simpson index is the probability that two individuals drawn at random belong to the same species. It returns total individuals, simpson dominance D, simpson diversity 1 − D and inverse Simpson 1 ÷ D, and the panel shows all of them at once.
-        
-        Subtract it from one and you have Simpson's diversity, the probability that they belong to different species — the most intuitive diversity number there is.
+        Enter Species 1 count, Species 2 count and Species 3 count into Biodiversity Index Calculator (Simpson) and the answer comes back as Simpson dominance D and Simpson diversity 1 − D. The arithmetic is the whole method: Simpson dominance D is worked out from Species 1 count by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Biodiversity Index (Simpson)', 'html' => <<<'TXT'
-            <p>D = Σ nᵢ(nᵢ − 1) ÷ [N(N − 1)]; diversity = 1 − D; inverse = 1 ÷ D</p>
-            <figure class="calc-figure"><img src="/uploads/biology/biodiversity-index.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Biodiversity Index Calculator (Simpson) — Dominance against diversity for the same counts." title="Biodiversity Index Calculator (Simpson)"><figcaption>Dominance against diversity for the same counts.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>nᵢ</code></td><td>individuals of species i</td><td>individuals</td></tr><tr><td><code>N</code></td><td>all individuals</td><td>individuals</td></tr><tr><td><code>D</code></td><td>probability two draws are the same species</td><td>0–1</td></tr></tbody></table>
+            ['title' => 'How the Biodiversity Index Calculator (Simpson) calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Biodiversity Index Calculator (Simpson): it takes 5 numbers and reports Simpson dominance D, Simpson diversity 1 − D and Inverse Simpson 1 ÷ D.</p><p>In the form&#039;s own words, Total individuals = Species 1 count + Species 2 count + Species 3 count + Species 4 count + Species 5 count.</p><p>The answers are Simpson dominance D, Simpson diversity 1 − D, Inverse Simpson 1 ÷ D and Total individuals; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Biodiversity Index (Simpson)?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 5 boxes and the page has everything it needs.</p><ul><li><strong>Species 1 count</strong> — in individuals</li><li><strong>Species 2 count</strong> — in individuals</li><li><strong>Species 3 count</strong> — in individuals</li><li><strong>Species 4 count</strong> — in individuals</li><li><strong>Species 5 count</strong> — in individuals</li></ul><p>What you get back is Simpson dominance D, Simpson diversity 1 − D, Inverse Simpson 1 ÷ D, Total individuals, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: species 1 count of <strong>40</strong> individuals, species 2 count of <strong>25</strong> individuals, species 3 count of <strong>15</strong> individuals, species 4 count of <strong>10</strong> individuals, species 5 count of <strong>6</strong> individuals.</p>
-            <p>Substituting them into the formula gives total individuals of <strong>96</strong>, simpson dominance d of <strong>0.273</strong>, simpson diversity 1 − d of <strong>0.727</strong>, inverse simpson 1 ÷ d of <strong>3.66</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Species 1 count = 40 individuals, Species 2 count = 25 individuals, Species 3 count = 15 individuals, Species 4 count = 10 individuals and Species 5 count = 6 individuals; the answers are &lt;strong&gt;Total individuals&lt;/strong&gt; = 96, &lt;strong&gt;Simpson dominance D&lt;/strong&gt; = 0.273, &lt;strong&gt;Simpson diversity 1 − D&lt;/strong&gt; = 0.727 and &lt;strong&gt;Inverse Simpson 1 ÷ D&lt;/strong&gt; = 3.66.</p><ul><li><strong>Total individuals</strong> = 96</li><li><strong>Simpson dominance D</strong> = 0.273</li><li><strong>Simpson diversity 1 − D</strong> = 0.727</li><li><strong>Inverse Simpson 1 ÷ D</strong> = 3.66</li></ul><p>The line behind those figures is <strong>Total individuals</strong> = <code>Species 1 count + Species 2 count + Species 3 count + Species 4 count + Species 5 count</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 − D below 0.5</td><td><strong>Low diversity</strong></td><td>one or two species dominate</td></tr><tr><td>0.5 – 0.8</td><td><strong>Moderate</strong></td><td>mixed community with clear dominants</td></tr><tr><td>above 0.8</td><td><strong>High diversity</strong></td><td>even, species-rich community</td></tr></tbody></table>
-            <ul><li><p>The n(n − 1) form is the unbiased estimator for sampling without replacement; the simpler Σ p² is the population version and is slightly smaller.</p></li><li><p>Inverse Simpson, 1/D, is read as 'the effective number of equally common species' and is usually easier to explain than the index itself.</p></li><li><p>Simpson is less sensitive to rare species than Shannon, so it is the index to use when sampling is incomplete.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Total individuals&lt;/strong&gt; = 96, &lt;strong&gt;Simpson dominance D&lt;/strong&gt; = 0.273, &lt;strong&gt;Simpson diversity 1 − D&lt;/strong&gt; = 0.727 and &lt;strong&gt;Inverse Simpson 1 ÷ D&lt;/strong&gt; = 3.66. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Simpson dominance D is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using the biased Σ p² formula and calling it the unbiased Simpson index.</li><li>Averaging index values from replicate quadrats instead of computing from pooled counts.</li><li>Reporting D (dominance) when you mean 1 − D (diversity).</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Total individuals</strong> = <code>Species 1 count + Species 2 count + Species 3 count + Species 4 count + Species 5 count</code></li></ul><p>Any one of Total individuals, Simpson dominance D and Simpson diversity 1 − D can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/shannon-wiener-index">Shannon–Wiener index</a>. <a href="/biology/species-richness">Species richness</a>. <a href="/biology/berger-parker-index">Berger–Parker index</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Species 1 count, from 40 to 80 — and the answers go from &lt;strong&gt;Total individuals&lt;/strong&gt; 96, &lt;strong&gt;Simpson dominance D&lt;/strong&gt; 0.273, &lt;strong&gt;Simpson diversity 1 − D&lt;/strong&gt; 0.727 and &lt;strong&gt;Inverse Simpson 1 ÷ D&lt;/strong&gt; 3.66 to &lt;strong&gt;Total individuals&lt;/strong&gt; 136, &lt;strong&gt;Simpson dominance D&lt;/strong&gt; 0.3949, &lt;strong&gt;Simpson diversity 1 − D&lt;/strong&gt; 0.6051 and &lt;strong&gt;Inverse Simpson 1 ÷ D&lt;/strong&gt; 2.53.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Simpson dominance D, Simpson diversity 1 − D and Inverse Simpson 1 ÷ D are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Species 1 count to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Species 1 count, Species 2 count and Species 3 count and the number you are missing is Simpson dominance D and Simpson diversity 1 − D.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/phenotypic-ratio">Phenotypic Ratio Calculator</a>, <a href="/biology/photosynthesis-rate">Photosynthesis Rate Calculator</a> and <a href="/biology/pig-weight">Pig Weight Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Is a higher Simpson index more diverse?', 'a' => <<<'TXT'
-            It depends which one: D (dominance) rises with uniformity of a single species being drawn twice, so higher D means lower diversity. 1 − D and 1/D rise with diversity.
+            ['q' => 'What does the Biodiversity Index Calculator (Simpson) calculator work out?', 'a' => <<<'TXT'
+            Simpson dominance D, Simpson diversity 1 − D, Inverse Simpson 1 ÷ D and Total individuals, from Species 1 count, Species 2 count, Species 3 count and Species 4 count. The relationship is Total individuals = Species 1 count + Species 2 count + Species 3 count + Species 4 count + Species 5 count.
             TXT],
-            ['q' => 'Why does Simpson need the n − 1 terms?', 'a' => 'Because the second draw cannot be the same individual as the first.'],
-            ['q' => 'What does the Biodiversity Index (Simpson) actually calculate?', 'a' => <<<'TXT'
-            It returns total individuals, simpson dominance D, simpson diversity 1 − D and inverse Simpson 1 ÷ D. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Species 1 count (individuals), Species 2 count (individuals), Species 3 count (individuals), Species 4 count (individuals), Species 5 count (individuals). With n1, n2 and n3 in place, Simpson dominance D can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Total individuals, Simpson dominance D, Simpson diversity 1 − D and Inverse Simpson 1 ÷ D blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Total individuals = 96, Simpson dominance D = 0.273, Simpson diversity 1 − D = 0.727 and Inverse Simpson 1 ÷ D = 3.66. The figures come from Species 1 count as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Simpson dominance D is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Species 1 count left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Simpson dominance D keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/phenotypic-ratio', 'name' => 'Phenotypic Ratio Calculator'],
+            ['path' => '/biology/photosynthesis-rate', 'name' => 'Photosynthesis Rate Calculator'],
+            ['path' => '/biology/pig-weight', 'name' => 'Pig Weight Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

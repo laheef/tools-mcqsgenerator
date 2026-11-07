@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Compost',
-    'meta' => ['title' => 'Compost Calculator: Formula, Steps & Examples', 'description' => 'Give the Compost calculator the length, the area, the price and the density and it returns <strong>width</strong>. The Compost calculator takes the values in…', 'h1' => 'Compost Calculator', 'updated' => '2026-08-21'],
+    'meta' => ['title' => 'Compost Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
+    Compost takes Length, Width and Area and returns Depth. If you&#039;re unsure about the depth of compost you need, choose an option from this menu.Volume — in…
+    TXT, 'h1' => 'Compost Calculator', 'updated' => '2026-08-21'],
     'raw' => [
         'vars' => [
             'area' => [
@@ -373,66 +375,45 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Give the Compost calculator the length, the area, the price and the density and it returns <strong>width</strong>.',
+        'intro' => <<<'TXT'
+        Compost takes Length, Width and Area and returns Depth. The arithmetic is the whole method: Depth is worked out from Length by one formula, applied once. Depth comes back in centimeters unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Compost calculator work?', 'html' => <<<'TXT'
-            <p>The Compost calculator takes the values in the form, applies the relationship described below and reports <strong>width</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the garden or lawn type); then you type in the length, the area, the price and the density.</p>
+            ['title' => 'How the Compost calculator works', 'html' => <<<'TXT'
+            <p>The Compost calculator applies one relationship to 9 numbers and reports Depth.</p><p>The relationship it solves reads Width = Area ÷ Length.</p><p>What comes back is Depth — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li> The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li>Pick the option that matches your case — 9 options, such as new lawn - high compost level, new lawn - low compost level and established lawn - high compost level. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>A measured quantity, entered by default in kilograms per cubic meter. The unit chip switches it to any of the 9 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 9 boxes and the page has everything it needs.</p><ul><li><strong>Length</strong> — in meters</li><li><strong>Width</strong> — in meters</li><li><strong>Area</strong> — in square meters</li><li><strong>Garden or lawn type</strong> — a plain number, no unit. If you&#039;re unsure about the depth of compost you need, choose an option from this menu.</li><li><strong>Volume</strong> — in cubic meters</li><li><strong>Price</strong> — in USD. A 1-cubic foot bag of compost typically costs around $5.</li><li><strong>Total cost</strong> — in USD</li><li><strong>Density</strong> — in kilograms per cubic meter. A one-pound bag of compost typically weighs about 40 pounds.</li><li><strong>Total weight</strong> — in kilograms</li></ul><p>What you get back is Depth in centimeters, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr><tr><td><strong>Garden or lawn type</strong></td><td>One of 9 options, such as new lawn - high compost level, new lawn - low compost level and established lawn - high compost level.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Volume</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Price</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Total cost</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Density</strong></td><td>A measured quantity, 9 units available.</td><td>kilograms per cubic meter</td><td>You supply it</td></tr><tr><td><strong>Total weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Depth offers 31 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Compost calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Width</span><span class="formula-eq">=</span><span class="formula-rhs">area ÷ length</span></div><div class="formula-row"><span class="formula-lhs">Volume</span><span class="formula-eq">=</span><span class="formula-rhs">area × depth</span></div><div class="formula-row"><span class="formula-lhs">Volume</span><span class="formula-eq">=</span><span class="formula-rhs">total cost ÷ price</span></div><div class="formula-row"><span class="formula-lhs">Volume</span><span class="formula-eq">=</span><span class="formula-rhs">total weight ÷ density</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Width</strong> = <code>Area ÷ Length</code></li><li><strong>Length</strong> = <code>Area ÷ Width</code></li><li><strong>Area</strong> = <code>Length × Width</code></li><li><strong>Volume</strong> = <code>Area × Depth</code></li><li><strong>Depth</strong> = <code>Volume ÷ Area</code></li><li><strong>Total cost</strong> = <code>Price × Volume</code></li></ul><p>Any one of Width, Length and Area can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Length, Width and Area is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Depth is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Length to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li><li>Length, opening in centimeters</li><li>Volume, opening in cubic meters</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Density, opening in kilograms per cubic meter</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Compost calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 4 figures keep coming back — the length, the area and the price — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/corn-yield">Corn yield</a>, <a href="/biology/cow-gestation">Cow gestation</a> and <a href="/biology/cricket-chirp-thermometer">Crickets chirping thermometer</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Length, Width and Area and the number you are missing is Depth.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/percent-germination">Percent Germination Calculator</a>, <a href="/biology/percent-inhibition">Percent Inhibition Calculator</a> and <a href="/biology/percent-viability">Percent Viability Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Compost calculator work out?', 'a' => <<<'TXT'
-            It returns width, derived from the length, the area and the price. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Length (meters), Width (meters), Area (square meters), Garden or lawn type, Volume (cubic meters). Enter length, width and area; Depth is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'What do I need to enter to use the Compost calculator?', 'a' => <<<'TXT'
-            The form asks for the length, the area, the price and the density, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Width, Length, Area and Volume blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Depth is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Length left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I enter length in a different unit?', 'a' => <<<'TXT'
-            Yes. Length opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Depth = 0 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Compost calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Depth keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/corn-yield', 'name' => 'Corn yield'],
-            ['path' => '/biology/cow-gestation', 'name' => 'Cow gestation'],
-            ['path' => '/biology/cricket-chirp-thermometer', 'name' => 'Crickets chirping thermometer'],
+            ['path' => '/biology/percent-germination', 'name' => 'Percent Germination Calculator'],
+            ['path' => '/biology/percent-inhibition', 'name' => 'Percent Inhibition Calculator'],
+            ['path' => '/biology/percent-viability', 'name' => 'Percent Viability Calculator'],
         ],
+        'authors' => [],
     ],
 ];

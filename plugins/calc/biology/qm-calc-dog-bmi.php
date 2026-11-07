@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog BMI',
-    'meta' => ['title' => 'Dog BMI Calculator — Formula, Units & Example', 'description' => 'Supply the weight and the BMI and the Dog BMI calculator solves for <strong>height</strong>. Press Calculate for the answer; change a value and it steps off…', 'h1' => 'Dog BMI Calculator', 'updated' => '2026-05-22'],
+    'meta' => ['title' => 'Dog BMI Calculator — Formula, Units & Example', 'description' => 'Dog BMI takes Weight and BMI and returns Height. It is a single relationship that reads Height out of Weight, not a table of canned results keyed by them.', 'h1' => 'Dog BMI Calculator', 'updated' => '2026-05-22'],
     'raw' => [
         'vars' => [
             'bmi' => [
@@ -533,70 +533,42 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Supply the weight and the BMI and the Dog BMI calculator solves for <strong>height</strong>. 
-        
-        Press Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.
+        Dog BMI takes Weight and BMI and returns Height. It is a single relationship that reads Height out of Weight, not a table of canned results keyed by them. Units for Height default to centimeters and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'How does the Dog BMI calculator work?', 'html' => <<<'TXT'
-            <p>The Dog BMI calculator takes the values in the form, applies the relationship described below and reports <strong>height</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the breed); then you type in the weight and the BMI.</p>
+            ['title' => 'How the Dog BMI calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Dog BMI: it takes 2 numbers and reports Height.</p><p>In the form&#039;s own words, Height = (254 ÷ 45) × Weight ÷ BMI.</p><p>The result panel carries Height, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 161 options, such as other/mixed, affenpinscher and afghan Hound. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Weight</strong> — in kilograms</li><li><strong>BMI</strong> — a plain number, no unit. Canine Body Mass Index.</li></ul><p>What you get back is Height in centimeters, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Breed</strong></td><td>One of 161 options, such as other/mixed, affenpinscher and afghan Hound.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>BMI</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Bottom</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Upper</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Height offers 31 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Suppose <strong>Breed</strong> set to Affenpinscher, <strong>Weight</strong> = 10 kg and <strong>BMI</strong> = 10. Working through the relationship above gives <strong>Height</strong> = 564 cm.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Height</strong> = 564 cm should be roughly the size you expected from <strong>Breed</strong> set to Affenpinscher and <strong>Weight</strong> = 10 kg.</li></ol>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Height</strong> = <code>(254 ÷ 45) × Weight ÷ BMI</code></li><li><strong>Weight</strong> = <code>(45 ÷ 254) × BMI × Height</code></li><li><strong>BMI</strong> = <code>(254 ÷ 45) × Weight ÷ Height</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Height, Weight and BMI can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Weight is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Height is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Weight is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Mass, opening in kilograms</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog BMI calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 2 figures keep coming back — the weight and the BMI — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Dog BMI calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-calorie">Dog calorie</a>, <a href="/biology/dog-chocolate-toxicity">Dog chocolate toxicity</a> and <a href="/biology/dog-crate-size">Dog crate size</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Weight and BMI and the number you are missing is Height.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cedar-tree-value">Standing Timber Value Calculator</a>, <a href="/biology/stems-per-hectare">Stems Per Hectare Calculator</a> and <a href="/biology/stomatal-density">Stomatal Density Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Dog BMI calculator work out?', 'a' => <<<'TXT'
-            It returns height, derived from the weight and the BMI. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Weight (kilograms), BMI. Enter mass and bmi; Height is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Height, Weight and BMI can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Height is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Weight left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'What do I need to enter to use the Dog BMI calculator?', 'a' => <<<'TXT'
-            The form asks for the weight and the BMI, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter height in a different unit?', 'a' => <<<'TXT'
-            Yes. Height opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Height = 564 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Dog BMI calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Height keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-calorie', 'name' => 'Dog calorie'],
-            ['path' => '/biology/dog-chocolate-toxicity', 'name' => 'Dog chocolate toxicity'],
-            ['path' => '/biology/dog-crate-size', 'name' => 'Dog crate size'],
+            ['path' => '/biology/cedar-tree-value', 'name' => 'Standing Timber Value Calculator'],
+            ['path' => '/biology/stems-per-hectare', 'name' => 'Stems Per Hectare Calculator'],
+            ['path' => '/biology/stomatal-density', 'name' => 'Stomatal Density Calculator'],
         ],
+        'authors' => [],
     ],
 ];

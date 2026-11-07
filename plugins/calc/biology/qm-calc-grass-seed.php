@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Grass seed',
-    'meta' => ['title' => 'Grass seed Calculator: Formula, Steps & Examples', 'description' => '<strong>length</strong> is what the Grass seed calculator works out, and it gets there from the width, the area, the radius and a axis. Working from the top…', 'h1' => 'Grass seed Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Grass seed Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
+    Grass seed takes Width and Area and returns Length and Radius. It is a single relationship that reads Length out of Width, not a table of canned results keyed…
+    TXT, 'h1' => 'Grass seed Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'a_axis' => [
@@ -542,63 +544,42 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => '<strong>length</strong> is what the Grass seed calculator works out, and it gets there from the width, the area, the radius and a axis.',
+        'intro' => <<<'TXT'
+        Grass seed takes Width and Area and returns Length and Radius. It is a single relationship that reads Length out of Width, not a table of canned results keyed by them. Units for Length default to meters and can be changed on the answer itself.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Grass seed calculator work?', 'html' => <<<'TXT'
-            <p>The Grass seed calculator takes the values in the form, applies the relationship described below and reports <strong>length</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the lawn shape); then you type in the width, the area (Lawn area), the radius and a axis.</p>
+            ['title' => 'How the Grass seed calculator works', 'html' => <<<'TXT'
+            <p>Grass seed answers one question from 2 numbers, and the answer is Length, Radius and Area.</p><p>Written with the labels from the form, Length = Area ÷ Width.</p><p>The result panel carries Length, Radius, Area and A axis, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 4 options, such as rectangle, circle and ellipsis. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li> The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Width</strong> — in meters</li><li><strong>Area</strong> — in square meters</li></ul><p>The result boxes are Length in meters, Radius in meters, Area in square meters, A axis in meters, B axis in meters, Area in square meters, Base in meters, Height in meters, Area in square meters, Coverage rate in kilograms per thousand square meters, Seeds in kilograms, Seeds in kilograms, Seeds in kilograms, Seeds in kilograms; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Lawn shape</strong></td><td>One of 4 options, such as rectangle, circle and ellipsis.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Area (Lawn area)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr><tr><td><strong>Radius</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Area (Lawn area)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>A axis</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>B axis</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Area (Lawn area)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Base</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Area (Lawn area)</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>Calculated</td></tr><tr><td><strong>Coverage rate</strong></td><td>A measured quantity, 11 units available.</td><td>kilograms per thousand square meters</td><td>Calculated</td></tr><tr><td><strong>Seeds (Seeds)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Seeds (Seeds)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Seeds (Seeds)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Seeds (Seeds)</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Length offers 31 units and opens on meters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Grass seed calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Length</span><span class="formula-eq">=</span><span class="formula-rhs">area ÷ width</span></div><div class="formula-row"><span class="formula-lhs">Area</span><span class="formula-eq">=</span><span class="formula-rhs">PI × (radius ^ 2)</span></div><div class="formula-row"><span class="formula-lhs">B axis</span><span class="formula-eq">=</span><span class="formula-rhs">area ÷ (PI × a axis)</span></div><div class="formula-row"><span class="formula-lhs">Area</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 2) × base × height</span></div><div class="formula-row"><span class="formula-lhs">Seeds</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 1000) × area × coverage rate</span></div><div class="formula-row"><span class="formula-lhs">Coverage rate</span><span class="formula-eq">=</span><span class="formula-rhs">1000 × seeds ÷ area</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Length</strong> = <code>Area ÷ Width</code></li><li><strong>Area</strong> = <code>Length × Width</code></li><li><strong>Width</strong> = <code>Area ÷ Length</code></li><li><strong>Radius</strong> = <code>√(Area) ÷ √(PI)</code></li><li><strong>B axis</strong> = <code>Area ÷ (PI × A axis)</code></li><li><strong>A axis</strong> = <code>Area ÷ (PI × B axis)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Length, Area and Width can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms per thousand square meters, and convertible to any of the 11 units on that chip.</li><li>Shown in square meters, and convertible to any of the 24 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Width and Area is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Length, Radius and Area are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Width is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Grass seed calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 4 figures keep coming back — the width, the area and the radius — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/guinea-pig-age">Guinea pig years to human years</a>, <a href="/biology/guinea-pig-pregnancy">Guinea pig pregnancy</a> and <a href="/biology/hamster-age">Hamster age</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Width and Area and the number you are missing is Length and Radius.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/femur-to-foot-ratio">Femur to Foot Ratio Calculator</a>, <a href="/biology/fertilizer">Fertilizer Calculator</a> and <a href="/biology/fertilizer-injector-ratio">Fertilizer Injector Ratio Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Grass seed calculator work out?', 'a' => <<<'TXT'
-            It returns length, derived from the width, the area and the radius. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
-            TXT],
-            ['q' => 'What do I need to enter to use the Grass seed calculator?', 'a' => <<<'TXT'
-            The form asks for the width, the area, the radius and a axis, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter width in a different unit?', 'a' => <<<'TXT'
-            Yes. Width opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Grass seed calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'What does the Grass seed calculator work out?', 'a' => 'Length, Radius, Area and A axis, from Area and Width. The relationship is Length = Area ÷ Width.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Width (meters), Area (square meters). With width and area_rectangle in place, Length can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Length, Area, Width and Area can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Length is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Width blank and the page solves for it, reporting Length instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Length at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/guinea-pig-age', 'name' => 'Guinea pig years to human years'],
-            ['path' => '/biology/guinea-pig-pregnancy', 'name' => 'Guinea pig pregnancy'],
-            ['path' => '/biology/hamster-age', 'name' => 'Hamster age'],
+            ['path' => '/biology/femur-to-foot-ratio', 'name' => 'Femur to Foot Ratio Calculator'],
+            ['path' => '/biology/fertilizer', 'name' => 'Fertilizer Calculator'],
+            ['path' => '/biology/fertilizer-injector-ratio', 'name' => 'Fertilizer Injector Ratio Calculator'],
         ],
+        'authors' => [],
     ],
 ];

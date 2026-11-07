@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mutation frequency',
-    'meta' => ['title' => 'Mutation frequency — Free Online Calculator', 'description' => 'Give the Mutation frequency calculator number of observed mutants and number of cells in culture and it returns <strong>mutation frequency (μ)</strong>.', 'h1' => 'Mutation frequency Calculator', 'updated' => '2026-07-06'],
+    'meta' => ['title' => 'Mutation frequency — Free Online Calculator', 'description' => 'Mutation frequency turns Number of observed mutants (m) and Number of cells in culture (N) into Mutation frequency (μ). There is no hidden constant here…', 'h1' => 'Mutation frequency Calculator', 'updated' => '2026-07-06'],
     'sections' => [
         [
             'title' => '',
@@ -60,63 +60,57 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Give the Mutation frequency calculator number of observed mutants and number of cells in culture and it returns <strong>mutation frequency (μ)</strong>.',
+        'intro' => <<<'TXT'
+        Mutation frequency turns Number of observed mutants (m) and Number of cells in culture (N) into Mutation frequency (μ). There is no hidden constant here: change Mutation frequency (μ) and Number of observed mutants (m) moves with it.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Mutation frequency calculator work?', 'html' => <<<'TXT'
-            <p>The Mutation frequency calculator takes the values in the form, applies the relationship described below and reports <strong>mutation frequency (μ)</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in number of observed mutants (m) and number of cells in culture (N).</p>
+            ['title' => 'How the Mutation frequency calculator works', 'html' => <<<'TXT'
+            <p>Mutation frequency answers one question from 2 numbers, and the answer is Mutation frequency (μ).</p><p>Written with the labels from the form, Mutation frequency (μ) = Number of observed mutants (m) ÷ Number of cells in culture (N).</p><p>The answers are Mutation frequency (μ); they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Number of observed mutants (m)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of cells in culture (N)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mutation frequency (μ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Number of observed mutants (m)</strong> — a plain number, no unit</li><li><strong>Number of cells in culture (N)</strong> — a plain number, no unit</li></ul><p>The answer comes back as Mutation frequency (μ). </p>
             TXT],
-            ['title' => 'The formula behind the Mutation frequency calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Mutation frequency (μ)</span><span class="formula-eq">=</span><span class="formula-rhs">number of observed mutants (m) ÷ number of cells in culture (N)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Number of observed mutants (m) = 10 and Number of cells in culture (N) = 100 gives &lt;strong&gt;Mutation frequency (μ)&lt;/strong&gt; = 0.1.</p><ul><li><strong>Mutation frequency (μ)</strong> = 0.1</li></ul><p>That is <strong>Mutation frequency (μ)</strong> = <code>Number of observed mutants (m) ÷ Number of cells in culture (N)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Suppose <strong>Number of observed mutants (m)</strong> = 10 and <strong>Number of cells in culture (N)</strong> = 10. Working through the relationship above gives <strong>Mutation frequency (μ)</strong> = 1.</p><p>Read it as a template. Every number above can be replaced with one of yours; only the relationship between them is fixed.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Mutation frequency (μ)</strong> = 1 should be roughly the size you expected from <strong>Number of observed mutants (m)</strong> = 10 and <strong>Number of cells in culture (N)</strong> = 10.</li></ol>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Mutation frequency (μ)&lt;/strong&gt; = 0.1 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Mutation frequency (μ) takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Mutation frequency (μ)</strong> = <code>Number of observed mutants (m) ÷ Number of cells in culture (N)</code></li><li><strong>Number of observed mutants (m)</strong> = <code>Number of cells in culture (N) × Mutation frequency (μ)</code></li><li><strong>Number of cells in culture (N)</strong> = <code>Number of observed mutants (m) ÷ Mutation frequency (μ)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Mutation frequency (μ), Number of observed mutants (m) and Number of cells in culture (N) can be the unknown.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Mutation frequency calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 2 figures keep coming back — number of observed mutants and number of cells in culture — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Number of observed mutants (m) from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Mutation frequency (μ)&lt;/strong&gt; 0.1 to &lt;strong&gt;Mutation frequency (μ)&lt;/strong&gt; 0.2.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Mutation frequency (μ) is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Number of observed mutants (m) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Mutation frequency calculator, these are the ones that matter:</p>
-            <ul><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — number of observed mutants for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/mutation-rate">Mutation rate</a>, <a href="/biology/omega-3-for-dogs">Omega-3 for dogs</a> and <a href="/biology/pet-sitter-rates">Pet sitter rates</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Number of observed mutants (m) and Number of cells in culture (N) and the number you are missing is Mutation frequency (μ).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/transpiration-rate">Transpiration Rate Calculator</a>, <a href="/biology/tree-age">Tree age</a> and <a href="/biology/tree-diameter">Tree diameter Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Mutation frequency calculator work out?', 'a' => <<<'TXT'
-            It returns mutation frequency (μ), derived from number of observed mutants and number of cells in culture. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Mutation frequency (μ), from Number of observed mutants (m) and Number of cells in culture (N). The relationship is Mutation frequency (μ) = Number of observed mutants (m) ÷ Number of cells in culture (N).
             TXT],
-            ['q' => 'What do I need to enter to use the Mutation frequency calculator?', 'a' => <<<'TXT'
-            The form asks for number of observed mutants and number of cells in culture, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Number of observed mutants (m), Number of cells in culture (N). Fill mutants and cellCulture and leave Mutation frequency (μ) empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Mutation frequency (μ), Number of observed mutants (m) and Number of cells in culture (N) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Mutation frequency (μ) = 1. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
+            ['q' => 'What answer do the default values give?', 'a' => 'Mutation frequency (μ) = 0.1. The figures come from Number of observed mutants (m) as the page opens it; they are a starting point, not a fixed answer.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Mutation frequency (μ) is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Number of observed mutants (m) left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Is the Mutation frequency calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Mutation frequency (μ) keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/mutation-rate', 'name' => 'Mutation rate'],
-            ['path' => '/biology/omega-3-for-dogs', 'name' => 'Omega-3 for dogs'],
-            ['path' => '/biology/pet-sitter-rates', 'name' => 'Pet sitter rates'],
+            ['path' => '/biology/transpiration-rate', 'name' => 'Transpiration Rate Calculator'],
+            ['path' => '/biology/tree-age', 'name' => 'Tree age'],
+            ['path' => '/biology/tree-diameter', 'name' => 'Tree diameter Calculator'],
         ],
+        'authors' => [],
     ],
 ];

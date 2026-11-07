@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell Density Unit Converter',
-    'meta' => ['title' => 'Cell Density Unit Converter — Formula & Results', 'description' => 'Cell counts get written as cells/mL, cells/µL, ×10⁶/mL or ×10⁵/mL depending on the lab, and a factor of a thousand between them is easy to lose.', 'h1' => 'Cell Density Unit Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Density Unit Converter — Formula & Results', 'description' => 'Enter Cell concentration into Cell Density Unit and the answer comes back as Cells per mL and Cells per µL. The arithmetic is the whole method: Cells per mL…', 'h1' => 'Cell Density Unit Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -86,46 +86,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Cell counts get written as cells/mL, cells/µL, ×10⁶/mL or ×10⁵/mL depending on the lab, and a factor of a thousand between them is easy to lose. It returns cells per mL, cells per µL, millions per mL and cells per litre, and the panel shows all of them at once.
-        
-        This converter moves between all of them, and to and from a haemocytometer count.
+        Enter Cell concentration into Cell Density Unit and the answer comes back as Cells per mL and Cells per µL. The arithmetic is the whole method: Cells per mL is worked out from Cell concentration by one formula, applied once. Cells per mL comes back in cells/mL unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Cell Density Unit Converter', 'html' => <<<'TXT'
-            <p>1 ×10⁶ cells/mL = 1 000 000 cells/mL = 1 000 cells/µL</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cell-density-unit-converter.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Cell Density Unit Converter — One concentration, every unit." title="Cell Density Unit Converter"><figcaption>One concentration, every unit.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>cells/mL</code></td><td>the base unit</td><td>cells/mL</td></tr><tr><td><code>cells/µL</code></td><td>a thousandth of cells/mL</td><td>cells/µL</td></tr><tr><td><code>×10⁶/mL</code></td><td>millions per mL</td><td>10⁶ cells/mL</td></tr></tbody></table>
+            ['title' => 'How the Cell Density Unit calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Cell Density Unit: it takes 1 number and reports Cells per mL, Cells per µL and Millions per mL.</p><p>Written with the labels from the form, Cells per mL = Cell concentration × 1000000.</p><p>The answers are Cells per mL, Cells per µL, Millions per mL and Cells per litre; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Cell Density Unit Converter?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Cell concentration</strong> — in ×10⁶/mL</li></ul><p>The result boxes are Cells per mL in cells/mL, Cells per µL in cells/µL, Millions per mL in ×10⁶/mL, Cells per litre in cells/L, log₁₀(cells/mL); they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: cell concentration of <strong>1.5</strong> ×10⁶/mL.</p>
-            <p>Substituting them into the formula gives cells per ml of <strong>1,500,000</strong> cells/mL, cells per µl of <strong>1,500</strong> cells/µL, millions per ml of <strong>1.5</strong> ×10⁶/mL, cells per litre of <strong>1,500,000,000</strong> cells/L, log₁₀(cells/ml) of <strong>6.18</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Cell concentration = 1.5 ×10⁶/mL — through the same formula and the panel reports &lt;strong&gt;Cells per mL&lt;/strong&gt; = 1.500e+6 cells/mL, &lt;strong&gt;Cells per µL&lt;/strong&gt; = 1500 cells/µL, &lt;strong&gt;Millions per mL&lt;/strong&gt; = 1.5 ×10⁶/mL, &lt;strong&gt;Cells per litre&lt;/strong&gt; = 1.500e+9 cells/L and &lt;strong&gt;log₁₀(cells/mL)&lt;/strong&gt; = 6.18.</p><ul><li><strong>Cells per mL</strong> = 1.500e+6 cells/mL</li><li><strong>Cells per µL</strong> = 1500 cells/µL</li><li><strong>Millions per mL</strong> = 1.5 ×10⁶/mL</li><li><strong>Cells per litre</strong> = 1.500e+9 cells/L</li><li><strong>log₁₀(cells/mL)</strong> = 6.18</li></ul><p>That is <strong>Cells per mL</strong> = <code>Cell concentration × 1000000</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>A log₁₀ value is how cell densities are plotted in growth curves, because it turns exponential growth into a straight line.</p></li><li><p>The ×10⁶/mL convention is common in haematology and in cell culture; the underlying unit is still cells per millilitre.</p></li><li><p>Mixing cells/µL and cells/mL between a count and a protocol is the most common unit error in the lab.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Cells per mL&lt;/strong&gt; = 1.500e+6, &lt;strong&gt;Cells per µL&lt;/strong&gt; = 1500, &lt;strong&gt;Millions per mL&lt;/strong&gt; = 1.5, &lt;strong&gt;Cells per litre&lt;/strong&gt; = 1.500e+9 and &lt;strong&gt;log₁₀(cells/mL)&lt;/strong&gt; = 6.18. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Cells per mL is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Reading 1.5 as 1.5 × 10⁵ rather than 1.5 × 10⁶.</li><li>Converting a bacterial count (10⁸ scale) with the same factor as a mammalian one (10⁶ scale).</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Cells per mL</strong> = <code>Cell concentration × 1000000</code></li><li><strong>Cells per µL</strong> = <code>Cell concentration × 1000</code></li><li><strong>Millions per mL</strong> = <code>Cell concentration</code></li><li><strong>Cells per litre</strong> = <code>Cell concentration × 1000000000</code></li><li><strong>log₁₀(cells/mL)</strong> = <code>log₁₀(Cell concentration × 1000000)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Cells per mL, Cells per µL and Millions per mL can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Cell concentration, from 1.5 to 3 — and the answers go from &lt;strong&gt;Cells per mL&lt;/strong&gt; 1.500e+6 cells/mL, &lt;strong&gt;Cells per µL&lt;/strong&gt; 1500 cells/µL, &lt;strong&gt;Millions per mL&lt;/strong&gt; 1.5 ×10⁶/mL, &lt;strong&gt;Cells per litre&lt;/strong&gt; 1.500e+9 cells/L and &lt;strong&gt;log₁₀(cells/mL)&lt;/strong&gt; 6.18 to &lt;strong&gt;Cells per mL&lt;/strong&gt; 3.000e+6 cells/mL, &lt;strong&gt;Cells per µL&lt;/strong&gt; 3000 cells/µL, &lt;strong&gt;Millions per mL&lt;/strong&gt; 3 ×10⁶/mL, &lt;strong&gt;Cells per litre&lt;/strong&gt; 3.000e+9 cells/L and &lt;strong&gt;log₁₀(cells/mL)&lt;/strong&gt; 6.48.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Cells per mL, Cells per µL and Millions per mL are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Cell concentration is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Cell concentration and the number you are missing is Cells per mL and Cells per µL.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/bird-age">Bird age</a>, <a href="/biology/bod-load">BOD Load Calculator</a> and <a href="/biology/bone-length-to-body-height">Bone Length to Body Height Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many cells/µL is 1 × 10⁶ cells/mL?', 'a' => 'Exactly 1 000 cells/µL.'],
-            ['q' => 'What does the Cell Density Unit Converter actually calculate?', 'a' => <<<'TXT'
-            It returns cells per mL, cells per µL, millions per mL and cells per litre. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Cell Density Unit calculator work out?', 'a' => 'Cells per mL, Cells per µL, Millions per mL and Cells per litre, from Cell concentration. The relationship is Cells per mL = Cell concentration × 1000000.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Cell concentration (×10⁶/mL). Enter value; Cells per mL is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Cells per mL, Cells per µL, Millions per mL and Cells per litre can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Cells per mL = 1.500e+6 cells/mL, Cells per µL = 1500 cells/µL, Millions per mL = 1.5 ×10⁶/mL, Cells per litre = 1.500e+9 cells/L and log₁₀(cells/mL) = 6.18. That comes from the page's own defaults, entered in Cell concentration; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Cells per mL is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Cell concentration left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
-            ['q' => 'Does it work in both directions?', 'a' => <<<'TXT'
-            Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Cells per mL keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/bird-age', 'name' => 'Bird age'],
+            ['path' => '/biology/bod-load', 'name' => 'BOD Load Calculator'],
+            ['path' => '/biology/bone-length-to-body-height', 'name' => 'Bone Length to Body Height Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

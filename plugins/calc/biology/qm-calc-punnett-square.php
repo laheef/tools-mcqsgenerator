@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Punnett square',
-    'meta' => ['title' => 'Punnett square Calculator — Formula & Results', 'description' => 'The Punnett square calculator takes the numbers you enter and reports <strong>chance for Aa</strong> immediately. The results leave the screen the moment you…', 'h1' => 'Punnett square Calculator', 'updated' => '2026-07-31'],
+    'meta' => ['title' => 'Punnett square Calculator — Formula & Results', 'description' => 'The arithmetic is the whole method: Chance for AA is worked out from Mother\'s genotype by one formula, applied once. A result here can always be checked…', 'h1' => 'Punnett square Calculator', 'updated' => '2026-07-31'],
     'raw' => [
         'vars' => [
             'AA' => [
@@ -245,70 +245,43 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Punnett square calculator takes the numbers you enter and reports <strong>chance for Aa</strong> immediately. 
-        
-         The results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.
+        Punnett square turns Mother's genotype and Father's genotype into Chance for AA and Chance for Aa. The arithmetic is the whole method: Chance for AA is worked out from Mother's genotype by one formula, applied once. Chance for AA comes back in percent unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'How does the Punnett square calculator work?', 'html' => <<<'TXT'
-            <p>The Punnett square calculator takes the values in the form, applies the relationship described below and reports <strong>chance for Aa</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the mother's genotype and the father's genotype).</p>
+            ['title' => 'How the Punnett square calculator works', 'html' => <<<'TXT'
+            <p>The Punnett square calculator applies one relationship to 2 numbers and reports Chance for AA, Chance for Aa and Chance for aa.</p><p>In the form&#039;s own words, Chance for Aa = get_chance_b(Mother&#039;s genotype, Father&#039;s genotype).</p><p>The answers are Chance for AA, Chance for Aa and Chance for aa; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as AA, aa and aa. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as AA, aa and aa. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>2 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Mother&#039;s genotype</strong> — a plain number, no unit</li><li><strong>Father&#039;s genotype</strong> — a plain number, no unit</li></ul><p>The answers come back as Chance for AA in percent, Chance for Aa in percent, Chance for aa in percent. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mother's genotype</strong></td><td>One of 3 options, such as AA, aa and aa.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Father's genotype</strong></td><td>One of 3 options, such as AA, aa and aa.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Chance for AA</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Chance for Aa</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr><tr><td><strong>Chance for aa</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Chance for AA offers 6 units and opens on percent, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Punnett square calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Chance for Aa</span><span class="formula-eq">=</span><span class="formula-rhs">(mother&#x27;s genotype, father&#x27;s genotype)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Chance for Aa</strong> = <code>get_chance_b(Mother&#039;s genotype, Father&#039;s genotype)</code></li><li><strong>Chance for AA</strong> = <code>get_chance_a(Mother&#039;s genotype, Father&#039;s genotype)</code></li><li><strong>Chance for aa</strong> = <code>get_chance_ab(Mother&#039;s genotype, Father&#039;s genotype)</code></li></ul><p>Any one of Chance for Aa, Chance for AA and Chance for aa can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Chance for AA, Chance for Aa and Chance for aa are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Mother&#039;s genotype and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>%, opening in percent</li><li>%, opening in percent</li><li>%, opening in percent</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Punnett square calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Punnett square calculator, these are the ones that matter:</p>
-            <ul><li>The 2 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — mother's genotype for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/qpcr-efficiency">qPCR efficiency</a>, <a href="/biology/rabbit-cage-size">Rabbit cage size</a> and <a href="/biology/rabbit-color">Rabbit color</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Mother&#039;s genotype and Father&#039;s genotype and the number you are missing is Chance for AA and Chance for Aa.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/dog-pregnancy">Dog pregnancy Calculator</a>, <a href="/biology/dog-quality-of-life">Dog quality of life</a> and <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Punnett square calculator work out?', 'a' => <<<'TXT'
-            It returns chance for Aa. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Chance for AA, Chance for Aa and Chance for aa, from Father's genotype and Mother's genotype. The relationship is Chance for Aa = get_chance_b(Mother's genotype, Father's genotype).
             TXT],
-            ['q' => 'What do I need to enter to use the Punnett square calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter chance for AA in a different unit?', 'a' => <<<'TXT'
-            Yes. Chance for AA opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Punnett square calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Mother\'s genotype, Father\'s genotype. With mother1 and father1 in place, Chance for AA can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Chance for Aa, Chance for AA and Chance for aa blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Chance for AA is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Mother\'s genotype blank and the page solves for it, reporting Chance for AA instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Chance for AA keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/qpcr-efficiency', 'name' => 'qPCR efficiency'],
-            ['path' => '/biology/rabbit-cage-size', 'name' => 'Rabbit cage size'],
-            ['path' => '/biology/rabbit-color', 'name' => 'Rabbit color'],
+            ['path' => '/biology/dog-pregnancy', 'name' => 'Dog pregnancy Calculator'],
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
         ],
+        'authors' => [],
     ],
 ];

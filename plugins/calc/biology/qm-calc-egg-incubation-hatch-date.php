@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Egg Incubation Hatch Date Calculator',
-    'meta' => ['title' => 'Egg Incubation Hatch Date Calculator — Biology', 'description' => 'Different species take different times to hatch, and setting a mixed batch means tracking several dates at once. It returns incubation period, hatch - day of…', 'h1' => 'Egg Incubation Hatch Date Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Egg Incubation Hatch Date Calculator — Biology', 'description' => 'Egg Incubation Hatch Date works out Incubation period and Hatch - day of the year from Species, Day of month set and Month set. The arithmetic is the whole…', 'h1' => 'Egg Incubation Hatch Date Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -141,46 +141,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Different species take different times to hatch, and setting a mixed batch means tracking several dates at once. It returns incubation period, hatch - day of the year, hatch month and hatch day of month, and the panel shows all of them at once.
-        
-        Choose the species, enter the set date and the calculator returns the hatch date, the candling window and the lockdown day for chickens, ducks, quail, turkeys, geese and pheasants.
+        Egg Incubation Hatch Date works out Incubation period and Hatch - day of the year from Species, Day of month set and Month set. The arithmetic is the whole method: Incubation period is worked out from Species by one formula, applied once. Incubation period comes back in days unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Egg Incubation Hatch Date', 'html' => <<<'TXT'
-            <p>Hatch date = set date + incubation period; candling at about a third of the way through; lockdown 3 days before hatch</p>
-            <figure class="calc-figure"><img src="/uploads/biology/egg-incubation-hatch-date.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Egg Incubation Hatch Date Calculator — Incubation lengths side by side." title="Egg Incubation Hatch Date Calculator"><figcaption>Incubation lengths side by side.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>species period</code></td><td>days from set to hatch</td><td>days</td></tr><tr><td><code>set day</code></td><td>day of month the eggs went in</td><td>day</td></tr><tr><td><code>hatch day</code></td><td>day of month they should hatch</td><td>day</td></tr></tbody></table>
+            ['title' => 'How the Egg Incubation Hatch Date calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Egg Incubation Hatch Date: it takes 3 numbers and reports Incubation period, Hatch - day of the year and Hatch month.</p><p>The relationship it solves reads Incubation period = Species.</p><p>The answers are Incubation period, Hatch - day of the year, Hatch month and Hatch day of month; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Egg Incubation Hatch Date?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Species</strong> — a plain number, no unit</li><li><strong>Day of month set</strong> — in day. 1-31</li><li><strong>Month set</strong> — in month. 1-12</li></ul><p>The answers come back as Incubation period in days, Hatch - day of the year in day, Hatch month in month, Hatch day of month in day, Candle on day in days, Lockdown month in month, Lockdown day of month in day. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: species set to <strong>21.0</strong>, day of month set of <strong>10</strong> day, month set of <strong>3</strong> month.</p>
-            <p>Substituting them into the formula gives incubation period of <strong>21</strong> days, hatch - day of the year of <strong>88</strong> day, hatch month of <strong>3</strong> month, hatch day of month of <strong>29</strong> day, candle on day of <strong>7</strong> days, lockdown month of <strong>3</strong> month, lockdown day of month of <strong>26</strong> day.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Species = 21, Day of month set = 10 day and Month set = 3 month; the answers are &lt;strong&gt;Incubation period&lt;/strong&gt; = 21 days, &lt;strong&gt;Hatch - day of the year&lt;/strong&gt; = 88 day, &lt;strong&gt;Hatch month&lt;/strong&gt; = 3 month, &lt;strong&gt;Hatch day of month&lt;/strong&gt; = 29 day, &lt;strong&gt;Candle on day&lt;/strong&gt; = 7 days, &lt;strong&gt;Lockdown month&lt;/strong&gt; = 3 month and &lt;strong&gt;Lockdown day of month&lt;/strong&gt; = 26 day.</p><ul><li><strong>Incubation period</strong> = 21 days</li><li><strong>Hatch - day of the year</strong> = 88 day</li><li><strong>Hatch month</strong> = 3 month</li><li><strong>Hatch day of month</strong> = 29 day</li><li><strong>Candle on day</strong> = 7 days</li><li><strong>Lockdown month</strong> = 3 month</li><li><strong>Lockdown day of month</strong> = 26 day</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Incubation period</strong> = <code>Species</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>17 – 18 days</td><td><strong>Quail</strong></td><td>the shortest common incubation</td></tr><tr><td>21 days</td><td><strong>Chicken</strong></td><td>37.5 °C, 45–55% humidity</td></tr><tr><td>28 days</td><td><strong>Duck / turkey</strong></td><td>slightly higher humidity than chicken</td></tr><tr><td>30 – 35 days</td><td><strong>Goose / Muscovy</strong></td><td>cooler and slower, more water needed</td></tr></tbody></table>
-            <ul><li><p>Candling is placed at a third of the way through the incubation, which is when the embryo is large enough to see but the egg is still easy to handle.</p></li><li><p>Waterfowl eggs need more humidity and benefit from cooling and misting once a day once incubation is under way.</p></li><li><p>The quoted periods assume a forced-air incubator at the species' standard temperature.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Incubation period&lt;/strong&gt; = 21, &lt;strong&gt;Hatch - day of the year&lt;/strong&gt; = 88, &lt;strong&gt;Hatch month&lt;/strong&gt; = 3, &lt;strong&gt;Hatch day of month&lt;/strong&gt; = 29, &lt;strong&gt;Candle on day&lt;/strong&gt; = 7, &lt;strong&gt;Lockdown month&lt;/strong&gt; = 3 and &lt;strong&gt;Lockdown day of month&lt;/strong&gt; = 26. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Incubation period is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Running waterfowl eggs on the chicken humidity schedule, which dries them out.</li><li>Candling too early and discarding eggs that are merely slow to show veins.</li><li>Mixing species in one incubator without tracking each batch separately.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Incubation period</strong> = <code>Species</code></li><li><strong>Candle on day</strong> = <code>round(Species × 0.33,0)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Incubation period, Hatch - day of the year and Hatch month can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Species, from 21 to 42 — and the answers go from &lt;strong&gt;Incubation period&lt;/strong&gt; 21 days, &lt;strong&gt;Hatch - day of the year&lt;/strong&gt; 88 day, &lt;strong&gt;Hatch month&lt;/strong&gt; 3 month, &lt;strong&gt;Hatch day of month&lt;/strong&gt; 29 day, &lt;strong&gt;Candle on day&lt;/strong&gt; 7 days, &lt;strong&gt;Lockdown month&lt;/strong&gt; 3 month and &lt;strong&gt;Lockdown day of month&lt;/strong&gt; 26 day to &lt;strong&gt;Incubation period&lt;/strong&gt; 42 days, &lt;strong&gt;Hatch - day of the year&lt;/strong&gt; 109 day, &lt;strong&gt;Hatch month&lt;/strong&gt; 4 month, &lt;strong&gt;Hatch day of month&lt;/strong&gt; 19 day, &lt;strong&gt;Candle on day&lt;/strong&gt; 14 days, &lt;strong&gt;Lockdown month&lt;/strong&gt; 4 month and &lt;strong&gt;Lockdown day of month&lt;/strong&gt; 16 day.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Incubation period, Hatch - day of the year and Hatch month are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Species to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Species, Day of month set and Month set is what you already know and Incubation period and Hatch - day of the year is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/stems-per-hectare">Stems Per Hectare Calculator</a>, <a href="/biology/stomatal-density">Stomatal Density Calculator</a> and <a href="/biology/sulfur-soil-acidifier">Sulfur Soil Acidifier Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long do duck eggs take to hatch?', 'a' => '28 days for mallard-type ducks and 35 for Muscovy, which are a different species entirely.'],
-            ['q' => 'Can I set different species together?', 'a' => 'Yes, if you track each batch\'s dates separately — lockdown differs by several days.'],
-            ['q' => 'What does the Egg Incubation Hatch Date actually calculate?', 'a' => <<<'TXT'
-            It returns incubation period, hatch - day of the year, hatch month and hatch day of month. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Egg Incubation Hatch Date calculator work out?', 'a' => 'Incubation period, Hatch - day of the year, Hatch month and Hatch day of month, from Species. The relationship is Incubation period = Species.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Species, Day of month set (day), Month set (month). Enter species, set_day and set_month; Incubation period is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Incubation period, Hatch - day of the year, Hatch month and Hatch day of month can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Incubation period = 21 days, Hatch - day of the year = 88 day, Hatch month = 3 month, Hatch day of month = 29 day, Candle on day = 7 days, Lockdown month = 3 month and Lockdown day of month = 26 day. That comes from the page's own defaults, entered in Species; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Incubation period is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Species left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Incubation period at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/stems-per-hectare', 'name' => 'Stems Per Hectare Calculator'],
+            ['path' => '/biology/stomatal-density', 'name' => 'Stomatal Density Calculator'],
+            ['path' => '/biology/sulfur-soil-acidifier', 'name' => 'Sulfur Soil Acidifier Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

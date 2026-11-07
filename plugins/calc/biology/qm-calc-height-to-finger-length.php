@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Height to Finger Length Calculator',
-    'meta' => ['title' => 'Height to Finger Length Calculator — Biology', 'description' => <<<'TXT'
-    Hand length is roughly 10.8% of standing height, and fingers are fixed fractions of the hand. It returns expected hand length, expected finger length and your…
-    TXT, 'h1' => 'Height to Finger Length Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Height to Finger Length Calculator — Biology', 'description' => 'Enter Standing height, Measured finger length and Which finger into Height to Finger Length and the answer comes back as Expected hand length and Expected…', 'h1' => 'Height to Finger Length Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -84,52 +82,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Hand length is roughly 10.8% of standing height, and fingers are fixed fractions of the hand. It returns expected hand length, expected finger length and your finger minus the expectation, and the panel shows all of them at once.
-        
-        Enter your height and a finger length to see how the two compare, or estimate the expected finger length from height alone.
+        Enter Standing height, Measured finger length and Which finger into Height to Finger Length and the answer comes back as Expected hand length and Expected finger length. There is no hidden constant here: change Expected hand length and Standing height moves with it. The main result, Expected hand length, is reported in cm.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Height to Finger Length', 'html' => <<<'TXT'
-            <p>Hand length ≈ 0.108 × height; index finger ≈ 0.42 × hand length, ring finger ≈ 0.44, middle finger ≈ 0.48</p>
-            <figure class="calc-figure"><img src="/uploads/biology/height-to-finger-length.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Height to Finger Length Calculator — Height sets the expected hand, the hand sets the expected finger, and your measurement is compared with it." title="Height to Finger Length Calculator"><figcaption>Height sets the expected hand, the hand sets the expected finger, and your measurement is compared with it.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>height</code></td><td>standing height without shoes</td><td>cm</td></tr><tr><td><code>hand length</code></td><td>wrist crease to the tip of the middle finger</td><td>cm</td></tr><tr><td><code>finger length</code></td><td>base to tip on the palmar side</td><td>cm</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Hand-to-stature proportion of 10.8% is the figure used in anthropometric tables (Pheasant & Haslegrave, Bodyspace).</p>
+            ['title' => 'How the Height to Finger Length calculator works', 'html' => <<<'TXT'
+            <p>Height to Finger Length answers one question from 3 numbers, and the answer is Expected hand length, Expected finger length and Your finger minus the expectation.</p><p>In the form&#039;s own words, Expected hand length = Standing height × 0.108.</p><p>The result panel carries Expected hand length, Expected finger length and Your finger minus the expectation, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Height to Finger Length?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Standing height</strong> — in cm. Without shoes</li><li><strong>Measured finger length</strong> — in cm. Base of the finger to the tip, on the palm side</li><li><strong>Which finger</strong> — a plain number, no unit</li></ul><p>The result boxes are Expected hand length in cm, Expected finger length in cm, Your finger minus the expectation in cm; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: standing height of <strong>175</strong> cm, measured finger length of <strong>7.5</strong> cm, which finger set to <strong>1.0</strong>.</p>
-            <p>Substituting them into the formula gives expected hand length of <strong>18.9</strong> cm, expected finger length of <strong>7.94</strong> cm, your finger minus the expectation of <strong>-0.438</strong> cm.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Standing height = 175 cm, Measured finger length = 7.5 cm and Which finger = 1 gives &lt;strong&gt;Expected hand length&lt;/strong&gt; = 18.9 cm, &lt;strong&gt;Expected finger length&lt;/strong&gt; = 7.94 cm and &lt;strong&gt;Your finger minus the expectation&lt;/strong&gt; = -0.438 cm.</p><ul><li><strong>Expected hand length</strong> = 18.9 cm</li><li><strong>Expected finger length</strong> = 7.94 cm</li><li><strong>Your finger minus the expectation</strong> = -0.438 cm</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Expected hand length</strong> = <code>Standing height × 0.108</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The fractions are averages: the standard deviation around them is about 0.4 cm, so a difference of a few millimetres means nothing.</p></li><li><p>Digit ratio (index length ÷ ring length) is a separate measure and is not reproduced by this scaling — the two fingers move together with height.</p></li><li><p>If the difference is more than about 1.5 cm, re-measure before drawing conclusions: the base of the finger is easy to place wrongly by a centimetre.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Expected hand length&lt;/strong&gt; = 18.9, &lt;strong&gt;Expected finger length&lt;/strong&gt; = 7.94 and &lt;strong&gt;Your finger minus the expectation&lt;/strong&gt; = -0.438. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Expected hand length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Measuring the finger from the knuckle of the hand rather than the crease at the base of the digit.</li><li>Measuring on the back of the hand, where the knuckle adds a centimetre.</li><li>Using height in inches with a finger length in centimetres.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Expected hand length</strong> = <code>Standing height × 0.108</code></li><li><strong>Expected finger length</strong> = <code>if_else(Which finger==1, Standing height × 0.108 × 0.42, if_else(Which finger==2, Standing height × 0.108 × 0.44, Standing height × 0.108 × 0.48))</code></li><li><strong>Your finger minus the expectation</strong> = <code>Measured finger length − Expected finger length</code></li></ul><p>Any one of Expected hand length, Expected finger length and Your finger minus the expectation can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/bone-length-to-body-height">Bone length to body height</a>. <a href="/biology/femur-to-foot-ratio">Femur to foot ratio</a>. <a href="/biology/cephalic-index">Cephalic index</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Standing height from 175 to 350, leaving every other box alone. The panel moves from &lt;strong&gt;Expected hand length&lt;/strong&gt; 18.9 cm, &lt;strong&gt;Expected finger length&lt;/strong&gt; 7.94 cm and &lt;strong&gt;Your finger minus the expectation&lt;/strong&gt; -0.438 cm to &lt;strong&gt;Expected hand length&lt;/strong&gt; 37.8 cm, &lt;strong&gt;Expected finger length&lt;/strong&gt; 15.88 cm and &lt;strong&gt;Your finger minus the expectation&lt;/strong&gt; -8.38 cm.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Expected hand length, Expected finger length and Your finger minus the expectation are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Standing height and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Standing height, Measured finger length and Which finger measured, Expected hand length and Expected finger length wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/bird-age">Bird age</a>, <a href="/biology/bod-load">BOD Load Calculator</a> and <a href="/biology/bone-length-to-body-height">Bone Length to Body Height Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Can finger length predict how tall someone will be?', 'a' => <<<'TXT'
-            Only weakly. Hand and finger lengths correlate with height at about 0.7, which is good enough to flag a measurement error and not good enough to replace a stadiometer.
+            ['q' => 'What does the Height to Finger Length calculator work out?', 'a' => <<<'TXT'
+            Expected hand length, Expected finger length and Your finger minus the expectation, from Standing height. The relationship is Expected hand length = Standing height × 0.108.
             TXT],
-            ['q' => 'What does the Height to Finger Length actually calculate?', 'a' => <<<'TXT'
-            It returns expected hand length, expected finger length and your finger minus the expectation. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Standing height (cm), Measured finger length (cm), Which finger. With height, finger and which in place, Expected hand length can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Expected hand length, Expected finger length and Your finger minus the expectation blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Expected hand length = 18.9 cm, Expected finger length = 7.94 cm and Your finger minus the expectation = -0.438 cm. The figures come from Standing height as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
-            ['q' => 'Does it work in both directions?', 'a' => <<<'TXT'
-            Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into.
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Expected hand length is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Standing height left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Expected hand length keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/bird-age', 'name' => 'Bird age'],
+            ['path' => '/biology/bod-load', 'name' => 'BOD Load Calculator'],
+            ['path' => '/biology/bone-length-to-body-height', 'name' => 'Bone Length to Body Height Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

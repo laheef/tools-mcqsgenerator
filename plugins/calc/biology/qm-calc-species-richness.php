@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Species Richness Calculator',
-    'meta' => ['title' => 'Species Richness Calculator — Formula & Results', 'description' => 'Species richness is simply the number of species present — the most basic biodiversity measure and the one every other index is compared with.', 'h1' => 'Species Richness Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Species Richness Calculator — Formula & Results', 'description' => 'Species Richness works out Species richness S and Total individuals from Species 1 count, Species 2 count and Species 3 count. There is no hidden constant…', 'h1' => 'Species Richness Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -101,44 +101,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Species richness is simply the number of species present — the most basic biodiversity measure and the one every other index is compared with. It returns total individuals, species richness S, margalef index and menhinick index, and the panel shows all of them at once.
-        
-        This calculator counts them from a list of abundances, adds the Margalef richness index and estimates how many species a larger sample would find.
+        Species Richness works out Species richness S and Total individuals from Species 1 count, Species 2 count and Species 3 count. There is no hidden constant here: change Species richness S and Species 1 count moves with it.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Species Richness', 'html' => <<<'TXT'
-            <p>S = number of species with at least one individual; Margalef = (S − 1) ÷ ln N</p>
-            <figure class="calc-figure"><img src="/uploads/biology/species-richness.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Species Richness Calculator — Five species and the individuals counted in each." title="Species Richness Calculator"><figcaption>Five species and the individuals counted in each.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>species richness</td><td>species</td></tr><tr><td><code>N</code></td><td>total individuals counted</td><td>individuals</td></tr><tr><td><code>Margalef</code></td><td>richness corrected for effort</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Species Richness calculator works', 'html' => <<<'TXT'
+            <p>Species Richness answers one question from 5 numbers, and the answer is Species richness S, Total individuals and Margalef index.</p><p>Written with the labels from the form, Total individuals = Species 1 count + Species 2 count + Species 3 count + Species 4 count + Species 5 count.</p><p>The answers are Species richness S, Total individuals, Margalef index and Menhinick index; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Species Richness?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 5 boxes and the page has everything it needs.</p><ul><li><strong>Species 1 count</strong> — in individuals</li><li><strong>Species 2 count</strong> — in individuals</li><li><strong>Species 3 count</strong> — in individuals</li><li><strong>Species 4 count</strong> — in individuals</li><li><strong>Species 5 count</strong> — in individuals</li></ul><p>What you get back is Species richness S, Total individuals, Margalef index, Menhinick index, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: species 1 count of <strong>40</strong> individuals, species 2 count of <strong>25</strong> individuals, species 3 count of <strong>15</strong> individuals, species 4 count of <strong>10</strong> individuals, species 5 count of <strong>6</strong> individuals.</p>
-            <p>Substituting them into the formula gives total individuals of <strong>96</strong>, species richness s of <strong>5</strong>, margalef index of <strong>0.8764</strong>, menhinick index of <strong>0.5103</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Species 1 count = 40 individuals, Species 2 count = 25 individuals, Species 3 count = 15 individuals, Species 4 count = 10 individuals and Species 5 count = 6 individuals; the answers are &lt;strong&gt;Total individuals&lt;/strong&gt; = 96, &lt;strong&gt;Species richness S&lt;/strong&gt; = 5, &lt;strong&gt;Margalef index&lt;/strong&gt; = 0.8764 and &lt;strong&gt;Menhinick index&lt;/strong&gt; = 0.5103.</p><ul><li><strong>Total individuals</strong> = 96</li><li><strong>Species richness S</strong> = 5</li><li><strong>Margalef index</strong> = 0.8764</li><li><strong>Menhinick index</strong> = 0.5103</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Total individuals</strong> = <code>Species 1 count + Species 2 count + Species 3 count + Species 4 count + Species 5 count</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Richness depends on effort: doubling the area or the time almost always adds species, which is why raw S is a poor comparison between studies.</p></li><li><p>Margalef and Menhinick divide by a function of N, so they compare samples of different size — imperfectly, but far better than raw counts.</p></li><li><p>Rarefaction curves plot expected richness against sample size and show when the inventory has plateaued.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Total individuals&lt;/strong&gt; = 96, &lt;strong&gt;Species richness S&lt;/strong&gt; = 5, &lt;strong&gt;Margalef index&lt;/strong&gt; = 0.8764 and &lt;strong&gt;Menhinick index&lt;/strong&gt; = 0.5103. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Species richness S is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Recording zero for a species you simply did not see, then reporting S as complete.</li><li>Comparing richness between a 1 m² quadrat and a 100 m² plot.</li><li>Counting morphospecies as species without saying so.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Total individuals</strong> = <code>Species 1 count + Species 2 count + Species 3 count + Species 4 count + Species 5 count</code></li><li><strong>Species richness S</strong> = <code>min(1,max(0,Species 1 count)) + min(1,max(0,Species 2 count)) + min(1,max(0,Species 3 count)) + min(1,max(0,Species 4 count)) + min(1,max(0,Species 5 count))</code></li></ul><p>Any one of Total individuals, Species richness S and Margalef index can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Species 1 count from 40 to 80, leaving every other box alone. The panel moves from &lt;strong&gt;Total individuals&lt;/strong&gt; 96, &lt;strong&gt;Species richness S&lt;/strong&gt; 5, &lt;strong&gt;Margalef index&lt;/strong&gt; 0.8764 and &lt;strong&gt;Menhinick index&lt;/strong&gt; 0.5103 to &lt;strong&gt;Total individuals&lt;/strong&gt; 136, &lt;strong&gt;Species richness S&lt;/strong&gt; 5, &lt;strong&gt;Margalef index&lt;/strong&gt; 0.8142 and &lt;strong&gt;Menhinick index&lt;/strong&gt; 0.4287.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Species richness S, Total individuals and Margalef index are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Species 1 count and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Species 1 count, Species 2 count and Species 3 count and the number you are missing is Species richness S and Total individuals.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/cedar-tree-value">Standing Timber Value Calculator</a>, <a href="/biology/stems-per-hectare">Stems Per Hectare Calculator</a> and <a href="/biology/stomatal-density">Stomatal Density Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is the difference between richness and diversity?', 'a' => 'Richness counts species; diversity also weighs how evenly individuals are spread among them.'],
-            ['q' => 'How many samples do I need before richness stops rising?', 'a' => 'Until the rarefaction curve flattens — on average 20–50 standardised samples for invertebrates, more for plants.'],
-            ['q' => 'What does the Species Richness actually calculate?', 'a' => <<<'TXT'
-            It returns total individuals, species richness S, margalef index and menhinick index. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Species Richness calculator work out?', 'a' => <<<'TXT'
+            Species richness S, Total individuals, Margalef index and Menhinick index, from Species 1 count, Species 2 count, Species 3 count and Species 4 count. The relationship is Total individuals = Species 1 count + Species 2 count + Species 3 count + Species 4 count + Species 5 count.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Species 1 count (individuals), Species 2 count (individuals), Species 3 count (individuals), Species 4 count (individuals), Species 5 count (individuals). With n1, n2 and n3 in place, Species richness S can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Total individuals, Species richness S, Margalef index and Menhinick index blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Total individuals = 96, Species richness S = 5, Margalef index = 0.8764 and Menhinick index = 0.5103. That comes from the page's own defaults, entered in Species 1 count; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Species richness S is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Species 1 count blank and the page solves for it, reporting Species richness S instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Species richness S keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cedar-tree-value', 'name' => 'Standing Timber Value Calculator'],
+            ['path' => '/biology/stems-per-hectare', 'name' => 'Stems Per Hectare Calculator'],
+            ['path' => '/biology/stomatal-density', 'name' => 'Stomatal Density Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cephalexin for cats dosage',
-    'meta' => ['title' => 'Cephalexin for cats dosage — Formula & Results', 'description' => 'Give the Cephalexin for cats dosage calculator your cat\'s weight and the dose base and it returns <strong>amount per dose</strong>. The Cephalexin for cats…', 'h1' => 'Cephalexin for cats dosage Calculator', 'updated' => '2026-05-25'],
+    'meta' => ['title' => 'Cephalexin for cats dosage — Formula & Results', 'description' => 'Your cat\'s weight (kilograms), Dose base (milligrams), Drug type, Amount per dose (milligrams), Daily dosage (milligrams). Leave any of Amount per dose, Dose…', 'h1' => 'Cephalexin for cats dosage Calculator', 'updated' => '2026-05-25'],
     'sections' => [
         [
             'title' => 'Cat and drug details',
@@ -202,63 +202,57 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Give the Cephalexin for cats dosage calculator your cat\'s weight and the dose base and it returns <strong>amount per dose</strong>.',
+        'intro' => <<<'TXT'
+        Cephalexin for cats dosage turns Your cat's weight, Dose base and Drug type into Liquid per dose and Liquid per day. It is a single relationship that reads Liquid per dose out of Your cat's weight, not a table of canned results keyed by them. Units for Liquid per dose default to milliliters and can be changed on the answer itself.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Cephalexin for cats dosage calculator work?', 'html' => <<<'TXT'
-            <p>The Cephalexin for cats dosage calculator takes the values in the form, applies the relationship described below and reports <strong>amount per dose</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the drug type); then you type in your cat's weight and the dose base.</p>
+            ['title' => 'How the Cephalexin for cats dosage calculator works', 'html' => <<<'TXT'
+            <p>Cephalexin for cats dosage answers one question from 7 numbers, and the answer is Liquid per dose and Liquid per day.</p><p>Written with the labels from the form, Amount per dose = Dose base × Your cat&#039;s weight.</p><p>The result panel carries Liquid per dose and Liquid per day, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A measured quantity, entered by default in milligrams. </li><li>Pick the option that matches your case — 6 options, such as tablets (250 mg), chewable tablets (75 mg) and chewable tablets (150 mg). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 7 boxes, and nothing else.</p><ul><li><strong>Your cat&#039;s weight</strong> — in kilograms</li><li><strong>Dose base</strong> — in milligrams</li><li><strong>Drug type</strong> — a plain number, no unit</li><li><strong>Amount per dose</strong> — in milligrams</li><li><strong>Daily dosage</strong> — in milligrams. With 2 doses per day, given every 12 hours.</li><li><strong>Tablets per dose</strong> — in #</li><li><strong>Tablets per day</strong> — in #. With 2 doses per day, administered every 12 hours.</li></ul><p>What you get back is Liquid per dose in milliliters, Liquid per day in milliliters, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your cat's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Dose base</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>You supply it</td></tr><tr><td><strong>Drug type</strong></td><td>One of 6 options, such as tablets (250 mg), chewable tablets (75 mg) and chewable tablets (150 mg).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Amount per dose</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>Calculated</td></tr><tr><td><strong>Daily dosage</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>Calculated</td></tr><tr><td><strong>Liquid per dose</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Liquid per day</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Tablets per dose</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Tablets per day</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Your cat&amp;#039;s weight = 10 kg and Dose base = 15 mg gives &lt;strong&gt;Drug type&lt;/strong&gt; = 25, &lt;strong&gt;Amount per dose&lt;/strong&gt; = 150 mg, &lt;strong&gt;Daily dosage&lt;/strong&gt; = 300 mg, &lt;strong&gt;Liquid per dose&lt;/strong&gt; = 6 ml, &lt;strong&gt;Liquid per day&lt;/strong&gt; = 12 ml, &lt;strong&gt;Tablets per dose&lt;/strong&gt; = 6 # and &lt;strong&gt;Tablets per day&lt;/strong&gt; = 12 #.</p><ul><li><strong>Drug type</strong> = 25</li><li><strong>Amount per dose</strong> = 150 mg</li><li><strong>Daily dosage</strong> = 300 mg</li><li><strong>Liquid per dose</strong> = 6 ml</li><li><strong>Liquid per day</strong> = 12 ml</li><li><strong>Tablets per dose</strong> = 6 #</li><li><strong>Tablets per day</strong> = 12 #</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Amount per dose</strong> = <code>Dose base × Your cat&#039;s weight</code>.</p>
             TXT],
-            ['title' => 'The formula behind the Cephalexin for cats dosage calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Amount per dose</span><span class="formula-eq">=</span><span class="formula-rhs">dose base × your cat&#x27;s weight</span></div><div class="formula-row"><span class="formula-lhs">Daily dosage</span><span class="formula-eq">=</span><span class="formula-rhs">2 × dose base × your cat&#x27;s weight</span></div><div class="formula-row"><span class="formula-lhs">Liquid per dose</span><span class="formula-eq">=</span><span class="formula-rhs">amount per dose ÷ drug type</span></div><div class="formula-row"><span class="formula-lhs">Liquid per day</span><span class="formula-eq">=</span><span class="formula-rhs">daily dosage ÷ drug type</span></div><div class="formula-row"><span class="formula-lhs">Tablets per dose</span><span class="formula-eq">=</span><span class="formula-rhs">rounded down, ((amount per dose + (1 ÷ 5) × drug type) ÷ drug type)</span></div><div class="formula-row"><span class="formula-lhs">Tablets per day</span><span class="formula-eq">=</span><span class="formula-rhs">(2 × rounded down, ((amount per dose + (1 ÷ 5) × drug type) ÷ drug type))</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Drug type&lt;/strong&gt; = 25, &lt;strong&gt;Amount per dose&lt;/strong&gt; = 150, &lt;strong&gt;Daily dosage&lt;/strong&gt; = 300, &lt;strong&gt;Liquid per dose&lt;/strong&gt; = 6, &lt;strong&gt;Liquid per day&lt;/strong&gt; = 12, &lt;strong&gt;Tablets per dose&lt;/strong&gt; = 6 and &lt;strong&gt;Tablets per day&lt;/strong&gt; = 12 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Liquid per dose offers 40 units and opens on milliliters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in milligrams, and convertible to any of the 29 units on that chip.</li><li>Shown in milligrams, and convertible to any of the 29 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Amount per dose</strong> = <code>Dose base × Your cat&#039;s weight</code></li><li><strong>Dose base</strong> = <code>Amount per dose ÷ Your cat&#039;s weight</code></li><li><strong>Your cat&#039;s weight</strong> = <code>Amount per dose ÷ Dose base</code></li><li><strong>Daily dosage</strong> = <code>2 × Dose base × Your cat&#039;s weight</code></li><li><strong>Liquid per dose</strong> = <code>Amount per dose ÷ Drug type</code></li><li><strong>Drug type</strong> = <code>Amount per dose ÷ Liquid per dose</code></li></ul><p>Any one of Amount per dose, Dose base and Your cat&#039;s weight can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Mass, opening in milligrams</li><li>Mass, opening in milligrams</li><li>Mass, opening in milligrams</li><li>Volume, opening in milliliters</li><li>Volume, opening in milliliters</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Your cat&#039;s weight from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Drug type&lt;/strong&gt; 25, &lt;strong&gt;Amount per dose&lt;/strong&gt; 150 mg, &lt;strong&gt;Daily dosage&lt;/strong&gt; 300 mg, &lt;strong&gt;Liquid per dose&lt;/strong&gt; 6 ml, &lt;strong&gt;Liquid per day&lt;/strong&gt; 12 ml, &lt;strong&gt;Tablets per dose&lt;/strong&gt; 6 # and &lt;strong&gt;Tablets per day&lt;/strong&gt; 12 # to &lt;strong&gt;Drug type&lt;/strong&gt; 25, &lt;strong&gt;Amount per dose&lt;/strong&gt; 300 mg, &lt;strong&gt;Daily dosage&lt;/strong&gt; 600 mg, &lt;strong&gt;Liquid per dose&lt;/strong&gt; 12 ml, &lt;strong&gt;Liquid per day&lt;/strong&gt; 24 ml, &lt;strong&gt;Tablets per dose&lt;/strong&gt; 12 # and &lt;strong&gt;Tablets per day&lt;/strong&gt; 24 #.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cephalexin for cats dosage calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 2 figures keep coming back — your cat's weight and the dose base — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Your cat&#039;s weight, Dose base and Amount per dose is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Liquid per dose and Liquid per day are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Your cat&#039;s weight is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cephalexin-for-dogs-dosage">Cephalexin for dogs dosage</a>, <a href="/biology/co2-grow-room">CO₂ grow room</a> and <a href="/biology/compost">Compost</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Your cat&#039;s weight, Dose base and Drug type is what you already know and Liquid per dose and Liquid per day is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cell-dilution">Cell dilution Calculator</a>, <a href="/biology/cell-doubling-time">Cell doubling time Calculator</a> and <a href="/biology/cell-seeding-density">Cell Seeding Density Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Cephalexin for cats dosage calculator work out?', 'a' => <<<'TXT'
-            It returns amount per dose, derived from your cat's weight and the dose base. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Cephalexin for cats dosage calculator work out?', 'a' => 'Liquid per dose and Liquid per day, from Dose base and Your cat\'s weight. The relationship is Amount per dose = Dose base × Your cat\'s weight.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Your cat's weight (kilograms), Dose base (milligrams), Drug type, Amount per dose (milligrams), Daily dosage (milligrams). With weight, prescribed_dose and drug_type in place, Liquid per dose can stay blank and the page will work it out.
             TXT],
-            ['q' => 'What do I need to enter to use the Cephalexin for cats dosage calculator?', 'a' => <<<'TXT'
-            The form asks for your cat's weight and the dose base, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Amount per dose, Dose base, Your cat's weight and Daily dosage blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I enter your cat\'s weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Your cat's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Drug type = 25, Amount per dose = 150 mg, Daily dosage = 300 mg, Liquid per dose = 6 ml, Liquid per day = 12 ml, Tablets per dose = 6 # and Tablets per day = 12 #. Those are the defaults written into the form — move Your cat's weight and every result box follows.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Liquid per dose is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Cephalexin for cats dosage calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Your cat\'s weight blank and the page solves for it, reporting Liquid per dose instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Liquid per dose keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/cephalexin-for-dogs-dosage', 'name' => 'Cephalexin for dogs dosage'],
-            ['path' => '/biology/co2-grow-room', 'name' => 'CO₂ grow room'],
-            ['path' => '/biology/compost', 'name' => 'Compost'],
+            ['path' => '/biology/cell-dilution', 'name' => 'Cell dilution Calculator'],
+            ['path' => '/biology/cell-doubling-time', 'name' => 'Cell doubling time Calculator'],
+            ['path' => '/biology/cell-seeding-density', 'name' => 'Cell Seeding Density Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chicken Years to Human Years Calculator',
-    'meta' => ['title' => 'Chicken Years to Human Years Calculator — Biology', 'description' => 'A chicken year is about 5.3 human years, so a one-year-old hen is already fully grown. It returns human-equivalent age, share of a 10-year lifespan and…', 'h1' => 'Chicken Years to Human Years Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Years to Human Years Calculator — Biology', 'description' => 'Chicken Years to Human Years turns Chicken age into Human-equivalent age and Share of a 10-year lifespan. It is a single relationship that reads…', 'h1' => 'Chicken Years to Human Years Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -58,48 +58,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A chicken year is about 5.3 human years, so a one-year-old hen is already fully grown. It returns human-equivalent age, share of a 10-year lifespan and chicken age, and the panel shows all of them at once.
-        
-        This calculator converts a chicken's age into a human-equivalent age using the usual rule of thumb that one chicken year is about 5.3 human years, and shows where the bird sits against its expected lifespan.
+        Chicken Years to Human Years turns Chicken age into Human-equivalent age and Share of a 10-year lifespan. It is a single relationship that reads Human-equivalent age out of Chicken age, not a table of canned results keyed by them. Units for Human-equivalent age default to years and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Chicken Years to Human Years', 'html' => <<<'TXT'
-            <p>Human-equivalent age ≈ chicken age × 5.33</p>
-            <figure class="calc-figure"><img src="/uploads/biology/chicken-years-to-human-years.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Chicken Years to Human Years Calculator — Chicken years beside their human equivalent." title="Chicken Years to Human Years Calculator"><figcaption>Chicken years beside their human equivalent.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>years</code></td><td>the bird's age in years</td><td>years</td></tr><tr><td><code>human</code></td><td>human-equivalent age</td><td>years</td></tr><tr><td><code>lifespan</code></td><td>age as a fraction of a typical 10-year lifespan</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Chicken Years to Human Years calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Chicken Years to Human Years: it takes 1 number and reports Human-equivalent age and Share of a 10-year lifespan.</p><p>The relationship it solves reads Human-equivalent age = Chicken age × 5.33.</p><p>The result panel carries Human-equivalent age and Share of a 10-year lifespan, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Chicken Years to Human Years?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>Chicken age</strong> — in years. Use 0.5 for six months</li></ul><p>The answers come back as Human-equivalent age in years, Share of a 10-year lifespan in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives human-equivalent age of <strong>10.66</strong> years, share of a 10-year lifespan of <strong>20</strong>%, chicken age of <strong>2</strong> years.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Human-equivalent age takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 – 0.25</td><td><strong>Chick</strong></td><td>first months, still under heat</td></tr><tr><td>0.5 – 1</td><td><strong>Point of lay</strong></td><td>sexual maturity, first eggs at 18–22 weeks</td></tr><tr><td>2 – 5</td><td><strong>Prime laying</strong></td><td>peak production years</td></tr><tr><td>6 and over</td><td><strong>Senior</strong></td><td>declining lay, watch for arthritis and egg issues</td></tr></tbody></table>
-            <ul><li><p>The multiplier is a rule of thumb, not a biological law: chickens mature in months and then age slowly, so a linear factor overstates the difference at both ends.</p></li><li><p>Backyard hybrids typically live 5–8 years; heritage breeds can reach 10–12, which is where the lifespan share becomes more useful than the raw conversion.</p></li><li><p>Production lifespan is much shorter than biological lifespan — commercial layers are retired at around 72–80 weeks.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Human-equivalent age</strong> = <code>Chicken age × 5.33</code></li><li><strong>Share of a 10-year lifespan</strong> = <code>Chicken age ÷ 10 × 100</code></li><li><strong>Chicken age</strong> = <code>Human-equivalent age ÷ 5.33</code></li></ul><p>Any one of Human-equivalent age, Share of a 10-year lifespan and Chicken age can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Entering months as years (a 20-week bird is 0.38 years, not 20).</li><li>Reading the human-equivalent age as a health prediction; it is a comparison, not a prognosis.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Human-equivalent age and Share of a 10-year lifespan are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Chicken age to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/chicken-hatch-date">Chicken hatch date</a>. <a href="/biology/goat-years-to-human-years">Goat years to human years</a>. <a href="/biology/goldfish-years-to-human-years">Goldfish years to human years</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Chicken age and the number you are missing is Human-equivalent age and Share of a 10-year lifespan.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/trypan-blue-cell-viability">Trypan Blue Cell Viability Calculator</a>, <a href="/biology/turtle-tank">Turtle tank Calculator</a> and <a href="/biology/vapor-pressure-deficit">Vapor pressure deficit Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long do chickens live?', 'a' => 'Five to eight years for most backyard hybrids, ten or more for some heritage breeds; commercial layers are kept for about 80 weeks.'],
-            ['q' => 'Is 5.33 right for every breed?', 'a' => 'It is an average across breeds. Small bantams tend to age more slowly, fast-growing broilers much faster.'],
-            ['q' => 'What does the Chicken Years to Human Years actually calculate?', 'a' => <<<'TXT'
-            It returns human-equivalent age, share of a 10-year lifespan and chicken age. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Chicken Years to Human Years calculator work out?', 'a' => 'Human-equivalent age and Share of a 10-year lifespan, from Chicken age. The relationship is Human-equivalent age = Chicken age × 5.33.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Chicken age (years). With years in place, Human-equivalent age can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Human-equivalent age, Share of a 10-year lifespan and Chicken age blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Human-equivalent age is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Chicken age blank and the page solves for it, reporting Human-equivalent age instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Human-equivalent age keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/trypan-blue-cell-viability', 'name' => 'Trypan Blue Cell Viability Calculator'],
+            ['path' => '/biology/turtle-tank', 'name' => 'Turtle tank Calculator'],
+            ['path' => '/biology/vapor-pressure-deficit', 'name' => 'Vapor pressure deficit Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

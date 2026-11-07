@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Reverse Translate Calculator',
-    'meta' => ['title' => 'Reverse Translate Calculator — Formula & Results', 'description' => 'Reverse translation turns a protein sequence back into a DNA sequence that would encode it. It returns protein length, dna length, gc content of the dna…', 'h1' => 'Reverse Translate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Reverse Translate Calculator — Formula & Results', 'description' => 'Reverse Translate takes Protein sequence, Codon choice and Add a stop codon and returns Protein length and DNA length. Protein length is opened in aa; the…', 'h1' => 'Reverse Translate Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'protein' => [
@@ -311,42 +311,40 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Reverse translation turns a protein sequence back into a DNA sequence that would encode it. It returns protein length, dna length, gc content of the dna, codons and melting temperature of the duplex, and the panel shows all of them at once.
-        
-        Every amino acid except methionine and tryptophan has several codons, so there is no single right answer — this tool offers the codons a host actually uses, the GC-balanced choice, and the rare-codon-avoiding choice.
+        Reverse Translate takes Protein sequence, Codon choice and Add a stop codon and returns Protein length and DNA length. Nothing is looked up on this page: Protein length is computed from Protein sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Protein length is opened in aa; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Reverse Translate', 'html' => <<<'TXT'
-            <p>Each residue is replaced by a codon from the host's preferred set; DNA length = 3 × (residues + stop). GC% = (G + C) ÷ length × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/reverse-translate.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Reverse Translate Calculator — Codons a residue can use" title="Reverse Translate Calculator"><figcaption>Codons a residue can use</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>aa</code></td><td>amino acid residue</td><td>—</td></tr><tr><td><code>nt</code></td><td>nucleotide</td><td>—</td></tr><tr><td><code>codon</code></td><td>three bases that specify one residue</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Reverse Translate calculator works', 'html' => <<<'TXT'
+            <p>Reverse Translate answers one question from 3 numbers, and the answer is Protein length, DNA length and GC content of the DNA.</p><p>What comes back is Protein length, DNA length, GC content of the DNA and Codons — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Reverse Translate?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Protein sequence</strong> — a plain number, no unit. Single-letter code; spaces, digits and FASTA headers are ignored</li><li><strong>Codon choice</strong> — a plain number, no unit</li><li><strong>Add a stop codon</strong> — a plain number, no unit</li></ul><p>The answers come back as Protein length in aa, DNA length in nt, GC content of the DNA in %, Codons, Melting temperature of the duplex in °C. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>rare codons kept</td><td><strong>Risk of poor expression</strong></td><td>especially clusters near the 5′ end</td></tr><tr><td>GC 40 – 60%</td><td><strong>Comfortable range</strong></td><td>synthesis and PCR both behave well</td></tr><tr><td>GC above 70%</td><td><strong>Hard to synthesise</strong></td><td>secondary structure and mispriming become likely</td></tr></tbody></table>
-            <ul><li><p>A back-translated sequence is a design proposal, not a recovered gene. Silent codons are lost forever when you translate forward, so the original DNA cannot be reconstructed.</p></li><li><p>The most-used codon is not always the best choice: runs of the same rare tRNA demand, strong secondary structure at the ribosome binding site, and hidden restriction sites all matter. Treat the output as a starting point for codon optimisation.</p></li><li><p>GC-balanced output is the safest default when the DNA will be chemically synthesised, because synthesis fails most often on extreme GC.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Protein length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming the reverse-translated sequence will match the original gene — it will not.</li><li>Ignoring the host: a codon set chosen for E. coli can be poor for Pichia or CHO.</li><li>Forgetting the stop codon, which truncates translation if it is missing in an expression construct.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Protein length, DNA length and GC content of the DNA are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Protein sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Protein sequence, Codon choice and Add a stop codon measured, Protein length and DNA length wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/relative-abundance">Relative Abundance Calculator</a>, <a href="/biology/respiratory-quotient">Respiratory Quotient Calculator</a> and <a href="/biology/restriction-digest">Restriction Digest Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Can I recover the original DNA from a protein?', 'a' => 'No. Most amino acids map to several codons and that information is lost in translation; you can only propose a new sequence.'],
-            ['q' => 'Which codon table should I use?', 'a' => 'The host you will express in. E. coli for bacterial work, human for mammalian cells, GC-balanced if the sequence is being synthesised.'],
-            ['q' => 'Why does the tool avoid rare codons?', 'a' => 'Clusters of rare codons deplete the matching tRNA and stall the ribosome, which lowers yield and can cause truncation.'],
-            ['q' => 'What does the Reverse Translate actually calculate?', 'a' => <<<'TXT'
-            It returns protein length, dna length, gc content of the dna, codons and melting temperature of the duplex. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Protein sequence, Codon choice, Add a stop codon. Enter protein, strategy and tail; Protein length is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Protein length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Protein length is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Protein length keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/relative-abundance', 'name' => 'Relative Abundance Calculator'],
+            ['path' => '/biology/respiratory-quotient', 'name' => 'Respiratory Quotient Calculator'],
+            ['path' => '/biology/restriction-digest', 'name' => 'Restriction Digest Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

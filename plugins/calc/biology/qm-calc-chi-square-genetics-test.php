@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chi-Square Test for Genetics',
-    'meta' => ['title' => 'Chi-Square Test for Genetics — Formula & Results', 'description' => 'A chi-square goodness-of-fit test answers one question: are these counts close enough to the ratio I expected? It returns chi-square, degrees of freedom…', 'h1' => 'Chi-Square Test for Genetics', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chi-Square Test for Genetics — Formula & Results', 'description' => 'Chi-Square Test for Genetics turns Observed, class 1, Expected, class 1 and Observed, class 2 into Chi-square and Degrees of freedom. The answer typed back in.', 'h1' => 'Chi-Square Test for Genetics', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -117,46 +117,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A chi-square goodness-of-fit test answers one question: are these counts close enough to the ratio I expected? It returns chi-square, degrees of freedom, critical value at 5% and verdict, and the panel shows all of them at once.
-        
-        This calculator computes the statistic, the degrees of freedom, the critical value at the usual thresholds and the p-value, for any number of classes up to six.
+        Chi-Square Test for Genetics turns Observed, class 1, Expected, class 1 and Observed, class 2 into Chi-square and Degrees of freedom. It is a single relationship that reads Chi-square out of Observed, class 1, not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Chi-Square Test for Genetics', 'html' => <<<'TXT'
-            <p>χ² = Σ (O − E)² ÷ E, with df = classes − 1</p>
-            <figure class="calc-figure"><img src="/uploads/biology/chi-square-genetics-test.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Chi-Square Test for Genetics — The statistic against the 5% and 1% critical values." title="Chi-Square Test for Genetics"><figcaption>The statistic against the 5% and 1% critical values.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>O</code></td><td>observed count</td><td>individuals</td></tr><tr><td><code>E</code></td><td>expected count</td><td>individuals</td></tr><tr><td><code>df</code></td><td>degrees of freedom, classes minus one</td><td>—</td></tr><tr><td><code>χ²</code></td><td>test statistic</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Chi-Square Test for Genetics calculator works', 'html' => <<<'TXT'
+            <p>Chi-Square Test for Genetics answers one question from 8 numbers, and the answer is Chi-square, Degrees of freedom and Critical value at 5%.</p><p>The answers are Chi-square, Degrees of freedom, Critical value at 5% and Verdict; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Chi-Square Test for Genetics?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 8 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Observed, class 1</strong> — a plain number, no unit</li><li><strong>Expected, class 1</strong> — a plain number, no unit</li><li><strong>Observed, class 2</strong> — a plain number, no unit</li><li><strong>Expected, class 2</strong> — a plain number, no unit</li><li><strong>Observed, class 3</strong> — a plain number, no unit</li><li><strong>Expected, class 3</strong> — a plain number, no unit</li><li><strong>Observed, class 4</strong> — a plain number, no unit</li><li><strong>Expected, class 4</strong> — a plain number, no unit</li></ul><p>The result boxes are Chi-square, Degrees of freedom, Critical value at 5%, Verdict; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: observed, class 1 of <strong>315</strong>, expected, class 1 of <strong>312.5</strong>, observed, class 2 of <strong>108</strong>, expected, class 2 of <strong>104.2</strong>, observed, class 3 of <strong>101</strong>, expected, class 3 of <strong>104.2</strong>, observed, class 4 of <strong>32</strong>, expected, class 4 of <strong>34.7</strong>.</p>
-            <p>Substituting them into the formula gives chi-square of <strong>0.4669</strong>, degrees of freedom of <strong>3</strong>, critical value at 5% of <strong>7.82</strong>, verdict of <strong>1</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Observed, class 1 = 315, Expected, class 1 = 313, Observed, class 2 = 108, Expected, class 2 = 104, Observed, class 3 = 101, Expected, class 3 = 104, Observed, class 4 = 32 and Expected, class 4 = 34.7 — through the same formula and the panel reports &lt;strong&gt;Chi-square&lt;/strong&gt; = 0.4669, &lt;strong&gt;Degrees of freedom&lt;/strong&gt; = 3, &lt;strong&gt;Critical value at 5%&lt;/strong&gt; = 7.82 and &lt;strong&gt;Verdict&lt;/strong&gt; = 1.</p><ul><li><strong>Chi-square</strong> = 0.4669</li><li><strong>Degrees of freedom</strong> = 3</li><li><strong>Critical value at 5%</strong> = 7.82</li><li><strong>Verdict</strong> = 1</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>χ² below the critical value</td><td><strong>Do not reject</strong></td><td>the data are consistent with the expected ratio</td></tr><tr><td>above the critical value</td><td><strong>Reject</strong></td><td>the departure is unlikely to be chance</td></tr></tbody></table>
-            <ul><li><p>Every expected count should be at least five; if not, combine the smallest classes or use an exact test.</p></li><li><p>The test is one-sided in the sense that only large values are evidence against the model — a χ² near zero can mean the data were fitted rather than observed.</p></li><li><p>Degrees of freedom are classes minus one, minus any parameter estimated from the data.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Chi-square&lt;/strong&gt; = 0.4669, &lt;strong&gt;Degrees of freedom&lt;/strong&gt; = 3, &lt;strong&gt;Critical value at 5%&lt;/strong&gt; = 7.82 and &lt;strong&gt;Verdict&lt;/strong&gt; = 1 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Chi-square takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Subtracting one from the wrong number — a 4-class cross has 3 df, not 4.</li><li>Using percentages as observed counts.</li><li>Re-running the test on subsets until it passes.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Degrees of freedom</strong> = <code>3</code></li><li><strong>Critical value at 5%</strong> = <code>7.815</code></li><li><strong>Verdict</strong> = <code>1</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Chi-square, Degrees of freedom and Critical value at 5% can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Observed, class 1 from 315 to 630, leaving every other box alone. The panel moves from &lt;strong&gt;Chi-square&lt;/strong&gt; 0.4669, &lt;strong&gt;Degrees of freedom&lt;/strong&gt; 3, &lt;strong&gt;Critical value at 5%&lt;/strong&gt; 7.82 and &lt;strong&gt;Verdict&lt;/strong&gt; 1 to &lt;strong&gt;Chi-square&lt;/strong&gt; 323, &lt;strong&gt;Degrees of freedom&lt;/strong&gt; 3, &lt;strong&gt;Critical value at 5%&lt;/strong&gt; 7.82 and &lt;strong&gt;Verdict&lt;/strong&gt; 1.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Chi-square, Degrees of freedom and Critical value at 5% are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Observed, class 1 and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Observed, class 1, Expected, class 1 and Observed, class 2 is what you already know and Chi-square and Degrees of freedom is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/compost-application-rate">Compost Application Rate Calculator</a>, <a href="/biology/compost">Compost Calculator</a> and <a href="/biology/corn-yield">Corn yield Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What chi-square value is significant?', 'a' => 'Above 3.84 at 1 df, 5.99 at 2 df or 7.81 at 3 df for the conventional 5% threshold.'],
-            ['q' => 'Can chi-square prove the expected ratio?', 'a' => 'No. It can only fail to reject it — which is why sample size and power matter.'],
-            ['q' => 'What does the Chi-Square Test for Genetics actually calculate?', 'a' => <<<'TXT'
-            It returns chi-square, degrees of freedom, critical value at 5% and verdict. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Chi-Square Test for Genetics calculator work out?', 'a' => 'Chi-square, Degrees of freedom, Critical value at 5% and Verdict, from Observed, class 1, Expected, class 1, Observed, class 2 and Expected, class 2.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Observed, class 1, Expected, class 1, Observed, class 2, Expected, class 2, Observed, class 3. Fill o1, e1 and o2 and leave Chi-square empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Chi-square, Degrees of freedom, Critical value at 5% and Verdict can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Chi-square = 0.4669, Degrees of freedom = 3, Critical value at 5% = 7.82 and Verdict = 1. The figures come from Observed, class 1 as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Chi-square is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Observed, class 1 blank and the page solves for it, reporting Chi-square instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Chi-square keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/compost-application-rate', 'name' => 'Compost Application Rate Calculator'],
+            ['path' => '/biology/compost', 'name' => 'Compost Calculator'],
+            ['path' => '/biology/corn-yield', 'name' => 'Corn yield Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

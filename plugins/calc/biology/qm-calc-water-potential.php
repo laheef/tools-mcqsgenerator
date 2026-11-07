@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Water potential',
-    'meta' => ['title' => 'Water potential Calculator: Free, With Steps', 'description' => 'Give the Water potential calculator the osmotic potential, the gravitational potential, the hydrostatic potential and the overburden potential and it returns…', 'h1' => 'Water potential Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Water potential Calculator: Free, With Steps', 'description' => 'Water potential turns Osmotic potential (Ψo), Gravitational potential (Ψg) and Hydrostatic potential (Ψh) into Pressure potential (Ψp).', 'h1' => 'Water potential Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => 'Choose the known components!',
@@ -145,65 +145,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Give the Water potential calculator the osmotic potential, the gravitational potential, the hydrostatic potential and the overburden potential and it returns <strong>pressure potential (Ψp)</strong>.
+        Water potential turns Osmotic potential (Ψo), Gravitational potential (Ψg) and Hydrostatic potential (Ψh) into Pressure potential (Ψp). The arithmetic is the whole method: Pressure potential (Ψp) is worked out from Osmotic potential (Ψo) by one formula, applied once. Pressure potential (Ψp) comes back in bars unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'How does the Water potential calculator work?', 'html' => <<<'TXT'
-            <p>The Water potential calculator takes the values in the form, applies the relationship described below and reports <strong>pressure potential (Ψp)</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the osmotic potential (Ψo), the gravitational potential (Ψg), the hydrostatic potential (Ψh) and the overburden potential (Ψa).</p>
+            ['title' => 'How the Water potential calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Water potential: it takes 6 numbers and reports Pressure potential (Ψp).</p><p>The relationship it solves reads Pressure potential (Ψp) = Ψ − Overburden potential (Ψa) − Gravitational potential (Ψg) − Hydrostatic potential (Ψh) − Matric potential (Ψm) − Osmotic potential (Ψo).</p><p>The result panel carries Pressure potential (Ψp), each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A measured quantity, entered by default in bars. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in bars. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in bars. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in bars. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in bars. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in bars. The unit chip switches it to any of the 28 supported units.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 6 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Osmotic potential (Ψo)</strong> — in bars</li><li><strong>Gravitational potential (Ψg)</strong> — in bars</li><li><strong>Hydrostatic potential (Ψh)</strong> — in bars</li><li><strong>Overburden potential (Ψa)</strong> — in bars</li><li><strong>Matric potential (Ψm)</strong> — in bars</li><li><strong>Ψ</strong> — in bars</li></ul><p>What you get back is Pressure potential (Ψp) in bars, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Osmotic potential (Ψo)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>You supply it</td></tr><tr><td><strong>Pressure potential (Ψp)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>Calculated</td></tr><tr><td><strong>Gravitational potential (Ψg)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>You supply it</td></tr><tr><td><strong>Hydrostatic potential (Ψh)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>You supply it</td></tr><tr><td><strong>Overburden potential (Ψa)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>You supply it</td></tr><tr><td><strong>Matric potential (Ψm)</strong></td><td>A measured quantity, 28 units available.</td><td>bars</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Osmotic potential (Ψo) = 10 bar, Gravitational potential (Ψg) = 100 bar, Hydrostatic potential (Ψh) = 1000 bar, Overburden potential (Ψa) = 10 bar, Matric potential (Ψm) = 100 bar and Ψ = 1000 bar; the answers are &lt;strong&gt;Pressure potential (Ψp)&lt;/strong&gt; = -220 bar.</p><ul><li><strong>Pressure potential (Ψp)</strong> = -220 bar</li></ul><p>That is <strong>Pressure potential (Ψp)</strong> = <code>Ψ − Overburden potential (Ψa) − Gravitational potential (Ψg) − Hydrostatic potential (Ψh) − Matric potential (Ψm) − Osmotic potential (Ψo)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'The formula behind the Water potential calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Pressure potential (Ψp)</span><span class="formula-eq">=</span><span class="formula-rhs">Ψ − overburden potential (Ψa) − gravitational potential (Ψg) − hydrostatic potential (Ψh) − matric potential (Ψm) − osmotic potential (Ψo)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Pressure potential (Ψp)&lt;/strong&gt; = -220 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Pressure potential (Ψp) offers 28 units and opens on bars, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in bars, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Pressure potential (Ψp)</strong> = <code>Ψ − Overburden potential (Ψa) − Gravitational potential (Ψg) − Hydrostatic potential (Ψh) − Matric potential (Ψm) − Osmotic potential (Ψo)</code></li><li><strong>Overburden potential (Ψa)</strong> = <code>Ψ − Gravitational potential (Ψg) − Hydrostatic potential (Ψh) − Matric potential (Ψm) − Osmotic potential (Ψo) − Pressure potential (Ψp)</code></li><li><strong>Hydrostatic potential (Ψh)</strong> = <code>Ψ − Overburden potential (Ψa) − Gravitational potential (Ψg) − Matric potential (Ψm) − Osmotic potential (Ψo) − Pressure potential (Ψp)</code></li><li><strong>Gravitational potential (Ψg)</strong> = <code>Ψ − Overburden potential (Ψa) − Hydrostatic potential (Ψh) − Matric potential (Ψm) − Osmotic potential (Ψo) − Pressure potential (Ψp)</code></li><li><strong>Osmotic potential (Ψo)</strong> = <code>Ψ − Overburden potential (Ψa) − Gravitational potential (Ψg) − Hydrostatic potential (Ψh) − Matric potential (Ψm) − Pressure potential (Ψp)</code></li><li><strong>Ψ</strong> = <code>Overburden potential (Ψa) + Gravitational potential (Ψg) + Hydrostatic potential (Ψh) + Matric potential (Ψm) + Osmotic potential (Ψo) + Pressure potential (Ψp)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Pressure potential (Ψp), Overburden potential (Ψa) and Hydrostatic potential (Ψh) can be the unknown.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Pressure, opening in bars</li><li>Pressure, opening in bars</li><li>Pressure, opening in bars</li><li>Pressure, opening in bars</li><li>Pressure, opening in bars</li><li>Pressure, opening in bars</li><li>Pressure, opening in bars</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Osmotic potential (Ψo), from 10 to 20 — and the answers go from &lt;strong&gt;Pressure potential (Ψp)&lt;/strong&gt; -220 bar to &lt;strong&gt;Pressure potential (Ψp)&lt;/strong&gt; -230 bar.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Water potential calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 4 figures keep coming back — the osmotic potential, the gravitational potential and the hydrostatic potential — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Osmotic potential (Ψo), Gravitational potential (Ψg) and Hydrostatic potential (Ψh) is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Pressure potential (Ψp) is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Osmotic potential (Ψo) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Water potential calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/water-soluble-fertilizer">Water soluble fertilizer</a>, <a href="/biology/acres-per-hour">Acres per hour</a> and <a href="/biology/allele-frequency">Allele frequency</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Osmotic potential (Ψo), Gravitational potential (Ψg) and Hydrostatic potential (Ψh) is what you already know and Pressure potential (Ψp) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/genetic-odds-ratio">Odds Ratio for Genetics Calculator</a>, <a href="/biology/oligo-converter">Oligo pmol/µL to µg/mL Converter Calculator — Formula &amp; Result</a> and <a href="/biology/oligo-tm-calculator">Oligo Tm (Melting Temperature) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Water potential calculator work out?', 'a' => <<<'TXT'
-            It returns pressure potential (Ψp), derived from the osmotic potential, the gravitational potential and the hydrostatic potential. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Pressure potential (Ψp), from Ψ, Overburden potential (Ψa), Gravitational potential (Ψg) and Hydrostatic potential (Ψh). The relationship is Pressure potential (Ψp) = Ψ − Overburden potential (Ψa) − Gravitational potential (Ψg) − Hydrostatic potential (Ψh) − Matric potential (Ψm) − Osmotic potential (Ψo).
             TXT],
-            ['q' => 'What do I need to enter to use the Water potential calculator?', 'a' => <<<'TXT'
-            The form asks for the osmotic potential, the gravitational potential, the hydrostatic potential and the overburden potential, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Osmotic potential (Ψo) (bars), Gravitational potential (Ψg) (bars), Hydrostatic potential (Ψh) (bars), Overburden potential (Ψa) (bars), Matric potential (Ψm) (bars). With psi_o, psi_g and psi_h in place, Pressure potential (Ψp) can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I enter osmotic potential (Ψo) in a different unit?', 'a' => <<<'TXT'
-            Yes. Osmotic potential (Ψo) opens in bars and the chip beside it offers 28 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Pressure potential (Ψp), Overburden potential (Ψa), Hydrostatic potential (Ψh) and Gravitational potential (Ψg) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Pressure potential (Ψp) = -220 bar. That comes from the page's own defaults, entered in Osmotic potential (Ψo); change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Ψ = 0 bar. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Pressure potential (Ψp) is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Is the Water potential calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Osmotic potential (Ψo) left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Pressure potential (Ψp) keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/water-soluble-fertilizer', 'name' => 'Water soluble fertilizer'],
-            ['path' => '/biology/acres-per-hour', 'name' => 'Acres per hour'],
-            ['path' => '/biology/allele-frequency', 'name' => 'Allele frequency'],
+            ['path' => '/biology/genetic-odds-ratio', 'name' => 'Odds Ratio for Genetics Calculator'],
+            ['path' => '/biology/oligo-converter', 'name' => 'Oligo pmol/µL to µg/mL Converter Calculator — Formula & Result'],
+            ['path' => '/biology/oligo-tm-calculator', 'name' => 'Oligo Tm (Melting Temperature) Calculator'],
         ],
+        'authors' => [],
     ],
 ];

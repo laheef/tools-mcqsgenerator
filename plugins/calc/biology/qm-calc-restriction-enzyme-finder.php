@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Restriction Enzyme Finder Calculator',
-    'meta' => ['title' => 'Restriction Enzyme Finder Calculator — Biology', 'description' => 'Paste a DNA sequence and the finder checks it against a panel of 26 common enzymes. It returns enzymes that cut, unique cutters and enzymes that do not cut…', 'h1' => 'Restriction Enzyme Finder Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Restriction Enzyme Finder Calculator — Biology', 'description' => 'Restriction Enzyme Finder works out Enzymes that cut and Unique cutters from DNA sequence and Treat the molecule as circular (plasmid).', 'h1' => 'Restriction Enzyme Finder Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -256,42 +256,38 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Paste a DNA sequence and the finder checks it against a panel of 26 common enzymes. It returns enzymes that cut, unique cutters and enzymes that do not cut, and the panel shows all of them at once.
-        
-        It also reports the cut position, the overhang each enzyme leaves and whether the site crosses the origin of a circular plasmid.
+        Restriction Enzyme Finder works out Enzymes that cut and Unique cutters from DNA sequence and Treat the molecule as circular (plasmid). It is a single relationship that reads Enzymes that cut out of DNA sequence, not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Restriction Enzyme Finder', 'html' => <<<'TXT'
-            <p>A site is a match of the enzyme's recognition sequence on either strand; a unique cutter has exactly one match</p>
-            <figure class="calc-figure"><img src="/uploads/biology/restriction-enzyme-finder.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Restriction Enzyme Finder Calculator — 26 enzymes screened against a 4 kb plasmid" title="Restriction Enzyme Finder Calculator"><figcaption>26 enzymes screened against a 4 kb plasmid</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>recognition site</code></td><td>the 6–8 bp sequence the enzyme binds</td><td>bp</td></tr><tr><td><code>cut offset</code></td><td>where the phosphodiester bond breaks, from the 5′ end of the site</td><td>bp</td></tr><tr><td><code>overhang</code></td><td>the single-stranded end left behind</td><td>5′, 3′ or blunt</td></tr></tbody></table>
+            ['title' => 'How the Restriction Enzyme Finder calculator works', 'html' => <<<'TXT'
+            <p>The Restriction Enzyme Finder calculator applies one relationship to 2 numbers and reports Enzymes that cut, Unique cutters and Enzymes that do not cut.</p><p>What comes back is Enzymes that cut, Unique cutters and Enzymes that do not cut — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Restriction Enzyme Finder?', 'html' => <<<'TXT'
-            <ol><li>Paste the sequence — plasmid map coordinates are not needed, the page counts from the first base.</li><li>Tick circular if it is a plasmid, so a site spanning the origin is found.</li><li>Start from the unique-cutter list: a single site per enzyme is what you need for a clean single-insert ligation, and a pair of unique sites with different overhangs is what you need for a directional one.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>DNA sequence</strong> — a plain number, no unit. Paste the plasmid or the amplicon; FASTA headers are ignored</li><li><strong>Treat the molecule as circular (plasmid)</strong> — a plain number, no unit. Sites that span the origin are counted too</li></ul><p>The answers come back as Enzymes that cut, Unique cutters, Enzymes that do not cut. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 site</td><td><strong>Unique cutter</strong></td><td>the cloning workhorse — one cut, one linear product</td></tr><tr><td>2 sites</td><td><strong>Double cutter</strong></td><td>useful for dropping a cassette out, or for a double digest</td></tr><tr><td>3+ sites</td><td><strong>Frequent cutter</strong></td><td>avoid unless you want the fragment pattern</td></tr><tr><td>0 sites</td><td><strong>Non-cutter</strong></td><td>useful when you must leave the sequence untouched</td></tr></tbody></table>
-            <ul><li><p>Both strands are searched, so a non-palindromic site on the bottom strand is reported at its top-strand coordinate rather than being missed.</p></li><li><p>For a circular molecule the sequence is searched against itself with an overlap of one site length, so a site straddling base 1 is found.</p></li><li><p>Overhang matters more than the cut position for cloning: two enzymes that leave the same cohesive end can be ligated together, and a blunt-end enzyme can go into any blunt site.</p></li><li><p>Dam and Dcm methylation of E. coli DNA blocks some sites (Dam: GATC; Dcm: CCWGG). If a site is absent from a plasmid prepped from a dam+ strain, that is usually why.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Enzymes that cut is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Searching a circular plasmid as linear and concluding an enzyme does not cut when its site spans the origin.</li><li>Choosing a unique site without checking its position: 3 bp from the end of the insert is unique but useless.</li><li>Forgetting that two different enzymes can leave the same overhang — BamHI (G^GATCC), BglII (A^GATCT), BclI and Sau3AI all produce a GATC 5′ overhang.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Enzymes that cut, Unique cutters and Enzymes that do not cut are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert DNA sequence to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: DNA sequence and Treat the molecule as circular (plasmid) measured, Enzymes that cut and Unique cutters wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/amino-acid-composition">Amino Acid Composition Calculator</a>, <a href="/biology/animal-mortality-rate">Animal mortality rate</a> and <a href="/biology/annealing-temperature">Annealing temperature Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a unique restriction site?', 'a' => <<<'TXT'
-            A site that occurs exactly once in the molecule, so digesting with that enzyme linearises a plasmid in one place. That is the standard position for cloning a single insert.
+            ['q' => 'Which values do I need before I start?', 'a' => 'DNA sequence, Treat the molecule as circular (plasmid). With sequence and circular in place, Enzymes that cut can stay blank and the page will work it out.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Enzymes that cut is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Enzymes that cut, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Why does an enzyme I expected cut nothing?', 'a' => <<<'TXT'
-            Three reasons cover almost every case. The site spans the origin of a circular plasmid, the DNA is methylated at that site, or a star activity buffer was assumed where the standard buffer does not support the enzyme.
-            TXT],
-            ['q' => 'Can I use two enzymes with different overhangs?', 'a' => 'Yes — that is a directional clone, and it stops the insert going in backwards. Check that the two buffers are compatible, or digest sequentially.'],
-            ['q' => 'Does this page give fragment sizes?', 'a' => 'The digest page does. This one is the screening step: which enzymes are worth taking forward, and where they cut.'],
-            ['q' => 'What does the Restriction Enzyme Finder actually calculate?', 'a' => 'It returns enzymes that cut, unique cutters and enzymes that do not cut. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Enzymes that cut keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/amino-acid-composition', 'name' => 'Amino Acid Composition Calculator'],
+            ['path' => '/biology/animal-mortality-rate', 'name' => 'Animal mortality rate'],
+            ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

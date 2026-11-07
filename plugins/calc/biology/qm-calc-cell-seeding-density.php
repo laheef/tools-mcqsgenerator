@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Cell Seeding Density Calculator',
-    'meta' => ['title' => 'Cell Seeding Density Calculator — Formula & Results', 'description' => 'Seeding density is the number of cells per unit area or volume you start a culture with. It returns cells per vessel, suspension to pipette per vessel, cells…', 'h1' => 'Cell Seeding Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Seeding Density Calculator — Formula & Results', 'description' => <<<'TXT'
+    Enter Stock concentration, Target density and Growth area per vessel into Cell Seeding Density and the answer comes back as Cells per vessel and Suspension to…
+    TXT, 'h1' => 'Cell Seeding Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -106,46 +108,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Seeding density is the number of cells per unit area or volume you start a culture with. It returns cells per vessel, suspension to pipette per vessel, cells needed in total and medium to add per vessel, and the panel shows all of them at once.
-        
-        Get it wrong and the experiment either takes a week to reach confluence or is confluent the next morning. This calculator turns a target density into the volume of suspension to pipette and the medium to add.
+        Enter Stock concentration, Target density and Growth area per vessel into Cell Seeding Density and the answer comes back as Cells per vessel and Suspension to pipette per vessel. There is no hidden constant here: change Cells per vessel and Stock concentration moves with it. The main result, Cells per vessel, is reported in cells.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Cell Seeding Density', 'html' => <<<'TXT'
-            <p>Cells per vessel = target density × growth area; volume = cells per vessel ÷ stock concentration</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cell-seeding-density.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Cell Seeding Density Calculator — Target density × area gives cells; divide by stock concentration for the volume." title="Cell Seeding Density Calculator"><figcaption>Target density × area gives cells; divide by stock concentration for the volume.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>target</code></td><td>cells per cm² you want to start with</td><td>cells/cm²</td></tr><tr><td><code>area</code></td><td>growth area of one flask or well</td><td>cm²</td></tr><tr><td><code>conc</code></td><td>stock concentration</td><td>cells/mL</td></tr></tbody></table>
+            ['title' => 'How the Cell Seeding Density calculator works', 'html' => <<<'TXT'
+            <p>Cell Seeding Density answers one question from 5 numbers, and the answer is Cells per vessel, Suspension to pipette per vessel and Cells needed in total.</p><p>The relationship it solves reads Cells per vessel = Target density × Growth area per vessel.</p><p>What comes back is Cells per vessel, Suspension to pipette per vessel, Cells needed in total and Medium to add per vessel — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Cell Seeding Density?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Stock concentration</strong> — in cells/mL. From your count</li><li><strong>Target density</strong> — in cells/cm²</li><li><strong>Growth area per vessel</strong> — in cm². T25 = 25, T75 = 75, 6-well = 9.6</li><li><strong>Number of vessels</strong> — a plain number, no unit</li><li><strong>Final volume per vessel</strong> — in mL</li></ul><p>The answers come back as Cells per vessel in cells, Suspension to pipette per vessel in mL, Cells needed in total in cells, Medium to add per vessel in mL. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: stock concentration of <strong>1,500,000</strong> cells/mL, target density of <strong>20,000</strong> cells/cm², growth area per vessel of <strong>25</strong> cm², number of vessels of <strong>1</strong>, final volume per vessel of <strong>5</strong> mL.</p>
-            <p>Substituting them into the formula gives cells per vessel of <strong>500,000</strong> cells, suspension to pipette per vessel of <strong>0.3333</strong> mL, cells needed in total of <strong>500,000</strong> cells, medium to add per vessel of <strong>4.67</strong> mL.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Stock concentration = 1.500e+6 cells/mL, Target density = 20000 cells/cm², Growth area per vessel = 25 cm², Number of vessels = 1 and Final volume per vessel = 5 mL — through the same formula and the panel reports &lt;strong&gt;Cells per vessel&lt;/strong&gt; = 500000 cells, &lt;strong&gt;Suspension to pipette per vessel&lt;/strong&gt; = 0.3333 mL, &lt;strong&gt;Cells needed in total&lt;/strong&gt; = 500000 cells and &lt;strong&gt;Medium to add per vessel&lt;/strong&gt; = 4.67 mL.</p><ul><li><strong>Cells per vessel</strong> = 500000 cells</li><li><strong>Suspension to pipette per vessel</strong> = 0.3333 mL</li><li><strong>Cells needed in total</strong> = 500000 cells</li><li><strong>Medium to add per vessel</strong> = 4.67 mL</li></ul><p>The line behind those figures is <strong>Cells per vessel</strong> = <code>Target density × Growth area per vessel</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>5 000 – 20 000 /cm²</td><td><strong>Sparse</strong></td><td>cloning, single-cell work</td></tr><tr><td>20 000 – 50 000 /cm²</td><td><strong>Standard</strong></td><td>routine passage of most lines</td></tr><tr><td>above 50 000 /cm²</td><td><strong>Dense</strong></td><td>fast experiments, or a line that needs contact</td></tr></tbody></table>
-            <ul><li><p>Seeding density sets the time to confluence: doubling the density roughly halves it, which is often easier than changing the medium.</p></li><li><p>Growth area is the number that matters for adherent cells; the flask volume is just what fits over it.</p></li><li><p>For a first passage of a new line, seed two densities and keep the one that looks right on day two.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Cells per vessel&lt;/strong&gt; = 500000, &lt;strong&gt;Suspension to pipette per vessel&lt;/strong&gt; = 0.3333, &lt;strong&gt;Cells needed in total&lt;/strong&gt; = 500000 and &lt;strong&gt;Medium to add per vessel&lt;/strong&gt; = 4.67. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Cells per vessel is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using the flask's nominal volume instead of its growth area.</li><li>Forgetting that the medium added dilutes the density — you seed cells into the final volume.</li><li>Seeding dead cells: always work from the live-cell count, not the total.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Cells per vessel</strong> = <code>Target density × Growth area per vessel</code></li><li><strong>Suspension to pipette per vessel</strong> = <code>Target density × Growth area per vessel ÷ Stock concentration</code></li><li><strong>Cells needed in total</strong> = <code>Target density × Growth area per vessel × Number of vessels</code></li><li><strong>Medium to add per vessel</strong> = <code>Final volume per vessel − Target density × Growth area per vessel ÷ Stock concentration</code></li></ul><p>Any one of Cells per vessel, Suspension to pipette per vessel and Cells needed in total can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Stock concentration from 1.500e+6 to 3.000e+6, leaving every other box alone. The panel moves from &lt;strong&gt;Cells per vessel&lt;/strong&gt; 500000 cells, &lt;strong&gt;Suspension to pipette per vessel&lt;/strong&gt; 0.3333 mL, &lt;strong&gt;Cells needed in total&lt;/strong&gt; 500000 cells and &lt;strong&gt;Medium to add per vessel&lt;/strong&gt; 4.67 mL to &lt;strong&gt;Cells per vessel&lt;/strong&gt; 500000 cells, &lt;strong&gt;Suspension to pipette per vessel&lt;/strong&gt; 0.1667 mL, &lt;strong&gt;Cells needed in total&lt;/strong&gt; 500000 cells and &lt;strong&gt;Medium to add per vessel&lt;/strong&gt; 4.83 mL.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Cells per vessel, Suspension to pipette per vessel and Cells needed in total are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Stock concentration and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Stock concentration, Target density and Growth area per vessel is what you already know and Cells per vessel and Suspension to pipette per vessel is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/raw-dog-food">Raw dog food Calculator</a>, <a href="/biology/recombination-frequency">Recombination Frequency Calculator</a> and <a href="/biology/genetic-linkage-distance">Recombination to cM — Haldane &amp; Kosambi</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many cells should I seed in a 6-well plate?', 'a' => 'A well is about 9.6 cm², so 20 000 cells/cm² is roughly 190 000 cells per well.'],
-            ['q' => 'Does seeding density affect the experiment?', 'a' => 'It changes growth rate, confluency timing and sometimes differentiation, so keep it constant across arms.'],
-            ['q' => 'What does the Cell Seeding Density actually calculate?', 'a' => <<<'TXT'
-            It returns cells per vessel, suspension to pipette per vessel, cells needed in total and medium to add per vessel. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Cell Seeding Density calculator work out?', 'a' => <<<'TXT'
+            Cells per vessel, Suspension to pipette per vessel, Cells needed in total and Medium to add per vessel, from Target density and Growth area per vessel. The relationship is Cells per vessel = Target density × Growth area per vessel.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Stock concentration (cells/mL), Target density (cells/cm²), Growth area per vessel (cm²), Number of vessels, Final volume per vessel (mL). Enter conc, target and area; Cells per vessel is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Cells per vessel, Suspension to pipette per vessel, Cells needed in total and Medium to add per vessel blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Cells per vessel = 500000 cells, Suspension to pipette per vessel = 0.3333 mL, Cells needed in total = 500000 cells and Medium to add per vessel = 4.67 mL. That comes from the page's own defaults, entered in Stock concentration; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Cells per vessel is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Stock concentration left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Cells per vessel keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/raw-dog-food', 'name' => 'Raw dog food Calculator'],
+            ['path' => '/biology/recombination-frequency', 'name' => 'Recombination Frequency Calculator'],
+            ['path' => '/biology/genetic-linkage-distance', 'name' => 'Recombination to cM — Haldane & Kosambi'],
+        ],
+        'authors' => [],
     ],
 ];

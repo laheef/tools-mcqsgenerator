@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Beer-Lambert A280 Protein Concentration',
-    'meta' => ['title' => 'Beer-Lambert A280 Protein Concentration Calculator', 'description' => 'A280 is the fastest protein measurement there is: no reagents, no standard curve, and you get the sample back. It returns protein concentration and protein…', 'h1' => 'Beer-Lambert A280 Protein Concentration', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Beer-Lambert A280 Protein Concentration Calculator', 'description' => 'Beer-Lambert A280 Protein Concentration turns Absorbance at 280 nm, Extinction coefficient and Molecular weight into Protein concentration and Protein…', 'h1' => 'Beer-Lambert A280 Protein Concentration', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -84,45 +84,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A280 is the fastest protein measurement there is: no reagents, no standard curve, and you get the sample back. It returns protein concentration and protein concentration, and the panel shows all of them at once.
-        
-        This calculator applies the Beer–Lambert law with an extinction coefficient to turn an absorbance into mg/mL.
+        Beer-Lambert A280 Protein Concentration turns Absorbance at 280 nm, Extinction coefficient and Molecular weight into Protein concentration and Protein concentration. There is no hidden constant here: change Protein concentration and Absorbance at 280 nm moves with it. The main result, Protein concentration, is reported in mg/mL.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Beer-Lambert A280 Protein Concentration', 'html' => <<<'TXT'
-            <p>A = ε × c × l, so c (M) = A ÷ (ε × l); c (mg/mL) = c (M) × molecular weight</p>
-            <figure class="calc-figure"><img src="/uploads/biology/beer-lambert-a280-protein-concentration.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Beer-Lambert A280 Protein Concentration — Absorbance, coefficient and path length give concentration." title="Beer-Lambert A280 Protein Concentration"><figcaption>Absorbance, coefficient and path length give concentration.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A₂₈₀</code></td><td>absorbance at 280 nm</td><td>AU</td></tr><tr><td><code>ε</code></td><td>molar extinction coefficient</td><td>M⁻¹cm⁻¹</td></tr><tr><td><code>l</code></td><td>path length</td><td>cm</td></tr><tr><td><code>MW</code></td><td>molecular weight</td><td>Da</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Beer–Lambert law; extinction coefficients from the ExPASy ProtParam convention.</p>
+            ['title' => 'How the Beer-Lambert A280 Protein Concentration calculator works', 'html' => <<<'TXT'
+            <p>The Beer-Lambert A280 Protein Concentration calculator applies one relationship to 4 numbers and reports Protein concentration and Protein concentration.</p><p>Written with the labels from the form, Protein concentration = Absorbance at 280 nm × Molecular weight ÷ (Extinction coefficient × Path length).</p><p>The answers are Protein concentration and Protein concentration; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Beer-Lambert A280 Protein Concentration?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Absorbance at 280 nm</strong> — a plain number, no unit. Blanked against buffer</li><li><strong>Extinction coefficient</strong> — in M⁻¹cm⁻¹. From the sequence, or 1.0 for 1 mg/mL = 1 AU</li><li><strong>Molecular weight</strong> — in Da. Used when the coefficient is molar</li><li><strong>Path length</strong> — in cm. 1 cm cuvette, or the drop path of a NanoDrop</li></ul><p>The result boxes are Protein concentration in mg/mL, Protein concentration in µM; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: absorbance at 280 nm of <strong>0.85</strong>, extinction coefficient of <strong>43,824</strong> M⁻¹cm⁻¹, molecular weight of <strong>55,000</strong> Da, path length of <strong>1</strong> cm.</p>
-            <p>Substituting them into the formula gives protein concentration of <strong>1.07</strong> mg/mL, protein concentration of <strong>19.4</strong> µM.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Absorbance at 280 nm = 0.85, Extinction coefficient = 43824 M⁻¹cm⁻¹, Molecular weight = 55000 Da and Path length = 1 cm; the answers are &lt;strong&gt;Protein concentration&lt;/strong&gt; = 1.07 mg/mL and &lt;strong&gt;Protein concentration&lt;/strong&gt; = 19.4 µM.</p><ul><li><strong>Protein concentration</strong> = 1.07 mg/mL</li><li><strong>Protein concentration</strong> = 19.4 µM</li></ul><p>That is <strong>Protein concentration</strong> = <code>Absorbance at 280 nm × Molecular weight ÷ (Extinction coefficient × Path length)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 AU ≈ 1 mg/mL</td><td><strong>Rule of thumb</strong></td><td>true only for proteins with ε ≈ MW</td></tr><tr><td>0.1 – 1.5 AU</td><td><strong>Reliable</strong></td><td>the linear range of most spectrophotometers</td></tr><tr><td>above 1.5</td><td><strong>Too concentrated</strong></td><td>dilute; the detector is saturating</td></tr></tbody></table>
-            <ul><li><p>The rule that 1 mg/mL gives 1 AU at 280 nm is exactly true only when ε equals the molecular weight, which holds for a typical IgG and for few other proteins.</p></li><li><p>Nucleic acid contamination inflates A280 badly. Read A260 as well: a 260/280 ratio above 0.7 means the reading is mostly DNA or RNA.</p></li><li><p>For a 1 cm cuvette the path is 1; for a NanoDrop-style instrument it is 0.1–0.05 cm, which the instrument corrects for internally.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Protein concentration&lt;/strong&gt; = 1.07 and &lt;strong&gt;Protein concentration&lt;/strong&gt; = 19.4 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Protein concentration takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using a molar coefficient with the mg/mL formula (or the reverse) — the answer is out by a factor of the molecular weight.</li><li>Ignoring nucleic acid contamination.</li><li>Forgetting to blank against the actual buffer, which may absorb at 280 nm itself.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Protein concentration</strong> = <code>Absorbance at 280 nm × Molecular weight ÷ (Extinction coefficient × Path length)</code></li></ul><p>Any one of Protein concentration and Protein concentration can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Absorbance at 280 nm from 0.85 to 1.7, leaving every other box alone. The panel moves from &lt;strong&gt;Protein concentration&lt;/strong&gt; 1.07 mg/mL and &lt;strong&gt;Protein concentration&lt;/strong&gt; 19.4 µM to &lt;strong&gt;Protein concentration&lt;/strong&gt; 2.13 mg/mL and &lt;strong&gt;Protein concentration&lt;/strong&gt; 38.79 µM.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Protein concentration and Protein concentration are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Absorbance at 280 nm to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Absorbance at 280 nm, Extinction coefficient and Molecular weight and the number you are missing is Protein concentration and Protein concentration.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/farm-pond-fish-stocking">Farm Pond Fish Stocking Calculator</a>, <a href="/biology/feed-conversion-ratio">Feed Conversion Ratio Calculator</a> and <a href="/biology/fcr">Feed conversion ratio</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I get the extinction coefficient without a spectrophotometer?', 'a' => 'Compute it from the sequence: 5500 × Trp + 1490 × Tyr + 125 × cystines, the ProtParam rule. The protein extinction coefficient calculator does that for you.'],
-            ['q' => 'Why is my A280 higher than expected?', 'a' => 'Usually DNA, RNA or a buffer component such as DTT absorbing at 280 nm. Check the 260/280 ratio.'],
-            ['q' => 'What does the Beer-Lambert A280 Protein Concentration actually calculate?', 'a' => 'It returns protein concentration and protein concentration. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Beer-Lambert A280 Protein Concentration calculator work out?', 'a' => <<<'TXT'
+            Protein concentration and Protein concentration, from Absorbance at 280 nm, Molecular weight, Extinction coefficient and Path length. The relationship is Protein concentration = Absorbance at 280 nm × Molecular weight ÷ (Extinction coefficient × Path length).
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Absorbance at 280 nm, Extinction coefficient (M⁻¹cm⁻¹), Molecular weight (Da), Path length (cm). Enter a280, ext and mw; Protein concentration is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Protein concentration and Protein concentration blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Protein concentration = 1.07 mg/mL and Protein concentration = 19.4 µM. The figures come from Absorbance at 280 nm as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Protein concentration is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Absorbance at 280 nm blank and the page solves for it, reporting Protein concentration instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Protein concentration at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/farm-pond-fish-stocking', 'name' => 'Farm Pond Fish Stocking Calculator'],
+            ['path' => '/biology/feed-conversion-ratio', 'name' => 'Feed Conversion Ratio Calculator'],
+            ['path' => '/biology/fcr', 'name' => 'Feed conversion ratio'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -146,22 +146,78 @@ final class CalcSeo
          * pages. So a cut always lands on a word boundary and says so with an
          * ellipsis, and a sentence that ends inside the window is kept whole.
          */
-        $intro = self::stripTemplate((string) ($article['intro'] ?? ''));
+        $intro = self::stripTemplate(strip_tags((string) ($article['intro'] ?? '')));
         $pool  = [$intro];
-        foreach (array_slice((array) ($article['sections'] ?? []), 0, 4) as $section) {
+        foreach (array_slice((array) ($article['sections'] ?? []), 0, 8) as $section) {
             $pool[] = trim(strip_tags((string) ($section['html'] ?? '')));
         }
-        foreach (array_slice((array) ($article['faq'] ?? []), 0, 4) as $qa) {
+        foreach (array_slice((array) ($article['faq'] ?? []), 0, 8) as $qa) {
             $pool[] = trim((string) ($qa['a'] ?? ''));
         }
 
-        $text = '';
+        /*
+         * Which sentences are worth 160 characters of a search result.
+         *
+         * A page about the acid–base balance has sentences about the anion gap
+         * and sentences about where the Calculate button is. Both are true; only
+         * one belongs in a meta description. So a sentence that names the thing
+         * the page is about is preferred, a sentence that talks about boxes and
+         * buttons is dropped, and the rest keep their order.
+         */
+        $nameWords = [];
+        foreach (preg_split('~[^a-z0-9]+~', mb_strtolower(self::cleanName($name), 'UTF-8')) ?: [] as $word) {
+            if (mb_strlen($word, 'UTF-8') >= 4 && !in_array($word, ['calculator', 'converter', 'generator', 'this', 'that', 'with', 'from', 'your'], true)) {
+                $nameWords[$word] = true;
+            }
+        }
+        $uiWords = [' the button', 'the box', 'boxes', 'the panel', 'press calculate', 'the form',
+            'grey boxes', 'click', 'dropdown', 'the field', 'results panel', 'type in', 'typing',
+            'on the page', 'below', 'copy out', 'this calculator', 'the calculator does',
+            'fields on this form', 'this form are a', 'the unit chip', 'it opens in'];
+
+        $topic = [];
+        $other = [];
         foreach ($pool as $block) {
             foreach (self::sentences($block) as $sentence) {
                 $len = mb_strlen($sentence, 'UTF-8');
-                if ($len < 25) {
-                    continue;                       // "Yes." is not a sentence
+                if ($len < 30) {
+                    continue;
                 }
+                $lower = mb_strtolower($sentence, 'UTF-8');
+                foreach ($uiWords as $ui) {
+                    if (str_contains($lower, $ui)) {
+                        continue 2;
+                    }
+                }
+                /* Not a sentence a search result can open with: a fragment that
+                   lost its subject to a <strong> tag, a formula, or a list of
+                   form controls. */
+                if (preg_match('~^[a-z]~u', $sentence) === 1
+                    || str_contains($sentence, 'rearranged')
+                    || str_contains($sentence, 'options, such as')
+                    || preg_match('~[=×√]~u', $sentence) === 1) {
+                    continue;
+                }
+                $hit = false;
+                foreach ($nameWords as $word => $_) {
+                    if (str_contains($lower, (string) $word)) {
+                        $hit = true;
+                        break;
+                    }
+                }
+                if ($hit) {
+                    $topic[] = $sentence;
+                } else {
+                    $other[] = $sentence;
+                }
+            }
+        }
+        $ordered = array_merge($topic, $other);
+
+        $text = '';
+        foreach ([$topic, $other] as $group) {
+            foreach ($group as $sentence) {
+                $len = mb_strlen($sentence, 'UTF-8');
                 if (mb_strlen($text, 'UTF-8') + ($text === '' ? 0 : 1) + $len <= self::DESC_MAX) {
                     $text .= ($text === '' ? '' : ' ') . $sentence;
                     if (mb_strlen($text, 'UTF-8') >= self::DESC_MIN) {
@@ -169,7 +225,6 @@ final class CalcSeo
                     }
                     continue;
                 }
-                /* This sentence does not fit whole; its opening might. */
                 if (mb_strlen($text, 'UTF-8') < self::DESC_MIN) {
                     $room = self::DESC_MAX - 1 - mb_strlen($text, 'UTF-8') - ($text === '' ? 0 : 1);
                     $cut  = self::clip($sentence, max(0, $room));
@@ -178,26 +233,83 @@ final class CalcSeo
                         break 2;
                     }
                 }
-                break 2;
             }
         }
 
-        /* One sentence ended just short of the window and the next did not fit:
-           fill the gap with the opening of that sentence. */
+        /* Still short: add what the calculator does, in the plainest words the
+           page allows, and cut that clause on a word boundary to land inside
+           the window rather than stopping at 145. */
+        if (mb_strlen($text, 'UTF-8') < self::DESC_MIN) {
+            $fact = self::facts($name, $article);
+            if ($fact !== '') {
+                $join = $text === '' ? '' : ' ';
+                if (mb_strlen($text . $join . $fact, 'UTF-8') <= self::DESC_MAX) {
+                    $text = trim($text . $join . $fact);
+                } else {
+                    $room = self::DESC_MAX - mb_strlen($text, 'UTF-8') - mb_strlen($join, 'UTF-8');
+                    if ($room >= 40) {
+                        $text = trim($text . $join . self::clip($fact, $room));
+                    }
+                }
+            }
+        }
+
+        /*
+         * Last resort: a page whose best sentences all failed the readability
+         * filters still needs 150 characters. Relaxed here — the interface
+         * words are allowed back in, because a description that mentions the
+         * form is better than one that stops halfway.
+         */
         if (mb_strlen($text, 'UTF-8') < self::DESC_MIN) {
             foreach ($pool as $block) {
                 foreach (self::sentences($block) as $sentence) {
-                    if (str_contains($text, $sentence)) {
+                    if (mb_strlen($sentence, 'UTF-8') < 25 || str_contains($sentence, $text)) {
                         continue;
                     }
-                    $room = self::DESC_MAX - 1 - mb_strlen($text, 'UTF-8') - ($text === '' ? 0 : 1);
-                    if ($room < 20) {
-                        break 2;
+                    if (preg_match('~[=×√]~u', $sentence) === 1 || preg_match('~^[a-z]~u', $sentence) === 1) {
+                        continue;
                     }
-                    $cut = self::clip($sentence, $room);
-                    if (mb_strlen($cut, 'UTF-8') >= 20) {
-                        $text .= ($text === '' ? '' : ' ') . $cut . '…';
-                        break 2;
+                    if (mb_strlen($text . ' ' . $sentence, 'UTF-8') <= self::DESC_MAX) {
+                        $text = trim($text . ' ' . $sentence);
+                        if (mb_strlen($text, 'UTF-8') >= self::DESC_MIN) {
+                            break 2;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*
+         * Still under the window: give the description its subject. A reader
+         * scanning results sees "Cell dilution: …" and knows what the page is
+         * before reading a word of it; the phrase is the page's own name, not a
+         * stock opener.
+         */
+        if (mb_strlen($text, 'UTF-8') < self::DESC_MIN && $text !== '') {
+            $subject = self::cleanName($name);
+            $lower = mb_strtolower($text, 'UTF-8');
+            if ($subject !== '' && !str_starts_with($lower, mb_strtolower($subject, 'UTF-8'))) {
+                $withSubject = $subject . ': ' . $text;
+                if (mb_strlen($withSubject, 'UTF-8') <= self::DESC_MAX) {
+                    $text = $withSubject;
+                } else {
+                    /* Drop whole sentences from the end until the longer text
+                       fits: a complete sentence is worth more than one more
+                       clause and an ellipsis. */
+                    $sentences = self::sentences($text);
+                    $keep = '';
+                    foreach ($sentences as $sentence) {
+                        $candidate = trim($keep . ' ' . $sentence);
+                        if (mb_strlen($subject . ': ' . $candidate, 'UTF-8') > self::DESC_MAX) {
+                            break;
+                        }
+                        $keep = $candidate;
+                        if (mb_strlen($subject . ': ' . $keep, 'UTF-8') >= self::DESC_MIN) {
+                            break;
+                        }
+                    }
+                    if (mb_strlen($subject . ': ' . $keep, 'UTF-8') >= self::DESC_MIN) {
+                        $text = $subject . ': ' . $keep;
                     }
                 }
             }
@@ -277,6 +389,12 @@ final class CalcSeo
     public static function stripTemplate(string $text): string
     {
         $patterns = [
+            /* The frames the old generator used on every page. A sentence that
+               opens this way says nothing about *this* calculator, and 320 of
+               them reading alike is what the metadata check is looking for. */
+            '~\s*The [A-Za-z0-9 &\-–]{0,40} calculator takes the numbers you enter and reports[^.]*\.?~u',
+            '~\s*Give the [A-Za-z0-9 &\-–]{0,50} calculator [^.]*\.?~u',
+            '~\s*It returns [^.]{0,80} and the panel shows all of them at once\.?~u',
             '~\s*(A|a) free [a-z &-]{0,30}calculator[^.]*\.?~u',
             '~\s*Free [a-z &-]{0,30}calculator[^.]*\.?~u',
             '~\s*with the formula, units and a worked example[^.]*\.?~iu',
@@ -287,6 +405,46 @@ final class CalcSeo
             $text = (string) preg_replace($p, ' ', $text);
         }
         return trim((string) preg_replace('~\s+~', ' ', $text));
+    }
+
+    /**
+     * One plain sentence about what the page computes, from its own field
+     * labels: "X works out A and B from C and D."
+     *
+     * Used only when the article has nothing quotable, which is the state the
+     * bulk-written pages are in until their prose is rewritten.
+     */
+    public static function facts(string $name, array $article): string
+    {
+        $inputs = [];
+        $outputs = [];
+        foreach ((array) ($article['fields'] ?? []) as $field) {
+            $label = trim((string) ($field['label'] ?? ''));
+            if ($label === '') {
+                continue;
+            }
+            if (($field['type'] ?? '') === 'result') {
+                $outputs[] = mb_strtolower($label, 'UTF-8');
+            } elseif (($field['type'] ?? '') !== 'note' && ($field['type'] ?? '') !== 'image') {
+                $inputs[] = mb_strtolower($label, 'UTF-8');
+            }
+        }
+        if ($outputs === []) {
+            return '';
+        }
+        $list = static function (array $items, int $max): string {
+            $items = array_slice(array_values(array_unique($items)), 0, $max);
+            if (count($items) <= 1) {
+                return (string) ($items[0] ?? '');
+            }
+            $last = array_pop($items);
+            return implode(', ', $items) . ' and ' . $last;
+        };
+        $out = self::cleanName($name) . ' works out ' . $list($outputs, 3);
+        if ($inputs !== []) {
+            $out .= ' from ' . $list($inputs, 4);
+        }
+        return rtrim($out, ' .') . '.';
     }
 
     /** Trim to a length on a word boundary. */

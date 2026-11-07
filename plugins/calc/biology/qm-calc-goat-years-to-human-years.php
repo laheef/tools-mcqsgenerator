@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Goat Years to Human Years Calculator',
-    'meta' => ['title' => 'Goat Years to Human Years Calculator — Biology', 'description' => 'A goat\'s first year is about 18 human years and each later year adds around 2.5. It returns human-equivalent age, share of an 18-year lifespan and goat age…', 'h1' => 'Goat Years to Human Years Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Goat Years to Human Years Calculator — Biology', 'description' => 'Goat Years to Human Years works out Human-equivalent age and Share of an 18-year lifespan from Goat age. The arithmetic is the whole method: Human-equivalent…', 'h1' => 'Goat Years to Human Years Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -58,48 +58,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A goat's first year is about 18 human years and each later year adds around 2.5. It returns human-equivalent age, share of an 18-year lifespan and goat age, and the panel shows all of them at once.
-        
-        This calculator uses the widely quoted schedule — the first goat year is about 18 human years and each later year adds around 2.5 — and shows the animal's life stage as well.
+        Goat Years to Human Years works out Human-equivalent age and Share of an 18-year lifespan from Goat age. The arithmetic is the whole method: Human-equivalent age is worked out from Goat age by one formula, applied once. Human-equivalent age comes back in years unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Goat Years to Human Years', 'html' => <<<'TXT'
-            <p>Human-equivalent age = 18 × goat age for the first year, then 18 + 2.5 × (goat age − 1)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/goat-years-to-human-years.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Goat Years to Human Years Calculator — The first year converts steeply; later years add a little at a time." title="Goat Years to Human Years Calculator"><figcaption>The first year converts steeply; later years add a little at a time.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>years</code></td><td>the goat's age</td><td>years</td></tr><tr><td><code>human</code></td><td>human-equivalent age</td><td>years</td></tr><tr><td><code>lifespan</code></td><td>age as a share of an 18-year lifespan</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Goat Years to Human Years calculator works', 'html' => <<<'TXT'
+            <p>Goat Years to Human Years answers one question from 1 number, and the answer is Human-equivalent age and Share of an 18-year lifespan.</p><p>In the form&#039;s own words, Human-equivalent age = if_else(Goat age&lt;=1, Goat age × 18, 18 + (Goat age − 1) × 2.5).</p><p>The answers are Human-equivalent age and Share of an 18-year lifespan; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Goat Years to Human Years?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Goat age</strong> — in years. Use decimals for months, e.g. 0.5 for six months</li></ul><p>The answers come back as Human-equivalent age in years, Share of an 18-year lifespan in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives human-equivalent age of <strong>23</strong> years, share of an 18-year lifespan of <strong>16.67</strong>%, goat age of <strong>3</strong> years.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Human-equivalent age is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 – 0.5</td><td><strong>Kid</strong></td><td>weaning at about 10 weeks</td></tr><tr><td>0.5 – 1</td><td><strong>Young stock</strong></td><td>growth and first breeding decisions</td></tr><tr><td>2 – 7</td><td><strong>Adult</strong></td><td>prime productive years</td></tr><tr><td>8 and over</td><td><strong>Senior</strong></td><td>teeth wear is the usual limiting factor</td></tr></tbody></table>
-            <ul><li><p>A six-month-old goat is roughly nine human years old by this schedule, which is why kids are weaned and breeding-ready so much sooner than a mammal of human size would be.</p></li><li><p>Dairy goats are usually productive to 8–10 years; after that, worn incisors decide more than age does.</p></li><li><p>Different sources use 2.5 to 4.7 human years per goat year after maturity. The schedule here is the conservative middle of that range.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Human-equivalent age</strong> = <code>if_else(Goat age&lt;=1, Goat age × 18, 18 + (Goat age − 1) × 2.5)</code></li><li><strong>Share of an 18-year lifespan</strong> = <code>Goat age ÷ 18 × 100</code></li><li><strong>Goat age</strong> = <code>if_else(Human-equivalent age&lt;=18, Human-equivalent age ÷ 18, 1 + (Human-equivalent age − 18) ÷ 2.5)</code></li></ul><p>Any one of Human-equivalent age, Share of an 18-year lifespan and Goat age can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Applying the first-year rate to an adult goat, which makes a five-year-old read as ninety.</li><li>Confusing a goat's age with its kidding history, which is not linear in age.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Human-equivalent age and Share of an 18-year lifespan are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Goat age to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/chicken-years-to-human-years">Chicken years to human years</a>. <a href="/biology/goldfish-years-to-human-years">Goldfish years to human years</a>. <a href="/biology/goat-gestation">Goat gestation</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Goat age and the number you are missing is Human-equivalent age and Share of an 18-year lifespan.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/cell-density">Cell Density Calculator</a>, <a href="/biology/cell-density-unit-converter">Cell Density Unit Converter Calculator</a> and <a href="/biology/cell-dilution">Cell dilution Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long do goats live?', 'a' => 'Twelve to eighteen years for pets and dairy stock, with most reaching 12–15.'],
-            ['q' => 'Why is the first year different?', 'a' => 'Because maturity is fast: a year-old goat is sexually and physically mature, which no human is.'],
-            ['q' => 'What does the Goat Years to Human Years actually calculate?', 'a' => <<<'TXT'
-            It returns human-equivalent age, share of an 18-year lifespan and goat age. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Goat Years to Human Years calculator work out?', 'a' => <<<'TXT'
+            Human-equivalent age and Share of an 18-year lifespan, from Goat age. The relationship is Human-equivalent age = if_else(Goat age<=1, Goat age × 18, 18 + (Goat age − 1) × 2.5).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Goat age (years). With years in place, Human-equivalent age can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Human-equivalent age, Share of an 18-year lifespan and Goat age blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Human-equivalent age is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Goat age blank and the page solves for it, reporting Human-equivalent age instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Human-equivalent age keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cell-density', 'name' => 'Cell Density Calculator'],
+            ['path' => '/biology/cell-density-unit-converter', 'name' => 'Cell Density Unit Converter Calculator'],
+            ['path' => '/biology/cell-dilution', 'name' => 'Cell dilution Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

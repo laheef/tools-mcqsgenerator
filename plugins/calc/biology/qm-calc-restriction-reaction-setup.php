@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Restriction Digest Recipe',
-    'meta' => ['title' => 'Restriction Digest Recipe — Formula & Results', 'description' => <<<'TXT'
-    Work out how much enzyme, buffer and water go into a digest. It returns DNA volume, enzyme units needed, enzyme volume and 10× buffer, and the panel shows all…
-    TXT, 'h1' => 'Restriction Digest Recipe', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Restriction Digest Recipe — Formula & Results', 'description' => 'Restriction Digest Recipe works out DNA volume and Enzyme units needed from DNA to digest, DNA concentration and Reaction volume. There is no hidden constant…', 'h1' => 'Restriction Digest Recipe', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -136,44 +134,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Work out how much enzyme, buffer and water go into a digest. It returns DNA volume, enzyme units needed, enzyme volume and 10× buffer, and the panel shows all of them at once.
-        
-        The rule that matters is that the enzyme must never be more than a tenth of the reaction volume, because restriction enzymes are stored in glycerol and too much of it inhibits the digest.
+        Restriction Digest Recipe works out DNA volume and Enzyme units needed from DNA to digest, DNA concentration and Reaction volume. There is no hidden constant here: change DNA volume and DNA to digest moves with it. The main result, DNA volume, is reported in µL.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Restriction Digest Recipe', 'html' => <<<'TXT'
-            <p>DNA volume (µL) = µg × 1000 ÷ ng/µL. Units = µg × U/µg. Enzyme volume = units ÷ (U/mL ÷ 1000). Buffer = 1/10 of the reaction</p>
-            <figure class="calc-figure"><img src="/uploads/biology/restriction-reaction-setup.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Restriction Digest Recipe — Glycerol carried in by the enzyme, by enzyme volume in a 20 µL digest" title="Restriction Digest Recipe"><figcaption>Glycerol carried in by the enzyme, by enzyme volume in a 20 µL digest</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>U</code></td><td>one unit digests 1 µg of substrate in one hour</td><td>U</td></tr><tr><td><code>glycerol</code></td><td>the storage solvent of the enzyme, an inhibitor above 5%</td><td>%</td></tr><tr><td><code>10×</code></td><td>ten-times concentrated buffer, diluted to 1× in the reaction</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Restriction Digest Recipe calculator works', 'html' => <<<'TXT'
+            <p>Restriction Digest Recipe answers one question from 5 numbers, and the answer is DNA volume, Enzyme units needed and Enzyme volume.</p><p>In the form&#039;s own words, DNA volume = DNA to digest × 1000 ÷ DNA concentration.</p><p>The result panel carries DNA volume, Enzyme units needed, Enzyme volume and 10× buffer, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Restriction Digest Recipe?', 'html' => <<<'TXT'
-            <ol><li>Enter how much DNA you want to cut and its concentration.</li><li>Set the final reaction volume and the units per microgram you intend to use.</li><li>Read the volumes of DNA, enzyme, buffer and water — and the glycerol percentage, which must stay under 5%.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>DNA to digest</strong> — in µg</li><li><strong>DNA concentration</strong> — in ng/µL</li><li><strong>Reaction volume</strong> — in µL</li><li><strong>Units per microgram</strong> — in U/µg. 5–10 U/µg is routine for a plasmid</li><li><strong>Enzyme stock</strong> — in U/mL. Most enzymes are supplied at 20 000 U/mL</li></ul><p>What you get back is DNA volume in µL, Enzyme units needed in U, Enzyme volume in µL, 10× buffer in µL, Water in µL, Glycerol in the reaction in %, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: dna to digest of <strong>1</strong> µg, dna concentration of <strong>100</strong> ng/µL, reaction volume of <strong>20</strong> µL, units per microgram of <strong>10</strong> U/µg, enzyme stock of <strong>20,000</strong> U/mL.</p>
-            <p>Substituting them into the formula gives dna volume of <strong>10</strong> µL, enzyme units needed of <strong>10</strong> U, enzyme volume of <strong>0.5</strong> µL, 10× buffer of <strong>2</strong> µL, water of <strong>7.5</strong> µL, glycerol in the reaction of <strong>2.5</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — DNA to digest = 1 µg, DNA concentration = 100 ng/µL, Reaction volume = 20 µL, Units per microgram = 10 U/µg and Enzyme stock = 20000 U/mL — through the same formula and the panel reports &lt;strong&gt;DNA volume&lt;/strong&gt; = 10 µL, &lt;strong&gt;Enzyme units needed&lt;/strong&gt; = 10 U, &lt;strong&gt;Enzyme volume&lt;/strong&gt; = 0.5 µL, &lt;strong&gt;10× buffer&lt;/strong&gt; = 2 µL, &lt;strong&gt;Water&lt;/strong&gt; = 7.5 µL and &lt;strong&gt;Glycerol in the reaction&lt;/strong&gt; = 2.5 %.</p><ul><li><strong>DNA volume</strong> = 10 µL</li><li><strong>Enzyme units needed</strong> = 10 U</li><li><strong>Enzyme volume</strong> = 0.5 µL</li><li><strong>10× buffer</strong> = 2 µL</li><li><strong>Water</strong> = 7.5 µL</li><li><strong>Glycerol in the reaction</strong> = 2.5 %</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>DNA volume</strong> = <code>DNA to digest × 1000 ÷ DNA concentration</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>glycerol under 5%</td><td><strong>Safe</strong></td><td>the enzyme works at full speed</td></tr><tr><td>glycerol 5 – 10%</td><td><strong>Marginal</strong></td><td>star activity and incomplete digestion appear</td></tr><tr><td>glycerol over 10%</td><td><strong>Inhibited</strong></td><td>dilute the DNA first rather than adding more enzyme</td></tr></tbody></table>
-            <ul><li><p>Adding more enzyme is the usual reaction to an incomplete digest, and it is usually wrong: it adds glycerol, which inhibits the enzyme and can relax its specificity.</p></li><li><p>One unit is defined against a specific substrate in one hour. A PCR product with a blunt end or a plasmid with a methylation pattern may need several times the nominal amount.</p></li><li><p>Keep the reaction at 1× buffer. A 10× buffer diluted wrongly is a common cause of a digest that simply does not work.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;DNA volume&lt;/strong&gt; = 10, &lt;strong&gt;Enzyme units needed&lt;/strong&gt; = 10, &lt;strong&gt;Enzyme volume&lt;/strong&gt; = 0.5, &lt;strong&gt;10× buffer&lt;/strong&gt; = 2, &lt;strong&gt;Water&lt;/strong&gt; = 7.5 and &lt;strong&gt;Glycerol in the reaction&lt;/strong&gt; = 2.5. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as DNA volume is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Adding 2 µL of enzyme to a 20 µL reaction, which is 10% glycerol before the DNA is counted.</li><li>Forgetting to mix gently — enzyme sticks to the tube wall above the liquid line.</li><li>Incubating for 15 minutes and calling an incomplete digest a failure of the enzyme.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>DNA volume</strong> = <code>DNA to digest × 1000 ÷ DNA concentration</code></li><li><strong>Enzyme units needed</strong> = <code>DNA to digest × Units per microgram</code></li><li><strong>Enzyme volume</strong> = <code>Enzyme units needed ÷ (Enzyme stock ÷ 1000)</code></li><li><strong>10× buffer</strong> = <code>Reaction volume ÷ 10</code></li><li><strong>Water</strong> = <code>Reaction volume − DNA volume − Enzyme volume − Reaction volume ÷ 10</code></li><li><strong>Glycerol in the reaction</strong> = <code>Enzyme volume ÷ Reaction volume × 100</code></li></ul><p>Any one of DNA volume, Enzyme units needed and Enzyme volume can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double DNA to digest from 1 to 2, leaving every other box alone. The panel moves from &lt;strong&gt;DNA volume&lt;/strong&gt; 10 µL, &lt;strong&gt;Enzyme units needed&lt;/strong&gt; 10 U, &lt;strong&gt;Enzyme volume&lt;/strong&gt; 0.5 µL, &lt;strong&gt;10× buffer&lt;/strong&gt; 2 µL, &lt;strong&gt;Water&lt;/strong&gt; 7.5 µL and &lt;strong&gt;Glycerol in the reaction&lt;/strong&gt; 2.5 % to &lt;strong&gt;DNA volume&lt;/strong&gt; 20 µL, &lt;strong&gt;Enzyme units needed&lt;/strong&gt; 20 U, &lt;strong&gt;Enzyme volume&lt;/strong&gt; 1 µL, &lt;strong&gt;10× buffer&lt;/strong&gt; 2 µL, &lt;strong&gt;Water&lt;/strong&gt; -3 µL and &lt;strong&gt;Glycerol in the reaction&lt;/strong&gt; 5 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> DNA volume, Enzyme units needed and Enzyme volume are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in DNA to digest and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: DNA to digest, DNA concentration and Reaction volume measured, DNA volume and Enzyme units needed wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dna-molarity-from-mass">DNA Molarity from Mass or A260 Calculator</a>, <a href="/biology/dna-molecular-weight-calculator">DNA Molecular Weight Calculator</a> and <a href="/biology/dna-pattern-finder">DNA Pattern Finder Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Why must the enzyme be under a tenth of the volume?', 'a' => 'Because the enzyme is stored in 50% glycerol, and glycerol above about 5% of the reaction inhibits cutting and can change specificity.'],
-            ['q' => 'How many units should I use?', 'a' => '5–10 U per microgram of plasmid for an hour; more for genomic DNA or a blunt-ended PCR product.'],
-            ['q' => 'Can I digest in a smaller volume?', 'a' => 'Yes, and it usually works better — a smaller volume means a higher concentration of both ends.'],
-            ['q' => 'What does the Restriction Digest Recipe actually calculate?', 'a' => 'It returns DNA volume, enzyme units needed, enzyme volume and 10× buffer. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Restriction Digest Recipe calculator work out?', 'a' => <<<'TXT'
+            DNA volume, Enzyme units needed, Enzyme volume and 10× buffer, from DNA to digest and DNA concentration. The relationship is DNA volume = DNA to digest × 1000 ÷ DNA concentration.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            DNA to digest (µg), DNA concentration (ng/µL), Reaction volume (µL), Units per microgram (U/µg), Enzyme stock (U/mL). Enter dna_ug, dna_conc and volume_ul; DNA volume is the box to leave alone unless it is the value you came for.
             TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of DNA volume, Enzyme units needed, Enzyme volume and 10× buffer blank and the page solves for that one instead — nothing has to be switched first.
+            TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            DNA volume = 10 µL, Enzyme units needed = 10 U, Enzyme volume = 0.5 µL, 10× buffer = 2 µL, Water = 7.5 µL and Glycerol in the reaction = 2.5 %. That comes from the page's own defaults, entered in DNA to digest; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of DNA volume is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave DNA to digest blank and the page solves for it, reporting DNA volume instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to DNA volume at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dna-molarity-from-mass', 'name' => 'DNA Molarity from Mass or A260 Calculator'],
+            ['path' => '/biology/dna-molecular-weight-calculator', 'name' => 'DNA Molecular Weight Calculator'],
+            ['path' => '/biology/dna-pattern-finder', 'name' => 'DNA Pattern Finder Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

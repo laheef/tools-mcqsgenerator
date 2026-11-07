@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat age',
-    'meta' => ['title' => 'Cat age Calculator: Formula, Steps & Examples', 'description' => 'Supply the cat years and the <strong>human years</strong> and the Cat age calculator solves for human years. The Cat age calculator takes the values in the…', 'h1' => 'Cat age Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Cat age Calculator: Formula, Steps & Examples', 'description' => 'Cat age works out Human years and Cat years from Cat years. There is no hidden constant here: change Human years and Cat years moves with it.', 'h1' => 'Cat age Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'cat_age' => [
@@ -198,67 +198,41 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'Supply the cat years and the <strong>human years</strong> and the Cat age calculator solves for human years.',
+        'intro' => <<<'TXT'
+        Cat age works out Human years and Cat years from Cat years. There is no hidden constant here: change Human years and Cat years moves with it. The main result, Human years, is reported in years.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Cat age calculator work?', 'html' => <<<'TXT'
-            <p>The Cat age calculator takes the values in the form, applies the relationship described below and reports <strong>human years</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the conversion type); then you type in the cat years and the human years (2).</p>
+            ['title' => 'How the Cat age calculator works', 'html' => <<<'TXT'
+            <p>The Cat age calculator applies one relationship to 1 number and reports Human years and Cat years.</p><p>The relationship it solves reads Human years = get_cat_age(Cat years).</p><p>The answers are Human years and Cat years; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 2 options, such as cat to human years and human to cat years. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in years / months. </li><li>A measured quantity, entered by default in years. </li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Cat years</strong> — in years / months</li></ul><p>What you get back is Human years in years, Cat years in years, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Conversion type</strong></td><td>One of 2 options, such as cat to human years and human to cat years.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cat years</strong></td><td>A measured quantity, 27 units available.</td><td>years / months</td><td>You supply it</td></tr><tr><td><strong>Human years</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Human years (2)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Cat years (2)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Human years</strong> = <code>get_cat_age(Cat years)</code></li><li><strong>Cat years</strong> = <code>get_human_age(Human years)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Human years and Cat years can be the unknown.</p>
             TXT],
-            ['title' => 'The formula behind the Cat age calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Human years</span><span class="formula-eq">=</span><span class="formula-rhs">(cat years)</span></div><div class="formula-row"><span class="formula-lhs">Cat years</span><span class="formula-eq">=</span><span class="formula-rhs">(human years)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Cat years carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Human years and Cat years are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Cat years is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>Shown in years, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in years / months</li><li>Time, opening in years</li><li>Time, opening in years</li><li>Time, opening in years</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cat age calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 2 figures keep coming back — the cat years and the human years — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Cat age calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cat-benadryl-dosage">Cat Benadryl dosage</a>, <a href="/biology/cat-bmi">Cat BMI</a> and <a href="/biology/cat-calorie">Cat calorie</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Cat years measured, Human years and Cat years wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dsdna-ug-to-pmol-converter">dsDNA µg to pmol Converter Calculator</a>, <a href="/biology/egg-incubation-hatch-date">Egg Incubation Hatch Date Calculator</a> and <a href="/biology/encounter-rate">Encounter Rate Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Cat age calculator work out?', 'a' => <<<'TXT'
-            It returns human years, derived from the cat years and the human years. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Cat age calculator work out?', 'a' => 'Human years and Cat years, from Cat years. The relationship is Human years = get_cat_age(Cat years).'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Cat years (years / months). Enter cat_age_calculation; Human years is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Human years and Cat years can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Human years is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Cat years left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'What do I need to enter to use the Cat age calculator?', 'a' => <<<'TXT'
-            The form asks for the cat years and the human years, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter cat years in a different unit?', 'a' => <<<'TXT'
-            Yes. Cat years opens in years / months and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Cat age calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Human years keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/cat-benadryl-dosage', 'name' => 'Cat Benadryl dosage'],
-            ['path' => '/biology/cat-bmi', 'name' => 'Cat BMI'],
-            ['path' => '/biology/cat-calorie', 'name' => 'Cat calorie'],
+            ['path' => '/biology/dsdna-ug-to-pmol-converter', 'name' => 'dsDNA µg to pmol Converter Calculator'],
+            ['path' => '/biology/egg-incubation-hatch-date', 'name' => 'Egg Incubation Hatch Date Calculator'],
+            ['path' => '/biology/encounter-rate', 'name' => 'Encounter Rate Calculator'],
         ],
+        'authors' => [],
     ],
 ];

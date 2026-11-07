@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Agarose Gel Calculator (gel percentage and loading)',
-    'meta' => ['title' => 'Agarose Gel (gel percentage and loading) Calculator', 'description' => 'The agarose percentage decides which fragment sizes resolve, and the number of lanes decides how much gel and buffer you need. It returns agarose to weigh…', 'h1' => 'Agarose Gel Calculator (gel percentage and loading)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Agarose Gel (gel percentage and loading) Calculator', 'description' => 'Agarose Gel Calculator (gel percentage and loading) works out Agarose to weigh out and Loading dye per sample from Agarose percentage, Gel volume and Number…', 'h1' => 'Agarose Gel Calculator (gel percentage and loading)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -107,46 +107,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The agarose percentage decides which fragment sizes resolve, and the number of lanes decides how much gel and buffer you need. It returns agarose to weigh out, loading dye per sample, running buffer and total volume needed, and the panel shows all of them at once.
-        
-        This calculator gives the grams of agarose, the buffer volume, the loading dye and the ladder volume for your gel.
+        Agarose Gel Calculator (gel percentage and loading) works out Agarose to weigh out and Loading dye per sample from Agarose percentage, Gel volume and Number of lanes. The arithmetic is the whole method: Agarose to weigh out is worked out from Agarose percentage by one formula, applied once. Agarose to weigh out comes back in g unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Agarose Gel (gel percentage and loading)', 'html' => <<<'TXT'
-            <p>Agarose (g) = % × gel volume (mL) ÷ 100; dye volume = sample volume ÷ dye fold</p>
-            <figure class="calc-figure"><img src="/uploads/biology/agarose-gel-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Agarose Gel Calculator (gel percentage and loading) — Agarose, buffer, dye and sample for one gel." title="Agarose Gel Calculator (gel percentage and loading)"><figcaption>Agarose, buffer, dye and sample for one gel.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>percent</code></td><td>agarose concentration</td><td>% w/v</td></tr><tr><td><code>volume</code></td><td>gel volume</td><td>mL</td></tr><tr><td><code>agarose</code></td><td>mass to weigh</td><td>g</td></tr></tbody></table>
+            ['title' => 'How the Agarose Gel Calculator (gel percentage and loading) calculator works', 'html' => <<<'TXT'
+            <p>The Agarose Gel Calculator (gel percentage and loading) calculator applies one relationship to 5 numbers and reports Agarose to weigh out, Loading dye per sample and Running buffer.</p><p>Written with the labels from the form, Agarose to weigh out = Gel volume × Agarose percentage ÷ 100.</p><p>The result panel carries Agarose to weigh out, Loading dye per sample, Running buffer and Total volume needed, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Agarose Gel (gel percentage and loading)?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Agarose percentage</strong> — in %. 1% for 0.5–10 kb</li><li><strong>Gel volume</strong> — in mL. Depends on the tray</li><li><strong>Number of lanes</strong> — a plain number, no unit</li><li><strong>Sample volume per lane</strong> — in µL</li><li><strong>Loading dye stock</strong> — in ×. 6× is standard</li></ul><p>The answers come back as Agarose to weigh out in g, Loading dye per sample in µL, Running buffer in mL, Total volume needed in µL. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: agarose percentage of <strong>1</strong>%, gel volume of <strong>100</strong> mL, number of lanes of <strong>16</strong>, sample volume per lane of <strong>10</strong> µL, loading dye stock of <strong>6</strong> ×.</p>
-            <p>Substituting them into the formula gives agarose to weigh out of <strong>1</strong> g, loading dye per sample of <strong>1.67</strong> µL, running buffer of <strong>500</strong> mL, total volume needed of <strong>160</strong> µL.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Agarose percentage = 1 %, Gel volume = 100 mL, Number of lanes = 16, Sample volume per lane = 10 µL and Loading dye stock = 6 ×; the answers are &lt;strong&gt;Agarose to weigh out&lt;/strong&gt; = 1 g, &lt;strong&gt;Loading dye per sample&lt;/strong&gt; = 1.67 µL, &lt;strong&gt;Running buffer&lt;/strong&gt; = 500 mL and &lt;strong&gt;Total volume needed&lt;/strong&gt; = 160 µL.</p><ul><li><strong>Agarose to weigh out</strong> = 1 g</li><li><strong>Loading dye per sample</strong> = 1.67 µL</li><li><strong>Running buffer</strong> = 500 mL</li><li><strong>Total volume needed</strong> = 160 µL</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Agarose to weigh out</strong> = <code>Gel volume × Agarose percentage ÷ 100</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.5 – 0.8%</td><td><strong>Large fragments</strong></td><td>1–20 kb; resolves genomic digests</td></tr><tr><td>1 – 1.5%</td><td><strong>Most PCR products</strong></td><td>200 bp – 5 kb</td></tr><tr><td>2 – 3%</td><td><strong>Small fragments</strong></td><td>20–200 bp; needs high-resolution agarose</td></tr></tbody></table>
-            <ul><li><p>Migration is roughly logarithmic in size: a 1% gel resolves 0.5–10 kb well, and every increase in percentage shifts the useful window downward.</p></li><li><p>Use the same buffer for the gel and the tank. TAE gives better resolution on large fragments, TBE better buffering capacity for long runs.</p></li><li><p>Let the gel cool to about 55 °C before pouring — hotter warps the tray, cooler sets it before you pour.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Agarose to weigh out&lt;/strong&gt; = 1, &lt;strong&gt;Loading dye per sample&lt;/strong&gt; = 1.67, &lt;strong&gt;Running buffer&lt;/strong&gt; = 500 and &lt;strong&gt;Total volume needed&lt;/strong&gt; = 160. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Agarose to weigh out is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Weighing agarose into a wet flask and forgetting the water already there.</li><li>Overloading lanes so the bands merge into a smear.</li><li>Running at a voltage that heats the gel enough to distort the bands.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Agarose to weigh out</strong> = <code>Gel volume × Agarose percentage ÷ 100</code></li><li><strong>Loading dye per sample</strong> = <code>Sample volume per lane ÷ Loading dye stock</code></li><li><strong>Running buffer</strong> = <code>Gel volume × 5</code></li><li><strong>Total volume needed</strong> = <code>Number of lanes × Sample volume per lane</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Agarose to weigh out, Loading dye per sample and Running buffer can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Agarose percentage, from 1 to 2 — and the answers go from &lt;strong&gt;Agarose to weigh out&lt;/strong&gt; 1 g, &lt;strong&gt;Loading dye per sample&lt;/strong&gt; 1.67 µL, &lt;strong&gt;Running buffer&lt;/strong&gt; 500 mL and &lt;strong&gt;Total volume needed&lt;/strong&gt; 160 µL to &lt;strong&gt;Agarose to weigh out&lt;/strong&gt; 2 g, &lt;strong&gt;Loading dye per sample&lt;/strong&gt; 1.67 µL, &lt;strong&gt;Running buffer&lt;/strong&gt; 500 mL and &lt;strong&gt;Total volume needed&lt;/strong&gt; 160 µL.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Agarose to weigh out, Loading dye per sample and Running buffer are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Agarose percentage to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Agarose percentage, Gel volume and Number of lanes measured, Agarose to weigh out and Loading dye per sample wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/cpg-island-finder">CpG Island Finder Calculator</a>, <a href="/biology/cricket-chirp-thermometer">Crickets chirping thermometer Calculator</a> and <a href="/biology/crop-coefficient">Crop Coefficient Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What percentage gel do I need?', 'a' => '1% for most PCR products, 2% for fragments under 300 bp, 0.7% for genomic digests.'],
-            ['q' => 'How much dye do I add to a 10 µL sample with 6× dye?', 'a' => 'About 1.7 µL, or adjust the sample so the final volume is convenient.'],
-            ['q' => 'What does the Agarose Gel (gel percentage and loading) actually calculate?', 'a' => <<<'TXT'
-            It returns agarose to weigh out, loading dye per sample, running buffer and total volume needed. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Agarose Gel Calculator (gel percentage and loading) calculator work out?', 'a' => <<<'TXT'
+            Agarose to weigh out, Loading dye per sample, Running buffer and Total volume needed, from Gel volume and Agarose percentage. The relationship is Agarose to weigh out = Gel volume × Agarose percentage ÷ 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Agarose percentage (%), Gel volume (mL), Number of lanes, Sample volume per lane (µL), Loading dye stock (×). With percent, volume and lanes in place, Agarose to weigh out can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Agarose to weigh out, Loading dye per sample, Running buffer and Total volume needed can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Agarose to weigh out = 1 g, Loading dye per sample = 1.67 µL, Running buffer = 500 mL and Total volume needed = 160 µL. The figures come from Agarose percentage as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Agarose to weigh out is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Agarose percentage left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Agarose to weigh out at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cpg-island-finder', 'name' => 'CpG Island Finder Calculator'],
+            ['path' => '/biology/cricket-chirp-thermometer', 'name' => 'Crickets chirping thermometer Calculator'],
+            ['path' => '/biology/crop-coefficient', 'name' => 'Crop Coefficient Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Huglin Index Calculator',
-    'meta' => ['title' => 'Huglin Index Calculator — Formula & Results', 'description' => 'The Huglin index measures the heat available for grape ripening, weighting daytime temperatures more heavily than night ones. It returns contribution per day…', 'h1' => 'Huglin Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Huglin Index Calculator — Formula & Results', 'description' => 'Huglin Index works out Huglin index and Climate class (1 very cool … 6 too hot) from Mean daily maximum, Mean daily temperature and Base temperature.', 'h1' => 'Huglin Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -98,46 +98,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Huglin index measures the heat available for grape ripening, weighting daytime temperatures more heavily than night ones. It returns contribution per day, huglin index and climate class (1 very cool … 6 too hot), and the panel shows all of them at once.
-        
-        It is the standard climate index for matching a grape variety to a site, and it decides which varieties can ripen there.
+        Huglin Index works out Huglin index and Climate class (1 very cool … 6 too hot) from Mean daily maximum, Mean daily temperature and Base temperature. Nothing is looked up on this page: Huglin index is computed from Mean daily maximum and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Huglin Index', 'html' => <<<'TXT'
-            <p>HI = K × [(T_max − 10) + (T_mean − 10)] ÷ 2, summed over the growing period</p>
-            <figure class="calc-figure"><img src="/uploads/biology/huglin-index.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Huglin Index Calculator — The heat accumulated across the growing period." title="Huglin Index Calculator"><figcaption>The heat accumulated across the growing period.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>T_max</code></td><td>mean daily maximum</td><td>°C</td></tr><tr><td><code>T_mean</code></td><td>mean daily temperature</td><td>°C</td></tr><tr><td><code>K</code></td><td>daylength coefficient</td><td>—</td></tr><tr><td><code>HI</code></td><td>Huglin heliothermal index</td><td>°C·day</td></tr></tbody></table>
+            ['title' => 'How the Huglin Index calculator works', 'html' => <<<'TXT'
+            <p>The Huglin Index calculator applies one relationship to 5 numbers and reports Huglin index, Climate class (1 very cool … 6 too hot) and Contribution per day.</p><p>The relationship it solves reads Contribution per day = Daylength coefficient (K) × ((max(0,Mean daily maximum − Base temperature) + max(0,Mean daily temperature − Base temperature)) ÷ 2).</p><p>The answers are Huglin index, Climate class (1 very cool … 6 too hot) and Contribution per day; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Huglin Index?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 5 boxes and the page has everything it needs.</p><ul><li><strong>Mean daily maximum</strong> — in °C. April–September in the north</li><li><strong>Mean daily temperature</strong> — in °C</li><li><strong>Base temperature</strong> — in °C</li><li><strong>Days in the growing period</strong> — in days</li><li><strong>Daylength coefficient (K)</strong> — a plain number, no unit. 1.02 below 40° latitude, 1.00 above</li></ul><p>The result boxes are Huglin index, Climate class (1 very cool … 6 too hot), Contribution per day in °C·day; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: mean daily maximum of <strong>26</strong>°C, mean daily temperature of <strong>18</strong>°C, base temperature of <strong>10</strong>°C, days in the growing period of <strong>180</strong> days, daylength coefficient (k) of <strong>1.02</strong>.</p>
-            <p>Substituting them into the formula gives contribution per day of <strong>12.24</strong> °C·day, huglin index of <strong>2,203.2</strong>, climate class (1 very cool … 6 too hot) of <strong>4</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Mean daily maximum = 26 °C, Mean daily temperature = 18 °C, Base temperature = 10 °C, Days in the growing period = 180 days and Daylength coefficient (K) = 1.02 — through the same formula and the panel reports &lt;strong&gt;Contribution per day&lt;/strong&gt; = 12.24 °C·day, &lt;strong&gt;Huglin index&lt;/strong&gt; = 2203 and &lt;strong&gt;Climate class (1 very cool … 6 too hot)&lt;/strong&gt; = 4.</p><ul><li><strong>Contribution per day</strong> = 12.24 °C·day</li><li><strong>Huglin index</strong> = 2203</li><li><strong>Climate class (1 very cool … 6 too hot)</strong> = 4</li></ul><p>That is <strong>Contribution per day</strong> = <code>Daylength coefficient (K) × ((max(0,Mean daily maximum − Base temperature) + max(0,Mean daily temperature − Base temperature)) ÷ 2)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 1 500 (class 1)</td><td><strong>Very cool</strong></td><td>early varieties only; sparkling base wines</td></tr><tr><td>1 500 – 1 800 (class 2)</td><td><strong>Cool</strong></td><td>Pinot Noir, Chardonnay, Riesling</td></tr><tr><td>1 800 – 2 100 (class 3)</td><td><strong>Temperate</strong></td><td>Cabernet Franc, Merlot, Sauvignon Blanc</td></tr><tr><td>2 100 – 2 400 (class 4)</td><td><strong>Warm</strong></td><td>Cabernet Sauvignon, Syrah, Grenache</td></tr><tr><td>2 400 – 3 000 (class 5)</td><td><strong>Very warm</strong></td><td>late-ripening Mediterranean varieties</td></tr><tr><td>above 3 000 (class 6)</td><td><strong>Too hot</strong></td><td>heat stress and irrigation become the limit</td></tr></tbody></table>
-            <ul><li><p>The formula weights the maximum temperature fully, which is what distinguishes it from growing degree days.</p></li><li><p>The daylength coefficient K is 1.02 below 40° latitude and 1.00 above it, correcting for longer summer days in the south.</p></li><li><p>Huglin is usually calculated over the frost-free period from April to September in the northern hemisphere, October to March in the south.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Contribution per day&lt;/strong&gt; = 12.24, &lt;strong&gt;Huglin index&lt;/strong&gt; = 2203 and &lt;strong&gt;Climate class (1 very cool … 6 too hot)&lt;/strong&gt; = 4. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Huglin index is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Summing over a full year rather than the growing period.</li><li>Forgetting the K coefficient and comparing sites at different latitudes.</li><li>Using the Huglin index to compare varieties without checking their own heat requirements.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Contribution per day</strong> = <code>Daylength coefficient (K) × ((max(0,Mean daily maximum − Base temperature) + max(0,Mean daily temperature − Base temperature)) ÷ 2)</code></li><li><strong>Huglin index</strong> = <code>Daylength coefficient (K) × ((max(0,Mean daily maximum − Base temperature) + max(0,Mean daily temperature − Base temperature)) ÷ 2) × Days in the growing period</code></li></ul><p>Any one of Contribution per day, Huglin index and Climate class (1 very cool … 6 too hot) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Mean daily maximum, from 26 to 52 — and the answers go from &lt;strong&gt;Contribution per day&lt;/strong&gt; 12.24 °C·day, &lt;strong&gt;Huglin index&lt;/strong&gt; 2203 and &lt;strong&gt;Climate class (1 very cool … 6 too hot)&lt;/strong&gt; 4 to &lt;strong&gt;Contribution per day&lt;/strong&gt; 25.5 °C·day, &lt;strong&gt;Huglin index&lt;/strong&gt; 4590 and &lt;strong&gt;Climate class (1 very cool … 6 too hot)&lt;/strong&gt; 6.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Huglin index, Climate class (1 very cool … 6 too hot) and Contribution per day are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Mean daily maximum to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Mean daily maximum, Mean daily temperature and Base temperature measured, Huglin index and Climate class (1 very cool … 6 too hot) wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cricket-chirp-thermometer">Crickets chirping thermometer Calculator</a>, <a href="/biology/crop-coefficient">Crop Coefficient Calculator</a> and <a href="/biology/crop-water-requirement">Crop Water Requirement (ETc) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What Huglin index suits Cabernet Sauvignon?', 'a' => 'About 2 100–2 400, which is why it struggles to ripen in cool maritime climates.'],
-            ['q' => 'Is Huglin better than growing degree days?', 'a' => 'For viticulture it usually is, because the extra weight on daytime heat matches ripening better than a plain mean.'],
-            ['q' => 'What does the Huglin Index actually calculate?', 'a' => <<<'TXT'
-            It returns contribution per day, huglin index and climate class (1 very cool … 6 too hot). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Huglin Index calculator work out?', 'a' => <<<'TXT'
+            Huglin index, Climate class (1 very cool … 6 too hot) and Contribution per day, from Daylength coefficient (K), Mean daily maximum, Base temperature and Mean daily temperature. The relationship is Contribution per day = Daylength coefficient (K) × ((max(0,Mean daily maximum − Base temperature) + max(0,Mean daily temperature − Base temperature)) ÷ 2).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Mean daily maximum (°C), Mean daily temperature (°C), Base temperature (°C), Days in the growing period (days), Daylength coefficient (K). With tmax, tmean and base in place, Huglin index can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Contribution per day, Huglin index and Climate class (1 very cool … 6 too hot) blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Contribution per day = 12.24 °C·day, Huglin index = 2203 and Climate class (1 very cool … 6 too hot) = 4. The figures come from Mean daily maximum as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Huglin index is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Mean daily maximum blank and the page solves for it, reporting Huglin index instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Huglin index keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cricket-chirp-thermometer', 'name' => 'Crickets chirping thermometer Calculator'],
+            ['path' => '/biology/crop-coefficient', 'name' => 'Crop Coefficient Calculator'],
+            ['path' => '/biology/crop-water-requirement', 'name' => 'Crop Water Requirement (ETc) Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

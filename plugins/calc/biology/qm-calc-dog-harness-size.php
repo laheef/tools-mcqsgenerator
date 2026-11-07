@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Dog harness size',
-    'meta' => ['title' => 'Dog harness size — Formula, Steps & Examples', 'description' => 'Supply the weight and the girth and the Dog harness size calculator solves for <strong>min weight print</strong>. The Dog harness size calculator takes the…', 'h1' => 'Dog harness size Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog harness size — Formula, Steps & Examples', 'description' => <<<'TXT'
+    Dog harness size works out minWeightPrint and maxWeightPrint from 🐾 Weight, 🐕 Girth and Min weight print imperial. Chest circumference, measured by wrapping a…
+    TXT, 'h1' => 'Dog harness size Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'girth' => [
@@ -356,67 +358,43 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'Supply the weight and the girth and the Dog harness size calculator solves for <strong>min weight print</strong>.',
+        'intro' => <<<'TXT'
+        Dog harness size works out minWeightPrint and maxWeightPrint from 🐾 Weight, 🐕 Girth and Min weight print imperial. Nothing is looked up on this page: minWeightPrint is computed from 🐾 Weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Dog harness size calculator work?', 'html' => <<<'TXT'
-            <p>The Dog harness size calculator takes the values in the form, applies the relationship described below and reports <strong>min weight print</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the weight and the girth.</p>
+            ['title' => 'How the Dog harness size calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Dog harness size: it takes 6 numbers and reports minWeightPrint, maxWeightPrint and minGirthPrint.</p><p>Written with the labels from the form, minWeightPrint = get_minWeight(🐕 Girth).</p><p>The answers are minWeightPrint, maxWeightPrint, minGirthPrint and maxGirthPrint; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Girth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Min girth print</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Max girth print</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Min weight print</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Max weight print</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 6 boxes and the page has everything it needs.</p><ul><li><strong>🐾 Weight</strong> — in kilograms</li><li><strong>🐕 Girth</strong> — in centimeters. Chest circumference, measured by wrapping a tailor&#039;s tape around the widest area of the dog&#039;s chest.</li><li><strong>Min weight print imperial</strong> — in pounds</li><li><strong>Max weight print imperial</strong> — in pounds</li><li><strong>Min girth print imperial</strong> — in inches</li><li><strong>Max girth print imperial</strong> — in inches</li></ul><p>The answers come back as minWeightPrint, maxWeightPrint, minGirthPrint, maxGirthPrint. </p>
             TXT],
-            ['title' => 'The formula behind the Dog harness size calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Min weight print</span><span class="formula-eq">=</span><span class="formula-rhs">(girth)</span></div><div class="formula-row"><span class="formula-lhs">Max weight print</span><span class="formula-eq">=</span><span class="formula-rhs">(girth)</span></div><div class="formula-row"><span class="formula-lhs">Min girth print</span><span class="formula-eq">=</span><span class="formula-rhs">(weight)</span></div><div class="formula-row"><span class="formula-lhs">Max girth print</span><span class="formula-eq">=</span><span class="formula-rhs">(weight)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>minWeightPrint</strong> = <code>get_minWeight(🐕 Girth)</code></li><li><strong>maxWeightPrint</strong> = <code>get_maxWeight(🐕 Girth)</code></li><li><strong>minGirthPrint</strong> = <code>get_minGirth(🐾 Weight)</code></li><li><strong>maxGirthPrint</strong> = <code>get_maxGirth(🐾 Weight)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of minWeightPrint, maxWeightPrint and minGirthPrint can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> 🐾 Weight, 🐕 Girth and Min weight print imperial carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> minWeightPrint, maxWeightPrint and minGirthPrint are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert 🐾 Weight to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li><li>Mass, opening in pounds</li><li>Mass, opening in pounds</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog harness size calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 2 figures keep coming back — the weight and the girth — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Dog harness size calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — weight for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-heat-cycle">Dog heat cycle</a>, <a href="/biology/dog-life-expectancy">Dog life expectancy</a> and <a href="/biology/dog-metacam">Dog Metacam dosage</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are 🐾 Weight, 🐕 Girth and Min weight print imperial and the number you are missing is minWeightPrint and maxWeightPrint.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/bacterial-growth-curve">Bacterial Growth Curve (generation time) Calculator</a>, <a href="/biology/basal-area">Basal area Calculator</a> and <a href="/biology/basal-metabolic-rate">Basal Metabolic Rate (Mifflin–St Jeor) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Dog harness size calculator work out?', 'a' => <<<'TXT'
-            It returns min weight print, derived from the weight and the girth. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Dog harness size calculator work out?', 'a' => 'minWeightPrint, maxWeightPrint, minGirthPrint and maxGirthPrint, from 🐕 Girth. The relationship is minWeightPrint = get_minWeight(🐕 Girth).'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            🐾 Weight (kilograms), 🐕 Girth (centimeters), Min weight print imperial (pounds), Max weight print imperial (pounds), Min girth print imperial (inches). With weight, girth and minWeightPrint_imperial in place, minWeightPrint can stay blank and the page will work it out.
             TXT],
-            ['q' => 'What do I need to enter to use the Dog harness size calculator?', 'a' => <<<'TXT'
-            The form asks for the weight and the girth, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. minWeightPrint, maxWeightPrint, minGirthPrint and maxGirthPrint can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I enter weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Is the Dog harness size calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of minWeightPrint is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave 🐾 Weight blank and the page solves for it, reporting minWeightPrint instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of minWeightPrint keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-heat-cycle', 'name' => 'Dog heat cycle'],
-            ['path' => '/biology/dog-life-expectancy', 'name' => 'Dog life expectancy'],
-            ['path' => '/biology/dog-metacam', 'name' => 'Dog Metacam dosage'],
+            ['path' => '/biology/bacterial-growth-curve', 'name' => 'Bacterial Growth Curve (generation time) Calculator'],
+            ['path' => '/biology/basal-area', 'name' => 'Basal area Calculator'],
+            ['path' => '/biology/basal-metabolic-rate', 'name' => 'Basal Metabolic Rate (Mifflin–St Jeor) Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -12,7 +12,7 @@
 return [
     'name' => 'Allometric Equation Calculator',
     'meta' => ['title' => 'Allometric Equation Calculator — Formula & Results', 'description' => <<<'TXT'
-    An allometric equation scales a trait as a power of body mass: Y = aM^b. It returns predicted value, log₁₀ of the prediction, change for a doubling of mass…
+    Allometric Equation works out Predicted value and log₁₀ of the prediction from Coefficient (a), Exponent (b) and Body mass. There is no hidden constant here…
     TXT, 'h1' => 'Allometric Equation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
@@ -88,46 +88,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        An allometric equation scales a trait as a power of body mass: Y = aM^b. It returns predicted value, log₁₀ of the prediction, change for a doubling of mass and predicted surface exponent, and the panel shows all of them at once.
-        
-        The exponent is the interesting part — 0.75 for metabolic rate, 1 for volume, 0.67 for surface area — and this calculator applies any allometric equation, reports the exponent's meaning and converts between log and linear forms.
+        Allometric Equation works out Predicted value and log₁₀ of the prediction from Coefficient (a), Exponent (b) and Body mass. There is no hidden constant here: change Predicted value and Coefficient (a) moves with it.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Allometric Equation', 'html' => <<<'TXT'
-            <p>Y = a × M^b</p>
-            <figure class="calc-figure"><img src="/uploads/biology/allometric-equation.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Allometric Equation Calculator — A power law on linear axes, and the same line on log axes." title="Allometric Equation Calculator"><figcaption>A power law on linear axes, and the same line on log axes.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>a</code></td><td>coefficient, in units of Y per M^b</td><td>—</td></tr><tr><td><code>b</code></td><td>scaling exponent</td><td>—</td></tr><tr><td><code>M</code></td><td>body mass</td><td>kg</td></tr><tr><td><code>Y</code></td><td>the trait being predicted</td><td>trait units</td></tr></tbody></table>
+            ['title' => 'How the Allometric Equation calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Allometric Equation: it takes 3 numbers and reports Predicted value, log₁₀ of the prediction and Change for a doubling of mass.</p><p>The relationship it solves reads Predicted value = Coefficient (a) × (Body mass)^(Exponent (b)).</p><p>The answers are Predicted value, log₁₀ of the prediction, Change for a doubling of mass and Predicted surface exponent; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Allometric Equation?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Coefficient (a)</strong> — a plain number, no unit. From the published equation</li><li><strong>Exponent (b)</strong> — a plain number, no unit</li><li><strong>Body mass</strong> — in kg</li></ul><p>What you get back is Predicted value, log₁₀ of the prediction, Change for a doubling of mass in ×, Predicted surface exponent, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: coefficient (a) of <strong>3.4</strong>, exponent (b) of <strong>0.75</strong>, body mass of <strong>70</strong> kg.</p>
-            <p>Substituting them into the formula gives predicted value of <strong>82.28</strong>, log₁₀ of the prediction of <strong>1.92</strong>, change for a doubling of mass of <strong>1.68</strong> ×, predicted surface exponent of <strong>0.67</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Coefficient (a) = 3.4, Exponent (b) = 0.75 and Body mass = 70 kg; the answers are &lt;strong&gt;Predicted value&lt;/strong&gt; = 82.28, &lt;strong&gt;log₁₀ of the prediction&lt;/strong&gt; = 1.92, &lt;strong&gt;Change for a doubling of mass&lt;/strong&gt; = 1.68 × and &lt;strong&gt;Predicted surface exponent&lt;/strong&gt; = 0.67.</p><ul><li><strong>Predicted value</strong> = 82.28</li><li><strong>log₁₀ of the prediction</strong> = 1.92</li><li><strong>Change for a doubling of mass</strong> = 1.68 ×</li><li><strong>Predicted surface exponent</strong> = 0.67</li></ul><p>That is <strong>Predicted value</strong> = <code>Coefficient (a) × (Body mass)^(Exponent (b))</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>b ≈ 0.67</td><td><strong>Surface scaling</strong></td><td>areas scale slower than volume</td></tr><tr><td>b ≈ 0.75</td><td><strong>Metabolic scaling</strong></td><td>Kleiber's law for metabolic rate</td></tr><tr><td>b ≈ 1.0</td><td><strong>Isometric</strong></td><td>the trait scales in proportion to mass</td></tr></tbody></table>
-            <ul><li><p>An exponent below 1 means the trait grows slower than mass: bigger animals have relatively lower metabolic rates per kilogram.</p></li><li><p>Coefficients are unit-specific — a mouse-to-elephant equation in kg cannot be fed grams.</p></li><li><p>Log–log plots turn the equation into a straight line whose slope is b and intercept is log a, which is how the parameters are actually fitted.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Predicted value&lt;/strong&gt; = 82.28, &lt;strong&gt;log₁₀ of the prediction&lt;/strong&gt; = 1.92, &lt;strong&gt;Change for a doubling of mass&lt;/strong&gt; = 1.68 and &lt;strong&gt;Predicted surface exponent&lt;/strong&gt; = 0.67. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Predicted value is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Fitting a straight line to untransformed data and calling the slope an exponent.</li><li>Using a coefficient published in different units.</li><li>Extrapolating far beyond the size range the equation was fitted over.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Predicted value</strong> = <code>Coefficient (a) × (Body mass)^(Exponent (b))</code></li><li><strong>log₁₀ of the prediction</strong> = <code>log₁₀(Coefficient (a) × (Body mass)^(Exponent (b)))</code></li><li><strong>Change for a doubling of mass</strong> = <code>(2)^(Exponent (b))</code></li><li><strong>Predicted surface exponent</strong> = <code>0.67</code></li></ul><p>Any one of Predicted value, log₁₀ of the prediction and Change for a doubling of mass can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Coefficient (a) from 3.4 to 6.8, leaving every other box alone. The panel moves from &lt;strong&gt;Predicted value&lt;/strong&gt; 82.28, &lt;strong&gt;log₁₀ of the prediction&lt;/strong&gt; 1.92, &lt;strong&gt;Change for a doubling of mass&lt;/strong&gt; 1.68 × and &lt;strong&gt;Predicted surface exponent&lt;/strong&gt; 0.67 to &lt;strong&gt;Predicted value&lt;/strong&gt; 165, &lt;strong&gt;log₁₀ of the prediction&lt;/strong&gt; 2.22, &lt;strong&gt;Change for a doubling of mass&lt;/strong&gt; 1.68 × and &lt;strong&gt;Predicted surface exponent&lt;/strong&gt; 0.67.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Predicted value, log₁₀ of the prediction and Change for a doubling of mass are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Coefficient (a) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Coefficient (a), Exponent (b) and Body mass measured, Predicted value and log₁₀ of the prediction wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/mic-zone-of-inhibition">MIC and Zone of Inhibition Calculator</a>, <a href="/biology/microscope-field-of-view">Microscope Field of View Calculator</a> and <a href="/biology/microscope-magnification">Microscope Magnification Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is Kleiber\'s law?', 'a' => 'Metabolic rate scales as mass^0.75, so a tenfold heavier animal uses about 5.6 times the energy.'],
-            ['q' => 'Why do exponents cluster at 3/4?', 'a' => 'Because transport networks — blood vessels, tracheae, xylem — constrain how fast resources can reach tissue as body size grows.'],
-            ['q' => 'What does the Allometric Equation actually calculate?', 'a' => <<<'TXT'
-            It returns predicted value, log₁₀ of the prediction, change for a doubling of mass and predicted surface exponent. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Allometric Equation calculator work out?', 'a' => <<<'TXT'
+            Predicted value, log₁₀ of the prediction, Change for a doubling of mass and Predicted surface exponent, from Coefficient (a), Body mass and Exponent (b). The relationship is Predicted value = Coefficient (a) × (Body mass)^(Exponent (b)).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Coefficient (a), Exponent (b), Body mass (kg). With a, b and mass in place, Predicted value can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Predicted value, log₁₀ of the prediction, Change for a doubling of mass and Predicted surface exponent blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Predicted value = 82.28, log₁₀ of the prediction = 1.92, Change for a doubling of mass = 1.68 × and Predicted surface exponent = 0.67. The figures come from Coefficient (a) as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Predicted value is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Coefficient (a) blank and the page solves for it, reporting Predicted value instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Predicted value at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mic-zone-of-inhibition', 'name' => 'MIC and Zone of Inhibition Calculator'],
+            ['path' => '/biology/microscope-field-of-view', 'name' => 'Microscope Field of View Calculator'],
+            ['path' => '/biology/microscope-magnification', 'name' => 'Microscope Magnification Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

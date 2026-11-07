@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Reverse Complement Calculator',
-    'meta' => ['title' => 'Reverse Complement Calculator — Formula & Results', 'description' => <<<'TXT'
-    The reverse complement is the other strand of a DNA molecule written 5′ to 3′: read the sequence backwards and swap every base for its partner (A↔T, G↔C).
-    TXT, 'h1' => 'Reverse Complement Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Reverse Complement Calculator — Formula & Results', 'description' => 'Reverse Complement works out Length and GC content from Sequence, Alphabet and Base pairs per line. The arithmetic is the whole method: Length is worked out…', 'h1' => 'Reverse Complement Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -216,40 +214,39 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The reverse complement is the other strand of a DNA molecule written 5′ to 3′: read the sequence backwards and swap every base for its partner (A↔T, G↔C). It returns length, gc content and melting temperature of the duplex, and the panel shows all of them at once.
-        
-        It is the first step of primer design, of checking that a sequencing read maps to the strand you expect, and of turning a gene's coding sequence into the template you will actually order.
+        Reverse Complement works out Length and GC content from Sequence, Alphabet and Base pairs per line. The arithmetic is the whole method: Length is worked out from Sequence by one formula, applied once. Length comes back in bp unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Reverse Complement', 'html' => <<<'TXT'
-            <p>Reverse complement: read 3′→5′ and pair A·T, G·C. GC% = (G + C) ÷ length × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/reverse-complement.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Reverse Complement Calculator — Hydrogen bonds per base pair" title="Reverse Complement Calculator"><figcaption>Hydrogen bonds per base pair</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>5′</code></td><td>the end with a free phosphate</td><td>—</td></tr><tr><td><code>3′</code></td><td>the end with a free hydroxyl</td><td>—</td></tr><tr><td><code>revcomp</code></td><td>the opposite strand, written 5′→3′</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Reverse Complement calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Reverse Complement: it takes 3 numbers and reports Length, GC content and Melting temperature of the duplex.</p><p>What comes back is Length, GC content and Melting temperature of the duplex — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Reverse Complement?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste DNA; spaces, line breaks and FASTA headers are ignored</li><li><strong>Alphabet</strong> — a plain number, no unit</li><li><strong>Base pairs per line</strong> — a plain number, no unit. 0 for one line</li></ul><p>What you get back is Length in bp, GC content in %, Melting temperature of the duplex in °C, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>A ↔ T</td><td><strong>DNA pairing</strong></td><td>two hydrogen bonds</td></tr><tr><td>G ↔ C</td><td><strong>DNA pairing</strong></td><td>three hydrogen bonds, which is why GC-rich duplexes melt higher</td></tr><tr><td>A ↔ U</td><td><strong>RNA pairing</strong></td><td>RNA has uracil where DNA has thymine</td></tr></tbody></table>
-            <ul><li><p>A reverse complement is not a palindrome: the reverse complement of ATGC is GCAT, and the reverse alone would be CGTA.</p></li><li><p>Ambiguity codes are handled properly — R (A or G) pairs with Y (C or T), S with S, W with W, K with M, B with V, D with H, and N with N.</p></li><li><p>The translation tools on this site take the reverse complement as input when you need the protein from the opposite strand.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Reversing without complementing (or the other way round) — both are common and both give a sequence that looks plausible.</li><li>Forgetting that a primer is written 5′→3′ and its template binding site is the reverse complement of the primer.</li><li>Pasting an alignment with gaps into a tool that does not strip them.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Length, GC content and Melting temperature of the duplex are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Sequence to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Sequence, Alphabet and Base pairs per line and the number you are missing is Length and GC content.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/enzyme-specific-activity-yield">Enzyme Kinetics: Specific Activity and Yield Calculator</a>, <a href="/biology/enzyme-unit-converter">Enzyme Unit Converter (U/mg, kcat) Calculator</a> and <a href="/biology/exponential-population-growth">Exponential Population Growth Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is the reverse complement of ATGGCC?', 'a' => 'GGCCAT — read backwards (CCGGTA) and swap each base for its partner.'],
-            ['q' => 'Why is the reverse complement used instead of the reverse?', 'a' => 'Because DNA is antiparallel: the other strand runs in the opposite direction, so its sequence must be both reversed and complemented to be written 5′→3′.'],
-            ['q' => 'How do I get the protein from the opposite strand?', 'a' => 'Take the reverse complement, then translate it in frame 1.'],
-            ['q' => 'What does the Reverse Complement actually calculate?', 'a' => 'It returns length, gc content and melting temperature of the duplex. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Reverse Complement calculator work out?', 'a' => 'Length, GC content and Melting temperature of the duplex.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Sequence, Alphabet, Base pairs per line. With sequence, alphabet and width in place, Length can stay blank and the page will work it out.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Internally Length is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Length keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/enzyme-specific-activity-yield', 'name' => 'Enzyme Kinetics: Specific Activity and Yield Calculator'],
+            ['path' => '/biology/enzyme-unit-converter', 'name' => 'Enzyme Unit Converter (U/mg, kcat) Calculator'],
+            ['path' => '/biology/exponential-population-growth', 'name' => 'Exponential Population Growth Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

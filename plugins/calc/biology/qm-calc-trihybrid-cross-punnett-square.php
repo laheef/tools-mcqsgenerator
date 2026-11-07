@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Trihybrid cross Punnett square',
-    'meta' => ['title' => 'Trihybrid cross Punnett square — Formula & Results', 'description' => <<<'TXT'
-    The Trihybrid cross Punnett square calculator takes the numbers you enter and reports <strong>Aabb cc</strong> immediately. The Trihybrid cross Punnett square…
-    TXT, 'h1' => 'Trihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
+    'meta' => ['title' => 'Trihybrid cross Punnett square — Formula & Results', 'description' => 'Trihybrid cross Punnett square takes Trait 1, Trait 2 and Trait 3 and returns AABBCC and AABBCc. There is no hidden constant here: change AABBCC and Trait 1…', 'h1' => 'Trihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
     'raw' => [
         'vars' => [
             'AABBCC' => [
@@ -1138,56 +1136,46 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'The Trihybrid cross Punnett square calculator takes the numbers you enter and reports <strong>Aabb cc</strong> immediately.',
+        'intro' => <<<'TXT'
+        Trihybrid cross Punnett square takes Trait 1, Trait 2 and Trait 3 and returns AABBCC and AABBCc. There is no hidden constant here: change AABBCC and Trait 1 moves with it. The main result, AABBCC, is reported in %.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Trihybrid cross Punnett square calculator work?', 'html' => <<<'TXT'
-            <p>The Trihybrid cross Punnett square calculator takes the values in the form, applies the relationship described below and reports <strong>Aabb cc</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the trait 1 (Mother's traits), the trait 2 (Mother's traits) and the trait 3 (Mother's traits)).</p>
+            ['title' => 'How the Trihybrid cross Punnett square calculator works', 'html' => <<<'TXT'
+            <p>The Trihybrid cross Punnett square calculator applies one relationship to 6 numbers and reports AABBCC, AABBCc and AABBcc.</p><p>Written with the labels from the form, AABBCC = get_chance_a(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3).</p><p>What comes back is AABBCC, AABBCc, AABBcc and AABbCC — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as AA, aa and aa. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as BB, bb and bb. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as CC, cc and cc. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as AA, aa and aa. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as BB, bb and bb. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as CC, cc and cc. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>6 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 6 boxes and the page has everything it needs.</p><ul><li><strong>Trait 1</strong> — a plain number, no unit</li><li><strong>Trait 2</strong> — a plain number, no unit</li><li><strong>Trait 3</strong> — a plain number, no unit</li><li><strong>Trait 1</strong> — a plain number, no unit</li><li><strong>Trait 2</strong> — a plain number, no unit</li><li><strong>Trait 3</strong> — a plain number, no unit</li></ul><p>The result boxes are AABBCC in %, AABBCc in %, AABBcc in %, AABbCC in %, AABbCc in %, AABbcc in %, AAbbCC in %, AAbbCc in %, AAbbcc in %, AaBBCC in %, AaBBCc in %, AaBBcc in %, AaBbCC in %, AaBbCc in %, AaBbcc in %, AabbCC in %, AabbCc in %, Aabbcc in %, aaBBCC in %, aaBBCc in %, aaBBcc in %, aaBbCC in %, aaBbCc in %, aaBbcc in %, aabbCC in %, aabbCc in %, aabbcc in %; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Trait 1 (Mother's traits)</strong></td><td>One of 3 options, such as AA, aa and aa.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trait 2 (Mother's traits)</strong></td><td>One of 3 options, such as BB, bb and bb.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trait 3 (Mother's traits)</strong></td><td>One of 3 options, such as CC, cc and cc.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trait 1 (Father's traits)</strong></td><td>One of 3 options, such as AA, aa and aa.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trait 2 (Father's traits)</strong></td><td>One of 3 options, such as BB, bb and bb.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trait 3 (Father's traits)</strong></td><td>One of 3 options, such as CC, cc and cc.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bbCC (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bbCc (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bbcc (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bbCC (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bbCc (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bbcc (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb cc (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabbcc (Offspring genotype frequency)</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr></tbody></table><p>The table lists the first 24 of 33 fields; the rest follow the same pattern.</p>
+            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: AABBCC takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>AABBCC</strong> = <code>get_chance_a(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3)</code></li><li><strong>AABbCC</strong> = <code>get_chance_b(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3)</code></li><li><strong>AaBbCC</strong> = <code>get_chance_c(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3)</code></li><li><strong>AaBBCC</strong> = <code>get_chance_d(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3)</code></li><li><strong>AabbCC</strong> = <code>get_chance_e(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3)</code></li><li><strong>AAbbCC</strong> = <code>get_chance_f(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3)</code></li></ul><p>Any one of AABBCC, AABbCC and AaBbCC can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with AABBCC, AABBCc and AABBcc are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Trait 1 and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Trihybrid cross Punnett square calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Round only at the end. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/turtle-tank">Turtle tank</a>, <a href="/biology/vapor-pressure-deficit">Vapor pressure deficit</a> and <a href="/biology/vegetable-seed">Vegetable seed</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Trait 1, Trait 2 and Trait 3 is what you already know and AABBCC and AABBCc is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/cephalexin-for-dogs-dosage">Cephalexin for dogs dosage Calculator</a>, <a href="/biology/cephalic-index">Cephalic Index Calculator</a> and <a href="/biology/cfu-g-calculator">CFU/g Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Trihybrid cross Punnett square calculator work out?', 'a' => <<<'TXT'
-            It returns AABBCC. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            AABBCC, AABBCc, AABBcc and AABbCC, from Trait 1, Trait 2, Trait 3 and Trait 1. The relationship is AABBCC = get_chance_a(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3).
             TXT],
-            ['q' => 'What do I need to enter to use the Trihybrid cross Punnett square calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Trait 1, Trait 2, Trait 3, Trait 1, Trait 2. With mother1, mother2 and mother3 in place, AABBCC can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of AABBCC, AABbCC, AaBbCC and AaBBCC blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            AABBCC is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Trait 1 left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Is the Trihybrid cross Punnett square calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of AABBCC keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/turtle-tank', 'name' => 'Turtle tank'],
-            ['path' => '/biology/vapor-pressure-deficit', 'name' => 'Vapor pressure deficit'],
-            ['path' => '/biology/vegetable-seed', 'name' => 'Vegetable seed'],
+            ['path' => '/biology/cephalexin-for-dogs-dosage', 'name' => 'Cephalexin for dogs dosage Calculator'],
+            ['path' => '/biology/cephalic-index', 'name' => 'Cephalic Index Calculator'],
+            ['path' => '/biology/cfu-g-calculator', 'name' => 'CFU/g Calculator'],
         ],
+        'authors' => [],
     ],
 ];

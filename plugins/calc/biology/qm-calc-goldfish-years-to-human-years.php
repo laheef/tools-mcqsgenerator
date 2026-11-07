@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Goldfish Years to Human Years Calculator',
-    'meta' => ['title' => 'Goldfish Years to Human Years Calculator — Biology', 'description' => 'A goldfish in a bowl lives a couple of years; the same fish in a large, filtered tank can reach twenty. It returns human-equivalent age, share of a 20-year…', 'h1' => 'Goldfish Years to Human Years Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Goldfish Years to Human Years Calculator — Biology', 'description' => 'Goldfish Years to Human Years works out Human-equivalent age and Share of a 20-year lifespan from Goldfish age. It is a single relationship that reads…', 'h1' => 'Goldfish Years to Human Years Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -58,48 +58,47 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A goldfish in a bowl lives a couple of years; the same fish in a large, filtered tank can reach twenty. It returns human-equivalent age, share of a 20-year lifespan and goldfish age, and the panel shows all of them at once.
-        
-        This calculator converts its age to a human-equivalent using the usual published rule of thumb — 16.5 years at age one, then 4 years per fish year — and shows how far through a typical lifespan it is.
+        Goldfish Years to Human Years works out Human-equivalent age and Share of a 20-year lifespan from Goldfish age. It is a single relationship that reads Human-equivalent age out of Goldfish age, not a table of canned results keyed by them. Units for Human-equivalent age default to years and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Goldfish Years to Human Years', 'html' => <<<'TXT'
-            <p>Human-equivalent age = 16.5 + (goldfish age − 1) × 4, with 16.5 × age for the first year</p>
-            <figure class="calc-figure"><img src="/uploads/biology/goldfish-years-to-human-years.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Goldfish Years to Human Years Calculator — Fish years against human-equivalent years." title="Goldfish Years to Human Years Calculator"><figcaption>Fish years against human-equivalent years.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>years</code></td><td>the fish's age</td><td>years</td></tr><tr><td><code>human</code></td><td>human-equivalent age</td><td>years</td></tr><tr><td><code>lifespan</code></td><td>age as a share of a 20-year lifespan</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Goldfish Years to Human Years calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Goldfish Years to Human Years: it takes 1 number and reports Human-equivalent age and Share of a 20-year lifespan.</p><p>In the form&#039;s own words, Human-equivalent age = if_else(Goldfish age&lt;=1, Goldfish age × 16.5, 16.5 + (Goldfish age − 1) × 4).</p><p>The result panel carries Human-equivalent age and Share of a 20-year lifespan, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Goldfish Years to Human Years?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>Goldfish age</strong> — in years. Use 0.5 for six months</li></ul><p>The answers come back as Human-equivalent age in years, Share of a 20-year lifespan in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives human-equivalent age of <strong>24.5</strong> years, share of a 20-year lifespan of <strong>15</strong>%, goldfish age of <strong>3</strong> years.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Human-equivalent age is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 – 0.25</td><td><strong>Fry</strong></td><td>first months, high mortality</td></tr><tr><td>0.5 – 1</td><td><strong>Juvenile</strong></td><td>body shape still developing</td></tr><tr><td>2 – 8</td><td><strong>Adult</strong></td><td>the long healthy middle</td></tr><tr><td>10 and over</td><td><strong>Old</strong></td><td>growth has stopped, colour fades</td></tr></tbody></table>
-            <ul><li><p>The number is a comparison, not a forecast. Housing decides goldfish lifespan far more than genetics: 40 litres for the first fish plus 20 per additional one, filtered and cycled.</p></li><li><p>Growth rings on scales can be read like tree rings to age a fish properly; the conversion here starts from that age.</p></li><li><p>Fancy varieties with rounded bodies generally live shorter lives than common goldfish.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Human-equivalent age</strong> = <code>if_else(Goldfish age&lt;=1, Goldfish age × 16.5, 16.5 + (Goldfish age − 1) × 4)</code></li><li><strong>Share of a 20-year lifespan</strong> = <code>Goldfish age ÷ 20 × 100</code></li><li><strong>Goldfish age</strong> = <code>if_else(Human-equivalent age&lt;=16.5, Human-equivalent age ÷ 16.5, 1 + (Human-equivalent age − 16.5) ÷ 4)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Human-equivalent age, Share of a 20-year lifespan and Goldfish age can be the unknown.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Entering months as years for a young fish, which exaggerates the equivalent age enormously.</li><li>Reading the human-equivalent age as a lifespan prediction from a bowl — in a bowl, the fish rarely reaches the years the conversion assumes.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Human-equivalent age and Share of a 20-year lifespan are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Goldfish age is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/fish-density">Fish density</a>. <a href="/biology/fish-condition-factor">Fish condition factor</a>. <a href="/biology/chicken-years-to-human-years">Chicken years to human years</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Goldfish age and the number you are missing is Human-equivalent age and Share of a 20-year lifespan.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/cheng-prusoff-equation">Cheng-Prusoff Equation Calculator</a>, <a href="/biology/chi-square-genetics-test">Chi-Square Test for Genetics Calculator</a> and <a href="/biology/chicken-density">Chicken Density Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long do goldfish live?', 'a' => 'Ten to twenty years in adequate housing, and often two to five in an unfiltered bowl.'],
-            ['q' => 'Does tank size change the conversion?', 'a' => 'It changes the expected lifespan, which is the second number the calculator shows; the conversion factor itself stays the same.'],
-            ['q' => 'What does the Goldfish Years to Human Years actually calculate?', 'a' => <<<'TXT'
-            It returns human-equivalent age, share of a 20-year lifespan and goldfish age. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Goldfish Years to Human Years calculator work out?', 'a' => <<<'TXT'
+            Human-equivalent age and Share of a 20-year lifespan, from Goldfish age. The relationship is Human-equivalent age = if_else(Goldfish age<=1, Goldfish age × 16.5, 16.5 + (Goldfish age − 1) × 4).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Goldfish age (years). Enter years; Human-equivalent age is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Human-equivalent age, Share of a 20-year lifespan and Goldfish age can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Human-equivalent age is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Goldfish age left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Human-equivalent age keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cheng-prusoff-equation', 'name' => 'Cheng-Prusoff Equation Calculator'],
+            ['path' => '/biology/chi-square-genetics-test', 'name' => 'Chi-Square Test for Genetics Calculator'],
+            ['path' => '/biology/chicken-density', 'name' => 'Chicken Density Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

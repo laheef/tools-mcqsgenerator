@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Cephalic Index Calculator',
-    'meta' => ['title' => 'Cephalic Index Calculator — Formula & Results', 'description' => 'The cephalic index is the width of the head expressed as a percentage of its length, the standard measure used to describe head shape in anthropology…', 'h1' => 'Cephalic Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cephalic Index Calculator — Formula & Results', 'description' => <<<'TXT'
+    Cephalic Index works out Cephalic index and Width to length ratio from Head width (biparietal) and Head length (fronto-occipital). There is no hidden constant…
+    TXT, 'h1' => 'Cephalic Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -66,49 +68,49 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The cephalic index is the width of the head expressed as a percentage of its length, the standard measure used to describe head shape in anthropology, paediatrics and ergonomics. It returns cephalic index, width to length ratio, head width (biparietal) and head length (fronto-occipital), and the panel shows all of them at once.
-        
-        Enter the two diameters and it returns the index together with the shape category the value falls into.
+        Cephalic Index works out Cephalic index and Width to length ratio from Head width (biparietal) and Head length (fronto-occipital). There is no hidden constant here: change Cephalic index and Head width (biparietal) moves with it. The main result, Cephalic index, is reported in %.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Cephalic Index', 'html' => <<<'TXT'
-            <p>Cephalic index = (head width ÷ head length) × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cephalic-index.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Cephalic Index Calculator — The index plotted on the conventional shape scale." title="Cephalic Index Calculator"><figcaption>The index plotted on the conventional shape scale.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>width</code></td><td>maximum transverse diameter</td><td>mm</td></tr><tr><td><code>length</code></td><td>maximum anteroposterior diameter</td><td>mm</td></tr><tr><td><code>index</code></td><td>width as a percentage of length</td><td>%</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Boundaries follow the conventional anthropometric classification (Retzius, 1842; modern cut-offs in Martin & Saller).</p>
+            ['title' => 'How the Cephalic Index calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Cephalic Index: it takes 2 numbers and reports Cephalic index and Width to length ratio.</p><p>The relationship it solves reads Cephalic index = Head width (biparietal) ÷ Head length (fronto-occipital) × 100.</p><p>What comes back is Cephalic index and Width to length ratio — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Cephalic Index?', 'html' => <<<'TXT'
-            <ol><li>Measure head width across the widest part of the skull, above the ears.</li><li>Measure head length from the brow ridge to the furthest point at the back.</li><li>Enter both in the same unit — the index is dimensionless, so millimetres or centimetres both work, but never one of each.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Head width (biparietal)</strong> — in mm. Widest transverse diameter of the head</li><li><strong>Head length (fronto-occipital)</strong> — in mm. Glabella to the most posterior point</li></ul><p>What you get back is Cephalic index in %, Width to length ratio, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives cephalic index of <strong>78.95</strong>%, width to length ratio of <strong>0.7895</strong>, head width (biparietal) of <strong>150</strong> mm, head length (fronto-occipital) of <strong>190</strong> mm.</p>
-            <p>A head 150 mm wide and 190 mm long gives 78.9 — mesocephalic, the middle of the usual adult range.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Cephalic index is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 75</td><td><strong>Dolichocephalic</strong></td><td>long and narrow head</td></tr><tr><td>75 – 79.9</td><td><strong>Mesocephalic</strong></td><td>average, the usual human range</td></tr><tr><td>80 – 84.9</td><td><strong>Brachycephalic</strong></td><td>short and broad head</td></tr><tr><td>85 and above</td><td><strong>Hyperbrachycephalic</strong></td><td>markedly broad head</td></tr></tbody></table>
-            <ul><li><p>The index describes shape, not size, and it is normal for it to differ between populations and between men and women within the same population.</p></li><li><p>In infants the index is naturally higher, because the skull is still broad relative to its length; adult bands do not apply before about two years of age.</p></li><li><p>Ergonomics uses the same number to size helmets and headphones, where the length matters more than the index itself.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Cephalic index</strong> = <code>Head width (biparietal) ÷ Head length (fronto-occipital) × 100</code></li><li><strong>Width to length ratio</strong> = <code>Head width (biparietal) ÷ Head length (fronto-occipital)</code></li><li><strong>Head width (biparietal)</strong> = <code>Cephalic index × Head length (fronto-occipital) ÷ 100</code></li><li><strong>Head length (fronto-occipital)</strong> = <code>Head width (biparietal) ÷ Cephalic index × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Cephalic index, Width to length ratio and Head width (biparietal) can be the unknown.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Mixing units: 150 mm of width with 19 cm of length gives an index ten times too small.</li><li>Using head circumference as the width or the length. Circumference is a different measure and cannot be substituted into this ratio.</li><li>Treating a high index as a diagnosis. Brachycephaly is a shape, and only a clinician can say whether a particular skull shape is a medical finding.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Cephalic index and Width to length ratio are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Head width (biparietal) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Head width (biparietal) and Head length (fronto-occipital) and the number you are missing is Cephalic index and Width to length ratio.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/net-primary-productivity">Net Primary Productivity Calculator</a>, <a href="/biology/net-reproductive-rate">Net Reproductive Rate (R₀) Calculator</a> and <a href="/biology/npk-fertilizer-blend">NPK Fertilizer Blend Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Is the cephalic index the same as the cranial index?', 'a' => <<<'TXT'
-            Yes in everyday use. Strictly, the cranial index is measured on the skull and the cephalic index on the living head, which is a few millimetres wider because of soft tissue.
+            ['q' => 'What does the Cephalic Index calculator work out?', 'a' => <<<'TXT'
+            Cephalic index and Width to length ratio, from Head width (biparietal) and Head length (fronto-occipital). The relationship is Cephalic index = Head width (biparietal) ÷ Head length (fronto-occipital) × 100.
             TXT],
-            ['q' => 'What is a normal cephalic index?', 'a' => 'Between about 75 and 85 for adults of most populations. Values outside that range are common in some regions and are not by themselves abnormal.'],
-            ['q' => 'What does the Cephalic Index actually calculate?', 'a' => <<<'TXT'
-            It returns cephalic index, width to length ratio, head width (biparietal) and head length (fronto-occipital). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Head width (biparietal) (mm), Head length (fronto-occipital) (mm). Enter width and length; Cephalic index is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Cephalic index, Width to length ratio, Head width (biparietal) and Head length (fronto-occipital) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Cephalic index is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Head width (biparietal) left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Cephalic index keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/net-primary-productivity', 'name' => 'Net Primary Productivity Calculator'],
+            ['path' => '/biology/net-reproductive-rate', 'name' => 'Net Reproductive Rate (R₀) Calculator'],
+            ['path' => '/biology/npk-fertilizer-blend', 'name' => 'NPK Fertilizer Blend Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

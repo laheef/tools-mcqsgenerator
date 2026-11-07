@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fruit Tree Spacing Calculator',
-    'meta' => ['title' => 'Fruit Tree Spacing Calculator — Formula & Results', 'description' => 'How many fruit trees fit an orchard, and how far apart they should stand. It returns space per tree, trees per hectare, trees to plant and trees of the main…', 'h1' => 'Fruit Tree Spacing Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fruit Tree Spacing Calculator — Formula & Results', 'description' => 'Fruit Tree Spacing turns Orchard area, Between rows and Between trees in the row into Trees to plant and Trees per hectare. A result box can be typed into…', 'h1' => 'Fruit Tree Spacing Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -113,44 +113,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        How many fruit trees fit an orchard, and how far apart they should stand. It returns space per tree, trees per hectare, trees to plant and trees of the main variety, and the panel shows all of them at once.
-        
-        Spacing depends on the rootstock far more than on the variety: a dwarf apple on M9 wants 3 m between trees, the same variety on a seedling rootstock wants 8 m.
+        Fruit Tree Spacing turns Orchard area, Between rows and Between trees in the row into Trees to plant and Trees per hectare. Nothing is looked up on this page: Trees to plant is computed from Orchard area and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Fruit Tree Spacing', 'html' => <<<'TXT'
-            <p>Trees per hectare = 10 000 ÷ (row spacing × in-row spacing). Trees to order = area in ha × trees per hectare</p>
-            <figure class="calc-figure"><img src="/uploads/biology/fruit-tree-spacing.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Fruit Tree Spacing Calculator — Trees per hectare by rootstock vigour" title="Fruit Tree Spacing Calculator"><figcaption>Trees per hectare by rootstock vigour</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>rootstock</code></td><td>the root system a variety is grafted onto; it sets the tree's vigour</td><td>—</td></tr><tr><td><code>in-row spacing</code></td><td>distance between trees in the same row</td><td>m</td></tr><tr><td><code>hedge ratio</code></td><td>row spacing divided by tree spacing</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Fruit Tree Spacing calculator works', 'html' => <<<'TXT'
+            <p>The Fruit Tree Spacing calculator applies one relationship to 4 numbers and reports Trees to plant, Trees per hectare and Space per tree.</p><p>Written with the labels from the form, Space per tree = Between rows × Between trees in the row.</p><p>What comes back is Trees to plant, Trees per hectare, Space per tree and Trees of the main variety — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Fruit Tree Spacing?', 'html' => <<<'TXT'
-            <ol><li>Enter the area you have available in hectares.</li><li>Choose the rootstock vigour — it sets the in-row spacing — and the row spacing your machinery needs.</li><li>The number of trees and the planting density follow.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Orchard area</strong> — in ha</li><li><strong>Between rows</strong> — in m. Usually 1.2–1.5 × the in-row spacing</li><li><strong>Between trees in the row</strong> — in m. 3 m for a dwarf on M9, 7 m on a seedling rootstock</li><li><strong>Pollinator rows</strong> — in %. Every fourth or fifth row, for cross-pollination</li></ul><p>The result boxes are Trees to plant, Trees per hectare in /ha, Space per tree in m², Trees of the main variety, Row spacing ÷ tree spacing; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: orchard area of <strong>1</strong> ha, between rows of <strong>4</strong> m, between trees in the row of <strong>3</strong> m, pollinator rows of <strong>20</strong>%.</p>
-            <p>Substituting them into the formula gives space per tree of <strong>12</strong> m², trees per hectare of <strong>833.33</strong> /ha, trees to plant of <strong>833.33</strong>, trees of the main variety of <strong>666.67</strong>, row spacing ÷ tree spacing of <strong>1.33</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Orchard area = 1 ha, Between rows = 4 m, Between trees in the row = 3 m and Pollinator rows = 20 %; the answers are &lt;strong&gt;Space per tree&lt;/strong&gt; = 12 m², &lt;strong&gt;Trees per hectare&lt;/strong&gt; = 833 /ha, &lt;strong&gt;Trees to plant&lt;/strong&gt; = 833, &lt;strong&gt;Trees of the main variety&lt;/strong&gt; = 667 and &lt;strong&gt;Row spacing ÷ tree spacing&lt;/strong&gt; = 1.33.</p><ul><li><strong>Space per tree</strong> = 12 m²</li><li><strong>Trees per hectare</strong> = 833 /ha</li><li><strong>Trees to plant</strong> = 833</li><li><strong>Trees of the main variety</strong> = 667</li><li><strong>Row spacing ÷ tree spacing</strong> = 1.33</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Space per tree</strong> = <code>Between rows × Between trees in the row</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 000 – 1 500/ha</td><td><strong>Modern intensive</strong></td><td>dwarf trees on a trellis, 3 × 3.5 m</td></tr><tr><td>400 – 800/ha</td><td><strong>Semi-intensive</strong></td><td>M26 or MM106 at 4.5 × 5 m</td></tr><tr><td>100 – 250/ha</td><td><strong>Traditional standard</strong></td><td>seedling rootstock at 7 × 8 m</td></tr></tbody></table>
-            <ul><li><p>Dwarf trees crop earlier and are picked from the ground; standard trees need ladders but live far longer. The choice is about labour, not just yield.</p></li><li><p>Pollination needs two different varieties that flower at the same time, and spacing must leave room for pollinator rows — often every fourth row.</p></li><li><p>The hedge ratio matters for light: keep the row spacing at roughly 1.25 times the tree height that the mature canopy will reach.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Space per tree&lt;/strong&gt; = 12, &lt;strong&gt;Trees per hectare&lt;/strong&gt; = 833, &lt;strong&gt;Trees to plant&lt;/strong&gt; = 833, &lt;strong&gt;Trees of the main variety&lt;/strong&gt; = 667 and &lt;strong&gt;Row spacing ÷ tree spacing&lt;/strong&gt; = 1.33 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Trees to plant takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using the variety's suggested spacing instead of the rootstock's, which is what actually determines vigour.</li><li>Planting too close for the machinery, then having to remove every third tree in year eight.</li><li>Forgetting that a windbreak costs the first and last rows some yield.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Space per tree</strong> = <code>Between rows × Between trees in the row</code></li><li><strong>Trees per hectare</strong> = <code>10000 ÷ (Between rows × Between trees in the row)</code></li><li><strong>Trees to plant</strong> = <code>Orchard area × 10000 ÷ (Between rows × Between trees in the row)</code></li><li><strong>Trees of the main variety</strong> = <code>Orchard area × 10000 ÷ (Between rows × Between trees in the row) × (1 − Pollinator rows ÷ 100)</code></li><li><strong>Row spacing ÷ tree spacing</strong> = <code>Between rows ÷ Between trees in the row</code></li></ul><p>Any one of Space per tree, Trees per hectare and Trees to plant can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Orchard area, from 1 to 2 — and the answers go from &lt;strong&gt;Space per tree&lt;/strong&gt; 12 m², &lt;strong&gt;Trees per hectare&lt;/strong&gt; 833 /ha, &lt;strong&gt;Trees to plant&lt;/strong&gt; 833, &lt;strong&gt;Trees of the main variety&lt;/strong&gt; 667 and &lt;strong&gt;Row spacing ÷ tree spacing&lt;/strong&gt; 1.33 to &lt;strong&gt;Space per tree&lt;/strong&gt; 12 m², &lt;strong&gt;Trees per hectare&lt;/strong&gt; 833 /ha, &lt;strong&gt;Trees to plant&lt;/strong&gt; 1667, &lt;strong&gt;Trees of the main variety&lt;/strong&gt; 1333 and &lt;strong&gt;Row spacing ÷ tree spacing&lt;/strong&gt; 1.33.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Trees to plant, Trees per hectare and Space per tree are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Orchard area and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Orchard area, Between rows and Between trees in the row and the number you are missing is Trees to plant and Trees per hectare.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/mark-recapture">Mark-Recapture Population Calculator</a>, <a href="/biology/mark-recapture-population">Mark–Recapture Population (Lincoln–Petersen) Calculator</a> and <a href="/biology/mass-molarity-conversion">Mass to Molarity Converter Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many apple trees per hectare?', 'a' => 'About 1 100 for dwarf trees at 3 × 3 m, or 250 for standards at 7 × 6 m.'],
-            ['q' => 'What spacing do dwarf trees need?', 'a' => '3 m in the row and 3.5–4 m between rows, on a trellis.'],
-            ['q' => 'Why keep pollinator rows?', 'a' => 'Most apple varieties are self-incompatible, so a different variety must flower at the same time within a bee\'s flight distance.'],
-            ['q' => 'Why does row spacing exceed tree spacing?', 'a' => 'So light reaches the lower canopy and machinery can pass; the ratio is roughly 1.25.'],
-            ['q' => 'What does the Fruit Tree Spacing actually calculate?', 'a' => <<<'TXT'
-            It returns space per tree, trees per hectare, trees to plant and trees of the main variety. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Fruit Tree Spacing calculator work out?', 'a' => <<<'TXT'
+            Trees to plant, Trees per hectare, Space per tree and Trees of the main variety, from Between rows and Between trees in the row. The relationship is Space per tree = Between rows × Between trees in the row.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Orchard area (ha), Between rows (m), Between trees in the row (m), Pollinator rows (%). With area_ha, row_m and tree_m in place, Trees to plant can stay blank and the page will work it out.
             TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Space per tree, Trees per hectare, Trees to plant and Trees of the main variety blank and the page solves for that one instead — nothing has to be switched first.
+            TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Space per tree = 12 m², Trees per hectare = 833 /ha, Trees to plant = 833, Trees of the main variety = 667 and Row spacing ÷ tree spacing = 1.33. The figures come from Orchard area as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Trees to plant is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Orchard area blank and the page solves for it, reporting Trees to plant instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Trees to plant keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mark-recapture', 'name' => 'Mark-Recapture Population Calculator'],
+            ['path' => '/biology/mark-recapture-population', 'name' => 'Mark–Recapture Population (Lincoln–Petersen) Calculator'],
+            ['path' => '/biology/mass-molarity-conversion', 'name' => 'Mass to Molarity Converter Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

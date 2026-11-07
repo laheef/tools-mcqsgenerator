@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Coefficient of Coincidence Calculator',
-    'meta' => ['title' => 'Coefficient of Coincidence Calculator — Biology', 'description' => 'The coefficient of coincidence compares observed double crossovers with the doubles the single rates predict. It returns expected double crossovers…', 'h1' => 'Coefficient of Coincidence Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Coefficient of Coincidence Calculator — Biology', 'description' => 'Coefficient of Coincidence turns Recombination frequency, region 1, Recombination frequency, region 2 and Observed double crossovers into Expected double…', 'h1' => 'Coefficient of Coincidence Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -87,46 +87,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The coefficient of coincidence compares observed double crossovers with the doubles the single rates predict. It returns expected double crossovers, coefficient of coincidence and interference, and the panel shows all of them at once.
-        
-        The coefficient of coincidence compares observed doubles with expected doubles, and its complement is interference — the quantity that tells you whether crossovers inhibit each other.
+        Coefficient of Coincidence turns Recombination frequency, region 1, Recombination frequency, region 2 and Observed double crossovers into Expected double crossovers and Coefficient of coincidence. There is no hidden constant here: change Expected double crossovers and Recombination frequency, region 1 moves with it. The main result, Expected double crossovers, is reported in individuals.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Coefficient of Coincidence', 'html' => <<<'TXT'
-            <p>Expected doubles = RF₁ × RF₂ × N; CoC = observed ÷ expected; I = 1 − CoC</p>
-            <figure class="calc-figure"><img src="/uploads/biology/coefficient-of-coincidence.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Coefficient of Coincidence Calculator — Observed doubles against the number chance predicts." title="Coefficient of Coincidence Calculator"><figcaption>Observed doubles against the number chance predicts.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>RF₁, RF₂</code></td><td>single-crossover frequencies in each interval</td><td>%</td></tr><tr><td><code>N</code></td><td>offspring scored</td><td>individuals</td></tr><tr><td><code>CoC</code></td><td>coefficient of coincidence</td><td>—</td></tr><tr><td><code>I</code></td><td>interference</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Coefficient of Coincidence calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Coefficient of Coincidence: it takes 4 numbers and reports Expected double crossovers, Coefficient of coincidence and Interference.</p><p>In the form&#039;s own words, Expected double crossovers = Recombination frequency, region 1 ÷ 100 × Recombination frequency, region 2 ÷ 100 × Total offspring.</p><p>The result panel carries Expected double crossovers, Coefficient of coincidence and Interference, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Coefficient of Coincidence?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Recombination frequency, region 1</strong> — in %</li><li><strong>Recombination frequency, region 2</strong> — in %</li><li><strong>Observed double crossovers</strong> — in individuals</li><li><strong>Total offspring</strong> — in individuals</li></ul><p>What you get back is Expected double crossovers in individuals, Coefficient of coincidence, Interference, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: recombination frequency, region 1 of <strong>10</strong>%, recombination frequency, region 2 of <strong>12</strong>%, observed double crossovers of <strong>14</strong> individuals, total offspring of <strong>1,000</strong> individuals.</p>
-            <p>Substituting them into the formula gives expected double crossovers of <strong>12</strong> individuals, coefficient of coincidence of <strong>1.17</strong>, interference of <strong>-0.1667</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Recombination frequency, region 1 = 10 %, Recombination frequency, region 2 = 12 %, Observed double crossovers = 14 individuals and Total offspring = 1000 individuals gives &lt;strong&gt;Expected double crossovers&lt;/strong&gt; = 12 individuals, &lt;strong&gt;Coefficient of coincidence&lt;/strong&gt; = 1.17 and &lt;strong&gt;Interference&lt;/strong&gt; = -0.1667.</p><ul><li><strong>Expected double crossovers</strong> = 12 individuals</li><li><strong>Coefficient of coincidence</strong> = 1.17</li><li><strong>Interference</strong> = -0.1667</li></ul><p>The line behind those figures is <strong>Expected double crossovers</strong> = <code>Recombination frequency, region 1 ÷ 100 × Recombination frequency, region 2 ÷ 100 × Total offspring</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>CoC = 1</td><td><strong>No interference</strong></td><td>doubles as often as predicted</td></tr><tr><td>CoC below 1</td><td><strong>Positive interference</strong></td><td>a crossover inhibits a nearby one — the usual case</td></tr><tr><td>CoC above 1</td><td><strong>Negative interference</strong></td><td>doubles more common than predicted, often near a crossover hotspot</td></tr></tbody></table>
-            <ul><li><p>Interference is usually strongest near the centromere and weakest at chromosome ends; values around 0.2–0.6 are typical for genes a few map units apart.</p></li><li><p>The expected number of doubles uses the product of the two single frequencies, which assumes independence — exactly the assumption the coefficient tests.</p></li><li><p>Small expected counts make the ratio unstable: with two expected doubles, one observed changes the coefficient by half.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Expected double crossovers&lt;/strong&gt; = 12, &lt;strong&gt;Coefficient of coincidence&lt;/strong&gt; = 1.17 and &lt;strong&gt;Interference&lt;/strong&gt; = -0.1667 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Expected double crossovers takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using percentages as fractions in the multiplication.</li><li>Counting each double crossover once per interval instead of once per individual.</li><li>Reporting interference without stating the interval over which it was measured.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Expected double crossovers</strong> = <code>Recombination frequency, region 1 ÷ 100 × Recombination frequency, region 2 ÷ 100 × Total offspring</code></li><li><strong>Coefficient of coincidence</strong> = <code>Observed double crossovers ÷ (Recombination frequency, region 1 ÷ 100 × Recombination frequency, region 2 ÷ 100 × Total offspring)</code></li><li><strong>Interference</strong> = <code>1 − Observed double crossovers ÷ (Recombination frequency, region 1 ÷ 100 × Recombination frequency, region 2 ÷ 100 × Total offspring)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Expected double crossovers, Coefficient of coincidence and Interference can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Recombination frequency, region 1 from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Expected double crossovers&lt;/strong&gt; 12 individuals, &lt;strong&gt;Coefficient of coincidence&lt;/strong&gt; 1.17 and &lt;strong&gt;Interference&lt;/strong&gt; -0.1667 to &lt;strong&gt;Expected double crossovers&lt;/strong&gt; 24 individuals, &lt;strong&gt;Coefficient of coincidence&lt;/strong&gt; 0.5833 and &lt;strong&gt;Interference&lt;/strong&gt; 0.4167.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Expected double crossovers, Coefficient of coincidence and Interference are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Recombination frequency, region 1 and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Recombination frequency, region 1, Recombination frequency, region 2 and Observed double crossovers is what you already know and Expected double crossovers and Coefficient of coincidence is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/buffer-preparation-calculator">Buffer Preparation Calculator</a>, <a href="/biology/bulb-spacing">Bulb spacing</a> and <a href="/biology/cat-age">Cat age</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does interference of 0.4 mean?', 'a' => '40% of the double crossovers predicted by chance did not occur.'],
-            ['q' => 'Can interference be negative?', 'a' => 'Yes, rarely: negative interference means doubles occur more often than expected, which happens near hotspots.'],
-            ['q' => 'What does the Coefficient of Coincidence actually calculate?', 'a' => <<<'TXT'
-            It returns expected double crossovers, coefficient of coincidence and interference. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Coefficient of Coincidence calculator work out?', 'a' => <<<'TXT'
+            Expected double crossovers, Coefficient of coincidence and Interference, from Recombination frequency, region 1, Recombination frequency, region 2 and Total offspring. The relationship is Expected double crossovers = Recombination frequency, region 1 ÷ 100 × Recombination frequency, region 2 ÷ 100 × Total offspring.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Recombination frequency, region 1 (%), Recombination frequency, region 2 (%), Observed double crossovers (individuals), Total offspring (individuals). Fill region1, region2 and observed and leave Expected double crossovers empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Expected double crossovers, Coefficient of coincidence and Interference can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Expected double crossovers = 12 individuals, Coefficient of coincidence = 1.17 and Interference = -0.1667. Those are the defaults written into the form — move Recombination frequency, region 1 and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Expected double crossovers is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Recombination frequency, region 1 left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Expected double crossovers keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/buffer-preparation-calculator', 'name' => 'Buffer Preparation Calculator'],
+            ['path' => '/biology/bulb-spacing', 'name' => 'Bulb spacing'],
+            ['path' => '/biology/cat-age', 'name' => 'Cat age'],
+        ],
+        'authors' => [],
     ],
 ];

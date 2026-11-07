@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog calorie',
-    'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Examples', 'description' => 'The Dog calorie calculator turns the dry matter and the crude fat into the answer. The results leave the screen the moment you edit a field; press Calculate…', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Examples', 'description' => 'Dog calorie works out Your dog needs and Your dog needs from Weight. Units for Your dog needs default to kilocalories and can be changed on the answer itself.', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'BNW' => [
@@ -1061,69 +1061,42 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Dog calorie calculator turns the dry matter and the crude fat into the answer. 
-        
-        The results leave the screen the moment you edit a field; press Calculate and they come back updated, so a single changed input shows its own effect.
+        Dog calorie works out Your dog needs and Your dog needs from Weight. It is a single relationship that reads Your dog needs out of Weight, not a table of canned results keyed by them. Units for Your dog needs default to kilocalories and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'How does the Dog calorie calculator work?', 'html' => <<<'TXT'
-            <p>The Dog calorie calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the activity); then you type in the dry matter, the crude fat, the caloric content of food and the digestible energy.</p>
+            ['title' => 'How the Dog calorie calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Dog calorie: it takes 1 number and reports Your dog needs, Your dog needs and Your dog needs.</p><p>In the form&#039;s own words, Your dog needs = 95 × (Weight)^(3 ÷ 4).</p><p>What comes back is Your dog needs, Your dog needs, Your dog needs and Your dog needs — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 4 options, such as low (including senior): &lt;1h/day, moderate (low intensity): 1-3h/day and moderate (high intensity): 3-6h/day. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in kilocalories. The unit chip switches it to any of the 33 supported units.</li><li>A single on/off switch — tick it for &ldquo;amount of food?&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A single on/off switch — tick it for &ldquo;calorie content of a specific food?&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in grams. </li><li>A measured quantity, entered by default in grams. </li><li>A measured quantity, entered by default in grams. </li><li>A measured quantity, entered by default in grams. </li><li>A number, expressed in kcal/100g.</li><li>A measured quantity, entered by default in grams. </li><li>A measured quantity, entered by default in grams. </li></ul><p>3 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Weight</strong> — in kilograms</li></ul><p>The answers come back as Your dog needs in kilocalories, Your dog needs in kilocalories, Your dog needs in kilocalories, Your dog needs in kilocalories, Energy content in food in kcal/100g, Your dog should eat in grams, Your dog should eat in grams, Your dog should eat in grams, Your dog should eat in grams, How many days do you need food for?, Amount of food for given the number of days in grams, Amount of food for given the number of days in grams, Amount of food for given the number of days in grams, Amount of food for given the number of days in grams, Dry matter in grams, Crude protein in grams, Crude ash in grams, Crude fat in grams, Crude fiber in grams, Caloric content of food in kcal/100g, Digestible energy in grams, Bnw, Gross energy, Wspstreb, Dry Pulse Fiber in grams. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Activity</strong></td><td>One of 4 options, such as low (including senior): &lt;1h/day, moderate (low intensity): 1-3h/day and moderate (high intensity): 3-6h/day.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Energy content in food</strong></td><td>A number stated in kcal/100g.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dry matter</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Crude protein</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Crude ash</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Crude fat</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Crude fiber</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Caloric content of food</strong></td><td>A number stated in kcal/100g.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Digestible energy</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr><tr><td><strong>Bnw</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Gross energy</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Wspstreb</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dry Pulse Fiber</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Your dog needs</strong> = <code>95 × (Weight)^(3 ÷ 4)</code></li><li><strong>Weight</strong> = <code>(1 ÷ 9025) × (95)^(2 ÷ 3) × (Your dog needs)^(4 ÷ 3)</code></li><li><strong>Energy content in food</strong> = <code>100 × Your dog needs ÷ Your dog should eat</code></li><li><strong>Your dog should eat</strong> = <code>100 × Your dog needs ÷ Energy content in food</code></li><li><strong>Bnw</strong> = <code>− 94 ÷ 41 × Crude fat − Crude fiber − 57 ÷ 41 × Crude protein + (10 ÷ 41) × Gross energy</code></li><li><strong>Crude fat</strong> = <code>− 41 ÷ 94 × Bnw − 41 ÷ 94 × Crude fiber − 57 ÷ 94 × Crude protein + (5 ÷ 47) × Gross energy</code></li></ul><p>Any one of Your dog needs, Weight and Your dog needs can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Dog calorie calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Your dog needs</span><span class="formula-eq">=</span><span class="formula-rhs">95 × (weight ^ 3 ÷ 4)</span></div><div class="formula-row"><span class="formula-lhs">Weight</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 12100) × (110 ^ 2 ÷ 3) × (your dog needs ^ 4 ÷ 3)</span></div><div class="formula-row"><span class="formula-lhs">Weight</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 625) × (your dog needs ^ 4 ÷ 3)</span></div><div class="formula-row"><span class="formula-lhs">Your dog needs</span><span class="formula-eq">=</span><span class="formula-rhs">175 × (weight ^ 3 ÷ 4)</span></div><div class="formula-row"><span class="formula-lhs">Your dog needs</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 100) × energy content in food × your dog should eat</span></div><div class="formula-row"><span class="formula-lhs">Your dog should eat</span><span class="formula-eq">=</span><span class="formula-rhs">100 × your dog needs ÷ energy content in food</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Weight carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Your dog needs, Your dog needs and Your dog needs are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Weight to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>The form opens with a complete set of values: <strong>Activity</strong> set to Moderate (low intensity): 1-3h/day, <strong>Dry matter</strong> = 0.09 g, <strong>Crude protein</strong> = 0.025 g and <strong>Crude ash</strong> = 0.005 g. Straight away the calculator returns <strong>Caloric content of food</strong> = 0.2417, <strong>Digestible energy</strong> = 0.2677 g, <strong>Bnw</strong> = 0.0405 and <strong>Gross energy</strong> = 0.407.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Caloric content of food</strong> = 0.2417, <strong>Digestible energy</strong> = 0.2677 g, <strong>Bnw</strong> = 0.0405 and <strong>Gross energy</strong> = 0.407 should be roughly the size you expected from <strong>Activity</strong> set to Moderate (low intensity): 1-3h/day and <strong>Dry matter</strong> = 0.09 g.</li></ol>
-            TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>Shown in kilocalories, and convertible to any of the 33 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Energy, opening in kilocalories</li><li>Energy, opening in kilocalories</li><li>Energy, opening in kilocalories</li><li>Energy, opening in kilocalories</li><li>Mass, opening in grams</li><li>Mass, opening in grams</li><li>Mass, opening in grams</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog calorie calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 2 figures keep coming back — the dry matter and the crude fat — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-chocolate-toxicity">Dog chocolate toxicity</a>, <a href="/biology/dog-crate-size">Dog crate size</a> and <a href="/biology/dog-food">Dog food</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Weight and the number you are missing is Your dog needs and Your dog needs.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dna-molarity-calculator">DNA Molarity Calculator</a>, <a href="/biology/dna-molarity-from-mass">DNA Molarity from Mass or A260 Calculator</a> and <a href="/biology/dna-molecular-weight-calculator">DNA Molecular Weight Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What do I need to enter to use the Dog calorie calculator?', 'a' => <<<'TXT'
-            The form asks for the dry matter and the crude fat, which is 11 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What does the Dog calorie calculator work out?', 'a' => 'Your dog needs, Your dog needs, Your dog needs and Your dog needs, from Weight. The relationship is Your dog needs = 95 × (Weight)^(3 ÷ 4).'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Weight (kilograms). Enter weight; Your dog needs is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Your dog needs, Weight, Your dog needs and Your dog needs blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I enter weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Your dog needs is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Weight left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Caloric content of food = 0.2417. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Dog calorie calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Your dog needs keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-chocolate-toxicity', 'name' => 'Dog chocolate toxicity'],
-            ['path' => '/biology/dog-crate-size', 'name' => 'Dog crate size'],
-            ['path' => '/biology/dog-food', 'name' => 'Dog food'],
+            ['path' => '/biology/dna-molarity-calculator', 'name' => 'DNA Molarity Calculator'],
+            ['path' => '/biology/dna-molarity-from-mass', 'name' => 'DNA Molarity from Mass or A260 Calculator'],
+            ['path' => '/biology/dna-molecular-weight-calculator', 'name' => 'DNA Molecular Weight Calculator'],
         ],
+        'authors' => [],
     ],
 ];

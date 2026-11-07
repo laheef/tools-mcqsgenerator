@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Vegetable seed',
-    'meta' => ['title' => 'Vegetable seed Calculator — Formula & Results', 'description' => 'Supply the length of row, the no. of rows and the no. of seedlings and the Vegetable seed calculator solves for <strong>no. of seeds</strong>.', 'h1' => 'Vegetable seed Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Vegetable seed Calculator — Formula & Results', 'description' => 'Vegetable seed: Enter Type of seed, Length of row and No. of rows into Vegetable seed and the answer comes back as Seed distance and Seedling distance.', 'h1' => 'Vegetable seed Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => 'Spacing for seeds',
@@ -203,66 +203,47 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Supply the length of row, the no. of rows and the no. of seedlings and the Vegetable seed calculator solves for <strong>no. of seeds</strong>.',
+        'intro' => <<<'TXT'
+        Enter Type of seed, Length of row and No. of rows into Vegetable seed and the answer comes back as Seed distance and Seedling distance. There is no hidden constant here: change Seed distance and Type of seed moves with it. The main result, Seed distance, is reported in centimeters.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Vegetable seed calculator work?', 'html' => <<<'TXT'
-            <p>The Vegetable seed calculator takes the values in the form, applies the relationship described below and reports <strong>no. of seeds</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the type of seed and the seedling type); then you type in the length of row (Spacing for seeds), the no. of rows (Spacing for seeds), the length of row (Spacing for seedlings) and the no. of seedlings.</p>
+            ['title' => 'How the Vegetable seed calculator works', 'html' => <<<'TXT'
+            <p>Vegetable seed answers one question from 8 numbers, and the answer is Seed distance and Seedling distance.</p><p>In the form&#039;s own words, No. of seeds = No. of rows × floor(Length of row ÷ Seed distance).</p><p>The answers are Seed distance and Seedling distance; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 15 options, such as beans/Chard/Garlic, beets/Carrots/Cauliflower/Turnips and broccoli/Cabbage. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li> The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li><li>Pick the option that matches your case — 19 options, such as artichoke, beans/Carrots and beets. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li> The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li></ul><p>2 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 8 boxes, and nothing else.</p><ul><li><strong>Type of seed</strong> — a plain number, no unit</li><li><strong>Length of row</strong> — in centimeters</li><li><strong>No. of rows</strong> — a plain number, no unit</li><li><strong>No. of seeds</strong> — a plain number, no unit</li><li><strong>Seedling type</strong> — a plain number, no unit</li><li><strong>Length of row</strong> — in centimeters</li><li><strong>No. of rows</strong> — a plain number, no unit</li><li><strong>No. of seedlings</strong> — a plain number, no unit</li></ul><p>The result boxes are Seed distance in centimeters, Seedling distance in centimeters; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Type of seed</strong></td><td>One of 15 options, such as beans/Chard/Garlic, beets/Carrots/Cauliflower/Turnips and broccoli/Cabbage.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length of row (Spacing for seeds)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>No. of rows (Spacing for seeds)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Seed distance</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>No. of seeds</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Seedling type</strong></td><td>One of 19 options, such as artichoke, beans/Carrots and beets.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length of row (Spacing for seedlings)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>No. of rows (Spacing for seedlings)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Seedling distance</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>No. of seedlings</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>No. of seeds</strong> = <code>No. of rows × floor(Length of row ÷ Seed distance)</code></li><li><strong>No. of rows</strong> = <code>No. of seeds ÷ floor(Length of row ÷ Seed distance)</code></li><li><strong>No. of seedlings</strong> = <code>No. of rows × floor(Length of row ÷ Seedling distance)</code></li></ul><p>Any one of No. of seeds, No. of rows and No. of rows can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Vegetable seed calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">No. of seeds</span><span class="formula-eq">=</span><span class="formula-rhs">no. of rows × rounded down, (length of row ÷ seed distance)</span></div><div class="formula-row"><span class="formula-lhs">No. of rows</span><span class="formula-eq">=</span><span class="formula-rhs">no. of seedlings ÷ rounded down, (length of row ÷ seedling distance)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Length of row and Length of row carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Seed distance and Seedling distance are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Type of seed and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Vegetable seed calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 3 figures keep coming back — the length of row, the no. of rows and the no. of seedlings — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/vegetable-yield">Vegetable yield</a>, <a href="/biology/wastewater">Wastewater</a> and <a href="/biology/water-potential">Water potential</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Type of seed, Length of row and No. of rows and the number you are missing is Seed distance and Seedling distance.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/crop-water-stress-index">Crop Water Stress Index Calculator</a>, <a href="/biology/daily-light-integral-dli">Daily light integral (DLI) Calculator</a> and <a href="/biology/days-to-maturity">Days to Maturity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Vegetable seed calculator work out?', 'a' => <<<'TXT'
-            It returns no. of seeds, derived from the length of row, the no. of rows and the no. of seedlings. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Seed distance and Seedling distance, from No. of rows, Length of row and Seed distance. The relationship is No. of seeds = No. of rows × floor(Length of row ÷ Seed distance).
             TXT],
-            ['q' => 'What do I need to enter to use the Vegetable seed calculator?', 'a' => <<<'TXT'
-            The form asks for the length of row, the no. of rows and the no. of seedlings, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Type of seed, Length of row (centimeters), No. of rows, No. of seeds, Seedling type. Enter seedType, lengthOfRow and noOfRows; Seed distance is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter length of row (Spacing for seeds) in a different unit?', 'a' => <<<'TXT'
-            Yes. Length of row (Spacing for seeds) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of No. of seeds, No. of rows, No. of rows and No. of seedlings blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Seed distance is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Seed distance = 0 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Vegetable seed calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Type of seed blank and the page solves for it, reporting Seed distance instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Seed distance keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/vegetable-yield', 'name' => 'Vegetable yield'],
-            ['path' => '/biology/wastewater', 'name' => 'Wastewater'],
-            ['path' => '/biology/water-potential', 'name' => 'Water potential'],
+            ['path' => '/biology/crop-water-stress-index', 'name' => 'Crop Water Stress Index Calculator'],
+            ['path' => '/biology/daily-light-integral-dli', 'name' => 'Daily light integral (DLI) Calculator'],
+            ['path' => '/biology/days-to-maturity', 'name' => 'Days to Maturity Calculator'],
         ],
+        'authors' => [],
     ],
 ];

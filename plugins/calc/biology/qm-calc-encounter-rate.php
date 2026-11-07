@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Encounter Rate Calculator',
-    'meta' => ['title' => 'Encounter Rate Calculator — Formula & Results', 'description' => 'Encounter rate is how often a forager meets a food item per unit of search — per metre, per minute or per kilometre. It returns encounters per hour…', 'h1' => 'Encounter Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Encounter Rate Calculator — Formula & Results', 'description' => 'Encounter Rate works out Encounters per hour and Encounters per km from Encounters recorded, Search time and Distance travelled. It is a single relationship…', 'h1' => 'Encounter Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -97,44 +97,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Encounter rate is how often a forager meets a food item per unit of search — per metre, per minute or per kilometre. It returns encounters per hour, encounters per km, implied prey density and encounter rate (model), and the panel shows all of them at once.
-        
-        It links search time, prey density and detection distance, and it is the quantity foraging models and camera-trap studies are built on.
+        Encounter Rate works out Encounters per hour and Encounters per km from Encounters recorded, Search time and Distance travelled. It is a single relationship that reads Encounters per hour out of Encounters recorded, not a table of canned results keyed by them. Units for Encounters per hour default to /h and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Encounter Rate', 'html' => <<<'TXT'
-            <p>Encounter rate = encounters ÷ effort; density ≈ encounters ÷ (distance × 2 × detection radius)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/encounter-rate.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Encounter Rate Calculator — Encounters, search effort and detection distance." title="Encounter Rate Calculator"><figcaption>Encounters, search effort and detection distance.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>encounters</code></td><td>number of prey or species detected</td><td>events</td></tr><tr><td><code>effort</code></td><td>time or distance covered</td><td>h or km</td></tr><tr><td><code>detection radius</code></td><td>distance at which an item is noticed</td><td>m</td></tr></tbody></table>
+            ['title' => 'How the Encounter Rate calculator works', 'html' => <<<'TXT'
+            <p>Encounter Rate answers one question from 4 numbers, and the answer is Encounters per hour, Encounters per km and Implied prey density.</p><p>In the form&#039;s own words, Encounters per hour = Encounters recorded ÷ Search time.</p><p>The result panel carries Encounters per hour, Encounters per km, Implied prey density and Encounter rate (model), each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Encounter Rate?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Encounters recorded</strong> — in events</li><li><strong>Search time</strong> — in hours</li><li><strong>Distance travelled</strong> — in km</li><li><strong>Detection radius</strong> — in m</li></ul><p>The answers come back as Encounters per hour in /h, Encounters per km in /km, Implied prey density in /km², Encounter rate (model) in /h. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: encounters recorded of <strong>48</strong> events, search time of <strong>6</strong> hours, distance travelled of <strong>12</strong> km, detection radius of <strong>25</strong> m.</p>
-            <p>Substituting them into the formula gives encounters per hour of <strong>8</strong> /h, encounters per km of <strong>4</strong> /km, implied prey density of <strong>160</strong> /km², encounter rate (model) of <strong>48</strong> /h.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Encounters recorded = 48 events, Search time = 6 hours, Distance travelled = 12 km and Detection radius = 25 m — through the same formula and the panel reports &lt;strong&gt;Encounters per hour&lt;/strong&gt; = 8 /h, &lt;strong&gt;Encounters per km&lt;/strong&gt; = 4 /km, &lt;strong&gt;Implied prey density&lt;/strong&gt; = 160 /km² and &lt;strong&gt;Encounter rate (model)&lt;/strong&gt; = 48 /h.</p><ul><li><strong>Encounters per hour</strong> = 8 /h</li><li><strong>Encounters per km</strong> = 4 /km</li><li><strong>Implied prey density</strong> = 160 /km²</li><li><strong>Encounter rate (model)</strong> = 48 /h</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Encounters per hour</strong> = <code>Encounters recorded ÷ Search time</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The density estimate is a strip transect: the area searched is distance × twice the detection radius, so a larger detection radius lowers the implied density.</p></li><li><p>Encounter rate rises linearly with prey density only when detection is perfect; in practice it saturates as visibility drops.</p></li><li><p>In camera-trap work the equivalent is the trapping rate, expressed per trap-night rather than per hour of search.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Encounters per hour&lt;/strong&gt; = 8, &lt;strong&gt;Encounters per km&lt;/strong&gt; = 4, &lt;strong&gt;Implied prey density&lt;/strong&gt; = 160 and &lt;strong&gt;Encounter rate (model)&lt;/strong&gt; = 48. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Encounters per hour is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using the time spent in the field rather than the time spent searching.</li><li>Ignoring missed detections, which biases density downwards.</li><li>Comparing encounter rates between habitats of different visibility without correcting.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Encounters per hour</strong> = <code>Encounters recorded ÷ Search time</code></li><li><strong>Encounters per km</strong> = <code>Encounters recorded ÷ Distance travelled</code></li><li><strong>Implied prey density</strong> = <code>Encounters recorded ÷ Distance travelled ÷ Detection radius × 1000</code></li><li><strong>Encounter rate (model)</strong> = <code>Encounters recorded ÷ Distance travelled ÷ Detection radius × 1000 × 2 × Detection radius ÷ 1000 × Search time</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Encounters per hour, Encounters per km and Implied prey density can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Encounters recorded from 48 to 96, leaving every other box alone. The panel moves from &lt;strong&gt;Encounters per hour&lt;/strong&gt; 8 /h, &lt;strong&gt;Encounters per km&lt;/strong&gt; 4 /km, &lt;strong&gt;Implied prey density&lt;/strong&gt; 160 /km² and &lt;strong&gt;Encounter rate (model)&lt;/strong&gt; 48 /h to &lt;strong&gt;Encounters per hour&lt;/strong&gt; 16 /h, &lt;strong&gt;Encounters per km&lt;/strong&gt; 8 /km, &lt;strong&gt;Implied prey density&lt;/strong&gt; 320 /km² and &lt;strong&gt;Encounter rate (model)&lt;/strong&gt; 96 /h.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Encounters per hour, Encounters per km and Implied prey density are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Encounters recorded to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Encounters recorded, Search time and Distance travelled and the number you are missing is Encounters per hour and Encounters per km.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cell-surface-area-volume-ratio">Cell Surface Area to Volume Ratio Calculator — Formula &amp; Resul</a>, <a href="/biology/centimorgan-to-percentage">Centimorgan to Percentage Calculator</a> and <a href="/biology/centrifuge-rcf-rpm">Centrifuge RCF to RPM Converter Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I convert an encounter rate to a density?', 'a' => 'Divide by the searched area — distance travelled times twice the detection radius.'],
-            ['q' => 'Why does visibility matter so much?', 'a' => 'Because detection distance defines the searched area; halve it and the implied density doubles.'],
-            ['q' => 'What does the Encounter Rate actually calculate?', 'a' => <<<'TXT'
-            It returns encounters per hour, encounters per km, implied prey density and encounter rate (model). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Encounter Rate calculator work out?', 'a' => <<<'TXT'
+            Encounters per hour, Encounters per km, Implied prey density and Encounter rate (model), from Encounters recorded and Search time. The relationship is Encounters per hour = Encounters recorded ÷ Search time.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Encounters recorded (events), Search time (hours), Distance travelled (km), Detection radius (m). Fill encounters, time and distance and leave Encounters per hour empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Encounters per hour, Encounters per km, Implied prey density and Encounter rate (model) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Encounters per hour = 8 /h, Encounters per km = 4 /km, Implied prey density = 160 /km² and Encounter rate (model) = 48 /h. That comes from the page's own defaults, entered in Encounters recorded; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Encounters per hour is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Encounters recorded left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Encounters per hour at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cell-surface-area-volume-ratio', 'name' => 'Cell Surface Area to Volume Ratio Calculator — Formula & Resul'],
+            ['path' => '/biology/centimorgan-to-percentage', 'name' => 'Centimorgan to Percentage Calculator'],
+            ['path' => '/biology/centrifuge-rcf-rpm', 'name' => 'Centrifuge RCF to RPM Converter Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

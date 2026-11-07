@@ -12,7 +12,7 @@
 return [
     'name' => 'Bird age',
     'meta' => ['title' => 'Bird age Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    Give the Bird age calculator the bird age and the human life expectancy and it returns <strong>human age</strong>. The Bird age calculator takes the values in…
+    Bird age works out Average bird lifespan and Adult from Bird species, Average bird lifespan and Bird age 🐦. The arithmetic is the whole method: Average bird…
     TXT, 'h1' => 'Bird age Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
@@ -430,66 +430,49 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Give the Bird age calculator the bird age and the human life expectancy and it returns <strong>human age</strong>.',
+        'intro' => <<<'TXT'
+        Bird age works out Average bird lifespan and Adult from Bird species, Average bird lifespan and Bird age 🐦. The arithmetic is the whole method: Average bird lifespan is worked out from Bird species by one formula, applied once. Average bird lifespan comes back in yrs unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Bird age calculator work?', 'html' => <<<'TXT'
-            <p>The Bird age calculator takes the values in the form, applies the relationship described below and reports <strong>human age</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the bird species); then you type in the bird age, the bird age (2), the human life expectancy and the human life expectancy (2).</p>
+            ['title' => 'How the Bird age calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Bird age: it takes 9 numbers and reports Average bird lifespan, Adult and Timemax.</p><p>The relationship it solves reads Human age 🚶 = Bird age 🐦 × Human life expectancy ÷ Average bird lifespan.</p><p>The result panel carries Average bird lifespan, Adult, Timemax and Timemin, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 8 options, such as parakeet (Budgie), cockatiel and lovebird. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in years. </li><li>A measured quantity, entered by default in years. </li><li>A number, expressed in yrs.</li><li>A number, expressed in yrs.</li><li>A measured quantity, entered by default in years. </li><li>A single on/off switch — tick it for &ldquo;Show assumed lifespans&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li></ul><p>2 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 9 boxes, and nothing else.</p><ul><li><strong>Bird species</strong> — a plain number, no unit</li><li><strong>Average bird lifespan</strong> — in yrs</li><li><strong>Bird age 🐦</strong> — in years</li><li><strong>Bird age 🐦</strong> — in years</li><li><strong>Human life expectancy</strong> — in yrs</li><li><strong>Human life expectancy</strong> — in yrs</li><li><strong>Human age 🚶</strong> — in years. Assuming the global average life expectancy of 72.6 years.</li><li><strong>Human age 🚶</strong> — in years. Assuming the global average life expectancy of 72.6 years.</li><li><strong>display_more_variables</strong> — a plain number, no unit</li></ul><p>The result boxes are Average bird lifespan in yrs, Adult, Timemax, Timemin; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Bird species</strong></td><td>One of 8 options, such as parakeet (Budgie), cockatiel and lovebird.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Average bird lifespan</strong></td><td>A number stated in yrs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Average bird lifespan (2)</strong></td><td>A number stated in yrs.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Bird age</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Bird age (2)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Human life expectancy</strong></td><td>A number stated in yrs.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Human life expectancy (2)</strong></td><td>A number stated in yrs.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Human age</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>Calculated</td></tr><tr><td><strong>Human age (2)</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr><tr><td><strong>Adult</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Timemax</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Timemin</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Human age 🚶</strong> = <code>Bird age 🐦 × Human life expectancy ÷ Average bird lifespan</code></li><li><strong>Human life expectancy</strong> = <code>Average bird lifespan × Human age 🚶 ÷ Bird age 🐦</code></li><li><strong>Average bird lifespan</strong> = <code>Bird age 🐦 × Human life expectancy ÷ Human age 🚶</code></li><li><strong>Bird age 🐦</strong> = <code>Average bird lifespan × Human age 🚶 ÷ Human life expectancy</code></li></ul><p>Any one of Human age 🚶, Human life expectancy and Average bird lifespan can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Bird age calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Human age</span><span class="formula-eq">=</span><span class="formula-rhs">bird age × human life expectancy ÷ average bird lifespan</span></div><div class="formula-row"><span class="formula-lhs">Average bird lifespan</span><span class="formula-eq">=</span><span class="formula-rhs">bird age × human life expectancy ÷ human age</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Bird age 🐦, Bird age 🐦 and Human age 🚶 carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Average bird lifespan, Adult and Timemax are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Bird species and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in years, and convertible to any of the 27 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in years</li><li>Time, opening in years</li><li>Time, opening in years</li><li>Time, opening in years</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Bird age calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 2 figures keep coming back — the bird age and the human life expectancy — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/bulb-spacing">Bulb spacing</a>, <a href="/biology/cat-age">Cat age</a> and <a href="/biology/cat-benadryl-dosage">Cat Benadryl dosage</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Bird species, Average bird lifespan and Bird age 🐦 and the number you are missing is Average bird lifespan and Adult.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/osmolarity-osmotic-pressure">Osmolarity / Osmotic Pressure Calculator</a>, <a href="/biology/pasture-stocking-rate">Pasture Stocking Rate Calculator</a> and <a href="/biology/pcr-annealing-temperature">PCR Annealing Temperature Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Bird age calculator work out?', 'a' => <<<'TXT'
-            It returns human age, derived from the bird age and the human life expectancy. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Average bird lifespan, Adult, Timemax and Timemin, from Human life expectancy, Average bird lifespan and Bird age 🐦. The relationship is Human age 🚶 = Bird age 🐦 × Human life expectancy ÷ Average bird lifespan.
             TXT],
-            ['q' => 'What do I need to enter to use the Bird age calculator?', 'a' => <<<'TXT'
-            The form asks for the bird age and the human life expectancy, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Bird species, Average bird lifespan (yrs), Bird age 🐦 (years), Bird age 🐦 (years), Human life expectancy (yrs). Enter species, average_bird_lifespan_custom and bird_age; Average bird lifespan is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter bird age in a different unit?', 'a' => <<<'TXT'
-            Yes. Bird age opens in years and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Human age 🚶, Human life expectancy, Average bird lifespan and Bird age 🐦 blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Average bird lifespan is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Bird species left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Average bird lifespan = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Bird age calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Average bird lifespan keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/bulb-spacing', 'name' => 'Bulb spacing'],
-            ['path' => '/biology/cat-age', 'name' => 'Cat age'],
-            ['path' => '/biology/cat-benadryl-dosage', 'name' => 'Cat Benadryl dosage'],
+            ['path' => '/biology/osmolarity-osmotic-pressure', 'name' => 'Osmolarity / Osmotic Pressure Calculator'],
+            ['path' => '/biology/pasture-stocking-rate', 'name' => 'Pasture Stocking Rate Calculator'],
+            ['path' => '/biology/pcr-annealing-temperature', 'name' => 'PCR Annealing Temperature Calculator'],
         ],
+        'authors' => [],
     ],
 ];

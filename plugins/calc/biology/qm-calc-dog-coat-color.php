@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog Coat Colour Calculator',
-    'meta' => ['title' => 'Dog Coat Colour Calculator — Formula & Results', 'description' => 'Dog coat colour comes from four genes acting in a fixed order: E, K, B and D. It returns loci answered, and the panel shows all of them at once.', 'h1' => 'Dog Coat Colour Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Dog Coat Colour Calculator — Formula & Results', 'description' => 'Dog Coat Colour takes E locus (extension), K locus (dominant black / brindle) and B locus (brown) and returns Loci answered. Dog Coat Colour answers one…', 'h1' => 'Dog Coat Colour Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'e_locus' => [
@@ -319,46 +319,40 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog coat colour comes from four genes acting in a fixed order: E, K, B and D. It returns loci answered, and the panel shows all of them at once.
-        
-        This page takes the genotype at those four loci and returns the colour you would see, the full gene order, and what each locus is doing.
+        Dog Coat Colour takes E locus (extension), K locus (dominant black / brindle) and B locus (brown) and returns Loci answered. The arithmetic is the whole method: Loci answered is worked out from E locus (extension) by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Dog Coat Colour', 'html' => <<<'TXT'
-            <p>E → K → B → D, in that order: E decides if black is made, K overrides the agouti pattern, B sets black vs brown, D dilutes whatever pigment is left</p>
-            <figure class="calc-figure"><img src="/uploads/biology/dog-coat-color.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Dog Coat Colour Calculator — Phenotype counts in a litter of 8 from a typical cross" title="Dog Coat Colour Calculator"><figcaption>Phenotype counts in a litter of 8 from a typical cross</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>E</code></td><td>extension — e/e blocks all black pigment</td><td>locus</td></tr><tr><td><code>K</code></td><td>dominant black: K^B solid, K^br brindle, k^y allows agouti</td><td>locus</td></tr><tr><td><code>B</code></td><td>b/b turns black pigment brown</td><td>locus</td></tr><tr><td><code>D</code></td><td>d/d dilutes black to blue and brown to lilac</td><td>locus</td></tr></tbody></table>
+            ['title' => 'How the Dog Coat Colour calculator works', 'html' => <<<'TXT'
+            <p>Dog Coat Colour answers one question from 5 numbers, and the answer is Loci answered.</p><p>The answers are Loci answered; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Dog Coat Colour?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the genotype at each locus — a dog can only be E/E or E/e if it shows any black at all.</li><li>Tick ticking if the dog has flecks on its white areas; that is the T locus and it is not part of the four-locus colour model.</li><li>Read the predicted colour, then the gene-order explanation: it tells you which locus is actually responsible, which is what matters if you are planning a litter.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>E locus (extension)</strong> — a plain number, no unit</li><li><strong>K locus (dominant black / brindle)</strong> — a plain number, no unit</li><li><strong>B locus (brown)</strong> — a plain number, no unit</li><li><strong>D locus (dilution)</strong> — a plain number, no unit</li><li><strong>Ticking or roan spotting (T locus)</strong> — a plain number, no unit. Small coloured flecks on white areas</li></ul><p>What you get back is Loci answered, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>e/e</td><td><strong>Red, yellow or cream</strong></td><td>no black pigment can be made, whatever the other loci say</td></tr><tr><td>E/- + K^B</td><td><strong>Solid black</strong></td><td>dominant black overrides the agouti pattern</td></tr><tr><td>E/- + k^y/k^y + B/-</td><td><strong>Black, or agouti if A allows</strong></td><td>the A locus decides the pattern</td></tr><tr><td>b/b</td><td><strong>Chocolate or liver</strong></td><td>black pigment turned brown</td></tr><tr><td>d/d</td><td><strong>Blue, lilac or isabella</strong></td><td>dilution of whatever the dog would otherwise be</td></tr></tbody></table>
-            <ul><li><p>The order matters and is the whole point of the page: a b/b dog that is also e/e is not chocolate, because with no black pigment there is nothing for B to turn brown. Epistasis runs E over K over A over B over D.</p></li><li><p>Dilution is a pigment-density effect, not a colour: d/d turns black into blue and brown into lilac, and dilutes red to a paler cream.</p></li><li><p>Two loci that often surprise people are missing from this model on purpose — the A (agouti) pattern, which needs a full allele series to be useful, and the merle locus, which is incompletely dominant and often unhealthy in homozygotes.</p></li><li><p>Locus notation varies by author (E, EXT; K, CBD103; B, TYRP1; D, MLPH). The phenotype is the same; the letters are convention.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Loci answered takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Naming a colour from the B locus alone: a b/b dog with no black pigment is red, not chocolate.</li><li>Assuming two chocolate parents give only chocolate puppies — they do, at the B locus, but E and K still decide whether any black pigment exists to be browned.</li><li>Breeding two merle dogs because the colours look interesting; double merle causes deafness and eye defects, which is why merle is not offered here.</li><li>Reading K^br as "any brindle pattern": brindle needs black pigment to stripe, so an e/e dog cannot be brindled.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Loci answered is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If E locus (extension) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/rabbit-color">Rabbit colour genetics</a>. <a href="/biology/dog-size">Dog size</a>. <a href="/biology/punnett-square">Punnett square</a>. <a href="/biology/dihybrid-cross">Dihybrid cross</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: E locus (extension), K locus (dominant black / brindle) and B locus (brown) measured, Loci answered wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/multi-reverse-translate">Multi Reverse Translate Calculator</a>, <a href="/biology/mushroom-yield">Mushroom Yield Calculator</a> and <a href="/biology/mutation-frequency">Mutation frequency</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How is dog coat colour inherited?', 'a' => <<<'TXT'
-            Through a small set of loci acting in a fixed order. E decides whether black pigment is produced at all; K overrides the agouti pattern with solid black or brindle; A sets the pattern; B makes black pigment brown; D dilutes the result.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            E locus (extension), K locus (dominant black / brindle), B locus (brown), D locus (dilution), Ticking or roan spotting (T locus). Fill e_locus, k_locus and b_locus and leave Loci answered empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can two black Labradors have yellow puppies?', 'a' => 'Yes — if both parents are E/e. The puppies that inherit e from both sides cannot make black pigment and are yellow, whatever their B and K loci say.'],
-            ['q' => 'What makes a dog chocolate instead of black?', 'a' => 'Two copies of b at the TYRP1 locus, plus at least one E so that black pigment is actually being made. Without E, the B locus has nothing to act on.'],
-            ['q' => 'Is this a DNA test?', 'a' => <<<'TXT'
-            No. It predicts a phenotype from a genotype you enter. The loci are real and commercially tested, but a prediction from a pedigree is only as good as the assumed genotypes.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Loci answered is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'What does the Dog Coat Colour actually calculate?', 'a' => 'It returns loci answered. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Loci answered is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Loci answered at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/multi-reverse-translate', 'name' => 'Multi Reverse Translate Calculator'],
+            ['path' => '/biology/mushroom-yield', 'name' => 'Mushroom Yield Calculator'],
+            ['path' => '/biology/mutation-frequency', 'name' => 'Mutation frequency'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fertilizer Injector Ratio Calculator',
-    'meta' => ['title' => 'Fertilizer Injector Ratio Calculator — Biology', 'description' => 'Injector ratios tell you how much stock solution to mix so that the water reaching the plants carries the intended concentration. This calculator converts…', 'h1' => 'Fertilizer Injector Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fertilizer Injector Ratio Calculator — Biology', 'description' => 'Fertilizer Injector Ratio turns Target nitrogen in the line, Nitrogen in the fertilizer and Injector ratio into Stock concentration and Fertilizer per litre…', 'h1' => 'Fertilizer Injector Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -90,48 +90,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Injector ratios tell you how much stock solution to mix so that the water reaching the plants carries the intended concentration. It returns stock concentration, fertilizer per litre of stock and fertilizer per tank, and the panel shows all of them at once.
-        
-        This calculator converts between a target ppm in the irrigation line, the injector ratio and the weight of fertilizer for a stock tank of any size.
+        Fertilizer Injector Ratio turns Target nitrogen in the line, Nitrogen in the fertilizer and Injector ratio into Stock concentration and Fertilizer per litre of stock. There is no hidden constant here: change Stock concentration and Target nitrogen in the line moves with it. The main result, Stock concentration, is reported in ppm.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Fertilizer Injector Ratio', 'html' => <<<'TXT'
-            <p>Stock ppm = line ppm × injector ratio; grams per litre = stock ppm ÷ (%N × 10)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/fertilizer-injector-ratio.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Fertilizer Injector Ratio Calculator — Line concentration, injector ratio and stock weight." title="Fertilizer Injector Ratio Calculator"><figcaption>Line concentration, injector ratio and stock weight.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>target</code></td><td>desired concentration in the irrigation line</td><td>ppm</td></tr><tr><td><code>ratio</code></td><td>dilution factor of the injector</td><td>:1</td></tr><tr><td><code>%N</code></td><td>nitrogen content of the fertilizer</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Fertilizer Injector Ratio calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Fertilizer Injector Ratio: it takes 4 numbers and reports Stock concentration, Fertilizer per litre of stock and Fertilizer per tank.</p><p>The relationship it solves reads Stock concentration = Target nitrogen in the line × Injector ratio.</p><p>The answers are Stock concentration, Fertilizer per litre of stock and Fertilizer per tank; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Fertilizer Injector Ratio?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Target nitrogen in the line</strong> — in ppm</li><li><strong>Nitrogen in the fertilizer</strong> — in %</li><li><strong>Injector ratio</strong> — in:1. 1:100 means 1 part stock to 99 parts water</li><li><strong>Stock tank size</strong> — in L</li></ul><p>The answers come back as Stock concentration in ppm, Fertilizer per litre of stock in g/L, Fertilizer per tank in kg. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: target nitrogen in the line of <strong>150</strong> ppm, nitrogen in the fertilizer of <strong>20</strong>%, injector ratio of <strong>100</strong>:1, stock tank size of <strong>200</strong> L.</p>
-            <p>Substituting them into the formula gives stock concentration of <strong>15,000</strong> ppm, fertilizer per litre of stock of <strong>0.0075</strong> g/L, fertilizer per tank of <strong>1.5</strong> kg.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Target nitrogen in the line = 150 ppm, Nitrogen in the fertilizer = 20 %, Injector ratio = 100:1 and Stock tank size = 200 L gives &lt;strong&gt;Stock concentration&lt;/strong&gt; = 15000 ppm, &lt;strong&gt;Fertilizer per litre of stock&lt;/strong&gt; = 0.0075 g/L and &lt;strong&gt;Fertilizer per tank&lt;/strong&gt; = 1.5 kg.</p><ul><li><strong>Stock concentration</strong> = 15000 ppm</li><li><strong>Fertilizer per litre of stock</strong> = 0.0075 g/L</li><li><strong>Fertilizer per tank</strong> = 1.5 kg</li></ul><p>That is <strong>Stock concentration</strong> = <code>Target nitrogen in the line × Injector ratio</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>A 1:100 injector makes the stock 100 times stronger than the line, so a 150 ppm target needs 15 000 ppm in the tank.</p></li><li><p>Weigh fertilizers in grams per litre of stock, then check the electrical conductivity — it rises with concentration and is the quickest in-field check that the mix is right.</p></li><li><p>Nitrogen sources differ: calcium nitrate and ammonium nitrate carry different amounts of calcium and ammonium, which matters for pH drift in the root zone.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Stock concentration&lt;/strong&gt; = 15000, &lt;strong&gt;Fertilizer per litre of stock&lt;/strong&gt; = 0.0075 and &lt;strong&gt;Fertilizer per tank&lt;/strong&gt; = 1.5 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Stock concentration takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Confusing 1:100 with 1:99 — the difference is small for the stock strength but large for water accounting.</li><li>Mixing the stock in the irrigation line instead of the tank.</li><li>Using a fertilizer percentage as a decimal in one place and a percentage in another.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Stock concentration</strong> = <code>Target nitrogen in the line × Injector ratio</code></li><li><strong>Fertilizer per litre of stock</strong> = <code>Target nitrogen in the line × Injector ratio ÷ Nitrogen in the fertilizer ÷ 100 ÷ 1000</code></li><li><strong>Fertilizer per tank</strong> = <code>Target nitrogen in the line × Injector ratio ÷ Nitrogen in the fertilizer ÷ 100 ÷ 1000 × Stock tank size</code></li></ul><p>Any one of Stock concentration, Fertilizer per litre of stock and Fertilizer per tank can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/npk-fertilizer-blend">NPK fertilizer blend</a>. <a href="/chemistry/ppm-to-molarity">ppm to molarity</a>. <a href="/biology/crop-water-requirement">Crop water requirement</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Target nitrogen in the line from 150 to 300, leaving every other box alone. The panel moves from &lt;strong&gt;Stock concentration&lt;/strong&gt; 15000 ppm, &lt;strong&gt;Fertilizer per litre of stock&lt;/strong&gt; 0.0075 g/L and &lt;strong&gt;Fertilizer per tank&lt;/strong&gt; 1.5 kg to &lt;strong&gt;Stock concentration&lt;/strong&gt; 30000 ppm, &lt;strong&gt;Fertilizer per litre of stock&lt;/strong&gt; 0.015 g/L and &lt;strong&gt;Fertilizer per tank&lt;/strong&gt; 3 kg.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Stock concentration, Fertilizer per litre of stock and Fertilizer per tank are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Target nitrogen in the line is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Target nitrogen in the line, Nitrogen in the fertilizer and Injector ratio and the number you are missing is Stock concentration and Fertilizer per litre of stock.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dog-life-expectancy">Dog life expectancy Calculator</a>, <a href="/biology/dog-metacam">Dog Metacam dosage</a> and <a href="/biology/dog-onion-toxicity">Dog onion toxicity</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I mix 100 ppm nitrogen with 20% fertilizer at 1:100?', 'a' => '50 g per litre of stock — 100 × 100 ÷ (20 × 10).'],
-            ['q' => 'Does the injector ratio affect the final EC?', 'a' => 'Yes: the line EC is set by the diluted concentration, so a stronger stock at a higher ratio can deliver the same EC.'],
-            ['q' => 'What does the Fertilizer Injector Ratio actually calculate?', 'a' => <<<'TXT'
-            It returns stock concentration, fertilizer per litre of stock and fertilizer per tank. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Fertilizer Injector Ratio calculator work out?', 'a' => <<<'TXT'
+            Stock concentration, Fertilizer per litre of stock and Fertilizer per tank, from Target nitrogen in the line and Injector ratio. The relationship is Stock concentration = Target nitrogen in the line × Injector ratio.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Target nitrogen in the line (ppm), Nitrogen in the fertilizer (%), Injector ratio (:1), Stock tank size (L). Fill target, n_pct and ratio and leave Stock concentration empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Stock concentration, Fertilizer per litre of stock and Fertilizer per tank blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Stock concentration = 15000 ppm, Fertilizer per litre of stock = 0.0075 g/L and Fertilizer per tank = 1.5 kg. The figures come from Target nitrogen in the line as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Stock concentration is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Target nitrogen in the line left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Stock concentration keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-life-expectancy', 'name' => 'Dog life expectancy Calculator'],
+            ['path' => '/biology/dog-metacam', 'name' => 'Dog Metacam dosage'],
+            ['path' => '/biology/dog-onion-toxicity', 'name' => 'Dog onion toxicity'],
+        ],
+        'authors' => [],
     ],
 ];

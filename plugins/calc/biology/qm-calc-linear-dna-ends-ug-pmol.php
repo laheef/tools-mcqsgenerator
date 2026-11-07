@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Linear DNA µg to pmol of Ends Converter',
-    'meta' => ['title' => 'Linear DNA µg to pmol of Ends Converter Calculator', 'description' => 'A linear DNA molecule has two ends, and many reactions care about the number of ends rather than the number of molecules — ligation, biotin labelling…', 'h1' => 'Linear DNA µg to pmol of Ends Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Linear DNA µg to pmol of Ends Converter Calculator', 'description' => 'Linear DNA µg to pmol of Ends works out Ends and Ends per microgram from Length, Mass and Molecules. Ends is opened in pmol; the chip beside it switches to…', 'h1' => 'Linear DNA µg to pmol of Ends Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -87,44 +87,52 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A linear DNA molecule has two ends, and many reactions care about the number of ends rather than the number of molecules — ligation, biotin labelling, exonuclease chewing. It returns molecules, mass, ends and ends per microgram, and the panel shows all of them at once.
-        
-        One microgram of a 1 kb fragment is 1.5 pmol of molecules but 3 pmol of ends, and this calculator gives both without the arithmetic.
+        Linear DNA µg to pmol of Ends works out Ends and Ends per microgram from Length, Mass and Molecules. Nothing is looked up on this page: Ends is computed from Length and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Ends is opened in pmol; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Linear DNA µg to pmol of Ends Converter', 'html' => <<<'TXT'
-            <p>pmol of molecules = µg × 10⁶ ÷ (660 × length). pmol of ends = 2 × pmol of molecules. Ends per µg = 2 × 10⁶ ÷ (660 × length)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/linear-dna-ends-ug-pmol.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Linear DNA µg to pmol of Ends Converter — pmol of ends in 1 µg of linear DNA" title="Linear DNA µg to pmol of Ends Converter"><figcaption>pmol of ends in 1 µg of linear DNA</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>pmol</code></td><td>picomole, 10⁻¹² mol</td><td>mol</td></tr><tr><td><code>end</code></td><td>a 5′ or 3′ terminus of a linear molecule</td><td>—</td></tr><tr><td><code>660</code></td><td>g/mol per base pair of double-stranded DNA</td><td>g/mol</td></tr></tbody></table>
+            ['title' => 'How the Linear DNA µg to pmol of Ends calculator works', 'html' => <<<'TXT'
+            <p>The Linear DNA µg to pmol of Ends calculator applies one relationship to 3 numbers and reports Ends, Ends per microgram and Molecules.</p><p>In the form&#039;s own words, Molecules = Mass × 1000000 ÷ (660 × Length).</p><p>The answers are Ends, Ends per microgram and Molecules; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Linear DNA µg to pmol of Ends Converter?', 'html' => <<<'TXT'
-            <ol><li>Enter the length of the fragment in base pairs and the mass in micrograms.</li><li>The molar amount and the number of ends are both reported.</li><li>If you know how many pmol of ends you need, type it and the mass is solved instead.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Length</strong> — in bp</li><li><strong>Mass</strong> — in µg</li><li><strong>Molecules</strong> — in pmol. Type either the mass or the molar amount</li></ul><p>The result boxes are Ends in pmol, Ends per microgram in pmol/µg, Molecules; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: length of <strong>1,000</strong> bp.</p>
-            <p>Substituting them into the formula gives molecules of <strong>1.52</strong> pmol, mass of <strong>1</strong> µg, ends of <strong>3.03</strong> pmol, ends per microgram of <strong>3.03</strong> pmol/µg, molecules of <strong>912,445,569,697</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Length = 1000 bp gives &lt;strong&gt;Ends per microgram&lt;/strong&gt; = 3.03 pmol/µg.</p><ul><li><strong>Ends per microgram</strong> = 3.03 pmol/µg</li></ul><p>That is <strong>Molecules</strong> = <code>Mass × 1000000 ÷ (660 × Length)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 200 bp</td><td><strong>Many ends per µg</strong></td><td>0.5 µg of a 100 bp fragment carries 15 pmol of ends</td></tr><tr><td>200 – 3 000 bp</td><td><strong>Typical cloning fragment</strong></td><td>1–7 pmol of ends per microgram</td></tr><tr><td>over 10 000 bp</td><td><strong>Few ends</strong></td><td>a microgram carries well under 1 pmol of ends</td></tr></tbody></table>
-            <ul><li><p>Ligations are driven by the concentration of ends, not the mass of DNA: two fragments of different lengths at equal mass do not have equal numbers of ends.</p></li><li><p>A circular plasmid has no ends, which is why a dephosphorylated vector is measured in molecules and an insert in ends.</p></li><li><p>Below about 1 nM of ends, the two termini rarely meet and the ligation stalls however much enzyme you add.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Ends per microgram&lt;/strong&gt; = 3.03. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Ends is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using the molecules figure where the ends figure belongs — the answer is out by exactly 2.</li><li>Applying this to a circular molecule, which has no ends at all.</li><li>Forgetting that the mass must be the whole molecule, not the insert length.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Molecules</strong> = <code>Mass × 1000000 ÷ (660 × Length)</code></li><li><strong>Mass</strong> = <code>Molecules × 660 × Length ÷ 1000000</code></li><li><strong>Ends</strong> = <code>2 × Molecules</code></li><li><strong>Ends per microgram</strong> = <code>2 × 1000000 ÷ (660 × Length)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Molecules, Mass and Ends can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Length, from 1000 to 2000 — and the answers go from &lt;strong&gt;Ends per microgram&lt;/strong&gt; 3.03 pmol/µg to &lt;strong&gt;Ends per microgram&lt;/strong&gt; 1.52 pmol/µg.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Ends, Ends per microgram and Molecules are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Length to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Length, Mass and Molecules measured, Ends and Ends per microgram wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dna-copy-number">DNA copy number Calculator</a>, <a href="/biology/dna-molarity-calculator">DNA Molarity Calculator</a> and <a href="/biology/dna-molarity-from-mass">DNA Molarity from Mass or A260 Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Why do ends matter more than molecules?', 'a' => 'Every ligation event joins two ends, so the rate depends on how often a 5′ and a 3′ terminus meet.'],
-            ['q' => 'How many pmol of ends are in 1 µg of a 500 bp fragment?', 'a' => '6.06 pmol — 3.03 pmol of molecules, doubled.'],
-            ['q' => 'Does a plasmid have ends?', 'a' => 'No. A closed circle contributes no ends, so it cannot ligate to anything without being cut first.'],
-            ['q' => 'What does the Linear DNA µg to pmol of Ends Converter actually calculate?', 'a' => 'It returns molecules, mass, ends and ends per microgram. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Linear DNA µg to pmol of Ends calculator work out?', 'a' => 'Ends, Ends per microgram and Molecules, from Mass and Length. The relationship is Molecules = Mass × 1000000 ÷ (660 × Length).'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Length (bp), Mass (µg), Molecules (pmol). Enter length, mass_ug and pmol; Ends is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Molecules, Mass, Ends and Ends per microgram can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'What answer do the default values give?', 'a' => 'Ends per microgram = 3.03 pmol/µg. That comes from the page\'s own defaults, entered in Length; change one of them and the whole set is recomputed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Ends is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Length left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Ends keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dna-copy-number', 'name' => 'DNA copy number Calculator'],
+            ['path' => '/biology/dna-molarity-calculator', 'name' => 'DNA Molarity Calculator'],
+            ['path' => '/biology/dna-molarity-from-mass', 'name' => 'DNA Molarity from Mass or A260 Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

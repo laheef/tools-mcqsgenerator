@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell Culture Dish / Plate / Flask Reference',
-    'meta' => ['title' => 'Cell Culture Dish / Plate / Flask Reference', 'description' => 'Every plasticware format has a growth area, a working volume and a recommended cell number, and mixing them up is a classic source of inconsistent experiments.', 'h1' => 'Cell Culture Dish / Plate / Flask Reference', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Culture Dish / Plate / Flask Reference', 'description' => 'Every plasticware format has a growth area, a working volume and a recommended cell number, and mixing them up is a classic source of inconsistent experiments', 'h1' => 'Cell Culture Dish / Plate / Flask Reference', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -108,45 +108,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Every plasticware format has a growth area, a working volume and a recommended cell number, and mixing them up is a classic source of inconsistent experiments. It returns growth area, medium per vessel, cells per vessel at that density and total growth area, and the panel shows all of them at once.
-        
-        This reference converts between formats and tells you how much medium and how many cells a vessel takes.
+        Cell Culture Dish / Plate / Flask Reference takes Format, Number of vessels and Medium per cm² and returns Growth area and Medium per vessel. It is a single relationship that reads Growth area out of Format, not a table of canned results keyed by them. Units for Growth area default to cm² and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Cell Culture Dish / Plate / Flask Reference', 'html' => <<<'TXT'
-            <p>Medium (mL) ≈ 0.2 × growth area (cm²); cells = growth area × target density</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cell-culture-vessel-reference.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Cell Culture Dish / Plate / Flask Reference — Growth area, medium and cells for the format you picked." title="Cell Culture Dish / Plate / Flask Reference"><figcaption>Growth area, medium and cells for the format you picked.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>vessel</code></td><td>growth area of one vessel</td><td>cm²</td></tr><tr><td><code>medium</code></td><td>working volume</td><td>mL</td></tr><tr><td><code>cells</code></td><td>cells to seed</td><td>cells</td></tr></tbody></table>
+            ['title' => 'How the Cell Culture Dish / Plate / Flask Reference calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Cell Culture Dish / Plate / Flask Reference: it takes 4 numbers and reports Growth area, Medium per vessel and Cells per vessel at that density.</p><p>The relationship it solves reads Growth area = Format.</p><p>The result panel carries Growth area, Medium per vessel, Cells per vessel at that density and Total growth area, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Cell Culture Dish / Plate / Flask Reference?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Format</strong> — a plain number, no unit</li><li><strong>Number of vessels</strong> — a plain number, no unit</li><li><strong>Medium per cm²</strong> — in mL/cm². 0.15–0.25 mL/cm² is the usual range</li><li><strong>Target seeding density</strong> — in cells/cm²</li></ul><p>The result boxes are Growth area in cm², Medium per vessel in mL, Cells per vessel at that density in cells, Total growth area in cm²; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: format set to <strong>75.0</strong>, number of vessels of <strong>1</strong>, medium per cm² of <strong>0.2</strong> mL/cm², target seeding density of <strong>20,000</strong> cells/cm².</p>
-            <p>Substituting them into the formula gives growth area of <strong>75</strong> cm², medium per vessel of <strong>15</strong> mL, cells per vessel at that density of <strong>1,500,000</strong> cells, total growth area of <strong>75</strong> cm².</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Format = 75, Number of vessels = 1, Medium per cm² = 0.2 mL/cm² and Target seeding density = 20000 cells/cm² gives &lt;strong&gt;Growth area&lt;/strong&gt; = 75 cm², &lt;strong&gt;Medium per vessel&lt;/strong&gt; = 15 mL, &lt;strong&gt;Cells per vessel at that density&lt;/strong&gt; = 1.500e+6 cells and &lt;strong&gt;Total growth area&lt;/strong&gt; = 75 cm².</p><ul><li><strong>Growth area</strong> = 75 cm²</li><li><strong>Medium per vessel</strong> = 15 mL</li><li><strong>Cells per vessel at that density</strong> = 1.500e+6 cells</li><li><strong>Total growth area</strong> = 75 cm²</li></ul><p>That is <strong>Growth area</strong> = <code>Format</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The 0.2 mL/cm² rule keeps the depth of medium at about 2 mm, which is what most protocols assume for gas exchange and autocrine signalling.</p></li><li><p>Multi-well plates are quoted per well: a 6-well plate is 9.6 cm² per well, about 58 cm² in total.</p></li><li><p>Transwell and low-attachment formats have their own areas and should not be substituted.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Growth area&lt;/strong&gt; = 75, &lt;strong&gt;Medium per vessel&lt;/strong&gt; = 15, &lt;strong&gt;Cells per vessel at that density&lt;/strong&gt; = 1.500e+6 and &lt;strong&gt;Total growth area&lt;/strong&gt; = 75 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Growth area takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using the plate's total area when the protocol is per well.</li><li>Filling a T175 with the T25 volume (or the reverse) and calling the difference a medium effect.</li><li>Forgetting that medium volume changes the drug concentration in a dose–response assay.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Growth area</strong> = <code>Format</code></li><li><strong>Medium per vessel</strong> = <code>Format × Medium per cm²</code></li><li><strong>Cells per vessel at that density</strong> = <code>Format × Target seeding density</code></li><li><strong>Total growth area</strong> = <code>Format × Number of vessels</code></li></ul><p>Any one of Growth area, Medium per vessel and Cells per vessel at that density can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Format from 75 to 150, leaving every other box alone. The panel moves from &lt;strong&gt;Growth area&lt;/strong&gt; 75 cm², &lt;strong&gt;Medium per vessel&lt;/strong&gt; 15 mL, &lt;strong&gt;Cells per vessel at that density&lt;/strong&gt; 1.500e+6 cells and &lt;strong&gt;Total growth area&lt;/strong&gt; 75 cm² to &lt;strong&gt;Growth area&lt;/strong&gt; 150 cm², &lt;strong&gt;Medium per vessel&lt;/strong&gt; 30 mL, &lt;strong&gt;Cells per vessel at that density&lt;/strong&gt; 3.000e+6 cells and &lt;strong&gt;Total growth area&lt;/strong&gt; 150 cm².</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Growth area, Medium per vessel and Cells per vessel at that density are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Format is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Format, Number of vessels and Medium per cm² and the number you are missing is Growth area and Medium per vessel.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/punnett-square">Punnett square Calculator</a>, <a href="/biology/puppy-adult-weight-predictor">Puppy Adult Weight Predictor Calculator</a> and <a href="/biology/q10-temperature-coefficient">Q10 Temperature Coefficient Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much medium does a T75 flask need?', 'a' => 'About 15 mL at the usual 0.2 mL/cm², with a range of 10–20 mL depending on the protocol.'],
-            ['q' => 'How many cells in a confluent T75?', 'a' => 'Roughly 7–8 million for most adherent lines, which is about 10⁵ cells/cm².'],
-            ['q' => 'What does the Cell Culture Dish / Plate / Flask Reference actually calculate?', 'a' => <<<'TXT'
-            It returns growth area, medium per vessel, cells per vessel at that density and total growth area. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Cell Culture Dish / Plate / Flask Reference calculator work out?', 'a' => 'Growth area, Medium per vessel, Cells per vessel at that density and Total growth area, from Format. The relationship is Growth area = Format.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Format, Number of vessels, Medium per cm² (mL/cm²), Target seeding density (cells/cm²). With vessel, factor and medium_per_cm2 in place, Growth area can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Growth area, Medium per vessel, Cells per vessel at that density and Total growth area blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Growth area = 75 cm², Medium per vessel = 15 mL, Cells per vessel at that density = 1.500e+6 cells and Total growth area = 75 cm². Those are the defaults written into the form — move Format and every result box follows.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Growth area is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Format left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Growth area at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/punnett-square', 'name' => 'Punnett square Calculator'],
+            ['path' => '/biology/puppy-adult-weight-predictor', 'name' => 'Puppy Adult Weight Predictor Calculator'],
+            ['path' => '/biology/q10-temperature-coefficient', 'name' => 'Q10 Temperature Coefficient Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

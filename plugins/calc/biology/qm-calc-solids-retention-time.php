@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Solids Retention Time Calculator (SRT)',
-    'meta' => ['title' => 'Solids Retention Time Calculator (SRT) — Biology', 'description' => 'Solids retention time, or sludge age, is how long a bacterium stays in the system, and it decides which organisms survive there. It returns solids inventory…', 'h1' => 'Solids Retention Time Calculator (SRT)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Solids Retention Time Calculator (SRT) — Biology', 'description' => 'Solids retention time, or sludge age, is how long a bacterium stays in the system, and it decides which organisms survive there. Free solids retention time (s', 'h1' => 'Solids Retention Time Calculator (SRT)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -113,50 +113,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Solids retention time, or sludge age, is how long a bacterium stays in the system, and it decides which organisms survive there. It returns solids inventory, solids retention time and wasting rate for the target SRT, and the panel shows all of them at once.
-        
-        This calculator returns SRT from the tank inventory and the daily sludge wasting, plus the wasting rate needed to hit a target age.
+        Solids Retention Time Calculator (SRT) turns Aeration tank volume, MLSS and Waste sludge flow into Solids retention time and Solids inventory. The arithmetic is the whole method: Solids retention time is worked out from Aeration tank volume by one formula, applied once. Solids retention time comes back in days unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Solids Retention Time (SRT)', 'html' => <<<'TXT'
-            <p>SRT = (V × MLSS) ÷ (Q_w × MLSS_w + Q_e × TSS_e), all masses in the same units</p>
-            <figure class="calc-figure"><img src="/uploads/biology/solids-retention-time.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Solids Retention Time Calculator (SRT) — Solids inventory divided by daily loss is the sludge age." title="Solids Retention Time Calculator (SRT)"><figcaption>Solids inventory divided by daily loss is the sludge age.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>V</code></td><td>aeration tank volume</td><td>m³</td></tr><tr><td><code>Q_w</code></td><td>waste sludge flow</td><td>m³/day</td></tr><tr><td><code>MLSS_w</code></td><td>wasted sludge concentration</td><td>mg/L</td></tr><tr><td><code>Q_e</code></td><td>effluent flow</td><td>m³/day</td></tr></tbody></table>
+            ['title' => 'How the Solids Retention Time Calculator (SRT) calculator works', 'html' => <<<'TXT'
+            <p>The Solids Retention Time Calculator (SRT) calculator applies one relationship to 7 numbers and reports Solids retention time, Solids inventory and Wasting rate for the target SRT.</p><p>In the form&#039;s own words, Solids inventory = Aeration tank volume × MLSS ÷ 1000.</p><p>The result panel carries Solids retention time, Solids inventory and Wasting rate for the target SRT, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Solids Retention Time (SRT)?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 7 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Aeration tank volume</strong> — in m³</li><li><strong>MLSS</strong> — in mg/L</li><li><strong>Waste sludge flow</strong> — in m³/day</li><li><strong>Waste sludge MLSS</strong> — in mg/L</li><li><strong>Effluent flow</strong> — in m³/day</li><li><strong>Effluent suspended solids</strong> — in mg/L</li><li><strong>Target SRT</strong> — in days</li></ul><p>What you get back is Solids retention time in days, Solids inventory in kg, Wasting rate for the target SRT in m³/day, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: aeration tank volume of <strong>750</strong> m³, mlss of <strong>3,000</strong> mg/L, waste sludge flow of <strong>25</strong> m³/day, waste sludge mlss of <strong>8,000</strong> mg/L, effluent flow of <strong>500</strong> m³/day, effluent suspended solids of <strong>15</strong> mg/L, target srt of <strong>15</strong> days.</p>
-            <p>Substituting them into the formula gives solids inventory of <strong>2,250</strong> kg, solids retention time of <strong>10.84</strong> days, wasting rate for the target srt of <strong>17.81</strong> m³/day.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Aeration tank volume = 750 m³, MLSS = 3000 mg/L, Waste sludge flow = 25 m³/day, Waste sludge MLSS = 8000 mg/L, Effluent flow = 500 m³/day, Effluent suspended solids = 15 mg/L and Target SRT = 15 days — through the same formula and the panel reports &lt;strong&gt;Solids inventory&lt;/strong&gt; = 2250 kg, &lt;strong&gt;Solids retention time&lt;/strong&gt; = 10.84 days and &lt;strong&gt;Wasting rate for the target SRT&lt;/strong&gt; = 17.81 m³/day.</p><ul><li><strong>Solids inventory</strong> = 2250 kg</li><li><strong>Solids retention time</strong> = 10.84 days</li><li><strong>Wasting rate for the target SRT</strong> = 17.81 m³/day</li></ul><p>The line behind those figures is <strong>Solids inventory</strong> = <code>Aeration tank volume × MLSS ÷ 1000</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>2 – 4 days</td><td><strong>High rate</strong></td><td>fast growth, poor nitrification</td></tr><tr><td>5 – 10 days</td><td><strong>Conventional</strong></td><td>BOD removal, partial nitrification</td></tr><tr><td>10 – 20 days</td><td><strong>Nitrifying</strong></td><td>stable ammonia removal</td></tr><tr><td>above 25 days</td><td><strong>Extended aeration</strong></td><td>sludge stabilisation, low yield</td></tr></tbody></table>
-            <ul><li><p>SRT, not hydraulic retention time, controls the biology: a plant can have a four-hour hydraulic pass and a fifteen-day sludge age at the same time.</p></li><li><p>Nitrifying bacteria grow slowly, so a plant designed for ammonia removal needs an SRT of at least 8–10 days at 15 °C and more when colder.</p></li><li><p>Solids lost over the weir count. On a plant with poor clarification, effluent TSS can be the dominant term in the denominator.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Solids inventory&lt;/strong&gt; = 2250, &lt;strong&gt;Solids retention time&lt;/strong&gt; = 10.84 and &lt;strong&gt;Wasting rate for the target SRT&lt;/strong&gt; = 17.81 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Solids retention time takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Quoting hydraulic retention time when asked about sludge age.</li><li>Ignoring effluent suspended solids, which quietly shorten the SRT.</li><li>Wasting from the return line without using the return concentration in the calculation.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Solids inventory</strong> = <code>Aeration tank volume × MLSS ÷ 1000</code></li><li><strong>Solids retention time</strong> = <code>(Aeration tank volume × MLSS ÷ 1000) ÷ (Waste sludge flow × Waste sludge MLSS ÷ 1000 + Effluent flow × Effluent suspended solids ÷ 1000)</code></li><li><strong>Wasting rate for the target SRT</strong> = <code>((Aeration tank volume × MLSS ÷ 1000) ÷ Target SRT − Effluent flow × Effluent suspended solids ÷ 1000) ÷ (Waste sludge MLSS ÷ 1000)</code></li></ul><p>Any one of Solids inventory, Solids retention time and Wasting rate for the target SRT can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/svi-sludge-volume-index">Sludge volume index</a>. <a href="/biology/bod-load">BOD load</a>. <a href="/biology/bacterial-growth-curve">Growth curve</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Aeration tank volume, from 750 to 1500 — and the answers go from &lt;strong&gt;Solids inventory&lt;/strong&gt; 2250 kg, &lt;strong&gt;Solids retention time&lt;/strong&gt; 10.84 days and &lt;strong&gt;Wasting rate for the target SRT&lt;/strong&gt; 17.81 m³/day to &lt;strong&gt;Solids inventory&lt;/strong&gt; 4500 kg, &lt;strong&gt;Solids retention time&lt;/strong&gt; 21.69 days and &lt;strong&gt;Wasting rate for the target SRT&lt;/strong&gt; 36.56 m³/day.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Solids retention time, Solids inventory and Wasting rate for the target SRT are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Aeration tank volume to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Aeration tank volume, MLSS and Waste sludge flow is what you already know and Solids retention time and Solids inventory is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dna-pattern-finder">DNA Pattern Finder Calculator</a>, <a href="/biology/dna-percentage">DNA Percentage Calculator</a> and <a href="/biology/sequence-shuffler">DNA Sequence Shuffler Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long should sludge be kept in an activated-sludge plant?', 'a' => '5–10 days for BOD removal, 10–20 for nitrification, 25 and above for stabilisation.'],
-            ['q' => 'Does SRT set sludge production?', 'a' => 'Yes — surplus sludge falls roughly as 1/SRT, which is why long ages produce less waste sludge.'],
-            ['q' => 'What does the Solids Retention Time (SRT) actually calculate?', 'a' => <<<'TXT'
-            It returns solids inventory, solids retention time and wasting rate for the target SRT. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Solids Retention Time Calculator (SRT) calculator work out?', 'a' => <<<'TXT'
+            Solids retention time, Solids inventory and Wasting rate for the target SRT, from Aeration tank volume and MLSS. The relationship is Solids inventory = Aeration tank volume × MLSS ÷ 1000.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Aeration tank volume (m³), MLSS (mg/L), Waste sludge flow (m³/day), Waste sludge MLSS (mg/L), Effluent flow (m³/day). Enter volume, mlss and waste; Solids retention time is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Solids inventory, Solids retention time and Wasting rate for the target SRT blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Solids inventory = 2250 kg, Solids retention time = 10.84 days and Wasting rate for the target SRT = 17.81 m³/day. That comes from the page's own defaults, entered in Aeration tank volume; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Solids retention time is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Aeration tank volume blank and the page solves for it, reporting Solids retention time instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Solids retention time keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dna-pattern-finder', 'name' => 'DNA Pattern Finder Calculator'],
+            ['path' => '/biology/dna-percentage', 'name' => 'DNA Percentage Calculator'],
+            ['path' => '/biology/sequence-shuffler', 'name' => 'DNA Sequence Shuffler Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

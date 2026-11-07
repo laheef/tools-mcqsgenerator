@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Metacam dosage for cats',
-    'meta' => ['title' => 'Metacam dosage for cats — Free Online Calculator', 'description' => 'Supply your cat\'s weight and the volume needed and the Metacam dosage for cats calculator solves for <strong>indication</strong>. The Metacam dosage for cats…', 'h1' => 'Metacam dosage for cats Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Metacam dosage for cats — Free Online Calculator', 'description' => 'Metacam dosage for cats takes Your cat\'s weight and Dosage for the first 24 hours and returns Indication and Volume needed. The chip beside Your cat&#039;s…', 'h1' => 'Metacam dosage for cats Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'dosage' => [
@@ -321,60 +321,57 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Supply your cat\'s weight and the volume needed and the Metacam dosage for cats calculator solves for <strong>indication</strong>.',
+        'intro' => <<<'TXT'
+        Metacam dosage for cats takes Your cat's weight and Dosage for the first 24 hours and returns Indication and Volume needed. It is a single relationship that reads Indication out of Your cat's weight, not a table of canned results keyed by them.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Metacam dosage for cats calculator work?', 'html' => <<<'TXT'
-            <p>The Metacam dosage for cats calculator takes the values in the form, applies the relationship described below and reports <strong>indication</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in your cat's weight and the volume needed.</p>
+            ['title' => 'How the Metacam dosage for cats calculator works', 'html' => <<<'TXT'
+            <p>The Metacam dosage for cats calculator applies one relationship to 2 numbers and reports Indication, Volume needed and Drops needed.</p><p>Written with the labels from the form, Indication = Dosage for the first 24 hours ÷ Your cat&#039;s weight.</p><p>The result panel carries Indication, Volume needed, Drops needed and Dosage after 24 hours, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Your cat&#039;s weight</strong> — in kilograms</li><li><strong>Dosage for the first 24 hours</strong> — in milligrams</li></ul><p>The answers come back as Indication, Volume needed in milliliters, Drops needed in #, Dosage after 24 hours in milligrams, Drops needed in #. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your cat's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Indication</strong></td><td>One of 3 options, such as post-operative pain, acute musculo-skeletal disorders and chronic musculo-skeletal disorders.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Dosage for the first 24 hours</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>Calculated</td></tr><tr><td><strong>Volume needed</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>Drops needed (First 24 hours)</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dosage after 24 hours</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>Calculated</td></tr><tr><td><strong>Drops needed (Following treatment)</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Your cat&amp;#039;s weight = 10 kg and Dosage for the first 24 hours = 100 mg — through the same formula and the panel reports &lt;strong&gt;Indication&lt;/strong&gt; = 0.2001, &lt;strong&gt;Drops needed&lt;/strong&gt; = 6000 #, &lt;strong&gt;Dosage after 24 hours&lt;/strong&gt; = 0.5 mg, &lt;strong&gt;Drops needed&lt;/strong&gt; = 30 # and &lt;strong&gt;Volume needed&lt;/strong&gt; = 50 ml.</p><ul><li><strong>Indication</strong> = 0.2001</li><li><strong>Drops needed</strong> = 6000 #</li><li><strong>Dosage after 24 hours</strong> = 0.5 mg</li><li><strong>Drops needed</strong> = 30 #</li><li><strong>Volume needed</strong> = 50 ml</li></ul><p>The line behind those figures is <strong>Indication</strong> = <code>Dosage for the first 24 hours ÷ Your cat&#039;s weight</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'The formula behind the Metacam dosage for cats calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Indication</span><span class="formula-eq">=</span><span class="formula-rhs">dosage for the first 24 hours ÷ your cat&#x27;s weight</span></div><div class="formula-row"><span class="formula-lhs">Drops needed</span><span class="formula-eq">=</span><span class="formula-rhs">60 × dosage for the first 24 hours</span></div><div class="formula-row"><span class="formula-lhs">Dosage after 24 hours</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 20) × your cat&#x27;s weight</span></div><div class="formula-row"><span class="formula-lhs">Dosage after 24 hours</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 60) × drops needed</span></div><div class="formula-row"><span class="formula-lhs">Dosage for the first 24 hours</span><span class="formula-eq">=</span><span class="formula-rhs">2 × volume needed</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Indication&lt;/strong&gt; = 0.2001, &lt;strong&gt;Drops needed&lt;/strong&gt; = 6000, &lt;strong&gt;Dosage after 24 hours&lt;/strong&gt; = 0.5, &lt;strong&gt;Drops needed&lt;/strong&gt; = 30 and &lt;strong&gt;Volume needed&lt;/strong&gt; = 50 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Volume needed offers 40 units and opens on milliliters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in milligrams, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in milligrams, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Indication</strong> = <code>Dosage for the first 24 hours ÷ Your cat&#039;s weight</code></li><li><strong>Your cat&#039;s weight</strong> = <code>Dosage for the first 24 hours ÷ Indication</code></li><li><strong>Dosage for the first 24 hours</strong> = <code>Indication × Your cat&#039;s weight</code></li><li><strong>Drops needed</strong> = <code>60 × Dosage for the first 24 hours</code></li><li><strong>Dosage after 24 hours</strong> = <code>(1 ÷ 20) × Your cat&#039;s weight</code></li><li><strong>Volume needed</strong> = <code>(1 ÷ 2) × Dosage for the first 24 hours</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Indication, Your cat&#039;s weight and Dosage for the first 24 hours can be the unknown.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Mass, opening in milligrams</li><li>Volume, opening in milliliters</li><li>Mass, opening in milligrams</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Your cat&#039;s weight from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Indication&lt;/strong&gt; 0.2001, &lt;strong&gt;Drops needed&lt;/strong&gt; 6000 #, &lt;strong&gt;Dosage after 24 hours&lt;/strong&gt; 0.5 mg, &lt;strong&gt;Drops needed&lt;/strong&gt; 30 # and &lt;strong&gt;Volume needed&lt;/strong&gt; 50 ml to &lt;strong&gt;Indication&lt;/strong&gt; 0.2001, &lt;strong&gt;Drops needed&lt;/strong&gt; 6000 #, &lt;strong&gt;Dosage after 24 hours&lt;/strong&gt; 1 mg, &lt;strong&gt;Drops needed&lt;/strong&gt; 60 # and &lt;strong&gt;Volume needed&lt;/strong&gt; 50 ml.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Metacam dosage for cats calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 2 figures keep coming back — your cat's weight and the volume needed — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Your cat&#039;s weight and Dosage for the first 24 hours is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Indication, Volume needed and Drops needed are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Your cat&#039;s weight is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/mlvss">Mixed liquor volatile suspended solids</a>, <a href="/biology/mowing-cost">Lawn mowing</a> and <a href="/biology/mulch">Mulch</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Your cat&#039;s weight and Dosage for the first 24 hours measured, Indication and Volume needed wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/dog-crate-size">Dog crate size</a>, <a href="/biology/dog-food">Dog food Calculator</a> and <a href="/biology/dog-harness-size">Dog harness size</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Metacam dosage for cats calculator work out?', 'a' => <<<'TXT'
-            It returns indication, derived from your cat's weight and the volume needed. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Indication, Volume needed, Drops needed and Dosage after 24 hours, from Your cat's weight and Dosage for the first 24 hours. The relationship is Indication = Dosage for the first 24 hours ÷ Your cat's weight.
             TXT],
-            ['q' => 'What do I need to enter to use the Metacam dosage for cats calculator?', 'a' => <<<'TXT'
-            The form asks for your cat's weight and the volume needed, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Your cat's weight (kilograms), Dosage for the first 24 hours (milligrams). Enter weight and dosage; Indication is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter your cat\'s weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Your cat's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Indication, Your cat's weight, Dosage for the first 24 hours and Drops needed can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Indication = 0.2001, Drops needed = 6000 #, Dosage after 24 hours = 0.5 mg, Drops needed = 30 # and Volume needed = 50 ml. That comes from the page's own defaults, entered in Your cat's weight; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Metacam dosage for cats calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Indication is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Your cat\'s weight blank and the page solves for it, reporting Indication instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Indication keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/mlvss', 'name' => 'Mixed liquor volatile suspended solids'],
-            ['path' => '/biology/mowing-cost', 'name' => 'Lawn mowing'],
-            ['path' => '/biology/mulch', 'name' => 'Mulch'],
+            ['path' => '/biology/dog-crate-size', 'name' => 'Dog crate size'],
+            ['path' => '/biology/dog-food', 'name' => 'Dog food Calculator'],
+            ['path' => '/biology/dog-harness-size', 'name' => 'Dog harness size'],
         ],
+        'authors' => [],
     ],
 ];

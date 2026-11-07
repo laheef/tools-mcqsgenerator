@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mass to Molarity Converter',
-    'meta' => ['title' => 'Mass to Molarity Converter — Formula & Results', 'description' => 'Mass to molarity conversion needs one number: the molecular weight of the substance. It returns amount of substance, mass, concentration and concentration…', 'h1' => 'Mass to Molarity Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mass to Molarity Converter — Formula & Results', 'description' => 'Enter Molecular weight, Mass and Volume into Mass to Molarity and the answer comes back as Concentration and Concentration. The typical use is one direction…', 'h1' => 'Mass to Molarity Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -82,44 +82,49 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Mass to molarity conversion needs one number: the molecular weight of the substance. It returns amount of substance, mass, concentration and concentration, and the panel shows all of them at once.
-        
-        It is the calculation behind every stock solution: 1 mg of a 500 g/mol compound in 1 mL is 2 mM, and the same arithmetic converts the other way when a protocol asks for a molar concentration and the balance gives you mass.
+        Enter Molecular weight, Mass and Volume into Mass to Molarity and the answer comes back as Concentration and Concentration. It is a single relationship that reads Concentration out of Molecular weight, not a table of canned results keyed by them. Units for Concentration default to mM and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Mass to Molarity Converter', 'html' => <<<'TXT'
-            <p>µmol = mg × 1000 ÷ MW. mM = µmol ÷ volume (mL). mg/mL = mg ÷ volume (mL)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/mass-molarity-conversion.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Mass to Molarity Converter — mM from 1 mg in 1 mL, by molecular weight" title="Mass to Molarity Converter"><figcaption>mM from 1 mg in 1 mL, by molecular weight</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>MW</code></td><td>molecular weight in g/mol</td><td>g/mol</td></tr><tr><td><code>mM</code></td><td>millimole per litre, the same as µmol per mL</td><td>mol/L</td></tr><tr><td><code>µmol</code></td><td>micromole, 10⁻⁶ mol</td><td>mol</td></tr></tbody></table>
+            ['title' => 'How the Mass to Molarity calculator works', 'html' => <<<'TXT'
+            <p>Mass to Molarity answers one question from 3 numbers, and the answer is Concentration, Concentration and Amount of substance.</p><p>Written with the labels from the form, Amount of substance = Mass × 1000 ÷ Molecular weight.</p><p>The result panel carries Concentration, Concentration and Amount of substance, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Mass to Molarity Converter?', 'html' => <<<'TXT'
-            <ol><li>Enter the molecular weight of the exact salt form you are weighing.</li><li>Enter the mass in milligrams and the volume it is dissolved in.</li><li>Read the concentration in mM and mg/mL, or type a target concentration to solve the mass.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Molecular weight</strong> — in g/mol. Also called molar mass or relative molecular mass</li><li><strong>Mass</strong> — in mg</li><li><strong>Volume</strong> — in mL</li></ul><p>The result boxes are Concentration in mM, Concentration in mg/mL, Amount of substance in µmol; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: molecular weight of <strong>500</strong> g/mol, volume of <strong>1</strong> mL.</p>
-            <p>Substituting them into the formula gives amount of substance of <strong>2</strong> µmol, mass of <strong>1</strong> mg, concentration of <strong>2</strong> mM, concentration of <strong>1</strong> mg/mL.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Concentration is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 – 100 mM</td><td><strong>Typical stock</strong></td><td>dissolves easily and pipettes accurately</td></tr><tr><td>100 mM – 1 M</td><td><strong>Concentrated stock</strong></td><td>check solubility before making it up</td></tr><tr><td>under 1 mM</td><td><strong>Working dilution</strong></td><td>easy to lose to adsorption on plastic</td></tr></tbody></table>
-            <ul><li><p>A millimolar solution contains one micromole per millilitre, which is why 1 mg of a 500 g/mol compound in 1 mL is 2 mM — no extra factor of 1000 is needed.</p></li><li><p>Molecular weight must include the salt form. A drug as a hydrochloride salt weighs more than its free base, and dosing errors often come from mixing the two.</p></li><li><p>Water of crystallisation counts too: CuSO₄·5H₂O is 249.7 g/mol, not 159.6.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Amount of substance</strong> = <code>Mass × 1000 ÷ Molecular weight</code></li><li><strong>Mass</strong> = <code>Amount of substance × Molecular weight ÷ 1000</code></li><li><strong>Concentration</strong> = <code>Amount of substance ÷ Volume</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Amount of substance, Mass and Concentration can be the unknown.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using the free-base molecular weight for a salt, which over-concentrates the solution by up to 20%.</li><li>Adding solvent to the final volume instead of dissolving and then making up to volume.</li><li>Confusing mM with µmol/mL — they are numerically the same, which is why the two are easily mixed up in a protocol.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Concentration, Concentration and Amount of substance are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Molecular weight to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Molecular weight, Mass and Volume measured, Concentration and Concentration wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/hardy-weinberg-recessive-allele">Hardy–Weinberg from the Recessive Allele Frequency Calculator</a>, <a href="/biology/hardy-weinberg-recessive-homozygote">Hardy–Weinberg from the Recessive Homozygote Frequency Calcula</a> and <a href="/biology/hatch-rate">Hatch Rate Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I make a 10 mM stock of a 300 g/mol compound?', 'a' => 'Dissolve 3 mg in 1 mL: 3 mg ÷ 300 g/mol = 10 µmol, and 10 µmol/mL is 10 mM.'],
-            ['q' => 'Does the salt form matter?', 'a' => 'Yes — always use the molecular weight of the exact form in the bottle, salt and hydration included.'],
-            ['q' => 'What is the difference between molarity and molality?', 'a' => 'Molarity is per litre of solution, molality per kilogram of solvent; they differ by a few percent in water.'],
-            ['q' => 'What does the Mass to Molarity Converter actually calculate?', 'a' => 'It returns amount of substance, mass, concentration and concentration. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Mass to Molarity calculator work out?', 'a' => <<<'TXT'
+            Concentration, Concentration and Amount of substance, from Mass and Molecular weight. The relationship is Amount of substance = Mass × 1000 ÷ Molecular weight.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Molecular weight (g/mol), Mass (mg), Volume (mL). Enter mw, mass_mg and volume_ml; Concentration is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Amount of substance, Mass, Concentration and Concentration can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Concentration is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Molecular weight left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Concentration keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/hardy-weinberg-recessive-allele', 'name' => 'Hardy–Weinberg from the Recessive Allele Frequency Calculator'],
+            ['path' => '/biology/hardy-weinberg-recessive-homozygote', 'name' => 'Hardy–Weinberg from the Recessive Homozygote Frequency Calcula'],
+            ['path' => '/biology/hatch-rate', 'name' => 'Hatch Rate Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

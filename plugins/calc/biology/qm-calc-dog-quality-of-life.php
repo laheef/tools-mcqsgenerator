@@ -12,7 +12,7 @@
 return [
     'name' => 'Dog quality of life',
     'meta' => ['title' => 'Dog quality of life — Free Online Calculator', 'description' => <<<'TXT'
-    The Dog quality of life calculator returns your result from the 6 fields on the form. The Dog quality of life calculator takes the values in the form, applies…
+    Enter Mobility, Nutrition (food intake) and Hydration (water intake) into Dog quality of life and the answer comes back as results. Your dog&#039;s ability to…
     TXT, 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
@@ -267,57 +267,45 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'The Dog quality of life calculator returns your result from the 6 fields on the form.',
+        'intro' => <<<'TXT'
+        Enter Mobility, Nutrition (food intake) and Hydration (water intake) into Dog quality of life and the answer comes back as results. Nothing is looked up on this page: results is computed from Mobility and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Dog quality of life calculator work?', 'html' => <<<'TXT'
-            <p>The Dog quality of life calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the mobility, the nutrition (food intake) and the hydration (water intake)).</p>
+            ['title' => 'How the Dog quality of life calculator works', 'html' => <<<'TXT'
+            <p>The Dog quality of life calculator applies one relationship to 6 numbers and reports results.</p><p>The relationship it solves reads results = (Mobility + Nutrition (food intake) + Hydration (water intake) + Interaction and attitude + Favorite things + Urination and defecation.).</p><p>What comes back is results — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as bare minimum, poor and good. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as none, poor or requires hand feeding and good. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no intake (not drinking), poor or increased intake and adequate intake. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as none, reduced or irregular and normal. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as hides in the closet or under the bed, some Interaction and interacts normally. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as no interest in their favorite toys and activities, decrease of interest in their favorite toys and activities and normal enthusiasm for favorite toys and activities. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>6 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 6 boxes, and nothing else.</p><ul><li><strong>Mobility</strong> — a plain number, no unit. Your dog&#039;s ability to move and get from one place to another. &amp;nbsp;</li><li><strong>Nutrition (food intake)</strong> — a plain number, no unit</li><li><strong>Hydration (water intake)</strong> — a plain number, no unit</li><li><strong>Urination and defecation</strong> — a plain number, no unit</li><li><strong>Interaction and attitude</strong> — a plain number, no unit</li><li><strong>Favorite things</strong> — a plain number, no unit</li></ul><p>The result box is results. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mobility</strong></td><td>One of 3 options, such as bare minimum, poor and good.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Nutrition (food intake)</strong></td><td>One of 3 options, such as none, poor or requires hand feeding and good.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hydration (water intake)</strong></td><td>One of 3 options, such as no intake (not drinking), poor or increased intake and adequate intake.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Urination and defecation.</strong></td><td>One of 3 options, such as none, reduced or irregular and normal.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Interaction and attitude</strong></td><td>One of 3 options, such as hides in the closet or under the bed, some Interaction and interacts normally.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Favorite things</strong></td><td>One of 3 options, such as no interest in their favorite toys and activities, decrease of interest in their favorite toys and activities and normal enthusiasm for favorite toys and activities.</td><td>choice</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as results is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'The formula behind the Dog quality of life calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Results</span><span class="formula-eq">=</span><span class="formula-rhs">(mobility + nutrition (food intake) + hydration (water intake) + interaction and attitude + favorite things + urination and defecation.)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>results</strong> = <code>(Mobility + Nutrition (food intake) + Hydration (water intake) + Interaction and attitude + Favorite things + Urination and defecation.)</code></li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> results is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Mobility is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog quality of life calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. </li><li>Write the answer down with its unit. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity</a>, <a href="/biology/dog-size">Dog size</a> and <a href="/biology/dog-water-intake">Dog water intake</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Mobility, Nutrition (food intake) and Hydration (water intake) measured, results wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/guinea-pig-age">Guinea pig years to human years</a>, <a href="/biology/gypsum-application-rate">Gypsum Application Rate Calculator</a> and <a href="/biology/hamster-age">Hamster age Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What do I need to enter to use the Dog quality of life calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What does the Dog quality of life calculator work out?', 'a' => <<<'TXT'
+            results, from Mobility, Nutrition (food intake), Hydration (water intake) and Interaction and attitude. The relationship is results = (Mobility + Nutrition (food intake) + Hydration (water intake) + Interaction and attitude + Favorite things + Urination and defecation.).
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (6 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Mobility, Nutrition (food intake), Hydration (water intake), Urination and defecation, Interaction and attitude. Fill item1, item2 and item3 and leave results empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Is the Dog quality of life calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of results is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: results is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. results keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity'],
-            ['path' => '/biology/dog-size', 'name' => 'Dog size'],
-            ['path' => '/biology/dog-water-intake', 'name' => 'Dog water intake'],
+            ['path' => '/biology/guinea-pig-age', 'name' => 'Guinea pig years to human years'],
+            ['path' => '/biology/gypsum-application-rate', 'name' => 'Gypsum Application Rate Calculator'],
+            ['path' => '/biology/hamster-age', 'name' => 'Hamster age Calculator'],
         ],
+        'authors' => [],
     ],
 ];

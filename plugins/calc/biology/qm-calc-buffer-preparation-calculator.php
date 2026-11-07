@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Buffer Preparation Calculator',
-    'meta' => ['title' => 'Buffer Preparation Calculator — Formula & Results', 'description' => 'A buffer is a weak acid and its conjugate base, and the ratio between them sets the pH. It returns pKa used, base: acid ratio, fraction as base and lower end…', 'h1' => 'Buffer Preparation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Buffer Preparation Calculator — Formula & Results', 'description' => 'Enter Buffer system, Use my own pKa instead (temperature-corrected, another buffer) and My pKa into Buffer Preparation and the answer comes back as Base…', 'h1' => 'Buffer Preparation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -149,44 +149,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A buffer is a weak acid and its conjugate base, and the ratio between them sets the pH. It returns pKa used, base: acid ratio, fraction as base and lower end of the useful pH range, and the panel shows all of them at once.
-        
-        The Henderson–Hasselbalch equation turns a target pH into a ratio, and this calculator turns the ratio into the volumes or masses you pipette.
+        Enter Buffer system, Use my own pKa instead (temperature-corrected, another buffer) and My pKa into Buffer Preparation and the answer comes back as Base: acid ratio and Fraction as base. Nothing is looked up on this page: Base: acid ratio is computed from Buffer system and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Base: acid ratio is opened in:1; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Buffer Preparation', 'html' => <<<'TXT'
-            <p>pH = pKa + log₁₀([A⁻] ÷ [HA]), so [A⁻]/[HA] = 10^(pH − pKa)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/buffer-preparation-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Buffer Preparation Calculator — The base-to-acid ratio that produces the target pH." title="Buffer Preparation Calculator"><figcaption>The base-to-acid ratio that produces the target pH.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>pKa</code></td><td>acid dissociation constant of the buffer</td><td>—</td></tr><tr><td><code>pH</code></td><td>target pH</td><td>—</td></tr><tr><td><code>ratio</code></td><td>base to acid</td><td>:1</td></tr></tbody></table>
+            ['title' => 'How the Buffer Preparation calculator works', 'html' => <<<'TXT'
+            <p>Buffer Preparation answers one question from 6 numbers, and the answer is Base: acid ratio, Fraction as base and pKa used.</p><p>The relationship it solves reads pKa used = (1 − Use my own pKa instead (temperature-corrected, another buffer)) × Buffer system + Use my own pKa instead (temperature-corrected, another buffer) × My pKa.</p><p>What comes back is Base: acid ratio, Fraction as base, pKa used and Lower end of the useful pH range — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Buffer Preparation?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 6 boxes and the page has everything it needs.</p><ul><li><strong>Buffer system</strong> — a plain number, no unit</li><li><strong>Use my own pKa instead (temperature-corrected, another buffer)</strong> — a plain number, no unit</li><li><strong>My pKa</strong> — a plain number, no unit. Only used when the box above is ticked</li><li><strong>Target pH</strong> — a plain number, no unit</li><li><strong>Buffer concentration</strong> — in M</li><li><strong>Final volume</strong> — in L</li></ul><p>The result boxes are Base: acid ratio in:1, Fraction as base in %, pKa used, Lower end of the useful pH range, Buffer substance in the batch in mmol, Basic form needed in mmol, Acidic form needed in mmol; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: buffer system set to <strong>HEPES (pKa 7.55)</strong>, use my own pka instead (temperature-corrected, another buffer) of <strong>0</strong>, my pka of <strong>7.2</strong>, target ph of <strong>7.4</strong>, buffer concentration of <strong>0.05</strong> M, final volume of <strong>1</strong> L.</p>
-            <p>Substituting them into the formula gives pka used of <strong>7.55</strong>, base: acid ratio of <strong>0.7079</strong>:1, fraction as base of <strong>41.45</strong>%, lower end of the useful ph range of <strong>6.55</strong>, buffer substance in the batch of <strong>50</strong> mmol, basic form needed of <strong>20.73</strong> mmol, acidic form needed of <strong>29.27</strong> mmol.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Buffer system = 7.55, Use my own pKa instead (temperature-corrected, another buffer) = 0, My pKa = 7.2, Target pH = 7.4, Buffer concentration = 0.05 M and Final volume = 1 L; the answers are &lt;strong&gt;pKa used&lt;/strong&gt; = 7.55, &lt;strong&gt;Base: acid ratio&lt;/strong&gt; = 0.7079:1, &lt;strong&gt;Fraction as base&lt;/strong&gt; = 41.45 %, &lt;strong&gt;Lower end of the useful pH range&lt;/strong&gt; = 6.55, &lt;strong&gt;Buffer substance in the batch&lt;/strong&gt; = 50 mmol, &lt;strong&gt;Basic form needed&lt;/strong&gt; = 20.73 mmol and &lt;strong&gt;Acidic form needed&lt;/strong&gt; = 29.27 mmol.</p><ul><li><strong>pKa used</strong> = 7.55</li><li><strong>Base: acid ratio</strong> = 0.7079:1</li><li><strong>Fraction as base</strong> = 41.45 %</li><li><strong>Lower end of the useful pH range</strong> = 6.55</li><li><strong>Buffer substance in the batch</strong> = 50 mmol</li><li><strong>Basic form needed</strong> = 20.73 mmol</li><li><strong>Acidic form needed</strong> = 29.27 mmol</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>pKa used</strong> = <code>(1 − Use my own pKa instead (temperature-corrected, another buffer)) × Buffer system + Use my own pKa instead (temperature-corrected, another buffer) × My pKa</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>A buffer works within about one pH unit of its pKa; outside that the ratio runs away from 1:1 and the buffering capacity collapses.</p></li><li><p>Tris has a large temperature coefficient: a solution at pH 8.06 at 25 °C reads about 7.7 at 4 °C, so pH it at the temperature you will use it.</p></li><li><p>Prepare a concentrated stock and dilute — weighing 0.05 mol into a litre is imprecise, and the pH will need adjusting anyway.</p></li><li><p>Phosphate buffers precipitate divalent cations; if your assay needs Mg²⁺, use HEPES or Tris.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;pKa used&lt;/strong&gt; = 7.55, &lt;strong&gt;Base: acid ratio&lt;/strong&gt; = 0.7079, &lt;strong&gt;Fraction as base&lt;/strong&gt; = 41.45, &lt;strong&gt;Lower end of the useful pH range&lt;/strong&gt; = 6.55, &lt;strong&gt;Buffer substance in the batch&lt;/strong&gt; = 50, &lt;strong&gt;Basic form needed&lt;/strong&gt; = 20.73 and &lt;strong&gt;Acidic form needed&lt;/strong&gt; = 29.27. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Base: acid ratio is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Choosing a buffer whose pKa is two units from the target pH.</li><li>Adjusting pH with strong acid without noting the final volume, which changes concentration.</li><li>Assuming pH paper is precise enough for an enzyme assay.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>pKa used</strong> = <code>(1 − Use my own pKa instead (temperature-corrected, another buffer)) × Buffer system + Use my own pKa instead (temperature-corrected, another buffer) × My pKa</code></li><li><strong>Base: acid ratio</strong> = <code>(10)^(Target pH − ((1 − Use my own pKa instead (temperature-corrected, another buffer)) × Buffer system + Use my own pKa instead (temperature-corrected, another buffer) × My pKa))</code></li><li><strong>Lower end of the useful pH range</strong> = <code>((1 − Use my own pKa instead (temperature-corrected, another buffer)) × Buffer system + Use my own pKa instead (temperature-corrected, another buffer) × My pKa) − 1</code></li><li><strong>Buffer substance in the batch</strong> = <code>Buffer concentration × Final volume × 1000</code></li><li><strong>Acidic form needed</strong> = <code>Buffer concentration × Final volume × 1000 ÷ (1 + (10)^(Target pH − ((1 − Use my own pKa instead (temperature-corrected, another buffer)) × Buffer system + Use my own pKa instead (temperature-corrected, another buffer) × My pKa)))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of pKa used, Base: acid ratio and Fraction as base can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Buffer system, from 7.55 to 15.1 — and the answers go from &lt;strong&gt;pKa used&lt;/strong&gt; 7.55, &lt;strong&gt;Base: acid ratio&lt;/strong&gt; 0.7079:1, &lt;strong&gt;Fraction as base&lt;/strong&gt; 41.45 %, &lt;strong&gt;Lower end of the useful pH range&lt;/strong&gt; 6.55, &lt;strong&gt;Buffer substance in the batch&lt;/strong&gt; 50 mmol, &lt;strong&gt;Basic form needed&lt;/strong&gt; 20.73 mmol and &lt;strong&gt;Acidic form needed&lt;/strong&gt; 29.27 mmol to &lt;strong&gt;pKa used&lt;/strong&gt; 15.1, &lt;strong&gt;Base: acid ratio&lt;/strong&gt; 1.995e-8:1, &lt;strong&gt;Fraction as base&lt;/strong&gt; 1.995e-6 %, &lt;strong&gt;Lower end of the useful pH range&lt;/strong&gt; 14.1, &lt;strong&gt;Buffer substance in the batch&lt;/strong&gt; 50 mmol, &lt;strong&gt;Basic form needed&lt;/strong&gt; 9.976e-7 mmol and &lt;strong&gt;Acidic form needed&lt;/strong&gt; 50 mmol.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Base: acid ratio, Fraction as base and pKa used are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Buffer system is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Buffer system, Use my own pKa instead (temperature-corrected, another buffer) and My pKa and the number you are missing is Base: acid ratio and Fraction as base.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/fertilizer-injector-ratio">Fertilizer Injector Ratio Calculator</a>, <a href="/biology/plant-available-water">Field Capacity and Plant Available Water Calculator</a> and <a href="/biology/field-capacity">Field Capacity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Which buffer should I use for pH 7.4?', 'a' => 'Phosphate or HEPES — both have pKa values within half a unit of 7.4. HEPES is preferred when metal ions are involved.'],
-            ['q' => 'Does temperature matter?', 'a' => 'For Tris, strongly. For phosphate and HEPES, much less.'],
-            ['q' => 'What does the Buffer Preparation actually calculate?', 'a' => <<<'TXT'
-            It returns pKa used, base : acid ratio, fraction as base and lower end of the useful pH range. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Buffer Preparation calculator work out?', 'a' => <<<'TXT'
+            Base: acid ratio, Fraction as base, pKa used and Lower end of the useful pH range, from Use my own pKa instead (temperature-corrected, another buffer), Buffer system and My pKa. The relationship is pKa used = (1 − Use my own pKa instead (temperature-corrected, another buffer)) × Buffer system + Use my own pKa instead (temperature-corrected, another buffer) × My pKa.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Buffer system, Use my own pKa instead (temperature-corrected, another buffer), My pKa, Target pH, Buffer concentration (M). Fill acid, custom and pka and leave Base: acid ratio empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. pKa used, Base: acid ratio, Fraction as base and Lower end of the useful pH range can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            pKa used = 7.55, Base: acid ratio = 0.7079:1, Fraction as base = 41.45 %, Lower end of the useful pH range = 6.55, Buffer substance in the batch = 50 mmol, Basic form needed = 20.73 mmol and Acidic form needed = 29.27 mmol. That comes from the page's own defaults, entered in Buffer system; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Base: acid ratio is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Buffer system blank and the page solves for it, reporting Base: acid ratio instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Base: acid ratio keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/fertilizer-injector-ratio', 'name' => 'Fertilizer Injector Ratio Calculator'],
+            ['path' => '/biology/plant-available-water', 'name' => 'Field Capacity and Plant Available Water Calculator'],
+            ['path' => '/biology/field-capacity', 'name' => 'Field Capacity Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

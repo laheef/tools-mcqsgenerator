@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Restriction Digest Reaction Setup',
-    'meta' => ['title' => 'Restriction Digest Reaction Setup — Biology', 'description' => 'A restriction digest is a small reaction with a strict recipe: enzyme units, buffer strength and volume. It returns DNA volume, enzyme volume, buffer volume…', 'h1' => 'Restriction Digest Reaction Setup', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Restriction Digest Reaction Setup — Biology', 'description' => 'Enter DNA mass, DNA concentration and Reaction volume into Restriction Digest Reaction Setup and the answer comes back as DNA volume and Enzyme volume.', 'h1' => 'Restriction Digest Reaction Setup', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -130,46 +130,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A restriction digest is a small reaction with a strict recipe: enzyme units, buffer strength and volume. It returns DNA volume, enzyme volume, buffer volume and water volume, and the panel shows all of them at once.
-        
-        This calculator builds the 20 µL reaction.
+        Enter DNA mass, DNA concentration and Reaction volume into Restriction Digest Reaction Setup and the answer comes back as DNA volume and Enzyme volume. It is a single relationship that reads DNA volume out of DNA mass, not a table of canned results keyed by them. Units for DNA volume default to µL and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Restriction Digest Reaction Setup', 'html' => <<<'TXT'
-            <p>Enzyme units = DNA (µg) × units per µg; buffer = reaction volume ÷ stock fold; water = the balance</p>
-            <figure class="calc-figure"><img src="/uploads/biology/restriction-digest-setup.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Restriction Digest Reaction Setup — A 20 µL digest: DNA, enzyme, buffer and water." title="Restriction Digest Reaction Setup"><figcaption>A 20 µL digest: DNA, enzyme, buffer and water.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>dna_ng</code></td><td>mass of DNA digested</td><td>ng</td></tr><tr><td><code>units_per_ug</code></td><td>enzyme excess over the minimum</td><td>U/µg</td></tr><tr><td><code>buffer_vol</code></td><td>1× final concentration</td><td>µL</td></tr></tbody></table>
+            ['title' => 'How the Restriction Digest Reaction Setup calculator works', 'html' => <<<'TXT'
+            <p>Restriction Digest Reaction Setup answers one question from 6 numbers, and the answer is DNA volume, Enzyme volume and Buffer volume.</p><p>In the form&#039;s own words, DNA volume = DNA mass ÷ DNA concentration.</p><p>The answers are DNA volume, Enzyme volume, Buffer volume and Water volume; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Restriction Digest Reaction Setup?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 6 boxes and the page has everything it needs.</p><ul><li><strong>DNA mass</strong> — in ng</li><li><strong>DNA concentration</strong> — in ng/µL</li><li><strong>Reaction volume</strong> — in µL</li><li><strong>Enzyme units per µg DNA</strong> — in U/µg. 5–10 is typical</li><li><strong>Enzyme concentration</strong> — in U/mL. 20 U/µL is typical</li><li><strong>Buffer stock</strong> — in ×. CutSmart is 10×</li></ul><p>What you get back is DNA volume in µL, Enzyme volume in µL, Buffer volume in µL, Water volume in µL, Total enzyme units in U, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: dna mass of <strong>1,000</strong> ng, dna concentration of <strong>200</strong> ng/µL, reaction volume of <strong>20</strong> µL, enzyme units per µg dna of <strong>10</strong> U/µg, enzyme concentration of <strong>20,000</strong> U/mL, buffer stock of <strong>10</strong> ×.</p>
-            <p>Substituting them into the formula gives dna volume of <strong>5</strong> µL, enzyme volume of <strong>0.5</strong> µL, buffer volume of <strong>2</strong> µL, water volume of <strong>12.5</strong> µL, total enzyme units of <strong>10</strong> U.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — DNA mass = 1000 ng, DNA concentration = 200 ng/µL, Reaction volume = 20 µL, Enzyme units per µg DNA = 10 U/µg, Enzyme concentration = 20000 U/mL and Buffer stock = 10 × — through the same formula and the panel reports &lt;strong&gt;DNA volume&lt;/strong&gt; = 5 µL, &lt;strong&gt;Enzyme volume&lt;/strong&gt; = 0.5 µL, &lt;strong&gt;Buffer volume&lt;/strong&gt; = 2 µL, &lt;strong&gt;Water volume&lt;/strong&gt; = 12.5 µL and &lt;strong&gt;Total enzyme units&lt;/strong&gt; = 10 U.</p><ul><li><strong>DNA volume</strong> = 5 µL</li><li><strong>Enzyme volume</strong> = 0.5 µL</li><li><strong>Buffer volume</strong> = 2 µL</li><li><strong>Water volume</strong> = 12.5 µL</li><li><strong>Total enzyme units</strong> = 10 U</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>DNA volume</strong> = <code>DNA mass ÷ DNA concentration</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Glycerol carry-over above 5% of the reaction volume causes star activity; keep the enzyme volume at or below 1/10 of the total.</p></li><li><p>One unit is defined against a specific substrate DNA, so a new lot or a new template may need more; 10 U/µg is the safe working excess.</p></li><li><p>Most enzymes are active for 15 minutes to an hour at 37 °C; longer incubations mostly add star activity, not completeness.</p></li><li><p>Heat-inactivate or column-purify before ligation — residual enzyme will re-cut the product.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;DNA volume&lt;/strong&gt; = 5, &lt;strong&gt;Enzyme volume&lt;/strong&gt; = 0.5, &lt;strong&gt;Buffer volume&lt;/strong&gt; = 2, &lt;strong&gt;Water volume&lt;/strong&gt; = 12.5 and &lt;strong&gt;Total enzyme units&lt;/strong&gt; = 10. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as DNA volume is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Adding 5 µL of enzyme to a 20 µL reaction for a 'fast' digest.</li><li>Using a 10× buffer at 1× in a reaction that already contains a large volume of DNA in TE.</li><li>Assuming complete digestion without running an aliquot on a gel.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>DNA volume</strong> = <code>DNA mass ÷ DNA concentration</code></li><li><strong>Enzyme volume</strong> = <code>DNA mass ÷ 1000 × Enzyme units per µg DNA ÷ Enzyme concentration × 1000</code></li><li><strong>Buffer volume</strong> = <code>Reaction volume ÷ Buffer stock</code></li><li><strong>Water volume</strong> = <code>Reaction volume − DNA mass ÷ DNA concentration − DNA mass ÷ 1000 × Enzyme units per µg DNA ÷ Enzyme concentration × 1000 − Reaction volume ÷ Buffer stock</code></li><li><strong>Total enzyme units</strong> = <code>DNA mass ÷ 1000 × Enzyme units per µg DNA</code></li></ul><p>Any one of DNA volume, Enzyme volume and Buffer volume can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/ligation-molar-ratio">Ligation molar ratio</a>. <a href="/biology/agarose-gel-calculator">Agarose gel</a>. <a href="/biology/dilution-calculator-c1v1">C1V1 dilution</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double DNA mass from 1000 to 2000, leaving every other box alone. The panel moves from &lt;strong&gt;DNA volume&lt;/strong&gt; 5 µL, &lt;strong&gt;Enzyme volume&lt;/strong&gt; 0.5 µL, &lt;strong&gt;Buffer volume&lt;/strong&gt; 2 µL, &lt;strong&gt;Water volume&lt;/strong&gt; 12.5 µL and &lt;strong&gt;Total enzyme units&lt;/strong&gt; 10 U to &lt;strong&gt;DNA volume&lt;/strong&gt; 10 µL, &lt;strong&gt;Enzyme volume&lt;/strong&gt; 1 µL, &lt;strong&gt;Buffer volume&lt;/strong&gt; 2 µL, &lt;strong&gt;Water volume&lt;/strong&gt; 7 µL and &lt;strong&gt;Total enzyme units&lt;/strong&gt; 20 U.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> DNA volume, Enzyme volume and Buffer volume are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If DNA mass is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when DNA mass, DNA concentration and Reaction volume is what you already know and DNA volume and Enzyme volume is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/land-equivalent-ratio">Land Equivalent Ratio Calculator</a>, <a href="/biology/lawn-fertilizer-rate">Lawn Fertilizer Rate Calculator</a> and <a href="/biology/mowing-cost">Lawn mowing Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What if the DNA volume exceeds the reaction volume?', 'a' => 'Concentrate the DNA or scale the reaction up; the calculator returns a negative water volume when that happens.'],
-            ['q' => 'Does doubled enzyme mean double the reaction volume?', 'a' => 'No — doubling units per µg means more enzyme in the same volume, until the glycerol limit.'],
-            ['q' => 'What does the Restriction Digest Reaction Setup actually calculate?', 'a' => 'It returns DNA volume, enzyme volume, buffer volume and water volume. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Restriction Digest Reaction Setup calculator work out?', 'a' => 'DNA volume, Enzyme volume, Buffer volume and Water volume, from DNA mass and DNA concentration. The relationship is DNA volume = DNA mass ÷ DNA concentration.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            DNA mass (ng), DNA concentration (ng/µL), Reaction volume (µL), Enzyme units per µg DNA (U/µg), Enzyme concentration (U/mL). Enter dna_ng, dna_conc and total_vol; DNA volume is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of DNA volume, Enzyme volume, Buffer volume and Water volume blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            DNA volume = 5 µL, Enzyme volume = 0.5 µL, Buffer volume = 2 µL, Water volume = 12.5 µL and Total enzyme units = 10 U. Those are the defaults written into the form — move DNA mass and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            DNA volume is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave DNA mass blank and the page solves for it, reporting DNA volume instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to DNA volume at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/land-equivalent-ratio', 'name' => 'Land Equivalent Ratio Calculator'],
+            ['path' => '/biology/lawn-fertilizer-rate', 'name' => 'Lawn Fertilizer Rate Calculator'],
+            ['path' => '/biology/mowing-cost', 'name' => 'Lawn mowing Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

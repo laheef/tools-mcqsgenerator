@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree diameter',
-    'meta' => ['title' => 'Tree diameter Calculator — Formula & Results', 'description' => 'The Tree diameter calculator turns the circumference, the diameter under-bark (Bark details (single)) and the diameter into <strong>diameter (Single-stemmed…', 'h1' => 'Tree diameter Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Tree diameter Calculator — Formula & Results', 'description' => 'Enter Circumference into Tree diameter and the answer comes back as Diameter and Average bark thickness. The arithmetic is the whole method: Diameter is…', 'h1' => 'Tree diameter Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'bark_thickness' => [
@@ -485,67 +485,40 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Tree diameter calculator turns the circumference, the diameter under-bark (Bark details (single)) and the diameter into <strong>diameter (Single-stemmed tree)</strong>.
+        Enter Circumference into Tree diameter and the answer comes back as Diameter and Average bark thickness. The arithmetic is the whole method: Diameter is worked out from Circumference by one formula, applied once. Diameter comes back in centimeters unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'How does the Tree diameter calculator work?', 'html' => <<<'TXT'
-            <p>The Tree diameter calculator takes the values in the form, applies the relationship described below and reports <strong>diameter (Single-stemmed tree)</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the circumference, the diameter under-bark (Bark details (single)), the diameter (Multi-stemmed tree) and the average bark thickness (Bark details (multi)).</p>
+            ['title' => 'How the Tree diameter calculator works', 'html' => <<<'TXT'
+            <p>Tree diameter answers one question from 1 number, and the answer is Diameter, Average bark thickness and Diameter under-bark.</p><p>The relationship it solves reads Diameter = Circumference ÷ PI.</p><p>The result panel carries Diameter, Average bark thickness, Diameter under-bark and 1st stem circumference, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>Circumference</strong> — in centimeters. Enter the circumference of the trunk at diameter at breast height (DBH). Generally, we measure DBH at 1.35 m or 4.5 ft from the highest point of the ground at the tree&#039;s base.</li></ul><p>What you get back is Diameter in centimeters, Average bark thickness in centimeters, Diameter under-bark in centimeters, 1st stem circumference in centimeters, 2nd stem circumference in centimeters, 3rd stem circumference in centimeters, 4th stem circumference in centimeters, 5th stem circumference in centimeters, 6th stem circumference in centimeters, Diameter in centimeters, Diameter under-bark in centimeters, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Circumference</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter (Single-stemmed tree)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Average bark thickness (Bark details (single))</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Diameter under-bark (Bark details (single))</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter (Multi-stemmed tree)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Average bark thickness (Bark details (multi))</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter under-bark (Bark details (multi))</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Diameter</strong> = <code>Circumference ÷ PI</code></li><li><strong>Circumference</strong> = <code>PI × Diameter</code></li><li><strong>Average bark thickness</strong> = <code>(1 ÷ 2) × Diameter − 1 ÷ 2 × Diameter under-bark</code></li><li><strong>Diameter under-bark</strong> = <code>− 2 × Average bark thickness + Diameter</code></li><li><strong>5th stem circumference</strong> = <code>√( − (1st stem circumference)^(2) − (2nd stem circumference)^(2) − (3rd stem circumference)^(2) − (4th stem circumference)^(2) − (6th stem circumference)^(2) + (PI)^(2) × (Diameter)^(2))</code></li><li><strong>3rd stem circumference</strong> = <code>√( − (1st stem circumference)^(2) − (2nd stem circumference)^(2) − (4th stem circumference)^(2) − (5th stem circumference)^(2) − (6th stem circumference)^(2) + (PI)^(2) × (Diameter)^(2))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Diameter, Circumference and Average bark thickness can be the unknown.</p>
             TXT],
-            ['title' => 'The formula behind the Tree diameter calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Diameter</span><span class="formula-eq">=</span><span class="formula-rhs">circumference ÷ PI</span></div><div class="formula-row"><span class="formula-lhs">Diameter</span><span class="formula-eq">=</span><span class="formula-rhs">2 × average bark thickness + diameter under-bark</span></div><div class="formula-row"><span class="formula-lhs">5th stem circumference</span><span class="formula-eq">=</span><span class="formula-rhs">the square root of (-(1st stem circumference ^ 2) − (2nd stem circumference ^ 2) − (3rd stem circumference ^ 2) − (4th stem circumference ^ 2) − (6th stem circumference ^ 2) + (PI ^ 2) × (diameter ^ 2))</span></div><div class="formula-row"><span class="formula-lhs">Diameter under-bark</span><span class="formula-eq">=</span><span class="formula-rhs">(1st stem circumference, average bark thickness)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Circumference carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Diameter, Average bark thickness and Diameter under-bark are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Circumference and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Take <strong>Circumference</strong> = 30 cm, <strong>1st stem circumference</strong> = 0 cm, <strong>2nd stem circumference</strong> = 0 cm and <strong>3rd stem circumference</strong> = 0 cm. The calculator returns <strong>Diameter</strong> = 9.549 cm.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Diameter</strong> = 9.549 cm should be roughly the size you expected from <strong>Circumference</strong> = 30 cm and <strong>1st stem circumference</strong> = 0 cm.</li></ol>
-            TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Tree diameter calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 3 figures keep coming back — the circumference, the diameter under-bark (Bark details (single)) and the diameter — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/tree-height">Tree height</a>, <a href="/biology/tree-leaves">Leaves on tree</a> and <a href="/biology/tree-spacing">Tree spacing</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Circumference measured, Diameter and Average bark thickness wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/vine-density">Vine Density Calculator</a>, <a href="/biology/wastewater">Wastewater Calculator</a> and <a href="/biology/water-potential">Water potential Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Tree diameter calculator work out?', 'a' => <<<'TXT'
-            It returns diameter (Single-stemmed tree), derived from the circumference, the diameter under-bark (Bark details (single)) and the diameter. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Tree diameter calculator work out?', 'a' => 'Diameter, Average bark thickness, Diameter under-bark and 1st stem circumference, from Circumference. The relationship is Diameter = Circumference ÷ PI.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Circumference (centimeters). With circumference in place, Diameter can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Diameter, Circumference, Average bark thickness and Diameter under-bark can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'What do I need to enter to use the Tree diameter calculator?', 'a' => <<<'TXT'
-            The form asks for the circumference, the diameter under-bark (Bark details (single)) and the diameter, which is 9 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter circumference in a different unit?', 'a' => <<<'TXT'
-            Yes. Circumference opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Diameter = 9.549 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Tree diameter calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Diameter is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Circumference blank and the page solves for it, reporting Diameter instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Diameter keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/tree-height', 'name' => 'Tree height'],
-            ['path' => '/biology/tree-leaves', 'name' => 'Leaves on tree'],
-            ['path' => '/biology/tree-spacing', 'name' => 'Tree spacing'],
+            ['path' => '/biology/vine-density', 'name' => 'Vine Density Calculator'],
+            ['path' => '/biology/wastewater', 'name' => 'Wastewater Calculator'],
+            ['path' => '/biology/water-potential', 'name' => 'Water potential Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Transfection Setup Calculator',
-    'meta' => ['title' => 'Transfection Setup Calculator — Formula & Results', 'description' => 'Transfection protocols are written per well or per flask, and scaling them by hand is where experiments go wrong. It returns DNA per batch to make, reagent…', 'h1' => 'Transfection Setup Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Transfection Setup Calculator — Formula & Results', 'description' => 'Transfection Setup turns DNA in the reference well, Reagent in the reference well and Diluent per reference well into DNA per batch to make and Reagent for…', 'h1' => 'Transfection Setup Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -111,50 +111,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Transfection protocols are written per well or per flask, and scaling them by hand is where experiments go wrong. It returns DNA per batch to make, reagent for the batch, diluent for the batch and total complex volume, and the panel shows all of them at once.
-        
-        This calculator scales DNA, transfection reagent and diluent from your reference format to the plate you actually have, with the complex formation time.
+        Transfection Setup turns DNA in the reference well, Reagent in the reference well and Diluent per reference well into DNA per batch to make and Reagent for the batch. It is a single relationship that reads DNA per batch to make out of DNA in the reference well, not a table of canned results keyed by them. Units for DNA per batch to make default to µg and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Transfection Setup', 'html' => <<<'TXT'
-            <p>Scale factor = wells × 1.1 for pipetting loss; every component is multiplied by that factor, and the complex is formed at the reference ratio</p>
-            <figure class="calc-figure"><img src="/uploads/biology/transfection-setup.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Transfection Setup Calculator — Two dilutions, one mix, then straight onto the cells." title="Transfection Setup Calculator"><figcaption>Two dilutions, one mix, then straight onto the cells.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>DNA</code></td><td>plasmid per well</td><td>µg</td></tr><tr><td><code>reagent</code></td><td>lipid or polymer per well</td><td>µL</td></tr><tr><td><code>diluent</code></td><td>serum-free medium per well</td><td>µL</td></tr></tbody></table>
+            ['title' => 'How the Transfection Setup calculator works', 'html' => <<<'TXT'
+            <p>The Transfection Setup calculator applies one relationship to 4 numbers and reports DNA per batch to make, Reagent for the batch and Diluent for the batch.</p><p>Written with the labels from the form, DNA per batch to make = DNA in the reference well × Wells (or vessels) needed × 1.1.</p><p>The result panel carries DNA per batch to make, Reagent for the batch, Diluent for the batch and Total complex volume, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Transfection Setup?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>DNA in the reference well</strong> — in µg</li><li><strong>Reagent in the reference well</strong> — in µL</li><li><strong>Diluent per reference well</strong> — in µL</li><li><strong>Wells (or vessels) needed</strong> — a plain number, no unit. Add 10% for pipetting loss</li></ul><p>What you get back is DNA per batch to make in µg, Reagent for the batch in µL, Diluent for the batch in µL, Total complex volume in µL, Volume of complex per well in µL, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: dna in the reference well of <strong>0.5</strong> µg, reagent in the reference well of <strong>1.5</strong> µL, diluent per reference well of <strong>50</strong> µL, wells (or vessels) needed of <strong>24</strong>.</p>
-            <p>Substituting them into the formula gives dna per batch to make of <strong>13.2</strong> µg, reagent for the batch of <strong>39.6</strong> µL, diluent for the batch of <strong>1,320</strong> µL, total complex volume of <strong>1,359.6</strong> µL, volume of complex per well of <strong>51.5</strong> µL.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, DNA in the reference well = 0.5 µg, Reagent in the reference well = 1.5 µL, Diluent per reference well = 50 µL and Wells (or vessels) needed = 24; the answers are &lt;strong&gt;DNA per batch to make&lt;/strong&gt; = 13.2 µg, &lt;strong&gt;Reagent for the batch&lt;/strong&gt; = 39.6 µL, &lt;strong&gt;Diluent for the batch&lt;/strong&gt; = 1320 µL, &lt;strong&gt;Total complex volume&lt;/strong&gt; = 1360 µL and &lt;strong&gt;Volume of complex per well&lt;/strong&gt; = 51.5 µL.</p><ul><li><strong>DNA per batch to make</strong> = 13.2 µg</li><li><strong>Reagent for the batch</strong> = 39.6 µL</li><li><strong>Diluent for the batch</strong> = 1320 µL</li><li><strong>Total complex volume</strong> = 1360 µL</li><li><strong>Volume of complex per well</strong> = 51.5 µL</li></ul><p>That is <strong>DNA per batch to make</strong> = <code>DNA in the reference well × Wells (or vessels) needed × 1.1</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1:2 – 1:3</td><td><strong>DNA to reagent</strong></td><td>typical for Lipofectamine-class reagents</td></tr><tr><td>15 – 30 min</td><td><strong>Complex formation</strong></td><td>room temperature, no serum, no antibiotics</td></tr><tr><td>4 – 6 h</td><td><strong>Exposure</strong></td><td>then change to complete medium for sensitive cells</td></tr></tbody></table>
-            <ul><li><p>Make the DNA and the reagent dilutions in separate tubes before mixing; adding lipid straight onto DNA creates local excess and uneven complexes.</p></li><li><p>The 10% excess is not laziness: 24 wells need 25 wells' worth because no pipette delivers exactly what it draws.</p></li><li><p>Scale by surface area, not by well number, when moving between plate formats — a 6-well well holds ten times the area of a 96-well well.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;DNA per batch to make&lt;/strong&gt; = 13.2, &lt;strong&gt;Reagent for the batch&lt;/strong&gt; = 39.6, &lt;strong&gt;Diluent for the batch&lt;/strong&gt; = 1320, &lt;strong&gt;Total complex volume&lt;/strong&gt; = 1360 and &lt;strong&gt;Volume of complex per well&lt;/strong&gt; = 51.5 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: DNA per batch to make takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Scaling a 24-well protocol to a 6-well plate by well count only.</li><li>Leaving complexes on the cells overnight, which is toxic for most primary cells.</li><li>Using medium with antibiotics during complex formation.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>DNA per batch to make</strong> = <code>DNA in the reference well × Wells (or vessels) needed × 1.1</code></li><li><strong>Reagent for the batch</strong> = <code>Reagent in the reference well × Wells (or vessels) needed × 1.1</code></li><li><strong>Diluent for the batch</strong> = <code>Diluent per reference well × Wells (or vessels) needed × 1.1</code></li><li><strong>Total complex volume</strong> = <code>(Reagent in the reference well + Diluent per reference well) × Wells (or vessels) needed × 1.1</code></li><li><strong>Volume of complex per well</strong> = <code>(Reagent in the reference well + Diluent per reference well)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of DNA per batch to make, Reagent for the batch and Diluent for the batch can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/cell-culture-vessel-reference">Cell culture vessel reference</a>. <a href="/biology/cell-seeding-density">Seeding density</a>. <a href="/biology/transformation-efficiency">Transformation efficiency</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double DNA in the reference well from 0.5 to 1, leaving every other box alone. The panel moves from &lt;strong&gt;DNA per batch to make&lt;/strong&gt; 13.2 µg, &lt;strong&gt;Reagent for the batch&lt;/strong&gt; 39.6 µL, &lt;strong&gt;Diluent for the batch&lt;/strong&gt; 1320 µL, &lt;strong&gt;Total complex volume&lt;/strong&gt; 1360 µL and &lt;strong&gt;Volume of complex per well&lt;/strong&gt; 51.5 µL to &lt;strong&gt;DNA per batch to make&lt;/strong&gt; 26.4 µg, &lt;strong&gt;Reagent for the batch&lt;/strong&gt; 39.6 µL, &lt;strong&gt;Diluent for the batch&lt;/strong&gt; 1320 µL, &lt;strong&gt;Total complex volume&lt;/strong&gt; 1360 µL and &lt;strong&gt;Volume of complex per well&lt;/strong&gt; 51.5 µL.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with DNA per batch to make, Reagent for the batch and Diluent for the batch are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If DNA in the reference well is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: DNA in the reference well, Reagent in the reference well and Diluent per reference well measured, DNA per batch to make and Reagent for the batch wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/puppy-adult-weight-predictor">Puppy Adult Weight Predictor Calculator</a>, <a href="/biology/q10-temperature-coefficient">Q10 Temperature Coefficient Calculator</a> and <a href="/biology/qpcr-efficiency">qPCR efficiency Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much DNA for a 6-well transfection?', 'a' => 'About 1–2 µg per well for a 9.6 cm² surface, roughly double a 12-well well.'],
-            ['q' => 'Can I scale this to a flask?', 'a' => 'Yes, but scale on growth area: a T-75 flask is about 8 times a 6-well well.'],
-            ['q' => 'What does the Transfection Setup actually calculate?', 'a' => <<<'TXT'
-            It returns DNA per batch to make, reagent for the batch, diluent for the batch and total complex volume. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Transfection Setup calculator work out?', 'a' => <<<'TXT'
+            DNA per batch to make, Reagent for the batch, Diluent for the batch and Total complex volume, from DNA in the reference well and Wells (or vessels) needed. The relationship is DNA per batch to make = DNA in the reference well × Wells (or vessels) needed × 1.1.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            DNA in the reference well (µg), Reagent in the reference well (µL), Diluent per reference well (µL), Wells (or vessels) needed. Fill dna_ref, reagent_ref and diluent_ref and leave DNA per batch to make empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. DNA per batch to make, Reagent for the batch, Diluent for the batch and Total complex volume can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            DNA per batch to make = 13.2 µg, Reagent for the batch = 39.6 µL, Diluent for the batch = 1320 µL, Total complex volume = 1360 µL and Volume of complex per well = 51.5 µL. Those are the defaults written into the form — move DNA in the reference well and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            DNA per batch to make is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave DNA in the reference well blank and the page solves for it, reporting DNA per batch to make instead of the usual answer.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to DNA per batch to make at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/puppy-adult-weight-predictor', 'name' => 'Puppy Adult Weight Predictor Calculator'],
+            ['path' => '/biology/q10-temperature-coefficient', 'name' => 'Q10 Temperature Coefficient Calculator'],
+            ['path' => '/biology/qpcr-efficiency', 'name' => 'qPCR efficiency Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

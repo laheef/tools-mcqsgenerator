@@ -11,7 +11,7 @@
 
 return [
     'name' => 'FWHR (Facial Width-to-Height Ratio) Calculator',
-    'meta' => ['title' => 'FWHR (Facial Width-to-Height Ratio) Calculator', 'description' => 'Facial width-to-height ratio compares the distance between the cheekbones with the height of the upper face, from the brow to the upper lip.', 'h1' => 'FWHR (Facial Width-to-Height Ratio) Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'FWHR (Facial Width-to-Height Ratio) Calculator', 'description' => 'The arithmetic is the whole method: Facial width-to-height ratio is worked out from Bizygomatic width by one formula, applied once. The empty box becomes the…', 'h1' => 'FWHR (Facial Width-to-Height Ratio) Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -65,49 +65,49 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Facial width-to-height ratio compares the distance between the cheekbones with the height of the upper face, from the brow to the upper lip. It returns facial width-to-height ratio, FWHR scaled ×100, bizygomatic width and upper face height, and the panel shows all of them at once.
-        
-        It is used in studies of perceived dominance, in behavioural endocrinology and in facial anthropometry, and it is simply the width divided by the height.
+        FWHR (Facial Width-to-Height Ratio) takes Bizygomatic width and Upper face height and returns Facial width-to-height ratio and FWHR scaled ×100. The arithmetic is the whole method: Facial width-to-height ratio is worked out from Bizygomatic width by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the FWHR (Facial Width-to-Height Ratio)', 'html' => <<<'TXT'
-            <p>FWHR = bizygomatic width ÷ upper face height</p>
-            <figure class="calc-figure"><img src="/uploads/biology/fwhr-facial-width-to-height-ratio.svg" width="720" height="300" loading="lazy" alt="Animated diagram: FWHR (Facial Width-to-Height Ratio) Calculator — FWHR on the usual range, with the average band shaded between 1.7 and 1.9." title="FWHR (Facial Width-to-Height Ratio) Calculator"><figcaption>FWHR on the usual range, with the average band shaded between 1.7 and 1.9.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>width</code></td><td>distance between the left and right zygion</td><td>mm</td></tr><tr><td><code>height</code></td><td>nasion to prosthion, the brow to the upper lip</td><td>mm</td></tr><tr><td><code>fwhr</code></td><td>width divided by height, typically 1.5 to 2.2</td><td>—</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> The width-over-upper-face-height definition follows Carré, McCormick & Mondloch (2009), the paper that established the measure in behavioural studies.</p>
+            ['title' => 'How the FWHR (Facial Width-to-Height Ratio) calculator works', 'html' => <<<'TXT'
+            <p>FWHR (Facial Width-to-Height Ratio) answers one question from 2 numbers, and the answer is Facial width-to-height ratio and FWHR scaled ×100.</p><p>The relationship it solves reads Facial width-to-height ratio = Bizygomatic width ÷ Upper face height.</p><p>The result panel carries Facial width-to-height ratio and FWHR scaled ×100, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the FWHR (Facial Width-to-Height Ratio)?', 'html' => <<<'TXT'
-            <ol><li>Take a frontal photograph with the head level and a neutral expression.</li><li>Measure cheekbone to cheekbone across the widest point.</li><li>Measure from the brow ridge to the point where the upper and lower lips meet, not to the chin — including the chin is the usual way to get a value that cannot be compared with published figures.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Bizygomatic width</strong> — in mm. Widest point of the face, cheekbone to cheekbone</li><li><strong>Upper face height</strong> — in mm. Brow (nasion) to the upper lip (prosthion)</li></ul><p>The result boxes are Facial width-to-height ratio, FWHR scaled ×100; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives facial width-to-height ratio of <strong>1.41</strong>, fwhr scaled ×100 of <strong>140.82</strong>, bizygomatic width of <strong>138</strong> mm, upper face height of <strong>98</strong> mm.</p>
-            <p>138 mm of width over 98 mm of upper face gives 1.41 by the strict measure — a value below the published average because the height here spans brow to lip only.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Facial width-to-height ratio takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 1.70</td><td><strong>Narrow</strong></td><td>longer, narrower face</td></tr><tr><td>1.70 – 1.89</td><td><strong>Average</strong></td><td>where most adult faces sit</td></tr><tr><td>1.90 and above</td><td><strong>Wide</strong></td><td>broader face relative to its upper height</td></tr></tbody></table>
-            <ul><li><p>Published FWHR values cluster around 1.8–1.9 for men and 1.7–1.8 for women, with wide overlap between the sexes.</p></li><li><p>Measurement method matters more than anatomy: studies that include the chin report values about 0.3 lower than studies that stop at the lip.</p></li><li><p>The ratio changes with camera distance and head tilt, so it is only comparable between images taken the same way.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Facial width-to-height ratio</strong> = <code>Bizygomatic width ÷ Upper face height</code></li><li><strong>FWHR scaled ×100</strong> = <code>Bizygomatic width ÷ Upper face height × 100</code></li><li><strong>Bizygomatic width</strong> = <code>Facial width-to-height ratio × Upper face height</code></li><li><strong>Upper face height</strong> = <code>Bizygomatic width ÷ Facial width-to-height ratio</code></li></ul><p>Any one of Facial width-to-height ratio, FWHR scaled ×100 and Bizygomatic width can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Including the chin in the height measurement.</li><li>Using a tilted or smiling photograph — both change the apparent height substantially.</li><li>Comparing a value measured from a 50 mm portrait lens with one from a phone selfie; perspective distortion alone moves FWHR by 0.1 or more.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Facial width-to-height ratio and FWHR scaled ×100 are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Bizygomatic width is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Bizygomatic width and Upper face height is what you already know and Facial width-to-height ratio and FWHR scaled ×100 is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/od260-nucleic-acid-concentration">OD260 to Nucleic Acid Concentration Calculator</a>, <a href="/biology/od600-to-cell-density">OD600 to Cell Density Calculator</a> and <a href="/biology/genetic-odds-ratio">Odds Ratio for Genetics Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Does a high FWHR mean anything about personality?', 'a' => <<<'TXT'
-            Studies report small statistical associations with perceived dominance, but the effect is weak and contested, and it says nothing about an individual. Treat the number as a measurement, not a personality test.
+            ['q' => 'What does the FWHR (Facial Width-to-Height Ratio) calculator work out?', 'a' => <<<'TXT'
+            Facial width-to-height ratio and FWHR scaled ×100, from Bizygomatic width and Upper face height. The relationship is Facial width-to-height ratio = Bizygomatic width ÷ Upper face height.
             TXT],
-            ['q' => 'Should I measure to the lip or to the chin?', 'a' => 'To the upper lip for anything you want to compare with the literature. Chin-included variants exist but are not comparable with those figures.'],
-            ['q' => 'What does the FWHR (Facial Width-to-Height Ratio) actually calculate?', 'a' => <<<'TXT'
-            It returns facial width-to-height ratio, FWHR scaled ×100, bizygomatic width and upper face height. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Bizygomatic width (mm), Upper face height (mm). Enter width and height; Facial width-to-height ratio is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Facial width-to-height ratio, FWHR scaled ×100, Bizygomatic width and Upper face height blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Facial width-to-height ratio is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Bizygomatic width blank and the page solves for it, reporting Facial width-to-height ratio instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Facial width-to-height ratio keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/od260-nucleic-acid-concentration', 'name' => 'OD260 to Nucleic Acid Concentration Calculator'],
+            ['path' => '/biology/od600-to-cell-density', 'name' => 'OD600 to Cell Density Calculator'],
+            ['path' => '/biology/genetic-odds-ratio', 'name' => 'Odds Ratio for Genetics Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

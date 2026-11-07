@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Shannon–Wiener Diversity Index Calculator',
-    'meta' => ['title' => 'Shannon–Wiener Diversity Index Calculator — Biology', 'description' => 'The Shannon–Wiener index measures how uncertain you would be, picking one individual at random, about which species it belongs to. It rises with both the…', 'h1' => 'Shannon–Wiener Diversity Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Shannon–Wiener Diversity Index Calculator — Biology', 'description' => <<<'TXT'
+    The Shannon–Wiener index measures how uncertain you would be, picking one individual at random, about which species it belongs to. Free shannon–wiener diversi
+    TXT, 'h1' => 'Shannon–Wiener Diversity Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -105,46 +107,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Shannon–Wiener index measures how uncertain you would be, picking one individual at random, about which species it belongs to. It returns species richness, shannon index H′, pielou evenness J′ and maximum H′ for this richness, and the panel shows all of them at once.
-        
-        It rises with both the number of species and the evenness of their abundances, which is why it is the default diversity measure in ecology.
+        Shannon–Wiener Diversity Index turns Species 1 count, Species 2 count and Species 3 count into Shannon index H′ and Pielou evenness J′. It is a single relationship that reads Shannon index H′ out of Species 1 count, not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Shannon–Wiener Diversity Index', 'html' => <<<'TXT'
-            <p>H′ = −Σ pᵢ ln pᵢ, where pᵢ = nᵢ ÷ N</p>
-            <figure class="calc-figure"><img src="/uploads/biology/shannon-wiener-index.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Shannon–Wiener Diversity Index Calculator — Species abundances, and the diversity they add up to." title="Shannon–Wiener Diversity Index Calculator"><figcaption>Species abundances, and the diversity they add up to.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>nᵢ</code></td><td>individuals of species i</td><td>individuals</td></tr><tr><td><code>pᵢ</code></td><td>that species' share of all individuals</td><td>0–1</td></tr><tr><td><code>H′</code></td><td>Shannon–Wiener index</td><td>nats</td></tr><tr><td><code>J′</code></td><td>Pielou evenness, H′ ÷ ln S</td><td>0–1</td></tr></tbody></table>
+            ['title' => 'How the Shannon–Wiener Diversity Index calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Shannon–Wiener Diversity Index: it takes 5 numbers and reports Shannon index H′, Pielou evenness J′ and Species richness.</p><p>The relationship it solves reads Species richness = min(1,max(0,Species 1 count)) + min(1,max(0,Species 2 count)) + min(1,max(0,Species 3 count)) + min(1,max(0,Species 4 count)) + min(1,max(0,Species 5 count)).</p><p>The result panel carries Shannon index H′, Pielou evenness J′, Species richness and Maximum H′ for this richness, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Shannon–Wiener Diversity Index?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Species 1 count</strong> — in individuals</li><li><strong>Species 2 count</strong> — in individuals</li><li><strong>Species 3 count</strong> — in individuals</li><li><strong>Species 4 count</strong> — in individuals</li><li><strong>Species 5 count</strong> — in individuals</li></ul><p>The answers come back as Shannon index H′, Pielou evenness J′, Species richness, Maximum H′ for this richness. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: species 1 count of <strong>40</strong> individuals, species 2 count of <strong>25</strong> individuals, species 3 count of <strong>15</strong> individuals, species 4 count of <strong>10</strong> individuals, species 5 count of <strong>6</strong> individuals.</p>
-            <p>Substituting them into the formula gives species richness of <strong>5</strong>, shannon index h′ of <strong>1.41</strong>, pielou evenness j′ of <strong>0.8786</strong>, maximum h′ for this richness of <strong>1.61</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Species 1 count = 40 individuals, Species 2 count = 25 individuals, Species 3 count = 15 individuals, Species 4 count = 10 individuals and Species 5 count = 6 individuals gives &lt;strong&gt;Species richness&lt;/strong&gt; = 5, &lt;strong&gt;Shannon index H′&lt;/strong&gt; = 1.41, &lt;strong&gt;Pielou evenness J′&lt;/strong&gt; = 0.8786 and &lt;strong&gt;Maximum H′ for this richness&lt;/strong&gt; = 1.61.</p><ul><li><strong>Species richness</strong> = 5</li><li><strong>Shannon index H′</strong> = 1.41</li><li><strong>Pielou evenness J′</strong> = 0.8786</li><li><strong>Maximum H′ for this richness</strong> = 1.61</li></ul><p>The line behind those figures is <strong>Species richness</strong> = <code>min(1,max(0,Species 1 count)) + min(1,max(0,Species 2 count)) + min(1,max(0,Species 3 count)) + min(1,max(0,Species 4 count)) + min(1,max(0,Species 5 count))</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>H′ below 1.0</td><td><strong>Low diversity</strong></td><td>dominated by one or two species</td></tr><tr><td>1.0 – 2.5</td><td><strong>Moderate</strong></td><td>typical of many temperate communities</td></tr><tr><td>above 2.5</td><td><strong>High diversity</strong></td><td>even, species-rich assemblages such as reefs or rainforest</td></tr></tbody></table>
-            <ul><li><p>H′ is in nats when the logarithm is natural; versions using log₂ or log₁₀ give different numbers, so always state the base.</p></li><li><p>The index is sample-size dependent — a bigger sample almost always raises it. Compare rarefied values, or fix the effort between sites.</p></li><li><p>Pielou evenness J′ = H′ / ln S divides out richness, so a community can be poor but very even and score a high J′.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Species richness&lt;/strong&gt; = 5, &lt;strong&gt;Shannon index H′&lt;/strong&gt; = 1.41, &lt;strong&gt;Pielou evenness J′&lt;/strong&gt; = 0.8786 and &lt;strong&gt;Maximum H′ for this richness&lt;/strong&gt; = 1.61 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Shannon index H′ takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Mixing log bases between the index and the evenness calculation.</li><li>Comparing H′ from quadrats of different size or counted by different people.</li><li>Entering zeros for unrecorded species, which does not change H′ but does change richness.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Species richness</strong> = <code>min(1,max(0,Species 1 count)) + min(1,max(0,Species 2 count)) + min(1,max(0,Species 3 count)) + min(1,max(0,Species 4 count)) + min(1,max(0,Species 5 count))</code></li><li><strong>Maximum H′ for this richness</strong> = <code>ln(max(1,min(1,max(0,Species 1 count)) + min(1,max(0,Species 2 count)) + min(1,max(0,Species 3 count)) + min(1,max(0,Species 4 count)) + min(1,max(0,Species 5 count))))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Species richness, Shannon index H′ and Pielou evenness J′ can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Species 1 count from 40 to 80, leaving every other box alone. The panel moves from &lt;strong&gt;Species richness&lt;/strong&gt; 5, &lt;strong&gt;Shannon index H′&lt;/strong&gt; 1.41, &lt;strong&gt;Pielou evenness J′&lt;/strong&gt; 0.8786 and &lt;strong&gt;Maximum H′ for this richness&lt;/strong&gt; 1.61 to &lt;strong&gt;Species richness&lt;/strong&gt; 5, &lt;strong&gt;Shannon index H′&lt;/strong&gt; 1.2, &lt;strong&gt;Pielou evenness J′&lt;/strong&gt; 0.7433 and &lt;strong&gt;Maximum H′ for this richness&lt;/strong&gt; 1.61.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Shannon index H′, Pielou evenness J′ and Species richness are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Species 1 count and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Species 1 count, Species 2 count and Species 3 count measured, Shannon index H′ and Pielou evenness J′ wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cell-seeding-density">Cell Seeding Density Calculator</a>, <a href="/biology/cell-surface-area-volume-ratio">Cell Surface Area to Volume Ratio Calculator — Formula &amp; Resul</a> and <a href="/biology/centimorgan-to-percentage">Centimorgan to Percentage Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good Shannon index value?', 'a' => 'There is no universal threshold: values between 1.5 and 3.5 are common in nature, and the number is only meaningful next to another sample taken the same way.'],
-            ['q' => 'What is the difference between H′ and the Simpson index?', 'a' => 'Shannon weights rare species more heavily; Simpson is dominated by the commonest ones.'],
-            ['q' => 'What does the Shannon–Wiener Diversity Index actually calculate?', 'a' => <<<'TXT'
-            It returns species richness, shannon index H′, pielou evenness J′ and maximum H′ for this richness. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Shannon–Wiener Diversity Index calculator work out?', 'a' => <<<'TXT'
+            Shannon index H′, Pielou evenness J′, Species richness and Maximum H′ for this richness, from Species 1 count, Species 2 count, Species 3 count and Species 4 count. The relationship is Species richness = min(1,max(0,Species 1 count)) + min(1,max(0,Species 2 count)) + min(1,max(0,Species 3 count)) + min(1,max(0,Species 4 count)) + min(1,max(0,Species 5 count)).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Species 1 count (individuals), Species 2 count (individuals), Species 3 count (individuals), Species 4 count (individuals), Species 5 count (individuals). Fill n1, n2 and n3 and leave Shannon index H′ empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Species richness, Shannon index H′, Pielou evenness J′ and Maximum H′ for this richness can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Species richness = 5, Shannon index H′ = 1.41, Pielou evenness J′ = 0.8786 and Maximum H′ for this richness = 1.61. Those are the defaults written into the form — move Species 1 count and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Shannon index H′ is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Species 1 count left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Shannon index H′ keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cell-seeding-density', 'name' => 'Cell Seeding Density Calculator'],
+            ['path' => '/biology/cell-surface-area-volume-ratio', 'name' => 'Cell Surface Area to Volume Ratio Calculator — Formula & Resul'],
+            ['path' => '/biology/centimorgan-to-percentage', 'name' => 'Centimorgan to Percentage Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

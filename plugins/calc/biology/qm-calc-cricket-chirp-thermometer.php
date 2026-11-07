@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Crickets chirping thermometer',
-    'meta' => ['title' => 'Crickets chirping thermometer — Formula & Results', 'description' => 'The Crickets chirping thermometer calculator is a free, no-sign-up biology tool. Fill in the 2 fields it asks for and it works out… Fill in the 2 fields it…', 'h1' => 'Crickets chirping thermometer Calculator', 'updated' => '2025-12-18'],
+    'meta' => ['title' => 'Crickets chirping thermometer — Formula & Results', 'description' => <<<'TXT'
+    Crickets chirping thermometer turns Cricket chirps into Temperature and Temperature. Temperature is opened in Celsius; the chip beside it switches to any unit…
+    TXT, 'h1' => 'Crickets chirping thermometer Calculator', 'updated' => '2025-12-18'],
     'sections' => [
         [
             'title' => '',
@@ -107,64 +109,43 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Crickets chirping thermometer calculator is a free, no-sign-up biology tool. Fill in the 2 fields it asks for and it works out <strong>temperature</strong> straight away, with the formula shown underneath.
+        Crickets chirping thermometer turns Cricket chirps into Temperature and Temperature. Nothing is looked up on this page: Temperature is computed from Cricket chirps and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Temperature is opened in Celsius; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'How does the Crickets chirping thermometer calculator work?', 'html' => <<<'TXT'
-            <p>The Crickets chirping thermometer calculator takes the values in the form, applies the relationship described below and reports <strong>temperature</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the formula); then you type in the cricket chirps.</p>
+            ['title' => 'How the Crickets chirping thermometer calculator works', 'html' => <<<'TXT'
+            <p>Crickets chirping thermometer answers one question from 1 number, and the answer is Temperature, Temperature and Temperature.</p><p>Written with the labels from the form, Temperature = (1 ÷ 4) × Cricket chirps + 40.</p><p>What comes back is Temperature, Temperature and Temperature — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 4 options, such as basic, field cricket and snowy tree cricket. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in fifteen seconds. </li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>Cricket chirps</strong> — in fifteen seconds</li></ul><p>What you get back is Temperature in Celsius, Temperature in Celsius, Temperature in Celsius, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Formula</strong></td><td>One of 4 options, such as basic, field cricket and snowy tree cricket.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cricket chirps</strong></td><td>A measured quantity, 27 units available.</td><td>fifteen seconds</td><td>You supply it</td></tr><tr><td><strong>Temperature</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Temperature (2)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr><tr><td><strong>Temperature (3)</strong></td><td>A measured quantity, 28 units available.</td><td>Celsius</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Temperature offers 28 units and opens on Celsius, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Crickets chirping thermometer calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Temperature</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 4) × cricket chirps + 40</span></div><div class="formula-row"><span class="formula-lhs">Temperature</span><span class="formula-eq">=</span><span class="formula-rhs">(10 ÷ 47) × cricket chirps + 1430 ÷ 47</span></div><div class="formula-row"><span class="formula-lhs">Temperature</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 3) × cricket chirps + 161 ÷ 3</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Temperature</strong> = <code>(1 ÷ 4) × Cricket chirps + 40</code></li><li><strong>Cricket chirps</strong> = <code>4 × Temperature − 160</code></li></ul><p>Any one of Temperature, Cricket chirps and Temperature can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li><li>Shown in Celsius, and convertible to any of the 28 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Cricket chirps is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Temperature, Temperature and Temperature are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Cricket chirps is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in fifteen seconds</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li><li>Temperature, opening in Celsius</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Crickets chirping thermometer calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 1 figures keep coming back — the cricket chirps — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Round only at the end. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/daily-light-integral-dli">Daily light integral (DLI)</a>, <a href="/biology/dihybrid-cross-punnett-square">Dihybrid cross Punnett square</a> and <a href="/biology/dna-concentration">DNA concentration</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Cricket chirps and the number you are missing is Temperature and Temperature.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/ligation-calculator">Ligation Calculator</a>, <a href="/biology/ligation-molar-ratio">Ligation Molar Ratio (Insert: Vector) Calculator</a> and <a href="/biology/ligation">Ligation</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Crickets chirping thermometer calculator work out?', 'a' => <<<'TXT'
-            It returns temperature, derived from the cricket chirps. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Crickets chirping thermometer calculator work out?', 'a' => 'Temperature, Temperature and Temperature, from Cricket chirps. The relationship is Temperature = (1 ÷ 4) × Cricket chirps + 40.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Cricket chirps (fifteen seconds). Fill chirps_per_min and leave Temperature empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Temperature, Cricket chirps, Temperature and Temperature blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'What do I need to enter to use the Crickets chirping thermometer calculator?', 'a' => <<<'TXT'
-            The form asks for the cricket chirps, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter cricket chirps in a different unit?', 'a' => <<<'TXT'
-            Yes. Cricket chirps opens in fifteen seconds and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Crickets chirping thermometer calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Temperature is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Cricket chirps blank and the page solves for it, reporting Temperature instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Temperature at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/daily-light-integral-dli', 'name' => 'Daily light integral (DLI)'],
-            ['path' => '/biology/dihybrid-cross-punnett-square', 'name' => 'Dihybrid cross Punnett square'],
-            ['path' => '/biology/dna-concentration', 'name' => 'DNA concentration'],
+            ['path' => '/biology/ligation-calculator', 'name' => 'Ligation Calculator'],
+            ['path' => '/biology/ligation-molar-ratio', 'name' => 'Ligation Molar Ratio (Insert : Vector) Calculator'],
+            ['path' => '/biology/ligation', 'name' => 'Ligation'],
         ],
+        'authors' => [],
     ],
 ];

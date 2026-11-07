@@ -11,9 +11,7 @@
 
 return [
     'name' => 'PCR Master Mix Calculator',
-    'meta' => ['title' => 'PCR Master Mix Calculator — Formula & Results', 'description' => <<<'TXT'
-    A master mix is one bulk solution split across every tube in the run. It returns total mix volume, master mix to add, each primer to add and water to add, and…
-    TXT, 'h1' => 'PCR Master Mix Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'PCR Master Mix Calculator — Formula & Results', 'description' => 'PCR Master Mix turns Reactions, Extra reactions and Volume per reaction into Total mix volume and Master mix to add. Each primer, from a 10 µM working…', 'h1' => 'PCR Master Mix Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -125,44 +123,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A master mix is one bulk solution split across every tube in the run. It returns total mix volume, master mix to add, each primer to add and water to add, and the panel shows all of them at once.
-        
-        This calculator sizes the mix, adds a pipetting allowance and returns the water volume to top up.
+        PCR Master Mix turns Reactions, Extra reactions and Volume per reaction into Total mix volume and Master mix to add. It is a single relationship that reads Total mix volume out of Reactions, not a table of canned results keyed by them. Units for Total mix volume default to µL and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the PCR Master Mix', 'html' => <<<'TXT'
-            <p>Reactions prepared = reactions + extra; master mix = total ÷ stock fold; water = total − master mix − primers − template</p>
-            <figure class="calc-figure"><img src="/uploads/biology/pcr-master-mix-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: PCR Master Mix Calculator — Reactions × volume, then each component's share, then the water." title="PCR Master Mix Calculator"><figcaption>Reactions × volume, then each component's share, then the water.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>total</code></td><td>number of tubes × volume per tube</td><td>µL</td></tr><tr><td><code>mm_vol</code></td><td>2× master mix, used at half the final volume</td><td>µL</td></tr><tr><td><code>primer_vol</code></td><td>each primer, from C1V1 = C2V2</td><td>µL</td></tr><tr><td><code>water_vol</code></td><td>the balance</td><td>µL</td></tr></tbody></table>
+            ['title' => 'How the PCR Master Mix calculator works', 'html' => <<<'TXT'
+            <p>The PCR Master Mix calculator applies one relationship to 7 numbers and reports Total mix volume, Master mix to add and Each primer to add.</p><p>In the form&#039;s own words, Total mix volume = (Reactions + Extra reactions) × Volume per reaction.</p><p>What comes back is Total mix volume, Master mix to add, Each primer to add and Water to add — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the PCR Master Mix?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 7 boxes, and nothing else.</p><ul><li><strong>Reactions</strong> — a plain number, no unit. Samples plus controls</li><li><strong>Extra reactions</strong> — a plain number, no unit. Allowance for pipetting loss</li><li><strong>Volume per reaction</strong> — in µL</li><li><strong>Master mix stock concentration</strong> — in ×. 2× mix is used at half the final volume</li><li><strong>Primer stock</strong> — in µM. Each primer, from a 10 µM working stock</li><li><strong>Primer final concentration</strong> — in µM</li><li><strong>Template volume per reaction</strong> — in µL</li></ul><p>The answers come back as Total mix volume in µL, Master mix to add in µL, Each primer to add in µL, Water to add in µL. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: reactions of <strong>24</strong>, extra reactions of <strong>2</strong>, volume per reaction of <strong>25</strong> µL, master mix stock concentration of <strong>2</strong> ×, primer stock of <strong>10</strong> µM, primer final concentration of <strong>0.5</strong> µM, template volume per reaction of <strong>1</strong> µL.</p>
-            <p>Substituting them into the formula gives total mix volume of <strong>650</strong> µL, master mix to add of <strong>325</strong> µL, each primer to add of <strong>32.5</strong> µL, water to add of <strong>234</strong> µL.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Reactions = 24, Extra reactions = 2, Volume per reaction = 25 µL, Master mix stock concentration = 2 ×, Primer stock = 10 µM, Primer final concentration = 0.5 µM and Template volume per reaction = 1 µL — through the same formula and the panel reports &lt;strong&gt;Total mix volume&lt;/strong&gt; = 650 µL, &lt;strong&gt;Master mix to add&lt;/strong&gt; = 325 µL, &lt;strong&gt;Each primer to add&lt;/strong&gt; = 32.5 µL and &lt;strong&gt;Water to add&lt;/strong&gt; = 234 µL.</p><ul><li><strong>Total mix volume</strong> = 650 µL</li><li><strong>Master mix to add</strong> = 325 µL</li><li><strong>Each primer to add</strong> = 32.5 µL</li><li><strong>Water to add</strong> = 234 µL</li></ul><p>The line behind those figures is <strong>Total mix volume</strong> = <code>(Reactions + Extra reactions) × Volume per reaction</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Prepare for two more reactions than you have tubes. Pipetting loss of 5–10% per component is normal, and running out halfway through a plate is unrecoverable.</p></li><li><p>Add the master mix to the plate first and the template last: template in a well without mix is the classic cause of one empty lane.</p></li><li><p>Primer volume is C1V1 = C2V2 per reaction, then multiplied by the number of reactions — 0.5 µM final from a 10 µM stock is 1.25 µL in a 25 µL reaction.</p></li><li><p>Keep the mix on ice and add polymerase last if it is a hot-start enzyme supplied separately.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Total mix volume&lt;/strong&gt; = 650, &lt;strong&gt;Master mix to add&lt;/strong&gt; = 325, &lt;strong&gt;Each primer to add&lt;/strong&gt; = 32.5 and &lt;strong&gt;Water to add&lt;/strong&gt; = 234 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Total mix volume takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Making exactly the number of reactions needed and coming up short.</li><li>Forgetting that the template volume is part of the 25 µL, not additional to it.</li><li>Pipetting the viscous master mix without pre-wetting the tip, which loses several microlitres.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Total mix volume</strong> = <code>(Reactions + Extra reactions) × Volume per reaction</code></li><li><strong>Master mix to add</strong> = <code>(Reactions + Extra reactions) × Volume per reaction ÷ Master mix stock concentration</code></li><li><strong>Each primer to add</strong> = <code>(Reactions + Extra reactions) × Volume per reaction × Primer final concentration ÷ Primer stock</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Total mix volume, Master mix to add and Each primer to add can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Reactions from 24 to 48, leaving every other box alone. The panel moves from &lt;strong&gt;Total mix volume&lt;/strong&gt; 650 µL, &lt;strong&gt;Master mix to add&lt;/strong&gt; 325 µL, &lt;strong&gt;Each primer to add&lt;/strong&gt; 32.5 µL and &lt;strong&gt;Water to add&lt;/strong&gt; 234 µL to &lt;strong&gt;Total mix volume&lt;/strong&gt; 1250 µL, &lt;strong&gt;Master mix to add&lt;/strong&gt; 625 µL, &lt;strong&gt;Each primer to add&lt;/strong&gt; 62.5 µL and &lt;strong&gt;Water to add&lt;/strong&gt; 450 µL.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Total mix volume, Master mix to add and Each primer to add are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Reactions to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Reactions, Extra reactions and Volume per reaction is what you already know and Total mix volume and Master mix to add is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/osmolarity-osmotic-pressure">Osmolarity / Osmotic Pressure Calculator</a>, <a href="/biology/pasture-stocking-rate">Pasture Stocking Rate Calculator</a> and <a href="/biology/pcr-annealing-temperature">PCR Annealing Temperature Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many extra reactions should I make?', 'a' => 'Two, or 10% of the plate — more for a full 96-well plate.'],
-            ['q' => 'Why is my water volume negative?', 'a' => 'The components already add up to more than the reaction volume: check the master mix concentration and the template volume.'],
-            ['q' => 'Does this work for a 20 µL reaction?', 'a' => 'Yes — set the volume per reaction to 20 and every component rescales.'],
-            ['q' => 'What does the PCR Master Mix actually calculate?', 'a' => <<<'TXT'
-            It returns total mix volume, master mix to add, each primer to add and water to add. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the PCR Master Mix calculator work out?', 'a' => <<<'TXT'
+            Total mix volume, Master mix to add, Each primer to add and Water to add, from Reactions, Extra reactions and Volume per reaction. The relationship is Total mix volume = (Reactions + Extra reactions) × Volume per reaction.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Reactions, Extra reactions, Volume per reaction (µL), Master mix stock concentration (×), Primer stock (µM). Enter reactions, extra and rxn_vol; Total mix volume is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Total mix volume, Master mix to add, Each primer to add and Water to add can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Total mix volume = 650 µL, Master mix to add = 325 µL, Each primer to add = 32.5 µL and Water to add = 234 µL. That comes from the page's own defaults, entered in Reactions; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Total mix volume is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Reactions blank and the page solves for it, reporting Total mix volume instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Total mix volume keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/osmolarity-osmotic-pressure', 'name' => 'Osmolarity / Osmotic Pressure Calculator'],
+            ['path' => '/biology/pasture-stocking-rate', 'name' => 'Pasture Stocking Rate Calculator'],
+            ['path' => '/biology/pcr-annealing-temperature', 'name' => 'PCR Annealing Temperature Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

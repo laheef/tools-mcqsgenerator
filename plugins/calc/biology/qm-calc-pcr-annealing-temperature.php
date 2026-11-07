@@ -11,7 +11,9 @@
 
 return [
     'name' => 'PCR Annealing Temperature Calculator',
-    'meta' => ['title' => 'PCR Annealing Temperature Calculator — Biology', 'description' => 'Annealing temperature is the one PCR variable worth calculating: too low and you get primer dimers and non-specific bands, too high and you get nothing.', 'h1' => 'PCR Annealing Temperature Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'PCR Annealing Temperature Calculator — Biology', 'description' => <<<'TXT'
+    It is a single relationship that reads Annealing temperature out of Forward primer Tm, not a table of canned results keyed by them. 3–5 °C is standardProduct…
+    TXT, 'h1' => 'PCR Annealing Temperature Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -121,50 +123,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Annealing temperature is the one PCR variable worth calculating: too low and you get primer dimers and non-specific bands, too high and you get nothing. It returns annealing temperature, gradient low, gradient high and tm difference, and the panel shows all of them at once.
-        
-        This calculator uses the primer pair's melting temperatures, the salt and the product length to suggest a starting temperature and a gradient to test.
+        Enter Forward primer Tm, Reverse primer Tm and Offset below the lower Tm into PCR Annealing Temperature and the answer comes back as Annealing temperature and Gradient low. It is a single relationship that reads Annealing temperature out of Forward primer Tm, not a table of canned results keyed by them. Units for Annealing temperature default to °C and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the PCR Annealing Temperature', 'html' => <<<'TXT'
-            <p>Ta = min(Tm) − 5 °C; test a gradient of Ta ± 3 °C</p>
-            <figure class="calc-figure"><img src="/uploads/biology/pcr-annealing-temperature.svg" width="720" height="300" loading="lazy" alt="Animated diagram: PCR Annealing Temperature Calculator — Annealing temperature against the primers' melting temperatures." title="PCR Annealing Temperature Calculator"><figcaption>Annealing temperature against the primers' melting temperatures.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Tm</code></td><td>melting temperature of each primer</td><td>°C</td></tr><tr><td><code>offset</code></td><td>how far below Tm to anneal</td><td>°C</td></tr><tr><td><code>Ta</code></td><td>annealing temperature</td><td>°C</td></tr></tbody></table>
+            ['title' => 'How the PCR Annealing Temperature calculator works', 'html' => <<<'TXT'
+            <p>PCR Annealing Temperature answers one question from 4 numbers, and the answer is Annealing temperature, Gradient low and Gradient high.</p><p>Written with the labels from the form, Annealing temperature = min(Forward primer Tm,Reverse primer Tm) − Offset below the lower Tm.</p><p>What comes back is Annealing temperature, Gradient low, Gradient high and Tm difference — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the PCR Annealing Temperature?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Forward primer Tm</strong> — in °C</li><li><strong>Reverse primer Tm</strong> — in °C</li><li><strong>Offset below the lower Tm</strong> — in °C. 3–5 °C is standard</li><li><strong>Product length</strong> — in bp</li></ul><p>The answers come back as Annealing temperature in °C, Gradient low in °C, Gradient high in °C, Tm difference in °C, Extension time (Taq, 1 min per kb) in s, Cycling time for 30 cycles in min. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: forward primer tm of <strong>60</strong>°C, reverse primer tm of <strong>60</strong>°C, offset below the lower tm of <strong>5</strong>°C, product length of <strong>400</strong> bp.</p>
-            <p>Substituting them into the formula gives annealing temperature of <strong>55</strong>°C, gradient low of <strong>52</strong>°C, gradient high of <strong>58</strong>°C, tm difference of <strong>0</strong>°C, extension time (taq, 1 min per kb) of <strong>24</strong> s, cycling time for 30 cycles of <strong>12</strong> min.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Forward primer Tm = 60 °C, Reverse primer Tm = 60 °C, Offset below the lower Tm = 5 °C and Product length = 400 bp; the answers are &lt;strong&gt;Annealing temperature&lt;/strong&gt; = 55 °C, &lt;strong&gt;Gradient low&lt;/strong&gt; = 52 °C, &lt;strong&gt;Gradient high&lt;/strong&gt; = 58 °C, &lt;strong&gt;Tm difference&lt;/strong&gt; = 0 °C, &lt;strong&gt;Extension time (Taq, 1 min per kb)&lt;/strong&gt; = 24 s and &lt;strong&gt;Cycling time for 30 cycles&lt;/strong&gt; = 12 min.</p><ul><li><strong>Annealing temperature</strong> = 55 °C</li><li><strong>Gradient low</strong> = 52 °C</li><li><strong>Gradient high</strong> = 58 °C</li><li><strong>Tm difference</strong> = 0 °C</li><li><strong>Extension time (Taq, 1 min per kb)</strong> = 24 s</li><li><strong>Cycling time for 30 cycles</strong> = 12 min</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Annealing temperature</strong> = <code>min(Forward primer Tm,Reverse primer Tm) − Offset below the lower Tm</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>Tm gap under 2 °C</td><td><strong>Good pair</strong></td><td>both primers anneal at the same temperature</td></tr><tr><td>2 – 5 °C</td><td><strong>Acceptable</strong></td><td>use the lower Tm and expect reduced efficiency</td></tr><tr><td>above 5 °C</td><td><strong>Poor pair</strong></td><td>redesign; a long product will not amplify efficiently</td></tr></tbody></table>
-            <ul><li><p>Use the lower of the two Tms, and 5 °C below it as a starting point. The first cycles matter more than the rest, so a two-step or touchdown protocol can rescue a difficult pair.</p></li><li><p>Salt matters: Tm rises about 16.6 °C per log unit of monovalent cation concentration, so a primer quoted in 50 mM Na⁺ is not the same in a 1× Q5 buffer.</p></li><li><p>Add 3 °C if the primers are longer than 22 nt or the product is GC-rich; subtract it for AT-rich templates.</p></li><li><p>Two-step PCR (denature, then anneal/extend at 68–72 °C) is becoming standard for high-fidelity polymerases that extend quickly.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Annealing temperature&lt;/strong&gt; = 55, &lt;strong&gt;Gradient low&lt;/strong&gt; = 52, &lt;strong&gt;Gradient high&lt;/strong&gt; = 58, &lt;strong&gt;Tm difference&lt;/strong&gt; = 0, &lt;strong&gt;Extension time (Taq, 1 min per kb)&lt;/strong&gt; = 24 and &lt;strong&gt;Cycling time for 30 cycles&lt;/strong&gt; = 12. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Annealing temperature is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Averaging the two Tms instead of using the lower one.</li><li>Using the manufacturer's default 60 °C for every pair — it works often enough to hide the pairs it fails.</li><li>Changing several variables at once when a single gradient would identify the problem.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Annealing temperature</strong> = <code>min(Forward primer Tm,Reverse primer Tm) − Offset below the lower Tm</code></li><li><strong>Gradient low</strong> = <code>min(Forward primer Tm,Reverse primer Tm) − Offset below the lower Tm − 3</code></li><li><strong>Gradient high</strong> = <code>min(Forward primer Tm,Reverse primer Tm) − Offset below the lower Tm + 3</code></li><li><strong>Tm difference</strong> = <code>max(Forward primer Tm,Reverse primer Tm) − min(Forward primer Tm,Reverse primer Tm)</code></li><li><strong>Extension time (Taq, 1 min per kb)</strong> = <code>max(15,Product length ÷ 1000 × 60)</code></li><li><strong>Cycling time for 30 cycles</strong> = <code>30 × (max(Forward primer Tm,Reverse primer Tm) − min(Forward primer Tm,Reverse primer Tm) + max(15,Product length ÷ 1000 × 60)) ÷ 60</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Annealing temperature, Gradient low and Gradient high can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/oligo-tm-calculator">Oligo Tm</a>. <a href="/biology/pcr-master-mix-calculator">PCR master mix</a>. <a href="/biology/gc-content-calculator">GC content</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Forward primer Tm from 60 to 120, leaving every other box alone. The panel moves from &lt;strong&gt;Annealing temperature&lt;/strong&gt; 55 °C, &lt;strong&gt;Gradient low&lt;/strong&gt; 52 °C, &lt;strong&gt;Gradient high&lt;/strong&gt; 58 °C, &lt;strong&gt;Tm difference&lt;/strong&gt; 0 °C, &lt;strong&gt;Extension time (Taq, 1 min per kb)&lt;/strong&gt; 24 s and &lt;strong&gt;Cycling time for 30 cycles&lt;/strong&gt; 12 min to &lt;strong&gt;Annealing temperature&lt;/strong&gt; 55 °C, &lt;strong&gt;Gradient low&lt;/strong&gt; 52 °C, &lt;strong&gt;Gradient high&lt;/strong&gt; 58 °C, &lt;strong&gt;Tm difference&lt;/strong&gt; 60 °C, &lt;strong&gt;Extension time (Taq, 1 min per kb)&lt;/strong&gt; 24 s and &lt;strong&gt;Cycling time for 30 cycles&lt;/strong&gt; 42 min.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Annealing temperature, Gradient low and Gradient high are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Forward primer Tm and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Forward primer Tm, Reverse primer Tm and Offset below the lower Tm measured, Annealing temperature and Gradient low wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/mitotic-index">Mitotic Index Calculator</a>, <a href="/biology/mlvss">Mixed liquor volatile suspended solids Calculator</a> and <a href="/biology/mouse-to-human-age">Mouse to Human Age Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Should annealing temperature be higher or lower than Tm?', 'a' => 'Lower, usually 3–5 °C below the lower primer\'s Tm.'],
-            ['q' => 'Why does my product vanish at higher annealing temperatures?', 'a' => 'Because the primers no longer bind; the temperature is above their Tm in your buffer.'],
-            ['q' => 'What is a touchdown PCR?', 'a' => 'A program that starts 10 °C above the annealing temperature and steps down, which favours the specific product early and prevents primer dimers later.'],
-            ['q' => 'What does the PCR Annealing Temperature actually calculate?', 'a' => <<<'TXT'
-            It returns annealing temperature, gradient low, gradient high and tm difference. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the PCR Annealing Temperature calculator work out?', 'a' => <<<'TXT'
+            Annealing temperature, Gradient low, Gradient high and Tm difference, from Forward primer Tm, Reverse primer Tm and Offset below the lower Tm. The relationship is Annealing temperature = min(Forward primer Tm,Reverse primer Tm) − Offset below the lower Tm.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Forward primer Tm (°C), Reverse primer Tm (°C), Offset below the lower Tm (°C), Product length (bp). Fill tm_f, tm_r and offset and leave Annealing temperature empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Annealing temperature, Gradient low, Gradient high and Tm difference can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Annealing temperature = 55 °C, Gradient low = 52 °C, Gradient high = 58 °C, Tm difference = 0 °C, Extension time (Taq, 1 min per kb) = 24 s and Cycling time for 30 cycles = 12 min. The figures come from Forward primer Tm as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Annealing temperature is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Forward primer Tm blank and the page solves for it, reporting Annealing temperature instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Annealing temperature keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mitotic-index', 'name' => 'Mitotic Index Calculator'],
+            ['path' => '/biology/mlvss', 'name' => 'Mixed liquor volatile suspended solids Calculator'],
+            ['path' => '/biology/mouse-to-human-age', 'name' => 'Mouse to Human Age Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

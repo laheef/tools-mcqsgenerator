@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Odds Ratio Calculator for Genetics',
-    'meta' => ['title' => 'Odds Ratio Calculator for Genetics — Biology', 'description' => 'A genetic odds ratio compares how often a variant appears in cases and in controls. It returns odds ratio, variant frequency in cases, variant frequency in…', 'h1' => 'Odds Ratio Calculator for Genetics', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Odds Ratio Calculator for Genetics — Biology', 'description' => <<<'TXT'
+    Odds Ratio Calculator for Genetics works out Odds ratio and 95% confidence, lower from Cases with the variant, Cases without the variant and Controls with the…
+    TXT, 'h1' => 'Odds Ratio Calculator for Genetics', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -118,46 +120,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A genetic odds ratio compares how often a variant appears in cases and in controls. It returns odds ratio, variant frequency in cases, variant frequency in controls and relative risk, and the panel shows all of them at once.
-        
-        From four counts — carriers and non-carriers in each group — you get the odds ratio, the relative risk and their 95% confidence intervals, which is the standard first pass in a genetic association study.
+        Odds Ratio Calculator for Genetics works out Odds ratio and 95% confidence, lower from Cases with the variant, Cases without the variant and Controls with the variant. It is a single relationship that reads Odds ratio out of Cases with the variant, not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Odds Ratio for Genetics', 'html' => <<<'TXT'
-            <p>OR = (a ÷ c) ÷ (b ÷ d). RR = (a ÷ (a+b)) ÷ (c ÷ (c+d)). 95% CI = exp(ln OR ± 1.96 × √(1/a + 1/b + 1/c + 1/d))</p>
-            <figure class="calc-figure"><img src="/uploads/biology/genetic-odds-ratio.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Odds Ratio Calculator for Genetics — Odds ratio as the case table changes" title="Odds Ratio Calculator for Genetics"><figcaption>Odds ratio as the case table changes</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>a, b</code></td><td>cases with and without the variant</td><td>people</td></tr><tr><td><code>c, d</code></td><td>controls with and without the variant</td><td>people</td></tr><tr><td><code>OR</code></td><td>odds of the variant in cases over the odds in controls</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Odds Ratio Calculator for Genetics calculator works', 'html' => <<<'TXT'
+            <p>The Odds Ratio Calculator for Genetics calculator applies one relationship to 4 numbers and reports Odds ratio, 95% confidence, lower and 95% confidence, upper.</p><p>Written with the labels from the form, Odds ratio = (Cases with the variant ÷ Controls with the variant) ÷ (Cases without the variant ÷ Controls without the variant).</p><p>The result panel carries Odds ratio, 95% confidence, lower, 95% confidence, upper and Relative risk, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Odds Ratio for Genetics?', 'html' => <<<'TXT'
-            <ol><li>Count cases with and without the variant, then controls with and without it.</li><li>Enter the four numbers in the order the table shows them.</li><li>Read the odds ratio, the relative risk and the 95% interval — the interval is what decides whether the result is real.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Cases with the variant</strong> — a plain number, no unit. Exposed cases</li><li><strong>Cases without the variant</strong> — a plain number, no unit. Unexposed cases</li><li><strong>Controls with the variant</strong> — a plain number, no unit. Exposed controls</li><li><strong>Controls without the variant</strong> — a plain number, no unit. Unexposed controls</li></ul><p>What you get back is Odds ratio, 95% confidence, lower, 95% confidence, upper, Relative risk, Variant frequency in cases in %, Variant frequency in controls in %, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: cases with the variant of <strong>60</strong>, cases without the variant of <strong>40</strong>, controls with the variant of <strong>30</strong>, controls without the variant of <strong>70</strong>.</p>
-            <p>Substituting them into the formula gives odds ratio of <strong>3.5</strong>, variant frequency in cases of <strong>60</strong>%, variant frequency in controls of <strong>30</strong>%, relative risk of <strong>2</strong>, 95% confidence, lower of <strong>1.95</strong>, 95% confidence, upper of <strong>6.29</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Cases with the variant = 60, Cases without the variant = 40, Controls with the variant = 30 and Controls without the variant = 70 — through the same formula and the panel reports &lt;strong&gt;Odds ratio&lt;/strong&gt; = 3.5, &lt;strong&gt;Variant frequency in cases&lt;/strong&gt; = 60 %, &lt;strong&gt;Variant frequency in controls&lt;/strong&gt; = 30 %, &lt;strong&gt;Relative risk&lt;/strong&gt; = 2, &lt;strong&gt;95% confidence, lower&lt;/strong&gt; = 1.95 and &lt;strong&gt;95% confidence, upper&lt;/strong&gt; = 6.29.</p><ul><li><strong>Odds ratio</strong> = 3.5</li><li><strong>Variant frequency in cases</strong> = 60 %</li><li><strong>Variant frequency in controls</strong> = 30 %</li><li><strong>Relative risk</strong> = 2</li><li><strong>95% confidence, lower</strong> = 1.95</li><li><strong>95% confidence, upper</strong> = 6.29</li></ul><p>The line behind those figures is <strong>Odds ratio</strong> = <code>(Cases with the variant ÷ Controls with the variant) ÷ (Cases without the variant ÷ Controls without the variant)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>OR = 1</td><td><strong>No association</strong></td><td>the interval crossing 1 is the usual test of significance</td></tr><tr><td>OR 1.2 – 2</td><td><strong>Modest association</strong></td><td>typical of most complex-trait variants</td></tr><tr><td>OR above 3</td><td><strong>Strong association</strong></td><td>check for genotyping artefacts and stratification</td></tr></tbody></table>
-            <ul><li><p>An odds ratio of 2 does not mean twice the risk. For a rare disease the two numbers are close; for a common one they diverge, and RR is the honest measure.</p></li><li><p>The confidence interval, not the p-value, is what tells you whether the study was big enough. An OR of 1.8 with an interval of 0.6–5.4 is a null result.</p></li><li><p>Population stratification — mixing two ancestries with different allele frequencies — creates associations that vanish once it is corrected for.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Odds ratio&lt;/strong&gt; = 3.5, &lt;strong&gt;Variant frequency in cases&lt;/strong&gt; = 60, &lt;strong&gt;Variant frequency in controls&lt;/strong&gt; = 30, &lt;strong&gt;Relative risk&lt;/strong&gt; = 2, &lt;strong&gt;95% confidence, lower&lt;/strong&gt; = 1.95 and &lt;strong&gt;95% confidence, upper&lt;/strong&gt; = 6.29. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Odds ratio is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Filling in the table by column instead of by row, which inverts the ratio.</li><li>Reporting OR as if it were relative risk for a common disease.</li><li>Ignoring a control group whose variant frequency does not match the published population.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Odds ratio</strong> = <code>(Cases with the variant ÷ Controls with the variant) ÷ (Cases without the variant ÷ Controls without the variant)</code></li><li><strong>Variant frequency in cases</strong> = <code>Cases with the variant ÷ (Cases with the variant + Cases without the variant) × 100</code></li><li><strong>Variant frequency in controls</strong> = <code>Controls with the variant ÷ (Controls with the variant + Controls without the variant) × 100</code></li><li><strong>Relative risk</strong> = <code>(Cases with the variant ÷ (Cases with the variant + Cases without the variant)) ÷ (Controls with the variant ÷ (Controls with the variant + Controls without the variant))</code></li></ul><p>Any one of Odds ratio, Variant frequency in cases and Variant frequency in controls can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Cases with the variant from 60 to 120, leaving every other box alone. The panel moves from &lt;strong&gt;Odds ratio&lt;/strong&gt; 3.5, &lt;strong&gt;Variant frequency in cases&lt;/strong&gt; 60 %, &lt;strong&gt;Variant frequency in controls&lt;/strong&gt; 30 %, &lt;strong&gt;Relative risk&lt;/strong&gt; 2, &lt;strong&gt;95% confidence, lower&lt;/strong&gt; 1.95 and &lt;strong&gt;95% confidence, upper&lt;/strong&gt; 6.29 to &lt;strong&gt;Odds ratio&lt;/strong&gt; 7, &lt;strong&gt;Variant frequency in cases&lt;/strong&gt; 75 %, &lt;strong&gt;Variant frequency in controls&lt;/strong&gt; 30 %, &lt;strong&gt;Relative risk&lt;/strong&gt; 2.5, &lt;strong&gt;95% confidence, lower&lt;/strong&gt; 4.01 and &lt;strong&gt;95% confidence, upper&lt;/strong&gt; 12.23.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Odds ratio, 95% confidence, lower and 95% confidence, upper are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Cases with the variant and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Cases with the variant, Cases without the variant and Controls with the variant and the number you are missing is Odds ratio and 95% confidence, lower.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/od600-to-cell-density">OD600 to Cell Density Calculator</a>, <a href="/biology/oligo-converter">Oligo pmol/µL to µg/mL Converter Calculator — Formula &amp; Result</a> and <a href="/biology/oligo-tm-calculator">Oligo Tm (Melting Temperature) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does an odds ratio of 1 mean?', 'a' => 'The variant is equally common in cases and controls — no association.'],
-            ['q' => 'When is a confidence interval significant?', 'a' => 'When it does not include 1.0. The p-value adds nothing that the interval does not already show.'],
-            ['q' => 'Why is my OR so much larger than the RR?', 'a' => 'Because the disease is common: odds overestimate risk when the outcome is not rare.'],
-            ['q' => 'What does the Odds Ratio for Genetics actually calculate?', 'a' => <<<'TXT'
-            It returns odds ratio, variant frequency in cases, variant frequency in controls and relative risk. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Odds Ratio Calculator for Genetics calculator work out?', 'a' => <<<'TXT'
+            Odds ratio, 95% confidence, lower, 95% confidence, upper and Relative risk, from Cases with the variant, Controls with the variant, Cases without the variant and Controls without the variant. The relationship is Odds ratio = (Cases with the variant ÷ Controls with the variant) ÷ (Cases without the variant ÷ Controls without the variant).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Cases with the variant, Cases without the variant, Controls with the variant, Controls without the variant. With a, b and c in place, Odds ratio can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Odds ratio, Variant frequency in cases, Variant frequency in controls and Relative risk blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Odds ratio = 3.5, Variant frequency in cases = 60 %, Variant frequency in controls = 30 %, Relative risk = 2, 95% confidence, lower = 1.95 and 95% confidence, upper = 6.29. That comes from the page's own defaults, entered in Cases with the variant; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Odds ratio is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Cases with the variant blank and the page solves for it, reporting Odds ratio instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Odds ratio at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/od600-to-cell-density', 'name' => 'OD600 to Cell Density Calculator'],
+            ['path' => '/biology/oligo-converter', 'name' => 'Oligo pmol/µL to µg/mL Converter Calculator — Formula & Result'],
+            ['path' => '/biology/oligo-tm-calculator', 'name' => 'Oligo Tm (Melting Temperature) Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

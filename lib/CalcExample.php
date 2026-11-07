@@ -33,7 +33,7 @@ final class CalcExample
     public static function sections(array $calc, Units $units): array
     {
         $roles  = self::roles($calc);
-        $inputs = self::sample($calc);
+        $inputs = self::sample($calc, $units);
         if ($inputs === [] || $roles['outputs'] === []) {
             return [];
         }
@@ -150,7 +150,7 @@ final class CalcExample
      *
      * @return array<string,float>
      */
-    public static function sample(array $calc): array
+    public static function sample(array $calc, ?Units $units = null): array
     {
         /* Only boxes the visitor can type in. A result box is visible too, and
            seeding it is how a worked example ends up quoting its own answer back
@@ -214,6 +214,77 @@ final class CalcExample
                 $seed[$name] = (float) $first;
             }
         }
+
+        /*
+         * A page that solves in every direction has no variable that is only an
+         * input: the harvest shows four boxes and four equations, so skipping
+         * everything an equation computes leaves nothing to type in and no
+         * example at all. Those pages get one box left as the unknown and the
+         * rest seeded.
+         */
+        if ($seed === [] && $typed !== [] && $units !== null) {
+            $names = array_keys($typed);
+            $unknown = null;
+            $needs = [];
+            foreach ($calc['equations'] as $entry) {
+                foreach ($entry['variants'] as $variant) {
+                    $lhs = (string) ($variant['lhs'] ?? '');
+                    $rhs = array_values((array) ($variant['rhs'] ?? []));
+                    /* Seed the boxes that variant reads and nothing else: the
+                       variables it does not mention are then computed, which is
+                       what a reader wants to see in a worked example. */
+                    if ($lhs !== '' && in_array($lhs, $names, true) && $rhs !== []
+                        && array_diff($rhs, $names) === []) {
+                        $unknown = $lhs;
+                        $needs = $rhs;
+                        break 2;
+                    }
+                }
+            }
+            $ramps = [[10, 100, 1000], [2, 4, 8], [100, 250, 50], [1, 10, 5]];
+            foreach ($ramps as $ramp) {
+                $candidate = [];
+                $i = 0;
+                foreach ($names as $name) {
+                    if ($name === $unknown || !in_array($name, $needs, true)) {
+                        continue;
+                    }
+                    $type = (string) ($calc['variables'][$name]['type'] ?? 'numerical');
+                    if ($type === 'valueSelect') {
+                        $value = Solver::selectValue($calc, $name, $calc['variables'][$name], null);
+                        if ($value !== null) {
+                            $candidate[$name] = $value;
+                        }
+                        continue;
+                    }
+                    if ($type !== 'numerical') {
+                        continue;
+                    }
+                    $defaults = $calc['variables'][$name]['defaults'] ?? [];
+                    $first = $defaults[0]['value'] ?? null;
+                    $candidate[$name] = ($first !== null && is_numeric($first) && (float) $first > 0)
+                        ? (float) $first
+                        : (float) $ramp[$i % count($ramp)];
+                    $i++;
+                }
+                if ($needs !== [] && array_diff($needs, array_keys($candidate)) !== []) {
+                    continue;                   // a box the formula reads was left blank
+                }
+                $solved = Solver::solve($calc, $candidate, $units);
+                $good = true;
+                foreach ($names as $name) {
+                    $value = $solved->values[$name] ?? null;
+                    if ($value === null || !is_finite((float) $value) || !empty($solved->placeholder[$name])) {
+                        $good = false;
+                        break;
+                    }
+                }
+                if ($good) {
+                    return $candidate;
+                }
+            }
+        }
+
         return $seed;
     }
 

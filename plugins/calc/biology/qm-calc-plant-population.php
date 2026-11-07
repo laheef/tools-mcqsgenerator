@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Plant population',
-    'meta' => ['title' => 'Plant population — Formula, Steps & Examples', 'description' => 'Give the Plant population calculator the field width, the plant spacing, the row spacing and the walkway width and it returns <strong>field area</strong>.', 'h1' => 'Plant population Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Plant population — Formula, Steps & Examples', 'description' => 'Plant population turns Plant spacing, Row spacing and Walkway width into Field length and Field width. There is no hidden constant here: change Field length…', 'h1' => 'Plant population Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => 'Farm field dimensions',
@@ -205,63 +205,50 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Give the Plant population calculator the field width, the plant spacing, the row spacing and the walkway width and it returns <strong>field area</strong>.',
+        'intro' => <<<'TXT'
+        Plant population turns Plant spacing, Row spacing and Walkway width into Field length and Field width. There is no hidden constant here: change Field length and Plant spacing moves with it. The main result, Field length, is reported in meters.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Plant population calculator work?', 'html' => <<<'TXT'
-            <p>The Plant population calculator takes the values in the form, applies the relationship described below and reports <strong>field area</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the field width, the plant spacing, the row spacing and the walkway width.</p>
+            ['title' => 'How the Plant population calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Plant population: it takes 5 numbers and reports Field length, Field width and Field area.</p><p>In the form&#039;s own words, Field area = Plant population × Row spacing × (Plant spacing + Walkway width) ÷ Number of plants per stand.</p><p>The result panel carries Field length, Field width, Field area and Plant population per area, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Plant spacing</strong> — in centimeters</li><li><strong>Row spacing</strong> — in centimeters</li><li><strong>Walkway width</strong> — in centimeters</li><li><strong>Number of plants per stand</strong> — a plain number, no unit</li><li><strong>Plant population</strong> — a plain number, no unit</li></ul><p>What you get back is Field length in meters, Field width in meters, Field area in hectares, Plant population per area in acres, Number seeds per mass unit in kilograms, Estimated seeds to buy in kilograms, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Field length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Field width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Field area</strong></td><td>A measured quantity, 24 units available.</td><td>hectares</td><td>Calculated</td></tr><tr><td><strong>Plant spacing</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Row spacing</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Walkway width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Number of plants per stand</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Plant population</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Plant population per area</strong></td><td>A measured quantity, 24 units available.</td><td>acres</td><td>Calculated</td></tr><tr><td><strong>Number seeds per mass unit</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Estimated seeds to buy</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Field length offers 31 units and opens on meters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Plant population calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Field area</span><span class="formula-eq">=</span><span class="formula-rhs">plant population × row spacing × (plant spacing + walkway width) ÷ number of plants per stand</span></div><div class="formula-row"><span class="formula-lhs">Plant population per area</span><span class="formula-eq">=</span><span class="formula-rhs">plant population ÷ field area</span></div><div class="formula-row"><span class="formula-lhs">Field length</span><span class="formula-eq">=</span><span class="formula-rhs">field area ÷ field width</span></div><div class="formula-row"><span class="formula-lhs">Estimated seeds to buy</span><span class="formula-eq">=</span><span class="formula-rhs">(6 ÷ 5) × plant population ÷ number seeds per mass unit</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Field area</strong> = <code>Plant population × Row spacing × (Plant spacing + Walkway width) ÷ Number of plants per stand</code></li><li><strong>Walkway width</strong> = <code>Field area × Number of plants per stand ÷ (Plant population × Row spacing) − Plant spacing</code></li><li><strong>Plant spacing</strong> = <code>Field area × Number of plants per stand ÷ (Plant population × Row spacing) − Walkway width</code></li><li><strong>Number of plants per stand</strong> = <code>Plant population × Row spacing × (Plant spacing + Walkway width) ÷ Field area</code></li><li><strong>Plant population</strong> = <code>Field area × Number of plants per stand ÷ (Row spacing × (Plant spacing + Walkway width))</code></li><li><strong>Row spacing</strong> = <code>Field area × Number of plants per stand ÷ (Plant population × (Plant spacing + Walkway width))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Field area, Walkway width and Plant spacing can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in hectares, and convertible to any of the 24 units on that chip.</li><li>Shown in acres, and convertible to any of the 24 units on that chip.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Plant spacing, Row spacing and Walkway width is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Field length, Field width and Field area are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Plant spacing to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in hectares</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Area, opening in acres</li><li>Mass, opening in kilograms</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Plant population calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 4 figures keep coming back — the field width, the plant spacing and the row spacing — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/plants">Plant spacing</a>, <a href="/biology/potting-soil-calculator">Potting soil</a> and <a href="/biology/protein-concentration">Protein concentration</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Plant spacing, Row spacing and Walkway width is what you already know and Field length and Field width is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/pcr-annealing-temperature">PCR Annealing Temperature Calculator</a>, <a href="/biology/pcr-cycle-calculator">PCR Cycle Calculator</a> and <a href="/biology/pcr-master-mix-calculator">PCR Master Mix Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Plant population calculator work out?', 'a' => <<<'TXT'
-            It returns field area, derived from the field width, the plant spacing and the row spacing. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Field length, Field width, Field area and Plant population per area, from Plant population, Row spacing, Plant spacing and Walkway width. The relationship is Field area = Plant population × Row spacing × (Plant spacing + Walkway width) ÷ Number of plants per stand.
             TXT],
-            ['q' => 'What do I need to enter to use the Plant population calculator?', 'a' => <<<'TXT'
-            The form asks for the field width, the plant spacing, the row spacing and the walkway width, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Plant spacing (centimeters), Row spacing (centimeters), Walkway width (centimeters), Number of plants per stand, Plant population. With plant_spacing, row_spacing and walkway in place, Field length can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I enter field length in a different unit?', 'a' => <<<'TXT'
-            Yes. Field length opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Field area, Walkway width, Plant spacing and Number of plants per stand can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Field length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Is the Plant population calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Plant spacing blank and the page solves for it, reporting Field length instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Field length at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/plants', 'name' => 'Plant spacing'],
-            ['path' => '/biology/potting-soil-calculator', 'name' => 'Potting soil'],
-            ['path' => '/biology/protein-concentration', 'name' => 'Protein concentration'],
+            ['path' => '/biology/pcr-annealing-temperature', 'name' => 'PCR Annealing Temperature Calculator'],
+            ['path' => '/biology/pcr-cycle-calculator', 'name' => 'PCR Cycle Calculator'],
+            ['path' => '/biology/pcr-master-mix-calculator', 'name' => 'PCR Master Mix Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -11,9 +11,7 @@
 
 return [
     'name' => 'DNA Molarity from Mass or A260',
-    'meta' => ['title' => 'DNA Molarity from Mass or A260 — Formula & Results', 'description' => <<<'TXT'
-    Concentration in ng/µL tells you how much DNA you have; molarity tells you how many molecules. It returns molar concentration, pmol per µL, copies per µL and…
-    TXT, 'h1' => 'DNA Molarity from Mass or A260', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Molarity from Mass or A260 — Formula & Results', 'description' => 'Concentration in ng/µL tells you how much DNA you have; molarity tells you how many molecules. Free dna molarity from mass or a260 calculator: enter your valu', 'h1' => 'DNA Molarity from Mass or A260', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -81,44 +79,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Concentration in ng/µL tells you how much DNA you have; molarity tells you how many molecules. It returns molar concentration, pmol per µL, copies per µL and equivalent A260, and the panel shows all of them at once.
-        
-        Sequencing, ligation and qPCR all need the second. This calculator converts between mass concentration, molar concentration and copy number.
+        Enter DNA concentration and Fragment length into DNA Molarity from Mass or A260 and the answer comes back as Molar concentration and pmol per µL. Nothing is looked up on this page: Molar concentration is computed from DNA concentration and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Molar concentration is opened in nM; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the DNA Molarity from Mass or A260', 'html' => <<<'TXT'
-            <p>nM = (ng/µL × 10⁶) ÷ (bp × 660); copies/µL = (ng/µL × 6.022×10¹⁴) ÷ (bp × 660)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/dna-molarity-from-mass.svg" width="720" height="300" loading="lazy" alt="Animated diagram: DNA Molarity from Mass or A260 — Mass concentration, length and Avogadro's number." title="DNA Molarity from Mass or A260"><figcaption>Mass concentration, length and Avogadro's number.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ng/µL</code></td><td>mass concentration</td><td>ng/µL</td></tr><tr><td><code>bp</code></td><td>molecule length</td><td>bp</td></tr><tr><td><code>nM</code></td><td>molar concentration</td><td>nM</td></tr></tbody></table>
+            ['title' => 'How the DNA Molarity from Mass or A260 calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind DNA Molarity from Mass or A260: it takes 2 numbers and reports Molar concentration, pmol per µL and Copies per µL.</p><p>Written with the labels from the form, Molar concentration = DNA concentration × 1000000 ÷ (Fragment length × 660).</p><p>The answers are Molar concentration, pmol per µL, Copies per µL and Equivalent A260; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the DNA Molarity from Mass or A260?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>DNA concentration</strong> — in ng/µL</li><li><strong>Fragment length</strong> — in bp</li></ul><p>The result boxes are Molar concentration in nM, pmol per µL in pmol/µL, Copies per µL, Equivalent A260; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: dna concentration of <strong>50</strong> ng/µL, fragment length of <strong>5,000</strong> bp.</p>
-            <p>Substituting them into the formula gives molar concentration of <strong>15.15</strong> nM, pmol per µl of <strong>0.0152</strong> pmol/µL, copies per µl of <strong>9,124,242,424</strong>, equivalent a260 of <strong>1</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — DNA concentration = 50 ng/µL and Fragment length = 5000 bp — through the same formula and the panel reports &lt;strong&gt;Molar concentration&lt;/strong&gt; = 15.15 nM, &lt;strong&gt;pmol per µL&lt;/strong&gt; = 0.0152 pmol/µL, &lt;strong&gt;Copies per µL&lt;/strong&gt; = 9.124e+9 and &lt;strong&gt;Equivalent A260&lt;/strong&gt; = 1.</p><ul><li><strong>Molar concentration</strong> = 15.15 nM</li><li><strong>pmol per µL</strong> = 0.0152 pmol/µL</li><li><strong>Copies per µL</strong> = 9.124e+9</li><li><strong>Equivalent A260</strong> = 1</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Molar concentration</strong> = <code>DNA concentration × 1000000 ÷ (Fragment length × 660)</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The copy-number form is the one qPCR standard curves are built on: a 10-fold dilution series is a 10-fold drop in copies per microlitre.</p></li><li><p>Doubling the length halves the molarity at the same mass concentration — long constructs need much more mass for the same number of molecules.</p></li><li><p>For a plasmid, use the full plasmid length, not the insert.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Molar concentration&lt;/strong&gt; = 15.15, &lt;strong&gt;pmol per µL&lt;/strong&gt; = 0.0152, &lt;strong&gt;Copies per µL&lt;/strong&gt; = 9.124e+9 and &lt;strong&gt;Equivalent A260&lt;/strong&gt; = 1. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Molar concentration is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Mixing ng/µL and µg/mL by a factor of a thousand.</li><li>Using a size in kilobases in a formula that expects base pairs.</li><li>Quoting molarity from a concentration measured with the wrong UV factor.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Molar concentration</strong> = <code>DNA concentration × 1000000 ÷ (Fragment length × 660)</code></li><li><strong>pmol per µL</strong> = <code>DNA concentration × 1000000 ÷ (Fragment length × 660) ÷ 1000</code></li><li><strong>Copies per µL</strong> = <code>DNA concentration × 0.000000001 ÷ 660 ÷ Fragment length × 602200000000000000000000</code></li><li><strong>Equivalent A260</strong> = <code>DNA concentration ÷ 50</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Molar concentration, pmol per µL and Copies per µL can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — DNA concentration, from 50 to 100 — and the answers go from &lt;strong&gt;Molar concentration&lt;/strong&gt; 15.15 nM, &lt;strong&gt;pmol per µL&lt;/strong&gt; 0.0152 pmol/µL, &lt;strong&gt;Copies per µL&lt;/strong&gt; 9.124e+9 and &lt;strong&gt;Equivalent A260&lt;/strong&gt; 1 to &lt;strong&gt;Molar concentration&lt;/strong&gt; 30.3 nM, &lt;strong&gt;pmol per µL&lt;/strong&gt; 0.0303 pmol/µL, &lt;strong&gt;Copies per µL&lt;/strong&gt; 1.825e+1 and &lt;strong&gt;Equivalent A260&lt;/strong&gt; 2.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Molar concentration, pmol per µL and Copies per µL are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in DNA concentration and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: DNA concentration and Fragment length measured, Molar concentration and pmol per µL wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a>, <a href="/biology/dog-size">Dog size Calculator</a> and <a href="/biology/dog-water-intake">Dog water intake Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many copies are in 1 ng of a 5 kb plasmid?', 'a' => 'About 1.8 × 10⁸ copies.'],
-            ['q' => 'Why do I need molarity for sequencing?', 'a' => 'Because the reaction consumes molecules, not micrograms, and library molarity determines cluster density.'],
-            ['q' => 'What does the DNA Molarity from Mass or A260 actually calculate?', 'a' => <<<'TXT'
-            It returns molar concentration, pmol per µL, copies per µL and equivalent A260. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the DNA Molarity from Mass or A260 calculator work out?', 'a' => <<<'TXT'
+            Molar concentration, pmol per µL, Copies per µL and Equivalent A260, from DNA concentration and Fragment length. The relationship is Molar concentration = DNA concentration × 1000000 ÷ (Fragment length × 660).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'DNA concentration (ng/µL), Fragment length (bp). With ng_ul and bp in place, Molar concentration can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Molar concentration, pmol per µL, Copies per µL and Equivalent A260 can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Molar concentration = 15.15 nM, pmol per µL = 0.0152 pmol/µL, Copies per µL = 9.124e+9 and Equivalent A260 = 1. That comes from the page's own defaults, entered in DNA concentration; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Molar concentration is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With DNA concentration left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Molar concentration at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+            ['path' => '/biology/dog-size', 'name' => 'Dog size Calculator'],
+            ['path' => '/biology/dog-water-intake', 'name' => 'Dog water intake Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

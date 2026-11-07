@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Corn yield',
-    'meta' => ['title' => 'Corn yield Calculator — Formula, Units & Example', 'description' => 'Supply the kernels per ear, the ears in a sample, the size of the field and the yield per acre and the Corn yield calculator solves for <strong>size of the…', 'h1' => 'Corn yield Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Corn yield Calculator — Formula, Units & Example', 'description' => 'Kernels per ear, Ears in a sample, Yield per acre (bushels). Leave any of Size of the kernels, Kernels per ear, Ears in a sample and Yield per acre blank and…', 'h1' => 'Corn yield Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => '',
@@ -153,64 +153,46 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Supply the kernels per ear, the ears in a sample, the size of the field and the yield per acre and the Corn yield calculator solves for <strong>size of the kernels</strong>.
+        Corn yield works out Size of the field and Size of the kernels from Kernels per ear, Ears in a sample and Yield per acre. The arithmetic is the whole method: Size of the field is worked out from Kernels per ear by one formula, applied once. Size of the field comes back in acres unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'How does the Corn yield calculator work?', 'html' => <<<'TXT'
-            <p>The Corn yield calculator takes the values in the form, applies the relationship described below and reports <strong>size of the kernels</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the kernels per ear, the ears in a sample, the size of the field and the yield per acre.</p>
+            ['title' => 'How the Corn yield calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Corn yield: it takes 3 numbers and reports Size of the field, Size of the kernels and Total yield.</p><p>Written with the labels from the form, Size of the kernels = 1000 × Ears in a sample × Kernels per ear ÷ Yield per acre.</p><p>What comes back is Size of the field, Size of the kernels, Total yield and Price per bushel — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in acres. The unit chip switches it to any of the 24 supported units.</li><li>A number, expressed in bushels.</li><li>A plain number with no unit attached.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Kernels per ear</strong> — a plain number, no unit. The average number of kernels per ear based on your sample. A typical ear has around 800 kernels.</li><li><strong>Ears in a sample</strong> — a plain number, no unit. Number of ears of corn in a 1/1000 acre sample.</li><li><strong>Yield per acre</strong> — in bushels</li></ul><p>The answers come back as Size of the field in acres, Size of the kernels, Total yield in bushels, Price per bushel in USD, Profit 💵. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Kernels per ear</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Ears in a sample</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Size of the field</strong></td><td>A measured quantity, 24 units available.</td><td>acres</td><td>You supply it</td></tr><tr><td><strong>Size of the kernels</strong></td><td>One of 3 options, such as small, medium and large.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Yield per acre</strong></td><td>A number stated in bushels.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total yield</strong></td><td>A number stated in bushels.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Price per bushel</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Profit</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Size of the kernels</strong> = <code>1000 × Ears in a sample × Kernels per ear ÷ Yield per acre</code></li><li><strong>Kernels per ear</strong> = <code>(1 ÷ 1000) × Yield per acre × Size of the kernels ÷ Ears in a sample</code></li><li><strong>Ears in a sample</strong> = <code>(1 ÷ 1000) × Yield per acre × Size of the kernels ÷ Kernels per ear</code></li><li><strong>Yield per acre</strong> = <code>1000 × Ears in a sample × Kernels per ear ÷ Size of the kernels</code></li><li><strong>Total yield</strong> = <code>Size of the field × Yield per acre</code></li><li><strong>Size of the field</strong> = <code>Total yield ÷ Yield per acre</code></li></ul><p>Any one of Size of the kernels, Kernels per ear and Ears in a sample can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Corn yield calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Size of the kernels</span><span class="formula-eq">=</span><span class="formula-rhs">1000 × ears in a sample × kernels per ear ÷ yield per acre</span></div><div class="formula-row"><span class="formula-lhs">Total yield</span><span class="formula-eq">=</span><span class="formula-rhs">size of the field × yield per acre</span></div><div class="formula-row"><span class="formula-lhs">Price per bushel</span><span class="formula-eq">=</span><span class="formula-rhs">profit ÷ total yield</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Size of the field, Size of the kernels and Total yield are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Kernels per ear to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Area, opening in acres</li><li>Currency, opening in US Dollar</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Corn yield calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 4 figures keep coming back — the kernels per ear, the ears in a sample and the size of the field — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cow-gestation">Cow gestation</a>, <a href="/biology/cricket-chirp-thermometer">Crickets chirping thermometer</a> and <a href="/biology/daily-light-integral-dli">Daily light integral (DLI)</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Kernels per ear, Ears in a sample and Yield per acre is what you already know and Size of the field and Size of the kernels is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/bird-age">Bird age</a>, <a href="/biology/bod-load">BOD Load Calculator</a> and <a href="/biology/bone-length-to-body-height">Bone Length to Body Height Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Corn yield calculator work out?', 'a' => <<<'TXT'
-            It returns size of the kernels, derived from the kernels per ear, the ears in a sample and the size of the field. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Size of the field, Size of the kernels, Total yield and Price per bushel, from Ears in a sample, Kernels per ear and Yield per acre. The relationship is Size of the kernels = 1000 × Ears in a sample × Kernels per ear ÷ Yield per acre.
             TXT],
-            ['q' => 'What do I need to enter to use the Corn yield calculator?', 'a' => <<<'TXT'
-            The form asks for the kernels per ear, the ears in a sample, the size of the field and the yield per acre, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Kernels per ear, Ears in a sample, Yield per acre (bushels). Fill kpe, ears and corn and leave Size of the field empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I enter size of the field in a different unit?', 'a' => <<<'TXT'
-            Yes. Size of the field opens in acres and the chip beside it offers 24 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Size of the kernels, Kernels per ear, Ears in a sample and Yield per acre blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Size of the field is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Kernels per ear left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Corn yield calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Size of the field keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/cow-gestation', 'name' => 'Cow gestation'],
-            ['path' => '/biology/cricket-chirp-thermometer', 'name' => 'Crickets chirping thermometer'],
-            ['path' => '/biology/daily-light-integral-dli', 'name' => 'Daily light integral (DLI)'],
+            ['path' => '/biology/bird-age', 'name' => 'Bird age'],
+            ['path' => '/biology/bod-load', 'name' => 'BOD Load Calculator'],
+            ['path' => '/biology/bone-length-to-body-height', 'name' => 'Bone Length to Body Height Calculator'],
         ],
+        'authors' => [],
     ],
 ];

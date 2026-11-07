@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Sulfur Soil Acidifier Calculator',
-    'meta' => ['title' => 'Sulfur Soil Acidifier Calculator — Formula & Results', 'description' => 'Elemental sulfur is how you lower soil pH without adding salt: soil bacteria oxidise it to sulfuric acid, which acidifies the soil over several months.', 'h1' => 'Sulfur Soil Acidifier Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Sulfur Soil Acidifier Calculator — Formula & Results', 'description' => 'Sulfur Soil Acidifier turns Area, Current pH and Target pH into Elemental sulfur and Sulfur per 100 m². There is no hidden constant here: change Elemental…', 'h1' => 'Sulfur Soil Acidifier Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -114,46 +114,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Elemental sulfur is how you lower soil pH without adding salt: soil bacteria oxidise it to sulfuric acid, which acidifies the soil over several months. It returns pH change, elemental sulfur, sulfur per 100 m² and sulfur per 1 000 ft², and the panel shows all of them at once.
-        
-        The amount depends on how far the pH has to fall and on the texture — a sand needs a third of what a clay needs for the same change.
+        Sulfur Soil Acidifier turns Area, Current pH and Target pH into Elemental sulfur and Sulfur per 100 m². There is no hidden constant here: change Elemental sulfur and Area moves with it. The main result, Elemental sulfur, is reported in kg.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Sulfur Soil Acidifier', 'html' => <<<'TXT'
-            <p>Sulfur (kg) ≈ area (m²) × ΔpH × texture factor × 0.2. One pH unit on a loam takes about 20 kg per 100 m² (≈ 4 lb per 100 ft²)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/sulfur-soil-acidifier.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Sulfur Soil Acidifier Calculator — Sulfur to lower pH by one unit, by texture (kg per 100 m²)" title="Sulfur Soil Acidifier Calculator"><figcaption>Sulfur to lower pH by one unit, by texture (kg per 100 m²)</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ΔpH</code></td><td>how many pH units you need to come down</td><td>—</td></tr><tr><td><code>S⁰</code></td><td>elemental sulfur, oxidised by soil bacteria to sulfuric acid</td><td>—</td></tr><tr><td><code>texture factor</code></td><td>0.5 for sand, 1 for loam, 1.5 for clay — clay buffers more</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Sulfur Soil Acidifier calculator works', 'html' => <<<'TXT'
+            <p>The Sulfur Soil Acidifier calculator applies one relationship to 4 numbers and reports Elemental sulfur, Sulfur per 100 m² and Sulfur per 1 000 ft².</p><p>The relationship it solves reads pH change = Current pH − Target pH.</p><p>What comes back is Elemental sulfur, Sulfur per 100 m², Sulfur per 1 000 ft² and Time to take effect — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Sulfur Soil Acidifier?', 'html' => <<<'TXT'
-            <ol><li>Enter the area and the pH from your soil test, plus the pH you want.</li><li>Choose the texture; clay needs the most sulfur, sand the least.</li><li>The sulfur to apply is given in kilograms and in pounds per 1 000 ft², with the months it will take.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Area</strong> — in m²</li><li><strong>Current pH</strong> — in pH. From a soil test</li><li><strong>Target pH</strong> — in pH. Blueberries want 4.5–5.5, most vegetables 6–7</li><li><strong>Soil texture</strong> — a plain number, no unit. Multiplier on the base rate</li></ul><p>The answers come back as Elemental sulfur in kg, Sulfur per 100 m² in kg, Sulfur per 1 000 ft² in lb, Time to take effect in months, pH change in units. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: area of <strong>100</strong> m², current ph of <strong>7.5</strong> pH, target ph of <strong>6.5</strong> pH, soil texture set to <strong>1.0</strong>.</p>
-            <p>Substituting them into the formula gives ph change of <strong>1</strong> units, elemental sulfur of <strong>20</strong> kg, sulfur per 100 m² of <strong>20</strong> kg, sulfur per 1 000 ft² of <strong>2</strong> lb, time to take effect of <strong>3</strong> months.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Area = 100 m², Current pH = 7.5 pH, Target pH = 6.5 pH and Soil texture = 1 — through the same formula and the panel reports &lt;strong&gt;pH change&lt;/strong&gt; = 1 units, &lt;strong&gt;Elemental sulfur&lt;/strong&gt; = 20 kg, &lt;strong&gt;Sulfur per 100 m²&lt;/strong&gt; = 20 kg, &lt;strong&gt;Sulfur per 1 000 ft²&lt;/strong&gt; = 2 lb and &lt;strong&gt;Time to take effect&lt;/strong&gt; = 3 months.</p><ul><li><strong>pH change</strong> = 1 units</li><li><strong>Elemental sulfur</strong> = 20 kg</li><li><strong>Sulfur per 100 m²</strong> = 20 kg</li><li><strong>Sulfur per 1 000 ft²</strong> = 2 lb</li><li><strong>Time to take effect</strong> = 3 months</li></ul><p>The line behind those figures is <strong>pH change</strong> = <code>Current pH − Target pH</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 0.5 unit</td><td><strong>Trim</strong></td><td>0.5–1 kg per 10 m² on a loam</td></tr><tr><td>0.5 – 1 unit</td><td><strong>Typical</strong></td><td>apply in autumn so winter rain works it in</td></tr><tr><td>over 1.5 units</td><td><strong>Large change</strong></td><td>split over two years and retest between</td></tr></tbody></table>
-            <ul><li><p>Sulfur is slow: the bacteria need warm, moist, aerated soil and it can take six months to a year. For a fast change use aluminium sulfate or a pH-adjusted mix, at the cost of adding salts.</p></li><li><p>Never change pH by more than about one unit in a single season — the shift is uneven and the plants in the patch get shocked.</p></li><li><p>Sulfur does not move far in soil. Incorporate it into the root zone rather than spreading it on the surface.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;pH change&lt;/strong&gt; = 1, &lt;strong&gt;Elemental sulfur&lt;/strong&gt; = 20, &lt;strong&gt;Sulfur per 100 m²&lt;/strong&gt; = 20, &lt;strong&gt;Sulfur per 1 000 ft²&lt;/strong&gt; = 2 and &lt;strong&gt;Time to take effect&lt;/strong&gt; = 3 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Elemental sulfur takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Expecting a pH change within a week — elemental sulfur needs microbial oxidation.</li><li>Using lime to raise pH and sulfur to lower it on the same bed in one season.</li><li>Applying sulfur to dry soil in a cold month, where the bacteria do nothing at all.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>pH change</strong> = <code>Current pH − Target pH</code></li><li><strong>Elemental sulfur</strong> = <code>Area × (Current pH − Target pH) × Soil texture × 0.2</code></li><li><strong>Sulfur per 100 m²</strong> = <code>(Current pH − Target pH) × Soil texture × 0.2 × 100</code></li><li><strong>Sulfur per 1 000 ft²</strong> = <code>(Current pH − Target pH) × Soil texture × 0.2 × 9.29 × 10.7639 ÷ 10</code></li><li><strong>Time to take effect</strong> = <code>(Current pH − Target pH) × Soil texture × 3</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of pH change, Elemental sulfur and Sulfur per 100 m² can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Area from 100 to 200, leaving every other box alone. The panel moves from &lt;strong&gt;pH change&lt;/strong&gt; 1 units, &lt;strong&gt;Elemental sulfur&lt;/strong&gt; 20 kg, &lt;strong&gt;Sulfur per 100 m²&lt;/strong&gt; 20 kg, &lt;strong&gt;Sulfur per 1 000 ft²&lt;/strong&gt; 2 lb and &lt;strong&gt;Time to take effect&lt;/strong&gt; 3 months to &lt;strong&gt;pH change&lt;/strong&gt; 1 units, &lt;strong&gt;Elemental sulfur&lt;/strong&gt; 40 kg, &lt;strong&gt;Sulfur per 100 m²&lt;/strong&gt; 20 kg, &lt;strong&gt;Sulfur per 1 000 ft²&lt;/strong&gt; 2 lb and &lt;strong&gt;Time to take effect&lt;/strong&gt; 3 months.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Elemental sulfur, Sulfur per 100 m² and Sulfur per 1 000 ft² are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Area to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Area, Current pH and Target pH is what you already know and Elemental sulfur and Sulfur per 100 m² is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/guinea-pig-pregnancy">Guinea pig pregnancy</a>, <a href="/biology/guinea-pig-age">Guinea pig years to human years</a> and <a href="/biology/gypsum-application-rate">Gypsum Application Rate Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long does elemental sulfur take to lower pH?', 'a' => 'Three to twelve months, depending on temperature, moisture and how finely ground it is.'],
-            ['q' => 'How much sulfur to lower pH by one unit?', 'a' => 'About 20 kg per 100 m² on a loam, roughly half that on sand and one and a half times on clay.'],
-            ['q' => 'Is aluminum sulfate better?', 'a' => 'It acts within weeks, but adds aluminium and salt; sulfur is gentler and slower.'],
-            ['q' => 'What does the Sulfur Soil Acidifier actually calculate?', 'a' => <<<'TXT'
-            It returns pH change, elemental sulfur, sulfur per 100 m² and sulfur per 1 000 ft². Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Sulfur Soil Acidifier calculator work out?', 'a' => <<<'TXT'
+            Elemental sulfur, Sulfur per 100 m², Sulfur per 1 000 ft² and Time to take effect, from Current pH and Target pH. The relationship is pH change = Current pH − Target pH.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Area (m²), Current pH (pH), Target pH (pH), Soil texture. Fill area, ph_now and ph_target and leave Elemental sulfur empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. pH change, Elemental sulfur, Sulfur per 100 m² and Sulfur per 1 000 ft² can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            pH change = 1 units, Elemental sulfur = 20 kg, Sulfur per 100 m² = 20 kg, Sulfur per 1 000 ft² = 2 lb and Time to take effect = 3 months. The figures come from Area as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Elemental sulfur is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Area blank and the page solves for it, reporting Elemental sulfur instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Elemental sulfur keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/guinea-pig-pregnancy', 'name' => 'Guinea pig pregnancy'],
+            ['path' => '/biology/guinea-pig-age', 'name' => 'Guinea pig years to human years'],
+            ['path' => '/biology/gypsum-application-rate', 'name' => 'Gypsum Application Rate Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

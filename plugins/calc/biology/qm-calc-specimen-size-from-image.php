@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Actual Specimen Size from Image Calculator',
-    'meta' => ['title' => 'Actual Specimen Size from Image Calculator — Biology', 'description' => 'Turn a measurement taken on a photograph or a micrograph into the real size of the object. It returns actual length, image to real ratio, actual length and…', 'h1' => 'Actual Specimen Size from Image Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Actual Specimen Size from Image Calculator — Biology', 'description' => 'Actual Specimen Size from Image works out Actual length and Actual length from Object length on the image, Scale bar length on the image and Real length of…', 'h1' => 'Actual Specimen Size from Image Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -102,46 +102,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Turn a measurement taken on a photograph or a micrograph into the real size of the object. It returns actual length, image to real ratio, actual length and area if square, and the panel shows all of them at once.
-        
-        You need one known reference — a scale bar, a stage micrometer or a ruler in the frame — and the length you measured on the image; the ratio gives the answer whether the image is a hand specimen or an electron micrograph.
+        Actual Specimen Size from Image works out Actual length and Actual length from Object length on the image, Scale bar length on the image and Real length of the scale bar. The arithmetic is the whole method: Actual length is worked out from Object length on the image by one formula, applied once. Actual length comes back in µm unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Actual Specimen Size from Image', 'html' => <<<'TXT'
-            <p>Actual size = (measured length ÷ scale bar length) × real length of the bar. Without a scale bar: actual size = measured length ÷ magnification</p>
-            <figure class="calc-figure"><img src="/uploads/biology/specimen-size-from-image.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Actual Specimen Size from Image Calculator — Actual sizes across microscopy scales (µm)" title="Actual Specimen Size from Image Calculator"><figcaption>Actual sizes across microscopy scales (µm)</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>scale bar</code></td><td>a line of known real length printed on the image</td><td>mm</td></tr><tr><td><code>magnification</code></td><td>how many times the specimen is enlarged</td><td>×</td></tr><tr><td><code>µm</code></td><td>micrometre, a thousandth of a millimetre</td><td>m</td></tr></tbody></table>
+            ['title' => 'How the Actual Specimen Size from Image calculator works', 'html' => <<<'TXT'
+            <p>The Actual Specimen Size from Image calculator applies one relationship to 4 numbers and reports Actual length, Actual length and Image to real ratio.</p><p>The relationship it solves reads Actual length = Object length on the image × (if_else(Scale bar length on the image&gt;0,Real length of the scale bar ÷ max(Scale bar length on the image,0.000001),1000 ÷ Microscope magnification)).</p><p>What comes back is Actual length, Actual length, Image to real ratio and Area if square — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Actual Specimen Size from Image?', 'html' => <<<'TXT'
-            <ol><li>Measure the object and the scale bar on the same image, in the same units.</li><li>Enter what the scale bar represents in real life.</li><li>The actual size follows in micrometres and millimetres; without a bar, use the magnification.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Object length on the image</strong> — in mm. Measure with a ruler on paper or a pixel ruler on screen</li><li><strong>Scale bar length on the image</strong> — in mm. Set to 0 to use the magnification instead</li><li><strong>Real length of the scale bar</strong> — in µm. What the bar represents</li><li><strong>Microscope magnification</strong> — in ×. Only used if there is no scale bar (leave the scale bar at 0)</li></ul><p>What you get back is Actual length in µm, Actual length in mm, Image to real ratio in ×, Area if square in µm², shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: object length on the image of <strong>30</strong> mm, scale bar length on the image of <strong>0</strong> mm, real length of the scale bar of <strong>100</strong> µm, microscope magnification of <strong>400</strong> ×.</p>
-            <p>Substituting them into the formula gives actual length of <strong>75</strong> µm, image to real ratio of <strong>2.5</strong> ×, actual length of <strong>0.075</strong> mm, area if square of <strong>5,625</strong> µm².</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Object length on the image = 30 mm, Scale bar length on the image = 4 mm, Real length of the scale bar = 100 µm and Microscope magnification = 400 × — through the same formula and the panel reports &lt;strong&gt;Actual length&lt;/strong&gt; = 750 µm, &lt;strong&gt;Image to real ratio&lt;/strong&gt; = 25 ×, &lt;strong&gt;Actual length&lt;/strong&gt; = 0.75 mm and &lt;strong&gt;Area if square&lt;/strong&gt; = 562500 µm².</p><ul><li><strong>Actual length</strong> = 750 µm</li><li><strong>Image to real ratio</strong> = 25 ×</li><li><strong>Actual length</strong> = 0.75 mm</li><li><strong>Area if square</strong> = 562500 µm²</li></ul><p>The line behind those figures is <strong>Actual length</strong> = <code>Object length on the image × (if_else(Scale bar length on the image&gt;0,Real length of the scale bar ÷ max(Scale bar length on the image,0.000001),1000 ÷ Microscope magnification))</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>4× – 10×</td><td><strong>Stereo microscope</strong></td><td>whole insects, plant parts, millimetre features</td></tr><tr><td>40× – 100×</td><td><strong>Compound, low power</strong></td><td>cells and tissue layers</td></tr><tr><td>400× – 1 000×</td><td><strong>Compound, high power</strong></td><td>organelles, bacteria</td></tr><tr><td>above 10 000×</td><td><strong>Electron microscope</strong></td><td>viruses and membranes; a scale bar is essential</td></tr></tbody></table>
-            <ul><li><p>Always measure the scale bar in the same units and on the same copy of the image — printing or resizing changes every pixel-based measurement.</p></li><li><p>A scale bar is more reliable than the magnification written on the image: micrographs are cropped and resized constantly, and the number in the caption is often the original setting.</p></li><li><p>Electron micrographs have no meaningful optical magnification to quote; measure the bar.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Actual length&lt;/strong&gt; = 750, &lt;strong&gt;Image to real ratio&lt;/strong&gt; = 25, &lt;strong&gt;Actual length&lt;/strong&gt; = 0.75 and &lt;strong&gt;Area if square&lt;/strong&gt; = 562500. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Actual length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using the on-screen size of a resized image against a magnification figure.</li><li>Mixing millimetres and micrometres between the measurement and the scale bar.</li><li>Measuring the object with a bent ruler or along a curve, which over-estimates a long specimen.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Actual length</strong> = <code>Object length on the image × (if_else(Scale bar length on the image&gt;0,Real length of the scale bar ÷ max(Scale bar length on the image,0.000001),1000 ÷ Microscope magnification))</code></li><li><strong>Image to real ratio</strong> = <code>(if_else(Scale bar length on the image&gt;0,Real length of the scale bar ÷ max(Scale bar length on the image,0.000001),1000 ÷ Microscope magnification))</code></li><li><strong>Area if square</strong> = <code>(Object length on the image × (if_else(Scale bar length on the image&gt;0,Real length of the scale bar ÷ max(Scale bar length on the image,0.000001),1000 ÷ Microscope magnification))) ^ 2</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Actual length, Image to real ratio and Actual length can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Object length on the image, from 30 to 60 — and the answers go from &lt;strong&gt;Actual length&lt;/strong&gt; 750 µm, &lt;strong&gt;Image to real ratio&lt;/strong&gt; 25 ×, &lt;strong&gt;Actual length&lt;/strong&gt; 0.75 mm and &lt;strong&gt;Area if square&lt;/strong&gt; 562500 µm² to &lt;strong&gt;Actual length&lt;/strong&gt; 1500 µm, &lt;strong&gt;Image to real ratio&lt;/strong&gt; 25 ×, &lt;strong&gt;Actual length&lt;/strong&gt; 1.5 mm and &lt;strong&gt;Area if square&lt;/strong&gt; 2.250e+6 µm².</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Actual length, Actual length and Image to real ratio are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Object length on the image is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Object length on the image, Scale bar length on the image and Real length of the scale bar is what you already know and Actual length and Actual length is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/solids-retention-time">Solids Retention Time (SRT) Calculator</a>, <a href="/biology/solute-potential">Solute Potential Calculator</a> and <a href="/biology/species-richness">Species Richness Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I find the real size of a specimen?', 'a' => 'Divide the measurement on the image by the scale bar\'s image length, then multiply by the bar\'s real length.'],
-            ['q' => 'What if there is no scale bar?', 'a' => 'Divide by the magnification instead, but only if you are sure of it.'],
-            ['q' => 'Why measure a scale bar rather than use the objective?', 'a' => 'Because the image may have been resized; the bar scales with the picture and the objective number does not.'],
-            ['q' => 'What does the Actual Specimen Size from Image actually calculate?', 'a' => <<<'TXT'
-            It returns actual length, image to real ratio, actual length and area if square. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Actual Specimen Size from Image calculator work out?', 'a' => <<<'TXT'
+            Actual length, Actual length, Image to real ratio and Area if square, from Object length on the image, Scale bar length on the image, Real length of the scale bar and Microscope magnification. The relationship is Actual length = Object length on the image × (if_else(Scale bar length on the image>0,Real length of the scale bar ÷ max(Scale bar length on the image,0.000001),1000 ÷ Microscope magnification)).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Object length on the image (mm), Scale bar length on the image (mm), Real length of the scale bar (µm), Microscope magnification (×). With measured_mm, scale_mm and scale_real_um in place, Actual length can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Actual length, Image to real ratio, Actual length and Area if square can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Actual length = 750 µm, Image to real ratio = 25 ×, Actual length = 0.75 mm and Area if square = 562500 µm². The figures come from Object length on the image as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Actual length is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Object length on the image left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Actual length keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/solids-retention-time', 'name' => 'Solids Retention Time (SRT) Calculator'],
+            ['path' => '/biology/solute-potential', 'name' => 'Solute Potential Calculator'],
+            ['path' => '/biology/species-richness', 'name' => 'Species Richness Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

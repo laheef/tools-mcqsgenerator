@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ligation Calculator',
-    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Results', 'description' => 'Set up a ligation by molar ratio instead of guessing: with a fixed amount of vector, the mass of insert you need depends on the ratio you want and the…', 'h1' => 'Ligation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Results', 'description' => 'Set up a ligation by molar ratio instead of guessing: with a fixed amount of vector, the mass of insert you need depends on the ratio you want and the relativ', 'h1' => 'Ligation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -83,44 +83,49 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Set up a ligation by molar ratio instead of guessing: with a fixed amount of vector, the mass of insert you need depends on the ratio you want and the relative lengths. It returns insert mass needed, vector mass and vector in the reaction, and the panel shows all of them at once.
-        
-        A 3:1 insert-to-vector ratio is the usual starting point, and this calculator gives the nanograms for any ratio you choose.
+        Enter Vector mass, Vector length and Insert length into Ligation and the answer comes back as Insert mass needed and Vector in the reaction. Nothing is looked up on this page: Insert mass needed is computed from Vector mass and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Insert mass needed is opened in ng; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Ligation', 'html' => <<<'TXT'
-            <p>insert (ng) = ratio × vector (ng) × insert length ÷ vector length. fmol = ng × 10⁹ ÷ (660 × length in bp) ÷ 1000</p>
-            <figure class="calc-figure"><img src="/uploads/biology/ligation-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Ligation Calculator — Insert mass needed for a 1 kb insert into a 3 kb vector" title="Ligation Calculator"><figcaption>Insert mass needed for a 1 kb insert into a 3 kb vector</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ratio</code></td><td>molecules of insert per molecule of vector</td><td>—</td></tr><tr><td><code>ng</code></td><td>nanogram</td><td>—</td></tr><tr><td><code>fmol</code></td><td>femtomole, 10⁻¹⁵ mol</td><td>mol</td></tr></tbody></table>
+            ['title' => 'How the Ligation calculator works', 'html' => <<<'TXT'
+            <p>Ligation answers one question from 4 numbers, and the answer is Insert mass needed and Vector in the reaction.</p><p>Written with the labels from the form, Insert mass needed = Insert: vector ratio × Vector mass × Insert length ÷ Vector length.</p><p>What comes back is Insert mass needed and Vector in the reaction — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Ligation?', 'html' => <<<'TXT'
-            <ol><li>Enter the vector mass you will use and both lengths in base pairs.</li><li>Choose the molar ratio — 3:1 for sticky ends is the standard start.</li><li>The insert mass is calculated; scale the whole reaction up if the volume gets too large.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Vector mass</strong> — in ng. The amount you will put in the reaction</li><li><strong>Vector length</strong> — in bp</li><li><strong>Insert length</strong> — in bp</li><li><strong>Insert: vector ratio</strong> — in ×. 3 is the usual starting point</li></ul><p>The answers come back as Insert mass needed in ng, Vector in the reaction in fmol. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: vector length of <strong>3,000</strong> bp, insert length of <strong>1,000</strong> bp, insert: vector ratio of <strong>3</strong> ×.</p>
-            <p>Substituting them into the formula gives insert mass needed of <strong>50</strong> ng, vector mass of <strong>50</strong> ng, vector in the reaction of <strong>25.25</strong> fmol.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Insert mass needed is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1: 1</td><td><strong>Equimolar</strong></td><td>good for a single insert with compatible ends</td></tr><tr><td>3: 1</td><td><strong>Standard</strong></td><td>the usual insert-to-vector ratio for a sticky-end ligation</td></tr><tr><td>10: 1</td><td><strong>Saturating</strong></td><td>useful for a short insert or a blunt-end ligation, but more concatemers</td></tr></tbody></table>
-            <ul><li><p>Many inserts at once need an equimolar amount of each, so divide the insert mass between them rather than multiplying it.</p></li><li><p>Total DNA in the reaction matters as much as the ratio: below about 5 ng/µL of total DNA the ends rarely find each other.</p></li><li><p>Blunt-end ligations are far slower and give more background; use 10:1 and double the enzyme.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Insert mass needed</strong> = <code>Insert: vector ratio × Vector mass × Insert length ÷ Vector length</code></li><li><strong>Vector mass</strong> = <code>Insert mass needed × Vector length ÷ (Insert: vector ratio × Insert length)</code></li><li><strong>Vector in the reaction</strong> = <code>Vector mass × 1000000000 ÷ (660 × Vector length) ÷ 1000</code></li></ul><p>Any one of Insert mass needed, Vector mass and Vector in the reaction can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using equal masses instead of equal moles, which over-represents the short molecule.</li><li>Adding a huge excess of insert, which mostly produces insert concatemers that will not transform as a single plasmid.</li><li>Forgetting to heat-inactivate the restriction enzyme before ligating.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Insert mass needed and Vector in the reaction are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Vector mass and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Vector mass, Vector length and Insert length is what you already know and Insert mass needed and Vector in the reaction is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/swine-gestation">Swine gestation Calculator</a>, <a href="/biology/sorensen-index">Sørensen Similarity Index Calculator</a> and <a href="/biology/tajimas-d">Tajima&#039;s D Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What insert:vector ratio should I use?', 'a' => '3:1 for sticky ends, 10:1 for blunt ends; 1:1 when you are ligating several fragments at once.'],
-            ['q' => 'How much total DNA should be in a ligation?', 'a' => '10–100 ng in 10–20 µL, so the ends can find each other.'],
-            ['q' => 'Why did my ligation give no colonies?', 'a' => 'Usually the ratio, the total concentration, phosphatase treatment or the ligase buffer.'],
-            ['q' => 'What does the Ligation actually calculate?', 'a' => 'It returns insert mass needed, vector mass and vector in the reaction. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Ligation calculator work out?', 'a' => <<<'TXT'
+            Insert mass needed and Vector in the reaction, from Insert: vector ratio, Vector mass, Insert length and Vector length. The relationship is Insert mass needed = Insert: vector ratio × Vector mass × Insert length ÷ Vector length.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Vector mass (ng), Vector length (bp), Insert length (bp), Insert: vector ratio (×). With vector_ng, vector_bp and insert_bp in place, Insert mass needed can stay blank and the page will work it out.
             TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Insert mass needed, Vector mass and Vector in the reaction blank and the page solves for that one instead — nothing has to be switched first.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Insert mass needed is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Vector mass left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Insert mass needed keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/swine-gestation', 'name' => 'Swine gestation Calculator'],
+            ['path' => '/biology/sorensen-index', 'name' => 'Sørensen Similarity Index Calculator'],
+            ['path' => '/biology/tajimas-d', 'name' => 'Tajima\'s D Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

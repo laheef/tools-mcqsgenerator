@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Mushroom Yield Calculator',
-    'meta' => ['title' => 'Mushroom Yield Calculator — Formula & Results', 'description' => <<<'TXT'
-    Mushroom yield is reported as biological efficiency: kilograms of fresh mushrooms per 100 kg of dry substrate. It returns biological efficiency, wet substrate…
-    TXT, 'h1' => 'Mushroom Yield Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mushroom Yield Calculator — Formula & Results', 'description' => 'Mushroom Yield works out Biological efficiency and Wet substrate weight from Fresh mushrooms harvested, Substrate dry weight and Substrate moisture.', 'h1' => 'Mushroom Yield Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -100,46 +98,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Mushroom yield is reported as biological efficiency: kilograms of fresh mushrooms per 100 kg of dry substrate. It returns biological efficiency, wet substrate weight, yield per block and blocks for a 100 kg harvest, and the panel shows all of them at once.
-        
-        This calculator converts your harvest and substrate weights into BE, the yield per block and the number of blocks a target harvest needs.
+        Mushroom Yield works out Biological efficiency and Wet substrate weight from Fresh mushrooms harvested, Substrate dry weight and Substrate moisture. Nothing is looked up on this page: Biological efficiency is computed from Fresh mushrooms harvested and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Biological efficiency is opened in %; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Mushroom Yield', 'html' => <<<'TXT'
-            <p>BE (%) = fresh mushroom weight ÷ dry substrate weight × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/mushroom-yield.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Mushroom Yield Calculator — Fresh harvest against dry substrate: the ratio is the score." title="Mushroom Yield Calculator"><figcaption>Fresh harvest against dry substrate: the ratio is the score.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>fresh</code></td><td>fresh mushrooms harvested</td><td>kg</td></tr><tr><td><code>dry substrate</code></td><td>substrate dry matter at spawning</td><td>kg</td></tr><tr><td><code>BE</code></td><td>biological efficiency</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Mushroom Yield calculator works', 'html' => <<<'TXT'
+            <p>The Mushroom Yield calculator applies one relationship to 4 numbers and reports Biological efficiency, Wet substrate weight and Yield per block.</p><p>In the form&#039;s own words, Biological efficiency = Fresh mushrooms harvested ÷ Substrate dry weight × 100.</p><p>The answers are Biological efficiency, Wet substrate weight, Yield per block and Blocks for a 100 kg harvest; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Mushroom Yield?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Fresh mushrooms harvested</strong> — in kg</li><li><strong>Substrate dry weight</strong> — in kg. Dry weight, not wet</li><li><strong>Substrate moisture</strong> — in %. Wet weight = dry ÷ (1 − moisture)</li><li><strong>Number of blocks</strong> — a plain number, no unit</li></ul><p>The answers come back as Biological efficiency in %, Wet substrate weight in kg, Yield per block in kg, Blocks for a 100 kg harvest in blocks. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: fresh mushrooms harvested of <strong>18</strong> kg, substrate dry weight of <strong>10</strong> kg, substrate moisture of <strong>65</strong>%, number of blocks of <strong>10</strong>.</p>
-            <p>Substituting them into the formula gives biological efficiency of <strong>180</strong>%, wet substrate weight of <strong>28.57</strong> kg, yield per block of <strong>1.8</strong> kg, blocks for a 100 kg harvest of <strong>55.56</strong> blocks.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Fresh mushrooms harvested = 18 kg, Substrate dry weight = 10 kg, Substrate moisture = 65 % and Number of blocks = 10 — through the same formula and the panel reports &lt;strong&gt;Biological efficiency&lt;/strong&gt; = 180 %, &lt;strong&gt;Wet substrate weight&lt;/strong&gt; = 28.57 kg, &lt;strong&gt;Yield per block&lt;/strong&gt; = 1.8 kg and &lt;strong&gt;Blocks for a 100 kg harvest&lt;/strong&gt; = 55.56 blocks.</p><ul><li><strong>Biological efficiency</strong> = 180 %</li><li><strong>Wet substrate weight</strong> = 28.57 kg</li><li><strong>Yield per block</strong> = 1.8 kg</li><li><strong>Blocks for a 100 kg harvest</strong> = 55.56 blocks</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Biological efficiency</strong> = <code>Fresh mushrooms harvested ÷ Substrate dry weight × 100</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 40%</td><td><strong>Poor</strong></td><td>contamination, wrong moisture or bad spawn run</td></tr><tr><td>40 – 70%</td><td><strong>Low</strong></td><td>typical of a first flush only</td></tr><tr><td>70 – 100%</td><td><strong>Good</strong></td><td>normal for oyster mushrooms over three flushes</td></tr><tr><td>above 100%</td><td><strong>Excellent</strong></td><td>achievable because the mushroom is mostly water</td></tr></tbody></table>
-            <ul><li><p>BE above 100% is possible and normal: mushrooms are about 90% water, so the fresh weight can exceed the dry substrate they grew on.</p></li><li><p>Always state whether the substrate weight is wet or dry. A 65% moisture block weighs nearly three times its dry matter, so the two numbers are not comparable.</p></li><li><p>Yield is counted over all flushes. Quoting the first flush only flatters the strain.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Biological efficiency&lt;/strong&gt; = 180, &lt;strong&gt;Wet substrate weight&lt;/strong&gt; = 28.57, &lt;strong&gt;Yield per block&lt;/strong&gt; = 1.8 and &lt;strong&gt;Blocks for a 100 kg harvest&lt;/strong&gt; = 55.56. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Biological efficiency is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using wet substrate weight in the denominator, which halves the apparent BE.</li><li>Harvesting after the veil breaks — heavier, but a lower grade and a shorter shelf life.</li><li>Comparing species: shiitake and oyster mushrooms have very different ceilings.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Biological efficiency</strong> = <code>Fresh mushrooms harvested ÷ Substrate dry weight × 100</code></li><li><strong>Wet substrate weight</strong> = <code>Substrate dry weight ÷ (1 − Substrate moisture ÷ 100)</code></li><li><strong>Yield per block</strong> = <code>Fresh mushrooms harvested ÷ Number of blocks</code></li><li><strong>Blocks for a 100 kg harvest</strong> = <code>100 ÷ (Fresh mushrooms harvested ÷ Number of blocks)</code></li></ul><p>Any one of Biological efficiency, Wet substrate weight and Yield per block can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Fresh mushrooms harvested, from 18 to 36 — and the answers go from &lt;strong&gt;Biological efficiency&lt;/strong&gt; 180 %, &lt;strong&gt;Wet substrate weight&lt;/strong&gt; 28.57 kg, &lt;strong&gt;Yield per block&lt;/strong&gt; 1.8 kg and &lt;strong&gt;Blocks for a 100 kg harvest&lt;/strong&gt; 55.56 blocks to &lt;strong&gt;Biological efficiency&lt;/strong&gt; 360 %, &lt;strong&gt;Wet substrate weight&lt;/strong&gt; 28.57 kg, &lt;strong&gt;Yield per block&lt;/strong&gt; 3.6 kg and &lt;strong&gt;Blocks for a 100 kg harvest&lt;/strong&gt; 27.78 blocks.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Biological efficiency, Wet substrate weight and Yield per block are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Fresh mushrooms harvested to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Fresh mushrooms harvested, Substrate dry weight and Substrate moisture and the number you are missing is Biological efficiency and Wet substrate weight.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/mic-zone-of-inhibition">MIC and Zone of Inhibition Calculator</a>, <a href="/biology/microscope-field-of-view">Microscope Field of View Calculator</a> and <a href="/biology/microscope-magnification">Microscope Magnification Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good biological efficiency for oyster mushrooms?', 'a' => '70–100% over three flushes on straw or sawdust blocks.'],
-            ['q' => 'How much substrate do I need for 100 kg of mushrooms?', 'a' => 'At 80% BE, about 125 kg of dry substrate — roughly 360 kg of wet blocks.'],
-            ['q' => 'What does the Mushroom Yield actually calculate?', 'a' => <<<'TXT'
-            It returns biological efficiency, wet substrate weight, yield per block and blocks for a 100 kg harvest. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Mushroom Yield calculator work out?', 'a' => <<<'TXT'
+            Biological efficiency, Wet substrate weight, Yield per block and Blocks for a 100 kg harvest, from Fresh mushrooms harvested and Substrate dry weight. The relationship is Biological efficiency = Fresh mushrooms harvested ÷ Substrate dry weight × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Fresh mushrooms harvested (kg), Substrate dry weight (kg), Substrate moisture (%), Number of blocks. Enter fresh, substrate and moisture; Biological efficiency is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Biological efficiency, Wet substrate weight, Yield per block and Blocks for a 100 kg harvest blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Biological efficiency = 180 %, Wet substrate weight = 28.57 kg, Yield per block = 1.8 kg and Blocks for a 100 kg harvest = 55.56 blocks. Those are the defaults written into the form — move Fresh mushrooms harvested and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Biological efficiency is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Fresh mushrooms harvested left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Biological efficiency keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mic-zone-of-inhibition', 'name' => 'MIC and Zone of Inhibition Calculator'],
+            ['path' => '/biology/microscope-field-of-view', 'name' => 'Microscope Field of View Calculator'],
+            ['path' => '/biology/microscope-magnification', 'name' => 'Microscope Magnification Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

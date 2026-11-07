@@ -11,7 +11,7 @@
 
 return [
     'name' => 'OD600 to Cell Density Calculator',
-    'meta' => ['title' => 'OD600 to Cell Density Calculator — Formula & Results', 'description' => 'OD600 is the fastest way to follow a bacterial culture, but it is an optical reading, not a cell count. It returns corrected OD600, cell density and dry cell…', 'h1' => 'OD600 to Cell Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'OD600 to Cell Density Calculator — Formula & Results', 'description' => 'OD600 is the fastest way to follow a bacterial culture, but it is an optical reading, not a cell count. Free od600 to cell density calculator: enter your valu', 'h1' => 'OD600 to Cell Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -90,44 +90,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        OD600 is the fastest way to follow a bacterial culture, but it is an optical reading, not a cell count. It returns corrected OD600, cell density and dry cell weight, and the panel shows all of them at once.
-        
-        This calculator converts absorbance to cells/mL and to dry cell weight using the standard factors, with a dilution correction for readings above 1.
+        OD600 to Cell Density takes OD600 reading, Dilution before reading and Cells/mL per OD unit and returns Cell density and Dry cell weight. It is a single relationship that reads Cell density out of OD600 reading, not a table of canned results keyed by them. Units for Cell density default to cells/mL and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the OD600 to Cell Density', 'html' => <<<'TXT'
-            <p>Cells/mL = OD600 × dilution × (cells/mL per OD unit)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/od600-to-cell-density.svg" width="720" height="300" loading="lazy" alt="Animated diagram: OD600 to Cell Density Calculator — Absorbance times dilution times the calibration factor." title="OD600 to Cell Density Calculator"><figcaption>Absorbance times dilution times the calibration factor.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>OD600</code></td><td>absorbance at 600 nm against a medium blank</td><td>AU</td></tr><tr><td><code>dilution</code></td><td>how much the sample was diluted before reading</td><td>×</td></tr><tr><td><code>factor</code></td><td>strain-specific conversion</td><td>cells/mL per OD</td></tr></tbody></table>
+            ['title' => 'How the OD600 to Cell Density calculator works', 'html' => <<<'TXT'
+            <p>OD600 to Cell Density answers one question from 4 numbers, and the answer is Cell density, Dry cell weight and Corrected OD600.</p><p>In the form&#039;s own words, Corrected OD600 = OD600 reading × Dilution before reading.</p><p>The answers are Cell density, Dry cell weight and Corrected OD600; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the OD600 to Cell Density?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>OD600 reading</strong> — a plain number, no unit</li><li><strong>Dilution before reading</strong> — in ×. 10 if you diluted 1:10</li><li><strong>Cells/mL per OD unit</strong> — in cells/mL. 8×10⁸ for E. coli, 3×10⁷ for yeast</li><li><strong>Dry cell weight per OD unit</strong> — in g/L. About 0.4–0.5 g/L per OD for E. coli</li></ul><p>The answers come back as Cell density in cells/mL, Dry cell weight in g/L, Corrected OD600. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: od600 reading of <strong>0.45</strong>, dilution before reading of <strong>1</strong> ×, cells/ml per od unit of <strong>800,000,000</strong> cells/mL, dry cell weight per od unit of <strong>0.4</strong> g/L.</p>
-            <p>Substituting them into the formula gives corrected od600 of <strong>0.45</strong>, cell density of <strong>360,000,000</strong> cells/mL, dry cell weight of <strong>0.18</strong> g/L.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — OD600 reading = 0.45, Dilution before reading = 1 ×, Cells/mL per OD unit = 8.000e+8 cells/mL and Dry cell weight per OD unit = 0.4 g/L — through the same formula and the panel reports &lt;strong&gt;Corrected OD600&lt;/strong&gt; = 0.45, &lt;strong&gt;Cell density&lt;/strong&gt; = 3.600e+8 cells/mL and &lt;strong&gt;Dry cell weight&lt;/strong&gt; = 0.18 g/L.</p><ul><li><strong>Corrected OD600</strong> = 0.45</li><li><strong>Cell density</strong> = 3.600e+8 cells/mL</li><li><strong>Dry cell weight</strong> = 0.18 g/L</li></ul><p>The line behind those figures is <strong>Corrected OD600</strong> = <code>OD600 reading × Dilution before reading</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.1 – 1.0</td><td><strong>Linear</strong></td><td>the reliable range of the spectrophotometer</td></tr><tr><td>1.0 – 1.5</td><td><strong>Edge</strong></td><td>dilute to be safe</td></tr><tr><td>above 1.5</td><td><strong>Non-linear</strong></td><td>always dilute and correct</td></tr></tbody></table>
-            <ul><li><p>The factor depends on the strain, the medium and the instrument (path length). Calibrate it once against a haemocytometer count or a plate count for your own system.</p></li><li><p>The relationship is only linear up to about 1.0; above that, dilution is mandatory rather than optional.</p></li><li><p>OD600 counts dead cells as well as live ones, so it is a biomass measure, not a viability one.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Corrected OD600&lt;/strong&gt; = 0.45, &lt;strong&gt;Cell density&lt;/strong&gt; = 3.600e+8 and &lt;strong&gt;Dry cell weight&lt;/strong&gt; = 0.18 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Cell density takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Reading against water rather than against fresh medium.</li><li>Forgetting to multiply by the dilution factor after diluting.</li><li>Using a cuvette with a different path length without correcting.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Corrected OD600</strong> = <code>OD600 reading × Dilution before reading</code></li><li><strong>Cell density</strong> = <code>OD600 reading × Dilution before reading × Cells/mL per OD unit</code></li><li><strong>Dry cell weight</strong> = <code>OD600 reading × Dilution before reading × Dry cell weight per OD unit</code></li></ul><p>Any one of Corrected OD600, Cell density and Dry cell weight can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double OD600 reading from 0.45 to 0.9, leaving every other box alone. The panel moves from &lt;strong&gt;Corrected OD600&lt;/strong&gt; 0.45, &lt;strong&gt;Cell density&lt;/strong&gt; 3.600e+8 cells/mL and &lt;strong&gt;Dry cell weight&lt;/strong&gt; 0.18 g/L to &lt;strong&gt;Corrected OD600&lt;/strong&gt; 0.9, &lt;strong&gt;Cell density&lt;/strong&gt; 7.200e+8 cells/mL and &lt;strong&gt;Dry cell weight&lt;/strong&gt; 0.36 g/L.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Cell density, Dry cell weight and Corrected OD600 are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If OD600 reading is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are OD600 reading, Dilution before reading and Cells/mL per OD unit and the number you are missing is Cell density and Dry cell weight.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/biodiversity-index">Biodiversity Index (Simpson) Calculator</a>, <a href="/biology/bird-age">Bird age</a> and <a href="/biology/bod-load">BOD Load Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many cells is OD600 = 1?', 'a' => 'About 8 × 10⁸ E. coli per mL, though this varies two-fold between strains and media.'],
-            ['q' => 'Can I use OD600 to measure growth rate?', 'a' => 'Yes — in the linear range, ln(OD) against time gives the growth rate, which is what the growth curve calculator does.'],
-            ['q' => 'What does the OD600 to Cell Density actually calculate?', 'a' => 'It returns corrected OD600, cell density and dry cell weight. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the OD600 to Cell Density calculator work out?', 'a' => <<<'TXT'
+            Cell density, Dry cell weight and Corrected OD600, from OD600 reading and Dilution before reading. The relationship is Corrected OD600 = OD600 reading × Dilution before reading.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            OD600 reading, Dilution before reading (×), Cells/mL per OD unit (cells/mL), Dry cell weight per OD unit (g/L). With od, dilution and factor in place, Cell density can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Corrected OD600, Cell density and Dry cell weight blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Corrected OD600 = 0.45, Cell density = 3.600e+8 cells/mL and Dry cell weight = 0.18 g/L. Those are the defaults written into the form — move OD600 reading and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Cell density is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With OD600 reading left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Cell density keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/biodiversity-index', 'name' => 'Biodiversity Index (Simpson) Calculator'],
+            ['path' => '/biology/bird-age', 'name' => 'Bird age'],
+            ['path' => '/biology/bod-load', 'name' => 'BOD Load Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

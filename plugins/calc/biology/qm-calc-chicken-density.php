@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Chicken Density Calculator',
-    'meta' => ['title' => 'Chicken Density Calculator — Formula & Results', 'description' => 'Chicken density is the number of birds divided by the usable floor area, in birds per m². It returns stocking density, floor allowance, number of birds and…', 'h1' => 'Chicken Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Density Calculator — Formula & Results', 'description' => <<<'TXT'
+    Enter Number of birds and Usable floor area into Chicken Density and the answer comes back as Stocking density and Floor allowance. Stocking density is opened…
+    TXT, 'h1' => 'Chicken Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -66,48 +68,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Chicken density is the number of birds divided by the usable floor area, in birds per m². It returns stocking density, floor allowance, number of birds and usable floor area, and the panel shows all of them at once.
-        
-        Flip it and you get the floor allowance per bird, the figure welfare standards and coop plans are written in.
+        Enter Number of birds and Usable floor area into Chicken Density and the answer comes back as Stocking density and Floor allowance. Nothing is looked up on this page: Stocking density is computed from Number of birds and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Stocking density is opened in birds/m²; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Chicken Density', 'html' => <<<'TXT'
-            <p>Density (birds/m²) = number of birds ÷ usable floor area (m²)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/chicken-density.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Chicken Density Calculator — Birds over floor area gives the density, and the allowance is its reciprocal." title="Chicken Density Calculator"><figcaption>Birds over floor area gives the density, and the allowance is its reciprocal.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>birds</code></td><td>number of birds in the house</td><td>birds</td></tr><tr><td><code>area</code></td><td>usable floor area</td><td>m²</td></tr><tr><td><code>density</code></td><td>birds per square metre</td><td>birds/m²</td></tr><tr><td><code>per_bird</code></td><td>floor each bird has to itself</td><td>m²/bird</td></tr></tbody></table>
+            ['title' => 'How the Chicken Density calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Chicken Density: it takes 2 numbers and reports Stocking density and Floor allowance.</p><p>The relationship it solves reads Stocking density = Number of birds ÷ Usable floor area.</p><p>The answers are Stocking density and Floor allowance; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Chicken Density?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Number of birds</strong> — a plain number, no unit. The flock you are housing</li><li><strong>Usable floor area</strong> — in m². Excluding feeders, drinkers and nest boxes</li></ul><p>The answers come back as Stocking density in birds/m², Floor allowance in m²/bird. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives stocking density of <strong>4</strong> birds/m², floor allowance of <strong>0.25</strong> m²/bird, number of birds of <strong>60</strong>, usable floor area of <strong>15</strong> m².</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Stocking density is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>up to 7</td><td><strong>Free range / organic</strong></td><td>typical outdoor or low-density indoor systems</td></tr><tr><td>7 – 9</td><td><strong>Barn</strong></td><td>indoor floor systems with litter</td></tr><tr><td>9 – 12</td><td><strong>Higher-density indoor</strong></td><td>permitted in some schemes with enrichment</td></tr></tbody></table>
-            <ul><li><p>Count usable floor, not the footprint of the building: feeders, drinkers, nest boxes and service aisles do not count as space the birds can use.</p></li><li><p>Density and allowance are reciprocals — 6 birds/m² is exactly 0.167 m²/bird — so a plan that quotes one and not the other is only half specified.</p></li><li><p>Ventilation, not floor area, becomes the limiting factor above about 9 birds/m² in a naturally ventilated shed.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Stocking density</strong> = <code>Number of birds ÷ Usable floor area</code></li><li><strong>Floor allowance</strong> = <code>Usable floor area ÷ Number of birds</code></li><li><strong>Number of birds</strong> = <code>Stocking density × Usable floor area</code></li><li><strong>Usable floor area</strong> = <code>Number of birds ÷ Stocking density</code></li></ul><p>Any one of Stocking density, Floor allowance and Number of birds can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using the shed footprint instead of the usable floor.</li><li>Forgetting that birds are moved or thinned: a plan for 10 birds/m² at placement becomes 12 or more at depletion unless birds leave.</li><li>Mixing metric and imperial floor areas.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Stocking density and Floor allowance are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Number of birds and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Number of birds and Usable floor area and the number you are missing is Stocking density and Floor allowance.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/mutation-rate">Mutation rate Calculator</a>, <a href="/biology/ndvi-calculator">NDVI (Normalised Difference Vegetation Index) Calculator</a> and <a href="/biology/net-primary-productivity">Net Primary Productivity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good chicken density?', 'a' => <<<'TXT'
-            For backyard flocks, 1–2 m² per bird of run plus 0.3 m² of coop is the usual guidance. Commercial indoor systems run between 7 and 12 birds/m² depending on the standard.
+            ['q' => 'What does the Chicken Density calculator work out?', 'a' => 'Stocking density and Floor allowance, from Number of birds and Usable floor area. The relationship is Stocking density = Number of birds ÷ Usable floor area.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Number of birds, Usable floor area (m²). Enter birds and area; Stocking density is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Stocking density, Floor allowance, Number of birds and Usable floor area blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Does the calculator account for outdoor run?', 'a' => 'It measures whatever area you give it. Use the indoor floor for housing density and the run area separately if you are checking free-range requirements.'],
-            ['q' => 'What does the Chicken Density actually calculate?', 'a' => <<<'TXT'
-            It returns stocking density, floor allowance, number of birds and usable floor area. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Stocking density is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Number of birds left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Stocking density keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mutation-rate', 'name' => 'Mutation rate Calculator'],
+            ['path' => '/biology/ndvi-calculator', 'name' => 'NDVI (Normalised Difference Vegetation Index) Calculator'],
+            ['path' => '/biology/net-primary-productivity', 'name' => 'Net Primary Productivity Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Guinea pig pregnancy',
-    'meta' => ['title' => 'Guinea pig pregnancy — Free Online Calculator', 'description' => 'The Guinea pig pregnancy calculator turns the difference negated and the earliest into <strong>due date</strong>. The Guinea pig pregnancy calculator takes…', 'h1' => 'Guinea pig pregnancy Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Guinea pig pregnancy — Free Online Calculator', 'description' => 'Enter Breeding date into Guinea pig pregnancy and the answer comes back as Due date. The arithmetic is the whole method: Due date is worked out from Breeding…', 'h1' => 'Guinea pig pregnancy Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'breeding_date' => ['type' => 'date', 'rnd' => null],
@@ -247,64 +247,42 @@ return [
         'datasets' => [],
     ],
     'article' => [
-        'intro' => 'The Guinea pig pregnancy calculator turns the difference negated and the earliest into <strong>due date</strong>.',
+        'intro' => <<<'TXT'
+        Enter Breeding date into Guinea pig pregnancy and the answer comes back as Due date. The arithmetic is the whole method: Due date is worked out from Breeding date by one formula, applied once.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Guinea pig pregnancy calculator work?', 'html' => <<<'TXT'
-            <p>The Guinea pig pregnancy calculator takes the values in the form, applies the relationship described below and reports <strong>due date</strong> in the results panel.</p>
-            <p>Working from the top of the form: you give the earliest; then you type in the difference negated.</p>
+            ['title' => 'How the Guinea pig pregnancy calculator works', 'html' => <<<'TXT'
+            <p>Guinea pig pregnancy answers one question from 1 number, and the answer is Due date.</p><p>Written with the labels from the form, Due date = Breeding date + 65.</p><p>What comes back is Due date — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Breeding date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Due date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Pregnancy day</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Current date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Difference</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>Calculated</td></tr><tr><td><strong>Difference negated</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Earliest</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Latest</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>Breeding date</strong> — a plain number, no unit, entered as a date</li></ul><p>The answer comes back as Due date. </p>
             TXT],
-            ['title' => 'The formula behind the Guinea pig pregnancy calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Due date</span><span class="formula-eq">=</span><span class="formula-rhs">breeding date + 65</span></div><div class="formula-row"><span class="formula-lhs">Difference</span><span class="formula-eq">=</span><span class="formula-rhs">rounded, (-current date + due date)</span></div><div class="formula-row"><span class="formula-lhs">Current date</span><span class="formula-eq">=</span><span class="formula-rhs">difference negated + due date</span></div><div class="formula-row"><span class="formula-lhs">Pregnancy day</span><span class="formula-eq">=</span><span class="formula-rhs">rounded, (-breeding date + current date)</span></div><div class="formula-row"><span class="formula-lhs">Breeding date</span><span class="formula-eq">=</span><span class="formula-rhs">earliest − 59</span></div><div class="formula-row"><span class="formula-lhs">Latest</span><span class="formula-eq">=</span><span class="formula-rhs">breeding date + 72</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Due date is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A calendar date.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>A calendar date.</li><li>Shown in days, and convertible to any of the 27 units on that chip.</li><li>A calendar date.</li><li>A calendar date.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Due date</strong> = <code>Breeding date + 65</code></li><li><strong>Breeding date</strong> = <code>Due date − 65</code></li><li><strong>difference</strong> = <code>round( − currentDate + Due date)</code></li><li><strong>currentDate</strong> = <code>difference_negated + Due date</code></li><li><strong>difference_negated</strong> = <code>currentDate − Due date</code></li><li><strong>pregnancyDay</strong> = <code>round( − Breeding date + currentDate)</code></li></ul><p>Any one of Due date, Breeding date and difference can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in days</li><li>Time, opening in days</li><li>Time, opening in days</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Due date is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Breeding date to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Guinea pig pregnancy calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 2 figures keep coming back — the difference negated and the earliest — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Guinea pig pregnancy calculator, these are the ones that matter:</p>
-            <ul><li>Dates are handled as whole calendar days in the time zone of the browser, so a birth date or a deadline is compared date to date rather than as a span of hours.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/hamster-age">Hamster age</a>, <a href="/biology/hardy-weinberg-equilibrium">Hardy-Weinberg equilibrium</a> and <a href="/biology/horse-gestation">Horse gestation</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Breeding date measured, Due date wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/tree-height">Tree height</a>, <a href="/biology/tree-spacing">Tree spacing</a> and <a href="/biology/tree-value">Tree value Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Guinea pig pregnancy calculator work out?', 'a' => <<<'TXT'
-            It returns due date, derived from the difference negated and the earliest. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
-            TXT],
-            ['q' => 'What do I need to enter to use the Guinea pig pregnancy calculator?', 'a' => <<<'TXT'
-            The form asks for the difference negated and the earliest, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter pregnancy day in a different unit?', 'a' => <<<'TXT'
-            Yes. Pregnancy day opens in days and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the Guinea pig pregnancy calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'What does the Guinea pig pregnancy calculator work out?', 'a' => 'Due date, from Breeding date. The relationship is Due date = Breeding date + 65.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Breeding date. Enter breeding_date; Due date is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Due date, Breeding date, difference and currentDate blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Due date is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Breeding date blank and the page solves for it, reporting Due date instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Due date keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/hamster-age', 'name' => 'Hamster age'],
-            ['path' => '/biology/hardy-weinberg-equilibrium', 'name' => 'Hardy-Weinberg equilibrium'],
-            ['path' => '/biology/horse-gestation', 'name' => 'Horse gestation'],
+            ['path' => '/biology/tree-height', 'name' => 'Tree height'],
+            ['path' => '/biology/tree-spacing', 'name' => 'Tree spacing'],
+            ['path' => '/biology/tree-value', 'name' => 'Tree value Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -12,7 +12,7 @@
 return [
     'name' => 'Genome Copy Number Calculator',
     'meta' => ['title' => 'Genome Copy Number Calculator — Formula & Results', 'description' => <<<'TXT'
-    The genome copy number in a nanogram of DNA depends only on the genome size. It returns genome copies, copies per µL in 50 µL, log₁₀ copies and mass of one…
+    Genome Copy Number turns DNA mass and Genome size into Genome copies and Copies per µL in 50 µL. The arithmetic is the whole method: Genome copies is worked…
     TXT, 'h1' => 'Genome Copy Number Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
@@ -82,48 +82,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The genome copy number in a nanogram of DNA depends only on the genome size. It returns genome copies, copies per µL in 50 µL, log₁₀ copies and mass of one genome, and the panel shows all of them at once.
-        
-        The answer depends only on genome size, and it is the number that sets qPCR standard curves, sequencing input and the limit of detection. This calculator converts mass to copies for any genome size.
+        Genome Copy Number turns DNA mass and Genome size into Genome copies and Copies per µL in 50 µL. The arithmetic is the whole method: Genome copies is worked out from DNA mass by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Genome Copy Number', 'html' => <<<'TXT'
-            <p>Copies = mass (g) ÷ (genome length × 660 g/mol) × 6.022 × 10²³</p>
-            <figure class="calc-figure"><img src="/uploads/biology/genome-copy-number.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Genome Copy Number Calculator — Mass, genome length and Avogadro's number." title="Genome Copy Number Calculator"><figcaption>Mass, genome length and Avogadro's number.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>mass</code></td><td>mass of DNA</td><td>ng</td></tr><tr><td><code>genome size</code></td><td>length of one genome</td><td>bp</td></tr><tr><td><code>copies</code></td><td>number of genomes</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Genome Copy Number calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Genome Copy Number: it takes 2 numbers and reports Genome copies, Copies per µL in 50 µL and log₁₀ copies.</p><p>The relationship it solves reads Genome copies = DNA mass × 0.000000001 ÷ (Genome size × 1000000 × 660) ÷ 1.66054e − 24.</p><p>What comes back is Genome copies, Copies per µL in 50 µL, log₁₀ copies and Mass of one genome — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Genome Copy Number?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>DNA mass</strong> — in ng</li><li><strong>Genome size</strong> — in Mb. 3 200 Mb for human, 4.6 Mb for E. coli</li></ul><p>The result boxes are Genome copies, Copies per µL in 50 µL in copies/µL, log₁₀ copies, Mass of one genome in fg; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: dna mass of <strong>10</strong> ng, genome size of <strong>3.2</strong> Mb.</p>
-            <p>Substituting them into the formula gives genome copies of <strong>2,851,391</strong>, copies per µl in 50 µl of <strong>57,027.82</strong> copies/µL, log₁₀ copies of <strong>6.46</strong>, mass of one genome of <strong>3.51</strong> fg.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — DNA mass = 10 ng and Genome size = 3.2 Mb — through the same formula and the panel reports &lt;strong&gt;Genome copies&lt;/strong&gt; = 2.851e-18, &lt;strong&gt;Copies per µL in 50 µL&lt;/strong&gt; = 5.703e-2 copies/µL, &lt;strong&gt;log₁₀ copies&lt;/strong&gt; = -17.54 and &lt;strong&gt;Mass of one genome&lt;/strong&gt; = 3.51 fg.</p><ul><li><strong>Genome copies</strong> = 2.851e-18</li><li><strong>Copies per µL in 50 µL</strong> = 5.703e-2 copies/µL</li><li><strong>log₁₀ copies</strong> = -17.54</li><li><strong>Mass of one genome</strong> = 3.51 fg</li></ul><p>The line behind those figures is <strong>Genome copies</strong> = <code>DNA mass × 0.000000001 ÷ (Genome size × 1000000 × 660) ÷ 1.66054e − 24</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>A human diploid genome weighs about 6.6 pg; a haploid one 3.3 pg. That is the number to remember: one cell, one copy.</p></li><li><p>For qPCR standards, diluting to 10⁶ copies per µL and then serially tenfold gives a clean seven-point curve.</p></li><li><p>Long-read sequencing needs far more mass per copy because the molecules are not amplified — the copy number, not the mass, is what the flow cell sees.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Genome copies&lt;/strong&gt; = 2.851e-18, &lt;strong&gt;Copies per µL in 50 µL&lt;/strong&gt; = 5.703e-2, &lt;strong&gt;log₁₀ copies&lt;/strong&gt; = -17.54 and &lt;strong&gt;Mass of one genome&lt;/strong&gt; = 3.51 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Genome copies takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using genome size in base pairs where the formula expects megabases.</li><li>Forgetting that a diploid cell contains two copies per genome equivalent.</li><li>Treating mitochondrial or plasmid DNA with the nuclear genome size.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Genome copies</strong> = <code>DNA mass × 0.000000001 ÷ (Genome size × 1000000 × 660) ÷ 1.66054e − 24</code></li><li><strong>Copies per µL in 50 µL</strong> = <code>DNA mass × 0.000000001 ÷ (Genome size × 1000000 × 660) ÷ 1.66054e − 24 ÷ 50</code></li><li><strong>log₁₀ copies</strong> = <code>log₁₀(DNA mass × 0.000000001 ÷ (Genome size × 1000000 × 660) ÷ 1.66054e − 24)</code></li><li><strong>Mass of one genome</strong> = <code>Genome size × 1000000 × 660 ÷ 602200000000000000000000 × 1000000000000000</code></li></ul><p>Any one of Genome copies, Copies per µL in 50 µL and log₁₀ copies can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/dna-molarity-from-mass">DNA molarity</a>. <a href="/biology/od260-nucleic-acid-concentration">OD260 concentration</a>. <a href="/biology/plasmid-copy-number">Plasmid copy number</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — DNA mass, from 10 to 20 — and the answers go from &lt;strong&gt;Genome copies&lt;/strong&gt; 2.851e-18, &lt;strong&gt;Copies per µL in 50 µL&lt;/strong&gt; 5.703e-2 copies/µL, &lt;strong&gt;log₁₀ copies&lt;/strong&gt; -17.54 and &lt;strong&gt;Mass of one genome&lt;/strong&gt; 3.51 fg to &lt;strong&gt;Genome copies&lt;/strong&gt; 5.703e-18, &lt;strong&gt;Copies per µL in 50 µL&lt;/strong&gt; 1.141e-19 copies/µL, &lt;strong&gt;log₁₀ copies&lt;/strong&gt; -17.24 and &lt;strong&gt;Mass of one genome&lt;/strong&gt; 3.51 fg.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Genome copies, Copies per µL in 50 µL and log₁₀ copies are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in DNA mass and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when DNA mass and Genome size is what you already know and Genome copies and Copies per µL in 50 µL is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/rabbit-color">Rabbit color</a>, <a href="/biology/rabbit-gestation">Rabbit gestation Calculator</a> and <a href="/biology/raised-bed-soil">Raised bed soil Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many copies of a genome are in 1 ng of human DNA?', 'a' => 'About 303 copies of the 3.2 Gb genome.'],
-            ['q' => 'What is the mass of one copy of the E. coli genome?', 'a' => 'About 5.0 fg for 4.6 Mb.'],
-            ['q' => 'What does the Genome Copy Number actually calculate?', 'a' => <<<'TXT'
-            It returns genome copies, copies per µL in 50 µL, log₁₀ copies and mass of one genome. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Genome Copy Number calculator work out?', 'a' => <<<'TXT'
+            Genome copies, Copies per µL in 50 µL, log₁₀ copies and Mass of one genome, from DNA mass and Genome size. The relationship is Genome copies = DNA mass × 0.000000001 ÷ (Genome size × 1000000 × 660) ÷ 1.66054e − 24.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'DNA mass (ng), Genome size (Mb). Enter mass_ng and genome_mb; Genome copies is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Genome copies, Copies per µL in 50 µL, log₁₀ copies and Mass of one genome blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Genome copies = 2.851e-18, Copies per µL in 50 µL = 5.703e-2 copies/µL, log₁₀ copies = -17.54 and Mass of one genome = 3.51 fg. That comes from the page's own defaults, entered in DNA mass; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Genome copies is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave DNA mass blank and the page solves for it, reporting Genome copies instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Genome copies at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/rabbit-color', 'name' => 'Rabbit color'],
+            ['path' => '/biology/rabbit-gestation', 'name' => 'Rabbit gestation Calculator'],
+            ['path' => '/biology/raised-bed-soil', 'name' => 'Raised bed soil Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

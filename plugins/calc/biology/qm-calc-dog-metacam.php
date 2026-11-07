@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog Metacam dosage',
-    'meta' => ['title' => 'Dog Metacam dosage — Free Online Calculator', 'description' => 'The Dog Metacam dosage calculator takes the numbers you enter and reports the result immediately. The Dog Metacam dosage calculator takes the values in the…', 'h1' => 'Dog Metacam dosage Calculator', 'updated' => '2026-08-19'],
+    'meta' => ['title' => 'Dog Metacam dosage — Free Online Calculator', 'description' => 'Enter Dog\'s weight, Metacam form and Solution\'s strength into Dog Metacam dosage and the answer comes back as Tablets Maintain1 and Tablets Maintain25.', 'h1' => 'Dog Metacam dosage Calculator', 'updated' => '2026-08-19'],
     'raw' => [
         'vars' => [
             'firstAmount' => [
@@ -302,68 +302,41 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'The Dog Metacam dosage calculator takes the numbers you enter and reports the result immediately.',
+        'intro' => <<<'TXT'
+        Enter Dog's weight, Metacam form and Solution's strength into Dog Metacam dosage and the answer comes back as Tablets Maintain1 and Tablets Maintain25. Nothing is looked up on this page: Tablets Maintain1 is computed from Dog's weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Dog Metacam dosage calculator work?', 'html' => <<<'TXT'
-            <p>The Dog Metacam dosage calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the metacam form and the solution's strength); then you type in the dog's weight.</p>
+            ['title' => 'How the Dog Metacam dosage calculator works', 'html' => <<<'TXT'
+            <p>Dog Metacam dosage answers one question from 9 numbers, and the answer is Tablets Maintain1 and Tablets Maintain25.</p><p>In the form&#039;s own words, Tablets Maintain1 = get_tablets_1(Dog&#039;s weight).</p><p>The result panel carries Tablets Maintain1 and Tablets Maintain25, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 2 options, such as solution and tablets. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 2 options, such as 0.5 mg/mL and 1.5 mg/mL. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>2 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 9 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Dog&#039;s weight</strong> — in kilograms</li><li><strong>Metacam form</strong> — a plain number, no unit</li><li><strong>Solution&#039;s strength</strong> — a plain number, no unit</li><li><strong>firstDay</strong> — a plain number, no unit</li><li><strong>otherDoses</strong> — a plain number, no unit</li><li><strong>firstAmount</strong> — a plain number, no unit</li><li><strong>otherAmount</strong> — a plain number, no unit</li><li><strong>firstDay1</strong> — a plain number, no unit</li><li><strong>firstDay25</strong> — a plain number, no unit</li></ul><p>The result boxes are Tablets Maintain1, Tablets Maintain25; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Dog's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Metacam form</strong></td><td>One of 2 options, such as solution and tablets.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Solution's strength</strong></td><td>One of 2 options, such as 0.5 mg/mL and 1.5 mg/mL.</td><td>choice</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Tablets Maintain1</strong> = <code>get_tablets_1(Dog&#039;s weight)</code></li><li><strong>Tablets Maintain25</strong> = <code>get_tablets_25(Dog&#039;s weight)</code></li></ul><p>Any one of Tablets Maintain1 and Tablets Maintain25 can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Dog Metacam dosage calculator', 'html' => <<<'TXT'
-            <p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>
-            <p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Dog&#039;s weight carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Tablets Maintain1 and Tablets Maintain25 are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Dog&#039;s weight to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog Metacam dosage calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 1 figures keep coming back — the dog's weight — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Keep the units you enter consistent. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Dog Metacam dosage calculator, these are the ones that matter:</p>
-            <ul><li>The 2 drop-downs on this page offer a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — dog's weight for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-onion-toxicity">Dog onion toxicity</a>, <a href="/biology/dog-pregnancy">Dog pregnancy</a> and <a href="/biology/dog-quality-of-life">Dog quality of life</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Dog&#039;s weight, Metacam form and Solution&#039;s strength measured, Tablets Maintain1 and Tablets Maintain25 wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/specific-growth-rate-od">Specific Growth Rate from OD Calculator</a>, <a href="/biology/specific-growth-rate-from-od">Specific Growth Rate from OD Readings Calculator</a> and <a href="/biology/specific-productivity-qp">Specific Productivity (qP) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What do I need to enter to use the Dog Metacam dosage calculator?', 'a' => <<<'TXT'
-            The form asks for the dog's weight, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What does the Dog Metacam dosage calculator work out?', 'a' => 'Tablets Maintain1 and Tablets Maintain25, from Dog\'s weight. The relationship is Tablets Maintain1 = get_tablets_1(Dog\'s weight).'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Dog's weight (kilograms), Metacam form, Solution's strength, firstDay, otherDoses. Enter weight, form and strength; Tablets Maintain1 is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter dog\'s weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Dog's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Dog Metacam dosage calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Tablets Maintain1 and Tablets Maintain25 blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Tablets Maintain1 is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Dog\'s weight blank and the page solves for it, reporting Tablets Maintain1 instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Tablets Maintain1 at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-onion-toxicity', 'name' => 'Dog onion toxicity'],
-            ['path' => '/biology/dog-pregnancy', 'name' => 'Dog pregnancy'],
-            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/specific-growth-rate-od', 'name' => 'Specific Growth Rate from OD Calculator'],
+            ['path' => '/biology/specific-growth-rate-from-od', 'name' => 'Specific Growth Rate from OD Readings Calculator'],
+            ['path' => '/biology/specific-productivity-qp', 'name' => 'Specific Productivity (qP) Calculator'],
         ],
+        'authors' => [],
     ],
 ];

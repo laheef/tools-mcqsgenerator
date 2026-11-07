@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Bacteria growth',
-    'meta' => ['title' => 'Bacteria growth — Formula, Steps & Examples', 'description' => <<<'TXT'
-    Give the Bacteria growth calculator the initial number of bacteria — N, the final number of bacteria — N and the doubling time and it returns <strong>growth…
-    TXT, 'h1' => 'Bacteria growth Calculator', 'updated' => '2026-07-23'],
+    'meta' => ['title' => 'Bacteria growth — Formula, Steps & Examples', 'description' => 'Bacteria growth works out Growth rate (r) and Doubling time (Td) from Initial number of bacteria — N(0), Final number of bacteria — N(t) and Elapsed time.', 'h1' => 'Bacteria growth Calculator', 'updated' => '2026-07-23'],
     'raw' => [
         'vars' => [
             'doublingTime' => [
@@ -157,63 +155,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Give the Bacteria growth calculator the initial number of bacteria — N, the final number of bacteria — N and the doubling time and it returns <strong>growth rate (r)</strong>.
+        Bacteria growth works out Growth rate (r) and Doubling time (Td) from Initial number of bacteria — N(0), Final number of bacteria — N(t) and Elapsed time. It is a single relationship that reads Growth rate (r) out of Initial number of bacteria — N(0), not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'How does the Bacteria growth calculator work?', 'html' => <<<'TXT'
-            <p>The Bacteria growth calculator takes the values in the form, applies the relationship described below and reports <strong>growth rate (r)</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the initial number of bacteria — N(0), the final number of bacteria — N(t) and the doubling time (Td).</p>
+            ['title' => 'How the Bacteria growth calculator works', 'html' => <<<'TXT'
+            <p>Bacteria growth answers one question from 3 numbers, and the answer is Growth rate (r) and Doubling time (Td).</p><p>In the form&#039;s own words, Growth rate (r) = (Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))^(1 ÷ Elapsed time) − 1.</p><p>What comes back is Growth rate (r) and Doubling time (Td) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => '<ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in hours. </li></ul>'],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Initial number of bacteria — N(0)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Final number of bacteria — N(t)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Elapsed time</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>Calculated</td></tr><tr><td><strong>Growth rate (r)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Doubling time (Td)</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Initial number of bacteria — N(0)</strong> — a plain number, no unit</li><li><strong>Final number of bacteria — N(t)</strong> — a plain number, no unit</li><li><strong>Elapsed time</strong> — in hours</li></ul><p>The answers come back as Growth rate (r), Doubling time (Td) in hours. </p>
             TXT],
-            ['title' => 'The formula behind the Bacteria growth calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Growth rate (r)</span><span class="formula-eq">=</span><span class="formula-rhs">(final number of bacteria — N(t) ÷ initial number of bacteria — N(0) ^ 1 ÷ elapsed time) − 1</span></div><div class="formula-row"><span class="formula-lhs">Elapsed time</span><span class="formula-eq">=</span><span class="formula-rhs">doubling time (Td) × the natural log of (final number of bacteria — N(t) ÷ initial number of bacteria — N(0)) ÷ the natural log of (2)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Initial number of bacteria — N(0) = 10, Final number of bacteria — N(t) = 100 and Elapsed time = 1000 hrs gives &lt;strong&gt;Growth rate (r)&lt;/strong&gt; = 0.0023 and &lt;strong&gt;Doubling time (Td)&lt;/strong&gt; = 301 hrs.</p><ul><li><strong>Growth rate (r)</strong> = 0.0023</li><li><strong>Doubling time (Td)</strong> = 301 hrs</li></ul><p>The line behind those figures is <strong>Growth rate (r)</strong> = <code>(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))^(1 ÷ Elapsed time) − 1</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in hours, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Growth rate (r)&lt;/strong&gt; = 0.0023 and &lt;strong&gt;Doubling time (Td)&lt;/strong&gt; = 301. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Doubling time (Td) lists 18 options and opens on hours. </p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in hours</li><li>Time, opening in hours</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Growth rate (r)</strong> = <code>(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))^(1 ÷ Elapsed time) − 1</code></li><li><strong>Elapsed time</strong> = <code>ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0)) ÷ ln(Growth rate (r) + 1)</code></li><li><strong>Initial number of bacteria — N(0)</strong> = <code>Final number of bacteria — N(t) × (Growth rate (r) + 1)^(− Elapsed time)</code></li><li><strong>Final number of bacteria — N(t)</strong> = <code>Initial number of bacteria — N(0) × (Growth rate (r) + 1)^(Elapsed time)</code></li><li><strong>Doubling time (Td)</strong> = <code>Elapsed time × ln(2) ÷ ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Growth rate (r), Elapsed time and Initial number of bacteria — N(0) can be the unknown.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Bacteria growth calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 3 figures keep coming back — the initial number of bacteria — N, the final number of bacteria — N and the doubling time — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Initial number of bacteria — N(0) from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Growth rate (r)&lt;/strong&gt; 0.0023 and &lt;strong&gt;Doubling time (Td)&lt;/strong&gt; 301 hrs to &lt;strong&gt;Growth rate (r)&lt;/strong&gt; 0.0016 and &lt;strong&gt;Doubling time (Td)&lt;/strong&gt; 431 hrs.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Elapsed time carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Growth rate (r) and Doubling time (Td) are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Initial number of bacteria — N(0) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Bacteria growth calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/basal-area">Basal area</a>, <a href="/biology/benadryl-dosage-for-dogs">Benadryl dosage for dogs</a> and <a href="/biology/bird-age">Bird age</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Initial number of bacteria — N(0), Final number of bacteria — N(t) and Elapsed time measured, Growth rate (r) and Doubling time (Td) wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/bone-length-to-body-height">Bone Length to Body Height Calculator</a>, <a href="/biology/bradford-assay-calculator">Bradford Assay (standard curve) Calculator</a> and <a href="/biology/henderson-hasselbalch-buffer">Buffer pH (Henderson–Hasselbalch) Calculator — Formula &amp; Resul</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Bacteria growth calculator work out?', 'a' => <<<'TXT'
-            It returns growth rate (r), derived from the initial number of bacteria — N, the final number of bacteria — N and the doubling time. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Growth rate (r) and Doubling time (Td), from Elapsed time, Initial number of bacteria — N(0) and Final number of bacteria — N(t). The relationship is Growth rate (r) = (Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))^(1 ÷ Elapsed time) − 1.
             TXT],
-            ['q' => 'What do I need to enter to use the Bacteria growth calculator?', 'a' => <<<'TXT'
-            The form asks for the initial number of bacteria — N, the final number of bacteria — N and the doubling time, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Initial number of bacteria — N(0), Final number of bacteria — N(t), Elapsed time (hours). With numberOfBacteria, numberOfBacteria2 and elapsedTime in place, Growth rate (r) can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I enter elapsed time in a different unit?', 'a' => <<<'TXT'
-            Yes. Elapsed time opens in hours and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Growth rate (r), Elapsed time, Initial number of bacteria — N(0) and Final number of bacteria — N(t) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Growth rate (r) = 0.0023 and Doubling time (Td) = 301 hrs. Those are the defaults written into the form — move Initial number of bacteria — N(0) and every result box follows.
             TXT],
-            ['q' => 'Is the Bacteria growth calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Growth rate (r) is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Initial number of bacteria — N(0) left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Growth rate (r) at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/basal-area', 'name' => 'Basal area'],
-            ['path' => '/biology/benadryl-dosage-for-dogs', 'name' => 'Benadryl dosage for dogs'],
-            ['path' => '/biology/bird-age', 'name' => 'Bird age'],
+            ['path' => '/biology/bone-length-to-body-height', 'name' => 'Bone Length to Body Height Calculator'],
+            ['path' => '/biology/bradford-assay-calculator', 'name' => 'Bradford Assay (standard curve) Calculator'],
+            ['path' => '/biology/henderson-hasselbalch-buffer', 'name' => 'Buffer pH (Henderson–Hasselbalch) Calculator — Formula & Resul'],
         ],
+        'authors' => [],
     ],
 ];

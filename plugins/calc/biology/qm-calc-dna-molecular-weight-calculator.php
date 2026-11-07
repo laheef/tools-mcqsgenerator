@@ -11,7 +11,9 @@
 
 return [
     'name' => 'DNA Molecular Weight Calculator',
-    'meta' => ['title' => 'DNA Molecular Weight Calculator — Formula & Results', 'description' => 'Molecular weight of a DNA molecule, single- or double-stranded, from its base composition. It returns length, gc content, molecular weight, one strand…', 'h1' => 'DNA Molecular Weight Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Molecular Weight Calculator — Formula & Results', 'description' => <<<'TXT'
+    DNA Molecular Weight turns Sequence and Molecule into Length and GC content. A result box can be typed into, and doing so changes the question rather than the…
+    TXT, 'h1' => 'DNA Molecular Weight Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -268,42 +270,37 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Molecular weight of a DNA molecule, single- or double-stranded, from its base composition. It returns length, gc content, molecular weight, one strand, molecular weight of the molecule, molecular weight and amount in 1 µg, and the panel shows all of them at once.
-        
-        It is what you need to convert a mass in nanograms into picomoles for a ligation, and to work out how much of a PCR product is in a band on a gel.
+        DNA Molecular Weight turns Sequence and Molecule into Length and GC content. The arithmetic is the whole method: Length is worked out from Sequence by one formula, applied once. Length comes back in nt unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the DNA Molecular Weight', 'html' => <<<'TXT'
-            <p>ssDNA = 313.21·A + 304.20·T + 289.18·C + 329.21·G − 61.96 (Da). dsDNA = 2 × ssDNA. pmol per µg = 10⁶ ÷ MW</p>
-            <figure class="calc-figure"><img src="/uploads/biology/dna-molecular-weight-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: DNA Molecular Weight Calculator — Residue mass of each base (Da)" title="DNA Molecular Weight Calculator"><figcaption>Residue mass of each base (Da)</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A, T, C, G</code></td><td>counts of each base</td><td>bases</td></tr><tr><td><code>MW</code></td><td>molecular weight</td><td>g/mol = Da</td></tr><tr><td><code>Da</code></td><td>dalton, one atomic mass unit</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the DNA Molecular Weight calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind DNA Molecular Weight: it takes 2 numbers and reports Length, GC content and Molecular weight, one strand.</p><p>What comes back is Length, GC content, Molecular weight, one strand and Molecular weight of the molecule — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the DNA Molecular Weight?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste one strand; the other is assumed to be its exact complement</li><li><strong>Molecule</strong> — a plain number, no unit</li></ul><p>What you get back is Length in nt, GC content in %, Molecular weight, one strand in Da, Molecular weight of the molecule in Da, Molecular weight in kDa, Amount in 1 µg in pmol, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 50 bp</td><td><strong>Oligonucleotide</strong></td><td>order by scale, not by mass</td></tr><tr><td>100 – 3 000 bp</td><td><strong>Typical PCR product</strong></td><td>a 1 kb dsDNA is about 660 kDa</td></tr><tr><td>above 10 000 bp</td><td><strong>Plasmid or genomic fragment</strong></td><td>handle shear-sensitive</td></tr></tbody></table>
-            <ul><li><p>A base pair of double-stranded DNA weighs about 618–660 Da depending on GC content; the often quoted 660 Da per bp is the average over equal base frequencies.</p></li><li><p>Pairing does not consume mass: a duplex weighs the sum of its two strands. Because the complement has the same composition as the strand you pasted, the duplex is exactly twice the single strand.</p></li><li><p>RNA uses uracil, which is 306.17 Da, so an RNA strand of the same sequence weighs slightly more than the equivalent DNA.</p></li><li><p>The figure here is the free-acid mass, summed from the exact residue masses (about 618 Da per base pair at 50% GC). The rounded 660 Da per base pair used for quick bench arithmetic is the sodium salt, which adds a sodium counterion for every phosphate — that is why the µg-to-pmol converter, which uses 660, returns about 7% fewer picomoles per microgram.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: Length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Length, GC content and Molecular weight, one strand are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Sequence and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Reporting the duplex mass for a single-stranded oligo, which doubles the number.</li><li>Using the 660 Da/bp shortcut for a GC-rich molecule; at 70% GC, a base pair is closer to 640 Da.</li><li>Forgetting that a 5′ modification (biotin, phosphate, a fluorophore) adds its own mass.</li></ul>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Sequence and Molecule measured, Length and GC content wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/protein-gravy-calculator">Protein GRAVY (Hydropathy) Calculator</a>, <a href="/biology/protein-hydrodynamic-radius">Protein Hydrodynamic Radius Calculator</a> and <a href="/biology/protein-isoelectric-point">Protein Isoelectric Point Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much does a 1 kb DNA fragment weigh?', 'a' => 'About 660 kDa double-stranded, roughly 1.1 × 10⁻¹⁸ g per molecule.'],
-            ['q' => 'How many pmol are in 100 ng of a 500 bp dsDNA?', 'a' => '100 ng ÷ 330 000 g/mol = 3 × 10⁻¹³ mol ≈ 0.30 pmol.'],
-            ['q' => 'Does the calculator handle RNA?', 'a' => 'Yes — choose RNA and uracil is counted at its own residue mass.'],
-            ['q' => 'What does the DNA Molecular Weight actually calculate?', 'a' => <<<'TXT'
-            It returns length, gc content, molecular weight, one strand, molecular weight of the molecule, molecular weight and amount in 1 µg. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the DNA Molecular Weight calculator work out?', 'a' => 'Length, GC content, Molecular weight, one strand and Molecular weight of the molecule.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Sequence, Molecule. Fill sequence and strands and leave Length empty if you would rather have that one solved instead.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/protein-gravy-calculator', 'name' => 'Protein GRAVY (Hydropathy) Calculator'],
+            ['path' => '/biology/protein-hydrodynamic-radius', 'name' => 'Protein Hydrodynamic Radius Calculator'],
+            ['path' => '/biology/protein-isoelectric-point', 'name' => 'Protein Isoelectric Point Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

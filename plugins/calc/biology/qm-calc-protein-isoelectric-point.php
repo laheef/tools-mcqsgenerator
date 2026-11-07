@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein Isoelectric Point Calculator',
-    'meta' => ['title' => 'Protein Isoelectric Point Calculator — Biology', 'description' => 'A protein\'s isoelectric point is the pH at which its net charge is exactly zero. It returns isoelectric point, net charge at the given ph, length, molecular…', 'h1' => 'Protein Isoelectric Point Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Protein Isoelectric Point Calculator — Biology', 'description' => 'Enter Protein sequence and pH for the charge calculation into Protein Isoelectric Point and the answer comes back as Isoelectric point and Net charge at the…', 'h1' => 'Protein Isoelectric Point Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'protein' => [
@@ -285,42 +285,39 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A protein's isoelectric point is the pH at which its net charge is exactly zero. It returns isoelectric point, net charge at the given ph, length, molecular weight, acidic residues (d + e), basic residues (k + r + h) and gravy (hydrophobicity), and the panel shows all of them at once.
-        
-        It is found by summing the charge of every ionisable residue at each trial pH and bisecting until the sum vanishes.
+        Enter Protein sequence and pH for the charge calculation into Protein Isoelectric Point and the answer comes back as Isoelectric point and Net charge at the given pH. There is no hidden constant here: change Isoelectric point and Protein sequence moves with it. The main result, Isoelectric point, is reported in pH.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Protein Isoelectric Point', 'html' => <<<'TXT'
-            <p>Z(pH) = Σ (+) ÷ (1 + 10^(pH − pKa)) − Σ (−) ÷ (1 + 10^(pKa − pH)). pI is the pH at which Z = 0, found by bisection between 0 and 14</p>
-            <figure class="calc-figure"><img src="/uploads/biology/protein-isoelectric-point.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Protein Isoelectric Point Calculator — Net charge against pH for the example protein" title="Protein Isoelectric Point Calculator"><figcaption>Net charge against pH for the example protein</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Z</code></td><td>net charge in units of the elementary charge</td><td>e</td></tr><tr><td><code>pI</code></td><td>isoelectric point</td><td>pH</td></tr><tr><td><code>pKa</code></td><td>acid dissociation constant of each ionisable group</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Protein Isoelectric Point calculator works', 'html' => <<<'TXT'
+            <p>The Protein Isoelectric Point calculator applies one relationship to 2 numbers and reports Isoelectric point, Net charge at the given pH and Length.</p><p>The answers are Isoelectric point, Net charge at the given pH, Length and Molecular weight; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Protein Isoelectric Point?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Protein sequence</strong> — a plain number, no unit. Single-letter code; headers, spaces and digits are ignored</li><li><strong>pH for the charge calculation</strong> — in pH. Net charge is reported at this pH</li></ul><p>The result boxes are Isoelectric point in pH, Net charge at the given pH in e, Length in aa, Molecular weight in kDa, Acidic residues (D + E), Basic residues (K + R + H), GRAVY (hydrophobicity); they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>pI below 5</td><td><strong>Acidic</strong></td><td>binds anion exchangers such as Q Sepharose</td></tr><tr><td>pI 5 – 7.5</td><td><strong>Neutral</strong></td><td>poor solubility near its pI; buffer away from it</td></tr><tr><td>pI above 7.5</td><td><strong>Basic</strong></td><td>binds cation exchangers such as SP Sepharose</td></tr></tbody></table>
-            <ul><li><p>Solubility is lowest at the pI because the protein has no net charge and molecules aggregate. Purification buffers are usually set one pH unit away from it.</p></li><li><p>The pKa values used are the standard solution values (D 3.65, E 4.25, C 8.18, Y 10.07, H 6.0, K 10.53, R 12.48, N-terminus 8.2, C-terminus 3.65). Real pKa values shift in a folded protein, so a measured pI can differ by half a unit.</p></li><li><p>Modifications are ignored: phosphorylation adds negative charges and moves the pI down, while a His-tag or a nuclear localisation signal moves it up.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Isoelectric point is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Assuming the calculated pI equals the value on an IEF gel — glycosylation and PTMs shift it.</li><li>Running an ion-exchange step at the pI, where the protein has no charge to bind with.</li><li>Forgetting that the N- and C-termini contribute, which matters for short peptides.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Isoelectric point, Net charge at the given pH and Length are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Protein sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Protein sequence and pH for the charge calculation and the number you are missing is Isoelectric point and Net charge at the given pH.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/compost-application-rate">Compost Application Rate Calculator</a>, <a href="/biology/compost">Compost Calculator</a> and <a href="/biology/corn-yield">Corn yield Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a typical protein pI?', 'a' => 'Most cytosolic proteins sit between 5 and 7; the human proteome averages around 6.5.'],
-            ['q' => 'How is pI calculated?', 'a' => 'By finding the pH where the sum of positive and negative charges is zero, using the Henderson-Hasselbalch equation for every ionisable group.'],
-            ['q' => 'Why is my measured pI different?', 'a' => 'Post-translational modification, bound ions, glycosylation and the local environment of each residue all shift the true value.'],
-            ['q' => 'What does the Protein Isoelectric Point actually calculate?', 'a' => <<<'TXT'
-            It returns isoelectric point, net charge at the given ph, length, molecular weight, acidic residues (d + e), basic residues (k + r + h) and gravy (hydrophobicity). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Protein Isoelectric Point calculator work out?', 'a' => 'Isoelectric point, Net charge at the given pH, Length and Molecular weight.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Protein sequence, pH for the charge calculation (pH). Fill protein and ph and leave Isoelectric point empty if you would rather have that one solved instead.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Isoelectric point is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Isoelectric point, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Isoelectric point keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/compost-application-rate', 'name' => 'Compost Application Rate Calculator'],
+            ['path' => '/biology/compost', 'name' => 'Compost Calculator'],
+            ['path' => '/biology/corn-yield', 'name' => 'Corn yield Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

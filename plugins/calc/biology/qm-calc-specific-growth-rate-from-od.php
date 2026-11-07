@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Specific Growth Rate from OD Readings',
-    'meta' => ['title' => 'Specific Growth Rate from OD Readings Calculator', 'description' => 'The specific growth rate µ is the slope of ln(OD) against time, and it is the standard way to compare growth conditions. It returns specific growth rate…', 'h1' => 'Specific Growth Rate from OD Readings', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Specific Growth Rate from OD Readings Calculator', 'description' => 'Enter OD at start, OD at end and Time between readings into Specific Growth Rate from OD Readings and the answer comes back as Specific growth rate and…', 'h1' => 'Specific Growth Rate from OD Readings', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -86,46 +86,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The specific growth rate µ is the slope of ln(OD) against time, and it is the standard way to compare growth conditions. It returns specific growth rate, doubling time, generations and cell density at the end, and the panel shows all of them at once.
-        
-        This calculator computes it from a series of OD readings, with the doubling time and the generation count that follow from it.
+        Enter OD at start, OD at end and Time between readings into Specific Growth Rate from OD Readings and the answer comes back as Specific growth rate and Doubling time. There is no hidden constant here: change Specific growth rate and OD at start moves with it. The main result, Specific growth rate, is reported in h⁻¹.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Specific Growth Rate from OD Readings', 'html' => <<<'TXT'
-            <p>µ = ln(OD_end ÷ OD_start) ÷ Δt</p>
-            <figure class="calc-figure"><img src="/uploads/biology/specific-growth-rate-from-od.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Specific Growth Rate from OD Readings — ln(OD) against time: the slope is the growth rate." title="Specific Growth Rate from OD Readings"><figcaption>ln(OD) against time: the slope is the growth rate.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>OD</code></td><td>absorbance at 600 nm</td><td>AU</td></tr><tr><td><code>µ</code></td><td>specific growth rate</td><td>h⁻¹</td></tr><tr><td><code>Δt</code></td><td>time between readings</td><td>h</td></tr></tbody></table>
+            ['title' => 'How the Specific Growth Rate from OD Readings calculator works', 'html' => <<<'TXT'
+            <p>The Specific Growth Rate from OD Readings calculator applies one relationship to 3 numbers and reports Specific growth rate, Doubling time and Generations.</p><p>In the form&#039;s own words, Specific growth rate = (ln(OD at end) − ln(OD at start)) ÷ Time between readings.</p><p>The answers are Specific growth rate, Doubling time, Generations and Cell density at the end; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Specific Growth Rate from OD Readings?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>OD at start</strong> — a plain number, no unit</li><li><strong>OD at end</strong> — a plain number, no unit</li><li><strong>Time between readings</strong> — in h</li></ul><p>The result boxes are Specific growth rate in h⁻¹, Doubling time in h, Generations, Cell density at the end in cells/mL; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: od at start of <strong>0.05</strong>, od at end of <strong>0.9</strong>, time between readings of <strong>3</strong> h.</p>
-            <p>Substituting them into the formula gives specific growth rate of <strong>0.9635</strong> h⁻¹, doubling time of <strong>0.7194</strong> h, generations of <strong>4.17</strong>, cell density at the end of <strong>720,000,000</strong> cells/mL.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — OD at start = 0.05, OD at end = 0.9 and Time between readings = 3 h — through the same formula and the panel reports &lt;strong&gt;Specific growth rate&lt;/strong&gt; = 0.9635 h⁻¹, &lt;strong&gt;Doubling time&lt;/strong&gt; = 0.7194 h, &lt;strong&gt;Generations&lt;/strong&gt; = 4.17 and &lt;strong&gt;Cell density at the end&lt;/strong&gt; = 7.200e+8 cells/mL.</p><ul><li><strong>Specific growth rate</strong> = 0.9635 h⁻¹</li><li><strong>Doubling time</strong> = 0.7194 h</li><li><strong>Generations</strong> = 4.17</li><li><strong>Cell density at the end</strong> = 7.200e+8 cells/mL</li></ul><p>That is <strong>Specific growth rate</strong> = <code>(ln(OD at end) − ln(OD at start)) ÷ Time between readings</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>µ above 0.6 h⁻¹</td><td><strong>Fast</strong></td><td>rich medium, optimal temperature</td></tr><tr><td>µ 0.3 – 0.6 h⁻¹</td><td><strong>Moderate</strong></td><td>typical of minimal medium with a good carbon source</td></tr><tr><td>µ below 0.3 h⁻¹</td><td><strong>Slow</strong></td><td>stress, a poor carbon source, or a suboptimal temperature</td></tr></tbody></table>
-            <ul><li><p>Doubling time is ln2/µ — 0.693 divided by the rate — not 1/µ. Mixing the two is the most common error in growth-rate reporting.</p></li><li><p>Take at least three readings across log phase and fit a line rather than using two points; two points hide the moment the culture leaves exponential growth.</p></li><li><p>µ is temperature- and medium-dependent; a Q10-style comparison only makes sense when nothing else changed.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Specific growth rate&lt;/strong&gt; = 0.9635, &lt;strong&gt;Doubling time&lt;/strong&gt; = 0.7194, &lt;strong&gt;Generations&lt;/strong&gt; = 4.17 and &lt;strong&gt;Cell density at the end&lt;/strong&gt; = 7.200e+8. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Specific growth rate is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using OD values below 0.05, where the blank error dominates.</li><li>Fitting a line through lag, log and stationary points together.</li><li>Reporting 1/µ as the doubling time.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Specific growth rate</strong> = <code>(ln(OD at end) − ln(OD at start)) ÷ Time between readings</code></li><li><strong>Doubling time</strong> = <code>0.6931471805599453 ÷ ((ln(OD at end) − ln(OD at start)) ÷ Time between readings)</code></li><li><strong>Generations</strong> = <code>(ln(OD at end) − ln(OD at start)) ÷ 0.6931471805599453</code></li><li><strong>Cell density at the end</strong> = <code>OD at end × 800000000</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Specific growth rate, Doubling time and Generations can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double OD at start from 0.05 to 0.1, leaving every other box alone. The panel moves from &lt;strong&gt;Specific growth rate&lt;/strong&gt; 0.9635 h⁻¹, &lt;strong&gt;Doubling time&lt;/strong&gt; 0.7194 h, &lt;strong&gt;Generations&lt;/strong&gt; 4.17 and &lt;strong&gt;Cell density at the end&lt;/strong&gt; 7.200e+8 cells/mL to &lt;strong&gt;Specific growth rate&lt;/strong&gt; 0.7324 h⁻¹, &lt;strong&gt;Doubling time&lt;/strong&gt; 0.9464 h, &lt;strong&gt;Generations&lt;/strong&gt; 3.17 and &lt;strong&gt;Cell density at the end&lt;/strong&gt; 7.200e+8 cells/mL.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Specific growth rate, Doubling time and Generations are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in OD at start and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: OD at start, OD at end and Time between readings measured, Specific growth rate and Doubling time wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/base-pair-to-kda">Base Pair to kDa Calculator</a>, <a href="/biology/bca-assay-calculator">BCA Assay (standard curve) Calculator</a> and <a href="/biology/beer-lambert-a280-protein-concentration">Beer-Lambert A280 Protein Concentration Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is the difference between µ and the doubling time?', 'a' => 'µ is the rate of exponential increase per unit time; doubling time is the time to double, ln2/µ.'],
-            ['q' => 'Can I use this for mammalian cells?', 'a' => 'Yes, provided the readings are in the linear range or replaced by cell counts.'],
-            ['q' => 'What does the Specific Growth Rate from OD Readings actually calculate?', 'a' => <<<'TXT'
-            It returns specific growth rate, doubling time, generations and cell density at the end. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Specific Growth Rate from OD Readings calculator work out?', 'a' => <<<'TXT'
+            Specific growth rate, Doubling time, Generations and Cell density at the end, from OD at end, OD at start and Time between readings. The relationship is Specific growth rate = (ln(OD at end) − ln(OD at start)) ÷ Time between readings.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'OD at start, OD at end, Time between readings (h). With od_start, od_end and hours in place, Specific growth rate can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Specific growth rate, Doubling time, Generations and Cell density at the end can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Specific growth rate = 0.9635 h⁻¹, Doubling time = 0.7194 h, Generations = 4.17 and Cell density at the end = 7.200e+8 cells/mL. That comes from the page's own defaults, entered in OD at start; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Specific growth rate is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With OD at start left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Specific growth rate keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/base-pair-to-kda', 'name' => 'Base Pair to kDa Calculator'],
+            ['path' => '/biology/bca-assay-calculator', 'name' => 'BCA Assay (standard curve) Calculator'],
+            ['path' => '/biology/beer-lambert-a280-protein-concentration', 'name' => 'Beer-Lambert A280 Protein Concentration Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

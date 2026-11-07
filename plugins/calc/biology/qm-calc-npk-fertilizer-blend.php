@@ -12,7 +12,7 @@
 return [
     'name' => 'NPK Fertilizer Blend Calculator',
     'meta' => ['title' => 'NPK Fertilizer Blend Calculator — Formula & Results', 'description' => <<<'TXT'
-    A fertilizer grade such as 20-10-10 tells you the percentage of nitrogen, phosphate and potash by weight — not the mass to spread. It returns product to apply…
+    Enter Nitrogen required, Phosphate required (P₂O₅) and Potash required (K₂O) into NPK Fertilizer Blend and the answer comes back as Product to apply (limited…
     TXT, 'h1' => 'NPK Fertilizer Blend Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
@@ -115,48 +115,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A fertilizer grade such as 20-10-10 tells you the percentage of nitrogen, phosphate and potash by weight — not the mass to spread. It returns product to apply (limited by N), product limited by P, product limited by K and bags of 50 kg per hectare, and the panel shows all of them at once.
-        
-        This calculator converts a nutrient requirement into kilograms of product per hectare and the fill weight for a spreader.
+        Enter Nitrogen required, Phosphate required (P₂O₅) and Potash required (K₂O) into NPK Fertilizer Blend and the answer comes back as Product to apply (limited by N) and Product limited by P. The arithmetic is the whole method: Product to apply (limited by N) is worked out from Nitrogen required by one formula, applied once. Product to apply (limited by N) comes back in kg/ha unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the NPK Fertilizer Blend', 'html' => <<<'TXT'
-            <p>Product (kg/ha) = nutrient required ÷ percentage in the product × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/npk-fertilizer-blend.svg" width="720" height="300" loading="lazy" alt="Animated diagram: NPK Fertilizer Blend Calculator — Nutrient requirement against the product rate for each nutrient." title="NPK Fertilizer Blend Calculator"><figcaption>Nutrient requirement against the product rate for each nutrient.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N, P₂O₅, K₂O</code></td><td>nutrient requirement</td><td>kg/ha</td></tr><tr><td><code>grade</code></td><td>percentage of each nutrient in the product</td><td>%</td></tr><tr><td><code>rate</code></td><td>product needed</td><td>kg/ha</td></tr></tbody></table>
+            ['title' => 'How the NPK Fertilizer Blend calculator works', 'html' => <<<'TXT'
+            <p>The NPK Fertilizer Blend calculator applies one relationship to 6 numbers and reports Product to apply (limited by N), Product limited by P and Product limited by K.</p><p>The relationship it solves reads Product to apply (limited by N) = Nitrogen required ÷ N in the product × 100.</p><p>The result panel carries Product to apply (limited by N), Product limited by P, Product limited by K and Bags of 50 kg per hectare, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the NPK Fertilizer Blend?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 6 boxes, and nothing else.</p><ul><li><strong>Nitrogen required</strong> — in kg/ha</li><li><strong>Phosphate required (P₂O₅)</strong> — in kg/ha</li><li><strong>Potash required (K₂O)</strong> — in kg/ha</li><li><strong>N in the product</strong> — in %</li><li><strong>P₂O₅ in the product</strong> — in %</li><li><strong>K₂O in the product</strong> — in %</li></ul><p>The result boxes are Product to apply (limited by N) in kg/ha, Product limited by P in kg/ha, Product limited by K in kg/ha, Bags of 50 kg per hectare in bags; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: nitrogen required of <strong>120</strong> kg/ha, phosphate required (p₂o₅) of <strong>60</strong> kg/ha, potash required (k₂o) of <strong>60</strong> kg/ha, n in the product of <strong>20</strong>%, p₂o₅ in the product of <strong>10</strong>%, k₂o in the product of <strong>10</strong>%.</p>
-            <p>Substituting them into the formula gives product to apply (limited by n) of <strong>600</strong> kg/ha, product limited by p of <strong>600</strong> kg/ha, product limited by k of <strong>600</strong> kg/ha, bags of 50 kg per hectare of <strong>12</strong> bags.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Nitrogen required = 120 kg/ha, Phosphate required (P₂O₅) = 60 kg/ha, Potash required (K₂O) = 60 kg/ha, N in the product = 20 %, P₂O₅ in the product = 10 % and K₂O in the product = 10 % — through the same formula and the panel reports &lt;strong&gt;Product to apply (limited by N)&lt;/strong&gt; = 600 kg/ha, &lt;strong&gt;Product limited by P&lt;/strong&gt; = 600 kg/ha, &lt;strong&gt;Product limited by K&lt;/strong&gt; = 600 kg/ha and &lt;strong&gt;Bags of 50 kg per hectare&lt;/strong&gt; = 12 bags.</p><ul><li><strong>Product to apply (limited by N)</strong> = 600 kg/ha</li><li><strong>Product limited by P</strong> = 600 kg/ha</li><li><strong>Product limited by K</strong> = 600 kg/ha</li><li><strong>Bags of 50 kg per hectare</strong> = 12 bags</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Product to apply (limited by N)</strong> = <code>Nitrogen required ÷ N in the product × 100</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The grade is by weight of N, P₂O₅ and K₂O — not elemental phosphorus and potassium. To convert, P₂O₅ × 0.44 = P and K₂O × 0.83 = K.</p></li><li><p>A single blend rarely matches all three requirements, so the product rate is set by the nutrient that runs out first and the rest is topped up with straight fertilizers.</p></li><li><p>Fertilizer grade percentages must sum to at most 100; a 20-10-10 blend is 40% nutrient and 60% carrier.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Product to apply (limited by N)&lt;/strong&gt; = 600, &lt;strong&gt;Product limited by P&lt;/strong&gt; = 600, &lt;strong&gt;Product limited by K&lt;/strong&gt; = 600 and &lt;strong&gt;Bags of 50 kg per hectare&lt;/strong&gt; = 12. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Product to apply (limited by N) is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Treating P₂O₅ as elemental P, which overstates phosphate by a factor of 2.3.</li><li>Dividing by the grade instead of multiplying by 100 ÷ grade.</li><li>Ignoring the nutrient already in the soil test.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Product to apply (limited by N)</strong> = <code>Nitrogen required ÷ N in the product × 100</code></li><li><strong>Product limited by P</strong> = <code>Phosphate required (P₂O₅) ÷ P₂O₅ in the product × 100</code></li><li><strong>Product limited by K</strong> = <code>Potash required (K₂O) ÷ K₂O in the product × 100</code></li><li><strong>Bags of 50 kg per hectare</strong> = <code>Nitrogen required ÷ N in the product × 100 ÷ 50</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Product to apply (limited by N), Product limited by P and Product limited by K can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/fertilizer-injector-ratio">Fertilizer injector ratio</a>. <a href="/biology/lime-requirement">Lime requirement</a>. <a href="/biology/crop-water-requirement">Crop water requirement</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Nitrogen required, from 120 to 240 — and the answers go from &lt;strong&gt;Product to apply (limited by N)&lt;/strong&gt; 600 kg/ha, &lt;strong&gt;Product limited by P&lt;/strong&gt; 600 kg/ha, &lt;strong&gt;Product limited by K&lt;/strong&gt; 600 kg/ha and &lt;strong&gt;Bags of 50 kg per hectare&lt;/strong&gt; 12 bags to &lt;strong&gt;Product to apply (limited by N)&lt;/strong&gt; 1200 kg/ha, &lt;strong&gt;Product limited by P&lt;/strong&gt; 600 kg/ha, &lt;strong&gt;Product limited by K&lt;/strong&gt; 600 kg/ha and &lt;strong&gt;Bags of 50 kg per hectare&lt;/strong&gt; 24 bags.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Product to apply (limited by N), Product limited by P and Product limited by K are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Nitrogen required and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Nitrogen required, Phosphate required (P₂O₅) and Potash required (K₂O) is what you already know and Product to apply (limited by N) and Product limited by P is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/tree-height">Tree height</a>, <a href="/biology/tree-spacing">Tree spacing</a> and <a href="/biology/tree-value">Tree value Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much 20-10-10 gives 120 kg of nitrogen?', 'a' => '600 kg per hectare — 120 ÷ 0.20.'],
-            ['q' => 'Why does the bag count differ from the rate?', 'a' => 'Because bags are sold in fixed weights; divide the rate by the bag weight.'],
-            ['q' => 'What does the NPK Fertilizer Blend actually calculate?', 'a' => <<<'TXT'
-            It returns product to apply (limited by N), product limited by P, product limited by K and bags of 50 kg per hectare. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the NPK Fertilizer Blend calculator work out?', 'a' => <<<'TXT'
+            Product to apply (limited by N), Product limited by P, Product limited by K and Bags of 50 kg per hectare, from Nitrogen required and N in the product. The relationship is Product to apply (limited by N) = Nitrogen required ÷ N in the product × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Nitrogen required (kg/ha), Phosphate required (P₂O₅) (kg/ha), Potash required (K₂O) (kg/ha), N in the product (%), P₂O₅ in the product (%). Enter n_need, p_need and k_need; Product to apply (limited by N) is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Product to apply (limited by N), Product limited by P, Product limited by K and Bags of 50 kg per hectare can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Product to apply (limited by N) = 600 kg/ha, Product limited by P = 600 kg/ha, Product limited by K = 600 kg/ha and Bags of 50 kg per hectare = 12 bags. That comes from the page's own defaults, entered in Nitrogen required; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Product to apply (limited by N) is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Nitrogen required left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Product to apply (limited by N) keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/tree-height', 'name' => 'Tree height'],
+            ['path' => '/biology/tree-spacing', 'name' => 'Tree spacing'],
+            ['path' => '/biology/tree-value', 'name' => 'Tree value Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

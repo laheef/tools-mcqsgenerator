@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat chocolate toxicity',
-    'meta' => ['title' => 'Cat chocolate toxicity Calculator: Free, With Steps', 'description' => '<strong>chocolate type</strong> is what the Cat chocolate toxicity calculator works out, and it gets there from your cat\'s weight, the methylxanthines dose…', 'h1' => 'Cat chocolate toxicity Calculator', 'updated' => '2026-05-25'],
+    'meta' => ['title' => 'Cat chocolate toxicity Calculator: Free, With Steps', 'description' => 'Cat chocolate toxicity turns Your cat\'s weight, Amount eaten and Methylxanthines dose into Chocolate type and Total methylxanthines received.', 'h1' => 'Cat chocolate toxicity Calculator', 'updated' => '2026-05-25'],
     'raw' => [
         'vars' => [
             'amount' => [
@@ -297,68 +297,49 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        <strong>chocolate type</strong> is what the Cat chocolate toxicity calculator works out, and it gets there from your cat's weight, the methylxanthines dose and the total methylxanthines received.
+        Cat chocolate toxicity turns Your cat's weight, Amount eaten and Methylxanthines dose into Chocolate type and Total methylxanthines received. It is a single relationship that reads Chocolate type out of Your cat's weight, not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'How does the Cat chocolate toxicity calculator work?', 'html' => <<<'TXT'
-            <p>The Cat chocolate toxicity calculator takes the values in the form, applies the relationship described below and reports <strong>chocolate type</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in your cat's weight, the methylxanthines dose and the total methylxanthines received.</p>
+            ['title' => 'How the Cat chocolate toxicity calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Cat chocolate toxicity: it takes 3 numbers and reports Chocolate type and Total methylxanthines received.</p><p>In the form&#039;s own words, Chocolate type = Methylxanthines dose × Your cat&#039;s weight ÷ Amount eaten.</p><p>The result panel carries Chocolate type and Total methylxanthines received, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => '<ul><li>A measured quantity, entered by default in milligrams. </li></ul><p>One field on this form is a choice rather than a number. </p>'],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your cat's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Chocolate type</strong></td><td>One of 21 options, such as white chocolate, milk chocolate and dark-sweet chocolate.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Amount eaten</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Methylxanthines dose</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Total methylxanthines received</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Your cat&#039;s weight</strong> — in kilograms</li><li><strong>Amount eaten</strong> — in grams. Quantity of chocolate that your pet has eaten.</li><li><strong>Methylxanthines dose</strong> — in kilograms. Substances in chocolate that cause the poisoning in dogs (theobromine + caffeine combined).</li></ul><p>What you get back is Chocolate type, Total methylxanthines received in milligrams, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'The formula behind the Cat chocolate toxicity calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Chocolate type</span><span class="formula-eq">=</span><span class="formula-rhs">methylxanthines dose × your cat&#x27;s weight ÷ amount eaten</span></div><div class="formula-row"><span class="formula-lhs">Chocolate type</span><span class="formula-eq">=</span><span class="formula-rhs">total methylxanthines received ÷ amount eaten</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Total methylxanthines received offers 27 units and opens on milligrams, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Take <strong>Your cat's weight</strong> = 10 kg, <strong>Chocolate type</strong> set to Milk chocolate, <strong>Amount eaten</strong> = 1000 g and <strong>Methylxanthines dose</strong> = 10 kg. The calculator returns <strong>Total methylxanthines received</strong> = 2260 mg.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Total methylxanthines received</strong> = 2260 mg should be roughly the size you expected from <strong>Your cat's weight</strong> = 10 kg and <strong>Chocolate type</strong> set to Milk chocolate.</li></ol>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Chocolate type</strong> = <code>Methylxanthines dose × Your cat&#039;s weight ÷ Amount eaten</code></li><li><strong>Methylxanthines dose</strong> = <code>Amount eaten × Chocolate type ÷ Your cat&#039;s weight</code></li><li><strong>Your cat&#039;s weight</strong> = <code>Amount eaten × Chocolate type ÷ Methylxanthines dose</code></li><li><strong>Amount eaten</strong> = <code>Methylxanthines dose × Your cat&#039;s weight ÷ Chocolate type</code></li><li><strong>Total methylxanthines received</strong> = <code>Amount eaten × Chocolate type</code></li></ul><p>Any one of Chocolate type, Methylxanthines dose and Your cat&#039;s weight can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>The option the calculation settles on.</li><li>Shown in grams, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Your cat&#039;s weight, Amount eaten and Methylxanthines dose is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Chocolate type and Total methylxanthines received are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Your cat&#039;s weight to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Mass, opening in grams</li><li>Mass, opening in kilograms</li><li>Mass, opening in milligrams</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cat chocolate toxicity calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 3 figures keep coming back — your cat's weight, the methylxanthines dose and the total methylxanthines received — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cat-pregnancy">Cat pregnancy</a>, <a href="/biology/cat-quality-of-life">Cat quality of life</a> and <a href="/biology/catculator">Catculator</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Your cat&#039;s weight, Amount eaten and Methylxanthines dose measured, Chocolate type and Total methylxanthines received wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a>, <a href="/biology/dog-size">Dog size Calculator</a> and <a href="/biology/dog-water-intake">Dog water intake Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Cat chocolate toxicity calculator work out?', 'a' => <<<'TXT'
-            It returns chocolate type, derived from your cat's weight, the methylxanthines dose and the total methylxanthines received. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Chocolate type and Total methylxanthines received, from Methylxanthines dose, Your cat's weight and Amount eaten. The relationship is Chocolate type = Methylxanthines dose × Your cat's weight ÷ Amount eaten.
             TXT],
-            ['q' => 'What do I need to enter to use the Cat chocolate toxicity calculator?', 'a' => <<<'TXT'
-            The form asks for your cat's weight, the methylxanthines dose and the total methylxanthines received, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Your cat's weight (kilograms), Amount eaten (grams), Methylxanthines dose (kilograms). Enter weight, amount and methyl; Chocolate type is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter your cat\'s weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Your cat's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Chocolate type, Methylxanthines dose, Your cat's weight and Amount eaten blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Chocolate type is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Your cat's weight left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Total methylxanthines received = 2260 mg. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Cat chocolate toxicity calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Chocolate type keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/cat-pregnancy', 'name' => 'Cat pregnancy'],
-            ['path' => '/biology/cat-quality-of-life', 'name' => 'Cat quality of life'],
-            ['path' => '/biology/catculator', 'name' => 'Catculator'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+            ['path' => '/biology/dog-size', 'name' => 'Dog size Calculator'],
+            ['path' => '/biology/dog-water-intake', 'name' => 'Dog water intake Calculator'],
         ],
+        'authors' => [],
     ],
 ];

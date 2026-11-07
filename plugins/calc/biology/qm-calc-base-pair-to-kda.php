@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Base Pair to kDa Calculator',
-    'meta' => ['title' => 'Base Pair to kDa Calculator — Formula & Results', 'description' => 'Kilodaltons and base pairs convert with one factor: 0.65 kDa per base pair of double-stranded DNA. It returns DNA mass, encoded amino acids, protein mass and…', 'h1' => 'Base Pair to kDa Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Base Pair to kDa Calculator — Formula & Results', 'description' => 'Base Pair to kDa takes DNA length and returns DNA mass and Encoded amino acids. There is no hidden constant here: change DNA mass and DNA length moves with it.', 'h1' => 'Base Pair to kDa Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -72,47 +72,52 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Kilodaltons and base pairs convert with one factor: 0.65 kDa per base pair of double-stranded DNA. It returns DNA mass, encoded amino acids, protein mass and DNA per kDa of protein, and the panel shows all of them at once.
-        
-        This calculator does both.
+        Base Pair to kDa takes DNA length and returns DNA mass and Encoded amino acids. There is no hidden constant here: change DNA mass and DNA length moves with it. The main result, DNA mass, is reported in kDa.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Base Pair to kDa', 'html' => <<<'TXT'
-            <p>DNA: kDa = bp × 0.65; protein: kDa ≈ (bp ÷ 3) × 0.11</p>
-            <figure class="calc-figure"><img src="/uploads/biology/base-pair-to-kda.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Base Pair to kDa Calculator — From base pairs to kilodaltons, for DNA and for the protein it encodes." title="Base Pair to kDa Calculator"><figcaption>From base pairs to kilodaltons, for DNA and for the protein it encodes.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>bp</code></td><td>length in base pairs</td><td>bp</td></tr><tr><td><code>0.65</code></td><td>kDa per base pair of dsDNA</td><td>kDa/bp</td></tr><tr><td><code>0.11</code></td><td>average kDa per amino acid</td><td>kDa/aa</td></tr></tbody></table>
+            ['title' => 'How the Base Pair to kDa calculator works', 'html' => <<<'TXT'
+            <p>The Base Pair to kDa calculator applies one relationship to 1 number and reports DNA mass, Encoded amino acids and Protein mass.</p><p>In the form&#039;s own words, DNA mass = DNA length × 0.65.</p><p>The answers are DNA mass, Encoded amino acids, Protein mass and DNA per kDa of protein; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Base Pair to kDa?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>DNA length</strong> — in bp</li></ul><p>What you get back is DNA mass in kDa, Encoded amino acids, Protein mass in kDa, DNA per kDa of protein in bp, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: dna length of <strong>3,000</strong> bp.</p>
-            <p>Substituting them into the formula gives dna mass of <strong>1,950</strong> kDa, encoded amino acids of <strong>1,000</strong>, protein mass of <strong>110</strong> kDa, dna per kda of protein of <strong>27.27</strong> bp.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, DNA length = 3000 bp; the answers are &lt;strong&gt;DNA mass&lt;/strong&gt; = 1950 kDa, &lt;strong&gt;Encoded amino acids&lt;/strong&gt; = 1000, &lt;strong&gt;Protein mass&lt;/strong&gt; = 110 kDa and &lt;strong&gt;DNA per kDa of protein&lt;/strong&gt; = 27.27 bp.</p><ul><li><strong>DNA mass</strong> = 1950 kDa</li><li><strong>Encoded amino acids</strong> = 1000</li><li><strong>Protein mass</strong> = 110 kDa</li><li><strong>DNA per kDa of protein</strong> = 27.27 bp</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>DNA mass</strong> = <code>DNA length × 0.65</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The protein estimate assumes the whole sequence is one open reading frame with no introns — true for bacterial genes and cDNA, wrong for genomic eukaryotic sequence.</p></li><li><p>Average residue mass is about 110 Da; a protein rich in glycine (57 Da) or tryptophan (186 Da) will deviate, and the estimate is only good to about ±10%.</p></li><li><p>For a fusion protein, add the tag: 6×His is about 0.8 kDa and GST about 26 kDa.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;DNA mass&lt;/strong&gt; = 1950, &lt;strong&gt;Encoded amino acids&lt;/strong&gt; = 1000, &lt;strong&gt;Protein mass&lt;/strong&gt; = 110 and &lt;strong&gt;DNA per kDa of protein&lt;/strong&gt; = 27.27 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: DNA mass takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Converting a eukaryotic gene length straight to protein mass, introns included.</li><li>Forgetting the stop codon, which does not become an amino acid.</li><li>Using 0.65 kDa per bp for single-stranded RNA, where it is about 0.34.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>DNA mass</strong> = <code>DNA length × 0.65</code></li><li><strong>Encoded amino acids</strong> = <code>DNA length ÷ 3</code></li><li><strong>Protein mass</strong> = <code>DNA length ÷ 3 × 0.11</code></li><li><strong>DNA per kDa of protein</strong> = <code>DNA length ÷ (DNA length ÷ 3 × 0.11)</code></li></ul><p>Any one of DNA mass, Encoded amino acids and Protein mass can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/base-pair-to-dalton">Base pair to dalton</a>. <a href="/biology/coding-capacity-of-dna">Coding capacity of DNA</a>. <a href="/biology/protein-molar-conversions">Protein molar conversions</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double DNA length from 3000 to 6000, leaving every other box alone. The panel moves from &lt;strong&gt;DNA mass&lt;/strong&gt; 1950 kDa, &lt;strong&gt;Encoded amino acids&lt;/strong&gt; 1000, &lt;strong&gt;Protein mass&lt;/strong&gt; 110 kDa and &lt;strong&gt;DNA per kDa of protein&lt;/strong&gt; 27.27 bp to &lt;strong&gt;DNA mass&lt;/strong&gt; 3900 kDa, &lt;strong&gt;Encoded amino acids&lt;/strong&gt; 2000, &lt;strong&gt;Protein mass&lt;/strong&gt; 220 kDa and &lt;strong&gt;DNA per kDa of protein&lt;/strong&gt; 27.27 bp.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with DNA mass, Encoded amino acids and Protein mass are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in DNA length and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are DNA length and the number you are missing is DNA mass and Encoded amino acids.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/microscope-field-of-view">Microscope Field of View Calculator</a>, <a href="/biology/microscope-magnification">Microscope Magnification Calculator</a> and <a href="/biology/mitotic-index">Mitotic Index Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many kDa is a 3 000 bp plasmid?', 'a' => 'About 1 950 kDa, or roughly 2 MDa.'],
-            ['q' => 'How big is the protein from a 1 500 bp open reading frame?', 'a' => '500 amino acids, about 55 kDa.'],
-            ['q' => 'What does the Base Pair to kDa actually calculate?', 'a' => <<<'TXT'
-            It returns DNA mass, encoded amino acids, protein mass and DNA per kDa of protein. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Base Pair to kDa calculator work out?', 'a' => 'DNA mass, Encoded amino acids, Protein mass and DNA per kDa of protein, from DNA length. The relationship is DNA mass = DNA length × 0.65.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'DNA length (bp). With bp in place, DNA mass can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of DNA mass, Encoded amino acids, Protein mass and DNA per kDa of protein blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            DNA mass = 1950 kDa, Encoded amino acids = 1000, Protein mass = 110 kDa and DNA per kDa of protein = 27.27 bp. Those are the defaults written into the form — move DNA length and every result box follows.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of DNA mass is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave DNA length blank and the page solves for it, reporting DNA mass instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to DNA mass at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/microscope-field-of-view', 'name' => 'Microscope Field of View Calculator'],
+            ['path' => '/biology/microscope-magnification', 'name' => 'Microscope Magnification Calculator'],
+            ['path' => '/biology/mitotic-index', 'name' => 'Mitotic Index Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

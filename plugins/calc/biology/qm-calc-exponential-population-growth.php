@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Exponential Population Growth Calculator',
-    'meta' => ['title' => 'Exponential Population Growth Calculator — Biology', 'description' => 'Unlimited growth follows N = N₀e^(rt): a constant per-capita rate applied to an ever larger population. It returns population after that time, increase…', 'h1' => 'Exponential Population Growth Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Exponential Population Growth Calculator — Biology', 'description' => <<<'TXT'
+    Exponential Population Growth takes Starting population, Growth rate and Time and returns Population after that time and Increase. The arithmetic is the whole…
+    TXT, 'h1' => 'Exponential Population Growth Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -90,48 +92,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Unlimited growth follows N = N₀e^(rt): a constant per-capita rate applied to an ever larger population. It returns population after that time, increase, doubling time and time to reach 10× the start, and the panel shows all of them at once.
-        
-        This calculator projects the size, the time to a target, and the doubling time that goes with the rate.
+        Exponential Population Growth takes Starting population, Growth rate and Time and returns Population after that time and Increase. The arithmetic is the whole method: Population after that time is worked out from Starting population by one formula, applied once. Population after that time comes back in individuals unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Exponential Population Growth', 'html' => <<<'TXT'
-            <p>N(t) = N₀ × e^(rt); doubling time = ln2 ÷ r</p>
-            <figure class="calc-figure"><img src="/uploads/biology/exponential-population-growth.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Exponential Population Growth Calculator — Exponential growth plotted over time." title="Exponential Population Growth Calculator"><figcaption>Exponential growth plotted over time.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N₀</code></td><td>starting population</td><td>individuals</td></tr><tr><td><code>r</code></td><td>per-capita growth rate</td><td>per time</td></tr><tr><td><code>t</code></td><td>elapsed time</td><td>time units</td></tr></tbody></table>
+            ['title' => 'How the Exponential Population Growth calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Exponential Population Growth: it takes 3 numbers and reports Population after that time, Increase and Doubling time.</p><p>The relationship it solves reads Population after that time = Starting population × e^(Growth rate × Time).</p><p>What comes back is Population after that time, Increase, Doubling time and Time to reach 10× the start — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Exponential Population Growth?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Starting population</strong> — in individuals</li><li><strong>Growth rate</strong> — in per year. 0.05 = 5% a year</li><li><strong>Time</strong> — in years</li></ul><p>What you get back is Population after that time in individuals, Increase in ×, Doubling time in years, Time to reach 10× the start in years, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: starting population of <strong>100</strong> individuals, growth rate of <strong>0.05</strong> per year, time of <strong>20</strong> years.</p>
-            <p>Substituting them into the formula gives population after that time of <strong>271.83</strong> individuals, increase of <strong>2.72</strong> ×, doubling time of <strong>13.86</strong> years, time to reach 10× the start of <strong>46.05</strong> years.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Starting population = 100 individuals, Growth rate = 0.05 per year and Time = 20 years gives &lt;strong&gt;Population after that time&lt;/strong&gt; = 272 individuals, &lt;strong&gt;Increase&lt;/strong&gt; = 2.72 ×, &lt;strong&gt;Doubling time&lt;/strong&gt; = 13.86 years and &lt;strong&gt;Time to reach 10× the start&lt;/strong&gt; = 46.05 years.</p><ul><li><strong>Population after that time</strong> = 272 individuals</li><li><strong>Increase</strong> = 2.72 ×</li><li><strong>Doubling time</strong> = 13.86 years</li><li><strong>Time to reach 10× the start</strong> = 46.05 years</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Population after that time</strong> = <code>Starting population × e^(Growth rate × Time)</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>A constant percentage growth rate means a constantly shrinking doubling time in absolute terms: at 5% a year the population doubles in 14 years, every time.</p></li><li><p>Compounding is why exponential curves look flat and then explode — the first doubling is invisible, the fifth is not.</p></li><li><p>Nothing grows exponentially forever; the value of the calculation is to show how quickly a limit approaches, not to predict the distant future.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Population after that time&lt;/strong&gt; = 272, &lt;strong&gt;Increase&lt;/strong&gt; = 2.72, &lt;strong&gt;Doubling time&lt;/strong&gt; = 13.86 and &lt;strong&gt;Time to reach 10× the start&lt;/strong&gt; = 46.05 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Population after that time takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Entering 5 for 5% instead of 0.05.</li><li>Mixing an annual rate with a monthly time step.</li><li>Averaging growth rates arithmetically across periods instead of exponentiating.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Population after that time</strong> = <code>Starting population × e^(Growth rate × Time)</code></li><li><strong>Increase</strong> = <code>e^(Growth rate × Time)</code></li><li><strong>Doubling time</strong> = <code>0.6931471805599453 ÷ Growth rate</code></li><li><strong>Time to reach 10× the start</strong> = <code>ln(10) ÷ Growth rate</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Population after that time, Increase and Doubling time can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/logistic-population-growth">Logistic growth</a>. <a href="/biology/maximum-sustainable-yield">Maximum sustainable yield</a>. <a href="/biology/bacterial-growth-curve">Bacterial growth curve</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Starting population, from 100 to 200 — and the answers go from &lt;strong&gt;Population after that time&lt;/strong&gt; 272 individuals, &lt;strong&gt;Increase&lt;/strong&gt; 2.72 ×, &lt;strong&gt;Doubling time&lt;/strong&gt; 13.86 years and &lt;strong&gt;Time to reach 10× the start&lt;/strong&gt; 46.05 years to &lt;strong&gt;Population after that time&lt;/strong&gt; 544 individuals, &lt;strong&gt;Increase&lt;/strong&gt; 2.72 ×, &lt;strong&gt;Doubling time&lt;/strong&gt; 13.86 years and &lt;strong&gt;Time to reach 10× the start&lt;/strong&gt; 46.05 years.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Population after that time, Increase and Doubling time are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Starting population and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Starting population, Growth rate and Time measured, Population after that time and Increase wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/dog-onion-toxicity">Dog onion toxicity</a>, <a href="/biology/dog-pregnancy">Dog pregnancy Calculator</a> and <a href="/biology/dog-quality-of-life">Dog quality of life</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I find the doubling time?', 'a' => 'Divide 70 by the percentage growth rate for a quick estimate, or use ln2 ÷ r for the exact value.'],
-            ['q' => 'What if r is negative?', 'a' => 'The population decays exponentially — the same formula, with a shrinking half-life instead of a doubling time.'],
-            ['q' => 'What does the Exponential Population Growth actually calculate?', 'a' => <<<'TXT'
-            It returns population after that time, increase, doubling time and time to reach 10× the start. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Exponential Population Growth calculator work out?', 'a' => <<<'TXT'
+            Population after that time, Increase, Doubling time and Time to reach 10× the start, from Starting population, Growth rate and Time. The relationship is Population after that time = Starting population × e^(Growth rate × Time).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Starting population (individuals), Growth rate (per year), Time (years). Enter n0, r and t; Population after that time is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Population after that time, Increase, Doubling time and Time to reach 10× the start can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Population after that time = 272 individuals, Increase = 2.72 ×, Doubling time = 13.86 years and Time to reach 10× the start = 46.05 years. Those are the defaults written into the form — move Starting population and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Population after that time is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Starting population blank and the page solves for it, reporting Population after that time instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Population after that time keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-onion-toxicity', 'name' => 'Dog onion toxicity'],
+            ['path' => '/biology/dog-pregnancy', 'name' => 'Dog pregnancy Calculator'],
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+        ],
+        'authors' => [],
     ],
 ];

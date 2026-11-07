@@ -11,7 +11,7 @@
 
 return [
     'name' => 'NDVI Calculator (Normalised Difference Vegetation Index)',
-    'meta' => ['title' => 'NDVI Calculator (Normalised Difference Vegetation', 'description' => 'NDVI compares near-infrared with red reflectance: healthy vegetation reflects strongly in the near-infrared and absorbs red. It returns NDVI, EVI…', 'h1' => 'NDVI Calculator (Normalised Difference Vegetation Index)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'NDVI Calculator (Normalised Difference Vegetation', 'description' => 'Enter Near-infrared reflectance and Red reflectance into NDVI Calculator (Normalised Difference Vegetation Index) and the answer comes back as NDVI and EVI…', 'h1' => 'NDVI Calculator (Normalised Difference Vegetation Index)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -80,46 +80,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        NDVI compares near-infrared with red reflectance: healthy vegetation reflects strongly in the near-infrared and absorbs red. It returns NDVI, EVI approximation, estimated fractional cover and surface class (0 water … 6 very dense), and the panel shows all of them at once.
-        
-        The result runs from −1 to +1 and is the most widely used satellite index of vegetation vigour.
+        Enter Near-infrared reflectance and Red reflectance into NDVI Calculator (Normalised Difference Vegetation Index) and the answer comes back as NDVI and EVI approximation. The arithmetic is the whole method: NDVI is worked out from Near-infrared reflectance by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the NDVI (Normalised Difference Vegetation Index)', 'html' => <<<'TXT'
-            <p>NDVI = (NIR − Red) ÷ (NIR + Red)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/ndvi-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: NDVI Calculator (Normalised Difference Vegetation Index) — Where the index falls between soil and dense canopy." title="NDVI Calculator (Normalised Difference Vegetation Index)"><figcaption>Where the index falls between soil and dense canopy.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>NIR</code></td><td>near-infrared reflectance</td><td>0–1</td></tr><tr><td><code>Red</code></td><td>red reflectance</td><td>0–1</td></tr><tr><td><code>NDVI</code></td><td>normalised difference vegetation index</td><td>−1 to 1</td></tr></tbody></table>
+            ['title' => 'How the NDVI Calculator (Normalised Difference Vegetation Index) calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind NDVI Calculator (Normalised Difference Vegetation Index): it takes 2 numbers and reports NDVI, EVI approximation and Estimated fractional cover.</p><p>Written with the labels from the form, NDVI = (Near-infrared reflectance − Red reflectance) ÷ (Near-infrared reflectance + Red reflectance).</p><p>The result panel carries NDVI, EVI approximation, Estimated fractional cover and Surface class (0 water … 6 very dense), each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the NDVI (Normalised Difference Vegetation Index)?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Near-infrared reflectance</strong> — a plain number, no unit. 0 to 1</li><li><strong>Red reflectance</strong> — a plain number, no unit. 0 to 1</li></ul><p>What you get back is NDVI, EVI approximation, Estimated fractional cover in %, Surface class (0 water … 6 very dense), shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: near-infrared reflectance of <strong>0.42</strong>, red reflectance of <strong>0.08</strong>.</p>
-            <p>Substituting them into the formula gives ndvi of <strong>0.68</strong>, evi approximation of <strong>0.4474</strong>, estimated fractional cover of <strong>79.34</strong>%, surface class (0 water … 6 very dense) of <strong>5</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Near-infrared reflectance = 0.42 and Red reflectance = 0.08; the answers are &lt;strong&gt;NDVI&lt;/strong&gt; = 0.68, &lt;strong&gt;EVI approximation&lt;/strong&gt; = 0.4474, &lt;strong&gt;Estimated fractional cover&lt;/strong&gt; = 79.34 % and &lt;strong&gt;Surface class (0 water … 6 very dense)&lt;/strong&gt; = 5.</p><ul><li><strong>NDVI</strong> = 0.68</li><li><strong>EVI approximation</strong> = 0.4474</li><li><strong>Estimated fractional cover</strong> = 79.34 %</li><li><strong>Surface class (0 water … 6 very dense)</strong> = 5</li></ul><p>The line behind those figures is <strong>NDVI</strong> = <code>(Near-infrared reflectance − Red reflectance) ÷ (Near-infrared reflectance + Red reflectance)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>−1 to 0 (class 0)</td><td><strong>Water, snow, cloud</strong></td><td>no vegetation signal</td></tr><tr><td>0 – 0.1 (class 1)</td><td><strong>Barren</strong></td><td>rock, sand, built-up</td></tr><tr><td>0.1 – 0.2 (class 2)</td><td><strong>Sparse</strong></td><td>bare soil with scattered plants</td></tr><tr><td>0.2 – 0.4 (class 3)</td><td><strong>Shrub and early crop</strong></td><td>dry grassland</td></tr><tr><td>0.4 – 0.6 (class 4)</td><td><strong>Moderate canopy</strong></td><td>growing crop</td></tr><tr><td>0.6 – 0.8 (class 5)</td><td><strong>Dense</strong></td><td>closed canopy at peak season</td></tr><tr><td>0.8 – 1 (class 6)</td><td><strong>Very dense</strong></td><td>rainforest or irrigated crop at full cover</td></tr></tbody></table>
-            <ul><li><p>NDVI saturates in dense canopies: above a leaf area index of about 3 it stops rising, which is why EVI was developed.</p></li><li><p>Atmospheric haze and thin cloud lower NDVI without changing the ground; compositing several dates reduces that.</p></li><li><p>Values are only comparable when computed from the same sensor and the same processing baseline — an NDVI from Landsat and one from Sentinel-2 need harmonising.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;NDVI&lt;/strong&gt; = 0.68, &lt;strong&gt;EVI approximation&lt;/strong&gt; = 0.4474, &lt;strong&gt;Estimated fractional cover&lt;/strong&gt; = 79.34 and &lt;strong&gt;Surface class (0 water … 6 very dense)&lt;/strong&gt; = 5. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as NDVI is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Mixing reflectance scaled 0–255 with reflectance scaled 0–1.</li><li>Comparing a growing-season maximum with an off-season image.</li><li>Reading NDVI as biomass in a saturated canopy.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>NDVI</strong> = <code>(Near-infrared reflectance − Red reflectance) ÷ (Near-infrared reflectance + Red reflectance)</code></li><li><strong>EVI approximation</strong> = <code>2.5 × (Near-infrared reflectance − Red reflectance) ÷ (Near-infrared reflectance + 6 × Red reflectance + 1)</code></li><li><strong>Estimated fractional cover</strong> = <code>(max(0,(Near-infrared reflectance − Red reflectance) ÷ (Near-infrared reflectance + Red reflectance)))^(0.6) × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of NDVI, EVI approximation and Estimated fractional cover can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Near-infrared reflectance, from 0.42 to 0.84 — and the answers go from &lt;strong&gt;NDVI&lt;/strong&gt; 0.68, &lt;strong&gt;EVI approximation&lt;/strong&gt; 0.4474, &lt;strong&gt;Estimated fractional cover&lt;/strong&gt; 79.34 % and &lt;strong&gt;Surface class (0 water … 6 very dense)&lt;/strong&gt; 5 to &lt;strong&gt;NDVI&lt;/strong&gt; 0.8261, &lt;strong&gt;EVI approximation&lt;/strong&gt; 0.819, &lt;strong&gt;Estimated fractional cover&lt;/strong&gt; 89.17 % and &lt;strong&gt;Surface class (0 water … 6 very dense)&lt;/strong&gt; 6.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> NDVI, EVI approximation and Estimated fractional cover are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Near-infrared reflectance to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Near-infrared reflectance and Red reflectance measured, NDVI and EVI approximation wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/tajimas-d">Tajima&#039;s D Calculator</a>, <a href="/biology/tff-membrane-area">TFF Membrane Area and Flux Calculator</a> and <a href="/biology/thousand-seed-weight">Thousand Seed Weight Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good NDVI?', 'a' => '0.6–0.8 for healthy dense crops; below 0.3 suggests bare soil or severe stress.'],
-            ['q' => 'Why is NDVI negative over water?', 'a' => 'Water absorbs near-infrared much more strongly than red, so NIR − Red goes negative.'],
-            ['q' => 'What does the NDVI (Normalised Difference Vegetation Index) actually calculate?', 'a' => <<<'TXT'
-            It returns NDVI, EVI approximation, estimated fractional cover and surface class (0 water … 6 very dense). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the NDVI Calculator (Normalised Difference Vegetation Index) calculator work out?', 'a' => <<<'TXT'
+            NDVI, EVI approximation, Estimated fractional cover and Surface class (0 water … 6 very dense), from Near-infrared reflectance and Red reflectance. The relationship is NDVI = (Near-infrared reflectance − Red reflectance) ÷ (Near-infrared reflectance + Red reflectance).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Near-infrared reflectance, Red reflectance. With nir and red in place, NDVI can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. NDVI, EVI approximation, Estimated fractional cover and Surface class (0 water … 6 very dense) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            NDVI = 0.68, EVI approximation = 0.4474, Estimated fractional cover = 79.34 % and Surface class (0 water … 6 very dense) = 5. Those are the defaults written into the form — move Near-infrared reflectance and every result box follows.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of NDVI is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Near-infrared reflectance left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. NDVI keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/tajimas-d', 'name' => 'Tajima\'s D Calculator'],
+            ['path' => '/biology/tff-membrane-area', 'name' => 'TFF Membrane Area and Flux Calculator'],
+            ['path' => '/biology/thousand-seed-weight', 'name' => 'Thousand Seed Weight Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

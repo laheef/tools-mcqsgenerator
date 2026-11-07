@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Net Reproductive Rate Calculator (R₀)',
-    'meta' => ['title' => 'Net Reproductive Rate Calculator (R₀) — Biology', 'description' => 'The net reproductive rate is the number of daughters a female leaves over her whole life, and it is the single number that says whether a population will grow.', 'h1' => 'Net Reproductive Rate Calculator (R₀)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Net Reproductive Rate Calculator (R₀) — Biology', 'description' => <<<'TXT'
+    Enter Probability a newborn reaches breeding age, Daughters per female per season and Breeding seasons per lifetime into Net Reproductive Rate Calculator (R₀)…
+    TXT, 'h1' => 'Net Reproductive Rate Calculator (R₀)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -96,46 +98,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The net reproductive rate is the number of daughters a female leaves over her whole life, and it is the single number that says whether a population will grow. It returns net reproductive rate, generation time, intrinsic rate of increase and doubling time, and the panel shows all of them at once.
-        
-        Enter age-specific survival and fertility and it returns R₀, generation time and the per-generation change.
+        Enter Probability a newborn reaches breeding age, Daughters per female per season and Breeding seasons per lifetime into Net Reproductive Rate Calculator (R₀) and the answer comes back as Net reproductive rate and Generation time. Nothing is looked up on this page: Net reproductive rate is computed from Probability a newborn reaches breeding age and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Net reproductive rate is opened in daughters; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Net Reproductive Rate (R₀)', 'html' => <<<'TXT'
-            <p>R₀ = Σ l(x)·m(x); r ≈ ln R₀ ÷ T; doubling time = ln 2 ÷ r</p>
-            <figure class="calc-figure"><img src="/uploads/biology/net-reproductive-rate.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Net Reproductive Rate Calculator (R₀) — Survival times fertility, summed over the lifetime." title="Net Reproductive Rate Calculator (R₀)"><figcaption>Survival times fertility, summed over the lifetime.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>l(x)</code></td><td>survival to age x</td><td>probability</td></tr><tr><td><code>m(x)</code></td><td>daughters produced at age x</td><td>daughters</td></tr><tr><td><code>R₀</code></td><td>net reproductive rate</td><td>daughters per female</td></tr><tr><td><code>T</code></td><td>generation time</td><td>years</td></tr></tbody></table>
+            ['title' => 'How the Net Reproductive Rate Calculator (R₀) calculator works', 'html' => <<<'TXT'
+            <p>Net Reproductive Rate Calculator (R₀) answers one question from 4 numbers, and the answer is Net reproductive rate, Generation time and Intrinsic rate of increase.</p><p>Written with the labels from the form, Net reproductive rate = Probability a newborn reaches breeding age × Daughters per female per season × Breeding seasons per lifetime.</p><p>The result panel carries Net reproductive rate, Generation time, Intrinsic rate of increase and Doubling time, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Net Reproductive Rate (R₀)?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Probability a newborn reaches breeding age</strong> — a plain number, no unit. 0–1</li><li><strong>Daughters per female per season</strong> — in daughters</li><li><strong>Breeding seasons per lifetime</strong> — a plain number, no unit</li><li><strong>Age at first reproduction</strong> — in years</li></ul><p>The result boxes are Net reproductive rate in daughters, Generation time in years, Intrinsic rate of increase in per year, Doubling time in years; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: probability a newborn reaches breeding age of <strong>0.6</strong>, daughters per female per season of <strong>3.2</strong> daughters, breeding seasons per lifetime of <strong>2</strong>, age at first reproduction of <strong>1</strong> years.</p>
-            <p>Substituting them into the formula gives net reproductive rate of <strong>3.84</strong> daughters, generation time of <strong>1.5</strong> years, intrinsic rate of increase of <strong>1.35</strong> per year, doubling time of <strong>0.5152</strong> years.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Probability a newborn reaches breeding age = 0.6, Daughters per female per season = 3.2 daughters, Breeding seasons per lifetime = 2 and Age at first reproduction = 1 years gives &lt;strong&gt;Net reproductive rate&lt;/strong&gt; = 3.84 daughters, &lt;strong&gt;Generation time&lt;/strong&gt; = 1.5 years, &lt;strong&gt;Intrinsic rate of increase&lt;/strong&gt; = 1.35 per year and &lt;strong&gt;Doubling time&lt;/strong&gt; = 0.5152 years.</p><ul><li><strong>Net reproductive rate</strong> = 3.84 daughters</li><li><strong>Generation time</strong> = 1.5 years</li><li><strong>Intrinsic rate of increase</strong> = 1.35 per year</li><li><strong>Doubling time</strong> = 0.5152 years</li></ul><p>That is <strong>Net reproductive rate</strong> = <code>Probability a newborn reaches breeding age × Daughters per female per season × Breeding seasons per lifetime</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>R₀ &lt; 1</td><td><strong>Declining</strong></td><td>each female is replaced by less than one daughter</td></tr><tr><td>R₀ = 1</td><td><strong>Stable</strong></td><td>exact replacement</td></tr><tr><td>1 &lt; R₀ &lt; 2</td><td><strong>Slow growth</strong></td><td>typical of long-lived vertebrates</td></tr><tr><td>R₀ &gt; 2</td><td><strong>Fast growth</strong></td><td>insects, weeds, invasive species</td></tr></tbody></table>
-            <ul><li><p>R₀ is a lifetime figure, so it compares across lifespans in a way that r does not; r is the per-year rate and is the one that goes into exponential growth models.</p></li><li><p>The approximation r ≈ ln R₀ / T is exact only in a stable age distribution. When the age structure is disturbed — after a drought or a cull — the realised rate differs for years.</p></li><li><p>A species with R₀ of 1.1 but a generation time of 15 years is effectively static on any management timescale.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Net reproductive rate&lt;/strong&gt; = 3.84, &lt;strong&gt;Generation time&lt;/strong&gt; = 1.5, &lt;strong&gt;Intrinsic rate of increase&lt;/strong&gt; = 1.35 and &lt;strong&gt;Doubling time&lt;/strong&gt; = 0.5152. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Net reproductive rate is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting offspring rather than daughters — sons do not add to R₀.</li><li>Using the mean age at reproduction when reproduction is spread over several seasons.</li><li>Treating R₀ as a projection: it is an average over the whole life, not next year's growth.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Net reproductive rate</strong> = <code>Probability a newborn reaches breeding age × Daughters per female per season × Breeding seasons per lifetime</code></li><li><strong>Generation time</strong> = <code>Age at first reproduction + (Breeding seasons per lifetime − 1) × Age at first reproduction ÷ 2</code></li><li><strong>Intrinsic rate of increase</strong> = <code>ln(max(0.000001,Probability a newborn reaches breeding age × Daughters per female per season × Breeding seasons per lifetime)) ÷ max(0.5,Age at first reproduction)</code></li><li><strong>Doubling time</strong> = <code>ln(2) ÷ (ln(max(0.000001,Probability a newborn reaches breeding age × Daughters per female per season × Breeding seasons per lifetime)) ÷ max(0.5,Age at first reproduction))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Net reproductive rate, Generation time and Intrinsic rate of increase can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Probability a newborn reaches breeding age, from 0.6 to 1.2 — and the answers go from &lt;strong&gt;Net reproductive rate&lt;/strong&gt; 3.84 daughters, &lt;strong&gt;Generation time&lt;/strong&gt; 1.5 years, &lt;strong&gt;Intrinsic rate of increase&lt;/strong&gt; 1.35 per year and &lt;strong&gt;Doubling time&lt;/strong&gt; 0.5152 years to &lt;strong&gt;Net reproductive rate&lt;/strong&gt; 7.68 daughters, &lt;strong&gt;Generation time&lt;/strong&gt; 1.5 years, &lt;strong&gt;Intrinsic rate of increase&lt;/strong&gt; 2.04 per year and &lt;strong&gt;Doubling time&lt;/strong&gt; 0.34 years.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Net reproductive rate, Generation time and Intrinsic rate of increase are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Probability a newborn reaches breeding age to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Probability a newborn reaches breeding age, Daughters per female per season and Breeding seasons per lifetime and the number you are missing is Net reproductive rate and Generation time.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/acid-base-balance">Acid–Base Balance (ABG) Calculator</a>, <a href="/biology/acres-per-hour">Acres per hour Calculator</a> and <a href="/biology/specimen-size-from-image">Actual Specimen Size from Image Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does R₀ = 1 mean?', 'a' => 'The population replaces itself exactly; every female is replaced by one daughter on average.'],
-            ['q' => 'How is R₀ different from the intrinsic rate r?', 'a' => 'R₀ is per generation and ignores timing; r is per unit time and includes it. A fast-breeding species can have the same R₀ as a slow one but a much larger r.'],
-            ['q' => 'What does the Net Reproductive Rate (R₀) actually calculate?', 'a' => <<<'TXT'
-            It returns net reproductive rate, generation time, intrinsic rate of increase and doubling time. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Net Reproductive Rate Calculator (R₀) calculator work out?', 'a' => <<<'TXT'
+            Net reproductive rate, Generation time, Intrinsic rate of increase and Doubling time, from Probability a newborn reaches breeding age, Daughters per female per season and Breeding seasons per lifetime. The relationship is Net reproductive rate = Probability a newborn reaches breeding age × Daughters per female per season × Breeding seasons per lifetime.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Probability a newborn reaches breeding age, Daughters per female per season (daughters), Breeding seasons per lifetime, Age at first reproduction (years). Fill survival, fecundity and seasons and leave Net reproductive rate empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Net reproductive rate, Generation time, Intrinsic rate of increase and Doubling time can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Net reproductive rate = 3.84 daughters, Generation time = 1.5 years, Intrinsic rate of increase = 1.35 per year and Doubling time = 0.5152 years. The figures come from Probability a newborn reaches breeding age as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Net reproductive rate is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave Probability a newborn reaches breeding age blank and the page solves for it, reporting Net reproductive rate instead of the usual answer.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Net reproductive rate keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/acid-base-balance', 'name' => 'Acid–Base Balance (ABG) Calculator'],
+            ['path' => '/biology/acres-per-hour', 'name' => 'Acres per hour Calculator'],
+            ['path' => '/biology/specimen-size-from-image', 'name' => 'Actual Specimen Size from Image Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

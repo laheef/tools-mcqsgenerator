@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog crate size',
-    'meta' => ['title' => 'Dog crate size Calculator — Formula & Results', 'description' => 'Give the Dog crate size calculator the height, the minimal crate height and the minimal crate length and it returns <strong>length</strong>.', 'h1' => 'Dog crate size Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog crate size Calculator — Formula & Results', 'description' => 'Dog crate size turns Extra length and Minimal crate length into Height and Length. To get the crate dimensions you need to add 2-4 inches to your dog&#039;s…', 'h1' => 'Dog crate size Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'addition' => [
@@ -204,67 +204,44 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'Give the Dog crate size calculator the height, the minimal crate height and the minimal crate length and it returns <strong>length</strong>.',
+        'intro' => <<<'TXT'
+        Dog crate size turns Extra length and Minimal crate length into Height and Length. It is a single relationship that reads Height out of Extra length, not a table of canned results keyed by them. Units for Height default to centimeters and can be changed on the answer itself.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Dog crate size calculator work?', 'html' => <<<'TXT'
-            <p>The Dog crate size calculator takes the values in the form, applies the relationship described below and reports <strong>length</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the height, the minimal crate height and the minimal crate length.</p>
+            ['title' => 'How the Dog crate size calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Dog crate size: it takes 2 numbers and reports Height, Length and Minimal crate height.</p><p>The relationship it solves reads Length = − Extra length + Minimal crate length.</p><p>What comes back is Height, Length and Minimal crate height — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Extra length</strong> — a plain number, no unit. To get the crate dimensions you need to add 2-4 inches to your dog&#039;s length and height.&amp;nbsp;</li><li><strong>Minimal crate length</strong> — in centimeters</li></ul><p>The answers come back as Height in centimeters, Length in centimeters, Minimal crate height in centimeters. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Extra length</strong></td><td>One of 3 options, such as 2 in/5.1 cm (small dog), 3 in/7.6 cm (medium dog) and 4 in/10.2 cm (big dog).</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Minimal crate height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Minimal crate length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Height offers 31 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Dog crate size calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Length</span><span class="formula-eq">=</span><span class="formula-rhs">-extra length + minimal crate length</span></div><div class="formula-row"><span class="formula-lhs">Extra length</span><span class="formula-eq">=</span><span class="formula-rhs">minimal crate height − height</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Length</strong> = <code>− Extra length + Minimal crate length</code></li><li><strong>Minimal crate length</strong> = <code>Extra length + Length</code></li><li><strong>Extra length</strong> = <code>Minimal crate length − Length</code></li><li><strong>Minimal crate height</strong> = <code>Extra length + Height</code></li><li><strong>Height</strong> = <code>− Extra length + Minimal crate height</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Length, Minimal crate length and Extra length can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>The option the calculation settles on.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Minimal crate length is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Height, Length and Minimal crate height are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Extra length is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog crate size calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 3 figures keep coming back — the height, the minimal crate height and the minimal crate length — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Dog crate size calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-food">Dog food</a>, <a href="/biology/dog-harness-size">Dog harness size</a> and <a href="/biology/dog-heat-cycle">Dog heat cycle</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Extra length and Minimal crate length measured, Height and Length wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/hamster-age">Hamster age Calculator</a>, <a href="/biology/hardy-weinberg-equilibrium">Hardy-Weinberg equilibrium Calculator</a> and <a href="/biology/hardy-weinberg-dominant-allele">Hardy–Weinberg from the Dominant Allele Frequency Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Dog crate size calculator work out?', 'a' => <<<'TXT'
-            It returns length, derived from the height, the minimal crate height and the minimal crate length. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Dog crate size calculator work out?', 'a' => 'Height, Length and Minimal crate height, from Minimal crate length and Extra length. The relationship is Length = − Extra length + Minimal crate length.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Extra length, Minimal crate length (centimeters). Fill addition and final_length and leave Height empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Length, Minimal crate length, Extra length and Minimal crate height can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'What do I need to enter to use the Dog crate size calculator?', 'a' => <<<'TXT'
-            The form asks for the height, the minimal crate height and the minimal crate length, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter height in a different unit?', 'a' => <<<'TXT'
-            Yes. Height opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Dog crate size calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Height is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Extra length blank and the page solves for it, reporting Height instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Height keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-food', 'name' => 'Dog food'],
-            ['path' => '/biology/dog-harness-size', 'name' => 'Dog harness size'],
-            ['path' => '/biology/dog-heat-cycle', 'name' => 'Dog heat cycle'],
+            ['path' => '/biology/hamster-age', 'name' => 'Hamster age Calculator'],
+            ['path' => '/biology/hardy-weinberg-equilibrium', 'name' => 'Hardy-Weinberg equilibrium Calculator'],
+            ['path' => '/biology/hardy-weinberg-dominant-allele', 'name' => 'Hardy–Weinberg from the Dominant Allele Frequency Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Sludge Volume Index Calculator (SVI)',
-    'meta' => ['title' => 'Sludge Volume Index Calculator (SVI) — Biology', 'description' => <<<'TXT'
-    Sludge volume index is the volume one gram of sludge occupies after thirty minutes of settling, and it is the fastest signal that an activated-sludge plant is…
-    TXT, 'h1' => 'Sludge Volume Index Calculator (SVI)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Sludge Volume Index Calculator (SVI) — Biology', 'description' => 'Sludge Volume Index Calculator (SVI) takes Settled sludge volume after 30 min, MLSS and Influent flow and returns Sludge volume index and Sludge density index.', 'h1' => 'Sludge Volume Index Calculator (SVI)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -99,46 +97,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Sludge volume index is the volume one gram of sludge occupies after thirty minutes of settling, and it is the fastest signal that an activated-sludge plant is about to bulk. It returns sludge volume index, sludge density index, return sludge ratio and return sludge flow, and the panel shows all of them at once.
-        
-        This calculator returns SVI, the sludge density index and the return-sludge ratio the clarifier needs.
+        Sludge Volume Index Calculator (SVI) takes Settled sludge volume after 30 min, MLSS and Influent flow and returns Sludge volume index and Sludge density index. There is no hidden constant here: change Sludge volume index and Settled sludge volume after 30 min moves with it. The main result, Sludge volume index, is reported in mL/g.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Sludge Volume Index (SVI)', 'html' => <<<'TXT'
-            <p>SVI = settled volume (mL/L) × 1 000 ÷ MLSS (mg/L); RAS ratio = MLSS ÷ (RAS MLSS − MLSS)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/svi-sludge-volume-index.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Sludge Volume Index Calculator (SVI) — Settling quality on one dial from dense to bulking." title="Sludge Volume Index Calculator (SVI)"><figcaption>Settling quality on one dial from dense to bulking.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>SV₃₀</code></td><td>settled sludge volume in 30 minutes</td><td>mL/L</td></tr><tr><td><code>MLSS</code></td><td>mixed liquor suspended solids</td><td>mg/L</td></tr><tr><td><code>SVI</code></td><td>sludge volume index</td><td>mL/g</td></tr></tbody></table>
+            ['title' => 'How the Sludge Volume Index Calculator (SVI) calculator works', 'html' => <<<'TXT'
+            <p>The Sludge Volume Index Calculator (SVI) calculator applies one relationship to 4 numbers and reports Sludge volume index, Sludge density index and Return sludge ratio.</p><p>Written with the labels from the form, Sludge volume index = Settled sludge volume after 30 min ÷ MLSS × 1000.</p><p>What comes back is Sludge volume index, Sludge density index, Return sludge ratio and Return sludge flow — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Sludge Volume Index (SVI)?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Settled sludge volume after 30 min</strong> — in mL/L. Read from the cone</li><li><strong>MLSS</strong> — in mg/L</li><li><strong>Influent flow</strong> — in m³/day</li><li><strong>Return sludge MLSS</strong> — in mg/L</li></ul><p>The answers come back as Sludge volume index in mL/g, Sludge density index, Return sludge ratio in %, Return sludge flow in m³/day. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: settled sludge volume after 30 min of <strong>280</strong> mL/L, mlss of <strong>3,000</strong> mg/L, influent flow of <strong>500</strong> m³/day, return sludge mlss of <strong>8,000</strong> mg/L.</p>
-            <p>Substituting them into the formula gives sludge volume index of <strong>93.33</strong> mL/g, sludge density index of <strong>1.07</strong>, return sludge ratio of <strong>60</strong>%, return sludge flow of <strong>300</strong> m³/day.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Settled sludge volume after 30 min = 280 mL/L, MLSS = 3000 mg/L, Influent flow = 500 m³/day and Return sludge MLSS = 8000 mg/L gives &lt;strong&gt;Sludge volume index&lt;/strong&gt; = 93.33 mL/g, &lt;strong&gt;Sludge density index&lt;/strong&gt; = 1.07, &lt;strong&gt;Return sludge ratio&lt;/strong&gt; = 60 % and &lt;strong&gt;Return sludge flow&lt;/strong&gt; = 300 m³/day.</p><ul><li><strong>Sludge volume index</strong> = 93.33 mL/g</li><li><strong>Sludge density index</strong> = 1.07</li><li><strong>Return sludge ratio</strong> = 60 %</li><li><strong>Return sludge flow</strong> = 300 m³/day</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Sludge volume index</strong> = <code>Settled sludge volume after 30 min ÷ MLSS × 1000</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 80</td><td><strong>Dense, well settling</strong></td><td>excellent sludge; check for pin floc</td></tr><tr><td>80 – 150</td><td><strong>Normal</strong></td><td>typical healthy activated sludge</td></tr><tr><td>150 – 250</td><td><strong>Poor settling</strong></td><td>investigate loading, aeration and nutrients</td></tr><tr><td>above 250</td><td><strong>Bulking</strong></td><td>filamentous outbreak; the clarifier will lose solids</td></tr></tbody></table>
-            <ul><li><p>SVI is a ratio, so it rises both when sludge settles badly and when the MLSS reading is too low — always check the MLSS measurement before blaming filaments.</p></li><li><p>Sludge density index is simply 100 ÷ SVI, a measure of how many grams one litre of settled sludge contains.</p></li><li><p>The return-sludge ratio follows from a mass balance on the clarifier: solids leaving in the return must equal solids arriving from the aeration tank.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Sludge volume index&lt;/strong&gt; = 93.33, &lt;strong&gt;Sludge density index&lt;/strong&gt; = 1.07, &lt;strong&gt;Return sludge ratio&lt;/strong&gt; = 60 and &lt;strong&gt;Return sludge flow&lt;/strong&gt; = 300 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Sludge volume index takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Reading the settled volume from a stirred or disturbed cylinder.</li><li>Measuring MLSS from a sample taken at the wrong point in the tank.</li><li>Raising the return rate to fight bulking without checking whether the clarifier can take the hydraulic load.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Sludge volume index</strong> = <code>Settled sludge volume after 30 min ÷ MLSS × 1000</code></li><li><strong>Sludge density index</strong> = <code>100 ÷ (Settled sludge volume after 30 min ÷ MLSS × 1000)</code></li><li><strong>Return sludge ratio</strong> = <code>MLSS ÷ (Return sludge MLSS − MLSS) × 100</code></li><li><strong>Return sludge flow</strong> = <code>Influent flow × MLSS ÷ (Return sludge MLSS − MLSS)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Sludge volume index, Sludge density index and Return sludge ratio can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Settled sludge volume after 30 min from 280 to 560, leaving every other box alone. The panel moves from &lt;strong&gt;Sludge volume index&lt;/strong&gt; 93.33 mL/g, &lt;strong&gt;Sludge density index&lt;/strong&gt; 1.07, &lt;strong&gt;Return sludge ratio&lt;/strong&gt; 60 % and &lt;strong&gt;Return sludge flow&lt;/strong&gt; 300 m³/day to &lt;strong&gt;Sludge volume index&lt;/strong&gt; 187 mL/g, &lt;strong&gt;Sludge density index&lt;/strong&gt; 0.5357, &lt;strong&gt;Return sludge ratio&lt;/strong&gt; 60 % and &lt;strong&gt;Return sludge flow&lt;/strong&gt; 300 m³/day.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Sludge volume index, Sludge density index and Return sludge ratio are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Settled sludge volume after 30 min is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Settled sludge volume after 30 min, MLSS and Influent flow and the number you are missing is Sludge volume index and Sludge density index.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/bulb-spacing">Bulb spacing</a>, <a href="/biology/cat-age">Cat age</a> and <a href="/biology/cat-benadryl-dosage">Cat Benadryl dosage Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a normal SVI?', 'a' => 'About 100–150 mL/g for conventional activated sludge; below 80 suits membrane and oxidation-ditch plants.'],
-            ['q' => 'What causes a high SVI?', 'a' => 'Filamentous bacteria, low dissolved oxygen, nutrient deficiency (often phosphorus) or a sudden organic load.'],
-            ['q' => 'What does the Sludge Volume Index (SVI) actually calculate?', 'a' => <<<'TXT'
-            It returns sludge volume index, sludge density index, return sludge ratio and return sludge flow. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Sludge Volume Index Calculator (SVI) calculator work out?', 'a' => <<<'TXT'
+            Sludge volume index, Sludge density index, Return sludge ratio and Return sludge flow, from Settled sludge volume after 30 min and MLSS. The relationship is Sludge volume index = Settled sludge volume after 30 min ÷ MLSS × 1000.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Settled sludge volume after 30 min (mL/L), MLSS (mg/L), Influent flow (m³/day), Return sludge MLSS (mg/L). Fill settled, mlss and flow and leave Sludge volume index empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Sludge volume index, Sludge density index, Return sludge ratio and Return sludge flow can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Sludge volume index = 93.33 mL/g, Sludge density index = 1.07, Return sludge ratio = 60 % and Return sludge flow = 300 m³/day. That comes from the page's own defaults, entered in Settled sludge volume after 30 min; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Sludge volume index is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Settled sludge volume after 30 min left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Sludge volume index at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/bulb-spacing', 'name' => 'Bulb spacing'],
+            ['path' => '/biology/cat-age', 'name' => 'Cat age'],
+            ['path' => '/biology/cat-benadryl-dosage', 'name' => 'Cat Benadryl dosage Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

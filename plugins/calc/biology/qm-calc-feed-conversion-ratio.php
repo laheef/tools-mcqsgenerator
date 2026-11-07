@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Feed Conversion Ratio Calculator',
-    'meta' => ['title' => 'Feed Conversion Ratio Calculator — Formula & Results', 'description' => 'Feed conversion ratio is the kilograms of feed it takes to add one kilogram of gain. It returns total liveweight gain, feed conversion ratio, feed efficiency…', 'h1' => 'Feed Conversion Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Feed Conversion Ratio Calculator — Formula & Results', 'description' => 'Feed Conversion Ratio works out Feed conversion ratio and Feed efficiency (gain per kg feed) from Feed offered, Starting weight and Finishing weight.', 'h1' => 'Feed Conversion Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -138,50 +138,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Feed conversion ratio is the kilograms of feed it takes to add one kilogram of gain. It returns total liveweight gain, feed conversion ratio, feed efficiency (gain per kg feed) and feed cost per kg of gain, and the panel shows all of them at once.
-        
-        This calculator returns FCR, its inverse (feed efficiency), the feed cost per kilogram of gain and the improvement from a target FCR.
+        Feed Conversion Ratio works out Feed conversion ratio and Feed efficiency (gain per kg feed) from Feed offered, Starting weight and Finishing weight. Nothing is looked up on this page: Feed conversion ratio is computed from Feed offered and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Feed conversion ratio is opened in kg/kg; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Feed Conversion Ratio', 'html' => <<<'TXT'
-            <p>FCR = feed consumed ÷ liveweight gain; feed efficiency = gain ÷ feed = 1 ÷ FCR</p>
-            <figure class="calc-figure"><img src="/uploads/biology/feed-conversion-ratio.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Feed Conversion Ratio Calculator — Feed in, gain out: the ratio is the whole story of feed cost." title="Feed Conversion Ratio Calculator"><figcaption>Feed in, gain out: the ratio is the whole story of feed cost.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>feed</code></td><td>dry or as-fed feed consumed</td><td>kg</td></tr><tr><td><code>gain</code></td><td>weight gained over the same period</td><td>kg</td></tr><tr><td><code>FCR</code></td><td>feed conversion ratio</td><td>kg/kg</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Feed conversion ratio is the standard performance measure in livestock recording schemes; values quoted here follow typical commercial breed benchmarks.</p>
+            ['title' => 'How the Feed Conversion Ratio calculator works', 'html' => <<<'TXT'
+            <p>Feed Conversion Ratio answers one question from 6 numbers, and the answer is Feed conversion ratio, Feed efficiency (gain per kg feed) and Total liveweight gain.</p><p>The relationship it solves reads Total liveweight gain = max(0,Finishing weight − Starting weight).</p><p>The result panel carries Feed conversion ratio, Feed efficiency (gain per kg feed), Total liveweight gain and Feed cost per kg of gain, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Feed Conversion Ratio?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 6 boxes and the page has everything it needs.</p><ul><li><strong>Feed offered</strong> — in kg. Total over the period</li><li><strong>Starting weight</strong> — in kg</li><li><strong>Finishing weight</strong> — in kg</li><li><strong>Animals lost</strong> — in head. Their feed was still consumed</li><li><strong>Feed price</strong> — in per kg</li><li><strong>Target FCR</strong> — a plain number, no unit. What a good herd achieves</li></ul><p>What you get back is Feed conversion ratio in kg/kg, Feed efficiency (gain per kg feed) in kg/kg, Total liveweight gain in kg, Feed cost per kg of gain in per kg, Feed per surviving animal in kg, Feed the target FCR would need in kg, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: feed offered of <strong>1,200</strong> kg, starting weight of <strong>30</strong> kg, finishing weight of <strong>105</strong> kg, animals lost of <strong>0</strong> head, feed price of <strong>0.42</strong> per kg, target fcr of <strong>2.6</strong>.</p>
-            <p>Substituting them into the formula gives total liveweight gain of <strong>75</strong> kg, feed conversion ratio of <strong>16</strong> kg/kg, feed efficiency (gain per kg feed) of <strong>0.0625</strong> kg/kg, feed cost per kg of gain of <strong>6.72</strong> per kg, feed per surviving animal of <strong>1,200</strong> kg, feed the target fcr would need of <strong>195</strong> kg.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Feed offered = 1200 kg, Starting weight = 30 kg, Finishing weight = 105 kg, Animals lost = 6 head, Feed price = 0.42 per kg and Target FCR = 2.6 gives &lt;strong&gt;Total liveweight gain&lt;/strong&gt; = 75 kg, &lt;strong&gt;Feed conversion ratio&lt;/strong&gt; = 16 kg/kg, &lt;strong&gt;Feed efficiency (gain per kg feed)&lt;/strong&gt; = 0.0625 kg/kg, &lt;strong&gt;Feed cost per kg of gain&lt;/strong&gt; = 6.72 per kg, &lt;strong&gt;Feed per surviving animal&lt;/strong&gt; = 1277 kg and &lt;strong&gt;Feed the target FCR would need&lt;/strong&gt; = 195 kg.</p><ul><li><strong>Total liveweight gain</strong> = 75 kg</li><li><strong>Feed conversion ratio</strong> = 16 kg/kg</li><li><strong>Feed efficiency (gain per kg feed)</strong> = 0.0625 kg/kg</li><li><strong>Feed cost per kg of gain</strong> = 6.72 per kg</li><li><strong>Feed per surviving animal</strong> = 1277 kg</li><li><strong>Feed the target FCR would need</strong> = 195 kg</li></ul><p>The line behind those figures is <strong>Total liveweight gain</strong> = <code>max(0,Finishing weight − Starting weight)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 1.8</td><td><strong>Excellent</strong></td><td>modern broilers and well-run pig units</td></tr><tr><td>1.8 – 2.5</td><td><strong>Good</strong></td><td>typical efficient pig finishing</td></tr><tr><td>2.5 – 4.0</td><td><strong>Average</strong></td><td>beef feedlot, older genetics</td></tr><tr><td>above 4.0</td><td><strong>Poor</strong></td><td>check feed wastage, health and weighing accuracy</td></tr></tbody></table>
-            <ul><li><p>Always compare FCR over the same weight range. A pig from 30 to 105 kg converts far better than the same pig from 8 to 30 kg, because maintenance is spread over more gain.</p></li><li><p>Feed efficiency is the same information upside down: an FCR of 2.5 is an efficiency of 0.40 kg of gain per kg of feed.</p></li><li><p>Deaths do not change FCR as calculated on surviving animals unless you divide by the weight gain of the animals actually placed, which is what makes the figure honest.</p></li><li><p>Report whether the feed weight is as-fed or dry matter. Silage at 35% dry matter looks like a wonderful FCR until you realise most of the weight was water.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Total liveweight gain&lt;/strong&gt; = 75, &lt;strong&gt;Feed conversion ratio&lt;/strong&gt; = 16, &lt;strong&gt;Feed efficiency (gain per kg feed)&lt;/strong&gt; = 0.0625, &lt;strong&gt;Feed cost per kg of gain&lt;/strong&gt; = 6.72, &lt;strong&gt;Feed per surviving animal&lt;/strong&gt; = 1277 and &lt;strong&gt;Feed the target FCR would need&lt;/strong&gt; = 195. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Feed conversion ratio is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Recording feed delivered to the bunk instead of feed consumed — spillage and refusals inflate the number.</li><li>Weighing animals once, at the end, after a different interval for each pen.</li><li>Comparing FCR across species: poultry, pigs and cattle live on completely different scales.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Total liveweight gain</strong> = <code>max(0,Finishing weight − Starting weight)</code></li><li><strong>Feed conversion ratio</strong> = <code>Feed offered ÷ max(0.0001,Finishing weight − Starting weight)</code></li><li><strong>Feed efficiency (gain per kg feed)</strong> = <code>max(0,Finishing weight − Starting weight) ÷ max(0.0001,Feed offered)</code></li><li><strong>Feed cost per kg of gain</strong> = <code>Feed price × Feed offered ÷ max(0.0001,Finishing weight − Starting weight)</code></li><li><strong>Feed per surviving animal</strong> = <code>Feed offered ÷ max(1,100 − Animals lost) × 100</code></li><li><strong>Feed the target FCR would need</strong> = <code>max(0,Finishing weight − Starting weight) × Target FCR</code></li></ul><p>Any one of Total liveweight gain, Feed conversion ratio and Feed efficiency (gain per kg feed) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/dry-matter-intake">Dry matter intake</a>. <a href="/biology/pig-weight">Pig weight from measurements</a>. <a href="/biology/chicken-feed-amount">Chicken feed amount</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Feed offered, from 1200 to 2400 — and the answers go from &lt;strong&gt;Total liveweight gain&lt;/strong&gt; 75 kg, &lt;strong&gt;Feed conversion ratio&lt;/strong&gt; 16 kg/kg, &lt;strong&gt;Feed efficiency (gain per kg feed)&lt;/strong&gt; 0.0625 kg/kg, &lt;strong&gt;Feed cost per kg of gain&lt;/strong&gt; 6.72 per kg, &lt;strong&gt;Feed per surviving animal&lt;/strong&gt; 1277 kg and &lt;strong&gt;Feed the target FCR would need&lt;/strong&gt; 195 kg to &lt;strong&gt;Total liveweight gain&lt;/strong&gt; 75 kg, &lt;strong&gt;Feed conversion ratio&lt;/strong&gt; 32 kg/kg, &lt;strong&gt;Feed efficiency (gain per kg feed)&lt;/strong&gt; 0.0313 kg/kg, &lt;strong&gt;Feed cost per kg of gain&lt;/strong&gt; 13.44 per kg, &lt;strong&gt;Feed per surviving animal&lt;/strong&gt; 2553 kg and &lt;strong&gt;Feed the target FCR would need&lt;/strong&gt; 195 kg.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Feed conversion ratio, Feed efficiency (gain per kg feed) and Total liveweight gain are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Feed offered and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Feed offered, Starting weight and Finishing weight and the number you are missing is Feed conversion ratio and Feed efficiency (gain per kg feed).</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/crop-coefficient">Crop Coefficient Calculator</a>, <a href="/biology/crop-water-requirement">Crop Water Requirement (ETc) Calculator</a> and <a href="/biology/crop-water-stress-index">Crop Water Stress Index Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good feed conversion ratio for broilers?', 'a' => 'Around 1.5–1.7 kg of feed per kg of liveweight for modern broiler strains over a 42-day cycle.'],
-            ['q' => 'Why does my FCR get worse as animals get heavier?', 'a' => 'Maintenance requirements scale with body weight while gain does not, so the marginal cost of each extra kilogram rises.'],
-            ['q' => 'Does adding water to feed change FCR?', 'a' => 'It changes as-fed FCR but not dry-matter FCR, which is why dry-matter figures are the only ones that compare across farms.'],
-            ['q' => 'What does the Feed Conversion Ratio actually calculate?', 'a' => <<<'TXT'
-            It returns total liveweight gain, feed conversion ratio, feed efficiency (gain per kg feed) and feed cost per kg of gain. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Feed Conversion Ratio calculator work out?', 'a' => <<<'TXT'
+            Feed conversion ratio, Feed efficiency (gain per kg feed), Total liveweight gain and Feed cost per kg of gain, from Finishing weight and Starting weight. The relationship is Total liveweight gain = max(0,Finishing weight − Starting weight).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Feed offered (kg), Starting weight (kg), Finishing weight (kg), Animals lost (head), Feed price (per kg). Fill feed, start and end and leave Feed conversion ratio empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Total liveweight gain, Feed conversion ratio, Feed efficiency (gain per kg feed) and Feed cost per kg of gain blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Total liveweight gain = 75 kg, Feed conversion ratio = 16 kg/kg, Feed efficiency (gain per kg feed) = 0.0625 kg/kg, Feed cost per kg of gain = 6.72 per kg, Feed per surviving animal = 1277 kg and Feed the target FCR would need = 195 kg. That comes from the page's own defaults, entered in Feed offered; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Feed conversion ratio is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Feed offered left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Feed conversion ratio keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/crop-coefficient', 'name' => 'Crop Coefficient Calculator'],
+            ['path' => '/biology/crop-water-requirement', 'name' => 'Crop Water Requirement (ETc) Calculator'],
+            ['path' => '/biology/crop-water-stress-index', 'name' => 'Crop Water Stress Index Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

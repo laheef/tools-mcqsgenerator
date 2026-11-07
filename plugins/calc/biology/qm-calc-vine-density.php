@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Vine Density Calculator',
-    'meta' => ['title' => 'Vine Density Calculator — Formula & Results', 'description' => <<<'TXT'
-    Vine density — vines per hectare — is set by row spacing and vine spacing, and it drives competition, fruit exposure and yield per vine. It returns vines per…
-    TXT, 'h1' => 'Vine Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Vine Density Calculator — Formula & Results', 'description' => 'Vine Density turns Row spacing, Vine spacing and Target yield into Vines per hectare and Vines per 100 m of row. It is a single relationship that reads Vines…', 'h1' => 'Vine Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -98,50 +96,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Vine density — vines per hectare — is set by row spacing and vine spacing, and it drives competition, fruit exposure and yield per vine. It returns vines per hectare, vines per 100 m of row, yield per vine and grams per bunch, and the panel shows all of them at once.
-        
-        This calculator gives density, vines per row, and the yield per vine that a target tonnes-per-hectare implies.
+        Vine Density turns Row spacing, Vine spacing and Target yield into Vines per hectare and Vines per 100 m of row. It is a single relationship that reads Vines per hectare out of Row spacing, not a table of canned results keyed by them. Units for Vines per hectare default to vines/ha and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Vine Density', 'html' => <<<'TXT'
-            <p>Vines/ha = 10 000 ÷ (row spacing × vine spacing); kg per vine = yield ÷ density</p>
-            <figure class="calc-figure"><img src="/uploads/biology/vine-density.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Vine Density Calculator — Row and vine spacing in a vineyard block." title="Vine Density Calculator"><figcaption>Row and vine spacing in a vineyard block.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>row spacing</code></td><td>distance between rows</td><td>m</td></tr><tr><td><code>vine spacing</code></td><td>distance between vines in the row</td><td>m</td></tr><tr><td><code>density</code></td><td>vines per hectare</td><td>vines/ha</td></tr></tbody></table>
+            ['title' => 'How the Vine Density calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Vine Density: it takes 4 numbers and reports Vines per hectare, Vines per 100 m of row and Yield per vine.</p><p>The relationship it solves reads Vines per hectare = 10000 ÷ (Row spacing × Vine spacing).</p><p>The result panel carries Vines per hectare, Vines per 100 m of row, Yield per vine and Grams per bunch, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Vine Density?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Row spacing</strong> — in m</li><li><strong>Vine spacing</strong> — in m</li><li><strong>Target yield</strong> — in t/ha</li><li><strong>Bunches per vine</strong> — a plain number, no unit</li></ul><p>The result boxes are Vines per hectare in vines/ha, Vines per 100 m of row in vines, Yield per vine in kg, Grams per bunch in g; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: row spacing of <strong>2.5</strong> m, vine spacing of <strong>1.2</strong> m, target yield of <strong>8</strong> t/ha, bunches per vine of <strong>24</strong>.</p>
-            <p>Substituting them into the formula gives vines per hectare of <strong>3,333.33</strong> vines/ha, vines per 100 m of row of <strong>83.33</strong> vines, yield per vine of <strong>2.4</strong> kg, grams per bunch of <strong>100</strong> g.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Row spacing = 2.5 m, Vine spacing = 1.2 m, Target yield = 8 t/ha and Bunches per vine = 24 gives &lt;strong&gt;Vines per hectare&lt;/strong&gt; = 3333 vines/ha, &lt;strong&gt;Vines per 100 m of row&lt;/strong&gt; = 83.33 vines, &lt;strong&gt;Yield per vine&lt;/strong&gt; = 2.4 kg and &lt;strong&gt;Grams per bunch&lt;/strong&gt; = 100 g.</p><ul><li><strong>Vines per hectare</strong> = 3333 vines/ha</li><li><strong>Vines per 100 m of row</strong> = 83.33 vines</li><li><strong>Yield per vine</strong> = 2.4 kg</li><li><strong>Grams per bunch</strong> = 100 g</li></ul><p>The line behind those figures is <strong>Vines per hectare</strong> = <code>10000 ÷ (Row spacing × Vine spacing)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 3 000</td><td><strong>Low density</strong></td><td>bush vines, old-vine plots, dry-grown</td></tr><tr><td>3 000 – 6 000</td><td><strong>Typical</strong></td><td>most modern trellised vineyards</td></tr><tr><td>above 7 000</td><td><strong>High density</strong></td><td>cool-climate quality plantings</td></tr></tbody></table>
-            <ul><li><p>Doubling density roughly halves the yield per vine for the same tonnes per hectare, which changes fruit composition as much as it changes tonnage.</p></li><li><p>Row spacing also has to fit the tractor: 2.0–2.5 m is common because machinery sets a floor.</p></li><li><p>Bunch weight is the least stable variable in the chain — it moves by 30% between seasons.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Vines per hectare&lt;/strong&gt; = 3333, &lt;strong&gt;Vines per 100 m of row&lt;/strong&gt; = 83.33, &lt;strong&gt;Yield per vine&lt;/strong&gt; = 2.4 and &lt;strong&gt;Grams per bunch&lt;/strong&gt; = 100 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Vines per hectare takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using feet for spacing in a metre-based formula.</li><li>Setting density from yield targets alone, ignoring vine vigour and water supply.</li><li>Confusing tonnes per hectare with tonnes per acre (1 t/ac ≈ 2.47 t/ha).</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Vines per hectare</strong> = <code>10000 ÷ (Row spacing × Vine spacing)</code></li><li><strong>Vines per 100 m of row</strong> = <code>100 ÷ Vine spacing</code></li><li><strong>Yield per vine</strong> = <code>Target yield × 1000 ÷ (10000 ÷ (Row spacing × Vine spacing))</code></li><li><strong>Grams per bunch</strong> = <code>Target yield × 1000 ÷ (10000 ÷ (Row spacing × Vine spacing)) ÷ Bunches per vine × 1000</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Vines per hectare, Vines per 100 m of row and Yield per vine can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/plant-population">Plant population</a>. <a href="/biology/growing-degree-days">Growing degree days</a>. <a href="/biology/huglin-index">Huglin index</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Row spacing from 2.5 to 5, leaving every other box alone. The panel moves from &lt;strong&gt;Vines per hectare&lt;/strong&gt; 3333 vines/ha, &lt;strong&gt;Vines per 100 m of row&lt;/strong&gt; 83.33 vines, &lt;strong&gt;Yield per vine&lt;/strong&gt; 2.4 kg and &lt;strong&gt;Grams per bunch&lt;/strong&gt; 100 g to &lt;strong&gt;Vines per hectare&lt;/strong&gt; 1667 vines/ha, &lt;strong&gt;Vines per 100 m of row&lt;/strong&gt; 83.33 vines, &lt;strong&gt;Yield per vine&lt;/strong&gt; 4.8 kg and &lt;strong&gt;Grams per bunch&lt;/strong&gt; 200 g.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Vines per hectare, Vines per 100 m of row and Yield per vine are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Row spacing is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Row spacing, Vine spacing and Target yield is what you already know and Vines per hectare and Vines per 100 m of row is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/hunting-tooth-ratio">Hunting Tooth Ratio Calculator</a>, <a href="/biology/ideal-fish-tank-size">Ideal Fish Tank Size Calculator</a> and <a href="/biology/in-vivo-formulation">In Vivo Formulation Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many vines per hectare at 2.5 × 1.2 m?', 'a' => 'About 3 333 vines.'],
-            ['q' => 'Does higher density give better wine?', 'a' => 'It can improve competition and fruit exposure, but only where water and nutrition allow it.'],
-            ['q' => 'What does the Vine Density actually calculate?', 'a' => <<<'TXT'
-            It returns vines per hectare, vines per 100 m of row, yield per vine and grams per bunch. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Vine Density calculator work out?', 'a' => <<<'TXT'
+            Vines per hectare, Vines per 100 m of row, Yield per vine and Grams per bunch, from Row spacing and Vine spacing. The relationship is Vines per hectare = 10000 ÷ (Row spacing × Vine spacing).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Row spacing (m), Vine spacing (m), Target yield (t/ha), Bunches per vine. Fill row_spacing, vine_spacing and yield_tha and leave Vines per hectare empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Vines per hectare, Vines per 100 m of row, Yield per vine and Grams per bunch can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Vines per hectare = 3333 vines/ha, Vines per 100 m of row = 83.33 vines, Yield per vine = 2.4 kg and Grams per bunch = 100 g. Those are the defaults written into the form — move Row spacing and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Vines per hectare is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Row spacing blank and the page solves for it, reporting Vines per hectare instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Vines per hectare keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/hunting-tooth-ratio', 'name' => 'Hunting Tooth Ratio Calculator'],
+            ['path' => '/biology/ideal-fish-tank-size', 'name' => 'Ideal Fish Tank Size Calculator'],
+            ['path' => '/biology/in-vivo-formulation', 'name' => 'In Vivo Formulation Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

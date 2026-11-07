@@ -11,7 +11,9 @@
 
 return [
     'name' => 'DNA Pattern Finder',
-    'meta' => ['title' => 'DNA Pattern Finder Calculator — Formula & Results', 'description' => 'Search a DNA sequence for a motif written in IUPAC code and get every position on both strands. It returns matches, forward strand, matches, reverse strand…', 'h1' => 'DNA Pattern Finder', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Pattern Finder Calculator — Formula & Results', 'description' => <<<'TXT'
+    DNA Pattern Finder turns Sequence, Pattern (IUPAC allowed) and Strand into Matches, forward strand and Matches, reverse strand. DNA Pattern Finder answers one…
+    TXT, 'h1' => 'DNA Pattern Finder', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -275,42 +277,40 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Search a DNA sequence for a motif written in IUPAC code and get every position on both strands. It returns matches, forward strand, matches, reverse strand, total sites and average spacing, and the panel shows all of them at once.
-        
-        It is the quickest way to count a regulatory element or check whether a cloning site is unique.
+        DNA Pattern Finder turns Sequence, Pattern (IUPAC allowed) and Strand into Matches, forward strand and Matches, reverse strand. Nothing is looked up on this page: Matches, forward strand is computed from Sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the DNA Pattern Finder', 'html' => <<<'TXT'
-            <p>A pattern of length k has N − k + 1 possible start positions. Each IUPAC letter is expanded to the set of bases it stands for</p>
-            <figure class="calc-figure"><img src="/uploads/biology/dna-pattern-finder.svg" width="720" height="300" loading="lazy" alt="Animated diagram: DNA Pattern Finder — Start positions a pattern can have" title="DNA Pattern Finder"><figcaption>Start positions a pattern can have</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N</code></td><td>sequence length</td><td>bp</td></tr><tr><td><code>k</code></td><td>pattern length</td><td>bp</td></tr><tr><td><code>IUPAC</code></td><td>the standard degenerate base alphabet</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the DNA Pattern Finder calculator works', 'html' => <<<'TXT'
+            <p>DNA Pattern Finder answers one question from 3 numbers, and the answer is Matches, forward strand, Matches, reverse strand and Total sites.</p><p>The answers are Matches, forward strand, Matches, reverse strand, Total sites and Average spacing; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the DNA Pattern Finder?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste DNA; headers, spaces and digits are ignored</li><li><strong>Pattern (IUPAC allowed)</strong> — a plain number, no unit. N = any base, R = A/G, Y = C/T, W = A/T, S = G/C, K = G/T, M = A/C</li><li><strong>Strand</strong> — a plain number, no unit</li></ul><p>What you get back is Matches, forward strand, Matches, reverse strand, Total sites, Average spacing in bp, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 site</td><td><strong>Unique</strong></td><td>usable as a single-cutter cloning site</td></tr><tr><td>2 – 5 sites</td><td><strong>A few</strong></td><td>check fragment sizes before digesting</td></tr><tr><td>more than 5</td><td><strong>Frequent</strong></td><td>poor choice for a unique site</td></tr></tbody></table>
-            <ul><li><p>Positions are 1-based and count from the first base of the pasted sequence, on the strand as written. Reverse-strand hits are reported at the position of the equivalent forward site so the two lists line up.</p></li><li><p>Palindromic patterns (GAATTC, most type II restriction sites) match both strands at the same coordinates and are therefore counted once, not twice.</p></li><li><p>Overlapping matches are counted, which matters for repeats such as ATATAT.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Matches, forward strand takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Forgetting that a reverse-strand hit means the motif is on the other strand — the protein or enzyme still binds there.</li><li>Typing a pattern with a space or a digit in it; both are stripped, which can silently change the motif.</li><li>Assuming a unique site is unique in the whole plasmid when only an insert was pasted.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Matches, forward strand, Matches, reverse strand and Total sites are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Sequence to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Sequence, Pattern (IUPAC allowed) and Strand measured, Matches, forward strand and Matches, reverse strand wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/goat-years-to-human-years">Goat Years to Human Years Calculator</a>, <a href="/biology/goldfish-years-to-human-years">Goldfish Years to Human Years Calculator</a> and <a href="/biology/ghk-membrane-potential">Goldman–Hodgkin–Katz Membrane Potential Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does N mean in a DNA pattern?', 'a' => 'Any base. It is the IUPAC wildcard, so NNNN finds any four bases.'],
-            ['q' => 'How do I find a restriction site?', 'a' => 'Type the recognition sequence, e.g. GAATTC for EcoRI or AAGCTT for HindIII, and search both strands.'],
-            ['q' => 'Does the search handle overlapping matches?', 'a' => 'Yes — ATATAT contains ATATAT twice in an ATATATAT run, and both are reported.'],
-            ['q' => 'What does the DNA Pattern Finder actually calculate?', 'a' => <<<'TXT'
-            It returns matches, forward strand, matches, reverse strand, total sites and average spacing. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Sequence, Pattern (IUPAC allowed), Strand. With sequence, pattern and strand in place, Matches, forward strand can stay blank and the page will work it out.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Matches, forward strand is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Matches, forward strand, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Matches, forward strand at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/goat-years-to-human-years', 'name' => 'Goat Years to Human Years Calculator'],
+            ['path' => '/biology/goldfish-years-to-human-years', 'name' => 'Goldfish Years to Human Years Calculator'],
+            ['path' => '/biology/ghk-membrane-potential', 'name' => 'Goldman–Hodgkin–Katz Membrane Potential Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

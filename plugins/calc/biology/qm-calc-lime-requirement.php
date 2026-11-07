@@ -12,7 +12,7 @@
 return [
     'name' => 'Lime Requirement Calculator',
     'meta' => ['title' => 'Lime Requirement Calculator — Formula & Results', 'description' => <<<'TXT'
-    Lime raises soil pH, and the amount needed depends on how far the pH must rise and how heavy the soil is. It returns lime required, as pure CaCO₃ equivalent…
+    Lime Requirement turns Current pH, Target pH and Soil texture into Lime required and As pure CaCO₃ equivalent. There is no hidden constant here: change Lime…
     TXT, 'h1' => 'Lime Requirement Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
@@ -101,48 +101,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Lime raises soil pH, and the amount needed depends on how far the pH must rise and how heavy the soil is. It returns lime required, as pure CaCO₃ equivalent, application splits recommended and pH increase per tonne, and the panel shows all of them at once.
-        
-        This calculator estimates the rate from a target pH and a buffer index, and warns when the change is large enough to split over seasons.
+        Lime Requirement turns Current pH, Target pH and Soil texture into Lime required and As pure CaCO₃ equivalent. There is no hidden constant here: change Lime required and Current pH moves with it. The main result, Lime required, is reported in t/ha.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Lime Requirement', 'html' => <<<'TXT'
-            <p>Lime (t/ha) ≈ (target pH − current pH) × buffer factor × texture factor</p>
-            <figure class="calc-figure"><img src="/uploads/biology/lime-requirement.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Lime Requirement Calculator — Current pH, target pH and the lime between them." title="Lime Requirement Calculator"><figcaption>Current pH, target pH and the lime between them.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ΔpH</code></td><td>change in pH required</td><td>pH units</td></tr><tr><td><code>buffer</code></td><td>buffer index from a soil test</td><td>—</td></tr><tr><td><code>texture</code></td><td>texture factor, 1.0 for sand down to 0.18 for clay</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Lime Requirement calculator works', 'html' => <<<'TXT'
+            <p>The Lime Requirement calculator applies one relationship to 4 numbers and reports Lime required, As pure CaCO₃ equivalent and Application splits recommended.</p><p>Written with the labels from the form, Lime required = (Target pH − Current pH) × Buffer index × Soil texture.</p><p>The result panel carries Lime required, As pure CaCO₃ equivalent, Application splits recommended and pH increase per tonne, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Lime Requirement?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Current pH</strong> — a plain number, no unit</li><li><strong>Target pH</strong> — a plain number, no unit</li><li><strong>Soil texture</strong> — a plain number, no unit</li><li><strong>Buffer index</strong> — a plain number, no unit. From a lime requirement test; lower means more lime</li></ul><p>The answers come back as Lime required in t/ha, As pure CaCO₃ equivalent in t/ha, Application splits recommended, pH increase per tonne. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: current ph of <strong>5.4</strong>, target ph of <strong>6.5</strong>, soil texture set to <strong>Loam</strong>, buffer index of <strong>6.4</strong>.</p>
-            <p>Substituting them into the formula gives lime required of <strong>2.82</strong> t/ha, as pure caco₃ equivalent of <strong>2.53</strong> t/ha, application splits recommended of <strong>2</strong>, ph increase per tonne of <strong>0.3906</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Current pH = 5.4, Target pH = 6.5, Soil texture = 0.4 and Buffer index = 6.4 — through the same formula and the panel reports &lt;strong&gt;Lime required&lt;/strong&gt; = 2.82 t/ha, &lt;strong&gt;As pure CaCO₃ equivalent&lt;/strong&gt; = 2.53 t/ha, &lt;strong&gt;Application splits recommended&lt;/strong&gt; = 2 and &lt;strong&gt;pH increase per tonne&lt;/strong&gt; = 0.3906.</p><ul><li><strong>Lime required</strong> = 2.82 t/ha</li><li><strong>As pure CaCO₃ equivalent</strong> = 2.53 t/ha</li><li><strong>Application splits recommended</strong> = 2</li><li><strong>pH increase per tonne</strong> = 0.3906</li></ul><p>That is <strong>Lime required</strong> = <code>(Target pH − Current pH) × Buffer index × Soil texture</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Clay soils need more lime per unit of pH because they have far more exchange sites to neutralise.</p></li><li><p>Lime moves slowly — about 2.5 cm a year in the profile — so a large requirement is split over two or three seasons rather than applied at once.</p></li><li><p>Use a buffer index test where available; the texture factor alone is a rough estimate.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Lime required&lt;/strong&gt; = 2.82, &lt;strong&gt;As pure CaCO₃ equivalent&lt;/strong&gt; = 2.53, &lt;strong&gt;Application splits recommended&lt;/strong&gt; = 2 and &lt;strong&gt;pH increase per tonne&lt;/strong&gt; = 0.3906 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Lime required takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Applying the full rate when the requirement exceeds 4–5 t/ha.</li><li>Lime and ammonium fertilizer applied in the same operation, which loses nitrogen as ammonia.</li><li>Chasing a high pH where the crop prefers acid soil — blueberries at pH 7 will be chlorotic.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Lime required</strong> = <code>(Target pH − Current pH) × Buffer index × Soil texture</code></li><li><strong>As pure CaCO₃ equivalent</strong> = <code>(Target pH − Current pH) × Buffer index × Soil texture × 0.9</code></li><li><strong>Application splits recommended</strong> = <code>max(1,ceil((Target pH − Current pH) × Buffer index × Soil texture ÷ 2))</code></li><li><strong>pH increase per tonne</strong> = <code>(Target pH − Current pH) ÷ ((Target pH − Current pH) × Buffer index × Soil texture)</code></li></ul><p>Any one of Lime required, As pure CaCO₃ equivalent and Application splits recommended can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/npk-fertilizer-blend">NPK fertilizer blend</a>. <a href="/biology/field-capacity">Field capacity</a>. <a href="/biology/crop-water-requirement">Crop water requirement</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Current pH from 5.4 to 10.8, leaving every other box alone. The panel moves from &lt;strong&gt;Lime required&lt;/strong&gt; 2.82 t/ha, &lt;strong&gt;As pure CaCO₃ equivalent&lt;/strong&gt; 2.53 t/ha, &lt;strong&gt;Application splits recommended&lt;/strong&gt; 2 and &lt;strong&gt;pH increase per tonne&lt;/strong&gt; 0.3906 to &lt;strong&gt;Lime required&lt;/strong&gt; -11.01 t/ha, &lt;strong&gt;As pure CaCO₃ equivalent&lt;/strong&gt; -9.91 t/ha, &lt;strong&gt;Application splits recommended&lt;/strong&gt; 1 and &lt;strong&gt;pH increase per tonne&lt;/strong&gt; 0.3906.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Lime required, As pure CaCO₃ equivalent and Application splits recommended are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Current pH and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Current pH, Target pH and Soil texture measured, Lime required and As pure CaCO₃ equivalent wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/specimen-size-from-image">Actual Specimen Size from Image Calculator</a>, <a href="/biology/agarose-gel-calculator">Agarose Gel (gel percentage and loading) Calculator</a> and <a href="/biology/alamarblue-cell-viability">AlamarBlue Cell Viability / Percent Reduction Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much does pH rise per tonne of lime?', 'a' => 'About 0.1–0.3 pH units on a loam; much more on sand, much less on clay.'],
-            ['q' => 'Does lime replace magnesium?', 'a' => 'Dolomitic lime does; calcitic lime does not, so check the soil test for magnesium.'],
-            ['q' => 'What does the Lime Requirement actually calculate?', 'a' => <<<'TXT'
-            It returns lime required, as pure CaCO₃ equivalent, application splits recommended and pH increase per tonne. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Lime Requirement calculator work out?', 'a' => <<<'TXT'
+            Lime required, As pure CaCO₃ equivalent, Application splits recommended and pH increase per tonne, from Target pH, Current pH, Buffer index and Soil texture. The relationship is Lime required = (Target pH − Current pH) × Buffer index × Soil texture.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Current pH, Target pH, Soil texture, Buffer index. Enter ph_now, ph_target and texture; Lime required is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Lime required, As pure CaCO₃ equivalent, Application splits recommended and pH increase per tonne blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Lime required = 2.82 t/ha, As pure CaCO₃ equivalent = 2.53 t/ha, Application splits recommended = 2 and pH increase per tonne = 0.3906. That comes from the page's own defaults, entered in Current pH; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Lime required is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Current pH left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Lime required at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/specimen-size-from-image', 'name' => 'Actual Specimen Size from Image Calculator'],
+            ['path' => '/biology/agarose-gel-calculator', 'name' => 'Agarose Gel (gel percentage and loading) Calculator'],
+            ['path' => '/biology/alamarblue-cell-viability', 'name' => 'AlamarBlue Cell Viability / Percent Reduction Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

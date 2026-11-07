@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA copy number',
-    'meta' => ['title' => 'DNA copy number Calculator: Free, With Steps', 'description' => 'The DNA copy number calculator works out <strong>DNA copies</strong> from the DNA concentration, the template length, number of PCR cycles and the DNA copies…', 'h1' => 'DNA copy number Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'DNA copy number Calculator: Free, With Steps', 'description' => 'DNA copy number: Enter DNA concentration, Template length and Base weight into DNA copy number and the answer comes back as DNA copies and Initial DNA copies.', 'h1' => 'DNA copy number Calculator', 'updated' => '2026-08-06'],
     'sections' => [
         [
             'title' => 'DNA copy number',
@@ -136,61 +136,46 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The DNA copy number calculator works out <strong>DNA copies</strong> from the DNA concentration, the template length, number of PCR cycles and the DNA copies after PCR cycle.
+        Enter DNA concentration, Template length and Base weight into DNA copy number and the answer comes back as DNA copies and Initial DNA copies. It is a single relationship that reads DNA copies out of DNA concentration, not a table of canned results keyed by them. Units for DNA copies default to copies/µl and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'How does the DNA copy number calculator work?', 'html' => <<<'TXT'
-            <p>The DNA copy number calculator takes the values in the form, applies the relationship described below and reports <strong>DNA copies</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the base weight); then you type in the DNA concentration, the template length, number of PCR cycles and the DNA copies after PCR cycle(s).</p>
+            ['title' => 'How the DNA copy number calculator works', 'html' => <<<'TXT'
+            <p>DNA copy number answers one question from 3 numbers, and the answer is DNA copies, Initial DNA copies and Number of PCR cycles.</p><p>The relationship it solves reads DNA copies = 602214000000000 × DNA concentration ÷ (Base weight × Template length).</p><p>The result panel carries DNA copies, Initial DNA copies, Number of PCR cycles and DNA copies after PCR cycle(s), each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A number, expressed in ng/µl.</li><li>A measured quantity, entered by default in base pairs. The unit chip switches it to any of the 2 supported units.</li><li>Pick the option that matches your case — 3 options, such as ssDNA (330 Da), ssRNA (340 Da) and dsDNA (660 Da). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in times 10 to the 7. The unit chip switches it to any of the 69 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>DNA concentration</strong> — in ng/µl. Measure the DNA concentration in ng/µl with a spectrophotometer.</li><li><strong>Template length</strong> — in base pairs. Enter how many base-pairs your template has in total.</li><li><strong>Base weight</strong> — in dalton. Choose between single-stranded DNA/RNA (ssDNA/ssRNA) or double-stranded DNA (dsDNA).</li></ul><p>The result boxes are DNA copies in copies/µl, Initial DNA copies in copies/µl, Number of PCR cycles, DNA copies after PCR cycle(s) in copies/µl; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>DNA concentration</strong></td><td>A number stated in ng/µl.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Template length</strong></td><td>A measured quantity, 2 units available.</td><td>base pairs</td><td>You supply it</td></tr><tr><td><strong>Base weight</strong></td><td>One of 3 options, such as ssDNA (330 Da), ssRNA (340 Da) and dsDNA (660 Da).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>DNA copies</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the 7</td><td>Calculated</td></tr><tr><td><strong>Initial DNA copies</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the 7</td><td>Calculated</td></tr><tr><td><strong>Number of PCR cycles</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>DNA copies after PCR cycle(s)</strong></td><td>A measured quantity, 69 units available.</td><td>times 10 to the 7</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>DNA copies</strong> = <code>602214000000000 × DNA concentration ÷ (Base weight × Template length)</code></li><li><strong>Template length</strong> = <code>602214000000000 × DNA concentration ÷ (Base weight × DNA copies)</code></li><li><strong>Base weight</strong> = <code>602214000000000 × DNA concentration ÷ (DNA copies × Template length)</code></li><li><strong>DNA concentration</strong> = <code>(1 ÷ 602214000000000) × Base weight × DNA copies × Template length</code></li><li><strong>Initial DNA copies</strong> = <code>(2)^(− Number of PCR cycles) × DNA copies after PCR cycle(s)</code></li><li><strong>DNA copies after PCR cycle(s)</strong> = <code>(2)^(Number of PCR cycles) × Initial DNA copies</code></li></ul><p>Any one of DNA copies, Template length and Base weight can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the DNA copy number calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">DNA copies</span><span class="formula-eq">=</span><span class="formula-rhs">602214000000000 × DNA concentration ÷ (base weight × template length)</span></div><div class="formula-row"><span class="formula-lhs">Initial DNA copies</span><span class="formula-eq">=</span><span class="formula-rhs">(2 ^ -number of PCR cycles) × DNA copies after PCR cycle(s)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Template length carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> DNA copies, Initial DNA copies and Number of PCR cycles are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in DNA concentration and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in times 10 to the 7, and convertible to any of the 69 units on that chip.</li><li>Shown in times 10 to the 7, and convertible to any of the 69 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>DNA, opening in base pairs</li><li>Scientific notation, opening in times 10 to the 7</li><li>Scientific notation, opening in times 10 to the 7</li><li>Scientific notation, opening in times 10 to the 7</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The DNA copy number calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 4 figures keep coming back — the DNA concentration, the template length and number of PCR cycles — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dna-to-mrna">DNA to mRNA</a>, <a href="/biology/dog-age">Dog age</a> and <a href="/biology/dog-bmi">Dog BMI</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are DNA concentration, Template length and Base weight and the number you are missing is DNA copies and Initial DNA copies.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/mark-recapture-population">Mark–Recapture Population (Lincoln–Petersen) Calculator</a>, <a href="/biology/mass-molarity-conversion">Mass to Molarity Converter Calculator</a> and <a href="/biology/maximum-sustainable-yield">Maximum Sustainable Yield Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the DNA copy number calculator work out?', 'a' => <<<'TXT'
-            It returns DNA copies, derived from the DNA concentration, the template length and number of PCR cycles. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            DNA copies, Initial DNA copies, Number of PCR cycles and DNA copies after PCR cycle(s), from DNA concentration, Base weight and Template length. The relationship is DNA copies = 602214000000000 × DNA concentration ÷ (Base weight × Template length).
             TXT],
-            ['q' => 'What do I need to enter to use the DNA copy number calculator?', 'a' => <<<'TXT'
-            The form asks for the DNA concentration, the template length, number of PCR cycles and the DNA copies after PCR cycle, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            DNA concentration (ng/µl), Template length (base pairs), Base weight (dalton). Enter dna_concentration, template_length and base_weight; DNA copies is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter template length in a different unit?', 'a' => <<<'TXT'
-            Yes. Template length opens in base pairs and the chip beside it offers 2 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of DNA copies, Template length, Base weight and DNA concentration blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            DNA copies is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the DNA copy number calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave DNA concentration blank and the page solves for it, reporting DNA copies instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. DNA copies keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/dna-to-mrna', 'name' => 'DNA to mRNA'],
-            ['path' => '/biology/dog-age', 'name' => 'Dog age'],
-            ['path' => '/biology/dog-bmi', 'name' => 'Dog BMI'],
+            ['path' => '/biology/mark-recapture-population', 'name' => 'Mark–Recapture Population (Lincoln–Petersen) Calculator'],
+            ['path' => '/biology/mass-molarity-conversion', 'name' => 'Mass to Molarity Converter Calculator'],
+            ['path' => '/biology/maximum-sustainable-yield', 'name' => 'Maximum Sustainable Yield Calculator'],
         ],
+        'authors' => [],
     ],
 ];

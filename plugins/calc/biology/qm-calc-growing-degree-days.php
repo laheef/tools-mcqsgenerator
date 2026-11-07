@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Growing Degree Days Calculator',
-    'meta' => ['title' => 'Growing Degree Days Calculator — Formula & Results', 'description' => 'Growing degree days count the heat a crop has accumulated above its base temperature. It returns growing degree days for the day, over seven days at this…', 'h1' => 'Growing Degree Days Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Growing Degree Days Calculator — Formula & Results', 'description' => 'Enter Method, Daily maximum and Daily minimum into Growing Degree Days and the answer comes back as Growing degree days for the day and Over seven days at…', 'h1' => 'Growing Degree Days Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -98,46 +98,57 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Growing degree days count the heat a crop has accumulated above its base temperature. It returns growing degree days for the day, over seven days at this weather and accumulated over 60 days, and the panel shows all of them at once.
-        
-        They predict development far better than calendar days do, which is why sowing dates, variety maturity and pest emergence are all scheduled on them.
+        Enter Method, Daily maximum and Daily minimum into Growing Degree Days and the answer comes back as Growing degree days for the day and Over seven days at this weather. There is no hidden constant here: change Growing degree days for the day and Method moves with it. The main result, Growing degree days for the day, is reported in GDD.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Growing Degree Days', 'html' => <<<'TXT'
-            <p>GDD = max(0, (T_max + T_min)/2 − T_base)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/growing-degree-days.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Growing Degree Days Calculator — Degree days accumulating across a season." title="Growing Degree Days Calculator"><figcaption>Degree days accumulating across a season.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>T_max, T_min</code></td><td>daily maximum and minimum air temperature</td><td>°C</td></tr><tr><td><code>T_base</code></td><td>temperature below which development stops</td><td>°C</td></tr><tr><td><code>GDD</code></td><td>degree days accumulated in one day</td><td>°C·day</td></tr></tbody></table>
+            ['title' => 'How the Growing Degree Days calculator works', 'html' => <<<'TXT'
+            <p>Growing Degree Days answers one question from 5 numbers, and the answer is Growing degree days for the day, Over seven days at this weather and Accumulated over 60 days.</p><p>Written with the labels from the form, Growing degree days for the day = if_else(Method&gt;0,max(0,(min(Daily maximum,Upper cut-off) + Daily minimum) ÷ 2 − Base temperature),max(0,(Daily maximum + Daily minimum) ÷ 2 − Base temperature)).</p><p>What comes back is Growing degree days for the day, Over seven days at this weather and Accumulated over 60 days — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Growing Degree Days?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 5 boxes, and nothing else.</p><ul><li><strong>Method</strong> — a plain number, no unit</li><li><strong>Daily maximum</strong> — in °C</li><li><strong>Daily minimum</strong> — in °C</li><li><strong>Base temperature</strong> — in °C. 10 °C for maize, 5 °C for wheat</li><li><strong>Upper cut-off</strong> — in °C. Growth stops above this in many models</li></ul><p>What you get back is Growing degree days for the day in GDD, Over seven days at this weather in GDD, Accumulated over 60 days in GDD, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: method set to <strong>0.0</strong>, daily maximum of <strong>33</strong>°C, daily minimum of <strong>12</strong>°C, base temperature of <strong>10</strong>°C, upper cut-off of <strong>30</strong>°C.</p>
-            <p>Substituting them into the formula gives growing degree days for the day of <strong>12.5</strong> GDD, over seven days at this weather of <strong>87.5</strong> GDD, accumulated over 60 days of <strong>750</strong> GDD.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Method = 0, Daily maximum = 33 °C, Daily minimum = 12 °C, Base temperature = 10 °C and Upper cut-off = 30 °C gives &lt;strong&gt;Growing degree days for the day&lt;/strong&gt; = 12.5 GDD, &lt;strong&gt;Over seven days at this weather&lt;/strong&gt; = 87.5 GDD and &lt;strong&gt;Accumulated over 60 days&lt;/strong&gt; = 750 GDD.</p><ul><li><strong>Growing degree days for the day</strong> = 12.5 GDD</li><li><strong>Over seven days at this weather</strong> = 87.5 GDD</li><li><strong>Accumulated over 60 days</strong> = 750 GDD</li></ul><p>That is <strong>Growing degree days for the day</strong> = <code>if_else(Method&gt;0,max(0,(min(Daily maximum,Upper cut-off) + Daily minimum) ÷ 2 − Base temperature),max(0,(Daily maximum + Daily minimum) ÷ 2 − Base temperature))</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 GDD</td><td><strong>No development</strong></td><td>below the base temperature all day</td></tr><tr><td>5 – 15 GDD/day</td><td><strong>Normal growing weather</strong></td><td>typical of a temperate summer</td></tr><tr><td>above 25 GDD/day</td><td><strong>Very rapid</strong></td><td>heat that may also stress the crop</td></tr></tbody></table>
-            <ul><li><p>Base temperatures are crop-specific: 0 °C for cool-season grasses, 5 °C for wheat, 10 °C for maize and soybean, 15.5 °C for cotton.</p></li><li><p>The upper cut-off matters in hot climates: without it, a 40 °C day adds heat the plant cannot use and maturity predictions come out early.</p></li><li><p>Accumulate from sowing, not from 1 January, if you are timing a crop rather than a season.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Growing degree days for the day&lt;/strong&gt; = 12.5, &lt;strong&gt;Over seven days at this weather&lt;/strong&gt; = 87.5 and &lt;strong&gt;Accumulated over 60 days&lt;/strong&gt; = 750. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Growing degree days for the day is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using the mean of hourly readings instead of the daily maximum and minimum.</li><li>Mixing Fahrenheit maxima with Celsius minima.</li><li>Assuming a single GDD target fits every variety — early and late maturities differ by hundreds of degree days.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Growing degree days for the day</strong> = <code>if_else(Method&gt;0,max(0,(min(Daily maximum,Upper cut-off) + Daily minimum) ÷ 2 − Base temperature),max(0,(Daily maximum + Daily minimum) ÷ 2 − Base temperature))</code></li><li><strong>Over seven days at this weather</strong> = <code>if_else(Method&gt;0,max(0,(min(Daily maximum,Upper cut-off) + Daily minimum) ÷ 2 − Base temperature),max(0,(Daily maximum + Daily minimum) ÷ 2 − Base temperature)) × 7</code></li><li><strong>Accumulated over 60 days</strong> = <code>if_else(Method&gt;0,max(0,(min(Daily maximum,Upper cut-off) + Daily minimum) ÷ 2 − Base temperature),max(0,(Daily maximum + Daily minimum) ÷ 2 − Base temperature)) × 60</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Growing degree days for the day, Over seven days at this weather and Accumulated over 60 days can be the unknown.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Growing degree days for the day, Over seven days at this weather and Accumulated over 60 days are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Method is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Method, Daily maximum and Daily minimum and the number you are missing is Growing degree days for the day and Over seven days at this weather.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/wastewater">Wastewater Calculator</a>, <a href="/biology/water-potential">Water potential Calculator</a> and <a href="/biology/water-soluble-fertilizer">Water soluble fertilizer Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many GDD does maize need to mature?', 'a' => 'About 2 400–2 800 GDD (50 °F base) depending on the hybrid; in Celsius-base-10 terms, roughly 1 300–1 500.'],
-            ['q' => 'What if the minimum is below the base temperature?', 'a' => 'The standard method still uses the daily mean; more refined models floor each half-day at the base temperature.'],
-            ['q' => 'What does the Growing Degree Days actually calculate?', 'a' => <<<'TXT'
-            It returns growing degree days for the day, over seven days at this weather and accumulated over 60 days. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Growing Degree Days calculator work out?', 'a' => <<<'TXT'
+            Growing degree days for the day, Over seven days at this weather and Accumulated over 60 days, from Method, Daily maximum, Upper cut-off and Daily minimum. The relationship is Growing degree days for the day = if_else(Method>0,max(0,(min(Daily maximum,Upper cut-off) + Daily minimum) ÷ 2 − Base temperature),max(0,(Daily maximum + Daily minimum) ÷ 2 − Base temperature)).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Method, Daily maximum (°C), Daily minimum (°C), Base temperature (°C), Upper cut-off (°C). Enter method, tmax and tmin; Growing degree days for the day is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Growing degree days for the day, Over seven days at this weather and Accumulated over 60 days can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Growing degree days for the day = 12.5 GDD, Over seven days at this weather = 87.5 GDD and Accumulated over 60 days = 750 GDD. The figures come from Method as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Growing degree days for the day is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Method left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Growing degree days for the day keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/wastewater', 'name' => 'Wastewater Calculator'],
+            ['path' => '/biology/water-potential', 'name' => 'Water potential Calculator'],
+            ['path' => '/biology/water-soluble-fertilizer', 'name' => 'Water soluble fertilizer Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

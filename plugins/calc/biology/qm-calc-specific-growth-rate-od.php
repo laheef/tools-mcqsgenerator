@@ -12,7 +12,7 @@
 return [
     'name' => 'Specific Growth Rate from OD',
     'meta' => ['title' => 'Specific Growth Rate from OD — Formula & Results', 'description' => <<<'TXT'
-    Specific growth rate is how fast a culture is dividing, in units of generations per hour: µ = ln(OD₂/OD₁) ÷ (t₂ − t₁). It returns specific growth rate…
+    Specific Growth Rate from OD turns First OD₆₀₀, Second OD₆₀₀ and First reading at into Specific growth rate and Doubling time. It is a single relationship…
     TXT, 'h1' => 'Specific Growth Rate from OD', 'updated' => '2026-10-29'],
     'sections' => [
         [
@@ -97,50 +97,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Specific growth rate is how fast a culture is dividing, in units of generations per hour: µ = ln(OD₂/OD₁) ÷ (t₂ − t₁). It returns specific growth rate, doubling time, generations and growth rate, and the panel shows all of them at once.
-        
-        From two optical densities and the time between them you get µ, the doubling time and the number of generations the culture went through — as long as the readings sit in the exponential phase.
+        Specific Growth Rate from OD turns First OD₆₀₀, Second OD₆₀₀ and First reading at into Specific growth rate and Doubling time. It is a single relationship that reads Specific growth rate out of First OD₆₀₀, not a table of canned results keyed by them. Units for Specific growth rate default to 1/h and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Specific Growth Rate from OD', 'html' => <<<'TXT'
-            <p>µ = ln(OD₂ ÷ OD₁) ÷ (t₂ − t₁). Doubling time = ln2 ÷ µ. Generations = µ × Δt ÷ ln2</p>
-            <figure class="calc-figure"><img src="/uploads/biology/specific-growth-rate-od.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Specific Growth Rate from OD — Exponential growth: the OD doubles at a constant interval" title="Specific Growth Rate from OD"><figcaption>Exponential growth: the OD doubles at a constant interval</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>µ</code></td><td>specific growth rate</td><td>1/h</td></tr><tr><td><code>OD₆₀₀</code></td><td>optical density at 600 nm</td><td>—</td></tr><tr><td><code>ln2</code></td><td>0.693, the natural log of two</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Specific Growth Rate from OD calculator works', 'html' => <<<'TXT'
+            <p>The Specific Growth Rate from OD calculator applies one relationship to 4 numbers and reports Specific growth rate, Doubling time and Generations.</p><p>In the form&#039;s own words, Specific growth rate = ln(Second OD₆₀₀ ÷ First OD₆₀₀) ÷ (Second reading at − First reading at).</p><p>The result panel carries Specific growth rate, Doubling time, Generations and Growth rate, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Specific Growth Rate from OD?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Take two OD₆₀₀ readings that are both between 0.05 and 0.6.</li><li>Enter each with the time it was taken.</li><li>Read µ, the doubling time in minutes and how many generations passed.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>First OD₆₀₀</strong> — a plain number, no unit. Blank subtracted, in the linear range</li><li><strong>Second OD₆₀₀</strong> — a plain number, no unit</li><li><strong>First reading at</strong> — in h</li><li><strong>Second reading at</strong> — in h</li></ul><p>The result boxes are Specific growth rate in 1/h, Doubling time in min, Generations, Growth rate in 1/day; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: first od₆₀₀ of <strong>0.15</strong>, second od₆₀₀ of <strong>0.62</strong>, first reading at of <strong>0</strong> h, second reading at of <strong>3</strong> h.</p>
-            <p>Substituting them into the formula gives specific growth rate of <strong>0.473</strong> 1/h, doubling time of <strong>87.92</strong> min, generations of <strong>2.05</strong>, growth rate of <strong>11.35</strong> 1/day.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, First OD₆₀₀ = 0.15, Second OD₆₀₀ = 0.62, First reading at = 5 h and Second reading at = 3 h gives &lt;strong&gt;Specific growth rate&lt;/strong&gt; = -0.7095 1/h, &lt;strong&gt;Doubling time&lt;/strong&gt; = -58.61 min, &lt;strong&gt;Generations&lt;/strong&gt; = 2.05 and &lt;strong&gt;Growth rate&lt;/strong&gt; = -17.03 1/day.</p><ul><li><strong>Specific growth rate</strong> = -0.7095 1/h</li><li><strong>Doubling time</strong> = -58.61 min</li><li><strong>Generations</strong> = 2.05</li><li><strong>Growth rate</strong> = -17.03 1/day</li></ul><p>That is <strong>Specific growth rate</strong> = <code>ln(Second OD₆₀₀ ÷ First OD₆₀₀) ÷ (Second reading at − First reading at)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 0.2 1/h</td><td><strong>Slow</strong></td><td>doubling in more than 3.5 h — stressed or minimal medium</td></tr><tr><td>0.2 – 0.8 1/h</td><td><strong>Typical</strong></td><td>E. coli in rich medium doubles in 20–60 min</td></tr><tr><td>above 1.0 1/h</td><td><strong>Fast</strong></td><td>doubling faster than 42 min; check for clumping or a bad blank</td></tr></tbody></table>
-            <ul><li><p>OD₆₀₀ is only proportional to cell number up to about 0.4–0.6. Above that, dilute and measure again — an OD of 1.2 underestimates the cells by a third or more.</p></li><li><p>A rate calculated across the lag or stationary phase is meaningless. Use two points that are both in the exponential phase, and ideally more than two.</p></li><li><p>OD₆₀₀ depends on the spectrophotometer and the cuvette. Report µ, not the OD, and describe the instrument.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Specific growth rate&lt;/strong&gt; = -0.7095, &lt;strong&gt;Doubling time&lt;/strong&gt; = -58.61, &lt;strong&gt;Generations&lt;/strong&gt; = 2.05 and &lt;strong&gt;Growth rate&lt;/strong&gt; = -17.03 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Specific growth rate takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using OD 0.05 as the first point, when the blank or the cuvette dominates the reading.</li><li>Averaging several late readings, where the culture has already slowed.</li><li>Confusing µ (per hour) with the number of generations, which is µ × Δt ÷ ln2.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Specific growth rate</strong> = <code>ln(Second OD₆₀₀ ÷ First OD₆₀₀) ÷ (Second reading at − First reading at)</code></li><li><strong>Doubling time</strong> = <code>ln(2) ÷ Specific growth rate × 60</code></li><li><strong>Generations</strong> = <code>Specific growth rate × (Second reading at − First reading at) ÷ ln(2)</code></li><li><strong>Growth rate</strong> = <code>Specific growth rate × 24</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Specific growth rate, Doubling time and Generations can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/bacterial-growth-curve">Bacterial growth curve</a>. <a href="/biology/cell-doubling-time">Cell doubling time</a>. <a href="/chemistry/michaelis-menten-equation">Michaelis–Menten</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double First OD₆₀₀ from 0.15 to 0.3, leaving every other box alone. The panel moves from &lt;strong&gt;Specific growth rate&lt;/strong&gt; -0.7095 1/h, &lt;strong&gt;Doubling time&lt;/strong&gt; -58.61 min, &lt;strong&gt;Generations&lt;/strong&gt; 2.05 and &lt;strong&gt;Growth rate&lt;/strong&gt; -17.03 1/day to &lt;strong&gt;Specific growth rate&lt;/strong&gt; -0.363 1/h, &lt;strong&gt;Doubling time&lt;/strong&gt; -115 min, &lt;strong&gt;Generations&lt;/strong&gt; 1.05 and &lt;strong&gt;Growth rate&lt;/strong&gt; -8.71 1/day.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Specific growth rate, Doubling time and Generations are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert First OD₆₀₀ to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are First OD₆₀₀, Second OD₆₀₀ and First reading at and the number you are missing is Specific growth rate and Doubling time.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/huglin-index">Huglin Index Calculator</a>, <a href="/biology/hunting-tooth-ratio">Hunting Tooth Ratio Calculator</a> and <a href="/biology/ideal-fish-tank-size">Ideal Fish Tank Size Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a typical growth rate for E. coli?', 'a' => 'About 0.6–0.8 1/h in LB at 37 °C, a doubling time of 20–30 minutes.'],
-            ['q' => 'Why is my doubling time longer in minimal medium?', 'a' => 'Fewer nutrients, so the cell spends longer building biomass; 60–120 minutes is normal.'],
-            ['q' => 'Can I use OD above 1?', 'a' => 'Dilute the sample into medium and multiply the reading by the dilution factor — beyond about 0.6 the relation is no longer linear.'],
-            ['q' => 'What does the Specific Growth Rate from OD actually calculate?', 'a' => <<<'TXT'
-            It returns specific growth rate, doubling time, generations and growth rate. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Specific Growth Rate from OD calculator work out?', 'a' => <<<'TXT'
+            Specific growth rate, Doubling time, Generations and Growth rate, from Second OD₆₀₀, First OD₆₀₀, Second reading at and First reading at. The relationship is Specific growth rate = ln(Second OD₆₀₀ ÷ First OD₆₀₀) ÷ (Second reading at − First reading at).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            First OD₆₀₀, Second OD₆₀₀, First reading at (h), Second reading at (h). Enter od1, od2 and t1; Specific growth rate is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Specific growth rate, Doubling time, Generations and Growth rate can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Specific growth rate = -0.7095 1/h, Doubling time = -58.61 min, Generations = 2.05 and Growth rate = -17.03 1/day. Those are the defaults written into the form — move First OD₆₀₀ and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Specific growth rate is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave First OD₆₀₀ blank and the page solves for it, reporting Specific growth rate instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Specific growth rate at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/huglin-index', 'name' => 'Huglin Index Calculator'],
+            ['path' => '/biology/hunting-tooth-ratio', 'name' => 'Hunting Tooth Ratio Calculator'],
+            ['path' => '/biology/ideal-fish-tank-size', 'name' => 'Ideal Fish Tank Size Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

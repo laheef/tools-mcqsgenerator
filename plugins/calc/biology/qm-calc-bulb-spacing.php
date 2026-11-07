@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Bulb spacing',
-    'meta' => ['title' => 'Bulb spacing Calculator — Formula & Results', 'description' => 'Supply the width, the border, the area and the row spacing and the Bulb spacing calculator solves for <strong>length</strong>. The Bulb spacing calculator…', 'h1' => 'Bulb spacing Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Bulb spacing Calculator — Formula & Results', 'description' => 'Bulb spacing works out Plant spacing (s) from Plant grid, Length and Width. Plant spacing (s) is opened in centimeters; the chip beside it switches to any…', 'h1' => 'Bulb spacing Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'area' => [
@@ -514,63 +514,43 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'Supply the width, the border, the area and the row spacing and the Bulb spacing calculator solves for <strong>length</strong>.',
+        'intro' => <<<'TXT'
+        Bulb spacing works out Plant spacing (s) from Plant grid, Length and Width. Nothing is looked up on this page: Plant spacing (s) is computed from Plant grid and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Plant spacing (s) is opened in centimeters; the chip beside it switches to any unit of the same quantity.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Bulb spacing calculator work?', 'html' => <<<'TXT'
-            <p>The Bulb spacing calculator takes the values in the form, applies the relationship described below and reports <strong>length</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the plant grid and the plant select); then you type in the width, the border, the area and the row spacing (r).</p>
+            ['title' => 'How the Bulb spacing calculator works', 'html' => <<<'TXT'
+            <p>Bulb spacing answers one question from 9 numbers, and the answer is Plant spacing (s).</p><p>The relationship it solves reads Length = Area ÷ Width.</p><p>The answers are Plant spacing (s); they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 2 options, such as rectangular and triangle. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li>Pick the option that matches your case — 14 options, such as allium, anemones and bluebells. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li> The unit chip switches it to any of the 34 supported units.</li></ul><p>2 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 9 boxes and the page has everything it needs.</p><ul><li><strong>Plant grid</strong> — a plain number, no unit</li><li><strong>Length</strong> — in meters</li><li><strong>Width</strong> — in meters</li><li><strong>Border</strong> — in meters</li><li><strong>Area</strong> — in square meters</li><li><strong>Plant select</strong> — a plain number, no unit</li><li><strong>Row spacing (r)</strong> — in centimeters</li><li><strong>Number of plants</strong> — a plain number, no unit</li><li><strong>Number of plants</strong> — a plain number, no unit</li></ul><p>The answer comes back as Plant spacing (s) in centimeters. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Plant grid</strong></td><td>One of 2 options, such as rectangular and triangle.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Border</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr><tr><td><strong>Plant select</strong></td><td>One of 14 options, such as allium, anemones and bluebells.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Plant spacing (s)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Row spacing (r)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Number of plants (Plant information)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of plants (Plant information)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Triangle rows</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Triangle row spacing</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Even row plants</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Odd row plants</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Rows</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Plants per row</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Length</strong> = <code>Area ÷ Width</code></li><li><strong>Area</strong> = <code>Length × Width</code></li><li><strong>Width</strong> = <code>Area ÷ Length</code></li><li><strong>triangle_rows</strong> = <code>floor((500 ÷ 433) × ( − 2 × Border + Width) ÷ Plant spacing (s)) + 1</code></li><li><strong>triangle_row_spacing</strong> = <code>((433 ÷ 500) × Plant spacing (s))</code></li><li><strong>odd_row_plants</strong> = <code>floor(( − 2 × Border + Length) ÷ Plant spacing (s)) + 1</code></li></ul><p>Any one of Length, Area and Width can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Bulb spacing calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Length</span><span class="formula-eq">=</span><span class="formula-rhs">area ÷ width</span></div><div class="formula-row"><span class="formula-lhs">Triangle rows</span><span class="formula-eq">=</span><span class="formula-rhs">rounded down, ((500 ÷ 433) × (-2 × border + width) ÷ plant spacing (s)) + 1</span></div><div class="formula-row"><span class="formula-lhs">Triangle row spacing</span><span class="formula-eq">=</span><span class="formula-rhs">((433 ÷ 500) × plant spacing (s))</span></div><div class="formula-row"><span class="formula-lhs">Odd row plants</span><span class="formula-eq">=</span><span class="formula-rhs">rounded down, ((-2 × border + length) ÷ plant spacing (s)) + 1</span></div><div class="formula-row"><span class="formula-lhs">Even row plants</span><span class="formula-eq">=</span><span class="formula-rhs">rounded down, ((1 ÷ 2) × (-4 × border + 2 × length − plant spacing (s)) ÷ plant spacing (s)) + 1</span></div><div class="formula-row"><span class="formula-lhs">Number of plants</span><span class="formula-eq">=</span><span class="formula-rhs">((rounded down, ((-2 × border + length) ÷ plant spacing (s)) + 1) × rounded up, ((1 ÷ 2) × rounded down, ((500 ÷ 433) × (-2 × border + width) ÷ plant spacing (s)) + 1 ÷ 2) + (rounded down, ((1 ÷ 2) × (-4 × border + 2 × length − plant spacing (s)) ÷ plant spacing (s)) + 1) × rounded down, ((1 ÷ 2) × rounded down, ((500 ÷ 433) × (-2 × border + width) ÷ plant spacing (s)) + 1 ÷ 2))</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Length, Width and Border carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Plant spacing (s) is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Plant grid to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in meters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Bulb spacing calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 4 figures keep coming back — the width, the border and the area — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cat-age">Cat age</a>, <a href="/biology/cat-benadryl-dosage">Cat Benadryl dosage</a> and <a href="/biology/cat-bmi">Cat BMI</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Plant grid, Length and Width is what you already know and Plant spacing (s) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/amino-acid-composition">Amino Acid Composition Calculator</a>, <a href="/biology/animal-mortality-rate">Animal mortality rate</a> and <a href="/biology/annealing-temperature">Annealing temperature Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Bulb spacing calculator work out?', 'a' => <<<'TXT'
-            It returns length, derived from the width, the border and the area. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Bulb spacing calculator work out?', 'a' => 'Plant spacing (s), from Area and Width. The relationship is Length = Area ÷ Width.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Plant grid, Length (meters), Width (meters), Border (meters), Area (square meters). Fill plant_grid, length and width and leave Plant spacing (s) empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'What do I need to enter to use the Bulb spacing calculator?', 'a' => <<<'TXT'
-            The form asks for the width, the border, the area and the row spacing, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Length, Area, Width and triangle_rows blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Plant spacing (s) is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Plant grid left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I enter length in a different unit?', 'a' => <<<'TXT'
-            Yes. Length opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Plant spacing (s) = 0 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Bulb spacing calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Plant spacing (s) keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/cat-age', 'name' => 'Cat age'],
-            ['path' => '/biology/cat-benadryl-dosage', 'name' => 'Cat Benadryl dosage'],
-            ['path' => '/biology/cat-bmi', 'name' => 'Cat BMI'],
+            ['path' => '/biology/amino-acid-composition', 'name' => 'Amino Acid Composition Calculator'],
+            ['path' => '/biology/animal-mortality-rate', 'name' => 'Animal mortality rate'],
+            ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature Calculator'],
         ],
+        'authors' => [],
     ],
 ];

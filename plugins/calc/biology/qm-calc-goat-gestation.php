@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Goat gestation',
-    'meta' => ['title' => 'Goat gestation Calculator — Formula & Results', 'description' => 'The answer is what the Goat gestation calculator works out, and it gets there from the days until, the current date and the neg difference.', 'h1' => 'Goat gestation Calculator', 'updated' => '2025-04-07'],
+    'meta' => ['title' => 'Goat gestation Calculator — Formula & Results', 'description' => 'Goat gestation takes Breeding date and Kidding date and returns 🐐 The breed of your goat is…. A result box can be typed into, and doing so changes the…', 'h1' => 'Goat gestation Calculator', 'updated' => '2025-04-07'],
     'raw' => [
         'vars' => [
             'calving' => ['type' => 'date', 'rnd' => null],
@@ -268,63 +268,50 @@ return [
         'js' => '"use strict";omni.define("getDayOfWeek",function(dateInput){var date=new Date(dateInput*1000*60*60*24);return date.getUTCDay()});//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'The answer is what the Goat gestation calculator works out, and it gets there from the days until, the current date and the neg difference.',
+        'intro' => <<<'TXT'
+        Goat gestation takes Breeding date and Kidding date and returns 🐐 The breed of your goat is…. Nothing is looked up on this page: 🐐 The breed of your goat is... is computed from Breeding date and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Goat gestation calculator work?', 'html' => <<<'TXT'
-            <p>The Goat gestation calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
-            <p>Working from the top of the form: you give the current date; then you type in the days until and the neg difference.</p>
+            ['title' => 'How the Goat gestation calculator works', 'html' => <<<'TXT'
+            <p>Goat gestation answers one question from 2 numbers, and the answer is 🐐 The breed of your goat is….</p><p>The relationship it solves reads 🐐 The breed of your goat is... = (1 ÷ 5) × Kidding date − 1 ÷ 5 × Breeding date − 29.</p><p>The answers are 🐐 The breed of your goat is…; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A plain number with no unit attached.</li><li>A calendar date. </li><li>A plain number with no unit attached.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Breeding date</strong> — a plain number, no unit, entered as a date</li><li><strong>Kidding date</strong> — a plain number, no unit, entered as a date</li></ul><p>The answer comes back as 🐐 The breed of your goat is…. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Breeding date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Kidding date</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Day</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Days until</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Current date</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Difference</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Neg difference</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: 🐐 The breed of your goat is... takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'The formula behind the Goat gestation calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">The breed of your goat is...</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 5) × kidding date − 1 ÷ 5 × breeding date − 29</span></div><div class="formula-row"><span class="formula-lhs">Day</span><span class="formula-eq">=</span><span class="formula-rhs">weekday of (kidding date)</span></div><div class="formula-row"><span class="formula-lhs">Breeding date</span><span class="formula-eq">=</span><span class="formula-rhs">kidding date − days until</span></div><div class="formula-row"><span class="formula-lhs">Kidding date</span><span class="formula-eq">=</span><span class="formula-rhs">current date + difference</span></div><div class="formula-row"><span class="formula-lhs">Difference</span><span class="formula-eq">=</span><span class="formula-rhs">-neg difference</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>🐐 The breed of your goat is...</strong> = <code>(1 ÷ 5) × Kidding date − 1 ÷ 5 × Breeding date − 29</code></li><li><strong>Breeding date</strong> = <code>Kidding date − 5 × 🐐 The breed of your goat is... − 145</code></li><li><strong>Kidding date</strong> = <code>Breeding date + 5 × 🐐 The breed of your goat is... + 145</code></li><li><strong>day</strong> = <code>getDayOfWeek(Kidding date)</code></li><li><strong>daysUntil</strong> = <code>Kidding date − Breeding date</code></li><li><strong>currentDate</strong> = <code>Kidding date − difference</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of 🐐 The breed of your goat is…, Breeding date and Kidding date can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>The option the calculation settles on.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A calendar date.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with 🐐 The breed of your goat is… is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Breeding date and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Goat gestation calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 3 figures keep coming back — the days until, the current date and the neg difference — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Keep the units you enter consistent. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Goat gestation calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>Dates are handled as whole calendar days in the time zone of the browser, so a birth date or a deadline is compared date to date rather than as a span of hours.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/grain-bin">Grain bin</a>, <a href="/biology/grain-conversion">Grain conversion</a> and <a href="/biology/grass-seed">Grass seed</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Breeding date and Kidding date is what you already know and 🐐 The breed of your goat is… is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/gc-content-calculator">GC Content Calculator</a>, <a href="/biology/gc-content-sequence">GC Content from a Sequence — Sliding Window</a> and <a href="/biology/gdu">GDU (growing degree units) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What do I need to enter to use the Goat gestation calculator?', 'a' => <<<'TXT'
-            The form asks for the days until, the current date and the neg difference, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What does the Goat gestation calculator work out?', 'a' => <<<'TXT'
+            🐐 The breed of your goat is…, from Breeding date and Kidding date. The relationship is 🐐 The breed of your goat is... = (1 ÷ 5) × Kidding date − 1 ÷ 5 × Breeding date − 29.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Breeding date, Kidding date. Enter exposed and calving; 🐐 The breed of your goat is... is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. 🐐 The breed of your goat is…, Breeding date, Kidding date and day can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            🐐 The breed of your goat is... is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Is the Goat gestation calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave Breeding date blank and the page solves for it, reporting 🐐 The breed of your goat is... instead of the usual answer.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of 🐐 The breed of your goat is... keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/grain-bin', 'name' => 'Grain bin'],
-            ['path' => '/biology/grain-conversion', 'name' => 'Grain conversion'],
-            ['path' => '/biology/grass-seed', 'name' => 'Grass seed'],
+            ['path' => '/biology/gc-content-calculator', 'name' => 'GC Content Calculator'],
+            ['path' => '/biology/gc-content-sequence', 'name' => 'GC Content from a Sequence — Sliding Window'],
+            ['path' => '/biology/gdu', 'name' => 'GDU (growing degree units) Calculator'],
         ],
+        'authors' => [],
     ],
 ];

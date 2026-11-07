@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Compost Application Rate Calculator',
-    'meta' => ['title' => 'Compost Application Rate Calculator — Biology', 'description' => 'How much compost to spread, in cubic yards or tonnes, from the area and the depth you want. It returns volume, volume, mass and rate, and the panel shows all…', 'h1' => 'Compost Application Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Compost Application Rate Calculator — Biology', 'description' => 'Compost Application Rate takes Area, Depth and Bulk density of the compost and returns Volume and Volume. 5–10 cm for a new bed, 1 cm for a lawn…', 'h1' => 'Compost Application Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -106,44 +106,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        How much compost to spread, in cubic yards or tonnes, from the area and the depth you want. It returns volume, volume, mass and rate, and the panel shows all of them at once.
-        
-        A garden bed usually takes 5–10 cm worked into the top 15 cm, a lawn a 1 cm top-dressing, and a farm a 5–20 tonne per hectare maintenance application.
+        Compost Application Rate takes Area, Depth and Bulk density of the compost and returns Volume and Volume. There is no hidden constant here: change Volume and Area moves with it. The main result, Volume, is reported in m³.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Compost Application Rate', 'html' => <<<'TXT'
-            <p>Volume (m³) = area (m²) × depth (m). Tonnes = volume × bulk density. 1 m³ = 1.308 cubic yards</p>
-            <figure class="calc-figure"><img src="/uploads/biology/compost-application-rate.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Compost Application Rate Calculator — Compost for 100 m² at different depths (m³)" title="Compost Application Rate Calculator"><figcaption>Compost for 100 m² at different depths (m³)</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>bulk density</code></td><td>mass per cubic metre of loose compost, 0.4–0.7 t/m³</td><td>t/m³</td></tr><tr><td><code>depth</code></td><td>how thick the layer is spread</td><td>cm</td></tr><tr><td><code>t/ha</code></td><td>tonnes per hectare, the field-scale unit</td><td>t/ha</td></tr></tbody></table>
+            ['title' => 'How the Compost Application Rate calculator works', 'html' => <<<'TXT'
+            <p>The Compost Application Rate calculator applies one relationship to 3 numbers and reports Volume, Volume and Mass.</p><p>Written with the labels from the form, Volume = Area × Depth ÷ 100.</p><p>The result panel carries Volume, Volume, Mass and Rate, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Compost Application Rate?', 'html' => <<<'TXT'
-            <ol><li>Enter the area you will cover in square metres.</li><li>Set the depth you want and, if you know it, the bulk density of your compost.</li><li>Read the volume in cubic metres and yards, and the mass in tonnes.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Area</strong> — in m²</li><li><strong>Depth</strong> — in cm. 5–10 cm for a new bed, 1 cm for a lawn top-dressing</li><li><strong>Bulk density of the compost</strong> — in t/m³. 0.4 for strawy compost, 0.7 for a wet, heavy one</li></ul><p>The answers come back as Volume in m³, Volume in yd³, Mass in t, Rate in t/ha, Cost at 40 per tonne. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: area of <strong>100</strong> m², depth of <strong>5</strong> cm, bulk density of the compost of <strong>0.55</strong> t/m³.</p>
-            <p>Substituting them into the formula gives volume of <strong>5</strong> m³, volume of <strong>6.54</strong> yd³, mass of <strong>2.75</strong> t, rate of <strong>275</strong> t/ha, cost at 40 per tonne of <strong>110</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Area = 100 m², Depth = 5 cm and Bulk density of the compost = 0.55 t/m³ gives &lt;strong&gt;Volume&lt;/strong&gt; = 5 m³, &lt;strong&gt;Volume&lt;/strong&gt; = 6.54 yd³, &lt;strong&gt;Mass&lt;/strong&gt; = 2.75 t, &lt;strong&gt;Rate&lt;/strong&gt; = 275 t/ha and &lt;strong&gt;Cost at 40 per tonne&lt;/strong&gt; = 110.</p><ul><li><strong>Volume</strong> = 5 m³</li><li><strong>Volume</strong> = 6.54 yd³</li><li><strong>Mass</strong> = 2.75 t</li><li><strong>Rate</strong> = 275 t/ha</li><li><strong>Cost at 40 per tonne</strong> = 110</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Volume</strong> = <code>Area × Depth ÷ 100</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>5 – 10 cm</td><td><strong>New bed</strong></td><td>worked into the top 15 cm to build organic matter</td></tr><tr><td>1 – 2 cm</td><td><strong>Lawn top-dressing</strong></td><td>applied in spring and brushed in</td></tr><tr><td>5 – 20 t/ha</td><td><strong>Field maintenance</strong></td><td>an annual or biennial application on arable land</td></tr></tbody></table>
-            <ul><li><p>Compost is sold by volume and spread by mass, so the bulk density is the number that converts one to the other. It varies by a factor of two between a dry strawy compost and a wet, heavy one.</p></li><li><p>More is not better: above about 25 t/ha in one application, salt and phosphorus load can harm the soil and the water course.</p></li><li><p>Compost shrinks as it matures. A cubic metre delivered today can be 20% smaller in a month, which matters if you are ordering to a finished depth.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Volume&lt;/strong&gt; = 5, &lt;strong&gt;Volume&lt;/strong&gt; = 6.54, &lt;strong&gt;Mass&lt;/strong&gt; = 2.75, &lt;strong&gt;Rate&lt;/strong&gt; = 275 and &lt;strong&gt;Cost at 40 per tonne&lt;/strong&gt; = 110 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Volume takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Ordering by weight when the supplier sells by the cubic yard, or the reverse.</li><li>Spreading fresh, immature compost, which ties up nitrogen as it finishes breaking down.</li><li>Assuming 1 m³ is 1 yard³ — it is 1.31 yard³, so a short order is a 24% shortfall.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Volume</strong> = <code>Area × Depth ÷ 100</code></li><li><strong>Mass</strong> = <code>Area × Depth ÷ 100 × Bulk density of the compost</code></li><li><strong>Rate</strong> = <code>Area × Depth ÷ 100 × Bulk density of the compost ÷ Area × 10000</code></li><li><strong>Cost at 40 per tonne</strong> = <code>Area × Depth ÷ 100 × Bulk density of the compost × 40</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Volume, Volume and Mass can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Area from 100 to 200, leaving every other box alone. The panel moves from &lt;strong&gt;Volume&lt;/strong&gt; 5 m³, &lt;strong&gt;Volume&lt;/strong&gt; 6.54 yd³, &lt;strong&gt;Mass&lt;/strong&gt; 2.75 t, &lt;strong&gt;Rate&lt;/strong&gt; 275 t/ha and &lt;strong&gt;Cost at 40 per tonne&lt;/strong&gt; 110 to &lt;strong&gt;Volume&lt;/strong&gt; 10 m³, &lt;strong&gt;Volume&lt;/strong&gt; 13.08 yd³, &lt;strong&gt;Mass&lt;/strong&gt; 5.5 t, &lt;strong&gt;Rate&lt;/strong&gt; 275 t/ha and &lt;strong&gt;Cost at 40 per tonne&lt;/strong&gt; 220.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Volume, Volume and Mass are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Area to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Area, Depth and Bulk density of the compost measured, Volume and Volume wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cat-quality-of-life">Cat quality of life Calculator</a>, <a href="/biology/catch-per-unit-effort">Catch Per Unit Effort Calculator</a> and <a href="/biology/catculator">Catculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many cubic yards is 1 m³ of compost?', 'a' => '1.31 cubic yards.'],
-            ['q' => 'How deep should compost be on a new bed?', 'a' => '5–10 cm, mixed into the top 15 cm of soil.'],
-            ['q' => 'How much does a cubic metre of compost weigh?', 'a' => 'About 550 kg, or 0.4–0.7 tonnes depending on moisture.'],
-            ['q' => 'What does the Compost Application Rate actually calculate?', 'a' => 'It returns volume, volume, mass and rate. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Compost Application Rate calculator work out?', 'a' => 'Volume, Volume, Mass and Rate, from Area and Depth. The relationship is Volume = Area × Depth ÷ 100.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Area (m²), Depth (cm), Bulk density of the compost (t/m³). Fill area, depth_cm and density and leave Volume empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Volume, Volume, Mass and Rate can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Volume = 5 m³, Volume = 6.54 yd³, Mass = 2.75 t, Rate = 275 t/ha and Cost at 40 per tonne = 110. The figures come from Area as the page opens it; they are a starting point, not a fixed answer.
             TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Volume is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Area blank and the page solves for it, reporting Volume instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Volume keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cat-quality-of-life', 'name' => 'Cat quality of life Calculator'],
+            ['path' => '/biology/catch-per-unit-effort', 'name' => 'Catch Per Unit Effort Calculator'],
+            ['path' => '/biology/catculator', 'name' => 'Catculator'],
+        ],
+        'authors' => [],
     ],
 ];

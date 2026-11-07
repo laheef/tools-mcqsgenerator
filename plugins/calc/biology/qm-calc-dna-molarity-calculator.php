@@ -11,9 +11,7 @@
 
 return [
     'name' => 'DNA Molarity Calculator',
-    'meta' => ['title' => 'DNA Molarity Calculator — Formula & Results', 'description' => <<<'TXT'
-    A DNA molarity comes from an A₂₆₀ reading, a mass or a concentration, once you know the length. It returns total mass, concentration, A₂₆₀ equivalent and…
-    TXT, 'h1' => 'DNA Molarity Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Molarity Calculator — Formula & Results', 'description' => 'DNA Molarity turns Length, Concentration and Volume into Total mass and Amount. A result box can be typed into, and doing so changes the question rather than…', 'h1' => 'DNA Molarity Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -122,48 +120,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A DNA molarity comes from an A₂₆₀ reading, a mass or a concentration, once you know the length. It returns total mass, concentration, A₂₆₀ equivalent and amount, and the panel shows all of them at once.
-        
-        One A₂₆₀ unit means 50 µg/mL of double-stranded DNA, 33 µg/mL of single-stranded DNA and 40 µg/mL of RNA, and a known length converts that mass into moles — the number a sequencing reaction or a ligation actually asks for.
+        DNA Molarity turns Length, Concentration and Volume into Total mass and Amount. There is no hidden constant here: change Total mass and Length moves with it. The main result, Total mass, is reported in ng.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the DNA Molarity', 'html' => <<<'TXT'
-            <p>mass (ng) = concentration (ng/µL) × volume (µL). pmol = mass (ng) × 1000 ÷ (660 × length in bp). c (nM) = pmol ÷ volume (µL) × 1000. A₂₆₀ = concentration ÷ 50 (dsDNA), 33 (ssDNA) or 40 (RNA)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/dna-molarity-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: DNA Molarity Calculator — A₂₆₀ conversion factors (µg/mL per absorbance unit)" title="DNA Molarity Calculator"><figcaption>A₂₆₀ conversion factors (µg/mL per absorbance unit)</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A₂₆₀</code></td><td>absorbance at 260 nm through a 1 cm path</td><td>—</td></tr><tr><td><code>660</code></td><td>g/mol per base pair of dsDNA</td><td>g/mol</td></tr><tr><td><code>nM</code></td><td>nanomole per litre</td><td>mol/L</td></tr></tbody></table>
+            ['title' => 'How the DNA Molarity calculator works', 'html' => <<<'TXT'
+            <p>The DNA Molarity calculator applies one relationship to 5 numbers and reports Total mass, Amount and Molarity.</p><p>Written with the labels from the form, Total mass = Concentration × Volume.</p><p>The answers are Total mass, Amount, Molarity and Molecules; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the DNA Molarity?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the length of the molecule — this is what turns a mass into a molar amount.</li><li>Type the concentration your nanodrop or Qubit reports, and the volume you will use.</li><li>Read the amount in pmol, the molarity in nM, the molecule count and the A₂₆₀ it corresponds to.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 5 boxes, and nothing else.</p><ul><li><strong>Length</strong> — in bp. Fragment or genome length</li><li><strong>Concentration</strong> — in ng/µL. What a nanodrop or a Qubit reports</li><li><strong>Volume</strong> — in µL</li><li><strong>Molecule (A₂₆₀ factor)</strong> — a plain number, no unit. µg/mL per absorbance unit</li><li><strong>Molar mass per base</strong> — in g/mol. 660 dsDNA per bp, 330 ssDNA, 340 RNA</li></ul><p>What you get back is Total mass in ng, Amount in pmol, Molarity in nM, Molecules, A₂₆₀ equivalent in A, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: length of <strong>1,000</strong> bp, volume of <strong>50</strong> µL, molecule (a₂₆₀ factor) set to <strong>50.0</strong>, molar mass per base of <strong>660</strong> g/mol.</p>
-            <p>Substituting them into the formula gives total mass of <strong>5,000</strong> ng, concentration of <strong>100</strong> ng/µL, a₂₆₀ equivalent of <strong>2</strong> A, amount of <strong>7.58</strong> pmol, molarity of <strong>151.52</strong> nM, molecules of <strong>4,562,227,848,485</strong>.</p>
+            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: Total mass takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Total mass</strong> = <code>Concentration × Volume</code></li><li><strong>Concentration</strong> = <code>Total mass ÷ Volume</code></li><li><strong>A₂₆₀ equivalent</strong> = <code>Concentration ÷ Molecule (A₂₆₀ factor)</code></li><li><strong>Amount</strong> = <code>Total mass × 1000 ÷ (Molar mass per base × Length)</code></li><li><strong>Molarity</strong> = <code>Amount ÷ Volume × 1000</code></li><li><strong>Molecules</strong> = <code>Amount × 602214076000</code></li></ul><p>Any one of Total mass, Concentration and A₂₆₀ equivalent can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1.8 – 1.9</td><td><strong>A₂₆₀/A₂₈₀</strong></td><td>clean DNA; lower means protein or phenol carry-over</td></tr><tr><td>50 ng/µL</td><td><strong>Typical miniprep</strong></td><td>enough for a dozen PCRs</td></tr><tr><td>under 2 ng/µL</td><td><strong>Too dilute</strong></td><td>concentrate before a sequencing reaction</td></tr></tbody></table>
-            <ul><li><p>The A₂₆₀ factor assumes a 1 cm path. A nanodrop uses a much shorter path and applies its own multiplier, so its answer is already in ng/µL — do not multiply it again.</p></li><li><p>A₂₆₀ cannot tell DNA from RNA or from free nucleotides. A reading with a huge 260 peak and a ratio near 1.8 often means nucleotides left over from a bad cleanup.</p></li><li><p>Molarity needs the length. Without it a mass tells you nothing about how many molecules are in the tube: the same 100 ng is 0.15 pmol of a 1 kb fragment but 0.003 pmol of a 50 kb one.</p></li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Total mass, Amount and Molarity are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Length and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using the dsDNA factor (50) for an oligo, which understates the absorbance by a third.</li><li>Forgetting to divide by the volume when converting to a working concentration.</li><li>Comparing A₂₆₀ readings taken in different cuvettes or after a freeze–thaw.</li></ul>
-            TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/dsdna-ug-to-pmol">dsDNA µg to pmol</a>. <a href="/biology/dna-molecular-weight-calculator">DNA molecular weight</a>. <a href="/biology/oligo-tm-calculator">Oligo Tm</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Length, Concentration and Volume is what you already know and Total mass and Amount is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/hardy-weinberg-equilibrium">Hardy-Weinberg equilibrium Calculator</a>, <a href="/biology/hardy-weinberg-dominant-allele">Hardy–Weinberg from the Dominant Allele Frequency Calculator</a> and <a href="/biology/hardy-weinberg-dominant-homozygote">Hardy–Weinberg from the Dominant Homozygote Frequency Calculat</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I convert A₂₆₀ to concentration?', 'a' => 'Multiply by 50 for dsDNA, 33 for ssDNA or 40 for RNA to get µg/mL, which is the same number in ng/µL.'],
-            ['q' => 'How many copies are in 100 ng of a 1 kb plasmid?', 'a' => 'About 9 × 10¹⁰ — 100 ng ÷ 660 kDa, times Avogadro\'s number.'],
-            ['q' => 'Why does molarity need the fragment length?', 'a' => 'Because the same mass of a longer molecule is fewer molecules.'],
-            ['q' => 'What does the DNA Molarity actually calculate?', 'a' => 'It returns total mass, concentration, A₂₆₀ equivalent and amount. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the DNA Molarity calculator work out?', 'a' => 'Total mass, Amount, Molarity and Molecules, from Concentration and Volume. The relationship is Total mass = Concentration × Volume.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Length (bp), Concentration (ng/µL), Volume (µL), Molecule (A₂₆₀ factor), Molar mass per base (g/mol). With length, conc_ng_ul and volume_ul in place, Total mass can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Total mass, Concentration, A₂₆₀ equivalent and Amount blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Total mass is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Length blank and the page solves for it, reporting Total mass instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Total mass at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/hardy-weinberg-equilibrium', 'name' => 'Hardy-Weinberg equilibrium Calculator'],
+            ['path' => '/biology/hardy-weinberg-dominant-allele', 'name' => 'Hardy–Weinberg from the Dominant Allele Frequency Calculator'],
+            ['path' => '/biology/hardy-weinberg-dominant-homozygote', 'name' => 'Hardy–Weinberg from the Dominant Homozygote Frequency Calculat'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,9 @@
 
 return [
     'name' => 'PCR Primer Stats Calculator',
-    'meta' => ['title' => 'PCR Primer Stats Calculator — Formula & Results', 'description' => 'A primer pair is worth checking on eight counts before you order it. It returns forward length, forward gc, forward tm, reverse length, reverse gc, reverse…', 'h1' => 'PCR Primer Stats Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'PCR Primer Stats Calculator — Formula & Results', 'description' => <<<'TXT'
+    PCR Primer Stats turns Forward primer (5′→3′) and Reverse primer (5′→3′) into Forward length and Forward GC. The arithmetic is the whole method: Forward…
+    TXT, 'h1' => 'PCR Primer Stats Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'forward' => [
@@ -341,42 +343,38 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A primer pair is worth checking on eight counts before you order it. It returns forward length, forward gc, forward tm, reverse length, reverse gc, reverse tm, suggested annealing temperature, difference in tm and longest 3′ complementary run, and the panel shows all of them at once.
-        
-        A pair that differs by more than 5 °C, or that can dimerise at its 3′ end, will amplify badly no matter how good the polymerase is.
+        PCR Primer Stats turns Forward primer (5′→3′) and Reverse primer (5′→3′) into Forward length and Forward GC. The arithmetic is the whole method: Forward length is worked out from Forward primer (5′→3′) by one formula, applied once. Forward length comes back in nt unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the PCR Primer Stats', 'html' => <<<'TXT'
-            <p>Tm = 2(A+T) + 4(G+C) up to 14 nt; 64.9 + 41(G+C − 16.4)/N from 15 to 40 nt; 81.5 + 16.6·log₁₀[Na⁺] + 0.41(GC%) − 675/N above 40 nt. Ta ≈ Tm(lower) − 5</p>
-            <figure class="calc-figure"><img src="/uploads/biology/pcr-primer-stats.svg" width="720" height="300" loading="lazy" alt="Animated diagram: PCR Primer Stats Calculator — Melting temperature by primer length (°C)" title="PCR Primer Stats Calculator"><figcaption>Melting temperature by primer length (°C)</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>Tm</code></td><td>melting temperature of the primer-template duplex</td><td>°C</td></tr><tr><td><code>Ta</code></td><td>annealing temperature for the PCR programme</td><td>°C</td></tr><tr><td><code>GC clamp</code></td><td>a G or C at the 3′ end</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the PCR Primer Stats calculator works', 'html' => <<<'TXT'
+            <p>PCR Primer Stats answers one question from 2 numbers, and the answer is Forward length, Forward GC and Forward Tm.</p><p>What comes back is Forward length, Forward GC, Forward Tm and Reverse length — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the PCR Primer Stats?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Forward primer (5′→3′)</strong> — a plain number, no unit. Paste the primer</li><li><strong>Reverse primer (5′→3′)</strong> — a plain number, no unit. Paste the primer as ordered</li></ul><p>The result boxes are Forward length in nt, Forward GC in %, Forward Tm in °C, Reverse length in nt, Reverse GC in %, Reverse Tm in °C, Suggested annealing temperature in °C, Difference in Tm in °C, Longest 3′ complementary run in bases; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>18 – 22 nt</td><td><strong>Ideal length</strong></td><td>specific and cheap to synthesise</td></tr><tr><td>40 – 60%</td><td><strong>Ideal GC</strong></td><td>balanced stability</td></tr><tr><td>difference over 5 °C</td><td><strong>Mismatched pair</strong></td><td>the cooler primer sets the annealing temperature</td></tr><tr><td>3′ run of 4+</td><td><strong>Dimer risk</strong></td><td>primers will amplify each other instead of the target</td></tr></tbody></table>
-            <ul><li><p>The annealing temperature is set by the less stable primer, so a big Tm difference wastes the better one. Aim for a pair within 2–5 °C.</p></li><li><p>Complementarity at the 3′ end is the dangerous kind: a polymerase will extend from it, so even two or three paired bases there produce primer dimers.</p></li><li><p>These Tm values are length-banded approximations. For a critical assay use a nearest-neighbour calculation with your real salt and primer concentrations.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Forward length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Entering the reverse primer as it appears in the template rather than as it is ordered (the order is the reverse complement).</li><li>Choosing a primer with a 3′ T — it is a poor clamp and misprimes more often.</li><li>Running all 40 cycles at the Tm of the higher primer, which lets the lower one misprime.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Forward length, Forward GC and Forward Tm are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Forward primer (5′→3′) and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Forward primer (5′→3′) and Reverse primer (5′→3′) measured, Forward length and Forward GC wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/cephalic-index">Cephalic Index Calculator</a>, <a href="/biology/cfu-g-calculator">CFU/g Calculator</a> and <a href="/biology/cfu-ml-calculator">CFU/mL Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good Tm difference for a primer pair?', 'a' => 'Under 5 °C, ideally 2–3 °C.'],
-            ['q' => 'How long should a primer be?', 'a' => '18–22 nt for routine PCR; longer for high GC or for adding restriction tails.'],
-            ['q' => 'Why is my primer dimerising?', 'a' => 'Complementary 3′ ends, or a long self-complementary run. Check the 3′ complementary run in the table above.'],
-            ['q' => 'What does the PCR Primer Stats actually calculate?', 'a' => <<<'TXT'
-            It returns forward length, forward gc, forward tm, reverse length, reverse gc, reverse tm, suggested annealing temperature, difference in tm and longest 3′ complementary run. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Forward primer (5′→3′), Reverse primer (5′→3′). With forward and reverse in place, Forward length can stay blank and the page will work it out.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Forward length is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Forward length, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Forward length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cephalic-index', 'name' => 'Cephalic Index Calculator'],
+            ['path' => '/biology/cfu-g-calculator', 'name' => 'CFU/g Calculator'],
+            ['path' => '/biology/cfu-ml-calculator', 'name' => 'CFU/mL Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

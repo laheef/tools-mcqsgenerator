@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Field Capacity and Plant Available Water Calculator',
-    'meta' => ['title' => 'Field Capacity and Plant Available Water Calculator', 'description' => 'Plant available water is what a soil holds between field capacity and the permanent wilting point. It returns plant available water, available water in the…', 'h1' => 'Field Capacity and Plant Available Water Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Field Capacity and Plant Available Water Calculator', 'description' => <<<'TXT'
+    Field Capacity and Plant Available Water takes Field capacity, Permanent wilting point and Rooting depth and returns Plant available water and Available water…
+    TXT, 'h1' => 'Field Capacity and Plant Available Water Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -98,46 +100,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Plant available water is what a soil holds between field capacity and the permanent wilting point. It returns plant available water, available water in the root zone, deficit to refill and days until wilting at 5 mm/day, and the panel shows all of them at once.
-        
-        It decides how long a crop can go between irrigations, and it is one of the few soil properties worth measuring once because it barely changes.
+        Field Capacity and Plant Available Water takes Field capacity, Permanent wilting point and Rooting depth and returns Plant available water and Available water in the root zone. There is no hidden constant here: change Plant available water and Field capacity moves with it. The main result, Plant available water, is reported in %.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Field Capacity and Plant Available Water', 'html' => <<<'TXT'
-            <p>PAW (%) = FC − PWP; PAW (mm) = PAW% ÷ 100 × rooting depth</p>
-            <figure class="calc-figure"><img src="/uploads/biology/plant-available-water.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Field Capacity and Plant Available Water Calculator — Saturation, field capacity, wilting point, and what roots can reach." title="Field Capacity and Plant Available Water Calculator"><figcaption>Saturation, field capacity, wilting point, and what roots can reach.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>FC</code></td><td>field capacity, volumetric</td><td>%</td></tr><tr><td><code>PWP</code></td><td>permanent wilting point, volumetric</td><td>%</td></tr><tr><td><code>PAW</code></td><td>plant available water</td><td>% or mm</td></tr></tbody></table>
+            ['title' => 'How the Field Capacity and Plant Available Water calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Field Capacity and Plant Available Water: it takes 4 numbers and reports Plant available water, Available water in the root zone and Deficit to refill.</p><p>The relationship it solves reads Plant available water = Field capacity − Permanent wilting point.</p><p>What comes back is Plant available water, Available water in the root zone, Deficit to refill and Days until wilting at 5 mm/day — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Field Capacity and Plant Available Water?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Field capacity</strong> — in %. Volumetric water content</li><li><strong>Permanent wilting point</strong> — in %</li><li><strong>Rooting depth</strong> — in mm</li><li><strong>Current water content</strong> — in %</li></ul><p>What you get back is Plant available water in %, Available water in the root zone in mm, Deficit to refill in mm, Days until wilting at 5 mm/day in days, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: field capacity of <strong>32</strong>%, permanent wilting point of <strong>15</strong>%, rooting depth of <strong>600</strong> mm, current water content of <strong>24</strong>%.</p>
-            <p>Substituting them into the formula gives plant available water of <strong>17</strong>%, available water in the root zone of <strong>102</strong> mm, deficit to refill of <strong>48</strong> mm, days until wilting at 5 mm/day of <strong>10.8</strong> days.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Field capacity = 32 %, Permanent wilting point = 15 %, Rooting depth = 600 mm and Current water content = 24 % — through the same formula and the panel reports &lt;strong&gt;Plant available water&lt;/strong&gt; = 17 %, &lt;strong&gt;Available water in the root zone&lt;/strong&gt; = 102 mm, &lt;strong&gt;Deficit to refill&lt;/strong&gt; = 48 mm and &lt;strong&gt;Days until wilting at 5 mm/day&lt;/strong&gt; = 10.8 days.</p><ul><li><strong>Plant available water</strong> = 17 %</li><li><strong>Available water in the root zone</strong> = 102 mm</li><li><strong>Deficit to refill</strong> = 48 mm</li><li><strong>Days until wilting at 5 mm/day</strong> = 10.8 days</li></ul><p>The line behind those figures is <strong>Plant available water</strong> = <code>Field capacity − Permanent wilting point</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 10%</td><td><strong>Low</strong></td><td>sand and gravel; irrigate little and often</td></tr><tr><td>10 – 20%</td><td><strong>Moderate</strong></td><td>sandy loam; the common middle ground</td></tr><tr><td>above 20%</td><td><strong>High</strong></td><td>clay loam and peat; long intervals between irrigations</td></tr></tbody></table>
-            <ul><li><p>Sands hold little plant available water even though they drain freely; clays hold a lot but release it slowly.</p></li><li><p>The mm figure is what an irrigation schedule works in: 51 mm of available water at 5 mm/day is about ten days of buffer.</p></li><li><p>Field capacity and wilting point are measured on undisturbed cores — a texture class conversion is only a rough guide.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Plant available water&lt;/strong&gt; = 17, &lt;strong&gt;Available water in the root zone&lt;/strong&gt; = 102, &lt;strong&gt;Deficit to refill&lt;/strong&gt; = 48 and &lt;strong&gt;Days until wilting at 5 mm/day&lt;/strong&gt; = 10.8 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Plant available water takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Using gravimetric water content as if it were volumetric.</li><li>Applying the same rooting depth to seedlings and mature plants.</li><li>Ignoring compaction, which cuts rooting depth far below the value in the table.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Plant available water</strong> = <code>Field capacity − Permanent wilting point</code></li><li><strong>Available water in the root zone</strong> = <code>(Field capacity − Permanent wilting point) ÷ 100 × Rooting depth</code></li><li><strong>Deficit to refill</strong> = <code>(Field capacity − Current water content) ÷ 100 × Rooting depth</code></li><li><strong>Days until wilting at 5 mm/day</strong> = <code>(Current water content − Permanent wilting point) ÷ 100 × Rooting depth ÷ 5</code></li></ul><p>Any one of Plant available water, Available water in the root zone and Deficit to refill can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Field capacity from 32 to 64, leaving every other box alone. The panel moves from &lt;strong&gt;Plant available water&lt;/strong&gt; 17 %, &lt;strong&gt;Available water in the root zone&lt;/strong&gt; 102 mm, &lt;strong&gt;Deficit to refill&lt;/strong&gt; 48 mm and &lt;strong&gt;Days until wilting at 5 mm/day&lt;/strong&gt; 10.8 days to &lt;strong&gt;Plant available water&lt;/strong&gt; 49 %, &lt;strong&gt;Available water in the root zone&lt;/strong&gt; 294 mm, &lt;strong&gt;Deficit to refill&lt;/strong&gt; 240 mm and &lt;strong&gt;Days until wilting at 5 mm/day&lt;/strong&gt; 10.8 days.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Plant available water, Available water in the root zone and Deficit to refill are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Field capacity is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Field capacity, Permanent wilting point and Rooting depth measured, Plant available water and Available water in the root zone wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dog-quality-of-life">Dog quality of life</a>, <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a> and <a href="/biology/dog-size">Dog size Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long can a crop go between irrigations?', 'a' => 'Divide the available water in the root zone by the daily crop water use.'],
-            ['q' => 'Why does clay hold more water than sand but wilt sooner?', 'a' => 'Because much of the water in clay is held too tightly for roots to extract.'],
-            ['q' => 'What does the Field Capacity and Plant Available Water actually calculate?', 'a' => <<<'TXT'
-            It returns plant available water, available water in the root zone, deficit to refill and days until wilting at 5 mm/day. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Field Capacity and Plant Available Water calculator work out?', 'a' => <<<'TXT'
+            Plant available water, Available water in the root zone, Deficit to refill and Days until wilting at 5 mm/day, from Field capacity and Permanent wilting point. The relationship is Plant available water = Field capacity − Permanent wilting point.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Field capacity (%), Permanent wilting point (%), Rooting depth (mm), Current water content (%). Fill fc, pwp and depth and leave Plant available water empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Plant available water, Available water in the root zone, Deficit to refill and Days until wilting at 5 mm/day blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Plant available water = 17 %, Available water in the root zone = 102 mm, Deficit to refill = 48 mm and Days until wilting at 5 mm/day = 10.8 days. The figures come from Field capacity as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Plant available water is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Field capacity blank and the page solves for it, reporting Plant available water instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Plant available water keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+            ['path' => '/biology/dog-size', 'name' => 'Dog size Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

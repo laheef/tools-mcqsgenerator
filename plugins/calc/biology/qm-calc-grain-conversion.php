@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Grain conversion',
-    'meta' => ['title' => 'Grain conversion — Formula, Steps & Examples', 'description' => 'Give the Grain conversion calculator the bushels, the price total and the price per and it returns the answer. The Grain conversion calculator takes the…', 'h1' => 'Grain conversion Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Grain conversion — Formula, Steps & Examples', 'description' => 'Grain conversion: Enter Agricultural commodity and Bushels into Grain conversion and the answer comes back as Amount and Price per {{PricePerUnit.fullUnit}}.', 'h1' => 'Grain conversion Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'Amount' => [
@@ -678,63 +678,43 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'Give the Grain conversion calculator the bushels, the price total and the price per and it returns the answer.',
+        'intro' => <<<'TXT'
+        Enter Agricultural commodity and Bushels into Grain conversion and the answer comes back as Amount and Price per {{PricePerUnit.fullUnit}}. The arithmetic is the whole method: Amount is worked out from Agricultural commodity by one formula, applied once. Amount comes back in metric tons unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Grain conversion calculator work?', 'html' => <<<'TXT'
-            <p>The Grain conversion calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the agricultural commodity and the agricultural commodity (Second commodity)); then you type in the bushels, the price total, the bushels (Second commodity) and the price per (Second commodity).</p>
+            ['title' => 'How the Grain conversion calculator works', 'html' => <<<'TXT'
+            <p>Grain conversion answers one question from 2 numbers, and the answer is Amount, Price per {{PricePerUnit.fullUnit}} and Price per bushel.</p><p>Written with the labels from the form, Amount = Bushels × Agricultural commodity.</p><p>The result panel carries Amount, Price per {{PricePerUnit.fullUnit}}, Price per bushel and Price total, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 53 options, such as alfalfa seed, barley and beans, Lima (dry). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in bu..</li><li>A single on/off switch — tick it for &ldquo;Calculate price per unit&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li><li>Pick the option that matches your case — 53 options, such as alfalfa seed, barley and beans, Lima (dry). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in bu..</li><li>A measured quantity, entered by default in US Dollar. The unit chip switches it to any of the 113 supported units.</li></ul><p>3 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Agricultural commodity</strong> — a plain number, no unit</li><li><strong>Bushels</strong> — in bu.. The calculator shows the equivalent amount in bushels</li></ul><p>The answers come back as Amount in metric tons, Price per {{PricePerUnit.fullUnit}} in USD, Price per bushel in / bu., Price total in USD, Agricultural commodity, Amount in metric tons, Bushels in bu., Price per {{PricePerUnit2.fullUnit}} in USD, Price per bushel in / bu., Price total in USD, Difference in USD, Absolut in USD. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Agricultural commodity</strong></td><td>One of 53 options, such as alfalfa seed, barley and beans, Lima (dry).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Bushels</strong></td><td>A number stated in bu..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Price per bushel</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Price total</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Agricultural commodity (Second commodity)</strong></td><td>One of 53 options, such as alfalfa seed, barley and beans, Lima (dry).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Bushels (Second commodity)</strong></td><td>A number stated in bu..</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Price per (Second commodity)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>You supply it</td></tr><tr><td><strong>Price per bushel (Second commodity)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Price total (Second commodity)</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Difference</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr><tr><td><strong>Absolut</strong></td><td>A measured quantity, 113 units available.</td><td>US Dollar</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Amount</strong> = <code>Bushels × Agricultural commodity</code></li><li><strong>Bushels</strong> = <code>Amount ÷ Agricultural commodity</code></li><li><strong>Agricultural commodity</strong> = <code>Amount ÷ Bushels</code></li><li><strong>Price per bushel</strong> = <code>Price total ÷ Bushels</code></li><li><strong>Price total</strong> = <code>Bushels × Price per bushel</code></li><li><strong>Price per {{PricePerUnit.fullUnit}}</strong> = <code>Price total ÷ Amount</code></li></ul><p>Any one of Amount, Bushels and Agricultural commodity can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Grain conversion calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Amount</span><span class="formula-eq">=</span><span class="formula-rhs">bushels × agricultural commodity</span></div><div class="formula-row"><span class="formula-lhs">Price per bushel</span><span class="formula-eq">=</span><span class="formula-rhs">price total ÷ bushels</span></div><div class="formula-row"><span class="formula-lhs">Price per</span><span class="formula-eq">=</span><span class="formula-rhs">price total ÷ amount</span></div><div class="formula-row"><span class="formula-lhs">Amount</span><span class="formula-eq">=</span><span class="formula-rhs">price total ÷ price per</span></div><div class="formula-row"><span class="formula-lhs">Price per bushel</span><span class="formula-eq">=</span><span class="formula-rhs">price per bushel + difference</span></div><div class="formula-row"><span class="formula-lhs">Absolut</span><span class="formula-eq">=</span><span class="formula-rhs">the absolute value of (difference)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Amount, Price per {{PricePerUnit.fullUnit}} and Price per bushel are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Agricultural commodity and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in metric tons, and convertible to any of the 29 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in metric tons, and convertible to any of the 29 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li><li>Shown in US Dollar, and convertible to any of the 113 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in metric tons</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Mass, opening in metric tons</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li><li>Currency, opening in US Dollar</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Grain conversion calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 3 figures keep coming back — the bushels, the price total and the price per — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/grass-seed">Grass seed</a>, <a href="/biology/guinea-pig-age">Guinea pig years to human years</a> and <a href="/biology/guinea-pig-pregnancy">Guinea pig pregnancy</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Agricultural commodity and Bushels and the number you are missing is Amount and Price per {{PricePerUnit.fullUnit}}.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/fish-per-liter">Fish Per Liter Calculator</a>, <a href="/biology/fish-tank-stocking">Fish Tank Stocking Calculator</a> and <a href="/biology/fixation-index-fst">Fixation Index (Fst) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What do I need to enter to use the Grain conversion calculator?', 'a' => <<<'TXT'
-            The form asks for the bushels, the price total and the price per, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What does the Grain conversion calculator work out?', 'a' => <<<'TXT'
+            Amount, Price per {{PricePerUnit.fullUnit}}, Price per bushel and Price total, from Bushels and Agricultural commodity. The relationship is Amount = Bushels × Agricultural commodity.
             TXT],
-            ['q' => 'Can I enter amount in a different unit?', 'a' => <<<'TXT'
-            Yes. Amount opens in metric tons and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Agricultural commodity, Bushels (bu.). Enter Grain and Bushels; Amount is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Amount, Bushels, Agricultural commodity and Price per bushel blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (3 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Grain conversion calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Amount is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Agricultural commodity blank and the page solves for it, reporting Amount instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Amount keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/grass-seed', 'name' => 'Grass seed'],
-            ['path' => '/biology/guinea-pig-age', 'name' => 'Guinea pig years to human years'],
-            ['path' => '/biology/guinea-pig-pregnancy', 'name' => 'Guinea pig pregnancy'],
+            ['path' => '/biology/fish-per-liter', 'name' => 'Fish Per Liter Calculator'],
+            ['path' => '/biology/fish-tank-stocking', 'name' => 'Fish Tank Stocking Calculator'],
+            ['path' => '/biology/fixation-index-fst', 'name' => 'Fixation Index (Fst) Calculator'],
         ],
+        'authors' => [],
     ],
 ];

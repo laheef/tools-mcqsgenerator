@@ -11,7 +11,7 @@
 
 return [
     'name' => 'In Vivo Formulation Calculator',
-    'meta' => ['title' => 'In Vivo Formulation Calculator — Formula & Results', 'description' => 'Work out the dosing volume, the amount of compound to weigh out and the dilution you need before an in vivo study. It returns volume per animal, dose volume…', 'h1' => 'In Vivo Formulation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'In Vivo Formulation Calculator — Formula & Results', 'description' => 'In Vivo Formulation works out Volume per animal and Dose volume per kg from Dose, Body weight and Number of animals. It is a single relationship that reads…', 'h1' => 'In Vivo Formulation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -125,56 +125,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Work out the dosing volume, the amount of compound to weigh out and the dilution you need before an in vivo study. It returns volume per animal, dose volume per kg, compound for the cohort and minimum stock concentration, and the panel shows all of them at once.
-        
-        Give the dose in mg/kg, the animal's weight and the stock concentration, and the page returns the volume to inject or dose orally, the total compound for the whole cohort, and whether the dose sits inside a sensible volume-to-bodyweight limit.
+        In Vivo Formulation works out Volume per animal and Dose volume per kg from Dose, Body weight and Number of animals. It is a single relationship that reads Volume per animal out of Dose, not a table of canned results keyed by them. Units for Volume per animal default to µL and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the In Vivo Formulation', 'html' => <<<'TXT'
-            <p>V (µL) = dose (mg/kg) × body weight (g) ÷ 1000 ÷ stock (mg/mL) × 1000; compound = dose × weight ÷ 1000 × animals</p>
-            <figure class="calc-figure"><img src="/uploads/biology/in-vivo-formulation.svg" width="720" height="300" loading="lazy" alt="Animated diagram: In Vivo Formulation Calculator — Volume per dose against the usual route limits" title="In Vivo Formulation Calculator"><figcaption>Volume per dose against the usual route limits</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>dose</code></td><td>milligrams of compound per kilogram of animal</td><td>mg/kg</td></tr><tr><td><code>weight</code></td><td>body weight of one animal</td><td>g</td></tr><tr><td><code>stock</code></td><td>concentration of the solution you dose from</td><td>mg/mL</td></tr><tr><td><code>V</code></td><td>volume given to one animal</td><td>µL</td></tr></tbody></table>
+            ['title' => 'How the In Vivo Formulation calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind In Vivo Formulation: it takes 5 numbers and reports Volume per animal, Dose volume per kg and Compound for the cohort.</p><p>Written with the labels from the form, Volume per animal = Dose × Body weight ÷ 1000 ÷ Stock concentration × 1000.</p><p>What comes back is Volume per animal, Dose volume per kg, Compound for the cohort and Minimum stock concentration — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the In Vivo Formulation?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the target dose and the average weight of the animals in the cohort.</li><li>Enter the stock concentration you have, or plan to make.</li><li>Compare the volume per animal with the route's limit: oral and subcutaneous doses are usually capped around 10 mL/kg, intravenous around 5 mL/kg.</li><li>Weigh out the compound the page reports, plus a little for losses — the figure is the theoretical minimum for the cohort.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 5 boxes and the page has everything it needs.</p><ul><li><strong>Dose</strong> — in mg/kg. Milligrams of compound per kilogram of animal</li><li><strong>Body weight</strong> — in g. Average weight of the animals</li><li><strong>Number of animals</strong> — a plain number, no unit. Doses to prepare</li><li><strong>Stock concentration</strong> — in mg/mL. The solution you have or will make</li><li><strong>Maximum volume per dose</strong> — in mL/kg. 5 mL/kg oral, 10 mL/kg IP are common limits</li></ul><p>What you get back is Volume per animal in µL, Dose volume per kg in mL/kg, Compound for the cohort in mg, Minimum stock concentration in mg/mL, Dilution factor to that stock in ×, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: dose of <strong>10</strong> mg/kg, body weight of <strong>25</strong> g, number of animals of <strong>10</strong>, stock concentration of <strong>5</strong> mg/mL, maximum volume per dose of <strong>10</strong> mL/kg.</p>
-            <p>Substituting them into the formula gives volume per animal of <strong>50</strong> µL, dose volume per kg of <strong>2</strong> mL/kg, compound for the cohort of <strong>2.5</strong> mg, minimum stock concentration of <strong>1</strong> mg/mL, dilution factor to that stock of <strong>5</strong> ×.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Dose = 10 mg/kg, Body weight = 25 g, Number of animals = 10, Stock concentration = 5 mg/mL and Maximum volume per dose = 10 mL/kg gives &lt;strong&gt;Volume per animal&lt;/strong&gt; = 50 µL, &lt;strong&gt;Dose volume per kg&lt;/strong&gt; = 2 mL/kg, &lt;strong&gt;Compound for the cohort&lt;/strong&gt; = 2.5 mg, &lt;strong&gt;Minimum stock concentration&lt;/strong&gt; = 1 mg/mL and &lt;strong&gt;Dilution factor to that stock&lt;/strong&gt; = 5 ×.</p><ul><li><strong>Volume per animal</strong> = 50 µL</li><li><strong>Dose volume per kg</strong> = 2 mL/kg</li><li><strong>Compound for the cohort</strong> = 2.5 mg</li><li><strong>Minimum stock concentration</strong> = 1 mg/mL</li><li><strong>Dilution factor to that stock</strong> = 5 ×</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Volume per animal</strong> = <code>Dose × Body weight ÷ 1000 ÷ Stock concentration × 1000</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>≤ 5 mL/kg</td><td><strong>Comfortable</strong></td><td>fine for every common route including IV bolus</td></tr><tr><td>5 – 10 mL/kg</td><td><strong>Acceptable</strong></td><td>usual ceiling for oral gavage and subcutaneous dosing</td></tr><tr><td>10 – 20 mL/kg</td><td><strong>High</strong></td><td>only for oral dosing, and it disturbs fluid balance</td></tr><tr><td>above 20 mL/kg</td><td><strong>Too high</strong></td><td>raise the stock concentration instead of the volume</td></tr></tbody></table>
-            <ul><li><p>The volume limit is a physiological constraint, not a convenience: a 25 g mouse given 1 mL has received 40 mL/kg, which is a fluid load large enough to change absorption and sometimes the result.</p></li><li><p>If the required volume exceeds the limit, the answer is a more concentrated stock, not a larger injection. The page reports the weakest stock that still fits, and how far your current stock could be diluted toward it.</p></li><li><p>The compound figure assumes no dead volume, no priming of lines and no spillage. In practice prepare 10–20 % extra, and more for a long study or a suspension.</p></li><li><p>For a suspension rather than a solution, dose by mass and vortex immediately before each dose — a settled suspension is the commonest cause of a variable exposure.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Volume per animal&lt;/strong&gt; = 50, &lt;strong&gt;Dose volume per kg&lt;/strong&gt; = 2, &lt;strong&gt;Compound for the cohort&lt;/strong&gt; = 2.5, &lt;strong&gt;Minimum stock concentration&lt;/strong&gt; = 1 and &lt;strong&gt;Dilution factor to that stock&lt;/strong&gt; = 5. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Volume per animal is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Mixing grams and milligrams: a 25 g mouse is 0.025 kg, and using 25 kg under-doses by 1000×.</li><li>Ignoring the volume limit and dosing 20 mL/kg because the arithmetic was easier.</li><li>Forgetting the vehicle-only control group when calculating how much compound to weigh out.</li><li>Assuming the stock concentration is exact: check the salt form and the purity, because both change the amount of free compound.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Volume per animal</strong> = <code>Dose × Body weight ÷ 1000 ÷ Stock concentration × 1000</code></li><li><strong>Dose volume per kg</strong> = <code>Dose × Body weight ÷ 1000 ÷ Stock concentration × 1000 ÷ Body weight</code></li><li><strong>Compound for the cohort</strong> = <code>Dose × Body weight ÷ 1000 × Number of animals</code></li><li><strong>Minimum stock concentration</strong> = <code>Dose ÷ Maximum volume per dose</code></li><li><strong>Dilution factor to that stock</strong> = <code>Stock concentration ÷ (Dose ÷ Maximum volume per dose)</code></li></ul><p>Any one of Volume per animal, Dose volume per kg and Compound for the cohort can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/dilution-calculator-c1v1">Dilution C1V1</a>. <a href="/biology/mass-molarity-conversion">Mass ↔ molarity</a>. <a href="/health/pediatric-dose">Paediatric dose</a>. <a href="/biology/serial-dilution-planner">Serial dilution planner</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Dose from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Volume per animal&lt;/strong&gt; 50 µL, &lt;strong&gt;Dose volume per kg&lt;/strong&gt; 2 mL/kg, &lt;strong&gt;Compound for the cohort&lt;/strong&gt; 2.5 mg, &lt;strong&gt;Minimum stock concentration&lt;/strong&gt; 1 mg/mL and &lt;strong&gt;Dilution factor to that stock&lt;/strong&gt; 5 × to &lt;strong&gt;Volume per animal&lt;/strong&gt; 100 µL, &lt;strong&gt;Dose volume per kg&lt;/strong&gt; 4 mL/kg, &lt;strong&gt;Compound for the cohort&lt;/strong&gt; 5 mg, &lt;strong&gt;Minimum stock concentration&lt;/strong&gt; 2 mg/mL and &lt;strong&gt;Dilution factor to that stock&lt;/strong&gt; 2.5 ×.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Volume per animal, Dose volume per kg and Compound for the cohort are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Dose and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Dose, Body weight and Number of animals and the number you are missing is Volume per animal and Dose volume per kg.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/chi-square-genetics-test">Chi-Square Test for Genetics Calculator</a>, <a href="/biology/chicken-density">Chicken Density Calculator</a> and <a href="/biology/chicken-feed-amount">Chicken Feed Amount Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I convert a mg/kg dose to a volume?', 'a' => <<<'TXT'
-            Multiply the dose by the animal's weight in kilograms to get the mass of compound, then divide by the stock concentration. For a 25 g mouse at 10 mg/kg from a 5 mg/mL stock that is 0.25 mg ÷ 5 mg/mL = 50 µL.
+            ['q' => 'What does the In Vivo Formulation calculator work out?', 'a' => <<<'TXT'
+            Volume per animal, Dose volume per kg, Compound for the cohort and Minimum stock concentration, from Dose, Body weight and Stock concentration. The relationship is Volume per animal = Dose × Body weight ÷ 1000 ÷ Stock concentration × 1000.
             TXT],
-            ['q' => 'What is a safe injection volume for a mouse?', 'a' => <<<'TXT'
-            Roughly 10 mL/kg for oral and subcutaneous routes and 5 mL/kg for intravenous — about 250 µL and 125 µL for a 25 g mouse. Above that you are dosing fluid as much as compound.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Dose (mg/kg), Body weight (g), Number of animals, Stock concentration (mg/mL), Maximum volume per dose (mL/kg). Fill dose, weight and animals and leave Volume per animal empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Should I weigh out extra compound?', 'a' => <<<'TXT'
-            Yes. The page gives the theoretical minimum for the cohort; add 10–20 % for dead volume and losses, and more if the compound is a suspension or the study runs for days.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Volume per animal, Dose volume per kg, Compound for the cohort and Minimum stock concentration blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Does body weight matter that much?', 'a' => <<<'TXT'
-            It scales the dose linearly, so a cohort that gains 10 % during a study receives 10 % more compound at the same volume. Re-weigh weekly and adjust the volume, not the concentration.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Volume per animal = 50 µL, Dose volume per kg = 2 mL/kg, Compound for the cohort = 2.5 mg, Minimum stock concentration = 1 mg/mL and Dilution factor to that stock = 5 ×. The figures come from Dose as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'What does the In Vivo Formulation actually calculate?', 'a' => <<<'TXT'
-            It returns volume per animal, dose volume per kg, compound for the cohort and minimum stock concentration. Each one is derived by the formula on this page, so you can check any figure by hand.
-            TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Volume per animal is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'A blank box is the question. With Dose left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Volume per animal keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/chi-square-genetics-test', 'name' => 'Chi-Square Test for Genetics Calculator'],
+            ['path' => '/biology/chicken-density', 'name' => 'Chicken Density Calculator'],
+            ['path' => '/biology/chicken-feed-amount', 'name' => 'Chicken Feed Amount Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

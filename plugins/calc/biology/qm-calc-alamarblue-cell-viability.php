@@ -12,7 +12,7 @@
 return [
     'name' => 'AlamarBlue Cell Viability / Percent Reduction Calculator',
     'meta' => ['title' => 'AlamarBlue Cell Viability / Percent Reduction', 'description' => <<<'TXT'
-    AlamarBlue (resazurin) is reduced by living cells to resorufin, which is fluorescent and pink. It returns percent reduction, viability relative to control and…
+    AlamarBlue Cell Viability / Percent Reduction works out Percent reduction and Viability relative to control from Sample fluorescence, Control fluorescence and…
     TXT, 'h1' => 'AlamarBlue Cell Viability / Percent Reduction Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
@@ -86,51 +86,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        AlamarBlue (resazurin) is reduced by living cells to resorufin, which is fluorescent and pink. It returns percent reduction, viability relative to control and cytotoxicity, and the panel shows all of them at once.
-        
-        Viability is the reduction relative to a control, corrected for the background of medium alone. This calculator does that three-point correction.
+        AlamarBlue Cell Viability / Percent Reduction works out Percent reduction and Viability relative to control from Sample fluorescence, Control fluorescence and Medium-only blank. It is a single relationship that reads Percent reduction out of Sample fluorescence, not a table of canned results keyed by them. Units for Percent reduction default to % and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the AlamarBlue Cell Viability / Percent Reduction', 'html' => <<<'TXT'
-            <p>Viability (%) = (sample − blank) ÷ (control − blank) × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/alamarblue-cell-viability.svg" width="720" height="300" loading="lazy" alt="Animated diagram: AlamarBlue Cell Viability / Percent Reduction Calculator — Sample, control and blank, and the reduction between them." title="AlamarBlue Cell Viability / Percent Reduction Calculator"><figcaption>Sample, control and blank, and the reduction between them.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>sample</code></td><td>fluorescence of treated wells</td><td>RFU</td></tr><tr><td><code>control</code></td><td>fluorescence of untreated wells</td><td>RFU</td></tr><tr><td><code>blank</code></td><td>medium plus reagent, no cells</td><td>RFU</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> AlamarBlue/resazurin reduction chemistry; 70% viability threshold from ISO 10993-5.</p>
+            ['title' => 'How the AlamarBlue Cell Viability / Percent Reduction calculator works', 'html' => <<<'TXT'
+            <p>AlamarBlue Cell Viability / Percent Reduction answers one question from 3 numbers, and the answer is Percent reduction, Viability relative to control and Cytotoxicity.</p><p>The relationship it solves reads Percent reduction = (Sample fluorescence − Medium-only blank) ÷ (Control fluorescence − Medium-only blank) × 100.</p><p>What comes back is Percent reduction, Viability relative to control and Cytotoxicity — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the AlamarBlue Cell Viability / Percent Reduction?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Sample fluorescence</strong> — in RFU. Treated wells</li><li><strong>Control fluorescence</strong> — in RFU. Untreated wells</li><li><strong>Medium-only blank</strong> — in RFU. No cells</li></ul><p>The result boxes are Percent reduction in %, Viability relative to control in %, Cytotoxicity in %; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: sample fluorescence of <strong>32,000</strong> RFU, control fluorescence of <strong>48,000</strong> RFU, medium-only blank of <strong>2,500</strong> RFU.</p>
-            <p>Substituting them into the formula gives percent reduction of <strong>64.84</strong>%, viability relative to control of <strong>64.84</strong>%, cytotoxicity of <strong>35.16</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Sample fluorescence = 32000 RFU, Control fluorescence = 48000 RFU and Medium-only blank = 2500 RFU; the answers are &lt;strong&gt;Percent reduction&lt;/strong&gt; = 64.84 %, &lt;strong&gt;Viability relative to control&lt;/strong&gt; = 64.84 % and &lt;strong&gt;Cytotoxicity&lt;/strong&gt; = 35.16 %.</p><ul><li><strong>Percent reduction</strong> = 64.84 %</li><li><strong>Viability relative to control</strong> = 64.84 %</li><li><strong>Cytotoxicity</strong> = 35.16 %</li></ul><p>The line behind those figures is <strong>Percent reduction</strong> = <code>(Sample fluorescence − Medium-only blank) ÷ (Control fluorescence − Medium-only blank) × 100</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>above 90%</td><td><strong>Non-cytotoxic</strong></td><td>within normal variation</td></tr><tr><td>70 – 90%</td><td><strong>Mild</strong></td><td>watch for dose-dependent effects</td></tr><tr><td>below 70%</td><td><strong>Cytotoxic</strong></td><td>the usual threshold in ISO 10993 testing</td></tr></tbody></table>
-            <ul><li><p>AlamarBlue measures metabolic activity, not cell number. A cytostatic compound lowers the signal without killing anything.</p></li><li><p>The blank matters: resazurin is partly reduced by medium components, and an uncorrected blank inflates weak signals.</p></li><li><p>Incubation time should be identical for all wells; reduction is enzymatic and keeps going.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Percent reduction&lt;/strong&gt; = 64.84, &lt;strong&gt;Viability relative to control&lt;/strong&gt; = 64.84 and &lt;strong&gt;Cytotoxicity&lt;/strong&gt; = 35.16. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Percent reduction is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Reading in the wrong channel — resorufin fluoresces at 590 nm with excitation around 560 nm.</li><li>Comparing plates incubated for different times.</li><li>Leaving the reagent in the wells during imaging, where it bleaches.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Percent reduction</strong> = <code>(Sample fluorescence − Medium-only blank) ÷ (Control fluorescence − Medium-only blank) × 100</code></li><li><strong>Viability relative to control</strong> = <code>(Sample fluorescence − Medium-only blank) ÷ (Control fluorescence − Medium-only blank) × 100</code></li><li><strong>Cytotoxicity</strong> = <code>100 − (Sample fluorescence − Medium-only blank) ÷ (Control fluorescence − Medium-only blank) × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Percent reduction, Viability relative to control and Cytotoxicity can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/percent-viability">Percent viability</a>. <a href="/biology/trypan-blue-cell-viability">Trypan blue viability</a>. <a href="/biology/percent-inhibition">Percent inhibition</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Sample fluorescence from 32000 to 64000, leaving every other box alone. The panel moves from &lt;strong&gt;Percent reduction&lt;/strong&gt; 64.84 %, &lt;strong&gt;Viability relative to control&lt;/strong&gt; 64.84 % and &lt;strong&gt;Cytotoxicity&lt;/strong&gt; 35.16 % to &lt;strong&gt;Percent reduction&lt;/strong&gt; 135 %, &lt;strong&gt;Viability relative to control&lt;/strong&gt; 135 % and &lt;strong&gt;Cytotoxicity&lt;/strong&gt; -35.16 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Percent reduction, Viability relative to control and Cytotoxicity are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Sample fluorescence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Sample fluorescence, Control fluorescence and Medium-only blank is what you already know and Percent reduction and Viability relative to control is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/qpcr-efficiency">qPCR efficiency Calculator</a>, <a href="/biology/quadrat-sampling-density">Quadrat Sampling Density Calculator</a> and <a href="/biology/rabbit-cage-size">Rabbit cage size</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is percent reduction?', 'a' => 'The share of the dye that the cells have reduced, corrected for the medium-only blank — the same number as viability when the control is fully viable.'],
-            ['q' => 'Can I use absorbance instead of fluorescence?', 'a' => 'Yes, at 570 nm against a 600 nm reference; the calculation is identical.'],
-            ['q' => 'What does the AlamarBlue Cell Viability / Percent Reduction actually calculate?', 'a' => <<<'TXT'
-            It returns percent reduction, viability relative to control and cytotoxicity. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the AlamarBlue Cell Viability / Percent Reduction calculator work out?', 'a' => <<<'TXT'
+            Percent reduction, Viability relative to control and Cytotoxicity, from Sample fluorescence, Medium-only blank and Control fluorescence. The relationship is Percent reduction = (Sample fluorescence − Medium-only blank) ÷ (Control fluorescence − Medium-only blank) × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Sample fluorescence (RFU), Control fluorescence (RFU), Medium-only blank (RFU). With sample, control and blank in place, Percent reduction can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Percent reduction, Viability relative to control and Cytotoxicity can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Percent reduction = 64.84 %, Viability relative to control = 64.84 % and Cytotoxicity = 35.16 %. The figures come from Sample fluorescence as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Percent reduction is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Sample fluorescence left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Percent reduction at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/qpcr-efficiency', 'name' => 'qPCR efficiency Calculator'],
+            ['path' => '/biology/quadrat-sampling-density', 'name' => 'Quadrat Sampling Density Calculator'],
+            ['path' => '/biology/rabbit-cage-size', 'name' => 'Rabbit cage size'],
+        ],
+        'authors' => [],
     ],
 ];

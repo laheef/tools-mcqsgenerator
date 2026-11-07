@@ -11,7 +11,7 @@
 
 return [
     'name' => 'TFF Membrane Area and Flux Calculator',
-    'meta' => ['title' => 'TFF Membrane Area and Flux Calculator — Biology', 'description' => 'A tangential-flow filtration step is sized by the volume to process and the flux the membrane will hold, and the membrane area then fixes how long the step…', 'h1' => 'TFF Membrane Area and Flux Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'TFF Membrane Area and Flux Calculator — Biology', 'description' => 'Enter Batch volume, Permeate flux and Concentration factor into TFF Membrane Area and Flux and the answer comes back as Membrane area required and Cassettes…', 'h1' => 'TFF Membrane Area and Flux Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -137,50 +137,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A tangential-flow filtration step is sized by the volume to process and the flux the membrane will hold, and the membrane area then fixes how long the step takes. It returns membrane area required, cassettes to install, diafiltration buffer needed and estimated step time, and the panel shows all of them at once.
-        
-        This calculator returns the area, the number of cassettes, the diafiltration volume and the step time at your flux.
+        Enter Batch volume, Permeate flux and Concentration factor into TFF Membrane Area and Flux and the answer comes back as Membrane area required and Cassettes to install. The arithmetic is the whole method: Membrane area required is worked out from Batch volume by one formula, applied once. Membrane area required comes back in m² unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the TFF Membrane Area and Flux', 'html' => <<<'TXT'
-            <p>Area = max(batch ÷ load capacity, batch ÷ flux-based area); DF buffer = (V ÷ CF) × DV; time ≈ (V + V·DV/CF) ÷ (area × flux)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/tff-membrane-area.svg" width="720" height="300" loading="lazy" alt="Animated diagram: TFF Membrane Area and Flux Calculator — Feed, retentate and permeate: area sets the pace of the step." title="TFF Membrane Area and Flux Calculator"><figcaption>Feed, retentate and permeate: area sets the pace of the step.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>V</code></td><td>starting batch volume</td><td>L</td></tr><tr><td><code>J</code></td><td>permeate flux</td><td>L/m²/h</td></tr><tr><td><code>CF</code></td><td>concentration factor (final ÷ initial volume)</td><td>×</td></tr><tr><td><code>DV</code></td><td>diafiltration volumes</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the TFF Membrane Area and Flux calculator works', 'html' => <<<'TXT'
+            <p>The TFF Membrane Area and Flux calculator applies one relationship to 6 numbers and reports Membrane area required, Cassettes to install and Diafiltration buffer needed.</p><p>In the form&#039;s own words, Membrane area required = max(Batch volume ÷ Maximum load per m²,Batch volume ÷ Permeate flux).</p><p>The result panel carries Membrane area required, Cassettes to install, Diafiltration buffer needed and Estimated step time, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the TFF Membrane Area and Flux?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 6 boxes, and nothing else.</p><ul><li><strong>Batch volume</strong> — in L</li><li><strong>Permeate flux</strong> — in L/m²/h. 30–100 for a typical mAb step</li><li><strong>Concentration factor</strong> — in x</li><li><strong>Diafiltration volumes</strong> — in DV</li><li><strong>Area per cassette</strong> — in m²</li><li><strong>Maximum load per m²</strong> — in L/m². Process-specific</li></ul><p>What you get back is Membrane area required in m², Cassettes to install in cassettes, Diafiltration buffer needed in L, Estimated step time in h, Area set by the load limit in m², Which limit sets the area (1 = flux, 2 = load), shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: batch volume of <strong>500</strong> L, permeate flux of <strong>60</strong> L/m²/h, concentration factor of <strong>8</strong> x, diafiltration volumes of <strong>5</strong> DV, area per cassette of <strong>2.5</strong> m², maximum load per m² of <strong>100</strong> L/m².</p>
-            <p>Substituting them into the formula gives membrane area required of <strong>8.33</strong> m², cassettes to install of <strong>4</strong> cassettes, diafiltration buffer needed of <strong>312.5</strong> L, estimated step time of <strong>2.12</strong> h, area set by the load limit of <strong>5</strong> m², which limit sets the area (1 = flux, 2 = load) of <strong>1</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Batch volume = 500 L, Permeate flux = 60 L/m²/h, Concentration factor = 8 x, Diafiltration volumes = 5 DV, Area per cassette = 2.5 m² and Maximum load per m² = 100 L/m²; the answers are &lt;strong&gt;Membrane area required&lt;/strong&gt; = 8.33 m², &lt;strong&gt;Cassettes to install&lt;/strong&gt; = 4 cassettes, &lt;strong&gt;Diafiltration buffer needed&lt;/strong&gt; = 313 L, &lt;strong&gt;Estimated step time&lt;/strong&gt; = 2.13 h, &lt;strong&gt;Area set by the load limit&lt;/strong&gt; = 5 m² and &lt;strong&gt;Which limit sets the area (1 = flux, 2 = load)&lt;/strong&gt; = 1.</p><ul><li><strong>Membrane area required</strong> = 8.33 m²</li><li><strong>Cassettes to install</strong> = 4 cassettes</li><li><strong>Diafiltration buffer needed</strong> = 313 L</li><li><strong>Estimated step time</strong> = 2.13 h</li><li><strong>Area set by the load limit</strong> = 5 m²</li><li><strong>Which limit sets the area (1 = flux, 2 = load)</strong> = 1</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Membrane area required</strong> = <code>max(Batch volume ÷ Maximum load per m²,Batch volume ÷ Permeate flux)</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>30 – 60</td><td><strong>Conservative flux</strong></td><td>high-mass, fouling feeds</td></tr><tr><td>60 – 100</td><td><strong>Typical</strong></td><td>a well-behaved mAb ultrafiltration step</td></tr><tr><td>above 100</td><td><strong>Aggressive</strong></td><td>only with pre-filtered, low-titre streams</td></tr></tbody></table>
-            <ul><li><p>Flux falls as the feed concentrates, so the time estimate is optimistic unless the quoted flux is the average over the step, not the clean-water value.</p></li><li><p>Diafiltration is done at constant volume: you add buffer at the rate permeate leaves, and the buffer volume needed is (retentate volume) × DV.</p></li><li><p>Install at least one cassette more than the calculation suggests; a single cassette leaves no margin for a fouled membrane.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Membrane area required&lt;/strong&gt; = 8.33, &lt;strong&gt;Cassettes to install&lt;/strong&gt; = 4, &lt;strong&gt;Diafiltration buffer needed&lt;/strong&gt; = 313, &lt;strong&gt;Estimated step time&lt;/strong&gt; = 2.13, &lt;strong&gt;Area set by the load limit&lt;/strong&gt; = 5 and &lt;strong&gt;Which limit sets the area (1 = flux, 2 = load)&lt;/strong&gt; = 1. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Membrane area required is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using clean-water flux for a cell-culture feed, where fouling cuts it by half or more.</li><li>Forgetting the hold-up volume of the system and tubing when quoting yield.</li><li>Sizing exactly to the load limit and then having to dilute the batch to finish the step.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Membrane area required</strong> = <code>max(Batch volume ÷ Maximum load per m²,Batch volume ÷ Permeate flux)</code></li><li><strong>Cassettes to install</strong> = <code>ceil(max(Batch volume ÷ Maximum load per m²,Batch volume ÷ Permeate flux) ÷ Area per cassette)</code></li><li><strong>Diafiltration buffer needed</strong> = <code>Batch volume ÷ Concentration factor × Diafiltration volumes</code></li><li><strong>Estimated step time</strong> = <code>(Batch volume ÷ Membrane area required + Batch volume ÷ Concentration factor × Diafiltration volumes ÷ Membrane area required) ÷ Permeate flux + 0.5</code></li><li><strong>Area set by the load limit</strong> = <code>Batch volume ÷ Maximum load per m²</code></li><li><strong>Which limit sets the area (1 = flux, 2 = load)</strong> = <code>if_else(Batch volume ÷ Maximum load per m²&gt;Batch volume ÷ Permeate flux,2,1)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Membrane area required, Cassettes to install and Diafiltration buffer needed can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/enzyme-specific-activity-yield">Specific activity and yield</a>. <a href="/biology/specific-productivity-qp">Specific productivity</a>. <a href="/chemistry/molarity">Molarity</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Batch volume, from 500 to 1000 — and the answers go from &lt;strong&gt;Membrane area required&lt;/strong&gt; 8.33 m², &lt;strong&gt;Cassettes to install&lt;/strong&gt; 4 cassettes, &lt;strong&gt;Diafiltration buffer needed&lt;/strong&gt; 313 L, &lt;strong&gt;Estimated step time&lt;/strong&gt; 2.13 h, &lt;strong&gt;Area set by the load limit&lt;/strong&gt; 5 m² and &lt;strong&gt;Which limit sets the area (1 = flux, 2 = load)&lt;/strong&gt; 1 to &lt;strong&gt;Membrane area required&lt;/strong&gt; 16.67 m², &lt;strong&gt;Cassettes to install&lt;/strong&gt; 7 cassettes, &lt;strong&gt;Diafiltration buffer needed&lt;/strong&gt; 625 L, &lt;strong&gt;Estimated step time&lt;/strong&gt; 2.13 h, &lt;strong&gt;Area set by the load limit&lt;/strong&gt; 10 m² and &lt;strong&gt;Which limit sets the area (1 = flux, 2 = load)&lt;/strong&gt; 1.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Membrane area required, Cassettes to install and Diafiltration buffer needed are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Batch volume to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Batch volume, Permeate flux and Concentration factor and the number you are missing is Membrane area required and Cassettes to install.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/bod-load">BOD Load Calculator</a>, <a href="/biology/bone-length-to-body-height">Bone Length to Body Height Calculator</a> and <a href="/biology/bradford-assay-calculator">Bradford Assay (standard curve) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I choose a cassette size?', 'a' => 'Round the calculated area up to whole cassettes, then check the retentate channel height gives a sensible crossflow for your pump.'],
-            ['q' => 'What is one diafiltration volume?', 'a' => 'A volume of buffer equal to the current retentate volume; five volumes remove about 99.3% of a freely permeating impurity.'],
-            ['q' => 'What does the TFF Membrane Area and Flux actually calculate?', 'a' => <<<'TXT'
-            It returns membrane area required, cassettes to install, diafiltration buffer needed and estimated step time. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the TFF Membrane Area and Flux calculator work out?', 'a' => <<<'TXT'
+            Membrane area required, Cassettes to install, Diafiltration buffer needed and Estimated step time, from Batch volume, Maximum load per m² and Permeate flux. The relationship is Membrane area required = max(Batch volume ÷ Maximum load per m²,Batch volume ÷ Permeate flux).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Batch volume (L), Permeate flux (L/m²/h), Concentration factor (x), Diafiltration volumes (DV), Area per cassette (m²). Fill volume, flux and concentration and leave Membrane area required empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Membrane area required, Cassettes to install, Diafiltration buffer needed and Estimated step time can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Membrane area required = 8.33 m², Cassettes to install = 4 cassettes, Diafiltration buffer needed = 313 L, Estimated step time = 2.13 h, Area set by the load limit = 5 m² and Which limit sets the area (1 = flux, 2 = load) = 1. The figures come from Batch volume as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Membrane area required is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Batch volume blank and the page solves for it, reporting Membrane area required instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Membrane area required at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/bod-load', 'name' => 'BOD Load Calculator'],
+            ['path' => '/biology/bone-length-to-body-height', 'name' => 'Bone Length to Body Height Calculator'],
+            ['path' => '/biology/bradford-assay-calculator', 'name' => 'Bradford Assay (standard curve) Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

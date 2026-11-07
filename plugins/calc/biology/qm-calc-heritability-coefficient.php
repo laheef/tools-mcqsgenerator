@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Heritability Coefficient Calculator',
-    'meta' => ['title' => 'Heritability Coefficient Calculator — Biology', 'description' => <<<'TXT'
-    Heritability is the share of the variation in a trait, in one population in one environment, that is attributable to genetic differences. Enter the values you…
-    TXT, 'h1' => 'Heritability Coefficient Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Heritability Coefficient Calculator — Biology', 'description' => 'Heritability Coefficient turns Correlation between parent and offspring, Correlation among half sibs and Additive genetic variance into Heritability from…', 'h1' => 'Heritability Coefficient Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -105,46 +103,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Heritability is the share of the variation in a trait, in one population in one environment, that is attributable to genetic differences. It returns heritability from parent-offspring regression, heritability from half-sib correlation, heritability from variance components and response to selection, and the panel shows all of them at once.
-        
-        This calculator estimates narrow-sense heritability from parent-offspring or half-sib data and shows the expected response to selection.
+        Heritability Coefficient turns Correlation between parent and offspring, Correlation among half sibs and Additive genetic variance into Heritability from parent-offspring regression and Heritability from half-sib correlation. It is a single relationship that reads Heritability from parent-offspring regression out of Correlation between parent and offspring, not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Heritability Coefficient', 'html' => <<<'TXT'
-            <p>h² = V_A ÷ (V_A + V_E); h² = 2r(parent, offspring); h² = 4r(half sibs); R = h² × S</p>
-            <figure class="calc-figure"><img src="/uploads/biology/heritability-coefficient.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Heritability Coefficient Calculator — Additive plus environmental variance sets the ceiling." title="Heritability Coefficient Calculator"><figcaption>Additive plus environmental variance sets the ceiling.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>V_A</code></td><td>additive genetic variance</td><td>—</td></tr><tr><td><code>V_E</code></td><td>environmental variance</td><td>—</td></tr><tr><td><code>S</code></td><td>selection differential</td><td>SD</td></tr><tr><td><code>R</code></td><td>response to selection</td><td>SD</td></tr></tbody></table>
+            ['title' => 'How the Heritability Coefficient calculator works', 'html' => <<<'TXT'
+            <p>The Heritability Coefficient calculator applies one relationship to 5 numbers and reports Heritability from parent-offspring regression, Heritability from half-sib correlation and Heritability from variance components.</p><p>Written with the labels from the form, Heritability from parent-offspring regression = 2 × Correlation between parent and offspring.</p><p>The result panel carries Heritability from parent-offspring regression, Heritability from half-sib correlation, Heritability from variance components and Response to selection, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Heritability Coefficient?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Correlation between parent and offspring</strong> — a plain number, no unit. 0–1</li><li><strong>Correlation among half sibs</strong> — a plain number, no unit. 0–1</li><li><strong>Additive genetic variance</strong> — a plain number, no unit. V_A</li><li><strong>Environmental variance</strong> — a plain number, no unit. V_E</li><li><strong>Selection differential</strong> — in SD. How far the selected parents sit above the mean</li></ul><p>What you get back is Heritability from parent-offspring regression, Heritability from half-sib correlation, Heritability from variance components, Response to selection in SD, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: correlation between parent and offspring of <strong>0.35</strong>, correlation among half sibs of <strong>0.09</strong>, additive genetic variance of <strong>0.4</strong>, environmental variance of <strong>0.6</strong>, selection differential of <strong>1.2</strong> SD.</p>
-            <p>Substituting them into the formula gives heritability from parent-offspring regression of <strong>0.7</strong>, heritability from half-sib correlation of <strong>0.36</strong>, heritability from variance components of <strong>0.4</strong>, response to selection of <strong>0.48</strong> SD.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Correlation between parent and offspring = 0.35, Correlation among half sibs = 0.09, Additive genetic variance = 0.4, Environmental variance = 0.6 and Selection differential = 1.2 SD; the answers are &lt;strong&gt;Heritability from parent-offspring regression&lt;/strong&gt; = 0.7, &lt;strong&gt;Heritability from half-sib correlation&lt;/strong&gt; = 0.36, &lt;strong&gt;Heritability from variance components&lt;/strong&gt; = 0.4 and &lt;strong&gt;Response to selection&lt;/strong&gt; = 0.48 SD.</p><ul><li><strong>Heritability from parent-offspring regression</strong> = 0.7</li><li><strong>Heritability from half-sib correlation</strong> = 0.36</li><li><strong>Heritability from variance components</strong> = 0.4</li><li><strong>Response to selection</strong> = 0.48 SD</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Heritability from parent-offspring regression</strong> = <code>2 × Correlation between parent and offspring</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 – 0.2</td><td><strong>Low</strong></td><td>environment dominates; breeding progress is slow</td></tr><tr><td>0.2 – 0.4</td><td><strong>Moderate</strong></td><td>typical for growth and yield traits</td></tr><tr><td>0.4 – 0.7</td><td><strong>High</strong></td><td>typical for body size and milk yield</td></tr><tr><td>0.7 – 1.0</td><td><strong>Very high</strong></td><td>highly canalised traits such as coat pattern</td></tr></tbody></table>
-            <ul><li><p>Heritability is a property of a population in an environment, not of a gene. The same trait can be 0.6 in a uniform greenhouse and 0.2 in a variable field.</p></li><li><p>Narrow-sense heritability counts only additive effects, because that is the part that responds to selection; broad-sense includes dominance and interaction.</p></li><li><p>The breeder's equation R = h²S is the most useful form: it turns heritability into a prediction of how much the next generation moves.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Heritability from parent-offspring regression&lt;/strong&gt; = 0.7, &lt;strong&gt;Heritability from half-sib correlation&lt;/strong&gt; = 0.36, &lt;strong&gt;Heritability from variance components&lt;/strong&gt; = 0.4 and &lt;strong&gt;Response to selection&lt;/strong&gt; = 0.48 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Heritability from parent-offspring regression takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Quoting a heritability figure for a trait without saying which population and environment.</li><li>Using a parent-offspring correlation from different environments, which inflates h².</li><li>Assuming that a high heritability means a trait cannot be changed by the environment.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Heritability from parent-offspring regression</strong> = <code>2 × Correlation between parent and offspring</code></li><li><strong>Heritability from half-sib correlation</strong> = <code>4 × Correlation among half sibs</code></li><li><strong>Heritability from variance components</strong> = <code>Additive genetic variance ÷ (Additive genetic variance + Environmental variance)</code></li><li><strong>Response to selection</strong> = <code>Additive genetic variance ÷ (Additive genetic variance + Environmental variance) × Selection differential</code></li></ul><p>Any one of Heritability from parent-offspring regression, Heritability from half-sib correlation and Heritability from variance components can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Correlation between parent and offspring from 0.35 to 0.7, leaving every other box alone. The panel moves from &lt;strong&gt;Heritability from parent-offspring regression&lt;/strong&gt; 0.7, &lt;strong&gt;Heritability from half-sib correlation&lt;/strong&gt; 0.36, &lt;strong&gt;Heritability from variance components&lt;/strong&gt; 0.4 and &lt;strong&gt;Response to selection&lt;/strong&gt; 0.48 SD to &lt;strong&gt;Heritability from parent-offspring regression&lt;/strong&gt; 1.4, &lt;strong&gt;Heritability from half-sib correlation&lt;/strong&gt; 0.36, &lt;strong&gt;Heritability from variance components&lt;/strong&gt; 0.4 and &lt;strong&gt;Response to selection&lt;/strong&gt; 0.48 SD.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Heritability from parent-offspring regression, Heritability from half-sib correlation and Heritability from variance components are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Correlation between parent and offspring is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Correlation between parent and offspring, Correlation among half sibs and Additive genetic variance and the number you are missing is Heritability from parent-offspring regression and Heritability from half-sib correlation.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dilution-calculator-c1v1">Dilution (C1V1 = C2V2) Calculator</a>, <a href="/biology/dna-concentration">DNA concentration</a> and <a href="/biology/dna-copy-number">DNA copy number Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is the difference between h² and H²?', 'a' => 'h² (narrow sense) is additive variance over total; H² (broad sense) is all genetic variance over total. Only h² predicts selection response.'],
-            ['q' => 'Can heritability be greater than 1?', 'a' => 'Not in a properly estimated design; a value above 1 signals a data or model error.'],
-            ['q' => 'What does the Heritability Coefficient actually calculate?', 'a' => <<<'TXT'
-            It returns heritability from parent-offspring regression, heritability from half-sib correlation, heritability from variance components and response to selection. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Heritability Coefficient calculator work out?', 'a' => <<<'TXT'
+            Heritability from parent-offspring regression, Heritability from half-sib correlation, Heritability from variance components and Response to selection, from Correlation between parent and offspring. The relationship is Heritability from parent-offspring regression = 2 × Correlation between parent and offspring.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Correlation between parent and offspring, Correlation among half sibs, Additive genetic variance, Environmental variance, Selection differential (SD). Fill r_parent, r_halfsib and additive and leave Heritability from parent-offspring regression empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Heritability from parent-offspring regression, Heritability from half-sib correlation, Heritability from variance components and Response to selection blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Heritability from parent-offspring regression = 0.7, Heritability from half-sib correlation = 0.36, Heritability from variance components = 0.4 and Response to selection = 0.48 SD. The figures come from Correlation between parent and offspring as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Heritability from parent-offspring regression is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Correlation between parent and offspring left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Heritability from parent-offspring regression keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dilution-calculator-c1v1', 'name' => 'Dilution (C1V1 = C2V2) Calculator'],
+            ['path' => '/biology/dna-concentration', 'name' => 'DNA concentration'],
+            ['path' => '/biology/dna-copy-number', 'name' => 'DNA copy number Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

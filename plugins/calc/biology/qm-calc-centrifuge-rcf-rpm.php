@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Centrifuge RCF to RPM Converter',
-    'meta' => ['title' => 'Centrifuge RCF to RPM Converter — Formula & Results', 'description' => 'RCF and RPM are the same centrifuge force in different units: RPM depends on the rotor, RCF does not. It returns relative centrifugal force, speed for 10 000…', 'h1' => 'Centrifuge RCF to RPM Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Centrifuge RCF to RPM Converter — Formula & Results', 'description' => 'Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally…', 'h1' => 'Centrifuge RCF to RPM Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -74,46 +74,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        RCF and RPM are the same centrifuge force in different units: RPM depends on the rotor, RCF does not. It returns relative centrifugal force, speed for 10 000 × g and distance travelled per minute, and the panel shows all of them at once.
-        
-        This converter goes between the two using the rotor radius, so a protocol written for someone else's centrifuge can be run on yours.
+        Centrifuge RCF to RPM takes Rotor radius and Speed and returns Relative centrifugal force and Speed for 10 000 × g. Nothing is looked up on this page: Relative centrifugal force is computed from Rotor radius and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Relative centrifugal force is opened in × g; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Centrifuge RCF to RPM Converter', 'html' => <<<'TXT'
-            <p>RCF = 1.118 × 10⁻⁵ × r × (rpm)², with r in centimetres and RCF in multiples of g</p>
-            <figure class="calc-figure"><img src="/uploads/biology/centrifuge-rcf-rpm.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Centrifuge RCF to RPM Converter — Force rises with the square of the speed." title="Centrifuge RCF to RPM Converter"><figcaption>Force rises with the square of the speed.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>r</code></td><td>rotor radius (centre to tube bottom)</td><td>cm</td></tr><tr><td><code>rpm</code></td><td>revolutions per minute</td><td>rpm</td></tr><tr><td><code>RCF</code></td><td>relative centrifugal force</td><td>× g</td></tr></tbody></table>
+            ['title' => 'How the Centrifuge RCF to RPM calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Centrifuge RCF to RPM: it takes 2 numbers and reports Relative centrifugal force, Speed for 10 000 × g and Distance travelled per minute.</p><p>In the form&#039;s own words, Relative centrifugal force = 1.118 × (10)^(− 5) × Rotor radius × Speed × Speed.</p><p>The result panel carries Relative centrifugal force, Speed for 10 000 × g and Distance travelled per minute, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Centrifuge RCF to RPM Converter?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Rotor radius</strong> — in cm. Measure to the bottom of the tube, not the top</li><li><strong>Speed</strong> — in rpm</li></ul><p>The answers come back as Relative centrifugal force in × g, Speed for 10 000 × g in rpm, Distance travelled per minute in km. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: rotor radius of <strong>8.5</strong> cm, speed of <strong>4,000</strong> rpm.</p>
-            <p>Substituting them into the formula gives relative centrifugal force of <strong>1,520.48</strong> × g, speed for 10 000 × g of <strong>10,258.16</strong> rpm, distance travelled per minute of <strong>2.14</strong> km.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Rotor radius = 8.5 cm and Speed = 4000 rpm — through the same formula and the panel reports &lt;strong&gt;Relative centrifugal force&lt;/strong&gt; = 1520 × g, &lt;strong&gt;Speed for 10 000 × g&lt;/strong&gt; = 10258 rpm and &lt;strong&gt;Distance travelled per minute&lt;/strong&gt; = 2.14 km.</p><ul><li><strong>Relative centrifugal force</strong> = 1520 × g</li><li><strong>Speed for 10 000 × g</strong> = 10258 rpm</li><li><strong>Distance travelled per minute</strong> = 2.14 km</li></ul><p>That is <strong>Relative centrifugal force</strong> = <code>1.118 × (10)^(− 5) × Rotor radius × Speed × Speed</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 500 × g</td><td><strong>Gentle pelleting</strong></td><td>cells, nuclei, large precipitates</td></tr><tr><td>1 000 – 5 000 × g</td><td><strong>Standard</strong></td><td>bacteria, mitochondria</td></tr><tr><td>10 000 – 20 000 × g</td><td><strong>High</strong></td><td>cell debris, protein precipitates</td></tr><tr><td>above 100 000 × g</td><td><strong>Ultracentrifuge</strong></td><td>ribosomes, viruses, density gradients</td></tr></tbody></table>
-            <ul><li><p>RCF scales with the square of the speed and linearly with the radius, so a rotor with a 17 cm radius needs far fewer rpm than a small benchtop one to reach the same force.</p></li><li><p>Radius is measured horizontally from the spindle axis to the bottom of the tube when the rotor is in its running position, not the top of the tube.</p></li><li><p>Because force varies along the tube, only the maximum radius (the pellet end) is used for pelleting steps; for gradients, use the average radius.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Relative centrifugal force&lt;/strong&gt; = 1520, &lt;strong&gt;Speed for 10 000 × g&lt;/strong&gt; = 10258 and &lt;strong&gt;Distance travelled per minute&lt;/strong&gt; = 2.14 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Relative centrifugal force takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Measuring the radius from the rotor edge instead of the spindle axis.</li><li>Copying rpm from a protocol run on a different rotor.</li><li>Assuming the same rpm always means the same force across a swinging-bucket and a fixed-angle rotor.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Relative centrifugal force</strong> = <code>1.118 × (10)^(− 5) × Rotor radius × Speed × Speed</code></li><li><strong>Speed for 10 000 × g</strong> = <code>√(10000 ÷ (1.118 × (10)^(− 5) × Rotor radius))</code></li><li><strong>Distance travelled per minute</strong> = <code>2 × pi × Rotor radius ÷ 100000 × Speed</code></li></ul><p>Any one of Relative centrifugal force, Speed for 10 000 × g and Distance travelled per minute can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Rotor radius, from 8.5 to 17 — and the answers go from &lt;strong&gt;Relative centrifugal force&lt;/strong&gt; 1520 × g, &lt;strong&gt;Speed for 10 000 × g&lt;/strong&gt; 10258 rpm and &lt;strong&gt;Distance travelled per minute&lt;/strong&gt; 2.14 km to &lt;strong&gt;Relative centrifugal force&lt;/strong&gt; 3041 × g, &lt;strong&gt;Speed for 10 000 × g&lt;/strong&gt; 7254 rpm and &lt;strong&gt;Distance travelled per minute&lt;/strong&gt; 4.27 km.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Relative centrifugal force, Speed for 10 000 × g and Distance travelled per minute are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Rotor radius to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Rotor radius and Speed is what you already know and Relative centrifugal force and Speed for 10 000 × g is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/dog-life-expectancy">Dog life expectancy Calculator</a>, <a href="/biology/dog-metacam">Dog Metacam dosage</a> and <a href="/biology/dog-onion-toxicity">Dog onion toxicity</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I convert 10 000 × g to rpm?', 'a' => 'rpm = √(RCF ÷ (1.118 × 10⁻⁵ × r)). For an 8.5 cm radius, about 10 260 rpm.'],
-            ['q' => 'Is RCF the same as g?', 'a' => 'RCF is the force expressed as multiples of Earth\'s gravity, so 10 000 × g means ten thousand times gravity.'],
-            ['q' => 'What does the Centrifuge RCF to RPM Converter actually calculate?', 'a' => <<<'TXT'
-            It returns relative centrifugal force, speed for 10 000 × g and distance travelled per minute. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Centrifuge RCF to RPM calculator work out?', 'a' => <<<'TXT'
+            Relative centrifugal force, Speed for 10 000 × g and Distance travelled per minute, from Rotor radius and Speed. The relationship is Relative centrifugal force = 1.118 × (10)^(− 5) × Rotor radius × Speed × Speed.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Rotor radius (cm), Speed (rpm). Enter radius and rpm; Relative centrifugal force is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Relative centrifugal force, Speed for 10 000 × g and Distance travelled per minute blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Relative centrifugal force = 1520 × g, Speed for 10 000 × g = 10258 rpm and Distance travelled per minute = 2.14 km. That comes from the page's own defaults, entered in Rotor radius; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Relative centrifugal force is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Rotor radius left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Relative centrifugal force keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-life-expectancy', 'name' => 'Dog life expectancy Calculator'],
+            ['path' => '/biology/dog-metacam', 'name' => 'Dog Metacam dosage'],
+            ['path' => '/biology/dog-onion-toxicity', 'name' => 'Dog onion toxicity'],
+        ],
+        'authors' => [],
     ],
 ];

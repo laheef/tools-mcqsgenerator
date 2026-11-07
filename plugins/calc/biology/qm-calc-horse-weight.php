@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Horse weight',
-    'meta' => ['title' => 'Horse weight Calculator — Formula, Units & Example', 'description' => 'Supply the height, the neck circumference, the girth circumference and the body length and the Horse weight calculator solves for <strong>actual…', 'h1' => 'Horse weight Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Horse weight Calculator — Formula, Units & Example', 'description' => 'Horse weight takes Type, Height (A) and Neck circumference (B) and returns Actual weight and Ideal weight. The arithmetic is the whole method: Actual weight…', 'h1' => 'Horse weight Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'breed' => [
@@ -256,64 +256,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Supply the height, the neck circumference, the girth circumference and the body length and the Horse weight calculator solves for <strong>actual weight</strong>.
+        Horse weight takes Type, Height (A) and Neck circumference (B) and returns Actual weight and Ideal weight. The arithmetic is the whole method: Actual weight is worked out from Type by one formula, applied once. Actual weight comes back in kilograms unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'How does the Horse weight calculator work?', 'html' => <<<'TXT'
-            <p>The Horse weight calculator takes the values in the form, applies the relationship described below and reports <strong>actual weight</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the type); then you type in the height (A), the neck circumference (B), the girth circumference (C) and the body length (D).</p>
+            ['title' => 'How the Horse weight calculator works', 'html' => <<<'TXT'
+            <p>Horse weight answers one question from 5 numbers, and the answer is Actual weight and Ideal weight.</p><p>The relationship it solves reads Actual weight = getEstimated(Girth circumference (C), Body length (D), Height (A), Neck circumference (B), Type).</p><p>The answers are Actual weight and Ideal weight; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as arabian, pony and stock horse. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Type</strong> — a plain number, no unit</li><li><strong>Height (A)</strong> — in centimeters. At the third thoracic vertebra.</li><li><strong>Neck circumference (B)</strong> — in centimeters. Located halfway between the poll and the withers.</li><li><strong>Girth circumference (C)</strong> — in centimeters. At the base of the mane hairs.</li><li><strong>Body length (D)</strong> — in centimeters. The straight line parallel to the ground from the point of the shoulder to the rear of the horse.</li></ul><p>What you get back is Actual weight in kilograms, Ideal weight in kilograms, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>One of 3 options, such as arabian, pony and stock horse.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Height (A)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Neck circumference (B)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Girth circumference (C)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Body length (D)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Actual weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Ideal weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Actual weight offers 27 units and opens on kilograms, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Horse weight calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Actual weight</span><span class="formula-eq">=</span><span class="formula-rhs">(girth circumference (C), body length (D), height (A), neck circumference (B), type)</span></div><div class="formula-row"><span class="formula-lhs">Ideal weight</span><span class="formula-eq">=</span><span class="formula-rhs">(body length (D), height (A), type)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Actual weight</strong> = <code>getEstimated(Girth circumference (C), Body length (D), Height (A), Neck circumference (B), Type)</code></li><li><strong>Ideal weight</strong> = <code>getIdeal(Body length (D), Height (A), Type)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Actual weight and Ideal weight can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Height (A), Neck circumference (B) and Girth circumference (C) is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Actual weight and Ideal weight are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Type to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Horse weight calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 4 figures keep coming back — the height, the neck circumference and the girth circumference — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/how-big-will-my-cat-get">How big will my cat get</a>, <a href="/biology/ligation">Ligation</a> and <a href="/biology/livestock-fence">Livestock fence cost</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Type, Height (A) and Neck circumference (B) is what you already know and Actual weight and Ideal weight is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/tree-value">Tree value Calculator</a>, <a href="/biology/trihybrid-cross-punnett-square">Trihybrid cross Punnett square Calculator</a> and <a href="/biology/trypan-blue-cell-viability">Trypan Blue Cell Viability Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Horse weight calculator work out?', 'a' => <<<'TXT'
-            It returns actual weight, derived from the height, the neck circumference and the girth circumference. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Actual weight and Ideal weight, from Type, Girth circumference (C), Height (A) and Body length (D). The relationship is Actual weight = getEstimated(Girth circumference (C), Body length (D), Height (A), Neck circumference (B), Type).
             TXT],
-            ['q' => 'What do I need to enter to use the Horse weight calculator?', 'a' => <<<'TXT'
-            The form asks for the height, the neck circumference, the girth circumference and the body length, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Type, Height (A) (centimeters), Neck circumference (B) (centimeters), Girth circumference (C) (centimeters), Body length (D) (centimeters). Enter breed, height and neck; Actual weight is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter height (A) in a different unit?', 'a' => <<<'TXT'
-            Yes. Height (A) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Horse weight calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Actual weight and Ideal weight can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Actual weight is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Type blank and the page solves for it, reporting Actual weight instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Actual weight keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/how-big-will-my-cat-get', 'name' => 'How big will my cat get'],
-            ['path' => '/biology/ligation', 'name' => 'Ligation'],
-            ['path' => '/biology/livestock-fence', 'name' => 'Livestock fence cost'],
+            ['path' => '/biology/tree-value', 'name' => 'Tree value Calculator'],
+            ['path' => '/biology/trihybrid-cross-punnett-square', 'name' => 'Trihybrid cross Punnett square Calculator'],
+            ['path' => '/biology/trypan-blue-cell-viability', 'name' => 'Trypan Blue Cell Viability Calculator'],
         ],
+        'authors' => [],
     ],
 ];

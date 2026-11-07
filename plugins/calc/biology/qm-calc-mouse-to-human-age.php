@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mouse to Human Age Calculator',
-    'meta' => ['title' => 'Mouse to Human Age Calculator — Formula & Results', 'description' => 'Mice age about forty times faster than people, but not evenly: the first months compress decades. It returns mouse age, human-equivalent age, share of a…', 'h1' => 'Mouse to Human Age Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mouse to Human Age Calculator — Formula & Results', 'description' => 'Mouse to Human Age turns Mouse age into Human-equivalent age and Mouse age. Human-equivalent age is opened in years; the chip beside it switches to any unit…', 'h1' => 'Mouse to Human Age Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -68,45 +68,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Mice age about forty times faster than people, but not evenly: the first months compress decades. It returns mouse age, human-equivalent age, share of a 2-year lifespan and mouse age, and the panel shows all of them at once.
-        
-        This calculator converts a mouse age in months to a human-equivalent using the published life-stage anchors (16 human years at two months, 38 at ten, 69 at two years) and names the developmental stage.
+        Mouse to Human Age turns Mouse age into Human-equivalent age and Mouse age. Nothing is looked up on this page: Human-equivalent age is computed from Mouse age and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Human-equivalent age is opened in years; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Mouse to Human Age', 'html' => <<<'TXT'
-            <p>Piecewise linear between the standard life-stage anchors: 2 months ≈ 16 human years, 10 months ≈ 38, 15 months ≈ 47, 18 months ≈ 56, 24 months ≈ 69</p>
-            <figure class="calc-figure"><img src="/uploads/biology/mouse-to-human-age.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Mouse to Human Age Calculator — The conversion is a curve, not a straight line: early months move fast." title="Mouse to Human Age Calculator"><figcaption>The conversion is a curve, not a straight line: early months move fast.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>months</code></td><td>the animal's age</td><td>months</td></tr><tr><td><code>human</code></td><td>human-equivalent age</td><td>years</td></tr><tr><td><code>lifespan</code></td><td>age as a share of the ~24-month median lifespan</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Mouse to Human Age calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Mouse to Human Age: it takes 1 number and reports Human-equivalent age, Mouse age and Share of a 2-year lifespan.</p><p>Written with the labels from the form, Mouse age = Mouse age × 4.345.</p><p>The answers are Human-equivalent age, Mouse age and Share of a 2-year lifespan; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Mouse to Human Age?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Mouse age</strong> — in months. 3 weeks = 0.7 months; 126 days = 4.1 months</li></ul><p>The answers come back as Human-equivalent age in years, Mouse age in weeks, Share of a 2-year lifespan in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Substituting them into the formula gives mouse age of <strong>17.38</strong> weeks, human-equivalent age of <strong>21.5</strong> years, share of a 2-year lifespan of <strong>16.67</strong>%, mouse age of <strong>4</strong> months.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Human-equivalent age takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>3 – 6 weeks</td><td><strong>Weanling</strong></td><td>independent, still growing</td></tr><tr><td>6 weeks – 6 months</td><td><strong>Young adult</strong></td><td>the standard experimental window</td></tr><tr><td>6 – 12 months</td><td><strong>Mature adult</strong></td><td>equivalent to roughly 30–40 human years</td></tr><tr><td>18 – 24 months</td><td><strong>Old</strong></td><td>the usual 'aged' cohort in ageing studies</td></tr></tbody></table>
-            <ul><li><p>Ageing studies quote cohorts in months because the mapping to human life stages is nonlinear: a two-month difference at six months is worth decades, at eighteen months barely a few years.</p></li><li><p>Strain matters. C57BL/6J, BALB/c and FVB have different median lifespans, so the lifespan share is indicative.</p></li><li><p>The conversion is a communication device for comparing cohorts, not a biological claim that the two species age identically.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Mouse age</strong> = <code>Mouse age × 4.345</code></li><li><strong>Share of a 2-year lifespan</strong> = <code>Mouse age ÷ 24 × 100</code></li></ul><p>Any one of Mouse age, Human-equivalent age and Share of a 2-year lifespan can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Converting in years rather than months for a young animal.</li><li>Using the linear 40× rule for a mouse younger than six months, which understates the early life-stage equivalence dramatically.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Human-equivalent age, Mouse age and Share of a 2-year lifespan are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Mouse age to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Mouse age is what you already know and Human-equivalent age and Mouse age is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/bacterial-concentration-calculator">Bacterial Concentration Calculator</a>, <a href="/biology/bacterial-growth-curve">Bacterial Growth Curve (generation time) Calculator</a> and <a href="/biology/basal-area">Basal area Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How old is a 1-year-old mouse in human years?', 'a' => 'About 42 human years by these anchors — early adulthood, not old age.'],
-            ['q' => 'Why are there different conversion tables?', 'a' => 'Because the species differ in more than one dimension: lifespan, developmental milestones and disease onset do not all scale by the same factor.'],
-            ['q' => 'What does the Mouse to Human Age actually calculate?', 'a' => <<<'TXT'
-            It returns mouse age, human-equivalent age, share of a 2-year lifespan and mouse age. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Mouse to Human Age calculator work out?', 'a' => 'Human-equivalent age, Mouse age and Share of a 2-year lifespan, from Mouse age. The relationship is Mouse age = Mouse age × 4.345.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Mouse age (months). Fill months and leave Human-equivalent age empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Mouse age, Human-equivalent age, Share of a 2-year lifespan and Mouse age blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Human-equivalent age is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Mouse age blank and the page solves for it, reporting Human-equivalent age instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Human-equivalent age at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/bacterial-concentration-calculator', 'name' => 'Bacterial Concentration Calculator'],
+            ['path' => '/biology/bacterial-growth-curve', 'name' => 'Bacterial Growth Curve (generation time) Calculator'],
+            ['path' => '/biology/basal-area', 'name' => 'Basal area Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

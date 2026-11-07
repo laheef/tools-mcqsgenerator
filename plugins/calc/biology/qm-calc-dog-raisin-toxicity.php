@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Dog raisin toxicity',
-    'meta' => ['title' => 'Dog raisin toxicity: Formula, Steps & Results', 'description' => 'The Dog raisin toxicity calculator returns <strong>toxic amount of raisins</strong> from the 2 fields on the form. The Dog raisin toxicity calculator takes…', 'h1' => 'Dog raisin toxicity Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Dog raisin toxicity: Formula, Steps & Results', 'description' => <<<'TXT'
+    Dog raisin toxicity works out Toxic amount of raisins and Size of raisins from Your dog's weight 🐕. There is no hidden constant here: change Toxic amount of…
+    TXT, 'h1' => 'Dog raisin toxicity Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'amount' => [
@@ -225,63 +227,57 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'The Dog raisin toxicity calculator returns <strong>toxic amount of raisins</strong> from the 2 fields on the form.',
+        'intro' => <<<'TXT'
+        Dog raisin toxicity works out Toxic amount of raisins and Size of raisins from Your dog's weight 🐕. There is no hidden constant here: change Toxic amount of raisins and Your dog's weight 🐕 moves with it. The main result, Toxic amount of raisins, is reported in grams.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Dog raisin toxicity calculator work?', 'html' => <<<'TXT'
-            <p>The Dog raisin toxicity calculator takes the values in the form, applies the relationship described below and reports <strong>toxic amount of raisins</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the size of raisins); then you type in your dog's weight.</p>
+            ['title' => 'How the Dog raisin toxicity calculator works', 'html' => <<<'TXT'
+            <p>The Dog raisin toxicity calculator applies one relationship to 1 number and reports Toxic amount of raisins, Size of raisins and Toxic number of raisins (approx.).</p><p>In the form&#039;s own words, Toxic amount of raisins = (7 ÷ 2500) × Your dog&#039;s weight 🐕.</p><p>What comes back is Toxic amount of raisins, Size of raisins and Toxic number of raisins (approx.) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as small, standard and jumbo. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Your dog&#039;s weight 🐕</strong> — in kilograms</li></ul><p>What you get back is Toxic amount of raisins in grams, Size of raisins, Toxic number of raisins (approx.), shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your dog's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Toxic amount of raisins</strong></td><td>A measured quantity, 29 units available.</td><td>grams</td><td>Calculated</td></tr><tr><td><strong>Size of raisins</strong></td><td>One of 3 options, such as small, standard and jumbo.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Toxic number of raisins (approx.)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Your dog&amp;#039;s weight 🐕 = 10 kg gives &lt;strong&gt;Size of raisins&lt;/strong&gt; = 1, &lt;strong&gt;Toxic amount of raisins&lt;/strong&gt; = 0.028 g and &lt;strong&gt;Toxic number of raisins (approx.)&lt;/strong&gt; = 28.</p><ul><li><strong>Size of raisins</strong> = 1</li><li><strong>Toxic amount of raisins</strong> = 0.028 g</li><li><strong>Toxic number of raisins (approx.)</strong> = 28</li></ul><p>The line behind those figures is <strong>Toxic amount of raisins</strong> = <code>(7 ÷ 2500) × Your dog&#039;s weight 🐕</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'The formula behind the Dog raisin toxicity calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Toxic amount of raisins</span><span class="formula-eq">=</span><span class="formula-rhs">(7 ÷ 2500) × your dog&#x27;s weight</span></div><div class="formula-row"><span class="formula-lhs">Toxic amount of raisins</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 1000) × toxic number of raisins (approx.) ÷ size of raisins</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Size of raisins&lt;/strong&gt; = 1, &lt;strong&gt;Toxic amount of raisins&lt;/strong&gt; = 0.028 and &lt;strong&gt;Toxic number of raisins (approx.)&lt;/strong&gt; = 28. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Toxic amount of raisins lists 27 options and opens on grams. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in grams, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Toxic amount of raisins</strong> = <code>(7 ÷ 2500) × Your dog&#039;s weight 🐕</code></li><li><strong>Your dog&#039;s weight 🐕</strong> = <code>(2500 ÷ 7) × Toxic amount of raisins</code></li><li><strong>Toxic number of raisins (approx.)</strong> = <code>1000 × Size of raisins × Toxic amount of raisins</code></li><li><strong>Size of raisins</strong> = <code>(1 ÷ 1000) × Toxic number of raisins (approx.) ÷ Toxic amount of raisins</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Toxic amount of raisins, Your dog&#039;s weight 🐕 and Toxic number of raisins (approx.) can be the unknown.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Mass, opening in grams</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Your dog&#039;s weight 🐕 from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Size of raisins&lt;/strong&gt; 1, &lt;strong&gt;Toxic amount of raisins&lt;/strong&gt; 0.028 g and &lt;strong&gt;Toxic number of raisins (approx.)&lt;/strong&gt; 28 to &lt;strong&gt;Size of raisins&lt;/strong&gt; 1, &lt;strong&gt;Toxic amount of raisins&lt;/strong&gt; 0.056 g and &lt;strong&gt;Toxic number of raisins (approx.)&lt;/strong&gt; 56.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog raisin toxicity calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 1 figures keep coming back — your dog's weight — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Your dog&#039;s weight 🐕 carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Toxic amount of raisins, Size of raisins and Toxic number of raisins (approx.) are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Your dog&#039;s weight 🐕 to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-size">Dog size</a>, <a href="/biology/dog-water-intake">Dog water intake</a> and <a href="/biology/dry-matter">Dry matter</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Your dog&#039;s weight 🐕 measured, Toxic amount of raisins and Size of raisins wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/transfection-setup">Transfection Setup Calculator</a>, <a href="/biology/transformation-efficiency">Transformation Efficiency Calculator</a> and <a href="/biology/transpiration-rate">Transpiration Rate Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Dog raisin toxicity calculator work out?', 'a' => <<<'TXT'
-            It returns toxic amount of raisins, derived from your dog's weight. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Toxic amount of raisins, Size of raisins and Toxic number of raisins (approx.), from Your dog's weight 🐕. The relationship is Toxic amount of raisins = (7 ÷ 2500) × Your dog's weight 🐕.
             TXT],
-            ['q' => 'What do I need to enter to use the Dog raisin toxicity calculator?', 'a' => <<<'TXT'
-            The form asks for your dog's weight, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Your dog\'s weight 🐕 (kilograms). Enter weight_kg; Toxic amount of raisins is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Toxic amount of raisins, Your dog's weight 🐕, Toxic number of raisins (approx.) and Size of raisins can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I enter your dog\'s weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Your dog's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Size of raisins = 1, Toxic amount of raisins = 0.028 g and Toxic number of raisins (approx.) = 28. Those are the defaults written into the form — move Your dog's weight 🐕 and every result box follows.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Toxic amount of raisins is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Your dog's weight 🐕 left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Dog raisin toxicity calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Toxic amount of raisins keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-size', 'name' => 'Dog size'],
-            ['path' => '/biology/dog-water-intake', 'name' => 'Dog water intake'],
-            ['path' => '/biology/dry-matter', 'name' => 'Dry matter'],
+            ['path' => '/biology/transfection-setup', 'name' => 'Transfection Setup Calculator'],
+            ['path' => '/biology/transformation-efficiency', 'name' => 'Transformation Efficiency Calculator'],
+            ['path' => '/biology/transpiration-rate', 'name' => 'Transpiration Rate Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Aquarium Water Volume Calculator',
-    'meta' => ['title' => 'Aquarium Water Volume Calculator — Formula & Results', 'description' => 'Tank capacity is quoted as a nominal volume, but the water you actually hold is less once glass, substrate and decoration are accounted for.', 'h1' => 'Aquarium Water Volume Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Aquarium Water Volume Calculator — Formula & Results', 'description' => <<<'TXT'
+    Aquarium Water Volume takes Shape, Length and Width or diameter and returns Gross volume and True water volume. There is no hidden constant here: change Gross…
+    TXT, 'h1' => 'Aquarium Water Volume Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -119,50 +121,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Tank capacity is quoted as a nominal volume, but the water you actually hold is less once glass, substrate and decoration are accounted for. It returns gross volume, true water volume, true volume and weight of the water, and the panel shows all of them at once.
-        
-        This calculator returns gross and true volume, the weight of the water and the heater and filter turnover the tank needs.
+        Aquarium Water Volume takes Shape, Length and Width or diameter and returns Gross volume and True water volume. There is no hidden constant here: change Gross volume and Shape moves with it. The main result, Gross volume, is reported in L.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Aquarium Water Volume', 'html' => <<<'TXT'
-            <p>Volume (L) = length × width × height ÷ 1 000; subtract length × width × substrate depth</p>
-            <figure class="calc-figure"><img src="/uploads/biology/aquarium-water-volume.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Aquarium Water Volume Calculator — Length, width, height — then subtract what the gravel takes." title="Aquarium Water Volume Calculator"><figcaption>Length, width, height — then subtract what the gravel takes.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>L, W, H</code></td><td>internal dimensions</td><td>cm</td></tr><tr><td><code>substrate</code></td><td>gravel or sand depth</td><td>cm</td></tr><tr><td><code>1 L</code></td><td>1 000 cm³ of water, 1 kg</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Aquarium Water Volume calculator works', 'html' => <<<'TXT'
+            <p>The Aquarium Water Volume calculator applies one relationship to 5 numbers and reports Gross volume, True water volume and True volume.</p><p>In the form&#039;s own words, Gross volume = Length × Width or diameter × Water height × Shape ÷ 1000.</p><p>The answers are Gross volume, True water volume, True volume and Weight of the water; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Aquarium Water Volume?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Shape</strong> — a plain number, no unit</li><li><strong>Length</strong> — in cm</li><li><strong>Width or diameter</strong> — in cm</li><li><strong>Water height</strong> — in cm</li><li><strong>Substrate depth</strong> — in cm. Displaces water and must be subtracted</li></ul><p>What you get back is Gross volume in L, True water volume in L, True volume in US gal, Weight of the water in kg, Filter turnover needed (5x per hour) in L/h, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: shape set to <strong>1.0</strong>, length of <strong>90</strong> cm, width or diameter of <strong>45</strong> cm, water height of <strong>45</strong> cm, substrate depth of <strong>5</strong> cm.</p>
-            <p>Substituting them into the formula gives gross volume of <strong>182.25</strong> L, true water volume of <strong>162</strong> L, true volume of <strong>42.8</strong> US gal, weight of the water of <strong>162</strong> kg, filter turnover needed (5x per hour) of <strong>810</strong> L/h.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Shape = 1, Length = 90 cm, Width or diameter = 45 cm, Water height = 45 cm and Substrate depth = 5 cm gives &lt;strong&gt;Gross volume&lt;/strong&gt; = 182 L, &lt;strong&gt;True water volume&lt;/strong&gt; = 162 L, &lt;strong&gt;True volume&lt;/strong&gt; = 42.8 US gal, &lt;strong&gt;Weight of the water&lt;/strong&gt; = 162 kg and &lt;strong&gt;Filter turnover needed (5x per hour)&lt;/strong&gt; = 810 L/h.</p><ul><li><strong>Gross volume</strong> = 182 L</li><li><strong>True water volume</strong> = 162 L</li><li><strong>True volume</strong> = 42.8 US gal</li><li><strong>Weight of the water</strong> = 162 kg</li><li><strong>Filter turnover needed (5x per hour)</strong> = 810 L/h</li></ul><p>That is <strong>Gross volume</strong> = <code>Length × Width or diameter × Water height × Shape ÷ 1000</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 20 L</td><td><strong>Nano</strong></td><td>very little buffering; small changes matter</td></tr><tr><td>20 – 60 L</td><td><strong>Small</strong></td><td>easy to maintain, few fish</td></tr><tr><td>60 – 200 L</td><td><strong>Community</strong></td><td>stable, forgiving of mistakes</td></tr><tr><td>above 200 L</td><td><strong>Large</strong></td><td>stable but heavy: check the floor loading</td></tr></tbody></table>
-            <ul><li><p>Tanks are sold by external dimensions. A '90 cm' tank usually holds about 90 cm internally, but the glass thickness and the fill line cost another few litres.</p></li><li><p>Water weighs one kilogram per litre, so a 200 L tank is a quarter of a tonne before glass, substrate and cabinet — worth checking against a floor joist span.</p></li><li><p>The old rule of five turnovers per hour suits most freshwater community tanks; marine and cichlid setups want ten or more.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Gross volume&lt;/strong&gt; = 182, &lt;strong&gt;True water volume&lt;/strong&gt; = 162, &lt;strong&gt;True volume&lt;/strong&gt; = 42.8, &lt;strong&gt;Weight of the water&lt;/strong&gt; = 162 and &lt;strong&gt;Filter turnover needed (5x per hour)&lt;/strong&gt; = 810 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Gross volume takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using external dimensions and filling to the brim in the calculation.</li><li>Forgetting that substrate and rock displace water, which is most of the error in a heavily decorated tank.</li><li>Treating US gallons and imperial gallons as the same — they differ by 20%.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Gross volume</strong> = <code>Length × Width or diameter × Water height × Shape ÷ 1000</code></li><li><strong>True water volume</strong> = <code>Length × Width or diameter × Water height × Shape ÷ 1000 − Length × Width or diameter × Substrate depth ÷ 1000</code></li><li><strong>True volume</strong> = <code>(Length × Width or diameter × Water height × Shape ÷ 1000 − Length × Width or diameter × Substrate depth ÷ 1000) ÷ 3.785</code></li><li><strong>Weight of the water</strong> = <code>Length × Width or diameter × Water height × Shape ÷ 1000 − Length × Width or diameter × Substrate depth ÷ 1000</code></li><li><strong>Filter turnover needed (5x per hour)</strong> = <code>(Length × Width or diameter × Water height × Shape ÷ 1000 − Length × Width or diameter × Substrate depth ÷ 1000) × 5</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Gross volume, True water volume and True volume can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/fish-tank-stocking">Fish tank stocking</a>. <a href="/biology/ideal-fish-tank-size">Ideal tank size</a>. <a href="/biology/fish-per-liter">Fish per litre</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Shape from 1 to 2, leaving every other box alone. The panel moves from &lt;strong&gt;Gross volume&lt;/strong&gt; 182 L, &lt;strong&gt;True water volume&lt;/strong&gt; 162 L, &lt;strong&gt;True volume&lt;/strong&gt; 42.8 US gal, &lt;strong&gt;Weight of the water&lt;/strong&gt; 162 kg and &lt;strong&gt;Filter turnover needed (5x per hour)&lt;/strong&gt; 810 L/h to &lt;strong&gt;Gross volume&lt;/strong&gt; 365 L, &lt;strong&gt;True water volume&lt;/strong&gt; 344 L, &lt;strong&gt;True volume&lt;/strong&gt; 90.95 US gal, &lt;strong&gt;Weight of the water&lt;/strong&gt; 344 kg and &lt;strong&gt;Filter turnover needed (5x per hour)&lt;/strong&gt; 1721 L/h.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Gross volume, True water volume and True volume are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Shape and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Shape, Length and Width or diameter is what you already know and Gross volume and True water volume is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/annealing-temperature">Annealing temperature Calculator</a>, <a href="/biology/atp-cellular-respiration-energy-yield">ATP / Cellular Respiration Energy Yield Calculator</a> and <a href="/biology/autosomal-dominant-pedigree">Autosomal Dominant Pedigree Analyzer Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many litres is a 90 × 45 × 45 cm tank?', 'a' => '182 L gross, and about 162 L with 5 cm of substrate.'],
-            ['q' => 'How much does a 200 L tank weigh?', 'a' => 'About 200 kg of water, plus 40–60 kg of glass and stand, plus substrate.'],
-            ['q' => 'What does the Aquarium Water Volume actually calculate?', 'a' => <<<'TXT'
-            It returns gross volume, true water volume, true volume and weight of the water. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Aquarium Water Volume calculator work out?', 'a' => <<<'TXT'
+            Gross volume, True water volume, True volume and Weight of the water, from Length, Width or diameter, Water height and Shape. The relationship is Gross volume = Length × Width or diameter × Water height × Shape ÷ 1000.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Shape, Length (cm), Width or diameter (cm), Water height (cm), Substrate depth (cm). With shape, length and width in place, Gross volume can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Gross volume, True water volume, True volume and Weight of the water can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Gross volume = 182 L, True water volume = 162 L, True volume = 42.8 US gal, Weight of the water = 162 kg and Filter turnover needed (5x per hour) = 810 L/h. Those are the defaults written into the form — move Shape and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Gross volume is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Shape blank and the page solves for it, reporting Gross volume instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Gross volume keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature Calculator'],
+            ['path' => '/biology/atp-cellular-respiration-energy-yield', 'name' => 'ATP / Cellular Respiration Energy Yield Calculator'],
+            ['path' => '/biology/autosomal-dominant-pedigree', 'name' => 'Autosomal Dominant Pedigree Analyzer Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

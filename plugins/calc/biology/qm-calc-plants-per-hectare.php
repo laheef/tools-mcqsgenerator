@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Plants Per Hectare Calculator',
-    'meta' => ['title' => 'Plants Per Hectare Calculator — Formula & Results', 'description' => 'How many plants fit in a field, from the spacing between rows and between plants. It returns space per plant, plants per hectare, plants needed and seedlings…', 'h1' => 'Plants Per Hectare Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Plants Per Hectare Calculator — Formula & Results', 'description' => <<<'TXT'
+    Plants Per Hectare works out Plants needed and Plants per hectare from Area to plant, Row spacing and In-row spacing. Distance between plants in a rowExpected…
+    TXT, 'h1' => 'Plants Per Hectare Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -101,46 +103,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        How many plants fit in a field, from the spacing between rows and between plants. It returns space per plant, plants per hectare, plants needed and seedlings to buy, and the panel shows all of them at once.
-        
-        Ten thousand square metres divided by the area each plant occupies gives the population — the number every fertiliser rate, seed order and yield estimate is built on.
+        Plants Per Hectare works out Plants needed and Plants per hectare from Area to plant, Row spacing and In-row spacing. Nothing is looked up on this page: Plants needed is computed from Area to plant and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Plants Per Hectare', 'html' => <<<'TXT'
-            <p>Plants per hectare = 10 000 ÷ (row spacing in m × in-row spacing in m). Total plants = area in ha × plants per hectare × (1 + losses)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/plants-per-hectare.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Plants Per Hectare Calculator — Plants per hectare as spacing widens" title="Plants Per Hectare Calculator"><figcaption>Plants per hectare as spacing widens</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ha</code></td><td>hectare, 10 000 m²</td><td>m²</td></tr><tr><td><code>row spacing</code></td><td>distance between adjacent rows</td><td>cm</td></tr><tr><td><code>in-row spacing</code></td><td>distance between plants within a row</td><td>cm</td></tr></tbody></table>
+            ['title' => 'How the Plants Per Hectare calculator works', 'html' => <<<'TXT'
+            <p>Plants Per Hectare answers one question from 4 numbers, and the answer is Plants needed, Plants per hectare and Space per plant.</p><p>The relationship it solves reads Space per plant = Row spacing × In-row spacing ÷ 10000.</p><p>The result panel carries Plants needed, Plants per hectare, Space per plant and Seedlings to buy, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Plants Per Hectare?', 'html' => <<<'TXT'
-            <ol><li>Enter the area in hectares (1 acre is 0.4047 ha).</li><li>Enter the row spacing and the in-row spacing in centimetres.</li><li>Add the losses you expect; the plants and seedlings to order are shown.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Area to plant</strong> — in ha. 1 hectare = 10 000 m²</li><li><strong>Row spacing</strong> — in cm. Distance between rows</li><li><strong>In-row spacing</strong> — in cm. Distance between plants in a row</li><li><strong>Expected losses</strong> — in %. Germination gaps, pest damage, headlands</li></ul><p>The result boxes are Plants needed, Plants per hectare in /ha, Space per plant in m², Seedlings to buy; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: area to plant of <strong>1</strong> ha, row spacing of <strong>75</strong> cm, in-row spacing of <strong>30</strong> cm, expected losses of <strong>5</strong>%.</p>
-            <p>Substituting them into the formula gives space per plant of <strong>0.225</strong> m², plants per hectare of <strong>44,444.44</strong> /ha, plants needed of <strong>46,666.67</strong>, seedlings to buy of <strong>46,667</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Area to plant = 1 ha, Row spacing = 75 cm, In-row spacing = 30 cm and Expected losses = 5 %; the answers are &lt;strong&gt;Space per plant&lt;/strong&gt; = 0.225 m², &lt;strong&gt;Plants per hectare&lt;/strong&gt; = 44444 /ha, &lt;strong&gt;Plants needed&lt;/strong&gt; = 46667 and &lt;strong&gt;Seedlings to buy&lt;/strong&gt; = 46667.</p><ul><li><strong>Space per plant</strong> = 0.225 m²</li><li><strong>Plants per hectare</strong> = 44444 /ha</li><li><strong>Plants needed</strong> = 46667</li><li><strong>Seedlings to buy</strong> = 46667</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Space per plant</strong> = <code>Row spacing × In-row spacing ÷ 10000</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 20 000/ha</td><td><strong>Wide spacing</strong></td><td>orchard trees, maize for silage, pumpkins</td></tr><tr><td>20 000 – 100 000/ha</td><td><strong>Field crops</strong></td><td>cereals, soybeans, potatoes</td></tr><tr><td>over 100 000/ha</td><td><strong>Dense</strong></td><td>leafy greens, carrots, transplants in beds</td></tr></tbody></table>
-            <ul><li><p>Spacing sets the population, and population sets the yield curve. Doubling the density does not double the yield, because plants compete for the same light and water.</p></li><li><p>Buy 5–10% more seedlings than the calculated population. Transplant losses and headland waste are real, and a second order mid-season costs more than the surplus.</p></li><li><p>For beds rather than rows, use the bed spacing as the row spacing and count beds per hectare instead of rows.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Space per plant&lt;/strong&gt; = 0.225, &lt;strong&gt;Plants per hectare&lt;/strong&gt; = 44444, &lt;strong&gt;Plants needed&lt;/strong&gt; = 46667 and &lt;strong&gt;Seedlings to buy&lt;/strong&gt; = 46667. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Plants needed is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Mixing centimetres and metres in the same calculation — the classic factor-of-100 error.</li><li>Forgetting the headland: a 1 ha field with a 3 m headland all round loses about 6% of its plantable area.</li><li>Planning the population for the seed packet's ideal spacing rather than your equipment's actual row width.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Space per plant</strong> = <code>Row spacing × In-row spacing ÷ 10000</code></li><li><strong>Plants per hectare</strong> = <code>10000 ÷ (Row spacing × In-row spacing ÷ 10000)</code></li><li><strong>Plants needed</strong> = <code>Area to plant × 10000 ÷ (Row spacing × In-row spacing ÷ 10000) × (1 + Expected losses ÷ 100)</code></li><li><strong>Seedlings to buy</strong> = <code>round(Area to plant × 10000 ÷ (Row spacing × In-row spacing ÷ 10000) × (1 + Expected losses ÷ 100))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Space per plant, Plants per hectare and Plants needed can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Area to plant, from 1 to 2 — and the answers go from &lt;strong&gt;Space per plant&lt;/strong&gt; 0.225 m², &lt;strong&gt;Plants per hectare&lt;/strong&gt; 44444 /ha, &lt;strong&gt;Plants needed&lt;/strong&gt; 46667 and &lt;strong&gt;Seedlings to buy&lt;/strong&gt; 46667 to &lt;strong&gt;Space per plant&lt;/strong&gt; 0.225 m², &lt;strong&gt;Plants per hectare&lt;/strong&gt; 44444 /ha, &lt;strong&gt;Plants needed&lt;/strong&gt; 93333 and &lt;strong&gt;Seedlings to buy&lt;/strong&gt; 93333.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Plants needed, Plants per hectare and Space per plant are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Area to plant and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Area to plant, Row spacing and In-row spacing and the number you are missing is Plants needed and Plants per hectare.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/rabbit-gestation">Rabbit gestation Calculator</a>, <a href="/biology/raised-bed-soil">Raised bed soil Calculator</a> and <a href="/biology/random-sequence-generator">Random Sequence Generator Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many plants per hectare at 75 × 30 cm?', 'a' => 'About 44 400 — 10 000 ÷ (0.75 × 0.30).'],
-            ['q' => 'How do I convert plants per hectare to plants per acre?', 'a' => 'Multiply by 0.4047, since an acre is 0.4047 ha.'],
-            ['q' => 'Should I add a margin for losses?', 'a' => 'Yes, 5–10% for field crops and more for transplants or direct-sown small seed.'],
-            ['q' => 'What does the Plants Per Hectare actually calculate?', 'a' => <<<'TXT'
-            It returns space per plant, plants per hectare, plants needed and seedlings to buy. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Plants Per Hectare calculator work out?', 'a' => <<<'TXT'
+            Plants needed, Plants per hectare, Space per plant and Seedlings to buy, from Row spacing and In-row spacing. The relationship is Space per plant = Row spacing × In-row spacing ÷ 10000.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Area to plant (ha), Row spacing (cm), In-row spacing (cm), Expected losses (%). With area, row_cm and plant_cm in place, Plants needed can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Space per plant, Plants per hectare, Plants needed and Seedlings to buy can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Space per plant = 0.225 m², Plants per hectare = 44444 /ha, Plants needed = 46667 and Seedlings to buy = 46667. That comes from the page's own defaults, entered in Area to plant; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Plants needed is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Area to plant blank and the page solves for it, reporting Plants needed instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Plants needed at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/rabbit-gestation', 'name' => 'Rabbit gestation Calculator'],
+            ['path' => '/biology/raised-bed-soil', 'name' => 'Raised bed soil Calculator'],
+            ['path' => '/biology/random-sequence-generator', 'name' => 'Random Sequence Generator Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

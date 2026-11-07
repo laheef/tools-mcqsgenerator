@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Amino Acid Composition Calculator',
-    'meta' => ['title' => 'Amino Acid Composition Calculator — Formula & Results', 'description' => 'Amino acid composition counts each residue in a protein and the share of the chain it makes up. It returns length, molecular weight, gravy, aromatic residues…', 'h1' => 'Amino Acid Composition Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Amino Acid Composition Calculator — Formula & Results', 'description' => 'Amino Acid Composition turns Protein sequence into Length and Molecular weight. Single-letter code; headers, spaces and digits are ignoredThe answers come…', 'h1' => 'Amino Acid Composition Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'protein' => [
@@ -250,42 +250,38 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Amino acid composition counts each residue in a protein and the share of the chain it makes up. It returns length, molecular weight, gravy, aromatic residues (f + w + y), acidic minus basic residues and cysteines, and the panel shows all of them at once.
-        
-        From those counts it derives molecular weight, GRAVY hydrophobicity, aromatic content and the acidic-to-basic balance.
+        Amino Acid Composition turns Protein sequence into Length and Molecular weight. The arithmetic is the whole method: Length is worked out from Protein sequence by one formula, applied once. Length comes back in aa unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Amino Acid Composition', 'html' => <<<'TXT'
-            <p>Molecular weight = Σ(residue masses) − (n − 1) × 18.015. GRAVY = Σ(hydropathy × count) ÷ n. Share of an amino acid = count ÷ n × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/amino-acid-composition.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Amino Acid Composition Calculator — Kyte–Doolittle hydropathy, most and least hydrophobic" title="Amino Acid Composition Calculator"><figcaption>Kyte–Doolittle hydropathy, most and least hydrophobic</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>n</code></td><td>number of residues</td><td>aa</td></tr><tr><td><code>GRAVY</code></td><td>grand average of hydropathicity (Kyte–Doolittle)</td><td>—</td></tr><tr><td><code>Da</code></td><td>dalton</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Amino Acid Composition calculator works', 'html' => <<<'TXT'
+            <p>Amino Acid Composition answers one question from 1 number, and the answer is Length, Molecular weight and GRAVY.</p><p>What comes back is Length, Molecular weight, GRAVY and Aromatic residues (F + W + Y) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Amino Acid Composition?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Protein sequence</strong> — a plain number, no unit. Single-letter code; headers, spaces and digits are ignored</li></ul><p>The answers come back as Length in aa, Molecular weight in kDa, GRAVY, Aromatic residues (F + W + Y) in %, Acidic minus basic residues, Cysteines. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>GRAVY above 0.2</td><td><strong>Hydrophobic</strong></td><td>likely membrane-associated or a membrane domain</td></tr><tr><td>GRAVY −0.2 to 0.2</td><td><strong>Mixed</strong></td><td>soluble globular proteins typically sit here</td></tr><tr><td>GRAVY below −0.5</td><td><strong>Very hydrophilic</strong></td><td>highly soluble, often disordered</td></tr></tbody></table>
-            <ul><li><p>GRAVY is the mean Kyte–Doolittle hydropathy. A value above about 0.2 across a window of 19–20 residues is the classic signal of a transmembrane helix.</p></li><li><p>Cysteine count matters downstream: an even number can form disulfide bonds, and free cysteines cause aggregation in formulation.</p></li><li><p>The mass here is the unmodified chain. Signal peptides are cleaved, glycosylation adds several kDa, and a His-tag adds about 0.8 kDa per histidine.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: Length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
+            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Length, Molecular weight and GRAVY are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Protein sequence and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming an extinction coefficient from composition alone — Trp and Tyr are close, but disulfides also contribute at 280 nm.</li><li>Comparing GRAVY of a full-length protein with that of its mature, processed form.</li><li>Treating percent composition as conserved: it varies widely between unrelated proteins of the same size.</li></ul>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Protein sequence measured, Length and Molecular weight wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/osmolarity-osmotic-pressure">Osmolarity / Osmotic Pressure Calculator</a>, <a href="/biology/pasture-stocking-rate">Pasture Stocking Rate Calculator</a> and <a href="/biology/pcr-annealing-temperature">PCR Annealing Temperature Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I calculate protein molecular weight from sequence?', 'a' => 'Add the average residue masses and subtract one water molecule per peptide bond.'],
-            ['q' => 'What does a positive GRAVY mean?', 'a' => 'The protein is net hydrophobic — often a membrane protein or a hydrophobic domain.'],
-            ['q' => 'Why does cysteine count matter?', 'a' => 'Two cysteines can form a disulfide bond; unpaired ones drive aggregation and need to be capped or removed.'],
-            ['q' => 'What does the Amino Acid Composition actually calculate?', 'a' => <<<'TXT'
-            It returns length, molecular weight, gravy, aromatic residues (f + w + y), acidic minus basic residues and cysteines. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Amino Acid Composition calculator work out?', 'a' => 'Length, Molecular weight, GRAVY and Aromatic residues (F + W + Y).'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Protein sequence. Fill protein and leave Length empty if you would rather have that one solved instead.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/osmolarity-osmotic-pressure', 'name' => 'Osmolarity / Osmotic Pressure Calculator'],
+            ['path' => '/biology/pasture-stocking-rate', 'name' => 'Pasture Stocking Rate Calculator'],
+            ['path' => '/biology/pcr-annealing-temperature', 'name' => 'PCR Annealing Temperature Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

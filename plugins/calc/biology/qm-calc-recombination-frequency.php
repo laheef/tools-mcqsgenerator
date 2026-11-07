@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Recombination Frequency Calculator',
-    'meta' => ['title' => 'Recombination Frequency Calculator — Biology', 'description' => 'Recombination frequency is the share of offspring with a reshuffled combination of two loci. It returns recombination frequency, map distance, parental…', 'h1' => 'Recombination Frequency Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Recombination Frequency Calculator — Biology', 'description' => 'Recombination Frequency turns Recombinant offspring and Total offspring into Recombination frequency and Map distance. Recombination frequency is opened in %…', 'h1' => 'Recombination Frequency Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -81,50 +81,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Recombination frequency is the share of offspring with a reshuffled combination of two loci. It returns recombination frequency, map distance, parental offspring and recombinant: parental, and the panel shows all of them at once.
-        
-        It is both the map distance in centimorgans and the experimental quantity a three-point cross measures, so this calculator converts between counts, percentage, map units and the testcross classes that produced them.
+        Recombination Frequency turns Recombinant offspring and Total offspring into Recombination frequency and Map distance. Nothing is looked up on this page: Recombination frequency is computed from Recombinant offspring and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Recombination frequency is opened in %; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Recombination Frequency', 'html' => <<<'TXT'
-            <p>RF (%) = recombinant offspring ÷ total offspring × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/recombination-frequency.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Recombination Frequency Calculator — Recombinant offspring as a share of the total, in percent and cM." title="Recombination Frequency Calculator"><figcaption>Recombinant offspring as a share of the total, in percent and cM.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>recombinant</code></td><td>offspring with a new allele combination</td><td>individuals</td></tr><tr><td><code>total</code></td><td>all offspring scored</td><td>individuals</td></tr><tr><td><code>RF</code></td><td>recombination frequency, equal to map units in cM</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Recombination Frequency calculator works', 'html' => <<<'TXT'
+            <p>The Recombination Frequency calculator applies one relationship to 2 numbers and reports Recombination frequency, Map distance and Parental offspring.</p><p>In the form&#039;s own words, Recombination frequency = Recombinant offspring ÷ Total offspring × 100.</p><p>What comes back is Recombination frequency, Map distance, Parental offspring and Recombinant: parental — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Recombination Frequency?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Recombinant offspring</strong> — in individuals</li><li><strong>Total offspring</strong> — in individuals</li></ul><p>The result boxes are Recombination frequency in %, Map distance in cM, Parental offspring in individuals, Recombinant: parental in:1; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: recombinant offspring of <strong>84</strong> individuals, total offspring of <strong>400</strong> individuals.</p>
-            <p>Substituting them into the formula gives recombination frequency of <strong>21</strong>%, map distance of <strong>21</strong> cM, parental offspring of <strong>316</strong> individuals, recombinant: parental of <strong>0.2658</strong>:1.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Recombinant offspring = 84 individuals and Total offspring = 400 individuals; the answers are &lt;strong&gt;Recombination frequency&lt;/strong&gt; = 21 %, &lt;strong&gt;Map distance&lt;/strong&gt; = 21 cM, &lt;strong&gt;Parental offspring&lt;/strong&gt; = 316 individuals and &lt;strong&gt;Recombinant: parental&lt;/strong&gt; = 0.2658:1.</p><ul><li><strong>Recombination frequency</strong> = 21 %</li><li><strong>Map distance</strong> = 21 cM</li><li><strong>Parental offspring</strong> = 316 individuals</li><li><strong>Recombinant: parental</strong> = 0.2658:1</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Recombination frequency</strong> = <code>Recombinant offspring ÷ Total offspring × 100</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 50%</td><td><strong>Linked</strong></td><td>the loci are on the same chromosome</td></tr><tr><td>about 50%</td><td><strong>Independent</strong></td><td>unlinked, or so far apart they assort freely</td></tr><tr><td>near 0%</td><td><strong>Tightly linked</strong></td><td>very few crossovers between the loci</td></tr></tbody></table>
-            <ul><li><p>Only a testcross (one parent homozygous recessive) exposes the recombinant classes directly; in an F2 cross the recombinants are masked by dominance.</p></li><li><p>Small samples give noisy estimates: with 100 offspring, one recombinant is a whole percentage point.</p></li><li><p>A single recombination frequency cannot be greater than 50%, which is why long intervals are measured as sums of short ones.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Recombination frequency&lt;/strong&gt; = 21, &lt;strong&gt;Map distance&lt;/strong&gt; = 21, &lt;strong&gt;Parental offspring&lt;/strong&gt; = 316 and &lt;strong&gt;Recombinant: parental&lt;/strong&gt; = 0.2658 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Recombination frequency takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Scoring an F2 instead of a testcross and expecting the recombinants to be visible.</li><li>Adding frequencies from overlapping intervals.</li><li>Forgetting that in a three-point cross each double crossover is counted twice.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Recombination frequency</strong> = <code>Recombinant offspring ÷ Total offspring × 100</code></li><li><strong>Map distance</strong> = <code>Recombinant offspring ÷ Total offspring × 100</code></li><li><strong>Parental offspring</strong> = <code>Total offspring − Recombinant offspring</code></li><li><strong>Recombinant: parental</strong> = <code>Recombinant offspring ÷ (Total offspring − Recombinant offspring)</code></li></ul><p>Any one of Recombination frequency, Map distance and Parental offspring can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/centimorgan-to-percentage">Centimorgan to percentage</a>. <a href="/biology/genetic-map-distance">Genetic linkage distance</a>. <a href="/biology/dihybrid-cross">Dihybrid cross</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Recombinant offspring, from 84 to 168 — and the answers go from &lt;strong&gt;Recombination frequency&lt;/strong&gt; 21 %, &lt;strong&gt;Map distance&lt;/strong&gt; 21 cM, &lt;strong&gt;Parental offspring&lt;/strong&gt; 316 individuals and &lt;strong&gt;Recombinant: parental&lt;/strong&gt; 0.2658:1 to &lt;strong&gt;Recombination frequency&lt;/strong&gt; 42 %, &lt;strong&gt;Map distance&lt;/strong&gt; 42 cM, &lt;strong&gt;Parental offspring&lt;/strong&gt; 232 individuals and &lt;strong&gt;Recombinant: parental&lt;/strong&gt; 0.7241:1.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Recombination frequency, Map distance and Parental offspring are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Recombinant offspring and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Recombinant offspring and Total offspring measured, Recombination frequency and Map distance wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/hunting-tooth-ratio">Hunting Tooth Ratio Calculator</a>, <a href="/biology/ideal-fish-tank-size">Ideal Fish Tank Size Calculator</a> and <a href="/biology/in-vivo-formulation">In Vivo Formulation Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is the difference between recombination frequency and map distance?', 'a' => 'They are numerically equal below about 10 cM; beyond that map distance uses a mapping function to correct for unseen double crossovers.'],
-            ['q' => 'What does 50% recombination mean?', 'a' => 'The loci assort independently — either they are on different chromosomes or far enough apart on the same one.'],
-            ['q' => 'What does the Recombination Frequency actually calculate?', 'a' => <<<'TXT'
-            It returns recombination frequency, map distance, parental offspring and recombinant : parental. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Recombination Frequency calculator work out?', 'a' => <<<'TXT'
+            Recombination frequency, Map distance, Parental offspring and Recombinant: parental, from Recombinant offspring and Total offspring. The relationship is Recombination frequency = Recombinant offspring ÷ Total offspring × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Recombinant offspring (individuals), Total offspring (individuals). Fill recombinant and total and leave Recombination frequency empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Recombination frequency, Map distance, Parental offspring and Recombinant: parental blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Recombination frequency = 21 %, Map distance = 21 cM, Parental offspring = 316 individuals and Recombinant: parental = 0.2658:1. Those are the defaults written into the form — move Recombinant offspring and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Recombination frequency is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Recombinant offspring blank and the page solves for it, reporting Recombination frequency instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Recombination frequency at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/hunting-tooth-ratio', 'name' => 'Hunting Tooth Ratio Calculator'],
+            ['path' => '/biology/ideal-fish-tank-size', 'name' => 'Ideal Fish Tank Size Calculator'],
+            ['path' => '/biology/in-vivo-formulation', 'name' => 'In Vivo Formulation Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

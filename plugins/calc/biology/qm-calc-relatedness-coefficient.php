@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Relatedness Coefficient Calculator',
-    'meta' => ['title' => 'Relatedness Coefficient Calculator — Biology', 'description' => 'The coefficient of relationship is the share of alleles two individuals have in common by descent: 50% for a parent and child, 25% for half-siblings, 12.5%…', 'h1' => 'Relatedness Coefficient Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Relatedness Coefficient Calculator — Biology', 'description' => 'Relatedness Coefficient takes Meioses from individual 1, Meioses from individual 2 and Paths through common ancestors and returns Coefficient of relationship…', 'h1' => 'Relatedness Coefficient Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -79,46 +79,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The coefficient of relationship is the share of alleles two individuals have in common by descent: 50% for a parent and child, 25% for half-siblings, 12.5% for first cousins. It returns coefficient of relationship, expected shared DNA and shared DNA share, and the panel shows all of them at once.
-        
-        This calculator gives it for a pedigree distance and the expected shared DNA in centimorgans.
+        Relatedness Coefficient takes Meioses from individual 1, Meioses from individual 2 and Paths through common ancestors and returns Coefficient of relationship and Expected shared DNA. It is a single relationship that reads Coefficient of relationship out of Meioses from individual 1, not a table of canned results keyed by them. Units for Coefficient of relationship default to % and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Relatedness Coefficient', 'html' => <<<'TXT'
-            <p>r = Σ (½)^(n₁ + n₂), summed over common ancestors</p>
-            <figure class="calc-figure"><img src="/uploads/biology/relatedness-coefficient.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Relatedness Coefficient Calculator — Relatedness by pedigree distance, from parent to third cousin." title="Relatedness Coefficient Calculator"><figcaption>Relatedness by pedigree distance, from parent to third cousin.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>n₁, n₂</code></td><td>meioses separating each individual from the shared ancestor</td><td>meioses</td></tr><tr><td><code>r</code></td><td>coefficient of relationship</td><td>%</td></tr><tr><td><code>cM</code></td><td>expected shared centimorgans, using 6 800 cM per genome</td><td>cM</td></tr></tbody></table>
+            ['title' => 'How the Relatedness Coefficient calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Relatedness Coefficient: it takes 3 numbers and reports Coefficient of relationship, Expected shared DNA and Shared DNA share.</p><p>In the form&#039;s own words, Coefficient of relationship = (0.5)^(Meioses from individual 1 + Meioses from individual 2) × Paths through common ancestors × 100.</p><p>The result panel carries Coefficient of relationship, Expected shared DNA and Shared DNA share, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Relatedness Coefficient?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Meioses from individual 1</strong> — a plain number, no unit. Steps up to the common ancestor</li><li><strong>Meioses from individual 2</strong> — a plain number, no unit</li><li><strong>Paths through common ancestors</strong> — a plain number, no unit</li></ul><p>The result boxes are Coefficient of relationship in %, Expected shared DNA in cM, Shared DNA share in %; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: meioses from individual 1 of <strong>2</strong>, meioses from individual 2 of <strong>2</strong>, paths through common ancestors of <strong>1</strong>.</p>
-            <p>Substituting them into the formula gives coefficient of relationship of <strong>6.25</strong>%, expected shared dna of <strong>425</strong> cM, shared dna share of <strong>6.25</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Meioses from individual 1 = 2, Meioses from individual 2 = 2 and Paths through common ancestors = 1; the answers are &lt;strong&gt;Coefficient of relationship&lt;/strong&gt; = 6.25 %, &lt;strong&gt;Expected shared DNA&lt;/strong&gt; = 425 cM and &lt;strong&gt;Shared DNA share&lt;/strong&gt; = 6.25 %.</p><ul><li><strong>Coefficient of relationship</strong> = 6.25 %</li><li><strong>Expected shared DNA</strong> = 425 cM</li><li><strong>Shared DNA share</strong> = 6.25 %</li></ul><p>That is <strong>Coefficient of relationship</strong> = <code>(0.5)^(Meioses from individual 1 + Meioses from individual 2) × Paths through common ancestors × 100</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>50%</td><td><strong>Parent–child, full siblings</strong></td><td>about 3 400 cM shared</td></tr><tr><td>25%</td><td><strong>Half-siblings, grandparent, aunt/uncle</strong></td><td>about 1 700 cM</td></tr><tr><td>12.5%</td><td><strong>First cousins</strong></td><td>about 850 cM</td></tr><tr><td>0.4%</td><td><strong>Third cousins</strong></td><td>at the edge of what consumer tests can resolve</td></tr></tbody></table>
-            <ul><li><p>The relationship coefficient is twice the inbreeding coefficient of their offspring: full siblings are 50% related, so their offspring have F = 25%.</p></li><li><p>Expected shared centimorgans assume 6 800 cM per genome and uniform recombination; real sharing has a standard deviation of several hundred cM.</p></li><li><p>Consanguinity in the pedigree multiplies paths, which is why double first cousins are as related as half-siblings.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Coefficient of relationship&lt;/strong&gt; = 6.25, &lt;strong&gt;Expected shared DNA&lt;/strong&gt; = 425 and &lt;strong&gt;Shared DNA share&lt;/strong&gt; = 6.25 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Coefficient of relationship takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting meioses to the ancestor for one side and to the individual for the other.</li><li>Reporting shared DNA as identical by descent when some of it is merely identical by state.</li><li>Assuming a genetic test result must match the pedigree exactly.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Coefficient of relationship</strong> = <code>(0.5)^(Meioses from individual 1 + Meioses from individual 2) × Paths through common ancestors × 100</code></li><li><strong>Expected shared DNA</strong> = <code>(0.5)^(Meioses from individual 1 + Meioses from individual 2) × Paths through common ancestors × 6800</code></li><li><strong>Shared DNA share</strong> = <code>(0.5)^(Meioses from individual 1 + Meioses from individual 2) × Paths through common ancestors × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Coefficient of relationship, Expected shared DNA and Shared DNA share can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Meioses from individual 1 from 2 to 4, leaving every other box alone. The panel moves from &lt;strong&gt;Coefficient of relationship&lt;/strong&gt; 6.25 %, &lt;strong&gt;Expected shared DNA&lt;/strong&gt; 425 cM and &lt;strong&gt;Shared DNA share&lt;/strong&gt; 6.25 % to &lt;strong&gt;Coefficient of relationship&lt;/strong&gt; 1.56 %, &lt;strong&gt;Expected shared DNA&lt;/strong&gt; 106 cM and &lt;strong&gt;Shared DNA share&lt;/strong&gt; 1.56 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Coefficient of relationship, Expected shared DNA and Shared DNA share are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Meioses from individual 1 is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Meioses from individual 1, Meioses from individual 2 and Paths through common ancestors and the number you are missing is Coefficient of relationship and Expected shared DNA.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/dna-pattern-finder">DNA Pattern Finder Calculator</a>, <a href="/biology/dna-percentage">DNA Percentage Calculator</a> and <a href="/biology/sequence-shuffler">DNA Sequence Shuffler Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How related are first cousins?', 'a' => '12.5%, sharing about 850 cM on average.'],
-            ['q' => 'Why do siblings share 50% on average but not exactly?', 'a' => 'Because they inherit random halves of their parents\' chromosomes; the observed value varies around 50%.'],
-            ['q' => 'What does the Relatedness Coefficient actually calculate?', 'a' => <<<'TXT'
-            It returns coefficient of relationship, expected shared DNA and shared DNA share. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Relatedness Coefficient calculator work out?', 'a' => <<<'TXT'
+            Coefficient of relationship, Expected shared DNA and Shared DNA share, from Meioses from individual 1, Meioses from individual 2 and Paths through common ancestors. The relationship is Coefficient of relationship = (0.5)^(Meioses from individual 1 + Meioses from individual 2) × Paths through common ancestors × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Meioses from individual 1, Meioses from individual 2, Paths through common ancestors. Fill n1, n2 and paths and leave Coefficient of relationship empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Coefficient of relationship, Expected shared DNA and Shared DNA share can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Coefficient of relationship = 6.25 %, Expected shared DNA = 425 cM and Shared DNA share = 6.25 %. Those are the defaults written into the form — move Meioses from individual 1 and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Coefficient of relationship is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave Meioses from individual 1 blank and the page solves for it, reporting Coefficient of relationship instead of the usual answer.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Coefficient of relationship keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dna-pattern-finder', 'name' => 'DNA Pattern Finder Calculator'],
+            ['path' => '/biology/dna-percentage', 'name' => 'DNA Percentage Calculator'],
+            ['path' => '/biology/sequence-shuffler', 'name' => 'DNA Sequence Shuffler Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

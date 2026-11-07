@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Double Digest Buffer Compatibility Calculator',
-    'meta' => ['title' => 'Double Digest Buffer Compatibility Calculator', 'description' => 'Two enzymes usually want different salt conditions, and the wrong buffer quietly costs you most of your digest. It returns buffers that suit both, best…', 'h1' => 'Double Digest Buffer Compatibility Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Double Digest Buffer Compatibility Calculator', 'description' => <<<'TXT'
+    Double Digest Buffer Compatibility takes Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) and returns Buffers that suit both…
+    TXT, 'h1' => 'Double Digest Buffer Compatibility Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'enzyme1' => [
@@ -346,48 +348,41 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Two enzymes usually want different salt conditions, and the wrong buffer quietly costs you most of your digest. It returns buffers that suit both, best combined activity and enzymes that need their own buffer, and the panel shows all of them at once.
-        
-        This page models each enzyme's salt class against the four standard buffers, shows the predicted activity of both enzymes in every buffer, and says whether to co-digest in one buffer or to digest sequentially with a clean-up step in between.
+        Double Digest Buffer Compatibility takes Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) and returns Buffers that suit both and Best combined activity. There is no hidden constant here: change Buffers that suit both and Enzyme 1 moves with it.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Double Digest Buffer Compatibility', 'html' => <<<'TXT'
-            <p>activity 100 % at the enzyme's rated salt class, 60 % one class away, 20 % two classes away; co-digest needs ≥ 75 % for both</p>
-            <figure class="calc-figure"><img src="/uploads/biology/restriction-buffer-compatibility.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Double Digest Buffer Compatibility Calculator — Modelled activity of two enzymes across four buffers" title="Double Digest Buffer Compatibility Calculator"><figcaption>Modelled activity of two enzymes across four buffers</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>salt class</code></td><td>monovalent salt the enzyme is rated at: 0, 50 or 100 mM NaCl</td><td>mM</td></tr><tr><td><code>CutSmart</code></td><td>the acetate-based universal buffer most suppliers ship</td><td>—</td></tr><tr><td><code>steps away</code></td><td>how many salt classes separate buffer and enzyme</td><td>classes</td></tr></tbody></table>
+            ['title' => 'How the Double Digest Buffer Compatibility calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Double Digest Buffer Compatibility: it takes 3 numbers and reports Buffers that suit both, Best combined activity and Enzymes that need their own buffer.</p><p>What comes back is Buffers that suit both, Best combined activity and Enzymes that need their own buffer — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Double Digest Buffer Compatibility?', 'html' => <<<'TXT'
-            <ol><li>Pick the two enzymes from the panel; the salt classes come from the classic low / medium / high classification.</li><li>Read the buffer table: the column with the highest minimum across the two enzymes is your co-digest buffer.</li><li>If the best combined activity is below about 75 %, digest sequentially instead — the page prints the protocol, including the dilution arithmetic.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Enzyme 1</strong> — a plain number, no unit</li><li><strong>Enzyme 2</strong> — a plain number, no unit</li><li><strong>I only have the classic three buffers (no universal buffer)</strong> — a plain number, no unit. Uncheck to model a kit that includes a CutSmart-type buffer</li></ul><p>The answers come back as Buffers that suit both, Best combined activity in %, Enzymes that need their own buffer. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>100 % both</td><td><strong>Co-digest</strong></td><td>one buffer, one tube, one incubation</td></tr><tr><td>75 % both</td><td><strong>Co-digest, longer</strong></td><td>double the enzyme or the time to recover the loss</td></tr><tr><td>50 – 74 %</td><td><strong>Sequential</strong></td><td>digest, heat-inactivate or column-purify, then digest again</td></tr><tr><td>below 50 %</td><td><strong>Sequential, two buffers</strong></td><td>no single buffer is acceptable for both</td></tr></tbody></table>
-            <ul><li><p>The activity figures here are a salt-class model, not a measured table: 100 % at the enzyme's rated class, 60 % one class away, 20 % two classes away. Published supplier charts are measured per enzyme and should win wherever they disagree.</p></li><li><p>A CutSmart-type buffer is formulated to support nearly every common enzyme at 100 %, which is why it is the default in most kits and why the page rates it at 100 % for the whole panel. Untick it if your kit only has the classic low / medium / high salt buffers — that is the case where the ordering of the two digests actually matters.</p></li><li><p>Glycerol matters as much as salt. Two enzymes both supplied in 50 % glycerol push the reaction above 5 % glycerol, which causes star activity; keep the enzyme volume at or below one tenth of the reaction.</p></li><li><p>If the enzymes need different temperatures, co-digestion is not possible at all: run them one after the other.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Buffers that suit both takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming any two enzymes co-digest because they are both 'common'.</li><li>Adding both enzymes neat and pushing the glycerol over 5 % of the reaction volume.</li><li>Heat-inactivating between digests at a temperature that also denatures the DNA or the second enzyme — check the inactivation table, not the incubation temperature.</li><li>Forgetting the methylation status of the template, which can make one enzyme look inactive and be blamed on the buffer.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Buffers that suit both, Best combined activity and Enzymes that need their own buffer are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Enzyme 1 is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) and the number you are missing is Buffers that suit both and Best combined activity.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dihybrid-cross-punnett-square">Dihybrid cross Punnett square Calculator</a>, <a href="/biology/dilution-calculator-c1v1">Dilution (C1V1 = C2V2) Calculator</a> and <a href="/biology/dna-concentration">DNA concentration</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Can I do a double digest in one buffer?', 'a' => <<<'TXT'
-            Yes when both enzymes are rated at least 75 % in the same buffer — the page names that buffer. Otherwise digest sequentially: the second enzyme's own buffer is restored by adding salt or by a column clean-up.
+            ['q' => 'What does the Double Digest Buffer Compatibility calculator work out?', 'a' => 'Buffers that suit both, Best combined activity and Enzymes that need their own buffer.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Enzyme 1, Enzyme 2, I only have the classic three buffers (no universal buffer). Fill enzyme1, enzyme2 and classic_only and leave Buffers that suit both empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'What is CutSmart buffer?', 'a' => <<<'TXT'
-            A universal buffer (Tris-acetate, potassium acetate, magnesium acetate, BSA) formulated so that the large majority of common enzymes work at full activity in it. It makes most double digests single-tube.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Buffers that suit both is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Buffers that suit both, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Why does my double digest show undigested plasmid?', 'a' => <<<'TXT'
-            Usually buffer incompatibility for one of the two enzymes, too much glycerol, or a methylated site. Run each enzyme alone as a control — the one that fails alone is the problem, and it is not the buffer.
-            TXT],
-            ['q' => 'How do I fix salt between sequential digests?', 'a' => <<<'TXT'
-            Either heat-inactivate and dilute 5–10 fold into the second buffer, or purify the DNA on a column. Dilution is fine when the DNA is concentrated; a column is safer when it is not.
-            TXT],
-            ['q' => 'What does the Double Digest Buffer Compatibility actually calculate?', 'a' => <<<'TXT'
-            It returns buffers that suit both, best combined activity and enzymes that need their own buffer. Each one is derived by the formula on this page, so you can check any figure by hand.
-            TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Buffers that suit both keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dihybrid-cross-punnett-square', 'name' => 'Dihybrid cross Punnett square Calculator'],
+            ['path' => '/biology/dilution-calculator-c1v1', 'name' => 'Dilution (C1V1 = C2V2) Calculator'],
+            ['path' => '/biology/dna-concentration', 'name' => 'DNA concentration'],
+        ],
+        'authors' => [],
     ],
 ];

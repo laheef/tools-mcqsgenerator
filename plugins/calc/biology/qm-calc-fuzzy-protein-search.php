@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fuzzy Protein Search Calculator',
-    'meta' => ['title' => 'Fuzzy Protein Search Calculator — Formula & Results', 'description' => 'A fuzzy protein search finds an approximate motif: X matches any residue, B, Z and J their ambiguous pairs. It returns matches found, fewest mismatches in a…', 'h1' => 'Fuzzy Protein Search Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fuzzy Protein Search Calculator — Formula & Results', 'description' => 'Fuzzy Protein Search turns Protein sequence, Pattern to find and Mismatches allowed into Matches found and Fewest mismatches in a hit. The answer typed back in.', 'h1' => 'Fuzzy Protein Search Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'protein' => [
@@ -232,40 +232,38 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A fuzzy protein search finds an approximate motif: X matches any residue, B, Z and J their ambiguous pairs. It returns matches found, fewest mismatches in a hit and residues searched, and the panel shows all of them at once.
-        
-        Every hit is reported with its position, its mass and how many positions it missed — the quick way to find a motif in a protein whose exact sequence you are not sure of.
+        Fuzzy Protein Search turns Protein sequence, Pattern to find and Mismatches allowed into Matches found and Fewest mismatches in a hit. The arithmetic is the whole method: Matches found is worked out from Protein sequence by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Fuzzy Protein Search', 'html' => <<<'TXT'
-            <p>a window of length |P| matches when the number of positions where P[i] does not cover S[i] is ≤ the allowed mismatches</p>
-            <figure class="calc-figure"><img src="/uploads/biology/fuzzy-protein-search.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Fuzzy Protein Search Calculator — Hits for a six-residue motif at three mismatch allowances" title="Fuzzy Protein Search Calculator"><figcaption>Hits for a six-residue motif at three mismatch allowances</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>S</code></td><td>the protein sequence</td><td>residues</td></tr><tr><td><code>P</code></td><td>the pattern</td><td>residues</td></tr><tr><td><code>X, B, Z, J</code></td><td>any residue; Asp/Asn; Glu/Gln; Ile/Leu</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Fuzzy Protein Search calculator works', 'html' => <<<'TXT'
+            <p>Fuzzy Protein Search answers one question from 3 numbers, and the answer is Matches found, Fewest mismatches in a hit and Residues searched.</p><p>The result panel carries Matches found, Fewest mismatches in a hit and Residues searched, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Fuzzy Protein Search?', 'html' => <<<'TXT'
-            <ol><li>Paste the protein and the motif. Case does not matter.</li><li>Allow a mismatch or two if the sequence comes from a different isoform or a related species.</li><li>Read the positions and the reported masses: the mass tells you at a glance whether the hit is the peptide you expect or an unrelated stretch.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Protein sequence</strong> — a plain number, no unit. Paste the protein; FASTA headers and non-letter characters are ignored</li><li><strong>Pattern to find</strong> — a plain number, no unit. Amino-acid letters, X for any residue, B = D/N, Z = E/Q, J = I/L</li><li><strong>Mismatches allowed</strong> — a plain number, no unit. 0 = exact, but X still matches any residue</li></ul><p>What you get back is Matches found, Fewest mismatches in a hit, Residues searched, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 mismatches</td><td><strong>Exact motif</strong></td><td>the pattern is present as written</td></tr><tr><td>1 mismatch</td><td><strong>Conservative hit</strong></td><td>usually a point mutation or a species difference</td></tr><tr><td>2+ mismatches</td><td><strong>Loose hit</strong></td><td>raise the allowance only if you expect divergence</td></tr></tbody></table>
-            <ul><li><p>X matches any residue, so a pattern full of X matches almost anywhere — count the X positions before trusting a hit.</p></li><li><p>The search is a sliding window over the forward sequence only; report both strands only makes sense for DNA, and this page is for protein.</p></li><li><p>Masses are average residue masses plus one water, the same convention as a peptide mass calculator, so they will be a few hundredths off a monoisotopic mass.</p></li><li><p>Positions are 1-based, the convention in protein databases.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Matches found takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Searching a nucleotide sequence with a protein pattern — every window will look like noise.</li><li>Treating B and Z as literal letters; they are ambiguity codes for Asp/Asn and Glu/Gln.</li><li>Allowing three mismatches on a six-residue pattern, which matches everything.</li><li>Comparing a hit's average mass with a monoisotopic mass from a mass spectrometer and expecting them to agree to the last decimal.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Matches found, Fewest mismatches in a hit and Residues searched are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Protein sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Protein sequence, Pattern to find and Mismatches allowed and the number you are missing is Matches found and Fewest mismatches in a hit.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/photosynthesis-rate">Photosynthesis Rate Calculator</a>, <a href="/biology/pig-weight">Pig Weight Calculator</a> and <a href="/biology/pine-straw">Pine straw</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does a fuzzy search do that an exact search does not?', 'a' => 'It lets a pattern match when a few positions differ, and it understands the IUPAC ambiguity letters (B, Z, J, X) that protein databases use.'],
-            ['q' => 'Why do I get a hit in a protein that should not contain the motif?', 'a' => 'Because you allowed mismatches — check the mismatch count on the hit. With a short pattern and two allowed mismatches, random matches are common.'],
-            ['q' => 'Are the masses monoisotopic or average?', 'a' => 'Average, using the standard residue masses plus H₂O for the intact peptide. For a mass spectrometry match, compare the monoisotopic mass instead.'],
-            ['q' => 'Can I search several patterns at once?', 'a' => 'Run them one after another; the page reports every window of the one pattern you paste.'],
-            ['q' => 'What does the Fuzzy Protein Search actually calculate?', 'a' => <<<'TXT'
-            It returns matches found, fewest mismatches in a hit and residues searched. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Protein sequence, Pattern to find, Mismatches allowed. With protein, pattern and mismatch in place, Matches found can stay blank and the page will work it out.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Matches found is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Matches found, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Matches found keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/photosynthesis-rate', 'name' => 'Photosynthesis Rate Calculator'],
+            ['path' => '/biology/pig-weight', 'name' => 'Pig Weight Calculator'],
+            ['path' => '/biology/pine-straw', 'name' => 'Pine straw'],
+        ],
+        'authors' => [],
     ],
 ];

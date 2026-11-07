@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Restriction Digest Calculator',
-    'meta' => ['title' => 'Restriction Digest Calculator — Formula & Results', 'description' => 'Work out where a restriction enzyme cuts a DNA sequence and how big the fragments will be. It returns sequence length, cut sites, fragments, largest fragment…', 'h1' => 'Restriction Digest Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Restriction Digest Calculator — Formula & Results', 'description' => <<<'TXT'
+    Restriction Digest turns DNA sequence, Enzyme 1 and Enzyme 2 into Sequence length and Cut sites. It is a single relationship that reads Sequence length out of…
+    TXT, 'h1' => 'Restriction Digest Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -377,42 +379,36 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Work out where a restriction enzyme cuts a DNA sequence and how big the fragments will be. It returns sequence length, cut sites, fragments, largest fragment and smallest fragment, and the panel shows all of them at once.
-        
-        Paste a plasmid or a PCR product, choose one enzyme or two, and the map gives every cut site, the fragment sizes in base pairs and what the gel will look like — the check you want before committing a digest.
+        Restriction Digest turns DNA sequence, Enzyme 1 and Enzyme 2 into Sequence length and Cut sites. It is a single relationship that reads Sequence length out of DNA sequence, not a table of canned results keyed by them. Units for Sequence length default to bp and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Restriction Digest', 'html' => <<<'TXT'
-            <p>Distance between adjacent cut sites gives each fragment; for a circular molecule the last fragment wraps from the final site back to the first. Σ fragments = sequence length</p>
-            <figure class="calc-figure"><img src="/uploads/biology/restriction-digest.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Restriction Digest Calculator — A typical double digest on a 3 kb plasmid" title="Restriction Digest Calculator"><figcaption>A typical double digest on a 3 kb plasmid</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>^</code></td><td>where the enzyme cuts, on the top strand</td><td>—</td></tr><tr><td><code>bp</code></td><td>base pair</td><td>—</td></tr><tr><td><code>site</code></td><td>a recognition sequence, usually 4–8 bp and palindromic</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Restriction Digest calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Restriction Digest: it takes 4 numbers and reports Sequence length, Cut sites and Fragments.</p><p>What comes back is Sequence length, Cut sites, Fragments and Largest fragment — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Restriction Digest?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>DNA sequence</strong> — a plain number, no unit. Paste the plasmid or the whole amplicon; FASTA headers are ignored</li><li><strong>Enzyme 1</strong> — a plain number, no unit</li><li><strong>Enzyme 2</strong> — a plain number, no unit</li><li><strong>Molecule</strong> — a plain number, no unit</li></ul><p>What you get back is Sequence length in bp, Cut sites, Fragments, Largest fragment in bp, Smallest fragment in bp, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 fragment</td><td><strong>No cut</strong></td><td>the enzyme does not cut, or cuts once on a circle</td></tr><tr><td>2 – 4 fragments</td><td><strong>Diagnostic</strong></td><td>a good check on a clone's identity</td></tr><tr><td>more than 6</td><td><strong>Frequent cutter</strong></td><td>hard to read on a gel; use a different enzyme</td></tr></tbody></table>
-            <ul><li><p>A circular molecule cut once gives one linear fragment; cut twice it gives two fragments whose sizes add up to the plasmid length.</p></li><li><p>Fragment sizes are what a gel will show. Two fragments of similar size appear as one thick band, which is why a double digest that gives 1 200 and 1 250 bp is a poor diagnostic.</p></li><li><p>Methylation blocks many enzymes in vivo: Dam methylation stops MboI and ClaI, Dcm stops EcoRII. A site that exists in the sequence may still not cut in a plasmid prepared from E. coli.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Sequence length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Pasting only the insert when the question is about the plasmid map.</li><li>Forgetting that a PCR product is linear while the template was circular.</li><li>Assuming a single-cutter is unique in the whole construct when only part of it was pasted.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Sequence length, Cut sites and Fragments are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If DNA sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: DNA sequence, Enzyme 1 and Enzyme 2 measured, Sequence length and Cut sites wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/puppy-adult-weight-predictor">Puppy Adult Weight Predictor Calculator</a>, <a href="/biology/q10-temperature-coefficient">Q10 Temperature Coefficient Calculator</a> and <a href="/biology/qpcr-efficiency">qPCR efficiency Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many fragments does a circular plasmid give with two cuts?', 'a' => 'Two — the plasmid is split at both sites and the two arcs add up to the full length.'],
-            ['q' => 'Why does an enzyme not cut a site that is in the sequence?', 'a' => 'Usually methylation (Dam or Dcm), supercoiling, or a buffer that does not suit the enzyme.'],
-            ['q' => 'How do I pick a diagnostic digest?', 'a' => 'Choose an enzyme that gives two or three clearly differently sized fragments, nothing within 15% of another.'],
-            ['q' => 'What does the Restriction Digest actually calculate?', 'a' => <<<'TXT'
-            It returns sequence length, cut sites, fragments, largest fragment and smallest fragment. Each one is derived by the formula on this page, so you can check any figure by hand.
-            TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Which values do I need before I start?', 'a' => 'DNA sequence, Enzyme 1, Enzyme 2, Molecule. Fill sequence, enzyme1 and enzyme2 and leave Sequence length empty if you would rather have that one solved instead.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Sequence length is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Sequence length is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Sequence length at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/puppy-adult-weight-predictor', 'name' => 'Puppy Adult Weight Predictor Calculator'],
+            ['path' => '/biology/q10-temperature-coefficient', 'name' => 'Q10 Temperature Coefficient Calculator'],
+            ['path' => '/biology/qpcr-efficiency', 'name' => 'qPCR efficiency Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

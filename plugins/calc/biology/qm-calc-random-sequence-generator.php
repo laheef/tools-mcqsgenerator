@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Random Sequence Generator Calculator',
-    'meta' => ['title' => 'Random Sequence Generator Calculator — Biology', 'description' => 'Generate a random DNA, RNA or protein sequence of any length with a target GC content, and get the same sequence back every time from the same seed.', 'h1' => 'Random Sequence Generator Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Random Sequence Generator Calculator — Biology', 'description' => 'Random Sequence Generator takes Alphabet, Length and Target GC content and returns GC content of the output. Random Sequence Generator answers one question…', 'h1' => 'Random Sequence Generator Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'kind' => [
@@ -274,49 +274,38 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Generate a random DNA, RNA or protein sequence of any length with a target GC content, and get the same sequence back every time from the same seed. It returns gc content of the output, and the panel shows all of them at once.
-        
-        It is the negative control you need for a motif search, a composition baseline for a GC calculator, or a training example for a pipeline.
+        Random Sequence Generator takes Alphabet, Length and Target GC content and returns GC content of the output. It is a single relationship that reads GC content of the output out of Alphabet, not a table of canned results keyed by them. Units for GC content of the output default to % and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Random Sequence Generator', 'html' => <<<'TXT'
-            <p>each base is drawn from a seeded 32-bit generator, with G and C chosen with probability GC/2 each</p>
-            <figure class="calc-figure"><img src="/uploads/biology/random-sequence-generator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Random Sequence Generator Calculator — Base composition of a 1 000-base draw at 50 % GC" title="Random Sequence Generator Calculator"><figcaption>Base composition of a 1 000-base draw at 50 % GC</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>seed</code></td><td>the integer that fixes the pseudo-random stream</td><td>—</td></tr><tr><td><code>GC</code></td><td>target fraction of G + C</td><td>%</td></tr><tr><td><code>n</code></td><td>length of the sequence</td><td>bases</td></tr></tbody></table>
+            ['title' => 'How the Random Sequence Generator calculator works', 'html' => <<<'TXT'
+            <p>Random Sequence Generator answers one question from 5 numbers, and the answer is GC content of the output.</p><p>The answers are GC content of the output; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Random Sequence Generator?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Choose the alphabet, the length and — for DNA or RNA — the GC content you want.</li><li>Keep the seed if you need the same sequence again, change it for a different draw.</li><li>Copy the output: it is wrapped at 60 columns and the seed is printed with it, so anyone can reproduce exactly what you used.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 5 boxes, and nothing else.</p><ul><li><strong>Alphabet</strong> — a plain number, no unit</li><li><strong>Length</strong> — in residues. 1 to 100 000</li><li><strong>Target GC content</strong> — in %. DNA and RNA only</li><li><strong>Seed</strong> — a plain number, no unit. Same seed, same sequence — any whole number</li><li><strong>Make the sequence start with ATG</strong> — a plain number, no unit. DNA only — gives you a start codon</li></ul><p>The result box is GC content of the output in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: length of <strong>1,000</strong> residues, target gc content of <strong>50</strong>%, seed of <strong>42</strong>, make the sequence start with atg of <strong>0</strong>.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: GC content of the output takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>20 – 40 % GC</td><td><strong>AT-rich</strong></td><td>typical of a bacterial genome's variable regions and of some promoters</td></tr><tr><td>40 – 60 % GC</td><td><strong>Balanced</strong></td><td>the usual null model for a mammalian sequence</td></tr><tr><td>60 – 80 % GC</td><td><strong>GC-rich</strong></td><td>like a CpG island or a GC3-rich coding sequence</td></tr></tbody></table>
-            <ul><li><p>The random draw is deterministic from the seed: the same seed and length always give the same sequence, which is what makes a 'random' control reproducible in a paper.</p></li><li><p>GC is applied as a target, so the achieved value wobbles around it by the binomial sampling error — for 1 000 bases at 50 %, expect about ±1.6 points.</p></li><li><p>A protein draw uses the 20 standard residues with equal probability, not the natural amino-acid frequencies; that is what you want for a shuffled control, and it is stated in the output rather than assumed.</p></li><li><p>Nothing here is cryptographically random. For keys or identifiers use a proper CSPRNG.</p></li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with GC content of the output is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Alphabet is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using a random sequence as a statistical null without matching its GC content to the real sequence — composition dominates most motif statistics.</li><li>Assuming two different seeds give unrelated sequences: they do, but a short sequence can happen to look similar, which is the point of the test.</li><li>Generating a 'random' protein with natural frequencies and calling it a shuffled control.</li><li>Losing the seed and then being unable to reproduce a figure.</li></ul>
-            TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/sequence-shuffler">Sequence shuffler</a>. <a href="/biology/gc-content-calculator">GC content</a>. <a href="/biology/dna-pattern-finder">DNA pattern finder</a>. <a href="/biology/reverse-complement">Reverse complement</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Alphabet, Length and Target GC content measured, GC content of the output wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/atp-cellular-respiration-energy-yield">ATP / Cellular Respiration Energy Yield Calculator</a>, <a href="/biology/autosomal-dominant-pedigree">Autosomal Dominant Pedigree Analyzer Calculator</a> and <a href="/biology/autosomal-recessive-risk">Autosomal Recessive Inheritance Risk Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Is the sequence truly random?', 'a' => 'It is pseudo-random and deterministic from the seed: statistically uniform, perfectly reproducible, and not suitable for anything security-related.'],
-            ['q' => 'Why does the GC content not exactly match what I asked for?', 'a' => <<<'TXT'
-            Because each base is drawn independently, so the realised count fluctuates around the target — more bases means a smaller wobble. The page reports what it actually produced.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Alphabet, Length (residues), Target GC content (%), Seed, Make the sequence start with ATG. Fill kind, length and gc and leave GC content of the output empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I regenerate the same sequence later?', 'a' => 'Yes — keep the seed and the length. The output block prints the seed for exactly that reason.'],
-            ['q' => 'Does the protein mode use natural amino-acid frequencies?', 'a' => <<<'TXT'
-            No. It draws the 20 residues uniformly, which is the right control for a shuffled sequence. Use a composition-matched generator if your null model needs natural frequencies.
-            TXT],
-            ['q' => 'What does the Random Sequence Generator actually calculate?', 'a' => 'It returns gc content of the output. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of GC content of the output is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: GC content of the output is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to GC content of the output at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/atp-cellular-respiration-energy-yield', 'name' => 'ATP / Cellular Respiration Energy Yield Calculator'],
+            ['path' => '/biology/autosomal-dominant-pedigree', 'name' => 'Autosomal Dominant Pedigree Analyzer Calculator'],
+            ['path' => '/biology/autosomal-recessive-risk', 'name' => 'Autosomal Recessive Inheritance Risk Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mark-Recapture Population Calculator',
-    'meta' => ['title' => 'Mark-Recapture Population Calculator — Biology', 'description' => 'Estimate how many animals are in a population from two visits: mark a sample, release them, then count how many marked individuals turn up in a second sample.', 'h1' => 'Mark-Recapture Population Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mark-Recapture Population Calculator — Biology', 'description' => 'Mark-Recapture Population turns Marked in the first sample, Total caught in the second sample and Of those, already marked into Population estimate and…', 'h1' => 'Mark-Recapture Population Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -102,47 +102,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Estimate how many animals are in a population from two visits: mark a sample, release them, then count how many marked individuals turn up in a second sample. It returns population estimate, chapman estimate, share marked in the second sample and 95% confidence, lower, and the panel shows all of them at once.
-        
-        The Lincoln–Petersen estimator is the simple proportion, and the Chapman correction makes it usable when samples are small.
+        Mark-Recapture Population turns Marked in the first sample, Total caught in the second sample and Of those, already marked into Population estimate and Chapman estimate. There is no hidden constant here: change Population estimate and Marked in the first sample moves with it.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Mark-Recapture Population', 'html' => <<<'TXT'
-            <p>N ≈ (M × C) ÷ R. Chapman: N = (M+1)(C+1)/(R+1) − 1</p>
-            <figure class="calc-figure"><img src="/uploads/biology/mark-recapture.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Mark-Recapture Population Calculator — The estimate tightens as recaptures rise" title="Mark-Recapture Population Calculator"><figcaption>The estimate tightens as recaptures rise</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>M</code></td><td>animals marked and released in the first sample</td><td>animals</td></tr><tr><td><code>C</code></td><td>animals caught in the second sample</td><td>animals</td></tr><tr><td><code>R</code></td><td>of those, how many carry a mark</td><td>animals</td></tr></tbody></table>
+            ['title' => 'How the Mark-Recapture Population calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Mark-Recapture Population: it takes 3 numbers and reports Population estimate, Chapman estimate and 95% confidence, lower.</p><p>Written with the labels from the form, Population estimate = Marked in the first sample × Total caught in the second sample ÷ Of those, already marked.</p><p>What comes back is Population estimate, Chapman estimate, 95% confidence, lower and 95% confidence, upper — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Mark-Recapture Population?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter how many animals you marked and released (M).</li><li>Enter the size of the second sample (C) and how many of them were already marked (R).</li><li>Read the estimate, the Chapman-corrected value and the confidence interval.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Marked in the first sample</strong> — a plain number, no unit. M</li><li><strong>Total caught in the second sample</strong> — a plain number, no unit. C</li><li><strong>Of those, already marked</strong> — a plain number, no unit. R</li></ul><p>The result boxes are Population estimate, Chapman estimate, 95% confidence, lower, 95% confidence, upper, Share marked in the second sample in %; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: marked in the first sample of <strong>80</strong>, total caught in the second sample of <strong>100</strong>, of those, already marked of <strong>20</strong>.</p>
-            <p>Substituting them into the formula gives population estimate of <strong>400</strong>, chapman estimate of <strong>388.57</strong>, share marked in the second sample of <strong>20</strong>%, 95% confidence, lower of <strong>263.88</strong>, 95% confidence, upper of <strong>513.27</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Marked in the first sample = 80, Total caught in the second sample = 100 and Of those, already marked = 20; the answers are &lt;strong&gt;Population estimate&lt;/strong&gt; = 400, &lt;strong&gt;Chapman estimate&lt;/strong&gt; = 389, &lt;strong&gt;Share marked in the second sample&lt;/strong&gt; = 20 %, &lt;strong&gt;95% confidence, lower&lt;/strong&gt; = 264 and &lt;strong&gt;95% confidence, upper&lt;/strong&gt; = 513.</p><ul><li><strong>Population estimate</strong> = 400</li><li><strong>Chapman estimate</strong> = 389</li><li><strong>Share marked in the second sample</strong> = 20 %</li><li><strong>95% confidence, lower</strong> = 264</li><li><strong>95% confidence, upper</strong> = 513</li></ul><p>That is <strong>Population estimate</strong> = <code>Marked in the first sample × Total caught in the second sample ÷ Of those, already marked</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>R ≥ 20</td><td><strong>Reliable</strong></td><td>the estimate is stable and the interval is tight</td></tr><tr><td>R 5 – 20</td><td><strong>Usable with care</strong></td><td>use the Chapman correction; expect a wide interval</td></tr><tr><td>R under 5</td><td><strong>Unreliable</strong></td><td>the interval will be enormous — mark more animals</td></tr></tbody></table>
-            <ul><li><p>The method assumes a closed population: no births, deaths, immigration or emigration between the two samples, and marks that do not fall off or change behaviour.</p></li><li><p>The Lincoln–Petersen estimate is biased high when R is small — it cannot even return a value below M plus the unmarked animals you saw. The Chapman correction exists for exactly this.</p></li><li><p>The confidence interval depends almost entirely on R. Twelve recaptures is the practical minimum for a number you would publish.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Population estimate&lt;/strong&gt; = 400, &lt;strong&gt;Chapman estimate&lt;/strong&gt; = 389, &lt;strong&gt;Share marked in the second sample&lt;/strong&gt; = 20, &lt;strong&gt;95% confidence, lower&lt;/strong&gt; = 264 and &lt;strong&gt;95% confidence, upper&lt;/strong&gt; = 513 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Population estimate takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Comparing samples taken in different seasons, when the population is not closed.</li><li>Marking only conspicuous animals, which are then more likely to be caught again.</li><li>Reporting the point estimate without the interval — it can easily be ±40%.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Population estimate</strong> = <code>Marked in the first sample × Total caught in the second sample ÷ Of those, already marked</code></li><li><strong>Chapman estimate</strong> = <code>(Marked in the first sample + 1) × (Total caught in the second sample + 1) ÷ (Of those, already marked + 1) − 1</code></li><li><strong>Share marked in the second sample</strong> = <code>Of those, already marked ÷ Total caught in the second sample × 100</code></li></ul><p>Any one of Population estimate, Chapman estimate and Share marked in the second sample can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Marked in the first sample from 80 to 160, leaving every other box alone. The panel moves from &lt;strong&gt;Population estimate&lt;/strong&gt; 400, &lt;strong&gt;Chapman estimate&lt;/strong&gt; 389, &lt;strong&gt;Share marked in the second sample&lt;/strong&gt; 20 %, &lt;strong&gt;95% confidence, lower&lt;/strong&gt; 264 and &lt;strong&gt;95% confidence, upper&lt;/strong&gt; 513 to &lt;strong&gt;Population estimate&lt;/strong&gt; 800, &lt;strong&gt;Chapman estimate&lt;/strong&gt; 773, &lt;strong&gt;Share marked in the second sample&lt;/strong&gt; 20 %, &lt;strong&gt;95% confidence, lower&lt;/strong&gt; 505 and &lt;strong&gt;95% confidence, upper&lt;/strong&gt; 1042.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Population estimate, Chapman estimate and 95% confidence, lower are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Marked in the first sample is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Marked in the first sample, Total caught in the second sample and Of those, already marked and the number you are missing is Population estimate and Chapman estimate.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/autosomal-recessive-risk">Autosomal Recessive Inheritance Risk Calculator</a>, <a href="/biology/bacteria-growth">Bacteria growth Calculator</a> and <a href="/biology/bacterial-concentration-calculator">Bacterial Concentration Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does mark-recapture assume?', 'a' => 'A closed population, equal catchability of marked and unmarked animals, and marks that are neither lost nor harmful.'],
-            ['q' => 'Why use the Chapman correction?', 'a' => 'The plain Lincoln–Petersen estimator is biased upward for small samples; Chapman\'s version is close to unbiased.'],
-            ['q' => 'How many recaptures do I need?', 'a' => 'At least twenty for a useful interval, and never fewer than five for a number worth reporting.'],
-            ['q' => 'What does the Mark-Recapture Population actually calculate?', 'a' => <<<'TXT'
-            It returns population estimate, chapman estimate, share marked in the second sample and 95% confidence, lower. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Mark-Recapture Population calculator work out?', 'a' => <<<'TXT'
+            Population estimate, Chapman estimate, 95% confidence, lower and 95% confidence, upper, from Marked in the first sample, Total caught in the second sample and Of those, already marked. The relationship is Population estimate = Marked in the first sample × Total caught in the second sample ÷ Of those, already marked.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Marked in the first sample, Total caught in the second sample, Of those, already marked. Fill marked, second and recaptured and leave Population estimate empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Population estimate, Chapman estimate, Share marked in the second sample and 95% confidence, lower blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Population estimate = 400, Chapman estimate = 389, Share marked in the second sample = 20 %, 95% confidence, lower = 264 and 95% confidence, upper = 513. The figures come from Marked in the first sample as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Population estimate is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Marked in the first sample left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Population estimate keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/autosomal-recessive-risk', 'name' => 'Autosomal Recessive Inheritance Risk Calculator'],
+            ['path' => '/biology/bacteria-growth', 'name' => 'Bacteria growth Calculator'],
+            ['path' => '/biology/bacterial-concentration-calculator', 'name' => 'Bacterial Concentration Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

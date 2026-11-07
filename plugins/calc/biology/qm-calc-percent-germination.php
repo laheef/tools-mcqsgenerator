@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Percent Germination Calculator',
-    'meta' => ['title' => 'Percent Germination Calculator — Formula & Results', 'description' => 'Percent germination is germinated seeds divided by seeds sown — the number on a seed packet, and the number that decides how much seed to buy.', 'h1' => 'Percent Germination Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Percent Germination Calculator — Formula & Results', 'description' => 'Percent germination is germinated seeds divided by seeds sown — the number on a seed packet, and the number that decides how much seed to buy. Free percent ge', 'h1' => 'Percent Germination Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -90,46 +90,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Percent germination is germinated seeds divided by seeds sown — the number on a seed packet, and the number that decides how much seed to buy. It returns germination, viability (germinated + dormant), seeds needed for 10 000 plants and sowing rate for 1 000 plants/m², and the panel shows all of them at once.
-        
-        This calculator adds the viability and vigour figures that explain a low result.
+        Percent Germination takes Seeds germinated, Seeds sown and Seeds rotted or dead and returns Germination and Viability (germinated + dormant). It is a single relationship that reads Germination out of Seeds germinated, not a table of canned results keyed by them. Units for Germination default to % and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Percent Germination', 'html' => <<<'TXT'
-            <p>Germination (%) = germinated ÷ sown × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/percent-germination.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Percent Germination Calculator — Germinated, dormant and dead seed in a test lot." title="Percent Germination Calculator"><figcaption>Germinated, dormant and dead seed in a test lot.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>germinated</code></td><td>seeds that produced a normal seedling</td><td>seeds</td></tr><tr><td><code>sown</code></td><td>seeds placed on the test</td><td>seeds</td></tr><tr><td><code>germination</code></td><td>the percentage</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Percent Germination calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Percent Germination: it takes 3 numbers and reports Germination, Viability (germinated + dormant) and Seeds needed for 10 000 plants.</p><p>Written with the labels from the form, Germination = Seeds germinated ÷ Seeds sown × 100.</p><p>The answers are Germination, Viability (germinated + dormant), Seeds needed for 10 000 plants and Sowing rate for 1 000 plants/m²; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Percent Germination?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Seeds germinated</strong> — in seeds</li><li><strong>Seeds sown</strong> — in seeds</li><li><strong>Seeds rotted or dead</strong> — in seeds. Optional — separates non-viable from dormant</li></ul><p>The result boxes are Germination in %, Viability (germinated + dormant) in %, Seeds needed for 10 000 plants in seeds, Sowing rate for 1 000 plants/m² in seeds/m²; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: seeds germinated of <strong>88</strong> seeds, seeds sown of <strong>100</strong> seeds, seeds rotted or dead of <strong>5</strong> seeds.</p>
-            <p>Substituting them into the formula gives germination of <strong>88</strong>%, viability (germinated + dormant) of <strong>95</strong>%, seeds needed for 10 000 plants of <strong>11,363.64</strong> seeds, sowing rate for 1 000 plants/m² of <strong>1,136.36</strong> seeds/m².</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Seeds germinated = 88 seeds, Seeds sown = 100 seeds and Seeds rotted or dead = 5 seeds; the answers are &lt;strong&gt;Germination&lt;/strong&gt; = 88 %, &lt;strong&gt;Viability (germinated + dormant)&lt;/strong&gt; = 95 %, &lt;strong&gt;Seeds needed for 10 000 plants&lt;/strong&gt; = 11364 seeds and &lt;strong&gt;Sowing rate for 1 000 plants/m²&lt;/strong&gt; = 1136 seeds/m².</p><ul><li><strong>Germination</strong> = 88 %</li><li><strong>Viability (germinated + dormant)</strong> = 95 %</li><li><strong>Seeds needed for 10 000 plants</strong> = 11364 seeds</li><li><strong>Sowing rate for 1 000 plants/m²</strong> = 1136 seeds/m²</li></ul><p>The line behind those figures is <strong>Germination</strong> = <code>Seeds germinated ÷ Seeds sown × 100</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>above 90%</td><td><strong>Excellent</strong></td><td>sow at the planned rate</td></tr><tr><td>70 – 90%</td><td><strong>Acceptable</strong></td><td>increase the rate by the shortfall</td></tr><tr><td>below 70%</td><td><strong>Poor</strong></td><td>check storage, seed lot age and test conditions</td></tr></tbody></table>
-            <ul><li><p>Standard tests count normal seedlings under specified conditions — 20 °C for most vegetables, alternating temperatures for grasses.</p></li><li><p>Dormant seed is viable but not counted as germinated; a tetrazolium test separates dormancy from death.</p></li><li><p>Vigour (how fast and uniformly seedlings emerge) predicts field establishment better than germination percentage alone.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Germination&lt;/strong&gt; = 88, &lt;strong&gt;Viability (germinated + dormant)&lt;/strong&gt; = 95, &lt;strong&gt;Seeds needed for 10 000 plants&lt;/strong&gt; = 11364 and &lt;strong&gt;Sowing rate for 1 000 plants/m²&lt;/strong&gt; = 1136 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Germination takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting abnormal seedlings as germinated.</li><li>Testing too few seeds — 100 is the minimum for a useful percentage.</li><li>Testing freshly harvested seed that is still dormant.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Germination</strong> = <code>Seeds germinated ÷ Seeds sown × 100</code></li><li><strong>Viability (germinated + dormant)</strong> = <code>(Seeds sown − Seeds rotted or dead) ÷ Seeds sown × 100</code></li><li><strong>Seeds needed for 10 000 plants</strong> = <code>10000 ÷ (Seeds germinated ÷ Seeds sown)</code></li><li><strong>Sowing rate for 1 000 plants/m²</strong> = <code>1000 ÷ (Seeds germinated ÷ Seeds sown)</code></li></ul><p>Any one of Germination, Viability (germinated + dormant) and Seeds needed for 10 000 plants can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Seeds germinated from 88 to 176, leaving every other box alone. The panel moves from &lt;strong&gt;Germination&lt;/strong&gt; 88 %, &lt;strong&gt;Viability (germinated + dormant)&lt;/strong&gt; 95 %, &lt;strong&gt;Seeds needed for 10 000 plants&lt;/strong&gt; 11364 seeds and &lt;strong&gt;Sowing rate for 1 000 plants/m²&lt;/strong&gt; 1136 seeds/m² to &lt;strong&gt;Germination&lt;/strong&gt; 176 %, &lt;strong&gt;Viability (germinated + dormant)&lt;/strong&gt; 95 %, &lt;strong&gt;Seeds needed for 10 000 plants&lt;/strong&gt; 5682 seeds and &lt;strong&gt;Sowing rate for 1 000 plants/m²&lt;/strong&gt; 568 seeds/m².</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Germination, Viability (germinated + dormant) and Seeds needed for 10 000 plants are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Seeds germinated to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Seeds germinated, Seeds sown and Seeds rotted or dead and the number you are missing is Germination and Viability (germinated + dormant).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a>, <a href="/biology/dog-size">Dog size Calculator</a> and <a href="/biology/dog-water-intake">Dog water intake Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many seeds do I need for a 95% germination rate and 10 000 plants?', 'a' => 'About 10 526 seeds.'],
-            ['q' => 'Why is field emergence lower than the test result?', 'a' => 'Soil temperature, crusting, pathogens and sowing depth all reduce it.'],
-            ['q' => 'What does the Percent Germination actually calculate?', 'a' => <<<'TXT'
-            It returns germination, viability (germinated + dormant), seeds needed for 10 000 plants and sowing rate for 1 000 plants/m². Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Percent Germination calculator work out?', 'a' => <<<'TXT'
+            Germination, Viability (germinated + dormant), Seeds needed for 10 000 plants and Sowing rate for 1 000 plants/m², from Seeds germinated and Seeds sown. The relationship is Germination = Seeds germinated ÷ Seeds sown × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Seeds germinated (seeds), Seeds sown (seeds), Seeds rotted or dead (seeds). With germinated, sown and dead in place, Germination can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Germination, Viability (germinated + dormant), Seeds needed for 10 000 plants and Sowing rate for 1 000 plants/m² blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Germination = 88 %, Viability (germinated + dormant) = 95 %, Seeds needed for 10 000 plants = 11364 seeds and Sowing rate for 1 000 plants/m² = 1136 seeds/m². Those are the defaults written into the form — move Seeds germinated and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Germination is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Seeds germinated blank and the page solves for it, reporting Germination instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Germination keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+            ['path' => '/biology/dog-size', 'name' => 'Dog size Calculator'],
+            ['path' => '/biology/dog-water-intake', 'name' => 'Dog water intake Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dihybrid cross Punnett square',
-    'meta' => ['title' => 'Dihybrid cross Punnett square — Formula & Results', 'description' => 'The Dihybrid cross Punnett square calculator returns <strong>AABB</strong> from the 4 fields on the form. Press Calculate for the answer; change a value and…', 'h1' => 'Dihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
+    'meta' => ['title' => 'Dihybrid cross Punnett square — Formula & Results', 'description' => 'Dihybrid cross Punnett square turns Trait 1, Trait 2 and Trait 1 into AABB and AABb. There is no hidden constant here: change AABB and Trait 1 moves with it.', 'h1' => 'Dihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
     'raw' => [
         'vars' => [
             'father_a' => [
@@ -426,59 +426,41 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Dihybrid cross Punnett square calculator returns <strong>AABB</strong> from the 4 fields on the form. 
-        
-         Press Calculate for the answer; change a value and it steps off screen until you press again, so each edit can be judged on its own.
+        Dihybrid cross Punnett square turns Trait 1, Trait 2 and Trait 1 into AABB and AABb. There is no hidden constant here: change AABB and Trait 1 moves with it. The main result, AABB, is reported in %.
         TXT,
         'sections' => [
-            ['title' => 'How does the Dihybrid cross Punnett square calculator work?', 'html' => <<<'TXT'
-            <p>The Dihybrid cross Punnett square calculator takes the values in the form, applies the relationship described below and reports <strong>AABB</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the trait 1 (Mother's traits), the trait 2 (Mother's traits) and the trait 1 (Father's traits)).</p>
+            ['title' => 'How the Dihybrid cross Punnett square calculator works', 'html' => <<<'TXT'
+            <p>Dihybrid cross Punnett square answers one question from 4 numbers, and the answer is AABB, AABb and AAbb.</p><p>In the form&#039;s own words, AABB = get_chance_a(Trait 1, Trait 1, Trait 2, Trait 2).</p><p>What comes back is AABB, AABb, AAbb and AaBB — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as AA, aa and aa. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as BB, bb and bb. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as AA, aa and aa. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 3 options, such as BB, bb and bb. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>4 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Trait 1</strong> — a plain number, no unit</li><li><strong>Trait 2</strong> — a plain number, no unit</li><li><strong>Trait 1</strong> — a plain number, no unit</li><li><strong>Trait 2</strong> — a plain number, no unit</li></ul><p>What you get back is AABB in %, AABb in %, AAbb in %, AaBB in %, AaBb in %, Aabb in %, aaBB in %, aaBb in %, aabb in %, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Trait 1 (Mother's traits)</strong></td><td>One of 3 options, such as AA, aa and aa.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trait 2 (Mother's traits)</strong></td><td>One of 3 options, such as BB, bb and bb.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trait 1 (Father's traits)</strong></td><td>One of 3 options, such as AA, aa and aa.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Trait 2 (Father's traits)</strong></td><td>One of 3 options, such as BB, bb and bb.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>AABB</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>AABb</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>AAbb</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bb (Resulting probabilities (%))</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bb (Resulting probabilities (%))</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb (Resulting probabilities (%))</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bb (Resulting probabilities (%))</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aa bb (Resulting probabilities (%))</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Aabb (Resulting probabilities (%))</strong></td><td>A number stated in %.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: AABB takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>AABB</strong> = <code>get_chance_a(Trait 1, Trait 1, Trait 2, Trait 2)</code></li><li><strong>AABb</strong> = <code>get_chance_b(Trait 1, Trait 1, Trait 2, Trait 2)</code></li><li><strong>AAbb</strong> = <code>get_chance_c(Trait 1, Trait 1, Trait 2, Trait 2)</code></li><li><strong>AaBB</strong> = <code>get_chance_d(Trait 1, Trait 1, Trait 2, Trait 2)</code></li><li><strong>AaBb</strong> = <code>get_chance_e(Trait 1, Trait 1, Trait 2, Trait 2)</code></li><li><strong>Aabb</strong> = <code>get_chance_f(Trait 1, Trait 1, Trait 2, Trait 2)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of AABB, AABb and AAbb can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with AABB, AABb and AAbb are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Trait 1 is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dihybrid cross Punnett square calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Keep the units you enter consistent. </li><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dna-concentration">DNA concentration</a>, <a href="/biology/dna-copy-number">DNA copy number</a> and <a href="/biology/dna-to-mrna">DNA to mRNA</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Trait 1, Trait 2 and Trait 1 is what you already know and AABB and AABb is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/grain-bin">Grain bin Calculator</a>, <a href="/biology/grain-conversion">Grain conversion Calculator</a> and <a href="/biology/grass-seed">Grass seed Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Dihybrid cross Punnett square calculator work out?', 'a' => <<<'TXT'
-            It returns AABB. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Dihybrid cross Punnett square calculator work out?', 'a' => 'AABB, AABb, AAbb and AaBB, from Trait 1, Trait 2, Trait 1 and Trait 2. The relationship is AABB = get_chance_a(Trait 1, Trait 1, Trait 2, Trait 2).'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Trait 1, Trait 2, Trait 1, Trait 2. With mother_a, mother_b and father_a in place, AABB can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. AABB, AABb, AAbb and AaBB can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of AABB is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Trait 1 left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'What do I need to enter to use the Dihybrid cross Punnett square calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (4 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Dihybrid cross Punnett square calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. AABB keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/dna-concentration', 'name' => 'DNA concentration'],
-            ['path' => '/biology/dna-copy-number', 'name' => 'DNA copy number'],
-            ['path' => '/biology/dna-to-mrna', 'name' => 'DNA to mRNA'],
+            ['path' => '/biology/grain-bin', 'name' => 'Grain bin Calculator'],
+            ['path' => '/biology/grain-conversion', 'name' => 'Grain conversion Calculator'],
+            ['path' => '/biology/grass-seed', 'name' => 'Grass seed Calculator'],
         ],
+        'authors' => [],
     ],
 ];

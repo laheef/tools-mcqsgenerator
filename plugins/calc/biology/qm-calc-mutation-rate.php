@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mutation rate',
-    'meta' => ['title' => 'Mutation rate Calculator — Formula & Results', 'description' => 'Supply the total offspring, the mutation rate and number of observed mutants and the Mutation rate calculator solves for <strong>mutant offspring (x)</strong>.', 'h1' => 'Mutation rate Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Mutation rate Calculator — Formula & Results', 'description' => 'Mutation rate turns Total offspring (N) and Mutation rate (μ) into Mutant offspring (x) and Number of observed mutants (x). Total number of births in the…', 'h1' => 'Mutation rate Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => '',
@@ -183,65 +183,47 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Supply the total offspring, the mutation rate and number of observed mutants and the Mutation rate calculator solves for <strong>mutant offspring (x)</strong>. 
-        
-        Nothing repaints underneath you: edit a field, press Calculate, and the new answer appears. That is how you find out which input the result is sensitive to.
+        Mutation rate turns Total offspring (N) and Mutation rate (μ) into Mutant offspring (x) and Number of observed mutants (x). There is no hidden constant here: change Mutant offspring (x) and Total offspring (N) moves with it.
         TXT,
         'sections' => [
-            ['title' => 'How does the Mutation rate calculator work?', 'html' => <<<'TXT'
-            <p>The Mutation rate calculator takes the values in the form, applies the relationship described below and reports <strong>mutant offspring (x)</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case; then you type in the total offspring (N), the mutation rate (μ), number of observed mutants (x) and the total generations (g).</p>
+            ['title' => 'How the Mutation rate calculator works', 'html' => <<<'TXT'
+            <p>The Mutation rate calculator applies one relationship to 2 numbers and reports Mutant offspring (x), Number of observed mutants (x) and Total generations (g).</p><p>Written with the labels from the form, Mutant offspring (x) = 2 × Mutation rate (μ) × Total offspring (N).</p><p>What comes back is Mutant offspring (x), Number of observed mutants (x), Total generations (g) and Size of sequenced DNA (b) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as per-locus phenotypic method, per-site genomic method and per-division fluctuation method. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Total offspring (N)</strong> — a plain number, no unit. Total number of births in the studied population.</li><li><strong>Mutation rate (μ)</strong> — a plain number, no unit</li></ul><p>The answers come back as Mutant offspring (x), Number of observed mutants (x), Total generations (g), Size of sequenced DNA (b), Mutation rate (μ), Total cells, Zero mutant fraction, Mutation rate. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Mutant offspring (x)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total offspring (N)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mutation rate (μ)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of observed mutants (x)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Total generations (g)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Size of sequenced DNA (b)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mutation rate (μ) (2)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Total cells</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Zero mutant fraction</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Mutation rate</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Mutant offspring (x) takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'The formula behind the Mutation rate calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Mutant offspring (x)</span><span class="formula-eq">=</span><span class="formula-rhs">2 × mutation rate (μ) × total offspring (N)</span></div><div class="formula-row"><span class="formula-lhs">Mutation rate (μ)</span><span class="formula-eq">=</span><span class="formula-rhs">number of observed mutants (x) ÷ (total generations (g) × size of sequenced DNA (b))</span></div><div class="formula-row"><span class="formula-lhs">Total cells</span><span class="formula-eq">=</span><span class="formula-rhs">-the natural log of (zero mutant fraction) ÷ mutation rate</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Mutant offspring (x)</strong> = <code>2 × Mutation rate (μ) × Total offspring (N)</code></li><li><strong>Total offspring (N)</strong> = <code>(1 ÷ 2) × Mutant offspring (x) ÷ Mutation rate (μ)</code></li><li><strong>Mutation rate (μ)</strong> = <code>(1 ÷ 2) × Mutant offspring (x) ÷ Total offspring (N)</code></li><li><strong>Total generations (g)</strong> = <code>Number of observed mutants (x) ÷ (Mutation rate (μ) × Size of sequenced DNA (b))</code></li><li><strong>Size of sequenced DNA (b)</strong> = <code>Number of observed mutants (x) ÷ (Total generations (g) × Mutation rate (μ))</code></li><li><strong>Number of observed mutants (x)</strong> = <code>Total generations (g) × Mutation rate (μ) × Size of sequenced DNA (b)</code></li></ul><p>Any one of Mutant offspring (x), Total offspring (N) and Mutation rate (μ) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Suppose <strong>Detect mutation rate by</strong> set to Per-locus phenotypic method, <strong>Total offspring (N)</strong> = 10 and <strong>Mutation rate (μ)</strong> = 10. Working through the relationship above gives <strong>Mutant offspring (x)</strong> = 200.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Mutant offspring (x)</strong> = 200 should be roughly the size you expected from <strong>Detect mutation rate by</strong> set to Per-locus phenotypic method and <strong>Total offspring (N)</strong> = 10.</li></ol>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Mutant offspring (x), Number of observed mutants (x) and Total generations (g) are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Total offspring (N) to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Mutation rate calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 3 figures keep coming back — the total offspring, the mutation rate and number of observed mutants — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Round only at the end. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/omega-3-for-dogs">Omega-3 for dogs</a>, <a href="/biology/pet-sitter-rates">Pet sitter rates</a> and <a href="/biology/pine-straw">Pine straw</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Total offspring (N) and Mutation rate (μ) and the number you are missing is Mutant offspring (x) and Number of observed mutants (x).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/fish-oil-dosage-for-cats">Fish oil dosage for cats Calculator</a>, <a href="/biology/fish-per-liter">Fish Per Liter Calculator</a> and <a href="/biology/fish-tank-stocking">Fish Tank Stocking Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Mutation rate calculator work out?', 'a' => <<<'TXT'
-            It returns mutant offspring (x), derived from the total offspring, the mutation rate and number of observed mutants. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Mutant offspring (x), Number of observed mutants (x), Total generations (g) and Size of sequenced DNA (b), from Mutation rate (μ) and Total offspring (N). The relationship is Mutant offspring (x) = 2 × Mutation rate (μ) × Total offspring (N).
             TXT],
-            ['q' => 'What do I need to enter to use the Mutation rate calculator?', 'a' => <<<'TXT'
-            The form asks for the total offspring, the mutation rate and number of observed mutants, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Total offspring (N), Mutation rate (μ). Fill totalOffsprings and mutationRate1 and leave Mutant offspring (x) empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Mutant offspring (x), Total offspring (N), Mutation rate (μ) and Mutation rate (μ) blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Mutant offspring (x) = 200. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Mutation rate calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Mutant offspring (x) is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Total offspring (N) blank and the page solves for it, reporting Mutant offspring (x) instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Mutant offspring (x) keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/omega-3-for-dogs', 'name' => 'Omega-3 for dogs'],
-            ['path' => '/biology/pet-sitter-rates', 'name' => 'Pet sitter rates'],
-            ['path' => '/biology/pine-straw', 'name' => 'Pine straw'],
+            ['path' => '/biology/fish-oil-dosage-for-cats', 'name' => 'Fish oil dosage for cats Calculator'],
+            ['path' => '/biology/fish-per-liter', 'name' => 'Fish Per Liter Calculator'],
+            ['path' => '/biology/fish-tank-stocking', 'name' => 'Fish Tank Stocking Calculator'],
         ],
+        'authors' => [],
     ],
 ];

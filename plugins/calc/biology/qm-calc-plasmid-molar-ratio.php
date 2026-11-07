@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Plasmid Molar Ratio Calculator',
-    'meta' => ['title' => 'Plasmid Molar Ratio Calculator — Formula & Results', 'description' => 'When you ligate two fragments into a vector, the ratio that matters is molar, not by mass. It returns insert 1 mass, insert 2 mass, total DNA and vector…', 'h1' => 'Plasmid Molar Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Plasmid Molar Ratio Calculator — Formula & Results', 'description' => 'Plasmid Molar Ratio turns Vector mass, Vector length and Insert 1 length into Insert 1 mass and Insert 2 mass. Insert 1 mass, Insert 2 mass, Total DNA and…', 'h1' => 'Plasmid Molar Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -120,44 +120,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        When you ligate two fragments into a vector, the ratio that matters is molar, not by mass. It returns insert 1 mass, insert 2 mass, total DNA and vector molecules, and the panel shows all of them at once.
-        
-        This gives the nanograms of each part for a chosen ratio and tells you the total molar concentration of the reaction — the number that decides whether the ends ever find each other.
+        Plasmid Molar Ratio turns Vector mass, Vector length and Insert 1 length into Insert 1 mass and Insert 2 mass. The arithmetic is the whole method: Insert 1 mass is worked out from Vector mass by one formula, applied once. Insert 1 mass comes back in ng unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Plasmid Molar Ratio', 'html' => <<<'TXT'
-            <p>Insert (ng) = ratio × vector (ng) × insert length ÷ vector length. fmol = ng × 1 000 000 ÷ (660 × length in bp), i.e. pmol × 1000</p>
-            <figure class="calc-figure"><img src="/uploads/biology/plasmid-molar-ratio.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Plasmid Molar Ratio Calculator — Insert mass for an 800 bp insert into a 5 kb vector" title="Plasmid Molar Ratio Calculator"><figcaption>Insert mass for an 800 bp insert into a 5 kb vector</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ratio</code></td><td>molecules of each insert per molecule of vector</td><td>—</td></tr><tr><td><code>ng</code></td><td>nanogram</td><td>—</td></tr><tr><td><code>fmol</code></td><td>femtomole, 10⁻¹⁵ mol</td><td>mol</td></tr></tbody></table>
+            ['title' => 'How the Plasmid Molar Ratio calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Plasmid Molar Ratio: it takes 5 numbers and reports Insert 1 mass, Insert 2 mass and Total DNA.</p><p>The relationship it solves reads Insert 1 mass = Insert: vector molar ratio × Vector mass × Insert 1 length ÷ Vector length.</p><p>The result panel carries Insert 1 mass, Insert 2 mass, Total DNA and Total DNA in the reaction, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Plasmid Molar Ratio?', 'html' => <<<'TXT'
-            <ol><li>Enter the vector mass and length, and the length of each insert.</li><li>Set the molar ratio and how many inserts the reaction has.</li><li>Read the mass of each insert, the total DNA and the molar amounts.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Vector mass</strong> — in ng</li><li><strong>Vector length</strong> — in bp</li><li><strong>Insert 1 length</strong> — in bp</li><li><strong>Insert 2 length</strong> — in bp. Leave at 0 for a two-part ligation</li><li><strong>Insert: vector molar ratio</strong> — in ×</li></ul><p>The answers come back as Insert 1 mass in ng, Insert 2 mass in ng, Total DNA in ng, Total DNA in the reaction in fmol, Vector molecules in fmol. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: vector mass of <strong>50</strong> ng, vector length of <strong>5,000</strong> bp, insert 1 length of <strong>800</strong> bp, insert 2 length of <strong>0</strong> bp, insert: vector molar ratio of <strong>3</strong> ×.</p>
-            <p>Substituting them into the formula gives insert 1 mass of <strong>24</strong> ng, insert 2 mass of <strong>0</strong> ng, total dna of <strong>74</strong> ng, vector molecules of <strong>15.15</strong> fmol, total dna in the reaction of <strong>19.33</strong> fmol.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Vector mass = 50 ng, Vector length = 5000 bp, Insert 1 length = 800 bp, Insert 2 length = 6 bp and Insert: vector molar ratio = 3 × — through the same formula and the panel reports &lt;strong&gt;Insert 1 mass&lt;/strong&gt; = 24 ng, &lt;strong&gt;Insert 2 mass&lt;/strong&gt; = 0.18 ng, &lt;strong&gt;Total DNA&lt;/strong&gt; = 74.18 ng, &lt;strong&gt;Vector molecules&lt;/strong&gt; = 15.15 fmol and &lt;strong&gt;Total DNA in the reaction&lt;/strong&gt; = 19.36 fmol.</p><ul><li><strong>Insert 1 mass</strong> = 24 ng</li><li><strong>Insert 2 mass</strong> = 0.18 ng</li><li><strong>Total DNA</strong> = 74.18 ng</li><li><strong>Vector molecules</strong> = 15.15 fmol</li><li><strong>Total DNA in the reaction</strong> = 19.36 fmol</li></ul><p>The line behind those figures is <strong>Insert 1 mass</strong> = <code>Insert: vector molar ratio × Vector mass × Insert 1 length ÷ Vector length</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1: 1</td><td><strong>Equimolar</strong></td><td>three-part assemblies, or when every fragment is unique</td></tr><tr><td>3: 1</td><td><strong>Standard</strong></td><td>a single insert with compatible sticky ends</td></tr><tr><td>10: 1</td><td><strong>Saturating</strong></td><td>blunt ends or a very short insert</td></tr></tbody></table>
-            <ul><li><p>For a three-part assembly, each insert gets the full molar ratio — so the total DNA rises fast and the reaction volume has to grow with it.</p></li><li><p>Check the total concentration, not just the ratio: below about 5 ng/µL of total DNA the ends rarely meet, however perfect the ratio.</p></li><li><p>A vector that has been dephosphorylated cannot ligate to itself, which is what makes a high insert ratio productive rather than wasteful.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Insert 1 mass&lt;/strong&gt; = 24, &lt;strong&gt;Insert 2 mass&lt;/strong&gt; = 0.18, &lt;strong&gt;Total DNA&lt;/strong&gt; = 74.18, &lt;strong&gt;Vector molecules&lt;/strong&gt; = 15.15 and &lt;strong&gt;Total DNA in the reaction&lt;/strong&gt; = 19.36 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Insert 1 mass takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Splitting the insert mass between inserts instead of giving each the full ratio.</li><li>Using mass ratios for fragments of very different lengths.</li><li>Adding so much DNA that the salt carried in with it inhibits the ligase.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Insert 1 mass</strong> = <code>Insert: vector molar ratio × Vector mass × Insert 1 length ÷ Vector length</code></li><li><strong>Insert 2 mass</strong> = <code>if_else(Insert 2 length&gt;0,Insert: vector molar ratio × Vector mass × Insert 2 length ÷ Vector length,0)</code></li><li><strong>Total DNA</strong> = <code>Vector mass + Insert: vector molar ratio × Vector mass × Insert 1 length ÷ Vector length + if_else(Insert 2 length&gt;0,Insert: vector molar ratio × Vector mass × Insert 2 length ÷ Vector length,0)</code></li><li><strong>Vector molecules</strong> = <code>Vector mass × 1000000 ÷ (660 × Vector length)</code></li></ul><p>Any one of Insert 1 mass, Insert 2 mass and Total DNA can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Vector mass, from 50 to 100 — and the answers go from &lt;strong&gt;Insert 1 mass&lt;/strong&gt; 24 ng, &lt;strong&gt;Insert 2 mass&lt;/strong&gt; 0.18 ng, &lt;strong&gt;Total DNA&lt;/strong&gt; 74.18 ng, &lt;strong&gt;Vector molecules&lt;/strong&gt; 15.15 fmol and &lt;strong&gt;Total DNA in the reaction&lt;/strong&gt; 19.36 fmol to &lt;strong&gt;Insert 1 mass&lt;/strong&gt; 48 ng, &lt;strong&gt;Insert 2 mass&lt;/strong&gt; 0.36 ng, &lt;strong&gt;Total DNA&lt;/strong&gt; 148 ng, &lt;strong&gt;Vector molecules&lt;/strong&gt; 30.3 fmol and &lt;strong&gt;Total DNA in the reaction&lt;/strong&gt; 38.72 fmol.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Insert 1 mass, Insert 2 mass and Total DNA are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Vector mass is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Vector mass, Vector length and Insert 1 length and the number you are missing is Insert 1 mass and Insert 2 mass.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/cat-age">Cat age</a>, <a href="/biology/cat-benadryl-dosage">Cat Benadryl dosage Calculator</a> and <a href="/biology/cat-bmi">Cat BMI Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What ratio for a two-fragment ligation?', 'a' => '3:1 insert to vector, in a total volume where the DNA is at least 5 ng/µL.'],
-            ['q' => 'Does a third fragment change the ratio?', 'a' => 'No, but it multiplies the total DNA: give each insert the same molar ratio to the vector.'],
-            ['q' => 'How much vector should I use?', 'a' => '25–100 ng per reaction; more vector means more self-ligation background.'],
-            ['q' => 'What does the Plasmid Molar Ratio actually calculate?', 'a' => 'It returns insert 1 mass, insert 2 mass, total DNA and vector molecules. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Plasmid Molar Ratio calculator work out?', 'a' => <<<'TXT'
+            Insert 1 mass, Insert 2 mass, Total DNA and Total DNA in the reaction, from Insert: vector molar ratio, Vector mass, Insert 1 length and Vector length. The relationship is Insert 1 mass = Insert: vector molar ratio × Vector mass × Insert 1 length ÷ Vector length.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Vector mass (ng), Vector length (bp), Insert 1 length (bp), Insert 2 length (bp), Insert: vector molar ratio (×). Enter vector_ng, vector_bp and insert1_bp; Insert 1 mass is the box to leave alone unless it is the value you came for.
             TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Insert 1 mass, Insert 2 mass, Total DNA and Vector molecules blank and the page solves for that one instead — nothing has to be switched first.
+            TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Insert 1 mass = 24 ng, Insert 2 mass = 0.18 ng, Total DNA = 74.18 ng, Vector molecules = 15.15 fmol and Total DNA in the reaction = 19.36 fmol. Those are the defaults written into the form — move Vector mass and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Insert 1 mass is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Vector mass blank and the page solves for it, reporting Insert 1 mass instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Insert 1 mass keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cat-age', 'name' => 'Cat age'],
+            ['path' => '/biology/cat-benadryl-dosage', 'name' => 'Cat Benadryl dosage Calculator'],
+            ['path' => '/biology/cat-bmi', 'name' => 'Cat BMI Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

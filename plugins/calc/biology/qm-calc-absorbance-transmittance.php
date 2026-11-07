@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Absorbance to Transmittance Converter',
-    'meta' => ['title' => 'Absorbance to Transmittance Converter Calculator', 'description' => 'Absorbance and transmittance are two ways of writing the same measurement, related by a base-ten logarithm. It returns transmittance, transmittance…', 'h1' => 'Absorbance to Transmittance Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Absorbance to Transmittance Converter Calculator', 'description' => <<<'TXT'
+    Absorbance to Transmittance turns Absorbance, Extinction coefficient and Path length into Transmittance and Transmittance. A result box can be typed into, and…
+    TXT, 'h1' => 'Absorbance to Transmittance Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -88,46 +90,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Absorbance and transmittance are two ways of writing the same measurement, related by a base-ten logarithm. It returns transmittance, transmittance, concentration from Beer–Lambert and fraction of light lost, and the panel shows all of them at once.
-        
-        This converter goes both ways, adds percent transmission and the concentration the reading implies at a chosen extinction coefficient.
+        Absorbance to Transmittance turns Absorbance, Extinction coefficient and Path length into Transmittance and Transmittance. Nothing is looked up on this page: Transmittance is computed from Absorbance and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Absorbance to Transmittance Converter', 'html' => <<<'TXT'
-            <p>A = −log₁₀(T) = 2 − log₁₀(%T); T = 10^(−A); A = ε·c·l</p>
-            <figure class="calc-figure"><img src="/uploads/biology/absorbance-transmittance.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Absorbance to Transmittance Converter — A logarithmic scale from full transmission to darkness." title="Absorbance to Transmittance Converter"><figcaption>A logarithmic scale from full transmission to darkness.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A</code></td><td>absorbance (optical density)</td><td>—</td></tr><tr><td><code>T</code></td><td>transmittance as a fraction</td><td>—</td></tr><tr><td><code>ε</code></td><td>extinction coefficient</td><td>per mg/mL</td></tr><tr><td><code>l</code></td><td>path length</td><td>cm</td></tr></tbody></table>
+            ['title' => 'How the Absorbance to Transmittance calculator works', 'html' => <<<'TXT'
+            <p>Absorbance to Transmittance answers one question from 3 numbers, and the answer is Transmittance, Transmittance and Concentration from Beer–Lambert.</p><p>In the form&#039;s own words, Transmittance = (10)^(− Absorbance).</p><p>The result panel carries Transmittance, Transmittance, Concentration from Beer–Lambert and Fraction of light lost, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Absorbance to Transmittance Converter?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Absorbance</strong> — a plain number, no unit</li><li><strong>Extinction coefficient</strong> — in per mg/mL. Use 1 for a plain conversion</li><li><strong>Path length</strong> — in cm</li></ul><p>What you get back is Transmittance, Transmittance in %, Concentration from Beer–Lambert in mg/mL, Fraction of light lost in %, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: absorbance of <strong>0.5</strong>, extinction coefficient of <strong>1</strong> per mg/mL, path length of <strong>1</strong> cm.</p>
-            <p>Substituting them into the formula gives transmittance of <strong>0.3162</strong>, transmittance of <strong>31.62</strong>%, concentration from beer–lambert of <strong>0.5</strong> mg/mL, fraction of light lost of <strong>68.38</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Absorbance = 0.5, Extinction coefficient = 1 per mg/mL and Path length = 1 cm gives &lt;strong&gt;Transmittance&lt;/strong&gt; = 0.3162, &lt;strong&gt;Transmittance&lt;/strong&gt; = 31.62 %, &lt;strong&gt;Concentration from Beer–Lambert&lt;/strong&gt; = 0.5 mg/mL and &lt;strong&gt;Fraction of light lost&lt;/strong&gt; = 68.38 %.</p><ul><li><strong>Transmittance</strong> = 0.3162</li><li><strong>Transmittance</strong> = 31.62 %</li><li><strong>Concentration from Beer–Lambert</strong> = 0.5 mg/mL</li><li><strong>Fraction of light lost</strong> = 68.38 %</li></ul><p>The line behind those figures is <strong>Transmittance</strong> = <code>(10)^(− Absorbance)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0 – 0.1</td><td><strong>Very dilute</strong></td><td>poor signal-to-noise on most instruments</td></tr><tr><td>0.1 – 1.0</td><td><strong>Reliable</strong></td><td>the linear window of a spectrophotometer</td></tr><tr><td>1.0 – 1.5</td><td><strong>High</strong></td><td>stray light starts to bend the curve</td></tr><tr><td>above 2.0</td><td><strong>Unreliable</strong></td><td>dilute the sample and multiply the result</td></tr></tbody></table>
-            <ul><li><p>An absorbance of 1.0 means 10% of the light got through; 2.0 means 1%. This is why a doubling of absorbance corresponds to ten times less light, not half.</p></li><li><p>Instruments quote linear range up to about 1.0–1.5 A, above which stray light makes the reading saturate. Always dilute and multiply.</p></li><li><p>Transmittance is sometimes quoted as a percentage in older methods; 50% T is 0.301 A, not 0.5 A.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Transmittance&lt;/strong&gt; = 0.3162, &lt;strong&gt;Transmittance&lt;/strong&gt; = 31.62, &lt;strong&gt;Concentration from Beer–Lambert&lt;/strong&gt; = 0.5 and &lt;strong&gt;Fraction of light lost&lt;/strong&gt; = 68.38 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Transmittance takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Treating absorbance as linear in transmittance: doubling A does not halve T.</li><li>Using a cuvette with the wrong path length and forgetting to scale c.</li><li>Forgetting the blank, which shifts every reading by its own absorbance.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Transmittance</strong> = <code>(10)^(− Absorbance)</code></li><li><strong>Concentration from Beer–Lambert</strong> = <code>Absorbance ÷ (Extinction coefficient × Path length)</code></li><li><strong>Fraction of light lost</strong> = <code>(1 − (10)^(− Absorbance)) × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Transmittance, Transmittance and Concentration from Beer–Lambert can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Absorbance, from 0.5 to 1 — and the answers go from &lt;strong&gt;Transmittance&lt;/strong&gt; 0.3162, &lt;strong&gt;Transmittance&lt;/strong&gt; 31.62 %, &lt;strong&gt;Concentration from Beer–Lambert&lt;/strong&gt; 0.5 mg/mL and &lt;strong&gt;Fraction of light lost&lt;/strong&gt; 68.38 % to &lt;strong&gt;Transmittance&lt;/strong&gt; 0.1, &lt;strong&gt;Transmittance&lt;/strong&gt; 10 %, &lt;strong&gt;Concentration from Beer–Lambert&lt;/strong&gt; 1 mg/mL and &lt;strong&gt;Fraction of light lost&lt;/strong&gt; 90 %.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Transmittance, Transmittance and Concentration from Beer–Lambert are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Absorbance and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Absorbance, Extinction coefficient and Path length measured, Transmittance and Transmittance wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dog-pregnancy">Dog pregnancy Calculator</a>, <a href="/biology/dog-quality-of-life">Dog quality of life</a> and <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is an absorbance of 2 in transmittance?', 'a' => '1% transmittance, or 0.01 as a fraction.'],
-            ['q' => 'Why does my reading stop increasing when I add more sample?', 'a' => 'The instrument has reached the top of its linear range and stray light now dominates.'],
-            ['q' => 'What does the Absorbance to Transmittance Converter actually calculate?', 'a' => <<<'TXT'
-            It returns transmittance, transmittance, concentration from Beer–Lambert and fraction of light lost. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Absorbance to Transmittance calculator work out?', 'a' => <<<'TXT'
+            Transmittance, Transmittance, Concentration from Beer–Lambert and Fraction of light lost, from Absorbance. The relationship is Transmittance = (10)^(− Absorbance).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Absorbance, Extinction coefficient (per mg/mL), Path length (cm). With absorbance, extinction and path in place, Transmittance can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Transmittance, Transmittance, Concentration from Beer–Lambert and Fraction of light lost can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Transmittance = 0.3162, Transmittance = 31.62 %, Concentration from Beer–Lambert = 0.5 mg/mL and Fraction of light lost = 68.38 %. That comes from the page's own defaults, entered in Absorbance; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Transmittance is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Absorbance blank and the page solves for it, reporting Transmittance instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Transmittance keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-pregnancy', 'name' => 'Dog pregnancy Calculator'],
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

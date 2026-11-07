@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Bradford Assay Calculator (standard curve)',
-    'meta' => ['title' => 'Bradford Assay Calculator (standard curve) — Biology', 'description' => 'Bradford is the quickest colorimetric protein assay and the one most sensitive to which protein you are measuring. It returns protein concentration, and the…', 'h1' => 'Bradford Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Bradford Assay Calculator (standard curve) — Biology', 'description' => 'Bradford is the quickest colorimetric protein assay and the one most sensitive to which protein you are measuring. Free bradford assay (standard curve) calcul', 'h1' => 'Bradford Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -72,50 +72,53 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Bradford is the quickest colorimetric protein assay and the one most sensitive to which protein you are measuring. It returns protein concentration, and the panel shows all of them at once.
-        
-        This calculator converts a 595 nm reading into mg/mL using your own standard curve, with the dilution factor applied.
+        Bradford Assay Calculator (standard curve) works out Protein concentration from Sample absorbance, Standard curve slope and Standard curve intercept. The arithmetic is the whole method: Protein concentration is worked out from Sample absorbance by one formula, applied once. Protein concentration comes back in mg/mL unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Bradford Assay (standard curve)', 'html' => <<<'TXT'
-            <p>Protein (mg/mL) = (A₅₉₅ − intercept) ÷ slope × dilution factor</p>
-            <figure class="calc-figure"><img src="/uploads/biology/bradford-assay-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Bradford Assay Calculator (standard curve) — A 595 nm reading turned into a concentration through your own standards." title="Bradford Assay Calculator (standard curve)"><figcaption>A 595 nm reading turned into a concentration through your own standards.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A₅₉₅</code></td><td>blank-corrected absorbance</td><td>AU</td></tr><tr><td><code>slope</code></td><td>absorbance per mg/mL</td><td>AU·mL/mg</td></tr><tr><td><code>intercept</code></td><td>fitted absorbance at zero protein</td><td>AU</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Bradford (1976), Analytical Biochemistry 72:248–254.</p>
+            ['title' => 'How the Bradford Assay Calculator (standard curve) calculator works', 'html' => <<<'TXT'
+            <p>Bradford Assay Calculator (standard curve) answers one question from 4 numbers, and the answer is Protein concentration.</p><p>In the form&#039;s own words, Protein concentration = (Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor.</p><p>The result panel carries Protein concentration, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Bradford Assay (standard curve)?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Sample absorbance</strong> — a plain number, no unit. Read at 595 nm, blank subtracted</li><li><strong>Standard curve slope</strong> — in per mg/mL</li><li><strong>Standard curve intercept</strong> — a plain number, no unit</li><li><strong>Sample dilution factor</strong> — in ×</li></ul><p>What you get back is Protein concentration in mg/mL, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: sample absorbance of <strong>0.48</strong>, standard curve slope of <strong>1.05</strong> per mg/mL, standard curve intercept of <strong>0.03</strong>, sample dilution factor of <strong>1</strong> ×.</p>
-            <p>Substituting them into the formula gives protein concentration of <strong>0.4286</strong> mg/mL.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Sample absorbance = 0.48, Standard curve slope = 1.05 per mg/mL, Standard curve intercept = 0.03 and Sample dilution factor = 1 ×; the answers are &lt;strong&gt;Protein concentration&lt;/strong&gt; = 0.4286 mg/mL.</p><ul><li><strong>Protein concentration</strong> = 0.4286 mg/mL</li></ul><p>That is <strong>Protein concentration</strong> = <code>(Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.1 – 1.4 mg/mL</td><td><strong>Working range</strong></td><td>linear for most proteins</td></tr><tr><td>below 0.1</td><td><strong>Too dilute</strong></td><td>use a micro-Bradford cuvette</td></tr><tr><td>above 1.4</td><td><strong>Saturated</strong></td><td>dilute and re-read</td></tr></tbody></table>
-            <ul><li><p>Bradford binds basic and aromatic residues, so the response is strongly protein-dependent: BSA is the usual standard, but a lysine-rich protein will over-read against it.</p></li><li><p>Detergents above 0.1% (especially SDS and Triton X-100) interfere; so do strong reducing agents.</p></li><li><p>The dye binds the cuvette, so use a fresh one or rinse with methanol between samples.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Protein concentration&lt;/strong&gt; = 0.4286. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Protein concentration is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Reading Bradford at 562 nm, the BCA wavelength — the peak is 595 nm.</li><li>Using a BSA curve for a very different protein and quoting the number as absolute.</li><li>Leaving the dye–sample mix to stand for different times for standards and samples.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Protein concentration</strong> = <code>(Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor</code></li></ul>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Sample absorbance, from 0.48 to 0.96 — and the answers go from &lt;strong&gt;Protein concentration&lt;/strong&gt; 0.4286 mg/mL to &lt;strong&gt;Protein concentration&lt;/strong&gt; 0.8857 mg/mL.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Protein concentration is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Sample absorbance and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Sample absorbance, Standard curve slope and Standard curve intercept and the number you are missing is Protein concentration.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/specific-growth-rate-from-od">Specific Growth Rate from OD Readings Calculator</a>, <a href="/biology/specific-productivity-qp">Specific Productivity (qP) Calculator</a> and <a href="/biology/cedar-tree-value">Standing Timber Value Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Is Bradford or BCA better?', 'a' => <<<'TXT'
-            BCA is more tolerant of detergents and more linear; Bradford is faster and less sensitive to reducing agents. Both need a standard curve made with a protein similar to your sample.
+            ['q' => 'What does the Bradford Assay Calculator (standard curve) calculator work out?', 'a' => <<<'TXT'
+            Protein concentration, from Sample absorbance, Standard curve intercept, Standard curve slope and Sample dilution factor. The relationship is Protein concentration = (Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor.
             TXT],
-            ['q' => 'What does the Bradford Assay (standard curve) actually calculate?', 'a' => 'It returns protein concentration. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Sample absorbance, Standard curve slope (per mg/mL), Standard curve intercept, Sample dilution factor (×). Enter a595, slope and intercept; Protein concentration is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => 'Protein concentration = 0.4286 mg/mL. Those are the defaults written into the form — move Sample absorbance and every result box follows.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Protein concentration is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Protein concentration, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
-            ['q' => 'Does it work in both directions?', 'a' => <<<'TXT'
-            Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Protein concentration keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/specific-growth-rate-from-od', 'name' => 'Specific Growth Rate from OD Readings Calculator'],
+            ['path' => '/biology/specific-productivity-qp', 'name' => 'Specific Productivity (qP) Calculator'],
+            ['path' => '/biology/cedar-tree-value', 'name' => 'Standing Timber Value Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

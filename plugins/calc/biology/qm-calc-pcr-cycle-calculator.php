@@ -11,7 +11,9 @@
 
 return [
     'name' => 'PCR Cycle Calculator',
-    'meta' => ['title' => 'PCR Cycle Calculator: Formula, Steps & Results', 'description' => 'A PCR run is a few dozen repeats of three steps, and the total time on the machine is simply the sum of those steps plus the ramp between them.', 'h1' => 'PCR Cycle Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'PCR Cycle Calculator: Formula, Steps & Results', 'description' => <<<'TXT'
+    PCR Cycle works out Time per cycle and Total run time from Denaturation time, Annealing time and Extension time. There is no hidden constant here: change Time…
+    TXT, 'h1' => 'PCR Cycle Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -120,46 +122,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A PCR run is a few dozen repeats of three steps, and the total time on the machine is simply the sum of those steps plus the ramp between them. It returns time per cycle, total run time, fold amplification and copies at the end, and the panel shows all of them at once.
-        
-        This calculator turns your protocol into the time per cycle, the time to the answer and the number of copies produced.
+        PCR Cycle works out Time per cycle and Total run time from Denaturation time, Annealing time and Extension time. There is no hidden constant here: change Time per cycle and Denaturation time moves with it. The main result, Time per cycle, is reported in s.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the PCR Cycle', 'html' => <<<'TXT'
-            <p>Time per cycle = t_denature + t_anneal + t_extend + 3 × ramp; copies = N₀ × (1 + E)^cycles</p>
-            <figure class="calc-figure"><img src="/uploads/biology/pcr-cycle-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: PCR Cycle Calculator — Denature, anneal, extend — repeated until the product dominates." title="PCR Cycle Calculator"><figcaption>Denature, anneal, extend — repeated until the product dominates.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>E</code></td><td>efficiency per cycle (1.0 = perfect doubling)</td><td>—</td></tr><tr><td><code>N₀</code></td><td>template copies at the start</td><td>copies</td></tr><tr><td><code>t</code></td><td>time for each step</td><td>s</td></tr></tbody></table>
+            ['title' => 'How the PCR Cycle calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind PCR Cycle: it takes 7 numbers and reports Time per cycle, Total run time and Copies at the end.</p><p>In the form&#039;s own words, Time per cycle = Denaturation time + Annealing time + Extension time + 3 × Ramp time between steps.</p><p>The answers are Time per cycle, Total run time, Copies at the end and Fold amplification; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the PCR Cycle?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 7 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Denaturation time</strong> — in s</li><li><strong>Annealing time</strong> — in s</li><li><strong>Extension time</strong> — in s</li><li><strong>Cycles</strong> — a plain number, no unit</li><li><strong>Ramp time between steps</strong> — in s. Per transition</li><li><strong>Starting copies</strong> — a plain number, no unit</li><li><strong>Amplification efficiency</strong> — in %. 100% doubles every cycle</li></ul><p>What you get back is Time per cycle in s, Total run time in min, Copies at the end, Fold amplification in x, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: denaturation time of <strong>30</strong> s, annealing time of <strong>30</strong> s, extension time of <strong>45</strong> s, cycles of <strong>35</strong>, ramp time between steps of <strong>4</strong> s, starting copies of <strong>1,000</strong>, amplification efficiency of <strong>95</strong>%.</p>
-            <p>Substituting them into the formula gives time per cycle of <strong>117</strong> s, total run time of <strong>68.25</strong> min, fold amplification of <strong>14,164,831,011</strong> x, copies at the end of <strong>14,164,831,011,411</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Denaturation time = 30 s, Annealing time = 30 s, Extension time = 45 s, Cycles = 35, Ramp time between steps = 4 s, Starting copies = 1000 and Amplification efficiency = 95 %; the answers are &lt;strong&gt;Time per cycle&lt;/strong&gt; = 117 s, &lt;strong&gt;Total run time&lt;/strong&gt; = 68.25 min, &lt;strong&gt;Fold amplification&lt;/strong&gt; = 1.416e+1 x and &lt;strong&gt;Copies at the end&lt;/strong&gt; = 1.416e+13.</p><ul><li><strong>Time per cycle</strong> = 117 s</li><li><strong>Total run time</strong> = 68.25 min</li><li><strong>Fold amplification</strong> = 1.416e+1 x</li><li><strong>Copies at the end</strong> = 1.416e+13</li></ul><p>The line behind those figures is <strong>Time per cycle</strong> = <code>Denaturation time + Annealing time + Extension time + 3 × Ramp time between steps</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>90 – 100%</td><td><strong>Efficient</strong></td><td>clean primers, good template quality</td></tr><tr><td>80 – 90%</td><td><strong>Workable</strong></td><td>some loss per cycle; enough product in 35 cycles</td></tr><tr><td>below 80%</td><td><strong>Poor</strong></td><td>inhibitors, primer dimers or wrong annealing temperature</td></tr></tbody></table>
-            <ul><li><p>Ramp time is not small: a three-step protocol ramps six times per cycle, and on a slow block that can add half a minute to every cycle.</p></li><li><p>Two-step protocols drop the separate extension step because the polymerase works at the annealing temperature, which is why fast protocols are so much shorter.</p></li><li><p>Efficiency above 100% in real data almost always means the baseline was set badly, not that the reaction invented copies.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Time per cycle&lt;/strong&gt; = 117, &lt;strong&gt;Total run time&lt;/strong&gt; = 68.25, &lt;strong&gt;Fold amplification&lt;/strong&gt; = 1.416e+1 and &lt;strong&gt;Copies at the end&lt;/strong&gt; = 1.416e+13. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Time per cycle is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Forgetting the initial hot start and the final extension when quoting a run time.</li><li>Cutting extension time below about 30 s per kilobase for a long product.</li><li>Adding cycles instead of fixing a low efficiency — beyond about 40 cycles the plateau gives artefacts, not more product.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Time per cycle</strong> = <code>Denaturation time + Annealing time + Extension time + 3 × Ramp time between steps</code></li><li><strong>Total run time</strong> = <code>(Denaturation time + Annealing time + Extension time + 3 × Ramp time between steps) × Cycles ÷ 60</code></li><li><strong>Fold amplification</strong> = <code>(1 + Amplification efficiency ÷ 100)^(Cycles)</code></li><li><strong>Copies at the end</strong> = <code>Starting copies × (1 + Amplification efficiency ÷ 100)^(Cycles)</code></li></ul><p>Any one of Time per cycle, Total run time and Fold amplification can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Denaturation time from 30 to 60, leaving every other box alone. The panel moves from &lt;strong&gt;Time per cycle&lt;/strong&gt; 117 s, &lt;strong&gt;Total run time&lt;/strong&gt; 68.25 min, &lt;strong&gt;Fold amplification&lt;/strong&gt; 1.416e+1 x and &lt;strong&gt;Copies at the end&lt;/strong&gt; 1.416e+13 to &lt;strong&gt;Time per cycle&lt;/strong&gt; 147 s, &lt;strong&gt;Total run time&lt;/strong&gt; 85.75 min, &lt;strong&gt;Fold amplification&lt;/strong&gt; 1.416e+1 x and &lt;strong&gt;Copies at the end&lt;/strong&gt; 1.416e+13.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Time per cycle, Total run time and Copies at the end are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Denaturation time and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Denaturation time, Annealing time and Extension time measured, Time per cycle and Total run time wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/pasture-stocking-rate">Pasture Stocking Rate Calculator</a>, <a href="/biology/pcr-annealing-temperature">PCR Annealing Temperature Calculator</a> and <a href="/biology/pcr-master-mix-calculator">PCR Master Mix Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long does a 35-cycle PCR take?', 'a' => 'With 30 s denaturation, 30 s annealing, 45 s extension and 4 s ramps, about 70 minutes.'],
-            ['q' => 'How many copies after 30 cycles?', 'a' => 'At 95% efficiency the target is multiplied by roughly 1.95³⁰ ≈ 5 × 10⁸.'],
-            ['q' => 'What does the PCR Cycle actually calculate?', 'a' => <<<'TXT'
-            It returns time per cycle, total run time, fold amplification and copies at the end. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the PCR Cycle calculator work out?', 'a' => <<<'TXT'
+            Time per cycle, Total run time, Copies at the end and Fold amplification, from Denaturation time, Annealing time, Extension time and Ramp time between steps. The relationship is Time per cycle = Denaturation time + Annealing time + Extension time + 3 × Ramp time between steps.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Denaturation time (s), Annealing time (s), Extension time (s), Cycles, Ramp time between steps (s). Enter denature_t, anneal_t and extend_t; Time per cycle is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Time per cycle, Total run time, Fold amplification and Copies at the end blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Time per cycle = 117 s, Total run time = 68.25 min, Fold amplification = 1.416e+1 x and Copies at the end = 1.416e+13. Those are the defaults written into the form — move Denaturation time and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Time per cycle is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Denaturation time left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Time per cycle at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/pasture-stocking-rate', 'name' => 'Pasture Stocking Rate Calculator'],
+            ['path' => '/biology/pcr-annealing-temperature', 'name' => 'PCR Annealing Temperature Calculator'],
+            ['path' => '/biology/pcr-master-mix-calculator', 'name' => 'PCR Master Mix Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

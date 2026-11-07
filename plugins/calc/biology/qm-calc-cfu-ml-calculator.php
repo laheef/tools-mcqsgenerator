@@ -11,9 +11,7 @@
 
 return [
     'name' => 'CFU/mL Calculator',
-    'meta' => ['title' => 'CFU/mL Calculator: Formula, Steps & Results', 'description' => <<<'TXT'
-    A CFU/mL count comes from one plate: clumps form a single colony, so the count is colony-forming units, not cells. It returns CFU per mL, log₁₀(CFU/mL), CFU…
-    TXT, 'h1' => 'CFU/mL Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'CFU/mL Calculator: Formula, Steps & Results', 'description' => 'A CFU/mL count comes from one plate: clumps form a single colony, so the count is colony-forming units, not cells. Free cfu/ml calculator: enter your values a', 'h1' => 'CFU/mL Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -85,46 +83,49 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A CFU/mL count comes from one plate: clumps form a single colony, so the count is colony-forming units, not cells. It returns CFU per mL, log₁₀(CFU/mL), CFU per 100 mL and dilution factor of the plated sample, and the panel shows all of them at once.
-        
-        This calculator converts a colony count and a plating volume into CFU/mL, choosing the countable dilution and applying the volume factor correctly.
+        Enter Colonies counted, Volume plated and Dilution factor of the plated sample into CFU/mL and the answer comes back as CFU per mL and log₁₀(CFU/mL). Nothing is looked up on this page: CFU per mL is computed from Colonies counted and the other boxes, so an unusual pair of values gives an honest answer rather than an error. CFU per mL is opened in CFU/mL; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the CFU/mL', 'html' => <<<'TXT'
-            <p>CFU/mL = colonies ÷ volume plated (mL) × dilution factor</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cfu-ml-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: CFU/mL Calculator — Colonies, volume and dilution give CFU/mL." title="CFU/mL Calculator"><figcaption>Colonies, volume and dilution give CFU/mL.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>colonies</code></td><td>colonies on the countable plate</td><td>CFU</td></tr><tr><td><code>volume</code></td><td>volume of diluted sample plated</td><td>mL</td></tr><tr><td><code>dilution</code></td><td>the reciprocal of the dilution</td><td>×</td></tr></tbody></table>
+            ['title' => 'How the CFU/mL calculator works', 'html' => <<<'TXT'
+            <p>The CFU/mL calculator applies one relationship to 3 numbers and reports CFU per mL, log₁₀(CFU/mL) and CFU per 100 mL.</p><p>In the form&#039;s own words, CFU per mL = Colonies counted ÷ Volume plated × Dilution factor of the plated sample.</p><p>The result panel carries CFU per mL, log₁₀(CFU/mL) and CFU per 100 mL, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the CFU/mL?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Colonies counted</strong> — in CFU. Countable range is 30–300</li><li><strong>Volume plated</strong> — in mL. 0.1 mL for a spread plate</li><li><strong>Dilution factor of the plated sample</strong> — in ×. 10⁶ for a 10⁻⁶ dilution</li></ul><p>The answers come back as CFU per mL in CFU/mL, log₁₀(CFU/mL), CFU per 100 mL in CFU/100 mL. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: colonies counted of <strong>148</strong> CFU, volume plated of <strong>0.1</strong> mL.</p>
-            <p>Substituting them into the formula gives cfu per ml of <strong>1,480,000,000</strong> CFU/mL, log₁₀(cfu/ml) of <strong>9.17</strong>, cfu per 100 ml of <strong>148,000,000,000</strong> CFU/100 mL, dilution factor of the plated sample of <strong>1,000,000</strong> ×.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as CFU per mL is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>30 – 300 colonies</td><td><strong>Countable</strong></td><td>statistically reliable window</td></tr><tr><td>below 30</td><td><strong>Too few</strong></td><td>the counting error exceeds 10%</td></tr><tr><td>above 300</td><td><strong>Too many</strong></td><td>crowding merges colonies</td></tr></tbody></table>
-            <ul><li><p>CFU undercounts cells: a pair of attached cells forms one colony, so the result is a lower bound on cell number.</p></li><li><p>Plate at least two dilutions: you cannot know in advance which one will land in 30–300.</p></li><li><p>For drinking water, results are usually reported per 100 mL; the calculator gives that too.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>CFU per mL</strong> = <code>Colonies counted ÷ Volume plated × Dilution factor of the plated sample</code></li><li><strong>log₁₀(CFU/mL)</strong> = <code>log₁₀(Colonies counted ÷ Volume plated × Dilution factor of the plated sample)</code></li><li><strong>CFU per 100 mL</strong> = <code>Colonies counted ÷ Volume plated × Dilution factor of the plated sample × 100</code></li><li><strong>Dilution factor of the plated sample</strong> = <code>CFU per mL × Volume plated ÷ Colonies counted</code></li></ul><p>Any one of CFU per mL, log₁₀(CFU/mL) and CFU per 100 mL can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Forgetting the plating volume, which changes the answer by a factor of ten.</li><li>Using a dilution factor of 10⁻⁶ instead of 10⁶.</li><li>Counting a plate with 500 colonies and reporting it as precise.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> CFU per mL, log₁₀(CFU/mL) and CFU per 100 mL are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Colonies counted is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Colonies counted, Volume plated and Dilution factor of the plated sample and the number you are missing is CFU per mL and log₁₀(CFU/mL).</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/q10-temperature-coefficient">Q10 Temperature Coefficient Calculator</a>, <a href="/biology/qpcr-efficiency">qPCR efficiency Calculator</a> and <a href="/biology/quadrat-sampling-density">Quadrat Sampling Density Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Why CFU and not cells?', 'a' => 'Because the method counts colonies, and two cells that stick together produce one colony.'],
-            ['q' => 'What if my plates have 20 and 280 colonies?', 'a' => 'Use the 280 plate and quote it as within range; average both only if they give the same CFU/mL estimate.'],
-            ['q' => 'What does the CFU/mL actually calculate?', 'a' => <<<'TXT'
-            It returns CFU per mL, log₁₀(CFU/mL), CFU per 100 mL and dilution factor of the plated sample. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the CFU/mL calculator work out?', 'a' => <<<'TXT'
+            CFU per mL, log₁₀(CFU/mL) and CFU per 100 mL, from Colonies counted, Volume plated and Dilution factor of the plated sample. The relationship is CFU per mL = Colonies counted ÷ Volume plated × Dilution factor of the plated sample.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Colonies counted (CFU), Volume plated (mL), Dilution factor of the plated sample (×). Enter colonies, volume and dilution; CFU per mL is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of CFU per mL, log₁₀(CFU/mL), CFU per 100 mL and Dilution factor of the plated sample blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally CFU per mL is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Colonies counted left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. CFU per mL keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/q10-temperature-coefficient', 'name' => 'Q10 Temperature Coefficient Calculator'],
+            ['path' => '/biology/qpcr-efficiency', 'name' => 'qPCR efficiency Calculator'],
+            ['path' => '/biology/quadrat-sampling-density', 'name' => 'Quadrat Sampling Density Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

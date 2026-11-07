@@ -12,7 +12,7 @@
 return [
     'name' => 'Cat Benadryl dosage',
     'meta' => ['title' => 'Cat Benadryl dosage: Formula, Steps & Results', 'description' => <<<'TXT'
-    The Cat Benadryl dosage calculator returns <strong>your cat's weight</strong> from the field on the form. The panel waits for the button. Working from the top…
+    Cat Benadryl dosage takes In mg and returns 🐈 Your cat's weight and Liquid (12.4 mg/5ml concentration). It is a single relationship that reads 🐈 Your cat's…
     TXT, 'h1' => 'Cat Benadryl dosage Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
@@ -251,67 +251,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Cat Benadryl dosage calculator returns <strong>your cat's weight</strong> from the field on the form. 
-        
-         The panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.
+        Cat Benadryl dosage takes In mg and returns 🐈 Your cat's weight and Liquid (12.4 mg/5ml concentration). It is a single relationship that reads 🐈 Your cat's weight out of In mg, not a table of canned results keyed by them. Units for 🐈 Your cat's weight default to kilograms and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'How does the Cat Benadryl dosage calculator work?', 'html' => <<<'TXT'
-            <p>The Cat Benadryl dosage calculator takes the values in the form, applies the relationship described below and reports <strong>your cat's weight</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the figures it asks for.</p>
+            ['title' => 'How the Cat Benadryl dosage calculator works', 'html' => <<<'TXT'
+            <p>The Cat Benadryl dosage calculator applies one relationship to 1 number and reports 🐈 Your cat&#039;s weight, Liquid (12.4 mg/5ml concentration) and Tablets of 25 mg.</p><p>Written with the labels from the form, 🐈 Your cat&#039;s weight = In mg.</p><p>The answers are 🐈 Your cat&#039;s weight, Liquid (12.4 mg/5ml concentration), Tablets of 25 mg and Chewable tablets of 12.5 mg; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your cat's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Liquid (12.4 mg/5ml concentration)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Tablets of 25 mg</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Chewable tablets of 12.5 mg</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Tablets</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Chewable tablets</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>In mg</strong> — in milligrams</li></ul><p>The result boxes are 🐈 Your cat&#039;s weight in kilograms, Liquid (12.4 mg/5ml concentration) in milliliters, Tablets of 25 mg in #, Chewable tablets of 12.5 mg in #, Tablets in #, Chewable tablets in #; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'The formula behind the Cat Benadryl dosage calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Your cat&#x27;s weight</span><span class="formula-eq">=</span><span class="formula-rhs">in mg</span></div><div class="formula-row"><span class="formula-lhs">Tablets</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 25) × in mg</span></div><div class="formula-row"><span class="formula-lhs">Liquid (12.4 mg/5ml concentration)</span><span class="formula-eq">=</span><span class="formula-rhs">(2 ÷ 5) × in mg</span></div><div class="formula-row"><span class="formula-lhs">Chewable tablets</span><span class="formula-eq">=</span><span class="formula-rhs">(2 ÷ 25) × in mg</span></div><div class="formula-row"><span class="formula-lhs">Tablets of 25 mg</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 4) × rounded down, (4 × tablets)</span></div><div class="formula-row"><span class="formula-lhs">Chewable tablets of 12.5 mg</span><span class="formula-eq">=</span><span class="formula-rhs">(1 ÷ 4) × rounded down, (4 × chewable tablets)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, In mg = 10 mg gives &lt;strong&gt;🐈 Your cat&amp;#039;s weight&lt;/strong&gt; = 10 kg, &lt;strong&gt;Tablets&lt;/strong&gt; = 0.4 #, &lt;strong&gt;Liquid (12.4 mg/5ml concentration)&lt;/strong&gt; = 4 ml, &lt;strong&gt;Chewable tablets&lt;/strong&gt; = 0.8 #, &lt;strong&gt;Tablets of 25 mg&lt;/strong&gt; = 0.25 # and &lt;strong&gt;Chewable tablets of 12.5 mg&lt;/strong&gt; = 0.75 #.</p><ul><li><strong>🐈 Your cat&#039;s weight</strong> = 10 kg</li><li><strong>Tablets</strong> = 0.4 #</li><li><strong>Liquid (12.4 mg/5ml concentration)</strong> = 4 ml</li><li><strong>Chewable tablets</strong> = 0.8 #</li><li><strong>Tablets of 25 mg</strong> = 0.25 #</li><li><strong>Chewable tablets of 12.5 mg</strong> = 0.75 #</li></ul><p>The line behind those figures is <strong>🐈 Your cat&#039;s weight</strong> = <code>In mg</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;🐈 Your cat&amp;#039;s weight&lt;/strong&gt; = 10, &lt;strong&gt;Tablets&lt;/strong&gt; = 0.4, &lt;strong&gt;Liquid (12.4 mg/5ml concentration)&lt;/strong&gt; = 4, &lt;strong&gt;Chewable tablets&lt;/strong&gt; = 0.8, &lt;strong&gt;Tablets of 25 mg&lt;/strong&gt; = 0.25 and &lt;strong&gt;Chewable tablets of 12.5 mg&lt;/strong&gt; = 0.75 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: 🐈 Your cat&#039;s weight offers 27 units and opens on kilograms, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Mass, opening in milligrams</li><li>Volume, opening in milliliters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>🐈 Your cat&#039;s weight</strong> = <code>In mg</code></li><li><strong>In mg</strong> = <code>🐈 Your cat&#039;s weight</code></li><li><strong>Tablets</strong> = <code>(1 ÷ 25) × In mg</code></li><li><strong>Liquid (12.4 mg/5ml concentration)</strong> = <code>(2 ÷ 5) × In mg</code></li><li><strong>Chewable tablets</strong> = <code>(2 ÷ 25) × In mg</code></li><li><strong>Tablets of 25 mg</strong> = <code>(1 ÷ 4) × floor(4 × Tablets)</code></li></ul><p>Any one of 🐈 Your cat&#039;s weight, In mg and Tablets can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cat Benadryl dosage calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li></ul>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double In mg from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;🐈 Your cat&amp;#039;s weight&lt;/strong&gt; 10 kg, &lt;strong&gt;Tablets&lt;/strong&gt; 0.4 #, &lt;strong&gt;Liquid (12.4 mg/5ml concentration)&lt;/strong&gt; 4 ml, &lt;strong&gt;Chewable tablets&lt;/strong&gt; 0.8 #, &lt;strong&gt;Tablets of 25 mg&lt;/strong&gt; 0.25 # and &lt;strong&gt;Chewable tablets of 12.5 mg&lt;/strong&gt; 0.75 # to &lt;strong&gt;🐈 Your cat&amp;#039;s weight&lt;/strong&gt; 20 kg, &lt;strong&gt;Tablets&lt;/strong&gt; 0.8 #, &lt;strong&gt;Liquid (12.4 mg/5ml concentration)&lt;/strong&gt; 8 ml, &lt;strong&gt;Chewable tablets&lt;/strong&gt; 1.6 #, &lt;strong&gt;Tablets of 25 mg&lt;/strong&gt; 0.75 # and &lt;strong&gt;Chewable tablets of 12.5 mg&lt;/strong&gt; 1.5 #.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Keep the units you enter consistent. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside In mg is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with 🐈 Your cat&#039;s weight, Liquid (12.4 mg/5ml concentration) and Tablets of 25 mg are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If In mg is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Cat Benadryl dosage calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cat-bmi">Cat BMI</a>, <a href="/biology/cat-calorie">Cat calorie</a> and <a href="/biology/cat-chocolate-toxicity">Cat chocolate toxicity</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are In mg and the number you are missing is 🐈 Your cat&#039;s weight and Liquid (12.4 mg/5ml concentration).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/simpson-diversity-index">Simpson&#039;s Diversity Index Calculator</a>, <a href="/biology/svi-sludge-volume-index">Sludge Volume Index (SVI) Calculator</a> and <a href="/biology/sod">Sod Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Cat Benadryl dosage calculator work out?', 'a' => <<<'TXT'
-            It returns your cat's weight. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            🐈 Your cat's weight, Liquid (12.4 mg/5ml concentration), Tablets of 25 mg and Chewable tablets of 12.5 mg, from In mg. The relationship is 🐈 Your cat's weight = In mg.
             TXT],
-            ['q' => 'What do I need to enter to use the Cat Benadryl dosage calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is a single field. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => 'In mg (milligrams). Enter benadryl_mg; 🐈 Your cat\'s weight is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of 🐈 Your cat's weight, In mg, Tablets and Liquid (12.4 mg/5ml concentration) blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I enter your cat\'s weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Your cat's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            🐈 Your cat's weight = 10 kg, Tablets = 0.4 #, Liquid (12.4 mg/5ml concentration) = 4 ml, Chewable tablets = 0.8 #, Tablets of 25 mg = 0.25 # and Chewable tablets of 12.5 mg = 0.75 #. The figures come from In mg as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the Cat Benadryl dosage calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally 🐈 Your cat\'s weight is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave In mg blank and the page solves for it, reporting 🐈 Your cat\'s weight instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to 🐈 Your cat\'s weight at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/cat-bmi', 'name' => 'Cat BMI'],
-            ['path' => '/biology/cat-calorie', 'name' => 'Cat calorie'],
-            ['path' => '/biology/cat-chocolate-toxicity', 'name' => 'Cat chocolate toxicity'],
+            ['path' => '/biology/simpson-diversity-index', 'name' => 'Simpson\'s Diversity Index Calculator'],
+            ['path' => '/biology/svi-sludge-volume-index', 'name' => 'Sludge Volume Index (SVI) Calculator'],
+            ['path' => '/biology/sod', 'name' => 'Sod Calculator'],
         ],
+        'authors' => [],
     ],
 ];

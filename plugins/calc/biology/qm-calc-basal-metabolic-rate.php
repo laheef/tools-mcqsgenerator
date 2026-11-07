@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Basal Metabolic Rate Calculator (Mifflin–St Jeor)',
-    'meta' => ['title' => 'Basal Metabolic Rate (Mifflin–St Jeor) Calculator', 'description' => 'Basal metabolic rate is the energy a body spends at complete rest. It returns basal metabolic rate, total daily energy expenditure, BMR per kg and BMR, and…', 'h1' => 'Basal Metabolic Rate Calculator (Mifflin–St Jeor)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Basal Metabolic Rate (Mifflin–St Jeor) Calculator', 'description' => 'Basal metabolic rate is the energy a body spends at complete rest. Free basal metabolic rate (mifflin–st jeor) calculator: enter your values and get basal met', 'h1' => 'Basal Metabolic Rate Calculator (Mifflin–St Jeor)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -110,48 +110,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Basal metabolic rate is the energy a body spends at complete rest. It returns basal metabolic rate, total daily energy expenditure, BMR per kg and BMR, and the panel shows all of them at once.
-        
-        The Mifflin–St Jeor equation is the most accurate simple predictor for most adults, and this calculator adds the activity factor that turns BMR into total daily energy expenditure.
+        Basal Metabolic Rate Calculator (Mifflin–St Jeor) takes Sex, Weight and Height and returns Basal metabolic rate and Total daily energy expenditure. Nothing is looked up on this page: Basal metabolic rate is computed from Sex and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Basal metabolic rate is opened in kcal/day; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Basal Metabolic Rate (Mifflin–St Jeor)', 'html' => <<<'TXT'
-            <p>Male: BMR = 10W + 6.25H − 5A + 5; female: BMR = 10W + 6.25H − 5A − 161</p>
-            <figure class="calc-figure"><img src="/uploads/biology/basal-metabolic-rate.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Basal Metabolic Rate Calculator (Mifflin–St Jeor) — Resting burn, activity, and the daily total." title="Basal Metabolic Rate Calculator (Mifflin–St Jeor)"><figcaption>Resting burn, activity, and the daily total.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>W</code></td><td>weight in kilograms</td><td>kg</td></tr><tr><td><code>H</code></td><td>height in centimetres</td><td>cm</td></tr><tr><td><code>A</code></td><td>age in years</td><td>years</td></tr><tr><td><code>TDEE</code></td><td>BMR × activity factor</td><td>kcal/day</td></tr></tbody></table>
+            ['title' => 'How the Basal Metabolic Rate Calculator (Mifflin–St Jeor) calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Basal Metabolic Rate Calculator (Mifflin–St Jeor): it takes 5 numbers and reports Basal metabolic rate, Total daily energy expenditure and BMR per kg.</p><p>In the form&#039;s own words, Basal metabolic rate = 10 × Weight + 6.25 × Height − 5 × Age + Sex.</p><p>What comes back is Basal metabolic rate, Total daily energy expenditure, BMR per kg and BMR — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Basal Metabolic Rate (Mifflin–St Jeor)?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 5 boxes and the page has everything it needs.</p><ul><li><strong>Sex</strong> — a plain number, no unit</li><li><strong>Weight</strong> — in kg</li><li><strong>Height</strong> — in cm</li><li><strong>Age</strong> — in years</li><li><strong>Activity level</strong> — a plain number, no unit</li></ul><p>What you get back is Basal metabolic rate in kcal/day, Total daily energy expenditure in kcal/day, BMR per kg in kcal/kg/day, BMR in kJ/day, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: sex set to <strong>5.0</strong>, weight of <strong>75</strong> kg, height of <strong>178</strong> cm, age of <strong>30</strong> years, activity level set to <strong>Light (×1.375)</strong>.</p>
-            <p>Substituting them into the formula gives basal metabolic rate of <strong>1,717.5</strong> kcal/day, total daily energy expenditure of <strong>2,361.56</strong> kcal/day, bmr per kg of <strong>22.9</strong> kcal/kg/day, bmr of <strong>7,186.02</strong> kJ/day.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Sex = 5, Weight = 75 kg, Height = 178 cm, Age = 30 years and Activity level = 1.38 gives &lt;strong&gt;Basal metabolic rate&lt;/strong&gt; = 1718 kcal/day, &lt;strong&gt;Total daily energy expenditure&lt;/strong&gt; = 2362 kcal/day, &lt;strong&gt;BMR per kg&lt;/strong&gt; = 22.9 kcal/kg/day and &lt;strong&gt;BMR&lt;/strong&gt; = 7186 kJ/day.</p><ul><li><strong>Basal metabolic rate</strong> = 1718 kcal/day</li><li><strong>Total daily energy expenditure</strong> = 2362 kcal/day</li><li><strong>BMR per kg</strong> = 22.9 kcal/kg/day</li><li><strong>BMR</strong> = 7186 kJ/day</li></ul><p>The line behind those figures is <strong>Basal metabolic rate</strong> = <code>10 × Weight + 6.25 × Height − 5 × Age + Sex</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>This page shows the male form on its default settings; the female equation subtracts 161 instead of adding 5, which is about 166 kcal lower for the same body.</p></li><li><p>BMR assumes complete rest; TDEE multiplies it by an activity factor that is the largest source of error in the whole calculation.</p></li><li><p>Measured BMR by indirect calorimetry is typically within 10% of the prediction for healthy adults, and further out in obesity, illness and old age.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Basal metabolic rate&lt;/strong&gt; = 1718, &lt;strong&gt;Total daily energy expenditure&lt;/strong&gt; = 2362, &lt;strong&gt;BMR per kg&lt;/strong&gt; = 22.9 and &lt;strong&gt;BMR&lt;/strong&gt; = 7186 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Basal metabolic rate takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using pounds or inches without converting.</li><li>Adding exercise calories twice — the activity factor already includes them.</li><li>Treating TDEE as a prescription rather than an estimate, then eating back every estimated calorie burned.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Basal metabolic rate</strong> = <code>10 × Weight + 6.25 × Height − 5 × Age + Sex</code></li><li><strong>Total daily energy expenditure</strong> = <code>(10 × Weight + 6.25 × Height − 5 × Age + Sex) × Activity level</code></li><li><strong>BMR per kg</strong> = <code>(10 × Weight + 6.25 × Height − 5 × Age + Sex) ÷ Weight</code></li><li><strong>BMR</strong> = <code>(10 × Weight + 6.25 × Height − 5 × Age + Sex) × 4.184</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Basal metabolic rate, Total daily energy expenditure and BMR per kg can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/tidal-volume-lung-capacity">Tidal volume and lung capacity</a>. <a href="/biology/basal-metabolic-rate">Basal metabolic rate</a>. <a href="/biology/respiratory-quotient">Respiratory quotient</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Sex, from 5 to 10 — and the answers go from &lt;strong&gt;Basal metabolic rate&lt;/strong&gt; 1718 kcal/day, &lt;strong&gt;Total daily energy expenditure&lt;/strong&gt; 2362 kcal/day, &lt;strong&gt;BMR per kg&lt;/strong&gt; 22.9 kcal/kg/day and &lt;strong&gt;BMR&lt;/strong&gt; 7186 kJ/day to &lt;strong&gt;Basal metabolic rate&lt;/strong&gt; 1723 kcal/day, &lt;strong&gt;Total daily energy expenditure&lt;/strong&gt; 2368 kcal/day, &lt;strong&gt;BMR per kg&lt;/strong&gt; 22.97 kcal/kg/day and &lt;strong&gt;BMR&lt;/strong&gt; 7207 kJ/day.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Basal metabolic rate, Total daily energy expenditure and BMR per kg are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Sex is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Sex, Weight and Height measured, Basal metabolic rate and Total daily energy expenditure wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/mutation-frequency">Mutation frequency</a>, <a href="/biology/mutation-rate">Mutation rate Calculator</a> and <a href="/biology/ndvi-calculator">NDVI (Normalised Difference Vegetation Index) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How accurate is Mifflin–St Jeor?', 'a' => 'It predicts BMR within about 10% for most adults and is more accurate than the older Harris–Benedict equation.'],
-            ['q' => 'Should I eat my BMR or my TDEE?', 'a' => 'TDEE is what you burn; BMR is the floor. Eating below BMR is rarely advisable without medical supervision.'],
-            ['q' => 'What does the Basal Metabolic Rate (Mifflin–St Jeor) actually calculate?', 'a' => <<<'TXT'
-            It returns basal metabolic rate, total daily energy expenditure, BMR per kg and BMR. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Basal Metabolic Rate Calculator (Mifflin–St Jeor) calculator work out?', 'a' => <<<'TXT'
+            Basal metabolic rate, Total daily energy expenditure, BMR per kg and BMR, from Weight, Height, Age and Sex. The relationship is Basal metabolic rate = 10 × Weight + 6.25 × Height − 5 × Age + Sex.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Sex, Weight (kg), Height (cm), Age (years), Activity level. With sex, weight and height in place, Basal metabolic rate can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Basal metabolic rate, Total daily energy expenditure, BMR per kg and BMR can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Basal metabolic rate = 1718 kcal/day, Total daily energy expenditure = 2362 kcal/day, BMR per kg = 22.9 kcal/kg/day and BMR = 7186 kJ/day. Those are the defaults written into the form — move Sex and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Basal metabolic rate is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'A blank box is the question. With Sex left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Basal metabolic rate keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mutation-frequency', 'name' => 'Mutation frequency'],
+            ['path' => '/biology/mutation-rate', 'name' => 'Mutation rate Calculator'],
+            ['path' => '/biology/ndvi-calculator', 'name' => 'NDVI (Normalised Difference Vegetation Index) Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'How big will my cat get',
-    'meta' => ['title' => 'How big will my cat get Calculator: Free, With Steps', 'description' => 'Give the How big will my cat get calculator your kitten\'s age and the weight and it returns <strong>final size</strong>. The How big will my cat get…', 'h1' => 'How big will my cat get Calculator', 'updated' => '2026-08-19'],
+    'meta' => ['title' => 'How big will my cat get Calculator: Free, With Steps', 'description' => 'How big will my cat get works out Final size from Your kitten\'s age and Weight. The arithmetic is the whole method: Final size is worked out from Your…', 'h1' => 'How big will my cat get Calculator', 'updated' => '2026-08-19'],
     'raw' => [
         'vars' => [
             'age' => [
@@ -143,64 +143,53 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'Give the How big will my cat get calculator your kitten\'s age and the weight and it returns <strong>final size</strong>.',
+        'intro' => <<<'TXT'
+        How big will my cat get works out Final size from Your kitten's age and Weight. The arithmetic is the whole method: Final size is worked out from Your kitten's age by one formula, applied once. Final size comes back in kilograms unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the How big will my cat get calculator work?', 'html' => <<<'TXT'
-            <p>The How big will my cat get calculator takes the values in the form, applies the relationship described below and reports <strong>final size</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in your kitten's age and the weight.</p>
+            ['title' => 'How the How big will my cat get calculator works', 'html' => <<<'TXT'
+            <p>How big will my cat get answers one question from 2 numbers, and the answer is Final size.</p><p>The relationship it solves reads Final size = 32 × Weight ÷ Your kitten&#039;s age.</p><p>The result panel carries Final size, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your kitten's age</strong></td><td>A measured quantity, 27 units available.</td><td>weeks</td><td>You supply it</td></tr><tr><td><strong>Weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Final size</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Your kitten&#039;s age</strong> — in weeks</li><li><strong>Weight</strong> — in kilograms. Your kitten&#039;s weight at the given age.</li></ul><p>What you get back is Final size in kilograms, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Your kitten&amp;#039;s age = 10 wk and Weight = 100 kg — through the same formula and the panel reports &lt;strong&gt;Final size&lt;/strong&gt; = 320 kg.</p><ul><li><strong>Final size</strong> = 320 kg</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Final size</strong> = <code>32 × Weight ÷ Your kitten&#039;s age</code>.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in weeks</li><li>Mass, opening in kilograms</li><li>Mass, opening in kilograms</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Final size&lt;/strong&gt; = 320. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Final size lists 27 options and opens on kilograms. </p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The How big will my cat get calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 2 figures keep coming back — your kitten's age and the weight — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Final size</strong> = <code>32 × Weight ÷ Your kitten&#039;s age</code></li><li><strong>Weight</strong> = <code>(1 ÷ 32) × Your kitten&#039;s age × Final size</code></li><li><strong>Your kitten&#039;s age</strong> = <code>32 × Weight ÷ Final size</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Final size, Weight and Your kitten&#039;s age can be the unknown.</p>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Your kitten&#039;s age, from 10 to 20 — and the answers go from &lt;strong&gt;Final size&lt;/strong&gt; 320 kg to &lt;strong&gt;Final size&lt;/strong&gt; 160 kg.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Your kitten&#039;s age and Weight carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Final size is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Your kitten&#039;s age is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the How big will my cat get calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — your kitten's age for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/ligation">Ligation</a>, <a href="/biology/livestock-fence">Livestock fence cost</a> and <a href="/biology/llama">Llama</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Your kitten&#039;s age and Weight measured, Final size wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/fish-per-liter">Fish Per Liter Calculator</a>, <a href="/biology/fish-tank-stocking">Fish Tank Stocking Calculator</a> and <a href="/biology/fixation-index-fst">Fixation Index (Fst) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the How big will my cat get calculator work out?', 'a' => <<<'TXT'
-            It returns final size, derived from your kitten's age and the weight. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the How big will my cat get calculator work out?', 'a' => 'Final size, from Weight and Your kitten\'s age. The relationship is Final size = 32 × Weight ÷ Your kitten\'s age.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Your kitten\'s age (weeks), Weight (kilograms). Enter age and weight; Final size is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Final size, Weight and Your kitten\'s age can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'What answer do the default values give?', 'a' => 'Final size = 320 kg. That comes from the page\'s own defaults, entered in Your kitten\'s age; change one of them and the whole set is recomputed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Final size is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'What do I need to enter to use the How big will my cat get calculator?', 'a' => <<<'TXT'
-            The form asks for your kitten's age and the weight, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Your kitten's age left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I enter your kitten\'s age in a different unit?', 'a' => <<<'TXT'
-            Yes. Your kitten's age opens in weeks and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the How big will my cat get calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Final size keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/ligation', 'name' => 'Ligation'],
-            ['path' => '/biology/livestock-fence', 'name' => 'Livestock fence cost'],
-            ['path' => '/biology/llama', 'name' => 'Llama'],
+            ['path' => '/biology/fish-per-liter', 'name' => 'Fish Per Liter Calculator'],
+            ['path' => '/biology/fish-tank-stocking', 'name' => 'Fish Tank Stocking Calculator'],
+            ['path' => '/biology/fixation-index-fst', 'name' => 'Fixation Index (Fst) Calculator'],
         ],
+        'authors' => [],
     ],
 ];

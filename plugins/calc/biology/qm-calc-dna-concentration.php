@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA concentration',
-    'meta' => ['title' => 'DNA concentration: Formula, Steps & Results', 'description' => 'Supply the molecular weight, the absorbance at λmax, the dilution factor and the concentration and the DNA concentration calculator solves for <strong>Path…', 'h1' => 'DNA concentration Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'DNA concentration: Formula, Steps & Results', 'description' => 'DNA concentration turns Sample type, Extinction coefficient and Molecular weight into Conversion factor. Leave one if the sample is not diluted.Concentration…', 'h1' => 'DNA concentration Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'absorbance' => [
@@ -266,64 +266,47 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Supply the molecular weight, the absorbance at λmax, the dilution factor and the concentration and the DNA concentration calculator solves for <strong>Path length</strong>.
+        DNA concentration turns Sample type, Extinction coefficient and Molecular weight into Conversion factor. It is a single relationship that reads Conversion factor out of Sample type, not a table of canned results keyed by them. Units for Conversion factor default to μg/mL and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'How does the DNA concentration calculator work?', 'html' => <<<'TXT'
-            <p>The DNA concentration calculator takes the values in the form, applies the relationship described below and reports <strong>Path length</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the sample type); then you type in the molecular weight, the absorbance at λmax, the dilution factor and the concentration.</p>
+            ['title' => 'How the DNA concentration calculator works', 'html' => <<<'TXT'
+            <p>The DNA concentration calculator applies one relationship to 7 numbers and reports Conversion factor.</p><p>The relationship it solves reads Pathlength = Absorbance at λmax × Conversion factor × Dilution factor ÷ Concentration.</p><p>The result panel carries Conversion factor, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 4 options, such as single-stranded DNA, double-stranded DNA and RNA. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A number, expressed in g/mol.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in micrograms per milliliter. The unit chip switches it to any of the 28 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 7 boxes and the page has everything it needs.</p><ul><li><strong>Sample type</strong> — a plain number, no unit</li><li><strong>Extinction coefficient</strong> — in M⁻¹ cm⁻¹. Sum up extinction coefficients of all nucleotides in your sequence to obtain this value.</li><li><strong>Molecular weight</strong> — in g/mol. Add up molecular weights of all nucleotides in your sequence to obtain this value.</li><li><strong>Absorbance at λmax</strong> — a plain number, no unit. For a typical nucleotide, λmax is 260 nm, but use the highest peak indicated by spectrophotometric reading.</li><li><strong>Pathlength</strong> — in centimeters. Spectrophotometer cuvettes are typically 1 cm (0.39 in) long, but adjust if needed.</li><li><strong>Dilution factor</strong> — a plain number, no unit. Change only if the absorbance is obtained from a diluted sample. Leave one if the sample is not diluted.</li><li><strong>Concentration</strong> — in micrograms per milliliter. Concentration of the nucleic acid in the sample.</li></ul><p>The result box is Conversion factor in μg/mL. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Sample type</strong></td><td>One of 4 options, such as single-stranded DNA, double-stranded DNA and RNA.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Extinction coefficient</strong></td><td>A number stated in M⁻¹ cm⁻¹.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Molecular weight</strong></td><td>A number stated in g/mol.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Conversion factor</strong></td><td>A number stated in μg/mL.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Absorbance at λmax</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Path length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Dilution factor</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Concentration</strong></td><td>A measured quantity, 28 units available.</td><td>micrograms per milliliter</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Pathlength offers 31 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the DNA concentration calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Path length</span><span class="formula-eq">=</span><span class="formula-rhs">absorbance at λmax × conversion factor × dilution factor ÷ concentration</span></div><div class="formula-row"><span class="formula-lhs">Extinction coefficient</span><span class="formula-eq">=</span><span class="formula-rhs">molecular weight ÷ conversion factor</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Pathlength</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Concentration</code></li><li><strong>Absorbance at λmax</strong> = <code>Concentration × Pathlength ÷ (Conversion factor × Dilution factor)</code></li><li><strong>Dilution factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Conversion factor)</code></li><li><strong>Concentration</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Pathlength</code></li><li><strong>Conversion factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Dilution factor)</code></li><li><strong>Extinction coefficient</strong> = <code>Molecular weight ÷ Conversion factor</code></li></ul><p>Any one of Pathlength, Absorbance at λmax and Dilution factor can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Pathlength and Concentration is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Conversion factor is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Sample type is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Density, opening in micrograms per milliliter</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The DNA concentration calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Any time the same 4 figures keep coming back — the molecular weight, the absorbance at λmax and the dilution factor — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dna-copy-number">DNA copy number</a>, <a href="/biology/dna-to-mrna">DNA to mRNA</a> and <a href="/biology/dog-age">Dog age</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Sample type, Extinction coefficient and Molecular weight is what you already know and Conversion factor is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/plant-available-water">Field Capacity and Plant Available Water Calculator</a>, <a href="/biology/field-capacity">Field Capacity Calculator</a> and <a href="/biology/fish-condition-factor">Fish Condition Factor Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the DNA concentration calculator work out?', 'a' => <<<'TXT'
-            It returns pathlength, derived from the molecular weight, the absorbance at λmax and the dilution factor. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Conversion factor, from Absorbance at λmax, Dilution factor, Concentration and Conversion factor. The relationship is Pathlength = Absorbance at λmax × Conversion factor × Dilution factor ÷ Concentration.
             TXT],
-            ['q' => 'What do I need to enter to use the DNA concentration calculator?', 'a' => <<<'TXT'
-            The form asks for the molecular weight, the absorbance at λmax, the dilution factor and the concentration, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Sample type, Extinction coefficient (M⁻¹ cm⁻¹), Molecular weight (g/mol), Absorbance at λmax, Pathlength (centimeters). Fill sample_type, extinction_coefficient and weight and leave Conversion factor empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I enter pathlength in a different unit?', 'a' => <<<'TXT'
-            Yes. Path length opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Pathlength, Absorbance at λmax, Dilution factor and Concentration blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Conversion factor = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the DNA concentration calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Conversion factor is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Sample type blank and the page solves for it, reporting Conversion factor instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Conversion factor at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/dna-copy-number', 'name' => 'DNA copy number'],
-            ['path' => '/biology/dna-to-mrna', 'name' => 'DNA to mRNA'],
-            ['path' => '/biology/dog-age', 'name' => 'Dog age'],
+            ['path' => '/biology/plant-available-water', 'name' => 'Field Capacity and Plant Available Water Calculator'],
+            ['path' => '/biology/field-capacity', 'name' => 'Field Capacity Calculator'],
+            ['path' => '/biology/fish-condition-factor', 'name' => 'Fish Condition Factor Calculator'],
         ],
+        'authors' => [],
     ],
 ];

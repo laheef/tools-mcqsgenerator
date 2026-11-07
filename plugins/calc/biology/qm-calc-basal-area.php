@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Basal area',
-    'meta' => ['title' => 'Basal area Calculator — Formula, Units & Example', 'description' => 'Give the Basal area calculator the basal area, the tree 1, the tree 2 and the tree 3 and it returns <strong>diameter at breast height (DBH)</strong>.', 'h1' => 'Basal area Calculator', 'updated' => '2025-07-04'],
+    'meta' => ['title' => 'Basal area Calculator — Formula, Units & Example', 'description' => 'Enter Basal area into Basal area and the answer comes back as Diameter at breast height (DBH). The arithmetic is the whole method: Diameter at breast height…', 'h1' => 'Basal area Calculator', 'updated' => '2025-07-04'],
     'raw' => [
         'vars' => [
             'amount_of_trees' => [
@@ -1123,63 +1123,43 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'Give the Basal area calculator the basal area, the tree 1, the tree 2 and the tree 3 and it returns <strong>diameter at breast height (DBH)</strong>.',
+        'intro' => <<<'TXT'
+        Enter Basal area into Basal area and the answer comes back as Diameter at breast height (DBH). The arithmetic is the whole method: Diameter at breast height (DBH) is worked out from Basal area by one formula, applied once. Diameter at breast height (DBH) comes back in centimeters unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Basal area calculator work?', 'html' => <<<'TXT'
-            <p>The Basal area calculator takes the values in the form, applies the relationship described below and reports <strong>diameter at breast height (DBH)</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (number of trees); then you type in the basal area, the tree 1, the tree 2 and the tree 3.</p>
+            ['title' => 'How the Basal area calculator works', 'html' => <<<'TXT'
+            <p>The Basal area calculator applies one relationship to 1 number and reports Diameter at breast height (DBH).</p><p>The relationship it solves reads Diameter at breast height (DBH) = 2 × √(Basal area) ÷ √(PI).</p><p>What comes back is Diameter at breast height (DBH) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 2 options, such as one tree and more than one tree. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li></ul><p>The form has 53 fields in total. The ones not listed here work the same way: a label, a unit chip where the quantity has units, and a box that updates the results as soon as it holds a valid number.</p><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>Basal area</strong> — in square meters</li></ul><p>The result box is Diameter at breast height (DBH) in centimeters. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Number of trees</strong></td><td>One of 2 options, such as one tree and more than one tree.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Diameter at breast height (DBH)</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Basal area</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr><tr><td><strong>Tree 1</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 2</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 3</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 4</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 5</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 6</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 7</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 8</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 9</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 10</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 11</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 12</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 13</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 14</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 15</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 16</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 17</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 18</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 19</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 20</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Tree 21</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr></tbody></table><p>The table lists the first 24 of 53 fields; the rest follow the same pattern.</p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Diameter at breast height (DBH)</strong> = <code>2 × √(Basal area) ÷ √(PI)</code></li><li><strong>Basal area</strong> = <code>(1 ÷ 4) × PI × (Diameter at breast height (DBH))^(2)</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Diameter at breast height (DBH) and Basal area can be the unknown.</p>
             TXT],
-            ['title' => 'The formula behind the Basal area calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Diameter at breast height (DBH)</span><span class="formula-eq">=</span><span class="formula-rhs">2 × the square root of (basal area) ÷ the square root of (PI)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Basal area carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Diameter at breast height (DBH) is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Basal area to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Area, opening in square meters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Basal area calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 4 figures keep coming back — the basal area, the tree 1 and the tree 2 — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Keep the units you enter consistent. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/benadryl-dosage-for-dogs">Benadryl dosage for dogs</a>, <a href="/biology/bird-age">Bird age</a> and <a href="/biology/bulb-spacing">Bulb spacing</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Basal area is what you already know and Diameter at breast height (DBH) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/pasture-stocking-rate">Pasture Stocking Rate Calculator</a>, <a href="/biology/pcr-annealing-temperature">PCR Annealing Temperature Calculator</a> and <a href="/biology/pcr-cycle-calculator">PCR Cycle Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Basal area calculator work out?', 'a' => <<<'TXT'
-            It returns diameter at breast height (DBH), derived from the basal area, the tree 1 and the tree 2. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Basal area calculator work out?', 'a' => 'Diameter at breast height (DBH), from Basal area. The relationship is Diameter at breast height (DBH) = 2 × √(Basal area) ÷ √(PI).'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Basal area (square meters). With basal_area in place, Diameter at breast height (DBH) can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Diameter at breast height (DBH) and Basal area can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Diameter at breast height (DBH) is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'What do I need to enter to use the Basal area calculator?', 'a' => <<<'TXT'
-            The form asks for the basal area, the tree 1, the tree 2 and the tree 3, which is 53 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Basal area left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I enter diameter at breast height (DBH) in a different unit?', 'a' => <<<'TXT'
-            Yes. Diameter at breast height (DBH) opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Basal area calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Diameter at breast height (DBH) at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/benadryl-dosage-for-dogs', 'name' => 'Benadryl dosage for dogs'],
-            ['path' => '/biology/bird-age', 'name' => 'Bird age'],
-            ['path' => '/biology/bulb-spacing', 'name' => 'Bulb spacing'],
+            ['path' => '/biology/pasture-stocking-rate', 'name' => 'Pasture Stocking Rate Calculator'],
+            ['path' => '/biology/pcr-annealing-temperature', 'name' => 'PCR Annealing Temperature Calculator'],
+            ['path' => '/biology/pcr-cycle-calculator', 'name' => 'PCR Cycle Calculator'],
         ],
+        'authors' => [],
     ],
 ];

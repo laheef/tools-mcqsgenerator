@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Enzyme Kinetics: Specific Activity and Yield',
-    'meta' => ['title' => 'Enzyme Kinetics: Specific Activity and Yield', 'description' => 'Purification tables report specific activity and fold purification, and both come from the same three numbers: total protein, total activity and the starting…', 'h1' => 'Enzyme Kinetics: Specific Activity and Yield', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Enzyme Kinetics: Specific Activity and Yield', 'description' => 'Enzyme Kinetics: Specific Activity and Yield takes Total protein in this step, Total activity in this step and Total protein in the starting material and…', 'h1' => 'Enzyme Kinetics: Specific Activity and Yield', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -97,48 +97,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Purification tables report specific activity and fold purification, and both come from the same three numbers: total protein, total activity and the starting values. It returns specific activity, starting specific activity, fold purification and activity yield, and the panel shows all of them at once.
-        
-        This calculator builds the two summary figures for any step and shows what the recovery cost.
+        Enzyme Kinetics: Specific Activity and Yield takes Total protein in this step, Total activity in this step and Total protein in the starting material and returns Specific activity and Starting specific activity. There is no hidden constant here: change Specific activity and Total protein in this step moves with it. The main result, Specific activity, is reported in U/mg.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Enzyme Kinetics: Specific Activity and Yield', 'html' => <<<'TXT'
-            <p>Specific activity = total activity ÷ total protein; fold = specific ÷ starting specific; yield = activity recovered ÷ activity started with × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/enzyme-specific-activity-yield.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Enzyme Kinetics: Specific Activity and Yield — Activity over protein gives specific activity; compare it with the start." title="Enzyme Kinetics: Specific Activity and Yield"><figcaption>Activity over protein gives specific activity; compare it with the start.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>total protein</code></td><td>protein in the fraction</td><td>mg</td></tr><tr><td><code>total activity</code></td><td>units in the fraction</td><td>U</td></tr><tr><td><code>fold</code></td><td>purification factor</td><td>×</td></tr><tr><td><code>yield</code></td><td>recovery of activity</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Enzyme Kinetics: Specific Activity and Yield calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Enzyme Kinetics: Specific Activity and Yield: it takes 4 numbers and reports Specific activity, Starting specific activity and Fold purification.</p><p>In the form&#039;s own words, Specific activity = Total activity in this step ÷ Total protein in this step.</p><p>The result panel carries Specific activity, Starting specific activity, Fold purification and Activity yield, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Enzyme Kinetics: Specific Activity and Yield?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Total protein in this step</strong> — in mg</li><li><strong>Total activity in this step</strong> — in U</li><li><strong>Total protein in the starting material</strong> — in mg</li><li><strong>Total activity in the starting material</strong> — in U</li></ul><p>The answers come back as Specific activity in U/mg, Starting specific activity in U/mg, Fold purification in ×, Activity yield in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: total protein in this step of <strong>45</strong> mg, total activity in this step of <strong>5,400</strong> U, total protein in the starting material of <strong>900</strong> mg, total activity in the starting material of <strong>7,200</strong> U.</p>
-            <p>Substituting them into the formula gives specific activity of <strong>120</strong> U/mg, starting specific activity of <strong>8</strong> U/mg, fold purification of <strong>15</strong> ×, activity yield of <strong>75</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Total protein in this step = 45 mg, Total activity in this step = 5400 U, Total protein in the starting material = 900 mg and Total activity in the starting material = 7200 U gives &lt;strong&gt;Specific activity&lt;/strong&gt; = 120 U/mg, &lt;strong&gt;Starting specific activity&lt;/strong&gt; = 8 U/mg, &lt;strong&gt;Fold purification&lt;/strong&gt; = 15 × and &lt;strong&gt;Activity yield&lt;/strong&gt; = 75 %.</p><ul><li><strong>Specific activity</strong> = 120 U/mg</li><li><strong>Starting specific activity</strong> = 8 U/mg</li><li><strong>Fold purification</strong> = 15 ×</li><li><strong>Activity yield</strong> = 75 %</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Specific activity</strong> = <code>Total activity in this step ÷ Total protein in this step</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Fold purification and yield always trade off: the step that purifies most is usually the one that loses the most activity.</p></li><li><p>A step with a fold below 1 has removed protein and activity in the same proportion — it is a concentration step, not a purification step.</p></li><li><p>Specific activity is only comparable if it is measured at the same temperature, pH and substrate concentration in every row of the table.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Specific activity&lt;/strong&gt; = 120, &lt;strong&gt;Starting specific activity&lt;/strong&gt; = 8, &lt;strong&gt;Fold purification&lt;/strong&gt; = 15 and &lt;strong&gt;Activity yield&lt;/strong&gt; = 75 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Specific activity takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using the protein concentration of the fraction instead of the total.</li><li>Adding the yields of successive steps — they multiply, not add.</li><li>Comparing specific activities measured with different substrates.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Specific activity</strong> = <code>Total activity in this step ÷ Total protein in this step</code></li><li><strong>Starting specific activity</strong> = <code>Total activity in the starting material ÷ Total protein in the starting material</code></li><li><strong>Fold purification</strong> = <code>(Total activity in this step ÷ Total protein in this step) ÷ (Total activity in the starting material ÷ Total protein in the starting material)</code></li><li><strong>Activity yield</strong> = <code>Total activity in this step ÷ Total activity in the starting material × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Specific activity, Starting specific activity and Fold purification can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/enzyme-unit-converter">Enzyme unit converter</a>. <a href="/chemistry/enzyme-activity">Enzyme activity</a>. <a href="/biology/bca-assay-calculator">BCA assay</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Total protein in this step from 45 to 90, leaving every other box alone. The panel moves from &lt;strong&gt;Specific activity&lt;/strong&gt; 120 U/mg, &lt;strong&gt;Starting specific activity&lt;/strong&gt; 8 U/mg, &lt;strong&gt;Fold purification&lt;/strong&gt; 15 × and &lt;strong&gt;Activity yield&lt;/strong&gt; 75 % to &lt;strong&gt;Specific activity&lt;/strong&gt; 60 U/mg, &lt;strong&gt;Starting specific activity&lt;/strong&gt; 8 U/mg, &lt;strong&gt;Fold purification&lt;/strong&gt; 7.5 × and &lt;strong&gt;Activity yield&lt;/strong&gt; 75 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Specific activity, Starting specific activity and Fold purification are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Total protein in this step and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Total protein in this step, Total activity in this step and Total protein in the starting material measured, Specific activity and Starting specific activity wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/mulch">Mulch</a>, <a href="/biology/multi-reverse-translate">Multi Reverse Translate Calculator</a> and <a href="/biology/mushroom-yield">Mushroom Yield Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good fold purification?', 'a' => 'There is no target; what matters is that specific activity rises and enough activity survives for the next step.'],
-            ['q' => 'Why did my yield rise?', 'a' => 'Usually activation or removal of an inhibitor — or an assay artefact. Re-measure before believing it.'],
-            ['q' => 'What does the Enzyme Kinetics: Specific Activity and Yield actually calculate?', 'a' => <<<'TXT'
-            It returns specific activity, starting specific activity, fold purification and activity yield. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Enzyme Kinetics: Specific Activity and Yield calculator work out?', 'a' => <<<'TXT'
+            Specific activity, Starting specific activity, Fold purification and Activity yield, from Total activity in this step and Total protein in this step. The relationship is Specific activity = Total activity in this step ÷ Total protein in this step.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Total protein in this step (mg), Total activity in this step (U), Total protein in the starting material (mg), Total activity in the starting material (U). Enter total_protein, total_activity and start_protein; Specific activity is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Specific activity, Starting specific activity, Fold purification and Activity yield can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Specific activity = 120 U/mg, Starting specific activity = 8 U/mg, Fold purification = 15 × and Activity yield = 75 %. The figures come from Total protein in this step as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Specific activity is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Total protein in this step blank and the page solves for it, reporting Specific activity instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Specific activity keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/mulch', 'name' => 'Mulch'],
+            ['path' => '/biology/multi-reverse-translate', 'name' => 'Multi Reverse Translate Calculator'],
+            ['path' => '/biology/mushroom-yield', 'name' => 'Mushroom Yield Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

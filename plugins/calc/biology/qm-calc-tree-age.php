@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Tree age',
-    'meta' => ['title' => 'Tree age Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    Give the Tree age calculator the growth factor and the age and it returns <strong>diameter at breast height</strong>. The Tree age calculator takes the values…
-    TXT, 'h1' => 'Tree age Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Tree age Calculator: Formula, Steps & Examples', 'description' => 'Tree age works out Growth factor from Tree species, Circumference at breast height and Diameter at breast height. There is no hidden constant here: change…', 'h1' => 'Tree age Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'age' => [
@@ -281,69 +279,57 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'Give the Tree age calculator the growth factor and the age and it returns <strong>diameter at breast height</strong>.',
+        'intro' => <<<'TXT'
+        Tree age works out Growth factor from Tree species, Circumference at breast height and Diameter at breast height. There is no hidden constant here: change Growth factor and Tree species moves with it.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Tree age calculator work?', 'html' => <<<'TXT'
-            <p>The Tree age calculator takes the values in the form, applies the relationship described below and reports <strong>diameter at breast height</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the growth factor and the age.</p>
+            ['title' => 'How the Tree age calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Tree age: it takes 4 numbers and reports Growth factor.</p><p>In the form&#039;s own words, Diameter at breast height = Age ÷ Tree species.</p><p>The result panel carries Growth factor, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in years. </li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Tree species</strong> — a plain number, no unit</li><li><strong>Circumference at breast height</strong> — in centimeters. Breast height is 4.5 ft or 1.3 m from the ground.</li><li><strong>Diameter at breast height</strong> — in centimeters. Breast height is 4.5 ft or 1.3 m from the ground.</li><li><strong>Age</strong> — in years</li></ul><p>The result box is Growth factor. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Tree species</strong></td><td>One of 45 options, such as american beech, american elm and american sycamore.</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Growth factor</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Circumference at breast height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Diameter at breast height</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Age</strong></td><td>A measured quantity, 27 units available.</td><td>years</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Tree species = 4 and Age = 10 yrs; the answers are &lt;strong&gt;Diameter at breast height&lt;/strong&gt; = 7.922e-8 cm, &lt;strong&gt;Circumference at breast height&lt;/strong&gt; = 2.489e-7 cm and &lt;strong&gt;Growth factor&lt;/strong&gt; = 4.</p><ul><li><strong>Diameter at breast height</strong> = 7.922e-8 cm</li><li><strong>Circumference at breast height</strong> = 2.489e-7 cm</li><li><strong>Growth factor</strong> = 4</li></ul><p>That is <strong>Diameter at breast height</strong> = <code>Age ÷ Tree species</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'The formula behind the Tree age calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Diameter at breast height</span><span class="formula-eq">=</span><span class="formula-rhs">age ÷ tree species</span></div><div class="formula-row"><span class="formula-lhs">Circumference at breast height</span><span class="formula-eq">=</span><span class="formula-rhs">PI × diameter at breast height</span></div><div class="formula-row"><span class="formula-lhs">Tree species</span><span class="formula-eq">=</span><span class="formula-rhs">growth factor</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Diameter at breast height&lt;/strong&gt; = 7.922e-8, &lt;strong&gt;Circumference at breast height&lt;/strong&gt; = 2.489e-7 and &lt;strong&gt;Growth factor&lt;/strong&gt; = 4. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Circumference at breast height lists 31 options and opens on centimeters. </p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Open the page and it is already filled in. With the values it starts from — <strong>Tree species</strong> set to American elm — it reports <strong>Growth factor</strong> = 4.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Growth factor</strong> = 4 should be roughly the size you expected from <strong>Tree species</strong> set to American elm.</li></ol>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Diameter at breast height</strong> = <code>Age ÷ Tree species</code></li><li><strong>Tree species</strong> = <code>Age ÷ Diameter at breast height</code></li><li><strong>Age</strong> = <code>Diameter at breast height × Tree species</code></li><li><strong>Circumference at breast height</strong> = <code>PI × Diameter at breast height</code></li><li><strong>Growth factor</strong> = <code>Tree species</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Diameter at breast height, Tree species and Age can be the unknown.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>The option the calculation settles on.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Tree species from 4 to 8, leaving every other box alone. The panel moves from &lt;strong&gt;Diameter at breast height&lt;/strong&gt; 7.922e-8 cm, &lt;strong&gt;Circumference at breast height&lt;/strong&gt; 2.489e-7 cm and &lt;strong&gt;Growth factor&lt;/strong&gt; 4 to &lt;strong&gt;Diameter at breast height&lt;/strong&gt; 3.961e-8 cm, &lt;strong&gt;Circumference at breast height&lt;/strong&gt; 1.244e-7 cm and &lt;strong&gt;Growth factor&lt;/strong&gt; 8.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Time, opening in years</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Circumference at breast height, Diameter at breast height and Age carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Growth factor is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Tree species to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Tree age calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 2 figures keep coming back — the growth factor and the age — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/tree-diameter">Tree diameter</a>, <a href="/biology/tree-height">Tree height</a> and <a href="/biology/tree-leaves">Leaves on tree</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Tree species, Circumference at breast height and Diameter at breast height measured, Growth factor wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/sheep-gestation">Sheep gestation Calculator</a>, <a href="/biology/simpson-diversity-index">Simpson&#039;s Diversity Index Calculator</a> and <a href="/biology/svi-sludge-volume-index">Sludge Volume Index (SVI) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Tree age calculator work out?', 'a' => <<<'TXT'
-            It returns diameter at breast height, derived from the growth factor and the age. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Tree age calculator work out?', 'a' => 'Growth factor, from Tree species and Age. The relationship is Diameter at breast height = Age ÷ Tree species.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Tree species, Circumference at breast height (centimeters), Diameter at breast height (centimeters), Age (years). Enter treeSpecies, circumferenceAtBreastHeight and diameterAtBreastHeight; Growth factor is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'What do I need to enter to use the Tree age calculator?', 'a' => <<<'TXT'
-            The form asks for the growth factor and the age, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Diameter at breast height, Tree species, Age and Circumference at breast height can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I enter circumference at breast height in a different unit?', 'a' => <<<'TXT'
-            Yes. Circumference at breast height opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Diameter at breast height = 7.922e-8 cm, Circumference at breast height = 2.489e-7 cm and Growth factor = 4. That comes from the page's own defaults, entered in Tree species; change one of them and the whole set is recomputed.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Growth factor is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Growth factor = 4. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Tree age calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Tree species blank and the page solves for it, reporting Growth factor instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Growth factor keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/tree-diameter', 'name' => 'Tree diameter'],
-            ['path' => '/biology/tree-height', 'name' => 'Tree height'],
-            ['path' => '/biology/tree-leaves', 'name' => 'Leaves on tree'],
+            ['path' => '/biology/sheep-gestation', 'name' => 'Sheep gestation Calculator'],
+            ['path' => '/biology/simpson-diversity-index', 'name' => 'Simpson\'s Diversity Index Calculator'],
+            ['path' => '/biology/svi-sludge-volume-index', 'name' => 'Sludge Volume Index (SVI) Calculator'],
         ],
+        'authors' => [],
     ],
 ];

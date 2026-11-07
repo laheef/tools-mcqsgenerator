@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * Export harvested calculators to their own files.
  *
- *   php tools/export_calc_files.php --cat=biology [--only=slug] [--force] [--raw]
+ *   php tools/export_calc_files.php --cat=biology [--only=slug] [--force] [--raw] [--rewrite]
  *
  * For every published calculator in the category this writes
  *
@@ -19,8 +19,9 @@ declare(strict_types=1);
  * engine's own arrays in a `raw` block instead, so a converted page is never a
  * worse calculator than the page it replaced.
  *
- * --force  overwrite files that exist (an edited file is left alone otherwise)
- * --raw    skip the shorthand entirely and write every page as `raw`
+ * --force    overwrite files that exist (an edited file is left alone otherwise)
+ * --raw      skip the shorthand entirely and write every page as `raw`
+ * --rewrite  replace the article with one written from the page's own record
  */
 
 require_once __DIR__ . '/../config.php';
@@ -45,6 +46,7 @@ $cat   = (string) ($opts['cat'] ?? 'biology');
 $only  = isset($opts['only']) ? (string) $opts['only'] : '';
 $force = isset($opts['force']);
 $rawOnly = isset($opts['raw']);
+$rewrite = isset($opts['rewrite']);
 
 $units = Data::units();
 $rows  = array_values(array_filter(
@@ -56,6 +58,33 @@ $rows  = array_values(array_filter(
 ));
 
 echo 'exporting ' . count($rows) . ' calculators from ' . $cat . "\n";
+
+/*
+ * Internal links, decided once per category: three neighbours for every page,
+ * taken from the same category and chosen by the page's own slug so the choice
+ * is stable across runs (a link that moves every rebuild is a link that means
+ * nothing). The page's existing `related` rows are kept as the first choice.
+ */
+$peerPool = [];
+foreach ($rows as $r) {
+    $peerPool[] = ['path' => (string) ($r['path'] ?? ''), 'name' => (string) ($r['name'] ?? '')];
+}
+$peersFor = static function (string $slug, int $want = 3) use ($peerPool): array {
+    $count = count($peerPool);
+    if ($count < 2) {
+        return [];
+    }
+    $start = abs((int) crc32($slug)) % $count;
+    $out = [];
+    for ($i = 0; $i < $count && count($out) < $want; $i++) {
+        $peer = $peerPool[($start + $i) % $count];
+        if (str_ends_with($peer['path'], '/' . $slug) || $peer['path'] === '') {
+            continue;
+        }
+        $out[] = $peer;
+    }
+    return $out;
+};
 
 /* --------------------------------------------------------------- the shard */
 
@@ -533,6 +562,21 @@ foreach ($rows as $row) {
     }
 
     /*
+     * The article, written from the page rather than around it: its own labels,
+     * its own units, its own formulas, its own numbers. See lib/CalcArticle.php.
+     */
+    if ($rewrite) {
+        $built  = CalcFile::compile($def + ['meta' => []], $path);
+        $shaped = \Onim\Shape::fromRecord($built, null);
+        $def['article'] = \Onim\CalcArticle::build(
+            $shaped,
+            $units,
+            $peersFor($slug, 3),
+            $def['article']
+        );
+    }
+
+    /*
      * A page that came out of the boilerplate filter thin gets a worked example
      * computed from its own formulas — the one paragraph nobody else can copy,
      * because the numbers are this page's numbers.
@@ -584,9 +628,26 @@ foreach ($pending as $i => $item) {
     $oldDesc = (string) ($content['seoDesc'] ?? '');
     $desc    = $oldDesc;
     $len     = mb_strlen($oldDesc, 'UTF-8');
-    if ($len < CalcSeo::DESC_MIN || $len > CalcSeo::DESC_MAX || !preg_match('~[.!?]$~u', $oldDesc)
-        || preg_match('~free [a-z &-]{0,30}calculator|formula, units and a worked~iu', $oldDesc) === 1) {
-        [$desc] = CalcSeo::description($item['name'], $article);
+    /* An in-range description is still worth replacing when it opens on the
+       interface ("the results leave the screen…") or on the frame the old
+       generator put on every page. */
+    $ui   = '~\b(press calculate|click calculate|results leave the screen|edit a field|grey box|the panel|this free|free [a-z &-]{0,30}calculator)\b~iu';
+    $real = preg_match($ui, $oldDesc) === 1;
+    /* The frame the old generator put on every page never survives a rewrite,
+       even when it is the only line long enough to fill the window. */
+    $banned = preg_match('~free [a-z &-]{0,30}calculator|formula, units and a worked~iu', $oldDesc) === 1;
+    if ($rewrite || $real || $banned || $len < CalcSeo::DESC_MIN || $len > CalcSeo::DESC_MAX || !preg_match('~[.!?]$~u', $oldDesc)) {
+        [$fresh] = CalcSeo::description($item['name'], $article);
+        $freshLen = mb_strlen($fresh, 'UTF-8');
+        if ($banned) {
+            $desc = $fresh;
+        } elseif ($freshLen >= CalcSeo::DESC_MIN && $freshLen <= CalcSeo::DESC_MAX) {
+            $desc = $fresh;
+        } elseif ($len >= CalcSeo::DESC_MIN && $len <= CalcSeo::DESC_MAX) {
+            $desc = $oldDesc;
+        } else {
+            $desc = $freshLen > $len ? $fresh : $oldDesc;
+        }
     }
     $descs[$i] = $desc;
 }
@@ -608,6 +669,34 @@ foreach ($titles as $i => $title) {
     }
     $titles[$i] = $alt;
     $seen[mb_strtolower($alt, 'UTF-8')] = $i;
+}
+
+/*
+ * A sentence repeated across a section is not content, however true it is.
+ * After the rewrite the pages are swept once more: whatever still appears on
+ * five or more of them is removed from all of them, and the emptied tags are
+ * tidied. The pages keep their own arithmetic, their own numbers and their own
+ * labels; they lose the shared furniture.
+ */
+if ($rewrite && count($pending) > 4) {
+    $pool = [];
+    foreach ($pending as $item) {
+        $pool[] = $item['def']['article'];
+    }
+    $shared = ContentClean::shared($pool, 5, 40);
+    $dropped = 0;
+    foreach ($pending as $i => $item) {
+        $before = $item['def']['article'];
+        $cleaned = ContentClean::clean($before, $shared, 4);
+        /* A page that the sweep leaves too thin keeps its article: shared
+           sentences are a smaller problem than a page with nothing on it. */
+        if (ContentClean::words($cleaned['article']) < 320) {
+            continue;
+        }
+        $pending[$i]['def']['article'] = $cleaned['article'];
+        $dropped += (int) ($cleaned['removed'] ?? 0);
+    }
+    echo 'second sweep: ' . count($shared) . ' shared sentences, ' . $dropped . " removals\n";
 }
 
 $fits = ['title' => 0, 'desc' => 0];

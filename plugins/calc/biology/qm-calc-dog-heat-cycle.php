@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog heat cycle',
-    'meta' => ['title' => 'Dog heat cycle Calculator — Formula & Results', 'description' => 'The answer is what the Dog heat cycle calculator works out, and it gets there from the first day of the cycle, the eight months, the eighteen days and the…', 'h1' => 'Dog heat cycle Calculator', 'updated' => '2026-08-19'],
+    'meta' => ['title' => 'Dog heat cycle Calculator — Formula & Results', 'description' => 'Dog heat cycle turns First day of the cycle, enter_heat_cycle and Heat cycle length into cycle1 and cycle2. The arithmetic is the whole method: cycle1 is…', 'h1' => 'Dog heat cycle Calculator', 'updated' => '2026-08-19'],
     'raw' => [
         'vars' => [
             'cycle1' => ['type' => 'date', 'rnd' => null],
@@ -366,64 +366,41 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The answer is what the Dog heat cycle calculator works out, and it gets there from the first day of the cycle, the eight months, the eighteen days and the five months.
+        Dog heat cycle turns First day of the cycle, enter_heat_cycle and Heat cycle length into cycle1 and cycle2. The arithmetic is the whole method: cycle1 is worked out from First day of the cycle by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'How does the Dog heat cycle calculator work?', 'html' => <<<'TXT'
-            <p>The Dog heat cycle calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the heat cycle length); then you give the first day of the cycle; then you type in the eight months, the eighteen days, the five months and the twentyone days.</p>
+            ['title' => 'How the Dog heat cycle calculator works', 'html' => <<<'TXT'
+            <p>Dog heat cycle answers one question from 3 numbers, and the answer is cycle1, cycle2 and nextCycle1.</p><p>The relationship it solves reads cycle1 = (eighteenDays + First day of the cycle).</p><p>The result panel carries cycle1, cycle2, nextCycle1 and nextCycle2, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A calendar date. </li><li>A single on/off switch — tick it for &ldquo;Enter your dog's heat cycle length (if you know it)&rdquo;, leave it clear for the other case. It changes which relationship the calculator applies, not just a multiplier.</li><li>Pick the option that matches your case — 9 options, such as 4, 5 and 6. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in days. </li><li>A measured quantity, entered by default in days. </li><li>A measured quantity, entered by default in days. </li><li>A measured quantity, entered by default in days. </li></ul><p>2 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>First day of the cycle</strong> — a plain number, no unit, entered as a date</li><li><strong>enter_heat_cycle</strong> — a plain number, no unit</li><li><strong>Heat cycle length</strong> — in months</li></ul><p>The answers come back as cycle1, cycle2, nextCycle1, nextCycle2, nextCycle3. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>First day of the cycle</strong></td><td>A calendar date.</td><td>date</td><td>You supply it</td></tr><tr><td><strong>Heat cycle length</strong></td><td>One of 9 options, such as 4, 5 and 6.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Eight months</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Eighteen days</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Five months</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Twentyone days</strong></td><td>A measured quantity, 27 units available.</td><td>days</td><td>You supply it</td></tr><tr><td><strong>Next cycle 1</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Next cycle 2</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr><tr><td><strong>Next cycle 3</strong></td><td>A calendar date.</td><td>date</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: cycle1 takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code></li><li><strong>cycle2</strong> = <code>(First day of the cycle + twentyoneDays)</code></li><li><strong>nextCycle1</strong> = <code>(First day of the cycle + fiveMonths)</code></li><li><strong>nextCycle2</strong> = <code>(eightMonths + First day of the cycle)</code></li><li><strong>nextCycle3</strong> = <code>(First day of the cycle + 86400000 × round((761 ÷ 25) × length_value))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of cycle1, cycle2 and nextCycle1 can be the unknown.</p>
             TXT],
-            ['title' => 'The formula behind the Dog heat cycle calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Cycle 1</span><span class="formula-eq">=</span><span class="formula-rhs">(eighteen days + first day of the cycle)</span></div><div class="formula-row"><span class="formula-lhs">Cycle 2</span><span class="formula-eq">=</span><span class="formula-rhs">(first day of the cycle + twentyone days)</span></div><div class="formula-row"><span class="formula-lhs">Next cycle 1</span><span class="formula-eq">=</span><span class="formula-rhs">(first day of the cycle + five months)</span></div><div class="formula-row"><span class="formula-lhs">Next cycle 2</span><span class="formula-eq">=</span><span class="formula-rhs">(eight months + first day of the cycle)</span></div><div class="formula-row"><span class="formula-lhs">Next cycle 3</span><span class="formula-eq">=</span><span class="formula-rhs">(first day of the cycle + 86400000 × rounded, ((761 ÷ 25) × length value))</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with cycle1, cycle2 and nextCycle1 are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert First day of the cycle to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A calendar date.</li><li>A calendar date.</li><li>A calendar date.</li><li>A calendar date.</li><li>A calendar date.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in days</li><li>Time, opening in days</li><li>Time, opening in days</li><li>Time, opening in days</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog heat cycle calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 4 figures keep coming back — the first day of the cycle, the eight months and the eighteen days — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. </li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Dates are compared date to date in your own time zone, so a daylight-saving change will not shift the count by a day.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-life-expectancy">Dog life expectancy</a>, <a href="/biology/dog-metacam">Dog Metacam dosage</a> and <a href="/biology/dog-onion-toxicity">Dog onion toxicity</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: First day of the cycle, enter_heat_cycle and Heat cycle length measured, cycle1 and cycle2 wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/gypsum-application-rate">Gypsum Application Rate Calculator</a>, <a href="/biology/hamster-age">Hamster age Calculator</a> and <a href="/biology/hardy-weinberg-equilibrium">Hardy-Weinberg equilibrium Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What do I need to enter to use the Dog heat cycle calculator?', 'a' => <<<'TXT'
-            The form asks for the first day of the cycle, the eight months, the eighteen days and the five months, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What does the Dog heat cycle calculator work out?', 'a' => 'cycle1, cycle2, nextCycle1 and nextCycle2, from First day of the cycle. The relationship is cycle1 = (eighteenDays + First day of the cycle).'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            First day of the cycle, enter_heat_cycle, Heat cycle length (months). Enter firstDay, enter_heat_cycle and length; cycle1 is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter eight months in a different unit?', 'a' => <<<'TXT'
-            Yes. Eight months opens in days and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (2 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Dog heat cycle calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. cycle1, cycle2, nextCycle1 and nextCycle2 can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally cycle1 is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave First day of the cycle blank and the page solves for it, reporting cycle1 instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of cycle1 keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-life-expectancy', 'name' => 'Dog life expectancy'],
-            ['path' => '/biology/dog-metacam', 'name' => 'Dog Metacam dosage'],
-            ['path' => '/biology/dog-onion-toxicity', 'name' => 'Dog onion toxicity'],
+            ['path' => '/biology/gypsum-application-rate', 'name' => 'Gypsum Application Rate Calculator'],
+            ['path' => '/biology/hamster-age', 'name' => 'Hamster age Calculator'],
+            ['path' => '/biology/hardy-weinberg-equilibrium', 'name' => 'Hardy-Weinberg equilibrium Calculator'],
         ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Livestock Water Requirement Calculator',
-    'meta' => ['title' => 'Livestock Water Requirement Calculator — Biology', 'description' => 'Water intake scales with dry-matter intake and with heat, and it is the number most often under-designed on a farm. It returns water per animal per day, herd…', 'h1' => 'Livestock Water Requirement Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Livestock Water Requirement Calculator — Biology', 'description' => 'Water intake scales with dry-matter intake and with heat, and it is the number most often under-designed on a farm. Free livestock water requirement calculato', 'h1' => 'Livestock Water Requirement Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -113,50 +113,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Water intake scales with dry-matter intake and with heat, and it is the number most often under-designed on a farm. It returns water per animal per day, herd water per day, herd water per week and peak flow for a 4-hour drinking window, and the panel shows all of them at once.
-        
-        This calculator estimates daily and weekly water demand for a herd from body weight, species and temperature, together with the peak flow rate a trough has to deliver.
+        Livestock Water Requirement turns Species, Number of animals and Average body weight into Water per animal per day and Herd water per day. Nothing is looked up on this page: Water per animal per day is computed from Species and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Water per animal per day is opened in L; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Livestock Water Requirement', 'html' => <<<'TXT'
-            <p>Daily water (L/animal) = body weight × species factor × temperature correction; temperature correction = 1 + 0.02 × (temp − 20 °C) above 20 °C</p>
-            <figure class="calc-figure"><img src="/uploads/biology/livestock-water-requirement.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Livestock Water Requirement Calculator — Daily demand by species at the temperature you entered." title="Livestock Water Requirement Calculator"><figcaption>Daily demand by species at the temperature you entered.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>weight</code></td><td>average body weight</td><td>kg</td></tr><tr><td><code>species factor</code></td><td>litres per kg of body weight for that species</td><td>L/kg</td></tr><tr><td><code>head</code></td><td>number of animals</td><td>head</td></tr><tr><td><code>per_head</code></td><td>daily water per animal</td><td>L/day</td></tr></tbody></table>
+            ['title' => 'How the Livestock Water Requirement calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Livestock Water Requirement: it takes 4 numbers and reports Water per animal per day, Herd water per day and Herd water per week.</p><p>The result panel carries Water per animal per day, Herd water per day, Herd water per week and Peak flow for a 4-hour drinking window, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Livestock Water Requirement?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Species</strong> — a plain number, no unit</li><li><strong>Number of animals</strong> — a plain number, no unit</li><li><strong>Average body weight</strong> — in kg. Adult weight</li><li><strong>Ambient temperature</strong> — in °C. Daily average or expected maximum</li></ul><p>The answers come back as Water per animal per day in L, Herd water per day in L, Herd water per week in L, Peak flow for a 4-hour drinking window in L/h. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: species set to <strong>1.0</strong>, average body weight of <strong>500</strong> kg, ambient temperature of <strong>25</strong>°C.</p>
-            <p>Substituting them into the formula gives water per animal per day of <strong>55</strong> L, herd water per day of <strong>1,100</strong> L, herd water per week of <strong>7,700</strong> L, peak flow for a 4-hour drinking window of <strong>275</strong> L/h, number of animals of <strong>20</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Species = 1, Average body weight = 500 kg and Ambient temperature = 25 °C gives &lt;strong&gt;Water per animal per day&lt;/strong&gt; = 55 L.</p><ul><li><strong>Water per animal per day</strong> = 55 L</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>cattle</td><td><strong>0.10 L/kg</strong></td><td>roughly 50 L for a 500 kg cow at 20 °C</td></tr><tr><td>sheep / goat</td><td><strong>0.08–0.09 L/kg</strong></td><td>4–6 L for a 50 kg ewe</td></tr><tr><td>pig</td><td><strong>0.12 L/kg</strong></td><td>about 18 L for a 150 kg sow</td></tr><tr><td>poultry</td><td><strong>0.20 L/kg</strong></td><td>approximately 0.3 L per hen per day</td></tr></tbody></table>
-            <ul><li><p>Intake climbs steeply with heat: a 500 kg cow needs about 50 L at 20 °C and around 70 L at 40 °C, which is why summer failures are usually a flow problem rather than a volume one.</p></li><li><p>Lactation adds 30–50% for dairy cattle; the calculator deliberately gives the maintenance figure and says so.</p></li><li><p>Peak flow matters: animals drink most of their water in a few hours after milking or feeding, so a trough sized for the daily total can still leave the herd waiting.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Water per animal per day&lt;/strong&gt; = 55 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Water per animal per day takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Sizing storage for the daily total but not the trough's refill rate.</li><li>Ignoring the temperature term in summer, which is where most shortfalls appear.</li><li>Using mature weight for growing animals, which overstates demand.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Herd water per day</strong> = <code>Number of animals × Water per animal per day</code></li><li><strong>Herd water per week</strong> = <code>Number of animals × Water per animal per day × 7</code></li><li><strong>Peak flow for a 4-hour drinking window</strong> = <code>Number of animals × Water per animal per day ÷ 4</code></li><li><strong>Number of animals</strong> = <code>Herd water per day ÷ Water per animal per day</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Water per animal per day, Herd water per day and Herd water per week can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/dry-matter-intake">Dry matter intake</a>. <a href="/biology/pasture-stocking-rate">Pasture stocking rate</a>. <a href="/biology/chicken-feed-amount">Chicken feed amount</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Species, from 1 to 2 — and the answers go from &lt;strong&gt;Water per animal per day&lt;/strong&gt; 55 L to &lt;strong&gt;Water per animal per day&lt;/strong&gt; 44 L.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Water per animal per day, Herd water per day and Herd water per week are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Species and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Species, Number of animals and Average body weight measured, Water per animal per day and Herd water per day wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/pet-sitter-rates">Pet sitter rates Calculator</a>, <a href="/biology/phenotypic-ratio">Phenotypic Ratio Calculator</a> and <a href="/biology/photosynthesis-rate">Photosynthesis Rate Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much water does a cow drink a day?', 'a' => 'About 40–70 litres for a 500 kg beef cow at moderate temperatures, rising to 100 litres or more in heat or during lactation.'],
-            ['q' => 'How do I size a trough?', 'a' => 'Give the herd its daily requirement in one to two hours of refill, which is what the peak flow figure here approximates.'],
-            ['q' => 'What does the Livestock Water Requirement actually calculate?', 'a' => <<<'TXT'
-            It returns water per animal per day, herd water per day, herd water per week and peak flow for a 4-hour drinking window. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Livestock Water Requirement calculator work out?', 'a' => <<<'TXT'
+            Water per animal per day, Herd water per day, Herd water per week and Peak flow for a 4-hour drinking window, from Species, Average body weight and Ambient temperature.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Species, Number of animals, Average body weight (kg), Ambient temperature (°C). Fill species, head and weight and leave Water per animal per day empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Water per animal per day, Herd water per day, Herd water per week and Peak flow for a 4-hour drinking window can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => 'Water per animal per day = 55 L. The figures come from Species as the page opens it; they are a starting point, not a fixed answer.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Water per animal per day is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Species left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Water per animal per day keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/pet-sitter-rates', 'name' => 'Pet sitter rates Calculator'],
+            ['path' => '/biology/phenotypic-ratio', 'name' => 'Phenotypic Ratio Calculator'],
+            ['path' => '/biology/photosynthesis-rate', 'name' => 'Photosynthesis Rate Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

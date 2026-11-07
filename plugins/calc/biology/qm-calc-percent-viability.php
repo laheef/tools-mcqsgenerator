@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Percent Viability Calculator',
-    'meta' => ['title' => 'Percent Viability Calculator — Formula & Results', 'description' => 'Percent viability is live cells as a share of all cells, and there are three ways to measure it: dye exclusion, metabolic reduction and membrane integrity.', 'h1' => 'Percent Viability Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Percent Viability Calculator — Formula & Results', 'description' => 'Enter Live cells and Dead cells into Percent Viability and the answer comes back as Viability and Non-viable. There is no hidden constant here: change…', 'h1' => 'Percent Viability Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -73,50 +73,50 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Percent viability is live cells as a share of all cells, and there are three ways to measure it: dye exclusion, metabolic reduction and membrane integrity. It returns viability, non-viable and live to dead ratio, and the panel shows all of them at once.
-        
-        This calculator handles the live/dead form and the control-relative form, and reports the cytotoxicity that goes with it.
+        Enter Live cells and Dead cells into Percent Viability and the answer comes back as Viability and Non-viable. There is no hidden constant here: change Viability and Live cells moves with it. The main result, Viability, is reported in %.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Percent Viability', 'html' => <<<'TXT'
-            <p>Viability (%) = live ÷ (live + dead) × 100</p>
-            <figure class="calc-figure"><img src="/uploads/biology/percent-viability.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Percent Viability Calculator — Live and dead cells as a share of the population." title="Percent Viability Calculator"><figcaption>Live and dead cells as a share of the population.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>live</code></td><td>cells excluding the dye or reducing the substrate</td><td>cells</td></tr><tr><td><code>dead</code></td><td>cells taking up the dye</td><td>cells</td></tr><tr><td><code>viability</code></td><td>live share of the population</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Percent Viability calculator works', 'html' => <<<'TXT'
+            <p>Percent Viability answers one question from 2 numbers, and the answer is Viability, Non-viable and Live to dead ratio.</p><p>Written with the labels from the form, Viability = Live cells ÷ (Live cells + Dead cells) × 100.</p><p>The answers are Viability, Non-viable and Live to dead ratio; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Percent Viability?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Live cells</strong> — in cells</li><li><strong>Dead cells</strong> — in cells</li></ul><p>The result boxes are Viability in %, Non-viable in %, Live to dead ratio in:1; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: live cells of <strong>920</strong> cells, dead cells of <strong>80</strong> cells.</p>
-            <p>Substituting them into the formula gives viability of <strong>92</strong>%, non-viable of <strong>8</strong>%, live to dead ratio of <strong>11.5</strong>:1.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Live cells = 920 cells and Dead cells = 80 cells; the answers are &lt;strong&gt;Viability&lt;/strong&gt; = 92 %, &lt;strong&gt;Non-viable&lt;/strong&gt; = 8 % and &lt;strong&gt;Live to dead ratio&lt;/strong&gt; = 11.5:1.</p><ul><li><strong>Viability</strong> = 92 %</li><li><strong>Non-viable</strong> = 8 %</li><li><strong>Live to dead ratio</strong> = 11.5:1</li></ul><p>That is <strong>Viability</strong> = <code>Live cells ÷ (Live cells + Dead cells) × 100</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>95 – 100%</td><td><strong>Healthy</strong></td><td>normal for a fresh culture</td></tr><tr><td>80 – 95%</td><td><strong>Reduced</strong></td><td>harvest stress or a mild treatment</td></tr><tr><td>below 80%</td><td><strong>Low</strong></td><td>check conditions before the experiment</td></tr></tbody></table>
-            <ul><li><p>A viability of 50% can mean 50% of the cells are dead, or that every cell is half as metabolically active — the two methods answer different questions.</p></li><li><p>Always quote the method: trypan blue, PI/FACS and ATP assays give different numbers on the same population.</p></li><li><p>For cytotoxicity reporting, the complement of viability assumes the untreated control was 100% viable, which is rarely exactly true.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Viability&lt;/strong&gt; = 92, &lt;strong&gt;Non-viable&lt;/strong&gt; = 8 and &lt;strong&gt;Live to dead ratio&lt;/strong&gt; = 11.5. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Viability is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Counting fewer than 100 cells, where a single cell is a whole percentage point.</li><li>Using total cells (live + dead) as the denominator in one place and live cells in another.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Viability</strong> = <code>Live cells ÷ (Live cells + Dead cells) × 100</code></li><li><strong>Non-viable</strong> = <code>Dead cells ÷ (Live cells + Dead cells) × 100</code></li><li><strong>Live to dead ratio</strong> = <code>Live cells ÷ Dead cells</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Viability, Non-viable and Live to dead ratio can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/trypan-blue-cell-viability">Trypan blue viability</a>. <a href="/biology/alamarblue-cell-viability">AlamarBlue viability</a>. <a href="/biology/percent-inhibition">Percent inhibition</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Live cells from 920 to 1840, leaving every other box alone. The panel moves from &lt;strong&gt;Viability&lt;/strong&gt; 92 %, &lt;strong&gt;Non-viable&lt;/strong&gt; 8 % and &lt;strong&gt;Live to dead ratio&lt;/strong&gt; 11.5:1 to &lt;strong&gt;Viability&lt;/strong&gt; 95.83 %, &lt;strong&gt;Non-viable&lt;/strong&gt; 4.17 % and &lt;strong&gt;Live to dead ratio&lt;/strong&gt; 23:1.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Viability, Non-viable and Live to dead ratio are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Live cells and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Live cells and Dead cells measured, Viability and Non-viable wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/od600-to-cell-density">OD600 to Cell Density Calculator</a>, <a href="/biology/genetic-odds-ratio">Odds Ratio for Genetics Calculator</a> and <a href="/biology/oligo-converter">Oligo pmol/µL to µg/mL Converter Calculator — Formula &amp; Result</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What viability is acceptable for an experiment?', 'a' => '90% or better at the start of most assays; treatments that drop it below 70% usually confound the readout with cytotoxicity.'],
-            ['q' => 'What does the Percent Viability actually calculate?', 'a' => 'It returns viability, non-viable and live to dead ratio. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Percent Viability calculator work out?', 'a' => 'Viability, Non-viable and Live to dead ratio, from Live cells and Dead cells. The relationship is Viability = Live cells ÷ (Live cells + Dead cells) × 100.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Live cells (cells), Dead cells (cells). With live and dead in place, Viability can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Viability, Non-viable and Live to dead ratio can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Viability = 92 %, Non-viable = 8 % and Live to dead ratio = 11.5:1. Those are the defaults written into the form — move Live cells and every result box follows.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
-            ['q' => 'Does it work in both directions?', 'a' => <<<'TXT'
-            Where the maths allows it, yes: the page states which values it solves for and which you supply. A field marked as a result is always computed, never typed into.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Viability is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Live cells blank and the page solves for it, reporting Viability instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Viability at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/od600-to-cell-density', 'name' => 'OD600 to Cell Density Calculator'],
+            ['path' => '/biology/genetic-odds-ratio', 'name' => 'Odds Ratio for Genetics Calculator'],
+            ['path' => '/biology/oligo-converter', 'name' => 'Oligo pmol/µL to µg/mL Converter Calculator — Formula & Result'],
+        ],
+        'authors' => [],
     ],
 ];

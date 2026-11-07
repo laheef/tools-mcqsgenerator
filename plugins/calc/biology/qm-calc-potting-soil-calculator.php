@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Potting soil',
-    'meta' => ['title' => 'Potting soil Calculator — Formula, Units & Example', 'description' => 'Supply the width, the depth, the diameter and the diameter across bottom and the Potting soil calculator solves for <strong>length</strong>.', 'h1' => 'Potting soil Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Potting soil Calculator — Formula, Units & Example', 'description' => 'Enter Width, Depth and Quantity into Potting soil and the answer comes back as Length and Diameter. Width, Depth and Volume of soil needed carry a unit chip…', 'h1' => 'Potting soil Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'd_R' => [
@@ -338,63 +338,43 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'Supply the width, the depth, the diameter and the diameter across bottom and the Potting soil calculator solves for <strong>length</strong>.',
+        'intro' => <<<'TXT'
+        Enter Width, Depth and Quantity into Potting soil and the answer comes back as Length and Diameter. The arithmetic is the whole method: Length is worked out from Width by one formula, applied once. Length comes back in centimeters unless you switch the unit chip beside the box.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Potting soil calculator work?', 'html' => <<<'TXT'
-            <p>The Potting soil calculator takes the values in the form, applies the relationship described below and reports <strong>length</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the shape); then you type in the width, the depth, the diameter and the diameter across bottom.</p>
+            ['title' => 'How the Potting soil calculator works', 'html' => <<<'TXT'
+            <p>The Potting soil calculator applies one relationship to 4 numbers and reports Length, Diameter and Diameter across top.</p><p>The relationship it solves reads Length = Volume of soil needed ÷ (Depth × Quantity × Width).</p><p>The result panel carries Length, Diameter, Diameter across top and Diameter across bottom, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 3 options, such as rectangular, round and flower pot (truncated cone). The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in liters. The unit chip switches it to any of the 40 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Width</strong> — in centimeters</li><li><strong>Depth</strong> — in centimeters</li><li><strong>Quantity</strong> — a plain number, no unit</li><li><strong>Volume of soil needed</strong> — in liters</li></ul><p>The result boxes are Length in centimeters, Diameter in centimeters, Diameter across top in centimeters, Diameter across bottom in centimeters, Volume of soil needed in liters, Volume of soil needed in liters; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Shape</strong></td><td>One of 3 options, such as rectangular, round and flower pot (truncated cone).</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Depth</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Diameter across top</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Diameter across bottom</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Quantity</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Volume of soil needed</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>You supply it</td></tr><tr><td><strong>Volume of soil needed (2)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>You supply it</td></tr><tr><td><strong>Volume of soil needed (3)</strong></td><td>A measured quantity, 40 units available.</td><td>liters</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Length</strong> = <code>Volume of soil needed ÷ (Depth × Quantity × Width)</code></li><li><strong>Volume of soil needed</strong> = <code>Depth × Length × Quantity × Width</code></li><li><strong>Width</strong> = <code>Volume of soil needed ÷ (Depth × Length × Quantity)</code></li><li><strong>Depth</strong> = <code>Volume of soil needed ÷ (Length × Quantity × Width)</code></li><li><strong>Quantity</strong> = <code>Volume of soil needed ÷ (Depth × Length × Width)</code></li><li><strong>Diameter</strong> = <code>2 × √(Volume of soil needed ÷ (Depth × Quantity)) ÷ √(PI)</code></li></ul><p>Any one of Length, Volume of soil needed and Width can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Potting soil calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Length</span><span class="formula-eq">=</span><span class="formula-rhs">volume of soil needed ÷ (depth × quantity × width)</span></div><div class="formula-row"><span class="formula-lhs">Quantity</span><span class="formula-eq">=</span><span class="formula-rhs">4 × volume of soil needed ÷ (PI × depth × (diameter ^ 2))</span></div><div class="formula-row"><span class="formula-lhs">Diameter across top</span><span class="formula-eq">=</span><span class="formula-rhs">-1 ÷ 2 × diameter across bottom + (1 ÷ 2) × the square root of (3) × the square root of (-PI × (diameter across bottom ^ 2) × (depth ^ 2) × (quantity ^ 2) + 16 × depth × quantity × volume of soil needed) ÷ (the square root of (PI) × depth × quantity)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Width, Depth and Volume of soil needed carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Length, Diameter and Diameter across top are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Width to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li><li>Volume, opening in liters</li><li>Volume, opening in liters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Potting soil calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 4 figures keep coming back — the width, the depth and the diameter — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/protein-concentration">Protein concentration</a>, <a href="/biology/protein-molecular-weight">Protein molecular weight</a> and <a href="/biology/punnett-square">Punnett square</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Width, Depth and Quantity is what you already know and Length and Diameter is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cell-surface-area-volume-ratio">Cell Surface Area to Volume Ratio Calculator — Formula &amp; Resul</a>, <a href="/biology/centimorgan-to-percentage">Centimorgan to Percentage Calculator</a> and <a href="/biology/centrifuge-rcf-rpm">Centrifuge RCF to RPM Converter Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Potting soil calculator work out?', 'a' => <<<'TXT'
-            It returns length, derived from the width, the depth and the diameter. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Length, Diameter, Diameter across top and Diameter across bottom, from Volume of soil needed, Width, Depth and Quantity. The relationship is Length = Volume of soil needed ÷ (Depth × Quantity × Width).
             TXT],
-            ['q' => 'What do I need to enter to use the Potting soil calculator?', 'a' => <<<'TXT'
-            The form asks for the width, the depth, the diameter and the diameter across bottom, which is 8 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Width (centimeters), Depth (centimeters), Quantity, Volume of soil needed (liters). Enter width, depth and quantity; Length is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter length in a different unit?', 'a' => <<<'TXT'
-            Yes. Length opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Potting soil calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Length, Volume of soil needed, Width and Depth blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Length is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Width blank and the page solves for it, reporting Length instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/protein-concentration', 'name' => 'Protein concentration'],
-            ['path' => '/biology/protein-molecular-weight', 'name' => 'Protein molecular weight'],
-            ['path' => '/biology/punnett-square', 'name' => 'Punnett square'],
+            ['path' => '/biology/cell-surface-area-volume-ratio', 'name' => 'Cell Surface Area to Volume Ratio Calculator — Formula & Resul'],
+            ['path' => '/biology/centimorgan-to-percentage', 'name' => 'Centimorgan to Percentage Calculator'],
+            ['path' => '/biology/centrifuge-rcf-rpm', 'name' => 'Centrifuge RCF to RPM Converter Calculator'],
         ],
+        'authors' => [],
     ],
 ];

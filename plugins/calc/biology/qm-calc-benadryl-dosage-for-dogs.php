@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Benadryl dosage for dogs',
-    'meta' => ['title' => 'Benadryl dosage for dogs — Free Online Calculator', 'description' => 'The Benadryl dosage for dogs calculator returns <strong>your dog\'s weight</strong> from the field on the form. Editing anything puts the results away until…', 'h1' => 'Benadryl dosage for dogs Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Benadryl dosage for dogs — Free Online Calculator', 'description' => <<<'TXT'
+    Benadryl dosage for dogs turns Dosage by weight into Your dog's weight and Liquid (12.5 mg / 5 mL). There is no hidden constant here: change Your dog's weight…
+    TXT, 'h1' => 'Benadryl dosage for dogs Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => '',
@@ -115,67 +117,52 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Benadryl dosage for dogs calculator returns <strong>your dog's weight</strong> from the field on the form. 
-        
-         Editing anything puts the results away until the next press of Calculate — change one value at a time and the updated answer tells you what that value was worth.
+        Benadryl dosage for dogs turns Dosage by weight into Your dog's weight and Liquid (12.5 mg / 5 mL). There is no hidden constant here: change Your dog's weight and Dosage by weight moves with it. The main result, Your dog's weight, is reported in kilograms.
         TXT,
         'sections' => [
-            ['title' => 'How does the Benadryl dosage for dogs calculator work?', 'html' => <<<'TXT'
-            <p>The Benadryl dosage for dogs calculator takes the values in the form, applies the relationship described below and reports <strong>your dog's weight</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the dosage by weight.</p>
+            ['title' => 'How the Benadryl dosage for dogs calculator works', 'html' => <<<'TXT'
+            <p>Benadryl dosage for dogs answers one question from 1 number, and the answer is Your dog&#039;s weight, Liquid (12.5 mg / 5 mL) and Tablets.</p><p>The relationship it solves reads Your dog&#039;s weight = Dosage by weight.</p><p>What comes back is Your dog&#039;s weight, Liquid (12.5 mg / 5 mL), Tablets and Chewable tablets — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your dog's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>Calculated</td></tr><tr><td><strong>Dosage by weight</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>You supply it</td></tr><tr><td><strong>Liquid (12.5 mg / 5 mL)</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>Tablets</strong></td><td>A number stated in × 25 mg.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Chewable tablets</strong></td><td>A number stated in × 12.5 mg.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Dosage by weight</strong> — in milligrams</li></ul><p>The answers come back as Your dog&#039;s weight in kilograms, Liquid (12.5 mg / 5 mL) in milliliters, Tablets in × 25 mg, Chewable tablets in × 12.5 mg. </p>
             TXT],
-            ['title' => 'The formula behind the Benadryl dosage for dogs calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Your dog&#x27;s weight</span><span class="formula-eq">=</span><span class="formula-rhs">dosage by weight</span></div><div class="formula-row"><span class="formula-lhs">Tablets</span><span class="formula-eq">=</span><span class="formula-rhs">rounded down, ((1 ÷ 25) × dosage by weight)</span></div><div class="formula-row"><span class="formula-lhs">Chewable tablets</span><span class="formula-eq">=</span><span class="formula-rhs">rounded down, ((2 ÷ 25) × dosage by weight)</span></div><div class="formula-row"><span class="formula-lhs">Liquid (12.5 mg / 5 mL)</span><span class="formula-eq">=</span><span class="formula-rhs">(2 ÷ 5) × dosage by weight</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Dosage by weight = 10 mg — through the same formula and the panel reports &lt;strong&gt;Your dog&amp;#039;s weight&lt;/strong&gt; = 10 kg, &lt;strong&gt;Tablets&lt;/strong&gt; = 0 × 25 mg, &lt;strong&gt;Chewable tablets&lt;/strong&gt; = 0 × 12.5 mg and &lt;strong&gt;Liquid (12.5 mg / 5 mL)&lt;/strong&gt; = 4 ml.</p><ul><li><strong>Your dog&#039;s weight</strong> = 10 kg</li><li><strong>Tablets</strong> = 0 × 25 mg</li><li><strong>Chewable tablets</strong> = 0 × 12.5 mg</li><li><strong>Liquid (12.5 mg / 5 mL)</strong> = 4 ml</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Your dog&#039;s weight</strong> = <code>Dosage by weight</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in kilograms, and convertible to any of the 29 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Your dog&amp;#039;s weight&lt;/strong&gt; = 10, &lt;strong&gt;Tablets&lt;/strong&gt; = 0, &lt;strong&gt;Chewable tablets&lt;/strong&gt; = 0 and &lt;strong&gt;Liquid (12.5 mg / 5 mL)&lt;/strong&gt; = 4 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Your dog&#039;s weight offers 27 units and opens on kilograms, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Mass, opening in milligrams</li><li>Volume, opening in milliliters</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Your dog&#039;s weight</strong> = <code>Dosage by weight</code></li><li><strong>Dosage by weight</strong> = <code>Your dog&#039;s weight</code></li><li><strong>Tablets</strong> = <code>floor((1 ÷ 25) × Dosage by weight)</code></li><li><strong>Chewable tablets</strong> = <code>floor((2 ÷ 25) × Dosage by weight)</code></li><li><strong>Liquid (12.5 mg / 5 mL)</strong> = <code>(2 ÷ 5) × Dosage by weight</code></li></ul><p>Any one of Your dog&#039;s weight, Dosage by weight and Tablets can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Benadryl dosage for dogs calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 1 figures keep coming back — the dosage by weight — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Dosage by weight from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Your dog&amp;#039;s weight&lt;/strong&gt; 10 kg, &lt;strong&gt;Tablets&lt;/strong&gt; 0 × 25 mg, &lt;strong&gt;Chewable tablets&lt;/strong&gt; 0 × 12.5 mg and &lt;strong&gt;Liquid (12.5 mg / 5 mL)&lt;/strong&gt; 4 ml to &lt;strong&gt;Your dog&amp;#039;s weight&lt;/strong&gt; 20 kg, &lt;strong&gt;Tablets&lt;/strong&gt; 0 × 25 mg, &lt;strong&gt;Chewable tablets&lt;/strong&gt; 1 × 12.5 mg and &lt;strong&gt;Liquid (12.5 mg / 5 mL)&lt;/strong&gt; 8 ml.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Dosage by weight is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Your dog&#039;s weight, Liquid (12.5 mg / 5 mL) and Tablets are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Dosage by weight is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Benadryl dosage for dogs calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — dosage by weight for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/bird-age">Bird age</a>, <a href="/biology/bulb-spacing">Bulb spacing</a> and <a href="/biology/cat-age">Cat age</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Dosage by weight and the number you are missing is Your dog&#039;s weight and Liquid (12.5 mg / 5 mL).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/amino-acid-composition">Amino Acid Composition Calculator</a>, <a href="/biology/animal-mortality-rate">Animal mortality rate</a> and <a href="/biology/annealing-temperature">Annealing temperature Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Benadryl dosage for dogs calculator work out?', 'a' => <<<'TXT'
-            It returns your dog's weight, derived from the dosage by weight. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Benadryl dosage for dogs calculator work out?', 'a' => 'Your dog\'s weight, Liquid (12.5 mg / 5 mL), Tablets and Chewable tablets, from Dosage by weight. The relationship is Your dog\'s weight = Dosage by weight.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Dosage by weight (milligrams). Enter mass_dose; Your dog\'s weight is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Your dog's weight, Dosage by weight, Tablets and Chewable tablets blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'What do I need to enter to use the Benadryl dosage for dogs calculator?', 'a' => <<<'TXT'
-            The form asks for the dosage by weight, which is a single field. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Your dog's weight = 10 kg, Tablets = 0 × 25 mg, Chewable tablets = 0 × 12.5 mg and Liquid (12.5 mg / 5 mL) = 4 ml. The figures come from Dosage by weight as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I enter your dog\'s weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Your dog's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the Benadryl dosage for dogs calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Your dog\'s weight is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Dosage by weight blank and the page solves for it, reporting Your dog\'s weight instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Your dog\'s weight at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/bird-age', 'name' => 'Bird age'],
-            ['path' => '/biology/bulb-spacing', 'name' => 'Bulb spacing'],
-            ['path' => '/biology/cat-age', 'name' => 'Cat age'],
+            ['path' => '/biology/amino-acid-composition', 'name' => 'Amino Acid Composition Calculator'],
+            ['path' => '/biology/animal-mortality-rate', 'name' => 'Animal mortality rate'],
+            ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature Calculator'],
         ],
+        'authors' => [],
     ],
 ];

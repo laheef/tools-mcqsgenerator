@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Linkage Disequilibrium Calculator',
-    'meta' => ['title' => 'Linkage Disequilibrium Calculator — Formula & Results', 'description' => 'Linkage disequilibrium measures whether two alleles are inherited together more often than chance. It returns expected AB if independent, D (coefficient of…', 'h1' => 'Linkage Disequilibrium Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Linkage Disequilibrium Calculator — Formula & Results', 'description' => 'Linkage Disequilibrium works out D (coefficient of disequilibrium) and D′ (normalised) from Frequency of allele A, Frequency of allele B and Frequency of…', 'h1' => 'Linkage Disequilibrium Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -86,46 +86,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Linkage disequilibrium measures whether two alleles are inherited together more often than chance. It returns expected AB if independent, D (coefficient of disequilibrium), D′ (normalised) and r², and the panel shows all of them at once.
-        
-        From the frequency of the four haplotypes you get D, the normalised D′ and r² — the number that decides whether a genetic marker can stand in for the causal variant next to it.
+        Linkage Disequilibrium works out D (coefficient of disequilibrium) and D′ (normalised) from Frequency of allele A, Frequency of allele B and Frequency of haplotype AB. Nothing is looked up on this page: D (coefficient of disequilibrium) is computed from Frequency of allele A and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Linkage Disequilibrium', 'html' => <<<'TXT'
-            <p>D = f(AB) − p_A·p_B. D′ = D ÷ D_max. r² = D² ÷ [p_A(1−p_A)·p_B(1−p_B)]</p>
-            <figure class="calc-figure"><img src="/uploads/biology/linkage-disequilibrium.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Linkage Disequilibrium Calculator — r² decays with distance between loci" title="Linkage Disequilibrium Calculator"><figcaption>r² decays with distance between loci</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>D</code></td><td>deviation of the observed haplotype frequency from independence</td><td>—</td></tr><tr><td><code>D′</code></td><td>D scaled to its maximum, −1 to 1</td><td>—</td></tr><tr><td><code>r²</code></td><td>the squared correlation between the two loci</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Linkage Disequilibrium calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Linkage Disequilibrium: it takes 3 numbers and reports D (coefficient of disequilibrium), D′ (normalised) and r².</p><p>Written with the labels from the form, Expected AB if independent = Frequency of allele A × Frequency of allele B.</p><p>What comes back is D (coefficient of disequilibrium), D′ (normalised), r² and Expected AB if independent — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Linkage Disequilibrium?', 'html' => <<<'TXT'
-            <ol><li>Enter the frequency of each allele and the observed frequency of the AB haplotype.</li><li>D, D′ and r² are calculated together with the independent expectation.</li><li>Use r² to judge whether one locus is a usable proxy for the other.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Frequency of allele A</strong> — a plain number, no unit. At the first locus</li><li><strong>Frequency of allele B</strong> — a plain number, no unit. At the second locus</li><li><strong>Frequency of haplotype AB</strong> — a plain number, no unit. Observed in the sample</li></ul><p>The answers come back as D (coefficient of disequilibrium), D′ (normalised), r², Expected AB if independent. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: frequency of allele a of <strong>0.4</strong>, frequency of allele b of <strong>0.3</strong>, frequency of haplotype ab of <strong>0.25</strong>.</p>
-            <p>Substituting them into the formula gives expected ab if independent of <strong>0.12</strong>, d (coefficient of disequilibrium) of <strong>0.13</strong>, d′ (normalised) of <strong>0.7222</strong>, r² of <strong>0.3353</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Frequency of allele A = 0.4, Frequency of allele B = 0.3 and Frequency of haplotype AB = 0.25 gives &lt;strong&gt;Expected AB if independent&lt;/strong&gt; = 0.12, &lt;strong&gt;D (coefficient of disequilibrium)&lt;/strong&gt; = 0.13, &lt;strong&gt;D′ (normalised)&lt;/strong&gt; = 0.7222 and &lt;strong&gt;r²&lt;/strong&gt; = 0.3353.</p><ul><li><strong>Expected AB if independent</strong> = 0.12</li><li><strong>D (coefficient of disequilibrium)</strong> = 0.13</li><li><strong>D′ (normalised)</strong> = 0.7222</li><li><strong>r²</strong> = 0.3353</li></ul><p>That is <strong>Expected AB if independent</strong> = <code>Frequency of allele A × Frequency of allele B</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>r² above 0.8</td><td><strong>Strong LD</strong></td><td>one locus predicts the other; a tag SNP will do</td></tr><tr><td>r² 0.3 – 0.8</td><td><strong>Moderate</strong></td><td>some information is shared</td></tr><tr><td>r² below 0.3</td><td><strong>Weak</strong></td><td>the loci behave almost independently</td></tr></tbody></table>
-            <ul><li><p>D depends on allele frequencies, so it cannot be compared between studies. D′ and r² are normalised and can.</p></li><li><p>Recombination erodes LD each generation by a factor of (1 − c), so tightly linked loci keep it far longer — that is the basis of association mapping.</p></li><li><p>r² is the statistic for marker selection: an r² of 0.8 means the tag SNP explains 80% of the variance at the causal site.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Expected AB if independent&lt;/strong&gt; = 0.12, &lt;strong&gt;D (coefficient of disequilibrium)&lt;/strong&gt; = 0.13, &lt;strong&gt;D′ (normalised)&lt;/strong&gt; = 0.7222 and &lt;strong&gt;r²&lt;/strong&gt; = 0.3353. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as D (coefficient of disequilibrium) is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Entering the haplotype count instead of its frequency.</li><li>Reading D′ as a correlation — it can be 1 with almost no correlation when one allele is rare.</li><li>Ignoring population structure, which creates LD between unlinked loci.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Expected AB if independent</strong> = <code>Frequency of allele A × Frequency of allele B</code></li><li><strong>D (coefficient of disequilibrium)</strong> = <code>Frequency of haplotype AB − Frequency of allele A × Frequency of allele B</code></li><li><strong>r²</strong> = <code>(Frequency of haplotype AB − Frequency of allele A × Frequency of allele B) ^ 2 ÷ (Frequency of allele A × (1 − Frequency of allele A) × Frequency of allele B × (1 − Frequency of allele B))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Expected AB if independent, D (coefficient of disequilibrium) and D′ (normalised) can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Frequency of allele A, from 0.4 to 0.8 — and the answers go from &lt;strong&gt;Expected AB if independent&lt;/strong&gt; 0.12, &lt;strong&gt;D (coefficient of disequilibrium)&lt;/strong&gt; 0.13, &lt;strong&gt;D′ (normalised)&lt;/strong&gt; 0.7222 and &lt;strong&gt;r²&lt;/strong&gt; 0.3353 to &lt;strong&gt;Expected AB if independent&lt;/strong&gt; 0.24, &lt;strong&gt;D (coefficient of disequilibrium)&lt;/strong&gt; 0.01, &lt;strong&gt;D′ (normalised)&lt;/strong&gt; 0.1667 and &lt;strong&gt;r²&lt;/strong&gt; 0.003.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> D (coefficient of disequilibrium), D′ (normalised) and r² are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Frequency of allele A and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Frequency of allele A, Frequency of allele B and Frequency of haplotype AB measured, D (coefficient of disequilibrium) and D′ (normalised) wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/plants-per-hectare">Plants Per Hectare Calculator</a>, <a href="/biology/plasmid-copy-number">Plasmid Copy Number Calculator</a> and <a href="/biology/plasmid-molar-ratio">Plasmid Molar Ratio Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a good r² for a tag SNP?', 'a' => '0.8 or above is the usual threshold for a marker to stand in for the causal variant.'],
-            ['q' => 'Can D be negative?', 'a' => 'Yes — that means the two alleles are found together less often than chance predicts.'],
-            ['q' => 'Why is D′ high while r² is low?', 'a' => 'When one allele is rare, D′ saturates while r², which accounts for allele frequency, stays low.'],
-            ['q' => 'What does the Linkage Disequilibrium actually calculate?', 'a' => <<<'TXT'
-            It returns expected AB if independent, D (coefficient of disequilibrium), D′ (normalised) and r². Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Linkage Disequilibrium calculator work out?', 'a' => <<<'TXT'
+            D (coefficient of disequilibrium), D′ (normalised), r² and Expected AB if independent, from Frequency of allele A and Frequency of allele B. The relationship is Expected AB if independent = Frequency of allele A × Frequency of allele B.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Frequency of allele A, Frequency of allele B, Frequency of haplotype AB. With p_a, p_b and f_ab in place, D (coefficient of disequilibrium) can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Expected AB if independent, D (coefficient of disequilibrium), D′ (normalised) and r² can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Expected AB if independent = 0.12, D (coefficient of disequilibrium) = 0.13, D′ (normalised) = 0.7222 and r² = 0.3353. That comes from the page's own defaults, entered in Frequency of allele A; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of D (coefficient of disequilibrium) is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Frequency of allele A left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. D (coefficient of disequilibrium) keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/plants-per-hectare', 'name' => 'Plants Per Hectare Calculator'],
+            ['path' => '/biology/plasmid-copy-number', 'name' => 'Plasmid Copy Number Calculator'],
+            ['path' => '/biology/plasmid-molar-ratio', 'name' => 'Plasmid Molar Ratio Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Osmolarity / Osmotic Pressure Calculator',
-    'meta' => ['title' => 'Osmolarity / Osmotic Pressure Calculator — Biology', 'description' => 'Osmolarity counts the particles a solute produces in solution, which is why 150 mM NaCl is 300 mOsm. It returns osmolarity, osmotic pressure and osmotic…', 'h1' => 'Osmolarity / Osmotic Pressure Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Osmolarity / Osmotic Pressure Calculator — Biology', 'description' => 'Enter Molar concentration, Dissociation factor (i) and Temperature into Osmolarity / Osmotic Pressure and the answer comes back as Osmolarity and Osmotic…', 'h1' => 'Osmolarity / Osmotic Pressure Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -82,45 +82,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Osmolarity counts the particles a solute produces in solution, which is why 150 mM NaCl is 300 mOsm. It returns osmolarity, osmotic pressure and osmotic pressure, and the panel shows all of them at once.
-        
-        This calculator converts concentration, osmolality and osmotic pressure, and it handles the dissociation factor that makes salt and sugars behave differently.
+        Enter Molar concentration, Dissociation factor (i) and Temperature into Osmolarity / Osmotic Pressure and the answer comes back as Osmolarity and Osmotic pressure. Nothing is looked up on this page: Osmolarity is computed from Molar concentration and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Osmolarity is opened in mOsm/L; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Osmolarity / Osmotic Pressure', 'html' => <<<'TXT'
-            <p>Osmolarity = M × i; π = iMRT</p>
-            <figure class="calc-figure"><img src="/uploads/biology/osmolarity-osmotic-pressure.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Osmolarity / Osmotic Pressure Calculator — Concentration × particles, then the gas law, gives osmotic pressure." title="Osmolarity / Osmotic Pressure Calculator"><figcaption>Concentration × particles, then the gas law, gives osmotic pressure.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>M</code></td><td>molar concentration</td><td>mol/L</td></tr><tr><td><code>i</code></td><td>van 't Hoff factor, particles per formula unit</td><td>—</td></tr><tr><td><code>R</code></td><td>gas constant</td><td>8.314 J/mol·K</td></tr><tr><td><code>π</code></td><td>osmotic pressure</td><td>kPa</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> van 't Hoff relation; physiological ranges from standard clinical chemistry references.</p>
+            ['title' => 'How the Osmolarity / Osmotic Pressure calculator works', 'html' => <<<'TXT'
+            <p>The Osmolarity / Osmotic Pressure calculator applies one relationship to 3 numbers and reports Osmolarity, Osmotic pressure and Osmotic pressure.</p><p>Written with the labels from the form, Osmolarity = Molar concentration × Dissociation factor (i).</p><p>The answers are Osmolarity, Osmotic pressure and Osmotic pressure; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Osmolarity / Osmotic Pressure?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Molar concentration</strong> — in mM. Total solute molarity</li><li><strong>Dissociation factor (i)</strong> — a plain number, no unit. 2 for NaCl, 1 for glucose, 1.8 for a weak electrolyte</li><li><strong>Temperature</strong> — in °C</li></ul><p>The result boxes are Osmolarity in mOsm/L, Osmotic pressure in kPa, Osmotic pressure in atm; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: molar concentration of <strong>150</strong> mM, dissociation factor (i) of <strong>2</strong>, temperature of <strong>37</strong>°C.</p>
-            <p>Substituting them into the formula gives osmolarity of <strong>300</strong> mOsm/L, osmotic pressure of <strong>773.58</strong> kPa, osmotic pressure of <strong>7.63</strong> atm.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Molar concentration = 150 mM, Dissociation factor (i) = 2 and Temperature = 37 °C; the answers are &lt;strong&gt;Osmolarity&lt;/strong&gt; = 300 mOsm/L, &lt;strong&gt;Osmotic pressure&lt;/strong&gt; = 774 kPa and &lt;strong&gt;Osmotic pressure&lt;/strong&gt; = 7.63 atm.</p><ul><li><strong>Osmolarity</strong> = 300 mOsm/L</li><li><strong>Osmotic pressure</strong> = 774 kPa</li><li><strong>Osmotic pressure</strong> = 7.63 atm</li></ul><p>That is <strong>Osmolarity</strong> = <code>Molar concentration × Dissociation factor (i)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>275 – 295 mOsm/L</td><td><strong>Isotonic</strong></td><td>plasma-like; safe for cells</td></tr><tr><td>below 275</td><td><strong>Hypotonic</strong></td><td>cells swell and can lyse</td></tr><tr><td>above 295</td><td><strong>Hypertonic</strong></td><td>cells shrink; used for cryopreservation</td></tr></tbody></table>
-            <ul><li><p>Osmolarity is per litre of solution; osmolality is per kilogram of water. In dilute solutions they are the same; in plasma they differ by about 1%.</p></li><li><p>Osmotic pressure is a colligative property: it depends on particle count, not identity. That is why 150 mM NaCl and 300 mM glucose are both about 300 mOsm.</p></li><li><p>Cell culture media are formulated to 260–320 mOsm/L, and adding a drug stock can push a medium out of range if the stock is concentrated in salt.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Osmolarity&lt;/strong&gt; = 300, &lt;strong&gt;Osmotic pressure&lt;/strong&gt; = 774 and &lt;strong&gt;Osmotic pressure&lt;/strong&gt; = 7.63. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Osmolarity is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Forgetting the dissociation factor for salts.</li><li>Entering concentration in mmol/L and reading the result as molar.</li><li>Using 8.314 with pressure in atm.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Osmolarity</strong> = <code>Molar concentration × Dissociation factor (i)</code></li><li><strong>Osmotic pressure</strong> = <code>Molar concentration × Dissociation factor (i) × 8.314 × (Temperature + 273.15) ÷ 1000</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Osmolarity, Osmotic pressure and Osmotic pressure can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Molar concentration, from 150 to 300 — and the answers go from &lt;strong&gt;Osmolarity&lt;/strong&gt; 300 mOsm/L, &lt;strong&gt;Osmotic pressure&lt;/strong&gt; 774 kPa and &lt;strong&gt;Osmotic pressure&lt;/strong&gt; 7.63 atm to &lt;strong&gt;Osmolarity&lt;/strong&gt; 600 mOsm/L, &lt;strong&gt;Osmotic pressure&lt;/strong&gt; 1547 kPa and &lt;strong&gt;Osmotic pressure&lt;/strong&gt; 15.27 atm.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Osmolarity, Osmotic pressure and Osmotic pressure are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Molar concentration is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Molar concentration, Dissociation factor (i) and Temperature and the number you are missing is Osmolarity and Osmotic pressure.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/dog-pregnancy">Dog pregnancy Calculator</a>, <a href="/biology/dog-quality-of-life">Dog quality of life</a> and <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is the osmolarity of normal saline?', 'a' => '154 mM NaCl × 2 = 308 mOsm/L, close to plasma at about 290.'],
-            ['q' => 'Why is osmolality used in clinical work?', 'a' => 'Because it is measured per kilogram of water, which does not change with temperature or with the volume the solute displaces.'],
-            ['q' => 'What does the Osmolarity / Osmotic Pressure actually calculate?', 'a' => 'It returns osmolarity, osmotic pressure and osmotic pressure. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Osmolarity / Osmotic Pressure calculator work out?', 'a' => <<<'TXT'
+            Osmolarity, Osmotic pressure and Osmotic pressure, from Molar concentration and Dissociation factor (i). The relationship is Osmolarity = Molar concentration × Dissociation factor (i).
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Molar concentration (mM), Dissociation factor (i), Temperature (°C). Fill conc, i and temp and leave Osmolarity empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Osmolarity, Osmotic pressure and Osmotic pressure can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Osmolarity = 300 mOsm/L, Osmotic pressure = 774 kPa and Osmotic pressure = 7.63 atm. The figures come from Molar concentration as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Osmolarity is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Molar concentration left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Osmolarity at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-pregnancy', 'name' => 'Dog pregnancy Calculator'],
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

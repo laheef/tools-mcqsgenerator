@@ -11,7 +11,7 @@
 
 return [
     'name' => 'CpG Island Finder',
-    'meta' => ['title' => 'CpG Island Finder Calculator — Formula & Results', 'description' => 'A CpG island finder scans a sequence for windows that are GC-rich and CpG-dense against expectation. It returns gc content of the sequence, cpg dinucleotides…', 'h1' => 'CpG Island Finder', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'CpG Island Finder Calculator — Formula & Results', 'description' => 'Enter Sequence, Window and Minimum GC in the window into CpG Island Finder and the answer comes back as GC content of the sequence and CpG dinucleotides…', 'h1' => 'CpG Island Finder', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -281,45 +281,41 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A CpG island finder scans a sequence for windows that are GC-rich and CpG-dense against expectation. It returns gc content of the sequence, cpg dinucleotides observed, observed / expected cpg, cpg islands found and longest island, and the panel shows all of them at once.
-        
-        By the classic definition an island is 200 bp or more with GC ≥ 50% and observed over expected CpG ≥ 0.6.
+        Enter Sequence, Window and Minimum GC in the window into CpG Island Finder and the answer comes back as GC content of the sequence and CpG dinucleotides observed. Nothing is looked up on this page: GC content of the sequence is computed from Sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error. GC content of the sequence is opened in %; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the CpG Island Finder', 'html' => <<<'TXT'
-            <p>Expected CpG = (C count × G count) ÷ N. Observed/expected = CpG observed ÷ expected. An island needs GC ≥ 50%, O/E ≥ 0.6 across a window of 200 bp</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cpg-island-finder.svg" width="720" height="300" loading="lazy" alt="Animated diagram: CpG Island Finder — CpG observed / expected" title="CpG Island Finder"><figcaption>CpG observed / expected</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>CpG</code></td><td>a cytosine followed by a guanine on the same strand</td><td>—</td></tr><tr><td><code>O/E</code></td><td>observed divided by expected CpG count</td><td>—</td></tr><tr><td><code>N</code></td><td>number of bases examined</td><td>bp</td></tr></tbody></table>
+            ['title' => 'How the CpG Island Finder calculator works', 'html' => <<<'TXT'
+            <p>CpG Island Finder answers one question from 4 numbers, and the answer is GC content of the sequence, CpG dinucleotides observed and Observed / expected CpG.</p><p>The answers are GC content of the sequence, CpG dinucleotides observed, Observed / expected CpG and CpG islands found; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the CpG Island Finder?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste DNA; 200 bp or more gives a meaningful answer</li><li><strong>Window</strong> — in bp. Gardiner-Garden uses 200 bp</li><li><strong>Minimum GC in the window</strong> — in %</li><li><strong>Minimum observed/expected CpG</strong> — a plain number, no unit. 0.6 is the classical cut-off</li></ul><p>The answers come back as GC content of the sequence in %, CpG dinucleotides observed, Observed / expected CpG, CpG islands found, Longest island in bp. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: window of <strong>200</strong> bp, minimum gc in the window of <strong>50</strong>%, minimum observed/expected cpg of <strong>0.6</strong>.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as GC content of the sequence is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>O/E &gt; 1.0</td><td><strong>CpG-rich</strong></td><td>unusual outside promoters and repeats</td></tr><tr><td>O/E 0.6 – 1.0</td><td><strong>Candidate island</strong></td><td>island criteria met if GC is also ≥ 50%</td></tr><tr><td>O/E &lt; 0.6</td><td><strong>Depleted</strong></td><td>the normal state of vertebrate DNA, where CpG is methylated and mutates to TpG</td></tr></tbody></table>
-            <ul><li><p>About 70–80% of human gene promoters sit in a CpG island, which is why a predicted island is used as a first pass at finding promoters in an unknown sequence.</p></li><li><p>Vertebrate genomes are CpG-depleted overall (O/E near 0.25) because methylated cytosine deaminates to thymine. Islands stay unmethylated and therefore keep their CpGs.</p></li><li><p>Methylation of an island silences the gene beneath it — the mechanism behind X inactivation and many tumour suppressors.</p></li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> GC content of the sequence, CpG dinucleotides observed and Observed / expected CpG are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Sequence to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Running the finder on a sequence shorter than the window: every window then fails and the answer looks like 'no islands' rather than 'sequence too short'.</li><li>Treating a predicted island as a proven promoter — it is a hypothesis that needs a transcription start site or a ChIP signal.</li><li>Forgetting that GC-rich repeats also score as islands.</li></ul>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Sequence, Window and Minimum GC in the window and the number you are missing is GC content of the sequence and CpG dinucleotides observed.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/enzyme-specific-activity-yield">Enzyme Kinetics: Specific Activity and Yield Calculator</a>, <a href="/biology/enzyme-unit-converter">Enzyme Unit Converter (U/mg, kcat) Calculator</a> and <a href="/biology/exponential-population-growth">Exponential Population Growth Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What defines a CpG island?', 'a' => 'Historically 200 bp or more with GC ≥ 50% and observed over expected CpG ≥ 0.6. Modern genome annotations use slightly relaxed thresholds.'],
-            ['q' => 'How many CpG islands does a human genome have?', 'a' => 'About 28 000, roughly one per gene, plus many in repeats.'],
-            ['q' => 'Why is CpG depleted in vertebrates?', 'a' => 'Cytosine in a CpG is methylated, and methylcytosine deaminates to thymine, so CG slowly mutates away to TG.'],
-            ['q' => 'What does the CpG Island Finder actually calculate?', 'a' => <<<'TXT'
-            It returns gc content of the sequence, cpg dinucleotides observed, observed / expected cpg, cpg islands found and longest island. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the CpG Island Finder calculator work out?', 'a' => 'GC content of the sequence, CpG dinucleotides observed, Observed / expected CpG and CpG islands found.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Sequence, Window (bp), Minimum GC in the window (%), Minimum observed/expected CpG. With sequence, window and gc_min in place, GC content of the sequence can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of GC content of the sequence is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is GC content of the sequence, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. GC content of the sequence keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/enzyme-specific-activity-yield', 'name' => 'Enzyme Kinetics: Specific Activity and Yield Calculator'],
+            ['path' => '/biology/enzyme-unit-converter', 'name' => 'Enzyme Unit Converter (U/mg, kcat) Calculator'],
+            ['path' => '/biology/exponential-population-growth', 'name' => 'Exponential Population Growth Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree value',
-    'meta' => ['title' => 'Tree value Calculator — Formula, Units & Example', 'description' => 'The Tree value calculator turns the circumference and the height into the answer. The Tree value calculator takes the values in the form, applies the…', 'h1' => 'Tree value Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Tree value Calculator — Formula, Units & Example', 'description' => 'Enter Tree type, Circumference and Height into Tree value and the answer comes back as Tree value. It is a single relationship that reads Tree value out of…', 'h1' => 'Tree value Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'circumference' => [
@@ -190,64 +190,51 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'The Tree value calculator turns the circumference and the height into the answer.',
+        'intro' => <<<'TXT'
+        Enter Tree type, Circumference and Height into Tree value and the answer comes back as Tree value. It is a single relationship that reads Tree value out of Tree type, not a table of canned results keyed by them. Units for Tree value default to $ and can be changed on the answer itself.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Tree value calculator work?', 'html' => <<<'TXT'
-            <p>The Tree value calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the tree type); then you type in the circumference and the height.</p>
+            ['title' => 'How the Tree value calculator works', 'html' => <<<'TXT'
+            <p>Tree value answers one question from 3 numbers, and the answer is Tree value.</p><p>The relationship it solves reads Tree value = Circumference × Height × Tree type.</p><p>The answers are Tree value; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 24 options, such as beech, black Cherry and black Ebony. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Tree type</strong> — a plain number, no unit</li><li><strong>Circumference</strong> — in centimeters</li><li><strong>Height</strong> — in meters</li></ul><p>The answer comes back as Tree value in $. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Tree type</strong></td><td>One of 24 options, such as beech, black Cherry and black Ebony.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Circumference</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Tree type = 1.06, Circumference = 10 cm and Height = 100 m gives &lt;strong&gt;Tree value&lt;/strong&gt; = 1060 $.</p><ul><li><strong>Tree value</strong> = 1060 $</li></ul><p>The line behind those figures is <strong>Tree value</strong> = <code>Circumference × Height × Tree type</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Tree value&lt;/strong&gt; = 1060. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Circumference lists 31 options and opens on centimeters. </p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Length, opening in meters</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Tree value</strong> = <code>Circumference × Height × Tree type</code></li><li><strong>Tree type</strong> = <code>Tree value ÷ (Circumference × Height)</code></li><li><strong>Circumference</strong> = <code>Tree value ÷ (Height × Tree type)</code></li><li><strong>Height</strong> = <code>Tree value ÷ (Circumference × Tree type)</code></li></ul><p>Any one of Tree value, Tree type and Circumference can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Tree value calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 2 figures keep coming back — the circumference and the height — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Tree type from 1.06 to 2.12, leaving every other box alone. The panel moves from &lt;strong&gt;Tree value&lt;/strong&gt; 1060 $ to &lt;strong&gt;Tree value&lt;/strong&gt; 2120 $.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. </li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Circumference and Height carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Tree value is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Tree type is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Tree value calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/trihybrid-cross-punnett-square">Trihybrid cross Punnett square</a>, <a href="/biology/turtle-tank">Turtle tank</a> and <a href="/biology/vapor-pressure-deficit">Vapor pressure deficit</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Tree type, Circumference and Height measured, Tree value wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dna-pattern-finder">DNA Pattern Finder Calculator</a>, <a href="/biology/dna-percentage">DNA Percentage Calculator</a> and <a href="/biology/sequence-shuffler">DNA Sequence Shuffler Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What do I need to enter to use the Tree value calculator?', 'a' => <<<'TXT'
-            The form asks for the circumference and the height, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What does the Tree value calculator work out?', 'a' => 'Tree value, from Tree type, Circumference and Height. The relationship is Tree value = Circumference × Height × Tree type.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Tree type, Circumference (centimeters), Height (meters). With treeType, circumference and height in place, Tree value can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I enter circumference in a different unit?', 'a' => <<<'TXT'
-            Yes. Circumference opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Tree value calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Tree value, Tree type, Circumference and Height blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What answer do the default values give?', 'a' => 'Tree value = 1060 $. The figures come from Tree type as the page opens it; they are a starting point, not a fixed answer.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Tree value is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Tree type blank and the page solves for it, reporting Tree value instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Tree value at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/trihybrid-cross-punnett-square', 'name' => 'Trihybrid cross Punnett square'],
-            ['path' => '/biology/turtle-tank', 'name' => 'Turtle tank'],
-            ['path' => '/biology/vapor-pressure-deficit', 'name' => 'Vapor pressure deficit'],
+            ['path' => '/biology/dna-pattern-finder', 'name' => 'DNA Pattern Finder Calculator'],
+            ['path' => '/biology/dna-percentage', 'name' => 'DNA Percentage Calculator'],
+            ['path' => '/biology/sequence-shuffler', 'name' => 'DNA Sequence Shuffler Calculator'],
         ],
+        'authors' => [],
     ],
 ];

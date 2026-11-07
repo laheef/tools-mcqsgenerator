@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Respiratory Quotient Calculator',
-    'meta' => ['title' => 'Respiratory Quotient Calculator — Formula & Results', 'description' => 'The respiratory quotient is carbon dioxide produced divided by oxygen consumed. It returns respiratory quotient, non-protein RQ, energy equivalent and fat…', 'h1' => 'Respiratory Quotient Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Respiratory Quotient Calculator — Formula & Results', 'description' => <<<'TXT'
+    Respiratory Quotient works out Respiratory quotient and Non-protein RQ from CO₂ produced and O₂ consumed. There is no hidden constant here: change Respiratory…
+    TXT, 'h1' => 'Respiratory Quotient Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -79,50 +81,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The respiratory quotient is carbon dioxide produced divided by oxygen consumed. It returns respiratory quotient, non-protein RQ, energy equivalent and fat share of fuel, and the panel shows all of them at once.
-        
-        It identifies which fuel a tissue is burning — 1.0 for carbohydrate, 0.7 for fat, 0.8 for protein — and it is the link between gas exchange and energy expenditure.
+        Respiratory Quotient works out Respiratory quotient and Non-protein RQ from CO₂ produced and O₂ consumed. There is no hidden constant here: change Respiratory quotient and CO₂ produced moves with it.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Respiratory Quotient', 'html' => <<<'TXT'
-            <p>RQ = VCO₂ ÷ VO₂</p>
-            <figure class="calc-figure"><img src="/uploads/biology/respiratory-quotient.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Respiratory Quotient Calculator — Where the ratio falls between fat and carbohydrate." title="Respiratory Quotient Calculator"><figcaption>Where the ratio falls between fat and carbohydrate.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>VCO₂</code></td><td>carbon dioxide produced</td><td>mL/min</td></tr><tr><td><code>VO₂</code></td><td>oxygen consumed</td><td>mL/min</td></tr><tr><td><code>RQ</code></td><td>respiratory quotient</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Respiratory Quotient calculator works', 'html' => <<<'TXT'
+            <p>The Respiratory Quotient calculator applies one relationship to 2 numbers and reports Respiratory quotient, Non-protein RQ and Energy equivalent.</p><p>In the form&#039;s own words, Respiratory quotient = CO₂ produced ÷ O₂ consumed.</p><p>The answers are Respiratory quotient, Non-protein RQ, Energy equivalent and Fat share of fuel; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Respiratory Quotient?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>CO₂ produced</strong> — in mL/min</li><li><strong>O₂ consumed</strong> — in mL/min</li></ul><p>The result boxes are Respiratory quotient, Non-protein RQ, Energy equivalent in kcal/L O₂, Fat share of fuel in %; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: co₂ produced of <strong>200</strong> mL/min, o₂ consumed of <strong>250</strong> mL/min.</p>
-            <p>Substituting them into the formula gives respiratory quotient of <strong>0.8</strong>, non-protein rq of <strong>0.8</strong>, energy equivalent of <strong>4.04</strong> kcal/L O₂, fat share of fuel of <strong>66.67</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, CO₂ produced = 200 mL/min and O₂ consumed = 250 mL/min gives &lt;strong&gt;Respiratory quotient&lt;/strong&gt; = 0.8, &lt;strong&gt;Non-protein RQ&lt;/strong&gt; = 0.8, &lt;strong&gt;Energy equivalent&lt;/strong&gt; = 4.04 kcal/L O₂ and &lt;strong&gt;Fat share of fuel&lt;/strong&gt; = 66.67 %.</p><ul><li><strong>Respiratory quotient</strong> = 0.8</li><li><strong>Non-protein RQ</strong> = 0.8</li><li><strong>Energy equivalent</strong> = 4.04 kcal/L O₂</li><li><strong>Fat share of fuel</strong> = 66.67 %</li></ul><p>The line behind those figures is <strong>Respiratory quotient</strong> = <code>CO₂ produced ÷ O₂ consumed</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>0.7</td><td><strong>Fat</strong></td><td>almost pure lipid oxidation</td></tr><tr><td>0.8</td><td><strong>Protein / mixed</strong></td><td>typical of a mixed diet at rest</td></tr><tr><td>1.0</td><td><strong>Carbohydrate</strong></td><td>pure glucose oxidation</td></tr><tr><td>above 1.0</td><td><strong>Not oxidation</strong></td><td>lipogenesis or hyperventilation — check the measurement</td></tr></tbody></table>
-            <ul><li><p>An RQ above 1.0 cannot come from burning a fuel: it appears during lipogenesis, when CO₂ is produced without corresponding O₂ use, or when the subject hyperventilates.</p></li><li><p>The energy equivalent rises with RQ, from 4.69 kcal per litre of O₂ for fat to 5.05 for carbohydrate, which is why indirect calorimetry needs the RQ.</p></li><li><p>For whole-body measurements the value is usually called the respiratory exchange ratio (RER) and includes protein oxidation.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Respiratory quotient&lt;/strong&gt; = 0.8, &lt;strong&gt;Non-protein RQ&lt;/strong&gt; = 0.8, &lt;strong&gt;Energy equivalent&lt;/strong&gt; = 4.04 and &lt;strong&gt;Fat share of fuel&lt;/strong&gt; = 66.67. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Respiratory quotient is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using RQ from a spirometry session where the subject was breathing hard.</li><li>Assuming 0.82 is always right for a resting subject.</li><li>Mixing volumes in litres and millilitres between the two boxes.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Respiratory quotient</strong> = <code>CO₂ produced ÷ O₂ consumed</code></li><li><strong>Non-protein RQ</strong> = <code>CO₂ produced ÷ O₂ consumed</code></li><li><strong>Energy equivalent</strong> = <code>5.047 × CO₂ produced ÷ O₂ consumed</code></li><li><strong>Fat share of fuel</strong> = <code>(1 − (CO₂ produced ÷ O₂ consumed − 0.7) ÷ 0.3) × 100</code></li></ul><p>Any one of Respiratory quotient, Non-protein RQ and Energy equivalent can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/basal-metabolic-rate">Basal metabolic rate</a>. <a href="/biology/tidal-volume-lung-capacity">Tidal volume</a>. <a href="/biology/q10-temperature-coefficient">Q10 coefficient</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double CO₂ produced from 200 to 400, leaving every other box alone. The panel moves from &lt;strong&gt;Respiratory quotient&lt;/strong&gt; 0.8, &lt;strong&gt;Non-protein RQ&lt;/strong&gt; 0.8, &lt;strong&gt;Energy equivalent&lt;/strong&gt; 4.04 kcal/L O₂ and &lt;strong&gt;Fat share of fuel&lt;/strong&gt; 66.67 % to &lt;strong&gt;Respiratory quotient&lt;/strong&gt; 1.6, &lt;strong&gt;Non-protein RQ&lt;/strong&gt; 1.6, &lt;strong&gt;Energy equivalent&lt;/strong&gt; 8.08 kcal/L O₂ and &lt;strong&gt;Fat share of fuel&lt;/strong&gt; -200 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Respiratory quotient, Non-protein RQ and Energy equivalent are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in CO₂ produced and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: CO₂ produced and O₂ consumed measured, Respiratory quotient and Non-protein RQ wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/transpiration-rate">Transpiration Rate Calculator</a>, <a href="/biology/tree-age">Tree age</a> and <a href="/biology/tree-diameter">Tree diameter Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a normal RQ?', 'a' => '0.7–1.0, with about 0.8 for a mixed diet at rest.'],
-            ['q' => 'Why is RQ higher on a high-carbohydrate diet?', 'a' => 'Because carbohydrate oxidation releases more CO₂ per O₂ consumed than fat does.'],
-            ['q' => 'What does the Respiratory Quotient actually calculate?', 'a' => <<<'TXT'
-            It returns respiratory quotient, non-protein RQ, energy equivalent and fat share of fuel. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Respiratory Quotient calculator work out?', 'a' => <<<'TXT'
+            Respiratory quotient, Non-protein RQ, Energy equivalent and Fat share of fuel, from CO₂ produced and O₂ consumed. The relationship is Respiratory quotient = CO₂ produced ÷ O₂ consumed.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'CO₂ produced (mL/min), O₂ consumed (mL/min). With co2 and o2 in place, Respiratory quotient can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Respiratory quotient, Non-protein RQ, Energy equivalent and Fat share of fuel blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Respiratory quotient = 0.8, Non-protein RQ = 0.8, Energy equivalent = 4.04 kcal/L O₂ and Fat share of fuel = 66.67 %. Those are the defaults written into the form — move CO₂ produced and every result box follows.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Respiratory quotient is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave CO₂ produced blank and the page solves for it, reporting Respiratory quotient instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Respiratory quotient keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/transpiration-rate', 'name' => 'Transpiration Rate Calculator'],
+            ['path' => '/biology/tree-age', 'name' => 'Tree age'],
+            ['path' => '/biology/tree-diameter', 'name' => 'Tree diameter Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

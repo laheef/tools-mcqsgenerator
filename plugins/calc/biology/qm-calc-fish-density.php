@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fish Density Calculator',
-    'meta' => ['title' => 'Fish Density Calculator — Formula & Results', 'description' => 'Fish density is the number of fish per litre or per cubic metre of water, and it is the number that decides whether a tank, pond or raceway is stocked sensibly.', 'h1' => 'Fish Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fish Density Calculator — Formula & Results', 'description' => 'Fish Density works out Fish per litre and Litres per fish from Number of fish, Water volume and Average fish weight. It is a single relationship that reads…', 'h1' => 'Fish Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -88,52 +88,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Fish density is the number of fish per litre or per cubic metre of water, and it is the number that decides whether a tank, pond or raceway is stocked sensibly. It returns fish per litre, litres per fish, biomass density and number of fish, and the panel shows all of them at once.
-        
-        Enter fish and volume and the calculator returns fish per litre, litres per fish and the biomass density in grams per litre.
+        Fish Density works out Fish per litre and Litres per fish from Number of fish, Water volume and Average fish weight. It is a single relationship that reads Fish per litre out of Number of fish, not a table of canned results keyed by them. Units for Fish per litre default to fish/L and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Fish Density', 'html' => <<<'TXT'
-            <p>Density (fish/L) = number of fish ÷ water volume in litres</p>
-            <figure class="calc-figure"><img src="/uploads/biology/fish-density.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Fish Density Calculator — Fish over litres gives density; average weight adds the biomass load." title="Fish Density Calculator"><figcaption>Fish over litres gives density; average weight adds the biomass load.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>fish</code></td><td>number of fish</td><td>fish</td></tr><tr><td><code>volume</code></td><td>net water volume</td><td>L</td></tr><tr><td><code>weight</code></td><td>average weight per fish</td><td>g</td></tr><tr><td><code>biomass</code></td><td>grams of fish per litre</td><td>g/L</td></tr></tbody></table>
+            ['title' => 'How the Fish Density calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Fish Density: it takes 3 numbers and reports Fish per litre, Litres per fish and Biomass density.</p><p>The relationship it solves reads Fish per litre = Number of fish ÷ Water volume.</p><p>What comes back is Fish per litre, Litres per fish and Biomass density — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Fish Density?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Number of fish</strong> — a plain number, no unit</li><li><strong>Water volume</strong> — in L. Net water volume, not the tank&#039;s outside size</li><li><strong>Average fish weight</strong> — in g. Optional: adds a biomass figure</li></ul><p>What you get back is Fish per litre in fish/L, Litres per fish in L/fish, Biomass density in g/L, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: average fish weight of <strong>15</strong> g.</p>
-            <p>Substituting them into the formula gives fish per litre of <strong>0.1</strong> fish/L, litres per fish of <strong>10</strong> L/fish, biomass density of <strong>1.5</strong> g/L, number of fish of <strong>20</strong>, water volume of <strong>200</strong> L.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Fish per litre is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>up to 0.02 fish/L</td><td><strong>Light</strong></td><td>50 L or more per fish</td></tr><tr><td>0.02 – 0.05 fish/L</td><td><strong>Moderate</strong></td><td>20–50 L per fish</td></tr><tr><td>0.05 – 0.1 fish/L</td><td><strong>Heavy</strong></td><td>10–20 L per fish, needs strong filtration</td></tr><tr><td>above 0.1 fish/L</td><td><strong>Very heavy</strong></td><td>under 10 L per fish; only with serious filtration</td></tr></tbody></table>
-            <ul><li><p>Fish per litre is the inverse of litres per fish, so 0.05 fish/L is the same statement as 20 L per fish. Both are shown because different guidelines use different ones.</p></li><li><p>Biomass density is the number that actually constrains a system: 20 g/L of small fish is a different load from 20 g/L of large ones, but it is closer to the truth than counting fish.</p></li><li><p>Volume should be net water volume. Gravel, decorations and a sump that is not running do not count.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Fish per litre</strong> = <code>Number of fish ÷ Water volume</code></li><li><strong>Litres per fish</strong> = <code>Water volume ÷ Number of fish</code></li><li><strong>Biomass density</strong> = <code>Number of fish × Average fish weight ÷ Water volume</code></li><li><strong>Number of fish</strong> = <code>Fish per litre × Water volume</code></li><li><strong>Water volume</strong> = <code>Number of fish ÷ Fish per litre</code></li></ul><p>Any one of Fish per litre, Litres per fish and Biomass density can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using the aquarium's advertised capacity rather than the water actually in it.</li><li>Judging by fish count alone when the fish are still growing.</li><li>Forgetting that density limits depend on the species: a betta and a koi are not the same calculation.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Fish per litre, Litres per fish and Biomass density are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Number of fish and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/fish-per-liter">Fish per litre</a>. <a href="/biology/fish-condition-factor">Fish condition factor</a>. <a href="/biology/farm-pond-fish-stocking">Farm pond fish stocking</a>. <a href="/other/aquarium-volume">Aquarium water volume</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Number of fish, Water volume and Average fish weight and the number you are missing is Fish per litre and Litres per fish.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/hamster-age">Hamster age Calculator</a>, <a href="/biology/hardy-weinberg-equilibrium">Hardy-Weinberg equilibrium Calculator</a> and <a href="/biology/hardy-weinberg-dominant-allele">Hardy–Weinberg from the Dominant Allele Frequency Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many fish per litre is safe?', 'a' => <<<'TXT'
-            As a starting point, 1 cm of adult fish length per litre is the old freshwater rule, which corresponds to roughly 20–30 L per small fish. Large or messy fish need far more.
+            ['q' => 'What does the Fish Density calculator work out?', 'a' => 'Fish per litre, Litres per fish and Biomass density, from Number of fish and Water volume. The relationship is Fish per litre = Number of fish ÷ Water volume.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Number of fish, Water volume (L), Average fish weight (g). With fish, volume and weight in place, Fish per litre can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Fish per litre, Litres per fish, Biomass density and Number of fish blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Does this work for ponds?', 'a' => 'Yes — enter the pond volume in litres (1 m³ = 1000 L). Pond stocking is usually quoted in fish per m³, which is the same ratio at a different scale.'],
-            ['q' => 'What does the Fish Density actually calculate?', 'a' => <<<'TXT'
-            It returns fish per litre, litres per fish, biomass density and number of fish. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Fish per litre is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Number of fish left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Fish per litre at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/hamster-age', 'name' => 'Hamster age Calculator'],
+            ['path' => '/biology/hardy-weinberg-equilibrium', 'name' => 'Hardy-Weinberg equilibrium Calculator'],
+            ['path' => '/biology/hardy-weinberg-dominant-allele', 'name' => 'Hardy–Weinberg from the Dominant Allele Frequency Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

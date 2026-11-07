@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Q10 Temperature Coefficient Calculator',
-    'meta' => ['title' => 'Q10 Temperature Coefficient Calculator — Biology', 'description' => 'Q10 is how many times faster a biological rate runs for every 10 °C of warming. It returns Q10, rate at t1 + 10 °C and apparent activation energy, and the…', 'h1' => 'Q10 Temperature Coefficient Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Q10 Temperature Coefficient Calculator — Biology', 'description' => 'Q10 is how many times faster a biological rate runs for every 10 °C of warming. Free q10 temperature coefficient calculator: enter your values and get Q10, ra', 'h1' => 'Q10 Temperature Coefficient Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -88,44 +88,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Q10 is how many times faster a biological rate runs for every 10 °C of warming. It returns Q10, rate at t1 + 10 °C and apparent activation energy, and the panel shows all of them at once.
-        
-        A Q10 of 2 — the rule of thumb for most enzyme and respiration rates — means doubling per 10 °C, and it is the standard way to compare thermal sensitivity across processes.
+        Q10 Temperature Coefficient takes Rate at temperature 1, Temperature 1 and Rate at temperature 2 and returns Q10 and Rate at t1 + 10 °C. The arithmetic is the whole method: Q10 is worked out from Rate at temperature 1 by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Q10 Temperature Coefficient', 'html' => <<<'TXT'
-            <p>Q10 = (R₂ ÷ R₁)^[10 ÷ (T₂ − T₁)]</p>
-            <figure class="calc-figure"><img src="/uploads/biology/q10-temperature-coefficient.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Q10 Temperature Coefficient Calculator — Rate against temperature, and the fold change per 10 °C." title="Q10 Temperature Coefficient Calculator"><figcaption>Rate against temperature, and the fold change per 10 °C.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>R₁, R₂</code></td><td>rates at two temperatures</td><td>any unit</td></tr><tr><td><code>T₁, T₂</code></td><td>the two temperatures</td><td>°C</td></tr><tr><td><code>Q10</code></td><td>fold change per 10 °C</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Q10 Temperature Coefficient calculator works', 'html' => <<<'TXT'
+            <p>The Q10 Temperature Coefficient calculator applies one relationship to 4 numbers and reports Q10, Rate at t1 + 10 °C and Apparent activation energy.</p><p>The relationship it solves reads Q10 = (Rate at temperature 2 ÷ Rate at temperature 1)^(10 ÷ (Temperature 2 − Temperature 1)).</p><p>What comes back is Q10, Rate at t1 + 10 °C and Apparent activation energy — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Q10 Temperature Coefficient?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Rate at temperature 1</strong> — in units</li><li><strong>Temperature 1</strong> — in °C</li><li><strong>Rate at temperature 2</strong> — in units</li><li><strong>Temperature 2</strong> — in °C</li></ul><p>The result boxes are Q10, Rate at t1 + 10 °C in units, Apparent activation energy in kJ/mol; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: rate at temperature 1 of <strong>10</strong> units, temperature 1 of <strong>20</strong>°C, rate at temperature 2 of <strong>22</strong> units, temperature 2 of <strong>30</strong>°C.</p>
-            <p>Substituting them into the formula gives q10 of <strong>2.2</strong>, rate at t1 + 10 °c of <strong>22</strong> units, apparent activation energy of <strong>58.26</strong> kJ/mol.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Rate at temperature 1 = 10 units, Temperature 1 = 20 °C, Rate at temperature 2 = 22 units and Temperature 2 = 30 °C; the answers are &lt;strong&gt;Q10&lt;/strong&gt; = 2.2, &lt;strong&gt;Rate at t1 + 10 °C&lt;/strong&gt; = 22 units and &lt;strong&gt;Apparent activation energy&lt;/strong&gt; = 58.26 kJ/mol.</p><ul><li><strong>Q10</strong> = 2.2</li><li><strong>Rate at t1 + 10 °C</strong> = 22 units</li><li><strong>Apparent activation energy</strong> = 58.26 kJ/mol</li></ul><p>That is <strong>Q10</strong> = <code>(Rate at temperature 2 ÷ Rate at temperature 1)^(10 ÷ (Temperature 2 − Temperature 1))</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1.0 – 1.5</td><td><strong>Weakly temperature dependent</strong></td><td>physical processes, diffusion</td></tr><tr><td>1.5 – 2.5</td><td><strong>Typical biological range</strong></td><td>most enzyme reactions and respiration</td></tr><tr><td>above 3</td><td><strong>Strongly temperature dependent</strong></td><td>or a rate still below its optimum</td></tr></tbody></table>
-            <ul><li><p>Q10 is only meaningful over a range where the rate is monotonic: above an enzyme's optimum the rate falls with temperature and Q10 becomes less than one.</p></li><li><p>The apparent activation energy is the Arrhenius equivalent of the same measurement; 50–70 kJ/mol is typical of biological rates.</p></li><li><p>Ecosystem respiration commonly shows Q10 near 2, which is why warming of 2 °C is expected to raise soil respiration by about 15% — before acclimation.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Q10&lt;/strong&gt; = 2.2, &lt;strong&gt;Rate at t1 + 10 °C&lt;/strong&gt; = 22 and &lt;strong&gt;Apparent activation energy&lt;/strong&gt; = 58.26 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Q10 takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using a temperature difference that is not exactly 10 °C without the exponent.</li><li>Mixing °C and K in the formula — differences are fine, but the activation-energy calculation needs kelvin.</li><li>Fitting Q10 across a range that includes a thermal optimum.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Q10</strong> = <code>(Rate at temperature 2 ÷ Rate at temperature 1)^(10 ÷ (Temperature 2 − Temperature 1))</code></li><li><strong>Rate at t1 + 10 °C</strong> = <code>Rate at temperature 1 × (Rate at temperature 2 ÷ Rate at temperature 1)^(10 ÷ (Temperature 2 − Temperature 1))</code></li><li><strong>Apparent activation energy</strong> = <code>8.314 × (Temperature 1 + 273.15) × (Temperature 2 + 273.15) ÷ ((Temperature 2 + 273.15) − (Temperature 1 + 273.15)) × ln(Rate at temperature 2 ÷ Rate at temperature 1) ÷ 1000</code></li></ul><p>Any one of Q10, Rate at t1 + 10 °C and Apparent activation energy can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Rate at temperature 1, from 10 to 20 — and the answers go from &lt;strong&gt;Q10&lt;/strong&gt; 2.2, &lt;strong&gt;Rate at t1 + 10 °C&lt;/strong&gt; 22 units and &lt;strong&gt;Apparent activation energy&lt;/strong&gt; 58.26 kJ/mol to &lt;strong&gt;Q10&lt;/strong&gt; 1.1, &lt;strong&gt;Rate at t1 + 10 °C&lt;/strong&gt; 22 units and &lt;strong&gt;Apparent activation energy&lt;/strong&gt; 7.04 kJ/mol.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Q10, Rate at t1 + 10 °C and Apparent activation energy are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Rate at temperature 1 to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Rate at temperature 1, Temperature 1 and Rate at temperature 2 is what you already know and Q10 and Rate at t1 + 10 °C is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/qpcr-efficiency">qPCR efficiency Calculator</a>, <a href="/biology/quadrat-sampling-density">Quadrat Sampling Density Calculator</a> and <a href="/biology/rabbit-cage-size">Rabbit cage size</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does Q10 = 2 mean?', 'a' => 'The rate doubles for every 10 °C increase in temperature.'],
-            ['q' => 'Is Q10 constant?', 'a' => 'No — it varies with temperature and species, which is why ecologists now fit Arrhenius-type curves instead.'],
-            ['q' => 'What does the Q10 Temperature Coefficient actually calculate?', 'a' => 'It returns Q10, rate at t1 + 10 °C and apparent activation energy. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Q10 Temperature Coefficient calculator work out?', 'a' => <<<'TXT'
+            Q10, Rate at t1 + 10 °C and Apparent activation energy, from Rate at temperature 2, Rate at temperature 1, Temperature 2 and Temperature 1. The relationship is Q10 = (Rate at temperature 2 ÷ Rate at temperature 1)^(10 ÷ (Temperature 2 − Temperature 1)).
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Rate at temperature 1 (units), Temperature 1 (°C), Rate at temperature 2 (units), Temperature 2 (°C). Enter r1, t1 and r2; Q10 is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Q10, Rate at t1 + 10 °C and Apparent activation energy blank and the page solves for that one instead — nothing has to be switched first.
+            TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Q10 = 2.2, Rate at t1 + 10 °C = 22 units and Apparent activation energy = 58.26 kJ/mol. Those are the defaults written into the form — move Rate at temperature 1 and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Q10 is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Rate at temperature 1 blank and the page solves for it, reporting Q10 instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Q10 keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/qpcr-efficiency', 'name' => 'qPCR efficiency Calculator'],
+            ['path' => '/biology/quadrat-sampling-density', 'name' => 'Quadrat Sampling Density Calculator'],
+            ['path' => '/biology/rabbit-cage-size', 'name' => 'Rabbit cage size'],
+        ],
+        'authors' => [],
     ],
 ];

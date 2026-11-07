@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dihybrid Cross Calculator (9:3:3:1)',
-    'meta' => ['title' => 'Dihybrid Cross Calculator (9:3:3:1) — Biology', 'description' => 'A dihybrid cross follows two genes at once. It returns dominant / dominant, dominant / recessive, recessive / dominant and recessive / recessive, and the…', 'h1' => 'Dihybrid Cross Calculator (9:3:3:1)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Dihybrid Cross Calculator (9:3:3:1) — Biology', 'description' => 'Dihybrid Cross Calculator (9:3:3:1) turns F2 offspring into Dominant / dominant and Dominant / recessive. Dominant / dominant is opened in individuals; the…', 'h1' => 'Dihybrid Cross Calculator (9:3:3:1)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -105,44 +105,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A dihybrid cross follows two genes at once. It returns dominant / dominant, dominant / recessive, recessive / dominant and recessive / recessive, and the panel shows all of them at once.
-        
-        With independent assortment the F2 of a double heterozygote splits 9:3:3:1, and this calculator gives those counts, the phenotype and genotype tables, and the ratio you would expect from a sample of any size.
+        Dihybrid Cross Calculator (9:3:3:1) turns F2 offspring into Dominant / dominant and Dominant / recessive. Nothing is looked up on this page: Dominant / dominant is computed from F2 offspring and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Dominant / dominant is opened in individuals; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Dihybrid Cross (9:3:3:1)', 'html' => <<<'TXT'
-            <p>AaBb × AaBb → 9 A_B_: 3 A_bb: 3 aaB_: 1 aabb</p>
-            <figure class="calc-figure"><img src="/uploads/biology/dihybrid-cross.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Dihybrid Cross Calculator (9:3:3:1) — The 4 × 4 Punnett square behind the 9:3:3:1 ratio." title="Dihybrid Cross Calculator (9:3:3:1)"><figcaption>The 4 × 4 Punnett square behind the 9:3:3:1 ratio.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>n</code></td><td>number of F2 offspring scored</td><td>individuals</td></tr><tr><td><code>:16</code></td><td>sixteen equally likely gamete combinations</td><td>—</td></tr><tr><td><code>recombinant</code></td><td>the two mixed phenotypes, 6/16</td><td>share</td></tr></tbody></table>
+            ['title' => 'How the Dihybrid Cross Calculator (9:3:3:1) calculator works', 'html' => <<<'TXT'
+            <p>The Dihybrid Cross Calculator (9:3:3:1) calculator applies one relationship to 1 number and reports Dominant / dominant, Dominant / recessive and Recessive / dominant.</p><p>The relationship it solves reads Dominant / dominant = F2 offspring × 9 ÷ 16.</p><p>The answers are Dominant / dominant, Dominant / recessive, Recessive / dominant and Recessive / recessive; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Dihybrid Cross (9:3:3:1)?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>F2 offspring</strong> — in individuals</li></ul><p>The result boxes are Dominant / dominant in individuals, Dominant / recessive in individuals, Recessive / dominant in individuals, Recessive / recessive in individuals, Phenotype classes, Genotype classes, Recombinant phenotypes in %; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: f2 offspring of <strong>320</strong> individuals.</p>
-            <p>Substituting them into the formula gives dominant / dominant of <strong>180</strong> individuals, dominant / recessive of <strong>60</strong> individuals, recessive / dominant of <strong>60</strong> individuals, recessive / recessive of <strong>20</strong> individuals, phenotype classes of <strong>4</strong>, genotype classes of <strong>9</strong>, recombinant phenotypes of <strong>37.5</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, F2 offspring = 320 individuals gives &lt;strong&gt;Dominant / dominant&lt;/strong&gt; = 180 individuals, &lt;strong&gt;Dominant / recessive&lt;/strong&gt; = 60 individuals, &lt;strong&gt;Recessive / dominant&lt;/strong&gt; = 60 individuals, &lt;strong&gt;Recessive / recessive&lt;/strong&gt; = 20 individuals, &lt;strong&gt;Phenotype classes&lt;/strong&gt; = 4, &lt;strong&gt;Genotype classes&lt;/strong&gt; = 9 and &lt;strong&gt;Recombinant phenotypes&lt;/strong&gt; = 37.5 %.</p><ul><li><strong>Dominant / dominant</strong> = 180 individuals</li><li><strong>Dominant / recessive</strong> = 60 individuals</li><li><strong>Recessive / dominant</strong> = 60 individuals</li><li><strong>Recessive / recessive</strong> = 20 individuals</li><li><strong>Phenotype classes</strong> = 4</li><li><strong>Genotype classes</strong> = 9</li><li><strong>Recombinant phenotypes</strong> = 37.5 %</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Dominant / dominant</strong> = <code>F2 offspring × 9 ÷ 16</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The 9:3:3:1 ratio requires the two genes to be on different chromosomes, or far enough apart on the same one to assort independently.</p></li><li><p>Linked genes shift the ratio toward the parental classes; measuring the departure is how recombination frequency is estimated.</p></li><li><p>Genotype rather than phenotype data splits the 9:3:3:1 into nine classes: 1:2:1:2:4:2:1:2:1.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Dominant / dominant&lt;/strong&gt; = 180, &lt;strong&gt;Dominant / recessive&lt;/strong&gt; = 60, &lt;strong&gt;Recessive / dominant&lt;/strong&gt; = 60, &lt;strong&gt;Recessive / recessive&lt;/strong&gt; = 20, &lt;strong&gt;Phenotype classes&lt;/strong&gt; = 4, &lt;strong&gt;Genotype classes&lt;/strong&gt; = 9 and &lt;strong&gt;Recombinant phenotypes&lt;/strong&gt; = 37.5 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Dominant / dominant takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Scoring too few offspring — with 20 plants, the 1/16 class may be absent by chance.</li><li>Pooling data across crosses with different parents.</li><li>Assuming independent assortment for two genes on the same chromosome.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Dominant / dominant</strong> = <code>F2 offspring × 9 ÷ 16</code></li><li><strong>Dominant / recessive</strong> = <code>F2 offspring × 3 ÷ 16</code></li><li><strong>Recessive / dominant</strong> = <code>F2 offspring × 3 ÷ 16</code></li><li><strong>Recessive / recessive</strong> = <code>F2 offspring × 1 ÷ 16</code></li><li><strong>Phenotype classes</strong> = <code>4</code></li><li><strong>Genotype classes</strong> = <code>9</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Dominant / dominant, Dominant / recessive and Recessive / dominant can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — F2 offspring, from 320 to 640 — and the answers go from &lt;strong&gt;Dominant / dominant&lt;/strong&gt; 180 individuals, &lt;strong&gt;Dominant / recessive&lt;/strong&gt; 60 individuals, &lt;strong&gt;Recessive / dominant&lt;/strong&gt; 60 individuals, &lt;strong&gt;Recessive / recessive&lt;/strong&gt; 20 individuals, &lt;strong&gt;Phenotype classes&lt;/strong&gt; 4, &lt;strong&gt;Genotype classes&lt;/strong&gt; 9 and &lt;strong&gt;Recombinant phenotypes&lt;/strong&gt; 37.5 % to &lt;strong&gt;Dominant / dominant&lt;/strong&gt; 360 individuals, &lt;strong&gt;Dominant / recessive&lt;/strong&gt; 120 individuals, &lt;strong&gt;Recessive / dominant&lt;/strong&gt; 120 individuals, &lt;strong&gt;Recessive / recessive&lt;/strong&gt; 40 individuals, &lt;strong&gt;Phenotype classes&lt;/strong&gt; 4, &lt;strong&gt;Genotype classes&lt;/strong&gt; 9 and &lt;strong&gt;Recombinant phenotypes&lt;/strong&gt; 37.5 %.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Dominant / dominant, Dominant / recessive and Recessive / dominant are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If F2 offspring is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are F2 offspring and the number you are missing is Dominant / dominant and Dominant / recessive.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/vapor-pressure-deficit">Vapor pressure deficit Calculator</a>, <a href="/biology/vegetable-seed">Vegetable seed</a> and <a href="/biology/vegetable-yield">Vegetable yield</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Why 16 combinations?', 'a' => 'Each parent makes four gamete types, and 4 × 4 = 16 equally likely fertilisations.'],
-            ['q' => 'What ratio do I get if the genes are linked?', 'a' => 'More parental and fewer recombinant classes than 9:3:3:1 — the exact proportions depend on the recombination frequency.'],
-            ['q' => 'How many genotypes come out of a dihybrid cross?', 'a' => 'Nine, from AABB to aabb.'],
-            ['q' => 'What does the Dihybrid Cross (9:3:3:1) actually calculate?', 'a' => <<<'TXT'
-            It returns dominant / dominant, dominant / recessive, recessive / dominant and recessive / recessive. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Dihybrid Cross Calculator (9:3:3:1) calculator work out?', 'a' => <<<'TXT'
+            Dominant / dominant, Dominant / recessive, Recessive / dominant and Recessive / recessive, from F2 offspring. The relationship is Dominant / dominant = F2 offspring × 9 ÷ 16.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'F2 offspring (individuals). Fill n and leave Dominant / dominant empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Dominant / dominant, Dominant / recessive, Recessive / dominant and Recessive / recessive can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Dominant / dominant = 180 individuals, Dominant / recessive = 60 individuals, Recessive / dominant = 60 individuals, Recessive / recessive = 20 individuals, Phenotype classes = 4, Genotype classes = 9 and Recombinant phenotypes = 37.5 %. The figures come from F2 offspring as the page opens it; they are a starting point, not a fixed answer.
             TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Dominant / dominant is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With F2 offspring left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Dominant / dominant at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/vapor-pressure-deficit', 'name' => 'Vapor pressure deficit Calculator'],
+            ['path' => '/biology/vegetable-seed', 'name' => 'Vegetable seed'],
+            ['path' => '/biology/vegetable-yield', 'name' => 'Vegetable yield'],
+        ],
+        'authors' => [],
     ],
 ];

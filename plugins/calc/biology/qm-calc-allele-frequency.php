@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Allele frequency',
-    'meta' => ['title' => 'Allele frequency — Formula, Steps & Examples', 'description' => <<<'TXT'
-    The Allele frequency calculator returns <strong>healthy allele frequency (p)</strong> from the 2 fields on the form. The Allele frequency calculator takes the…
-    TXT, 'h1' => 'Allele frequency Calculator', 'updated' => '2024-07-19'],
+    'meta' => ['title' => 'Allele frequency — Formula, Steps & Examples', 'description' => 'Allele frequency turns Mutant allele frequency (q) into Occurrence of the disease and Occurrence of the disease. Fill in 1 box and the page has everything it…', 'h1' => 'Allele frequency Calculator', 'updated' => '2024-07-19'],
     'raw' => [
         'vars' => [
             'a_percentage' => [
@@ -348,63 +346,50 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'The Allele frequency calculator returns <strong>healthy allele frequency (p)</strong> from the 2 fields on the form.',
+        'intro' => <<<'TXT'
+        Allele frequency turns Mutant allele frequency (q) into Occurrence of the disease and Occurrence of the disease. Nothing is looked up on this page: Occurrence of the disease: is computed from Mutant allele frequency (q) and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Occurrence of the disease: is opened in percent; the chip beside it switches to any unit of the same quantity.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Allele frequency calculator work?', 'html' => <<<'TXT'
-            <p>The Allele frequency calculator takes the values in the form, applies the relationship described below and reports <strong>healthy allele frequency (p)</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case; then you type in the figures it asks for.</p>
+            ['title' => 'How the Allele frequency calculator works', 'html' => <<<'TXT'
+            <p>The Allele frequency calculator applies one relationship to 1 number and reports Occurrence of the disease, Occurrence of the disease and Healthy allele frequency (p).</p><p>Written with the labels from the form, Healthy allele frequency (p) = − Mutant allele frequency (q) − 1.</p><p>The result panel carries Occurrence of the disease, Occurrence of the disease, Healthy allele frequency (p) and Truea, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 2 options, such as proportion and percentage. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Mutant allele frequency (q)</strong> — a plain number, no unit. The recessive allele that carries the disease.</li></ul><p>What you get back is Occurrence of the disease in percent, Occurrence of the disease, Healthy allele frequency (p), Truea, B, 2pq, 1/2pq, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Healthy allele frequency (p)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mutant allele frequency (q)</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Calculated ratio</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Occurrence of the disease: offers 6 units and opens on percent, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Allele frequency calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Healthy allele frequency (p)</span><span class="formula-eq">=</span><span class="formula-rhs">-mutant allele frequency (q) − 1</span></div><div class="formula-row"><span class="formula-lhs">Occurrence of the disease</span><span class="formula-eq">=</span><span class="formula-rhs">1 ÷ occurrence of the disease</span></div><div class="formula-row"><span class="formula-lhs">Occurrence of the disease</span><span class="formula-eq">=</span><span class="formula-rhs">(mutant allele frequency (q) ^ 2)</span></div><div class="formula-row"><span class="formula-lhs">Healthy allele frequency (p)</span><span class="formula-eq">=</span><span class="formula-rhs">the square root of (B)</span></div><div class="formula-row"><span class="formula-lhs">Healthy allele frequency (p)</span><span class="formula-eq">=</span><span class="formula-rhs">1 − mutant allele frequency (q)</span></div><div class="formula-row"><span class="formula-lhs">Calculated ratio</span><span class="formula-eq">=</span><span class="formula-rhs">1 ÷ occurrence of the disease</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Healthy allele frequency (p)</strong> = <code>− Mutant allele frequency (q) − 1</code></li><li><strong>Mutant allele frequency (q)</strong> = <code>− Healthy allele frequency (p) − 1</code></li><li><strong>Occurrence of the disease:</strong> = <code>1 ÷ Occurrence of the disease:</code></li><li><strong>B</strong> = <code>(Healthy allele frequency (p))^(2)</code></li><li><strong>Truea</strong> = <code>1 ÷ Occurrence of the disease:</code></li><li><strong>2pq</strong> = <code>2 × Healthy allele frequency (p) × Mutant allele frequency (q)</code></li></ul><p>Any one of Healthy allele frequency (p), Mutant allele frequency (q) and Occurrence of the disease can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Occurrence of the disease, Occurrence of the disease and Healthy allele frequency (p) are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Mutant allele frequency (q) and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>%, opening in percent</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Allele frequency calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Write the answer down with its unit. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/animal-mortality-rate">Animal mortality rate</a>, <a href="/biology/annealing-temperature">Annealing temperature</a> and <a href="/biology/bacteria-growth">Bacteria growth</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Mutant allele frequency (q) is what you already know and Occurrence of the disease and Occurrence of the disease is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/pedigree-probability">Pedigree Probability Calculator</a>, <a href="/biology/percent-germination">Percent Germination Calculator</a> and <a href="/biology/percent-inhibition">Percent Inhibition Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Allele frequency calculator work out?', 'a' => <<<'TXT'
-            It returns healthy allele frequency (p). Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Occurrence of the disease, Occurrence of the disease, Healthy allele frequency (p) and Truea, from Mutant allele frequency (q). The relationship is Healthy allele frequency (p) = − Mutant allele frequency (q) − 1.
             TXT],
-            ['q' => 'What do I need to enter to use the Allele frequency calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Mutant allele frequency (q). Fill q and leave Occurrence of the disease: empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Healthy allele frequency (p), Mutant allele frequency (q), Occurrence of the disease and Occurrence of the disease blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I enter occurrence of the disease (Frequency of the disease in the population) in a different unit?', 'a' => <<<'TXT'
-            Yes. Occurrence of the disease (Frequency of the disease in the population) opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Occurrence of the disease: is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave Mutant allele frequency (q) blank and the page solves for it, reporting Occurrence of the disease: instead of the usual answer.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Allele frequency calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Occurrence of the disease: keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/animal-mortality-rate', 'name' => 'Animal mortality rate'],
-            ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature'],
-            ['path' => '/biology/bacteria-growth', 'name' => 'Bacteria growth'],
+            ['path' => '/biology/pedigree-probability', 'name' => 'Pedigree Probability Calculator'],
+            ['path' => '/biology/percent-germination', 'name' => 'Percent Germination Calculator'],
+            ['path' => '/biology/percent-inhibition', 'name' => 'Percent Inhibition Calculator'],
         ],
+        'authors' => [],
     ],
 ];

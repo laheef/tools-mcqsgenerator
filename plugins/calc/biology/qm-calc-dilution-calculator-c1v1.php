@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dilution Calculator (C1V1 = C2V2)',
-    'meta' => ['title' => 'Dilution (C1V1 = C2V2) Calculator — Formula & Results', 'description' => 'Every dilution question is the same equation: the amount of solute before equals the amount after. It returns stock volume, diluent to add and dilution…', 'h1' => 'Dilution Calculator (C1V1 = C2V2)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Dilution (C1V1 = C2V2) Calculator — Formula & Results', 'description' => 'Stock volume, Diluent to add and Dilution factor are results, and each can be typed into. Stock volume, Diluent to add and Dilution factor, from Final…', 'h1' => 'Dilution Calculator (C1V1 = C2V2)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -81,43 +81,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Every dilution question is the same equation: the amount of solute before equals the amount after. It returns stock volume, diluent to add and dilution factor, and the panel shows all of them at once.
-        
-        This calculator solves C₁V₁ = C₂V₂ for whichever value you are missing and tells you how much diluent to add.
+        Dilution Calculator (C1V1 = C2V2) works out Stock volume and Diluent to add from Stock concentration, Final concentration and Final volume. There is no hidden constant here: change Stock volume and Stock concentration moves with it. The main result, Stock volume, is reported in mL.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Dilution (C1V1 = C2V2)', 'html' => <<<'TXT'
-            <p>C₁ × V₁ = C₂ × V₂</p>
-            <figure class="calc-figure"><img src="/uploads/biology/dilution-calculator-c1v1.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Dilution Calculator (C1V1 = C2V2) — Concentration before and after, and the volume that bridges them." title="Dilution Calculator (C1V1 = C2V2)"><figcaption>Concentration before and after, and the volume that bridges them.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>C₁</code></td><td>stock concentration</td><td>any</td></tr><tr><td><code>V₁</code></td><td>volume of stock to take</td><td>mL</td></tr><tr><td><code>C₂</code></td><td>final concentration</td><td>any</td></tr><tr><td><code>V₂</code></td><td>final volume</td><td>mL</td></tr></tbody></table>
+            ['title' => 'How the Dilution Calculator (C1V1 = C2V2) calculator works', 'html' => <<<'TXT'
+            <p>Dilution Calculator (C1V1 = C2V2) answers one question from 3 numbers, and the answer is Stock volume, Diluent to add and Dilution factor.</p><p>The relationship it solves reads Stock volume = Final concentration × Final volume ÷ Stock concentration.</p><p>What comes back is Stock volume, Diluent to add and Dilution factor — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Dilution (C1V1 = C2V2)?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Stock concentration</strong> — in M</li><li><strong>Final concentration</strong> — in M</li><li><strong>Final volume</strong> — in mL</li></ul><p>The answers come back as Stock volume in mL, Diluent to add in mL, Dilution factor in ×. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: stock concentration of <strong>10</strong> M, final concentration of <strong>0.5</strong> M, final volume of <strong>100</strong> mL.</p>
-            <p>Substituting them into the formula gives stock volume of <strong>5</strong> mL, diluent to add of <strong>95</strong> mL, dilution factor of <strong>20</strong> ×.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Stock concentration = 10 M, Final concentration = 0.5 M and Final volume = 100 mL — through the same formula and the panel reports &lt;strong&gt;Stock volume&lt;/strong&gt; = 5 mL, &lt;strong&gt;Diluent to add&lt;/strong&gt; = 95 mL and &lt;strong&gt;Dilution factor&lt;/strong&gt; = 20 ×.</p><ul><li><strong>Stock volume</strong> = 5 mL</li><li><strong>Diluent to add</strong> = 95 mL</li><li><strong>Dilution factor</strong> = 20 ×</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Stock volume</strong> = <code>Final concentration × Final volume ÷ Stock concentration</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The confidence check is units: C₁ and C₂ must be in the same unit and V₁ and V₂ in the same unit, or the equation quietly gives a wrong answer.</p></li><li><p>Add the stock to about 80% of the final volume of diluent, then top up to the mark: mixing volumes is not strictly additive.</p></li><li><p>For a dilution series, do it stepwise; a single 1000× dilution is less accurate than three 10× steps because of pipetting error.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Stock volume&lt;/strong&gt; = 5, &lt;strong&gt;Diluent to add&lt;/strong&gt; = 95 and &lt;strong&gt;Dilution factor&lt;/strong&gt; = 20. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Stock volume is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Mixing molarity with mass concentration in the same equation.</li><li>Forgetting that V₂ includes the stock volume.</li><li>Using a volumetric flask for a small volume and a beaker for the rest.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Stock volume</strong> = <code>Final concentration × Final volume ÷ Stock concentration</code></li><li><strong>Diluent to add</strong> = <code>Final volume − Final concentration × Final volume ÷ Stock concentration</code></li><li><strong>Dilution factor</strong> = <code>Stock concentration ÷ Final concentration</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Stock volume, Diluent to add and Dilution factor can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Stock concentration from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Stock volume&lt;/strong&gt; 5 mL, &lt;strong&gt;Diluent to add&lt;/strong&gt; 95 mL and &lt;strong&gt;Dilution factor&lt;/strong&gt; 20 × to &lt;strong&gt;Stock volume&lt;/strong&gt; 2.5 mL, &lt;strong&gt;Diluent to add&lt;/strong&gt; 97.5 mL and &lt;strong&gt;Dilution factor&lt;/strong&gt; 40 ×.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Stock volume, Diluent to add and Dilution factor are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Stock concentration is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Stock concentration, Final concentration and Final volume measured, Stock volume and Diluent to add wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dog-chocolate-toxicity">Dog chocolate toxicity Calculator</a>, <a href="/biology/dog-coat-color">Dog Coat Colour Calculator</a> and <a href="/biology/dog-crate-size">Dog crate size</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What if I want a dilution factor, not a concentration?', 'a' => 'Dilution factor is C₁/C₂; a 1:10 dilution has a factor of 10.'],
-            ['q' => 'Can V₁ be larger than V₂?', 'a' => 'No — that would mean concentrating the solution, which a dilution cannot do.'],
-            ['q' => 'What does the Dilution (C1V1 = C2V2) actually calculate?', 'a' => 'It returns stock volume, diluent to add and dilution factor. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Dilution Calculator (C1V1 = C2V2) calculator work out?', 'a' => <<<'TXT'
+            Stock volume, Diluent to add and Dilution factor, from Final concentration, Final volume and Stock concentration. The relationship is Stock volume = Final concentration × Final volume ÷ Stock concentration.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Stock concentration (M), Final concentration (M), Final volume (mL). Enter c1, c2 and v2; Stock volume is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Stock volume, Diluent to add and Dilution factor can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Stock volume = 5 mL, Diluent to add = 95 mL and Dilution factor = 20 ×. The figures come from Stock concentration as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Stock volume is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Stock concentration left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Stock volume keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-chocolate-toxicity', 'name' => 'Dog chocolate toxicity Calculator'],
+            ['path' => '/biology/dog-coat-color', 'name' => 'Dog Coat Colour Calculator'],
+            ['path' => '/biology/dog-crate-size', 'name' => 'Dog crate size'],
+        ],
+        'authors' => [],
     ],
 ];

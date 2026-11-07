@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Primer Resuspension and Working Stock Calculator',
-    'meta' => ['title' => 'Primer Resuspension and Working Stock Calculator', 'description' => <<<'TXT'
-    A primer arrives as a dried pellet measured in nanomoles. It returns volume to add to the pellet, stock to take for the working stock, diluent for the working…
-    TXT, 'h1' => 'Primer Resuspension and Working Stock Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Primer Resuspension and Working Stock Calculator', 'description' => 'Primer Resuspension and Working Stock takes Primer in the tube, Stock concentration and Working concentration and returns Volume to add to the pellet and…', 'h1' => 'Primer Resuspension and Working Stock Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -100,44 +98,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A primer arrives as a dried pellet measured in nanomoles. It returns volume to add to the pellet, stock to take for the working stock, diluent for the working stock and working stocks from one tube, and the panel shows all of them at once.
-        
-        Dissolve it to a 100 µM stock, then dilute to a 10 µM working stock — this calculator gives the exact volume of TE or water for each step and how much working stock one tube of stock will make.
+        Primer Resuspension and Working Stock takes Primer in the tube, Stock concentration and Working concentration and returns Volume to add to the pellet and Stock to take for the working stock. There is no hidden constant here: change Volume to add to the pellet and Primer in the tube moves with it. The main result, Volume to add to the pellet, is reported in µL.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Primer Resuspension and Working Stock', 'html' => <<<'TXT'
-            <p>Volume (µL) = nmol ÷ concentration (µM) × 1000; stock volume = C2V2 ÷ C1</p>
-            <figure class="calc-figure"><img src="/uploads/biology/primer-resuspension-working-stock.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Primer Resuspension and Working Stock Calculator — Nanonmoles in the tube to microlitres of diluent, twice over." title="Primer Resuspension and Working Stock Calculator"><figcaption>Nanonmoles in the tube to microlitres of diluent, twice over.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>nmol</code></td><td>amount in the vial, per the spec sheet</td><td>nmol</td></tr><tr><td><code>stock</code></td><td>master stock concentration</td><td>µM</td></tr><tr><td><code>volume</code></td><td>diluent to add</td><td>µL</td></tr></tbody></table>
+            ['title' => 'How the Primer Resuspension and Working Stock calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Primer Resuspension and Working Stock: it takes 4 numbers and reports Volume to add to the pellet, Stock to take for the working stock and Diluent for the working stock.</p><p>In the form&#039;s own words, Volume to add to the pellet = Primer in the tube ÷ Stock concentration × 1000.</p><p>The answers are Volume to add to the pellet, Stock to take for the working stock, Diluent for the working stock and Working stocks from one tube; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Primer Resuspension and Working Stock?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Primer in the tube</strong> — in nmol. Printed on the vial or the spec sheet</li><li><strong>Stock concentration</strong> — in µM. 100 µM is the usual master stock</li><li><strong>Working concentration</strong> — in µM</li><li><strong>Working stock to make</strong> — in µL</li></ul><p>What you get back is Volume to add to the pellet in µL, Stock to take for the working stock in µL, Diluent for the working stock in µL, Working stocks from one tube, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: primer in the tube of <strong>33.4</strong> nmol, stock concentration of <strong>100</strong> µM, working concentration of <strong>10</strong> µM, working stock to make of <strong>500</strong> µL.</p>
-            <p>Substituting them into the formula gives volume to add to the pellet of <strong>334</strong> µL, stock to take for the working stock of <strong>50</strong> µL, diluent for the working stock of <strong>450</strong> µL, working stocks from one tube of <strong>167</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Primer in the tube = 33.4 nmol, Stock concentration = 100 µM, Working concentration = 10 µM and Working stock to make = 500 µL gives &lt;strong&gt;Volume to add to the pellet&lt;/strong&gt; = 334 µL, &lt;strong&gt;Stock to take for the working stock&lt;/strong&gt; = 50 µL, &lt;strong&gt;Diluent for the working stock&lt;/strong&gt; = 450 µL and &lt;strong&gt;Working stocks from one tube&lt;/strong&gt; = 167.</p><ul><li><strong>Volume to add to the pellet</strong> = 334 µL</li><li><strong>Stock to take for the working stock</strong> = 50 µL</li><li><strong>Diluent for the working stock</strong> = 450 µL</li><li><strong>Working stocks from one tube</strong> = 167</li></ul><p>The line behind those figures is <strong>Volume to add to the pellet</strong> = <code>Primer in the tube ÷ Stock concentration × 1000</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>1 nmol in 1 mL is 1 µM, so the arithmetic is friendly: 33.4 nmol in 334 µL gives 100 µM.</p></li><li><p>Vortex for 30 seconds and leave at room temperature for 10 minutes; pellets of long oligos dissolve slowly and a half-dissolved stock reads low.</p></li><li><p>Use TE rather than water for long-term storage: the Tris buffer holds the pH and the EDTA protects against nucleases.</p></li><li><p>Store the 100 µM stock at −20 °C in aliquots and keep the 10 µM working stock at 4 °C for up to a few weeks.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Volume to add to the pellet&lt;/strong&gt; = 334, &lt;strong&gt;Stock to take for the working stock&lt;/strong&gt; = 50, &lt;strong&gt;Diluent for the working stock&lt;/strong&gt; = 450 and &lt;strong&gt;Working stocks from one tube&lt;/strong&gt; = 167 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Volume to add to the pellet takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming the vial contains exactly the nominal amount instead of reading the spec sheet.</li><li>Freezing and thawing the working stock repeatedly, which is a common source of failed PCR.</li><li>Recording concentrations as '100×' rather than in µM, which cannot be checked later.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Volume to add to the pellet</strong> = <code>Primer in the tube ÷ Stock concentration × 1000</code></li><li><strong>Stock to take for the working stock</strong> = <code>Working concentration × Working stock to make ÷ Stock concentration</code></li><li><strong>Diluent for the working stock</strong> = <code>Working stock to make − Working concentration × Working stock to make ÷ Stock concentration</code></li><li><strong>Working stocks from one tube</strong> = <code>Primer in the tube ÷ Stock concentration × 1000 ÷ Working concentration × Working stock to make ÷ Stock concentration</code></li></ul><p>Any one of Volume to add to the pellet, Stock to take for the working stock and Diluent for the working stock can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Primer in the tube from 33.4 to 66.8, leaving every other box alone. The panel moves from &lt;strong&gt;Volume to add to the pellet&lt;/strong&gt; 334 µL, &lt;strong&gt;Stock to take for the working stock&lt;/strong&gt; 50 µL, &lt;strong&gt;Diluent for the working stock&lt;/strong&gt; 450 µL and &lt;strong&gt;Working stocks from one tube&lt;/strong&gt; 167 to &lt;strong&gt;Volume to add to the pellet&lt;/strong&gt; 668 µL, &lt;strong&gt;Stock to take for the working stock&lt;/strong&gt; 50 µL, &lt;strong&gt;Diluent for the working stock&lt;/strong&gt; 450 µL and &lt;strong&gt;Working stocks from one tube&lt;/strong&gt; 334.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Volume to add to the pellet, Stock to take for the working stock and Diluent for the working stock are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Primer in the tube to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Primer in the tube, Stock concentration and Working concentration and the number you are missing is Volume to add to the pellet and Stock to take for the working stock.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/restriction-reaction-setup">Restriction Digest Recipe — Enzyme Limit</a>, <a href="/biology/restriction-enzyme-finder">Restriction Enzyme Finder Calculator</a> and <a href="/biology/reverse-complement">Reverse Complement Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How much water do I add to a 33.4 nmol primer?', 'a' => '334 µL for a 100 µM stock, or 3.34 mL for 10 µM.'],
-            ['q' => 'Can I use water instead of TE?', 'a' => 'For short-term use yes, but TE keeps the oligo stable for years.'],
-            ['q' => 'What does the Primer Resuspension and Working Stock actually calculate?', 'a' => <<<'TXT'
-            It returns volume to add to the pellet, stock to take for the working stock, diluent for the working stock and working stocks from one tube. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Primer Resuspension and Working Stock calculator work out?', 'a' => <<<'TXT'
+            Volume to add to the pellet, Stock to take for the working stock, Diluent for the working stock and Working stocks from one tube, from Primer in the tube and Stock concentration. The relationship is Volume to add to the pellet = Primer in the tube ÷ Stock concentration × 1000.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Primer in the tube (nmol), Stock concentration (µM), Working concentration (µM), Working stock to make (µL). Enter nmol, stock and working; Volume to add to the pellet is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Volume to add to the pellet, Stock to take for the working stock, Diluent for the working stock and Working stocks from one tube blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Volume to add to the pellet = 334 µL, Stock to take for the working stock = 50 µL, Diluent for the working stock = 450 µL and Working stocks from one tube = 167. The figures come from Primer in the tube as the page opens it; they are a starting point, not a fixed answer.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Volume to add to the pellet is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Primer in the tube blank and the page solves for it, reporting Volume to add to the pellet instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Volume to add to the pellet keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/restriction-reaction-setup', 'name' => 'Restriction Digest Recipe — Enzyme Limit'],
+            ['path' => '/biology/restriction-enzyme-finder', 'name' => 'Restriction Enzyme Finder Calculator'],
+            ['path' => '/biology/reverse-complement', 'name' => 'Reverse Complement Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

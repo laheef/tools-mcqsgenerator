@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Catculator',
-    'meta' => ['title' => 'Catculator Calculator: Formula, Steps & Examples', 'description' => 'The Catculator calculator takes the numbers you enter and reports <strong>cat1 index</strong> immediately. The panel waits for the button.', 'h1' => 'Catculator Calculator', 'updated' => '2025-02-18'],
+    'meta' => ['title' => 'Catculator Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
+    Catculator turns How do you show affection? ❤️, What’s your ideal bed? 🛏️ and What do you like to eat? 🥫 into cat1Index and cat2Index. The answer typed back in.
+    TXT, 'h1' => 'Catculator Calculator', 'updated' => '2025-02-18'],
     'raw' => [
         'vars' => [
             'agreeableCat' => [
@@ -858,62 +860,47 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Catculator calculator takes the numbers you enter and reports <strong>cat1 index</strong> immediately. 
-        
-         The panel waits for the button. Edit a field, press Calculate, and compare — one input at a time is enough to see what drives the answer.
+        Catculator turns How do you show affection? ❤️, What’s your ideal bed? 🛏️ and What do you like to eat? 🥫 into cat1Index and cat2Index. The arithmetic is the whole method: cat1Index is worked out from How do you show affection? ❤️ by one formula, applied once.
         TXT,
         'sections' => [
-            ['title' => 'How does the Catculator calculator work?', 'html' => <<<'TXT'
-            <p>The Catculator calculator takes the values in the form, applies the relationship described below and reports <strong>cat1 index</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (what’s your ideal bed?).</p>
+            ['title' => 'How the Catculator calculator works', 'html' => <<<'TXT'
+            <p>Catculator answers one question from 5 numbers, and the answer is cat1Index, cat2Index and domCat.</p><p>In the form&#039;s own words, cat1Index = getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴).</p><p>The answers are cat1Index, cat2Index, domCat and unpredictableCat; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 5 options, such as by ignoring people, depends on my mood and I don’t do it often, or by running away. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as wherever I like, preferably somebody’s bed, I can sleep anywhere and only in my bed, a safe place. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as whatever’s on someone else's plate, whatever's in the fridge, I like strange combinations and the same thing every day. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as puke on someone’s doormat, eat and drink even more and I’m never drunk. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 5 options, such as take A LOT of selfies, extreme sports! and holidays make me anxious. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>5 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 5 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>How do you show affection? ❤️</strong> — a plain number, no unit</li><li><strong>What’s your ideal bed? 🛏️</strong> — a plain number, no unit</li><li><strong>What do you like to eat? 🥫</strong> — a plain number, no unit</li><li><strong>What do you do when you’re drunk? 🍷</strong> — a plain number, no unit</li><li><strong>What would you do on vacation? 🌴</strong> — a plain number, no unit</li></ul><p>The result boxes are cat1Index, cat2Index, domCat, unpredictableCat, shyCat, extrovertCat, agreeableCat; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>What’s your ideal bed?</strong></td><td>One of 5 options, such as wherever I like, preferably somebody’s bed, I can sleep anywhere and only in my bed, a safe place.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Cat 1 index</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Cat 2 index</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Dom cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Agreeable cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Extrovert cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Shy cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Unpredictable cat</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: cat1Index takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>cat1Index</strong> = <code>getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴)</code></li><li><strong>cat2Index</strong> = <code>getCat2Type(getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴))</code></li><li><strong>domCat</strong> = <code>getDomCat(getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴))</code></li><li><strong>unpredictableCat</strong> = <code>getUnpredictableCat(getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴))</code></li><li><strong>shyCat</strong> = <code>getShyCat(getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴))</code></li><li><strong>extrovertCat</strong> = <code>getExtrovertCat(getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴))</code></li></ul><p>Any one of cat1Index, cat2Index and domCat can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the Catculator calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Cat 1 index</span><span class="formula-eq">=</span><span class="formula-rhs">(how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?)</span></div><div class="formula-row"><span class="formula-lhs">Cat 2 index</span><span class="formula-eq">=</span><span class="formula-rhs">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div><div class="formula-row"><span class="formula-lhs">Dom cat</span><span class="formula-eq">=</span><span class="formula-rhs">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div><div class="formula-row"><span class="formula-lhs">Unpredictable cat</span><span class="formula-eq">=</span><span class="formula-rhs">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div><div class="formula-row"><span class="formula-lhs">Shy cat</span><span class="formula-eq">=</span><span class="formula-rhs">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div><div class="formula-row"><span class="formula-lhs">Extrovert cat</span><span class="formula-eq">=</span><span class="formula-rhs">((how do you show affection?, what’s your ideal bed?, what do you like to eat?, what do you do when you’re drunk?, what would you do on vacation?))</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with cat1Index, cat2Index and domCat are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert How do you show affection? ❤️ to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Catculator calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Keep the units you enter consistent. </li><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cattle-per-acre">Cattle per acre</a>, <a href="/biology/cell-dilution">Cell dilution</a> and <a href="/biology/cell-doubling-time">Cell doubling time</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are How do you show affection? ❤️, What’s your ideal bed? 🛏️ and What do you like to eat? 🥫 and the number you are missing is cat1Index and cat2Index.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/guinea-pig-age">Guinea pig years to human years</a>, <a href="/biology/gypsum-application-rate">Gypsum Application Rate Calculator</a> and <a href="/biology/hamster-age">Hamster age Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Catculator calculator work out?', 'a' => <<<'TXT'
-            It returns cat1 index. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            cat1Index, cat2Index, domCat and unpredictableCat, from How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫 and What do you do when you’re drunk? 🍷. The relationship is cat1Index = getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴).
             TXT],
-            ['q' => 'What do I need to enter to use the Catculator calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is 5 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴. With q1, q2 and q3 in place, cat1Index can stay blank and the page will work it out.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (5 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of cat1Index, cat2Index, domCat and unpredictableCat blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            cat1Index is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Is the Catculator calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With How do you show affection? ❤️ left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of cat1Index keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/cattle-per-acre', 'name' => 'Cattle per acre'],
-            ['path' => '/biology/cell-dilution', 'name' => 'Cell dilution'],
-            ['path' => '/biology/cell-doubling-time', 'name' => 'Cell doubling time'],
+            ['path' => '/biology/guinea-pig-age', 'name' => 'Guinea pig years to human years'],
+            ['path' => '/biology/gypsum-application-rate', 'name' => 'Gypsum Application Rate Calculator'],
+            ['path' => '/biology/hamster-age', 'name' => 'Hamster age Calculator'],
         ],
+        'authors' => [],
     ],
 ];

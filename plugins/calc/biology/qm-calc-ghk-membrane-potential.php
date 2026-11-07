@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Goldman–Hodgkin–Katz Membrane Potential Calculator',
-    'meta' => ['title' => 'Goldman–Hodgkin–Katz Membrane Potential Calculator', 'description' => 'The Goldman–Hodgkin–Katz equation predicts a cell\'s resting membrane potential from all three permeant ions at once — sodium, potassium and chloride…', 'h1' => 'Goldman–Hodgkin–Katz Membrane Potential Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Goldman–Hodgkin–Katz Membrane Potential Calculator', 'description' => 'Goldman–Hodgkin–Katz Membrane Potential turns Potassium outside, Potassium inside and Sodium outside into Membrane potential and Potassium equilibrium…', 'h1' => 'Goldman–Hodgkin–Katz Membrane Potential Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -137,46 +137,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Goldman–Hodgkin–Katz equation predicts a cell's resting membrane potential from all three permeant ions at once — sodium, potassium and chloride — weighted by their permeabilities. It returns membrane potential, potassium equilibrium potential, sodium equilibrium potential and chloride equilibrium potential, and the panel shows all of them at once.
-        
-        It is why the resting potential sits near the potassium equilibrium potential rather than at it.
+        Goldman–Hodgkin–Katz Membrane Potential turns Potassium outside, Potassium inside and Sodium outside into Membrane potential and Potassium equilibrium potential. The arithmetic is the whole method: Membrane potential is worked out from Potassium outside by one formula, applied once. Membrane potential comes back in mV unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Goldman–Hodgkin–Katz Membrane Potential', 'html' => <<<'TXT'
-            <p>V_m = 61.5 log₁₀[(P_K[K]ₒ + P_Na[Na]ₒ + P_Cl[Cl]ᵢ) ÷ (P_K[K]ᵢ + P_Na[Na]ᵢ + P_Cl[Cl]ₒ)]</p>
-            <figure class="calc-figure"><img src="/uploads/biology/ghk-membrane-potential.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Goldman–Hodgkin–Katz Membrane Potential Calculator — Three equilibrium potentials and where the cell actually sits." title="Goldman–Hodgkin–Katz Membrane Potential Calculator"><figcaption>Three equilibrium potentials and where the cell actually sits.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>[X]ₒ, [X]ᵢ</code></td><td>outside and inside concentrations</td><td>mM</td></tr><tr><td><code>P</code></td><td>relative permeability</td><td>—</td></tr><tr><td><code>61.5</code></td><td>RT/F × 2.303 at 37 °C</td><td>mV</td></tr></tbody></table>
+            ['title' => 'How the Goldman–Hodgkin–Katz Membrane Potential calculator works', 'html' => <<<'TXT'
+            <p>Goldman–Hodgkin–Katz Membrane Potential answers one question from 9 numbers, and the answer is Membrane potential, Potassium equilibrium potential and Sodium equilibrium potential.</p><p>The result panel carries Membrane potential, Potassium equilibrium potential, Sodium equilibrium potential and Chloride equilibrium potential, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Goldman–Hodgkin–Katz Membrane Potential?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 9 boxes, and nothing else.</p><ul><li><strong>Potassium outside</strong> — in mM</li><li><strong>Potassium inside</strong> — in mM</li><li><strong>Sodium outside</strong> — in mM</li><li><strong>Sodium inside</strong> — in mM</li><li><strong>Chloride outside</strong> — in mM</li><li><strong>Chloride inside</strong> — in mM</li><li><strong>Potassium permeability</strong> — in relative</li><li><strong>Sodium permeability</strong> — in relative</li><li><strong>Chloride permeability</strong> — in relative</li></ul><p>The answers come back as Membrane potential in mV, Potassium equilibrium potential in mV, Sodium equilibrium potential in mV, Chloride equilibrium potential in mV. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: potassium outside of <strong>4</strong> mM, potassium inside of <strong>140</strong> mM, sodium outside of <strong>145</strong> mM, sodium inside of <strong>12</strong> mM, chloride outside of <strong>110</strong> mM, chloride inside of <strong>10</strong> mM, potassium permeability of <strong>1</strong> relative, sodium permeability of <strong>0.04</strong> relative, chloride permeability of <strong>0.45</strong> relative.</p>
-            <p>Substituting them into the formula gives membrane potential of <strong>-69.09</strong> mV, potassium equilibrium potential of <strong>-94.96</strong> mV, sodium equilibrium potential of <strong>66.55</strong> mV, chloride equilibrium potential of <strong>-64.05</strong> mV.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Potassium outside = 4 mM, Potassium inside = 140 mM, Sodium outside = 145 mM, Sodium inside = 12 mM, Chloride outside = 110 mM, Chloride inside = 10 mM, Potassium permeability = 1 relative, Sodium permeability = 0.04 relative and Chloride permeability = 0.45 relative; the answers are &lt;strong&gt;Membrane potential&lt;/strong&gt; = -69.09 mV, &lt;strong&gt;Potassium equilibrium potential&lt;/strong&gt; = -94.96 mV, &lt;strong&gt;Sodium equilibrium potential&lt;/strong&gt; = 66.55 mV and &lt;strong&gt;Chloride equilibrium potential&lt;/strong&gt; = -64.05 mV.</p><ul><li><strong>Membrane potential</strong> = -69.09 mV</li><li><strong>Potassium equilibrium potential</strong> = -94.96 mV</li><li><strong>Sodium equilibrium potential</strong> = 66.55 mV</li><li><strong>Chloride equilibrium potential</strong> = -64.05 mV</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>-90 to -70 mV</td><td><strong>Resting neuron</strong></td><td>typical mammalian neuron at rest</td></tr><tr><td>-60 to -40 mV</td><td><strong>Depolarised</strong></td><td>or a cell with higher sodium leak</td></tr><tr><td>-30 to 0 mV</td><td><strong>Excitable peak</strong></td><td>during an action potential</td></tr></tbody></table>
-            <ul><li><p>Note that chloride is inverted: it is an anion, so inside and outside swap places in the numerator and denominator.</p></li><li><p>The potassium equilibrium potential is set by the ratio [K]ₒ/[K]ᵢ; raising extracellular potassium from 4 to 8 mM depolarises the cell by about 18 mV, which is why hyperkalaemia disturbs cardiac rhythm.</p></li><li><p>The 61.5 mV constant is RT/F in base-10 form at 37 °C; at 20 °C it is 58 mV.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Membrane potential&lt;/strong&gt; = -69.09, &lt;strong&gt;Potassium equilibrium potential&lt;/strong&gt; = -94.96, &lt;strong&gt;Sodium equilibrium potential&lt;/strong&gt; = 66.55 and &lt;strong&gt;Chloride equilibrium potential&lt;/strong&gt; = -64.05 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Membrane potential takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Putting chloride the same way round as the cations.</li><li>Using conductances where permeabilities belong — they are not interchangeable.</li><li>Entering concentrations in mmol/L for one ion and mol/L for another.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Potassium equilibrium potential</strong> = <code>61.5 × log₁₀(Potassium outside ÷ Potassium inside)</code></li><li><strong>Sodium equilibrium potential</strong> = <code>61.5 × log₁₀(Sodium outside ÷ Sodium inside)</code></li><li><strong>Chloride equilibrium potential</strong> = <code>− 61.5 × log₁₀(Chloride outside ÷ Chloride inside)</code></li></ul><p>Any one of Membrane potential, Potassium equilibrium potential and Sodium equilibrium potential can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Potassium outside, from 4 to 8 — and the answers go from &lt;strong&gt;Membrane potential&lt;/strong&gt; -69.09 mV, &lt;strong&gt;Potassium equilibrium potential&lt;/strong&gt; -94.96 mV, &lt;strong&gt;Sodium equilibrium potential&lt;/strong&gt; 66.55 mV and &lt;strong&gt;Chloride equilibrium potential&lt;/strong&gt; -64.05 mV to &lt;strong&gt;Membrane potential&lt;/strong&gt; -62.5 mV, &lt;strong&gt;Potassium equilibrium potential&lt;/strong&gt; -76.45 mV, &lt;strong&gt;Sodium equilibrium potential&lt;/strong&gt; 66.55 mV and &lt;strong&gt;Chloride equilibrium potential&lt;/strong&gt; -64.05 mV.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Membrane potential, Potassium equilibrium potential and Sodium equilibrium potential are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Potassium outside and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Potassium outside, Potassium inside and Sodium outside is what you already know and Membrane potential and Potassium equilibrium potential is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/reverse-translate">Reverse Translate Calculator</a>, <a href="/biology/sds-page-gel">SDS-PAGE Gel Calculator</a> and <a href="/biology/seeding-rate">Seeding Rate and Plants per Hectare Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Why is the resting potential near E_K?', 'a' => 'Because at rest potassium permeability dominates, so the membrane sits close to the potassium equilibrium potential without quite reaching it.'],
-            ['q' => 'What happens if sodium permeability rises?', 'a' => 'The potential depolarises toward the sodium equilibrium potential — the basis of the action potential.'],
-            ['q' => 'What does the Goldman–Hodgkin–Katz Membrane Potential actually calculate?', 'a' => <<<'TXT'
-            It returns membrane potential, potassium equilibrium potential, sodium equilibrium potential and chloride equilibrium potential. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Goldman–Hodgkin–Katz Membrane Potential calculator work out?', 'a' => <<<'TXT'
+            Membrane potential, Potassium equilibrium potential, Sodium equilibrium potential and Chloride equilibrium potential, from Potassium permeability, Potassium outside, Sodium permeability and Sodium outside.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Potassium outside (mM), Potassium inside (mM), Sodium outside (mM), Sodium inside (mM), Chloride outside (mM). Fill ko, ki and nao and leave Membrane potential empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Membrane potential, Potassium equilibrium potential, Sodium equilibrium potential and Chloride equilibrium potential blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Membrane potential = -69.09 mV, Potassium equilibrium potential = -94.96 mV, Sodium equilibrium potential = 66.55 mV and Chloride equilibrium potential = -64.05 mV. That comes from the page's own defaults, entered in Potassium outside; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Membrane potential is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Potassium outside left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Membrane potential keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/reverse-translate', 'name' => 'Reverse Translate Calculator'],
+            ['path' => '/biology/sds-page-gel', 'name' => 'SDS-PAGE Gel Calculator'],
+            ['path' => '/biology/seeding-rate', 'name' => 'Seeding Rate and Plants per Hectare Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

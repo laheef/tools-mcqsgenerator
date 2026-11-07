@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA to Protein Translation Calculator',
-    'meta' => ['title' => 'DNA to Protein Translation Calculator — Biology', 'description' => 'Translation reads a nucleotide sequence three bases at a time and writes the amino acids it encodes. It returns coding length, amino acids in the longest…', 'h1' => 'DNA to Protein Translation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA to Protein Translation Calculator — Biology', 'description' => 'Enter DNA sequence and Frame handling into DNA to Protein Translation and the answer comes back as Coding length and Amino acids in the longest frame.', 'h1' => 'DNA to Protein Translation Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => ['type' => 'text', 'rnd' => null],
@@ -249,43 +249,39 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Translation reads a nucleotide sequence three bases at a time and writes the amino acids it encodes. It returns coding length, amino acids in the longest frame, stop codons in frame 1 and mass of the frame-1 protein, and the panel shows all of them at once.
-        
-        Because the reading frame is not marked in the sequence, the same DNA gives three completely different proteins — this calculator shows all six frames, three from each strand, which is how a real open reading frame is found.
+        Enter DNA sequence and Frame handling into DNA to Protein Translation and the answer comes back as Coding length and Amino acids in the longest frame. It is a single relationship that reads Coding length out of DNA sequence, not a table of canned results keyed by them. Units for Coding length default to bp and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the DNA to Protein Translation', 'html' => <<<'TXT'
-            <p>Each codon of three bases maps to one amino acid; the standard genetic code is used</p>
-            <figure class="calc-figure"><img src="/uploads/biology/dna-to-protein.svg" width="720" height="300" loading="lazy" alt="Animated diagram: DNA to Protein Translation Calculator — Codons that mean something, and codons that stop" title="DNA to Protein Translation Calculator"><figcaption>Codons that mean something, and codons that stop</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>frame</code></td><td>which base the reading starts on (1, 2 or 3)</td><td>—</td></tr><tr><td><code>ORF</code></td><td>open reading frame: start codon to stop codon</td><td>—</td></tr><tr><td><code>aa</code></td><td>amino acid</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the DNA to Protein Translation calculator works', 'html' => <<<'TXT'
+            <p>DNA to Protein Translation answers one question from 2 numbers, and the answer is Coding length, Amino acids in the longest frame and Stop codons in frame 1.</p><p>The result panel carries Coding length, Amino acids in the longest frame, Stop codons in frame 1 and Mass of the frame-1 protein, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the DNA to Protein Translation?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>DNA sequence</strong> — a plain number, no unit. Paste DNA; headers and numbers are removed</li><li><strong>Frame handling</strong> — a plain number, no unit</li></ul><p>What you get back is Coding length in bp, Amino acids in the longest frame in aa, Stop codons in frame 1, Mass of the frame-1 protein in kDa, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>ATG</td><td><strong>Start</strong></td><td>methionine, and the usual start of an ORF</td></tr><tr><td>TAA, TAG, TGA</td><td><strong>Stop</strong></td><td>do not encode an amino acid</td></tr><tr><td>3 frames per strand</td><td><strong>Six in total</strong></td><td>only one is normally the real gene</td></tr></tbody></table>
-            <ul><li><p>The reverse strand is read as its reverse complement, which is why a gene can be on either strand of a chromosome.</p></li><li><p>A long open reading frame — a hundred codons or more with no stop — is the strongest sequence-level evidence that a region is protein-coding.</p></li><li><p>The mass uses average residue masses, so it matches what a mass spectrometer reports rather than the monoisotopic mass.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Coding length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Translating a sequence that still contains introns and wondering why there are stops every few codons.</li><li>Assuming frame 1 is the gene: roughly half of human genes are on the reverse strand.</li><li>Pasting an alignment with gaps, which shifts every downstream codon.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Coding length, Amino acids in the longest frame and Stop codons in frame 1 are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in DNA sequence and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are DNA sequence and Frame handling and the number you are missing is Coding length and Amino acids in the longest frame.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/tree-diameter">Tree diameter Calculator</a>, <a href="/biology/tree-height">Tree height</a> and <a href="/biology/tree-spacing">Tree spacing</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I find the reading frame of a gene?', 'a' => 'Translate all six frames and look for the long open reading frame that starts with ATG and ends with a stop codon.'],
-            ['q' => 'Why does my translation have so many stops?', 'a' => 'Almost always the wrong frame, or a genomic sequence where a cDNA was expected.'],
-            ['q' => 'What does the DNA to Protein Translation actually calculate?', 'a' => <<<'TXT'
-            It returns coding length, amino acids in the longest frame, stop codons in frame 1 and mass of the frame-1 protein. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the DNA to Protein Translation calculator work out?', 'a' => 'Coding length, Amino acids in the longest frame, Stop codons in frame 1 and Mass of the frame-1 protein.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'DNA sequence, Frame handling. With sequence and start in place, Coding length can stay blank and the page will work it out.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Coding length is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Coding length, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Coding length keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/tree-diameter', 'name' => 'Tree diameter Calculator'],
+            ['path' => '/biology/tree-height', 'name' => 'Tree height'],
+            ['path' => '/biology/tree-spacing', 'name' => 'Tree spacing'],
+        ],
+        'authors' => [],
     ],
 ];

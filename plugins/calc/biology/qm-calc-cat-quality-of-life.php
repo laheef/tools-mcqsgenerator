@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat quality of life',
-    'meta' => ['title' => 'Cat quality of life: Formula, Steps & Results', 'description' => 'The Cat quality of life calculator returns <strong>quality of life score</strong> from the 7 fields on the form. The Cat quality of life calculator takes the…', 'h1' => 'Cat quality of life Calculator', 'updated' => '2026-07-23'],
+    'meta' => ['title' => 'Cat quality of life: Formula, Steps & Results', 'description' => 'Cat quality of life takes Hurt, Hunger and Hydration and returns Quality of life score. The arithmetic is the whole method: Quality of life score is worked…', 'h1' => 'Cat quality of life Calculator', 'updated' => '2026-07-23'],
     'raw' => [
         'vars' => [
             'days' => [
@@ -361,62 +361,54 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => 'The Cat quality of life calculator returns <strong>quality of life score</strong> from the 7 fields on the form.',
+        'intro' => <<<'TXT'
+        Cat quality of life takes Hurt, Hunger and Hydration and returns Quality of life score. The arithmetic is the whole method: Quality of life score is worked out from Hurt by one formula, applied once.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Cat quality of life calculator work?', 'html' => <<<'TXT'
-            <p>The Cat quality of life calculator takes the values in the form, applies the relationship described below and reports <strong>quality of life score</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the hurt, the hunger and the hydration).</p>
+            ['title' => 'How the Cat quality of life calculator works', 'html' => <<<'TXT'
+            <p>The Cat quality of life calculator applies one relationship to 7 numbers and reports Quality of life score.</p><p>Written with the labels from the form, Quality of life score = (More good days than bad + Happiness + Hunger + Hurt + Hydration + Hygiene + Mobility).</p><p>The answers are Quality of life score; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>Pick the option that matches your case — 10 options, such as 1, 2 and 3. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>7 fields on this form are a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 7 boxes, and nothing else.</p><ul><li><strong>Hurt</strong> — a plain number, no unit. Is your cat&#039;s pain under adequate control?</li><li><strong>Hunger</strong> — a plain number, no unit. Is your cat eating enough? Do you need to hand-feed them?</li><li><strong>Hydration</strong> — a plain number, no unit. Is your cat hydrated? Do they need subcutaneous fluids to stay hydrated?</li><li><strong>Hygiene</strong> — a plain number, no unit. Does your cat need to be cleaned, especially after elimination?</li><li><strong>Happiness</strong> — a plain number, no unit. Does your cat express joy and show other emotional signs?</li><li><strong>Mobility</strong> — a plain number, no unit. Can your cat get up without assistance? Do they regularly want to go for a walk?</li><li><strong>More good days than bad</strong> — a plain number, no unit. Do your cat&#039;s good days outnumber their bad days?&amp;nbsp;</li></ul><p>What you get back is Quality of life score, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Hurt</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hunger</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hydration</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Hygiene</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Happiness</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Mobility</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>More good days than bad</strong></td><td>One of 10 options, such as 1, 2 and 3.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Quality of life score</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Hurt = 10, Hunger = 10, Hydration = 10, Hygiene = 10, Happiness = 10, Mobility = 10 and More good days than bad = 10 gives &lt;strong&gt;Quality of life score&lt;/strong&gt; = 70.</p><ul><li><strong>Quality of life score</strong> = 70</li></ul><p>The line behind those figures is <strong>Quality of life score</strong> = <code>(More good days than bad + Happiness + Hunger + Hurt + Hydration + Hygiene + Mobility)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'The formula behind the Cat quality of life calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Quality of life score</span><span class="formula-eq">=</span><span class="formula-rhs">(more good days than bad + happiness + hunger + hurt + hydration + hygiene + mobility)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Quality of life score&lt;/strong&gt; = 70 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Quality of life score takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>The form opens with a complete set of values: <strong>Hurt</strong> set to 10, <strong>Hunger</strong> set to 10, <strong>Hydration</strong> set to 10 and <strong>Hygiene</strong> set to 10. Straight away the calculator returns <strong>Quality of life score</strong> = 70.</p><p>Those are real numbers produced by the same engine that runs when you press Calculate, so you can change any single box afterwards and watch the answer move from this starting point.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Quality of life score</strong> = 70 should be roughly the size you expected from <strong>Hurt</strong> set to 10 and <strong>Hunger</strong> set to 10.</li></ol>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Quality of life score</strong> = <code>(More good days than bad + Happiness + Hunger + Hurt + Hydration + Hygiene + Mobility)</code></li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Hurt, from 10 to 20 — and the answers go from &lt;strong&gt;Quality of life score&lt;/strong&gt; 70 to &lt;strong&gt;Quality of life score&lt;/strong&gt; 80.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cat quality of life calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Quality of life score is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Hurt is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Write the answer down with its unit. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/catculator">Catculator</a>, <a href="/biology/cattle-per-acre">Cattle per acre</a> and <a href="/biology/cell-dilution">Cell dilution</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Hurt, Hunger and Hydration measured, Quality of life score wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/cat-pregnancy">Cat pregnancy Calculator</a>, <a href="/biology/catch-per-unit-effort">Catch Per Unit Effort Calculator</a> and <a href="/biology/catculator">Catculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Cat quality of life calculator work out?', 'a' => <<<'TXT'
-            It returns quality of life score. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Quality of life score, from More good days than bad, Happiness, Hunger and Hurt. The relationship is Quality of life score = (More good days than bad + Happiness + Hunger + Hurt + Hydration + Hygiene + Mobility).
             TXT],
-            ['q' => 'What do I need to enter to use the Cat quality of life calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is 7 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Hurt, Hunger, Hydration, Hygiene, Happiness. Fill hurt, hunger and hydration and leave Quality of life score empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There are several choices to make (7 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
+            ['q' => 'What answer do the default values give?', 'a' => 'Quality of life score = 70. The figures come from Hurt as the page opens it; they are a starting point, not a fixed answer.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Quality of life score is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Quality of life score, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Quality of life score = 70. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Cat quality of life calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Quality of life score keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
+            ['path' => '/biology/cat-pregnancy', 'name' => 'Cat pregnancy Calculator'],
+            ['path' => '/biology/catch-per-unit-effort', 'name' => 'Catch Per Unit Effort Calculator'],
             ['path' => '/biology/catculator', 'name' => 'Catculator'],
-            ['path' => '/biology/cattle-per-acre', 'name' => 'Cattle per acre'],
-            ['path' => '/biology/cell-dilution', 'name' => 'Cell dilution'],
         ],
+        'authors' => [],
     ],
 ];

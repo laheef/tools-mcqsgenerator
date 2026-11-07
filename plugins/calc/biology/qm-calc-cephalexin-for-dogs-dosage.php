@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cephalexin for dogs dosage',
-    'meta' => ['title' => 'Cephalexin for dogs dosage — Formula & Results', 'description' => '<strong>amount per dose</strong> is what the Cephalexin for dogs dosage calculator works out, and it gets there from your dog\'s weight and the liquid per dose.', 'h1' => 'Cephalexin for dogs dosage Calculator', 'updated' => '2026-05-22'],
+    'meta' => ['title' => 'Cephalexin for dogs dosage — Formula & Results', 'description' => 'Cephalexin for dogs dosage takes Your dog\'s weight, Amount per dose and Drug type and returns Liquid per dose and Total liquid. Your dog\'s weight (kilograms)…', 'h1' => 'Cephalexin for dogs dosage Calculator', 'updated' => '2026-05-22'],
     'raw' => [
         'vars' => [
             'dailyDosage' => [
@@ -329,63 +329,57 @@ return [
         'js' => '"use strict";//# sourceURL=customJs.js',
     ],
     'article' => [
-        'intro' => '<strong>amount per dose</strong> is what the Cephalexin for dogs dosage calculator works out, and it gets there from your dog\'s weight and the liquid per dose.',
+        'intro' => <<<'TXT'
+        Cephalexin for dogs dosage takes Your dog's weight, Amount per dose and Drug type and returns Liquid per dose and Total liquid. There is no hidden constant here: change Liquid per dose and Your dog's weight moves with it. The main result, Liquid per dose, is reported in milliliters.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Cephalexin for dogs dosage calculator work?', 'html' => <<<'TXT'
-            <p>The Cephalexin for dogs dosage calculator takes the values in the form, applies the relationship described below and reports <strong>amount per dose</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in your dog's weight and the liquid per dose.</p>
+            ['title' => 'How the Cephalexin for dogs dosage calculator works', 'html' => <<<'TXT'
+            <p>Cephalexin for dogs dosage answers one question from 6 numbers, and the answer is Liquid per dose and Total liquid.</p><p>The relationship it solves reads Amount per dose = 15 × Your dog&#039;s weight.</p><p>The result panel carries Liquid per dose and Total liquid, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A measured quantity, entered by default in milliliters. The unit chip switches it to any of the 40 supported units.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 6 boxes, and nothing else.</p><ul><li><strong>Your dog&#039;s weight</strong> — in kilograms</li><li><strong>Amount per dose</strong> — in milligrams</li><li><strong>Drug type</strong> — a plain number, no unit</li><li><strong>~Tablets per dose</strong> — in #</li><li><strong>Daily dosage</strong> — in milligrams. With 2 doses per day, given every 12 hours.</li><li><strong>~Tablets per day</strong> — in #. With 2 doses per day, administered every 12 hours.</li></ul><p>What you get back is Liquid per dose in milliliters, Total liquid in milliliters, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Your dog's weight</strong></td><td>A measured quantity, 29 units available.</td><td>kilograms</td><td>You supply it</td></tr><tr><td><strong>Amount per dose</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>Calculated</td></tr><tr><td><strong>Drug type</strong></td><td>One of 8 options, such as tablets (250 mg), tablets (500 mg) and chewable tablets (75 mg).</td><td>choice</td><td>Calculated</td></tr><tr><td><strong>Liquid per dose</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>You supply it</td></tr><tr><td><strong>~Tablets per dose</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Daily dosage</strong></td><td>A measured quantity, 29 units available.</td><td>milligrams</td><td>Calculated</td></tr><tr><td><strong>Total liquid</strong></td><td>A measured quantity, 40 units available.</td><td>milliliters</td><td>Calculated</td></tr><tr><td><strong>~Tablets per day</strong></td><td>A number stated in #.</td><td>—</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Your dog&amp;#039;s weight = 10 kg — through the same formula and the panel reports &lt;strong&gt;Drug type&lt;/strong&gt; = 150, &lt;strong&gt;Amount per dose&lt;/strong&gt; = 150 mg, &lt;strong&gt;Daily dosage&lt;/strong&gt; = 300 mg, &lt;strong&gt;Liquid per dose&lt;/strong&gt; = 1 ml, &lt;strong&gt;Total liquid&lt;/strong&gt; = 2 ml, &lt;strong&gt;~Tablets per dose&lt;/strong&gt; = 1 # and &lt;strong&gt;~Tablets per day&lt;/strong&gt; = 2 #.</p><ul><li><strong>Drug type</strong> = 150</li><li><strong>Amount per dose</strong> = 150 mg</li><li><strong>Daily dosage</strong> = 300 mg</li><li><strong>Liquid per dose</strong> = 1 ml</li><li><strong>Total liquid</strong> = 2 ml</li><li><strong>~Tablets per dose</strong> = 1 #</li><li><strong>~Tablets per day</strong> = 2 #</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Amount per dose</strong> = <code>15 × Your dog&#039;s weight</code>.</p>
             TXT],
-            ['title' => 'The formula behind the Cephalexin for dogs dosage calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Amount per dose</span><span class="formula-eq">=</span><span class="formula-rhs">15 × your dog&#x27;s weight</span></div><div class="formula-row"><span class="formula-lhs">Daily dosage</span><span class="formula-eq">=</span><span class="formula-rhs">30 × your dog&#x27;s weight</span></div><div class="formula-row"><span class="formula-lhs">Drug type</span><span class="formula-eq">=</span><span class="formula-rhs">amount per dose ÷ liquid per dose</span></div><div class="formula-row"><span class="formula-lhs">Total liquid</span><span class="formula-eq">=</span><span class="formula-rhs">daily dosage ÷ drug type</span></div><div class="formula-row"><span class="formula-lhs">~Tablets per dose</span><span class="formula-eq">=</span><span class="formula-rhs">rounded down, ((amount per dose + (1 ÷ 5) × drug type) ÷ drug type)</span></div><div class="formula-row"><span class="formula-lhs">~Tablets per day</span><span class="formula-eq">=</span><span class="formula-rhs">(2 × rounded down, ((amount per dose + (1 ÷ 5) × drug type) ÷ drug type))</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Drug type&lt;/strong&gt; = 150, &lt;strong&gt;Amount per dose&lt;/strong&gt; = 150, &lt;strong&gt;Daily dosage&lt;/strong&gt; = 300, &lt;strong&gt;Liquid per dose&lt;/strong&gt; = 1, &lt;strong&gt;Total liquid&lt;/strong&gt; = 2, &lt;strong&gt;~Tablets per dose&lt;/strong&gt; = 1 and &lt;strong&gt;~Tablets per day&lt;/strong&gt; = 2 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Liquid per dose offers 40 units and opens on milliliters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in milligrams, and convertible to any of the 29 units on that chip.</li><li>Shown in milligrams, and convertible to any of the 29 units on that chip.</li><li>The option the calculation settles on.</li><li>Shown in milliliters, and convertible to any of the 40 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Amount per dose</strong> = <code>15 × Your dog&#039;s weight</code></li><li><strong>Your dog&#039;s weight</strong> = <code>(1 ÷ 15) × Amount per dose</code></li><li><strong>Daily dosage</strong> = <code>30 × Your dog&#039;s weight</code></li><li><strong>Drug type</strong> = <code>Amount per dose ÷ Liquid per dose</code></li><li><strong>Liquid per dose</strong> = <code>Amount per dose ÷ Drug type</code></li><li><strong>Total liquid</strong> = <code>Daily dosage ÷ Drug type</code></li></ul><p>Any one of Amount per dose, Your dog&#039;s weight and Daily dosage can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Mass, opening in kilograms</li><li>Mass, opening in milligrams</li><li>Volume, opening in milliliters</li><li>Mass, opening in milligrams</li><li>Volume, opening in milliliters</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Your dog&#039;s weight from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Drug type&lt;/strong&gt; 150, &lt;strong&gt;Amount per dose&lt;/strong&gt; 150 mg, &lt;strong&gt;Daily dosage&lt;/strong&gt; 300 mg, &lt;strong&gt;Liquid per dose&lt;/strong&gt; 1 ml, &lt;strong&gt;Total liquid&lt;/strong&gt; 2 ml, &lt;strong&gt;~Tablets per dose&lt;/strong&gt; 1 # and &lt;strong&gt;~Tablets per day&lt;/strong&gt; 2 # to &lt;strong&gt;Drug type&lt;/strong&gt; 150, &lt;strong&gt;Amount per dose&lt;/strong&gt; 300 mg, &lt;strong&gt;Daily dosage&lt;/strong&gt; 600 mg, &lt;strong&gt;Liquid per dose&lt;/strong&gt; 2 ml, &lt;strong&gt;Total liquid&lt;/strong&gt; 4 ml, &lt;strong&gt;~Tablets per dose&lt;/strong&gt; 2 # and &lt;strong&gt;~Tablets per day&lt;/strong&gt; 4 #.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cephalexin for dogs dosage calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 2 figures keep coming back — your dog's weight and the liquid per dose — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Your dog&#039;s weight, Amount per dose and Daily dosage is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Liquid per dose and Total liquid are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Your dog&#039;s weight to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. </li><li>Round only at the end. </li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/co2-grow-room">CO₂ grow room</a>, <a href="/biology/compost">Compost</a> and <a href="/biology/corn-yield">Corn yield</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Your dog&#039;s weight, Amount per dose and Drug type measured, Liquid per dose and Total liquid wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dsdna-ug-to-pmol">dsDNA µg to pmol Calculator</a>, <a href="/biology/dsdna-ug-to-pmol-converter">dsDNA µg to pmol Converter Calculator</a> and <a href="/biology/egg-incubation-hatch-date">Egg Incubation Hatch Date Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Cephalexin for dogs dosage calculator work out?', 'a' => <<<'TXT'
-            It returns amount per dose, derived from your dog's weight and the liquid per dose. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Cephalexin for dogs dosage calculator work out?', 'a' => 'Liquid per dose and Total liquid, from Your dog\'s weight. The relationship is Amount per dose = 15 × Your dog\'s weight.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Your dog's weight (kilograms), Amount per dose (milligrams), Drug type, ~Tablets per dose (#), Daily dosage (milligrams). Enter weight, dosage and form; Liquid per dose is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'What do I need to enter to use the Cephalexin for dogs dosage calculator?', 'a' => <<<'TXT'
-            The form asks for your dog's weight and the liquid per dose, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Amount per dose, Your dog's weight, Daily dosage and Drug type blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I enter your dog\'s weight in a different unit?', 'a' => <<<'TXT'
-            Yes. Your dog's weight opens in kilograms and the chip beside it offers 29 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Drug type = 150, Amount per dose = 150 mg, Daily dosage = 300 mg, Liquid per dose = 1 ml, Total liquid = 2 ml, ~Tablets per dose = 1 # and ~Tablets per day = 2 #. Those are the defaults written into the form — move Your dog's weight and every result box follows.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Liquid per dose is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Cephalexin for dogs dosage calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Your dog\'s weight blank and the page solves for it, reporting Liquid per dose instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Liquid per dose keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/co2-grow-room', 'name' => 'CO₂ grow room'],
-            ['path' => '/biology/compost', 'name' => 'Compost'],
-            ['path' => '/biology/corn-yield', 'name' => 'Corn yield'],
+            ['path' => '/biology/dsdna-ug-to-pmol', 'name' => 'dsDNA µg to pmol Calculator'],
+            ['path' => '/biology/dsdna-ug-to-pmol-converter', 'name' => 'dsDNA µg to pmol Converter Calculator'],
+            ['path' => '/biology/egg-incubation-hatch-date', 'name' => 'Egg Incubation Hatch Date Calculator'],
         ],
+        'authors' => [],
     ],
 ];

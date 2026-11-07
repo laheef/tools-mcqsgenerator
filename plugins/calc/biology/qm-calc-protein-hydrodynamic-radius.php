@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein Hydrodynamic Radius Calculator',
-    'meta' => ['title' => 'Protein Hydrodynamic Radius Calculator — Biology', 'description' => 'The hydrodynamic radius is the effective size a protein presents to the solvent — what size-exclusion chromatography and dynamic light scattering actually…', 'h1' => 'Protein Hydrodynamic Radius Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Protein Hydrodynamic Radius Calculator — Biology', 'description' => 'Protein Hydrodynamic Radius works out Hydrodynamic radius and Diffusion coefficient from Molecular weight, Fold and Solvent viscosity. The answer typed back in.', 'h1' => 'Protein Hydrodynamic Radius Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -89,47 +89,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The hydrodynamic radius is the effective size a protein presents to the solvent — what size-exclusion chromatography and dynamic light scattering actually measure. It returns hydrodynamic radius, diffusion coefficient and relative elution volume (SEC), and the panel shows all of them at once.
-        
-        This calculator estimates it from molecular weight, and converts between radius, diffusion coefficient and elution behaviour for globular and disordered proteins.
+        Protein Hydrodynamic Radius works out Hydrodynamic radius and Diffusion coefficient from Molecular weight, Fold and Solvent viscosity. The arithmetic is the whole method: Hydrodynamic radius is worked out from Molecular weight by one formula, applied once. Hydrodynamic radius comes back in nm unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Protein Hydrodynamic Radius', 'html' => <<<'TXT'
-            <p>Globular: Rh ≈ 0.066 × MW^⅓ nm; D = kT ÷ (6πηR)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/protein-hydrodynamic-radius.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Protein Hydrodynamic Radius Calculator — Mass and fold give a radius, and the radius gives the diffusion coefficient." title="Protein Hydrodynamic Radius Calculator"><figcaption>Mass and fold give a radius, and the radius gives the diffusion coefficient.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>MW</code></td><td>molecular weight</td><td>Da</td></tr><tr><td><code>Rh</code></td><td>hydrodynamic radius</td><td>nm</td></tr><tr><td><code>η</code></td><td>solvent viscosity</td><td>Pa·s</td></tr><tr><td><code>D</code></td><td>translational diffusion coefficient</td><td>µm²/s</td></tr></tbody></table>
+            ['title' => 'How the Protein Hydrodynamic Radius calculator works', 'html' => <<<'TXT'
+            <p>The Protein Hydrodynamic Radius calculator applies one relationship to 4 numbers and reports Hydrodynamic radius, Diffusion coefficient and Relative elution volume (SEC).</p><p>In the form&#039;s own words, Hydrodynamic radius = if_else(Fold==1, 0.066 × (Molecular weight)^(0.333), 0.192 × (Molecular weight)^(0.5)).</p><p>The result panel carries Hydrodynamic radius, Diffusion coefficient and Relative elution volume (SEC), each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Protein Hydrodynamic Radius?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Molecular weight</strong> — in Da</li><li><strong>Fold</strong> — a plain number, no unit</li><li><strong>Solvent viscosity</strong> — in cP. Water at 25 °C = 0.89 cP</li><li><strong>Temperature</strong> — in °C</li></ul><p>The answers come back as Hydrodynamic radius in nm, Diffusion coefficient in µm²/s, Relative elution volume (SEC) in Ve/V0. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: molecular weight of <strong>55,000</strong> Da, fold set to <strong>1.0</strong>, solvent viscosity of <strong>0.89</strong> cP, temperature of <strong>25</strong>°C.</p>
-            <p>Substituting them into the formula gives hydrodynamic radius of <strong>2.5</strong> nm, diffusion coefficient of <strong>98.07</strong> µm²/s, relative elution volume (sec) of <strong>1.35</strong> Ve/V0.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Molecular weight = 55000 Da, Fold = 1, Solvent viscosity = 0.89 cP and Temperature = 25 °C; the answers are &lt;strong&gt;Hydrodynamic radius&lt;/strong&gt; = 2.5 nm, &lt;strong&gt;Diffusion coefficient&lt;/strong&gt; = 98.07 µm²/s and &lt;strong&gt;Relative elution volume (SEC)&lt;/strong&gt; = 1.35 Ve/V0.</p><ul><li><strong>Hydrodynamic radius</strong> = 2.5 nm</li><li><strong>Diffusion coefficient</strong> = 98.07 µm²/s</li><li><strong>Relative elution volume (SEC)</strong> = 1.35 Ve/V0</li></ul><p>That is <strong>Hydrodynamic radius</strong> = <code>if_else(Fold==1, 0.066 × (Molecular weight)^(0.333), 0.192 × (Molecular weight)^(0.5))</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>1 – 3 nm</td><td><strong>Small globular</strong></td><td>lysozyme, cytochrome c</td></tr><tr><td>3 – 6 nm</td><td><strong>Typical globular</strong></td><td>BSA, IgG fragments</td></tr><tr><td>above 8 nm</td><td><strong>Large or disordered</strong></td><td>multimers, complexes, IDPs</td></tr></tbody></table>
-            <ul><li><p>A disordered protein of the same molecular weight is two to three times larger than a globular one; the difference is what makes SEC a shape measurement, not just a mass one.</p></li><li><p>The Stokes–Einstein relation assumes a sphere, which is why a radius derived this way is 'hydrodynamic' rather than geometric.</p></li><li><p>Glycosylation adds mass without adding much radius per dalton, so heavily modified proteins sit below the globular line.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Hydrodynamic radius&lt;/strong&gt; = 2.5, &lt;strong&gt;Diffusion coefficient&lt;/strong&gt; = 98.07 and &lt;strong&gt;Relative elution volume (SEC)&lt;/strong&gt; = 1.35. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Hydrodynamic radius is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Using viscosity in poise where Pa·s is needed (a factor of 10).</li><li>Treating the estimate as a measurement: DLS gives the real number.</li><li>Comparing Rh across temperatures without correcting the viscosity of water.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Hydrodynamic radius</strong> = <code>if_else(Fold==1, 0.066 × (Molecular weight)^(0.333), 0.192 × (Molecular weight)^(0.5))</code></li><li><strong>Diffusion coefficient</strong> = <code>0.0000000000000000000000138 × (Temperature + 273.15) ÷ (6 × 3.14159265358979 × Solvent viscosity × 0.001 × (0.066 × (Molecular weight)^(0.333) × 0.000000001)) × 1000000000000</code></li><li><strong>Relative elution volume (SEC)</strong> = <code>1 + 0.35 × (0.066 × (Molecular weight)^(0.333) ÷ 2.5)^(3)</code></li></ul><p>Any one of Hydrodynamic radius, Diffusion coefficient and Relative elution volume (SEC) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Molecular weight, from 55000 to 110000 — and the answers go from &lt;strong&gt;Hydrodynamic radius&lt;/strong&gt; 2.5 nm, &lt;strong&gt;Diffusion coefficient&lt;/strong&gt; 98.07 µm²/s and &lt;strong&gt;Relative elution volume (SEC)&lt;/strong&gt; 1.35 Ve/V0 to &lt;strong&gt;Hydrodynamic radius&lt;/strong&gt; 3.15 nm, &lt;strong&gt;Diffusion coefficient&lt;/strong&gt; 77.86 µm²/s and &lt;strong&gt;Relative elution volume (SEC)&lt;/strong&gt; 1.7 Ve/V0.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Hydrodynamic radius, Diffusion coefficient and Relative elution volume (SEC) are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Molecular weight to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Molecular weight, Fold and Solvent viscosity is what you already know and Hydrodynamic radius and Diffusion coefficient is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/tree-leaves">Leaves on tree Calculator</a>, <a href="/biology/ligation-calculator">Ligation Calculator</a> and <a href="/biology/ligation-molar-ratio">Ligation Molar Ratio (Insert: Vector) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a normal hydrodynamic radius for a 50 kDa protein?', 'a' => 'About 3 nm if globular, 6–8 nm if partly disordered.'],
-            ['q' => 'Why does my SEC elution suggest a much larger protein?', 'a' => 'Because SEC separates by size, and an elongated or disordered protein behaves like a larger sphere.'],
-            ['q' => 'What does the Protein Hydrodynamic Radius actually calculate?', 'a' => <<<'TXT'
-            It returns hydrodynamic radius, diffusion coefficient and relative elution volume (SEC). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Protein Hydrodynamic Radius calculator work out?', 'a' => <<<'TXT'
+            Hydrodynamic radius, Diffusion coefficient and Relative elution volume (SEC), from Fold and Molecular weight. The relationship is Hydrodynamic radius = if_else(Fold==1, 0.066 × (Molecular weight)^(0.333), 0.192 × (Molecular weight)^(0.5)).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Molecular weight (Da), Fold, Solvent viscosity (cP), Temperature (°C). Enter mw, shape and viscosity; Hydrodynamic radius is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Hydrodynamic radius, Diffusion coefficient and Relative elution volume (SEC) blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Hydrodynamic radius = 2.5 nm, Diffusion coefficient = 98.07 µm²/s and Relative elution volume (SEC) = 1.35 Ve/V0. That comes from the page's own defaults, entered in Molecular weight; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Hydrodynamic radius is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Molecular weight left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Hydrodynamic radius keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/tree-leaves', 'name' => 'Leaves on tree Calculator'],
+            ['path' => '/biology/ligation-calculator', 'name' => 'Ligation Calculator'],
+            ['path' => '/biology/ligation-molar-ratio', 'name' => 'Ligation Molar Ratio (Insert : Vector) Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

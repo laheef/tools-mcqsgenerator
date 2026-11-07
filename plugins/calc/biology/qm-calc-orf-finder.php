@@ -11,9 +11,7 @@
 
 return [
     'name' => 'ORF Finder',
-    'meta' => ['title' => 'ORF Finder for Biology — Formula, Steps & Results', 'description' => <<<'TXT'
-    An ORF finder lists every open reading frame in a sequence: each stretch between a start and a stop codon. It returns open reading frames, longest orf, on the…
-    TXT, 'h1' => 'ORF Finder', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'ORF Finder for Biology — Formula, Steps & Results', 'description' => 'ORF Finder takes DNA sequence, Minimum protein length and Count as a start and returns Open reading frames and Longest ORF. There is one relationship behind…', 'h1' => 'ORF Finder', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -275,42 +273,41 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        An ORF finder lists every open reading frame in a sequence: each stretch between a start and a stop codon. It returns open reading frames, longest orf, on the forward strand, on the reverse strand and stop codons in frame, and the panel shows all of them at once.
-        
-        It is how you decide which frame to express, whether a cloned insert is intact, and where a sequencing read's protein should start.
+        ORF Finder takes DNA sequence, Minimum protein length and Count as a start and returns Open reading frames and Longest ORF. Nothing is looked up on this page: Open reading frames is computed from DNA sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the ORF Finder', 'html' => <<<'TXT'
-            <p>An ORF runs from a start codon to the first in-frame stop. Length in aa = (stop − start) ÷ 3. Six frames = three on the forward strand and three on its reverse complement</p>
-            <figure class="calc-figure"><img src="/uploads/biology/orf-finder.svg" width="720" height="300" loading="lazy" alt="Animated diagram: ORF Finder — Open reading frames are read from six registers" title="ORF Finder"><figcaption>Open reading frames are read from six registers</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ORF</code></td><td>open reading frame</td><td>—</td></tr><tr><td><code>frame</code></td><td>one of the three registers a sequence can be read in</td><td>—</td></tr><tr><td><code>aa</code></td><td>amino acid</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the ORF Finder calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind ORF Finder: it takes 3 numbers and reports Open reading frames, Longest ORF and On the forward strand.</p><p>The answers are Open reading frames, Longest ORF, On the forward strand and On the reverse strand; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the ORF Finder?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>DNA sequence</strong> — a plain number, no unit. Paste DNA; FASTA headers and digits are ignored</li><li><strong>Minimum protein length</strong> — in aa. Shorter ORFs are ignored</li><li><strong>Count as a start</strong> — a plain number, no unit</li></ul><p>The answers come back as Open reading frames, Longest ORF in aa, On the forward strand, On the reverse strand, Stop codons in frame. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 100 aa</td><td><strong>Short ORF</strong></td><td>often a false call in a random sequence</td></tr><tr><td>100 – 300 aa</td><td><strong>Typical protein</strong></td><td>most bacterial proteins fall here</td></tr><tr><td>above 500 aa</td><td><strong>Large protein</strong></td><td>check for a fused or unfused tag</td></tr></tbody></table>
-            <ul><li><p>In a random DNA sequence an ORF of 100 codons appears by chance roughly once per 60 kb, so a short ORF on its own proves nothing.</p></li><li><p>The longest ORF is not automatically the gene: in a bacterial operon the first gene may be shorter than a downstream one, and on the reverse strand there may be an equally long frame.</p></li><li><p>The bacterial start set (ATG, GTG, TTG) is worth using on prokaryotic sequence; eukaryotic scans should stay with ATG.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Open reading frames takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Reporting an ORF that starts mid-gene because the real start codon is upstream of the pasted region.</li><li>Forgetting the reverse strand — a gene can be on either strand.</li><li>Assuming the first ATG is the start; in eukaryotes the first ATG in a good Kozak context is the better guess.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Open reading frames, Longest ORF and On the forward strand are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert DNA sequence to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: DNA sequence, Minimum protein length and Count as a start measured, Open reading frames and Longest ORF wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/water-soluble-fertilizer">Water soluble fertilizer Calculator</a>, <a href="/biology/watterson-estimator">Watterson Estimator Calculator</a> and <a href="/biology/western-blot-loading">Western Blot Protein Loading Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is an open reading frame?', 'a' => 'A stretch with no stop codon in a given frame, usually counted from a start codon to the next in-frame stop.'],
-            ['q' => 'Why six frames?', 'a' => 'DNA is double-stranded, and each strand can be read in three registers, so a sequence has six possible protein products.'],
-            ['q' => 'How long must an ORF be to be believable?', 'a' => 'In bacteria, 100 codons or more; in eukaryotes, longer, because introns break the frame.'],
-            ['q' => 'What does the ORF Finder actually calculate?', 'a' => <<<'TXT'
-            It returns open reading frames, longest orf, on the forward strand, on the reverse strand and stop codons in frame. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the ORF Finder calculator work out?', 'a' => 'Open reading frames, Longest ORF, On the forward strand and On the reverse strand.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            DNA sequence, Minimum protein length (aa), Count as a start. Fill sequence, min_aa and starts and leave Open reading frames empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Open reading frames is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Open reading frames is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Open reading frames keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/water-soluble-fertilizer', 'name' => 'Water soluble fertilizer Calculator'],
+            ['path' => '/biology/watterson-estimator', 'name' => 'Watterson Estimator Calculator'],
+            ['path' => '/biology/western-blot-loading', 'name' => 'Western Blot Protein Loading Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

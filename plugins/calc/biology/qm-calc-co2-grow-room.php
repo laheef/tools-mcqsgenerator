@@ -11,7 +11,9 @@
 
 return [
     'name' => 'CO₂ grow room',
-    'meta' => ['title' => 'CO₂ grow room Calculator — Formula & Results', 'description' => 'The CO₂ grow room calculator turns the width, the height and more into <strong>length</strong>. The CO₂ grow room calculator takes the values in the form…', 'h1' => 'CO₂ grow room Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'CO₂ grow room Calculator — Formula & Results', 'description' => <<<'TXT'
+    Enter Width and Area into CO₂ grow room and the answer comes back as Length and Height. Fill roomWidth and roomArea and leave Length empty if you would rather…
+    TXT, 'h1' => 'CO₂ grow room Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => 'Grow room dimensions',
@@ -184,63 +186,38 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'The CO₂ grow room calculator turns the width, the height and more into <strong>length</strong>.',
+        'intro' => <<<'TXT'
+        Enter Width and Area into CO₂ grow room and the answer comes back as Length and Height. There is no hidden constant here: change Length and Width moves with it. The main result, Length, is reported in meters.
+        TXT,
         'sections' => [
-            ['title' => 'How does the CO₂ grow room calculator work?', 'html' => <<<'TXT'
-            <p>The CO₂ grow room calculator takes the values in the form, applies the relationship described below and reports <strong>length</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the width, the height, the area and the target CO₂.</p>
+            ['title' => 'How the CO₂ grow room calculator works', 'html' => <<<'TXT'
+            <p>CO₂ grow room answers one question from 2 numbers, and the answer is Length, Height and Volume.</p><p>The relationship it solves reads Length = Area ÷ Width.</p><p>The answers are Length, Height, Volume and Current CO₂; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li> The unit chip switches it to any of the 34 supported units.</li><li> The unit chip switches it to any of the 34 supported units.</li><li>A measured quantity, entered by default in square meters. The unit chip switches it to any of the 24 supported units.</li><li>A measured quantity, entered by default in parts per million. The unit chip switches it to any of the 28 supported units.</li><li>A measured quantity, entered by default in cubic meters. The unit chip switches it to any of the 40 supported units.</li><li>A measured quantity, entered by default in minutes. </li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Width</strong> — in meters</li><li><strong>Area</strong> — in square meters</li></ul><p>The answers come back as Length in meters, Height in meters, Volume in cubic meters, Current CO₂ in parts per million, Target CO₂ in parts per million, Required CO₂ in cubic meters, Time in minutes, CO₂ flow rate in cubic meters per hour. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Width</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Length</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>Calculated</td></tr><tr><td><strong>Height</strong></td><td>A measured quantity, 34 units available.</td><td>meters</td><td>You supply it</td></tr><tr><td><strong>Area</strong></td><td>A measured quantity, 24 units available.</td><td>square meters</td><td>You supply it</td></tr><tr><td><strong>Volume</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>Calculated</td></tr><tr><td><strong>Current CO₂</strong></td><td>A measured quantity, 28 units available.</td><td>parts per million</td><td>Calculated</td></tr><tr><td><strong>Target CO₂</strong></td><td>A measured quantity, 28 units available.</td><td>parts per million</td><td>You supply it</td></tr><tr><td><strong>Required CO₂</strong></td><td>A measured quantity, 40 units available.</td><td>cubic meters</td><td>You supply it</td></tr><tr><td><strong>Time</strong></td><td>A measured quantity, 27 units available.</td><td>minutes</td><td>You supply it</td></tr><tr><td><strong>CO₂ flow rate</strong></td><td>A measured quantity, 39 units available.</td><td>cubic meters per hour</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Length</strong> = <code>Area ÷ Width</code></li><li><strong>Width</strong> = <code>Area ÷ Length</code></li><li><strong>Area</strong> = <code>Length × Width</code></li><li><strong>Volume</strong> = <code>Height × Area</code></li><li><strong>Height</strong> = <code>Volume ÷ Area</code></li><li><strong>Current CO₂</strong> = <code>− 1000000 × Required CO₂ ÷ Volume + Target CO₂</code></li></ul><p>Any one of Length, Width and Area can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'The formula behind the CO₂ grow room calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Length</span><span class="formula-eq">=</span><span class="formula-rhs">area ÷ width</span></div><div class="formula-row"><span class="formula-lhs">Volume</span><span class="formula-eq">=</span><span class="formula-rhs">height × area</span></div><div class="formula-row"><span class="formula-lhs">Volume</span><span class="formula-eq">=</span><span class="formula-rhs">-1000000 × required CO₂ ÷ (current CO₂ − target CO₂)</span></div><div class="formula-row"><span class="formula-lhs">CO₂ flow rate</span><span class="formula-eq">=</span><span class="formula-rhs">required CO₂ ÷ time</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Width and Area carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Length, Height and Volume are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Width and let the panel round the answer once.</li></ul>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in meters, and convertible to any of the 34 units on that chip.</li><li>Shown in cubic meters, and convertible to any of the 40 units on that chip.</li><li>Shown in parts per million, and convertible to any of the 28 units on that chip.</li><li>Shown in cubic meters per hour, and convertible to any of the 39 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
-            TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Length, opening in meters</li><li>Area, opening in square meters</li><li>Volume, opening in cubic meters</li><li>Density, opening in parts per million</li><li>Density, opening in parts per million</li><li>Volume, opening in cubic meters</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The CO₂ grow room calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 4 figures keep coming back — the width, the height and the area — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Round only at the end. </li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/compost">Compost</a>, <a href="/biology/corn-yield">Corn yield</a> and <a href="/biology/cow-gestation">Cow gestation</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Width and Area is what you already know and Length and Height is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/daily-light-integral-dli">Daily light integral (DLI) Calculator</a>, <a href="/biology/days-to-maturity">Days to Maturity Calculator</a> and <a href="/biology/dihybrid-cross">Dihybrid Cross (9:3:3:1) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the CO₂ grow room calculator work out?', 'a' => <<<'TXT'
-            It returns length, derived from the width, the height and the area. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
-            TXT],
-            ['q' => 'What do I need to enter to use the CO₂ grow room calculator?', 'a' => <<<'TXT'
-            The form asks for the width, the height, the area and the target CO₂, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
-            TXT],
-            ['q' => 'Can I enter width in a different unit?', 'a' => <<<'TXT'
-            Yes. Width opens in meters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
-            TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'Is the CO₂ grow room calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'What does the CO₂ grow room calculator work out?', 'a' => 'Length, Height, Volume and Current CO₂, from Area and Width. The relationship is Length = Area ÷ Width.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Width (meters), Area (square meters). Fill roomWidth and roomArea and leave Length empty if you would rather have that one solved instead.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Length, Width, Area and Volume blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'A blank box is the question. With Width left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Length keeps more digits than the panel prints.'],
         ],
         'related' => [
-            ['path' => '/biology/compost', 'name' => 'Compost'],
-            ['path' => '/biology/corn-yield', 'name' => 'Corn yield'],
-            ['path' => '/biology/cow-gestation', 'name' => 'Cow gestation'],
+            ['path' => '/biology/daily-light-integral-dli', 'name' => 'Daily light integral (DLI) Calculator'],
+            ['path' => '/biology/days-to-maturity', 'name' => 'Days to Maturity Calculator'],
+            ['path' => '/biology/dihybrid-cross', 'name' => 'Dihybrid Cross (9:3:3:1) Calculator'],
         ],
+        'authors' => [],
     ],
 ];

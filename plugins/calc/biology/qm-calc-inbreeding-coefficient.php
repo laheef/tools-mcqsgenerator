@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Inbreeding Coefficient Calculator (COI)',
-    'meta' => ['title' => 'Inbreeding Coefficient Calculator (COI) — Biology', 'description' => 'The coefficient of inbreeding is the probability that two alleles at a locus in one individual are identical by descent. It returns inbreeding coefficient…', 'h1' => 'Inbreeding Coefficient Calculator (COI)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Inbreeding Coefficient Calculator (COI) — Biology', 'description' => 'Enter Independent ancestral paths, Generations on the sire\'s side and Generations on the dam\'s side into Inbreeding Coefficient Calculator (COI) and the…', 'h1' => 'Inbreeding Coefficient Calculator (COI)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -79,50 +79,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The coefficient of inbreeding is the probability that two alleles at a locus in one individual are identical by descent. It returns inbreeding coefficient, heterozygosity retained and relationship coefficient, and the panel shows all of them at once.
-        
-        This calculator estimates it from an ancestral path and shows the expected loss of heterozygosity, which is what actually matters for a breeding programme.
+        Enter Independent ancestral paths, Generations on the sire's side and Generations on the dam's side into Inbreeding Coefficient Calculator (COI) and the answer comes back as Inbreeding coefficient and Heterozygosity retained. It is a single relationship that reads Inbreeding coefficient out of Independent ancestral paths, not a table of canned results keyed by them. Units for Inbreeding coefficient default to % and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Inbreeding Coefficient (COI)', 'html' => <<<'TXT'
-            <p>F = Σ (½)^(n₁ + n₂ + 1), summed over independent paths to a common ancestor</p>
-            <figure class="calc-figure"><img src="/uploads/biology/inbreeding-coefficient.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Inbreeding Coefficient Calculator (COI) — Two paths up the pedigree and the probability they carry the same allele." title="Inbreeding Coefficient Calculator (COI)"><figcaption>Two paths up the pedigree and the probability they carry the same allele.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>n₁, n₂</code></td><td>generations from each parent to the shared ancestor</td><td>generations</td></tr><tr><td><code>F</code></td><td>coefficient of inbreeding</td><td>%</td></tr><tr><td><code>½^(n+1)</code></td><td>the probability the same allele travelled down both paths</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Inbreeding Coefficient Calculator (COI) calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Inbreeding Coefficient Calculator (COI): it takes 3 numbers and reports Inbreeding coefficient, Heterozygosity retained and Relationship coefficient.</p><p>In the form&#039;s own words, Inbreeding coefficient = (0.5)^(Generations on the sire&#039;s side + Generations on the dam&#039;s side + 1) × Independent ancestral paths × 100.</p><p>The answers are Inbreeding coefficient, Heterozygosity retained and Relationship coefficient; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Inbreeding Coefficient (COI)?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Independent ancestral paths</strong> — a plain number, no unit. Count of distinct loops through a common ancestor</li><li><strong>Generations on the sire&#039;s side</strong> — a plain number, no unit</li><li><strong>Generations on the dam&#039;s side</strong> — a plain number, no unit</li></ul><p>The answers come back as Inbreeding coefficient in %, Heterozygosity retained in %, Relationship coefficient in %. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: independent ancestral paths of <strong>1</strong>, generations on the sire's side of <strong>2</strong>, generations on the dam's side of <strong>2</strong>.</p>
-            <p>Substituting them into the formula gives inbreeding coefficient of <strong>3.12</strong>%, heterozygosity retained of <strong>96.88</strong>%, relationship coefficient of <strong>6.25</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Independent ancestral paths = 1, Generations on the sire&amp;#039;s side = 2 and Generations on the dam&amp;#039;s side = 2; the answers are &lt;strong&gt;Inbreeding coefficient&lt;/strong&gt; = 3.13 %, &lt;strong&gt;Heterozygosity retained&lt;/strong&gt; = 96.88 % and &lt;strong&gt;Relationship coefficient&lt;/strong&gt; = 6.25 %.</p><ul><li><strong>Inbreeding coefficient</strong> = 3.13 %</li><li><strong>Heterozygosity retained</strong> = 96.88 %</li><li><strong>Relationship coefficient</strong> = 6.25 %</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Inbreeding coefficient</strong> = <code>(0.5)^(Generations on the sire&#039;s side + Generations on the dam&#039;s side + 1) × Independent ancestral paths × 100</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>F below 6.25%</td><td><strong>Low</strong></td><td>mating of second cousins or more distant relatives</td></tr><tr><td>6.25 – 12.5%</td><td><strong>Moderate</strong></td><td>first cousins are 6.25%, uncle–niece 12.5%</td></tr><tr><td>above 25%</td><td><strong>High</strong></td><td>parent–offspring or full siblings; inbreeding depression is likely</td></tr></tbody></table>
-            <ul><li><p>F measures identity by descent, not homozygosity: a population may be homozygous for a reason other than inbreeding.</p></li><li><p>Each 1% of inbreeding coefficient removes about 1% of expected heterozygosity, which is the quantity that predicts inbreeding depression in fitness traits.</p></li><li><p>Pedigree F values are expectations; realised inbreeding from genome data differs because recombination is uneven.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Inbreeding coefficient&lt;/strong&gt; = 3.13, &lt;strong&gt;Heterozygosity retained&lt;/strong&gt; = 96.88 and &lt;strong&gt;Relationship coefficient&lt;/strong&gt; = 6.25. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Inbreeding coefficient is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Counting the same ancestral path twice.</li><li>Mixing species: the same pedigree gives the same F, but the fitness consequences differ enormously.</li><li>Treating F as a percentage of the genome that is homozygous.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Inbreeding coefficient</strong> = <code>(0.5)^(Generations on the sire&#039;s side + Generations on the dam&#039;s side + 1) × Independent ancestral paths × 100</code></li><li><strong>Heterozygosity retained</strong> = <code>(1 − (0.5)^(Generations on the sire&#039;s side + Generations on the dam&#039;s side + 1) × Independent ancestral paths) × 100</code></li><li><strong>Relationship coefficient</strong> = <code>(0.5)^(Generations on the sire&#039;s side + Generations on the dam&#039;s side) × Independent ancestral paths × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Inbreeding coefficient, Heterozygosity retained and Relationship coefficient can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/relatedness-coefficient">Relatedness coefficient</a>. <a href="/biology/hardy-weinberg-equilibrium">Hardy–Weinberg equilibrium</a>. <a href="/biology/autosomal-recessive-risk">Recessive inheritance risk</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Independent ancestral paths from 1 to 2, leaving every other box alone. The panel moves from &lt;strong&gt;Inbreeding coefficient&lt;/strong&gt; 3.13 %, &lt;strong&gt;Heterozygosity retained&lt;/strong&gt; 96.88 % and &lt;strong&gt;Relationship coefficient&lt;/strong&gt; 6.25 % to &lt;strong&gt;Inbreeding coefficient&lt;/strong&gt; 6.25 %, &lt;strong&gt;Heterozygosity retained&lt;/strong&gt; 93.75 % and &lt;strong&gt;Relationship coefficient&lt;/strong&gt; 12.5 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Inbreeding coefficient, Heterozygosity retained and Relationship coefficient are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Independent ancestral paths is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Independent ancestral paths, Generations on the sire&#039;s side and Generations on the dam&#039;s side and the number you are missing is Inbreeding coefficient and Heterozygosity retained.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/cat-chocolate-toxicity">Cat chocolate toxicity Calculator</a>, <a href="/biology/cat-pregnancy">Cat pregnancy Calculator</a> and <a href="/biology/cat-quality-of-life">Cat quality of life Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is F for a mating of full siblings?', 'a' => '25% for their offspring, from two paths through the shared parents.'],
-            ['q' => 'Does inbreeding cause mutations?', 'a' => 'No — it makes existing recessive alleles homozygous, which exposes them.'],
-            ['q' => 'What does the Inbreeding Coefficient (COI) actually calculate?', 'a' => <<<'TXT'
-            It returns inbreeding coefficient, heterozygosity retained and relationship coefficient. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Inbreeding Coefficient Calculator (COI) calculator work out?', 'a' => <<<'TXT'
+            Inbreeding coefficient, Heterozygosity retained and Relationship coefficient, from Generations on the sire's side, Generations on the dam's side and Independent ancestral paths. The relationship is Inbreeding coefficient = (0.5)^(Generations on the sire's side + Generations on the dam's side + 1) × Independent ancestral paths × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Independent ancestral paths, Generations on the sire's side, Generations on the dam's side. Enter paths, n1 and n2; Inbreeding coefficient is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Inbreeding coefficient, Heterozygosity retained and Relationship coefficient can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Inbreeding coefficient = 3.13 %, Heterozygosity retained = 96.88 % and Relationship coefficient = 6.25 %. That comes from the page's own defaults, entered in Independent ancestral paths; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Inbreeding coefficient is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave Independent ancestral paths blank and the page solves for it, reporting Inbreeding coefficient instead of the usual answer.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Inbreeding coefficient keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/cat-chocolate-toxicity', 'name' => 'Cat chocolate toxicity Calculator'],
+            ['path' => '/biology/cat-pregnancy', 'name' => 'Cat pregnancy Calculator'],
+            ['path' => '/biology/cat-quality-of-life', 'name' => 'Cat quality of life Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

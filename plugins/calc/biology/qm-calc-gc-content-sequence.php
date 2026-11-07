@@ -11,7 +11,7 @@
 
 return [
     'name' => 'GC Content from a Sequence',
-    'meta' => ['title' => 'GC Content from a Sequence — Sliding Window', 'description' => 'GC content is the share of a DNA molecule that is guanine or cytosine, and it decides how strongly two strands stick together. It returns length, g + c bases…', 'h1' => 'GC Content from a Sequence', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'GC Content from a Sequence — Sliding Window', 'description' => 'GC Content from a Sequence works out Length and G + C bases from Sequence and Window size. There is no hidden constant here: change Length and Sequence moves…', 'h1' => 'GC Content from a Sequence', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => ['type' => 'text', 'rnd' => null],
@@ -191,42 +191,39 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        GC content is the share of a DNA molecule that is guanine or cytosine, and it decides how strongly two strands stick together. It returns length, g + c bases, gc content, at content and melting temperature of the duplex, and the panel shows all of them at once.
-        
-        This calculator reports GC% overall and in sliding windows, so a GC-rich island inside an otherwise AT-rich sequence is visible rather than averaged away.
+        GC Content from a Sequence works out Length and G + C bases from Sequence and Window size. There is no hidden constant here: change Length and Sequence moves with it. The main result, Length, is reported in bp.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the GC Content from a Sequence', 'html' => <<<'TXT'
-            <p>GC% = (G + C) ÷ N × 100; Tm ≈ 64.9 + 41(G+C − 16.4)/N (G+C as a count)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/gc-content-sequence.svg" width="720" height="300" loading="lazy" alt="Animated diagram: GC Content from a Sequence — Typical GC content (%)" title="GC Content from a Sequence"><figcaption>Typical GC content (%)</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N</code></td><td>sequence length</td><td>bp</td></tr><tr><td><code>GC</code></td><td>number of guanine and cytosine bases</td><td>bases</td></tr><tr><td><code>Tm</code></td><td>melting temperature of the duplex</td><td>°C</td></tr></tbody></table>
+            ['title' => 'How the GC Content from a Sequence calculator works', 'html' => <<<'TXT'
+            <p>The GC Content from a Sequence calculator applies one relationship to 2 numbers and reports Length, G + C bases and GC content.</p><p>What comes back is Length, G + C bases, GC content and AT content — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the GC Content from a Sequence?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste DNA or RNA</li><li><strong>Window size</strong> — in bp. GC is computed in windows of this length</li></ul><p>The answers come back as Length in bp, G + C bases, GC content in %, AT content in %, Melting temperature of the duplex in °C. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 40%</td><td><strong>AT-rich</strong></td><td>easier to melt; often regulatory or repeat DNA</td></tr><tr><td>40 – 60%</td><td><strong>Typical</strong></td><td>most vertebrate genomic DNA sits here</td></tr><tr><td>60 – 70%</td><td><strong>GC-rich</strong></td><td>more stable duplex, harder to denature</td></tr><tr><td>above 70%</td><td><strong>Very GC-rich</strong></td><td>CpG islands, ribosomal DNA, some bacterial genomes</td></tr></tbody></table>
-            <ul><li><p>GC pairs have three hydrogen bonds and AT pairs have two, which is why GC-rich DNA melts at a higher temperature and why GC-rich templates are harder to sequence through.</p></li><li><p>A single GC% figure hides structure. A 200 bp CpG island at 70% GC inside a 100 kb region at 41% GC changes the overall number by a fraction of a percent.</p></li><li><p>RNA has uracil instead of thymine; the GC fraction is calculated the same way.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting ambiguous bases (N, R, Y) as AT because they are not G or C.</li><li>Comparing GC% of an mRNA (no introns) with that of its gene.</li><li>Assuming high GC always means a high melting temperature in a cell — salt and length matter at least as much.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Length, G + C bases and GC content are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Sequence and Window size and the number you are missing is Length and G + C bases.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/chicken-years-to-human-years">Chicken Years to Human Years Calculator</a>, <a href="/biology/coding-capacity-of-dna">Coding Capacity of DNA Calculator</a> and <a href="/biology/codon-adaptation-index">Codon Adaptation Index Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is a normal GC content?', 'a' => 'About 41% for the human genome, 50% for many bacteria, and as low as 25% in some Plasmodium genomes.'],
-            ['q' => 'Why does GC content matter for PCR?', 'a' => 'GC-rich regions need higher denaturation temperatures and often additives such as betaine or DMSO.'],
-            ['q' => 'What does the GC Content from a Sequence actually calculate?', 'a' => <<<'TXT'
-            It returns length, g + c bases, gc content, at content and melting temperature of the duplex. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the GC Content from a Sequence calculator work out?', 'a' => 'Length, G + C bases, GC content and AT content.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Sequence, Window size (bp). Enter sequence and window; Length is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            The arithmetic runs at full precision and only the display of Length is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/chicken-years-to-human-years', 'name' => 'Chicken Years to Human Years Calculator'],
+            ['path' => '/biology/coding-capacity-of-dna', 'name' => 'Coding Capacity of DNA Calculator'],
+            ['path' => '/biology/codon-adaptation-index', 'name' => 'Codon Adaptation Index Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

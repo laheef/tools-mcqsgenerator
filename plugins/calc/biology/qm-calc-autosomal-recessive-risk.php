@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Autosomal Recessive Inheritance Risk',
-    'meta' => ['title' => 'Autosomal Recessive Inheritance Risk Calculator', 'description' => 'For a recessive condition, risk depends on whether each parent carries one copy. It returns chance of an affected child, chance of a carrier child, chance of…', 'h1' => 'Autosomal Recessive Inheritance Risk', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Autosomal Recessive Inheritance Risk Calculator', 'description' => 'Autosomal Recessive Inheritance Risk works out Chance of an affected child and Chance of a carrier child from Parent 1 genotype, Parent 2 genotype and…', 'h1' => 'Autosomal Recessive Inheritance Risk', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -87,48 +87,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        For a recessive condition, risk depends on whether each parent carries one copy. It returns chance of an affected child, chance of a carrier child, chance of an unaffected child and population risk from carrier frequency, and the panel shows all of them at once.
-        
-        This calculator covers the four standard matings — carrier × carrier, carrier × affected, affected × affected and carrier × non-carrier — and gives the chance for an affected child, an unaffected child and a carrier child.
+        Autosomal Recessive Inheritance Risk works out Chance of an affected child and Chance of a carrier child from Parent 1 genotype, Parent 2 genotype and Population carrier frequency. It is a single relationship that reads Chance of an affected child out of Parent 1 genotype, not a table of canned results keyed by them. Units for Chance of an affected child default to % and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Autosomal Recessive Inheritance Risk', 'html' => <<<'TXT'
-            <p>Aa × Aa → 1 affected: 2 carriers: 1 non-carrier unaffected</p>
-            <figure class="calc-figure"><img src="/uploads/biology/autosomal-recessive-risk.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Autosomal Recessive Inheritance Risk — The Aa × Aa cross, cell by cell." title="Autosomal Recessive Inheritance Risk"><figcaption>The Aa × Aa cross, cell by cell.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A</code></td><td>the normal allele</td><td>—</td></tr><tr><td><code>a</code></td><td>the recessive disease allele</td><td>—</td></tr><tr><td><code>carrier</code></td><td>Aa, has the allele but not the disease</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Autosomal Recessive Inheritance Risk calculator works', 'html' => <<<'TXT'
+            <p>The Autosomal Recessive Inheritance Risk calculator applies one relationship to 3 numbers and reports Chance of an affected child, Chance of a carrier child and Chance of an unaffected child.</p><p>Written with the labels from the form, Chance of an affected child = Parent 1 genotype × Parent 2 genotype × 100.</p><p>What comes back is Chance of an affected child, Chance of a carrier child, Chance of an unaffected child and Population risk from carrier frequency — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Autosomal Recessive Inheritance Risk?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Parent 1 genotype</strong> — a plain number, no unit</li><li><strong>Parent 2 genotype</strong> — a plain number, no unit</li><li><strong>Population carrier frequency</strong> — a plain number, no unit. Optional — 2pq from Hardy–Weinberg</li></ul><p>What you get back is Chance of an affected child in %, Chance of a carrier child in %, Chance of an unaffected child in %, Population risk from carrier frequency in %, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: parent 1 genotype set to <strong>Aa — carrier</strong>, parent 2 genotype set to <strong>Aa — carrier</strong>, population carrier frequency of <strong>0.04</strong>.</p>
-            <p>Substituting them into the formula gives chance of an affected child of <strong>25</strong>%, chance of a carrier child of <strong>50</strong>%, chance of an unaffected child of <strong>25</strong>%, population risk from carrier frequency of <strong>0.04</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Parent 1 genotype = 0.5, Parent 2 genotype = 0.5 and Population carrier frequency = 0.04; the answers are &lt;strong&gt;Chance of an affected child&lt;/strong&gt; = 25 %, &lt;strong&gt;Chance of a carrier child&lt;/strong&gt; = 50 %, &lt;strong&gt;Chance of an unaffected child&lt;/strong&gt; = 25 % and &lt;strong&gt;Population risk from carrier frequency&lt;/strong&gt; = 0.04 %.</p><ul><li><strong>Chance of an affected child</strong> = 25 %</li><li><strong>Chance of a carrier child</strong> = 50 %</li><li><strong>Chance of an unaffected child</strong> = 25 %</li><li><strong>Population risk from carrier frequency</strong> = 0.04 %</li></ul><p>The line behind those figures is <strong>Chance of an affected child</strong> = <code>Parent 1 genotype × Parent 2 genotype × 100</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Every child of two carriers has the same 25% risk regardless of what happened to earlier children; the dice are independent.</p></li><li><p>Consanguineous couples are more likely to both be carriers, which is why recessive conditions cluster in populations with limited gene flow.</p></li><li><p>Carrier frequency comes from Hardy–Weinberg: 2pq, which for a rare allele is close to 2q.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Chance of an affected child&lt;/strong&gt; = 25, &lt;strong&gt;Chance of a carrier child&lt;/strong&gt; = 50, &lt;strong&gt;Chance of an unaffected child&lt;/strong&gt; = 25 and &lt;strong&gt;Population risk from carrier frequency&lt;/strong&gt; = 0.04. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Chance of an affected child is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Multiplying the parents' risks together instead of working from their genotypes.</li><li>Reading 25% as 'one in four of our children' rather than a per-child probability.</li><li>Confusing a carrier with an affected individual.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Chance of an affected child</strong> = <code>Parent 1 genotype × Parent 2 genotype × 100</code></li><li><strong>Chance of a carrier child</strong> = <code>(Parent 1 genotype × (1 − Parent 2 genotype) + (1 − Parent 1 genotype) × Parent 2 genotype) × 100</code></li><li><strong>Chance of an unaffected child</strong> = <code>(1 − Parent 1 genotype) × (1 − Parent 2 genotype) × 100</code></li><li><strong>Population risk from carrier frequency</strong> = <code>(Population carrier frequency)^(2) × 0.25 × 100</code></li></ul><p>Any one of Chance of an affected child, Chance of a carrier child and Chance of an unaffected child can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/hardy-weinberg-equilibrium">Hardy–Weinberg equilibrium</a>. <a href="/biology/inbreeding-coefficient">Inbreeding coefficient</a>. <a href="/biology/autosomal-dominant-pedigree">Dominant pedigree</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Parent 1 genotype from 0.5 to 1, leaving every other box alone. The panel moves from &lt;strong&gt;Chance of an affected child&lt;/strong&gt; 25 %, &lt;strong&gt;Chance of a carrier child&lt;/strong&gt; 50 %, &lt;strong&gt;Chance of an unaffected child&lt;/strong&gt; 25 % and &lt;strong&gt;Population risk from carrier frequency&lt;/strong&gt; 0.04 % to &lt;strong&gt;Chance of an affected child&lt;/strong&gt; 50 %, &lt;strong&gt;Chance of a carrier child&lt;/strong&gt; 50 %, &lt;strong&gt;Chance of an unaffected child&lt;/strong&gt; 0 % and &lt;strong&gt;Population risk from carrier frequency&lt;/strong&gt; 0.04 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Chance of an affected child, Chance of a carrier child and Chance of an unaffected child are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Parent 1 genotype is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Parent 1 genotype, Parent 2 genotype and Population carrier frequency is what you already know and Chance of an affected child and Chance of a carrier child is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/transpiration-rate">Transpiration Rate Calculator</a>, <a href="/biology/tree-age">Tree age</a> and <a href="/biology/tree-diameter">Tree diameter Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'If both parents are carriers, why can a child be unaffected?', 'a' => 'Because there is a 75% chance the child inherits at least one normal allele.'],
-            ['q' => 'What is the risk if one parent is affected and one is a carrier?', 'a' => '50% affected, 50% carrier, none completely free of the allele.'],
-            ['q' => 'What does the Autosomal Recessive Inheritance Risk actually calculate?', 'a' => <<<'TXT'
-            It returns chance of an affected child, chance of a carrier child, chance of an unaffected child and population risk from carrier frequency. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Autosomal Recessive Inheritance Risk calculator work out?', 'a' => <<<'TXT'
+            Chance of an affected child, Chance of a carrier child, Chance of an unaffected child and Population risk from carrier frequency, from Parent 1 genotype and Parent 2 genotype. The relationship is Chance of an affected child = Parent 1 genotype × Parent 2 genotype × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Parent 1 genotype, Parent 2 genotype, Population carrier frequency. Enter parent1, parent2 and carrier_freq; Chance of an affected child is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Chance of an affected child, Chance of a carrier child, Chance of an unaffected child and Population risk from carrier frequency blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Chance of an affected child = 25 %, Chance of a carrier child = 50 %, Chance of an unaffected child = 25 % and Population risk from carrier frequency = 0.04 %. That comes from the page's own defaults, entered in Parent 1 genotype; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Chance of an affected child is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Parent 1 genotype left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Chance of an affected child at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/transpiration-rate', 'name' => 'Transpiration Rate Calculator'],
+            ['path' => '/biology/tree-age', 'name' => 'Tree age'],
+            ['path' => '/biology/tree-diameter', 'name' => 'Tree diameter Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

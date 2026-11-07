@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mark–Recapture Population Calculator (Lincoln–Petersen)',
-    'meta' => ['title' => 'Mark–Recapture Population Calculator — Biology', 'description' => 'Mark a sample, release it, catch a second sample and count how many are marked: the share of marked animals in the second sample estimates the share of the…', 'h1' => 'Mark–Recapture Population Calculator (Lincoln–Petersen)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mark–Recapture Population Calculator — Biology', 'description' => 'Mark a sample, release it, catch a second sample and count how many are marked: the share of marked animals in the second sample estimates the share of the wh', 'h1' => 'Mark–Recapture Population Calculator (Lincoln–Petersen)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -107,50 +107,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Mark a sample, release it, catch a second sample and count how many are marked: the share of marked animals in the second sample estimates the share of the whole population. It returns population estimate (Lincoln–Petersen), chapman-corrected estimate, standard error and 95% lower bound, and the panel shows all of them at once.
-        
-        This calculator gives the Lincoln–Petersen estimate, the Chapman small-sample correction and a confidence interval.
+        Enter Animals marked and released (M), Animals in the second sample (C) and Marked animals recaptured (R) into Mark–Recapture Population Calculator (Lincoln–Petersen) and the answer comes back as Population estimate (Lincoln–Petersen) and Chapman-corrected estimate. It is a single relationship that reads Population estimate (Lincoln–Petersen) out of Animals marked and released (M), not a table of canned results keyed by them. Units for Population estimate (Lincoln–Petersen) default to individuals and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Mark–Recapture Population (Lincoln–Petersen)', 'html' => <<<'TXT'
-            <p>N ≈ (M × C) ÷ R, with Chapman's correction N = [(M+1)(C+1) ÷ (R+1)] − 1</p>
-            <figure class="calc-figure"><img src="/uploads/biology/mark-recapture-population.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Mark–Recapture Population Calculator (Lincoln–Petersen) — Marked animals, second sample and recaptures give the population size." title="Mark–Recapture Population Calculator (Lincoln–Petersen)"><figcaption>Marked animals, second sample and recaptures give the population size.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>M</code></td><td>marked and released in the first sample</td><td>individuals</td></tr><tr><td><code>C</code></td><td>total caught in the second sample</td><td>individuals</td></tr><tr><td><code>R</code></td><td>marked individuals in the second sample</td><td>individuals</td></tr><tr><td><code>N</code></td><td>estimated population size</td><td>individuals</td></tr></tbody></table>
+            ['title' => 'How the Mark–Recapture Population Calculator (Lincoln–Petersen) calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Mark–Recapture Population Calculator (Lincoln–Petersen): it takes 3 numbers and reports Population estimate (Lincoln–Petersen), Chapman-corrected estimate and Standard error.</p><p>Written with the labels from the form, Population estimate (Lincoln–Petersen) = Animals marked and released (M) × Animals in the second sample (C) ÷ Marked animals recaptured (R).</p><p>The answers are Population estimate (Lincoln–Petersen), Chapman-corrected estimate, Standard error and 95% lower bound; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Mark–Recapture Population (Lincoln–Petersen)?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Animals marked and released (M)</strong> — in individuals</li><li><strong>Animals in the second sample (C)</strong> — in individuals</li><li><strong>Marked animals recaptured (R)</strong> — in individuals</li></ul><p>The result boxes are Population estimate (Lincoln–Petersen) in individuals, Chapman-corrected estimate in individuals, Standard error in individuals, 95% lower bound in individuals, 95% upper bound in individuals; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: animals marked and released (m) of <strong>120</strong> individuals, animals in the second sample (c) of <strong>100</strong> individuals, marked animals recaptured (r) of <strong>22</strong> individuals.</p>
-            <p>Substituting them into the formula gives population estimate (lincoln–petersen) of <strong>545.45</strong> individuals, chapman-corrected estimate of <strong>530.35</strong> individuals, standard error of <strong>527.58</strong> individuals, 95% lower bound of <strong>-3,389.75</strong> individuals, 95% upper bound of <strong>4,450.44</strong> individuals.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Animals marked and released (M) = 120 individuals, Animals in the second sample (C) = 100 individuals and Marked animals recaptured (R) = 22 individuals; the answers are &lt;strong&gt;Population estimate (Lincoln–Petersen)&lt;/strong&gt; = 545 individuals, &lt;strong&gt;Chapman-corrected estimate&lt;/strong&gt; = 530 individuals, &lt;strong&gt;Standard error&lt;/strong&gt; = 528 individuals, &lt;strong&gt;95% lower bound&lt;/strong&gt; = -3390 individuals and &lt;strong&gt;95% upper bound&lt;/strong&gt; = 4450 individuals.</p><ul><li><strong>Population estimate (Lincoln–Petersen)</strong> = 545 individuals</li><li><strong>Chapman-corrected estimate</strong> = 530 individuals</li><li><strong>Standard error</strong> = 528 individuals</li><li><strong>95% lower bound</strong> = -3390 individuals</li><li><strong>95% upper bound</strong> = 4450 individuals</li></ul><p>The line behind those figures is <strong>Population estimate (Lincoln–Petersen)</strong> = <code>Animals marked and released (M) × Animals in the second sample (C) ÷ Marked animals recaptured (R)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>R above 20</td><td><strong>Reliable</strong></td><td>the estimate is stable and the interval is narrow</td></tr><tr><td>R 5 – 20</td><td><strong>Use the correction</strong></td><td>Chapman's version removes most of the bias</td></tr><tr><td>R below 5</td><td><strong>Poor</strong></td><td>collect another sample; the interval is wider than the estimate</td></tr></tbody></table>
-            <ul><li><p>The method assumes a closed population (no births, deaths, immigration or emigration between samples), equal catchability and that marks are not lost.</p></li><li><p>Trapshy animals violate equal catchability and inflate the estimate; baited traps and trap-happy animals deflate it.</p></li><li><p>The Chapman estimator is less biased than the plain ratio at the sample sizes field biologists actually achieve.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Population estimate (Lincoln–Petersen)&lt;/strong&gt; = 545, &lt;strong&gt;Chapman-corrected estimate&lt;/strong&gt; = 530, &lt;strong&gt;Standard error&lt;/strong&gt; = 528, &lt;strong&gt;95% lower bound&lt;/strong&gt; = -3390 and &lt;strong&gt;95% upper bound&lt;/strong&gt; = 4450. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Population estimate (Lincoln–Petersen) is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Sampling too soon after marking, before the animals have mixed back into the population.</li><li>Marking only the largest individuals, which makes them easier to recapture.</li><li>Reporting a point estimate with no interval, which overstates what a single sample can say.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Population estimate (Lincoln–Petersen)</strong> = <code>Animals marked and released (M) × Animals in the second sample (C) ÷ Marked animals recaptured (R)</code></li><li><strong>Chapman-corrected estimate</strong> = <code>(Animals marked and released (M) + 1) × (Animals in the second sample (C) + 1) ÷ (Marked animals recaptured (R) + 1) − 1</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Population estimate (Lincoln–Petersen), Chapman-corrected estimate and Standard error can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/quadrat-sampling-density">Quadrat sampling density</a>. <a href="/biology/catch-per-unit-effort">Catch per unit effort</a>. <a href="/biology/logistic-population-growth">Logistic growth</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Animals marked and released (M) from 120 to 240, leaving every other box alone. The panel moves from &lt;strong&gt;Population estimate (Lincoln–Petersen)&lt;/strong&gt; 545 individuals, &lt;strong&gt;Chapman-corrected estimate&lt;/strong&gt; 530 individuals, &lt;strong&gt;Standard error&lt;/strong&gt; 528 individuals, &lt;strong&gt;95% lower bound&lt;/strong&gt; -3390 individuals and &lt;strong&gt;95% upper bound&lt;/strong&gt; 4450 individuals to &lt;strong&gt;Population estimate (Lincoln–Petersen)&lt;/strong&gt; 1091 individuals, &lt;strong&gt;Chapman-corrected estimate&lt;/strong&gt; 1057 individuals, &lt;strong&gt;Standard error&lt;/strong&gt; 1053 individuals, &lt;strong&gt;95% lower bound&lt;/strong&gt; -10555 individuals and &lt;strong&gt;95% upper bound&lt;/strong&gt; 12670 individuals.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Population estimate (Lincoln–Petersen), Chapman-corrected estimate and Standard error are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Animals marked and released (M) and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Animals marked and released (M), Animals in the second sample (C) and Marked animals recaptured (R) and the number you are missing is Population estimate (Lincoln–Petersen) and Chapman-corrected estimate.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/genetic-linkage-distance">Recombination to cM — Haldane &amp; Kosambi</a>, <a href="/biology/relatedness-coefficient">Relatedness Coefficient Calculator</a> and <a href="/biology/relative-abundance">Relative Abundance Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Why is my recapture rate so low?', 'a' => 'Either the population is large or the second sample was small; the estimator needs at least five to twenty recaptures to be meaningful.'],
-            ['q' => 'What if marked animals die from handling?', 'a' => 'That violates the closure assumption and biases the estimate; use a model that allows for losses on capture (Cormack–Jolly–Seber).'],
-            ['q' => 'What does the Mark–Recapture Population (Lincoln–Petersen) actually calculate?', 'a' => <<<'TXT'
-            It returns population estimate (Lincoln–Petersen), chapman-corrected estimate, standard error and 95% lower bound. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Mark–Recapture Population Calculator (Lincoln–Petersen) calculator work out?', 'a' => <<<'TXT'
+            Population estimate (Lincoln–Petersen), Chapman-corrected estimate, Standard error and 95% lower bound, from Animals marked and released (M), Animals in the second sample (C) and Marked animals recaptured (R). The relationship is Population estimate (Lincoln–Petersen) = Animals marked and released (M) × Animals in the second sample (C) ÷ Marked animals recaptured (R).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Animals marked and released (M) (individuals), Animals in the second sample (C) (individuals), Marked animals recaptured (R) (individuals). Fill marked, second and recaptured and leave Population estimate (Lincoln–Petersen) empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Population estimate (Lincoln–Petersen), Chapman-corrected estimate, Standard error and 95% lower bound can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Population estimate (Lincoln–Petersen) = 545 individuals, Chapman-corrected estimate = 530 individuals, Standard error = 528 individuals, 95% lower bound = -3390 individuals and 95% upper bound = 4450 individuals. Those are the defaults written into the form — move Animals marked and released (M) and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Population estimate (Lincoln–Petersen) is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            The empty box becomes the unknown: leave Animals marked and released (M) blank and the page solves for it, reporting Population estimate (Lincoln–Petersen) instead of the usual answer.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Population estimate (Lincoln–Petersen) at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/genetic-linkage-distance', 'name' => 'Recombination to cM — Haldane & Kosambi'],
+            ['path' => '/biology/relatedness-coefficient', 'name' => 'Relatedness Coefficient Calculator'],
+            ['path' => '/biology/relative-abundance', 'name' => 'Relative Abundance Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

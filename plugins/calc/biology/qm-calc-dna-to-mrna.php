@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA to mRNA',
-    'meta' => ['title' => 'DNA to mRNA Calculator: Formula, Steps & Examples', 'description' => 'The DNA to mRNA calculator turns the input DNA sequence and the input mRNA sequence into the answer. The DNA to mRNA calculator takes the values in the form…', 'h1' => 'DNA to mRNA Calculator', 'updated' => '2026-01-27'],
+    'meta' => ['title' => 'DNA to mRNA Calculator: Formula, Steps & Examples', 'description' => 'DNA to mRNA turns Convert sequence from, Input DNA sequence and Input mRNA sequence into DNA, in codons and Messenger RNA transcript. The answer typed back in.', 'h1' => 'DNA to mRNA Calculator', 'updated' => '2026-01-27'],
     'raw' => [
         'vars' => [
             'choice' => [
@@ -454,62 +454,40 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'The DNA to mRNA calculator turns the input DNA sequence and the input mRNA sequence into the answer.',
+        'intro' => <<<'TXT'
+        DNA to mRNA turns Convert sequence from, Input DNA sequence and Input mRNA sequence into DNA, in codons and Messenger RNA transcript. There is no hidden constant here: change DNA, in codons and Convert sequence from: moves with it.
+        TXT,
         'sections' => [
-            ['title' => 'How does the DNA to mRNA calculator work?', 'html' => <<<'TXT'
-            <p>The DNA to mRNA calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the convert sequence from); then you type in the input DNA sequence and the input mRNA sequence.</p>
+            ['title' => 'How the DNA to mRNA calculator works', 'html' => <<<'TXT'
+            <p>The DNA to mRNA calculator applies one relationship to 3 numbers and reports DNA, in codons, Messenger RNA transcript and Protein.</p><p>What comes back is DNA, in codons, Messenger RNA transcript, Protein and DNA from your messenger RNA — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 2 options, such as DNA to mRNA and mRNA to DNA. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Convert sequence from</strong> — a plain number, no unit</li><li><strong>Input DNA sequence</strong> — a plain number, no unit. DNA uses A, C, G, T. Any other letters or characters (numbers, punctuation, etc.) are ignored automatically.</li><li><strong>Input mRNA sequence</strong> — a plain number, no unit. mRNA uses A, C, G, U. Any other letters or characters (numbers, punctuation, etc.) are ignored automatically.</li></ul><p>The result boxes are DNA, in codons, Messenger RNA transcript, Protein, DNA from your messenger RNA, Messenger RNA you entered, Protein from that mRNA; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Convert sequence from</strong></td><td>One of 2 options, such as DNA to mRNA and mRNA to DNA.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Input DNA sequence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Input mRNA sequence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: DNA, in codons takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'The formula behind the DNA to mRNA calculator', 'html' => <<<'TXT'
-            <p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>
-            <p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with DNA, in codons, Messenger RNA transcript and Protein are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Convert sequence from: to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The DNA to mRNA calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 2 figures keep coming back — the input DNA sequence and the input mRNA sequence — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li><li>Write the answer down with its unit. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the DNA to mRNA calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — convert sequence from for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-age">Dog age</a>, <a href="/biology/dog-bmi">Dog BMI</a> and <a href="/biology/dog-calorie">Dog calorie</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Convert sequence from, Input DNA sequence and Input mRNA sequence and the number you are missing is DNA, in codons and Messenger RNA transcript.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/inbreeding-coefficient">Inbreeding Coefficient (COI) Calculator</a>, <a href="/biology/land-equivalent-ratio">Land Equivalent Ratio Calculator</a> and <a href="/biology/lawn-fertilizer-rate">Lawn Fertilizer Rate Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What do I need to enter to use the DNA to mRNA calculator?', 'a' => <<<'TXT'
-            The form asks for the input DNA sequence and the input mRNA sequence, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'What does the DNA to mRNA calculator work out?', 'a' => 'DNA, in codons, Messenger RNA transcript, Protein and DNA from your messenger RNA.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Convert sequence from, Input DNA sequence, Input mRNA sequence. Fill choice, input_DNA_strand and input_mRNA_strand and leave DNA, in codons empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the DNA to mRNA calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of DNA, in codons is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: DNA, in codons is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. DNA, in codons keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-age', 'name' => 'Dog age'],
-            ['path' => '/biology/dog-bmi', 'name' => 'Dog BMI'],
-            ['path' => '/biology/dog-calorie', 'name' => 'Dog calorie'],
+            ['path' => '/biology/inbreeding-coefficient', 'name' => 'Inbreeding Coefficient (COI) Calculator'],
+            ['path' => '/biology/land-equivalent-ratio', 'name' => 'Land Equivalent Ratio Calculator'],
+            ['path' => '/biology/lawn-fertilizer-rate', 'name' => 'Lawn Fertilizer Rate Calculator'],
         ],
+        'authors' => [],
     ],
 ];

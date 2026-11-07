@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Lineweaver-Burk Plot / Km & Vmax Calculator',
-    'meta' => ['title' => 'Lineweaver-Burk Plot / Km & Vmax Calculator', 'description' => 'The Lineweaver–Burk plot linearises Michaelis–Menten kinetics: 1/v against 1/[S] gives a straight line whose intercepts are 1/Vmax and −1/Km.', 'h1' => 'Lineweaver-Burk Plot / Km & Vmax Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Lineweaver-Burk Plot / Km & Vmax Calculator', 'description' => <<<'TXT'
+    Lineweaver-Burk Plot / Km & Vmax turns Substrate concentration 1, Initial velocity 1 and Substrate concentration 2 into Vmax and Km. A result box can be typed…
+    TXT, 'h1' => 'Lineweaver-Burk Plot / Km & Vmax Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -89,43 +91,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        The Lineweaver–Burk plot linearises Michaelis–Menten kinetics: 1/v against 1/[S] gives a straight line whose intercepts are 1/Vmax and −1/Km. It returns vmax, km and vmax/Km, and the panel shows all of them at once.
-        
-        Enter two substrate/velocity pairs and the calculator returns Vmax, Km and catalytic efficiency.
+        Lineweaver-Burk Plot / Km & Vmax turns Substrate concentration 1, Initial velocity 1 and Substrate concentration 2 into Vmax and Km. Nothing is looked up on this page: Vmax is computed from Substrate concentration 1 and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Vmax is opened in µmol/min; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Lineweaver-Burk Plot / Km & Vmax', 'html' => <<<'TXT'
-            <p>1/v = (Km/Vmax)(1/[S]) + 1/Vmax</p>
-            <figure class="calc-figure"><img src="/uploads/biology/lineweaver-burk-plot.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Lineweaver-Burk Plot / Km &amp; Vmax Calculator — The double-reciprocal line: x-intercept −1/Km, y-intercept 1/Vmax." title="Lineweaver-Burk Plot / Km &amp; Vmax Calculator"><figcaption>The double-reciprocal line: x-intercept −1/Km, y-intercept 1/Vmax.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>*S*</code></td><td>substrate concentration</td><td>mM</td></tr><tr><td><code>v</code></td><td>initial velocity</td><td>µmol/min</td></tr><tr><td><code>Vmax</code></td><td>velocity at saturating substrate</td><td>µmol/min</td></tr><tr><td><code>Km</code></td><td>substrate concentration at half Vmax</td><td>mM</td></tr></tbody></table>
-            <p><strong>Where the relationship comes from.</strong> Lineweaver & Burk (1934); the cautions on the double-reciprocal fit follow Dowd & Riggs (1965).</p>
+            ['title' => 'How the Lineweaver-Burk Plot / Km & Vmax calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Lineweaver-Burk Plot / Km &amp; Vmax: it takes 4 numbers and reports Vmax, Km and Vmax/Km.</p><p>The relationship it solves reads Vmax = 1 ÷ ((1 ÷ Initial velocity 1) − (((1 ÷ Initial velocity 2) − (1 ÷ Initial velocity 1)) ÷ ((1 ÷ Substrate concentration 2) − (1 ÷ Substrate concentration 1))) × (1 ÷ Substrate concentration 1)).</p><p>What comes back is Vmax, Km and Vmax/Km — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Lineweaver-Burk Plot / Km & Vmax?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Substrate concentration 1</strong> — in mM</li><li><strong>Initial velocity 1</strong> — in µmol/min</li><li><strong>Substrate concentration 2</strong> — in mM</li><li><strong>Initial velocity 2</strong> — in µmol/min</li></ul><p>What you get back is Vmax in µmol/min, Km in mM, Vmax/Km in µmol/min/mM, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: substrate concentration 1 of <strong>0.5</strong> mM, initial velocity 1 of <strong>0.35</strong> µmol/min, substrate concentration 2 of <strong>2</strong> mM, initial velocity 2 of <strong>0.62</strong> µmol/min.</p>
-            <p>Substituting them into the formula gives vmax of <strong>0.8346</strong> µmol/min, km of <strong>0.6923</strong> mM, vmax/km of <strong>1.21</strong> µmol/min/mM.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Substrate concentration 1 = 0.5 mM, Initial velocity 1 = 0.35 µmol/min, Substrate concentration 2 = 2 mM and Initial velocity 2 = 0.62 µmol/min — through the same formula and the panel reports &lt;strong&gt;Vmax&lt;/strong&gt; = 0.8346 µmol/min, &lt;strong&gt;Km&lt;/strong&gt; = 0.6923 mM and &lt;strong&gt;Vmax/Km&lt;/strong&gt; = 1.21 µmol/min/mM.</p><ul><li><strong>Vmax</strong> = 0.8346 µmol/min</li><li><strong>Km</strong> = 0.6923 mM</li><li><strong>Vmax/Km</strong> = 1.21 µmol/min/mM</li></ul><p>That is <strong>Vmax</strong> = <code>1 ÷ ((1 ÷ Initial velocity 1) − (((1 ÷ Initial velocity 2) − (1 ÷ Initial velocity 1)) ÷ ((1 ÷ Substrate concentration 2) − (1 ÷ Substrate concentration 1))) × (1 ÷ Substrate concentration 1))</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>With two points, Vmax and Km are exact for a linear fit but very sensitive to a single bad measurement; four to six points from 0.2 to 5 × Km is the practical minimum.</p></li><li><p>The double-reciprocal plot weights the lowest substrate points most heavily, which is its well-known weakness. A non-linear fit to the same data is more reliable.</p></li><li><p>Km is an operational constant: it changes with pH, temperature and the second substrate.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Vmax&lt;/strong&gt; = 0.8346, &lt;strong&gt;Km&lt;/strong&gt; = 0.6923 and &lt;strong&gt;Vmax/Km&lt;/strong&gt; = 1.21 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Vmax takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using substrate concentrations in different units on one line.</li><li>Including points where the rate has already plateaued.</li><li>Reading Km off the y-intercept instead of the x-intercept (which is −1/Km).</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Vmax</strong> = <code>1 ÷ ((1 ÷ Initial velocity 1) − (((1 ÷ Initial velocity 2) − (1 ÷ Initial velocity 1)) ÷ ((1 ÷ Substrate concentration 2) − (1 ÷ Substrate concentration 1))) × (1 ÷ Substrate concentration 1))</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Vmax, Km and Vmax/Km can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Substrate concentration 1, from 0.5 to 1 — and the answers go from &lt;strong&gt;Vmax&lt;/strong&gt; 0.8346 µmol/min, &lt;strong&gt;Km&lt;/strong&gt; 0.6923 mM and &lt;strong&gt;Vmax/Km&lt;/strong&gt; 1.21 µmol/min/mM to &lt;strong&gt;Vmax&lt;/strong&gt; 2.71 µmol/min, &lt;strong&gt;Km&lt;/strong&gt; 6.75 mM and &lt;strong&gt;Vmax/Km&lt;/strong&gt; 0.4019 µmol/min/mM.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Vmax, Km and Vmax/Km are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Substrate concentration 1 is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Substrate concentration 1, Initial velocity 1 and Substrate concentration 2 measured, Vmax and Km wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/hardy-weinberg-recessive-homozygote">Hardy–Weinberg from the Recessive Homozygote Frequency Calcula</a>, <a href="/biology/hatch-rate">Hatch Rate Calculator</a> and <a href="/biology/height-to-finger-length">Height to Finger Length Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does a high Km mean?', 'a' => 'Low affinity: more substrate is needed to reach half of Vmax.'],
-            ['q' => 'How many points do I need?', 'a' => 'At least four, spread geometrically from about 0.2 to 5 × Km.'],
-            ['q' => 'What does the Lineweaver-Burk Plot / Km & Vmax actually calculate?', 'a' => 'It returns vmax, km and vmax/Km. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Lineweaver-Burk Plot / Km & Vmax calculator work out?', 'a' => <<<'TXT'
+            Vmax, Km and Vmax/Km, from Initial velocity 1, Initial velocity 2, Substrate concentration 2 and Substrate concentration 1. The relationship is Vmax = 1 ÷ ((1 ÷ Initial velocity 1) − (((1 ÷ Initial velocity 2) − (1 ÷ Initial velocity 1)) ÷ ((1 ÷ Substrate concentration 2) − (1 ÷ Substrate concentration 1))) × (1 ÷ Substrate concentration 1)).
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Substrate concentration 1 (mM), Initial velocity 1 (µmol/min), Substrate concentration 2 (mM), Initial velocity 2 (µmol/min). Enter s1, v1 and s2; Vmax is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Vmax, Km and Vmax/Km can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Vmax = 0.8346 µmol/min, Km = 0.6923 mM and Vmax/Km = 1.21 µmol/min/mM. Those are the defaults written into the form — move Substrate concentration 1 and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Vmax is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Substrate concentration 1 left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Vmax keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/hardy-weinberg-recessive-homozygote', 'name' => 'Hardy–Weinberg from the Recessive Homozygote Frequency Calcula'],
+            ['path' => '/biology/hatch-rate', 'name' => 'Hatch Rate Calculator'],
+            ['path' => '/biology/height-to-finger-length', 'name' => 'Height to Finger Length Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

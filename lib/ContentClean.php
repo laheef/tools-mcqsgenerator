@@ -72,6 +72,11 @@ final class ContentClean
             foreach (self::sentences($text) as $sentence) {
                 $pages[$sentence][$i] = true;
             }
+            foreach ((array) ($article['faq'] ?? []) as $qa) {
+                foreach (self::sentences((string) ($qa['a'] ?? '')) as $sentence) {
+                    $pages[$sentence][$i] = true;
+                }
+            }
         }
         $freq = [];
         foreach ($pages as $sentence => $set) {
@@ -79,6 +84,24 @@ final class ContentClean
         }
         arsort($freq);
         return $freq;
+    }
+
+    /**
+     * The sentences that are too common to be worth keeping, measured straight
+     * from a set of articles in one call.
+     *
+     * @param array<int,array> $articles
+     * @return array<string,true>
+     */
+    public static function shared(array $articles, int $minPages = 5, int $minChars = 40): array
+    {
+        $out = [];
+        foreach (self::frequencies($articles) as $sentence => $count) {
+            if ($count >= $minPages && mb_strlen((string) $sentence, 'UTF-8') >= $minChars) {
+                $out[(string) $sentence] = true;
+            }
+        }
+        return $out;
     }
 
     /**
@@ -105,7 +128,7 @@ final class ContentClean
      * @param array<string,true>                  $boilerplate
      * @return array{article:array,removed:int,words:int}
      */
-    public static function clean(array $article, array $boilerplate): array
+    public static function clean(array $article, array $boilerplate, int $minFaq = 0): array
     {
         $removed = 0;
 
@@ -123,6 +146,22 @@ final class ContentClean
         }
         $article['intro'] = self::tidy($intro);
         $article['sections'] = $sections;
+
+        if (isset($article['faq']) && is_array($article['faq'])) {
+            $faq = [];
+            foreach ($article['faq'] as $qa) {
+                $answer = self::tidy(self::strip((string) ($qa['a'] ?? ''), $boilerplate, $removed));
+                if (str_word_count($answer) < 12) {
+                    continue;               // a question with no answer left
+                }
+                $faq[] = ['q' => (string) ($qa['q'] ?? ''), 'a' => $answer];
+            }
+            /* A page needs questions to be a Q&A; the sweep gives way to that
+               rather than leaving two of them behind. */
+            if (count($faq) >= $minFaq || count($faq) === count($article['faq'])) {
+                $article['faq'] = $faq;
+            }
+        }
 
         $text = $article['intro'];
         foreach ($sections as $s) {

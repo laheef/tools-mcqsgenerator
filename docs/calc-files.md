@@ -164,7 +164,35 @@ sample inputs), and otherwise writes a `raw` block. It also:
   category (`lib/ContentClean.php`);
 * writes the metadata through the rules in `lib/CalcSeo.php`;
 * adds a worked example computed from the page's own formulas where the page
-  came out thin (`lib/CalcExample.php`).
+  came out thin (`lib/CalcExample.php`);
+* with `--rewrite`, replaces the article with one written from the page's own
+  record — its labels, units, equations, defaults and numbers
+  (`lib/CalcArticle.php`) — then sweeps the whole category once more and removes
+  any sentence that still appears on five or more pages.
+
+```
+php tools/export_calc_files.php --cat=biology --force --rewrite
+```
+
+### The article the page can defend
+
+`lib/CalcArticle.php` writes from the record and from nothing else:
+
+| section | where the words come from |
+| --- | --- |
+| How the calculator works | the first equation's left-hand side, its readable right-hand side, the names of the result boxes |
+| What to enter, what comes back | every input's label, unit and help line; every result's unit |
+| A worked example | the page's own defaults pushed through `Solver::solve()` |
+| Reading the answer | the size of those answers, the units each box offers, the rounding the record asks for |
+| The formula, and what turns it round | every equation variant, with the form's labels substituted for variable names |
+| Checking an answer by hand | one input doubled, the solver run again, both sets of answers quoted |
+| Where the numbers go wrong | the boxes that carry a unit chip, the result boxes, the measurements that pair badly |
+| Where this calculation comes up | the direction of the calculation, plus three internal links to neighbouring pages in the same category |
+
+Nothing in it is invented: if the record has no default, the example says so by
+using a number the page itself would accept, and if a page has no result box the
+value it computes under a hidden name is reported under the name the record
+carries. Two pages come out alike only when they are the same calculator.
 
 ## 7. Checks
 

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'CFU/g Calculator',
-    'meta' => ['title' => 'CFU/g Calculator — Formula, Steps & Examples', 'description' => 'Food, soil and tissue microbiology counts per gram, not per millilitre, and getting from a plate count to CFU/g needs the dilution and the wet weight.', 'h1' => 'CFU/g Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'CFU/g Calculator — Formula, Steps & Examples', 'description' => 'CFU/g turns Colonies counted, Volume plated and Dilution factor into CFU per gram and log₁₀(CFU/g). CFU per gram is opened in CFU/g; the chip beside it…', 'h1' => 'CFU/g Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -90,45 +90,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Food, soil and tissue microbiology counts per gram, not per millilitre, and getting from a plate count to CFU/g needs the dilution and the wet weight. It returns CFU per gram, log₁₀(CFU/g) and CFU per kg, and the panel shows all of them at once.
-        
-        This calculator does it, and converts to log CFU/g, the scale used in food safety limits.
+        CFU/g turns Colonies counted, Volume plated and Dilution factor into CFU per gram and log₁₀(CFU/g). Nothing is looked up on this page: CFU per gram is computed from Colonies counted and the other boxes, so an unusual pair of values gives an honest answer rather than an error. CFU per gram is opened in CFU/g; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the CFU/g', 'html' => <<<'TXT'
-            <p>CFU/g = colonies ÷ volume plated × dilution factor ÷ sample weight</p>
-            <figure class="calc-figure"><img src="/uploads/biology/cfu-g-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: CFU/g Calculator — Plate count, dilution and sample weight give CFU/g." title="CFU/g Calculator"><figcaption>Plate count, dilution and sample weight give CFU/g.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>colonies</code></td><td>colonies on the countable plate</td><td>CFU</td></tr><tr><td><code>volume</code></td><td>volume plated</td><td>mL</td></tr><tr><td><code>dilution</code></td><td>total dilution</td><td>×</td></tr><tr><td><code>weight</code></td><td>mass of sample in the first dilution</td><td>g</td></tr></tbody></table>
+            ['title' => 'How the CFU/g calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind CFU/g: it takes 4 numbers and reports CFU per gram, log₁₀(CFU/g) and CFU per kg.</p><p>Written with the labels from the form, CFU per gram = Colonies counted ÷ Volume plated × Dilution factor ÷ Sample weight.</p><p>The answers are CFU per gram, log₁₀(CFU/g) and CFU per kg; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the CFU/g?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Colonies counted</strong> — in CFU</li><li><strong>Volume plated</strong> — in mL</li><li><strong>Dilution factor</strong> — in ×. 10⁴ for a 1 g in 9 mL then 10⁻³ series</li><li><strong>Sample weight</strong> — in g. Weight that went into the first dilution</li></ul><p>What you get back is CFU per gram in CFU/g, log₁₀(CFU/g), CFU per kg in CFU/kg, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: colonies counted of <strong>126</strong> CFU, volume plated of <strong>0.1</strong> mL, dilution factor of <strong>10,000</strong> ×, sample weight of <strong>1</strong> g.</p>
-            <p>Substituting them into the formula gives cfu per gram of <strong>12,600,000</strong> CFU/g, log₁₀(cfu/g) of <strong>7.1</strong>, cfu per kg of <strong>12,600,000,000</strong> CFU/kg.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Colonies counted = 126 CFU, Volume plated = 0.1 mL, Dilution factor = 10000 × and Sample weight = 1 g — through the same formula and the panel reports &lt;strong&gt;CFU per gram&lt;/strong&gt; = 1.260e+7 CFU/g, &lt;strong&gt;log₁₀(CFU/g)&lt;/strong&gt; = 7.1 and &lt;strong&gt;CFU per kg&lt;/strong&gt; = 1.260e+1 CFU/kg.</p><ul><li><strong>CFU per gram</strong> = 1.260e+7 CFU/g</li><li><strong>log₁₀(CFU/g)</strong> = 7.1</li><li><strong>CFU per kg</strong> = 1.260e+1 CFU/kg</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>CFU per gram</strong> = <code>Colonies counted ÷ Volume plated × Dilution factor ÷ Sample weight</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> Here is the scale that goes with this one:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>below 4 log CFU/g</td><td><strong>Low</strong></td><td>below most spoilage thresholds</td></tr><tr><td>4 – 6 log</td><td><strong>Moderate</strong></td><td>typical of raw foods</td></tr><tr><td>above 6 log</td><td><strong>High</strong></td><td>spoilage or a process failure</td></tr></tbody></table>
-            <ul><li><p>Log CFU/g is the industry language: 6 log CFU/g is a million per gram.</p></li><li><p>If the sample was frozen or dried, report whether the weight was taken before or after.</p></li><li><p>Homogenisation must be included in the first dilution volume, not after it.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;CFU per gram&lt;/strong&gt; = 1.260e+7, &lt;strong&gt;log₁₀(CFU/g)&lt;/strong&gt; = 7.1 and &lt;strong&gt;CFU per kg&lt;/strong&gt; = 1.260e+1 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: CFU per gram takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Dividing by the weight twice.</li><li>Treating a 25 g sample in 225 mL as a dilution factor of 225 instead of 10.</li><li>Reporting CFU/mL from a solid sample without stating the weight used.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>CFU per gram</strong> = <code>Colonies counted ÷ Volume plated × Dilution factor ÷ Sample weight</code></li><li><strong>log₁₀(CFU/g)</strong> = <code>log₁₀(Colonies counted ÷ Volume plated × Dilution factor ÷ Sample weight)</code></li><li><strong>CFU per kg</strong> = <code>Colonies counted ÷ Volume plated × Dilution factor ÷ Sample weight × 1000</code></li></ul><p>Any one of CFU per gram, log₁₀(CFU/g) and CFU per kg can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Colonies counted, from 126 to 252 — and the answers go from &lt;strong&gt;CFU per gram&lt;/strong&gt; 1.260e+7 CFU/g, &lt;strong&gt;log₁₀(CFU/g)&lt;/strong&gt; 7.1 and &lt;strong&gt;CFU per kg&lt;/strong&gt; 1.260e+1 CFU/kg to &lt;strong&gt;CFU per gram&lt;/strong&gt; 2.520e+7 CFU/g, &lt;strong&gt;log₁₀(CFU/g)&lt;/strong&gt; 7.4 and &lt;strong&gt;CFU per kg&lt;/strong&gt; 2.520e+1 CFU/kg.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with CFU per gram, log₁₀(CFU/g) and CFU per kg are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Colonies counted to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Colonies counted, Volume plated and Dilution factor and the number you are missing is CFU per gram and log₁₀(CFU/g).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/tree-height">Tree height</a>, <a href="/biology/tree-spacing">Tree spacing</a> and <a href="/biology/tree-value">Tree value Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How do I convert CFU/g to log CFU/g?', 'a' => 'Take the base-10 logarithm: 1 × 10⁶ CFU/g is 6 log CFU/g.'],
-            ['q' => 'Does this work for swabs?', 'a' => 'Use CFU per swab or per cm² instead; a swab has no meaningful gram weight.'],
-            ['q' => 'What does the CFU/g actually calculate?', 'a' => 'It returns CFU per gram, log₁₀(CFU/g) and CFU per kg. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the CFU/g calculator work out?', 'a' => <<<'TXT'
+            CFU per gram, log₁₀(CFU/g) and CFU per kg, from Colonies counted, Volume plated, Dilution factor and Sample weight. The relationship is CFU per gram = Colonies counted ÷ Volume plated × Dilution factor ÷ Sample weight.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Colonies counted (CFU), Volume plated (mL), Dilution factor (×), Sample weight (g). Fill colonies, volume and dilution and leave CFU per gram empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of CFU per gram, log₁₀(CFU/g) and CFU per kg blank and the page solves for that one instead — nothing has to be switched first.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            CFU per gram = 1.260e+7 CFU/g, log₁₀(CFU/g) = 7.1 and CFU per kg = 1.260e+1 CFU/kg. Those are the defaults written into the form — move Colonies counted and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally CFU per gram is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Colonies counted blank and the page solves for it, reporting CFU per gram instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. CFU per gram keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/tree-height', 'name' => 'Tree height'],
+            ['path' => '/biology/tree-spacing', 'name' => 'Tree spacing'],
+            ['path' => '/biology/tree-value', 'name' => 'Tree value Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

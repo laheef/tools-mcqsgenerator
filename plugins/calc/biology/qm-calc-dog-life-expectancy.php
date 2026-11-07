@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Dog life expectancy',
-    'meta' => ['title' => 'Dog life expectancy: Formula, Steps & Results', 'description' => <<<'TXT'
-    The Dog <strong>life expectancy</strong> calculator returns life expectancy from the field on the form. The Dog life expectancy calculator takes the values in…
-    TXT, 'h1' => 'Dog life expectancy Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog life expectancy: Formula, Steps & Results', 'description' => 'Dog life expectancy turns How old is the dog, in years? and Size of the breed into Age in human years and Typical lifespan for this size (years).', 'h1' => 'Dog life expectancy Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'dog_age' => ['type' => 'numerical'],
@@ -626,64 +624,42 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'The Dog <strong>life expectancy</strong> calculator returns life expectancy from the field on the form.',
+        'intro' => <<<'TXT'
+        Dog life expectancy turns How old is the dog, in years? and Size of the breed into Age in human years and Typical lifespan for this size (years). It is a single relationship that reads Age in human years out of How old is the dog, in years?, not a table of canned results keyed by them.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Dog life expectancy calculator work?', 'html' => <<<'TXT'
-            <p>The Dog life expectancy calculator takes the values in the form, applies the relationship described below and reports <strong>life expectancy</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the breed).</p>
+            ['title' => 'How the Dog life expectancy calculator works', 'html' => <<<'TXT'
+            <p>Dog life expectancy answers one question from 2 numbers, and the answer is Age in human years, Typical lifespan for this size (years) and Years likely left.</p><p>What comes back is Age in human years, Typical lifespan for this size (years), Years likely left and Life stage (1 puppy, 2 adult, 3 mature, 4 senior) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>Pick the option that matches your case — 201 options, such as affenpinscher, afghan Hound and african Boerboels. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>How old is the dog, in years?</strong> — a plain number, no unit</li><li><strong>Size of the breed</strong> — a plain number, no unit</li></ul><p>The result boxes are Age in human years, Typical lifespan for this size (years), Years likely left, Life stage (1 puppy, 2 adult, 3 mature, 4 senior); they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
-            ['title' => 'The formula behind the Dog life expectancy calculator', 'html' => <<<'TXT'
-            <p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>
-            <p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: Age in human years takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Age in human years, Typical lifespan for this size (years) and Years likely left are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If How old is the dog, in years? is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Dog life expectancy calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Dog life expectancy calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — breed for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-metacam">Dog Metacam dosage</a>, <a href="/biology/dog-onion-toxicity">Dog onion toxicity</a> and <a href="/biology/dog-pregnancy">Dog pregnancy</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are How old is the dog, in years? and Size of the breed and the number you are missing is Age in human years and Typical lifespan for this size (years).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dog-quality-of-life">Dog quality of life</a>, <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a> and <a href="/biology/dog-size">Dog size Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Dog life expectancy calculator work out?', 'a' => <<<'TXT'
-            It returns life expectancy. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            ['q' => 'What does the Dog life expectancy calculator work out?', 'a' => 'Age in human years, Typical lifespan for this size (years), Years likely left and Life stage (1 puppy, 2 adult, 3 mature, 4 senior).'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            How old is the dog, in years?, Size of the breed. Enter dog_age and breed_size; Age in human years is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'What do I need to enter to use the Dog life expectancy calculator?', 'a' => <<<'TXT'
-            The form asks for a few values, which is a single field. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'How precise is the result?', 'a' => 'Internally Age in human years is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Age in human years, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Life expectancy = 0. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Dog life expectancy calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Age in human years at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/dog-metacam', 'name' => 'Dog Metacam dosage'],
-            ['path' => '/biology/dog-onion-toxicity', 'name' => 'Dog onion toxicity'],
-            ['path' => '/biology/dog-pregnancy', 'name' => 'Dog pregnancy'],
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+            ['path' => '/biology/dog-size', 'name' => 'Dog size Calculator'],
         ],
+        'authors' => [],
     ],
 ];

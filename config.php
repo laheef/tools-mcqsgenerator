@@ -238,6 +238,7 @@ require_once __DIR__ . '/lib/CalcFile.php';
 require_once __DIR__ . '/lib/CalcSeo.php';
 require_once __DIR__ . '/lib/ContentClean.php';
 require_once __DIR__ . '/lib/CalcExample.php';
+require_once __DIR__ . '/lib/CalcArticle.php';
 require_once __DIR__ . '/lib/Solver.php';
 require_once __DIR__ . '/lib/Data.php';
 require_once __DIR__ . '/lib/Groups.php';

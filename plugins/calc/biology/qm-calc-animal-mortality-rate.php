@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Animal mortality rate',
-    'meta' => ['title' => 'Animal mortality rate — Free Online Calculator', 'description' => 'The Animal mortality rate calculator turns the available stock, number of animals sold and more into <strong>number of deaths</strong>. The Animal mortality…', 'h1' => 'Animal mortality rate Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Animal mortality rate — Free Online Calculator', 'description' => 'Animal mortality rate turns Opening stock, Number of newborns and Number of animals sold into Available stock and Mortality rate. A result box can be typed…', 'h1' => 'Animal mortality rate Calculator', 'updated' => '2026-08-06'],
     'sections' => [
         [
             'title' => 'Mortality rate',
@@ -187,63 +187,50 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'The Animal mortality rate calculator turns the available stock, number of animals sold and more into <strong>number of deaths</strong>.',
+        'intro' => <<<'TXT'
+        Animal mortality rate turns Opening stock, Number of newborns and Number of animals sold into Available stock and Mortality rate. There is no hidden constant here: change Available stock and Opening stock moves with it.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Animal mortality rate calculator work?', 'html' => <<<'TXT'
-            <p>The Animal mortality rate calculator takes the values in the form, applies the relationship described below and reports <strong>number of deaths</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the available stock, number of animals sold, the mortality rate and the cumulative mortality.</p>
+            ['title' => 'How the Animal mortality rate calculator works', 'html' => <<<'TXT'
+            <p>Animal mortality rate answers one question from 8 numbers, and the answer is Available stock, Mortality rate and Cumulative mortality.</p><p>Written with the labels from the form, Number of deaths = − Closing stock − Number of animals sold + Number of newborns + Opening stock.</p><p>What comes back is Available stock, Mortality rate and Cumulative mortality — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in percent. The unit chip switches it to any of the 6 supported units.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 8 boxes and the page has everything it needs.</p><ul><li><strong>Opening stock</strong> — a plain number, no unit. Number of animals you started the growing cycle with.</li><li><strong>Number of newborns</strong> — a plain number, no unit</li><li><strong>Number of animals sold</strong> — a plain number, no unit. Number of animals sold during the growing cycle.</li><li><strong>Closing stock</strong> — a plain number, no unit. Number of animals you ended the growing cycle with.</li><li><strong>Number of deaths</strong> — a plain number, no unit</li><li><strong>Number of disease cases</strong> — a plain number, no unit</li><li><strong>Number of deaths from disease</strong> — a plain number, no unit</li><li><strong>Case mortality</strong> — in percent</li></ul><p>What you get back is Available stock, Mortality rate in percent, Cumulative mortality, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Opening stock</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of newborns</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Available stock</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of animals sold</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Closing stock</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Number of deaths</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Mortality rate</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>You supply it</td></tr><tr><td><strong>Cumulative mortality</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of disease cases</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Number of deaths from disease</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Case mortality</strong></td><td>A measured quantity, 6 units available.</td><td>percent</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Units are handled before the formula runs: Mortality rate offers 6 units and opens on percent, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'The formula behind the Animal mortality rate calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Number of deaths</span><span class="formula-eq">=</span><span class="formula-rhs">-closing stock − number of animals sold + number of newborns + opening stock</span></div><div class="formula-row"><span class="formula-lhs">Opening stock</span><span class="formula-eq">=</span><span class="formula-rhs">-number of newborns + number of deaths ÷ mortality rate</span></div><div class="formula-row"><span class="formula-lhs">Closing stock</span><span class="formula-eq">=</span><span class="formula-rhs">number of deaths ÷ cumulative mortality</span></div><div class="formula-row"><span class="formula-lhs">Case mortality</span><span class="formula-eq">=</span><span class="formula-rhs">number of deaths from disease ÷ number of disease cases</span></div><div class="formula-row"><span class="formula-lhs">Number of newborns</span><span class="formula-eq">=</span><span class="formula-rhs">available stock − opening stock</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Number of deaths</strong> = <code>− Closing stock − Number of animals sold + Number of newborns + Opening stock</code></li><li><strong>Number of animals sold</strong> = <code>− Closing stock − Number of deaths + Number of newborns + Opening stock</code></li><li><strong>Opening stock</strong> = <code>Closing stock + Number of animals sold + Number of deaths − Number of newborns</code></li><li><strong>Number of newborns</strong> = <code>Closing stock + Number of animals sold + Number of deaths − Opening stock</code></li><li><strong>Closing stock</strong> = <code>− Number of animals sold − Number of deaths + Number of newborns + Opening stock</code></li><li><strong>Mortality rate</strong> = <code>Number of deaths ÷ (Number of newborns + Opening stock)</code></li></ul><p>Any one of Number of deaths, Number of animals sold and Opening stock can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in percent, and convertible to any of the 6 units on that chip.</li><li>A number, filled in as soon as the inputs allow it.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Case mortality is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Available stock, Mortality rate and Cumulative mortality are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Opening stock to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>%, opening in percent</li><li>%, opening in percent</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
-            TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Animal mortality rate calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 4 figures keep coming back — the available stock, number of animals sold and the mortality rate — and you would rather not repeat the arithmetic by hand each time.</li></ul>
-            TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li><li>Keep the units you enter consistent. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/annealing-temperature">Annealing temperature</a>, <a href="/biology/bacteria-growth">Bacteria growth</a> and <a href="/biology/basal-area">Basal area</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Opening stock, Number of newborns and Number of animals sold is what you already know and Available stock and Mortality rate is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/chicken-years-to-human-years">Chicken Years to Human Years Calculator</a>, <a href="/biology/coding-capacity-of-dna">Coding Capacity of DNA Calculator</a> and <a href="/biology/codon-adaptation-index">Codon Adaptation Index Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Animal mortality rate calculator work out?', 'a' => <<<'TXT'
-            It returns number of deaths, derived from the available stock, number of animals sold and the mortality rate. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Available stock, Mortality rate and Cumulative mortality, from Closing stock, Number of animals sold, Number of newborns and Opening stock. The relationship is Number of deaths = − Closing stock − Number of animals sold + Number of newborns + Opening stock.
             TXT],
-            ['q' => 'What do I need to enter to use the Animal mortality rate calculator?', 'a' => <<<'TXT'
-            The form asks for the available stock, number of animals sold, the mortality rate and the cumulative mortality, which is 6 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Opening stock, Number of newborns, Number of animals sold, Closing stock, Number of deaths. Enter opening_stock, number_of_newborns and number_of_animals_sold; Available stock is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Can I enter mortality rate in a different unit?', 'a' => <<<'TXT'
-            Yes. Mortality rate opens in percent and the chip beside it offers 6 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Number of deaths, Number of animals sold, Opening stock and Number of newborns blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Available stock is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Is the Animal mortality rate calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Opening stock blank and the page solves for it, reporting Available stock instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Available stock keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature'],
-            ['path' => '/biology/bacteria-growth', 'name' => 'Bacteria growth'],
-            ['path' => '/biology/basal-area', 'name' => 'Basal area'],
+            ['path' => '/biology/chicken-years-to-human-years', 'name' => 'Chicken Years to Human Years Calculator'],
+            ['path' => '/biology/coding-capacity-of-dna', 'name' => 'Coding Capacity of DNA Calculator'],
+            ['path' => '/biology/codon-adaptation-index', 'name' => 'Codon Adaptation Index Calculator'],
         ],
+        'authors' => [],
     ],
 ];

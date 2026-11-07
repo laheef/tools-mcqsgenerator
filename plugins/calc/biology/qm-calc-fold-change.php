@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Fold Change Calculator',
-    'meta' => ['title' => 'Fold Change Calculator: Formula, Steps & Results', 'description' => 'Fold change compares a treated value with a control: 2 means doubled, 0.5 means halved. It returns fold change, log₂ fold change, percent change and…', 'h1' => 'Fold Change Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fold Change Calculator: Formula, Steps & Results', 'description' => <<<'TXT'
+    Enter Treated value and Control value into Fold Change and the answer comes back as Fold change and log₂ fold change. The arithmetic is the whole method: Fold…
+    TXT, 'h1' => 'Fold Change Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -78,46 +80,54 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Fold change compares a treated value with a control: 2 means doubled, 0.5 means halved. It returns fold change, log₂ fold change, percent change and reciprocal fold change, and the panel shows all of them at once.
-        
-        This calculator handles the direction properly, works with averages and replicates, and warns when the two conventions (treated/control versus control/treated) give different answers.
+        Enter Treated value and Control value into Fold Change and the answer comes back as Fold change and log₂ fold change. The arithmetic is the whole method: Fold change is worked out from Treated value by one formula, applied once. Fold change comes back in × unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Fold Change', 'html' => <<<'TXT'
-            <p>Fold change = treated ÷ control; log₂ fold change = log₂(treated/control)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/fold-change.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Fold Change Calculator — Control and treated, and the ratio between them." title="Fold Change Calculator"><figcaption>Control and treated, and the ratio between them.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>treated</code></td><td>mean of the treated group</td><td>any</td></tr><tr><td><code>control</code></td><td>mean of the control group</td><td>any</td></tr><tr><td><code>log₂ FC</code></td><td>symmetric measure: 1 is up twofold, −1 is down twofold</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Fold Change calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Fold Change: it takes 2 numbers and reports Fold change, log₂ fold change and Percent change.</p><p>The relationship it solves reads Fold change = Treated value ÷ Control value.</p><p>What comes back is Fold change, log₂ fold change, Percent change and Reciprocal fold change — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Fold Change?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Treated value</strong> — a plain number, no unit</li><li><strong>Control value</strong> — a plain number, no unit</li></ul><p>The answers come back as Fold change in ×, log₂ fold change, Percent change in %, Reciprocal fold change in ×. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: treated value of <strong>240</strong>, control value of <strong>100</strong>.</p>
-            <p>Substituting them into the formula gives fold change of <strong>2.4</strong> ×, log₂ fold change of <strong>1.26</strong>, percent change of <strong>140</strong>%, reciprocal fold change of <strong>0.4167</strong> ×.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Treated value = 240 and Control value = 100 gives &lt;strong&gt;Fold change&lt;/strong&gt; = 2.4 ×, &lt;strong&gt;log₂ fold change&lt;/strong&gt; = 1.26, &lt;strong&gt;Percent change&lt;/strong&gt; = 140 % and &lt;strong&gt;Reciprocal fold change&lt;/strong&gt; = 0.4167 ×.</p><ul><li><strong>Fold change</strong> = 2.4 ×</li><li><strong>log₂ fold change</strong> = 1.26</li><li><strong>Percent change</strong> = 140 %</li><li><strong>Reciprocal fold change</strong> = 0.4167 ×</li></ul><p>The line behind those figures is <strong>Fold change</strong> = <code>Treated value ÷ Control value</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>2 and above</td><td><strong>Upregulated</strong></td><td>at least doubled</td></tr><tr><td>0.5 – 2</td><td><strong>Unchanged</strong></td><td>within the usual biological noise</td></tr><tr><td>0.5 and below</td><td><strong>Downregulated</strong></td><td>at least halved</td></tr></tbody></table>
-            <ul><li><p>Fold change on a linear scale is asymmetric: up twofold is 2, down twofold is 0.5. log₂ makes the two symmetric, which is why it is used in expression analysis.</p></li><li><p>A fold change without a measure of variance is nearly meaningless — a 3× change from n=2 can be noise.</p></li><li><p>With qPCR, fold change is usually computed as 2^−ΔΔCt, which is the same thing expressed through cycle thresholds.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Fold change&lt;/strong&gt; = 2.4, &lt;strong&gt;log₂ fold change&lt;/strong&gt; = 1.26, &lt;strong&gt;Percent change&lt;/strong&gt; = 140 and &lt;strong&gt;Reciprocal fold change&lt;/strong&gt; = 0.4167. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Fold change is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Comparing a treated sample with a different baseline than the one the graph uses.</li><li>Averaging fold changes across replicates instead of computing them from the means, or the reverse.</li><li>Going from a negative control value close to zero, where small absolute differences become enormous ratios.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Fold change</strong> = <code>Treated value ÷ Control value</code></li><li><strong>log₂ fold change</strong> = <code>log2(Treated value ÷ Control value)</code></li><li><strong>Percent change</strong> = <code>(Treated value ÷ Control value − 1) × 100</code></li><li><strong>Reciprocal fold change</strong> = <code>Control value ÷ Treated value</code></li></ul><p>Any one of Fold change, log₂ fold change and Percent change can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Treated value, from 240 to 480 — and the answers go from &lt;strong&gt;Fold change&lt;/strong&gt; 2.4 ×, &lt;strong&gt;log₂ fold change&lt;/strong&gt; 1.26, &lt;strong&gt;Percent change&lt;/strong&gt; 140 % and &lt;strong&gt;Reciprocal fold change&lt;/strong&gt; 0.4167 × to &lt;strong&gt;Fold change&lt;/strong&gt; 4.8 ×, &lt;strong&gt;log₂ fold change&lt;/strong&gt; 2.26, &lt;strong&gt;Percent change&lt;/strong&gt; 380 % and &lt;strong&gt;Reciprocal fold change&lt;/strong&gt; 0.2083 ×.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Fold change, log₂ fold change and Percent change are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Treated value to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Treated value and Control value and the number you are missing is Fold change and log₂ fold change.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/fish-condition-factor">Fish Condition Factor Calculator</a>, <a href="/biology/fish-density">Fish Density Calculator</a> and <a href="/biology/fish-oil-dosage-for-cats">Fish oil dosage for cats Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Is a 2-fold change significant?', 'a' => 'Not by itself. Significance needs the variance of the replicates; fold change is an effect size.'],
-            ['q' => 'Why do some papers report log₂ fold change?', 'a' => 'Because it is symmetric and averages sensibly across genes and conditions.'],
-            ['q' => 'What does the Fold Change actually calculate?', 'a' => <<<'TXT'
-            It returns fold change, log₂ fold change, percent change and reciprocal fold change. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Fold Change calculator work out?', 'a' => <<<'TXT'
+            Fold change, log₂ fold change, Percent change and Reciprocal fold change, from Treated value and Control value. The relationship is Fold change = Treated value ÷ Control value.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Treated value, Control value. Enter treated and control; Fold change is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Fold change, log₂ fold change, Percent change and Reciprocal fold change blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Fold change = 2.4 ×, log₂ fold change = 1.26, Percent change = 140 % and Reciprocal fold change = 0.4167 ×. The figures come from Treated value as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Fold change is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Treated value blank and the page solves for it, reporting Fold change instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Fold change keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/fish-condition-factor', 'name' => 'Fish Condition Factor Calculator'],
+            ['path' => '/biology/fish-density', 'name' => 'Fish Density Calculator'],
+            ['path' => '/biology/fish-oil-dosage-for-cats', 'name' => 'Fish oil dosage for cats Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

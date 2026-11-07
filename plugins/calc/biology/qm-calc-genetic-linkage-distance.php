@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Recombination to Centimorgans',
-    'meta' => ['title' => 'Recombination to Centimorgans — Formula & Results', 'description' => 'Recombination frequency undercounts true genetic distance, because a double crossover between two loci reverts the markers to parental type.', 'h1' => 'Recombination to Centimorgans', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Recombination to Centimorgans — Formula & Results', 'description' => 'Enter Recombinant offspring, Total offspring and Use Kosambi (interference) into Recombination to Centimorgans and the answer comes back as Recombination…', 'h1' => 'Recombination to Centimorgans', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -106,46 +106,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Recombination frequency undercounts true genetic distance, because a double crossover between two loci reverts the markers to parental type. It returns recombination fraction, haldane distance, kosambi distance and corrected distance (chosen function), and the panel shows all of them at once.
-        
-        A mapping function corrects for it: Haldane's assumes no interference, Kosambi's assumes some. Both turn a recombination fraction into centimorgans.
+        Enter Recombinant offspring, Total offspring and Use Kosambi (interference) into Recombination to Centimorgans and the answer comes back as Recombination fraction and Haldane distance. There is no hidden constant here: change Recombination fraction and Recombinant offspring moves with it.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Recombination to Centimorgans', 'html' => <<<'TXT'
-            <p>RF = recombinants ÷ total. Haldane: d = −½ ln(1 − 2·RF). Kosambi: d = ¼ ln[(1 + 2RF) ÷ (1 − 2RF)]. Both in Morgans, ×100 for cM</p>
-            <figure class="calc-figure"><img src="/uploads/biology/genetic-linkage-distance.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Recombination to Centimorgans — Map distance against recombination fraction" title="Recombination to Centimorgans"><figcaption>Map distance against recombination fraction</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>RF</code></td><td>recombination fraction, between 0 and 0.5</td><td>—</td></tr><tr><td><code>cM</code></td><td>centimorgan: 1 cM is 1% recombination</td><td>—</td></tr><tr><td><code>interference</code></td><td>the tendency of one crossover to suppress the next nearby</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Recombination to Centimorgans calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Recombination to Centimorgans: it takes 3 numbers and reports Recombination fraction, Haldane distance and Kosambi distance.</p><p>Written with the labels from the form, Recombination fraction = if_else(Recombinant offspring ÷ Total offspring&lt;0.49,Recombinant offspring ÷ Total offspring,0.49).</p><p>What comes back is Recombination fraction, Haldane distance, Kosambi distance and Corrected distance (chosen function) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Recombination to Centimorgans?', 'html' => <<<'TXT'
-            <ol><li>Enter the recombinant and total offspring from the cross.</li><li>Tick Kosambi if your organism shows interference — the usual choice outside fungi.</li><li>Read the recombination fraction and the corrected distance in centimorgans.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Recombinant offspring</strong> — a plain number, no unit. From a test cross</li><li><strong>Total offspring</strong> — a plain number, no unit</li><li><strong>Use Kosambi (interference)</strong> — a plain number, no unit. Untick for Haldane, which assumes crossovers are independent</li></ul><p>The answers come back as Recombination fraction, Haldane distance in cM, Kosambi distance in cM, Corrected distance (chosen function) in cM, Distance added by the map correction in cM. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: recombinant offspring of <strong>35</strong>, total offspring of <strong>200</strong>, use kosambi (interference) of <strong>0</strong>.</p>
-            <p>Substituting them into the formula gives recombination fraction of <strong>0.175</strong>, haldane distance of <strong>21.54</strong> cM, kosambi distance of <strong>18.27</strong> cM, corrected distance (chosen function) of <strong>21.54</strong> cM, distance added by the map correction of <strong>4.04</strong> cM.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Recombinant offspring = 35, Total offspring = 200 and Use Kosambi (interference) = 0 gives &lt;strong&gt;Recombination fraction&lt;/strong&gt; = 0.175, &lt;strong&gt;Haldane distance&lt;/strong&gt; = 21.54 cM, &lt;strong&gt;Kosambi distance&lt;/strong&gt; = 18.27 cM, &lt;strong&gt;Corrected distance (chosen function)&lt;/strong&gt; = 21.54 cM and &lt;strong&gt;Distance added by the map correction&lt;/strong&gt; = 4.04 cM.</p><ul><li><strong>Recombination fraction</strong> = 0.175</li><li><strong>Haldane distance</strong> = 21.54 cM</li><li><strong>Kosambi distance</strong> = 18.27 cM</li><li><strong>Corrected distance (chosen function)</strong> = 21.54 cM</li><li><strong>Distance added by the map correction</strong> = 4.04 cM</li></ul><p>That is <strong>Recombination fraction</strong> = <code>if_else(Recombinant offspring ÷ Total offspring&lt;0.49,Recombinant offspring ÷ Total offspring,0.49)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 10 cM</td><td><strong>Tightly linked</strong></td><td>few double crossovers; either function works</td></tr><tr><td>10 – 30 cM</td><td><strong>Linked</strong></td><td>the two functions begin to differ</td></tr><tr><td>50 cM or more</td><td><strong>Effectively unlinked</strong></td><td>at RF 0.5 the distance is undefined</td></tr></tbody></table>
-            <ul><li><p>Recombination fraction saturates at 0.5: two loci on different chromosomes recombine 50% of the time, and the same is true of two loci far apart on the same chromosome.</p></li><li><p>Haldane's function assumes crossovers are independent; Kosambi's assumes interference, which is closer to what is seen in most eukaryotes.</p></li><li><p>Map distance is not physical distance: recombination hotspots make one megabase worth anywhere from 0.1 to 10 cM.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Recombination fraction&lt;/strong&gt; = 0.175, &lt;strong&gt;Haldane distance&lt;/strong&gt; = 21.54, &lt;strong&gt;Kosambi distance&lt;/strong&gt; = 18.27, &lt;strong&gt;Corrected distance (chosen function)&lt;/strong&gt; = 21.54 and &lt;strong&gt;Distance added by the map correction&lt;/strong&gt; = 4.04. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Recombination fraction is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Reporting the recombination fraction as centimorgans for distant loci, which understates the distance badly.</li><li>Using Haldane on data where interference is strong.</li><li>Forgetting that 50% recombination means unlinked, not 50 cM apart.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Recombination fraction</strong> = <code>if_else(Recombinant offspring ÷ Total offspring&lt;0.49,Recombinant offspring ÷ Total offspring,0.49)</code></li><li><strong>Haldane distance</strong> = <code>− 0.5 × ln(1 − 2 × (if_else(Recombinant offspring ÷ Total offspring&lt;0.49,Recombinant offspring ÷ Total offspring,0.49))) × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Recombination fraction, Haldane distance and Kosambi distance can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Recombinant offspring from 35 to 70, leaving every other box alone. The panel moves from &lt;strong&gt;Recombination fraction&lt;/strong&gt; 0.175, &lt;strong&gt;Haldane distance&lt;/strong&gt; 21.54 cM, &lt;strong&gt;Kosambi distance&lt;/strong&gt; 18.27 cM, &lt;strong&gt;Corrected distance (chosen function)&lt;/strong&gt; 21.54 cM and &lt;strong&gt;Distance added by the map correction&lt;/strong&gt; 4.04 cM to &lt;strong&gt;Recombination fraction&lt;/strong&gt; 0.35, &lt;strong&gt;Haldane distance&lt;/strong&gt; 60.2 cM, &lt;strong&gt;Kosambi distance&lt;/strong&gt; 43.37 cM, &lt;strong&gt;Corrected distance (chosen function)&lt;/strong&gt; 60.2 cM and &lt;strong&gt;Distance added by the map correction&lt;/strong&gt; 25.2 cM.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Recombination fraction, Haldane distance and Kosambi distance are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Recombinant offspring is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Recombinant offspring, Total offspring and Use Kosambi (interference) measured, Recombination fraction and Haldane distance wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/allele-frequency">Allele frequency Calculator</a>, <a href="/biology/allometric-equation">Allometric Equation Calculator</a> and <a href="/biology/amino-acid-composition">Amino Acid Composition Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is the difference between Haldane and Kosambi?', 'a' => 'Haldane assumes crossovers are independent; Kosambi assumes they interfere, so it converts the same RF to a shorter distance.'],
-            ['q' => 'Why can\'t distance exceed 50 cM?', 'a' => 'Because beyond about 50 cM the recombination fraction stops rising — the loci behave as if unlinked.'],
-            ['q' => 'What is one centimorgan?', 'a' => 'A 1% chance of recombination between two loci in a generation.'],
-            ['q' => 'What does the Recombination to Centimorgans actually calculate?', 'a' => <<<'TXT'
-            It returns recombination fraction, haldane distance, kosambi distance and corrected distance (chosen function). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Recombination to Centimorgans calculator work out?', 'a' => <<<'TXT'
+            Recombination fraction, Haldane distance, Kosambi distance and Corrected distance (chosen function), from Recombinant offspring and Total offspring. The relationship is Recombination fraction = if_else(Recombinant offspring ÷ Total offspring<0.49,Recombinant offspring ÷ Total offspring,0.49).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Recombinant offspring, Total offspring, Use Kosambi (interference). Enter recombinants, total and use_kosambi; Recombination fraction is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Recombination fraction, Haldane distance, Kosambi distance and Corrected distance (chosen function) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Recombination fraction = 0.175, Haldane distance = 21.54 cM, Kosambi distance = 18.27 cM, Corrected distance (chosen function) = 21.54 cM and Distance added by the map correction = 4.04 cM. Those are the defaults written into the form — move Recombinant offspring and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'The arithmetic runs at full precision and only the display of Recombination fraction is rounded.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Recombinant offspring blank and the page solves for it, reporting Recombination fraction instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Recombination fraction keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/allele-frequency', 'name' => 'Allele frequency Calculator'],
+            ['path' => '/biology/allometric-equation', 'name' => 'Allometric Equation Calculator'],
+            ['path' => '/biology/amino-acid-composition', 'name' => 'Amino Acid Composition Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

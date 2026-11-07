@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Puppy Adult Weight Predictor',
-    'meta' => ['title' => 'Puppy Adult Weight Predictor — Formula & Results', 'description' => 'A puppy\'s adult weight can be estimated from its current weight and age, because growth follows a predictable curve that depends on the breed\'s adult size.', 'h1' => 'Puppy Adult Weight Predictor', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Puppy Adult Weight Predictor — Formula & Results', 'description' => 'Enter Current weight, Current age and Predicted breed size into Puppy Adult Weight Predictor and the answer comes back as Estimated adult weight and Likely…', 'h1' => 'Puppy Adult Weight Predictor', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -98,46 +98,45 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A puppy's adult weight can be estimated from its current weight and age, because growth follows a predictable curve that depends on the breed's adult size. It returns estimated adult weight, likely range — low, likely range — high and growth still to come, and the panel shows all of them at once.
-        
-        This calculator gives an estimate and a realistic range, and names the size class the dog is heading for.
+        Enter Current weight, Current age and Predicted breed size into Puppy Adult Weight Predictor and the answer comes back as Estimated adult weight and Likely range — low. It is a single relationship that reads Estimated adult weight out of Current weight, not a table of canned results keyed by them. Units for Estimated adult weight default to kg and can be changed on the answer itself.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Puppy Adult Weight Predictor', 'html' => <<<'TXT'
-            <p>Adult weight ≈ current weight × (1 + growth allowance), where the allowance shrinks with age and is larger for bigger breeds</p>
-            <figure class="calc-figure"><img src="/uploads/biology/puppy-adult-weight-predictor.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Puppy Adult Weight Predictor — Growth curves flatten at different ages depending on adult size." title="Puppy Adult Weight Predictor"><figcaption>Growth curves flatten at different ages depending on adult size.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>weight</code></td><td>puppy weight now</td><td>kg</td></tr><tr><td><code>age</code></td><td>age in weeks</td><td>weeks</td></tr><tr><td><code>class</code></td><td>breed size class</td><td>—</td></tr><tr><td><code>adult</code></td><td>estimated adult weight</td><td>kg</td></tr></tbody></table>
+            ['title' => 'How the Puppy Adult Weight Predictor calculator works', 'html' => <<<'TXT'
+            <p>Puppy Adult Weight Predictor answers one question from 3 numbers, and the answer is Estimated adult weight, Likely range — low and Likely range — high.</p><p>What comes back is Estimated adult weight, Likely range — low, Likely range — high and Growth still to come — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Puppy Adult Weight Predictor?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Current weight</strong> — in kg. At the age you enter below</li><li><strong>Current age</strong> — in weeks. Weeks old</li><li><strong>Predicted breed size</strong> — a plain number, no unit</li></ul><p>What you get back is Estimated adult weight in kg, Likely range — low in kg, Likely range — high in kg, Growth still to come in %, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: current age of <strong>14</strong> weeks, predicted breed size set to <strong>2.0</strong>.</p>
-            <p>Substituting them into the formula gives estimated adult weight of <strong>9.01</strong> kg, likely range — low of <strong>8.11</strong> kg, likely range — high of <strong>9.91</strong> kg, growth still to come of <strong>1.5</strong>%, current weight of <strong>6</strong> kg.</p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>As far as Estimated adult weight is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>under 10 kg</td><td><strong>Small</strong></td><td>terriers, toy breeds, reaching adult weight at 9–10 months</td></tr><tr><td>10 – 25 kg</td><td><strong>Medium</strong></td><td>beagles, border collies, adult at 12 months</td></tr><tr><td>25 – 45 kg</td><td><strong>Large</strong></td><td>labradors, shepherds, adult at 14–16 months</td></tr><tr><td>over 45 kg</td><td><strong>Giant</strong></td><td>mastiffs, great danes, growing until 18–24 months</td></tr></tbody></table>
-            <ul><li><p>The estimate is a band, not a promise: within one litter of the same breed, adult weights can differ by 20%.</p></li><li><p>Large and giant breeds keep growing long after small breeds have stopped, which is why the same 14-week-old puppy can have very different trajectories.</p></li><li><p>Puppies should be weighed weekly for the first months — the trend matters more than any single estimate.</p></li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Likely range — low</strong> = <code>Estimated adult weight × 0.9</code></li><li><strong>Likely range — high</strong> = <code>Estimated adult weight × 1.1</code></li><li><strong>Growth still to come</strong> = <code>Estimated adult weight ÷ Current weight</code></li><li><strong>Current weight</strong> = <code>Estimated adult weight ÷ (1 + max(0,0.60 − Current age × 0.007))</code></li></ul><p>Any one of Estimated adult weight, Likely range — low and Likely range — high can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Entering the age in months where weeks are expected (a 14 here means 14 weeks).</li><li>Picking the size class by what the puppy looks like now rather than by its parentage.</li><li>Feeding to the predicted adult weight instead of to body condition score.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Estimated adult weight, Likely range — low and Likely range — high are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Current weight and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Current weight, Current age and Predicted breed size is what you already know and Estimated adult weight and Likely range — low is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/beer-lambert-a280-protein-concentration">Beer-Lambert A280 Protein Concentration Calculator</a>, <a href="/biology/benadryl-dosage-for-dogs">Benadryl dosage for dogs</a> and <a href="/biology/berger-parker-index">Berger–Parker Index Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How accurate is a puppy weight prediction?', 'a' => 'Within about 10–15% for purebred puppies of known parentage; much less reliable for mixed breeds and for puppies whose growth has been uneven.'],
-            ['q' => 'When does a puppy stop growing?', 'a' => 'Small breeds at 9–10 months, medium at about 12, large at 14–16 and giant breeds at 18–24.'],
-            ['q' => 'What does the Puppy Adult Weight Predictor actually calculate?', 'a' => <<<'TXT'
-            It returns estimated adult weight, likely range — low, likely range — high and growth still to come. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Puppy Adult Weight Predictor calculator work out?', 'a' => 'Estimated adult weight, Likely range — low, Likely range — high and Growth still to come, from Predicted breed size, Current weight and Current age.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Current weight (kg), Current age (weeks), Predicted breed size. Enter weight, age and size_class; Estimated adult weight is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Estimated adult weight, Likely range — low, Likely range — high and Growth still to come blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Estimated adult weight is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Current weight blank and the page solves for it, reporting Estimated adult weight instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Estimated adult weight keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/beer-lambert-a280-protein-concentration', 'name' => 'Beer-Lambert A280 Protein Concentration Calculator'],
+            ['path' => '/biology/benadryl-dosage-for-dogs', 'name' => 'Benadryl dosage for dogs'],
+            ['path' => '/biology/berger-parker-index', 'name' => 'Berger–Parker Index Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Primer Dimer Checker',
-    'meta' => ['title' => 'Primer Dimer Checker Calculator — Formula & Results', 'description' => 'Primer dimers are the most common reason a PCR reaction produces no product: the primers pair with each other or with themselves and the polymerase extends…', 'h1' => 'Primer Dimer Checker', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Primer Dimer Checker Calculator — Formula & Results', 'description' => <<<'TXT'
+    Primer Dimer Checker turns Forward primer (5′→3′) and Reverse primer (5′→3′) into 3′ complementary run and Longest complementary run. The answer typed back in.
+    TXT, 'h1' => 'Primer Dimer Checker', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'forward' => [
@@ -278,42 +280,41 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Primer dimers are the most common reason a PCR reaction produces no product: the primers pair with each other or with themselves and the polymerase extends that product instead. It returns 3′ complementary run, longest complementary run, forward self-dimer run, reverse self-dimer run, forward hairpin stem, reverse hairpin stem and dimer risk score, and the panel shows all of them at once.
-        
-        This tool scores the 3′ complementarity of a pair, each primer's self-dimer and its hairpin, and says plainly whether the pair is safe.
+        Primer Dimer Checker turns Forward primer (5′→3′) and Reverse primer (5′→3′) into 3′ complementary run and Longest complementary run. There is no hidden constant here: change 3′ complementary run and Forward primer (5′→3′) moves with it. The main result, 3′ complementary run, is reported in bases.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Primer Dimer Checker', 'html' => <<<'TXT'
-            <p>A 3′ run of k complementary bases contributes 3^(k−1) to the risk: 4 bases is 27× the chance of a 2-base match, because the polymerase only needs a short 3′ duplex to extend</p>
-            <figure class="calc-figure"><img src="/uploads/biology/primer-dimer-checker.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Primer Dimer Checker — Dimer risk rises sharply with the length of the 3′ run" title="Primer Dimer Checker"><figcaption>Dimer risk rises sharply with the length of the 3′ run</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>3′ run</code></td><td>complementary bases at the 3′ ends, which can be extended</td><td>bases</td></tr><tr><td><code>hairpin</code></td><td>a primer folding back on itself</td><td>bases</td></tr><tr><td><code>ΔG</code></td><td>free energy of the dimer — lower is worse</td><td>kcal/mol</td></tr></tbody></table>
+            ['title' => 'How the Primer Dimer Checker calculator works', 'html' => <<<'TXT'
+            <p>The Primer Dimer Checker calculator applies one relationship to 2 numbers and reports 3′ complementary run, Longest complementary run and Forward self-dimer run.</p><p>The answers are 3′ complementary run, Longest complementary run, Forward self-dimer run and Reverse self-dimer run; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Primer Dimer Checker?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Forward primer (5′→3′)</strong> — a plain number, no unit. Paste the primer</li><li><strong>Reverse primer (5′→3′)</strong> — a plain number, no unit. Paste the primer</li></ul><p>What you get back is 3′ complementary run in bases, Longest complementary run in bases, Forward self-dimer run in bases, Reverse self-dimer run in bases, Forward hairpin stem in bases, Reverse hairpin stem in bases, Dimer risk score in of 10, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>3′ run 0–2</td><td><strong>Safe</strong></td><td>no extension possible in practice</td></tr><tr><td>3′ run 3–4</td><td><strong>Watch</strong></td><td>some dimer forms; consider a redesign</td></tr><tr><td>3′ run 5+</td><td><strong>Redesign</strong></td><td>the pair will amplify a dimer instead of the target</td></tr></tbody></table>
-            <ul><li><p>Only 3′ complementarity is extendable. A strong match in the middle of two primers looks alarming but the polymerase has no 3′ end to extend there.</p></li><li><p>Self-dimers matter as much as cross-dimers: a primer that can pair with another copy of itself doubles its own effective concentration.</p></li><li><p>A hairpin with a stem of four or more G–C pairs is stable enough to compete with template binding, especially at low annealing temperatures.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>None of the boxes on this page carries a unit chip: 3′ complementary run takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Checking only the forward primer against the reverse, and not each against itself.</li><li>Judging a dimer by the total number of complementary bases instead of the 3′ run.</li><li>Ignoring a 3′ G/C clamp that also happens to be complementary to the other primer's 3′ end.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with 3′ complementary run, Longest complementary run and Forward self-dimer run are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Forward primer (5′→3′) to one scale before entering anything.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Forward primer (5′→3′) and Reverse primer (5′→3′) and the number you are missing is 3′ complementary run and Longest complementary run.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/specific-growth-rate-od">Specific Growth Rate from OD Calculator</a>, <a href="/biology/specific-growth-rate-from-od">Specific Growth Rate from OD Readings Calculator</a> and <a href="/biology/specific-productivity-qp">Specific Productivity (qP) Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How many complementary bases cause a primer dimer?', 'a' => 'Three at the 3′ end is already a risk because that is where the polymerase extends; five or more will almost always dimerise.'],
-            ['q' => 'What is the difference between a self-dimer and a hairpin?', 'a' => 'A self-dimer is two copies of the primer pairing; a hairpin is one primer folding back on itself.'],
-            ['q' => 'Does a dimer always stop the PCR?', 'a' => 'No, but it consumes primers and polymerase, so the target product appears late or not at all, and a low band appears on the gel.'],
-            ['q' => 'What does the Primer Dimer Checker actually calculate?', 'a' => <<<'TXT'
-            It returns 3′ complementary run, longest complementary run, forward self-dimer run, reverse self-dimer run, forward hairpin stem, reverse hairpin stem and dimer risk score. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Primer Dimer Checker calculator work out?', 'a' => '3′ complementary run, Longest complementary run, Forward self-dimer run and Reverse self-dimer run.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Forward primer (5′→3′), Reverse primer (5′→3′). Enter forward and reverse; 3′ complementary run is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            3′ complementary run is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
-            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: 3′ complementary run is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of 3′ complementary run keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/specific-growth-rate-od', 'name' => 'Specific Growth Rate from OD Calculator'],
+            ['path' => '/biology/specific-growth-rate-from-od', 'name' => 'Specific Growth Rate from OD Readings Calculator'],
+            ['path' => '/biology/specific-productivity-qp', 'name' => 'Specific Productivity (qP) Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

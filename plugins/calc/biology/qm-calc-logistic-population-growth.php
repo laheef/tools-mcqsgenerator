@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Logistic Population Growth Calculator',
-    'meta' => ['title' => 'Logistic Population Growth Calculator — Biology', 'description' => 'Logistic growth starts exponential and slows as a population approaches its carrying capacity. It returns population after that time, growth rate at the…', 'h1' => 'Logistic Population Growth Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Logistic Population Growth Calculator — Biology', 'description' => 'Logistic Population Growth turns Starting population, Carrying capacity and Intrinsic growth rate into Population after that time and Growth rate at the start.', 'h1' => 'Logistic Population Growth Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -96,44 +96,58 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Logistic growth starts exponential and slows as a population approaches its carrying capacity. It returns population after that time, growth rate at the start, population at half of K and time to reach K/2, and the panel shows all of them at once.
-        
-        This calculator projects the population size forward, gives the growth rate at the current size, and shows when the population reaches half of K — the point of fastest growth.
+        Logistic Population Growth turns Starting population, Carrying capacity and Intrinsic growth rate into Population after that time and Growth rate at the start. The arithmetic is the whole method: Population after that time is worked out from Starting population by one formula, applied once. Population after that time comes back in individuals unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Logistic Population Growth', 'html' => <<<'TXT'
-            <p>N(t) = K ÷ [1 + ((K − N₀) ÷ N₀) e^(−rt)]</p>
-            <figure class="calc-figure"><img src="/uploads/biology/logistic-population-growth.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Logistic Population Growth Calculator — The S-shaped curve, from exponential to a plateau at K." title="Logistic Population Growth Calculator"><figcaption>The S-shaped curve, from exponential to a plateau at K.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>N₀</code></td><td>starting population</td><td>individuals</td></tr><tr><td><code>K</code></td><td>carrying capacity</td><td>individuals</td></tr><tr><td><code>r</code></td><td>intrinsic rate of increase</td><td>per time</td></tr><tr><td><code>t</code></td><td>time elapsed</td><td>time units</td></tr></tbody></table>
+            ['title' => 'How the Logistic Population Growth calculator works', 'html' => <<<'TXT'
+            <p>Logistic Population Growth answers one question from 4 numbers, and the answer is Population after that time, Growth rate at the start and Population at half of K.</p><p>The relationship it solves reads Population after that time = Carrying capacity ÷ (1 + ((Carrying capacity − Starting population) ÷ Starting population) × e^( − 1 × Intrinsic growth rate × Time)).</p><p>What comes back is Population after that time, Growth rate at the start, Population at half of K and Time to reach K/2 — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Logistic Population Growth?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Starting population</strong> — in individuals</li><li><strong>Carrying capacity</strong> — in individuals</li><li><strong>Intrinsic growth rate</strong> — in per unit time</li><li><strong>Time</strong> — a plain number, no unit</li></ul><p>What you get back is Population after that time in individuals, Growth rate at the start in individuals/time, Population at half of K in individuals, Time to reach K/2 in time units, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: starting population of <strong>50</strong> individuals, carrying capacity of <strong>1,000</strong> individuals, intrinsic growth rate of <strong>0.4</strong> per unit time, time of <strong>10</strong>.</p>
-            <p>Substituting them into the formula gives population after that time of <strong>741.84</strong> individuals, growth rate at the start of <strong>19</strong> individuals/time, population at half of k of <strong>500</strong> individuals, time to reach k/2 of <strong>0</strong> time units.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Starting population = 50 individuals, Carrying capacity = 1000 individuals, Intrinsic growth rate = 0.4 per unit time and Time = 10 — through the same formula and the panel reports &lt;strong&gt;Population after that time&lt;/strong&gt; = 742 individuals, &lt;strong&gt;Growth rate at the start&lt;/strong&gt; = 19 individuals/time, &lt;strong&gt;Population at half of K&lt;/strong&gt; = 500 individuals and &lt;strong&gt;Time to reach K/2&lt;/strong&gt; = 0 time units.</p><ul><li><strong>Population after that time</strong> = 742 individuals</li><li><strong>Growth rate at the start</strong> = 19 individuals/time</li><li><strong>Population at half of K</strong> = 500 individuals</li><li><strong>Time to reach K/2</strong> = 0 time units</li></ul><p>The line behind those figures is <strong>Population after that time</strong> = <code>Carrying capacity ÷ (1 + ((Carrying capacity − Starting population) ÷ Starting population) × e^( − 1 × Intrinsic growth rate × Time))</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>The inflection point is at N = K/2, where growth is fastest; after it the curve flattens toward K without ever crossing it.</p></li><li><p>r sets the speed and K sets the ceiling: a large r with a small K produces a sharp rise and an early plateau.</p></li><li><p>The model assumes a closed population with no age structure, and it ignores the lag that produces overshoot and collapse in real populations.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Population after that time&lt;/strong&gt; = 742, &lt;strong&gt;Growth rate at the start&lt;/strong&gt; = 19, &lt;strong&gt;Population at half of K&lt;/strong&gt; = 500 and &lt;strong&gt;Time to reach K/2&lt;/strong&gt; = 0 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Population after that time takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Using a per-generation r with a time step in years.</li><li>Starting above K, where the formula predicts decline — which is correct, but often unexpected.</li><li>Mixing a percentage growth rate with the exponential r: for small rates they coincide, for large ones they do not.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Population after that time</strong> = <code>Carrying capacity ÷ (1 + ((Carrying capacity − Starting population) ÷ Starting population) × e^( − 1 × Intrinsic growth rate × Time))</code></li><li><strong>Growth rate at the start</strong> = <code>Intrinsic growth rate × Starting population × (1 − Starting population ÷ Carrying capacity)</code></li><li><strong>Population at half of K</strong> = <code>Carrying capacity ÷ 2</code></li><li><strong>Time to reach K/2</strong> = <code>ln((Carrying capacity ÷ (Carrying capacity ÷ 2)) − 1) ÷ ((Carrying capacity − Starting population) ÷ Starting population) ÷ Intrinsic growth rate</code></li></ul><p>Any one of Population after that time, Growth rate at the start and Population at half of K can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — Starting population, from 50 to 100 — and the answers go from &lt;strong&gt;Population after that time&lt;/strong&gt; 742 individuals, &lt;strong&gt;Growth rate at the start&lt;/strong&gt; 19 individuals/time, &lt;strong&gt;Population at half of K&lt;/strong&gt; 500 individuals and &lt;strong&gt;Time to reach K/2&lt;/strong&gt; 0 time units to &lt;strong&gt;Population after that time&lt;/strong&gt; 858 individuals, &lt;strong&gt;Growth rate at the start&lt;/strong&gt; 36 individuals/time, &lt;strong&gt;Population at half of K&lt;/strong&gt; 500 individuals and &lt;strong&gt;Time to reach K/2&lt;/strong&gt; 0 time units.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Population after that time, Growth rate at the start and Population at half of K are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Keep full precision in Starting population and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Starting population, Carrying capacity and Intrinsic growth rate and the number you are missing is Population after that time and Growth rate at the start.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/plasmid-molar-ratio">Plasmid Molar Ratio Calculator</a>, <a href="/biology/potting-soil-calculator">Potting soil Calculator</a> and <a href="/biology/primer-dimer-checker">Primer Dimer Checker Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What is the difference between exponential and logistic growth?', 'a' => 'Exponential growth has no ceiling; logistic growth slows as the population approaches K.'],
-            ['q' => 'When is growth fastest?', 'a' => 'At half the carrying capacity, which is the inflection point of the sigmoid curve.'],
-            ['q' => 'What does the Logistic Population Growth actually calculate?', 'a' => <<<'TXT'
-            It returns population after that time, growth rate at the start, population at half of K and time to reach K/2. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Logistic Population Growth calculator work out?', 'a' => <<<'TXT'
+            Population after that time, Growth rate at the start, Population at half of K and Time to reach K/2, from Carrying capacity, Starting population, Intrinsic growth rate and Time. The relationship is Population after that time = Carrying capacity ÷ (1 + ((Carrying capacity − Starting population) ÷ Starting population) × e^( − 1 × Intrinsic growth rate × Time)).
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Starting population (individuals), Carrying capacity (individuals), Intrinsic growth rate (per unit time), Time. Fill n0, k and r and leave Population after that time empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Population after that time, Growth rate at the start, Population at half of K and Time to reach K/2 blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Population after that time = 742 individuals, Growth rate at the start = 19 individuals/time, Population at half of K = 500 individuals and Time to reach K/2 = 0 time units. That comes from the page's own defaults, entered in Starting population; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Population after that time is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Starting population blank and the page solves for it, reporting Population after that time instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Population after that time keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/plasmid-molar-ratio', 'name' => 'Plasmid Molar Ratio Calculator'],
+            ['path' => '/biology/potting-soil-calculator', 'name' => 'Potting soil Calculator'],
+            ['path' => '/biology/primer-dimer-checker', 'name' => 'Primer Dimer Checker Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat BMI',
-    'meta' => ['title' => 'Cat BMI Calculator: Formula, Steps & Examples', 'description' => 'The Cat BMI calculator turns the length of the lower back leg and the FBMI into <strong>rib cage circumference</strong>. The Cat BMI calculator takes the…', 'h1' => 'Cat BMI Calculator', 'updated' => '2026-09-05'],
+    'meta' => ['title' => 'Cat BMI Calculator: Formula, Steps & Examples', 'description' => 'Cat BMI takes Length of the lower back leg and FBMI and returns Rib cage circumference. It is a single relationship that reads Rib cage circumference out of…', 'h1' => 'Cat BMI Calculator', 'updated' => '2026-09-05'],
     'sections' => [
         [
             'title' => '',
@@ -67,64 +67,55 @@ return [
         ],
     ],
     'article' => [
-        'intro' => 'The Cat BMI calculator turns the length of the lower back leg and the FBMI into <strong>rib cage circumference</strong>.',
+        'intro' => <<<'TXT'
+        Cat BMI takes Length of the lower back leg and FBMI and returns Rib cage circumference. It is a single relationship that reads Rib cage circumference out of Length of the lower back leg, not a table of canned results keyed by them. Units for Rib cage circumference default to centimeters and can be changed on the answer itself.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Cat BMI calculator work?', 'html' => <<<'TXT'
-            <p>The Cat BMI calculator takes the values in the form, applies the relationship described below and reports <strong>rib cage circumference</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the length of the lower back leg and the FBMI.</p>
+            ['title' => 'How the Cat BMI calculator works', 'html' => <<<'TXT'
+            <p>Cat BMI answers one question from 2 numbers, and the answer is Rib cage circumference.</p><p>Written with the labels from the form, Rib cage circumference = (8082459 ÷ 12500000) × FBMI + (16909959 ÷ 12500000) × Length of the lower back leg.</p><p>What comes back is Rib cage circumference — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Rib cage circumference</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>Calculated</td></tr><tr><td><strong>Length of the lower back leg</strong></td><td>A measured quantity, 34 units available.</td><td>centimeters</td><td>You supply it</td></tr><tr><td><strong>FBMI</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Length of the lower back leg</strong> — in centimeters. Length of your cat&#039;s lower back leg from the knee to the ankle.</li><li><strong>FBMI</strong> — a plain number, no unit. Feline Body Mass Index.</li></ul><p>The result box is Rib cage circumference in centimeters. </p>
             TXT],
-            ['title' => 'The formula behind the Cat BMI calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Rib cage circumference</span><span class="formula-eq">=</span><span class="formula-rhs">(8082459 ÷ 12500000) × FBMI + (16909959 ÷ 12500000) × length of the lower back leg</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Length of the lower back leg = 10 cm and FBMI = 100 — through the same formula and the panel reports &lt;strong&gt;Rib cage circumference&lt;/strong&gt; = 78.19 cm.</p><ul><li><strong>Rib cage circumference</strong> = 78.19 cm</li></ul><p>That is <strong>Rib cage circumference</strong> = <code>(8082459 ÷ 12500000) × FBMI + (16909959 ÷ 12500000) × Length of the lower back leg</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
-            ['title' => 'What is a worked example?', 'html' => <<<'TXT'
-            <p>Suppose <strong>Length of the lower back leg</strong> = 30 cm and <strong>FBMI</strong> = 10. Working through the relationship above gives <strong>Rib cage circumference</strong> = 687 cm.</p><p>The point of the example is the scale, not the particular digits: swap in your own figures and the same relationship produces your answer.</p><ol><li>Enter the values listed above, matching the units each box asks for.</li><li>Read off the result. Any field you leave empty is the one the calculator solves for.</li><li>Sanity-check the number against the relationship: <strong>Rib cage circumference</strong> = 687 cm should be roughly the size you expected from <strong>Length of the lower back leg</strong> = 30 cm and <strong>FBMI</strong> = 10.</li></ol>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Rib cage circumference&lt;/strong&gt; = 78.19 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Rib cage circumference offers 31 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in centimeters, and convertible to any of the 34 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Rib cage circumference</strong> = <code>(8082459 ÷ 12500000) × FBMI + (16909959 ÷ 12500000) × Length of the lower back leg</code></li><li><strong>FBMI</strong> = <code>− 4789 ÷ 2289 × Length of the lower back leg + (12500000 ÷ 8082459) × Rib cage circumference</code></li><li><strong>Length of the lower back leg</strong> = <code>− 2289 ÷ 4789 × FBMI + (12500000 ÷ 16909959) × Rib cage circumference</code></li></ul><p>Any one of Rib cage circumference, FBMI and Length of the lower back leg can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Length, opening in centimeters</li><li>Length, opening in centimeters</li></ul>
-            <p>Results are rounded for display but computed at full precision, so chaining one result into the next does not accumulate error. </p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Length of the lower back leg from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Rib cage circumference&lt;/strong&gt; 78.19 cm to &lt;strong&gt;Rib cage circumference&lt;/strong&gt; 91.72 cm.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cat BMI calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 2 figures keep coming back — the length of the lower back leg and the FBMI — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Length of the lower back leg is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Rib cage circumference is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Length of the lower back leg is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Cat BMI calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
-            <ul><li>Change one input at a time — length of the lower back leg for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Switch the units to the ones you normally use and confirm the numbers are unchanged apart from their label; if they are not, a chip was on the wrong setting.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cat-calorie">Cat calorie</a>, <a href="/biology/cat-chocolate-toxicity">Cat chocolate toxicity</a> and <a href="/biology/cat-pregnancy">Cat pregnancy</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Length of the lower back leg and FBMI and the number you are missing is Rib cage circumference.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/mulch">Mulch</a>, <a href="/biology/multi-reverse-translate">Multi Reverse Translate Calculator</a> and <a href="/biology/mushroom-yield">Mushroom Yield Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Cat BMI calculator work out?', 'a' => <<<'TXT'
-            It returns rib cage circumference, derived from the length of the lower back leg and the FBMI. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Rib cage circumference, from FBMI and Length of the lower back leg. The relationship is Rib cage circumference = (8082459 ÷ 12500000) × FBMI + (16909959 ÷ 12500000) × Length of the lower back leg.
             TXT],
-            ['q' => 'What do I need to enter to use the Cat BMI calculator?', 'a' => <<<'TXT'
-            The form asks for the length of the lower back leg and the FBMI, which is 2 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Length of the lower back leg (centimeters), FBMI. With lim and fbmi in place, Rib cage circumference can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Rib cage circumference, FBMI and Length of the lower back leg blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
-            ['q' => 'Can I enter rib cage circumference in a different unit?', 'a' => <<<'TXT'
-            Yes. Rib cage circumference opens in centimeters and the chip beside it offers 34 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'What answer do the default values give?', 'a' => 'Rib cage circumference = 78.19 cm. Those are the defaults written into the form — move Length of the lower back leg and every result box follows.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Rib cage circumference is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Length of the lower back leg left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'What is a typical result?', 'a' => <<<'TXT'
-            With the values the page starts from, the calculator reports Rib cage circumference = 687 cm. Treat that as a reference point rather than a recommendation: it exists so you can tell at a glance whether your own inputs are on the same scale.
-            TXT],
-            ['q' => 'Is the Cat BMI calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Rib cage circumference keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/cat-calorie', 'name' => 'Cat calorie'],
-            ['path' => '/biology/cat-chocolate-toxicity', 'name' => 'Cat chocolate toxicity'],
-            ['path' => '/biology/cat-pregnancy', 'name' => 'Cat pregnancy'],
+            ['path' => '/biology/mulch', 'name' => 'Mulch'],
+            ['path' => '/biology/multi-reverse-translate', 'name' => 'Multi Reverse Translate Calculator'],
+            ['path' => '/biology/mushroom-yield', 'name' => 'Mushroom Yield Calculator'],
         ],
+        'authors' => [],
     ],
 ];

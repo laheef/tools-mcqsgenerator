@@ -12,7 +12,7 @@
 return [
     'name' => 'Codon Plot Calculator',
     'meta' => ['title' => 'Codon Plot Calculator: Formula, Steps & Results', 'description' => <<<'TXT'
-    A codon plot shows where the rare codons sit along a coding sequence, not just how many there are. It returns codons read, rare codons (w ≤ 0.2) and runs of…
+    Codon Plot takes Coding sequence (DNA) and Window size and returns Codons read and Rare codons (w ≤ 0.2). It is a single relationship that reads Codons read…
     TXT, 'h1' => 'Codon Plot Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
@@ -242,44 +242,36 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A codon plot shows where the rare codons sit along a coding sequence, not just how many there are. It returns codons read, rare codons (w ≤ 0.2) and runs of 3+ rare codons, and the panel shows all of them at once.
-        
-        It scores every codon for E. coli adaptation, draws the sequence as a track of bars and lists runs of rare codons — the clusters that stall a ribosome and cost protein yield.
+        Codon Plot takes Coding sequence (DNA) and Window size and returns Codons read and Rare codons (w ≤ 0.2). It is a single relationship that reads Codons read out of Coding sequence (DNA), not a table of canned results keyed by them.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Codon Plot', 'html' => <<<'TXT'
-            <p>plot the relative adaptiveness w of each codon in order; a cluster is 3 or more consecutive codons with w ≤ 0.2</p>
-            <figure class="calc-figure"><img src="/uploads/biology/codon-plot.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Codon Plot Calculator — Rare codons per 30-codon window along a 720 bp gene" title="Codon Plot Calculator"><figcaption>Rare codons per 30-codon window along a 720 bp gene</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>w</code></td><td>relative adaptiveness of the codon in E. coli</td><td>0 – 1</td></tr><tr><td><code>window</code></td><td>codons per summary point on the plot</td><td>codons</td></tr><tr><td><code>cluster</code></td><td>consecutive rare codons</td><td>codons</td></tr></tbody></table>
+            ['title' => 'How the Codon Plot calculator works', 'html' => <<<'TXT'
+            <p>Codon Plot answers one question from 2 numbers, and the answer is Codons read, Rare codons (w ≤ 0.2) and Runs of 3+ rare codons.</p><p>The answers are Codons read, Rare codons (w ≤ 0.2) and Runs of 3+ rare codons; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'How do I use the Codon Plot?', 'html' => <<<'TXT'
-            <ol><li>Paste the coding sequence — the page reads from the first base as codon 1.</li><li>Set the window if you want the summary coarser or finer than 30 codons.</li><li>Read the track first: a flat blue line with a handful of dips is a healthy gene. Then read the cluster list — a run of three or more rare codons is the part worth resynthesising.</li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Coding sequence (DNA)</strong> — a plain number, no unit. Paste the open reading frame; long sequences are summarised window by window</li><li><strong>Window size</strong> — in codons. How many codons each summary point covers</li></ul><p>What you get back is Codons read, Rare codons (w ≤ 0.2), Runs of 3+ rare codons, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> These are the bands most often used when the result is quoted in a paper, a report or a label:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>no cluster</td><td><strong>Even</strong></td><td>the gene has rare codons but they are spread out — usually fine</td></tr><tr><td>one cluster</td><td><strong>One hot spot</strong></td><td>often at the 5′ end; check the translation initiation region</td></tr><tr><td>two or three</td><td><strong>Several hot spots</strong></td><td>expect a yield penalty; consider changing those codons</td></tr><tr><td>four or more</td><td><strong>Poorly adapted</strong></td><td>resynthesise the gene rather than tune single codons</td></tr></tbody></table>
-            <ul><li><p>This is the plot that shows what a single CAI number cannot: a gene with a good average can still carry five consecutive codons at w = 0.06, and that run is what the ribosome queues on.</p></li><li><p>The y-axis is relative adaptiveness, not frequency. w = 1.00 means the codon is the host's most-used synonym for that amino acid; w = 0.03 means it is nearly unused.</p></li><li><p>Positions are codon numbers, not base numbers, so position 12 is bases 34–36.</p></li><li><p>Met, Trp and stop codons carry no adaptiveness — they are drawn as neutral points rather than scored, because there is no choice to make.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: Codons read takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Codons read, Rare codons (w ≤ 0.2) and Runs of 3+ rare codons are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Coding sequence (DNA) is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>These are the errors that account for almost every wrong answer people bring to this calculator:</p><ul><li>Plotting a genomic sequence with introns: the frame breaks at the first intron and every codon after it is wrong.</li><li>Treating a low average as the whole story, or a high one as a clean bill of health.</li><li>Ignoring an all-rare cluster at the very start, which affects initiation more than internal clusters affect elongation.</li></ul>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Coding sequence (DNA) and Window size is what you already know and Codons read and Rare codons (w ≤ 0.2) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/vapor-pressure-deficit">Vapor pressure deficit Calculator</a>, <a href="/biology/vegetable-seed">Vegetable seed</a> and <a href="/biology/vegetable-yield">Vegetable yield</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does a codon plot show that the CAI does not?', 'a' => 'Position. CAI averages the whole sequence; the plot shows where the rare codons are, so a cluster that stalls translation is visible instead of averaged away.'],
-            ['q' => 'What counts as a rare codon?', 'a' => <<<'TXT'
-            Here, a codon whose relative adaptiveness in E. coli is 0.2 or below — roughly the bottom fifth of the usage range. The cut-off is stated on the page rather than implied.
+            ['q' => 'Which values do I need before I start?', 'a' => 'Coding sequence (DNA), Window size (codons). With sequence and window in place, Codons read can stay blank and the page will work it out.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Codons read is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            Every box has to have a number in it. What this page returns is Codons read, so an empty input simply leaves the result blank rather than choosing a new unknown.
             TXT],
-            ['q' => 'Why are the stops and Met not scored?', 'a' => 'Because they have a single codon. Adaptiveness measures a choice between synonyms, and there is none for those.'],
-            ['q' => 'Can I use the plot for a human gene?', 'a' => <<<'TXT'
-            The weighting table here is E. coli. For a mammalian expression experiment the pattern of rare codons differs, and the codon adaptation index page lets you switch the host.
-            TXT],
-            ['q' => 'What does the Codon Plot actually calculate?', 'a' => <<<'TXT'
-            It returns codons read, rare codons (w ≤ 0.2) and runs of 3+ rare codons. Each one is derived by the formula on this page, so you can check any figure by hand.
-            TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
-            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Codons read keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/vapor-pressure-deficit', 'name' => 'Vapor pressure deficit Calculator'],
+            ['path' => '/biology/vegetable-seed', 'name' => 'Vegetable seed'],
+            ['path' => '/biology/vegetable-yield', 'name' => 'Vegetable yield'],
+        ],
+        'authors' => [],
     ],
 ];

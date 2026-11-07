@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chicken Hatch Date Calculator',
-    'meta' => ['title' => 'Chicken Hatch Date Calculator — Formula & Results', 'description' => 'Chicken eggs hatch 21 days after they are set, with a one-day window either side. It returns days remaining, candle on day, stop turning on day and hatch day…', 'h1' => 'Chicken Hatch Date Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Hatch Date Calculator — Formula & Results', 'description' => 'Chicken Hatch Date works out Hatch day (day of month) and Hatch month from Day of month you set the eggs, Month and Days already incubated.', 'h1' => 'Chicken Hatch Date Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -113,49 +113,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Chicken eggs hatch 21 days after they are set, with a one-day window either side. It returns days remaining, candle on day, stop turning on day and hatch day (day of month), and the panel shows all of them at once.
-        
-        This calculator counts forward from the day you set the eggs to the hatch date, tells you which incubation stage the eggs are at today, and flags the days when you should candle and when to stop turning.
+        Chicken Hatch Date works out Hatch day (day of month) and Hatch month from Day of month you set the eggs, Month and Days already incubated. There is no hidden constant here: change Hatch day (day of month) and Day of month you set the eggs moves with it. The main result, Hatch day (day of month), is reported in day.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Chicken Hatch Date', 'html' => <<<'TXT'
-            <p>Hatch date = set date + 21 days; lockdown (stop turning, raise humidity) at day 18</p>
-            <figure class="calc-figure"><img src="/uploads/biology/chicken-hatch-date.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Chicken Hatch Date Calculator — Set date plus incubation period lands on hatch day." title="Chicken Hatch Date Calculator"><figcaption>Set date plus incubation period lands on hatch day.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>set date</code></td><td>the day the eggs went in</td><td>date</td></tr><tr><td><code>total_days</code></td><td>incubation period for the species</td><td>days</td></tr><tr><td><code>hatch date</code></td><td>expected hatch</td><td>date</td></tr></tbody></table>
+            ['title' => 'How the Chicken Hatch Date calculator works', 'html' => <<<'TXT'
+            <p>Chicken Hatch Date answers one question from 4 numbers, and the answer is Hatch day (day of month), Hatch month and Days remaining.</p><p>Written with the labels from the form, Days remaining = Incubation period − Days already incubated.</p><p>The result panel carries Hatch day (day of month), Hatch month, Days remaining and Candle on day, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Chicken Hatch Date?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Day of month you set the eggs</strong> — in day. 1–31</li><li><strong>Month</strong> — in month. 1 = January, 12 = December</li><li><strong>Days already incubated</strong> — in days. Leave 0 if you set them today</li><li><strong>Incubation period</strong> — in days. 21 for chickens, 28 duck, 28–30 goose</li></ul><p>The answers come back as Hatch day (day of month) in day, Hatch month in month, Days remaining in days, Candle on day, Stop turning on day. </p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: day of month you set the eggs of <strong>1</strong> day, month of <strong>4</strong> month, days already incubated of <strong>0</strong> days, incubation period of <strong>21</strong> days.</p>
-            <p>Substituting them into the formula gives days remaining of <strong>21</strong> days, candle on day of <strong>7</strong>, stop turning on day of <strong>18</strong>, hatch day (day of month) of <strong>22</strong> day, hatch month of <strong>4</strong> month.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Day of month you set the eggs = 1 day, Month = 4 month, Days already incubated = 5 days and Incubation period = 21 days; the answers are &lt;strong&gt;Days remaining&lt;/strong&gt; = 16 days, &lt;strong&gt;Candle on day&lt;/strong&gt; = 7, &lt;strong&gt;Stop turning on day&lt;/strong&gt; = 18, &lt;strong&gt;Hatch day (day of month)&lt;/strong&gt; = 22 day and &lt;strong&gt;Hatch month&lt;/strong&gt; = 4 month.</p><ul><li><strong>Days remaining</strong> = 16 days</li><li><strong>Candle on day</strong> = 7</li><li><strong>Stop turning on day</strong> = 18</li><li><strong>Hatch day (day of month)</strong> = 22 day</li><li><strong>Hatch month</strong> = 4 month</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Days remaining</strong> = <code>Incubation period − Days already incubated</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <p> The usual bands are:</p>
-            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>day 1 – 7</td><td><strong>Setting</strong></td><td>temperature and humidity stabilising</td></tr><tr><td>day 7 – 10</td><td><strong>Candling</strong></td><td>clear eggs can be removed</td></tr><tr><td>day 18</td><td><strong>Lockdown</strong></td><td>stop turning, raise humidity to 65–70%</td></tr><tr><td>day 21</td><td><strong>Hatch</strong></td><td>chicks emerge over 12–24 hours</td></tr></tbody></table>
-            <ul><li><p>The hatch date moves by up to a day either way with temperature: a forced-air incubator running 0.5 °C cool can add a day, and a still-air one can finish early.</p></li><li><p>If you set eggs on several days, treat each batch separately — a two-day spread becomes a two-day spread at hatch.</p></li><li><p>Month arithmetic here is a plain addition of the day number; if the sum passes the end of the month, count into the next month when you plan your calendar.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Days remaining&lt;/strong&gt; = 16, &lt;strong&gt;Candle on day&lt;/strong&gt; = 7, &lt;strong&gt;Stop turning on day&lt;/strong&gt; = 18, &lt;strong&gt;Hatch day (day of month)&lt;/strong&gt; = 22 and &lt;strong&gt;Hatch month&lt;/strong&gt; = 4. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Hatch day (day of month) is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting the set day as day 1 when the eggs went in late in the evening.</li><li>Leaving the turner on past day 18, which is a common cause of malpositioned chicks.</li><li>Opening the incubator during hatch, which drops humidity exactly when the chicks need it.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Days remaining</strong> = <code>Incubation period − Days already incubated</code></li><li><strong>Candle on day</strong> = <code>7</code></li><li><strong>Stop turning on day</strong> = <code>Incubation period − 3</code></li><li><strong>Hatch day (day of month)</strong> = <code>Day of month you set the eggs + Incubation period</code></li><li><strong>Hatch month</strong> = <code>Month + 0</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Days remaining, Candle on day and Stop turning on day can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>Most real jobs need two or three of these together:</p><p><a href="/biology/egg-incubation-hatch-date">Egg incubation hatch date</a>. <a href="/biology/hatch-rate">Hatch rate</a>. <a href="/biology/chicken-years-to-human-years">Chicken years to human years</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Day of month you set the eggs from 1 to 2, leaving every other box alone. The panel moves from &lt;strong&gt;Days remaining&lt;/strong&gt; 16 days, &lt;strong&gt;Candle on day&lt;/strong&gt; 7, &lt;strong&gt;Stop turning on day&lt;/strong&gt; 18, &lt;strong&gt;Hatch day (day of month)&lt;/strong&gt; 22 day and &lt;strong&gt;Hatch month&lt;/strong&gt; 4 month to &lt;strong&gt;Days remaining&lt;/strong&gt; 16 days, &lt;strong&gt;Candle on day&lt;/strong&gt; 7, &lt;strong&gt;Stop turning on day&lt;/strong&gt; 18, &lt;strong&gt;Hatch day (day of month)&lt;/strong&gt; 23 day and &lt;strong&gt;Hatch month&lt;/strong&gt; 4 month.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Hatch day (day of month), Hatch month and Days remaining are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If Day of month you set the eggs is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are Day of month you set the eggs, Month and Days already incubated and the number you are missing is Hatch day (day of month) and Hatch month.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/egg-incubation-hatch-date">Egg Incubation Hatch Date Calculator</a>, <a href="/biology/encounter-rate">Encounter Rate Calculator</a> and <a href="/biology/enzyme-activity-units">Enzyme Activity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'How long do chicken eggs take to hatch?', 'a' => '21 days at 37.5 °C in a forced-air incubator. Ducks take 28, quail 17–18, geese 28–30.'],
-            ['q' => 'What is lockdown?', 'a' => 'The last three days, when turning stops, humidity goes up to about 65–70% and the incubator stays closed.'],
-            ['q' => 'What does the Chicken Hatch Date actually calculate?', 'a' => <<<'TXT'
-            It returns days remaining, candle on day, stop turning on day and hatch day (day of month). Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Chicken Hatch Date calculator work out?', 'a' => <<<'TXT'
+            Hatch day (day of month), Hatch month, Days remaining and Candle on day, from Incubation period and Days already incubated. The relationship is Days remaining = Incubation period − Days already incubated.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Day of month you set the eggs (day), Month (month), Days already incubated (days), Incubation period (days). Fill set_day, set_month and elapsed and leave Hatch day (day of month) empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Days remaining, Candle on day, Stop turning on day and Hatch day (day of month) can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Days remaining = 16 days, Candle on day = 7, Stop turning on day = 18, Hatch day (day of month) = 22 day and Hatch month = 4 month. That comes from the page's own defaults, entered in Day of month you set the eggs; change one of them and the whole set is recomputed.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Hatch day (day of month) is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Day of month you set the eggs left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Hatch day (day of month) keeps more digits than the panel prints.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/egg-incubation-hatch-date', 'name' => 'Egg Incubation Hatch Date Calculator'],
+            ['path' => '/biology/encounter-rate', 'name' => 'Encounter Rate Calculator'],
+            ['path' => '/biology/enzyme-activity-units', 'name' => 'Enzyme Activity Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

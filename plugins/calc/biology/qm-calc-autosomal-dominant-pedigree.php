@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Autosomal Dominant Pedigree Analyzer',
-    'meta' => ['title' => 'Autosomal Dominant Pedigree Analyzer Calculator', 'description' => 'A dominant allele shows in every generation and has an affected parent for every affected child. It returns chance of an affected child, chance of an…', 'h1' => 'Autosomal Dominant Pedigree Analyzer', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Autosomal Dominant Pedigree Analyzer Calculator', 'description' => 'Autosomal Dominant Pedigree Analyzer turns Parent 1 genotype, Parent 2 genotype and Penetrance into Chance of an affected child and Chance of an unaffected…', 'h1' => 'Autosomal Dominant Pedigree Analyzer', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -88,44 +88,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        A dominant allele shows in every generation and has an affected parent for every affected child. It returns chance of an affected child, chance of an unaffected child, chance the child carries the allele and expected affected fraction at generation 5, and the panel shows all of them at once.
-        
-        This calculator works out the genotype of each parent, the risk for their children and the chance a healthy child of an affected carrier-free parent still carries the allele.
+        Autosomal Dominant Pedigree Analyzer turns Parent 1 genotype, Parent 2 genotype and Penetrance into Chance of an affected child and Chance of an unaffected child. There is no hidden constant here: change Chance of an affected child and Parent 1 genotype moves with it. The main result, Chance of an affected child, is reported in %.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Autosomal Dominant Pedigree Analyzer', 'html' => <<<'TXT'
-            <p>Aa × aa → 1 affected: 1 unaffected; each generation halves the allele's share</p>
-            <figure class="calc-figure"><img src="/uploads/biology/autosomal-dominant-pedigree.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Autosomal Dominant Pedigree Analyzer — An affected heterozygote mated with an unaffected partner." title="Autosomal Dominant Pedigree Analyzer"><figcaption>An affected heterozygote mated with an unaffected partner.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>A</code></td><td>the dominant disease allele</td><td>—</td></tr><tr><td><code>a</code></td><td>the normal allele</td><td>—</td></tr><tr><td><code>penetrance</code></td><td>share of carriers who show the trait</td><td>%</td></tr></tbody></table>
+            ['title' => 'How the Autosomal Dominant Pedigree Analyzer calculator works', 'html' => <<<'TXT'
+            <p>The Autosomal Dominant Pedigree Analyzer calculator applies one relationship to 3 numbers and reports Chance of an affected child, Chance of an unaffected child and Chance the child carries the allele.</p><p>In the form&#039;s own words, Chance of an affected child = (1 − (1 − Parent 1 genotype) × (1 − Parent 2 genotype)) × Penetrance ÷ 100 × 100.</p><p>The result panel carries Chance of an affected child, Chance of an unaffected child, Chance the child carries the allele and Expected affected fraction at generation 5, each in a box of its own rather than buried in a sentence.</p>
             TXT],
-            ['title' => 'How do I use the Autosomal Dominant Pedigree Analyzer?', 'html' => <<<'TXT'
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Parent 1 genotype</strong> — a plain number, no unit</li><li><strong>Parent 2 genotype</strong> — a plain number, no unit</li><li><strong>Penetrance</strong> — in %. Below 100% if carriers can appear unaffected</li></ul><p>What you get back is Chance of an affected child in %, Chance of an unaffected child in %, Chance the child carries the allele in %, Expected affected fraction at generation 5 in %, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: parent 1 genotype set to <strong>Aa — affected heterozygote</strong>, parent 2 genotype set to <strong>0.0</strong>, penetrance of <strong>100</strong>%.</p>
-            <p>Substituting them into the formula gives chance of an affected child of <strong>50</strong>%, chance of an unaffected child of <strong>50</strong>%, chance the child carries the allele of <strong>50</strong>%, expected affected fraction at generation 5 of <strong>3.12</strong>%.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — Parent 1 genotype = 0.5, Parent 2 genotype = 0 and Penetrance = 100 % — through the same formula and the panel reports &lt;strong&gt;Chance of an affected child&lt;/strong&gt; = 50 %, &lt;strong&gt;Chance of an unaffected child&lt;/strong&gt; = 50 %, &lt;strong&gt;Chance the child carries the allele&lt;/strong&gt; = 50 % and &lt;strong&gt;Expected affected fraction at generation 5&lt;/strong&gt; = 3.13 %.</p><ul><li><strong>Chance of an affected child</strong> = 50 %</li><li><strong>Chance of an unaffected child</strong> = 50 %</li><li><strong>Chance the child carries the allele</strong> = 50 %</li><li><strong>Expected affected fraction at generation 5</strong> = 3.13 %</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Chance of an affected child</strong> = <code>(1 − (1 − Parent 1 genotype) × (1 − Parent 2 genotype)) × Penetrance ÷ 100 × 100</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Dominant alleles are lost from a pedigree as carriers die without children: the expected share of affected offspring after five generations of mating with unaffected partners is about 3%.</p></li><li><p>Incomplete penetrance makes a dominant allele appear to skip a generation, which is the classic mimic of a recessive pattern.</p></li><li><p>Huntington's disease, Marfan syndrome and familial hypercholesterolaemia are the usual textbook autosomal dominant examples.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Chance of an affected child&lt;/strong&gt; = 50, &lt;strong&gt;Chance of an unaffected child&lt;/strong&gt; = 50, &lt;strong&gt;Chance the child carries the allele&lt;/strong&gt; = 50 and &lt;strong&gt;Expected affected fraction at generation 5&lt;/strong&gt; = 3.13 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Chance of an affected child takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Assuming a dominant trait must appear in every generation when penetrance is incomplete.</li><li>Ignoring new mutations, which can produce an affected child in an unaffected family.</li><li>Confusing an affected homozygote with a heterozygote — the first passes the allele to every child.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Chance of an affected child</strong> = <code>(1 − (1 − Parent 1 genotype) × (1 − Parent 2 genotype)) × Penetrance ÷ 100 × 100</code></li><li><strong>Chance of an unaffected child</strong> = <code>(1 − (1 − (1 − Parent 1 genotype) × (1 − Parent 2 genotype)) × Penetrance ÷ 100) × 100</code></li><li><strong>Chance the child carries the allele</strong> = <code>(Parent 1 genotype × (1 − Parent 2 genotype) + (1 − Parent 1 genotype) × Parent 2 genotype) × Penetrance ÷ 100 × 100</code></li><li><strong>Expected affected fraction at generation 5</strong> = <code>(1 − (1 − Parent 1 genotype) × (1 − Parent 2 genotype))^(5) × Penetrance ÷ 100 × 100</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Chance of an affected child, Chance of an unaffected child and Chance the child carries the allele can be the unknown.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Parent 1 genotype from 0.5 to 1, leaving every other box alone. The panel moves from &lt;strong&gt;Chance of an affected child&lt;/strong&gt; 50 %, &lt;strong&gt;Chance of an unaffected child&lt;/strong&gt; 50 %, &lt;strong&gt;Chance the child carries the allele&lt;/strong&gt; 50 % and &lt;strong&gt;Expected affected fraction at generation 5&lt;/strong&gt; 3.13 % to &lt;strong&gt;Chance of an affected child&lt;/strong&gt; 100 %, &lt;strong&gt;Chance of an unaffected child&lt;/strong&gt; 0 %, &lt;strong&gt;Chance the child carries the allele&lt;/strong&gt; 100 % and &lt;strong&gt;Expected affected fraction at generation 5&lt;/strong&gt; 100 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Chance of an affected child, Chance of an unaffected child and Chance the child carries the allele are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> If Parent 1 genotype is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Parent 1 genotype, Parent 2 genotype and Penetrance is what you already know and Chance of an affected child and Chance of an unaffected child is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dog-pregnancy">Dog pregnancy Calculator</a>, <a href="/biology/dog-quality-of-life">Dog quality of life</a> and <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Can two affected parents have an unaffected child?', 'a' => 'Yes, if both are heterozygotes: the child may inherit the normal allele from each.'],
-            ['q' => 'What does an affected parent pass on?', 'a' => 'A heterozygote passes the allele to 50% of children; a homozygote to all of them.'],
-            ['q' => 'What does the Autosomal Dominant Pedigree Analyzer actually calculate?', 'a' => <<<'TXT'
-            It returns chance of an affected child, chance of an unaffected child, chance the child carries the allele and expected affected fraction at generation 5. Each one is derived by the formula on this page, so you can check any figure by hand.
+            ['q' => 'What does the Autosomal Dominant Pedigree Analyzer calculator work out?', 'a' => <<<'TXT'
+            Chance of an affected child, Chance of an unaffected child, Chance the child carries the allele and Expected affected fraction at generation 5, from Parent 1 genotype, Parent 2 genotype and Penetrance. The relationship is Chance of an affected child = (1 − (1 − Parent 1 genotype) × (1 − Parent 2 genotype)) × Penetrance ÷ 100 × 100.
             TXT],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Parent 1 genotype, Parent 2 genotype, Penetrance (%). Enter parent1, parent2 and penetrance; Chance of an affected child is the box to leave alone unless it is the value you came for.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Chance of an affected child, Chance of an unaffected child, Chance the child carries the allele and Expected affected fraction at generation 5 can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Chance of an affected child = 50 %, Chance of an unaffected child = 50 %, Chance the child carries the allele = 50 % and Expected affected fraction at generation 5 = 3.13 %. Those are the defaults written into the form — move Parent 1 genotype and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Chance of an affected child is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Parent 1 genotype blank and the page solves for it, reporting Chance of an affected child instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Chance of an affected child keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/dog-pregnancy', 'name' => 'Dog pregnancy Calculator'],
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

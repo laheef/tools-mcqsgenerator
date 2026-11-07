@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell doubling time',
-    'meta' => ['title' => 'Cell doubling time: Formula, Steps & Results', 'description' => 'Give the Cell doubling time calculator the final reference parameter, the time duration and the growth rate and it returns <strong>initial reference…', 'h1' => 'Cell doubling time Calculator', 'updated' => '2024-07-30'],
+    'meta' => ['title' => 'Cell doubling time: Formula, Steps & Results', 'description' => 'Enter Final reference parameter, Time duration and Growth rate into Cell doubling time and the answer comes back as Initial reference parameter and Doubling…', 'h1' => 'Cell doubling time Calculator', 'updated' => '2024-07-30'],
     'sections' => [
         [
             'title' => '',
@@ -96,68 +96,60 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Give the Cell doubling time calculator the final reference parameter, the time duration and the growth rate and it returns <strong>initial reference parameter</strong>.
+        Enter Final reference parameter, Time duration and Growth rate into Cell doubling time and the answer comes back as Initial reference parameter and Doubling time. There is no hidden constant here: change Initial reference parameter and Final reference parameter moves with it.
         TXT,
         'sections' => [
-            ['title' => 'How does the Cell doubling time calculator work?', 'html' => <<<'TXT'
-            <p>The Cell doubling time calculator takes the values in the form, applies the relationship described below and reports <strong>initial reference parameter</strong> in the results panel.</p>
-            <p>Working from the top of the form: you type in the final reference parameter, the time duration and the growth rate.</p>
+            ['title' => 'How the Cell doubling time calculator works', 'html' => <<<'TXT'
+            <p>Cell doubling time answers one question from 3 numbers, and the answer is Initial reference parameter and Doubling time.</p><p>The relationship it solves reads Initial reference parameter = Final reference parameter × e^( − Growth rate × Time duration).</p><p>The answers are Initial reference parameter and Doubling time; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A plain number with no unit attached.</li><li>A measured quantity, entered by default in hours. </li><li>A measured quantity, entered by default in hours. </li></ul>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>There are 3 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Final reference parameter</strong> — a plain number, no unit</li><li><strong>Time duration</strong> — in hours</li><li><strong>Growth rate</strong> — in hours</li></ul><p>The answers come back as Initial reference parameter, Doubling time in hours / minutes. </p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Initial reference parameter</strong></td><td>A plain number, with no unit.</td><td>—</td><td>Calculated</td></tr><tr><td><strong>Final reference parameter</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Time duration</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Growth rate</strong></td><td>A measured quantity, 27 units available.</td><td>hours</td><td>You supply it</td></tr><tr><td><strong>Doubling time</strong></td><td>A measured quantity, 27 units available.</td><td>hours / minutes</td><td>Calculated</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Take the values the form starts on, Final reference parameter = 10, Time duration = 100 hrs and Growth rate = 1000 hrs; the answers are &lt;strong&gt;Initial reference parameter&lt;/strong&gt; = 0 and &lt;strong&gt;Doubling time&lt;/strong&gt; = 6.931e-4 hrsmin.</p><ul><li><strong>Initial reference parameter</strong> = 0</li><li><strong>Doubling time</strong> = 6.931e-4 hrsmin</li></ul><p>The line behind those figures is <strong>Initial reference parameter</strong> = <code>Final reference parameter × e^( − Growth rate × Time duration)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
-            ['title' => 'The formula behind the Cell doubling time calculator', 'html' => <<<'TXT'
-            <p> Each one can be rearranged for any of its variables, which is what makes the calculator work in both directions:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Initial reference parameter</span><span class="formula-eq">=</span><span class="formula-rhs">final reference parameter × the exponential of (-growth rate × time duration)</span></div><div class="formula-row"><span class="formula-lhs">Doubling time</span><span class="formula-eq">=</span><span class="formula-rhs">the natural log of (2) ÷ growth rate</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Initial reference parameter&lt;/strong&gt; = 0 and &lt;strong&gt;Doubling time&lt;/strong&gt; = 6.931e-4. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Doubling time lists 18 options and opens on hours / minutes. </p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>A number, filled in as soon as the inputs allow it.</li><li>Shown in hours / minutes, and convertible to any of the 27 units on that chip.</li></ul><p>If a number looks wrong, check three things in this order: that the units match what you had in mind, that no drop-down is still on its default, and that the value you entered is on the same scale as the rest — a rate typed as 5 rather than 0.05 is the classic mistake. </p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Initial reference parameter</strong> = <code>Final reference parameter × e^( − Growth rate × Time duration)</code></li><li><strong>Time duration</strong> = <code>ln(Final reference parameter ÷ Initial reference parameter) ÷ Growth rate</code></li><li><strong>Final reference parameter</strong> = <code>Initial reference parameter × e^(Growth rate × Time duration)</code></li><li><strong>Growth rate</strong> = <code>ln(Final reference parameter ÷ Initial reference parameter) ÷ Time duration</code></li><li><strong>Doubling time</strong> = <code>ln(2) ÷ Growth rate</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Initial reference parameter, Time duration and Final reference parameter can be the unknown.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>Time, opening in hours</li><li>Time, opening in hours</li><li>Time, opening in hours / minutes</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Final reference parameter from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Initial reference parameter&lt;/strong&gt; 0 and &lt;strong&gt;Doubling time&lt;/strong&gt; 6.931e-4 hrsmin to &lt;strong&gt;Initial reference parameter&lt;/strong&gt; 0 and &lt;strong&gt;Doubling time&lt;/strong&gt; 6.931e-4 hrsmin.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Cell doubling time calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 3 figures keep coming back — the final reference parameter, the time duration and the growth rate — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> Time duration and Growth rate carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Initial reference parameter and Doubling time are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> Convert Final reference parameter to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Keep the units you enter consistent. </li><li>Round only at the end. </li><li>If a result surprises you, look at the order of magnitude before the digits: a plausible number in the wrong unit looks more convincing than an implausible one, and is easier to miss.</li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Cell doubling time calculator, these are the ones that matter:</p>
-            <ul><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/cephalexin-for-cats-dosage">Cephalexin for cats dosage</a>, <a href="/biology/cephalexin-for-dogs-dosage">Cephalexin for dogs dosage</a> and <a href="/biology/co2-grow-room">CO₂ grow room</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>The typical use is one direction of the relationship: Final reference parameter, Time duration and Growth rate measured, Initial reference parameter and Doubling time wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dog-quality-of-life">Dog quality of life</a>, <a href="/biology/dog-raisin-toxicity">Dog raisin toxicity Calculator</a> and <a href="/biology/dog-size">Dog size Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Cell doubling time calculator work out?', 'a' => <<<'TXT'
-            It returns initial reference parameter, derived from the final reference parameter, the time duration and the growth rate. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Initial reference parameter and Doubling time, from Final reference parameter, Growth rate and Time duration. The relationship is Initial reference parameter = Final reference parameter × e^( − Growth rate × Time duration).
             TXT],
-            ['q' => 'What do I need to enter to use the Cell doubling time calculator?', 'a' => <<<'TXT'
-            The form asks for the final reference parameter, the time duration and the growth rate, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Final reference parameter, Time duration (hours), Growth rate (hours). With final_concentration, time and growth_rate in place, Initial reference parameter can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I enter time duration in a different unit?', 'a' => <<<'TXT'
-            Yes. Time duration opens in hours and the chip beside it offers 27 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Initial reference parameter, Time duration, Final reference parameter and Growth rate can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Initial reference parameter = 0 and Doubling time = 6.931e-4 hrsmin. The figures come from Final reference parameter as the page opens it; they are a starting point, not a fixed answer.
             TXT],
-            ['q' => 'Is the Cell doubling time calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Initial reference parameter is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
+            A blank box is the question. With Final reference parameter left empty the page rearranges the relationship and returns that value; fill everything and it has nothing to solve for.
+            TXT],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Initial reference parameter keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
         ],
         'related' => [
-            ['path' => '/biology/cephalexin-for-cats-dosage', 'name' => 'Cephalexin for cats dosage'],
-            ['path' => '/biology/cephalexin-for-dogs-dosage', 'name' => 'Cephalexin for dogs dosage'],
-            ['path' => '/biology/co2-grow-room', 'name' => 'CO₂ grow room'],
+            ['path' => '/biology/dog-quality-of-life', 'name' => 'Dog quality of life'],
+            ['path' => '/biology/dog-raisin-toxicity', 'name' => 'Dog raisin toxicity Calculator'],
+            ['path' => '/biology/dog-size', 'name' => 'Dog size Calculator'],
         ],
+        'authors' => [],
     ],
 ];

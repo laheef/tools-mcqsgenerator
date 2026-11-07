@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Bacterial Concentration Calculator',
-    'meta' => ['title' => 'Bacterial Concentration Calculator — Biology', 'description' => 'Bacterial concentration can come from a plate count, an OD reading or a dilution series, and the three disagree. It returns cells per mL (from OD), log₁�….', 'h1' => 'Bacterial Concentration Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Bacterial Concentration Calculator — Biology', 'description' => <<<'TXT'
+    Bacterial Concentration works out Cells per mL (from OD) and log₁₀ CFU/mL from CFU per mL, OD600 and Cells per mL per OD unit. There is no hidden constant…
+    TXT, 'h1' => 'Bacterial Concentration Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -80,46 +82,56 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Bacterial concentration can come from a plate count, an OD reading or a dilution series, and the three disagree. It returns cells per mL (from OD), log₁₀ CFU/mL and cells per CFU, and the panel shows all of them at once.
-        
-        This calculator converts between them and reports the concentration in cells/mL, CFU/mL and log units, with the doubling time it implies.
+        Bacterial Concentration works out Cells per mL (from OD) and log₁₀ CFU/mL from CFU per mL, OD600 and Cells per mL per OD unit. There is no hidden constant here: change Cells per mL (from OD) and CFU per mL moves with it. The main result, Cells per mL (from OD), is reported in cells/mL.
         TXT,
         'sections' => [
-            ['title' => 'The formula behind the Bacterial Concentration', 'html' => <<<'TXT'
-            <p>Cells/mL ≈ OD600 × (cells/mL per OD unit); log₁₀ CFU/mL = log₁₀(CFU/mL)</p>
-            <figure class="calc-figure"><img src="/uploads/biology/bacterial-concentration-calculator.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Bacterial Concentration Calculator — Plate count against the OD estimate, side by side." title="Bacterial Concentration Calculator"><figcaption>Plate count against the OD estimate, side by side.</figcaption></figure>
-            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>CFU/mL</code></td><td>colony-forming units from a plate</td><td>CFU/mL</td></tr><tr><td><code>OD600</code></td><td>absorbance of the culture</td><td>AU</td></tr><tr><td><code>ratio</code></td><td>how many cells make up one colony — the clumping factor</td><td>—</td></tr></tbody></table>
+            ['title' => 'How the Bacterial Concentration calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Bacterial Concentration: it takes 3 numbers and reports Cells per mL (from OD), log₁₀ CFU/mL and Cells per CFU.</p><p>Written with the labels from the form, Cells per mL (from OD) = OD600 × Cells per mL per OD unit.</p><p>What comes back is Cells per mL (from OD), log₁₀ CFU/mL and Cells per CFU — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'How do I use the Bacterial Concentration?', 'html' => <<<'TXT'
-            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
-            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>CFU per mL</strong> — in CFU/mL. From a plate count</li><li><strong>OD600</strong> — a plain number, no unit. Optional cross-check</li><li><strong>Cells per mL per OD unit</strong> — in cells/mL</li></ul><p>What you get back is Cells per mL (from OD) in cells/mL, log₁₀ CFU/mL, Cells per CFU, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'A worked example', 'html' => <<<'TXT'
-            <p>Take the default values the page opens with: cfu per ml of <strong>5,000,000</strong> CFU/mL, od600 of <strong>0.6</strong>, cells per ml per od unit of <strong>800,000,000</strong> cells/mL.</p>
-            <p>Substituting them into the formula gives cells per ml (from od) of <strong>480,000,000</strong> cells/mL, log₁₀ cfu/ml of <strong>6.7</strong>, cells per cfu of <strong>96</strong>.</p>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, CFU per mL = 5.000e+6 CFU/mL, OD600 = 0.6 and Cells per mL per OD unit = 8.000e+8 cells/mL gives &lt;strong&gt;Cells per mL (from OD)&lt;/strong&gt; = 4.800e+8 cells/mL, &lt;strong&gt;log₁₀ CFU/mL&lt;/strong&gt; = 6.7 and &lt;strong&gt;Cells per CFU&lt;/strong&gt; = 96.</p><ul><li><strong>Cells per mL (from OD)</strong> = 4.800e+8 cells/mL</li><li><strong>log₁₀ CFU/mL</strong> = 6.7</li><li><strong>Cells per CFU</strong> = 96</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Cells per mL (from OD)</strong> = <code>OD600 × Cells per mL per OD unit</code>.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li><p>Cells per CFU is usually 1–3 for well-dispersed cultures and much higher for clumping strains; it is the size of the gap between the two methods.</p></li><li><p>Both methods count dead cells differently: OD600 counts everything, plating counts only what can grow.</p></li><li><p>For a standard curve, calibrate OD against CFU for your own strain, medium and spectrophotometer once, and reuse the factor.</p></li></ul>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Cells per mL (from OD)&lt;/strong&gt; = 4.800e+8, &lt;strong&gt;log₁₀ CFU/mL&lt;/strong&gt; = 6.7 and &lt;strong&gt;Cells per CFU&lt;/strong&gt; = 96. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Cells per mL (from OD) is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
-            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
-            <p> The usual culprits:</p><ul><li>Comparing OD-derived cell counts with CFU directly and reporting a discrepancy as a result.</li><li>Using the E. coli factor for a Gram-positive organism.</li></ul>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Cells per mL (from OD)</strong> = <code>OD600 × Cells per mL per OD unit</code></li><li><strong>log₁₀ CFU/mL</strong> = <code>log₁₀(CFU per mL)</code></li><li><strong>Cells per CFU</strong> = <code>OD600 × Cells per mL per OD unit ÷ CFU per mL</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Cells per mL (from OD), log₁₀ CFU/mL and Cells per CFU can be the unknown.</p>
             TXT],
-            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
-            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/cfu-ml-calculator">CFU/mL</a>. <a href="/biology/od600-to-cell-density">OD600 to cell density</a>. <a href="/biology/bacterial-growth-curve">Bacterial growth curve</a>.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double CFU per mL from 5.000e+6 to 1.000e+7, leaving every other box alone. The panel moves from &lt;strong&gt;Cells per mL (from OD)&lt;/strong&gt; 4.800e+8 cells/mL, &lt;strong&gt;log₁₀ CFU/mL&lt;/strong&gt; 6.7 and &lt;strong&gt;Cells per CFU&lt;/strong&gt; 96 to &lt;strong&gt;Cells per mL (from OD)&lt;/strong&gt; 4.800e+8 cells/mL, &lt;strong&gt;log₁₀ CFU/mL&lt;/strong&gt; 7 and &lt;strong&gt;Cells per CFU&lt;/strong&gt; 48.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> Cells per mL (from OD), log₁₀ CFU/mL and Cells per CFU are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Measurements mixed across scales.</strong> If CFU per mL is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Use it whenever the numbers you have are CFU per mL, OD600 and Cells per mL per OD unit and the number you are missing is Cells per mL (from OD) and log₁₀ CFU/mL.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/hunting-tooth-ratio">Hunting Tooth Ratio Calculator</a>, <a href="/biology/ideal-fish-tank-size">Ideal Fish Tank Size Calculator</a> and <a href="/biology/in-vivo-formulation">In Vivo Formulation Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'Which number should I report?', 'a' => 'Both, with the method: OD-based cells/mL for mass, CFU/mL for viable count.'],
-            ['q' => 'Why do they differ by a factor of two?', 'a' => 'Clumping, dead cells and chains of cells. For streptococci the gap can be tenfold.'],
-            ['q' => 'What does the Bacterial Concentration actually calculate?', 'a' => 'It returns cells per mL (from OD), log₁₀ CFU/mL and cells per CFU. Each one is derived by the formula on this page, so you can check any figure by hand.'],
-            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
-            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            ['q' => 'What does the Bacterial Concentration calculator work out?', 'a' => <<<'TXT'
+            Cells per mL (from OD), log₁₀ CFU/mL and Cells per CFU, from OD600 and Cells per mL per OD unit. The relationship is Cells per mL (from OD) = OD600 × Cells per mL per OD unit.
             TXT],
-            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
-            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            CFU per mL (CFU/mL), OD600, Cells per mL per OD unit (cells/mL). With cfu_ml, od and factor in place, Cells per mL (from OD) can stay blank and the page will work it out.
             TXT],
-            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Cells per mL (from OD), log₁₀ CFU/mL and Cells per CFU can each be the answer: the page works out which box is empty and rearranges the relationship for it.
+            TXT],
+            ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
+            Cells per mL (from OD) = 4.800e+8 cells/mL, log₁₀ CFU/mL = 6.7 and Cells per CFU = 96. Those are the defaults written into the form — move CFU per mL and every result box follows.
+            TXT],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Cells per mL (from OD) is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave CFU per mL blank and the page solves for it, reporting Cells per mL (from OD) instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Cells per mL (from OD) at the moment it is drawn.'],
         ],
-        'related' => [],
+        'related' => [
+            ['path' => '/biology/hunting-tooth-ratio', 'name' => 'Hunting Tooth Ratio Calculator'],
+            ['path' => '/biology/ideal-fish-tank-size', 'name' => 'Ideal Fish Tank Size Calculator'],
+            ['path' => '/biology/in-vivo-formulation', 'name' => 'In Vivo Formulation Calculator'],
+        ],
+        'authors' => [],
     ],
 ];

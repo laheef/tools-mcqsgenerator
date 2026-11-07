@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ligation',
-    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Examples', 'description' => '<strong>vector mass</strong> is what the Ligation calculator works out, and it gets there from the insert length, the vector length and the insert mass.', 'h1' => 'Ligation Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Examples', 'description' => 'Ligation turns Insert length, Vector length and Insert / vector ratio into Vector mass. It is a single relationship that reads Vector mass out of Insert…', 'h1' => 'Ligation Calculator', 'updated' => '2026-08-06'],
     'sections' => [
         [
             'title' => '',
@@ -106,67 +106,55 @@ return [
         ],
     ],
     'article' => [
-        'intro' => '<strong>vector mass</strong> is what the Ligation calculator works out, and it gets there from the insert length, the vector length and the insert mass.',
+        'intro' => <<<'TXT'
+        Ligation turns Insert length, Vector length and Insert / vector ratio into Vector mass. It is a single relationship that reads Vector mass out of Insert length, not a table of canned results keyed by them. Units for Vector mass default to nanograms and can be changed on the answer itself.
+        TXT,
         'sections' => [
-            ['title' => 'How does the Ligation calculator work?', 'html' => <<<'TXT'
-            <p>The Ligation calculator takes the values in the form, applies the relationship described below and reports <strong>vector mass</strong> in the results panel.</p>
-            <p>Working from the top of the form: you choose the option that describes your case (the insert / vector ratio); then you type in the insert length, the vector length and the insert mass.</p>
+            ['title' => 'How the Ligation calculator works', 'html' => <<<'TXT'
+            <p>There is one relationship behind Ligation: it takes 4 numbers and reports Vector mass.</p><p>Written with the labels from the form, Vector mass = Insert mass × Vector length ÷ (Insert length × Insert / vector ratio).</p><p>What comes back is Vector mass — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
-            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
-            <ul><li>A measured quantity, entered by default in kilobases. The unit chip switches it to any of the 2 supported units.</li><li>A measured quantity, entered by default in kilobases. The unit chip switches it to any of the 2 supported units.</li><li>Pick the option that matches your case — 5 options, such as 1:1, 2:1 and 3:1. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A measured quantity, entered by default in nanograms. </li></ul><p>One field on this form is a choice rather than a number. </p>
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Insert length</strong> — in kilobases</li><li><strong>Vector length</strong> — in kilobases</li><li><strong>Insert / vector ratio</strong> — a plain number, no unit. Molar ratio of insert to vector.</li><li><strong>Insert mass</strong> — in nanograms</li></ul><p>What you get back is Vector mass in nanograms, shown next to the form rather than on a page of its own.</p>
             TXT],
-            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
-            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Insert length</strong></td><td>A measured quantity, 2 units available.</td><td>kilobases</td><td>You supply it</td></tr><tr><td><strong>Vector length</strong></td><td>A measured quantity, 2 units available.</td><td>kilobases</td><td>You supply it</td></tr><tr><td><strong>Vector mass</strong></td><td>A measured quantity, 29 units available.</td><td>nanograms</td><td>Calculated</td></tr><tr><td><strong>Insert / vector ratio</strong></td><td>One of 5 options, such as 1:1, 2:1 and 3:1.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Insert mass</strong></td><td>A measured quantity, 29 units available.</td><td>nanograms</td><td>You supply it</td></tr></tbody></table>
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>With the defaults in place, Insert length = 10 kb, Vector length = 100 kb, Insert / vector ratio = 3 and Insert mass = 1000 ng gives &lt;strong&gt;Vector mass&lt;/strong&gt; = 3333 ng.</p><ul><li><strong>Vector mass</strong> = 3333 ng</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Vector mass</strong> = <code>Insert mass × Vector length ÷ (Insert length × Insert / vector ratio)</code>.</p>
             TXT],
-            ['title' => 'The formula behind the Ligation calculator', 'html' => <<<'TXT'
-            <p>One relationship drives the whole page:</p><div class="formula-block"><div class="formula-row"><span class="formula-lhs">Vector mass</span><span class="formula-eq">=</span><span class="formula-rhs">insert mass × vector length ÷ (insert length × insert ÷ vector ratio)</span></div></div><p>Read it as an ordinary equation. </p>
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Vector mass&lt;/strong&gt; = 3333 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Vector mass offers 27 units and opens on nanograms, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
-            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
-            <ul><li>Shown in nanograms, and convertible to any of the 29 units on that chip.</li></ul><p>Before doubting the arithmetic, check the inputs: a unit chip on the wrong setting, a drop-down left at its default, or a percentage typed as a whole number rather than a decimal will each shift the answer by a clean power of ten.</p>
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Vector mass</strong> = <code>Insert mass × Vector length ÷ (Insert length × Insert / vector ratio)</code></li><li><strong>Vector length</strong> = <code>Insert length × Insert / vector ratio × Vector mass ÷ Insert mass</code></li><li><strong>Insert length</strong> = <code>Insert mass × Vector length ÷ (Insert / vector ratio × Vector mass)</code></li><li><strong>Insert / vector ratio</strong> = <code>Insert mass × Vector length ÷ (Insert length × Vector mass)</code></li><li><strong>Insert mass</strong> = <code>Insert length × Insert / vector ratio × Vector mass ÷ Vector length</code></li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Vector mass, Vector length and Insert length can be the unknown.</p>
             TXT],
-            ['title' => 'How are units and precision handled?', 'html' => <<<'TXT'
-            <ul><li>DNA, opening in kilobases</li><li>DNA, opening in kilobases</li><li>Mass, opening in nanograms</li><li>Mass, opening in nanograms</li></ul>
-            <p>Display rounding is separate from calculation rounding: the digits you see are shortened, the value behind them is not. </p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Take the example above and double Insert length from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Vector mass&lt;/strong&gt; 3333 ng to &lt;strong&gt;Vector mass&lt;/strong&gt; 1667 ng.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. </p>
             TXT],
-            ['title' => 'When should you use it?', 'html' => <<<'TXT'
-            <p>The Ligation calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Comparing two organisms, populations or processes</li><li>Supporting a lesson, a lecture or a field note</li><li>Putting a biological quantity into a scale you can picture</li><li>Any time the same 3 figures keep coming back — the insert length, the vector length and the insert mass — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>Units left where they were.</strong> The chip beside Insert length, Vector length and Insert mass is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Vector mass is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Measurements mixed across scales.</strong> Convert Insert length to one scale before entering anything.</li></ul>
             TXT],
-            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
-            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Write the answer down with its unit. </li><li>Round only at the end. </li></ul>
-            TXT],
-            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
-            <ul><li>Filling in more than one box is fine. </li><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
-            TXT],
-            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
-            <p>Every tool draws a boundary somewhere. For the Ligation calculator, these are the ones that matter:</p>
-            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The unit chips cover the units listed on the page. A historical or regional unit that is missing can still be used by converting it to a listed unit first.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li></ul>
-            TXT],
-            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
-            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/livestock-fence">Livestock fence cost</a>, <a href="/biology/llama">Llama</a> and <a href="/biology/log-reduction">Log Reduction</a>.</p>
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when Insert length, Vector length and Insert / vector ratio is what you already know and Vector mass is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/cat-pregnancy">Cat pregnancy Calculator</a>, <a href="/biology/cat-quality-of-life">Cat quality of life Calculator</a> and <a href="/biology/catch-per-unit-effort">Catch Per Unit Effort Calculator</a>.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Ligation calculator work out?', 'a' => <<<'TXT'
-            It returns vector mass, derived from the insert length, the vector length and the insert mass. Every field in the form feeds the same relationship: press Calculate once and changing any of them updates the result immediately, with no page reload.
+            Vector mass, from Insert mass, Vector length, Insert length and Insert / vector ratio. The relationship is Vector mass = Insert mass × Vector length ÷ (Insert length × Insert / vector ratio).
             TXT],
-            ['q' => 'What do I need to enter to use the Ligation calculator?', 'a' => <<<'TXT'
-            The form asks for the insert length, the vector length and the insert mass, which is 4 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Insert length (kilobases), Vector length (kilobases), Insert / vector ratio, Insert mass (nanograms). Fill insertLength, vectorLength and ratio and leave Vector mass empty if you would rather have that one solved instead.
             TXT],
-            ['q' => 'Can I enter insert length in a different unit?', 'a' => <<<'TXT'
-            Yes. Insert length opens in kilobases and the chip beside it offers 2 units. The number you typed keeps its magnitude and only its label changes; the calculation itself happens in a common base unit, so mixing systems in one form is safe.
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            Yes. Vector mass, Vector length, Insert length and Insert / vector ratio can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],
-            ['q' => 'Can I use it backwards?', 'a' => <<<'TXT'
-            Yes. Each variable in the relationship can be the one being solved for: fill in the answer you are aiming at, leave the field you want empty, and the calculator inverts the equation for you.
-            TXT],
-            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
-            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
-            TXT],
-            ['q' => 'Is the Ligation calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'What answer do the default values give?', 'a' => 'Vector mass = 3333 ng. The figures come from Insert length as the page opens it; they are a starting point, not a fixed answer.'],
+            ['q' => 'How precise is the result?', 'a' => 'Internally Vector mass is not rounded at all; the figure you read is formatted for legibility.'],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave Insert length blank and the page solves for it, reporting Vector mass instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Vector mass at the moment it is drawn.'],
         ],
         'related' => [
-            ['path' => '/biology/livestock-fence', 'name' => 'Livestock fence cost'],
-            ['path' => '/biology/llama', 'name' => 'Llama'],
-            ['path' => '/biology/log-reduction', 'name' => 'Log Reduction'],
+            ['path' => '/biology/cat-pregnancy', 'name' => 'Cat pregnancy Calculator'],
+            ['path' => '/biology/cat-quality-of-life', 'name' => 'Cat quality of life Calculator'],
+            ['path' => '/biology/catch-per-unit-effort', 'name' => 'Catch Per Unit Effort Calculator'],
         ],
+        'authors' => [],
     ],
 ];
