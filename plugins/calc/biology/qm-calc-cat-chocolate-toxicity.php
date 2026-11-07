@@ -167,11 +167,11 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        ['methyl<15.01', '✅ Your cat is going to be ok.'],
-                                        ['methyl<34.02 and methyl>=15.01', '❌ Your cat may suffer from diarrhea and vomiting.'],
-                                        ['methyl<45 and methyl>=34.02', '❗ Your cat may experience rapid heart rate (tachyarrhythmia), diarrhea, and vomiting. Find help immediately.'],
-                                        ['methyl<55.01 and methyl>=45', '❗ Your cat may experience tremors and seizures. Find help immediately.'],
-                                        ['methyl>=55.01', '💀❗ Your cat is at risk of death. Find help immediately.'],
+                                        ['methyl<15.01', ' Your cat is going to be ok.'],
+                                        ['methyl<34.02 and methyl>=15.01', ' Your cat may suffer from diarrhea and vomiting.'],
+                                        ['methyl<45 and methyl>=34.02', ' Your cat may experience rapid heart rate (tachyarrhythmia), diarrhea, and vomiting. Find help immediately.'],
+                                        ['methyl<55.01 and methyl>=45', ' Your cat may experience tremors and seizures. Find help immediately.'],
+                                        ['methyl>=55.01', ' Your cat is at risk of death. Find help immediately.'],
                                     ],
                                 ],
                                 [

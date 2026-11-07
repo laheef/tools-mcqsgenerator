@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Thousand Seed Weight Calculator',
-    'meta' => ['title' => 'Thousand Seed Weight Calculator — Formula & Results', 'description' => 'Thousand Seed Weight Calculator reports seeds per kilogram and TSW at 12% moisture. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Thousand Seed Weight Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Thousand Seed Weight Calculator — Formula & Results', 'description' => 'Thousand Seed Weight Calculator reports seeds per kilogram and TSW at 12% moisture. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Thousand Seed Weight Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cheng-Prusoff Equation Calculator',
-    'meta' => ['title' => 'Cheng-Prusoff Equation Calculator — Formula & Results', 'description' => 'Cheng-Prusoff Equation Calculator reports ki and Km apparent at this [S]. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Cheng-Prusoff Equation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cheng-Prusoff Equation Calculator — Formula', 'description' => 'Cheng-Prusoff Equation Calculator reports ki and Km apparent at this [S]. No sign-up and no waiting: type the numbers, press Calculate, read the answer.', 'h1' => 'Cheng-Prusoff Equation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

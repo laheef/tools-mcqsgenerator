@@ -12,7 +12,7 @@
 return [
     'name' => 'Fertilizer',
     'meta' => ['title' => 'Fertilizer Calculator — Formula, Units & Example', 'description' => <<<'TXT'
-    Fertilizer works out phosphate (P₂O₅) rate from lawn area and Nitrogen (N). The formula is printed in the form's own words, so the arithmetic can be checked.
+    Fertilizer works out phosphate (P₂O₅) rate from lawn area and Nitrogen (N). Free to use, and the working stays on the page beside the answer. No sign-up.
     TXT, 'h1' => 'Fertilizer Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [

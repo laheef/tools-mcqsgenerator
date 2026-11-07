@@ -82,7 +82,7 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        [null, '✨ Skip the math: create, edit, and save custom calculators ➔ instantly just by typing what you need.'],
+                                        [null, ' Skip the math: create, edit, and save custom calculators  instantly just by typing what you need.'],
                                     ],
                                 ],
                             ],
@@ -147,9 +147,9 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        [null, '📅 Your dog\'s cycle will last up to {{cycle1.shortValue}} - {{cycle2.shortValue}}.'],
-                                        ['enter_heat_cycle==0', '📅 You can expect the next heat cycle between {{nextCycle1.shortValue}} and {{nextCycle2.shortValue}}.&nbsp;'],
-                                        ['enter_heat_cycle==1', '📅 You can expect the next heat on {{nextCycle3.shortValue}}.'],
+                                        [null, ' Your dog\'s cycle will last up to {{cycle1.shortValue}} - {{cycle2.shortValue}}.'],
+                                        ['enter_heat_cycle==0', ' You can expect the next heat cycle between {{nextCycle1.shortValue}} and {{nextCycle2.shortValue}}.&nbsp;'],
+                                        ['enter_heat_cycle==1', ' You can expect the next heat on {{nextCycle3.shortValue}}.'],
                                     ],
                                 ],
                             ],
@@ -162,7 +162,7 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        [null, '💡 Dogs of small breeds might go into heat more often (even every four months), while dogs of giant breeds - less frequently (e.g., once per year).'],
+                                        [null, ' Dogs of small breeds might go into heat more often (even every four months), while dogs of giant breeds - less frequently (e.g., once per year).'],
                                     ],
                                 ],
                             ],

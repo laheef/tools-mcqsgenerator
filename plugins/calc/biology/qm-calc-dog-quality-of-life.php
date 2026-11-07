@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog quality of life',
-    'meta' => ['title' => 'Dog quality of life — Free Online Calculator', 'description' => 'Dog quality of life works out results from mobility and nutrition (food intake). Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog quality of life — Free Online Calculator', 'description' => 'Dog quality of life works out results from mobility and nutrition (food intake). Leave mobility empty and the page will solve for it instead. No sign-up.', 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'item1' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => '8sGHxdXKoGDpxOFbptD01'],
@@ -178,7 +178,7 @@ return [
                                         ['results >= 6 and results<=8', <<<'TXT'
                                         According to this results, your dog's quality of life may require intervention. Consider making an appointment with your local veterinarian to address the necessary behavioral and health changes of your four-legged best friend's lifestyle
                                         TXT],
-                                        ['results>=9 and  results<=12', '🎉 Congratulations, this result means that everything is okay, and your dog has a good quality of life.'],
+                                        ['results>=9 and  results<=12', 'Congratulations, this result means that everything is okay, and your dog has a good quality of life.'],
                                     ],
                                 ],
                             ],
@@ -189,7 +189,7 @@ return [
         ],
         'eq' => [
             [
-                'formula' => 'results =  one_way(item1 + item2 + item3 + item4 + item5 + item6)',
+                'formula' => 'results =  item1 + item2 + item3 + item4 + item5 + item6',
                 'var' => [
                     [
                         'l' => 'results',

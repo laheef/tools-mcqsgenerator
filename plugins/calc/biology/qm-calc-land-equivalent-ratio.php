@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Land Equivalent Ratio Calculator',
-    'meta' => ['title' => 'Land Equivalent Ratio Calculator — Formula & Results', 'description' => 'Land Equivalent Ratio Calculator reports crop 1 partial ratio, crop 2 partial ratio and land saved. Every box can be solved for, not only the one in the title.', 'h1' => 'Land Equivalent Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Land Equivalent Ratio Calculator — Formula & Results', 'description' => 'Land Equivalent Ratio Calculator reports crop 1 partial ratio, crop 2 partial ratio and land saved. Free to use, with the working shown beside the answer.', 'h1' => 'Land Equivalent Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

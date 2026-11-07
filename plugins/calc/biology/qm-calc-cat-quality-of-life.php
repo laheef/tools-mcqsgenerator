@@ -310,8 +310,8 @@ return [
                                         According to your score, your cat has an unaccaptable quality of life and shouldn't continue with hospice care. This score could serve as a starting point for you to further explore your cat's quality of life with the help of your veterinarian.
                                         TXT],
                                         ['sum_total > 35 and sum_total < 70', 'Your score of {{sum_total.formattedValue}} points indicates an acceptable quality of life for your cat, and that they can continue with hospice care.'],
-                                        ['sum_total == 70', 'Your score of {{sum_total.formattedValue}} points is an excellent (purrfect) result! You can confidently continue with cat hospice care 🐈'],
-                                        [null, '❗ This tool should not replace the professional recommendation of a veterinarian.'],
+                                        ['sum_total == 70', 'Your score of {{sum_total.formattedValue}} points is an excellent (purrfect) result! You can confidently continue with cat hospice care '],
+                                        [null, ' This tool should not replace the professional recommendation of a veterinarian.'],
                                     ],
                                 ],
                             ],

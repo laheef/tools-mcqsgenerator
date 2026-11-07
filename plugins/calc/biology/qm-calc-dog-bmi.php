@@ -287,7 +287,7 @@ return [
                                     't' => 'x',
                                     'c' => [
                                         [null, <<<'TXT'
-                                        Generally, your dog's BMI should be below 3, but it depends on the size of the dog 🐶 We recommend that you verify the result with the body condition score and/or consult a vet 🐶
+                                        Generally, your dog's BMI should be below 3, but it depends on the size of the dog  We recommend that you verify the result with the body condition score and/or consult a vet 
                                         TXT],
                                     ],
                                 ],
@@ -305,7 +305,7 @@ return [
                                         ['bmi < bottom', 'This BMI suggests that your dog may be underweight.'],
                                         ['bottom <= bmi <= upper', 'This BMI suggests that your dog\'s weight is healthy.'],
                                         [null, <<<'TXT'
-                                        The estimated healthy BMI range for this breed is from {{bottom.formattedValue}} to {{upper.formattedValue}} 🐶 Remember that this result is just a guide and you should always consult your vet if in doubt.
+                                        The estimated healthy BMI range for this breed is from {{bottom.formattedValue}} to {{upper.formattedValue}}  Remember that this result is just a guide and you should always consult your vet if in doubt.
                                         TXT],
                                     ],
                                 ],

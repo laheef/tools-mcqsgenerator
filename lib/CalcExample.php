@@ -55,7 +55,18 @@ final class CalcExample
         $label = static fn (string $name): string => $roles['labels'][$name] ?? $name;
         $suffix = static fn (string $name): string => $roles['suffixes'][$name] ?? '';
 
-        $fmt = static function (float $v): string {
+        /*  A date is a number of milliseconds, and printed as one it reads as
+            1.772e+12 — the eleven date pages in Biology all did, in the worked
+            example, the sensitivity table and the two extra runs. Ask the
+            variable's type first and give the calendar date instead. */
+        $isDate = static function (string $name) use ($calc): bool {
+            $t = (string) ($calc['variables'][$name]['type'] ?? '');
+            return $t === 'date' || $t === 'datetime';
+        };
+        $fmt = static function (float $v, string $name = '') use ($isDate): string {
+            if ($name !== '' && $isDate($name) && abs($v) > 1.0e10) {
+                return (string) gmdate('D j F Y', (int) round($v / 1000));
+            }
             $abs = abs($v);
             if ($abs !== 0.0 && ($abs < 0.001 || $abs >= 1000000)) {
                 return rtrim(rtrim(sprintf('%.3e', $v), '0'), '.');
@@ -71,13 +82,13 @@ final class CalcExample
         $inParts = [];
         foreach ($inputs as $name => $value) {
             $unit = $suffix($name);
-            $inParts[] = $label($name) . ' = ' . $fmt((float) $value) . ($unit !== '' ? ' ' . $unit : '');
+            $inParts[] = $label($name) . ' = ' . $fmt((float) $value, (string) $name) . ($unit !== '' ? ' ' . $unit : '');
         }
         $outParts = [];
         foreach ($rows as $name => $value) {
             $unit = $suffix($name);
             $outParts[] = '<strong>' . View::escape($label($name)) . '</strong> = '
-                . $fmt((float) $value) . ($unit !== '' ? ' ' . View::escape($unit) : '');
+                . $fmt((float) $value, (string) $name) . ($unit !== '' ? ' ' . View::escape($unit) : '');
         }
 
         $html = '<p>Take a worked example with numbers a reader might have to hand. '

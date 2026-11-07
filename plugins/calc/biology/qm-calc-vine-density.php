@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Vine Density Calculator',
-    'meta' => ['title' => 'Vine Density Calculator — Formula & Results', 'description' => 'Vine Density Calculator reports vines per hectare and vines per 100 m of row. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Vine Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Vine Density Calculator — Formula & Results', 'description' => 'Vine Density Calculator reports vines per hectare and vines per 100 m of row. Enter row spacing and vine spacing; the answer follows without a table lookup.', 'h1' => 'Vine Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -61,11 +61,11 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        ['difference == 0', '🐹 Your sow is going to farrow today!'],
-                                        ['difference == 1', '🐹 Your sow is going to farrow in about 1 day! Today is day {{pregnancyDay.formattedValue}} of the gestation.'],
-                                        ['difference > 1', '🐹 Your sow is going to farrow in about {{difference.formattedValue}} days! Today is day {{pregnancyDay.formattedValue}} of the gestation.'],
-                                        ['difference == -1', '🐹 Your sow gave birth 1 day ago!'],
-                                        ['difference < -1', '🐹 Your sow gave birth {{difference_negated.formattedValue}} days ago!'],
+                                        ['difference == 0', ' Your sow is going to farrow today!'],
+                                        ['difference == 1', ' Your sow is going to farrow in about 1 day! Today is day {{pregnancyDay.formattedValue}} of the gestation.'],
+                                        ['difference > 1', ' Your sow is going to farrow in about {{difference.formattedValue}} days! Today is day {{pregnancyDay.formattedValue}} of the gestation.'],
+                                        ['difference == -1', ' Your sow gave birth 1 day ago!'],
+                                        ['difference < -1', ' Your sow gave birth {{difference_negated.formattedValue}} days ago!'],
                                         [null, 'The earliest possible farrowing: {{earliest.shortValue}} The latest possible farrowing: {{latest.shortValue}}'],
                                     ],
                                 ],

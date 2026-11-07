@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ligation',
-    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Examples', 'description' => 'Ligation takes insert length, vector length and vector mass and returns insert mass. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Ligation Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Examples', 'description' => 'Ligation takes insert length, vector length and vector mass and returns insert mass. No sign-up: type the numbers, press Calculate and read the answer.', 'h1' => 'Ligation Calculator', 'updated' => '2026-08-06'],
     'sections' => [
         [
             'title' => '',

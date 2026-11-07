@@ -61,8 +61,18 @@ foreach ($calc['groups'] as $g) {
                 }
                 $key = !empty($f['unitSwitcher']) && $units->supported($f['unitSwitcher']) ? $f['unitSwitcher'] : null;
                 $fieldsMeta[$f['var']] = ['unitKey' => $key];
+                /*
+                 * The box's own name is the name its answer deserves. Exported
+                 * pages carry their variables in the file, so a date output that
+                 * is never drawn as a box (dog-heat-cycle's "day 18 of the
+                 * cycle") would otherwise reach the results panel as "Cycle1".
+                 * The label travels with the variable into the client payload.
+                 */
+                if (!empty($f['label'])) {
+                    $fieldsMeta[$f['var']]['label'] = (string) $f['label'];
+                }
                 if ($key !== null) {
-                    foreach ($units->options($key) as $slug => $u) {
+                    foreach ($units->options($key, $f['defaultUnit'] ?? null) as $slug => $u) {
                         $unitExprs[$key][$slug] = $u['expr'];
                     }
                 }

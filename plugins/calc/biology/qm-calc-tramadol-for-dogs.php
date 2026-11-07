@@ -63,7 +63,7 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        [null, '🐶 Fill in the field above to receive the recommended tramadol dose for your dog.'],
+                                        [null, ' Fill in the field above to receive the recommended tramadol dose for your dog.'],
                                     ],
                                 ],
                             ],
@@ -76,10 +76,10 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        [null, '🐶 Recommended dosage: {{minimum_dose.formattedValue}}-{{maximum_dose.formattedValue}} mg. 🐕 Tramadol should be given every 8-12 hours (2-3 times per day).'],
-                                        ['minimum_dose >= 49', '⚕️The minimal dosage requires a total of {{Minimum_dose_tablets.formattedValue}} tablets (strength: 50 mg) per day.'],
+                                        [null, ' Recommended dosage: {{minimum_dose.formattedValue}}-{{maximum_dose.formattedValue}} mg.  Tramadol should be given every 8-12 hours (2-3 times per day).'],
+                                        ['minimum_dose >= 49', 'The minimal dosage requires a total of {{Minimum_dose_tablets.formattedValue}} tablets (strength: 50 mg) per day.'],
                                         ['minimum_dose < 49', '&nbsp;'],
-                                        [null, '⚠️ Maximum dose allowed: {{Maximum_dose_allowed.formattedValue}} mg/day.'],
+                                        [null, ' Maximum dose allowed: {{Maximum_dose_allowed.formattedValue}} mg/day.'],
                                     ],
                                 ],
                             ],

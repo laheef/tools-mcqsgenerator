@@ -11,7 +11,7 @@
 
 return [
     'name' => 'In Vivo Formulation Calculator',
-    'meta' => ['title' => 'In Vivo Formulation Calculator — Formula & Results', 'description' => 'In Vivo Formulation Calculator reports volume per animal and dose volume per kg. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'In Vivo Formulation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'In Vivo Formulation Calculator — Formula & Results', 'description' => 'In Vivo Formulation Calculator reports volume per animal and dose volume per kg. Enter dose and body weight; the answer follows without a table lookup.', 'h1' => 'In Vivo Formulation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

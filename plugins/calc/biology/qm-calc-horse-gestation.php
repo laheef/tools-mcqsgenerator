@@ -71,13 +71,13 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        ['difference == 0', '🐎 Your mare is going to foal today! Today is a&nbsp;'],
-                                        ['difference == 1', '🐎 Your mare is going to foal in 1 day! Today is day 337 of the gestation. Your mare\'s estimated due date falls on a&nbsp;'],
+                                        ['difference == 0', ' Your mare is going to foal today! Today is a&nbsp;'],
+                                        ['difference == 1', ' Your mare is going to foal in 1 day! Today is day 337 of the gestation. Your mare\'s estimated due date falls on a&nbsp;'],
                                         ['difference > 1', <<<'TXT'
-                                        🐎 Your mare is going to foal in {{difference.formattedValue}} days! Today is day {{pregnancyDay.formattedValue}} of the gestation. Your mare's estimated due date falls on a&nbsp;
+                                         Your mare is going to foal in {{difference.formattedValue}} days! Today is day {{pregnancyDay.formattedValue}} of the gestation. Your mare's estimated due date falls on a&nbsp;
                                         TXT],
-                                        ['difference == -1', '🐎 Your mare gave birth 1 day ago! Your mare\'s estimated due date was on a&nbsp;'],
-                                        ['difference < -1', '🐎 Your mare gave birth {{difference_negated.formattedValue}} days ago! Your mare\'s estimated due date was on a&nbsp;'],
+                                        ['difference == -1', ' Your mare gave birth 1 day ago! Your mare\'s estimated due date was on a&nbsp;'],
+                                        ['difference < -1', ' Your mare gave birth {{difference_negated.formattedValue}} days ago! Your mare\'s estimated due date was on a&nbsp;'],
                                         ['weekday==0', 'Sunday.'],
                                         ['weekday==1', 'Monday.'],
                                         ['weekday==2', 'Tuesday.'],

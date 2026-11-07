@@ -56,8 +56,8 @@ return [
                                     'l' => 'Conversion type',
                                     'ds' => '2654',
                                     'opts' => [
-                                        ['4X77jFp-6t5pdHA5T_BEA', 'Cat 🐈 to human🧍years', '1'],
-                                        ['WQCvl0o64H2OwiinKy7Nq', 'Human🧍to cat 🐈 years', '0'],
+                                        ['4X77jFp-6t5pdHA5T_BEA', 'Cat  to humanyears', '1'],
+                                        ['WQCvl0o64H2OwiinKy7Nq', 'Humanto cat  years', '0'],
                                     ],
                                 ],
                             ],
@@ -138,7 +138,7 @@ return [
                                     't' => 'x',
                                     'c' => [
                                         [null, <<<'TXT'
-                                        Want to check your cat’s well-being without hard math? Type the following prompt into our ✨ AI Calculator Builder to instantly make a working tool or check the ready example of the Cat Quality of Life Scale Calculator that we built for you.
+                                        Want to check your cat’s well-being without hard math? Type the following prompt into our  AI Calculator Builder to instantly make a working tool or check the ready example of the Cat Quality of Life Scale Calculator that we built for you.
                                         TXT],
                                     ],
                                 ],
@@ -188,8 +188,8 @@ return [
                 'name' => 'if_cat_to_human',
                 'uiType' => 'RADIO',
                 'options' => [
-                    ['uid' => '4X77jFp-6t5pdHA5T_BEA', 'label' => 'Cat 🐈 to human🧍years', 'value' => '1'],
-                    ['uid' => 'WQCvl0o64H2OwiinKy7Nq', 'label' => 'Human🧍to cat 🐈 years', 'value' => '0'],
+                    ['uid' => '4X77jFp-6t5pdHA5T_BEA', 'label' => 'Cat  to humanyears', 'value' => '1'],
+                    ['uid' => 'WQCvl0o64H2OwiinKy7Nq', 'label' => 'Humanto cat  years', 'value' => '0'],
                 ],
             ],
         ],

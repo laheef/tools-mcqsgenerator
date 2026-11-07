@@ -12,7 +12,7 @@
 return [
     'name' => 'Linear DNA µg to pmol of Ends Converter',
     'meta' => ['title' => 'Linear DNA µg to pmol of Ends Converter Calculator', 'description' => <<<'TXT'
-    Linear DNA µg to pmol of Ends Converter works out ends per microgram and molecules and reports both. Every box can be solved for, not only the one in the title.
+    Linear DNA µg to pmol of Ends Converter works out ends per microgram and molecules and reports both. It returns ends and shows the arithmetic behind it.
     TXT, 'h1' => 'Linear DNA µg to pmol of Ends Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [

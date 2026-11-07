@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mutation rate',
-    'meta' => ['title' => 'Mutation rate Calculator — Formula & Results', 'description' => 'Mutation rate works out mutation rate (μ) and mutation rate and reports both. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Mutation rate Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Mutation rate Calculator — Formula & Results', 'description' => 'Mutation rate works out mutation rate (μ) and mutation rate and reports both. Enter detect mutation rate by and mutant offspring (x); the answer follows.', 'h1' => 'Mutation rate Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => '',

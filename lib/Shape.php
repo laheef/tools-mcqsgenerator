@@ -322,6 +322,13 @@ final class Shape
 
             $meta = $fields[$name] ?? null;
             if ($meta !== null) {
+                /* The name a box is given is the name its answer deserves. A
+                   date output that is never rendered as a box (dog-heat-cycle's
+                   "day 18 of the cycle") used to reach the results panel as the
+                   variable's own name, "Cycle1". */
+                if (!empty($meta['label'])) {
+                    $var['label'] = (string) $meta['label'];
+                }
                 if (!empty($meta['us'])) {
                     $var['unitKey'] = (string) $meta['us'];
                 }

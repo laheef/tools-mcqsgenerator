@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ligation Molar Ratio Calculator (Insert : Vector)',
-    'meta' => ['title' => 'Ligation Molar Ratio (Insert : Vector) Calculator', 'description' => 'Ligation Molar Ratio Calculator (Insert : Vector) works out insert mass. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Ligation Molar Ratio Calculator (Insert : Vector)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Ligation Molar Ratio (Insert : Vector) Calculator', 'description' => 'Ligation Molar Ratio Calculator (Insert : Vector) works out insert mass. Both insert mass and vector amount come back, with the working shown beside them.', 'h1' => 'Ligation Molar Ratio Calculator (Insert : Vector)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

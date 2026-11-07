@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Rabbit cage size',
-    'meta' => ['title' => 'Rabbit cage size — Formula, Steps & Examples', 'description' => 'Rabbit cage size works out length from rabbit size (metric) and one hop distance. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Rabbit cage size Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Rabbit cage size — Formula, Steps & Examples', 'description' => 'Rabbit cage size works out length from rabbit size (metric) and one hop distance. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Rabbit cage size Calculator', 'updated' => '2026-08-06'],
     'sections' => [
         [
             'title' => 'Rabbit size',

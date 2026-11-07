@@ -11,7 +11,7 @@
 
 return [
     'name' => 'CFU/g Calculator',
-    'meta' => ['title' => 'CFU/g Calculator — Formula, Steps & Examples', 'description' => 'CFU/g Calculator turns colonies counted and volume plated into CFU per gram. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'CFU/g Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'CFU/g Calculator — Formula, Steps & Examples', 'description' => 'CFU/g Calculator turns colonies counted and volume plated into CFU per gram. Nothing is stored between visits: the boxes are the only place your numbers live.', 'h1' => 'CFU/g Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -34,6 +34,17 @@ final class CalcArticle
     /** Set once per build: the unit registry, for naming a box's unit. */
     private static ?Units $units = null;
     /**
+     * True while an article is being written for a page that works in dates.
+     *
+     * A date in this engine is a number of milliseconds, so `num()` printed
+     * 1.772e+12 wherever a calendar date belonged — the worked example, the
+     * sensitivity table and the two extra runs on every gestation and
+     * heat-cycle page. Nothing else in Biology produces a value between 10^11
+     * and 10^13, so the range plus this flag is a safe reading of "that is a
+     * date".
+     */
+    private static bool $datesMode = false;
+    /**
      * @param array $calc   shaped calculator (Shape::fromRecord)
      * @param array $peers  sibling calculators in the same category: [['path','name'], …]
      * @param array $keep   the article being replaced, for authors and related
@@ -46,6 +57,13 @@ final class CalcArticle
         $seed  = (string) ($calc['slug'] ?? $name);
 
         self::$units = $units;
+        self::$datesMode = false;
+        foreach ((array) ($calc['variables'] ?? []) as $v) {
+            if (in_array((string) ($v['type'] ?? ''), ['date', 'datetime'], true)) {
+                self::$datesMode = true;
+                break;
+            }
+        }
         $fields = self::fields($calc);
         $in     = $fields['inputs'];
         $out    = $fields['outputs'];
@@ -800,7 +818,7 @@ final class CalcArticle
         foreach (array_merge($out, array_keys($labels)) as $var) {
             $entry = $unitOf[$var] ?? [];
             if (!empty($entry['key']) && $units->supported((string) $entry['key'])) {
-                $count = count($units->options((string) $entry['key']));
+                $count = count($units->options((string) $entry['key'], isset($entry['default']) ? (string) $entry['default'] : null));
                 $switchers[$var] = [$count, self::unitText($entry['key'], $entry['default'] ?? null, '')];
             }
         }
@@ -1036,7 +1054,7 @@ final class CalcArticle
             }
             $default = (string) ($entry['default'] ?? $units->defaultUnit($key) ?? '');
             $options = [];
-            foreach ($units->options($key) as $slug => $u) {
+            foreach ($units->options($key, $default) as $slug => $u) {
                 $options[(string) $slug] = (string) ($u['name'] ?? $slug);
             }
             $chips[$key] = [
@@ -2148,6 +2166,9 @@ final class CalcArticle
 
     private static function num(float $value): string
     {
+        if (self::$datesMode && $value >= 1.0e11 && $value <= 1.0e13) {
+            return (string) gmdate('D j F Y', (int) round($value / 1000));
+        }
         $abs = abs($value);
         if ($abs !== 0.0 && ($abs < 0.001 || $abs >= 1000000)) {
             return rtrim(rtrim(sprintf('%.3e', $value), '0'), '.');

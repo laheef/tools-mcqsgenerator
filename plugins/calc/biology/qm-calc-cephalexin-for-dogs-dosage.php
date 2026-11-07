@@ -209,7 +209,7 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        [null, '📍 The calculated dosage is based on NOAH recommendations and is equal to 15 mg/kg per dose.'],
+                                        [null, ' The calculated dosage is based on NOAH recommendations and is equal to 15 mg/kg per dose.'],
                                     ],
                                 ],
                             ],

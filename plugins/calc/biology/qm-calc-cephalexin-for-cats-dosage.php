@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cephalexin for cats dosage',
-    'meta' => ['title' => 'Cephalexin for cats dosage — Formula & Results', 'description' => 'Cephalexin for cats dosage reports amount per dose and daily dosage. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Cephalexin for cats dosage Calculator', 'updated' => '2026-05-25'],
+    'meta' => ['title' => 'Cephalexin for cats dosage — Formula & Results', 'description' => 'Cephalexin for cats dosage reports amount per dose and daily dosage. No sign-up and no waiting: type the numbers, press Calculate, read the answer. Free.', 'h1' => 'Cephalexin for cats dosage Calculator', 'updated' => '2026-05-25'],
     'sections' => [
         [
             'title' => 'Cat and drug details',
@@ -74,7 +74,7 @@ return [
                 [
                     'columns' => 1,
                     'fields' => [
-                        ['type' => 'note', 'text' => '📍 The calculated dosage is based on the MSD Manual recommendations.'],
+                        ['type' => 'note', 'text' => 'The calculated dosage is based on the MSD Manual recommendations.'],
                     ],
                 ],
             ],

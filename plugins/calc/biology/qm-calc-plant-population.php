@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Plant population',
-    'meta' => ['title' => 'Plant population — Formula, Steps & Examples', 'description' => 'Plant population works out field area and estimated seeds to buy and reports both. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Plant population Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Plant population — Formula, Steps & Examples', 'description' => 'Plant population works out field area and estimated seeds to buy and reports both. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Plant population Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => 'Farm field dimensions',

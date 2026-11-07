@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Raised bed soil',
-    'meta' => ['title' => 'Raised bed soil Calculator: Free, With Steps', 'description' => 'Raised bed soil works out volume of soil needed and topsoil from length and width. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Raised bed soil Calculator', 'updated' => '2026-06-17'],
+    'meta' => ['title' => 'Raised bed soil Calculator: Free, With Steps', 'description' => 'Raised bed soil works out volume of soil needed and topsoil from length and width. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Raised bed soil Calculator', 'updated' => '2026-06-17'],
     'sections' => [
         [
             'title' => '',

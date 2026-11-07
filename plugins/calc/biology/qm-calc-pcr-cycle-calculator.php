@@ -11,7 +11,7 @@
 
 return [
     'name' => 'PCR Cycle Calculator',
-    'meta' => ['title' => 'PCR Cycle Calculator: Formula, Steps & Results', 'description' => 'PCR Cycle Calculator takes denaturation time, annealing time and extension time and returns time per cycle and total run time. Any box can be the unknown.', 'h1' => 'PCR Cycle Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'PCR Cycle Calculator: Formula, Steps & Results', 'description' => 'PCR Cycle Calculator takes denaturation time, annealing time and extension time and returns time per cycle and total run time. It returns time per cycle.', 'h1' => 'PCR Cycle Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

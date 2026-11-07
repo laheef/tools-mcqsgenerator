@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Field Capacity and Plant Available Water Calculator',
-    'meta' => ['title' => 'Field Capacity and Plant Available Water Calculator', 'description' => 'Field Capacity and Plant Available Water Calculator works out available water in the root zone. Every box can be solved for, not only the one in the title.', 'h1' => 'Field Capacity and Plant Available Water Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Field Capacity and Plant Available Water Calculator', 'description' => 'Field Capacity and Plant Available Water Calculator works out available water in the root zone. Free to use, with the working shown beside the answer.', 'h1' => 'Field Capacity and Plant Available Water Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

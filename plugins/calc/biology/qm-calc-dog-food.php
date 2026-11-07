@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog food',
-    'meta' => ['title' => 'Dog food Calculator: Formula, Steps & Examples', 'description' => 'Dog food takes type, body weight and 1 dose and returns resting daily calories and total daily calories. The formula is printed in the form\'s own words.', 'h1' => 'Dog food Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog food Calculator: Formula, Steps & Examples', 'description' => 'Dog food takes type, body weight and 1 dose and returns resting daily calories and total daily calories. Enter type and body weight; the answer follows.', 'h1' => 'Dog food Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => 'Dog\'s characteristics',

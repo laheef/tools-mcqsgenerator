@@ -128,6 +128,14 @@
     dateAtYearsOld: function (a) { return shiftMonths(DAY_MS * (a[0] || 0), 12 * Math.round(a[1] || 0)) / DAY_MS; },
     daysBetween: function (a) { return (a[1] || 0) - (a[0] || 0); },
     if_else: function (a) { return (a[0] || 0) ? (a[1] || 0) : (a[2] || 0); },
+    /*
+     * Omni marks a relationship that only runs one way as one_way(...).
+     * The export kept the marker but not the helper, so ten biology pages
+     * threw on every press and answered nothing. It is identity here: the
+     * solver still cannot invert those relationships, because no reverse
+     * formula is supplied for the variables inside it.
+     */
+    one_way: function (a) { return a[0]; },
     today: function () { return Math.floor(Date.now() / DAY_MS); },
     now: function () { return Math.floor(Date.now() / DAY_MS); },
     mod: function (a) { if (!a[1]) throw new Error('mod0'); return (a[0] || 0) % a[1]; },
@@ -592,6 +600,23 @@
     return (f && f.unitKey) || null;
   }
 
+  /*
+   * Is there actually a box on the page for this variable?
+   *
+   * A layout can declare a field the builder never draws — a section the model
+   * puts behind a condition that is false on arrival. Such a name still sits in
+   * DEF.fields, and the seeding code below reads that map as "the visitor fills
+   * this one", so the constant the model was written with is never applied:
+   * /biology/dog-heat-cycle answered with the mating date unchanged, because
+   * its 18-day and 21-day constants were declared but not drawn. A field with no
+   * control anywhere in the widget is treated as the constant it is.
+   */
+  function hasControl(name) {
+    if (!(DEF.fields && DEF.fields[name])) return false;
+    var root = document.querySelector('.calc-widget');
+    return !!(root && root.querySelector('[data-var="' + name + '"]'));
+  }
+
   /* Page scripts are written against the numbers the visitor sees, not the
      internal base units, so they receive a converted copy. */
   function displayValues(st) {
@@ -791,14 +816,33 @@
    *   standard — precision is a decimal count ("2" -> 22.86)
    *   omni     — precision is a step ("0.0001")
    */
+  /*
+   * No answer on this site is printed with more than three decimals.
+   *
+   * The harvested rounding asks for four (a step of 0.0001) on most pages, and
+   * the results panel honoured it: 3.3333, 0.1837, 1.66668. A reader cannot use
+   * the fourth digit for anything, and it makes the same page disagree with
+   * itself when the number is rounded in the box but not in the row beside it.
+   */
+  var MAX_DECIMALS = 3;
+
   function decimalsFor(precision, algo) {
     if (algo === 'standard') {
       var d = precision === null || precision === undefined || precision === '' ? 0 : Math.round(parseFloat(precision));
-      return Math.max(0, Math.min(12, isFinite(d) ? d : 0));
+      return Math.max(0, Math.min(MAX_DECIMALS, isFinite(d) ? d : 0));
     }
     var step = precision ? parseFloat(precision) : 0;
     if (!(step > 0)) return 0;
-    return Math.max(0, Math.min(12, Math.ceil(-Math.log10(step) - 1e-9)));
+    return Math.max(0, Math.min(MAX_DECIMALS, Math.ceil(-Math.log10(step) - 1e-9)));
+  }
+
+  /* 2.688e+47 is not a number a reader scans; "2.688 ×10^47" is. Every printed
+     figure above a quadrillion goes through here so a result box, a row and a
+     sentence all agree. */
+  function sciText(v, dec) {
+    return v.toExponential(Math.max(0, Math.min(MAX_DECIMALS, dec)))
+      .replace('+', '')
+      .replace('e', ' ×10^');
   }
 
   function formatNumber(v, precision, algo) {
@@ -806,7 +850,14 @@
     var dec = decimalsFor(precision, algo);
     if (algo === 'standard' && dec >= 0) v = Math.round(v * Math.pow(10, dec)) / Math.pow(10, dec);
     var abs = Math.abs(v);
-    if (abs !== 0 && (abs >= 1e15 || abs < 1e-6)) return v.toExponential(Math.max(2, Math.min(9, dec))).replace('e', ' ×10^');
+    /*
+     * Below a thousandth, three decimals would print 0.000 — the number would
+     * be lost, not rounded. Scientific notation keeps three significant digits
+     * and stays readable.
+     */
+    if (abs !== 0 && (abs >= 1e15 || abs < 1e-3)) {
+      return sciText(v, dec);
+    }
     var s = Math.abs(v).toFixed(dec);
     if (dec > 0) s = s.replace(/0+$/, '').replace(/\.$/, '');
     var parts = s.split('.');
@@ -836,9 +887,11 @@
      * else. Expand the full digit string instead (multiplying 1e9 by 1e9 is a
      * click away in a units calculator, so this is reachable in normal use).
      */
-    if (Math.abs(v) >= 1e21) {
-      var big = v.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 0 });
-      return group ? groupDigits(big) : big;
+    if (Math.abs(v) >= 1e15) {
+      /* A 24-digit population is unreadable in a box, and the digits past the
+         first few carry no information the formula did not already lose to
+         floating point. Scientific form, same as the results rows. */
+      return sciText(v, decimalsFor(precision, algo));
     }
     var dec = decimalsFor(precision, algo);
     if (algo === 'standard') v = Math.round(v * Math.pow(10, dec)) / Math.pow(10, dec);
@@ -853,6 +906,7 @@
     var s = String(raw).trim();
     if (s === '') return null;
     s = s.replace(/\u2212|\u2013|−/g, '-').replace(/[\u00A0\u202F\s]/g, '');
+    s = s.replace(/×10\^/, 'e').replace(/x10\^/i, 'e');
     if (/^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(s)) s = s.replace(/,/g, '');
     else if (s.indexOf(',') !== -1 && s.indexOf('.') === -1) s = s.replace(',', '.');
     if (!/^[-+]?(\d+\.?\d*|\.\d+)([eE][-+]?\d+)?$/.test(s)) return null;
@@ -1112,6 +1166,60 @@
     return given;
   }
 
+  /*
+   * The scale a box lives on, when the page names one.
+   *
+   * The widget is told the bound in the mark-up (`data-range-min` / `-max`)
+   * when the label or the unit settles it: a percentage, a pH, a probability.
+   * Nothing else is bounded — a range invented for a box that has none would
+   * refuse honest answers.
+   */
+  function outOfRange(inp) {
+    var lo = inp.getAttribute('data-range-min');
+    var hi = inp.getAttribute('data-range-max');
+    if (lo === null || hi === null) return null;
+    var v = parseNumber(String(inp.value || '').trim());
+    if (v === null) return null;
+    lo = parseFloat(lo); hi = parseFloat(hi);
+    if (!isFinite(lo) || !isFinite(hi)) return null;
+    /* the chip moves the scale: 1 000 ‰ is the same 100 % this bound is in */
+    var factors = inp.getAttribute('data-range-factors');
+    if (factors) {
+      var field = inp.closest('.calc-field');
+      var sel = field && field.querySelector('select[data-unit-select]');
+      var map = null;
+      try { map = JSON.parse(factors); } catch (e) { map = null; }
+      if (!sel || !map || !isFinite(map[sel.value])) return null;
+      lo *= map[sel.value];
+      hi *= map[sel.value];
+    }
+    if (v >= lo && v <= hi) return null;
+    var why = inp.getAttribute('data-range-why') || 'this box has a fixed scale';
+    var shown = String(inp.value || '').trim();
+    return {
+      low: lo, high: hi,
+      text: 'Enter a value from ' + lo + ' to ' + hi + ' — ' + shown
+        + ' is outside the scale: ' + why + '.'
+    };
+  }
+
+  /*
+   * The same check while the visitor types, so the message arrives with the
+   * mistake rather than at the button.
+   */
+  function noteRange(inp) {
+    var field = inp.closest('.calc-field');
+    if (!field) return;
+    var out = outOfRange(inp);
+    if (out) {
+      setFieldError(field, out.text);
+      field.setAttribute('data-range-held', '1');
+    } else if (field.getAttribute('data-range-held') === '1') {
+      clearFieldError(field);
+      field.removeAttribute('data-range-held');
+    }
+  }
+
   function validateForm() {
     var problems = [];
     var firstBad = null;
@@ -1144,6 +1252,13 @@
         problems.push(label + ' needs a whole number');
         firstBad = firstBad || field;
         setFieldError(field, 'Whole numbers only — no decimals or letters.');
+        return;
+      }
+      var out = outOfRange(inp);
+      if (out) {
+        problems.push(label + ' is outside the scale');
+        firstBad = firstBad || field;
+        setFieldError(field, out.text);
       }
     });
     /* a field with nothing valid at all is only a problem when it is required;
@@ -1190,7 +1305,19 @@
          checkboxes (the mobile menu toggle, a "show the formula" switch) whose
          ticked state says nothing about the form's values. */
       var picks = widget.querySelectorAll('input[type="radio"][name]:checked, input[type="checkbox"][data-var-check]:checked');
-      for (var i = 0; i < picks.length; i++) any = true;
+      for (var i = 0; i < picks.length; i++) {
+        /*
+         * The share box has its own radio group ("this calculation" / "just the
+         * result"), and its first button is checked from the moment the page
+         * loads. Counting it made every page look answered: hundreds of
+         * calculators reported results on a form nobody had touched. A choice
+         * only counts when the page declared it as a variable.
+         */
+        var rname = picks[i].getAttribute('name') || '';
+        if (rname === 'share-scope') continue;
+        if (picks[i].type === 'radio' && !picks[i].hasAttribute('data-var-check') && !(DEF.vars && DEF.vars[rname])) continue;
+        any = true;
+      }
     }
     if (!any) {
       var selects = widget.querySelectorAll('select[data-var]');
@@ -1265,7 +1392,7 @@
        * model was written with.
        */
       if (v.type === 'valueSelect') {
-        if (DEF.fields && DEF.fields[name]) continue;
+        if (hasControl(name)) continue;
         var selN = choiceDefault(name);
         if (selN !== null) { values[name] = selN; isKnown[name] = true; }
         continue;
@@ -1277,7 +1404,7 @@
        * because that is a given the page supplies rather than something the
        * visitor is asked for.
        */
-      if (DEF.fields && DEF.fields[name]) continue;
+      if (hasControl(name)) continue;
       var dflt = v.defaults && v.defaults[0] ? v.defaults[0].value : null;
       if (dflt !== null && dflt !== undefined && String(dflt).trim() !== '') {
         var d = parseNumber(dflt);
@@ -1338,8 +1465,18 @@
             computed[lhs] = true;
             progress = true;
           } catch (err) {
+            /*
+             * A formula that divides by zero or overflows throws here rather
+             * than returning a number. That is still the visitor's numbers
+             * failing, not a missing input: remember the box so the press can
+             * say the answer is undefined instead of silently printing nothing.
+             */
+            var why = String(err && err.message || err);
+            if (/not finite|div0|division|divide|non-numeric|infinity|undefined|zero/i.test(why)) {
+              overflow[lhs] = true;
+            }
             /* variant not usable here — but if a debug flag is set, say why */
-            if (window.__calcDebug) (window.__calcErrors = window.__calcErrors || []).push(String(err && err.message || err));
+            if (window.__calcDebug) (window.__calcErrors = window.__calcErrors || []).push(why);
           }
         }
       }
@@ -1367,6 +1504,11 @@
     .filter(function (s) { return !s.hasAttribute('data-unit-select'); });
   var unitSelects = {};
   [].slice.call(widget.querySelectorAll('select[data-unit-select]')).forEach(function (s) {
+    s.addEventListener('change', function () {
+      var box = s.closest('.calc-field');
+      var field = box && box.querySelector('input[data-var]');
+      if (field) noteRange(field);
+    });
     unitSelects[s.getAttribute('data-unit-select')] = s;
   });
   var formulas = [].slice.call(widget.querySelectorAll('[data-formula-index]'));
@@ -1402,6 +1544,71 @@
     var iso = new Date(Math.round(ms)).toISOString();
     if (dtype === 'date') return iso.slice(0, 10);
     return iso.slice(0, 16);
+  }
+
+  /*
+   * A date a person reads.
+   *
+   * `2026-06-06` is the ISO value a box holds; it is not how a lambing date is
+   * written. Results and the sentences that quote them get the weekday and the
+   * month name — "Sat 6 June 2026" — because the weekday is the part a breeder
+   * actually checks against the calendar.
+   */
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+  var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  function humanDate(ms, dtype) {
+    if (ms === null || ms === undefined || !isFinite(ms)) return '';
+    if (dtype === 'time') return msToDate(ms, 'time');
+    var d = new Date(Math.round(ms));
+    var text = DAYS[d.getUTCDay()] + ' ' + d.getUTCDate() + ' ' + MONTHS[d.getUTCMonth()] + ' ' + d.getUTCFullYear();
+    if (dtype === 'datetime') {
+      text += ', ' + ('0' + d.getUTCHours()).slice(-2) + ':' + ('0' + d.getUTCMinutes()).slice(-2);
+    }
+    return text;
+  }
+
+  /*
+   * The value a date box holds is an ISO string; that is a database format, not
+   * an answer. Under every filled date box the page now writes the same day the
+   * way a person says it — "Sat 6 June 2026" — so the result card shows a date
+   * and not `2026-06-06`.
+   */
+  function dateTextToMs(value) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/.exec(String(value || ''));
+    if (!m) return null;
+    return Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4] || 0, +m[5] || 0);
+  }
+
+  function decorateDates() {
+    var nodes = document.querySelectorAll('input[data-datetype][data-var]');
+    [].slice.call(nodes).forEach(function (inp) {
+      var wrap = inp.closest('.calc-input-wrap');
+      if (!wrap || !wrap.parentNode) return;
+      var holder = wrap.parentNode;
+      var out = null;
+      for (var i = 0; i < holder.children.length; i++) {
+        var c = holder.children[i];
+        if (c !== wrap && c.classList && c.classList.contains('calc-date-text')) { out = c; break; }
+      }
+      var text = '';
+      if (inp.value) {
+        var ms = dateTextToMs(inp.value);
+        var type = inp.getAttribute('data-datetype');
+        if (ms !== null) text = type === 'datetime' ? humanDate(ms, 'datetime') : humanDate(ms, 'date');
+      }
+      if (!text) {
+        if (out) out.remove();
+        return;
+      }
+      if (!out) {
+        out = document.createElement('p');
+        out.className = 'calc-date-text';
+        holder.appendChild(out);
+      }
+      if (out.textContent !== text) out.textContent = text;
+    });
   }
 
   function currentUnit(name) {
@@ -1584,17 +1791,30 @@
       if (/(?:^|[^\d])(?:by|of|with|equals?)\s*[,\.]|,\s*,|\b(?:is|are|gives?)\s*,/.test(rawPlain)) html = '';
       if (html === '') { el.innerHTML = ''; return; }
       el.innerHTML = html.replace(
-        /\{\{\s*([A-Za-z_][A-Za-z0-9_]*)\.(value|formattedValue|rawValue|unit|formattedUnit|uiValue|label)\s*\}\}/g,
+        /\{\{\s*([A-Za-z_][A-Za-z0-9_]*)\.(value|formattedValue|rawValue|shortValue|longValue|monetaryValue|unit|formattedUnit|fullUnit|uiValue|label|name)\s*\}\}/g,
         function (m, name, what) {
           var r = roundingOf(name);
-          var unitKey = (DEF.fields[name] || {}).unitKey || null;
+          var field = DEF.fields[name] || {};
+          var unitKey = field.unitKey || null;
           var unit = currentUnit(name);
-          if (what === 'uiValue' || what === 'label') return choiceLabel(name);
-          if (what === 'unit' || what === 'formattedUnit') {
+          if (what === 'uiValue' || what === 'label' || what === 'name') return field.label || choiceLabel(name) || name;
+          if (what === 'unit' || what === 'formattedUnit' || what === 'fullUnit') {
             return unit ? (DEF.unitLabels && DEF.unitLabels[unitKey] ? (DEF.unitLabels[unitKey][unit] || unit) : unit) : '';
           }
           if (!isShown(state, name)) return '';
           var raw = state.values[name];
+          /*
+           * A date is written as a date. A harvested sentence asks for one with
+           * `longValue` / `shortValue` ("born between {{a.longValue}} and
+           * {{b.longValue}}"); passing a date through formatNumber printed its
+           * milliseconds, and leaving the property unsupported printed nothing
+           * at all — "born between  and ." on every gestation page.
+           */
+          var dtype = field.datetype || (DEF.vars[name] && DEF.vars[name].type);
+          if ((dtype === 'date' || dtype === 'datetime' || dtype === 'time') && typeof raw === 'number') {
+            if (what === 'shortValue') return msToDate(raw, dtype);
+            return humanDate(raw, dtype);
+          }
           // a page script may publish text ("C, E, G"), not just numbers
           if (typeof raw !== 'number') return String(raw);
           var shown = toDisplay(raw, unitKey, unit);
@@ -1857,9 +2077,58 @@
          edit would hide the panel the visitor had only just opened. */
       if (ev.type === 'input' && Gate) Gate.markStale();
       recompute(name);
+      if (ev.type === 'input') noteRange(inp);
     };
     inp.addEventListener('input', handler);
     inp.addEventListener('change', handler);
+    /*
+     * A number box takes numbers — and refuses the rest at the door.
+     *
+     * The old behaviour let a letter in and complained on blur, so the box held
+     * "12a" until the visitor left it, and a page whose script read the field
+     * mid-typing saw a value it could not parse. A character that cannot be part
+     * of a number is now stopped before it lands: `beforeinput` for typing and
+     * IME, `paste` for the clipboard, and a final sweep for anything that gets
+     * past both (browser autofill, a dragged selection). The message appears
+     * under the box that refused it.
+     */
+    if (!inp.readOnly && inp.type !== 'checkbox' && inp.type !== 'radio') {
+      var NUMERIC_CHAR = /[0-9.,eE+\-]/;
+      var refuseText = function () {
+        var fld = inp.closest('.calc-field');
+        if (fld) setFieldError(fld, 'Numbers only — this box takes digits, one decimal point and a minus sign.');
+      };
+      inp.addEventListener('beforeinput', function (ev) {
+        if (inp.getAttribute('data-datetype')) return;
+        var data = ev.data;
+        if (data === null || data === undefined) return;      // deletion or a composing key
+        for (var ci = 0; ci < data.length; ci++) {
+          if (!NUMERIC_CHAR.test(data.charAt(ci))) { ev.preventDefault(); refuseText(); return; }
+        }
+      });
+      inp.addEventListener('paste', function (ev) {
+        if (inp.getAttribute('data-datetype')) return;
+        var clip = ev.clipboardData || window.clipboardData;
+        if (!clip) return;
+        var text = String(clip.getData('text') || '');
+        var clean = text.replace(/[^0-9.,eE+\-]/g, '');
+        if (clean === text) return;                            // nothing to strip: let it through
+        ev.preventDefault();
+        var start = inp.selectionStart === null ? inp.value.length : inp.selectionStart;
+        var end = inp.selectionEnd === null ? inp.value.length : inp.selectionEnd;
+        inp.value = inp.value.slice(0, start) + clean + inp.value.slice(end);
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+        refuseText();
+      });
+      inp.addEventListener('input', function () {
+        if (inp.getAttribute('data-datetype')) return;
+        var v = inp.value;
+        if (v === '' || parseNumber(v) !== null || /^[-+]?\d*[.,]?\d*(?:[eE][-+]?\d*)?$/.test(v)) return;
+        var cleaned = v.replace(/[^0-9.,eE+\-]/g, '');
+        if (cleaned !== v) { inp.value = cleaned; }
+        refuseText();
+      });
+    }
     /* Leaving a field is not a change. The old handler re-solved on every blur,
        which — now that an edit takes the results off screen — cleared them again
        the moment Enter moved focus away. Only an unreadable value is acted on. */
@@ -2249,6 +2518,7 @@
       if (empty) {
         empty.textContent = n ? '' : 'Fill in the values above and press Calculate — the answers appear here.';
       }
+      decorateDates();
       return n;
     }
 
@@ -2487,6 +2757,7 @@
     function humanLabel(name) {
       var words = String(name || '')
         .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+        .replace(/([a-zA-Z])(\d+)/g, '$1 $2')
         .replace(/[_-]+/g, ' ')
         .trim()
         .toLowerCase();
@@ -2517,13 +2788,22 @@
       Object.keys(st.values).forEach(function (name) {
         if (!st.computed[name] || (st.placeholder && st.placeholder[name])) return;
         var field = widget.querySelector('.calc-field[data-var="' + name + '"]');
+        var f = (DEF.fields && DEF.fields[name]) || {};
+        var dtype = f.datetype || (DEF.vars[name] && DEF.vars[name].type);
+        var isDate = dtype === 'date' || dtype === 'datetime' || dtype === 'time';
         if (field && !field.hidden && field.getAttribute('data-output') !== '1') {
           var box = field.querySelector('input[data-var]');
-          if (box && String(box.value || '').trim() !== '') return;   // already in a box
+          /*
+           * A date box counts as filled, but `2026-06-06` is a form value, not
+           * an answer a person reads: the panel says it back as "Sat 6 June
+           * 2026". Every date calculator used to press Calculate and get a
+           * results panel still telling them the answers appear here.
+           */
+          var solved = box && box.closest('.calc-input-wrap.is-computed');
+          if (box && String(box.value || '').trim() !== '' && !(isDate && solved)) return;
         }
         var row = panel.querySelector('[data-result-row="' + name + '"]');
         if (row && !row.hidden) return;
-        var f = (DEF.fields && DEF.fields[name]) || {};
         /*
          * A name whose last word is `eq`, `msg`, `err` or `idx` is bookkeeping,
          * not an answer: pages built around a message renderer keep the index of
@@ -2539,7 +2819,9 @@
          */
         var stem = String(name).replace(/\d+$/, '');
         if (stem !== name && (DEF.vars[stem] || (DEF.fields && DEF.fields[stem]))) return;
-        var label = String(f.label || '').trim() || humanLabel(name);
+        var label = String(f.label || '').trim()
+          || String(((DEF.vars || {})[name] || {}).label || '').trim()
+          || humanLabel(name);
         if (!label) return;
         if (shownText(name)) return;                                  // already in the prose
         var value = st.values[name];
@@ -2556,9 +2838,8 @@
           return;
         }
         if (typeof value !== 'number' || !isFinite(value)) return;
-        var dtype = f.datetype || (DEF.vars[name] && DEF.vars[name].type);
-        var text = (dtype === 'date' || dtype === 'datetime' || dtype === 'time')
-          ? msToDate(value, dtype)
+        var text = isDate
+          ? humanDate(value, dtype)
           : plainNumber(toDisplay(value, f.unitKey, currentUnit(name)), null, 'omni', false);
         if (text === '') return;
         wanted.push({ name: name, label: label, text: text });
@@ -2814,12 +3095,18 @@
               ? 'One field still needs a value — it is marked Required below, under its box.'
               : named
                 ? named + ' fields still need a value — they are marked Required below, under their boxes.'
+                : (lastState && lastState.overflow && Object.keys(lastState.overflow).length)
+                  /*
+                   * The formulas ran and refused the numbers: a division by
+                   * zero (two boxes holding the same value) or a result too
+                   * large to hold. Saying "every field already has a value"
+                   * there blames the form for the arithmetic.
+                   */
+                  ? 'Those numbers make the answer undefined — a division by zero, or a result too large to work out. Change a box and press Calculate again.'
                 : emptyDerivable
                   ? 'Fill in any one of the boxes above — the rest are worked out from it.'
                 : blanks
                   ? 'The values so far are not enough — fill in the remaining fields and press Calculate.'
-                : (emptyOutputs && lastState && lastState.overflow && Object.keys(lastState.overflow).length)
-                  ? 'Those numbers are too large for this formula to work out — try smaller values or a smaller unit.'
                 : unresolved
                   /* Variables the page has to work out and could not: the
                      numbers are in, the formulas did not resolve. Saying "every

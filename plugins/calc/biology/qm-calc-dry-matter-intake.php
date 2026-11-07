@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dry Matter Intake Calculator',
-    'meta' => ['title' => 'Dry Matter Intake Calculator — Formula & Results', 'description' => 'Dry Matter Intake Calculator reports intake as % of body weight and target intake. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dry Matter Intake Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Dry Matter Intake Calculator — Formula & Results', 'description' => 'Dry Matter Intake Calculator reports intake as % of body weight and target intake. The answer, target intake, is worked out in one step from the boxes you fill.', 'h1' => 'Dry Matter Intake Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

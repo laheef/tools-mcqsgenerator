@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog life expectancy',
-    'meta' => ['title' => 'Dog life expectancy: Formula, Steps & Results', 'description' => 'Dog life expectancy works out whichever of how old is the dog, in years?, size of the breed and age in human years is left blank. Every figure is computed.', 'h1' => 'Dog life expectancy Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog life expectancy: Formula, Steps & Results', 'description' => 'Dog life expectancy converts a dog\'s age for its breed size into human years and works the same sum back from a human age. The breed list runs to 300 dogs.', 'h1' => 'Dog life expectancy Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'dog_age' => ['type' => 'numerical'],

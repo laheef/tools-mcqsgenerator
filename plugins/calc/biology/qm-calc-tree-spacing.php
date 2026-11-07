@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree spacing',
-    'meta' => ['title' => 'Tree spacing Calculator — Formula & Results', 'description' => 'Tree spacing works out area and space between trees and reports both. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Tree spacing Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Tree spacing Calculator — Formula & Results', 'description' => 'Tree spacing works out area and space between trees and reports both. It answers in centimeters, and every other unit on the chip is converted for you.', 'h1' => 'Tree spacing Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => 'Planting area specification',
@@ -121,7 +121,7 @@ return [
             ],
         ],
         [
-            'title' => 'How many trees you can plant 🌱',
+            'title' => 'How many trees you can plant ',
             'note' => '',
             'blocks' => [
                 [

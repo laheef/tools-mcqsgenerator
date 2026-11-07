@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA Molarity Calculator',
-    'meta' => ['title' => 'DNA Molarity Calculator — Formula & Results', 'description' => 'DNA Molarity Calculator works out total mass and amount from length, concentration and volume. Every box can be solved for, not only the one in the title.', 'h1' => 'DNA Molarity Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Molarity Calculator — Formula & Results', 'description' => 'DNA Molarity Calculator works out total mass and amount from length, concentration and volume. Leave length empty and the page will solve for it instead.', 'h1' => 'DNA Molarity Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

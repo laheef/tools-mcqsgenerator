@@ -11,7 +11,7 @@
 
 return [
     'name' => 'CO₂ grow room',
-    'meta' => ['title' => 'CO₂ grow room Calculator — Formula & Results', 'description' => 'CO₂ grow room takes width, length and height and returns area and volume. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'CO₂ grow room Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'CO₂ grow room Calculator — Formula & Results', 'description' => 'CO₂ grow room takes width, length and height and returns area and volume. Free to use, and the working stays on the page beside the answer. No sign-up.', 'h1' => 'CO₂ grow room Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => 'Grow room dimensions',

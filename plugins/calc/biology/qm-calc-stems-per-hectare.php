@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Stems Per Hectare Calculator',
-    'meta' => ['title' => 'Stems Per Hectare Calculator — Formula & Results', 'description' => 'Stems Per Hectare Calculator works out stools per hectare from area and row spacing. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Stems Per Hectare Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Stems Per Hectare Calculator — Formula & Results', 'description' => 'Stems Per Hectare Calculator works out stools per hectare from area and row spacing. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Stems Per Hectare Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

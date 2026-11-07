@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Livestock fence cost',
-    'meta' => ['title' => 'Livestock fence cost Calculator: Free, With Steps', 'description' => 'Livestock fence cost turns fence type and ✔️ Length into 8" Wood posts total cost. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Livestock fence cost Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Livestock fence cost Calculator: Free, With Steps', 'description' => 'Fence a paddock on a budget: choose woven wire, barbed wire or electric tape, enter the perimeter, and add up posts, wire, gates and labour in one total.', 'h1' => 'Livestock fence cost Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'addConcreteFootingOptions' => [
@@ -608,14 +608,14 @@ return [
                                     't' => 'v',
                                     'n' => 'fenceLength',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Length',
+                                    'l' => ' Length',
                                     'h' => 'Also equivalent to the perimeter of the lot you want to fence.',
                                     'us' => '4',
                                     'du' => 'm',
                                 ],
                             ],
                             [
-                                ['t' => 'v', 'n' => 'fenceHeight', 'vt' => 'numerical', 'l' => '✔️ Height'],
+                                ['t' => 'v', 'n' => 'fenceHeight', 'vt' => 'numerical', 'l' => ' Height'],
                             ],
                         ],
                     ],
@@ -627,7 +627,7 @@ return [
                                     't' => 'v',
                                     'n' => 'fencepostSpacing',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Desired spacing of posts',
+                                    'l' => ' Desired spacing of posts',
                                     'h' => 'Distance between two adjacent posts.',
                                     'us' => '4',
                                     'du' => 'm',
@@ -657,7 +657,7 @@ return [
             ],
             [
                 'uid' => 'I4ATbcZqCLnrYJ67f9Hz3',
-                'title' => '📍 Post requirements',
+                'title' => ' Post requirements',
                 'desc' => '',
                 'm' => [
                     [
@@ -676,7 +676,7 @@ return [
                                     't' => 'v',
                                     'n' => 'woodpostUnitPrice8in',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ 8" Wood post unit price',
+                                    'l' => ' 8" Wood post unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -714,7 +714,7 @@ return [
                                     't' => 'v',
                                     'n' => 'fencepostUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Fence post unit price',
+                                    'l' => ' Fence post unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -758,7 +758,7 @@ return [
                                     't' => 'v',
                                     'n' => 'fiberglasspostsUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Fiberglass post unit price',
+                                    'l' => ' Fiberglass post unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -784,7 +784,7 @@ return [
             ],
             [
                 'uid' => 'IROGRHJTLXUBBy4K82UhX',
-                'title' => '⛓ Wire requirements',
+                'title' => ' Wire requirements',
                 'desc' => '',
                 'm' => [
                     [
@@ -795,7 +795,7 @@ return [
                                     't' => 'v',
                                     'n' => 'wovenwireRollLength',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Woven wire length per roll',
+                                    'l' => ' Woven wire length per roll',
                                     'us' => '4',
                                     'du' => 'm',
                                 ],
@@ -818,7 +818,7 @@ return [
                                     't' => 'v',
                                     'n' => 'wovenwireUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Woven wire price per roll',
+                                    'l' => ' Woven wire price per roll',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -890,7 +890,7 @@ return [
                                     't' => 'v',
                                     'n' => 'averageBarbedWireSpacing',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Average barbed wire spacing',
+                                    'l' => ' Average barbed wire spacing',
                                     'us' => '4',
                                     'du' => 'cm',
                                 ],
@@ -938,7 +938,7 @@ return [
                                     't' => 'v',
                                     'n' => 'barbedwireRollLength',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Barbed wire length per roll',
+                                    'l' => ' Barbed wire length per roll',
                                     'us' => '4',
                                     'du' => 'm',
                                 ],
@@ -969,7 +969,7 @@ return [
                                     't' => 'v',
                                     'n' => 'barbedwireUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Barbed wire price per roll',
+                                    'l' => ' Barbed wire price per roll',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -999,7 +999,7 @@ return [
                                     't' => 'v',
                                     'n' => 'additional',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Barbed wire price per roll',
+                                    'l' => ' Barbed wire price per roll',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1053,7 +1053,7 @@ return [
                                     't' => 'v',
                                     'n' => 'htWireSpacing',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Average high-tensile wire spacing',
+                                    'l' => ' Average high-tensile wire spacing',
                                     'us' => '4',
                                     'du' => 'cm',
                                 ],
@@ -1145,7 +1145,7 @@ return [
                                     't' => 'v',
                                     'n' => 'polywireSpacing',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Average polywire spacing',
+                                    'l' => ' Average polywire spacing',
                                     'us' => '4',
                                     'du' => 'cm',
                                 ],
@@ -1182,7 +1182,7 @@ return [
                                     't' => 'v',
                                     'n' => 'polywireUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Polywire unit price',
+                                    'l' => ' Polywire unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1208,7 +1208,7 @@ return [
             ],
             [
                 'uid' => 'wlLWAdV8Oo89slxAGeoiT',
-                'title' => '🔗 Mounting hardware requirements',
+                'title' => ' Mounting hardware requirements',
                 'desc' => '',
                 'm' => [
                     [
@@ -1310,7 +1310,7 @@ return [
                                     't' => 'v',
                                     'n' => 'springsUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Spring unit price',
+                                    'l' => ' Spring unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1354,7 +1354,7 @@ return [
                                     't' => 'v',
                                     'n' => 'strainerUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Strainer unit price',
+                                    'l' => ' Strainer unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1392,7 +1392,7 @@ return [
                                     't' => 'v',
                                     'n' => 'clipsForFiberglassPostsUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Clips for fiberglass posts unit price',
+                                    'l' => ' Clips for fiberglass posts unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1455,7 +1455,7 @@ return [
                                     't' => 'v',
                                     'n' => 'staysRequired',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Fence stays needed',
+                                    'l' => ' Fence stays needed',
                                     'h' => 'Number of fence stays needed.',
                                 ],
                             ],
@@ -1469,7 +1469,7 @@ return [
                                     't' => 'v',
                                     'n' => 'staysUnitPrice',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Fence stay unit price',
+                                    'l' => ' Fence stay unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1514,7 +1514,7 @@ return [
                         'FR1',
                         [
                             [
-                                ['t' => 'v', 'n' => 'hingeJointRollLength', 'vt' => 'numerical', 'l' => '✔️ Hinge joint wire length per roll'],
+                                ['t' => 'v', 'n' => 'hingeJointRollLength', 'vt' => 'numerical', 'l' => ' Hinge joint wire length per roll'],
                             ],
                         ],
                     ],
@@ -1534,7 +1534,7 @@ return [
                                     't' => 'v',
                                     'n' => 'hingeJointUnitPrice',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Hinge joint wire price per roll',
+                                    'l' => ' Hinge joint wire price per roll',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1560,14 +1560,14 @@ return [
             ],
             [
                 'uid' => 'OdDlTjw1K7oU5c36HyKPG',
-                'title' => '⚡ Electrical requirements',
+                'title' => ' Electrical requirements',
                 'desc' => '',
                 'm' => [
                     [
                         'FR1',
                         [
                             [
-                                ['t' => 'v', 'n' => 'numberOfElectrifiedWires', 'vt' => 'numerical', 'l' => '✔️ Number of electrified wires needed'],
+                                ['t' => 'v', 'n' => 'numberOfElectrifiedWires', 'vt' => 'numerical', 'l' => ' Number of electrified wires needed'],
                             ],
                         ],
                     ],
@@ -1593,7 +1593,7 @@ return [
                                     't' => 'v',
                                     'n' => 'energizerUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Energizer unit price',
+                                    'l' => ' Energizer unit price',
                                     'h' => 'Total cost of Energizer required',
                                     'us' => '663',
                                     'du' => 'USD',
@@ -1644,7 +1644,7 @@ return [
                                     't' => 'v',
                                     'n' => 'rodsRequired',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Your desired number of grounding or lightning rods',
+                                    'l' => ' Your desired number of grounding or lightning rods',
                                     'h' => 'Number of grounding or lightning rods needed.',
                                 ],
                             ],
@@ -1658,7 +1658,7 @@ return [
                                     't' => 'v',
                                     'n' => 'rodsUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Grounding or lightning rod unit price',
+                                    'l' => ' Grounding or lightning rod unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1684,7 +1684,7 @@ return [
                         'FR1',
                         [
                             [
-                                ['t' => 'v', 'n' => 'switchRequired', 'vt' => 'numerical', 'l' => '✔️ Cut-out switch needed'],
+                                ['t' => 'v', 'n' => 'switchRequired', 'vt' => 'numerical', 'l' => ' Cut-out switch needed'],
                             ],
                         ],
                     ],
@@ -1696,7 +1696,7 @@ return [
                                     't' => 'v',
                                     'n' => 'switchUnitPrice',
                                     'vt' => 'numerical',
-                                    'l' => '✔️ Cut-out switch unit price',
+                                    'l' => ' Cut-out switch unit price',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1722,7 +1722,7 @@ return [
             ],
             [
                 'uid' => 'NMOrDF0OxeyjuOHAc0ckN',
-                'title' => '🧱 More materials needed',
+                'title' => ' More materials needed',
                 'desc' => '',
                 'm' => [
                     [
@@ -1751,7 +1751,7 @@ return [
                                     't' => 'v',
                                     'n' => 'concreteRequired',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Concrete volume needed',
+                                    'l' => ' Concrete volume needed',
                                     'h' => 'Volume of concrete for fence posts fabrication or for fence posts foundation.',
                                     'us' => '20',
                                     'du' => 'm3',
@@ -1767,7 +1767,7 @@ return [
                                     't' => 'v',
                                     'n' => 'concreteUnitPrice',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Concrete price per unit volume',
+                                    'l' => ' Concrete price per unit volume',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1793,7 +1793,7 @@ return [
             ],
             [
                 'uid' => 'lLNjiEKb3h_88yM5WogQi',
-                'title' => '👷‍♂️ Labor cost',
+                'title' => '‍ Labor cost',
                 'desc' => '',
                 'm' => [
                     [
@@ -1822,7 +1822,7 @@ return [
                                     't' => 'v',
                                     'n' => 'laborRequired',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Estimated labor hours',
+                                    'l' => ' Estimated labor hours',
                                     'h' => 'Estimated number of hours needed for the fence construction.',
                                 ],
                             ],
@@ -1836,7 +1836,7 @@ return [
                                     't' => 'v',
                                     'n' => 'laborCost',
                                     'vt' => 'dependent',
-                                    'l' => '✔️ Labor cost per unit time',
+                                    'l' => ' Labor cost per unit time',
                                     'h' => 'Labor cost per time (hour, day, week, month, etc.).',
                                     'us' => '663',
                                     'du' => 'USD',
@@ -1934,7 +1934,7 @@ return [
             ],
             [
                 'uid' => 'NwnzqgLFK0w7h8cDroShz',
-                'title' => '💰 Construction cost',
+                'title' => ' Construction cost',
                 'desc' => '',
                 'm' => [
                     [
@@ -1945,7 +1945,7 @@ return [
                                     't' => 'v',
                                     'n' => 'totalCostWovenWire',
                                     'vt' => 'numerical',
-                                    'l' => '💲 Total cost',
+                                    'l' => ' Total cost',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1960,7 +1960,7 @@ return [
                                     't' => 'v',
                                     'n' => 'totalCostBarbedWire',
                                     'vt' => 'numerical',
-                                    'l' => '💲 Total cost',
+                                    'l' => ' Total cost',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1975,7 +1975,7 @@ return [
                                     't' => 'v',
                                     'n' => 'totalCostHtWire',
                                     'vt' => 'numerical',
-                                    'l' => '💲 Total cost',
+                                    'l' => ' Total cost',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -1990,7 +1990,7 @@ return [
                                     't' => 'v',
                                     'n' => 'totalCostElectrifiedHtWire',
                                     'vt' => 'numerical',
-                                    'l' => '💲 Total cost',
+                                    'l' => ' Total cost',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -2005,7 +2005,7 @@ return [
                                     't' => 'v',
                                     'n' => 'totalCostElectrifiedPolywire',
                                     'vt' => 'numerical',
-                                    'l' => '💲 Total cost',
+                                    'l' => ' Total cost',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -2020,7 +2020,7 @@ return [
                                     't' => 'v',
                                     'n' => 'totalCostCustomFence',
                                     'vt' => 'numerical',
-                                    'l' => '💲 Total cost',
+                                    'l' => ' Total cost',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -2035,7 +2035,7 @@ return [
                                     't' => 'v',
                                     'n' => 'tcplWovenWire',
                                     'vt' => 'numerical',
-                                    'l' => '📏 Total cost per unit length',
+                                    'l' => ' Total cost per unit length',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -2050,7 +2050,7 @@ return [
                                     't' => 'v',
                                     'n' => 'tcplBarbedWire',
                                     'vt' => 'numerical',
-                                    'l' => '📏 Total cost per unit length',
+                                    'l' => ' Total cost per unit length',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -2065,7 +2065,7 @@ return [
                                     't' => 'v',
                                     'n' => 'tcplHtWire',
                                     'vt' => 'numerical',
-                                    'l' => '📏 Total cost per unit length',
+                                    'l' => ' Total cost per unit length',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -2080,7 +2080,7 @@ return [
                                     't' => 'v',
                                     'n' => 'tcplElectrifiedHtWire',
                                     'vt' => 'numerical',
-                                    'l' => '📏 Total cost per unit length',
+                                    'l' => ' Total cost per unit length',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -2095,7 +2095,7 @@ return [
                                     't' => 'v',
                                     'n' => 'tcplElectrifiedPolywire',
                                     'vt' => 'numerical',
-                                    'l' => '📏 Total cost per unit length',
+                                    'l' => ' Total cost per unit length',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -2110,7 +2110,7 @@ return [
                                     't' => 'v',
                                     'n' => 'tcplCustomFence',
                                     'vt' => 'numerical',
-                                    'l' => '📏 Total cost per unit length',
+                                    'l' => ' Total cost per unit length',
                                     'us' => '663',
                                     'du' => 'USD',
                                 ],
@@ -3162,40 +3162,40 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Fence type, ✔️ Length and ✔️ Height into Livestock fence cost and the answer comes back as 8" Wood end posts needed and ✔️ 8" Wood post unit price. It is a single relationship that reads 8" Wood end posts needed out of fence type, not a table of canned results keyed by them.
+        Enter Fence type,  Length and  Height into Livestock fence cost and the answer comes back as 8" Wood end posts needed and  8" Wood post unit price. It is a single relationship that reads 8" Wood end posts needed out of fence type, not a table of canned results keyed by them.
         TXT,
         'sections' => [
             ['title' => 'How the Livestock fence cost calculator works', 'html' => <<<'TXT'
-            <p>Livestock fence cost answers one question from 83 numbers, and the answer is 8&quot; Wood end posts needed, ✔️ 8&quot; Wood post unit price and ✔️ Average barbed wire spacing.</p><p>The relationship it solves reads 8&quot; Wood posts total cost = (8&quot; Wood end posts needed × ✔️ 8&quot; Wood post unit price).</p><p>The answers are 8&quot; Wood end posts needed, ✔️ 8&quot; Wood post unit price, ✔️ Average barbed wire spacing and ✔️ Barbed wire price per roll; they are reported together because a single calculation usually settles more than one question.</p>
+            <p>Livestock fence cost answers one question from 83 numbers, and the answer is 8&quot; Wood end posts needed,  8&quot; Wood post unit price and  Average barbed wire spacing.</p><p>The relationship it solves reads 8&quot; Wood posts total cost = (8&quot; Wood end posts needed ×  8&quot; Wood post unit price).</p><p>The answers are 8&quot; Wood end posts needed,  8&quot; Wood post unit price,  Average barbed wire spacing and  Barbed wire price per roll; they are reported together because a single calculation usually settles more than one question.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>There are 83 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Fence type</strong> — a plain number, no unit. What type of fence are you interested in constructing?</li><li><strong>✔️ Length</strong> — in meters. Also equivalent to the perimeter of the lot you want to fence.</li><li><strong>✔️ Height</strong> — in meters</li><li><strong>✔️ Desired spacing of posts</strong> — in meters. Distance between two adjacent posts.</li><li><strong>Desired fence post material</strong> — a plain number, no unit</li><li><strong>8&quot; Wood posts total cost</strong> — in USD</li><li><strong>Fence posts needed</strong> — a plain number, no unit</li><li><strong>✔️ Fence post unit price</strong> — in USD</li><li><strong>Fence posts total cost</strong> — in USD</li><li><strong>Fiberglass posts needed</strong> — a plain number, no unit. Number of fiberglass posts needed.</li><li><strong>✔️ Fiberglass post unit price</strong> — in USD</li><li><strong>Fiberglass posts total cost</strong> — in USD</li><li><strong>✔️ Woven wire length per roll</strong> — in meters</li><li><strong>Woven wire rolls needed</strong> — a plain number, no unit</li><li><strong>✔️ Woven wire price per roll</strong> — in USD</li><li><strong>Woven wires total cost</strong> — in USD</li><li><strong>additionalBarbedWires</strong> — a plain number, no unit</li><li><strong>Average barbed wire vertical spacing</strong> — a plain number, no unit</li><li><strong>Barbed wire horizontal runs</strong> — a plain number, no unit. Number of barbed wires to run through the fence length.</li><li><strong>Number of additional barbed wire runs</strong> — a plain number, no unit</li><li><strong>✔️ Barbed wire length per roll</strong> — in meters</li><li><strong>Barbed wire rolls needed</strong> — a plain number, no unit</li><li><strong>Barbed wire rolls needed</strong> — a plain number, no unit</li><li><strong>✔️ Barbed wire price per roll</strong> — in USD</li><li><strong>Barbed wires total cost</strong> — in USD</li><li><strong>Additional barbed wire total cost</strong> — in USD</li><li><strong>High-tensile wire spacing options</strong> — a plain number, no unit</li><li><strong>High-tensile wire runs needed</strong> — a plain number, no unit. Number of high-tensile wire runs needed.</li><li><strong>High-tensile wire total length needed</strong> — in meters</li><li><strong>High-tensile wire unit price</strong> — in USD. Cost of high-tensile wires.</li><li><strong>Hight-tensile wire total cost</strong> — in USD</li><li><strong>Polywire spacing options</strong> — a plain number, no unit</li><li><strong>Polywire runs needed</strong> — a plain number, no unit</li><li><strong>Polywire length needed</strong> — in meters. Length of Polywire needed.</li><li><strong>✔️ Polywire unit price</strong> — in USD</li><li><strong>Polywire total cost</strong> — in USD</li><li><strong>Clips or staples spacing options</strong> — a plain number, no unit</li><li><strong>Clips or staples needed</strong> — a plain number, no unit</li><li><strong>Clips or staples unit price</strong> — in USD</li><li><strong>Clips or staples total cost</strong> — in USD</li><li><strong>Springs needed</strong> — a plain number, no unit. Number of springs needed.</li><li><strong>✔️ Spring unit price</strong> — in USD</li><li><strong>Springs total cost</strong> — in USD</li><li><strong>Strainers needed</strong> — a plain number, no unit. Number of wire strainers needed.</li><li><strong>✔️ Strainer unit price</strong> — in USD</li><li><strong>Strainers total cost</strong> — in USD</li><li><strong>Clips for fiberglass posts</strong> — a plain number, no unit</li><li><strong>✔️ Clips for fiberglass posts unit price</strong> — in USD</li><li><strong>Clips for fiberglass posts total cost</strong> — in USD</li><li><strong>useStaysOptions</strong> — a plain number, no unit</li><li><strong>Horizontal stays spacing</strong> — in centimeters</li><li><strong>✔️ Fence stays needed</strong> — a plain number, no unit. Number of fence stays needed.</li><li><strong>Stays total cost</strong> — in USD</li><li><strong>useHingeJointOptions</strong> — a plain number, no unit. Are you using hinge joint wires?</li><li><strong>✔️ Hinge joint wire length per roll</strong> — in meters</li><li><strong>Hinge joint needed</strong> — a plain number, no unit</li><li><strong>Hinge joint total cost</strong> — in USD</li><li><strong>✔️ Number of electrified wires needed</strong> — a plain number, no unit</li><li><strong>Energizer capacity needed</strong> — in meters. Recommended capacity of energizer needed for the fence length.</li><li><strong>✔️ Energizer unit price</strong> — in USD. Total cost of Energizer required</li><li><strong>Energizer total cost</strong> — in USD</li><li><strong>Grounding or lightning rods needed</strong> — a plain number, no unit</li><li><strong>✔️ Grounding or lightning rod unit price</strong> — in USD</li><li><strong>Grounding or lightning rods total cost</strong> — in USD</li><li><strong>✔️ Cut-out switch needed</strong> — a plain number, no unit</li><li><strong>✔️ Cut-out switch unit price</strong> — in USD</li><li><strong>Cut-out switch total cost</strong> — in USD</li><li><strong>addConcreteFootingOptions</strong> — a plain number, no unit</li><li><strong>Concrete total cost</strong> — in USD</li><li><strong>includeLaborCostOptions</strong> — a plain number, no unit</li><li><strong>Labor total cost</strong> — in USD</li><li><strong>💲 Total cost</strong> — in USD</li><li><strong>💲 Total cost</strong> — in USD</li><li><strong>💲 Total cost</strong> — in USD</li><li><strong>💲 Total cost</strong> — in USD</li><li><strong>💲 Total cost</strong> — in USD</li><li><strong>💲 Total cost</strong> — in USD</li><li><strong>📏 Total cost per unit length</strong> — in USD</li><li><strong>📏 Total cost per unit length</strong> — in USD</li><li><strong>📏 Total cost per unit length</strong> — in USD</li><li><strong>📏 Total cost per unit length</strong> — in USD</li><li><strong>📏 Total cost per unit length</strong> — in USD</li><li><strong>📏 Total cost per unit length</strong> — in USD</li></ul><p>What you get back is 8&quot; Wood end posts needed, ✔️ 8&quot; Wood post unit price in USD, ✔️ Average barbed wire spacing in centimeters, ✔️ Barbed wire price per roll in USD, ✔️ Average high-tensile wire spacing in centimeters, ✔️ Average polywire spacing in centimeters, Clips or staples vertical spacing in centimeters, ✔️ Fence stay unit price in USD, ✔️ Hinge joint wire price per roll in USD, ✔️ Your desired number of grounding or lightning rods, ✔️ Concrete volume needed in cubic meters, ✔️ Concrete price per unit volume in USD, ✔️ Estimated labor hours, ✔️ Labor cost per unit time in USD, shown next to the form rather than on a page of its own.</p>
+            <p>There are 83 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Fence type</strong> — a plain number, no unit. What type of fence are you interested in constructing?</li><li><strong> Length</strong> — in meters. Also equivalent to the perimeter of the lot you want to fence.</li><li><strong> Height</strong> — in meters</li><li><strong> Desired spacing of posts</strong> — in meters. Distance between two adjacent posts.</li><li><strong>Desired fence post material</strong> — a plain number, no unit</li><li><strong>8&quot; Wood posts total cost</strong> — in USD</li><li><strong>Fence posts needed</strong> — a plain number, no unit</li><li><strong> Fence post unit price</strong> — in USD</li><li><strong>Fence posts total cost</strong> — in USD</li><li><strong>Fiberglass posts needed</strong> — a plain number, no unit. Number of fiberglass posts needed.</li><li><strong> Fiberglass post unit price</strong> — in USD</li><li><strong>Fiberglass posts total cost</strong> — in USD</li><li><strong> Woven wire length per roll</strong> — in meters</li><li><strong>Woven wire rolls needed</strong> — a plain number, no unit</li><li><strong> Woven wire price per roll</strong> — in USD</li><li><strong>Woven wires total cost</strong> — in USD</li><li><strong>additionalBarbedWires</strong> — a plain number, no unit</li><li><strong>Average barbed wire vertical spacing</strong> — a plain number, no unit</li><li><strong>Barbed wire horizontal runs</strong> — a plain number, no unit. Number of barbed wires to run through the fence length.</li><li><strong>Number of additional barbed wire runs</strong> — a plain number, no unit</li><li><strong> Barbed wire length per roll</strong> — in meters</li><li><strong>Barbed wire rolls needed</strong> — a plain number, no unit</li><li><strong>Barbed wire rolls needed</strong> — a plain number, no unit</li><li><strong> Barbed wire price per roll</strong> — in USD</li><li><strong>Barbed wires total cost</strong> — in USD</li><li><strong>Additional barbed wire total cost</strong> — in USD</li><li><strong>High-tensile wire spacing options</strong> — a plain number, no unit</li><li><strong>High-tensile wire runs needed</strong> — a plain number, no unit. Number of high-tensile wire runs needed.</li><li><strong>High-tensile wire total length needed</strong> — in meters</li><li><strong>High-tensile wire unit price</strong> — in USD. Cost of high-tensile wires.</li><li><strong>Hight-tensile wire total cost</strong> — in USD</li><li><strong>Polywire spacing options</strong> — a plain number, no unit</li><li><strong>Polywire runs needed</strong> — a plain number, no unit</li><li><strong>Polywire length needed</strong> — in meters. Length of Polywire needed.</li><li><strong> Polywire unit price</strong> — in USD</li><li><strong>Polywire total cost</strong> — in USD</li><li><strong>Clips or staples spacing options</strong> — a plain number, no unit</li><li><strong>Clips or staples needed</strong> — a plain number, no unit</li><li><strong>Clips or staples unit price</strong> — in USD</li><li><strong>Clips or staples total cost</strong> — in USD</li><li><strong>Springs needed</strong> — a plain number, no unit. Number of springs needed.</li><li><strong> Spring unit price</strong> — in USD</li><li><strong>Springs total cost</strong> — in USD</li><li><strong>Strainers needed</strong> — a plain number, no unit. Number of wire strainers needed.</li><li><strong> Strainer unit price</strong> — in USD</li><li><strong>Strainers total cost</strong> — in USD</li><li><strong>Clips for fiberglass posts</strong> — a plain number, no unit</li><li><strong> Clips for fiberglass posts unit price</strong> — in USD</li><li><strong>Clips for fiberglass posts total cost</strong> — in USD</li><li><strong>useStaysOptions</strong> — a plain number, no unit</li><li><strong>Horizontal stays spacing</strong> — in centimeters</li><li><strong> Fence stays needed</strong> — a plain number, no unit. Number of fence stays needed.</li><li><strong>Stays total cost</strong> — in USD</li><li><strong>useHingeJointOptions</strong> — a plain number, no unit. Are you using hinge joint wires?</li><li><strong> Hinge joint wire length per roll</strong> — in meters</li><li><strong>Hinge joint needed</strong> — a plain number, no unit</li><li><strong>Hinge joint total cost</strong> — in USD</li><li><strong> Number of electrified wires needed</strong> — a plain number, no unit</li><li><strong>Energizer capacity needed</strong> — in meters. Recommended capacity of energizer needed for the fence length.</li><li><strong> Energizer unit price</strong> — in USD. Total cost of Energizer required</li><li><strong>Energizer total cost</strong> — in USD</li><li><strong>Grounding or lightning rods needed</strong> — a plain number, no unit</li><li><strong> Grounding or lightning rod unit price</strong> — in USD</li><li><strong>Grounding or lightning rods total cost</strong> — in USD</li><li><strong> Cut-out switch needed</strong> — a plain number, no unit</li><li><strong> Cut-out switch unit price</strong> — in USD</li><li><strong>Cut-out switch total cost</strong> — in USD</li><li><strong>addConcreteFootingOptions</strong> — a plain number, no unit</li><li><strong>Concrete total cost</strong> — in USD</li><li><strong>includeLaborCostOptions</strong> — a plain number, no unit</li><li><strong>Labor total cost</strong> — in USD</li><li><strong> Total cost</strong> — in USD</li><li><strong> Total cost</strong> — in USD</li><li><strong> Total cost</strong> — in USD</li><li><strong> Total cost</strong> — in USD</li><li><strong> Total cost</strong> — in USD</li><li><strong> Total cost</strong> — in USD</li><li><strong> Total cost per unit length</strong> — in USD</li><li><strong> Total cost per unit length</strong> — in USD</li><li><strong> Total cost per unit length</strong> — in USD</li><li><strong> Total cost per unit length</strong> — in USD</li><li><strong> Total cost per unit length</strong> — in USD</li><li><strong> Total cost per unit length</strong> — in USD</li></ul><p>What you get back is 8&quot; Wood end posts needed,  8&quot; Wood post unit price in USD,  Average barbed wire spacing in centimeters,  Barbed wire price per roll in USD,  Average high-tensile wire spacing in centimeters,  Average polywire spacing in centimeters, Clips or staples vertical spacing in centimeters,  Fence stay unit price in USD,  Hinge joint wire price per roll in USD,  Your desired number of grounding or lightning rods,  Concrete volume needed in cubic meters,  Concrete price per unit volume in USD,  Estimated labor hours,  Labor cost per unit time in USD, shown next to the form rather than on a page of its own.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Run the numbers the page opens with — Fence type = 1, ✔️ Length = 30 m, ✔️ Height = 1.2 m, ✔️ Desired spacing of posts = 2.5 m, Desired fence post material = 1, ✔️ Fence post unit price = 6 USD, ✔️ Fiberglass post unit price = 7 USD, ✔️ Woven wire length per roll = 10 m, ✔️ Woven wire price per roll = 9 USD, additionalBarbedWires = 0, Average barbed wire vertical spacing = 3, Number of additional barbed wire runs = 1, ✔️ Barbed wire length per roll = 10 m, ✔️ Barbed wire price per roll = 2 USD, High-tensile wire spacing options = 2, High-tensile wire unit price = 3 USD, Polywire spacing options = 5, ✔️ Polywire unit price = 4 USD, Clips or staples spacing options = 1, Clips or staples unit price = 5 USD, ✔️ Spring unit price = 6 USD, ✔️ Strainer unit price = 7 USD, ✔️ Clips for fiberglass posts unit price = 8 USD, useStaysOptions = 0, Horizontal stays spacing = 45 cm, useHingeJointOptions = 0, ✔️ Hinge joint wire length per roll = 10 m, ✔️ Number of electrified wires needed = 1, ✔️ Energizer unit price = 3 USD, Grounding or lightning rods needed = 3, ✔️ Grounding or lightning rod unit price = 4 USD, ✔️ Cut-out switch needed = 1, ✔️ Cut-out switch unit price = 6 USD, addConcreteFootingOptions = 0 and includeLaborCostOptions = 0 — through the same formula and the panel reports <strong>8&amp;quot; Wood posts total cost</strong> = 0 USD, <strong>Fence posts needed</strong> = 0, <strong>Fence posts total cost</strong> = 0 USD, <strong>Fiberglass posts needed</strong> = 11, <strong>Fiberglass posts total cost</strong> = 77 USD, <strong>Woven wire rolls needed</strong> = 3, <strong>Woven wires total cost</strong> = 27 USD, <strong>✔️ Fence stays needed</strong> = 1, <strong>Stays total cost</strong> = 0 USD, <strong>Hinge joint needed</strong> = 0, <strong>Hinge joint total cost</strong> = 0 USD, <strong>Energizer capacity needed</strong> = 37.5 m, <strong>Energizer total cost</strong> = 113 USD, <strong>Cut-out switch total cost</strong> = 6 USD, <strong>Grounding or lightning rods total cost</strong> = 0 USD, <strong>Concrete total cost</strong> = 0 USD, <strong>Labor total cost</strong> = 0 USD, <strong>Barbed wire rolls needed</strong> = 3 and <strong>Additional barbed wire total cost</strong> = 0 USD.</p><ul><li><strong>8&quot; Wood posts total cost</strong> = 0 USD</li><li><strong>Fence posts needed</strong> = 0</li><li><strong>Fence posts total cost</strong> = 0 USD</li><li><strong>Fiberglass posts needed</strong> = 11</li><li><strong>Fiberglass posts total cost</strong> = 77 USD</li><li><strong>Woven wire rolls needed</strong> = 3</li><li><strong>Woven wires total cost</strong> = 27 USD</li><li><strong>✔️ Fence stays needed</strong> = 1</li><li><strong>Stays total cost</strong> = 0 USD</li><li><strong>Hinge joint needed</strong> = 0</li><li><strong>Hinge joint total cost</strong> = 0 USD</li><li><strong>Energizer capacity needed</strong> = 37.5 m</li><li><strong>Energizer total cost</strong> = 113 USD</li><li><strong>Cut-out switch total cost</strong> = 6 USD</li><li><strong>Grounding or lightning rods total cost</strong> = 0 USD</li><li><strong>Concrete total cost</strong> = 0 USD</li><li><strong>Labor total cost</strong> = 0 USD</li><li><strong>Barbed wire rolls needed</strong> = 3</li><li><strong>Additional barbed wire total cost</strong> = 0 USD</li></ul><p>That is <strong>8&quot; Wood posts total cost</strong> = <code>(8&quot; Wood end posts needed × ✔️ 8&quot; Wood post unit price)</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>Run the numbers the page opens with — Fence type = 1,  Length = 30 m,  Height = 1.2 m,  Desired spacing of posts = 2.5 m, Desired fence post material = 1,  Fence post unit price = 6 USD,  Fiberglass post unit price = 7 USD,  Woven wire length per roll = 10 m,  Woven wire price per roll = 9 USD, additionalBarbedWires = 0, Average barbed wire vertical spacing = 3, Number of additional barbed wire runs = 1,  Barbed wire length per roll = 10 m,  Barbed wire price per roll = 2 USD, High-tensile wire spacing options = 2, High-tensile wire unit price = 3 USD, Polywire spacing options = 5,  Polywire unit price = 4 USD, Clips or staples spacing options = 1, Clips or staples unit price = 5 USD,  Spring unit price = 6 USD,  Strainer unit price = 7 USD,  Clips for fiberglass posts unit price = 8 USD, useStaysOptions = 0, Horizontal stays spacing = 45 cm, useHingeJointOptions = 0,  Hinge joint wire length per roll = 10 m,  Number of electrified wires needed = 1,  Energizer unit price = 3 USD, Grounding or lightning rods needed = 3,  Grounding or lightning rod unit price = 4 USD,  Cut-out switch needed = 1,  Cut-out switch unit price = 6 USD, addConcreteFootingOptions = 0 and includeLaborCostOptions = 0 — through the same formula and the panel reports <strong>8&amp;quot; Wood posts total cost</strong> = 0 USD, <strong>Fence posts needed</strong> = 0, <strong>Fence posts total cost</strong> = 0 USD, <strong>Fiberglass posts needed</strong> = 11, <strong>Fiberglass posts total cost</strong> = 77 USD, <strong>Woven wire rolls needed</strong> = 3, <strong>Woven wires total cost</strong> = 27 USD, <strong> Fence stays needed</strong> = 1, <strong>Stays total cost</strong> = 0 USD, <strong>Hinge joint needed</strong> = 0, <strong>Hinge joint total cost</strong> = 0 USD, <strong>Energizer capacity needed</strong> = 37.5 m, <strong>Energizer total cost</strong> = 113 USD, <strong>Cut-out switch total cost</strong> = 6 USD, <strong>Grounding or lightning rods total cost</strong> = 0 USD, <strong>Concrete total cost</strong> = 0 USD, <strong>Labor total cost</strong> = 0 USD, <strong>Barbed wire rolls needed</strong> = 3 and <strong>Additional barbed wire total cost</strong> = 0 USD.</p><ul><li><strong>8&quot; Wood posts total cost</strong> = 0 USD</li><li><strong>Fence posts needed</strong> = 0</li><li><strong>Fence posts total cost</strong> = 0 USD</li><li><strong>Fiberglass posts needed</strong> = 11</li><li><strong>Fiberglass posts total cost</strong> = 77 USD</li><li><strong>Woven wire rolls needed</strong> = 3</li><li><strong>Woven wires total cost</strong> = 27 USD</li><li><strong> Fence stays needed</strong> = 1</li><li><strong>Stays total cost</strong> = 0 USD</li><li><strong>Hinge joint needed</strong> = 0</li><li><strong>Hinge joint total cost</strong> = 0 USD</li><li><strong>Energizer capacity needed</strong> = 37.5 m</li><li><strong>Energizer total cost</strong> = 113 USD</li><li><strong>Cut-out switch total cost</strong> = 6 USD</li><li><strong>Grounding or lightning rods total cost</strong> = 0 USD</li><li><strong>Concrete total cost</strong> = 0 USD</li><li><strong>Labor total cost</strong> = 0 USD</li><li><strong>Barbed wire rolls needed</strong> = 3</li><li><strong>Additional barbed wire total cost</strong> = 0 USD</li></ul><p>That is <strong>8&quot; Wood posts total cost</strong> = <code>(8&quot; Wood end posts needed ×  8&quot; Wood post unit price)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>8&amp;quot; Wood posts total cost</strong> = 0, <strong>Fence posts needed</strong> = 0, <strong>Fence posts total cost</strong> = 0, <strong>Fiberglass posts needed</strong> = 11, <strong>Fiberglass posts total cost</strong> = 77, <strong>Woven wire rolls needed</strong> = 3, <strong>Woven wires total cost</strong> = 27, <strong>✔️ Fence stays needed</strong> = 1, <strong>Stays total cost</strong> = 0, <strong>Hinge joint needed</strong> = 0, <strong>Hinge joint total cost</strong> = 0, <strong>Energizer capacity needed</strong> = 37.5, <strong>Energizer total cost</strong> = 113, <strong>Cut-out switch total cost</strong> = 6, <strong>Grounding or lightning rods total cost</strong> = 0, <strong>Concrete total cost</strong> = 0, <strong>Labor total cost</strong> = 0, <strong>Barbed wire rolls needed</strong> = 3 and <strong>Additional barbed wire total cost</strong> = 0. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on ✔️ Average barbed wire spacing lists 31 options and opens on centimeters. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>8&amp;quot; Wood posts total cost</strong> = 0, <strong>Fence posts needed</strong> = 0, <strong>Fence posts total cost</strong> = 0, <strong>Fiberglass posts needed</strong> = 11, <strong>Fiberglass posts total cost</strong> = 77, <strong>Woven wire rolls needed</strong> = 3, <strong>Woven wires total cost</strong> = 27, <strong> Fence stays needed</strong> = 1, <strong>Stays total cost</strong> = 0, <strong>Hinge joint needed</strong> = 0, <strong>Hinge joint total cost</strong> = 0, <strong>Energizer capacity needed</strong> = 37.5, <strong>Energizer total cost</strong> = 113, <strong>Cut-out switch total cost</strong> = 6, <strong>Grounding or lightning rods total cost</strong> = 0, <strong>Concrete total cost</strong> = 0, <strong>Labor total cost</strong> = 0, <strong>Barbed wire rolls needed</strong> = 3 and <strong>Additional barbed wire total cost</strong> = 0. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on  Average barbed wire spacing lists 31 options and opens on centimeters. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>8&quot; Wood posts total cost</strong> = <code>(8&quot; Wood end posts needed × ✔️ 8&quot; Wood post unit price)</code></li><li><strong>Fiberglass posts needed</strong> = <code>floor(✔️ Length ÷ ✔️ Desired spacing of posts) − 1</code></li><li><strong>Fiberglass posts total cost</strong> = <code>(✔️ Fiberglass post unit price × (floor(✔️ Length ÷ ✔️ Desired spacing of posts) − 1))</code></li><li><strong>Woven wire rolls needed</strong> = <code>ceil(✔️ Length ÷ ✔️ Woven wire length per roll)</code></li><li><strong>Woven wires total cost</strong> = <code>(✔️ Woven wire price per roll × ceil(✔️ Length ÷ ✔️ Woven wire length per roll))</code></li><li><strong>Barbed wire horizontal runs</strong> = <code>floor(12 × ✔️ Height ÷ ✔️ Average barbed wire spacing)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>8&quot; Wood posts total cost</strong> = <code>(8&quot; Wood end posts needed × ✔️ 8&quot; Wood post unit price)</code> — the form to use when 8&quot; Wood end posts needed and ✔️ 8&quot; Wood post unit price are the values you have.</li><li><strong>Fiberglass posts needed</strong> = <code>floor(✔️ Length ÷ ✔️ Desired spacing of posts) − 1</code> — the form to use when ✔️ Length and ✔️ Desired spacing of posts are the values you have.</li><li><strong>Fiberglass posts total cost</strong> = <code>(✔️ Fiberglass post unit price × (floor(✔️ Length ÷ ✔️ Desired spacing of posts) − 1))</code> — the form to use when ✔️ Length, ✔️ Desired spacing of posts and ✔️ Fiberglass post unit price are the values you have.</li><li><strong>Woven wire rolls needed</strong> = <code>ceil(✔️ Length ÷ ✔️ Woven wire length per roll)</code> — the form to use when ✔️ Length and ✔️ Woven wire length per roll are the values you have.</li><li><strong>Woven wires total cost</strong> = <code>(✔️ Woven wire price per roll × ceil(✔️ Length ÷ ✔️ Woven wire length per roll))</code> — the form to use when ✔️ Length, ✔️ Woven wire length per roll and ✔️ Woven wire price per roll are the values you have.</li><li><strong>Barbed wire horizontal runs</strong> = <code>floor(12 × ✔️ Height ÷ ✔️ Average barbed wire spacing)</code> — the form to use when ✔️ Average barbed wire spacing and ✔️ Height are the values you have.</li><li><strong>Barbed wire rolls needed</strong> = <code>ceil(✔️ Length × floor(12 × ✔️ Height ÷ ✔️ Average barbed wire spacing) ÷ ✔️ Barbed wire length per roll)</code> — the form to use when ✔️ Average barbed wire spacing, ✔️ Barbed wire length per roll, ✔️ Height and ✔️ Length are the values you have.</li><li><strong>Barbed wires total cost</strong> = <code>(✔️ Barbed wire price per roll × ceil(✔️ Length × floor(12 × ✔️ Height ÷ ✔️ Average barbed wire spacing) ÷ ✔️ Barbed wire length per roll))</code> — the form to use when ✔️ Average barbed wire spacing, ✔️ Barbed wire length per roll, ✔️ Barbed wire price per roll and ✔️ Height are the values you have.</li></ul><p>Any one of 8&quot; Wood posts total cost, Fence posts needed and Fence posts total cost can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>8&quot; Wood posts total cost</strong> = <code>(8&quot; Wood end posts needed ×  8&quot; Wood post unit price)</code></li><li><strong>Fiberglass posts needed</strong> = <code>floor( Length ÷  Desired spacing of posts) − 1</code></li><li><strong>Fiberglass posts total cost</strong> = <code>( Fiberglass post unit price × (floor( Length ÷  Desired spacing of posts) − 1))</code></li><li><strong>Woven wire rolls needed</strong> = <code>ceil( Length ÷  Woven wire length per roll)</code></li><li><strong>Woven wires total cost</strong> = <code>( Woven wire price per roll × ceil( Length ÷  Woven wire length per roll))</code></li><li><strong>Barbed wire horizontal runs</strong> = <code>floor(12 ×  Height ÷  Average barbed wire spacing)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>8&quot; Wood posts total cost</strong> = <code>(8&quot; Wood end posts needed ×  8&quot; Wood post unit price)</code> — the form to use when 8&quot; Wood end posts needed and  8&quot; Wood post unit price are the values you have.</li><li><strong>Fiberglass posts needed</strong> = <code>floor( Length ÷  Desired spacing of posts) − 1</code> — the form to use when  Length and  Desired spacing of posts are the values you have.</li><li><strong>Fiberglass posts total cost</strong> = <code>( Fiberglass post unit price × (floor( Length ÷  Desired spacing of posts) − 1))</code> — the form to use when  Length,  Desired spacing of posts and  Fiberglass post unit price are the values you have.</li><li><strong>Woven wire rolls needed</strong> = <code>ceil( Length ÷  Woven wire length per roll)</code> — the form to use when  Length and  Woven wire length per roll are the values you have.</li><li><strong>Woven wires total cost</strong> = <code>( Woven wire price per roll × ceil( Length ÷  Woven wire length per roll))</code> — the form to use when  Length,  Woven wire length per roll and  Woven wire price per roll are the values you have.</li><li><strong>Barbed wire horizontal runs</strong> = <code>floor(12 ×  Height ÷  Average barbed wire spacing)</code> — the form to use when  Average barbed wire spacing and  Height are the values you have.</li><li><strong>Barbed wire rolls needed</strong> = <code>ceil( Length × floor(12 ×  Height ÷  Average barbed wire spacing) ÷  Barbed wire length per roll)</code> — the form to use when  Average barbed wire spacing,  Barbed wire length per roll,  Height and  Length are the values you have.</li><li><strong>Barbed wires total cost</strong> = <code>( Barbed wire price per roll × ceil( Length × floor(12 ×  Height ÷  Average barbed wire spacing) ÷  Barbed wire length per roll))</code> — the form to use when  Average barbed wire spacing,  Barbed wire length per roll,  Barbed wire price per roll and  Height are the values you have.</li></ul><p>Any one of 8&quot; Wood posts total cost, Fence posts needed and Fence posts total cost can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>Units left where they were.</strong> ✔️ Length, ✔️ Height and ✔️ Desired spacing of posts carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> 8&quot; Wood end posts needed, ✔️ 8&quot; Wood post unit price and ✔️ Average barbed wire spacing are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Fence type left as a guess.</strong> Anything typed into Fence type is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>✔️ Length left as a guess.</strong> Anything typed into ✔️ Length is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Fence type and let the panel round the answer once.</li></ul>
+            <ul><li><strong>Units left where they were.</strong>  Length,  Height and  Desired spacing of posts carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> 8&quot; Wood end posts needed,  8&quot; Wood post unit price and  Average barbed wire spacing are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Fence type left as a guess.</strong> Anything typed into Fence type is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong> Length left as a guess.</strong> Anything typed into  Length is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Fence type and let the panel round the answer once.</li></ul>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Livestock fence cost calculator work out?', 'a' => <<<'TXT'
-            8" Wood end posts needed, ✔️ 8" Wood post unit price, ✔️ Average barbed wire spacing and ✔️ Barbed wire price per roll, from 8" Wood end posts needed and ✔️ 8" Wood post unit price. The relationship is 8" Wood posts total cost = (8" Wood end posts needed × ✔️ 8" Wood post unit price).
+            8" Wood end posts needed,  8" Wood post unit price,  Average barbed wire spacing and  Barbed wire price per roll, from 8" Wood end posts needed and  8" Wood post unit price. The relationship is 8" Wood posts total cost = (8" Wood end posts needed ×  8" Wood post unit price).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Fence type, ✔️ Length (meters), ✔️ Height (meters), ✔️ Desired spacing of posts (meters), Desired fence post material. Enter fence type, ✔️ Length and ✔️ Height; 8" Wood end posts needed is the box to leave alone unless it is the value you came for.
+            Fence type,  Length (meters),  Height (meters),  Desired spacing of posts (meters), Desired fence post material. Enter fence type,  Length and  Height; 8" Wood end posts needed is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of 8" Wood posts total cost, Fence posts needed, Fence posts total cost and Fiberglass posts needed blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
             ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
-            8" Wood posts total cost = 0 USD, Fence posts needed = 0, Fence posts total cost = 0 USD, Fiberglass posts needed = 11, Fiberglass posts total cost = 77 USD, Woven wire rolls needed = 3, Woven wires total cost = 27 USD, ✔️ Fence stays needed = 1, Stays total cost = 0 USD, Hinge joint needed = 0, Hinge joint total cost = 0 USD, Energizer capacity needed = 37.5 m, Energizer total cost = 113 USD, Cut-out switch total cost = 6 USD, Grounding or lightning rods total cost = 0 USD, Concrete total cost = 0 USD, Labor total cost = 0 USD, Barbed wire rolls needed = 3 and Additional barbed wire total cost = 0 USD. That comes from the page's own defaults, entered in Fence type; change one of them and the whole set is recomputed.
+            8" Wood posts total cost = 0 USD, Fence posts needed = 0, Fence posts total cost = 0 USD, Fiberglass posts needed = 11, Fiberglass posts total cost = 77 USD, Woven wire rolls needed = 3, Woven wires total cost = 27 USD,  Fence stays needed = 1, Stays total cost = 0 USD, Hinge joint needed = 0, Hinge joint total cost = 0 USD, Energizer capacity needed = 37.5 m, Energizer total cost = 113 USD, Cut-out switch total cost = 6 USD, Grounding or lightning rods total cost = 0 USD, Concrete total cost = 0 USD, Labor total cost = 0 USD, Barbed wire rolls needed = 3 and Additional barbed wire total cost = 0 USD. That comes from the page's own defaults, entered in Fence type; change one of them and the whole set is recomputed.
             TXT],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             8" Wood end posts needed is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.

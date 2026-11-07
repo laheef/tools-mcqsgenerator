@@ -11,7 +11,7 @@
 
 return [
     'name' => 'BCA Assay Calculator (standard curve)',
-    'meta' => ['title' => 'BCA Assay Calculator (standard curve) — Biology', 'description' => 'BCA Assay Calculator (standard curve) reports protein concentration. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'BCA Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'BCA Assay Calculator (standard curve) — Biology', 'description' => 'BCA Assay Calculator turns a 562 nm absorbance, the standard-curve slope and intercept, and the dilution factor into protein concentration. The working shows.', 'h1' => 'BCA Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

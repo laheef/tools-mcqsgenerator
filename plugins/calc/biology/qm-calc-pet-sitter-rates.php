@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Pet sitter rates',
-    'meta' => ['title' => 'Pet sitter rates — Formula, Steps & Examples', 'description' => 'Pet sitter rates turns the number of hours pet sitting, days of care and pet sitting rate into pet sitting cost. The formula is printed in the form\'s own words.', 'h1' => 'Pet sitter rates Calculator', 'updated' => '2024-07-12'],
+    'meta' => ['title' => 'Pet sitter rates — Formula, Steps & Examples', 'description' => 'Pet sitter rates multiply hours, days of care and an hourly charge into a total cost, and solve for any missing one. Money is rounded to the nearest cent.', 'h1' => 'Pet sitter rates Calculator', 'updated' => '2024-07-12'],
     'sections' => [
         [
             'title' => '',

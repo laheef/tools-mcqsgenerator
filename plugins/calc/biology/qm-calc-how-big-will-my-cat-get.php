@@ -86,9 +86,9 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        ['final_size >0 and final_size <= 8', 'Your pet\'s going to be a small cat&nbsp;🐈 This type of cat typically weighs less than 8 pounds (3.6 kg)!'],
-                                        ['final_size >8 and final_size <= 13', 'Your pet\'s going to be a medium cat&nbsp;🐈 This type of cat typically weighs 8–13 pounds (3.6-5.9 kg)!'],
-                                        ['final_size > 13', 'Your pet\'s going to be a large cat&nbsp;🐈 This type of cat is usually larger than 13 pounds (5.9 kg)!&nbsp;'],
+                                        ['final_size >0 and final_size <= 8', 'Your pet\'s going to be a small cat&nbsp; This type of cat typically weighs less than 8 pounds (3.6 kg)!'],
+                                        ['final_size >8 and final_size <= 13', 'Your pet\'s going to be a medium cat&nbsp; This type of cat typically weighs 8–13 pounds (3.6-5.9 kg)!'],
+                                        ['final_size > 13', 'Your pet\'s going to be a large cat&nbsp; This type of cat is usually larger than 13 pounds (5.9 kg)!&nbsp;'],
                                     ],
                                 ],
                             ],
@@ -108,7 +108,7 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        [null, '✨ Build and customize your own tools instantly. Just type a simple sentence to generate a working calculator with zero coding.'],
+                                        [null, ' Build and customize your own tools instantly. Just type a simple sentence to generate a working calculator with zero coding.'],
                                     ],
                                 ],
                             ],

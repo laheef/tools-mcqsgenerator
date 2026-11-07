@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Benadryl dosage for dogs',
-    'meta' => ['title' => 'Benadryl dosage for dogs — Free Online Calculator', 'description' => 'Benadryl dosage for dogs takes dosage by weight and returns your dog\'s weight and Liquid (12.5 mg / 5 mL). The formula is printed in the form\'s own words.', 'h1' => 'Benadryl dosage for dogs Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Benadryl dosage for dogs — Free Online Calculator', 'description' => 'Benadryl dosage for dogs takes dosage by weight and returns your dog\'s weight and Liquid (12.5 mg / 5 mL). The formula is printed in the form\'s own words.', 'h1' => 'Benadryl dosage for dogs Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => '',
@@ -89,7 +89,7 @@ return [
                 [
                     'columns' => 1,
                     'fields' => [
-                        ['type' => 'note', 'text' => '🕒 Dose must be repeated every 8 or 12 hours (2 or 3 times per day).'],
+                        ['type' => 'note', 'text' => 'Dose must be repeated every 8 or 12 hours (2 or 3 times per day).'],
                     ],
                 ],
             ],

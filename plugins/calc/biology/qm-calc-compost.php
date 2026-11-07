@@ -78,7 +78,7 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        [null, '🍂 Composting guide or supply store? Help readers get the right amount. Prompt your own compost tool ➔&nbsp;'],
+                                        [null, ' Composting guide or supply store? Help readers get the right amount. Prompt your own compost tool &nbsp;'],
                                     ],
                                 ],
                             ],

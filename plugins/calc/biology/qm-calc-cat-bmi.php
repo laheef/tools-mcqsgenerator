@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat BMI',
-    'meta' => ['title' => 'Cat BMI Calculator: Formula, Steps & Examples', 'description' => 'Cat BMI works out FBMI from rib cage circumference and length of the lower back leg. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Cat BMI Calculator', 'updated' => '2026-09-05'],
+    'meta' => ['title' => 'Cat BMI Calculator: Formula, Steps & Examples', 'description' => 'Cat BMI works out FBMI from rib cage circumference and length of the lower back leg. No sign-up: type the numbers, press Calculate and read the answer.', 'h1' => 'Cat BMI Calculator', 'updated' => '2026-09-05'],
     'sections' => [
         [
             'title' => '',

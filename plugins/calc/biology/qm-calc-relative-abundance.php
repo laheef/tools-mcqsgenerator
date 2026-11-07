@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Relative Abundance Calculator',
-    'meta' => ['title' => 'Relative Abundance Calculator — Formula & Results', 'description' => 'Relative Abundance Calculator reports species 1 relative abundance and species 2 relative abundance. Every box can be solved for, not only the one in the title.', 'h1' => 'Relative Abundance Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Relative Abundance Calculator — Formula & Results', 'description' => 'Relative Abundance Calculator reports species 1 relative abundance and species 2 relative abundance. Free to use, with the working shown beside the answer.', 'h1' => 'Relative Abundance Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mitotic Index Calculator',
-    'meta' => ['title' => 'Mitotic Index Calculator — Formula & Results', 'description' => 'Mitotic Index Calculator works out mitotic cells per 1000 from total cells counted and cells in mitosis. The formula is printed in the form\'s own words.', 'h1' => 'Mitotic Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mitotic Index Calculator — Formula & Results', 'description' => 'Mitotic Index Calculator works out mitotic cells per 1000 from total cells counted and cells in mitosis. Free to use, with the working shown beside the answer.', 'h1' => 'Mitotic Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fish Density Calculator',
-    'meta' => ['title' => 'Fish Density Calculator — Formula & Results', 'description' => 'Enter number of fish, water volume and average fish weight and Fish Density Calculator returns fish per litre and litres per fish. Every figure is computed.', 'h1' => 'Fish Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fish Density Calculator — Formula & Results', 'description' => 'Enter number of fish, water volume and average fish weight and Fish Density Calculator returns fish per litre and litres per fish. It returns fish per litre.', 'h1' => 'Fish Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

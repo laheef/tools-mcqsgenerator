@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree height',
-    'meta' => ['title' => 'Tree height Calculator: Formula, Steps & Examples', 'description' => 'Tree height turns method, tree location and distance from the tree into eye level. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Tree height Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Tree height Calculator: Formula, Steps & Examples', 'description' => 'Tree height turns method, tree location and distance from the tree into eye level. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Tree height Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => '',

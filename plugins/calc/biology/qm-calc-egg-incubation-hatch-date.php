@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Egg Incubation Hatch Date Calculator',
-    'meta' => ['title' => 'Egg Incubation Hatch Date Calculator — Biology', 'description' => 'Egg Incubation Hatch Date Calculator takes species and returns incubation period. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Egg Incubation Hatch Date Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Egg Incubation Hatch Date Calculator — Biology', 'description' => 'Egg Incubation Hatch Date Calculator takes the species and the day the eggs were set and returns the hatch, candle and lockdown dates. Set eggs, read dates.', 'h1' => 'Egg Incubation Hatch Date Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

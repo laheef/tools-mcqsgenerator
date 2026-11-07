@@ -167,11 +167,11 @@ return [
                                 [
                                     't' => 'x',
                                     'c' => [
-                                        ['methyl<15.01', '✅ Your dog\'s going to be OK.'],
-                                        ['methyl<34.02 and methyl>=15.01', '❌ Your pet may suffer from diarrhea and vomiting.'],
-                                        ['methyl<45 and  methyl>=34.02', '❗ Your pet may experience rapid heart rate (tachyarrhythmia), diarrhea, and vomiting. Find help immediately.'],
-                                        ['methyl<55.01 and  methyl>=45', '❗ Your pet may experience tremors and seizures. Find help immediately.'],
-                                        ['methyl>=55.01', '💀❗ Your pet\'s at risk of death. Find help immediately.'],
+                                        ['methyl<15.01', ' Your dog\'s going to be OK.'],
+                                        ['methyl<34.02 and methyl>=15.01', ' Your pet may suffer from diarrhea and vomiting.'],
+                                        ['methyl<45 and  methyl>=34.02', ' Your pet may experience rapid heart rate (tachyarrhythmia), diarrhea, and vomiting. Find help immediately.'],
+                                        ['methyl<55.01 and  methyl>=45', ' Your pet may experience tremors and seizures. Find help immediately.'],
+                                        ['methyl>=55.01', ' Your pet\'s at risk of death. Find help immediately.'],
                                         [null, 'Caffeine dose received: {{caffeine.value}}&nbsp;mg/kg Theobromine dose received: {{theobromine.value}}&nbsp;mg/kg Methylxantines = Theobromine + Caffeine'],
                                         [null, 'Consult your vet in case of any doubt, suspicious behavior or worsening state of your pet.'],
                                     ],

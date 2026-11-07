@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fish Per Liter Calculator',
-    'meta' => ['title' => 'Fish Per Liter Calculator — Formula & Results', 'description' => 'Fish Per Liter Calculator works out fish per litre and litres per fish from number of fish and tank volume. The formula is printed in the form\'s own words.', 'h1' => 'Fish Per Liter Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fish Per Liter Calculator — Formula & Results', 'description' => 'Fish Per Liter Calculator works out fish per litre and litres per fish from number of fish and tank volume. Both fish per litre and litres per fish come back.', 'h1' => 'Fish Per Liter Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

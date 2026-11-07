@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Acres per hour',
-    'meta' => ['title' => 'Acres per hour Calculator — Formula & Results', 'description' => 'Acres per hour works out area per hour and time to complete and reports both. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Acres per hour Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Acres per hour Calculator — Formula & Results', 'description' => 'Acres per hour works out area per hour and time to complete and reports both. Enter tool\'s width and speed; the answer follows without a table lookup.', 'h1' => 'Acres per hour Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => '',

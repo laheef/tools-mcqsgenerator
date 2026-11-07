@@ -63,9 +63,9 @@ foreach ($calc['groups'] as $group) {
 
                 // unit selection
                 $unitKey = $field['unitSwitcher'] ?? null;
+                $declared = (string) ($varDef['defaultUnit'] ?? '');
                 if ($unitKey !== null && $units->supported($unitKey)) {
-                    $allowed = array_keys($units->options($unitKey));
-                    $declared = (string) ($varDef['defaultUnit'] ?? '');
+                    $allowed = array_keys($units->options($unitKey, $declared !== '' ? $declared : null));
                     if ($declared !== '' && !in_array($declared, $allowed, true)) {
                         // The field opens in a compound unit ("deg min sec").
                         // There is no factor that turns that into one number, so
@@ -77,7 +77,7 @@ foreach ($calc['groups'] as $group) {
                     $unitKey = null;
                 }
                 if ($unitKey !== null && $units->supported($unitKey)) {
-                    $allowed = array_keys($units->options($unitKey));
+                    $allowed = array_keys($units->options($unitKey, $declared !== '' ? $declared : null));
                     $wanted  = isset($_GET[$name . '_unit']) ? (string) $_GET[$name . '_unit'] : '';
                     $start = (string) ($varDef['defaultUnit'] ?? '');
                     if (!in_array($start, $allowed, true)) {

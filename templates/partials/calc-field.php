@@ -38,6 +38,7 @@ $id = 'f-' . preg_replace('/[^A-Za-z0-9_-]/', '-', (string) ($f['name'] ?? 'fiel
                 data-unit="<?= View::escape((string) ($f['unit'] ?? '')) ?>"
                 value="<?= View::escape($f['value']) ?>"
                 aria-label="<?= View::escape($f['label'] !== '' ? $f['label'] : $f['name']) ?>"
+                <?= !empty($f['range']) ? 'data-range-min="' . View::escape((string) $f['range']['min']) . '" data-range-max="' . View::escape((string) $f['range']['max']) . '" data-range-why="' . View::escape((string) $f['range']['text']) . '"' . (!empty($f['range']['factors']) ? ' data-range-factors="' . View::escape(json_encode($f['range']['factors'])) . '"' : '') : '' ?>
                 <?= $f['outputOnly'] ? 'readonly' : '' ?>
             >
 

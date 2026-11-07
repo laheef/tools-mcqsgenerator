@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Crickets chirping thermometer',
-    'meta' => ['title' => 'Crickets chirping thermometer — Formula & Results', 'description' => 'Crickets chirping thermometer works out temperature from formula and cricket chirps. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Crickets chirping thermometer Calculator', 'updated' => '2025-12-18'],
+    'meta' => ['title' => 'Crickets chirping thermometer — Formula & Results', 'description' => 'Crickets chirping thermometer works out temperature from formula and cricket chirps. Runs in the browser, so the numbers never leave the page. No sign-up.', 'h1' => 'Crickets chirping thermometer Calculator', 'updated' => '2025-12-18'],
     'sections' => [
         [
             'title' => '',

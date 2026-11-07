@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat calorie',
-    'meta' => ['title' => 'Cat calorie Calculator: Formula, Steps & Examples', 'description' => 'Cat calorie turns weight, condition and maintenance coefficient into resting energy and maintenance energy. The formula is printed in the form\'s own words.', 'h1' => 'Cat calorie Calculator', 'updated' => '2026-07-23'],
+    'meta' => ['title' => 'Cat calorie Calculator: Formula, Steps & Examples', 'description' => 'Cat calorie turns weight, condition and maintenance coefficient into resting energy and maintenance energy. Enter weight and condition; the answer follows.', 'h1' => 'Cat calorie Calculator', 'updated' => '2026-07-23'],
     'sections' => [
         [
             'title' => '',

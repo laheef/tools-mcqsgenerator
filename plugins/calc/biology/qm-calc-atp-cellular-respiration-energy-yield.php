@@ -11,7 +11,7 @@
 
 return [
     'name' => 'ATP / Cellular Respiration Energy Yield Calculator',
-    'meta' => ['title' => 'ATP / Cellular Respiration Energy Yield Calculator', 'description' => 'ATP / Cellular Respiration Energy Yield Calculator turns fuel and NADH produced into total ATP. Every box can be solved for, not only the one in the title.', 'h1' => 'ATP / Cellular Respiration Energy Yield Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'ATP / Cellular Respiration Energy Yield Calculator', 'description' => 'ATP / Cellular Respiration Energy Yield Calculator turns fuel and NADH produced into total ATP. It returns total ATP and shows the arithmetic behind it.', 'h1' => 'ATP / Cellular Respiration Energy Yield Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

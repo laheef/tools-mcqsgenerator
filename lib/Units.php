@@ -122,7 +122,21 @@ final class Units
         return (string) ($def['full'] ?? $def['name'] ?? $unit);
     }
 
-    public function options(?string $key): array
+    /**
+     * The units a chip may offer.
+     *
+     * The pool a switcher holds is shared by every page that uses it, and it is
+     * far wider than any one box needs: the mass switcher holds Suns and Earths
+     * because something somewhere weighs a planet, and a dog's weight in Earths
+     * is not a choice worth offering. When `$around` names the unit the box
+     * itself is in, the list is cut to the units within ten-thousand-fold of it
+     * — mg to kg on a dose page, g to a tonne on a feed page — which keeps every
+     * sensible conversion and drops the astronomical end of the pool.
+     *
+     * Kelvin-to-the-kilo and its friends are dropped outright: they are
+     * intervals, not temperatures, and no page means "-80 K_centi".
+     */
+    public function options(?string $key, ?string $around = null): array
     {
         $sw = $this->switcher($key);
         if (!$sw) {
@@ -130,8 +144,33 @@ final class Units
         }
         $units = [];
         foreach ($sw['units'] as $slug => $u) {
+            if (preg_match('/^K_/', (string) $slug) === 1) {
+                continue;
+            }
             if ($this->isLinear((string) $u['expr'])) {
                 $units[$slug] = $u;
+            }
+        }
+        $ref = $around !== null && isset($units[$around]) ? $around : null;
+        if ($ref !== null) {
+            [$c, $k] = $this->linear((string) $units[$ref]['expr']);
+            if ($k !== null && $k != 0.0) {
+                $wanted = [];
+                foreach ($units as $slug => $u) {
+                    if ((string) $slug === $ref) {
+                        $wanted[$slug] = $u;
+                        continue;
+                    }
+                    [, $ku] = $this->linear((string) $u['expr']);
+                    if ($ku === null || $ku == 0.0) {
+                        continue;
+                    }
+                    $ratio = abs($k / $ku);      // one unit of $u, measured in $ref
+                    if ($ratio >= 1e-4 && $ratio <= 1e4) {
+                        $wanted[$slug] = $u;
+                    }
+                }
+                $units = $wanted;
             }
         }
         $order = [];
@@ -146,6 +185,28 @@ final class Units
             }
         }
         return $order;
+    }
+
+    /**
+     * Every linear unit of a switcher, before the chip is cut around a box's own
+     * unit. The article's unit counts are written against this list, so the
+     * trimming pass can tell "28 units" from "8 units".
+     *
+     * @return array<string,array{name:string,full:string,expr:string}>
+     */
+    public function pool(?string $key): array
+    {
+        $sw = $this->switcher($key);
+        if (!$sw) {
+            return [];
+        }
+        $units = [];
+        foreach ($sw['units'] as $slug => $u) {
+            if ($this->isLinear((string) $u['expr'])) {
+                $units[$slug] = $u;
+            }
+        }
+        return $units;
     }
 
     public function defaultUnit(?string $key): ?string

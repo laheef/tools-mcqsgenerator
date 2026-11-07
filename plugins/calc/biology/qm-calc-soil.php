@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Soil',
-    'meta' => ['title' => 'Soil Calculator — Free, With Worked Examples', 'description' => 'Soil takes length, width and depth and returns area and volume needed. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Soil Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Soil Calculator — Free, With Worked Examples', 'description' => 'Soil takes length, width and depth and returns area and volume needed. Press Calculate once and every figure on the page is refreshed together. No sign-up.', 'h1' => 'Soil Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => 'How much soil do you need?',

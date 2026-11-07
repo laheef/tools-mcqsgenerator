@@ -473,6 +473,11 @@ final class Widget
         $label = (string) preg_replace('~\{\{[^{}]{0,60}\}\}~u', '', $label);
         $label = str_replace(['^^', '**', '__'], '', $label);
         $label = (string) preg_replace('~==(.+?)==~u', '$1', $label);
+        // A label is text. An emoji harvested with it ("\u{1f999} Due date", a
+        // check-mark bullet) is decoration from the reference page, not part of
+        // the field's name, and it has no place in the form or in the article.
+        $label = (string) preg_replace('~[\x{1F000}-\x{1FAFF}\x{2600}-\x{27BF}\x{2B00}-\x{2BFF}\x{FE0F}]+~u', '', $label);
+        $label = (string) preg_replace('~(\s)\s+~u', '$1', $label);
         $label = (string) preg_replace('~\(\s*required\s*\)~i', '', $label);
         // a token that was the only thing inside the brackets leaves an empty pair:
         // the currency converter used to read "From currency ()"
@@ -517,6 +522,7 @@ final class Widget
         $text = str_replace(["\u{00a0}", '&nbsp;'], ' ', $text);
         $text = (string) preg_replace('~\^\^(.+?)\^\^~u', '^$1', $text);
         $text = (string) preg_replace('~==(.+?)==~u', '$1', $text);
+        $text = (string) preg_replace('~[\x{1F000}-\x{1FAFF}\x{2600}-\x{27BF}\x{2B00}-\x{2BFF}\x{FE0F}]+~u', '', $text);
         $text = (string) preg_replace('~\*\*(.+?)\*\*~us', '$1', $text);
         $text = str_replace(['**', '^^'], '', $text);
         $text = (string) preg_replace('~\s+~', ' ', $text);
@@ -634,7 +640,7 @@ final class Widget
             if (!$this->units->offers($unitKey, $selectedUnit)) {
                 $selectedUnit = $this->units->defaultUnit($unitKey);
             }
-            foreach ($this->units->options($unitKey) as $slug => $u) {
+            foreach ($this->units->options($unitKey, $selectedUnit) as $slug => $u) {
                 $unitOptions[] = [
                     'slug' => $slug,
                     'label' => $u['name'],
@@ -821,10 +827,42 @@ final class Widget
             ];
         }
 
+        $range = $this->domainRange(
+            self::fieldLabel($raw, $def, $name),
+            (string) ($raw['suffix'] ?? ''),
+            $selectedUnit
+        );
+        /*
+         * A chip turns the bound into a different number: 100 % is 1 000 ‰ and
+         * 10 000 bps, so the limit has to travel with the unit. The factor is
+         * the unit's own scale against the unit the bound is written in.
+         */
+        if ($range !== null && $unitKey !== null && $unitOptions !== []) {
+            $ref = $selectedUnit !== null
+                ? $this->units->linearPair((string) $unitKey, $selectedUnit)
+                : null;
+            $factors = [];
+            if ($ref !== null && $ref[0] != 0.0) {
+                foreach ($unitOptions as $u) {
+                    $slug = (string) ($u['slug'] ?? '');
+                    if ($slug === '') { continue; }
+                    $pair = $this->units->linearPair((string) $unitKey, $slug);
+                    if ($pair === null || $pair[0] == 0.0) { continue; }
+                    $factors[$slug] = $pair[0] / $ref[0];
+                }
+            }
+            if ($factors !== []) {
+                $range['factors'] = $factors;
+            } else {
+                $range = null;
+            }
+        }
+
         return [
             'kind' => 'number',
             'name' => $name,
             'label' => self::fieldLabel($raw, $def, $name),
+            'range' => $range,
             'prefix' => self::cleanText((string) ($raw['prefix'] ?? '')),
             'suffix' => ($raw['suffix'] ?? '') !== ''
                 ? self::cleanText((string) $raw['suffix'])
@@ -847,6 +885,45 @@ final class Widget
             'unit' => $selectedUnit,
             'unitLabel' => $selectedUnit ? $this->units->label($unitKey, $selectedUnit) : '',
         ];
+    }
+
+    /**
+     * The scale a box lives on, where the page's own words fix one.
+     *
+     * These calculators carry no declared bounds — the harvest never recorded
+     * them — but three scales can be read straight off the label and the unit,
+     * and they are the ones where an out-of-range number returns a confident,
+     * wrong answer instead of an error. Anything else keeps no bound: a range
+     * invented for a box that has none would refuse honest values.
+     *
+     * @return array{min:float,max:float,unit:string,text:string}|null
+     */
+    private function domainRange(string $label, string $suffix, ?string $unit): ?array
+    {
+        $l = mb_strtolower($label);
+        $s = trim($suffix);
+        /*
+         * A change is not a share. "Percent change" and "difference from the
+         * input" are signed and unbounded — a fold change of 4x is a 300 % rise
+         * — so a 0-to-100 rule there would refuse honest answers.
+         */
+        if (preg_match('~\b(change|difference|deviation|delta)\b~', $l) === 1) {
+            return null;
+        }
+        if ($s === '%' || str_contains($s, '%') || preg_match('~\bpercent(age)?\b~', $l) === 1
+            || in_array((string) $unit, ['perc', 'percent', 'percent-us'], true)) {
+            return ['min' => 0.0, 'max' => 100.0, 'unit' => '%',
+                'text' => 'a percentage runs from 0 to 100'];
+        }
+        if (preg_match('~^ph\b|\bph\b~', $l) === 1) {
+            return ['min' => 0.0, 'max' => 14.0, 'unit' => '',
+                'text' => 'pH runs from 0 to 14'];
+        }
+        if (preg_match('~\b(probability|proportion|allele frequency|frequency of|mole fraction|allele freq)\b~', $l) === 1) {
+            return ['min' => 0.0, 'max' => 1.0, 'unit' => '',
+                'text' => 'a probability runs from 0 to 1'];
+        }
+        return null;
     }
 
     /**

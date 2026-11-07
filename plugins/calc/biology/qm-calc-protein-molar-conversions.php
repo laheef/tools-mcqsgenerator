@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein Molar Conversions',
-    'meta' => ['title' => 'Protein Molar Conversions — Formula & Results', 'description' => 'Protein Molar Conversions works out molar concentration from molecular weight. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Protein Molar Conversions', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Protein Molar Conversions — Formula & Results', 'description' => 'Protein Molar Conversions works out molar concentration from molecular weight. The answer, amount per mL, is worked out in one step from the boxes you fill.', 'h1' => 'Protein Molar Conversions', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Agarose Gel Calculator (gel percentage and loading)',
-    'meta' => ['title' => 'Agarose Gel (gel percentage and loading) Calculator', 'description' => 'Agarose Gel Calculator (gel percentage and loading) works out agarose to weigh out. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Agarose Gel Calculator (gel percentage and loading)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Agarose Gel (gel percentage and loading) Calculator', 'description' => 'Agarose Gel Calculator (gel percentage and loading) works out agarose to weigh out. No sign-up: type the numbers, press Calculate and read the answer.', 'h1' => 'Agarose Gel Calculator (gel percentage and loading)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

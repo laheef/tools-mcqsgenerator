@@ -11,7 +11,7 @@
 
 return [
     'name' => 'FWHR (Facial Width-to-Height Ratio) Calculator',
-    'meta' => ['title' => 'FWHR (Facial Width-to-Height Ratio) Calculator', 'description' => 'FWHR (Facial Width-to-Height Ratio) Calculator works out FWHR scaled ×100. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'FWHR (Facial Width-to-Height Ratio) Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'FWHR (Facial Width-to-Height Ratio) Calculator', 'description' => 'FWHR (Facial Width-to-Height Ratio) Calculator works out FWHR scaled ×100. Press Calculate once and every figure on the page is refreshed together. Free.', 'h1' => 'FWHR (Facial Width-to-Height Ratio) Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

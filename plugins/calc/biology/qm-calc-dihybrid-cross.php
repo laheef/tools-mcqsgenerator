@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dihybrid Cross Calculator (9:3:3:1)',
-    'meta' => ['title' => 'Dihybrid Cross Calculator (9:3:3:1) — Biology', 'description' => 'Dihybrid Cross Calculator (9:3:3:1) turns f2 offspring into dominant / dominant and dominant / recessive. The formula is printed in the form\'s own words.', 'h1' => 'Dihybrid Cross Calculator (9:3:3:1)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Dihybrid Cross Calculator (9:3:3:1) — Biology', 'description' => 'Dihybrid Cross Calculator splits a given number of F2 offspring into the 9:3:3:1 phenotypic classes for two unlinked genes. Counts come back as whole animals.', 'h1' => 'Dihybrid Cross Calculator (9:3:3:1)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

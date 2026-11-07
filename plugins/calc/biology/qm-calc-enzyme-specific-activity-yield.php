@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Enzyme Kinetics: Specific Activity and Yield',
-    'meta' => ['title' => 'Enzyme Kinetics: Specific Activity and Yield', 'description' => 'Enzyme Kinetics: Specific Activity and Yield works out starting specific activity. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Enzyme Kinetics: Specific Activity and Yield', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Enzyme Kinetics: Specific Activity and Yield', 'description' => 'Enzyme Kinetics: Specific Activity and Yield works out starting specific activity. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Enzyme Kinetics: Specific Activity and Yield', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
