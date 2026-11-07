@@ -3467,12 +3467,14 @@ a:focus-visible > .calc-glyph,
   display: flex; flex-wrap: nowrap;
   height: 44px; align-items: center;
   /* The gap plus each link's own padding is the air between one section and the
-     next — 30px in all, so a boundary is visible without a rule in the row. */
-  gap: 10px;
+     next — 21px in all. Thirty was too wide: at sixteen sections it read as
+     twelve gaps rather than one row, and it pushed three sections off the right
+     edge. Twenty-one still separates two names clearly without a rule. */
+  gap: 5px;
 }
 .category-nav-link {
   display: inline-flex; align-items: center; gap: 5px;
-  height: 44px; padding-block: 0; padding-inline: 10px;
+  height: 44px; padding-block: 0; padding-inline: 8px;
   letter-spacing: -.01em;
 }
 /* The first name lines up with the breadcrumb below it; the padding of the
