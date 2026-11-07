@@ -149,6 +149,7 @@ $controllers = [
     'custom-calculator-edit' => 'custom-calculator-edit.php',
     'custom-import'          => 'custom-import.php',
     'tool-plugins'           => 'tool-plugins.php',
+    'calc-files'             => 'calc-files.php',
     'tool-groups'            => 'tool-groups.php',
     'tool-new'               => 'tool-new.php',
     /* Editing a tool page opens the same one-screen form that created it. */
@@ -197,6 +198,7 @@ $roleFor = [
     'custom-calculator-edit' => 'custom-calculators',
     'custom-import'          => 'custom-calculators',
     'tool-plugins'           => 'custom-calculators',
+    'calc-files'             => 'custom-calculators',
     'tool-groups'            => 'tool-groups',
     'tool-new'               => 'custom-calculators',
     'tool-edit'              => 'custom-calculators',

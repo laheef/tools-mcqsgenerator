@@ -25,6 +25,7 @@ $toolsTab = (string) ($toolsTab ?? 'tools');
 $tabs = [
     'tools'     => ['label' => 'Tools', 'page' => 'custom-calculators', 'icon' => 'star'],
     'files'     => ['label' => 'Tool files', 'page' => 'tool-plugins', 'icon' => 'code'],
+    'calc-files' => ['label' => 'Calculator files', 'page' => 'calc-files', 'icon' => 'file'],
     'libraries' => ['label' => 'Libraries', 'page' => 'libraries', 'icon' => 'download'],
     'sections'  => ['label' => 'Sections', 'page' => 'tool-groups', 'icon' => 'grid'],
 ];

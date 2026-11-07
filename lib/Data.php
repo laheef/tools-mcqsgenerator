@@ -155,6 +155,40 @@ final class Data
             }
         }
 
+        /*
+         * Calculator files that are not a converted catalogue page — a page
+         * written as a file from the start. It gets a row of its own so it
+         * routes, lists, searches, sitemaps and counts like everything else.
+         */
+        if (class_exists(CalcFile::class)) {
+            foreach (CalcFile::manifest() as $path => $file) {
+                if (isset($byPath[$path]) || $file['error'] !== '') {
+                    continue;
+                }
+                $cat  = (string) $file['cat'];
+                $slug = (string) $file['slug'];
+                $row = [
+                    'path'        => $path,
+                    'cat'         => $cat,
+                    'slug'        => $slug,
+                    'name'        => self::cleanName($file['name']),
+                    'rawName'     => $file['name'],
+                    'title'       => $file['name'],
+                    'description' => self::cleanDescription($file['description'], $file['name']),
+                    'file'        => $path,
+                    'calcFile'    => true,
+                    'sourcePath'  => $path,
+                    'sourceCat'   => $cat,
+                    'sourceSlug'  => $slug,
+                    'status'      => 'published',
+                    'sortOrder'   => 0,
+                    'featured'    => false,
+                ];
+                $rows[] = $row;
+                $byPath[$path] = $row;
+            }
+        }
+
         self::$rows = $rows;
         self::$byPath = $byPath;
         return $rows;
@@ -293,6 +327,15 @@ final class Data
             }
             fclose($fh);
         }
+        /* A calculator file carries its own date; a converted page must not
+           keep the shard's older one. */
+        if (class_exists(CalcFile::class)) {
+            foreach (CalcFile::manifest() as $path => $file) {
+                if ($file['updated'] !== '') {
+                    $map[$path] = $file['updated'];
+                }
+            }
+        }
         return self::$updatedMap = $map;
     }
 
@@ -350,6 +393,15 @@ final class Data
 
     private static function readRecord(array $row): ?array
     {
+        /* A calculator maintained as its own file (plugins/calc/…) is built
+           from that file and nothing else. Converting a page is writing the
+           file; deleting it puts the harvested record back. */
+        if (class_exists(CalcFile::class)) {
+            $file = CalcFile::record((string) ($row['sourcePath'] ?? $row['path'] ?? ''));
+            if ($file !== null) {
+                return $file;
+            }
+        }
         if (isset($row['customId'])) {
             $custom = CustomCalc::find((int) $row['customId']);
             if ($custom === null) {
@@ -397,8 +449,12 @@ final class Data
             ? CustomCalc::findByPath('/' . $cat . '/' . $slug)
             : null;
 
+        /* The article lives in the calculator's own file when it has one. */
+        $fromFile = class_exists(CalcFile::class) ? CalcFile::content('/' . $cat . '/' . $slug) : null;
         if ($custom !== null) {
             $raw = CustomCalc::content($custom);
+        } elseif ($fromFile !== null) {
+            $raw = $fromFile;
         } else {
             $file = self::path('content/' . $cat . '/' . $slug . '.json');
             $raw  = is_file($file) ? json_decode((string) file_get_contents($file), true) : null;

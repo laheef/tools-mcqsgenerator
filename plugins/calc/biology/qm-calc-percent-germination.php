@@ -1,0 +1,135 @@
+<?php
+
+/**
+ * Percent Germination Calculator
+ * /biology/percent-germination
+ *
+ * One calculator, one file. Edit the form, the formulas or the
+ * article here; the page is rebuilt from this file on the next
+ * request. See docs/calc-files.md for the format.
+ */
+
+return [
+    'name' => 'Percent Germination Calculator',
+    'meta' => ['title' => 'Percent Germination Calculator — Formula & Results', 'description' => 'Percent germination is germinated seeds divided by seeds sown — the number on a seed packet, and the number that decides how much seed to buy.', 'h1' => 'Percent Germination Calculator', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'fields' => [
+                        [
+                            'name' => 'germinated',
+                            'label' => 'Seeds germinated',
+                            'type' => 'number',
+                            'suffix' => 'seeds',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '88',
+                        ],
+                        [
+                            'name' => 'sown',
+                            'label' => 'Seeds sown',
+                            'type' => 'number',
+                            'suffix' => 'seeds',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '100',
+                        ],
+                        [
+                            'name' => 'dead',
+                            'label' => 'Seeds rotted or dead',
+                            'type' => 'number',
+                            'suffix' => 'seeds',
+                            'help' => 'Optional — separates non-viable from dormant',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '5',
+                        ],
+                        [
+                            'name' => 'germination',
+                            'label' => 'Germination',
+                            'type' => 'number',
+                            'suffix' => '%',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'viability',
+                            'label' => 'Viability (germinated + dormant)',
+                            'type' => 'number',
+                            'suffix' => '%',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'seed_needed',
+                            'label' => 'Seeds needed for 10 000 plants',
+                            'type' => 'number',
+                            'suffix' => 'seeds',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'sow_rate',
+                            'label' => 'Sowing rate for 1 000 plants/m²',
+                            'type' => 'number',
+                            'suffix' => 'seeds/m²',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'formula' => [
+        [
+            'title' => 'Germination',
+            'results' => ['germination' => 'germinated/sown*100', 'viability' => '(sown-dead)/sown*100', 'seed_needed' => '10000/(germinated/sown)', 'sow_rate' => '1000/(germinated/sown)'],
+        ],
+    ],
+    'article' => [
+        'intro' => <<<'TXT'
+        Percent germination is germinated seeds divided by seeds sown — the number on a seed packet, and the number that decides how much seed to buy. It returns germination, viability (germinated + dormant), seeds needed for 10 000 plants and sowing rate for 1 000 plants/m², and the panel shows all of them at once.
+        
+        This calculator adds the viability and vigour figures that explain a low result.
+        TXT,
+        'sections' => [
+            ['title' => 'The formula behind the Percent Germination', 'html' => <<<'TXT'
+            <p>Germination (%) = germinated ÷ sown × 100</p>
+            <figure class="calc-figure"><img src="/uploads/biology/percent-germination.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Percent Germination Calculator — Germinated, dormant and dead seed in a test lot." title="Percent Germination Calculator"><figcaption>Germinated, dormant and dead seed in a test lot.</figcaption></figure>
+            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>germinated</code></td><td>seeds that produced a normal seedling</td><td>seeds</td></tr><tr><td><code>sown</code></td><td>seeds placed on the test</td><td>seeds</td></tr><tr><td><code>germination</code></td><td>the percentage</td><td>%</td></tr></tbody></table>
+            TXT],
+            ['title' => 'How do I use the Percent Germination?', 'html' => <<<'TXT'
+            <ol><li>Enter the values you already have. Every box accepts a decimal point and a minus sign; thousands separators are ignored.</li><li>The grey boxes are results: they are worked out from your inputs and cannot be typed into.</li><li>Press <strong>Calculate</strong>. </li></ol>
+            TXT],
+            ['title' => 'A worked example', 'html' => <<<'TXT'
+            <p>Take the default values the page opens with: seeds germinated of <strong>88</strong> seeds, seeds sown of <strong>100</strong> seeds, seeds rotted or dead of <strong>5</strong> seeds.</p>
+            <p>Substituting them into the formula gives germination of <strong>88</strong>%, viability (germinated + dormant) of <strong>95</strong>%, seeds needed for 10 000 plants of <strong>11,363.64</strong> seeds, sowing rate for 1 000 plants/m² of <strong>1,136.36</strong> seeds/m².</p>
+            TXT],
+            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
+            <p> The usual bands are:</p>
+            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>above 90%</td><td><strong>Excellent</strong></td><td>sow at the planned rate</td></tr><tr><td>70 – 90%</td><td><strong>Acceptable</strong></td><td>increase the rate by the shortfall</td></tr><tr><td>below 70%</td><td><strong>Poor</strong></td><td>check storage, seed lot age and test conditions</td></tr></tbody></table>
+            <ul><li><p>Standard tests count normal seedlings under specified conditions — 20 °C for most vegetables, alternating temperatures for grasses.</p></li><li><p>Dormant seed is viable but not counted as germinated; a tetrazolium test separates dormancy from death.</p></li><li><p>Vigour (how fast and uniformly seedlings emerge) predicts field establishment better than germination percentage alone.</p></li></ul>
+            TXT],
+            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
+            <p>Before blaming the formula, check these — they explain nearly every mismatch:</p><ul><li>Counting abnormal seedlings as germinated.</li><li>Testing too few seeds — 100 is the minimum for a useful percentage.</li><li>Testing freshly harvested seed that is still dormant.</li></ul>
+            TXT],
+        ],
+        'faq' => [
+            ['q' => 'How many seeds do I need for a 95% germination rate and 10 000 plants?', 'a' => 'About 10 526 seeds.'],
+            ['q' => 'Why is field emergence lower than the test result?', 'a' => 'Soil temperature, crusting, pathogens and sowing depth all reduce it.'],
+            ['q' => 'What does the Percent Germination actually calculate?', 'a' => <<<'TXT'
+            It returns germination, viability (germinated + dormant), seeds needed for 10 000 plants and sowing rate for 1 000 plants/m². Each one is derived by the formula on this page, so you can check any figure by hand.
+            TXT],
+            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
+            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            TXT],
+            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
+            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            TXT],
+            ['q' => 'Can I use it with the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit, and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+        ],
+        'related' => [],
+    ],
+];

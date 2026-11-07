@@ -41,7 +41,13 @@ final class FileRepo
     public const EDITABLE = ['php', 'js', 'css', 'json', 'md', 'txt', 'html', 'htaccess'];
 
     /** Folders that may be edited, relative to the project root. */
-    private const ROOTS = ['lib', 'templates', 'assets/js', 'assets/css', 'modules', 'admin/lib', 'admin/views', 'admin/assets', 'data/cache', 'tests', 'docs'];
+    private const ROOTS = [
+        'lib', 'templates', 'assets/js', 'assets/css', 'modules',
+        'admin/lib', 'admin/views', 'admin/assets', 'data/cache', 'tests', 'docs',
+        /* Tool files and calculator files live here; both are meant to be
+           opened and saved from the panel. */
+        'plugins',
+    ];
 
     /** Files an editor may open but never save or delete. */
     private const READ_ONLY = ['config.php', 'config.db.php', 'router.php', 'index.php', 'api.php', '.htaccess'];

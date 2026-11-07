@@ -1,0 +1,155 @@
+<?php
+
+/**
+ * Crop Coefficient Calculator
+ * /biology/crop-coefficient
+ *
+ * One calculator, one file. Edit the form, the formulas or the
+ * article here; the page is rebuilt from this file on the next
+ * request. See docs/calc-files.md for the format.
+ */
+
+return [
+    'name' => 'Crop Coefficient Calculator',
+    'meta' => ['title' => 'Crop Coefficient Calculator — Formula & Results', 'description' => 'The crop coefficient converts the reference evapotranspiration of a well-watered grass crop into what your crop actually uses: ETc = Kc × ETo.', 'h1' => 'Crop Coefficient Calculator', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'fields' => [
+                        [
+                            'name' => 'eto',
+                            'label' => 'Reference evapotranspiration',
+                            'type' => 'number',
+                            'suffix' => 'mm/day',
+                            'help' => 'From a weather station or a local network — the daily reference for grass',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '5',
+                        ],
+                        [
+                            'name' => 'kc',
+                            'label' => 'Crop coefficient',
+                            'type' => 'number',
+                            'help' => '0.3 at establishment, 1.0–1.2 mid-season',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '1.05',
+                        ],
+                        [
+                            'name' => 'etc',
+                            'label' => 'Crop water use',
+                            'type' => 'number',
+                            'suffix' => 'mm/day',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'litres_m2',
+                            'label' => 'Crop water use',
+                            'type' => 'number',
+                            'suffix' => 'L/m²/day',
+                            'help' => '1 mm on 1 m² is 1 litre',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'litres_ha',
+                            'label' => 'Water per hectare',
+                            'type' => 'number',
+                            'suffix' => 'm³/day',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'rain',
+                            'label' => 'Effective rainfall',
+                            'type' => 'number',
+                            'suffix' => 'mm/day',
+                            'help' => 'Leave at 0 if none',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '0',
+                        ],
+                        [
+                            'name' => 'irrigation',
+                            'label' => 'Irrigation needed',
+                            'type' => 'number',
+                            'suffix' => 'mm/day',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'weekly',
+                            'label' => 'Irrigation per week',
+                            'type' => 'number',
+                            'suffix' => 'mm',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'formula' => [
+        [
+            'title' => 'Water use',
+            'results' => [
+                'etc' => 'eto*kc',
+                'litres_m2' => 'eto*kc',
+                'litres_ha' => 'eto*kc*10',
+                'irrigation' => 'eto*kc-rain',
+                'weekly' => '(eto*kc-rain)*7',
+            ],
+        ],
+    ],
+    'article' => [
+        'intro' => <<<'TXT'
+        The crop coefficient converts the reference evapotranspiration of a well-watered grass crop into what your crop actually uses: ETc = Kc × ETo. It returns crop water use, crop water use, water per hectare and irrigation needed, and the panel shows all of them at once.
+        
+        It is the standard first step of irrigation scheduling, and the Kc changes with growth stage, so a maize field in July uses three times the water it used in June.
+        TXT,
+        'sections' => [
+            ['title' => 'The formula behind the Crop Coefficient', 'html' => <<<'TXT'
+            <p>ETc = Kc × ETo. Irrigation (mm) = ETc − effective rainfall. 1 mm over 1 ha is 10 m³ of water</p>
+            <figure class="calc-figure"><img src="/uploads/biology/crop-coefficient.svg" width="720" height="300" loading="lazy" alt="Animated diagram: Crop Coefficient Calculator — Crop coefficient over a growing season" title="Crop Coefficient Calculator"><figcaption>Crop coefficient over a growing season</figcaption></figure>
+            <table><caption>The symbols in the formula</caption><thead><tr><th>Symbol</th><th>What it stands for</th><th>Unit</th></tr></thead><tbody><tr><td><code>ETo</code></td><td>reference evapotranspiration of a grass crop</td><td>mm/day</td></tr><tr><td><code>Kc</code></td><td>crop coefficient, a factor by growth stage</td><td>—</td></tr><tr><td><code>ETc</code></td><td>crop evapotranspiration, the water the crop actually uses</td><td>mm/day</td></tr></tbody></table>
+            TXT],
+            ['title' => 'How do I use the Crop Coefficient?', 'html' => <<<'TXT'
+            <p>The form asks only for what the formula needs — nothing is optional decoration.</p>
+            <ol><li>Enter the reference evapotranspiration from your weather source, in mm per day.</li><li>Enter the crop coefficient for the growth stage the crop is in.</li><li>Read the water use in mm and litres per square metre, and subtract any effective rainfall to get the irrigation needed.</li></ol>
+            TXT],
+            ['title' => 'A worked example', 'html' => <<<'TXT'
+            <p>Take the default values the page opens with: reference evapotranspiration of <strong>5</strong> mm/day, crop coefficient of <strong>1.05</strong>, effective rainfall of <strong>0</strong> mm/day.</p>
+            <p>Substituting them into the formula gives crop water use of <strong>5.25</strong> mm/day, crop water use of <strong>5.25</strong> L/m²/day, water per hectare of <strong>52.5</strong> m³/day, irrigation needed of <strong>5.25</strong> mm/day, irrigation per week of <strong>36.75</strong> mm.</p>
+            TXT],
+            ['title' => 'What does the result mean?', 'html' => <<<'TXT'
+            <p> Here is the scale that goes with this one:</p>
+            <table><caption>How to read the result</caption><thead><tr><th>Result</th><th>Band</th><th>What it means</th></tr></thead><tbody><tr><td>Kc 0.2 – 0.4</td><td><strong>Establishment</strong></td><td>bare soil and tiny plants lose little</td></tr><tr><td>Kc 0.7 – 0.9</td><td><strong>Development</strong></td><td>canopy closing, water use climbing</td></tr><tr><td>Kc 1.0 – 1.2</td><td><strong>Mid-season</strong></td><td>full canopy and maximum water use</td></tr><tr><td>above 1.2</td><td><strong>Very high</strong></td><td>certain crops and orchard canopies, or advection</td></tr></tbody></table>
+            <ul><li><p>ETo is a property of the weather, Kc is a property of the crop, and their product is what the root zone must replace. Keeping the two separate is what makes the method portable between sites.</p></li><li><p>The coefficient is not constant: for most field crops it runs 0.3 early, about 1.0 at full canopy, and 0.5 again at senescence.</p></li><li><p>1 mm of water over 1 m² is 1 litre. That single identity converts every meteorological figure into a volume you can pump.</p></li></ul>
+            TXT],
+            ['title' => 'What are the common mistakes?', 'html' => <<<'TXT'
+            <p> The usual culprits:</p><ul><li>Using a single Kc for the whole season instead of the growth-stage values.</li><li>Treating rainfall as fully effective — heavy storms mostly run off.</li><li>Scheduling by the calendar rather than by the accumulated ETc since the last irrigation.</li></ul>
+            TXT],
+            ['title' => 'Calculators that go with this one', 'html' => <<<'TXT'
+            <p>If you need the rest of the working, these cover the adjacent quantities:</p><p><a href="/biology/plants-per-hectare">Plants per hectare</a>. <a href="/ecology/water-demand">Water demand</a>. <a href="/biology/lawn-fertilizer-rate">Lawn fertiliser rate</a>.</p>
+            TXT],
+        ],
+        'faq' => [
+            ['q' => 'What is a typical crop coefficient?', 'a' => 'About 1.0–1.2 at full canopy for most field crops, 0.3 at establishment.'],
+            ['q' => 'How much water is 1 mm of ETc per hectare?', 'a' => '10 m³ — 1 mm over 10 000 m² is 10 m³.'],
+            ['q' => 'Where do I get ETo?', 'a' => 'From a local weather network or a reference evapotranspiration service; it is calculated from temperature, humidity, wind and solar radiation.'],
+            ['q' => 'What does the Crop Coefficient actually calculate?', 'a' => <<<'TXT'
+            It returns crop water use, crop water use, water per hectare and irrigation needed. Each one is derived by the formula on this page, so you can check any figure by hand.
+            TXT],
+            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
+            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — and if you change an input, every result updates with it.
+            TXT],
+            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
+            Nearly always a unit or a rounding difference. This calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            TXT],
+        ],
+        'related' => [],
+    ],
+];

@@ -1,0 +1,515 @@
+<?php
+
+/**
+ * DNA to mRNA
+ * /biology/dna-to-mrna
+ *
+ * One calculator, one file. Edit the form, the formulas or the
+ * article here; the page is rebuilt from this file on the next
+ * request. See docs/calc-files.md for the format.
+ */
+
+return [
+    'name' => 'DNA to mRNA',
+    'meta' => ['title' => 'DNA to mRNA Calculator: Formula, Steps & Examples', 'description' => 'The DNA to mRNA calculator turns the input DNA sequence and the input mRNA sequence into the answer. The DNA to mRNA calculator takes the values in the form…', 'h1' => 'DNA to mRNA Calculator', 'updated' => '2026-01-27'],
+    'raw' => [
+        'vars' => [
+            'choice' => [
+                'type' => 'valueSelect',
+                'rnd' => null,
+                'dfl' => [
+                    ['v' => 'CUEgWvImp8RtmGtcgxqQi', 'c' => null],
+                ],
+                'ds' => '_AKF2kJVItM3H1_FhddsK',
+            ],
+            'input_DNA_strand' => ['type' => 'text'],
+            'input_mRNA_strand' => ['type' => 'text'],
+            'dna_out_1' => ['type' => 'numerical'],
+            'mrna_out_1' => ['type' => 'numerical'],
+            'protein_out_1' => ['type' => 'numerical'],
+            'dna_out_2' => ['type' => 'numerical'],
+            'mrna_out_2' => ['type' => 'numerical'],
+            'protein_out_2' => ['type' => 'numerical'],
+        ],
+        'groups' => [
+            [
+                'uid' => 'N2ABS0BRK88SVjd9Ju52B',
+                'title' => '',
+                'desc' => '',
+                'm' => [
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'choice',
+                                    'vt' => 'valueSelect',
+                                    'l' => 'Convert sequence from:',
+                                    'ds' => '_AKF2kJVItM3H1_FhddsK',
+                                    'opts' => [
+                                        ['CUEgWvImp8RtmGtcgxqQi', 'DNA to mRNA', '1'],
+                                        ['h3-f64BZDFZENg5uAiHDO', 'mRNA to DNA', '2'],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'input_DNA_strand',
+                                    'vt' => 'numerical',
+                                    'l' => 'Input DNA sequence',
+                                    'h' => 'DNA uses A, C, G, T. Any other letters or characters (numbers, punctuation, etc.) are ignored automatically.',
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'input_mRNA_strand',
+                                    'vt' => 'numerical',
+                                    'l' => 'Input mRNA sequence',
+                                    'h' => 'mRNA uses A, C, G, U. Any other letters or characters (numbers, punctuation, etc.) are ignored automatically.',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'uid' => 'supp-outputs',
+                'title' => 'Results',
+                'desc' => '',
+                'm' => [
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'dna_out_1',
+                                    'vt' => 'numerical',
+                                    'l' => 'DNA, in codons',
+                                    'oo' => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'mrna_out_1',
+                                    'vt' => 'numerical',
+                                    'l' => 'Messenger RNA transcript',
+                                    'oo' => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'protein_out_1',
+                                    'vt' => 'numerical',
+                                    'l' => 'Protein',
+                                    'oo' => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'dna_out_2',
+                                    'vt' => 'numerical',
+                                    'l' => 'DNA from your messenger RNA',
+                                    'oo' => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'mrna_out_2',
+                                    'vt' => 'numerical',
+                                    'l' => 'Messenger RNA you entered',
+                                    'oo' => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'FR1',
+                        [
+                            [
+                                [
+                                    't' => 'v',
+                                    'n' => 'protein_out_2',
+                                    'vt' => 'numerical',
+                                    'l' => 'Protein from that mRNA',
+                                    'oo' => 1,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        'eq' => [],
+        'datasets' => [
+            '_AKF2kJVItM3H1_FhddsK' => [
+                'name' => 'direction_DS',
+                'uiType' => 'RADIO',
+                'options' => [
+                    ['uid' => 'CUEgWvImp8RtmGtcgxqQi', 'label' => 'DNA to mRNA', 'value' => '1'],
+                    ['uid' => 'h3-f64BZDFZENg5uAiHDO', 'label' => 'mRNA to DNA', 'value' => '2'],
+                ],
+            ],
+        ],
+        'js' => <<<'TXT'
+        "use strict";function insertEveryN(str,n){return str.replace(new RegExp(".{1,"+n+"}","g"),"$& ").trim()}function dnaToMrna(dna){return dna.split("").map(function(b){switch(b){case"A":return"U";case"T":return"A";case"C":return"G";case"G":return"C";default:return""}}).join("")}function mrnaToDna(mrna){return mrna.split("").map(function(b){switch(b){case"U":return"A";case"A":return"T";case"C":return"G";case"G":return"C";default:return""}}).join("")}function mrnaToProtein(mrna){var codonTable={UUU:"PHE",UUC:"PHE",UUA:"LEU",UUG:"LEU",CUU:"LEU",CUC:"LEU",CUA:"LEU",CUG:"LEU",AUU:"ILE",AUC:"ILE",AUA:"ILE",AUG:"MET",GUU:"VAL",GUC:"VAL",GUA:"VAL",GUG:"VAL",UCU:"SER",UCC:"SER",UCA:"SER",UCG:"SER",CCU:"PRO",CCC:"PRO",CCA:"PRO",CCG:"PRO",ACU:"THR",ACC:"THR",ACA:"THR",ACG:"THR",GCU:"ALA",GCC:"ALA",GCA:"ALA",GCG:"ALA",UAU:"TYR",UAC:"TYR",UAA:"STOP",UAG:"STOP",CAU:"HIS",CAC:"HIS",CAA:"GLN",CAG:"GLN",AAU:"ASN",AAC:"ASN",AAA:"LYS",AAG:"LYS",GAU:"ASP",GAC:"ASP",GAA:"GLU",GAG:"GLU",UGU:"CYS",UGC:"CYS",UGA:"STOP",UGG:"TRP",CGU:"ARG",CGC:"ARG",CGA:"ARG",CGG:"ARG",AGU:"SER",AGC:"SER",AGA:"ARG",AGG:"ARG",GGU:"GLY",GGC:"GLY",GGA:"GLY",GGG:"GLY"};var seq=mrna.toUpperCase().replace(/[^ACGU]/g,"");var aminoAcids=[];for(var i=0;i+2<seq.length;i+=3){var codon=seq.slice(i,i+3);var aa=codonTable[codon]||"?";if(aa==="STOP"){break}aminoAcids.push(aa)}return aminoAcids.join("-")}omni.onResult([],function(ctx){var rawDNA=ctx.getRawInput("input_DNA_strand")||"";var rawmRNA=ctx.getRawInput("input_mRNA_strand")||"";ctx.exportValue("dna_out_1","");ctx.exportValue("mrna_out_1","");ctx.exportValue("protein_out_1","");ctx.exportValue("dna_out_2","");ctx.exportValue("mrna_out_2","");ctx.exportValue("protein_out_2","");if(rawDNA.trim()){var cleanedDNA=rawDNA.toUpperCase().replace(/ /g,"");cleanedDNA=cleanedDNA.replace(/[^ACGT]/g,"");var dna1=cleanedDNA;var mrna1=dnaToMrna(dna1);var prot1=mrnaToProtein(mrna1);var dnaFormatted1=dna1?insertEveryN(dna1,3):"__";var mrnaFormatted1=mrna1?insertEveryN(mrna1,3):"__";ctx.exportValue("dna_out_1",dnaFormatted1);ctx.exportValue("mrna_out_1",mrnaFormatted1);ctx.exportValue("protein_out_1",prot1||"__")}if(rawmRNA.trim()){var cleanedmRNA=rawmRNA.toUpperCase().replace(/ /g,"");cleanedmRNA=cleanedmRNA.replace(/[^ACGU]/g,"");var mrna2=cleanedmRNA;var dna2=mrnaToDna(mrna2);var prot2=mrnaToProtein(mrna2);var dnaFormatted2=dna2?insertEveryN(dna2,3):"__";var mrnaFormatted2=mrna2?insertEveryN(mrna2,3):"__";ctx.exportValue("dna_out_2",dnaFormatted2);ctx.exportValue("mrna_out_2",mrnaFormatted2);ctx.exportValue("protein_out_2",prot2||"__")}});//# sourceURL=customJs.js
+        /*
+         * Shared helpers for the hand-written repairs in data/calc/supplement/.
+         *
+         * Every supplement script is evaluated in its own closed scope, so anything the
+         * repairs have in common has to travel with each one. Supplement::apply()
+         * prepends this file to every page script it merges.
+         */
+        
+        /**
+         * The numbers in one free-text box: "1, 2, 3", "1 2 3", "1;2;3" or one per line.
+         *
+         * A statistics page that asked for fifty separate boxes now asks for one, and
+         * the visitor types a list the way they would in a spreadsheet cell. Anything
+         * that is not a number is ignored rather than turned into NaN — a stray comma
+         * or an accidental letter must not poison the whole set.
+         */
+        function snumlist(text) {
+          if (typeof text !== 'string' || text.trim() === '') return [];
+          var out = [];
+          text.split(/[\s,;]+/).forEach(function (piece) {
+            if (piece === '') return;
+            var n = Number(piece.replace(/(\d),(?=\d{3}\b)/g, '$1'));
+            if (isFinite(n)) out.push(n);
+          });
+          return out;
+        }
+        
+        /** Median of an already sorted array of numbers. */
+        function smedian(sorted) {
+          var n = sorted.length;
+          if (!n) return NaN;
+          var mid = Math.floor(n / 2);
+          return n % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+        }
+        
+        /** The numbers a visitor actually typed, in field order, skipping blanks. */
+        function snumbers(values, pattern, limit) {
+          var out = [];
+          for (var i = 1; i <= limit; i++) {
+            var key = pattern.replace('%d', i);
+            var raw = values[key];
+            if (raw === undefined || raw === null || raw === '') continue;
+            var n = Number(raw);
+            if (!isFinite(n)) continue;
+            out.push({ key: key, n: n });
+          }
+          return out;
+        }
+        
+        /** A plain number, no trailing zeros, at most `d` decimals. */
+        function snum(n, d) {
+          if (!isFinite(n)) return '—';
+          var v = Number(n.toFixed(d === undefined ? 4 : d));
+          return String(v);
+        }
+        
+        /** Round to `d` decimals but keep it a number. */
+        function sround(n, d) {
+          var f = Math.pow(10, d === undefined ? 2 : d);
+          return Math.round(n * f) / f;
+        }
+        
+        /** Greatest common divisor of two whole numbers. */
+        function sgcd(x, y) {
+          x = Math.abs(Math.round(x));
+          y = Math.abs(Math.round(y));
+          return y === 0 ? x : sgcd(y, x % y);
+        }
+        
+        /** "10" / "1/3" — a fraction reduced to lowest terms. */
+        function sfrac(part, whole) {
+          if (!whole) return '—';
+          var a = Math.round(part), b = Math.round(whole);
+          var g = sgcd(a, b) || 1;
+          if (g > 1) { a = a / g; b = b / g; }
+          return b === 1 ? String(a) : a + '/' + b;
+        }
+        
+        /** Minimal escape for text that came out of the definition or a label. */
+        function sesc(s) {
+          return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+        
+        /**
+         * A table from a header list and rows of cells. Cells are printed as they are
+         * given, so a caller can pass a pre-formatted string.
+         */
+        function stable(head, rows, foot) {
+          var html = '<table><thead><tr>';
+          head.forEach(function (h) { html += '<th>' + h + '</th>'; });
+          html += '</tr></thead><tbody>';
+          rows.forEach(function (r) {
+            html += '<tr>';
+            r.forEach(function (c) { html += '<td>' + c + '</td>'; });
+            html += '</tr>';
+          });
+          if (foot) {
+            html += '<tr>';
+            foot.forEach(function (c) { html += '<th>' + c + '</th>'; });
+            html += '</tr>';
+          }
+          return html + '</tbody></table>';
+        }
+        
+        /** Turn a list of [label, value] pairs into "A: 3, B: 4" style prose. */
+        function slist(pairs) {
+          return pairs.map(function (p) { return p[0] + ': ' + p[1]; }).join(', ');
+        }
+        
+        /**
+         * Tidy a value a page script published.
+         *
+         * The harvested scripts speak the reference site's front-end dialect: `==2==`
+         * for a subscript, `**bold**`, `<br>` between lines, and often a trailing
+         * comma or a dangling colon left where a second half of a sentence used to
+         * follow. Our panel prints the string as plain text, so those markers would
+         * land on screen as punctuation soup. This turns them into something readable
+         * without changing the value itself.
+         */
+        function sclean(value) {
+          var s = value === null || value === undefined ? '' : String(value);
+          var sub = {'0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
+                     '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉'};
+          s = s.replace(/==(\d+)==/g, function (all, d) {
+            return d.split('').map(function (c) { return sub[c] || c; }).join('');
+          });
+          /* the same convention for superscripts: "^^+^^" is a charge, "^^2^^" an index */
+          var sup = {'0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+                     '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
+                     '+': '⁺', '-': '⁻'};
+          s = s.replace(/\^\^([0-9+-]+)\^\^/g, function (all, d) {
+            return d.split('').map(function (c) { return sup[c] || c; }).join('');
+          });
+          s = s.replace(/\*\*(.+?)\*\*/g, '$1');
+          s = s.replace(/<br\s*\/?>/gi, ' ');
+          s = s.replace(/<\/(p|div|li)>/gi, ' ');
+          s = s.replace(/<[^>]+>/g, '');
+          s = s.replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+          /* invisible characters the reference used as "this line is blank": an Arabic
+             letter mark, a zero-width space, a byte-order mark. They render as nothing
+             and would otherwise keep an empty row looking filled. */
+          s = s.replace(/[\u061C\u200B\u200C\u200D\uFEFF\u00AD]/g, '');
+          s = s.replace(/\s+/g, ' ').trim();
+          s = s.replace(/[,;:\-–—]\s*$/, '').trim();
+          return s;
+        }
+        
+        /**
+         * Turn a drop-down option's id back into its label.
+         *
+         * Several harvested scripts publish `ctx.getRawInput("…")` of a select, which
+         * is the option's uid (`z3nTqAbVhlMSz-B46c7Xk`) and not the words the visitor
+         * picked. The uid is in the page markup as an option value or a radio value,
+         * so the label is one lookup away.
+         */
+        function sdelabel(value) {
+          if (typeof value !== 'string' || !/[A-Za-z0-9_-]{20,28}/.test(value)) { return value; }
+          var one = function (id) {
+            if (!/^[A-Za-z0-9_-]{20,28}$/.test(id)) { return id; }
+            var el = document.querySelector('[value="' + id + '"]');
+            if (!el) { return id; }
+            if (el.tagName === 'OPTION') { return (el.textContent || '').trim() || id; }
+            var lab = el.closest ? el.closest('label') : null;
+            return lab ? ((lab.textContent || '').trim() || id) : id;
+          };
+          /* a published value can be several ids joined by commas ("Possibilities,
+             MD4, NTLM"), so map each piece rather than the whole string */
+          return value.split(/\s*,\s*/).map(one).join(', ');
+        }
+        
+        var CODON_TABLE = {
+          UUU: 'Phe', UUC: 'Phe', UUA: 'Leu', UUG: 'Leu', CUU: 'Leu', CUC: 'Leu', CUA: 'Leu', CUG: 'Leu',
+          AUU: 'Ile', AUC: 'Ile', AUA: 'Ile', AUG: 'Met', GUU: 'Val', GUC: 'Val', GUA: 'Val', GUG: 'Val',
+          UCU: 'Ser', UCC: 'Ser', UCA: 'Ser', UCG: 'Ser', CCU: 'Pro', CCC: 'Pro', CCA: 'Pro', CCG: 'Pro',
+          ACU: 'Thr', ACC: 'Thr', ACA: 'Thr', ACG: 'Thr', GCU: 'Ala', GCC: 'Ala', GCA: 'Ala', GCG: 'Ala',
+          UAU: 'Tyr', UAC: 'Tyr', UAA: 'Stop', UAG: 'Stop', CAU: 'His', CAC: 'His', CAA: 'Gln', CAG: 'Gln',
+          AAU: 'Asn', AAC: 'Asn', AAA: 'Lys', AAG: 'Lys', GAU: 'Asp', GAC: 'Asp', GAA: 'Glu', GAG: 'Glu',
+          UGU: 'Cys', UGC: 'Cys', UGA: 'Stop', UGG: 'Trp', CGU: 'Arg', CGC: 'Arg', CGA: 'Arg', CGG: 'Arg',
+          AGU: 'Ser', AGC: 'Ser', AGA: 'Arg', AGG: 'Arg', GGU: 'Gly', GGC: 'Gly', GGA: 'Gly', GGG: 'Gly'
+        };
+        
+        function dmBox(name) {
+          var el = document.querySelector('.calc-widget textarea[data-var="' + name + '"], '
+            + '.calc-widget input[data-var="' + name + '"]');
+          return el ? String(el.value) : '';
+        }
+        
+        function dmGroup(seq) {
+          return String(seq).replace(/(.{3})/g, '$1 ').trim();
+        }
+        
+        omni.onResult([], function (ctx, values) {
+          var dna = dmBox('input_DNA_strand').toUpperCase().replace(/\s/g, '');
+          var rna = dmBox('input_mRNA_strand').toUpperCase().replace(/\s/g, '');
+          var dnaBad = dna.replace(/[ACGT]/g, '').length;
+          var rnaBad = rna.replace(/[ACGU]/g, '').length;
+          dna = dna.replace(/[^ACGT]/g, '');
+          rna = rna.replace(/[^ACGU]/g, '');
+        
+          if (!dna && !rna) {
+            ctx.addUnmetCondition('Type a DNA strand (A, C, G, T) or an mRNA strand (A, C, G, U).');
+            return;
+          }
+          if ((dnaBad && !dna) || (rnaBad && !rna)) {
+            ctx.addUnmetCondition('That is not a nucleotide sequence — DNA uses A, C, G and T, mRNA uses A, C, G and U.');
+            return;
+          }
+        
+          if (dna) {
+            /* the strand typed in is read as the coding strand: transcription copies it
+               with every T turned into U, so ATG still opens the protein at Met */
+            var mrna = dna.replace(/T/g, 'U');
+            ctx.exportValue('dna_out_1', dmGroup(dna));
+            ctx.exportValue('mrna_out_1', dmGroup(mrna));
+            ctx.exportValue('protein_out_1', dmProtein(mrna));
+            dmReport(ctx, 'DNA', dna, mrna, '1');
+          }
+          if (rna) {
+            var dna2 = rna.replace(/U/g, 'T');
+            ctx.exportValue('dna_out_2', dmGroup(dna2));
+            ctx.exportValue('mrna_out_2', dmGroup(rna));
+            ctx.exportValue('protein_out_2', dmProtein(rna));
+            if (!dna) { dmReport(ctx, 'mRNA', dna2, rna, '2'); }
+          }
+          if (dnaBad || rnaBad) {
+            ctx.addHtml('<p class="calc-note">' + (dnaBad + rnaBad) + ' character(s) were not a nucleotide and were '
+              + 'left out of the calculation.</p>');
+          }
+        });
+        
+        function dmProtein(mrna) {
+          var out = [];
+          for (var i = 0; i + 3 <= mrna.length; i += 3) {
+            var aa = CODON_TABLE[mrna.substr(i, 3)];
+            if (!aa) { out.push('?'); continue; }
+            if (aa === 'Stop') { out.push('Stop'); break; }
+            out.push(aa);
+          }
+          return out.length ? out.join('-') : 'no complete codon';
+        }
+        
+        function dmReport(ctx, which, dna, mrna, n) {
+          var protein = dmProtein(mrna);
+          var codons = Math.floor(mrna.length / 3);
+          ctx.addHtml('<p><strong>' + codons + ' codon' + (codons === 1 ? '' : 's') + ' from ' + mrna.length
+            + ' nucleotides: ' + sesc(protein) + '</strong></p>');
+          ctx.addHtml(stable(['Step', 'Result'], [
+            ['Template DNA', dmGroup(dna)],
+            ['mRNA (transcription)', dmGroup(mrna)],
+            ['Reading frame', 'starts at the first base' + (mrna.substr(0, 3) === 'AUG' ? ', an AUG start codon' : '')],
+            ['Protein (translation)', protein]
+          ]));
+          ctx.addHtml('<p class="calc-note">Transcription copies the coding strand into mRNA, swapping T for U; '
+            + 'translation then reads the mRNA three bases at a time, because three bases carry the sixteen possible '
+            + 'choices that a four-letter alphabet needs to name twenty amino acids. AUG is the usual start and also '
+            + 'codes methionine; UAA, UAG and UGA stop the chain and are not turned into an amino acid. The strand you '
+            + 'type is taken as the coding strand — the one the mRNA matches — so ATG opens at methionine. A laboratory '
+            + 'sequence is often the template strand instead, in which case the mRNA is its complement (A to U, T to A, '
+            + 'C to G, G to C); paste that complement here and the protein will be right. Only the first reading frame '
+            + 'is read: a real gene needs its frame chosen, and one strand of DNA holds six frames.</p>');
+        }
+        TXT,
+    ],
+    'article' => [
+        'intro' => 'The DNA to mRNA calculator turns the input DNA sequence and the input mRNA sequence into the answer.',
+        'sections' => [
+            ['title' => 'How does the DNA to mRNA calculator work?', 'html' => <<<'TXT'
+            <p>The DNA to mRNA calculator takes the values in the form, applies the relationships described below and reports every result it can derive from them.</p>
+            <p>Working from the top of the form: you choose the option that describes your case (the convert sequence from); then you type in the input DNA sequence and the input mRNA sequence.</p>
+            TXT],
+            ['title' => 'What do you need to enter?', 'html' => <<<'TXT'
+            <ul><li>Pick the option that matches your case — 2 options, such as DNA to mRNA and mRNA to DNA. The choice changes which relationship the calculator applies, not just a multiplier, so it is worth reading the options carefully.</li><li>A plain number with no unit attached.</li><li>A plain number with no unit attached.</li></ul><p>One field on this form is a choice rather than a number. </p>
+            TXT],
+            ['title' => 'What are the variables at a glance?', 'html' => <<<'TXT'
+            <table><thead><tr><th>Field</th><th>What it is</th><th>Unit</th><th>Role</th></tr></thead><tbody><tr><td><strong>Convert sequence from</strong></td><td>One of 2 options, such as DNA to mRNA and mRNA to DNA.</td><td>choice</td><td>You supply it</td></tr><tr><td><strong>Input DNA sequence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr><tr><td><strong>Input mRNA sequence</strong></td><td>A plain number, with no unit.</td><td>—</td><td>You supply it</td></tr></tbody></table>
+            TXT],
+            ['title' => 'The formula behind the DNA to mRNA calculator', 'html' => <<<'TXT'
+            <p>This one is not a single closed-form equation. It is driven by a page script that applies a set of rules — lookups, cut-offs and conditional branches — and the numbers you see are the script's output rather than the rearrangement of one line of algebra. The rules are what make the tool useful: a plain formula cannot express a table of thresholds or a choice between cases.</p>
+            <p>Practically, that means you can trust the result but cannot reproduce it with a pocket calculator. If you need to show your working, quote the inputs and the output rather than an equation.</p>
+            TXT],
+            ['title' => 'When should you use it?', 'html' => <<<'TXT'
+            <p>The DNA to mRNA calculator earns its place in the middle of a task, not instead of one. It is most useful when:</p><ul><li>Putting a biological quantity into a scale you can picture</li><li>Supporting a lesson, a lecture or a field note</li><li>Comparing two organisms, populations or processes</li><li>Any time the same 2 figures keep coming back — the input DNA sequence and the input mRNA sequence — and you would rather not repeat the arithmetic by hand each time.</li></ul>
+            TXT],
+            ['title' => 'How do you get a reliable answer?', 'html' => <<<'TXT'
+            <ul><li>Compare two scenarios by changing the input that actually differs between them, and keep the rest fixed, so the difference you see is the difference you meant to test.</li><li>Keep the units you enter consistent. </li><li>Write the answer down with its unit. </li></ul>
+            TXT],
+            ['title' => 'What else is worth knowing?', 'html' => <<<'TXT'
+            <ul><li> Switching to a neighbouring option is the quickest way to see how much that factor matters.</li><li>Some options are backed by reference tables that ship with the page, so the values are fixed data rather than a live lookup.</li><li>Fields that are still blank are exactly the ones the calculator has not yet been given, so the results panel is a reliable map of what is missing.</li></ul>
+            TXT],
+            ['title' => 'What are the limits worth knowing?', 'html' => <<<'TXT'
+            <p>Every tool draws a boundary somewhere. For the DNA to mRNA calculator, these are the ones that matter:</p>
+            <ul><li>The 1 drop-down on this page offers a fixed list of cases. A value that is not on the list cannot be entered, and the nearest option is not always a good substitute.</li><li>The calculator reports what the relationship implies; it does not judge whether the inputs themselves are sensible, so a figure that is out by a factor of ten will produce an answer that is out by the same factor.</li><li>There is nothing to invert here: the result is produced in one direction only, from the values you supply.</li></ul>
+            TXT],
+            ['title' => 'How do you check the answer yourself?', 'html' => <<<'TXT'
+            <ul><li>Change one input at a time — convert sequence from for instance — and watch which results move. A result that stays put does not depend on it.</li><li>Try a round value you can work out in your head. If the answer matches your mental arithmetic, the inputs are on the scale you assumed.</li><li>Re-enter the same figure and confirm the result is stable; a number that moves when you press Calculate again is a sign that a field is still empty.</li></ul>
+            TXT],
+            ['title' => 'Which calculators go with this one?', 'html' => <<<'TXT'
+            <p>If this one is part of a bigger problem, these biology calculators cover the neighbouring steps: <a href="/biology/dog-age">Dog age</a>, <a href="/biology/dog-bmi">Dog BMI</a> and <a href="/biology/dog-calorie">Dog calorie</a>.</p>
+            TXT],
+        ],
+        'faq' => [
+            ['q' => 'What do I need to enter to use the DNA to mRNA calculator?', 'a' => <<<'TXT'
+            The form asks for the input DNA sequence and the input mRNA sequence, which is 3 fields in total. Each one is labelled with what it means and, where relevant, the unit it expects. Anything you leave blank is treated as the value to solve for.
+            TXT],
+            ['q' => 'How much do the drop-down choices change the answer?', 'a' => <<<'TXT'
+            There is one choice to make (1 in total), and each one selects a different case rather than scaling the result. Switching a single option and watching the result is the fastest way to see how much that choice is worth.
+            TXT],
+            ['q' => 'Is the DNA to mRNA calculator free to use?', 'a' => 'Yes — no account, no sign-up and no limit on how many times you run it. The arithmetic happens in your browser, so the values you type are not sent anywhere.'],
+            ['q' => 'Do I have to fill in every box?', 'a' => <<<'TXT'
+            Fill in the ones you know. The result boxes are computed from them, so you never enter a value the formula can derive — press Calculate and every result updates together.
+            TXT],
+            ['q' => 'Why is the answer different from the one in my protocol?', 'a' => <<<'TXT'
+            Nearly always a unit or a rounding difference. The calculator works in the units printed next to each box, keeps full precision internally and only rounds for display, so recomputing from the rounded numbers on screen can differ in the last digit.
+            TXT],
+            ['q' => 'Can I use the numbers straight from a datasheet?', 'a' => 'Yes. Every box states its unit and nothing is converted behind your back, so a figure copied from a datasheet, a kit insert or a protocol goes in as printed.'],
+        ],
+        'related' => [
+            ['path' => '/biology/dog-age', 'name' => 'Dog age'],
+            ['path' => '/biology/dog-bmi', 'name' => 'Dog BMI'],
+            ['path' => '/biology/dog-calorie', 'name' => 'Dog calorie'],
+        ],
+    ],
+];

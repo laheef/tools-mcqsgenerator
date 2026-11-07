@@ -71,6 +71,19 @@ final class Seo
         if ($title === '') {
             return $title;
         }
+        /*
+         * A title that was written to fit is left alone.
+         *
+         * CalcSeo sizes every calculator title against the same 50–60 window
+         * this function aims at; re-tuning a title that already lands in it only
+         * shaves off the qualifier that was put there on purpose ("… — Biology"
+         * became "… Biology" became plain "…").
+         */
+        $withBrand = mb_strlen($title, 'UTF-8') + 7;
+        if ($withBrand >= 50 && $withBrand <= 60
+            && preg_match('~Calculator\s+Calculator~i', $title) !== 1) {
+            return $title;
+        }
         // " | Onim Calculator" is 18 characters, so 62 - 18 is all a title gets
         $budget = 44;
 
