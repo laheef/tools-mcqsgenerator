@@ -1415,7 +1415,7 @@ return [
             <p>As far as Weight is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul></ul><p>Any one of 11th Amino acid, 7th Amino acid and 3rd Amino acid can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul></ul><p>Any one of Weight, 11th Amino acid and 7th Amino acid can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
@@ -1443,12 +1443,12 @@ return [
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Protein molecular weight calculator work out?', 'a' => 'Weight, from 7th Amino acid, 3rd Amino acid, 1st Amino acid and 19th Amino acid.'],
+            ['q' => 'What does the Protein molecular weight calculator work out?', 'a' => 'Weight, from 11th Amino acid, 7th Amino acid, 3rd Amino acid and 1st Amino acid.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
             1st Amino acid, 2nd Amino acid, 3rd Amino acid, 4th Amino acid, 5th Amino acid. Fill 1st Amino acid, 2nd Amino acid and 3rd Amino acid and leave Weight empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
-            It can. Leave any of 11th Amino acid, 7th Amino acid, 3rd Amino acid and 1st Amino acid blank and the page solves for that one instead — nothing has to be switched first.
+            It can. Leave any of Weight, 11th Amino acid, 7th Amino acid and 3rd Amino acid blank and the page solves for that one instead — nothing has to be switched first.
             TXT],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Weight is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.

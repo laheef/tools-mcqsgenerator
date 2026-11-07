@@ -1121,7 +1121,7 @@ return [
         TXT,
         'sections' => [
             ['title' => 'How the Basal area calculator works', 'html' => <<<'TXT'
-            <p>The Basal area calculator applies one relationship to 1 number and reports Basal area.</p><p>The relationship it solves reads Diameter at breast height (DBH) = 2 × √(Basal area) ÷ √(PI).</p><p>What comes back is Basal area — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            <p>The Basal area calculator applies one relationship to 1 number and reports Basal area.</p><p>The relationship it solves reads Basal area = (1 ÷ 4) × PI × (Diameter at breast height (DBH))^(2).</p><p>What comes back is Basal area — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
             <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>Diameter at breast height (DBH)</strong> — in centimeters. Defined as 1.35 m up from the highest point of ground at the tree&#039;s base.</li></ul><p>The result box is Basal area in square meters. It fills in as soon as the inputs allow it, and it is updated rather than accumulated — change a number and the answer changes with it.</p>
@@ -1130,7 +1130,7 @@ return [
             <p>The unit chip on Basal area lists 24 options and opens on square meters. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Diameter at breast height (DBH)</strong> = <code>2 × √(Basal area) ÷ √(PI)</code></li><li><strong>Basal area</strong> = <code>(1 ÷ 4) × PI × (Diameter at breast height (DBH))^(2)</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Diameter at breast height (DBH)</strong> = <code>2 × √(Basal area) ÷ √(PI)</code> — the form to use when Basal area are the values you have.</li><li><strong>Basal area</strong> = <code>(1 ÷ 4) × PI × (Diameter at breast height (DBH))^(2)</code> — the form to use when Diameter at breast height (DBH) are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Diameter at breast height (DBH) and Basal area can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Basal area</strong> = <code>(1 ÷ 4) × PI × (Diameter at breast height (DBH))^(2)</code></li><li><strong>Diameter at breast height (DBH)</strong> = <code>2 × √(Basal area) ÷ √(PI)</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Basal area</strong> = <code>(1 ÷ 4) × PI × (Diameter at breast height (DBH))^(2)</code> — the form to use when Diameter at breast height (DBH) are the values you have.</li><li><strong>Diameter at breast height (DBH)</strong> = <code>2 × √(Basal area) ÷ √(PI)</code> — the form to use when Basal area are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Basal area and Diameter at breast height (DBH) can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
@@ -1162,9 +1162,9 @@ return [
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Basal area calculator work out?', 'a' => 'Basal area, from Basal area. The relationship is Diameter at breast height (DBH) = 2 × √(Basal area) ÷ √(PI).'],
+            ['q' => 'What does the Basal area calculator work out?', 'a' => 'Basal area, from Diameter at breast height (DBH). The relationship is Basal area = (1 ÷ 4) × PI × (Diameter at breast height (DBH))^(2).'],
             ['q' => 'Which values do I need before I start?', 'a' => 'Diameter at breast height (DBH) (centimeters). With diameter at breast height (DBH) in place, Basal area can stay blank and the page will work it out.'],
-            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Diameter at breast height (DBH) and Basal area can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Basal area and Diameter at breast height (DBH) can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Basal area is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],

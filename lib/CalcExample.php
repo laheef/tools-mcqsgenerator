@@ -226,18 +226,36 @@ final class CalcExample
             $names = array_keys($typed);
             $unknown = null;
             $needs = [];
+            /*
+             * Which box stays empty is the page's subject, not the solver's
+             * first preference: for "annealing_temp = 0.3·primer + 0.7·product
+             * − 14.9" the compiler offers temp_product first, and seeding on
+             * that wrote a worked example that computed the target melting
+             * temperature on a page whose answer is the annealing temperature.
+             */
+            $declaredFor = [];
             foreach ($calc['equations'] as $entry) {
-                foreach ($entry['variants'] as $variant) {
-                    $lhs = (string) ($variant['lhs'] ?? '');
-                    $rhs = array_values((array) ($variant['rhs'] ?? []));
-                    /* Seed the boxes that variant reads and nothing else: the
-                       variables it does not mention are then computed, which is
-                       what a reader wants to see in a worked example. */
-                    if ($lhs !== '' && in_array($lhs, $names, true) && $rhs !== []
-                        && array_diff($rhs, $names) === []) {
-                        $unknown = $lhs;
-                        $needs = $rhs;
-                        break 2;
+                if (preg_match('~^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=~', (string) ($entry['formula'] ?? ''), $m)) {
+                    $declaredFor[] = $m[1];
+                }
+            }
+            foreach ([true, false] as $preferDeclared) {
+                foreach ($calc['equations'] as $entry) {
+                    foreach ($entry['variants'] as $variant) {
+                        $lhs = (string) ($variant['lhs'] ?? '');
+                        $rhs = array_values((array) ($variant['rhs'] ?? []));
+                        /* Seed the boxes that variant reads and nothing else: the
+                           variables it does not mention are then computed, which
+                           is what a reader wants to see in a worked example. */
+                        if ($lhs !== '' && in_array($lhs, $names, true) && $rhs !== []
+                            && array_diff($rhs, $names) === []) {
+                            if ($preferDeclared && !in_array($lhs, $declaredFor, true)) {
+                                continue;
+                            }
+                            $unknown = $lhs;
+                            $needs = $rhs;
+                            break 3;
+                        }
                     }
                 }
             }

@@ -535,7 +535,7 @@ return [
         'intro' => 'Dog BMI takes Height and Weight and returns BMI. It is a single relationship that reads BMI out of height, not a table of canned results keyed by them.',
         'sections' => [
             ['title' => 'How the Dog BMI calculator works', 'html' => <<<'TXT'
-            <p>There is one relationship behind Dog BMI: it takes 2 numbers and reports BMI.</p><p>In the form&#039;s own words, Height = (254 ÷ 45) × Weight ÷ BMI.</p><p>The result panel carries BMI, each in a box of its own rather than buried in a sentence.</p>
+            <p>There is one relationship behind Dog BMI: it takes 2 numbers and reports BMI.</p><p>In the form&#039;s own words, BMI = (254 ÷ 45) × Weight ÷ Height.</p><p>The result panel carries BMI, each in a box of its own rather than buried in a sentence.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
             <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Height</strong> — in centimeters. Measured from the top of your dog&#039;s shoulders.</li><li><strong>Weight</strong> — in kilograms</li></ul><p>What you get back is BMI, shown next to the form rather than on a page of its own.</p>
@@ -544,7 +544,7 @@ return [
             <p>Units are handled before the formula runs: Height offers 31 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Height</strong> = <code>(254 ÷ 45) × Weight ÷ BMI</code></li><li><strong>Weight</strong> = <code>(45 ÷ 254) × BMI × Height</code></li><li><strong>BMI</strong> = <code>(254 ÷ 45) × Weight ÷ Height</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Height</strong> = <code>(254 ÷ 45) × Weight ÷ BMI</code> — the form to use when Weight and BMI are the values you have.</li><li><strong>Weight</strong> = <code>(45 ÷ 254) × BMI × Height</code> — the form to use when Height and BMI are the values you have.</li><li><strong>BMI</strong> = <code>(254 ÷ 45) × Weight ÷ Height</code> — the form to use when Height and Weight are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Height, Weight and BMI can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>BMI</strong> = <code>(254 ÷ 45) × Weight ÷ Height</code></li><li><strong>Height</strong> = <code>(254 ÷ 45) × Weight ÷ BMI</code></li><li><strong>Weight</strong> = <code>(45 ÷ 254) × BMI × Height</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>BMI</strong> = <code>(254 ÷ 45) × Weight ÷ Height</code> — the form to use when Height and Weight are the values you have.</li><li><strong>Height</strong> = <code>(254 ÷ 45) × Weight ÷ BMI</code> — the form to use when Weight and BMI are the values you have.</li><li><strong>Weight</strong> = <code>(45 ÷ 254) × BMI × Height</code> — the form to use when Height and BMI are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of BMI, Height and Weight can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
@@ -578,9 +578,9 @@ return [
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Dog BMI calculator work out?', 'a' => 'BMI, from Weight and BMI. The relationship is Height = (254 ÷ 45) × Weight ÷ BMI.'],
+            ['q' => 'What does the Dog BMI calculator work out?', 'a' => 'BMI, from Height and Weight. The relationship is BMI = (254 ÷ 45) × Weight ÷ Height.'],
             ['q' => 'Which values do I need before I start?', 'a' => 'Height (centimeters), Weight (kilograms). Enter height and weight; BMI is the box to leave alone unless it is the value you came for.'],
-            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Height, Weight and BMI can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. BMI, Height and Weight can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally BMI is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
             TXT],

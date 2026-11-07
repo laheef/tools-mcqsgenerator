@@ -472,7 +472,23 @@ final class CalcArticle
     {
         $out = [];
         foreach ((array) ($calc['equations'] ?? []) as $entry) {
-            foreach ((array) ($entry['variants'] ?? []) as $variant) {
+            /*
+             * The variant the equation was written as comes first: it is the
+             * one the page leads with, and the first entry here is the line the
+             * article quotes as "the relationship". Compiler order would open
+             * with whichever variable the solver prefers to isolate.
+             */
+            $declared = '';
+            if (preg_match('~^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=~', (string) ($entry['formula'] ?? ''), $m)) {
+                $declared = $m[1];
+            }
+            $variants = array_values((array) ($entry['variants'] ?? []));
+            usort($variants, static function (array $a, array $b) use ($declared): int {
+                $aFirst = (string) ($a['lhs'] ?? '') === $declared;
+                $bFirst = (string) ($b['lhs'] ?? '') === $declared;
+                return $aFirst === $bFirst ? 0 : ($aFirst ? -1 : 1);
+            });
+            foreach ($variants as $variant) {
                 $lhs = (string) ($variant['lhs'] ?? '');
                 $expr = trim((string) ($variant['formula'] ?? ''));
                 if ($lhs === '' || $expr === '') {

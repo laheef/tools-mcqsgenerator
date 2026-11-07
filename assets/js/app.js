@@ -411,27 +411,23 @@
   (function pinCalculatorColumn() {
     var column = document.querySelector('.calc-widget-column');
     if (!column) return;
-    var GAP = 24;        // breathing room between the column and the fold
     var MIN_TOP = 72;    // never tuck the column's head closer than this
 
     /*
-     * The whole column sticks, by whichever end keeps it readable.
+     * The whole column sticks, by its head, always.
      *
-     * It used to pin by its FOOT while the page scrolled down — the Calculate
-     * button and whatever sat under it were what stayed on screen — and that
-     * put the answers below the fold the moment the panel grew: a reader
-     * pressed Calculate on a pinned card and the numbers appeared off screen.
+     * It used to switch ends: head-pinned while the card was short, then
+     * foot-pinned once the results made it taller than the screen, so the last
+     * row stayed just above the fold. That second mode is what a reader sees at
+     * the top of a scrolled page — the title of the calculator gone, the form
+     * cut through its first field, the card starting in the middle of itself.
+     * The answers are no use if the page no longer says what it is answering.
      *
-     * The rule now is one measurement and no direction tracking:
-     *
-     *   fits    the column is pinned by its HEAD, `clear` below the sticky
-     *           header, so the title, the form, the button and the results are
-     *           all on screen together. This is the ordinary case.
-     *   taller  the column cannot be shown whole, so it is pinned by its FOOT:
-     *           its last row — the results — rests just above the fold, and
-     *           the top of the form rides under the header. The answers are
-     *           what the reader pressed a button for; they are never the part
-     *           that gets cut.
+     * So the head is the anchor: the column pins with its title just under the
+     * sticky header and stays there, top edge visible for the whole scroll. On
+     * a screen too short for the whole card the furniture at the very bottom —
+     * the tab strip and the share row — is what goes below the fold, and the
+     * page's own scrolling brings it back at the end of the article.
      */
     function headerClearance() {
       var root = getComputedStyle(document.documentElement).getPropertyValue('--header-h');
@@ -450,11 +446,9 @@
       var height = column.getBoundingClientRect().height;
       var viewport = window.innerHeight;
       if (!height) return;
-      var headPin = Math.round(clear);
-      var footPin = Math.round(viewport - GAP - height);
-      var pin = Math.min(headPin, footPin);
+      var pin = Math.round(clear);
       column.style.setProperty('--calc-pin', pin + 'px');
-      column.classList.toggle('is-foot-pinned', footPin < headPin);
+      column.classList.toggle('is-overfold', height + pin > viewport);
     }
     function queue() {
       if (frame !== null) return;

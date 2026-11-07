@@ -2829,6 +2829,30 @@ a:focus-visible > .calc-glyph,
 .js .calc-widget:not([data-results="shown"]) .calc-results { display: none; }
 .js .calc-widget[data-results="shown"] .calc-results { display: block; }
 
+/*
+ * On a screen shorter than the card, the column still pins by its head — the
+ * title and the first field stay put — so the only way to keep the last answer
+ * above the fold is to spend fewer pixels on the results block. app.js sets
+ * .is-overfold when the column cannot be shown whole; the numbers below are the
+ * row padding and gaps, not a new layout.
+ */
+.calc-widget-column.is-overfold .calc-results { margin-top: 8px; }
+.calc-widget-column.is-overfold .calc-results-head { padding: 8px 14px; }
+.calc-widget-column.is-overfold .calc-result { padding: 6px 14px; }
+.calc-widget-column.is-overfold .calc-copy-all { min-height: 32px; padding: 5px 10px; }
+
+/* Below about 700px of height even that is not enough, and the last row is the
+   one that matters: the fields lose a few pixels each, which no one can see,
+   and the answers fit. */
+@media (max-height: 700px) {
+  .calc-widget-column.is-overfold .calc-field { gap: 3px; }
+  .calc-widget-column.is-overfold .calc-input-wrap { min-height: 40px; }
+  .calc-widget-column.is-overfold .calc-result { padding: 4px 14px; }
+  .calc-widget-column.is-overfold .calc-results { margin-top: 6px; }
+  .calc-widget-column.is-overfold .calc-go { min-height: 42px; }
+  .calc-widget-column.is-overfold .calc-results-head { padding: 6px 14px; }
+}
+
 .calc-results-head {
   display: flex;
   flex-wrap: wrap;
