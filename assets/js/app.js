@@ -411,23 +411,37 @@
   (function pinCalculatorColumn() {
     var column = document.querySelector('.calc-widget-column');
     if (!column) return;
-    var MIN_TOP = 72;    // never tuck the column's head closer than this
+    /* The widget card, not the whole column: the column also carries the ad
+       slots below the tool, and measuring those was what made a 480px form
+       behave like a 1,600px one. */
+    var card = column.querySelector('.calc-widget') || column;
+    var GAP = 24;        // breathing room between the card and the fold
+    var MIN_TOP = 72;    // never tuck the card's head closer than this
 
     /*
-     * The whole column sticks, by its head, always.
+     * The card travels with the page between two lines, and pins at whichever
+     * one it reaches.
      *
-     * It used to switch ends: head-pinned while the card was short, then
-     * foot-pinned once the results made it taller than the screen, so the last
-     * row stayed just above the fold. That second mode is what a reader sees at
-     * the top of a scrolled page — the title of the calculator gone, the form
-     * cut through its first field, the card starting in the middle of itself.
-     * The answers are no use if the page no longer says what it is answering.
+     *   top line    the tool's name, `clear` below the sticky header. Reached
+     *               by scrolling up: the card comes back down with the page
+     *               until its name is where it started, and stops there.
+     *   bottom line the card's last row — the results, the share strip under
+     *               them — GAP above the fold. Reached by scrolling down: the
+     *               card travels up with the page until its foot is on the
+     *               fold, and stops there, so the thing the reader pressed
+     *               Calculate for stays on screen.
      *
-     * So the head is the anchor: the column pins with its title just under the
-     * sticky header and stays there, top edge visible for the whole scroll. On
-     * a screen too short for the whole card the furniture at the very bottom —
-     * the tab strip and the share row — is what goes below the fold, and the
-     * page's own scrolling brings it back at the end of the article.
+     * Between the two lines the card is not pinned at all: it moves with the
+     * document, one pixel per pixel scrolled, in both directions. Lifting it
+     * from one line to the other in a single step — which is what a two-state
+     * pin does — reads as a jump the moment the wheel turns.
+     *
+     * A card shorter than the window has no room to travel: both lines are the
+     * top line, and it simply pins under the header.
+     *
+     * The offsets are measured from the header rather than hard-coded: the
+     * header is ~119px at rest, shrinks to 59px when it sticks, and is a
+     * different height again on a phone.
      */
     function headerClearance() {
       var root = getComputedStyle(document.documentElement).getPropertyValue('--header-h');
@@ -439,30 +453,143 @@
       return Math.max(Math.round(measured) + 18, MIN_TOP);
     }
 
-    var frame = null;
-    function paint() {
-      frame = null;
-      var clear = headerClearance();
-      var height = column.getBoundingClientRect().height;
-      var viewport = window.innerHeight;
-      if (!height) return;
-      var pin = Math.round(clear);
-      column.style.setProperty('--calc-pin', pin + 'px');
-      column.classList.toggle('is-overfold', height + pin > viewport);
-    }
-    function queue() {
-      if (frame !== null) return;
-      frame = window.requestAnimationFrame(paint);
+    /* Height of the card and the name stacked above it. Both are fixed while
+       the page scrolls — the card moves as a whole — so they are measured when
+       something can actually change them, not on every frame. */
+    var height = 0;
+    var offset = 0;
+    function measure() {
+      var cardBox = card.getBoundingClientRect();
+      var columnBox = column.getBoundingClientRect();
+      height = cardBox.height;
+      offset = Math.round(cardBox.top - columnBox.top);
     }
 
-    paint();
-    window.addEventListener('scroll', queue, { passive: true });
-    window.addEventListener('resize', queue);
-    window.addEventListener('load', paint);
-    /* The column changes height when the results appear, which is exactly the
-       moment the pin has to be reconsidered. */
+    var pin = null;          // the current top offset, in pixels
+    var lastY = window.pageYOffset;
+    var frame = null;
+    var pending = 0;         // pixels scrolled since the last paint
+
+    function paint(delta) {
+      frame = null;
+      if (!height) measure();
+      if (!height) return;
+      var head = headerClearance();
+      var foot = Math.round(window.innerHeight - GAP - height - offset);
+      if (foot >= head) {
+        /* The whole card fits between the header and the fold: there is nowhere
+           to travel to, so the top line is the only line. */
+        pin = head;
+      } else if (!delta) {
+        /*
+         * Not a scroll — the page has just loaded, the window has been resized,
+         * or the card has just grown because results appeared. Nothing may jump
+         * here: the card keeps the place it already has and only steps back
+         * under the header if that place is above the name's line. The reader's
+         * next scroll carries it to the bottom line in the same motion as the
+         * page, which is the whole point of the travel.
+         */
+        pin = Math.min(pin === null ? head : pin, head);
+      } else {
+        /* Move with the page, then hold at whichever line is reached. */
+        var next = (pin === null ? head : pin) - delta;
+        pin = Math.max(foot, Math.min(head, next));
+      }
+      column.style.setProperty('--calc-pin', Math.round(pin) + 'px');
+      column.classList.toggle('is-foot-pinned', pin < head - 1);
+    }
+
+    function queue() {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(function () {
+        var delta = pending;
+        pending = 0;
+        paint(delta);
+      });
+    }
+
+    function onScroll() {
+      var y = window.pageYOffset;
+      pending += y - lastY;
+      lastY = y;
+      queue();
+    }
+
+    function reset() {
+      pending = 0;
+      lastY = window.pageYOffset;
+      measure();
+      pin = null;
+      paint(0);
+    }
+
+    /*
+     * "The results appeared and they are under the fold." The card slides up
+     * just far enough to bring them into view — a quarter of a second, no page
+     * scroll — and then behaves like any other position between its two lines:
+     * scrolling up brings the name back, scrolling down holds the foot.
+     */
+    var sliding = null;
+    function slideBy(need) {
+      if (!height) measure();
+      var head = headerClearance();
+      var foot = Math.round(window.innerHeight - GAP - height - offset);
+      if (foot >= head) return;
+      var from = pin === null ? head : pin;
+      var to = Math.max(foot, Math.min(head, from - need));
+      if (to === from) return;
+      var start = 0;
+      var span = 240;
+      if (sliding) window.cancelAnimationFrame(sliding.frame);
+      sliding = { frame: 0 };
+      var step = function (now) {
+        if (!start) start = now;
+        var t = Math.min(1, (now - start) / span);
+        var eased = 1 - Math.pow(1 - t, 3);
+        pin = from + (to - from) * eased;
+        column.style.setProperty('--calc-pin', Math.round(pin) + 'px');
+        column.classList.toggle('is-foot-pinned', pin < head - 1);
+        lastY = window.pageYOffset;
+        pending = 0;
+        if (t < 1) {
+          sliding.frame = window.requestAnimationFrame(step);
+        } else {
+          sliding = null;
+        }
+      };
+      sliding.frame = window.requestAnimationFrame(step);
+    }
+
+    document.addEventListener('calc:reveal', function (ev) {
+      var bottom = ev && ev.detail && ev.detail.bottom;
+      if (typeof bottom !== 'number') return;
+      var overflow = bottom - (window.innerHeight - GAP);
+      if (overflow <= 0) return;
+      /*
+       * The slide only means something once the column is actually stuck. At
+       * the top of the page the card is still sitting in the page at its own
+       * place, where a pin has no effect at all — there the page itself has to
+       * move, exactly as it did before.
+       */
+      var engaged = column.getBoundingClientRect().top <= (parseFloat(getComputedStyle(column).top) || 0) + 1;
+      if (engaged) {
+        slideBy(overflow);
+      } else {
+        window.scrollTo({ top: window.scrollY + overflow, behavior: 'smooth' });
+      }
+    });
+
+    reset();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', reset);
+    window.addEventListener('load', reset);
+    /* The card grows when the results appear, which is exactly the moment the
+       bottom line moves. */
     if (typeof ResizeObserver === 'function') {
-      new ResizeObserver(queue).observe(column);
+      new ResizeObserver(function () {
+        measure();
+        queue();
+      }).observe(card);
     }
   })();
 

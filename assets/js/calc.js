@@ -2864,10 +2864,29 @@
         if (siteHeader) head = siteHeader.getBoundingClientRect().height || 0;
         var clear = Math.max(72, Math.round(head) + 18);
         if (r.top < clear - 4 || r.bottom > window.innerHeight + 4) {
-          window.scrollTo({
-            top: window.scrollY + r.top - clear - 8,
-            behavior: 'smooth'
-          });
+          /*
+           * On a wide screen the tool column is stuck to the page and travels
+           * between its name and its foot. Scrolling the window there would
+           * carry the card along with the document and leave the panel exactly
+           * as far below the fold as it started, so the column is asked to step
+           * up by the difference instead — a short, deliberate slide of the
+           * card, with the page staying where the reader left it.
+           *
+           * Narrow screens have no stuck column: there the page is the only
+           * thing that can move, and it moves as it always did.
+           */
+          var column = widget.closest('.calc-widget-column');
+          var stuck = column && window.getComputedStyle(column).position === 'sticky';
+          if (stuck) {
+            document.dispatchEvent(new CustomEvent('calc:reveal', {
+              detail: { bottom: r.bottom, top: r.top, clear: clear }
+            }));
+          } else {
+            window.scrollTo({
+              top: window.scrollY + r.top - clear - 8,
+              behavior: 'smooth'
+            });
+          }
         }
       }
     }

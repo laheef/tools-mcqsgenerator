@@ -913,19 +913,18 @@ button { font: inherit; color: inherit; }
 .calc-rail { order: 3; min-width: 0; }
 
 /*
- * The tool column pins itself, and app.js decides from which edge.
+ * The tool column pins itself, and app.js decides where along the way.
  *
  * A calculator page is read top-down but used at the bottom: the reader scrolls
  * to the write-up, then back up to change a value. The column therefore sticks
- * for the whole page, with its head held clear of the sticky header — never
- * sliding under it, because a card whose first field is hidden behind the
- * header reads as a broken page. `--calc-pin` is that measured offset, written
- * by app.js.
+ * for the whole page and travels between two lines — the tool's name under the
+ * header on the way up, the card's foot above the fold on the way down. Between
+ * the two it moves with the document, so nothing jumps. `--calc-pin` is that
+ * measured offset, rewritten by app.js as the page scrolls.
  *
  * The column is often much taller than the screen: it carries the ad slots
- * below the tool. That is fine — the column pins by its head, so the tool is
- * what stays on screen and the slots below it are what scrolls out of the
- * pinned column. Height no longer decides whether the column pins at all.
+ * below the tool. Those sit under the card, so a pin measured on the card is a
+ * pin measured on the thing the reader is working with.
  */
 .calc-widget-column {
   order: 1;
@@ -943,15 +942,16 @@ button { font: inherit; color: inherit; }
   }
   .calc-widget-column {
     position: sticky;
-    /* app.js writes --calc-pin: the column's head sits just below the sticky
-       header, in every scroll direction and at every width. The offset is
-       measured from the header, so it follows a header that shrinks when it
-       sticks. Nothing moves on load — sticky only applies once the page has
-       scrolled past the column's own place in the document. */
+    /* app.js writes --calc-pin every frame it is needed: the column travels
+       between its name's line under the header and its foot's line above the
+       fold, and holds at whichever line it reaches. The offset is measured from
+       the header, so it follows a header that shrinks when it sticks. Nothing
+       moves on load — sticky only applies once the page has scrolled past the
+       column's own place in the document. */
     top: var(--calc-pin, 0px);
-    /* The offset changes when the header shrinks, so let that one slide rather
-       than jump. Ordinary scrolling never changes it. */
-    transition: top .18s ease-out;
+    /* No transition: the offset is rewritten as the page scrolls, and easing
+       each step would leave the card lagging behind the document by a frame or
+       two — the one thing a column that travels with the page must not do. */
     /* The column is taller than the grid row in some layouts; without this the
        grid would stretch it to the article's height and `align-self` would be
        ignored, making the sticky box as tall as its own containing block and
@@ -2828,30 +2828,6 @@ a:focus-visible > .calc-glyph,
 
 .js .calc-widget:not([data-results="shown"]) .calc-results { display: none; }
 .js .calc-widget[data-results="shown"] .calc-results { display: block; }
-
-/*
- * On a screen shorter than the card, the column still pins by its head — the
- * title and the first field stay put — so the only way to keep the last answer
- * above the fold is to spend fewer pixels on the results block. app.js sets
- * .is-overfold when the column cannot be shown whole; the numbers below are the
- * row padding and gaps, not a new layout.
- */
-.calc-widget-column.is-overfold .calc-results { margin-top: 8px; }
-.calc-widget-column.is-overfold .calc-results-head { padding: 8px 14px; }
-.calc-widget-column.is-overfold .calc-result { padding: 6px 14px; }
-.calc-widget-column.is-overfold .calc-copy-all { min-height: 32px; padding: 5px 10px; }
-
-/* Below about 700px of height even that is not enough, and the last row is the
-   one that matters: the fields lose a few pixels each, which no one can see,
-   and the answers fit. */
-@media (max-height: 700px) {
-  .calc-widget-column.is-overfold .calc-field { gap: 3px; }
-  .calc-widget-column.is-overfold .calc-input-wrap { min-height: 40px; }
-  .calc-widget-column.is-overfold .calc-result { padding: 4px 14px; }
-  .calc-widget-column.is-overfold .calc-results { margin-top: 6px; }
-  .calc-widget-column.is-overfold .calc-go { min-height: 42px; }
-  .calc-widget-column.is-overfold .calc-results-head { padding: 6px 14px; }
-}
 
 .calc-results-head {
   display: flex;
