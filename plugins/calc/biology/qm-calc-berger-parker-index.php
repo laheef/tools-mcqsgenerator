@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Berger–Parker Index Calculator',
-    'meta' => ['title' => 'Berger–Parker Index Calculator — Formula & Results', 'description' => 'Berger–Parker Index Calculator reports berger–Parker index d and reciprocal 1/d. Enter count of the commonest species and total individuals; the answer follows.', 'h1' => 'Berger–Parker Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Berger–Parker Index Calculator: Units & Formula', 'description' => 'Berger–Parker Index Calculator reports berger–Parker index d and reciprocal 1/d. Enter count of the commonest species and total individuals; the answer follows.', 'h1' => 'Berger–Parker Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

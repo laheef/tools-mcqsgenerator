@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell Density Calculator',
-    'meta' => ['title' => 'Cell Density Calculator — Formula & Results', 'description' => 'Cell Density Calculator turns cells counted, squares counted and dilution factor into density per area and Cells/mL from OD600. It returns cell density.', 'h1' => 'Cell Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Density Calculator: Units and Formulas', 'description' => 'Cell density turns cells counted, squares counted and dilution factor into cells per mL, density per cm2 of growth area and a count from the OD600 reading.', 'h1' => 'Cell Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

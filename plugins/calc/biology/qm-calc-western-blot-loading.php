@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Western Blot Protein Loading Calculator',
-    'meta' => ['title' => 'Western Blot Protein Loading Calculator — Biology', 'description' => 'Western Blot Protein Loading Calculator reports lysate volume per lane, protein needed in total, lysate needed in total and final loading concentration.', 'h1' => 'Western Blot Protein Loading Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Western Blot Protein Loading: Steps & Units', 'description' => 'Western Blot Protein Loading Calculator reports lysate volume per lane, protein needed in total, lysate needed in total and final loading concentration.', 'h1' => 'Western Blot Protein Loading Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

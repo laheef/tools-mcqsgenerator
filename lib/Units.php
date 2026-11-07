@@ -99,6 +99,72 @@ final class Units
      * using the same unit list.
      */
     /**
+     * The units a person would actually pick, by dimension.
+     *
+     * `options()` already cuts the pool to within ten-thousand-fold of the box's
+     * own unit, but that still leaves a dog's weight offering drachms and a
+     * garden's area offering circular mils: the pool is shared, and a unit that
+     * one page genuinely needs is dead weight on the other ninety-nine. Each
+     * list below is the everyday ladder for its dimension, widest first, and it
+     * becomes both the filter and the chip's order. A dimension that is not
+     * listed — currencies, cooking measures, the "weird units" pools — keeps
+     * every unit the ratio window allows, because there the long list *is* the
+     * point.
+     *
+     * @var array<string,list<string>>
+     */
+    private const EVERYDAY = [
+        'mass'        => ['kg', 'g', 'mg', 'mcg', 'ng', 'u', 'lb', 'oz', 'stone', 't', 'us_ton'],
+        'length'      => ['mm', 'cm', 'm', 'km', 'inch', 'ft', 'yd', 'mi', 'nmi', 'nm', 'microm', 'angstrom'],
+        'area'        => ['mm2', 'cm2', 'm2', 'km2', 'in2', 'ft2', 'yd2', 'mi2', 'acre', 'hectare'],
+        'volume'      => ['ml', 'liters', 'ul', 'cl', 'cc', 'cm3', 'm3', 'teesp', 'tbsp', 'cups', 'fl-oz',
+                          'USpint', 'UKpint', 'USquart', 'UKquart', 'usgal', 'ukgal'],
+        'time'        => ['sec', 'min', 'hrs', 'days', 'wk', 'mos', 'yrs', 'ms', 'us'],
+        'pressure'    => ['uPa', 'mPa', 'Pascal', 'kPa', 'MPa', 'GPa', 'hPa', 'mbar', 'bar', 'psi', 'ksi',
+                          'standard_atmosphere', 'mmHg', 'Torr', 'inHg'],
+        'speed'       => ['kmph', 'mph', 'ms', 'knot', 'ftps'],
+        'temperature' => ['C', 'F', 'K', 'R'],
+        'power'       => ['w', 'kw', 'mw', 'mW', 'kcal_h', 'btuperh', 'hp_m'],
+        'energy'      => ['J', 'kJ', 'MJ', 'Wh', 'kWh', 'MWh', 'cal', 'kcal', 'BTU', 'eV', 'keV', 'MeV'],
+        'data sizes'  => ['bit', 'byte', 'kilobit', 'kilobyte', 'megabit', 'megabyte', 'gigabit', 'gigabyte',
+                          'terabit', 'terabyte'],
+    ];
+
+    /**
+     * Cut an already-windowed list down to the everyday ladder of its dimension.
+     * The box's own unit always survives — a page that opens in stones keeps
+     * stones — and a list that would fall below two choices is left alone, so a
+     * chip never disappears because of this filter.
+     *
+     * @param array<string,array{name:string,full:string,expr:string}> $units
+     * @return array<string,array{name:string,full:string,expr:string}>
+     */
+    private function everyday(?string $key, array $units, ?string $around): array
+    {
+        $sw = $this->switcher($key);
+        if (!$sw) {
+            return $units;
+        }
+        $name = strtolower(trim((string) preg_replace('~\s*\(.*$~', '', (string) $sw['name'])));
+        $ladder = self::EVERYDAY[$name] ?? null;
+        if ($ladder === null) {
+            return $units;
+        }
+
+        $kept = [];
+        foreach ($ladder as $slug) {
+            if (isset($units[$slug])) {
+                $kept[$slug] = $units[$slug];
+            }
+        }
+        $unit = $around !== null ? $around : null;
+        if ($unit !== null && isset($units[$unit]) && !isset($kept[$unit])) {
+            $kept = [$unit => $units[$unit]] + $kept;
+        }
+        return count($kept) >= 2 ? $kept : $units;
+    }
+
+    /**
      * Is this unit one a reader can actually switch to? Compound entries such as
      * mix(wk, days) need several boxes at once and cannot be applied to a single
      * number, so they are not offered and must not be used to convert.
@@ -108,7 +174,9 @@ final class Units
         if ($key === null || $unit === null) {
             return false;
         }
-        return isset($this->options($key)[$unit]);
+        /* Asked around the unit itself: a box that opens in stones keeps its
+           chip even though stones are not on the metric part of the ladder. */
+        return isset($this->options($key, $unit)[$unit]);
     }
 
     /** Full name of any unit in a switcher, offered or not ("weeks / days"). */
@@ -173,6 +241,13 @@ final class Units
                 $units = $wanted;
             }
         }
+        /* The everyday ladder, when the dimension has one, decides both which
+           units survive and the order the chip lists them in. */
+        $trimmed = $this->everyday($key, $units, $ref);
+        if ($trimmed !== $units) {
+            return $trimmed;
+        }
+
         $order = [];
         foreach ($sw['default'] as $slug) {
             if (isset($units[$slug])) {

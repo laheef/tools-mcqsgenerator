@@ -106,6 +106,11 @@ final class Shape
             /* Which boxes a page shows depends on another field ("how many
                groups?"): a map of variable → condition, honoured by the client. */
             'showIf'      => is_array($rec['showIf'] ?? null) ? $rec['showIf'] : [],
+            /* The page's own names, so a result row is never labelled with the
+               variable it was computed from. */
+            'labels'      => self::labels($rec),
+            /* Statements that must hold across boxes before the formula runs. */
+            'checks'      => is_array($rec['checks'] ?? null) ? $rec['checks'] : [],
             /*
              * Not every widget is a formula. A tool-backed page carries the
              * shortcode that renders it instead of a field set; the template
@@ -197,6 +202,49 @@ final class Shape
             }
             return $sub;
         }, $raw);
+    }
+
+    /**
+     * Every label the record carries, keyed by variable.
+     *
+     * A label travels with a *box* — and some answers are never drawn as a box
+     * (dog-heat-cycle's "day 18 of the cycle" is worked out from the date the
+     * reader picked). Those answers still deserve the name the page gives them,
+     * so the whole group tree is walked here, before any of it is shaped for
+     * display. The first label a variable gets wins: the same variable can be
+     * drawn more than once, and the first drawing is the one the reader meets.
+     *
+     * @return array<string,string>
+     */
+    public static function labels(array $rec): array
+    {
+        $out = [];
+        $walk = static function (array $groups) use (&$walk, &$out): void {
+            foreach ($groups as $g) {
+                if (!is_array($g)) {
+                    continue;
+                }
+                foreach ((array) ($g['m'] ?? []) as $matrix) {
+                    foreach ((array) ($matrix[1] ?? []) as $column) {
+                        foreach ((array) $column as $f) {
+                            if (!is_array($f) || (string) ($f['t'] ?? '') !== 'v') {
+                                continue;
+                            }
+                            $var = (string) ($f['n'] ?? '');
+                            $lab = trim(self::label((string) ($f['l'] ?? '')));
+                            if ($var !== '' && $lab !== '' && !isset($out[$var])) {
+                                $out[$var] = $lab;
+                            }
+                        }
+                    }
+                }
+                if (isset($g['groups'])) {
+                    $walk((array) $g['groups']);
+                }
+            }
+        };
+        $walk((array) ($rec['groups'] ?? []));
+        return $out;
     }
 
     private static function field(array $f): ?array

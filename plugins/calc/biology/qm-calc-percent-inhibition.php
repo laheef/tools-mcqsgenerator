@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Percent Inhibition Calculator',
-    'meta' => ['title' => 'Percent Inhibition Calculator — Formula & Results', 'description' => 'Percent Inhibition Calculator works out percent of control remaining and percent of signal window from control signal, sample signal and blank / background.', 'h1' => 'Percent Inhibition Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Percent Inhibition Calculator: Steps & Units', 'description' => 'Percent Inhibition Calculator works out percent of control remaining and percent of signal window from control signal, sample signal and blank / background.', 'h1' => 'Percent Inhibition Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

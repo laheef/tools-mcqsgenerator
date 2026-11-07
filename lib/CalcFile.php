@@ -431,6 +431,12 @@ final class CalcFile
             if (!empty($raw['showIf'])) {
                 $rec['showIf'] = (array) $raw['showIf'];
             }
+            /* Cross-field rules live with the rest of the machine in `raw` on an
+               exported page, and at the top level on an authored one. */
+            $checks = !empty($raw['checks']) ? $raw['checks'] : ($def['checks'] ?? null);
+            if (!empty($checks) && is_array($checks)) {
+                $rec['checks'] = $checks;
+            }
             return $rec;
         }
 
@@ -515,6 +521,16 @@ final class CalcFile
         }
         if (!empty($def['showIf']) && is_array($def['showIf'])) {
             $rec['showIf'] = $def['showIf'];
+        }
+        /*
+         * Cross-field rules: statements that are true of the world rather than
+         * of one box. A wet bulb cannot read above the dry bulb; a leaf cannot
+         * be colder than the dew point and still be wet. Each rule is checked
+         * once both boxes hold a number, and the message lands under the field
+         * it is about — the same place a scale error appears.
+         */
+        if (!empty($def['checks']) && is_array($def['checks'])) {
+            $rec['checks'] = $def['checks'];
         }
         return $rec;
     }

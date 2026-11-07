@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Heritability Coefficient Calculator',
-    'meta' => ['title' => 'Heritability Coefficient Calculator — Biology', 'description' => 'Heritability Coefficient Calculator works out heritability from parent-offspring regression and heritability from half-sib correlation and reports both.', 'h1' => 'Heritability Coefficient Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Heritability Coefficient Calculator: Steps & Units', 'description' => 'Heritability Coefficient Calculator works out heritability from parent-offspring regression and heritability from half-sib correlation and reports both.', 'h1' => 'Heritability Coefficient Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

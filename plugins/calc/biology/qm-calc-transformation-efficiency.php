@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Transformation Efficiency Calculator',
-    'meta' => ['title' => 'Transformation Efficiency Calculator — Biology', 'description' => 'Transformation Efficiency Calculator takes colonies on the plate, volume plated and recovery volume and returns total transformants and transformants per ng.', 'h1' => 'Transformation Efficiency Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Transformation Efficiency Calculator: Steps & Units', 'description' => 'Transformation Efficiency Calculator takes colonies on the plate, volume plated and recovery volume and returns total transformants and transformants per ng.', 'h1' => 'Transformation Efficiency Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

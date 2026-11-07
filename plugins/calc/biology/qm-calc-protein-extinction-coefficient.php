@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein Extinction Coefficient (ε280) Calculator',
-    'meta' => ['title' => 'Protein Extinction Coefficient (ε280) Calculator', 'description' => 'Protein Extinction Coefficient (ε280) Calculator turns tryptophan residues, tyrosine residues and cystine (disulfide) bonds into A280 of a 1 mg/mL solution.', 'h1' => 'Protein Extinction Coefficient (ε280) Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Protein Extinction Coefficient: Steps & Units', 'description' => 'Protein Extinction Coefficient (ε280) Calculator turns tryptophan residues, tyrosine residues and cystine (disulfide) bonds into A280 of a 1 mg/mL solution.', 'h1' => 'Protein Extinction Coefficient (ε280) Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

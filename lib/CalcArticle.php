@@ -290,7 +290,26 @@ final class CalcArticle
     {
         $inputs = [];
         $outputs = [];
+        /*
+         * Every name the page knows, before a single box is looked at: the
+         * record's own labels first, then a humanised name for anything the
+         * record leaves unnamed. Equations are written in variable names, so
+         * this map is what keeps "currentDate" and "twentyoneDays" out of the
+         * formula lines and out of the prose around them.
+         */
         $labels = [];
+        foreach ((array) ($calc['labels'] ?? []) as $key => $text) {
+            $text = trim((string) $text);
+            if ($text !== '') {
+                $labels[(string) $key] = $text;
+            }
+        }
+        foreach (array_keys((array) ($calc['variables'] ?? [])) as $key) {
+            $key = (string) $key;
+            if (!isset($labels[$key]) || $labels[$key] === '') {
+                $labels[$key] = self::humanName($key);
+            }
+        }
         $unitOf = [];
         $help = [];
         $notes = [];
@@ -316,8 +335,16 @@ final class CalcArticle
                             continue;
                         }
                         $label = trim((string) ($field['label'] ?? ''));
-                        $label = $label !== '' ? $label : $var;
-                        $labels[$var] = $label;
+                        /*
+                         * A field the record never named is plumbing — a helper
+                         * the page works out for itself ("diet_type", "carrier_
+                         * perc", fifty-eight colour codes on the rabbit page).
+                         * It cannot be a question for the reader, and its raw
+                         * name must never reach the prose: it is dropped from
+                         * "what to enter" and humanised if it is an answer.
+                         */
+                        $named = $label !== '';
+                        $labels[$var] = $named ? $label : self::humanName($var);
                         $unitOf[$var] = [
                             'key'     => $field['unitSwitcher'] ?? null,
                             'default' => $field['unitDefault'] ?? null,
@@ -330,7 +357,7 @@ final class CalcArticle
                             if (!in_array($var, $outputs, true)) {
                                 $outputs[] = $var;
                             }
-                        } elseif (!in_array($var, $inputs, true)) {
+                        } elseif ($named && !in_array($var, $inputs, true)) {
                             $inputs[] = $var;
                         }
                     }
@@ -512,10 +539,36 @@ final class CalcArticle
                 if ($lhs === '' || $expr === '') {
                     continue;
                 }
+                $pretty = self::expand(CustomArticle::prettyFormula($expr, $labels));
+                /* a label carrying the form's own placeholder ("Price per
+                   {{PricePerUnit.fullUnit}}") must not land inside the code */
+                $pretty = (string) preg_replace('~\{\{[^{}]{0,80}\}\}~u', '', $pretty);
+                $pretty = (string) preg_replace('~\s+~u', ' ', $pretty);
+                /*
+                 * Date arithmetic is written in milliseconds. "Mating date +
+                 * 30412800000" is not a sentence anybody can check; the same
+                 * constant is 352 days, and that is the only form worth
+                 * printing. Only whole days are converted — a half-day offset
+                 * stays a number rather than becoming 0.5 days in a paragraph.
+                 */
+                if (self::$datesMode) {
+                    $pretty = (string) preg_replace_callback(
+                        '~(?<![\d.])(\d{8,13})(?![\d.])~',
+                        static function (array $m): string {
+                            $n = (int) $m[1];
+                            if ($n < 86400000 || $n % 86400000 !== 0) {
+                                return $m[1];
+                            }
+                            $days = intdiv($n, 86400000);
+                            return $days . ($days === 1 ? ' day' : ' days');
+                        },
+                        $pretty
+                    );
+                }
                 $out[] = [
                     'lhs'   => $lhs,
-                    'label' => $labels[$lhs] ?? $lhs,
-                    'expr'  => self::expand(CustomArticle::prettyFormula($expr, $labels)),
+                    'label' => self::clean($labels[$lhs] ?? self::humanName($lhs)),
+                    'expr'  => $pretty,
                     'rhs'   => array_values((array) ($variant['rhs'] ?? [])),
                 ];
             }
@@ -1045,6 +1098,15 @@ final class CalcArticle
      */
     private static function chips(array $in, array $out, array $unitOf, Units $units): array
     {
+        /*
+         * One chip per switcher, not per box.
+         *
+         * Several boxes on a page share a table — a dose and a weight both use
+         * the mass chip — and the page hands every box the same chip, sized as
+         * the union of what each of those boxes can show. Counting only the
+         * first box's slice is how the article came to promise "3 units" for a
+         * chip that offers 7.
+         */
         $chips = [];
         foreach (array_merge($out, $in) as $var) {
             $entry = $unitOf[$var] ?? [];
@@ -1053,17 +1115,18 @@ final class CalcArticle
                 continue;
             }
             $default = (string) ($entry['default'] ?? $units->defaultUnit($key) ?? '');
-            $options = [];
-            foreach ($units->options($key, $default) as $slug => $u) {
-                $options[(string) $slug] = (string) ($u['name'] ?? $slug);
+            if (!isset($chips[$key])) {
+                $chips[$key] = [
+                    'label'   => $entry['label'] ?? '',
+                    'key'     => $key,
+                    'default' => $default,
+                    'name'    => (string) $units->name($key, $default),
+                    'options' => [],
+                ];
             }
-            $chips[$key] = [
-                'label'   => $entry['label'] ?? '',
-                'key'     => $key,
-                'default' => $default,
-                'name'    => (string) $units->name($key, $default),
-                'options' => $options,
-            ];
+            foreach ($units->options($key, $default) as $slug => $u) {
+                $chips[$key]['options'][(string) $slug] = (string) ($u['name'] ?? $slug);
+            }
         }
         return array_values($chips);
     }
@@ -1324,11 +1387,17 @@ final class CalcArticle
 
         $html .= '<ul>';
         foreach ($chips as $chip) {
-            $names = array_values($chip['options']);
-            $count = count($names);
-            $sample = self::plainNames(array_slice($names, 1, 6), 6);
-            $html .= '<li><strong>' . View::escape($chip['name']) . '</strong> — '
-                . $count . ' units. It opens in <em>' . View::escape($chip['default']) . '</em>'
+            /*
+             * The units are named, not counted.
+             *
+             * A count is a promise about a list the reader can see, and the
+             * list is built per request from the switcher the page opens with;
+             * a sentence baked into the article could only ever be right by
+             * luck. Naming the units cannot go stale.
+             */
+            $sample = self::plainNames(array_slice(array_values($chip['options']), 1, 6), 6);
+            $html .= '<li><strong>' . View::escape($chip['name']) . '</strong> — opens in <em>'
+                . View::escape($chip['default']) . '</em>'
                 . ($sample !== '' ? ', and the chip also carries ' . View::escape($sample) : '')
                 . '. Every one of them is converted to a single base unit before the formula sees the number, so the answer is the same quantity whichever chip you leave it on.</li>';
         }
@@ -1385,7 +1454,7 @@ final class CalcArticle
                     }
                 }
             }
-            if ($producer !== []) {
+            if (!empty($producer)) {
                 $reads = [];
                 foreach ($producer as $dep) {
                     if (isset($labels[$dep])) {
@@ -2151,9 +2220,31 @@ final class CalcArticle
     }
 
     /** A label with its trailing punctuation removed, for use mid-sentence. */
+    /**
+     * "carrier_perc" -> "Carrier perc", "currentDate" -> "Current date".
+     *
+     * Used only where a record gives no label at all. It is not as good as a
+     * written label and it is never shown in preference to one; it exists so the
+     * prose never prints an identifier.
+     */
+    private static function humanName(string $name): string
+    {
+        $text = (string) preg_replace('~[_\-]+~u', ' ', $name);
+        $text = (string) preg_replace('~(?<=[a-z0-9])(?=[A-Z])~u', ' ', $text);
+        $text = (string) preg_replace('~(?<=[A-Za-z])(?=\d)~u', ' ', $text);
+        $text = (string) preg_replace('~\s+~u', ' ', trim($text));
+        return $text === '' ? $name : ucfirst($text);
+    }
+
     private static function clean(string $label): string
     {
         $label = trim($label);
+        /* a form's own placeholder is not a label ("Price per {{PricePerUnit.fullUnit}}") */
+        $label = (string) preg_replace('~\{\{[^{}]{0,80}\}\}~u', '', $label);
+        /* decoration harvested with the name (a llama, a heart, a tick) */
+        $label = (string) preg_replace('~[\x{1F000}-\x{1FAFF}\x{2600}-\x{27BF}\x{2B00}-\x{2BFF}\x{FE0F}]+~u', '', $label);
+        $label = (string) preg_replace('~\s+~u', ' ', $label);
+        $label = trim($label, " \t");
         $label = (string) preg_replace('~\.{2,}$~u', '…', $label);
         return rtrim($label, " .:;,");
     }

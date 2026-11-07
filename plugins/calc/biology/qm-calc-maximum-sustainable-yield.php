@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Maximum Sustainable Yield Calculator',
-    'meta' => ['title' => 'Maximum Sustainable Yield Calculator — Biology', 'description' => 'Maximum Sustainable Yield Calculator takes carrying capacity (K) and intrinsic growth rate (r) and returns stock size at MSY and sustainable harvest rate.', 'h1' => 'Maximum Sustainable Yield Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Maximum Sustainable Yield Calculator: Units & Formula', 'description' => 'Maximum Sustainable Yield Calculator takes carrying capacity (K) and intrinsic growth rate (r) and returns stock size at MSY and sustainable harvest rate.', 'h1' => 'Maximum Sustainable Yield Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

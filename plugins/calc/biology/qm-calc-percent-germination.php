@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Percent Germination Calculator',
-    'meta' => ['title' => 'Percent Germination Calculator — Formula & Results', 'description' => 'Percent Germination Calculator works out viability (germinated + dormant) from seeds germinated and seeds sown. The formula is printed in the form\'s own words.', 'h1' => 'Percent Germination Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Percent Germination Calculator: Units & Formula', 'description' => 'Percent Germination Calculator works out viability (germinated + dormant) from seeds germinated and seeds sown. The formula is printed in the form\'s own words.', 'h1' => 'Percent Germination Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

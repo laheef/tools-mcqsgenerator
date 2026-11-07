@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chicken Hatch Date Calculator',
-    'meta' => ['title' => 'Chicken Hatch Date Calculator — Formula & Results', 'description' => 'Chicken Hatch Date Calculator works out hatch day (day of month) and hatch month from day of month you set the eggs, month and days already incubated.', 'h1' => 'Chicken Hatch Date Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Hatch Date Calculator: Steps & Units', 'description' => 'Chicken Hatch Date Calculator works out hatch day (day of month) and hatch month from day of month you set the eggs, month and days already incubated.', 'h1' => 'Chicken Hatch Date Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

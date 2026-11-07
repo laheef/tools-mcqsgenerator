@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Catch Per Unit Effort Calculator',
-    'meta' => ['title' => 'Catch Per Unit Effort Calculator — Formula & Results', 'description' => 'Catch Per Unit Effort Calculator works out change in CPUE from catch and effort. Runs in the browser, so the numbers never leave the page. No sign-up.', 'h1' => 'Catch Per Unit Effort Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Catch Per Unit Effort Calculator: Units & Formula', 'description' => 'Catch Per Unit Effort Calculator works out change in CPUE from catch and effort. Runs in the browser, so the numbers never leave the page. No sign-up.', 'h1' => 'Catch Per Unit Effort Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

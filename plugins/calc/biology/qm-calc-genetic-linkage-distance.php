@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Recombination to Centimorgans',
-    'meta' => ['title' => 'Recombination to Centimorgans — Formula & Results', 'description' => 'Recombination to Centimorgans works out recombination fraction and haldane distance from recombinant offspring, total offspring and Use Kosambi (interference).', 'h1' => 'Recombination to Centimorgans', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Recombination to Centimorgans: Steps & Units', 'description' => 'Recombination to Centimorgans works out recombination fraction and haldane distance from recombinant offspring, total offspring and Use Kosambi (interference).', 'h1' => 'Recombination to Centimorgans', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

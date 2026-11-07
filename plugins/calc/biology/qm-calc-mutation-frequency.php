@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mutation frequency',
-    'meta' => ['title' => 'Mutation frequency — Free Online Calculator', 'description' => 'Enter number of observed mutants (m) and Number of cells in culture (N) and get mutation frequency (μ) back. The formula is printed in the form\'s own words.', 'h1' => 'Mutation frequency Calculator', 'updated' => '2026-07-06'],
+    'meta' => ['title' => 'Mutation frequency Calculator: Steps & Units', 'description' => 'Enter number of observed mutants (m) and Number of cells in culture (N) and get mutation frequency (μ) back. The formula is printed in the form\'s own words.', 'h1' => 'Mutation frequency Calculator', 'updated' => '2026-07-06'],
     'sections' => [
         [
             'title' => '',

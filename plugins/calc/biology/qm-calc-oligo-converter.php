@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Oligo pmol/µL to µg/mL Converter',
-    'meta' => ['title' => 'Oligo pmol/µL to µg/mL Converter — Formula & Results', 'description' => 'Oligo pmol/µL to µg/mL Converter reports concentration and amount in the tube. Enter oligo length and concentration; the answer follows without a table lookup.', 'h1' => 'Oligo pmol/µL to µg/mL Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Oligo pmol and µL to µg and mL Converter Calculator', 'description' => 'Oligo pmol/µL to µg/mL Converter reports concentration and amount in the tube. Enter oligo length and concentration; the answer follows without a table lookup.', 'h1' => 'Oligo pmol/µL to µg/mL Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

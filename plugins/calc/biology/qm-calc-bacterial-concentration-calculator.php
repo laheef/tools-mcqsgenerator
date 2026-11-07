@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Bacterial Concentration Calculator',
-    'meta' => ['title' => 'Bacterial Concentration Calculator — Biology', 'description' => <<<'TXT'
-    Bacterial Concentration Calculator turns CFU per mL, OD600 and Cells per mL per OD unit into cells per mL (from OD) and log₁₀ CFU/mL. Every figure is computed.
-    TXT, 'h1' => 'Bacterial Concentration Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Bacterial Concentration Calculator: Steps & Units', 'description' => 'Bacterial Concentration Calculator turns CFU per mL, OD600 and Cells per mL per OD unit into cells per mL (from OD) and log₁₀ CFU/mL. Every figure is computed.', 'h1' => 'Bacterial Concentration Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Height to Finger Length Calculator',
-    'meta' => ['title' => 'Height to Finger Length Calculator — Biology', 'description' => 'Height to Finger Length Calculator takes standing height, measured finger length and which finger and returns expected hand length and expected finger length.', 'h1' => 'Height to Finger Length Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Height to Finger Length Calculator: Steps & Units', 'description' => 'Height to Finger Length Calculator takes standing height, measured finger length and which finger and returns expected hand length and expected finger length.', 'h1' => 'Height to Finger Length Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

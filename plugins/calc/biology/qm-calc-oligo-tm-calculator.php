@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Oligo Tm (Melting Temperature) Calculator',
-    'meta' => ['title' => 'Oligo Tm (Melting Temperature) Calculator — Biology', 'description' => 'Oligo Tm (Melting Temperature) Calculator turns oligo length, Number of G and C bases and monovalent salt into tm, GC rule with salt correction and Tm, Wallace.', 'h1' => 'Oligo Tm (Melting Temperature) Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Oligo Tm Calculator: Formula, Steps & Example', 'description' => 'Oligo Tm (Melting Temperature) Calculator turns oligo length, Number of G and C bases and monovalent salt into tm, GC rule with salt correction and Tm, Wallace.', 'h1' => 'Oligo Tm (Melting Temperature) Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

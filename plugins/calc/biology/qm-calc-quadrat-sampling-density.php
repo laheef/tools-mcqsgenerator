@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Quadrat Sampling Density Calculator',
-    'meta' => ['title' => 'Quadrat Sampling Density Calculator — Biology', 'description' => 'Enter individuals counted, number of quadrats and quadrat area and Quadrat Sampling Density Calculator returns density per m² and density per hectare.', 'h1' => 'Quadrat Sampling Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Quadrat Sampling Density Calculator: Steps & Units', 'description' => 'Enter individuals counted, number of quadrats and quadrat area and Quadrat Sampling Density Calculator returns density per m² and density per hectare.', 'h1' => 'Quadrat Sampling Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

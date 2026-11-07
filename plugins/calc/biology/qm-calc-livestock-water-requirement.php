@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Livestock Water Requirement Calculator',
-    'meta' => ['title' => 'Livestock Water Requirement Calculator — Biology', 'description' => 'Livestock Water Requirement Calculator works out water per animal per day and herd water per day from species, number of animals and average body weight.', 'h1' => 'Livestock Water Requirement Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Livestock Water Requirement Calculator: Steps & Units', 'description' => 'Livestock Water Requirement Calculator works out water per animal per day and herd water per day from species, number of animals and average body weight.', 'h1' => 'Livestock Water Requirement Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

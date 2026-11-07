@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Bone Length to Body Height Calculator',
-    'meta' => ['title' => 'Bone Length to Body Height Calculator — Biology', 'description' => 'Enter bone measured, sex of the individual and bone length and Bone Length to Body Height Calculator returns estimated stature. It returns estimated stature.', 'h1' => 'Bone Length to Body Height Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Bone Length to Body Height Calculator: Steps & Units', 'description' => 'Enter bone measured, sex of the individual and bone length and Bone Length to Body Height Calculator returns estimated stature. It returns estimated stature.', 'h1' => 'Bone Length to Body Height Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

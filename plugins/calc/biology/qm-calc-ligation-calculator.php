@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ligation Calculator',
-    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Results', 'description' => 'Ligation Calculator works out insert mass needed from vector mass and vector length. Free to use, and the working stays on the page beside the answer.', 'h1' => 'Ligation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Example', 'description' => 'Ligation Calculator works out insert mass needed from vector mass and vector length. Free to use, and the working stays on the page beside the answer.', 'h1' => 'Ligation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

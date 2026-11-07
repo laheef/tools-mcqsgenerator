@@ -11,7 +11,7 @@
 
 return [
     'name' => 'OD260 to Nucleic Acid Concentration Calculator',
-    'meta' => ['title' => 'OD260 to Nucleic Acid Concentration Calculator', 'description' => 'OD260 to Nucleic Acid Concentration Calculator reports A260/A280 and Total yield in 100 µL. No sign-up: type the numbers, press Calculate and read the answer.', 'h1' => 'OD260 to Nucleic Acid Concentration Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'OD260 to Nucleic Acid Concentration: Steps & Units', 'description' => 'OD260 to Nucleic Acid Concentration Calculator reports A260/A280 and Total yield in 100 µL. No sign-up: type the numbers, press Calculate and read the answer.', 'h1' => 'OD260 to Nucleic Acid Concentration Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

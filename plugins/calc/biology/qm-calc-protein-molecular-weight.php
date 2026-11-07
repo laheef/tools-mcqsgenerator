@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein molecular weight',
-    'meta' => ['title' => 'Protein molecular weight — Formula & Results', 'description' => 'Protein molecular weight turns 1st Amino acid and 2nd Amino acid into weight. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Protein molecular weight Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Protein molecular weight Calculator: Units & Formula', 'description' => 'Protein molecular weight turns 1st Amino acid and 2nd Amino acid into weight. Free to use, and the working stays on the page beside the answer. No sign-up.', 'h1' => 'Protein molecular weight Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'A1' => [

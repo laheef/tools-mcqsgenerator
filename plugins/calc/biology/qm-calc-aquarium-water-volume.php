@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Aquarium Water Volume Calculator',
-    'meta' => ['title' => 'Aquarium Water Volume Calculator — Formula & Results', 'description' => 'Aquarium Water Volume Calculator reports gross volume and true water volume. Leave width or diameter empty and the page will solve for it instead. Free.', 'h1' => 'Aquarium Water Volume Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Aquarium Water Volume Calculator: Steps & Units', 'description' => 'Aquarium Water Volume Calculator reports gross volume and true water volume. Leave width or diameter empty and the page will solve for it instead. Free.', 'h1' => 'Aquarium Water Volume Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

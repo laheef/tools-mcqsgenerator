@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Cell Culture Dish / Plate / Flask Reference',
-    'meta' => ['title' => 'Cell Culture Dish / Plate / Flask Reference', 'description' => <<<'TXT'
-    Cell Culture Dish / Plate / Flask Reference turns format, number of vessels and medium per cm² into growth area and medium per vessel. It returns growth area.
-    TXT, 'h1' => 'Cell Culture Dish / Plate / Flask Reference', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Culture Dish and Plate and Flask Reference', 'description' => 'Cell Culture Dish / Plate / Flask Reference turns format, number of vessels and medium per cm² into growth area and medium per vessel. It returns growth area.', 'h1' => 'Cell Culture Dish / Plate / Flask Reference', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

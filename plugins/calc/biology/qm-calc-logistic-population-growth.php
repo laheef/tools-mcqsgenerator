@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Logistic Population Growth Calculator',
-    'meta' => ['title' => 'Logistic Population Growth Calculator — Biology', 'description' => 'Logistic Population Growth Calculator works out population after that time and growth rate at the start from starting population and carrying capacity.', 'h1' => 'Logistic Population Growth Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Logistic Population Growth Calculator: Worked Example', 'description' => 'Logistic Population Growth Calculator works out population after that time and growth rate at the start from starting population and carrying capacity.', 'h1' => 'Logistic Population Growth Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

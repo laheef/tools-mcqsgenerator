@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Serial Dilution Planner',
-    'meta' => ['title' => 'Serial Dilution Planner — Formula & Results', 'description' => 'Serial Dilution Planner takes starting concentration and returns transfer volume. Leave number of steps empty and the page will solve for it instead. Free.', 'h1' => 'Serial Dilution Planner', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Serial Dilution Planner Calculator: Steps & Units', 'description' => 'Serial Dilution Planner takes starting concentration and returns transfer volume. Leave number of steps empty and the page will solve for it instead. Free.', 'h1' => 'Serial Dilution Planner', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

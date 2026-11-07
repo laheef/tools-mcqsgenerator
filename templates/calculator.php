@@ -72,7 +72,10 @@ foreach ($calc['groups'] as $g) {
                     $fieldsMeta[$f['var']]['label'] = (string) $f['label'];
                 }
                 if ($key !== null) {
-                    foreach ($units->options($key, $f['defaultUnit'] ?? null) as $slug => $u) {
+                    /* Around the unit the box actually opens in, so the chip and
+                       the article's "N units" are the same list. */
+                    $opening = $f['defaultUnit'] ?? $units->defaultUnit($key);
+                    foreach ($units->options($key, $opening) as $slug => $u) {
                         $unitExprs[$key][$slug] = $u['expr'];
                     }
                 }
@@ -278,6 +281,8 @@ $clientPayload = [
     'units' => $unitExprs,
     'datasets' => $calc['datasets'],
     'showIf' => $calc['showIf'] ?? [],
+    'checks' => $calc['checks'] ?? [],
+    'labels' => $calc['labels'] ?? [],
     'js' => $calc['js'] ?? null,
     'precision' => null,
 ];

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'TFF Membrane Area and Flux Calculator',
-    'meta' => ['title' => 'TFF Membrane Area and Flux Calculator — Biology', 'description' => 'Enter batch volume, permeate flux and concentration factor and TFF Membrane Area and Flux Calculator returns membrane area required and cassettes to install.', 'h1' => 'TFF Membrane Area and Flux Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'TFF Membrane Area and Flux Calculator: Worked Example', 'description' => 'Enter batch volume, permeate flux and concentration factor and TFF Membrane Area and Flux Calculator returns membrane area required and cassettes to install.', 'h1' => 'TFF Membrane Area and Flux Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

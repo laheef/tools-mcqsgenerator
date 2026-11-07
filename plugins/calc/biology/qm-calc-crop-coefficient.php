@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Crop Coefficient Calculator',
-    'meta' => ['title' => 'Crop Coefficient Calculator — Formula & Results', 'description' => 'Crop Coefficient Calculator takes reference evapotranspiration, crop coefficient and effective rainfall and returns crop water use and water per hectare.', 'h1' => 'Crop Coefficient Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Crop Coefficient Calculator: Units & Formula', 'description' => 'Crop Coefficient Calculator takes reference evapotranspiration, crop coefficient and effective rainfall and returns crop water use and water per hectare.', 'h1' => 'Crop Coefficient Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

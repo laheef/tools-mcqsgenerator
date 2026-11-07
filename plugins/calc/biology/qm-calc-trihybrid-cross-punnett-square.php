@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Trihybrid cross Punnett square',
-    'meta' => ['title' => 'Trihybrid cross Punnett square — Formula & Results', 'description' => 'Trihybrid cross Punnett square works out AABBCC and AABBCc and reports both. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Trihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
+    'meta' => ['title' => 'Trihybrid cross Punnett square: Steps & Units', 'description' => 'Trihybrid cross Punnett square works out AABBCC and AABBCc and reports both. Press Calculate once and every figure on the page is refreshed together. Free.', 'h1' => 'Trihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
     'raw' => [
         'vars' => [
             'AABBCC' => [

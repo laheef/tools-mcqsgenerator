@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Pasture Stocking Rate Calculator',
-    'meta' => ['title' => 'Pasture Stocking Rate Calculator — Formula & Results', 'description' => 'Pasture Stocking Rate Calculator works out animals carried and Livestock units (1 LU = 600 kg cow) from pasture area, pasture dry-matter yield and utilisation.', 'h1' => 'Pasture Stocking Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Pasture Stocking Rate Calculator: Steps & Units', 'description' => 'Pasture Stocking Rate Calculator works out animals carried and Livestock units (1 LU = 600 kg cow) from pasture area, pasture dry-matter yield and utilisation.', 'h1' => 'Pasture Stocking Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

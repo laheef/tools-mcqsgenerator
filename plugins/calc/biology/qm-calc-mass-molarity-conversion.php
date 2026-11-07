@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mass to Molarity Converter',
-    'meta' => ['title' => 'Mass to Molarity Converter — Formula & Results', 'description' => 'Mass to Molarity Converter takes molecular weight and returns concentration. No sign-up and no waiting: type the numbers, press Calculate, read the answer.', 'h1' => 'Mass to Molarity Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mass to Molarity Converter Calculator: Steps & Units', 'description' => 'Mass to Molarity Converter takes molecular weight and returns concentration. No sign-up and no waiting: type the numbers, press Calculate, read the answer.', 'h1' => 'Mass to Molarity Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

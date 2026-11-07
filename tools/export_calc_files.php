@@ -266,6 +266,9 @@ function to_shorthand(array $rec): array
     if (!empty($rec['showIf'])) {
         $def['showIf'] = $rec['showIf'];
     }
+    if (!empty($rec['checks'])) {
+        $def['checks'] = $rec['checks'];
+    }
     return [$def, ''];
 }
 
@@ -554,6 +557,10 @@ foreach ($rows as $row) {
         }
         if (!empty($rec['showIf'])) {
             $def['raw']['showIf'] = (array) $rec['showIf'];
+        }
+        /* readings that cannot be true together, checked before the formula runs */
+        if (!empty($rec['checks'])) {
+            $def['raw']['checks'] = (array) $rec['checks'];
         }
         $written['raw']++;
         $reasons[$why] = ($reasons[$why] ?? 0) + 1;

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'CFU/mL Calculator',
-    'meta' => ['title' => 'CFU/mL Calculator: Formula, Steps & Results', 'description' => 'CFU/mL Calculator turns colonies counted and volume plated into CFU per mL. Nothing is stored between visits: the boxes are the only place your numbers live.', 'h1' => 'CFU/mL Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'CFU and mL Calculator: Formula, Steps & Example', 'description' => 'CFU/mL Calculator turns colonies counted and volume plated into CFU per mL. Nothing is stored between visits: the boxes are the only place your numbers live.', 'h1' => 'CFU/mL Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'GC Content Calculator',
-    'meta' => ['title' => 'GC Content Calculator: Formula, Steps & Results', 'description' => 'GC Content Calculator takes guanine (G), Cytosine (C) and Adenine (A) and returns GC content and AT content. The answer, aT content, is worked out in one step.', 'h1' => 'GC Content Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'GC Content Calculator: Formula, Steps & Example', 'description' => 'GC content counts guanine and cytosine against all four bases and returns GC and AT percentages, the sequence length and an estimated melting temperature.', 'h1' => 'GC Content Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

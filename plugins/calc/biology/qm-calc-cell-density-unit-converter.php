@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell Density Unit Converter',
-    'meta' => ['title' => 'Cell Density Unit Converter — Formula & Results', 'description' => 'Cell Density Unit Converter takes cell concentration and returns cells per mL. No sign-up and no waiting: type the numbers, press Calculate, read the answer.', 'h1' => 'Cell Density Unit Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Density Unit Converter: Units & Formula', 'description' => 'Cell Density Unit Converter takes cell concentration and returns cells per mL. No sign-up and no waiting: type the numbers, press Calculate, read the answer.', 'h1' => 'Cell Density Unit Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

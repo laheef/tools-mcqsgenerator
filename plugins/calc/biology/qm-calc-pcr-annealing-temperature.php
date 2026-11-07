@@ -11,7 +11,7 @@
 
 return [
     'name' => 'PCR Annealing Temperature Calculator',
-    'meta' => ['title' => 'PCR Annealing Temperature Calculator — Biology', 'description' => 'PCR Annealing Temperature Calculator takes forward primer Tm, Reverse primer Tm and Offset below the lower Tm and returns gradient low and gradient high.', 'h1' => 'PCR Annealing Temperature Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'PCR Annealing Temperature Calculator: Steps & Units', 'description' => 'PCR Annealing Temperature Calculator takes forward primer Tm, Reverse primer Tm and Offset below the lower Tm and returns gradient low and gradient high.', 'h1' => 'PCR Annealing Temperature Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

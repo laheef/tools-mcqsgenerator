@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Respiratory Quotient Calculator',
-    'meta' => ['title' => 'Respiratory Quotient Calculator — Formula & Results', 'description' => 'Respiratory Quotient Calculator divides CO2 produced by O2 consumed to give RQ, non-protein RQ and the fat share of fuel. Fat share is a percentage of the fuel.', 'h1' => 'Respiratory Quotient Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Respiratory Quotient Calculator: Units & Formula', 'description' => 'Respiratory Quotient Calculator divides CO2 produced by O2 consumed to give RQ, non-protein RQ and the fat share of fuel. Fat share is a percentage of the fuel.', 'h1' => 'Respiratory Quotient Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

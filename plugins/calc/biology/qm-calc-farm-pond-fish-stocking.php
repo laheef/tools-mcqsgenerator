@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Farm Pond Fish Stocking Calculator',
-    'meta' => ['title' => 'Farm Pond Fish Stocking Calculator — Biology', 'description' => 'Farm Pond Fish Stocking Calculator turns pond surface area, stocking rate and predator share into total fish to stock and predators. Every figure is computed.', 'h1' => 'Farm Pond Fish Stocking Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Farm Pond Fish Stocking Calculator: Units & Formula', 'description' => 'Farm Pond Fish Stocking Calculator turns pond surface area, stocking rate and predator share into total fish to stock and predators. Every figure is computed.', 'h1' => 'Farm Pond Fish Stocking Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

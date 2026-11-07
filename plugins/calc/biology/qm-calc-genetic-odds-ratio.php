@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Odds Ratio Calculator for Genetics',
-    'meta' => ['title' => 'Odds Ratio Calculator for Genetics — Biology', 'description' => 'Odds Ratio Calculator for Genetics works out 95% confidence, lower and 95% confidence, upper from cases with the variant and cases without the variant.', 'h1' => 'Odds Ratio Calculator for Genetics', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Odds Ratio Calculator for Genetics Calculator', 'description' => 'Odds Ratio Calculator for Genetics works out 95% confidence, lower and 95% confidence, upper from cases with the variant and cases without the variant.', 'h1' => 'Odds Ratio Calculator for Genetics', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

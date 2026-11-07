@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Solids Retention Time Calculator (SRT)',
-    'meta' => ['title' => 'Solids Retention Time Calculator (SRT) — Biology', 'description' => 'Solids Retention Time Calculator (SRT) turns aeration tank volume, MLSS and waste sludge flow into solids inventory and Wasting rate for the target SRT.', 'h1' => 'Solids Retention Time Calculator (SRT)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Solids Retention Time Calculator: Units & Formula', 'description' => 'Solids Retention Time Calculator (SRT) turns aeration tank volume, MLSS and waste sludge flow into solids inventory and Wasting rate for the target SRT.', 'h1' => 'Solids Retention Time Calculator (SRT)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

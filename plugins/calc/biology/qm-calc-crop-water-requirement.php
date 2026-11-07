@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Crop Water Requirement Calculator (ETc)',
-    'meta' => ['title' => 'Crop Water Requirement Calculator (ETc) — Biology', 'description' => 'Crop Water Requirement Calculator (ETc) reports crop water use, seasonal use (120 days), volume to apply per hectare and hours a 10 m³/h system must run.', 'h1' => 'Crop Water Requirement Calculator (ETc)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Crop Water Requirement Calculator: Steps & Units', 'description' => 'Crop Water Requirement Calculator (ETc) reports crop water use, seasonal use (120 days), volume to apply per hectare and hours a 10 m³/h system must run.', 'h1' => 'Crop Water Requirement Calculator (ETc)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

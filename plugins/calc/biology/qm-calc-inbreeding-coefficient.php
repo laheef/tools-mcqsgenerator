@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Inbreeding Coefficient Calculator (COI)',
-    'meta' => ['title' => 'Inbreeding Coefficient Calculator (COI) — Biology', 'description' => 'Inbreeding Coefficient Calculator (COI) works out heterozygosity retained from independent ancestral paths. The formula is printed in the form\'s own words.', 'h1' => 'Inbreeding Coefficient Calculator (COI)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Inbreeding Coefficient Calculator: Units & Formula', 'description' => 'Inbreeding Coefficient Calculator (COI) works out heterozygosity retained from independent ancestral paths. The formula is printed in the form\'s own words.', 'h1' => 'Inbreeding Coefficient Calculator (COI)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Field Capacity Calculator',
-    'meta' => ['title' => 'Field Capacity Calculator — Formula & Results', 'description' => 'Field Capacity Calculator reports bulk density and water stored in the root zone. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Field Capacity Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Field Capacity Calculator: Formula & Example', 'description' => 'Field Capacity Calculator reports bulk density and water stored in the root zone. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Field Capacity Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

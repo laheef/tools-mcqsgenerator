@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Allele frequency',
-    'meta' => ['title' => 'Allele frequency — Formula, Steps & Examples', 'description' => 'Allele frequency works out occurrence of the disease: and truea and reports both. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Allele frequency Calculator', 'updated' => '2024-07-19'],
+    'meta' => ['title' => 'Allele frequency Calculator: Units & Formula', 'description' => 'Allele frequency calculator: give the healthy and mutant allele frequencies (p and q) and it returns the genotype split they imply, with the working shown.', 'h1' => 'Allele frequency Calculator', 'updated' => '2024-07-19'],
     'raw' => [
         'vars' => [
             'a_percentage' => [
@@ -87,7 +87,7 @@ return [
                                     't' => 'v',
                                     'n' => 'a_percentage',
                                     'vt' => 'numerical',
-                                    'l' => 'Occurrence of the disease',
+                                    'l' => 'Occurrence of the disease: ',
                                     'h' => 'E.g., people with cystic fibrosis constitute 0.00029% of the Caucasian population.&nbsp;',
                                     'us' => '37',
                                     'du' => 'perc',
@@ -103,7 +103,7 @@ return [
                                     't' => 'v',
                                     'n' => 'a_proportion',
                                     'vt' => 'numerical',
-                                    'l' => 'Affected people, as 1 in',
+                                    'l' => 'Occurrence of the disease:',
                                     'pre' => '1 in ',
                                     'h' => 'For example, people with cystic fibrosis constitute 1 in 3500 of the Caucasian population.&nbsp;',
                                 ],
@@ -185,10 +185,10 @@ return [
                         'FR1_FR1',
                         [
                             [
-                                ['t' => 'v', 'n' => 'truea', 'vt' => 'numerical', 'l' => 'People with two mutant alleles (q²)'],
+                                ['t' => 'v', 'n' => 'truea', 'vt' => 'numerical', 'l' => 'Truea'],
                             ],
                             [
-                                ['t' => 'v', 'n' => 'b', 'vt' => 'numerical', 'l' => 'People with two healthy alleles (p²)'],
+                                ['t' => 'v', 'n' => 'b', 'vt' => 'numerical', 'l' => 'B'],
                             ],
                         ],
                     ],
@@ -196,10 +196,10 @@ return [
                         'FR1_FR1',
                         [
                             [
-                                ['t' => 'v', 'n' => 'pq', 'vt' => 'numerical', 'l' => 'Carriers (2pq)'],
+                                ['t' => 'v', 'n' => 'pq', 'vt' => 'numerical', 'l' => '2pq'],
                             ],
                             [
-                                ['t' => 'v', 'n' => 'inv_pq', 'vt' => 'numerical', 'l' => 'One carrier in ... people'],
+                                ['t' => 'v', 'n' => 'inv_pq', 'vt' => 'numerical', 'l' => '1/2pq'],
                             ],
                         ],
                     ],
@@ -226,12 +226,12 @@ return [
                 'formula' => '1/a_percentage = a_proportion',
                 'var' => [
                     [
-                        'l' => 'Disease occurrence, as a percentage',
+                        'l' => 'a_percentage',
                         'f' => '1/a_proportion',
                         'r' => ['a_proportion'],
                     ],
                     [
-                        'l' => 'One affected person in ... (1/q²)',
+                        'l' => 'a_proportion',
                         'f' => '1/a_percentage',
                         'r' => ['a_percentage'],
                     ],
@@ -360,7 +360,7 @@ return [
             <p>Units are handled before the formula runs: Occurrence of the disease: offers 6 units and opens on percent, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Healthy allele frequency (p)</strong> = <code>− Mutant allele frequency (q) − 1</code></li><li><strong>Mutant allele frequency (q)</strong> = <code>− Healthy allele frequency (p) − 1</code></li><li><strong>Occurrence of the disease:</strong> = <code>1 ÷ Occurrence of the disease:</code></li><li><strong>B</strong> = <code>(Healthy allele frequency (p))^(2)</code></li><li><strong>Truea</strong> = <code>1 ÷ Occurrence of the disease:</code></li><li><strong>2pq</strong> = <code>2 × Healthy allele frequency (p) × Mutant allele frequency (q)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Healthy allele frequency (p)</strong> = <code>− Mutant allele frequency (q) − 1</code> — the form to use when Mutant allele frequency (q) are the values you have.</li><li><strong>Mutant allele frequency (q)</strong> = <code>− Healthy allele frequency (p) − 1</code> — the form to use when Healthy allele frequency (p) are the values you have.</li><li><strong>Occurrence of the disease:</strong> = <code>1 ÷ Occurrence of the disease:</code> — the form to use when Occurrence of the disease are the values you have.</li><li><strong>Occurrence of the disease:</strong> = <code>1 ÷ Occurrence of the disease:</code> — the form to use when Occurrence of the disease are the values you have.</li><li><strong>Occurrence of the disease:</strong> = <code>(Mutant allele frequency (q))^(2)</code> — the form to use when Mutant allele frequency (q) are the values you have.</li><li><strong>Mutant allele frequency (q)</strong> = <code>√(Occurrence of the disease:)</code> — the form to use when Occurrence of the disease are the values you have.</li><li><strong>Healthy allele frequency (p)</strong> = <code>√(B)</code> — the form to use when B are the values you have.</li><li><strong>B</strong> = <code>(Healthy allele frequency (p))^(2)</code> — the form to use when Healthy allele frequency (p) are the values you have.</li></ul><p>Any one of Healthy allele frequency (p), Mutant allele frequency (q) and Occurrence of the disease can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Healthy allele frequency (p)</strong> = <code>− Mutant allele frequency (q) − 1</code></li><li><strong>Mutant allele frequency (q)</strong> = <code>− Healthy allele frequency (p) − 1</code></li><li><strong>Occurrence of the disease</strong> = <code>1 ÷ Occurrence of the disease:</code></li><li><strong>B</strong> = <code>(Healthy allele frequency (p))^(2)</code></li><li><strong>Truea</strong> = <code>1 ÷ Occurrence of the disease:</code></li><li><strong>2pq</strong> = <code>2 × Healthy allele frequency (p) × Mutant allele frequency (q)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Healthy allele frequency (p)</strong> = <code>− Mutant allele frequency (q) − 1</code> — the form to use when Mutant allele frequency (q) are the values you have.</li><li><strong>Mutant allele frequency (q)</strong> = <code>− Healthy allele frequency (p) − 1</code> — the form to use when Healthy allele frequency (p) are the values you have.</li><li><strong>Occurrence of the disease</strong> = <code>1 ÷ Occurrence of the disease:</code> — the form to use when Occurrence of the disease are the values you have.</li><li><strong>Occurrence of the disease</strong> = <code>1 ÷ Occurrence of the disease:</code> — the form to use when Occurrence of the disease are the values you have.</li><li><strong>Occurrence of the disease</strong> = <code>(Mutant allele frequency (q))^(2)</code> — the form to use when Mutant allele frequency (q) are the values you have.</li><li><strong>Mutant allele frequency (q)</strong> = <code>√(Occurrence of the disease:)</code> — the form to use when Occurrence of the disease are the values you have.</li><li><strong>Healthy allele frequency (p)</strong> = <code>√(B)</code> — the form to use when B are the values you have.</li><li><strong>B</strong> = <code>(Healthy allele frequency (p))^(2)</code> — the form to use when Healthy allele frequency (p) are the values you have.</li></ul><p>Any one of Healthy allele frequency (p), Mutant allele frequency (q) and Occurrence of the disease can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
@@ -373,7 +373,7 @@ return [
             <p>The panel reports 7 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Occurrence of the disease</strong> is a percent figure. It is worked out from Occurrence of the disease. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Healthy allele frequency (p)</strong> is a plain number. It is worked out from Mutant allele frequency (q). Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Mutant allele frequency (q)</strong> is a plain number. It is worked out from Healthy allele frequency (p). Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Truea</strong> is a plain number. It is worked out from Occurrence of the disease. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>B</strong> is a plain number. It is worked out from Healthy allele frequency (p). Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>2pq</strong> is a plain number. It is worked out from Healthy allele frequency (p) and Mutant allele frequency (q). Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>1/2pq</strong> is a plain number. It is worked out from 2pq. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
             TXT],
             ['title' => 'The units this page accepts', 'html' => <<<'TXT'
-            <p>A unit chip is only useful if the conversion behind it is the right one, so here is what each chip on Allele frequency actually offers.</p><ul><li><strong>percent</strong> — 6 units. It opens in <em>perc</em>, and the chip also carries %/yr, bps, ‱ and ‰. Every one of them is converted to a single base unit before the formula sees the number, so the answer is the same quantity whichever chip you leave it on.</li></ul><p>Two things follow. First, the unit you pick changes the label and the conversion, never the formula: 2 metres and 200 centimetres take exactly the same path through the arithmetic. Second, a unit that is not in the table cannot be entered — if your measurement is in something else, convert it once, by hand, before typing it in.</p>
+            <p>A unit chip is only useful if the conversion behind it is the right one, so here is what each chip on Allele frequency actually offers.</p><ul><li><strong>percent</strong> — opens in <em>perc</em>, and the chip also carries %/yr, bps, ‱ and ‰. Every one of them is converted to a single base unit before the formula sees the number, so the answer is the same quantity whichever chip you leave it on.</li></ul><p>Two things follow. First, the unit you pick changes the label and the conversion, never the formula: 2 metres and 200 centimetres take exactly the same path through the arithmetic. Second, a unit that is not in the table cannot be entered — if your measurement is in something else, convert it once, by hand, before typing it in.</p>
             TXT],
             ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
             <ol><li><strong>Collect the inputs.</strong> Have Occurrence of the disease ready and all in one unit. The page will convert whatever a chip says it is; it cannot tell that one of the numbers was measured in something else.</li><li><strong>Enter them and press Calculate.</strong> Fill the form — starting with Occurrence of the disease — and press Calculate. The panel updates in place, and the fields you typed into keep your numbers.</li><li><strong>Read the answer against the defaults.</strong> Check Occurrence of the disease in perc against the worked example above. If the two disagree by a round factor, the chip or the decimal separator is the place to look first.</li><li><strong>Change one box to check your understanding.</strong> Double one input, leaving the rest alone, and press Calculate again. The direction the answer moves tells you whether that box sits in the numerator or the denominator — and whether the number you got a moment ago was plausible.</li></ol><p>That is the whole procedure. Everything else on this page is the reasoning behind it.</p>

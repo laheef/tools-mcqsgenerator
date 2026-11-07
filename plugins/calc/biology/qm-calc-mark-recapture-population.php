@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mark–Recapture Population Calculator (Lincoln–Petersen)',
-    'meta' => ['title' => 'Mark–Recapture Population Calculator — Biology', 'description' => 'Mark–Recapture Population Calculator (Lincoln–Petersen) works out population estimate (Lincoln–Petersen) and chapman-corrected estimate and reports both.', 'h1' => 'Mark–Recapture Population Calculator (Lincoln–Petersen)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mark–Recapture Population Calculator: Units & Formula', 'description' => 'Mark–Recapture Population Calculator (Lincoln–Petersen) works out population estimate (Lincoln–Petersen) and chapman-corrected estimate and reports both.', 'h1' => 'Mark–Recapture Population Calculator (Lincoln–Petersen)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

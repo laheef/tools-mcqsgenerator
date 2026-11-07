@@ -11,7 +11,7 @@
 
 return [
     'name' => 'NPK Fertilizer Blend Calculator',
-    'meta' => ['title' => 'NPK Fertilizer Blend Calculator — Formula & Results', 'description' => 'NPK Fertilizer Blend Calculator works out product to apply (limited by N) and Product limited by P from nitrogen required and Phosphate required (P₂O₅).', 'h1' => 'NPK Fertilizer Blend Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'NPK Fertilizer Blend Calculator: Steps & Units', 'description' => 'NPK Fertilizer Blend Calculator works out product to apply (limited by N) and Product limited by P from nitrogen required and Phosphate required (P₂O₅).', 'h1' => 'NPK Fertilizer Blend Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

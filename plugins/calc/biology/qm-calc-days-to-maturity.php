@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Days to Maturity Calculator',
-    'meta' => ['title' => 'Days to Maturity Calculator — Formula & Results', 'description' => 'Days to Maturity Calculator reports harvest day of year, harvest month, Days implied by the GDD target and days remaining after harvest (season 220 days).', 'h1' => 'Days to Maturity Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Days to Maturity Calculator: Units & Formula', 'description' => 'Days to Maturity Calculator reports harvest day of year, harvest month, Days implied by the GDD target and days remaining after harvest (season 220 days).', 'h1' => 'Days to Maturity Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

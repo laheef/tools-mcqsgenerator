@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Hemocytometer Cell Counter (cells/mL)',
-    'meta' => ['title' => 'Hemocytometer Cell Counter (cells/mL) Calculator', 'description' => 'Hemocytometer Cell Counter (cells/mL) turns total cells counted, squares counted and dilution factor into cell concentration and total cells in the suspension.', 'h1' => 'Hemocytometer Cell Counter (cells/mL)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Hemocytometer Cell Counter Calculator: Worked Example', 'description' => 'Hemocytometer Cell Counter (cells/mL) turns total cells counted, squares counted and dilution factor into cell concentration and total cells in the suspension.', 'h1' => 'Hemocytometer Cell Counter (cells/mL)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

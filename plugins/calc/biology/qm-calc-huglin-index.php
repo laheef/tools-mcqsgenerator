@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Huglin Index Calculator',
-    'meta' => ['title' => 'Huglin Index Calculator — Formula & Results', 'description' => 'Huglin Index Calculator works out climate class (1 very cool … 6 too hot) and contribution per day from mean daily maximum and mean daily temperature.', 'h1' => 'Huglin Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Huglin Index Calculator: Units and Formulas', 'description' => 'Huglin Index Calculator works out climate class (1 very cool … 6 too hot) and contribution per day from mean daily maximum and mean daily temperature.', 'h1' => 'Huglin Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat quality of life',
-    'meta' => ['title' => 'Cat quality of life: Formula, Steps & Results', 'description' => 'Cat quality of life turns hurt, hunger and hydration into quality of life score. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Cat quality of life Calculator', 'updated' => '2026-07-23'],
+    'meta' => ['title' => 'Cat quality of life Calculator: Steps & Units', 'description' => 'Cat quality of life turns hurt, hunger and hydration into quality of life score. Leave hydration empty and the page will solve for it instead. No sign-up.', 'h1' => 'Cat quality of life Calculator', 'updated' => '2026-07-23'],
     'raw' => [
         'vars' => [
             'days' => [

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Net Primary Productivity Calculator',
-    'meta' => ['title' => 'Net Primary Productivity Calculator — Biology', 'description' => 'Net Primary Productivity Calculator reports per hectare, dry biomass equivalent, energy equivalent and net ecosystem production (less 10% heterotroph).', 'h1' => 'Net Primary Productivity Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Net Primary Productivity Calculator: Steps & Units', 'description' => 'Net Primary Productivity Calculator reports per hectare, dry biomass equivalent, energy equivalent and net ecosystem production (less 10% heterotroph).', 'h1' => 'Net Primary Productivity Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

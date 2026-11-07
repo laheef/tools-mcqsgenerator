@@ -1220,6 +1220,66 @@
     }
   }
 
+  /*
+   * Cross-field rules, checked before the formula runs.
+   *
+   * Some pairs of readings cannot both be true — a wet bulb cannot read warmer
+   * than the dry bulb beside it, a dew point cannot sit above the air
+   * temperature. The formula does not care: it divides what it is given and
+   * returns a confident number, a relative humidity over 100 % or a negative
+   * vapour-pressure deficit. The page states the rules in its own record
+   * (`DEF.checks`), each one `a op b`, and both boxes have to hold numbers
+   * before a rule can be judged. The message lands under the field, in the same
+   * slot every other error uses.
+   */
+  function crossCheck() {
+    var rules = DEF.checks || [];
+    if (!rules.length || !inputs.length) return null;
+    var read = function (name) {
+      var inp = null;
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].getAttribute('data-var') === name) { inp = inputs[i]; break; }
+      }
+      if (!inp || inp.getAttribute('data-datetype')) return null;
+      var raw = String(inp.value || '').trim();
+      if (raw === '') return null;
+      return parseNumber(raw);
+    };
+    for (var r = 0; r < rules.length; r++) {
+      var rule = rules[r] || {};
+      var a = read(rule.a);
+      var b = read(rule.b);
+      if (a === null || b === null) continue;
+      var ok;
+      switch (rule.op) {
+        case '<=': ok = a <= b; break;
+        case '<':  ok = a < b;  break;
+        case '>=': ok = a >= b; break;
+        case '>':  ok = a > b;  break;
+        case '==': ok = a === b; break;
+        case '!=': ok = a !== b; break;
+        default:   ok = true;
+      }
+      if (ok) continue;
+      var field = null;
+      for (var f2 = 0; f2 < inputs.length; f2++) {
+        if (inputs[f2].getAttribute('data-var') === rule.a) {
+          field = inputs[f2].closest('.calc-field');
+          break;
+        }
+      }
+      if (!field) continue;
+      var labelEl = field.querySelector('.calc-label');
+      var name = labelEl && labelEl.textContent.trim().replace(/\s*:$/, '')
+        ? labelEl.textContent.trim().replace(/\s*:$/, '')
+        : (pageLabel(rule.a) || rule.a);
+      var msg = String(rule.msg || '').trim();
+      setFieldError(field, msg || (name + ' does not fit the other readings.'));
+      return { problems: [msg || (name + ' does not fit the other readings.')], firstBad: field };
+    }
+    return null;
+  }
+
   function validateForm() {
     var problems = [];
     var firstBad = null;
@@ -2534,7 +2594,10 @@
     function labelOf(inp) {
       var field = inp.closest('.calc-field');
       var lab = field ? field.querySelector('.calc-label') : null;
-      return lab ? (lab.textContent || '').trim() : inp.getAttribute('data-var');
+      var drawn = lab ? (lab.textContent || '').trim() : '';
+      if (drawn) return drawn;
+      var varName = inp.getAttribute('data-var');
+      return pageLabel(varName) || varName;
     }
 
     function rows() {
@@ -2767,6 +2830,27 @@
       }).join(' ');
     }
 
+    /*
+     * The name the page gives a value, before any guess of our own.
+     *
+     * A label travels with a field, and the server sends every label it can see
+     * in `DEF.labels` — including the ones for answers that are never drawn as
+     * a box (dog-heat-cycle's "day 18 of the cycle" is worked out from the date
+     * the reader picked, so there is no box to read a name off). Looking here
+     * first is what stops a result row reading "Cycle 1" instead of the words
+     * the page uses.
+     */
+    function pageLabel(name) {
+      var labels = DEF.labels || {};
+      var own = labels[name];
+      if (own && String(own).trim()) return String(own).trim();
+      var f = DEF.fields && DEF.fields[name];
+      if (f && f.label && String(f.label).trim()) return String(f.label).trim();
+      var v = (DEF.vars || {})[name];
+      if (v && v.label && String(v.label).trim()) return String(v.label).trim();
+      return '';
+    }
+
     function revealUnshown(st, panelEl) {
       var panel = panelEl;
       if (!panel || !st || !st.values) return;
@@ -2821,6 +2905,7 @@
         if (stem !== name && (DEF.vars[stem] || (DEF.fields && DEF.fields[stem]))) return;
         var label = String(f.label || '').trim()
           || String(((DEF.vars || {})[name] || {}).label || '').trim()
+          || pageLabel(name)
           || humanLabel(name);
         if (!label) return;
         if (shownText(name)) return;                                  // already in the prose
@@ -2896,6 +2981,16 @@
       }
       /* Nothing is revealed while a field it needs is empty or unusable. */
       var check = validateForm();
+      /*
+       * A per-box check cannot see a contradiction between two boxes. When the
+       * record states one, it is asked here, after the boxes are individually
+       * valid and before anything is printed — a wrong answer that is confidently
+       * formatted is worse than no answer.
+       */
+      if (!check.problems.length) {
+        var cross = crossCheck();
+        if (cross) { check = cross; }
+      }
       if (check.problems.length) {
         paintSolved = false;
         recompute();

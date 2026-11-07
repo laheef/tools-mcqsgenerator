@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ideal Fish Tank Size Calculator',
-    'meta' => ['title' => 'Ideal Fish Tank Size Calculator — Formula & Results', 'description' => 'Ideal Fish Tank Size Calculator turns adult length of the largest fish, number in the school and temperament into recommended volume and minimum tank length.', 'h1' => 'Ideal Fish Tank Size Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Ideal Fish Tank Size Calculator: Steps & Units', 'description' => 'Ideal Fish Tank Size Calculator turns adult length of the largest fish, number in the school and temperament into recommended volume and minimum tank length.', 'h1' => 'Ideal Fish Tank Size Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mushroom Yield Calculator',
-    'meta' => ['title' => 'Mushroom Yield Calculator — Formula & Results', 'description' => 'Mushroom Yield Calculator works out biological efficiency and wet substrate weight from fresh mushrooms harvested, substrate dry weight and substrate moisture.', 'h1' => 'Mushroom Yield Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mushroom Yield Calculator: Formula & Example', 'description' => 'Mushroom Yield Calculator works out biological efficiency and wet substrate weight from fresh mushrooms harvested, substrate dry weight and substrate moisture.', 'h1' => 'Mushroom Yield Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

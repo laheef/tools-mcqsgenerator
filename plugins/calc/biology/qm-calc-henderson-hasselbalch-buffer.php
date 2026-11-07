@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Buffer pH Calculator (Henderson–Hasselbalch)',
-    'meta' => ['title' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'description' => 'Buffer pH Calculator (Henderson–Hasselbalch) works out base ÷ acid ratio and acid share from pKa of the buffer, Target pH and total buffer concentration.', 'h1' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Buffer pH Calculator: Formula, Steps & Example', 'description' => 'Buffer pH Calculator (Henderson–Hasselbalch) works out base ÷ acid ratio and acid share from pKa of the buffer, Target pH and total buffer concentration.', 'h1' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

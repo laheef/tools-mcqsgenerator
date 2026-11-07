@@ -11,7 +11,7 @@
 
 return [
     'name' => 'AlamarBlue Cell Viability / Percent Reduction Calculator',
-    'meta' => ['title' => 'AlamarBlue Cell Viability / Percent Reduction', 'description' => 'AlamarBlue Cell Viability / Percent Reduction Calculator turns sample fluorescence and control fluorescence into viability relative to control and cytotoxicity.', 'h1' => 'AlamarBlue Cell Viability / Percent Reduction Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'AlamarBlue Cell Viability and Percent Reduction', 'description' => 'AlamarBlue Cell Viability / Percent Reduction Calculator turns sample fluorescence and control fluorescence into viability relative to control and cytotoxicity.', 'h1' => 'AlamarBlue Cell Viability / Percent Reduction Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

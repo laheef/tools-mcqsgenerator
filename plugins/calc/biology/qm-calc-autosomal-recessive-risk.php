@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Autosomal Recessive Inheritance Risk',
-    'meta' => ['title' => 'Autosomal Recessive Inheritance Risk Calculator', 'description' => 'Autosomal Recessive Inheritance Risk works out chance of an affected child and chance of a carrier child from parent 1 genotype and parent 2 genotype.', 'h1' => 'Autosomal Recessive Inheritance Risk', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Autosomal Recessive Inheritance Risk: Steps & Units', 'description' => 'Autosomal Recessive Inheritance Risk works out chance of an affected child and chance of a carrier child from parent 1 genotype and parent 2 genotype.', 'h1' => 'Autosomal Recessive Inheritance Risk', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

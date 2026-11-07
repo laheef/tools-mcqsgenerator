@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mark-Recapture Population Calculator',
-    'meta' => ['title' => 'Mark-Recapture Population Calculator — Biology', 'description' => 'Mark-Recapture Population Calculator turns marked in the first sample and total caught in the second sample into population estimate and chapman estimate.', 'h1' => 'Mark-Recapture Population Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mark-Recapture Population Calculator: Steps & Units', 'description' => 'Mark-Recapture Population Calculator turns marked in the first sample and total caught in the second sample into population estimate and chapman estimate.', 'h1' => 'Mark-Recapture Population Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

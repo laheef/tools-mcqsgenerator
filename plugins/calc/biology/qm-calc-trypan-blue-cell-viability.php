@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Trypan Blue Cell Viability Calculator',
-    'meta' => ['title' => 'Trypan Blue Cell Viability Calculator — Biology', 'description' => 'Trypan Blue Cell Viability Calculator turns live cells counted, dead cells counted and squares counted into live cell concentration and Live cells in 10 mL.', 'h1' => 'Trypan Blue Cell Viability Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Trypan Blue Cell Viability Calculator: Worked Example', 'description' => 'Trypan Blue Cell Viability Calculator turns live cells counted, dead cells counted and squares counted into live cell concentration and Live cells in 10 mL.', 'h1' => 'Trypan Blue Cell Viability Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

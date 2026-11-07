@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Growing Degree Days Calculator',
-    'meta' => ['title' => 'Growing Degree Days Calculator — Formula & Results', 'description' => 'Enter method, daily maximum and daily minimum and Growing Degree Days Calculator returns over seven days at this weather and accumulated over 60 days.', 'h1' => 'Growing Degree Days Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Growing Degree Days Calculator: Units & Formula', 'description' => 'Enter method, daily maximum and daily minimum and Growing Degree Days Calculator returns over seven days at this weather and accumulated over 60 days.', 'h1' => 'Growing Degree Days Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

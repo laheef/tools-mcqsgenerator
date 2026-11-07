@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Transfection Setup Calculator',
-    'meta' => ['title' => 'Transfection Setup Calculator — Formula & Results', 'description' => 'Transfection Setup Calculator works out DNA per batch to make and reagent for the batch from DNA in the reference well and reagent in the reference well.', 'h1' => 'Transfection Setup Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Transfection Setup Calculator: Steps & Units', 'description' => 'Transfection Setup Calculator works out DNA per batch to make and reagent for the batch from DNA in the reference well and reagent in the reference well.', 'h1' => 'Transfection Setup Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

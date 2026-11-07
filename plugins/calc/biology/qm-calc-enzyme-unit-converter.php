@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Enzyme Unit Converter (U/mg, kcat)',
-    'meta' => ['title' => 'Enzyme Unit Converter (U/mg, kcat) Calculator', 'description' => 'Enzyme Unit Converter (U/mg, kcat) works out molar activity from specific activity. It returns kcat (turnover number) and shows the arithmetic behind it.', 'h1' => 'Enzyme Unit Converter (U/mg, kcat)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Enzyme Unit Converter Calculator: Units & Formula', 'description' => 'Enzyme Unit Converter (U/mg, kcat) works out molar activity from specific activity. It returns kcat (turnover number) and shows the arithmetic behind it.', 'h1' => 'Enzyme Unit Converter (U/mg, kcat)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
