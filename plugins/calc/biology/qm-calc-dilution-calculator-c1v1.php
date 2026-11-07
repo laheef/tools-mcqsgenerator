@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dilution Calculator (C1V1 = C2V2)',
-    'meta' => ['title' => 'Dilution (C1V1 = C2V2) Calculator — Formula & Results', 'description' => 'Dilution Calculator (C1V1 = C2V2) reports stock volume and diluent to add. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Dilution Calculator (C1V1 = C2V2)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Dilution (C1V1 = C2V2) Calculator — Formula & Results', 'description' => 'Dilution Calculator (C1V1 = C2V2) works out stock volume and diluent to add from stock concentration and final concentration. A worked example follows.', 'h1' => 'Dilution Calculator (C1V1 = C2V2)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

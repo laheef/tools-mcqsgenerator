@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mulch',
-    'meta' => ['title' => 'Mulch Calculator: Formula, Steps & Examples', 'description' => 'Mulch reports area, number of bags needed, total costs of mulch and estimated weight. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Mulch Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Mulch Calculator: Formula, Steps & Examples', 'description' => 'Mulch works out area and number of bags needed from do you know what\'s the area? and shape. Every box can be solved for, not only the one in the title.', 'h1' => 'Mulch Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'Shape' => [

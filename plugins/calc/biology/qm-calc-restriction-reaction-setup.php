@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Restriction Digest Recipe',
-    'meta' => ['title' => 'Restriction Digest Recipe — Formula & Results', 'description' => 'Restriction Digest Recipe reports DNA volume and enzyme units needed. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Restriction Digest Recipe', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Restriction Digest Recipe — Formula & Results', 'description' => 'Restriction Digest Recipe takes DNA to digest and returns DNA volume. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Restriction Digest Recipe', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

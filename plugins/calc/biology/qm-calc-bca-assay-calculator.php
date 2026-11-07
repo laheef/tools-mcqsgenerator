@@ -11,7 +11,7 @@
 
 return [
     'name' => 'BCA Assay Calculator (standard curve)',
-    'meta' => ['title' => 'BCA Assay Calculator (standard curve) — Biology', 'description' => 'BCA Assay Calculator (standard curve) takes sample absorbance and returns protein concentration. Every box can be solved for, not only the one in the title.', 'h1' => 'BCA Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'BCA Assay Calculator (standard curve) — Biology', 'description' => 'BCA Assay Calculator (standard curve) reports protein concentration. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'BCA Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

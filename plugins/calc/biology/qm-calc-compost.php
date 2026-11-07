@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Compost',
-    'meta' => ['title' => 'Compost Calculator: Formula, Steps & Examples', 'description' => 'Compost works out area and volume from length, width and garden or lawn type. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Compost Calculator', 'updated' => '2026-08-21'],
+    'meta' => ['title' => 'Compost Calculator: Formula, Steps & Examples', 'description' => 'Compost works out area and volume from length, width and garden or lawn type. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Compost Calculator', 'updated' => '2026-08-21'],
     'raw' => [
         'vars' => [
             'area' => [

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'PCR Master Mix Calculator',
-    'meta' => ['title' => 'PCR Master Mix Calculator — Formula & Results', 'description' => 'PCR Master Mix Calculator takes reactions and returns total mix volume. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'PCR Master Mix Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'PCR Master Mix Calculator — Formula & Results', 'description' => 'PCR Master Mix Calculator reports total mix volume, master mix to add, each primer to add and water to add. The formula is printed in the form\'s own words.', 'h1' => 'PCR Master Mix Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

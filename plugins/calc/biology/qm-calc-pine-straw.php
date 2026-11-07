@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Pine straw',
-    'meta' => ['title' => 'Pine straw Calculator: Formula, Steps & Examples', 'description' => 'Pine straw works out area and number of bales needed and reports both. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Pine straw Calculator', 'updated' => '2026-06-02'],
+    'meta' => ['title' => 'Pine straw Calculator: Formula, Steps & Examples', 'description' => 'Pine straw works out area and number of bales needed from length, width and number of bales. Results come back in ft2, with any other unit a click away.', 'h1' => 'Pine straw Calculator', 'updated' => '2026-06-02'],
     'sections' => [
         [
             'title' => '',

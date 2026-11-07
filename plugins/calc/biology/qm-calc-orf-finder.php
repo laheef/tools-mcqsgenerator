@@ -11,7 +11,7 @@
 
 return [
     'name' => 'ORF Finder',
-    'meta' => ['title' => 'ORF Finder for Biology — Formula, Steps & Results', 'description' => 'ORF Finder turns DNA sequence and minimum protein length into open reading frames. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'ORF Finder', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'ORF Finder for Biology — Formula, Steps & Results', 'description' => 'ORF Finder turns DNA sequence and minimum protein length into open reading frames and Longest ORF. Every box can be solved for, not only the one in the title.', 'h1' => 'ORF Finder', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [

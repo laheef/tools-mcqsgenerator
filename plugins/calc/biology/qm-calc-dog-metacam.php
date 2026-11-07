@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog Metacam dosage',
-    'meta' => ['title' => 'Dog Metacam dosage — Free Online Calculator', 'description' => 'Enter Dog\'s weight, Metacam form and Solution\'s strength into dog Metacam dosage and the answer comes back as tablets Maintain1 and Tablets Maintain25.', 'h1' => 'Dog Metacam dosage Calculator', 'updated' => '2026-08-19'],
+    'meta' => ['title' => 'Dog Metacam dosage — Free Online Calculator', 'description' => 'Dog Metacam dosage works out tablets Maintain1 and Tablets Maintain25 from dog\'s weight, metacam form and solution\'s strength. Every figure is computed.', 'h1' => 'Dog Metacam dosage Calculator', 'updated' => '2026-08-19'],
     'raw' => [
         'vars' => [
             'firstAmount' => [

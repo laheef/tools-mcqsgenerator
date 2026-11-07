@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Gypsum Application Rate Calculator',
-    'meta' => ['title' => 'Gypsum Application Rate Calculator — Biology', 'description' => 'Gypsum Application Rate Calculator works out gypsum rate and gypsum needed from area and soil texture. The formula is printed in the form\'s own words.', 'h1' => 'Gypsum Application Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Gypsum Application Rate Calculator — Biology', 'description' => 'Gypsum Application Rate Calculator turns area and soil texture into gypsum rate. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Gypsum Application Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

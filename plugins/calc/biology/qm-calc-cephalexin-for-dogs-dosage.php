@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cephalexin for dogs dosage',
-    'meta' => ['title' => 'Cephalexin for dogs dosage — Formula & Results', 'description' => 'Cephalexin for dogs dosage turns your dog\'s weight and drug type into amount per dose and liquid per dose. The formula is printed in the form\'s own words.', 'h1' => 'Cephalexin for dogs dosage Calculator', 'updated' => '2026-05-22'],
+    'meta' => ['title' => 'Cephalexin for dogs dosage — Formula & Results', 'description' => 'Cephalexin for dogs dosage reports amount per dose, liquid per dose, ~Tablets per dose and daily dosage. The formula is printed in the form\'s own words.', 'h1' => 'Cephalexin for dogs dosage Calculator', 'updated' => '2026-05-22'],
     'raw' => [
         'vars' => [
             'dailyDosage' => [

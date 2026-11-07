@@ -11,9 +11,7 @@
 
 return [
     'name' => 'dsDNA µg to pmol Calculator',
-    'meta' => ['title' => 'dsDNA µg to pmol Calculator — Formula & Results', 'description' => <<<'TXT'
-    dsDNA µg to pmol Calculator works out amount and number of molecules and reports both. Each figure is computed from the boxes you fill, never read from a table.
-    TXT, 'h1' => 'dsDNA µg to pmol Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'dsDNA µg to pmol Calculator — Formula & Results', 'description' => 'dsDNA µg to pmol Calculator works out amount and number of molecules from fragment length and mass. Every box can be solved for, not only the one in the title.', 'h1' => 'dsDNA µg to pmol Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

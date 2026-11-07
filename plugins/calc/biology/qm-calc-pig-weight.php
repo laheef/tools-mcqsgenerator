@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Pig Weight Calculator',
-    'meta' => ['title' => 'Pig Weight Calculator: Formula, Steps & Results', 'description' => 'Pig Weight Calculator works out estimated live weight from heart girth, body length and measured in. Every box can be solved for, not only the one in the title.', 'h1' => 'Pig Weight Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Pig Weight Calculator: Formula, Steps & Results', 'description' => 'Pig Weight Calculator turns heart girth and body length into estimated live weight. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Pig Weight Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

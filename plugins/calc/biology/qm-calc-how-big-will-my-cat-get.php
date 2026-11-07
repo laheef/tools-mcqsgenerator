@@ -11,7 +11,7 @@
 
 return [
     'name' => 'How big will my cat get',
-    'meta' => ['title' => 'How big will my cat get Calculator: Free, With Steps', 'description' => 'How big will my cat get works out final size from your kitten\'s age and weight. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'How big will my cat get Calculator', 'updated' => '2026-08-19'],
+    'meta' => ['title' => 'How big will my cat get Calculator: Free, With Steps', 'description' => 'How big will my cat get works out final size from your kitten\'s age and weight. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'How big will my cat get Calculator', 'updated' => '2026-08-19'],
     'raw' => [
         'vars' => [
             'age' => [

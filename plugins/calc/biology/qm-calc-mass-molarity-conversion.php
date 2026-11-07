@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mass to Molarity Converter',
-    'meta' => ['title' => 'Mass to Molarity Converter — Formula & Results', 'description' => 'Mass to Molarity Converter reports concentration and amount of substance. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Mass to Molarity Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mass to Molarity Converter — Formula & Results', 'description' => 'Mass to Molarity Converter takes molecular weight and returns concentration. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Mass to Molarity Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

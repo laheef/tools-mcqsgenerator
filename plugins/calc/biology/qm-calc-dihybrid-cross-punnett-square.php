@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dihybrid cross Punnett square',
-    'meta' => ['title' => 'Dihybrid cross Punnett square — Formula & Results', 'description' => 'Dihybrid cross Punnett square turns trait 1, Trait 2 and Trait 1 into AABB and AABb. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
+    'meta' => ['title' => 'Dihybrid cross Punnett square — Formula & Results', 'description' => 'Dihybrid cross Punnett square turns trait 1 and trait 2 into AABB and AABb. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
     'raw' => [
         'vars' => [
             'father_a' => [

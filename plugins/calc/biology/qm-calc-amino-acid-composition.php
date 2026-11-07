@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Amino Acid Composition Calculator',
-    'meta' => ['title' => 'Amino Acid Composition Calculator — Formula & Results', 'description' => 'Amino Acid Composition Calculator works out length and molecular weight from protein sequence. Every box can be solved for, not only the one in the title.', 'h1' => 'Amino Acid Composition Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Amino Acid Composition Calculator — Formula & Results', 'description' => 'Amino Acid Composition Calculator works out length from protein sequence. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Amino Acid Composition Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'protein' => [

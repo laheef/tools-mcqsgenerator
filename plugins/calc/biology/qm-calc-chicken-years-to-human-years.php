@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chicken Years to Human Years Calculator',
-    'meta' => ['title' => 'Chicken Years to Human Years Calculator — Biology', 'description' => 'Work out human-equivalent age from chicken age with chicken Years to Human Years Calculator. Every box can be solved for, not only the one in the title.', 'h1' => 'Chicken Years to Human Years Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Years to Human Years Calculator — Biology', 'description' => 'Chicken Years to Human Years Calculator works out human-equivalent age. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Chicken Years to Human Years Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

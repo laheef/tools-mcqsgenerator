@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cephalic Index Calculator',
-    'meta' => ['title' => 'Cephalic Index Calculator — Formula & Results', 'description' => 'Cephalic Index Calculator works out width to length ratio from head width (biparietal) and head length (fronto-occipital). Any box can be the unknown.', 'h1' => 'Cephalic Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cephalic Index Calculator — Formula & Results', 'description' => 'Cephalic Index Calculator takes head width (biparietal) and head length (fronto-occipital) and returns width to length ratio. Every figure is computed.', 'h1' => 'Cephalic Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

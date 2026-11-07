@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat pregnancy',
-    'meta' => ['title' => 'Cat pregnancy Calculator — Formula & Results', 'description' => 'Cat pregnancy works out due date from mating date. Any box can be the unknown. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Cat pregnancy Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Cat pregnancy Calculator — Formula & Results', 'description' => 'Cat pregnancy takes mating date and returns due date. A worked example follows. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Cat pregnancy Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'currentDate' => ['type' => 'date', 'rnd' => null],

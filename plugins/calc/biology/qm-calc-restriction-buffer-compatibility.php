@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Double Digest Buffer Compatibility Calculator',
-    'meta' => ['title' => 'Double Digest Buffer Compatibility Calculator', 'description' => 'Double Digest Buffer Compatibility Calculator takes enzyme 1 and returns buffers that suit both. Every box can be solved for, not only the one in the title.', 'h1' => 'Double Digest Buffer Compatibility Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Double Digest Buffer Compatibility Calculator', 'description' => 'Double Digest Buffer Compatibility Calculator turns enzyme 1 and enzyme 2 into buffers that suit both. The formula is printed in the form\'s own words.', 'h1' => 'Double Digest Buffer Compatibility Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'enzyme1' => [

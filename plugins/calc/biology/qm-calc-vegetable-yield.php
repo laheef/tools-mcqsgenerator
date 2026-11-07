@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Vegetable yield',
-    'meta' => ['title' => 'Vegetable yield — Formula, Steps & Examples', 'description' => 'Vegetable yield turns choose crop and length of rows into seed distance (isolation distance). Results come back in cm, with any other unit a click away.', 'h1' => 'Vegetable yield Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Vegetable yield — Formula, Steps & Examples', 'description' => 'Vegetable yield works out seed distance (isolation distance) from choose crop. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Vegetable yield Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'crop_type' => [

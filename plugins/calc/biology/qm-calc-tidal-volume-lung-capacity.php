@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tidal Volume and Lung Capacity Calculator',
-    'meta' => ['title' => 'Tidal Volume and Lung Capacity Calculator — Biology', 'description' => 'Tidal Volume and Lung Capacity Calculator turns height and respiratory rate into ideal body weight. Every box can be solved for, not only the one in the title.', 'h1' => 'Tidal Volume and Lung Capacity Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Tidal Volume and Lung Capacity Calculator — Biology', 'description' => 'Tidal Volume and Lung Capacity Calculator works out ideal body weight. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Tidal Volume and Lung Capacity Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell Counting Calculator',
-    'meta' => ['title' => 'Cell Counting Calculator — Formula & Results', 'description' => 'Cell Counting Calculator turns cells counted and squares counted into concentration and total cells available. The formula is printed in the form\'s own words.', 'h1' => 'Cell Counting Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Counting Calculator — Formula & Results', 'description' => 'Enter cells counted, squares counted and dilution factor and Cell Counting Calculator returns concentration and total cells available. Every figure is computed.', 'h1' => 'Cell Counting Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

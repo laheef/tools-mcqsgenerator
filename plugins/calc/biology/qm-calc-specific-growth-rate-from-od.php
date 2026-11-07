@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Specific Growth Rate from OD Readings',
-    'meta' => ['title' => 'Specific Growth Rate from OD Readings Calculator', 'description' => 'Specific Growth Rate from OD Readings works out doubling time and generations and reports both. Every box can be solved for, not only the one in the title.', 'h1' => 'Specific Growth Rate from OD Readings', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Specific Growth Rate from OD Readings Calculator', 'description' => 'Specific Growth Rate from OD Readings works out doubling time from OD at start. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Specific Growth Rate from OD Readings', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

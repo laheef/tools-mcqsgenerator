@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog raisin toxicity',
-    'meta' => ['title' => 'Dog raisin toxicity: Formula, Steps & Results', 'description' => 'Work out toxic amount of raisins from your dog\'s weight 🐕 with dog raisin toxicity. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dog raisin toxicity Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Dog raisin toxicity: Formula, Steps & Results', 'description' => 'Dog raisin toxicity reports toxic amount of raisins and toxic number of raisins (approx.). Every box can be solved for, not only the one in the title.', 'h1' => 'Dog raisin toxicity Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'amount' => [

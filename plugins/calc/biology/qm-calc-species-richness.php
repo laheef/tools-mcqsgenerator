@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Species Richness Calculator',
-    'meta' => ['title' => 'Species Richness Calculator — Formula & Results', 'description' => 'Species Richness Calculator reports species richness S and total individuals. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Species Richness Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Species Richness Calculator — Formula & Results', 'description' => 'Species Richness Calculator works out species richness S and total individuals and reports both. Every box can be solved for, not only the one in the title.', 'h1' => 'Species Richness Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

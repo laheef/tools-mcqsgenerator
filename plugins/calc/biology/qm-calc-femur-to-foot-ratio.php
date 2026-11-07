@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Femur to Foot Ratio Calculator',
-    'meta' => ['title' => 'Femur to Foot Ratio Calculator — Formula & Results', 'description' => 'Enter femur length and foot length and Femur to Foot Ratio Calculator returns foot length as % of femur. The formula is printed in the form\'s own words.', 'h1' => 'Femur to Foot Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Femur to Foot Ratio Calculator — Formula & Results', 'description' => 'Femur to Foot Ratio Calculator works out foot length as % of femur from femur length. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Femur to Foot Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

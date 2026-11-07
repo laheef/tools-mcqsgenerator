@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Lime Requirement Calculator',
-    'meta' => ['title' => 'Lime Requirement Calculator — Formula & Results', 'description' => <<<'TXT'
-    Lime Requirement Calculator works out lime required and As pure CaCO₃ equivalent from current pH and Target pH. The formula is printed in the form's own words.
-    TXT, 'h1' => 'Lime Requirement Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Lime Requirement Calculator — Formula & Results', 'description' => 'Enter Current pH, Target pH and soil texture and Lime Requirement Calculator returns lime required and As pure CaCO₃ equivalent. Every figure is computed.', 'h1' => 'Lime Requirement Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

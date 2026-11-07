@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dry matter',
-    'meta' => ['title' => 'Dry matter Calculator: Formula, Steps & Examples', 'description' => 'Dry matter takes i want to..., protein and fat and returns others and final total0. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Dry matter Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Dry matter Calculator: Formula, Steps & Examples', 'description' => 'Dry matter turns i want to..., protein and fat into others and final total0. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dry matter Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'compareOption' => [

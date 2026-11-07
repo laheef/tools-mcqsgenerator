@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog quality of life',
-    'meta' => ['title' => 'Dog quality of life — Free Online Calculator', 'description' => 'Enter Mobility, Nutrition (food intake) and Hydration (water intake) into dog quality of life and the answer comes back as results. A worked example follows.', 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog quality of life — Free Online Calculator', 'description' => 'Dog quality of life works out results from mobility and nutrition (food intake). Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'item1' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => '8sGHxdXKoGDpxOFbptD01'],

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog age',
-    'meta' => ['title' => 'Dog age Calculator — Formula, Units & Example', 'description' => 'Human age, Dog age and Human age are results, and each can be typed into. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Dog age Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog age Calculator — Formula, Units & Example', 'description' => 'Dog age turns breed and size into human age. Every figure is computed. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Dog age Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'breed' => [

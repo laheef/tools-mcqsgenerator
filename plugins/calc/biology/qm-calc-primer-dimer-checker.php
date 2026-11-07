@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Primer Dimer Checker',
-    'meta' => ['title' => 'Primer Dimer Checker Calculator — Formula & Results', 'description' => 'Primer Dimer Checker reports 3′ complementary run, longest complementary run, forward self-dimer run and reverse self-dimer run. A worked example follows.', 'h1' => 'Primer Dimer Checker', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Primer Dimer Checker Calculator — Formula & Results', 'description' => <<<'TXT'
+    Primer Dimer Checker works out 3′ complementary run from forward primer (5′→3′). Each box lists the units it accepts, and the answer converts between them.
+    TXT, 'h1' => 'Primer Dimer Checker', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'forward' => [

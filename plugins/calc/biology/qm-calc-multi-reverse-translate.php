@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Multi Reverse Translate Calculator',
-    'meta' => ['title' => 'Multi Reverse Translate Calculator — Biology', 'description' => 'Multi Reverse Translate Calculator works out sequences translated and residues translated and reports both. The formula is printed in the form\'s own words.', 'h1' => 'Multi Reverse Translate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Multi Reverse Translate Calculator — Biology', 'description' => 'Multi Reverse Translate Calculator takes protein sequences (one or more) and returns sequences translated. The formula is printed in the form\'s own words.', 'h1' => 'Multi Reverse Translate Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'proteins' => [

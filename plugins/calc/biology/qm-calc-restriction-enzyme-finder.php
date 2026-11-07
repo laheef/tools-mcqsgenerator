@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Restriction Enzyme Finder Calculator',
-    'meta' => ['title' => 'Restriction Enzyme Finder Calculator — Biology', 'description' => 'Restriction Enzyme Finder Calculator works out enzymes that cut from DNA sequence and treat the molecule as circular (plasmid). A worked example follows.', 'h1' => 'Restriction Enzyme Finder Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Restriction Enzyme Finder Calculator — Biology', 'description' => 'Restriction Enzyme Finder Calculator reports enzymes that cut and unique cutters. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Restriction Enzyme Finder Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Beer-Lambert A280 Protein Concentration',
-    'meta' => ['title' => 'Beer-Lambert A280 Protein Concentration Calculator', 'description' => 'Beer-Lambert A280 Protein Concentration works out protein concentration from absorbance at 280 nm. Every box can be solved for, not only the one in the title.', 'h1' => 'Beer-Lambert A280 Protein Concentration', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Beer-Lambert A280 Protein Concentration Calculator', 'description' => 'Beer-Lambert A280 Protein Concentration works out protein concentration from absorbance at 280 nm and extinction coefficient. Every figure is computed.', 'h1' => 'Beer-Lambert A280 Protein Concentration', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

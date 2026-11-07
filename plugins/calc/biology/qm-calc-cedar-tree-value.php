@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Standing Timber Value Calculator',
-    'meta' => ['title' => 'Standing Timber Value Calculator — Formula & Results', 'description' => 'Work out volume from diameter at breast height with standing Timber Value Calculator. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Standing Timber Value Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Standing Timber Value Calculator — Formula & Results', 'description' => 'Standing Timber Value Calculator takes diameter at breast height and returns volume. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Standing Timber Value Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

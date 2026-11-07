@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat chocolate toxicity',
-    'meta' => ['title' => 'Cat chocolate toxicity Calculator: Free, With Steps', 'description' => 'Cat chocolate toxicity takes your cat\'s weight and returns methylxanthines dose. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Cat chocolate toxicity Calculator', 'updated' => '2026-05-25'],
+    'meta' => ['title' => 'Cat chocolate toxicity Calculator: Free, With Steps', 'description' => 'Cat chocolate toxicity takes your cat\'s weight and returns methylxanthines dose. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Cat chocolate toxicity Calculator', 'updated' => '2026-05-25'],
     'raw' => [
         'vars' => [
             'amount' => [

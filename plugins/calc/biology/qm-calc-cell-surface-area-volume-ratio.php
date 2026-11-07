@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell Surface Area to Volume Ratio Calculator',
-    'meta' => ['title' => 'Cell Surface Area to Volume Ratio Calculator', 'description' => 'Cell Surface Area to Volume Ratio Calculator reports total uptake capacity. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Cell Surface Area to Volume Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Surface Area to Volume Ratio Calculator', 'description' => 'Cell Surface Area to Volume Ratio Calculator turns shape, size (diameter or length) and surface flux into total uptake capacity. Every figure is computed.', 'h1' => 'Cell Surface Area to Volume Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

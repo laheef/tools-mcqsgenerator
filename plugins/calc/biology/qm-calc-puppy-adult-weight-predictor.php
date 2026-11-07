@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Puppy Adult Weight Predictor',
-    'meta' => ['title' => 'Puppy Adult Weight Predictor — Formula & Results', 'description' => 'Puppy Adult Weight Predictor takes current weight and returns estimated adult weight. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Puppy Adult Weight Predictor', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Puppy Adult Weight Predictor — Formula & Results', 'description' => 'Puppy Adult Weight Predictor reports estimated adult weight, likely range — low, likely range — high and growth still to come. Any box can be the unknown.', 'h1' => 'Puppy Adult Weight Predictor', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

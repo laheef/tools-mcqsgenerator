@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Centrifuge RCF to RPM Converter',
-    'meta' => ['title' => 'Centrifuge RCF to RPM Converter — Formula & Results', 'description' => 'Centrifuge RCF to RPM Converter works out relative centrifugal force from rotor radius and speed. Every box can be solved for, not only the one in the title.', 'h1' => 'Centrifuge RCF to RPM Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Centrifuge RCF to RPM Converter — Formula & Results', 'description' => 'Centrifuge RCF to RPM Converter works out relative centrifugal force and speed for 10 000 × g from rotor radius and speed. Any box can be the unknown.', 'h1' => 'Centrifuge RCF to RPM Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

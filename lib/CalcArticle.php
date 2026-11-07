@@ -335,11 +335,28 @@ final class CalcArticle
                can compute is a result. */
             $primary = null;
             $reads = [];
+            /*
+             * The compiler lists the variants in the order it likes to solve
+             * them, not in the order the equation was written: for
+             * "annealing_temp = 0.3·primer + 0.7·product − 14.9" it offered
+             * temp_product first, and the article then told the reader that the
+             * page turns primer and annealing temperature into target melting
+             * temperature — the sums run backwards. The subject of the equation
+             * as written is the answer, so that is the variant to look for.
+             */
             foreach ((array) ($calc['equations'] ?? []) as $entry) {
+                $declared = '';
+                if (preg_match('~^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=~', (string) ($entry['formula'] ?? ''), $m)) {
+                    $declared = $m[1];
+                }
+                $found = null;
+                $foundReads = [];
+                $fallback = null;
+                $fallbackReads = [];
                 foreach ((array) ($entry['variants'] ?? []) as $variant) {
                     $lhs = (string) ($variant['lhs'] ?? '');
                     $rhs = array_values((array) ($variant['rhs'] ?? []));
-                    if ($lhs === '' || $rhs === [] || !isset($labels[$lhs]) || !isset($labels[$lhs])) {
+                    if ($lhs === '' || $rhs === [] || !isset($labels[$lhs])) {
                         continue;
                     }
                     $missing = [];
@@ -351,9 +368,24 @@ final class CalcArticle
                     if ($missing !== []) {
                         continue;
                     }
-                    $primary = $lhs;
-                    $reads = $rhs;
-                    break 2;
+                    if ($lhs === $declared) {
+                        $found = $lhs;
+                        $foundReads = $rhs;
+                        break;
+                    }
+                    if ($fallback === null) {
+                        $fallback = $lhs;
+                        $fallbackReads = $rhs;
+                    }
+                }
+                if ($found !== null) {
+                    $primary = $found;
+                    $reads = $foundReads;
+                    break;
+                }
+                if ($fallback !== null && $primary === null) {
+                    $primary = $fallback;
+                    $reads = $fallbackReads;
                 }
             }
 
@@ -376,7 +408,14 @@ final class CalcArticle
                     }
                     $outputs[] = $var;
                 }
-            } elseif (count($computable) === 1) {
+            } elseif (count($computable) === 1 && !in_array(array_key_first($computable), $inputs, true)) {
+                /* One relationship with one name on it — but if that name is
+                   already a box the reader fills, it is not an answer. Tramadol
+                   is written "minimum_dose = 0.9 * weight", so weight is a
+                   subject of a rearrangement and not the thing the page is
+                   for; calling it the answer made the intro read "Tramadol for
+                   dogs returns your dog's weight from the values already on the
+                   page". */
                 $outputs = array_keys($computable);
                 $inputs = array_values(array_filter($inputs, static fn (string $v): bool => !in_array($v, $outputs, true)));
             }
@@ -395,7 +434,7 @@ final class CalcArticle
                 }
                 $named[(string) $var] = trim((string) ($meta['label'] ?? '')) !== ''
                     ? trim((string) $meta['label'])
-                    : (string) $var;
+                    : self::titleCase((string) $var);
             }
             foreach ((array) ($calc['equations'] ?? []) as $entry) {
                 foreach ((array) ($entry['variants'] ?? []) as $variant) {
@@ -514,6 +553,16 @@ final class CalcArticle
     }
 
     /* --------------------------------------------------------------- sections */
+
+    /** "Minimum_dose_tablets" -> "Minimum dose tablets". */
+    private static function titleCase(string $var): string
+    {
+        $words = trim((string) preg_replace('~[_\-]+~', ' ', $var));
+        if ($words === '') {
+            return $var;
+        }
+        return mb_strtoupper(mb_substr($words, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($words, 1, null, 'UTF-8');
+    }
 
     private static function intro(string $seed, string $name, array $in, array $out, array $labels, array $unitOf, string $cat): string
     {

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cow gestation',
-    'meta' => ['title' => 'Cow gestation Calculator — Formula & Results', 'description' => 'Cow gestation takes exposed and first-time calver? and returns calving start and end of postpartum. Every box can be solved for, not only the one in the title.', 'h1' => 'Cow gestation Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Cow gestation Calculator — Formula & Results', 'description' => 'Cow gestation works out calving start and end of postpartum and reports both. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Cow gestation Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'calvingStart' => ['type' => 'date', 'rnd' => null],

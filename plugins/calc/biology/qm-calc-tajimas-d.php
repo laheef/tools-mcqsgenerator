@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Tajima\'s D Calculator',
-    'meta' => ['title' => 'Tajima\'s D Calculator: Formula, Steps & Results', 'description' => <<<'TXT'
-    Tajima's D Calculator works out tajima's D and watterson's θ and reports both. The formula is printed in the form's own words, so the arithmetic can be checked.
-    TXT, 'h1' => 'Tajima\'s D Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Tajima\'s D Calculator: Formula, Steps & Results', 'description' => 'Tajima\'s D Calculator works out tajima\'s D from segregating sites (S). The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Tajima\'s D Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

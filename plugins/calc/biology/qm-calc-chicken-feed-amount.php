@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chicken Feed Amount Calculator',
-    'meta' => ['title' => 'Chicken Feed Amount Calculator — Formula & Results', 'description' => 'Chicken Feed Amount Calculator works out feed per day and total feed and reports both. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Chicken Feed Amount Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Feed Amount Calculator — Formula & Results', 'description' => 'Chicken Feed Amount Calculator reports feed per day, total feed, 25 kg bags and feed cost. Every box can be solved for, not only the one in the title.', 'h1' => 'Chicken Feed Amount Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

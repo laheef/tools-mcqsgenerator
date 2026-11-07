@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Goat Years to Human Years Calculator',
-    'meta' => ['title' => 'Goat Years to Human Years Calculator — Biology', 'description' => 'Goat Years to Human Years Calculator turns goat age into human-equivalent age. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Goat Years to Human Years Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Goat Years to Human Years Calculator — Biology', 'description' => 'Goat Years to Human Years Calculator takes goat age and returns human-equivalent age. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Goat Years to Human Years Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

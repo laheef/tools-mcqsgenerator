@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree age',
-    'meta' => ['title' => 'Tree age Calculator: Formula, Steps & Examples', 'description' => 'Tree age reports tree species, growth factor and diameter at breast height. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Tree age Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Tree age Calculator: Formula, Steps & Examples', 'description' => 'Tree age takes circumference at breast height and returns tree species. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Tree age Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'age' => [

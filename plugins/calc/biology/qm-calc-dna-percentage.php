@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA Percentage Calculator',
-    'meta' => ['title' => 'DNA Percentage Calculator — Formula & Results', 'description' => 'Enter genome size, coding bases and gene count and DNA Percentage Calculator returns coding percentage and non-coding share. Any box can be the unknown.', 'h1' => 'DNA Percentage Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Percentage Calculator — Formula & Results', 'description' => 'DNA Percentage Calculator reports coding percentage and non-coding share. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'DNA Percentage Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fruit Tree Spacing Calculator',
-    'meta' => ['title' => 'Fruit Tree Spacing Calculator — Formula & Results', 'description' => 'Fruit Tree Spacing Calculator reports trees to plant and trees per hectare. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Fruit Tree Spacing Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fruit Tree Spacing Calculator — Formula & Results', 'description' => 'Fruit Tree Spacing Calculator turns orchard area, between rows and between trees in the row into trees to plant and trees per hectare. A worked example follows.', 'h1' => 'Fruit Tree Spacing Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Horse weight',
-    'meta' => ['title' => 'Horse weight Calculator — Formula, Units & Example', 'description' => 'Horse weight turns type and Height (A) into actual weight and ideal weight. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Horse weight Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Horse weight Calculator — Formula, Units & Example', 'description' => 'Horse weight works out actual weight and ideal weight from type and Height (A). Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Horse weight Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'breed' => [

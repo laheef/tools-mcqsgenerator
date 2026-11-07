@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Plasmid Molar Ratio Calculator',
-    'meta' => ['title' => 'Plasmid Molar Ratio Calculator — Formula & Results', 'description' => 'Plasmid Molar Ratio Calculator works out insert 1 mass and insert 2 mass from vector mass and vector length. The formula is printed in the form\'s own words.', 'h1' => 'Plasmid Molar Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Plasmid Molar Ratio Calculator — Formula & Results', 'description' => 'Plasmid Molar Ratio Calculator takes vector mass, vector length and insert 1 length and returns insert 1 mass and insert 2 mass. A worked example follows.', 'h1' => 'Plasmid Molar Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

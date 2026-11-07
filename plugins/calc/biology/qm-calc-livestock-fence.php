@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Livestock fence cost',
-    'meta' => ['title' => 'Livestock fence cost Calculator: Free, With Steps', 'description' => <<<'TXT'
-    Enter Fence type, ✔️ Length and ✔️ Height into livestock fence cost and the answer comes back as 8" Wood end posts needed and ✔️ 8" Wood post unit price.
-    TXT, 'h1' => 'Livestock fence cost Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Livestock fence cost Calculator: Free, With Steps', 'description' => 'Livestock fence cost turns fence type and ✔️ Length into 8" Wood posts total cost. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Livestock fence cost Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'addConcreteFootingOptions' => [

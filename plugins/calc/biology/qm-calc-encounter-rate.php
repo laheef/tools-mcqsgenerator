@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Encounter Rate Calculator',
-    'meta' => ['title' => 'Encounter Rate Calculator — Formula & Results', 'description' => 'Work out encounters per hour from encounters recorded with encounter Rate Calculator. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Encounter Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Encounter Rate Calculator — Formula & Results', 'description' => 'Encounter Rate Calculator works out encounters per hour from encounters recorded and search time. Every box can be solved for, not only the one in the title.', 'h1' => 'Encounter Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

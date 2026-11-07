@@ -11,7 +11,7 @@
 
 return [
     'name' => 'GC Content from a Sequence',
-    'meta' => ['title' => 'GC Content from a Sequence — Sliding Window', 'description' => 'GC Content from a Sequence works out length and G + C bases from sequence and Window size. Every box can be solved for, not only the one in the title.', 'h1' => 'GC Content from a Sequence', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'GC Content from a Sequence — Sliding Window', 'description' => 'Enter sequence and window size and GC Content from a Sequence returns length and G + C bases. Every box can be solved for, not only the one in the title.', 'h1' => 'GC Content from a Sequence', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => ['type' => 'text', 'rnd' => null],

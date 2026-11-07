@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Allometric Equation Calculator',
-    'meta' => ['title' => 'Allometric Equation Calculator — Formula & Results', 'description' => 'Work out predicted value from coefficient (a) with allometric Equation Calculator. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Allometric Equation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Allometric Equation Calculator — Formula & Results', 'description' => <<<'TXT'
+    Allometric Equation Calculator reports predicted value and log₁₀ of the prediction. Each box lists the units it accepts, and the answer converts between them.
+    TXT, 'h1' => 'Allometric Equation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

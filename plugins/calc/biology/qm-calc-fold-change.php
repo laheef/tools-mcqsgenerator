@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fold Change Calculator',
-    'meta' => ['title' => 'Fold Change Calculator: Formula, Steps & Results', 'description' => 'Fold Change Calculator works out log₂ fold change and percent change from treated value and control value. The formula is printed in the form\'s own words.', 'h1' => 'Fold Change Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fold Change Calculator: Formula, Steps & Results', 'description' => 'Enter treated value and control value and Fold Change Calculator returns log₂ fold change and percent change. The formula is printed in the form\'s own words.', 'h1' => 'Fold Change Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

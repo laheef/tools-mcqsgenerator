@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Restriction Digest Reaction Setup',
-    'meta' => ['title' => 'Restriction Digest Reaction Setup — Biology', 'description' => 'Enter DNA mass, DNA concentration and Reaction volume into restriction Digest Reaction Setup and the answer comes back as DNA volume and Enzyme volume.', 'h1' => 'Restriction Digest Reaction Setup', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Restriction Digest Reaction Setup — Biology', 'description' => 'Enter DNA mass, DNA concentration and reaction volume and Restriction Digest Reaction Setup returns DNA volume and enzyme volume. Every figure is computed.', 'h1' => 'Restriction Digest Reaction Setup', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

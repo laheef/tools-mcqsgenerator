@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA Sequence Shuffler',
-    'meta' => ['title' => 'DNA Sequence Shuffler Calculator — Formula & Results', 'description' => 'DNA Sequence Shuffler turns sequence and shuffle by into length and GC content. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'DNA Sequence Shuffler', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Sequence Shuffler Calculator — Formula & Results', 'description' => 'DNA Sequence Shuffler works out length and GC content from sequence and shuffle by. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'DNA Sequence Shuffler', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [

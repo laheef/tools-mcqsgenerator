@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog Coat Colour Calculator',
-    'meta' => ['title' => 'Dog Coat Colour Calculator — Formula & Results', 'description' => 'Work out loci answered from e locus (extension) with dog Coat Colour Calculator. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dog Coat Colour Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Dog Coat Colour Calculator — Formula & Results', 'description' => 'Dog Coat Colour Calculator takes e locus (extension) and returns loci answered. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Dog Coat Colour Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'e_locus' => [

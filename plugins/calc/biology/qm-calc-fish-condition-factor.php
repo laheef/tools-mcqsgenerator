@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fish Condition Factor Calculator',
-    'meta' => ['title' => 'Fish Condition Factor Calculator — Formula & Results', 'description' => 'Enter fish weight and fork length and Fish Condition Factor Calculator returns condition factor (K) and Expected weight at K = 1. Any box can be the unknown.', 'h1' => 'Fish Condition Factor Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fish Condition Factor Calculator — Formula & Results', 'description' => 'Fish Condition Factor Calculator reports condition factor (K) and Expected weight at K = 1. Every box can be solved for, not only the one in the title.', 'h1' => 'Fish Condition Factor Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

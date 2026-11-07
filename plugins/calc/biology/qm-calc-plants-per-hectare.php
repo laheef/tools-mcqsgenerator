@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Plants Per Hectare Calculator',
-    'meta' => ['title' => 'Plants Per Hectare Calculator — Formula & Results', 'description' => 'Plants Per Hectare Calculator works out plants needed and space per plant from area to plant, row spacing and in-row spacing. Any box can be the unknown.', 'h1' => 'Plants Per Hectare Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Plants Per Hectare Calculator — Formula & Results', 'description' => 'Enter area to plant, row spacing and in-row spacing and Plants Per Hectare Calculator returns plants needed and space per plant. Every figure is computed.', 'h1' => 'Plants Per Hectare Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

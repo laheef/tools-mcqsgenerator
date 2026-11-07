@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Bacterial Growth Curve Calculator (generation time)',
-    'meta' => ['title' => 'Bacterial Growth Curve (generation time) Calculator', 'description' => 'Bacterial Growth Curve Calculator (generation time) works out specific growth rate and doubling time from first OD600, Second OD600 and first reading time.', 'h1' => 'Bacterial Growth Curve Calculator (generation time)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Bacterial Growth Curve (generation time) Calculator', 'description' => 'Enter First OD600, Second OD600 and first reading time and Bacterial Growth Curve Calculator (generation time) returns specific growth rate and doubling time.', 'h1' => 'Bacterial Growth Curve Calculator (generation time)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

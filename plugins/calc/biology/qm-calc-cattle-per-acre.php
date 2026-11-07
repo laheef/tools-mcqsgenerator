@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cattle per acre',
-    'meta' => ['title' => 'Cattle per acre Calculator — Formula, Units & Example', 'description' => 'Cattle per acre takes cattle type and returns estimated forage yield. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Cattle per acre Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Cattle per acre Calculator — Formula, Units & Example', 'description' => 'Cattle per acre reports estimated forage yield and monthly forage available. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Cattle per acre Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'animal_unit_equivalent' => [

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree spacing',
-    'meta' => ['title' => 'Tree spacing Calculator — Formula & Results', 'description' => 'Tree spacing works out area and space between trees from length, width and tree type. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Tree spacing Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Tree spacing Calculator — Formula & Results', 'description' => 'Tree spacing works out area and space between trees and reports both. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Tree spacing Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => 'Planting area specification',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mouse to Human Age Calculator',
-    'meta' => ['title' => 'Mouse to Human Age Calculator — Formula & Results', 'description' => 'Mouse to Human Age Calculator works out human-equivalent age and mouse age from mouse age. Every box can be solved for, not only the one in the title.', 'h1' => 'Mouse to Human Age Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mouse to Human Age Calculator — Formula & Results', 'description' => 'Mouse to Human Age Calculator works out human-equivalent age from mouse age. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Mouse to Human Age Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

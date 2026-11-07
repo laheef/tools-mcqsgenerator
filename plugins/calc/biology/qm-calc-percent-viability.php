@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Percent Viability Calculator',
-    'meta' => ['title' => 'Percent Viability Calculator — Formula & Results', 'description' => 'Percent Viability Calculator turns live cells and dead cells into non-viable and live to dead ratio. Every box can be solved for, not only the one in the title.', 'h1' => 'Percent Viability Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Percent Viability Calculator — Formula & Results', 'description' => 'Percent Viability Calculator turns live cells and dead cells into non-viable. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Percent Viability Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

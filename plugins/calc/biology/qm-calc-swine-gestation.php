@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Swine gestation',
-    'meta' => ['title' => 'Swine gestation — Formula, Steps & Examples', 'description' => 'Swine gestation turns breeding date into farrowing date. Each figure is computed from the boxes you fill, never read from a table. Any box can be the unknown.', 'h1' => 'Swine gestation Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Swine gestation — Formula, Steps & Examples', 'description' => 'Swine gestation turns breeding date into farrowing date. Every figure is computed. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Swine gestation Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'SuffixCheckJ' => [

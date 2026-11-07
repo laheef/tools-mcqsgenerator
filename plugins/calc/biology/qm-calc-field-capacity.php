@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Field Capacity Calculator',
-    'meta' => ['title' => 'Field Capacity Calculator — Formula & Results', 'description' => 'Work out bulk density from wet soil mass with field Capacity Calculator. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Field Capacity Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Field Capacity Calculator — Formula & Results', 'description' => 'Field Capacity Calculator reports bulk density and water stored in the root zone. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Field Capacity Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

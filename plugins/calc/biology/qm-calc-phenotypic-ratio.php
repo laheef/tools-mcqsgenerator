@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Phenotypic Ratio Calculator',
-    'meta' => ['title' => 'Phenotypic Ratio Calculator — Formula & Results', 'description' => 'Phenotypic Ratio Calculator reports total scored and ratio to the smallest class. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Phenotypic Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Phenotypic Ratio Calculator — Formula & Results', 'description' => 'Phenotypic Ratio Calculator turns class 1 count, class 2 count and class 3 count into total scored and ratio to the smallest class. A worked example follows.', 'h1' => 'Phenotypic Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

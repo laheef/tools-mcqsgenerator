@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Oligo pmol/µL to µg/mL Converter',
-    'meta' => ['title' => 'Oligo pmol/µL to µg/mL Converter — Formula & Results', 'description' => <<<'TXT'
-    Oligo pmol/µL to µg/mL Converter turns oligo length and concentration into concentration and amount in the tube. The formula is printed in the form's own words.
-    TXT, 'h1' => 'Oligo pmol/µL to µg/mL Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Oligo pmol/µL to µg/mL Converter — Formula & Results', 'description' => 'Oligo pmol/µL to µg/mL Converter reports concentration and amount in the tube. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Oligo pmol/µL to µg/mL Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

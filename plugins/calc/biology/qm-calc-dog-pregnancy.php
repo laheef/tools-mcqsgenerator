@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog pregnancy',
-    'meta' => ['title' => 'Dog pregnancy Calculator — Formula, Units & Example', 'description' => 'Dog pregnancy reports due date. Each box lists the units it accepts, and the answer converts between them. The formula is printed in the form\'s own words.', 'h1' => 'Dog pregnancy Calculator', 'updated' => '2026-10-05'],
+    'meta' => ['title' => 'Dog pregnancy Calculator — Formula, Units & Example', 'description' => 'Dog pregnancy works out due date. Each figure is computed from the boxes you fill, never read from a table. The formula is printed in the form\'s own words.', 'h1' => 'Dog pregnancy Calculator', 'updated' => '2026-10-05'],
     'raw' => [
         'vars' => [
             'currentDate' => ['type' => 'date', 'rnd' => null],

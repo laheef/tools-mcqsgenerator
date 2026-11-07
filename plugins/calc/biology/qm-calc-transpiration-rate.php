@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Transpiration Rate Calculator',
-    'meta' => ['title' => 'Transpiration Rate Calculator — Formula & Results', 'description' => 'Work out daily water use per m² of leaf from mass lost with transpiration Rate Calculator. Every box can be solved for, not only the one in the title.', 'h1' => 'Transpiration Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Transpiration Rate Calculator — Formula & Results', 'description' => 'Transpiration Rate Calculator reports daily water use per m² of leaf and molar rate. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Transpiration Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

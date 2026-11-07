@@ -11,7 +11,7 @@
 
 return [
     'name' => 'qPCR efficiency',
-    'meta' => ['title' => 'qPCR efficiency Calculator — Formula, Units & Example', 'description' => 'qPCR efficiency works out amplification factor and qPCR efficiency from slope. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'qPCR efficiency Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'qPCR efficiency Calculator — Formula, Units & Example', 'description' => 'qPCR efficiency works out amplification factor. Every figure is computed. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'qPCR efficiency Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => '',

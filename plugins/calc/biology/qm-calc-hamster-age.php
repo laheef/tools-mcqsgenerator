@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Hamster age',
-    'meta' => ['title' => 'Hamster age Calculator: Formula, Steps & Examples', 'description' => 'Work out 💁 In human years it\'s from 🐹 My hamster is with hamster age. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Hamster age Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Hamster age Calculator: Formula, Steps & Examples', 'description' => 'Hamster age takes 🐹 My hamster is and returns 💁 In human years it\'s. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Hamster age Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'age' => [

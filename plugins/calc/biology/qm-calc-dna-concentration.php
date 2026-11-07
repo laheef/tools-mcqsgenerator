@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA concentration',
-    'meta' => ['title' => 'DNA concentration: Formula, Steps & Results', 'description' => 'Enter sample type, extinction coefficient and molecular weight and DNA concentration returns conversion factor. The formula is printed in the form\'s own words.', 'h1' => 'DNA concentration Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'DNA concentration: Formula, Steps & Results', 'description' => 'DNA concentration turns sample type and extinction coefficient into conversion factor. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'DNA concentration Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'absorbance' => [

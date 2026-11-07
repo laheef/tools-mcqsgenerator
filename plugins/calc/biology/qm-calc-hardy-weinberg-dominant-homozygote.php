@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Hardy–Weinberg from the Dominant Homozygote Frequency',
-    'meta' => ['title' => 'Hardy–Weinberg from the Dominant Homozygote Frequency', 'description' => <<<'TXT'
-    Hardy–Weinberg from the Dominant Homozygote Frequency turns homozygous dominant frequency (p²) into dominant allele frequency (p). Any box can be the unknown.
-    TXT, 'h1' => 'Hardy–Weinberg from the Dominant Homozygote Frequency', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Hardy–Weinberg from the Dominant Homozygote Frequency', 'description' => 'Hardy–Weinberg from the Dominant Homozygote Frequency works out dominant allele frequency (p). Every box can be solved for, not only the one in the title.', 'h1' => 'Hardy–Weinberg from the Dominant Homozygote Frequency', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

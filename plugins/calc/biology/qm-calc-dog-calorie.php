@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog calorie',
-    'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Examples', 'description' => 'Dog calorie works out your dog needs and your dog should eat from activity and weight. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Examples', 'description' => 'Dog calorie works out your dog needs and your dog should eat and reports both. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'BNW' => [

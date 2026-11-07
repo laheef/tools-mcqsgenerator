@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fish Tank Stocking Calculator',
-    'meta' => ['title' => 'Fish Tank Stocking Calculator — Formula & Results', 'description' => 'Fish Tank Stocking Calculator reports stocking capacity and stocking level. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Fish Tank Stocking Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fish Tank Stocking Calculator — Formula & Results', 'description' => 'Fish Tank Stocking Calculator turns true water volume and adult length of the species into stocking capacity. The formula is printed in the form\'s own words.', 'h1' => 'Fish Tank Stocking Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

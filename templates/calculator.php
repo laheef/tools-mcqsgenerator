@@ -297,6 +297,12 @@ $clientPayload = [
              pins that column to the bottom of the viewport as you scroll. */ ?>
     <?= \Onim\Ads::slot('calc_top', 'ad-slot--page-top') ?>
 
+    <?php /* The page's one heading, ahead of everything it describes. The card
+             repeats the same words as plain text so the tool still carries its
+             own name, but the outline of the document starts here rather than
+             after twenty section headings. */ ?>
+    <h1 class="sr-only"><?= View::escape($calc['title'] ?: $calc['name']) ?></h1>
+
     <?php
     /* The right-hand rail exists only when it has something to show. An empty
        third column is 200px of white on every calculator page, and the article
@@ -379,7 +385,10 @@ $clientPayload = [
 
             <?php if ($toc !== []): ?>
                 <nav class="toc" aria-labelledby="toc-heading">
-                    <h2 id="toc-heading" class="toc-title">Table of contents</h2>
+                    <?php /* A heading here would be an h2 above the h1 — the page's
+                               outline would start in the middle of the article. The
+                               label stays for screen readers, as plain text. */ ?>
+                    <p id="toc-heading" class="toc-title">Table of contents</p>
                     <ol class="toc-list">
                         <?php foreach ($toc as $entry): ?>
                             <li><a href="#<?= View::escape($entry['slug']) ?>"><?= View::escape($entry['text']) ?></a></li>
@@ -606,7 +615,10 @@ $clientPayload = [
             <header class="calc-page-head">
                 <div class="article-head-row">
                     <?= Icons::forCalculator(['path' => $calc['path'], 'name' => $calc['name'], 'cat' => $calc['cat'], 'icon' => $calc['icon'] ?? ''], 34, 'calc-glyph calc-glyph-lg') ?>
-                    <h1 class="article-title"><?= View::escape($calc['title'] ?: $calc['name']) ?></h1>
+                    <?php /* Not a heading: the page's h1 sits at the top of the
+                               main column, so the same words here would be a
+                               second one. */ ?>
+                    <p class="article-title"><?= View::escape($calc['title'] ?: $calc['name']) ?></p>
                 </div>
             </header>
 

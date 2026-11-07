@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat age',
-    'meta' => ['title' => 'Cat age Calculator: Formula, Steps & Examples', 'description' => 'Cat age turns conversion type and cat years into human years and cat years. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Cat age Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Cat age Calculator: Formula, Steps & Examples', 'description' => 'Enter conversion type, cat years and human years and Cat age returns human years and cat years. Every box can be solved for, not only the one in the title.', 'h1' => 'Cat age Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'cat_age' => [

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fertilizer Injector Ratio Calculator',
-    'meta' => ['title' => 'Fertilizer Injector Ratio Calculator — Biology', 'description' => 'Fertilizer Injector Ratio Calculator works out stock concentration from target nitrogen in the line and nitrogen in the fertilizer. A worked example follows.', 'h1' => 'Fertilizer Injector Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fertilizer Injector Ratio Calculator — Biology', 'description' => 'Fertilizer Injector Ratio Calculator works out stock concentration from target nitrogen in the line and nitrogen in the fertilizer. Every figure is computed.', 'h1' => 'Fertilizer Injector Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

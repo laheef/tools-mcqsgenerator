@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Aquarium Water Volume Calculator',
-    'meta' => ['title' => 'Aquarium Water Volume Calculator — Formula & Results', 'description' => 'Aquarium Water Volume Calculator works out gross volume from shape and length. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Aquarium Water Volume Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Aquarium Water Volume Calculator — Formula & Results', 'description' => 'Aquarium Water Volume Calculator reports gross volume and true water volume. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Aquarium Water Volume Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

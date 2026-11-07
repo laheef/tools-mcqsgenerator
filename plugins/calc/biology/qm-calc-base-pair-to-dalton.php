@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Base Pair to Dalton Calculator',
-    'meta' => ['title' => 'Base Pair to Dalton Calculator — Formula & Results', 'description' => 'Base Pair to Dalton Calculator works out molecular weight and molar mass from molecule and length. Every box can be solved for, not only the one in the title.', 'h1' => 'Base Pair to Dalton Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Base Pair to Dalton Calculator — Formula & Results', 'description' => 'Base Pair to Dalton Calculator reports molecular weight and molar mass. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Base Pair to Dalton Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

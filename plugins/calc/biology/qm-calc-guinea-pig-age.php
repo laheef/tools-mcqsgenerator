@@ -12,7 +12,7 @@
 return [
     'name' => 'Guinea pig years to human years',
     'meta' => ['title' => 'Guinea pig years to human years — Formula & Results', 'description' => <<<'TXT'
-    Enter guinea pig age 🐹 and Guinea pig years to human years returns human age 👨‍🌾. A worked example walks through the arithmetic with this page's own numbers.
+    Guinea pig years to human years turns guinea pig age 🐹 into human age 👨‍🌾. A worked example walks through the arithmetic with this page's own numbers.
     TXT, 'h1' => 'Guinea pig years to human years Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [

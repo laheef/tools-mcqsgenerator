@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Watterson Estimator Calculator',
-    'meta' => ['title' => 'Watterson Estimator Calculator — Formula & Results', 'description' => 'Watterson Estimator Calculator works out watterson θ (per locus) from segregating sites and sequence length. The formula is printed in the form\'s own words.', 'h1' => 'Watterson Estimator Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Watterson Estimator Calculator — Formula & Results', 'description' => <<<'TXT'
+    Watterson Estimator Calculator reports watterson θ (per locus), θ per site, watterson θ per kb and harmonic number a₁ (n − 1). Any box can be the unknown.
+    TXT, 'h1' => 'Watterson Estimator Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

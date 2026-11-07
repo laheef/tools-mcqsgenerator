@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Hatch Rate Calculator',
-    'meta' => ['title' => 'Hatch Rate Calculator: Formula, Steps & Results', 'description' => 'Hatch Rate Calculator works out hatchability (of set) from eggs set. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Hatch Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Hatch Rate Calculator: Formula, Steps & Results', 'description' => 'Hatch Rate Calculator turns eggs set and fertile eggs into hatchability (of set) and infertile eggs. Every box can be solved for, not only the one in the title.', 'h1' => 'Hatch Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

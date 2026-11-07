@@ -210,7 +210,8 @@ final class CalcSeo
 
         /* ------------------------------------------------------ candidates */
         $candidates = [];
-        $add = static function (array $parts) use (&$candidates, $clean): void {
+        $asserted = [];
+        $add = static function (array $parts, bool $fromFacts = false) use (&$candidates, &$asserted, $clean): void {
             $parts = array_values(array_filter(array_map($clean, $parts), static fn (string $p): bool => $p !== ''));
             if ($parts === []) {
                 return;
@@ -222,6 +223,9 @@ final class CalcSeo
             $len = mb_strlen($text, 'UTF-8');
             if ($len >= self::DESC_MIN && $len <= self::DESC_MAX) {
                 $candidates[] = $text;
+                if ($fromFacts) {
+                    $asserted[] = $text;
+                }
             }
         };
 
@@ -235,10 +239,10 @@ final class CalcSeo
             }
         }
         foreach (self::factSentences($name, $article, $facts) as $sentences) {
-            $add($sentences);
+            $add($sentences, true);
             foreach ($tails as $t1 => $variants) {
                 foreach ($variants as $tail) {
-                    $add(array_merge($sentences, [$tail]));
+                    $add(array_merge($sentences, [$tail]), true);
                     /* Two clauses from different topics make one longer
                        description: a page whose answer has a one-word name
                        needs both to reach the window. */
@@ -247,14 +251,33 @@ final class CalcSeo
                             continue;
                         }
                         foreach ($others as $second) {
-                            $add(array_merge($sentences, [$tail, $second]));
+                            $add(array_merge($sentences, [$tail, $second]), true);
                         }
                     }
                 }
             }
         }
 
+        /* A sentence written from the form — what goes in, what comes back —
+           says more about the page than a line lifted from its prose, which is
+           generic by nature ("Units for X default to Celsius and can be changed
+           on the answer itself"). Facts first; quoted sentences when the facts
+           cannot fill the window. */
+        if ($asserted !== []) {
+            $candidates = $asserted;
+        }
+
         if ($candidates !== []) {
+            /* The page's own name once is enough. A description that says it a
+               second time wastes the window on the words the title already
+               spent: "Annealing temperature returns annealing temperature (Tₐ)". */
+            $needle = mb_strtolower($cleanName, 'UTF-8');
+            if ($needle !== '') {
+                $once = array_values(array_filter($candidates, static fn (string $c): bool => substr_count(mb_strtolower($c, 'UTF-8'), $needle) <= 1));
+                if ($once !== []) {
+                    $candidates = $once;
+                }
+            }
             /* Fewest sentences wins: "X works out Y from Z. The formula is
                printed in the form's own words." is a description; three clauses
                where two will do read like a keyword list. */
@@ -337,7 +360,8 @@ final class CalcSeo
         $out = [];
         /* Only a symbol reads correctly in a sentence ("88 °C", "24 kg"); a
            unit spelled out ("hectare") would need its own grammar. */
-        if ($unit !== '' && mb_strlen($unit, 'UTF-8') <= 6 && preg_match('~\p{L}~u', $unit) === 1) {
+        if ($unit !== '' && mb_strlen($unit, 'UTF-8') <= 6 && mb_strlen($unit, 'UTF-8') > 1
+            && preg_match('~\p{L}~u', $unit) === 1) {
             $out['unit'] = ['The answer is shown in ' . $unit . '.', 'Results come back in ' . $unit . ', with any other unit a click away.'];
         }
         $out['formula'] = [
@@ -426,9 +450,9 @@ final class CalcSeo
             }
         }
         $oneOut = $list($outs, 1);
-        $twoOut = $list($outs, 2);
+        $twoOut = count($outs) >= 2 ? $list($outs, 2) : '';
         $oneIn  = $list($ins, 1);
-        $twoIn  = $list($ins, 2);
+        $twoIn  = count($ins) >= 2 ? $list($ins, 2) : '';
 
         if ($outList !== '' && $inList !== '') {
             $out[] = [sprintf('%s works out %s from %s.', $name, $outList, $inList)];
@@ -456,9 +480,18 @@ final class CalcSeo
             $out[] = [sprintf('%s works out %s and reports both.', $name, $twoOut)];
         }
         if ($oneOut !== '') {
+            /* When the answer is named after the page, a sentence with both in it
+               says the name twice — "Annealing temperature returns annealing
+               temperature (Tₐ)". The verb-first form drops it to one. */
+            if ($twoIn !== '' && (str_starts_with($oneOut, $self) || str_starts_with($self, $oneOut))) {
+                $out[] = [sprintf('Enter %s and get %s back.', $twoIn, self::inSentence($oneOut))];
+                $out[] = [sprintf('Put %s in and read %s back.', $twoIn, self::inSentence($oneOut))];
+            }
             $out[] = [sprintf('%s works out %s.', $name, $oneOut)];
-            if ($oneIn !== '') {
-                $out[] = [sprintf('Work out %s from %s with %s.', $oneOut, $oneIn, $name)];
+            /* No "Work out X from Y with <name>": a page name dropped after
+               "with" reads as a colleague, not a calculator. */
+            if ($twoIn !== '' && (str_starts_with($oneOut, $self) || str_starts_with($self, $oneOut))) {
+                $out[] = [sprintf('Enter %s and get %s back.', $twoIn, self::inSentence($oneOut))];
             }
         }
         if ($outAll !== '') {

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein Isoelectric Point Calculator',
-    'meta' => ['title' => 'Protein Isoelectric Point Calculator — Biology', 'description' => 'Protein Isoelectric Point Calculator turns protein sequence and pH for the charge calculation into net charge at the given pH. Every figure is computed.', 'h1' => 'Protein Isoelectric Point Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Protein Isoelectric Point Calculator — Biology', 'description' => 'Protein Isoelectric Point Calculator reports net charge at the given pH and length. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Protein Isoelectric Point Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'protein' => [

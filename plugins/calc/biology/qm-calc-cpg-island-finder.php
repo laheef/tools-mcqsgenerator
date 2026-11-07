@@ -11,7 +11,7 @@
 
 return [
     'name' => 'CpG Island Finder',
-    'meta' => ['title' => 'CpG Island Finder Calculator — Formula & Results', 'description' => 'CpG Island Finder works out GC content of the sequence from sequence and window. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'CpG Island Finder', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'CpG Island Finder Calculator — Formula & Results', 'description' => 'CpG Island Finder turns sequence and window into GC content of the sequence. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'CpG Island Finder', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [

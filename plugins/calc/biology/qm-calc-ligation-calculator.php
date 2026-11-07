@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ligation Calculator',
-    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Results', 'description' => 'Ligation Calculator works out insert mass needed and vector in the reaction from vector mass, vector length and insert length. Every figure is computed.', 'h1' => 'Ligation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Results', 'description' => 'Ligation Calculator works out insert mass needed from vector mass and vector length. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Ligation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

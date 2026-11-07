@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Animal mortality rate',
-    'meta' => ['title' => 'Animal mortality rate — Free Online Calculator', 'description' => 'Animal mortality rate works out available stock and number of deaths and reports both. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Animal mortality rate Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Animal mortality rate — Free Online Calculator', 'description' => 'Animal mortality rate works out available stock from opening stock and number of newborns. Results come back in perc, with any other unit a click away.', 'h1' => 'Animal mortality rate Calculator', 'updated' => '2026-08-06'],
     'sections' => [
         [
             'title' => 'Mortality rate',

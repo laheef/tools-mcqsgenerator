@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Crop Water Stress Index Calculator',
-    'meta' => ['title' => 'Crop Water Stress Index Calculator — Biology', 'description' => 'Crop Water Stress Index Calculator turns canopy temperature and wet reference temperature into estimated root-zone depletion. A worked example follows.', 'h1' => 'Crop Water Stress Index Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Crop Water Stress Index Calculator — Biology', 'description' => 'Crop Water Stress Index Calculator works out estimated root-zone depletion from canopy temperature and wet reference temperature. Any box can be the unknown.', 'h1' => 'Crop Water Stress Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

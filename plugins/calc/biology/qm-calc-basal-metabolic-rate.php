@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Basal Metabolic Rate Calculator (Mifflin–St Jeor)',
-    'meta' => ['title' => 'Basal Metabolic Rate (Mifflin–St Jeor) Calculator', 'description' => 'Basal Metabolic Rate Calculator (Mifflin–St Jeor) works out total daily energy expenditure and BMR per kg and reports both. Any box can be the unknown.', 'h1' => 'Basal Metabolic Rate Calculator (Mifflin–St Jeor)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Basal Metabolic Rate (Mifflin–St Jeor) Calculator', 'description' => <<<'TXT'
+    Basal Metabolic Rate Calculator (Mifflin–St Jeor) works out total daily energy expenditure from sex. Every box can be solved for, not only the one in the title.
+    TXT, 'h1' => 'Basal Metabolic Rate Calculator (Mifflin–St Jeor)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

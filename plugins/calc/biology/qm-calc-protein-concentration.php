@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein concentration',
-    'meta' => ['title' => 'Protein concentration: Formula, Steps & Results', 'description' => 'Protein concentration works out concentration from protein and extinction coefficient. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Protein concentration Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Protein concentration: Formula, Steps & Results', 'description' => 'Protein concentration works out concentration from protein, extinction coefficient and molecular weight. The formula is printed in the form\'s own words.', 'h1' => 'Protein concentration Calculator', 'updated' => '2026-08-06'],
     'sections' => [
         [
             'title' => '',

@@ -12,7 +12,7 @@
 return [
     'name' => 'Specific Growth Rate from OD',
     'meta' => ['title' => 'Specific Growth Rate from OD — Formula & Results', 'description' => <<<'TXT'
-    Specific Growth Rate from OD turns first OD₆₀₀ and Second OD₆₀₀ into doubling time. A worked example walks through the arithmetic with this page's own numbers.
+    Specific Growth Rate from OD turns first OD₆₀₀ and Second OD₆₀₀ into doubling time and generations. Every box can be solved for, not only the one in the title.
     TXT, 'h1' => 'Specific Growth Rate from OD', 'updated' => '2026-10-29'],
     'sections' => [
         [

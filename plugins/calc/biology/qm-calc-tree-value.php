@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree value',
-    'meta' => ['title' => 'Tree value Calculator — Formula, Units & Example', 'description' => 'Tree value turns tree type, circumference and height into tree value. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Tree value Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Tree value Calculator — Formula, Units & Example', 'description' => 'Enter tree type and circumference and get tree value back. A worked example walks through the arithmetic with this page\'s own numbers. Every figure is computed.', 'h1' => 'Tree value Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'circumference' => [

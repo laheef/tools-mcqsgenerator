@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA Pattern Finder',
-    'meta' => ['title' => 'DNA Pattern Finder Calculator — Formula & Results', 'description' => 'DNA Pattern Finder works out matches, forward strand from sequence and Pattern (IUPAC allowed). Every box can be solved for, not only the one in the title.', 'h1' => 'DNA Pattern Finder', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Pattern Finder Calculator — Formula & Results', 'description' => 'DNA Pattern Finder takes sequence, Pattern (IUPAC allowed) and strand and returns matches, forward strand and matches, reverse strand. Every figure is computed.', 'h1' => 'DNA Pattern Finder', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [

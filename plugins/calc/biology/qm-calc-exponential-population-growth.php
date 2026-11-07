@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Exponential Population Growth Calculator',
-    'meta' => ['title' => 'Exponential Population Growth Calculator — Biology', 'description' => 'Exponential Population Growth Calculator works out population after that time. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Exponential Population Growth Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Exponential Population Growth Calculator — Biology', 'description' => 'Exponential Population Growth Calculator reports population after that time, increase, doubling time and time to reach 10× the start. Every figure is computed.', 'h1' => 'Exponential Population Growth Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

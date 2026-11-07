@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Rabbit color',
-    'meta' => ['title' => 'Rabbit color Calculator — Formula & Results', 'description' => 'Enter I want to input, include_steel and include_broken into rabbit color and the answer comes back as color_sire_full_text1 and color_sire_full_textE1.', 'h1' => 'Rabbit color Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Rabbit color Calculator — Formula & Results', 'description' => 'Rabbit color solves for any one of i want to input, color family and color, given the rest. Every box can be solved for, not only the one in the title.', 'h1' => 'Rabbit color Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'A_gene_dam' => [

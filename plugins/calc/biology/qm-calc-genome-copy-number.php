@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Genome Copy Number Calculator',
-    'meta' => ['title' => 'Genome Copy Number Calculator — Formula & Results', 'description' => <<<'TXT'
-    Genome Copy Number Calculator works out genome copies and Copies per µL in 50 µL from DNA mass and genome size. The formula is printed in the form's own words.
-    TXT, 'h1' => 'Genome Copy Number Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Genome Copy Number Calculator — Formula & Results', 'description' => 'Genome Copy Number Calculator reports genome copies and Copies per µL in 50 µL. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Genome Copy Number Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

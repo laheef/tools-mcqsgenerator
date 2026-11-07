@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Omega-3 for dogs',
-    'meta' => ['title' => 'Omega-3 for dogs — Formula, Steps & Examples', 'description' => 'Work out Total Omega-3 dose from dog\'s weight with omega-3 for dogs. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Omega-3 for dogs Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Omega-3 for dogs — Formula, Steps & Examples', 'description' => 'Omega-3 for dogs works out total Omega-3 dose from dog\'s weight and purpose/disorder. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Omega-3 for dogs Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => '',

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Plasmid Copy Number Calculator',
-    'meta' => ['title' => 'Plasmid Copy Number Calculator — Formula & Results', 'description' => 'Plasmid Copy Number Calculator works out plasmids per cell from plasmid yield. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Plasmid Copy Number Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Plasmid Copy Number Calculator — Formula & Results', 'description' => 'Plasmid Copy Number Calculator takes plasmid yield and returns plasmids per cell. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Plasmid Copy Number Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

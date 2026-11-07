@@ -12,7 +12,7 @@
 return [
     'name' => 'Cat Benadryl dosage',
     'meta' => ['title' => 'Cat Benadryl dosage: Formula, Steps & Results', 'description' => <<<'TXT'
-    Cat Benadryl dosage works out 🐈 Your cat's weight and liquid (12.4 mg/5ml concentration) from in mg. Every box can be solved for, not only the one in the title.
+    Cat Benadryl dosage works out 🐈 Your cat's weight and liquid (12.4 mg/5ml concentration) from in mg. Results come back in kg, with any other unit a click away.
     TXT, 'h1' => 'Cat Benadryl dosage Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [

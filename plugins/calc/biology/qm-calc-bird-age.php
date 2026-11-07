@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Bird age',
-    'meta' => ['title' => 'Bird age Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    Bird age 🐦, Bird age 🐦 and Human age 🚶 carry a unit chip, and it is easy to type a value in one unit while the chip says another. A worked example follows.
-    TXT, 'h1' => 'Bird age Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Bird age Calculator: Formula, Steps & Examples', 'description' => 'Enter bird species and average bird lifespan and get bird age 🐦 back. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Bird age Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'adult' => [

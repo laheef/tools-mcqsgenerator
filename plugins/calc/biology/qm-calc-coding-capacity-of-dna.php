@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Coding Capacity of DNA Calculator',
-    'meta' => ['title' => 'Coding Capacity of DNA Calculator — Formula & Results', 'description' => 'Coding Capacity of DNA Calculator turns coding DNA length and share that is coding into amino acids encoded and protein mass. Any box can be the unknown.', 'h1' => 'Coding Capacity of DNA Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Coding Capacity of DNA Calculator — Formula & Results', 'description' => 'Coding Capacity of DNA Calculator works out amino acids encoded and protein mass from coding DNA length and share that is coding. Any box can be the unknown.', 'h1' => 'Coding Capacity of DNA Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

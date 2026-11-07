@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chicken Density Calculator',
-    'meta' => ['title' => 'Chicken Density Calculator — Formula & Results', 'description' => 'Chicken Density Calculator works out stocking density from number of birds. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Chicken Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Density Calculator — Formula & Results', 'description' => 'Chicken Density Calculator works out stocking density from number of birds and usable floor area. Every box can be solved for, not only the one in the title.', 'h1' => 'Chicken Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

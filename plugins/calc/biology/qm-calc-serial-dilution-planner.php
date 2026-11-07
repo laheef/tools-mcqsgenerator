@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Serial Dilution Planner',
-    'meta' => ['title' => 'Serial Dilution Planner — Formula & Results', 'description' => 'Serial Dilution Planner works out transfer volume from starting concentration. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Serial Dilution Planner', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Serial Dilution Planner — Formula & Results', 'description' => 'Serial Dilution Planner takes starting concentration and returns transfer volume. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Serial Dilution Planner', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

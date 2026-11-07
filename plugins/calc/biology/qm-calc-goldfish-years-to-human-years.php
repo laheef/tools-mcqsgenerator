@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Goldfish Years to Human Years Calculator',
-    'meta' => ['title' => 'Goldfish Years to Human Years Calculator — Biology', 'description' => 'Goldfish Years to Human Years Calculator takes goldfish age and returns human-equivalent age and share of a 20-year lifespan. Every figure is computed.', 'h1' => 'Goldfish Years to Human Years Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Goldfish Years to Human Years Calculator — Biology', 'description' => 'Enter goldfish age and Goldfish Years to Human Years Calculator returns human-equivalent age and share of a 20-year lifespan. A worked example follows.', 'h1' => 'Goldfish Years to Human Years Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

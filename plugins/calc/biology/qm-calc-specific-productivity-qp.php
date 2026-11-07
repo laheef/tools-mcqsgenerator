@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Specific Productivity Calculator (qP)',
-    'meta' => ['title' => 'Specific Productivity Calculator (qP) — Biology', 'description' => 'Specific Productivity Calculator (qP) works out specific productivity and Total product per batch from product titre, Viable cell density and Production phase.', 'h1' => 'Specific Productivity Calculator (qP)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Specific Productivity Calculator (qP) — Biology', 'description' => 'Specific Productivity Calculator (qP) turns product titre, viable cell density and production phase into total product per batch and volumetric productivity.', 'h1' => 'Specific Productivity Calculator (qP)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

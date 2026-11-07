@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog chocolate toxicity',
-    'meta' => ['title' => 'Dog chocolate toxicity: Formula, Steps & Results', 'description' => 'Dog chocolate toxicity works out methylxanthines dose and total methylxanthines received from your dog\'s weight and chocolate type. Any box can be the unknown.', 'h1' => 'Dog chocolate toxicity Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Dog chocolate toxicity: Formula, Steps & Results', 'description' => 'Dog chocolate toxicity works out methylxanthines dose from your dog\'s weight. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dog chocolate toxicity Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'amount' => [

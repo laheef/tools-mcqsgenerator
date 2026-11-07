@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Cell Culture Dish / Plate / Flask Reference',
-    'meta' => ['title' => 'Cell Culture Dish / Plate / Flask Reference', 'description' => 'Cell Culture Dish / Plate / Flask Reference works out growth area from format. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Cell Culture Dish / Plate / Flask Reference', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Cell Culture Dish / Plate / Flask Reference', 'description' => <<<'TXT'
+    Cell Culture Dish / Plate / Flask Reference turns format, number of vessels and medium per cm² into growth area and medium per vessel. A worked example follows.
+    TXT, 'h1' => 'Cell Culture Dish / Plate / Flask Reference', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

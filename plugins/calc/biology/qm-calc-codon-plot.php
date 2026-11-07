@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Codon Plot Calculator',
-    'meta' => ['title' => 'Codon Plot Calculator: Formula, Steps & Results', 'description' => 'Codon Plot Calculator reports codons read, rare codons (w ≤ 0.2) and runs of 3+ rare codons. Every box can be solved for, not only the one in the title.', 'h1' => 'Codon Plot Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Codon Plot Calculator: Formula, Steps & Results', 'description' => 'Codon Plot Calculator turns coding sequence (DNA) and window size into codons read. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Codon Plot Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [

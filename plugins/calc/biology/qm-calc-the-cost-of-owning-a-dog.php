@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Cost of owning a dog',
-    'meta' => ['title' => 'Cost of owning a dog: Formula, Steps & Results', 'description' => 'Work out total price of medical expenses from your dog\'s size 🐕 with cost of owning a dog. Every box can be solved for, not only the one in the title.', 'h1' => 'Cost of owning a dog Calculator', 'updated' => '2026-05-22'],
+    'meta' => ['title' => 'Cost of owning a dog: Formula, Steps & Results', 'description' => <<<'TXT'
+    Cost of owning a dog turns your dog's size 🐕 and vaccination into total price of medical expenses. Every box can be solved for, not only the one in the title.
+    TXT, 'h1' => 'Cost of owning a dog Calculator', 'updated' => '2026-05-22'],
     'raw' => [
         'vars' => [
             'bed1' => [

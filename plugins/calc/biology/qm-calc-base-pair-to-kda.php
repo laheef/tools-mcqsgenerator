@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Base Pair to kDa Calculator',
-    'meta' => ['title' => 'Base Pair to kDa Calculator — Formula & Results', 'description' => 'Base Pair to kDa Calculator reports DNA mass, encoded amino acids, protein mass and DNA per kDa of protein. The formula is printed in the form\'s own words.', 'h1' => 'Base Pair to kDa Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Base Pair to kDa Calculator — Formula & Results', 'description' => 'Base Pair to kDa Calculator turns DNA length into DNA mass and encoded amino acids. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Base Pair to kDa Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

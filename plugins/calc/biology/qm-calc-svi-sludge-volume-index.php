@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Sludge Volume Index Calculator (SVI)',
-    'meta' => ['title' => 'Sludge Volume Index Calculator (SVI) — Biology', 'description' => 'Sludge Volume Index Calculator (SVI) works out sludge density index and return sludge ratio from settled sludge volume after 30 min, MLSS and influent flow.', 'h1' => 'Sludge Volume Index Calculator (SVI)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Sludge Volume Index Calculator (SVI) — Biology', 'description' => 'Sludge Volume Index Calculator (SVI) takes settled sludge volume after 30 min, MLSS and influent flow and returns sludge density index and return sludge ratio.', 'h1' => 'Sludge Volume Index Calculator (SVI)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

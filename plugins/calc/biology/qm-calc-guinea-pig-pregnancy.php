@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Guinea pig pregnancy',
-    'meta' => ['title' => 'Guinea pig pregnancy — Free Online Calculator', 'description' => 'Enter Breeding date into guinea pig pregnancy and the answer comes back as due date. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Guinea pig pregnancy Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Guinea pig pregnancy — Free Online Calculator', 'description' => 'Guinea pig pregnancy works out due date from breeding date. Every figure is computed. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Guinea pig pregnancy Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'breeding_date' => ['type' => 'date', 'rnd' => null],

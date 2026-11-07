@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fixation Index Calculator (Fst)',
-    'meta' => ['title' => 'Fixation Index (Fst) Calculator — Formula & Results', 'description' => 'Fixation Index Calculator (Fst) works out mean allele frequency and expected heterozygosity within populations and reports both. Every figure is computed.', 'h1' => 'Fixation Index Calculator (Fst)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fixation Index (Fst) Calculator — Formula & Results', 'description' => 'Fixation Index Calculator (Fst) works out mean allele frequency and expected heterozygosity within populations and reports both. A worked example follows.', 'h1' => 'Fixation Index Calculator (Fst)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

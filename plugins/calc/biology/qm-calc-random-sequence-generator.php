@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Random Sequence Generator Calculator',
-    'meta' => ['title' => 'Random Sequence Generator Calculator — Biology', 'description' => 'Random Sequence Generator Calculator reports GC content of the output. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Random Sequence Generator Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Random Sequence Generator Calculator — Biology', 'description' => 'Random Sequence Generator Calculator works out GC content of the output. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Random Sequence Generator Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'kind' => [

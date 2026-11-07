@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA to mRNA',
-    'meta' => ['title' => 'DNA to mRNA Calculator: Formula, Steps & Examples', 'description' => 'DNA to mRNA takes convert sequence from: and returns DNA, in codons. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'DNA to mRNA Calculator', 'updated' => '2026-01-27'],
+    'meta' => ['title' => 'DNA to mRNA Calculator: Formula, Steps & Examples', 'description' => 'DNA to mRNA turns convert sequence from:, Input DNA sequence and Input mRNA sequence into DNA, in codons and Messenger RNA transcript. Every figure is computed.', 'h1' => 'DNA to mRNA Calculator', 'updated' => '2026-01-27'],
     'raw' => [
         'vars' => [
             'choice' => [

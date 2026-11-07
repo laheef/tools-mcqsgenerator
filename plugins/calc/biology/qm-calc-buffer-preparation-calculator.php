@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Buffer Preparation Calculator',
-    'meta' => ['title' => 'Buffer Preparation Calculator — Formula & Results', 'description' => 'Work out base : acid ratio from buffer system with buffer Preparation Calculator. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Buffer Preparation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Buffer Preparation Calculator — Formula & Results', 'description' => 'Buffer Preparation Calculator works out base : acid ratio and fraction as base and reports both. Every box can be solved for, not only the one in the title.', 'h1' => 'Buffer Preparation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

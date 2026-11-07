@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Reverse Translate Calculator',
-    'meta' => ['title' => 'Reverse Translate Calculator — Formula & Results', 'description' => 'Reverse Translate Calculator takes protein sequence and returns protein length. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Reverse Translate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Reverse Translate Calculator — Formula & Results', 'description' => 'Reverse Translate Calculator takes protein sequence and returns protein length. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Reverse Translate Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'protein' => [

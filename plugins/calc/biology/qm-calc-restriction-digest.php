@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Restriction Digest Calculator',
-    'meta' => ['title' => 'Restriction Digest Calculator — Formula & Results', 'description' => 'Work out sequence length from DNA sequence with restriction Digest Calculator. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Restriction Digest Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Restriction Digest Calculator — Formula & Results', 'description' => 'Restriction Digest Calculator takes DNA sequence and returns sequence length. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Restriction Digest Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [

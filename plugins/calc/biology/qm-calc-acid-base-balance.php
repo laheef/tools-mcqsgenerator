@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Acid–Base Balance Calculator (ABG)',
-    'meta' => ['title' => 'Acid–Base Balance Calculator (ABG) — Biology', 'description' => 'Acid–Base Balance Calculator (ABG) turns pH and PaCO₂ into anion gap and albumin-corrected gap. Every box can be solved for, not only the one in the title.', 'h1' => 'Acid–Base Balance Calculator (ABG)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Acid–Base Balance Calculator (ABG) — Biology', 'description' => 'Acid–Base Balance Calculator (ABG) reports anion gap and albumin-corrected gap. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Acid–Base Balance Calculator (ABG)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

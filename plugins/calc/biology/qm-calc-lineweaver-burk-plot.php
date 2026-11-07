@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Lineweaver-Burk Plot / Km & Vmax Calculator',
-    'meta' => ['title' => 'Lineweaver-Burk Plot / Km & Vmax Calculator', 'description' => 'Lineweaver-Burk Plot / Km & Vmax Calculator turns substrate concentration 1 and initial velocity 1 into vmax/Km. The formula is printed in the form\'s own words.', 'h1' => 'Lineweaver-Burk Plot / Km & Vmax Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Lineweaver-Burk Plot / Km & Vmax Calculator', 'description' => 'Lineweaver-Burk Plot / Km & Vmax Calculator takes substrate concentration 1 and returns vmax/Km. Every box can be solved for, not only the one in the title.', 'h1' => 'Lineweaver-Burk Plot / Km & Vmax Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',

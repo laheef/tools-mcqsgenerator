@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Rat cage',
-    'meta' => ['title' => 'Rat cage Calculator: Formula, Steps & Examples', 'description' => 'Rat cage works out cage volume and can fit at most and reports both. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Rat cage Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Rat cage Calculator: Formula, Steps & Examples', 'description' => 'Rat cage works out cage volume and can fit at most from height and length. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Rat cage Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'height' => [

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog water intake',
-    'meta' => ['title' => 'Dog water intake — Formula, Steps & Examples', 'description' => 'Dog water intake takes activity level and weight and returns daily water intake. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dog water intake Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog water intake — Formula, Steps & Examples', 'description' => 'Enter activity level and weight and Dog water intake returns daily water intake. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Dog water intake Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'activity_level' => [
