@@ -496,7 +496,12 @@
         pin = Math.max(foot, Math.min(head, next));
       }
       column.style.setProperty('--calc-pin', Math.round(pin) + 'px');
-      column.classList.toggle('is-foot-pinned', pin < head - 1);
+      /* The class is a statement about where the card is, not about the number:
+         near the top of the page the column is still in its own place in the
+         document and nothing is pinned at all. */
+      var colTop = Math.round(column.getBoundingClientRect().top);
+      var stuck = Math.abs(colTop - Math.round(pin)) <= 1;
+      column.classList.toggle('is-foot-pinned', stuck && pin < head - 1);
     }
 
     function queue() {
