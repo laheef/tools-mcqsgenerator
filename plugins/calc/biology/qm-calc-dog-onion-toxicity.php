@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog onion toxicity',
-    'meta' => ['title' => 'Dog onion toxicity — Free Online Calculator', 'description' => 'Enter Toxic dose into Dog onion toxicity and the answer comes back as Your dog\'s weight and Serious toxicity. Lowest reported dose to cause onion-related…', 'h1' => 'Dog onion toxicity Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog onion toxicity — Free Online Calculator', 'description' => 'Dog onion toxicity takes your dog\'s weight and consumed amount and returns toxic dose and serious toxicity. The formula is printed in the form\'s own words.', 'h1' => 'Dog onion toxicity Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'consumedAmount' => [
@@ -199,7 +199,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Toxic dose into Dog onion toxicity and the answer comes back as Your dog's weight and Serious toxicity. It is a single relationship that reads Your dog's weight out of Toxic dose, not a table of canned results keyed by them. Units for Your dog's weight default to kilograms and can be changed on the answer itself.
+        Enter Toxic dose into Dog onion toxicity and the answer comes back as Your dog's weight and Serious toxicity. It is a single relationship that reads your dog's weight out of toxic dose, not a table of canned results keyed by them. Units for Your dog's weight default to kilograms and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Dog onion toxicity calculator works', 'html' => <<<'TXT'
@@ -247,7 +247,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dog onion toxicity calculator work out?', 'a' => 'Your dog\'s weight and Serious toxicity, from Toxic dose. The relationship is Your dog\'s weight = (2 ÷ 5) × Toxic dose.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Toxic dose (grams). With toxicDose in place, Your dog\'s weight can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Toxic dose (grams). With toxic dose in place, Your dog\'s weight can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Your dog\'s weight, Toxic dose and Serious toxicity can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             The arithmetic runs at full precision and only the display of Your dog's weight is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.

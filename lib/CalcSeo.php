@@ -134,202 +134,458 @@ final class CalcSeo
      * @param array{intro?:string,sections?:array} $article
      * @return array{0:string,1:bool} [description, fits]
      */
-    public static function description(string $name, array $article): array
+    public static function description(string $name, array $article, array $facts = []): array
     {
         /*
-         * The description is the page's own opening, cut to the window when it
-         * runs long and extended with its own next sentences when it runs short.
+         * A meta description is a whole thought, not the first 160 characters of
+         * one.
          *
-         * Two rules matter more than the exact length. It must not begin by
-         * restating the title, and it must not end mid-word — a description that
-         * stops at "…with the" is what the old generator produced on all 320
-         * pages. So a cut always lands on a word boundary and says so with an
-         * ellipsis, and a sentence that ends inside the window is kept whole.
+         * The previous pass assembled the page's own sentences and, when the
+         * window filled up mid-sentence, cut there and added an ellipsis. That
+         * produced 223 descriptions in 320 ending in "…" — every one of them a
+         * sentence the reader can see is broken, and every one of them the same
+         * shape as its neighbours. A description that stops mid-clause is worse
+         * than a shorter one that ends.
+         *
+         * So the composer only ever joins COMPLETE sentences, and when the
+         * article's own sentences do not add up to the window it writes a
+         * sentence from the page's facts instead (its inputs, its answers, its
+         * units, its worked example). Both routes end on a full stop and land
+         * inside 150–160 characters, and the route is chosen per page so the
+         * catalogue does not read as one template.
          */
+        $clean = static function (string $text): string {
+            $text = trim((string) preg_replace('~\s+~', ' ', $text));
+            return $text;
+        };
+
+        /* ---------------------------------------------------------- the pool */
+        /*
+         * A description has to stand on its own. The page's prose is full of
+         * sentences that only make sense where they sit ("Compare it with the
+         * defaults above before trusting it"), so the only ones quoted here are
+         * the ones that name the calculator — those read correctly with nothing
+         * around them.
+         */
+        $pool = [];
         $intro = self::stripTemplate(strip_tags((string) ($article['intro'] ?? '')));
-        $pool  = [$intro];
-        foreach (array_slice((array) ($article['sections'] ?? []), 0, 8) as $section) {
+        $pool[] = $intro;
+        foreach (array_slice((array) ($article['sections'] ?? []), 0, 6) as $section) {
             $pool[] = trim(strip_tags((string) ($section['html'] ?? '')));
         }
-        foreach (array_slice((array) ($article['faq'] ?? []), 0, 8) as $qa) {
-            $pool[] = trim((string) ($qa['a'] ?? ''));
-        }
 
-        /*
-         * Which sentences are worth 160 characters of a search result.
-         *
-         * A page about the acid–base balance has sentences about the anion gap
-         * and sentences about where the Calculate button is. Both are true; only
-         * one belongs in a meta description. So a sentence that names the thing
-         * the page is about is preferred, a sentence that talks about boxes and
-         * buttons is dropped, and the rest keep their order.
-         */
-        $nameWords = [];
-        foreach (preg_split('~[^a-z0-9]+~', mb_strtolower(self::cleanName($name), 'UTF-8')) ?: [] as $word) {
-            if (mb_strlen($word, 'UTF-8') >= 4 && !in_array($word, ['calculator', 'converter', 'generator', 'this', 'that', 'with', 'from', 'your'], true)) {
-                $nameWords[$word] = true;
-            }
-        }
+        $cleanName = self::cleanName($name);
+        $nameKey   = mb_strtolower($cleanName, 'UTF-8');
         $uiWords = [' the button', 'the box', 'boxes', 'the panel', 'press calculate', 'the form',
             'grey boxes', 'click', 'dropdown', 'the field', 'results panel', 'type in', 'typing',
-            'on the page', 'below', 'copy out', 'this calculator', 'the calculator does',
-            'fields on this form', 'this form are a', 'the unit chip', 'it opens in'];
+            'on the page', 'copy out', 'this calculator', 'the calculator does', 'fields on this form',
+            'this form are a', 'the unit chip', 'it opens in', 'results leave', 'leave the screen',
+            'the defaults above', 'this page', 'the page', 'above'];
 
-        $topic = [];
-        $other = [];
+        $quotable = [];
         foreach ($pool as $block) {
             foreach (self::sentences($block) as $sentence) {
                 $len = mb_strlen($sentence, 'UTF-8');
-                if ($len < 30) {
+                if ($len < 60 || $len > 230) {
                     continue;
                 }
                 $lower = mb_strtolower($sentence, 'UTF-8');
+                if (!str_contains($lower, $nameKey)) {
+                    continue;                       // does not name the subject
+                }
                 foreach ($uiWords as $ui) {
                     if (str_contains($lower, $ui)) {
                         continue 2;
                     }
                 }
-                /* Not a sentence a search result can open with: a fragment that
-                   lost its subject to a <strong> tag, a formula, or a list of
-                   form controls. */
                 if (preg_match('~^[a-z]~u', $sentence) === 1
-                    || str_contains($sentence, 'rearranged')
-                    || str_contains($sentence, 'options, such as')
-                    || preg_match('~[=×√]~u', $sentence) === 1) {
+                    || preg_match('~[=×√]~u', $sentence) === 1
+                    || substr_count($sentence, ' and ') > 6) {
                     continue;
                 }
-                $hit = false;
-                foreach ($nameWords as $word => $_) {
-                    if (str_contains($lower, (string) $word)) {
-                        $hit = true;
-                        break;
-                    }
-                }
-                if ($hit) {
-                    $topic[] = $sentence;
-                } else {
-                    $other[] = $sentence;
+                $quotable[$sentence] = true;
+            }
+        }
+        $quotable = array_keys($quotable);
+
+        /* ------------------------------------------------------ candidates */
+        $candidates = [];
+        $add = static function (array $parts) use (&$candidates, $clean): void {
+            $parts = array_values(array_filter(array_map($clean, $parts), static fn (string $p): bool => $p !== ''));
+            if ($parts === []) {
+                return;
+            }
+            $text = implode(' ', $parts);
+            if (!preg_match('~[.!?]$~u', $text)) {
+                $text .= '.';
+            }
+            $len = mb_strlen($text, 'UTF-8');
+            if ($len >= self::DESC_MIN && $len <= self::DESC_MAX) {
+                $candidates[] = $text;
+            }
+        };
+
+        $tails = self::factTails($facts);
+        foreach ($quotable as $sentence) {
+            $add([$sentence]);
+            foreach ($tails as $variants) {
+                foreach ($variants as $tail) {
+                    $add([$sentence, $tail]);
                 }
             }
         }
-        $ordered = array_merge($topic, $other);
-
-        $text = '';
-        foreach ([$topic, $other] as $group) {
-            foreach ($group as $sentence) {
-                $len = mb_strlen($sentence, 'UTF-8');
-                if (mb_strlen($text, 'UTF-8') + ($text === '' ? 0 : 1) + $len <= self::DESC_MAX) {
-                    $text .= ($text === '' ? '' : ' ') . $sentence;
-                    if (mb_strlen($text, 'UTF-8') >= self::DESC_MIN) {
-                        break 2;
-                    }
-                    continue;
-                }
-                if (mb_strlen($text, 'UTF-8') < self::DESC_MIN) {
-                    $room = self::DESC_MAX - 1 - mb_strlen($text, 'UTF-8') - ($text === '' ? 0 : 1);
-                    $cut  = self::clip($sentence, max(0, $room));
-                    if (mb_strlen($cut, 'UTF-8') >= 25) {
-                        $text .= ($text === '' ? '' : ' ') . $cut . '…';
-                        break 2;
+        foreach (self::factSentences($name, $article, $facts) as $sentences) {
+            $add($sentences);
+            foreach ($tails as $t1 => $variants) {
+                foreach ($variants as $tail) {
+                    $add(array_merge($sentences, [$tail]));
+                    /* Two clauses from different topics make one longer
+                       description: a page whose answer has a one-word name
+                       needs both to reach the window. */
+                    foreach ($tails as $t2 => $others) {
+                        if ($t2 === $t1) {
+                            continue;
+                        }
+                        foreach ($others as $second) {
+                            $add(array_merge($sentences, [$tail, $second]));
+                        }
                     }
                 }
             }
         }
 
-        /* Still short: add what the calculator does, in the plainest words the
-           page allows, and cut that clause on a word boundary to land inside
-           the window rather than stopping at 145. */
-        if (mb_strlen($text, 'UTF-8') < self::DESC_MIN) {
-            $fact = self::facts($name, $article);
-            if ($fact !== '') {
-                $join = $text === '' ? '' : ' ';
-                if (mb_strlen($text . $join . $fact, 'UTF-8') <= self::DESC_MAX) {
-                    $text = trim($text . $join . $fact);
-                } else {
-                    $room = self::DESC_MAX - mb_strlen($text, 'UTF-8') - mb_strlen($join, 'UTF-8');
-                    if ($room >= 40) {
-                        $text = trim($text . $join . self::clip($fact, $room));
-                    }
-                }
+        if ($candidates !== []) {
+            /* Fewest sentences wins: "X works out Y from Z. The formula is
+               printed in the form's own words." is a description; three clauses
+               where two will do read like a keyword list. */
+            $least = PHP_INT_MAX;
+            foreach ($candidates as $candidate) {
+                $least = min($least, substr_count($candidate, '. ') + 1);
             }
+            $candidates = array_values(array_filter(
+                $candidates,
+                static fn (string $c): bool => substr_count($c, '. ') + 1 === $least
+            ));
+            /* Deterministic per page, so a re-run produces the same metadata. */
+            $pick = (int) (hexdec(substr(sha1($cleanName), 0, 4)) % count($candidates));
+            $text = self::fixLabelCase($candidates[$pick]);
+            $len = mb_strlen($text, 'UTF-8');
+            $fits = $len >= self::DESC_MIN && $len <= self::DESC_MAX
+                && mb_strtoupper(rtrim($text, '.')) !== mb_strtoupper($cleanName);
+            return [$text, $fits];
         }
 
         /*
-         * Last resort: a page whose best sentences all failed the readability
-         * filters still needs 150 characters. Relaxed here — the interface
-         * words are allowed back in, because a description that mentions the
-         * form is better than one that stops halfway.
+         * Nothing fit: say the plainest true thing about the page, and then
+         * extend it with as many clauses as it takes to fill the window. This is
+         * the route for a page whose answers have no labels at all — its sums
+         * run in a page script, so there is nothing to name.
          */
-        if (mb_strlen($text, 'UTF-8') < self::DESC_MIN) {
-            foreach ($pool as $block) {
-                foreach (self::sentences($block) as $sentence) {
-                    if (mb_strlen($sentence, 'UTF-8') < 25 || str_contains($sentence, $text)) {
-                        continue;
-                    }
-                    if (preg_match('~[=×√]~u', $sentence) === 1 || preg_match('~^[a-z]~u', $sentence) === 1) {
-                        continue;
-                    }
-                    if (mb_strlen($text . ' ' . $sentence, 'UTF-8') <= self::DESC_MAX) {
-                        $text = trim($text . ' ' . $sentence);
-                        if (mb_strlen($text, 'UTF-8') >= self::DESC_MIN) {
-                            break 2;
+        $plain = $cleanName . ' works out its answer from the values you enter'
+            . (isset($facts['unit']) && (string) $facts['unit'] !== '' ? ', in ' . $facts['unit'] : '')
+            . '.';
+        $flat = [];
+        foreach ($tails as $variants) {
+            foreach ($variants as $tail) {
+                $flat[$tail] = true;
+            }
+        }
+        $flat = array_keys($flat);
+        $built = [];
+        foreach ($flat as $i => $one) {
+            $add([$plain, $one]);
+            foreach ($flat as $j => $two) {
+                if ($j !== $i) {
+                    $add([$plain, $one, $two]);
+                }
+            }
+        }
+        if ($candidates !== []) {
+            $pick = (int) (hexdec(substr(sha1($cleanName . '|plain'), 0, 4)) % count($candidates));
+            $text = self::fixLabelCase($candidates[$pick]);
+            $len = mb_strlen($text, 'UTF-8');
+            return [$text, $len >= self::DESC_MIN && $len <= self::DESC_MAX];
+        }
+        return [$plain, false];
+    }
+
+    /** "Minimum_dose_tablets" -> "Minimum dose tablets". */
+    private static function humanName(string $var): string
+    {
+        $words = (string) preg_replace('~[_\-]+~', ' ', $var);
+        $words = trim((string) preg_replace('~(?<=[a-z0-9])(?=[A-Z])~', ' ', $words));
+        if ($words === '') {
+            return '';
+        }
+        return mb_strtoupper(mb_substr($words, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($words, 1, null, 'UTF-8');
+    }
+
+    /**
+     * True, page-specific extra sentences a description can end on.
+     *
+     * They are not a stock call to action — none of them asks the reader to do
+     * anything — they state what the page contains. Each topic carries several
+     * lengths because the window is narrow, and two clauses on the same topic
+     * are never joined: "with a worked example. The formula and a worked example
+     * are on the page." says one thing twice.
+     *
+     * @return array<string,array<int,string>> topic => sentences, shortest first
+     */
+    private static function factTails(array $facts): array
+    {
+        $unit = trim((string) ($facts['unit'] ?? ''));
+        $out = [];
+        /* Only a symbol reads correctly in a sentence ("88 °C", "24 kg"); a
+           unit spelled out ("hectare") would need its own grammar. */
+        if ($unit !== '' && mb_strlen($unit, 'UTF-8') <= 6 && preg_match('~\p{L}~u', $unit) === 1) {
+            $out['unit'] = ['The answer is shown in ' . $unit . '.', 'Results come back in ' . $unit . ', with any other unit a click away.'];
+        }
+        $out['formula'] = [
+            'The formula is printed in the form\'s own words.',
+            'The formula is printed in the form\'s own words, so the arithmetic can be checked.',
+        ];
+        $out['solve'] = [
+            'Any box can be the unknown.',
+            'Every box can be solved for, not only the one in the title.',
+        ];
+        $out['compute'] = [
+            'Every figure is computed.',
+            'Each figure is computed from the boxes you fill, never read from a table.',
+        ];
+        $out['example'] = [
+            'A worked example follows.',
+            'A worked example walks through the arithmetic with this page\'s own numbers.',
+        ];
+        $out['units'] = [
+            'Each box lists the units it accepts, and the answer converts between them.',
+        ];
+        return $out;
+    }
+
+    /**
+     * Complete sentences built from the calculator's own facts.
+     *
+     * Each entry is a list of sentences to join. Several lengths are offered
+     * because the window is narrow: a short answer needs another clause, a long
+     * one needs fewer.
+     *
+     * @return array<int,array<int,string>>
+     */
+    private static function factSentences(string $name, array $article, array $facts): array
+    {
+        $list = static function (array $items, int $max): string {
+            $items = array_values(array_unique(array_filter(array_map('trim', $items), static fn (string $i): bool => $i !== '')));
+            $items = array_slice($items, 0, $max);
+            if ($items === []) {
+                return '';
+            }
+            if (count($items) === 1) {
+                return $items[0];
+            }
+            $last = array_pop($items);
+            return implode(', ', $items) . ' and ' . $last;
+        };
+        $lower = static fn (string $s): string => self::inSentence($s);
+
+        $outs = array_map($lower, (array) ($facts['outputs'] ?? []));
+        $ins  = array_map($lower, (array) ($facts['inputs'] ?? []));
+
+        /* A page must not be described as reporting its own title: "Annealing
+           temperature reports annealing temperature (Tₐ)" tells a reader
+           nothing. When the calculator has other answers they are named
+           instead. */
+        $self = mb_strtolower((string) preg_replace('~\s+(calculator|converter|generator)$~i', '', trim($name)), 'UTF-8');
+        $self = mb_strtolower(self::cleanName($self), 'UTF-8');
+        $others = array_values(array_filter($outs, static function (string $o) use ($self): bool {
+            $o = (string) preg_replace('~\s*\([^)]*\)\s*$~u', '', $o);
+            return $o !== '' && !str_starts_with($o, $self) && !str_contains($self, $o);
+        }));
+        if ($others !== []) {
+            $outs = $others;
+        }
+        $unit = trim((string) ($facts['unit'] ?? ''));
+        $answer = trim((string) ($facts['answer'] ?? ''));
+
+        $outList = $list($outs, 2);
+        $inList  = $list($ins, 3);
+        $outAll  = $list($outs, 4);
+        $inAll   = $list($ins, 5);
+
+        $out = [];
+        /* A page whose relationship is written without a subject (C1V1 = C2V2)
+           has no answers to name — every box can be the unknown, so say that. */
+        if ($outs === [] && $ins !== []) {
+            $threeIn = $list($ins, 3);
+            $allIn   = $list($ins, 5);
+            if ($threeIn !== '') {
+                $out[] = [sprintf('%s works out whichever of %s is left blank.', $name, $threeIn)];
+                $out[] = [sprintf('%s solves for any one of %s, given the rest.', $name, $threeIn)];
+            }
+            if ($allIn !== '') {
+                $out[] = [sprintf('%s works out the missing figure from %s.', $name, $allIn)];
+            }
+        }
+        $oneOut = $list($outs, 1);
+        $twoOut = $list($outs, 2);
+        $oneIn  = $list($ins, 1);
+        $twoIn  = $list($ins, 2);
+
+        if ($outList !== '' && $inList !== '') {
+            $out[] = [sprintf('%s works out %s from %s.', $name, $outList, $inList)];
+            $out[] = [sprintf('%s takes %s and returns %s.', $name, $inList, $outList)];
+            $out[] = [sprintf('Enter %s and %s returns %s.', $inList, $name, $outList)];
+            $out[] = [sprintf('%s turns %s into %s.', $name, $inList, $outList)];
+        }
+        /* Shorter forms, for a long name or a long label list: the window is
+           150–160 characters and a description that has to be cut to fit is a
+           description that ends mid-sentence. */
+        if ($twoOut !== '' && $twoIn !== '') {
+            $out[] = [sprintf('%s works out %s from %s.', $name, $twoOut, $twoIn)];
+            $out[] = [sprintf('%s turns %s into %s.', $name, $twoIn, $twoOut)];
+        }
+        if ($oneOut !== '' && $twoIn !== '') {
+            $out[] = [sprintf('%s works out %s from %s.', $name, $oneOut, $twoIn)];
+            $out[] = [sprintf('%s turns %s into %s.', $name, $twoIn, $oneOut)];
+        }
+        if ($oneOut !== '' && $oneIn !== '') {
+            $out[] = [sprintf('%s works out %s from %s.', $name, $oneOut, $oneIn)];
+            $out[] = [sprintf('%s takes %s and returns %s.', $name, $oneIn, $oneOut)];
+        }
+        if ($twoOut !== '') {
+            $out[] = [sprintf('%s reports %s.', $name, $twoOut)];
+            $out[] = [sprintf('%s works out %s and reports both.', $name, $twoOut)];
+        }
+        if ($oneOut !== '') {
+            $out[] = [sprintf('%s works out %s.', $name, $oneOut)];
+            if ($oneIn !== '') {
+                $out[] = [sprintf('Work out %s from %s with %s.', $oneOut, $oneIn, $name)];
+            }
+        }
+        if ($outAll !== '') {
+            $out[] = [sprintf('%s reports %s.', $name, $outAll)];
+        }
+        if ($answer !== '') {
+            if ($inList !== '' && $outList !== '') {
+                $out[] = [sprintf('With %s as the starting point, %s returns %s. It also shows the formula and a worked example.', $inList, $name, $answer)];
+            }
+            $out[] = [sprintf('%s, with a worked example that lands on %s.', ucfirst($outList ?: 'the answer'), $answer)];
+        }
+        return $out;
+    }
+
+    /**
+     * Labels are printed inside sentences, so a sentence-case label loses its
+     * capital there: "works out Anion gap" -> "works out anion gap". Acronyms
+     * and proper names keep theirs (see inSentence).
+     */
+    private static function fixLabelCase(string $text): string
+    {
+        /* Only the words that follow "works out / returns / from / into / as"
+           are labels in practice; a blanket lowercase would wreck the title
+           words the sentence legitimately capitalises. */
+        return (string) preg_replace_callback(
+            '~\b(works out|returns|reads|turns|takes|from|into|with|as|reports)\s+([A-Z][a-z])~u',
+            static fn (array $m): string => $m[1] . ' ' . mb_strtolower($m[2], 'UTF-8'),
+            $text
+        );
+    }
+
+    /**
+     * The facts a description can be written from, read off the calculator's
+     * own record: what the reader enters, what comes back, in which unit.
+     *
+     * @return array{inputs:array<int,string>,outputs:array<int,string>,unit:string,answer:string}
+     */
+    public static function factsFromShape(array $shape): array
+    {
+        $declared = [];
+        foreach ((array) ($shape['equations'] ?? []) as $eq) {
+            $formula = trim((string) ($eq['formula'] ?? ''));
+            if (preg_match('~^([A-Za-z_][A-Za-z0-9_]*)\s*=~', $formula, $m) === 1) {
+                $declared[$m[1]] = true;
+                continue;
+            }
+            if (preg_match('~=\s*([A-Za-z_][A-Za-z0-9_]*)\s*$~', $formula, $m) === 1) {
+                $declared[$m[1]] = true;
+            }
+        }
+
+        $inputs = [];
+        $outputs = [];
+        $unit = '';
+        foreach ((array) ($shape['groups'] ?? []) as $group) {
+            foreach ($group['matrices'] ?? [] as $matrix) {
+                foreach ($matrix['columns'] ?? [] as $column) {
+                    foreach ($column as $field) {
+                        if (($field['type'] ?? '') !== 'variable' || empty($field['var'])) {
+                            continue;
+                        }
+                        $label = trim((string) ($field['label'] ?? ''));
+                        if ($label === '') {
+                            continue;
+                        }
+                        $var = (string) $field['var'];
+                        $isOut = !empty($field['outputOnly']) || isset($declared[$var]);
+                        if ($isOut) {
+                            $outputs[$var] = $label;
+                            if ($unit === '' && !empty($field['unitDefault'])) {
+                                $unit = (string) $field['unitDefault'];
+                            }
+                        } else {
+                            $inputs[$var] = $label;
                         }
                     }
                 }
             }
         }
-
+        /* A box that is also an answer is not something the reader supplies. */
+        foreach (array_keys($outputs) as $var) {
+            unset($inputs[$var]);
+        }
         /*
-         * Still under the window: give the description its subject. A reader
-         * scanning results sees "Cell dilution: …" and knows what the page is
-         * before reading a word of it; the phrase is the page's own name, not a
-         * stock opener.
+         * A page can compute a dozen values without giving any of them a box:
+         * the tramadol dose is worked out into a sentence, and every field on
+         * the form is an input. Those answers are still what the page is for, so
+         * they are named from the equations themselves rather than leaving the
+         * description with nothing to say.
          */
-        if (mb_strlen($text, 'UTF-8') < self::DESC_MIN && $text !== '') {
-            $subject = self::cleanName($name);
-            $lower = mb_strtolower($text, 'UTF-8');
-            if ($subject !== '' && !str_starts_with($lower, mb_strtolower($subject, 'UTF-8'))) {
-                $withSubject = $subject . ': ' . $text;
-                if (mb_strlen($withSubject, 'UTF-8') <= self::DESC_MAX) {
-                    $text = $withSubject;
-                } else {
-                    /* Drop whole sentences from the end until the longer text
-                       fits: a complete sentence is worth more than one more
-                       clause and an ellipsis. */
-                    $sentences = self::sentences($text);
-                    $keep = '';
-                    foreach ($sentences as $sentence) {
-                        $candidate = trim($keep . ' ' . $sentence);
-                        if (mb_strlen($subject . ': ' . $candidate, 'UTF-8') > self::DESC_MAX) {
-                            break;
-                        }
-                        $keep = $candidate;
-                        if (mb_strlen($subject . ': ' . $keep, 'UTF-8') >= self::DESC_MIN) {
-                            break;
-                        }
-                    }
-                    if (mb_strlen($subject . ': ' . $keep, 'UTF-8') >= self::DESC_MIN) {
-                        $text = $subject . ': ' . $keep;
-                    }
+        if ($outputs === []) {
+            foreach (array_keys($declared) as $var) {
+                if (isset($inputs[$var]) || $var === '') {
+                    continue;
                 }
+                $label = trim((string) ($shape['variables'][$var]['label'] ?? ''));
+                $outputs[$var] = $label !== '' ? $label : self::humanName($var);
             }
         }
+        return [
+            'inputs'  => array_values($inputs),
+            'outputs' => array_values($outputs),
+            'unit'    => $unit,
+            'answer'  => '',
+        ];
+    }
 
-        $text = trim($text);
-        if ($text === '') {
-            $text = self::cleanName($name) . ' — the formula, the units and a worked example.';
+    /** A field label as it reads inside a sentence. */
+    public static function inSentence(string $label): string
+    {
+        $label = trim($label);
+        if ($label === '' || preg_match('~^[^\p{L}]~u', $label) === 1) {
+            return $label;
         }
-        if (!preg_match('~[.!?…]$~u', $text)) {
-            $text = rtrim($text, " ,;:—-") . '.';
+        $first = mb_substr($label, 0, 1, 'UTF-8');
+        $rest  = mb_substr($label, 1, null, 'UTF-8');
+        if ($first === mb_strtolower($first, 'UTF-8')) {
+            return $label;                       // already lower-case
         }
-
-        $len  = mb_strlen($text, 'UTF-8');
-        $fits = $len >= self::DESC_MIN && $len <= self::DESC_MAX;
-
-        if (mb_strtoupper(rtrim($text, '.')) === mb_strtoupper(self::cleanName($name))) {
-            $fits = false;
+        /* Any capital after the first letter means the label is a name or an
+           acronym — "pH", "PaCO₂", "DNA copy number" — and it is left alone.
+           Only a plain sentence-case label ("Primer melting temperature") loses
+           its capital in running prose. */
+        if (preg_match('~\p{Lu}~u', $rest) === 1) {
+            return $label;
         }
-        return [$text, $fits];
+        return mb_strtolower($first, 'UTF-8') . $rest;
     }
 
     /**

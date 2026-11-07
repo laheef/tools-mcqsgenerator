@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Basal area',
-    'meta' => ['title' => 'Basal area Calculator — Formula, Units & Example', 'description' => 'Enter Basal area into Basal area and the answer comes back as Diameter at breast height (DBH). The arithmetic is the whole method: Diameter at breast height…', 'h1' => 'Basal area Calculator', 'updated' => '2025-07-04'],
+    'meta' => ['title' => 'Basal area Calculator — Formula, Units & Example', 'description' => 'The arithmetic is the whole method: diameter at breast height (DBH) is worked out from basal area by one formula, applied once. A worked example follows.', 'h1' => 'Basal area Calculator', 'updated' => '2025-07-04'],
     'raw' => [
         'vars' => [
             'amount_of_trees' => [
@@ -1117,7 +1117,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Basal area into Basal area and the answer comes back as Diameter at breast height (DBH). The arithmetic is the whole method: Diameter at breast height (DBH) is worked out from Basal area by one formula, applied once. Diameter at breast height (DBH) comes back in centimeters unless you switch the unit chip beside the box.
+        Enter Basal area into Basal area and the answer comes back as Diameter at breast height (DBH). The arithmetic is the whole method: diameter at breast height (DBH) is worked out from basal area by one formula, applied once. Diameter at breast height (DBH) comes back in centimeters unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Basal area calculator works', 'html' => <<<'TXT'
@@ -1163,7 +1163,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Basal area calculator work out?', 'a' => 'Diameter at breast height (DBH), from Basal area. The relationship is Diameter at breast height (DBH) = 2 × √(Basal area) ÷ √(PI).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Basal area (square meters). With basal_area in place, Diameter at breast height (DBH) can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Basal area (square meters). With basal area in place, Diameter at breast height (DBH) can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Diameter at breast height (DBH) and Basal area can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Diameter at breast height (DBH) is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.

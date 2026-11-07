@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree diameter',
-    'meta' => ['title' => 'Tree diameter Calculator — Formula & Results', 'description' => 'Enter Circumference into Tree diameter and the answer comes back as Diameter and Average bark thickness. The arithmetic is the whole method: Diameter is…', 'h1' => 'Tree diameter Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Tree diameter Calculator — Formula & Results', 'description' => 'Tree diameter turns circumference and average bark thickness into diameter under-bark. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Tree diameter Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'bark_thickness' => [
@@ -485,7 +485,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Circumference into Tree diameter and the answer comes back as Diameter and Average bark thickness. The arithmetic is the whole method: Diameter is worked out from Circumference by one formula, applied once. Diameter comes back in centimeters unless you switch the unit chip beside the box.
+        Enter Circumference into Tree diameter and the answer comes back as Diameter and Average bark thickness. The arithmetic is the whole method: diameter is worked out from circumference by one formula, applied once. Diameter comes back in centimeters unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Tree diameter calculator works', 'html' => <<<'TXT'

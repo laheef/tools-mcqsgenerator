@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree spacing',
-    'meta' => ['title' => 'Tree spacing Calculator — Formula & Results', 'description' => 'Enter Length, Width and Area into Tree spacing and the answer comes back as Space between trees. It is a single relationship that reads Space between trees…', 'h1' => 'Tree spacing Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Tree spacing Calculator — Formula & Results', 'description' => 'Tree spacing works out area and space between trees from length, width and tree type. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Tree spacing Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => 'Planting area specification',
@@ -155,7 +155,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Length, Width and Area into Tree spacing and the answer comes back as Space between trees. It is a single relationship that reads Space between trees out of Length, not a table of canned results keyed by them. Units for Space between trees default to meters and can be changed on the answer itself.
+        Enter Length, Width and Area into Tree spacing and the answer comes back as Space between trees. It is a single relationship that reads space between trees out of length, not a table of canned results keyed by them. Units for Space between trees default to meters and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Tree spacing calculator works', 'html' => <<<'TXT'

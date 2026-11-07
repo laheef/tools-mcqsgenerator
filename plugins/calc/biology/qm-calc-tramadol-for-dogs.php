@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tramadol for dogs',
-    'meta' => ['title' => 'Tramadol for dogs: Formula, Steps & Results', 'description' => 'Your dog\'s weight is opened in kilograms; the chip beside it switches to any unit of the same quantity. Moving it changes the conversion applied to that row…', 'h1' => 'Tramadol for dogs Calculator', 'updated' => '2026-05-22'],
+    'meta' => ['title' => 'Tramadol for dogs: Formula, Steps & Results', 'description' => 'Tramadol for dogs turns your dog\'s weight into minimum dose and maximum dose. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Tramadol for dogs Calculator', 'updated' => '2026-05-22'],
     'raw' => [
         'vars' => [
             'Maximum_dose_allowed' => [
@@ -194,7 +194,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Tramadol for dogs returns Your dog's weight from the values already on the page. Nothing is looked up on this page: Your dog's weight is computed from  and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Your dog's weight is opened in kilograms; the chip beside it switches to any unit of the same quantity.
+        Tramadol for dogs returns Your dog's weight from the values already on the page. Your dog's weight is opened in kilograms; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Tramadol for dogs calculator works', 'html' => <<<'TXT'

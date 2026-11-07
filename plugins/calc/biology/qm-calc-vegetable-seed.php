@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Vegetable seed',
-    'meta' => ['title' => 'Vegetable seed Calculator — Formula & Results', 'description' => 'Vegetable seed: Enter Type of seed, Length of row and No. of rows into Vegetable seed and the answer comes back as Seed distance and Seedling distance.', 'h1' => 'Vegetable seed Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Vegetable seed Calculator — Formula & Results', 'description' => 'Vegetable seed works out no. of seeds from type of seed and length of row. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Vegetable seed Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => 'Spacing for seeds',
@@ -204,7 +204,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Type of seed, Length of row and No. of rows into Vegetable seed and the answer comes back as Seed distance and Seedling distance. There is no hidden constant here: change Seed distance and Type of seed moves with it. The main result, Seed distance, is reported in centimeters.
+        Enter Type of seed, Length of row and No. of rows into Vegetable seed and the answer comes back as Seed distance and Seedling distance. There is no hidden constant here: change seed distance and type of seed moves with it. The main result, Seed distance, is reported in centimeters.
         TXT,
         'sections' => [
             ['title' => 'How the Vegetable seed calculator works', 'html' => <<<'TXT'
@@ -246,7 +246,7 @@ return [
             Seed distance and Seedling distance, from No. of rows, Length of row and Seed distance. The relationship is No. of seeds = No. of rows × floor(Length of row ÷ Seed distance).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Type of seed, Length of row (centimeters), No. of rows, No. of seeds, Seedling type. Enter seedType, lengthOfRow and noOfRows; Seed distance is the box to leave alone unless it is the value you came for.
+            Type of seed, Length of row (centimeters), No. of rows, No. of seeds, Seedling type. Enter type of seed, length of row and no. of rows; Seed distance is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of No. of seeds, No. of rows, No. of rows and No. of seedlings blank and the page solves for that one instead — nothing has to be switched first.

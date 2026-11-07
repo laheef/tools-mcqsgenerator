@@ -12,7 +12,7 @@
 return [
     'name' => 'Bird age',
     'meta' => ['title' => 'Bird age Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    Bird age works out Average bird lifespan and Adult from Bird species, Average bird lifespan and Bird age 🐦. The arithmetic is the whole method: Average bird…
+    Bird age 🐦, Bird age 🐦 and Human age 🚶 carry a unit chip, and it is easy to type a value in one unit while the chip says another. A worked example follows.
     TXT, 'h1' => 'Bird age Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
@@ -431,7 +431,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Bird age works out Average bird lifespan and Adult from Bird species, Average bird lifespan and Bird age 🐦. The arithmetic is the whole method: Average bird lifespan is worked out from Bird species by one formula, applied once. Average bird lifespan comes back in yrs unless you switch the unit chip beside the box.
+        Bird age works out Average bird lifespan and Adult from Bird species, Bird age 🐦 and Bird age 🐦. The arithmetic is the whole method: average bird lifespan is worked out from bird species by one formula, applied once. Average bird lifespan comes back in yrs unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Bird age calculator works', 'html' => <<<'TXT'
@@ -471,7 +471,7 @@ return [
             Average bird lifespan, Adult, Timemax and Timemin, from Human life expectancy, Average bird lifespan and Bird age 🐦. The relationship is Human age 🚶 = Bird age 🐦 × Human life expectancy ÷ Average bird lifespan.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Bird species, Average bird lifespan (yrs), Bird age 🐦 (years), Bird age 🐦 (years), Human life expectancy (yrs). Enter species, average_bird_lifespan_custom and bird_age; Average bird lifespan is the box to leave alone unless it is the value you came for.
+            Bird species, Average bird lifespan (yrs), Bird age 🐦 (years), Bird age 🐦 (years), Human life expectancy (yrs). Enter bird species, average bird lifespan and bird age 🐦; Average bird lifespan is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Human age 🚶, Human life expectancy, Average bird lifespan and Bird age 🐦 blank and the page solves for that one instead — nothing has to be switched first.

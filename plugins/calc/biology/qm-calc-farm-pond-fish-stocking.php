@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Farm Pond Fish Stocking Calculator',
-    'meta' => ['title' => 'Farm Pond Fish Stocking Calculator — Biology', 'description' => 'Farm Pond Fish Stocking turns Pond surface area, Stocking rate and Predator share into Total fish to stock and Predators. The arithmetic is the whole method…', 'h1' => 'Farm Pond Fish Stocking Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Farm Pond Fish Stocking Calculator — Biology', 'description' => 'Farm Pond Fish Stocking Calculator turns pond surface area, stocking rate and predator share into total fish to stock and predators. Any box can be the unknown.', 'h1' => 'Farm Pond Fish Stocking Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -107,7 +107,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Farm Pond Fish Stocking turns Pond surface area, Stocking rate and Predator share into Total fish to stock and Predators. The arithmetic is the whole method: Total fish to stock is worked out from Pond surface area by one formula, applied once. Total fish to stock comes back in fish unless you switch the unit chip beside the box.
+        Farm Pond Fish Stocking turns Pond surface area, Stocking rate and Predator share into Total fish to stock and Predators. The arithmetic is the whole method: total fish to stock is worked out from pond surface area by one formula, applied once. Total fish to stock comes back in fish unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Farm Pond Fish Stocking calculator works', 'html' => <<<'TXT'
@@ -144,7 +144,7 @@ return [
             Total fish to stock, Predators, Forage fish and Fish per hectare, from Pond surface area, Stocking rate and Presence of wild fish (1 = yes, 0 = no). The relationship is Total fish to stock = Pond surface area × Stocking rate × (1 + 0.1 × Presence of wild fish (1 = yes, 0 = no)).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Pond surface area (hectares), Stocking rate (fish/ha), Predator share (%), Presence of wild fish (1 = yes, 0 = no). With area, rate and predator in place, Total fish to stock can stay blank and the page will work it out.
+            Pond surface area (hectares), Stocking rate (fish/ha), Predator share (%), Presence of wild fish (1 = yes, 0 = no). With pond surface area, stocking rate and predator share in place, Total fish to stock can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Total fish to stock, Predators, Forage fish and Fish per hectare blank and the page solves for that one instead — nothing has to be switched first.

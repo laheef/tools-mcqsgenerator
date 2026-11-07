@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Hamster age',
-    'meta' => ['title' => 'Hamster age Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    Enter 🐹 My hamster is into Hamster age and the answer comes back as 💁 In human years it's. It is a single relationship that reads 💁 In human years it's out of…
-    TXT, 'h1' => 'Hamster age Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Hamster age Calculator: Formula, Steps & Examples', 'description' => 'Work out 💁 In human years it\'s from 🐹 My hamster is with hamster age. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Hamster age Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'age' => [
@@ -134,7 +132,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Hamster age calculator work out?', 'a' => '💁 In human years it\'s, from 🐹 My hamster is. The relationship is 💁 In human years it\'s = get_age(🐹 My hamster is).'],
-            ['q' => 'Which values do I need before I start?', 'a' => '🐹 My hamster is (months). Enter hamster_age; 💁 In human years it\'s is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => '🐹 My hamster is (months). Enter 🐹 My hamster is; 💁 In human years it\'s is the box to leave alone unless it is the value you came for.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally 💁 In human years it's is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
             TXT],

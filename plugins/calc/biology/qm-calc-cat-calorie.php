@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat calorie',
-    'meta' => ['title' => 'Cat calorie Calculator: Formula, Steps & Examples', 'description' => 'Enter Weight, Condition and Resting energy into Cat calorie and the answer comes back as Maintenance coefficient. The energy required to perform basic bodily…', 'h1' => 'Cat calorie Calculator', 'updated' => '2026-07-23'],
+    'meta' => ['title' => 'Cat calorie Calculator: Formula, Steps & Examples', 'description' => 'Cat calorie turns weight, condition and maintenance coefficient into resting energy and maintenance energy. The formula is printed in the form\'s own words.', 'h1' => 'Cat calorie Calculator', 'updated' => '2026-07-23'],
     'sections' => [
         [
             'title' => '',
@@ -115,7 +115,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Weight, Condition and Resting energy into Cat calorie and the answer comes back as Maintenance coefficient. There is no hidden constant here: change Maintenance coefficient and Weight moves with it.
+        Enter Weight, Condition and Resting energy into Cat calorie and the answer comes back as Maintenance coefficient. There is no hidden constant here: change maintenance coefficient and weight moves with it.
         TXT,
         'sections' => [
             ['title' => 'How the Cat calorie calculator works', 'html' => <<<'TXT'
@@ -159,7 +159,7 @@ return [
         'faq' => [
             ['q' => 'What does the Cat calorie calculator work out?', 'a' => 'Maintenance coefficient, from Resting energy. The relationship is Weight = (1 ÷ 4900) × (70)^(2 ÷ 3) × (Resting energy)^(4 ÷ 3).'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Weight (kilograms), Condition, Resting energy (kilocalories), Maintenance energy (kilocalories). Fill weight, condition and resting_energy and leave Maintenance coefficient empty if you would rather have that one solved instead.
+            Weight (kilograms), Condition, Resting energy (kilocalories), Maintenance energy (kilocalories). Fill weight, condition and resting energy and leave Maintenance coefficient empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Weight, Resting energy, Maintenance coefficient and Maintenance energy blank and the page solves for that one instead — nothing has to be switched first.

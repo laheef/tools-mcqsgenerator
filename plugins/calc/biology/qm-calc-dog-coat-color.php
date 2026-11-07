@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog Coat Colour Calculator',
-    'meta' => ['title' => 'Dog Coat Colour Calculator — Formula & Results', 'description' => 'Dog Coat Colour takes E locus (extension), K locus (dominant black / brindle) and B locus (brown) and returns Loci answered. Dog Coat Colour answers one…', 'h1' => 'Dog Coat Colour Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Dog Coat Colour Calculator — Formula & Results', 'description' => 'Work out loci answered from e locus (extension) with dog Coat Colour Calculator. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dog Coat Colour Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'e_locus' => [
@@ -319,7 +319,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog Coat Colour takes E locus (extension), K locus (dominant black / brindle) and B locus (brown) and returns Loci answered. The arithmetic is the whole method: Loci answered is worked out from E locus (extension) by one formula, applied once.
+        Dog Coat Colour takes E locus (extension), K locus (dominant black / brindle) and B locus (brown) and returns Loci answered. The arithmetic is the whole method: loci answered is worked out from e locus (extension) by one formula, applied once.
         TXT,
         'sections' => [
             ['title' => 'How the Dog Coat Colour calculator works', 'html' => <<<'TXT'
@@ -360,7 +360,7 @@ return [
         'faq' => [
             ['q' => 'What does the Dog Coat Colour calculator work out?', 'a' => 'Loci answered.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            E locus (extension), K locus (dominant black / brindle), B locus (brown), D locus (dilution), Ticking or roan spotting (T locus). Fill e_locus, k_locus and b_locus and leave Loci answered empty if you would rather have that one solved instead.
+            E locus (extension), K locus (dominant black / brindle), B locus (brown), D locus (dilution), Ticking or roan spotting (T locus). Fill e locus (extension), k locus (dominant black / brindle) and b locus (brown) and leave Loci answered empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Loci answered is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Lawn mowing',
-    'meta' => ['title' => 'Lawn mowing Calculator — Formula, Units & Example', 'description' => 'Lawn mowing works out Mowing price and Area to mow from Mower speed, Expected mowing productivity and Your mower can mow. Mowing price is opened in USD; the…', 'h1' => 'Lawn mowing Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Lawn mowing Calculator — Formula, Units & Example', 'description' => 'Lawn mowing reports total costs, your mower can mow and mowing should take. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Lawn mowing Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'area' => [
@@ -441,7 +441,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Lawn mowing works out Mowing price and Area to mow from Mower speed, Expected mowing productivity and Your mower can mow. Nothing is looked up on this page: Mowing price is computed from Mower speed and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Mowing price is opened in USD; the chip beside it switches to any unit of the same quantity.
+        Lawn mowing works out Mowing price and Area to mow from Mower speed, Expected mowing productivity and Your mower can mow. Nothing is looked up on this page: mowing price is computed from mower speed and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Mowing price is opened in USD; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Lawn mowing calculator works', 'html' => <<<'TXT'
@@ -478,7 +478,7 @@ return [
             Mowing price, Area to mow, Total costs and Mowing price, from Your mower can mow, Mower speed and Expected mowing productivity. The relationship is Mower width = Your mower can mow ÷ (Expected mowing productivity × Mower speed).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Mower speed (kilometers per hour), Expected mowing productivity (percent), Your mower can mow (hectares). With mowSpeed, errorMargin and mowingEff in place, Mowing price can stay blank and the page will work it out.
+            Mower speed (kilometers per hour), Expected mowing productivity (percent), Your mower can mow (hectares). With mower speed, expected mowing productivity and your mower can mow in place, Mowing price can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Mower width, Your mower can mow, Mower speed and Expected mowing productivity blank and the page solves for that one instead — nothing has to be switched first.

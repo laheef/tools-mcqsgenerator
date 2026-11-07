@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog crate size',
-    'meta' => ['title' => 'Dog crate size Calculator — Formula & Results', 'description' => 'Dog crate size turns Extra length and Minimal crate length into Height and Length. To get the crate dimensions you need to add 2-4 inches to your dog&#039;s…', 'h1' => 'Dog crate size Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog crate size Calculator — Formula & Results', 'description' => 'Dog crate size turns extra length and Minimal crate length into height and Length. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dog crate size Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'addition' => [
@@ -205,7 +205,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog crate size turns Extra length and Minimal crate length into Height and Length. It is a single relationship that reads Height out of Extra length, not a table of canned results keyed by them. Units for Height default to centimeters and can be changed on the answer itself.
+        Dog crate size turns Extra length and Minimal crate length into Height and Length. It is a single relationship that reads height out of extra length, not a table of canned results keyed by them. Units for Height default to centimeters and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Dog crate size calculator works', 'html' => <<<'TXT'
@@ -215,16 +215,16 @@ return [
             <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Extra length</strong> — a plain number, no unit. To get the crate dimensions you need to add 2-4 inches to your dog&#039;s length and height.&amp;nbsp;</li><li><strong>Minimal crate length</strong> — in centimeters</li></ul><p>The answers come back as Height in centimeters, Length in centimeters, Minimal crate height in centimeters. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Run the numbers the page opens with — Height = 10 cm, Extra length = 3, Minimal crate height = 100 cm and Minimal crate length = 1000 cm — through the same formula and the panel reports &lt;strong&gt;Length&lt;/strong&gt; = 997 cm.</p><ul><li><strong>Length</strong> = 997 cm</li></ul><p>The line behind those figures is <strong>Length</strong> = <code>− Extra length + Minimal crate length</code> — nothing in it is a constant the page keeps to itself.</p>
+            <p>Run the numbers the page opens with — Height = 10 cm, Extra length = 3, Minimal crate height = 100 cm and Minimal crate length = 1000 cm — through the same formula and the panel reports <strong>Length</strong> = 997 cm.</p><ul><li><strong>Length</strong> = 997 cm</li></ul><p>The line behind those figures is <strong>Length</strong> = <code>− Extra length + Minimal crate length</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Length&lt;/strong&gt; = 997 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Height offers 31 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
+            <p>Treat the size of a result as part of the answer: <strong>Length</strong> = 997 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Height offers 31 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Length</strong> = <code>− Extra length + Minimal crate length</code></li><li><strong>Minimal crate length</strong> = <code>Extra length + Length</code></li><li><strong>Extra length</strong> = <code>Minimal crate length − Length</code></li><li><strong>Minimal crate height</strong> = <code>Extra length + Height</code></li><li><strong>Height</strong> = <code>− Extra length + Minimal crate height</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Length</strong> = <code>− Extra length + Minimal crate length</code> — the form to use when Minimal crate length and Extra length are the values you have.</li><li><strong>Minimal crate length</strong> = <code>Extra length + Length</code> — the form to use when Length and Extra length are the values you have.</li><li><strong>Extra length</strong> = <code>Minimal crate length − Length</code> — the form to use when Length and Minimal crate length are the values you have.</li><li><strong>Extra length</strong> = <code>Minimal crate height − Height</code> — the form to use when Minimal crate height and Height are the values you have.</li><li><strong>Minimal crate height</strong> = <code>Extra length + Height</code> — the form to use when Extra length and Height are the values you have.</li><li><strong>Height</strong> = <code>− Extra length + Minimal crate height</code> — the form to use when Extra length and Minimal crate height are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Length, Minimal crate length and Extra length can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Take the example above and double Height from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Length&lt;/strong&gt; 997 cm to &lt;strong&gt;Length&lt;/strong&gt; 997 cm.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
+            <p>Take the example above and double Height from 10 to 20, leaving every other box alone. The panel moves from <strong>Length</strong> 997 cm to <strong>Length</strong> 997 cm.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>Units left where they were.</strong> The chip beside Minimal crate length is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Height, Length and Minimal crate height are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Extra length left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Extra length is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Minimal crate length left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Minimal crate length is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Extra length is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
@@ -253,7 +253,9 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dog crate size calculator work out?', 'a' => 'Height, Length and Minimal crate height, from Minimal crate length and Extra length. The relationship is Length = − Extra length + Minimal crate length.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Extra length, Minimal crate length (centimeters). Fill addition and final_length and leave Height empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Extra length, Minimal crate length (centimeters). Fill extra length and minimal crate length and leave Height empty if you would rather have that one solved instead.
+            TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Length, Minimal crate length, Extra length and Minimal crate height can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],

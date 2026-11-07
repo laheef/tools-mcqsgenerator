@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Raw dog food',
-    'meta' => ['title' => 'Raw dog food Calculator — Formula & Results', 'description' => 'Raw dog food turns Life stage, Dog\'s ideal body weight and Required amount of food into Age (months) and %. The chip beside Dog&#039;s ideal body weight…', 'h1' => 'Raw dog food Calculator', 'updated' => '2026-05-25'],
+    'meta' => ['title' => 'Raw dog food Calculator — Formula & Results', 'description' => 'Raw dog food reports required amount of food, muscle meat, bone and liver. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Raw dog food Calculator', 'updated' => '2026-05-25'],
     'raw' => [
         'vars' => [
             'age' => [
@@ -971,7 +971,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Raw dog food turns Life stage, Dog's ideal body weight and Required amount of food into Age (months) and %. The arithmetic is the whole method: Age (months) is worked out from Life stage by one formula, applied once. Age (months) comes back in months unless you switch the unit chip beside the box.
+        Raw dog food turns Life stage, Dog's ideal body weight and Required amount of food into Age (months) and %. The arithmetic is the whole method: age (months) is worked out from life stage by one formula, applied once. Age (months) comes back in months unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Raw dog food calculator works', 'html' => <<<'TXT'
@@ -1011,7 +1011,7 @@ return [
             Age (months), %, % and %, from Required amount of food, Age (months) and Life stage. The relationship is Dog's ideal body weight = Required amount of food ÷ getPercentageDogMass(Life stage, Age (months)).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Life stage, Dog's ideal body weight (kilograms), Required amount of food (grams), diet_type, Muscle meat (grams). With life_stage, bodyWeight and averageDogActivityFoodKilograms in place, Age (months) can stay blank and the page will work it out.
+            Life stage, Dog's ideal body weight (kilograms), Required amount of food (grams), diet_type, Muscle meat (grams). With life stage, dog's ideal body weight and required amount of food in place, Age (months) can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Dog's ideal body weight, Required amount of food, % and Muscle meat blank and the page solves for that one instead — nothing has to be switched first.

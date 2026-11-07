@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mixed liquor volatile suspended solids',
-    'meta' => ['title' => 'Mixed liquor volatile suspended solids Calculator', 'description' => 'Mixed liquor volatile suspended solids: work out average untreated in-fluent COD from the sample volume and the weight of filter paper. A free biology…', 'h1' => 'Mixed liquor volatile suspended solids Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Mixed liquor volatile suspended solids Calculator', 'description' => 'Mixed liquor volatile suspended solids takes method, sample volume and weight of filter paper and returns MLSS and fixed solids. Any box can be the unknown.', 'h1' => 'Mixed liquor volatile suspended solids Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'COD_lb_day' => [
@@ -735,7 +735,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Mixed liquor volatile suspended solids works out Sample volume and Weight of filter paper from Average primary treated COD and Primary effluent COD. Nothing is looked up on this page: Sample volume is computed from Average primary treated COD and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Sample volume is opened in cubic decimeters; the chip beside it switches to any unit of the same quantity.
+        Mixed liquor volatile suspended solids works out Sample volume and Weight of filter paper from Average primary treated COD and Primary effluent COD. Nothing is looked up on this page: sample volume is computed from average primary treated COD and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Sample volume is opened in cubic decimeters; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Mixed liquor volatile suspended solids calculator works', 'html' => <<<'TXT'
@@ -775,7 +775,7 @@ return [
             Sample volume, Weight of filter paper, Weight of filter paper + residue and MLSS, from Average primary treated COD and Primary effluent COD. The relationship is Average untreated in-fluent COD = Average primary treated COD + Primary effluent COD.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Average primary treated COD (grams per liter), Primary effluent COD (grams per liter). Fill average_primary_treated_COD and primary_effluent_COD and leave Sample volume empty if you would rather have that one solved instead.
+            Average primary treated COD (grams per liter), Primary effluent COD (grams per liter). Fill average primary treated COD and primary effluent COD and leave Sample volume empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Average untreated in-fluent COD, Average primary treated COD, Primary effluent COD and COD added to aeration can each be the answer: the page works out which box is empty and rearranges the relationship for it.

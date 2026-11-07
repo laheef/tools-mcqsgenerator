@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat quality of life',
-    'meta' => ['title' => 'Cat quality of life: Formula, Steps & Results', 'description' => 'Cat quality of life takes Hurt, Hunger and Hydration and returns Quality of life score. The arithmetic is the whole method: Quality of life score is worked…', 'h1' => 'Cat quality of life Calculator', 'updated' => '2026-07-23'],
+    'meta' => ['title' => 'Cat quality of life: Formula, Steps & Results', 'description' => 'Cat quality of life works out quality of life score from hurt, hunger and hydration. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Cat quality of life Calculator', 'updated' => '2026-07-23'],
     'raw' => [
         'vars' => [
             'days' => [
@@ -362,7 +362,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Cat quality of life takes Hurt, Hunger and Hydration and returns Quality of life score. The arithmetic is the whole method: Quality of life score is worked out from Hurt by one formula, applied once.
+        Cat quality of life takes Hurt, Hunger and Hydration and returns Quality of life score. The arithmetic is the whole method: quality of life score is worked out from hurt by one formula, applied once.
         TXT,
         'sections' => [
             ['title' => 'How the Cat quality of life calculator works', 'html' => <<<'TXT'
@@ -372,16 +372,16 @@ return [
             <p>The form asks for 7 boxes, and nothing else.</p><ul><li><strong>Hurt</strong> — a plain number, no unit. Is your cat&#039;s pain under adequate control?</li><li><strong>Hunger</strong> — a plain number, no unit. Is your cat eating enough? Do you need to hand-feed them?</li><li><strong>Hydration</strong> — a plain number, no unit. Is your cat hydrated? Do they need subcutaneous fluids to stay hydrated?</li><li><strong>Hygiene</strong> — a plain number, no unit. Does your cat need to be cleaned, especially after elimination?</li><li><strong>Happiness</strong> — a plain number, no unit. Does your cat express joy and show other emotional signs?</li><li><strong>Mobility</strong> — a plain number, no unit. Can your cat get up without assistance? Do they regularly want to go for a walk?</li><li><strong>More good days than bad</strong> — a plain number, no unit. Do your cat&#039;s good days outnumber their bad days?&amp;nbsp;</li></ul><p>What you get back is Quality of life score, shown next to the form rather than on a page of its own.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Hurt = 10, Hunger = 10, Hydration = 10, Hygiene = 10, Happiness = 10, Mobility = 10 and More good days than bad = 10 gives &lt;strong&gt;Quality of life score&lt;/strong&gt; = 70.</p><ul><li><strong>Quality of life score</strong> = 70</li></ul><p>The line behind those figures is <strong>Quality of life score</strong> = <code>(More good days than bad + Happiness + Hunger + Hurt + Hydration + Hygiene + Mobility)</code> — nothing in it is a constant the page keeps to itself.</p>
+            <p>With the defaults in place, Hurt = 10, Hunger = 10, Hydration = 10, Hygiene = 10, Happiness = 10, Mobility = 10 and More good days than bad = 10 gives <strong>Quality of life score</strong> = 70.</p><ul><li><strong>Quality of life score</strong> = 70</li></ul><p>The line behind those figures is <strong>Quality of life score</strong> = <code>(More good days than bad + Happiness + Hunger + Hurt + Hydration + Hygiene + Mobility)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Quality of life score&lt;/strong&gt; = 70 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Quality of life score takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            <p>Treat the size of a result as part of the answer: <strong>Quality of life score</strong> = 70 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Quality of life score takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Quality of life score</strong> = <code>(More good days than bad + Happiness + Hunger + Hurt + Hydration + Hygiene + Mobility)</code></li></ul>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Hurt, from 10 to 20 — and the answers go from &lt;strong&gt;Quality of life score&lt;/strong&gt; 70 to &lt;strong&gt;Quality of life score&lt;/strong&gt; 80.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Hurt, from 10 to 20 — and the answers go from <strong>Quality of life score</strong> 70 to <strong>Quality of life score</strong> 80.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Quality of life score is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Hurt left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Hurt is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Hunger left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Hunger is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Hydration left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Hydration is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Hurt is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>

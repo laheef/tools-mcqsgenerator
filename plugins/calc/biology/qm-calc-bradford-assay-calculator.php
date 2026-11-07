@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Bradford Assay Calculator (standard curve)',
-    'meta' => ['title' => 'Bradford Assay Calculator (standard curve) — Biology', 'description' => 'Bradford is the quickest colorimetric protein assay and the one most sensitive to which protein you are measuring. Free bradford assay (standard curve) calcul', 'h1' => 'Bradford Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Bradford Assay Calculator (standard curve) — Biology', 'description' => 'Enter sample absorbance, standard curve slope and standard curve intercept and Bradford Assay Calculator (standard curve) returns protein concentration.', 'h1' => 'Bradford Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -72,7 +72,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Bradford Assay Calculator (standard curve) works out Protein concentration from Sample absorbance, Standard curve slope and Standard curve intercept. The arithmetic is the whole method: Protein concentration is worked out from Sample absorbance by one formula, applied once. Protein concentration comes back in mg/mL unless you switch the unit chip beside the box.
+        Bradford Assay Calculator (standard curve) works out Protein concentration from Sample absorbance, Standard curve slope and Standard curve intercept. The arithmetic is the whole method: protein concentration is worked out from sample absorbance by one formula, applied once. Protein concentration comes back in mg/mL unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Bradford Assay Calculator (standard curve) calculator works', 'html' => <<<'TXT'
@@ -82,16 +82,16 @@ return [
             <p>The form asks for 4 boxes, and nothing else.</p><ul><li><strong>Sample absorbance</strong> — a plain number, no unit. Read at 595 nm, blank subtracted</li><li><strong>Standard curve slope</strong> — in per mg/mL</li><li><strong>Standard curve intercept</strong> — a plain number, no unit</li><li><strong>Sample dilution factor</strong> — in ×</li></ul><p>What you get back is Protein concentration in mg/mL, shown next to the form rather than on a page of its own.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Take the values the form starts on, Sample absorbance = 0.48, Standard curve slope = 1.05 per mg/mL, Standard curve intercept = 0.03 and Sample dilution factor = 1 ×; the answers are &lt;strong&gt;Protein concentration&lt;/strong&gt; = 0.4286 mg/mL.</p><ul><li><strong>Protein concentration</strong> = 0.4286 mg/mL</li></ul><p>That is <strong>Protein concentration</strong> = <code>(Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>Take the values the form starts on, Sample absorbance = 0.48, Standard curve slope = 1.05 per mg/mL, Standard curve intercept = 0.03 and Sample dilution factor = 1 ×; the answers are <strong>Protein concentration</strong> = 0.4286 mg/mL.</p><ul><li><strong>Protein concentration</strong> = 0.4286 mg/mL</li></ul><p>That is <strong>Protein concentration</strong> = <code>(Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Protein concentration&lt;/strong&gt; = 0.4286. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Protein concentration is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Protein concentration</strong> = 0.4286. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Protein concentration is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Protein concentration</strong> = <code>(Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor</code></li></ul>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Sample absorbance, from 0.48 to 0.96 — and the answers go from &lt;strong&gt;Protein concentration&lt;/strong&gt; 0.4286 mg/mL to &lt;strong&gt;Protein concentration&lt;/strong&gt; 0.8857 mg/mL.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Sample absorbance, from 0.48 to 0.96 — and the answers go from <strong>Protein concentration</strong> 0.4286 mg/mL to <strong>Protein concentration</strong> 0.8857 mg/mL.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> Protein concentration is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Sample absorbance left as a guess.</strong> Anything typed into Sample absorbance is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Standard curve slope left as a guess.</strong> Anything typed into Standard curve slope is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Standard curve intercept left as a guess.</strong> Anything typed into Standard curve intercept is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Sample absorbance and let the panel round the answer once.</li></ul>
@@ -126,7 +126,7 @@ return [
             Protein concentration, from Sample absorbance, Standard curve intercept, Standard curve slope and Sample dilution factor. The relationship is Protein concentration = (Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Sample absorbance, Standard curve slope (per mg/mL), Standard curve intercept, Sample dilution factor (×). Enter a595, slope and intercept; Protein concentration is the box to leave alone unless it is the value you came for.
+            Sample absorbance, Standard curve slope (per mg/mL), Standard curve intercept, Sample dilution factor (×). Enter sample absorbance, standard curve slope and standard curve intercept; Protein concentration is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'What answer do the default values give?', 'a' => 'Protein concentration = 0.4286 mg/mL. Those are the defaults written into the form — move Sample absorbance and every result box follows.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

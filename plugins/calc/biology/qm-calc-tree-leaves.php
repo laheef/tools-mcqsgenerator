@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Leaves on tree',
-    'meta' => ['title' => 'Leaves on tree Calculator — Formula & Results', 'description' => 'Leaves on tree works out Leaves area index (LAI) from Plate diameter, Number of leaves on a plate and Tree crown projection diameter.', 'h1' => 'Leaves on tree Calculator', 'updated' => '2026-07-24'],
+    'meta' => ['title' => 'Leaves on tree Calculator — Formula & Results', 'description' => 'Enter plate diameter, number of leaves on a plate and tree crown projection diameter and Leaves on tree returns number of leaves on a tree and bags needed.', 'h1' => 'Leaves on tree Calculator', 'updated' => '2026-07-24'],
     'sections' => [
         [
             'title' => 'How many leaves are on a tree?',
@@ -454,7 +454,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Leaves on tree works out Leaves area index (LAI) from Plate diameter, Number of leaves on a plate and Tree crown projection diameter. It is a single relationship that reads Leaves area index (LAI) out of Plate diameter, not a table of canned results keyed by them.
+        Leaves on tree works out Leaves area index (LAI) from Plate diameter, Number of leaves on a plate and Tree crown projection diameter. It is a single relationship that reads leaves area index (LAI) out of plate diameter, not a table of canned results keyed by them.
         TXT,
         'sections' => [
             ['title' => 'How the Leaves on tree calculator works', 'html' => <<<'TXT'
@@ -496,7 +496,7 @@ return [
             Leaves area index (LAI), from Plate diameter, Number of leaves on a plate, Tree crown projection diameter and Tree species. The relationship is Plate diameter = 2 × √(plate_area) ÷ √(PI).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Plate diameter (centimeters), Number of leaves on a plate, Tree crown projection diameter (meters), Tree species, Number of leaves on a tree. Enter plate_radius, plate_number_of_leaves and canopy_radius; Leaves area index (LAI) is the box to leave alone unless it is the value you came for.
+            Plate diameter (centimeters), Number of leaves on a plate, Tree crown projection diameter (meters), Tree species, Number of leaves on a tree. Enter plate diameter, number of leaves on a plate and tree crown projection diameter; Leaves area index (LAI) is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Plate diameter, plate_area, canopy_area and Tree crown projection diameter can each be the answer: the page works out which box is empty and rearranges the relationship for it.

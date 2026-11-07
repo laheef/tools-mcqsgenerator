@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Crickets chirping thermometer',
-    'meta' => ['title' => 'Crickets chirping thermometer — Formula & Results', 'description' => <<<'TXT'
-    Crickets chirping thermometer turns Cricket chirps into Temperature and Temperature. Temperature is opened in Celsius; the chip beside it switches to any unit…
-    TXT, 'h1' => 'Crickets chirping thermometer Calculator', 'updated' => '2025-12-18'],
+    'meta' => ['title' => 'Crickets chirping thermometer — Formula & Results', 'description' => 'Crickets chirping thermometer turns formula and cricket chirps into temperature. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Crickets chirping thermometer Calculator', 'updated' => '2025-12-18'],
     'sections' => [
         [
             'title' => '',
@@ -109,7 +107,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Crickets chirping thermometer turns Cricket chirps into Temperature and Temperature. Nothing is looked up on this page: Temperature is computed from Cricket chirps and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Temperature is opened in Celsius; the chip beside it switches to any unit of the same quantity.
+        Crickets chirping thermometer turns Cricket chirps into Temperature and Temperature. Nothing is looked up on this page: temperature is computed from cricket chirps and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Temperature is opened in Celsius; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Crickets chirping thermometer calculator works', 'html' => <<<'TXT'
@@ -152,7 +150,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Crickets chirping thermometer calculator work out?', 'a' => 'Temperature, Temperature and Temperature, from Cricket chirps. The relationship is Temperature = (1 ÷ 4) × Cricket chirps + 40.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Cricket chirps (fifteen seconds). Fill chirps_per_min and leave Temperature empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Cricket chirps (fifteen seconds). Fill cricket chirps and leave Temperature empty if you would rather have that one solved instead.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Temperature, Cricket chirps, Temperature and Temperature blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

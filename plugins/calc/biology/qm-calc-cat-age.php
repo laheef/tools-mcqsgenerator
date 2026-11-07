@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat age',
-    'meta' => ['title' => 'Cat age Calculator: Formula, Steps & Examples', 'description' => 'Cat age works out Human years and Cat years from Cat years. There is no hidden constant here: change Human years and Cat years moves with it.', 'h1' => 'Cat age Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Cat age Calculator: Formula, Steps & Examples', 'description' => 'Cat age turns conversion type and cat years into human years and cat years. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Cat age Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'cat_age' => [
@@ -198,9 +198,7 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => <<<'TXT'
-        Cat age works out Human years and Cat years from Cat years. There is no hidden constant here: change Human years and Cat years moves with it. The main result, Human years, is reported in years.
-        TXT,
+        'intro' => 'Cat age reads one of human years and cat years from the other, so either can be the value you fill in. The main result, Human years, is reported in years.',
         'sections' => [
             ['title' => 'How the Cat age calculator works', 'html' => <<<'TXT'
             <p>The Cat age calculator applies one relationship to 1 number and reports Human years and Cat years.</p><p>The relationship it solves reads Human years = get_cat_age(Cat years).</p><p>The answers are Human years and Cat years; they are reported together because a single calculation usually settles more than one question.</p>
@@ -248,7 +246,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Cat age calculator work out?', 'a' => 'Human years and Cat years, from Cat years. The relationship is Human years = get_cat_age(Cat years).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Cat years (years / months). Enter cat_age_calculation; Human years is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Cat years (years / months). Enter cat years; Human years is the box to leave alone unless it is the value you came for.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Human years and Cat years can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Human years is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.

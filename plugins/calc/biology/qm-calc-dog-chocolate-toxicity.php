@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog chocolate toxicity',
-    'meta' => ['title' => 'Dog chocolate toxicity: Formula, Steps & Results', 'description' => 'Dog chocolate toxicity takes Your dog\'s weight, Chocolate type and Amount eaten and returns Methylxanthines dose and Total methylxanthines received.', 'h1' => 'Dog chocolate toxicity Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Dog chocolate toxicity: Formula, Steps & Results', 'description' => 'Dog chocolate toxicity works out methylxanthines dose and total methylxanthines received from your dog\'s weight and chocolate type. Any box can be the unknown.', 'h1' => 'Dog chocolate toxicity Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'amount' => [
@@ -300,7 +300,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog chocolate toxicity takes Your dog's weight, Chocolate type and Amount eaten and returns Methylxanthines dose and Total methylxanthines received. Nothing is looked up on this page: Methylxanthines dose is computed from Your dog's weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Methylxanthines dose is opened in kilograms; the chip beside it switches to any unit of the same quantity.
+        Dog chocolate toxicity takes Your dog's weight, Chocolate type and Amount eaten and returns Methylxanthines dose and Total methylxanthines received. Nothing is looked up on this page: methylxanthines dose is computed from your dog's weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Methylxanthines dose is opened in kilograms; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Dog chocolate toxicity calculator works', 'html' => <<<'TXT'
@@ -343,7 +343,7 @@ return [
             Methylxanthines dose and Total methylxanthines received, from Your dog's weight, Chocolate type and Amount eaten. The relationship is Methylxanthines dose = Amount eaten × Chocolate type ÷ Your dog's weight.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Your dog's weight (kilograms), Chocolate type, Amount eaten (grams). With weight, chocolateType and amount in place, Methylxanthines dose can stay blank and the page will work it out.
+            Your dog's weight (kilograms), Chocolate type, Amount eaten (grams). With your dog's weight, chocolate type and amount eaten in place, Methylxanthines dose can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Methylxanthines dose, Your dog's weight, Chocolate type and Amount eaten can each be the answer: the page works out which box is empty and rearranges the relationship for it.

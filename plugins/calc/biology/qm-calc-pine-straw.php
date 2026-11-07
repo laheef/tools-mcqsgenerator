@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Pine straw',
-    'meta' => ['title' => 'Pine straw Calculator: Formula, Steps & Examples', 'description' => 'Enter Length and Width into Pine straw and the answer comes back as Area and Number of bales needed. The arithmetic is the whole method: Area is worked out…', 'h1' => 'Pine straw Calculator', 'updated' => '2026-06-02'],
+    'meta' => ['title' => 'Pine straw Calculator: Formula, Steps & Examples', 'description' => 'Pine straw works out area and number of bales needed and reports both. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Pine straw Calculator', 'updated' => '2026-06-02'],
     'sections' => [
         [
             'title' => '',
@@ -106,7 +106,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Length and Width into Pine straw and the answer comes back as Area and Number of bales needed. The arithmetic is the whole method: Area is worked out from Length by one formula, applied once. Area comes back in square feet unless you switch the unit chip beside the box.
+        Enter Length and Width into Pine straw and the answer comes back as Area and Number of bales needed. The arithmetic is the whole method: area is worked out from length by one formula, applied once. Area comes back in square feet unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Pine straw calculator works', 'html' => <<<'TXT'
@@ -116,16 +116,16 @@ return [
             <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Length</strong> — in feet</li><li><strong>Width</strong> — in feet</li></ul><p>What you get back is Area in square feet, Number of bales needed, Number of bales, shown next to the form rather than on a page of its own.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Length = 10 ft, Width = 100 ft, Number of bales needed = 1000 and Number of bales = 40 gives &lt;strong&gt;Area&lt;/strong&gt; = 1000 ft2.</p><ul><li><strong>Area</strong> = 1000 ft2</li></ul><p>That is <strong>Area</strong> = <code>Length × Width</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>With the defaults in place, Length = 10 ft, Width = 100 ft, Number of bales needed = 1000 and Number of bales = 40 gives <strong>Area</strong> = 1000 ft2.</p><ul><li><strong>Area</strong> = 1000 ft2</li></ul><p>That is <strong>Area</strong> = <code>Length × Width</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Area&lt;/strong&gt; = 1000. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Area lists 24 options and opens on square feet. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Area</strong> = 1000. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Area lists 24 options and opens on square feet. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Area</strong> = <code>Length × Width</code></li><li><strong>Length</strong> = <code>Area ÷ Width</code></li><li><strong>Width</strong> = <code>Area ÷ Length</code></li><li><strong>Number of bales</strong> = <code>Area ÷ Number of bales needed</code></li><li><strong>Number of bales needed</strong> = <code>Area ÷ Number of bales</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Area</strong> = <code>Length × Width</code> — the form to use when Length and Width are the values you have.</li><li><strong>Length</strong> = <code>Area ÷ Width</code> — the form to use when Area and Width are the values you have.</li><li><strong>Width</strong> = <code>Area ÷ Length</code> — the form to use when Area and Length are the values you have.</li><li><strong>Area</strong> = <code>Number of bales × Number of bales needed</code> — the form to use when Number of bales and Number of bales needed are the values you have.</li><li><strong>Number of bales</strong> = <code>Area ÷ Number of bales needed</code> — the form to use when Area and Number of bales needed are the values you have.</li><li><strong>Number of bales needed</strong> = <code>Area ÷ Number of bales</code> — the form to use when Area and Number of bales are the values you have.</li></ul><p>Any one of Area, Length and Width can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Length, from 10 to 20 — and the answers go from &lt;strong&gt;Area&lt;/strong&gt; 1000 ft2 to &lt;strong&gt;Area&lt;/strong&gt; 2000 ft2.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Length, from 10 to 20 — and the answers go from <strong>Area</strong> 1000 ft2 to <strong>Area</strong> 2000 ft2.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>Units left where they were.</strong> Length and Width carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Area, Number of bales needed and Number of bales are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Length left as a guess.</strong> Anything typed into Length is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Width left as a guess.</strong> Anything typed into Width is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Length and let the panel round the answer once.</li></ul>

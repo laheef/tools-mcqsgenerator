@@ -12,7 +12,7 @@
 return [
     'name' => 'Catculator',
     'meta' => ['title' => 'Catculator Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    Catculator turns How do you show affection? ❤️, What’s your ideal bed? 🛏️ and What do you like to eat? 🥫 into cat1Index and cat2Index. The answer typed back in.
+    Catculator turns how do you show affection? ❤️ and what’s your ideal bed? 🛏️ into cat1 Index. Every box can be solved for, not only the one in the title.
     TXT, 'h1' => 'Catculator Calculator', 'updated' => '2025-02-18'],
     'raw' => [
         'vars' => [
@@ -860,7 +860,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Catculator turns How do you show affection? ❤️, What’s your ideal bed? 🛏️ and What do you like to eat? 🥫 into cat1Index and cat2Index. The arithmetic is the whole method: cat1Index is worked out from How do you show affection? ❤️ by one formula, applied once.
+        Catculator turns How do you show affection? ❤️, What’s your ideal bed? 🛏️ and What do you like to eat? 🥫 into cat1Index and cat2Index. The arithmetic is the whole method: cat1Index is worked out from how do you show affection? ❤️ by one formula, applied once.
         TXT,
         'sections' => [
             ['title' => 'How the Catculator calculator works', 'html' => <<<'TXT'
@@ -892,7 +892,7 @@ return [
             cat1Index, cat2Index, domCat and unpredictableCat, from How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫 and What do you do when you’re drunk? 🍷. The relationship is cat1Index = getCatType(How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴. With q1, q2 and q3 in place, cat1Index can stay blank and the page will work it out.
+            How do you show affection? ❤️, What’s your ideal bed? 🛏️, What do you like to eat? 🥫, What do you do when you’re drunk? 🍷, What would you do on vacation? 🌴. With how do you show affection? ❤️, what’s your ideal bed? 🛏️ and what do you like to eat? 🥫 in place, cat1Index can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of cat1Index, cat2Index, domCat and unpredictableCat blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

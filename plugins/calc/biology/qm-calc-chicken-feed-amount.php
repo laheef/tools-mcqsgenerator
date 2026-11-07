@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chicken Feed Amount Calculator',
-    'meta' => ['title' => 'Chicken Feed Amount Calculator — Formula & Results', 'description' => 'Enter Number of birds, Feed per bird per day and Number of days into Chicken Feed Amount and the answer comes back as Feed per day and Total feed.', 'h1' => 'Chicken Feed Amount Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Feed Amount Calculator — Formula & Results', 'description' => 'Chicken Feed Amount Calculator works out feed per day and total feed and reports both. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Chicken Feed Amount Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -102,7 +102,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Number of birds, Feed per bird per day and Number of days into Chicken Feed Amount and the answer comes back as Feed per day and Total feed. Nothing is looked up on this page: Feed per day is computed from Number of birds and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Feed per day is opened in kg; the chip beside it switches to any unit of the same quantity.
+        Enter Number of birds, Feed per bird per day and Number of days into Chicken Feed Amount and the answer comes back as Feed per day and Total feed. Nothing is looked up on this page: feed per day is computed from number of birds and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Feed per day is opened in kg; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Chicken Feed Amount calculator works', 'html' => <<<'TXT'
@@ -139,7 +139,7 @@ return [
             Feed per day, Total feed, 25 kg bags and Feed cost, from Number of birds and Feed per bird per day. The relationship is Feed per day = Number of birds × Feed per bird per day ÷ 1000.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Number of birds, Feed per bird per day (g), Number of days, Feed price (per kg). Enter birds, intake and days; Feed per day is the box to leave alone unless it is the value you came for.
+            Number of birds, Feed per bird per day (g), Number of days, Feed price (per kg). Enter number of birds, feed per bird per day and number of days; Feed per day is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Feed per day, Total feed, 25 kg bags and Feed cost can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

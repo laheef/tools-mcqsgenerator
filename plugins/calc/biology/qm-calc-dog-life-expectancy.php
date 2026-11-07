@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog life expectancy',
-    'meta' => ['title' => 'Dog life expectancy: Formula, Steps & Results', 'description' => 'Dog life expectancy turns How old is the dog, in years? and Size of the breed into Age in human years and Typical lifespan for this size (years).', 'h1' => 'Dog life expectancy Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog life expectancy: Formula, Steps & Results', 'description' => 'Dog life expectancy works out whichever of how old is the dog, in years?, size of the breed and age in human years is left blank. Every figure is computed.', 'h1' => 'Dog life expectancy Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'dog_age' => ['type' => 'numerical'],
@@ -625,7 +625,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog life expectancy turns How old is the dog, in years? and Size of the breed into Age in human years and Typical lifespan for this size (years). It is a single relationship that reads Age in human years out of How old is the dog, in years?, not a table of canned results keyed by them.
+        Dog life expectancy turns How old is the dog, in years? and Size of the breed into Age in human years and Typical lifespan for this size (years). It is a single relationship that reads age in human years out of how old is the dog, in years?, not a table of canned results keyed by them.
         TXT,
         'sections' => [
             ['title' => 'How the Dog life expectancy calculator works', 'html' => <<<'TXT'
@@ -668,7 +668,7 @@ return [
         'faq' => [
             ['q' => 'What does the Dog life expectancy calculator work out?', 'a' => 'Age in human years, Typical lifespan for this size (years), Years likely left and Life stage (1 puppy, 2 adult, 3 mature, 4 senior).'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            How old is the dog, in years?, Size of the breed. Enter dog_age and breed_size; Age in human years is the box to leave alone unless it is the value you came for.
+            How old is the dog, in years?, Size of the breed. Enter how old is the dog, in years? and size of the breed; Age in human years is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Age in human years is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.

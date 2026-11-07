@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog water intake',
-    'meta' => ['title' => 'Dog water intake — Formula, Steps & Examples', 'description' => 'Dog water intake works out Daily water intake from Activity level and Weight. Daily water intake is opened in milliliters; the chip beside it switches to any…', 'h1' => 'Dog water intake Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog water intake — Formula, Steps & Examples', 'description' => 'Dog water intake takes activity level and weight and returns daily water intake. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dog water intake Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'activity_level' => [
@@ -143,7 +143,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog water intake works out Daily water intake from Activity level and Weight. Nothing is looked up on this page: Daily water intake is computed from Activity level and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Daily water intake is opened in milliliters; the chip beside it switches to any unit of the same quantity.
+        Dog water intake works out Daily water intake from Activity level and Weight. Nothing is looked up on this page: daily water intake is computed from activity level and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Daily water intake is opened in milliliters; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Dog water intake calculator works', 'html' => <<<'TXT'
@@ -153,16 +153,16 @@ return [
             <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Activity level</strong> — a plain number, no unit</li><li><strong>Weight</strong> — in kilograms</li></ul><p>What you get back is Daily water intake in milliliters, shown next to the form rather than on a page of its own.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Run the numbers the page opens with — Activity level = 50 and Weight = 10 kg — through the same formula and the panel reports &lt;strong&gt;Daily water intake&lt;/strong&gt; = 500 ml.</p><ul><li><strong>Daily water intake</strong> = 500 ml</li></ul><p>That is <strong>Weight</strong> = <code>Daily water intake ÷ Activity level</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>Run the numbers the page opens with — Activity level = 50 and Weight = 10 kg — through the same formula and the panel reports <strong>Daily water intake</strong> = 500 ml.</p><ul><li><strong>Daily water intake</strong> = 500 ml</li></ul><p>That is <strong>Weight</strong> = <code>Daily water intake ÷ Activity level</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Daily water intake&lt;/strong&gt; = 500. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Daily water intake lists 40 options and opens on milliliters. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Daily water intake</strong> = 500. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Daily water intake lists 40 options and opens on milliliters. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Weight</strong> = <code>Daily water intake ÷ Activity level</code></li><li><strong>Daily water intake</strong> = <code>Activity level × Weight</code></li><li><strong>Activity level</strong> = <code>Daily water intake ÷ Weight</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Weight</strong> = <code>Daily water intake ÷ Activity level</code> — the form to use when Daily water intake and Activity level are the values you have.</li><li><strong>Daily water intake</strong> = <code>Activity level × Weight</code> — the form to use when Weight and Activity level are the values you have.</li><li><strong>Activity level</strong> = <code>Daily water intake ÷ Weight</code> — the form to use when Weight and Daily water intake are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Weight, Daily water intake and Activity level can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Activity level, from 50 to 100 — and the answers go from &lt;strong&gt;Daily water intake&lt;/strong&gt; 500 ml to &lt;strong&gt;Daily water intake&lt;/strong&gt; 1000 ml.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Activity level, from 50 to 100 — and the answers go from <strong>Daily water intake</strong> 500 ml to <strong>Daily water intake</strong> 1000 ml.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>Units left where they were.</strong> Weight carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Daily water intake is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Activity level left as a guess.</strong> Anything typed into Activity level is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Weight left as a guess.</strong> Anything typed into Weight is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Activity level is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
@@ -194,7 +194,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dog water intake calculator work out?', 'a' => 'Daily water intake, from Daily water intake and Activity level. The relationship is Weight = Daily water intake ÷ Activity level.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Activity level, Weight (kilograms). With activity_level and weight in place, Daily water intake can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Activity level, Weight (kilograms). With activity level and weight in place, Daily water intake can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Weight, Daily water intake and Activity level can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'What answer do the default values give?', 'a' => 'Daily water intake = 500 ml. The figures come from Activity level as the page opens it; they are a starting point, not a fixed answer.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

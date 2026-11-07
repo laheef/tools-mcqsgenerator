@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog BMI',
-    'meta' => ['title' => 'Dog BMI Calculator — Formula, Units & Example', 'description' => 'Dog BMI takes Weight and BMI and returns Height. It is a single relationship that reads Height out of Weight, not a table of canned results keyed by them.', 'h1' => 'Dog BMI Calculator', 'updated' => '2026-05-22'],
+    'meta' => ['title' => 'Dog BMI Calculator — Formula, Units & Example', 'description' => 'Dog BMI turns breed and height into BMI. The formula is printed in the form\'s own words, so the arithmetic can be checked. Any box can be the unknown.', 'h1' => 'Dog BMI Calculator', 'updated' => '2026-05-22'],
     'raw' => [
         'vars' => [
             'bmi' => [
@@ -533,7 +533,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog BMI takes Weight and BMI and returns Height. It is a single relationship that reads Height out of Weight, not a table of canned results keyed by them. Units for Height default to centimeters and can be changed on the answer itself.
+        Dog BMI takes Weight and BMI and returns Height. It is a single relationship that reads height out of weight, not a table of canned results keyed by them. Units for Height default to centimeters and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Dog BMI calculator works', 'html' => <<<'TXT'
@@ -581,7 +581,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dog BMI calculator work out?', 'a' => 'Height, from Weight and BMI. The relationship is Height = (254 ÷ 45) × Weight ÷ BMI.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Weight (kilograms), BMI. Enter mass and bmi; Height is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Weight (kilograms), BMI. Enter weight and BMI; Height is the box to leave alone unless it is the value you came for.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Height, Weight and BMI can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Height is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.

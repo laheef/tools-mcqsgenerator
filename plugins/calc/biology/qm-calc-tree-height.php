@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Tree height',
-    'meta' => ['title' => 'Tree height Calculator: Formula, Steps & Examples', 'description' => 'Enter Distance from the tree, Angle between the viewpoint and the treetop (β) and Eye level into Tree height and the answer comes back as Angle between the…', 'h1' => 'Tree height Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Tree height Calculator: Formula, Steps & Examples', 'description' => 'Tree height turns method, tree location and distance from the tree into eye level. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Tree height Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => '',
@@ -242,7 +242,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Distance from the tree, Angle between the viewpoint and the treetop (β) and Eye level into Tree height and the answer comes back as Angle between the viewpoint and the tree base (α) and Tree height. The arithmetic is the whole method: Angle between the viewpoint and the tree base (α) is worked out from Distance from the tree by one formula, applied once. Angle between the viewpoint and the tree base (α) comes back in degrees unless you switch the unit chip beside the box.
+        Enter Eye level into Tree height and the answer comes back as Angle between the viewpoint and the tree base (α) and Tree height. The arithmetic is the whole method: angle between the viewpoint and the tree base (α) is worked out from eye level by one formula, applied once. Angle between the viewpoint and the tree base (α) comes back in degrees unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Tree height calculator works', 'html' => <<<'TXT'
@@ -279,7 +279,7 @@ return [
             Angle between the viewpoint and the tree base (α), Tree height, Distance from the tree and Angle between the viewpoint and the treetop (β), from Distance from the tree, Angle between the viewpoint and the treetop (β) and Eye level. The relationship is Tree height = Distance from the tree × tan(Angle between the viewpoint and the treetop (β)) + Eye level.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Distance from the tree (meters), Angle between the viewpoint and the treetop (β) (degrees), Eye level (meters). Enter distance_from_lowered_or_level_tree, angle_to_treetop_lowered_or_level and eye_level; Angle between the viewpoint and the tree base (α) is the box to leave alone unless it is the value you came for.
+            Distance from the tree (meters), Angle between the viewpoint and the treetop (β) (degrees), Eye level (meters). Enter distance from the tree, angle between the viewpoint and the treetop (β) and eye level; Angle between the viewpoint and the tree base (α) is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Tree height, Eye level, Distance from the tree and Angle between the viewpoint and the treetop (β) blank and the page solves for that one instead — nothing has to be switched first.

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Potting soil',
-    'meta' => ['title' => 'Potting soil Calculator — Formula, Units & Example', 'description' => 'Enter Width, Depth and Quantity into Potting soil and the answer comes back as Length and Diameter. Width, Depth and Volume of soil needed carry a unit chip…', 'h1' => 'Potting soil Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Potting soil Calculator — Formula, Units & Example', 'description' => 'Potting soil takes shape, length and width and returns volume of soil needed. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Potting soil Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'd_R' => [
@@ -339,7 +339,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Width, Depth and Quantity into Potting soil and the answer comes back as Length and Diameter. The arithmetic is the whole method: Length is worked out from Width by one formula, applied once. Length comes back in centimeters unless you switch the unit chip beside the box.
+        Enter Width, Depth and Quantity into Potting soil and the answer comes back as Length and Diameter. The arithmetic is the whole method: length is worked out from width by one formula, applied once. Length comes back in centimeters unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Potting soil calculator works', 'html' => <<<'TXT'

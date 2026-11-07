@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mass to Molarity Converter',
-    'meta' => ['title' => 'Mass to Molarity Converter — Formula & Results', 'description' => 'Enter Molecular weight, Mass and Volume into Mass to Molarity and the answer comes back as Concentration and Concentration. The page has no way to flag an…', 'h1' => 'Mass to Molarity Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Mass to Molarity Converter — Formula & Results', 'description' => 'Mass to Molarity Converter reports concentration and amount of substance. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Mass to Molarity Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -82,7 +82,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Molecular weight, Mass and Volume into Mass to Molarity and the answer comes back as Concentration and Concentration. It is a single relationship that reads Concentration out of Molecular weight, not a table of canned results keyed by them. Units for Concentration default to mM and can be changed on the answer itself.
+        Enter Molecular weight, Mass and Volume into Mass to Molarity and the answer comes back as Concentration and Concentration. It is a single relationship that reads concentration out of molecular weight, not a table of canned results keyed by them. Units for Concentration default to mM and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Mass to Molarity calculator works', 'html' => <<<'TXT'
@@ -129,7 +129,9 @@ return [
             ['q' => 'What does the Mass to Molarity calculator work out?', 'a' => <<<'TXT'
             Concentration, Concentration and Amount of substance, from Mass and Molecular weight. The relationship is Amount of substance = Mass × 1000 ÷ Molecular weight.
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Molecular weight (g/mol), Mass (mg), Volume (mL). Enter mw, mass_mg and volume_ml; Concentration is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Molecular weight (g/mol), Mass (mg), Volume (mL). Enter molecular weight, mass and volume; Concentration is the box to leave alone unless it is the value you came for.
+            TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Amount of substance, Mass, Concentration and Concentration can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],

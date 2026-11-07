@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Bulb spacing',
-    'meta' => ['title' => 'Bulb spacing Calculator — Formula & Results', 'description' => 'Bulb spacing works out Plant spacing (s) from Plant grid, Length and Width. Plant spacing (s) is opened in centimeters; the chip beside it switches to any…', 'h1' => 'Bulb spacing Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Bulb spacing Calculator — Formula & Results', 'description' => 'Bulb spacing turns plant grid, length and width into area and number of plants. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Bulb spacing Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'area' => [
@@ -508,7 +508,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Bulb spacing works out Plant spacing (s) from Plant grid, Length and Width. Nothing is looked up on this page: Plant spacing (s) is computed from Plant grid and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Plant spacing (s) is opened in centimeters; the chip beside it switches to any unit of the same quantity.
+        Bulb spacing works out Plant spacing (s) from Plant grid, Length and Width. Nothing is looked up on this page: plant spacing (s) is computed from plant grid and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Plant spacing (s) is opened in centimeters; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Bulb spacing calculator works', 'html' => <<<'TXT'
@@ -546,7 +546,7 @@ return [
         'faq' => [
             ['q' => 'What does the Bulb spacing calculator work out?', 'a' => 'Plant spacing (s), from Area and Width. The relationship is Length = Area ÷ Width.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Plant grid, Length (meters), Width (meters), Border (meters), Area (square meters). Fill plant_grid, length and width and leave Plant spacing (s) empty if you would rather have that one solved instead.
+            Plant grid, Length (meters), Width (meters), Border (meters), Area (square meters). Fill plant grid, length and width and leave Plant spacing (s) empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Length, Area, Width and triangle_rows blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

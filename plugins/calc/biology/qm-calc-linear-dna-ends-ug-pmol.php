@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Linear DNA µg to pmol of Ends Converter',
-    'meta' => ['title' => 'Linear DNA µg to pmol of Ends Converter Calculator', 'description' => 'Linear DNA µg to pmol of Ends works out Ends and Ends per microgram from Length, Mass and Molecules. Ends is opened in pmol; the chip beside it switches to…', 'h1' => 'Linear DNA µg to pmol of Ends Converter', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Linear DNA µg to pmol of Ends Converter Calculator', 'description' => 'Linear DNA µg to pmol of Ends Converter works out ends per microgram from length. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Linear DNA µg to pmol of Ends Converter', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -87,7 +87,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Linear DNA µg to pmol of Ends works out Ends and Ends per microgram from Length, Mass and Molecules. Nothing is looked up on this page: Ends is computed from Length and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Ends is opened in pmol; the chip beside it switches to any unit of the same quantity.
+        Linear DNA µg to pmol of Ends works out Ends and Ends per microgram from Length and Mass. Nothing is looked up on this page: ends is computed from length and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Ends is opened in pmol; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Linear DNA µg to pmol of Ends calculator works', 'html' => <<<'TXT'
@@ -97,16 +97,16 @@ return [
             <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Length</strong> — in bp</li><li><strong>Mass</strong> — in µg</li><li><strong>Molecules</strong> — in pmol. Type either the mass or the molar amount</li></ul><p>The result boxes are Ends in pmol, Ends per microgram in pmol/µg, Molecules; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Length = 1000 bp gives &lt;strong&gt;Ends per microgram&lt;/strong&gt; = 3.03 pmol/µg.</p><ul><li><strong>Ends per microgram</strong> = 3.03 pmol/µg</li></ul><p>That is <strong>Molecules</strong> = <code>Mass × 1000000 ÷ (660 × Length)</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>With the defaults in place, Length = 1000 bp gives <strong>Ends per microgram</strong> = 3.03 pmol/µg.</p><ul><li><strong>Ends per microgram</strong> = 3.03 pmol/µg</li></ul><p>That is <strong>Molecules</strong> = <code>Mass × 1000000 ÷ (660 × Length)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Ends per microgram&lt;/strong&gt; = 3.03. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Ends is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Ends per microgram</strong> = 3.03. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Ends is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Molecules</strong> = <code>Mass × 1000000 ÷ (660 × Length)</code></li><li><strong>Mass</strong> = <code>Molecules × 660 × Length ÷ 1000000</code></li><li><strong>Ends</strong> = <code>2 × Molecules</code></li><li><strong>Ends per microgram</strong> = <code>2 × 1000000 ÷ (660 × Length)</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Molecules</strong> = <code>Mass × 1000000 ÷ (660 × Length)</code> — the form to use when Mass and Length are the values you have.</li><li><strong>Mass</strong> = <code>Molecules × 660 × Length ÷ 1000000</code> — the form to use when Molecules and Length are the values you have.</li><li><strong>Ends</strong> = <code>2 × Molecules</code> — the form to use when Molecules are the values you have.</li><li><strong>Ends per microgram</strong> = <code>2 × 1000000 ÷ (660 × Length)</code> — the form to use when Length are the values you have.</li><li><strong>Molecules</strong> = <code>Molecules × 602214076000</code> — the form to use when Molecules are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Molecules, Mass and Ends can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Length, from 1000 to 2000 — and the answers go from &lt;strong&gt;Ends per microgram&lt;/strong&gt; 3.03 pmol/µg to &lt;strong&gt;Ends per microgram&lt;/strong&gt; 1.52 pmol/µg.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Length, from 1000 to 2000 — and the answers go from <strong>Ends per microgram</strong> 3.03 pmol/µg to <strong>Ends per microgram</strong> 1.52 pmol/µg.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> Ends, Ends per microgram and Molecules are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Length left as a guess.</strong> Anything typed into Length is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Mass left as a guess.</strong> Anything typed into Mass is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Molecules left as a guess.</strong> Anything typed into Molecules is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Length to one scale before entering anything.</li></ul>
@@ -135,7 +135,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Linear DNA µg to pmol of Ends calculator work out?', 'a' => 'Ends, Ends per microgram and Molecules, from Mass and Length. The relationship is Molecules = Mass × 1000000 ÷ (660 × Length).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Length (bp), Mass (µg), Molecules (pmol). Enter length, mass_ug and pmol; Ends is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Length (bp), Mass (µg), Molecules (pmol). Enter length, mass and molecules; Ends is the box to leave alone unless it is the value you came for.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Molecules, Mass, Ends and Ends per microgram can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'What answer do the default values give?', 'a' => 'Ends per microgram = 3.03 pmol/µg. That comes from the page\'s own defaults, entered in Length; change one of them and the whole set is recomputed.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

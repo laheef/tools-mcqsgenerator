@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Grass seed',
-    'meta' => ['title' => 'Grass seed Calculator: Formula, Steps & Examples', 'description' => 'Grass seed takes Width and Area and returns Length and Radius. It feeds Length, Width and Seeds. It is a single relationship that reads Length out of Width…', 'h1' => 'Grass seed Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Grass seed Calculator: Formula, Steps & Examples', 'description' => 'Grass seed takes lawn shape, width and length and returns area and seeds. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Grass seed Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'a_axis' => [
@@ -536,7 +536,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Grass seed takes Width and Area and returns Length and Radius. It is a single relationship that reads Length out of Width, not a table of canned results keyed by them. Units for Length default to meters and can be changed on the answer itself.
+        Grass seed takes Width and returns Length and Radius. It is a single relationship that reads length out of width, not a table of canned results keyed by them. Units for Length default to meters and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Grass seed calculator works', 'html' => <<<'TXT'
@@ -581,7 +581,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Grass seed calculator work out?', 'a' => 'Length, Radius, Area and A axis, from Area and Width. The relationship is Length = Area ÷ Width.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Width (meters), Area (square meters). With width and area_rectangle in place, Length can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Width (meters), Area (square meters). With width and area in place, Length can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Length, Area, Width and Area can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             The arithmetic runs at full precision and only the display of Length is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.

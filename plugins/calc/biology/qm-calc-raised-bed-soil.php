@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Raised bed soil',
-    'meta' => ['title' => 'Raised bed soil Calculator: Free, With Steps', 'description' => 'Raised bed soil takes Length, Width and Depth and returns Topsoil percentage and Compost percentage. Topsoil percentage is opened in percent; the chip beside…', 'h1' => 'Raised bed soil Calculator', 'updated' => '2026-06-17'],
+    'meta' => ['title' => 'Raised bed soil Calculator: Free, With Steps', 'description' => 'Enter length, width and depth and Raised bed soil returns volume of soil needed and topsoil. Results come back in m3, with any other unit a click away.', 'h1' => 'Raised bed soil Calculator', 'updated' => '2026-06-17'],
     'sections' => [
         [
             'title' => '',
@@ -211,7 +211,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Raised bed soil takes Length, Width and Depth and returns Topsoil percentage and Compost percentage. Nothing is looked up on this page: Topsoil percentage is computed from Length and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Topsoil percentage is opened in percent; the chip beside it switches to any unit of the same quantity.
+        Raised bed soil takes Length, Width and Depth and returns Topsoil percentage and Compost percentage. Nothing is looked up on this page: topsoil percentage is computed from length and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Topsoil percentage is opened in percent; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Raised bed soil calculator works', 'html' => <<<'TXT'

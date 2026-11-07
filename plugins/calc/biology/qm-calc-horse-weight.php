@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Horse weight',
-    'meta' => ['title' => 'Horse weight Calculator — Formula, Units & Example', 'description' => 'Horse weight takes Type, Height (A) and Neck circumference (B) and returns Actual weight and Ideal weight. The arithmetic is the whole method: Actual weight…', 'h1' => 'Horse weight Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Horse weight Calculator — Formula, Units & Example', 'description' => 'Horse weight turns type and Height (A) into actual weight and ideal weight. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Horse weight Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'breed' => [
@@ -252,7 +252,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Horse weight takes Type, Height (A) and Neck circumference (B) and returns Actual weight and Ideal weight. The arithmetic is the whole method: Actual weight is worked out from Type by one formula, applied once. Actual weight comes back in kilograms unless you switch the unit chip beside the box.
+        Horse weight takes Type, Height (A) and Neck circumference (B) and returns Actual weight and Ideal weight. The arithmetic is the whole method: actual weight is worked out from type by one formula, applied once. Actual weight comes back in kilograms unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Horse weight calculator works', 'html' => <<<'TXT'
@@ -292,7 +292,7 @@ return [
             Actual weight and Ideal weight, from Type, Girth circumference (C), Height (A) and Body length (D). The relationship is Actual weight = getEstimated(Girth circumference (C), Body length (D), Height (A), Neck circumference (B), Type).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Type, Height (A) (centimeters), Neck circumference (B) (centimeters), Girth circumference (C) (centimeters), Body length (D) (centimeters). Enter breed, height and neck; Actual weight is the box to leave alone unless it is the value you came for.
+            Type, Height (A) (centimeters), Neck circumference (B) (centimeters), Girth circumference (C) (centimeters), Body length (D) (centimeters). Enter type, height (A) and neck circumference (B); Actual weight is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Actual weight and Ideal weight can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

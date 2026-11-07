@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Buffer pH Calculator (Henderson–Hasselbalch)',
-    'meta' => ['title' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'description' => <<<'TXT'
-    The pH of a buffer depends on the ratio of its conjugate base to its acid, not on how concentrated it is: pH = pKa + log₁₀([A⁻]/[HA]). Free buffer ph (henders
-    TXT, 'h1' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'description' => 'Buffer pH Calculator (Henderson–Hasselbalch) works out base ÷ acid ratio and acid share from pKa of the buffer, Target pH and total buffer concentration.', 'h1' => 'Buffer pH Calculator (Henderson–Hasselbalch)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -111,7 +109,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Buffer pH Calculator (Henderson–Hasselbalch) turns pKa of the buffer, Target pH and Total buffer concentration into Base ÷ acid ratio and Acid share. Nothing is looked up on this page: Base ÷ acid ratio is computed from pKa of the buffer and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        Buffer pH Calculator (Henderson–Hasselbalch) turns pKa of the buffer, Target pH and Total buffer concentration into Base ÷ acid ratio and Acid share. Nothing is looked up on this page: base ÷ acid ratio is computed from pKa of the buffer and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
             ['title' => 'How the Buffer pH Calculator (Henderson–Hasselbalch) calculator works', 'html' => <<<'TXT'
@@ -148,7 +146,7 @@ return [
             Base ÷ acid ratio, Acid share, Base share and pH − pKa, from Target pH and pKa of the buffer. The relationship is Base ÷ acid ratio = 10 ^ (Target pH − pKa of the buffer).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            pKa of the buffer, Target pH (pH), Total buffer concentration (mM). Fill pka, ph and total_mm and leave Base ÷ acid ratio empty if you would rather have that one solved instead.
+            pKa of the buffer, Target pH (pH), Total buffer concentration (mM). Fill pKa of the buffer, target pH and total buffer concentration and leave Base ÷ acid ratio empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Base ÷ acid ratio, Target pH, pH − pKa and Acid share can each be the answer: the page works out which box is empty and rearranges the relationship for it.

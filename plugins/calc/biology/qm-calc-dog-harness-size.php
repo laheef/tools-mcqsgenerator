@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Dog harness size',
-    'meta' => ['title' => 'Dog harness size — Formula, Steps & Examples', 'description' => <<<'TXT'
-    Dog harness size works out minWeightPrint and maxWeightPrint from 🐾 Weight, 🐕 Girth and Min weight print imperial. Chest circumference, measured by wrapping a…
-    TXT, 'h1' => 'Dog harness size Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog harness size — Formula, Steps & Examples', 'description' => 'Dog harness size works out min Weight Print from 🐾 Weight and 🐕 Girth. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Dog harness size Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'girth' => [
@@ -397,7 +395,7 @@ return [
         'faq' => [
             ['q' => 'What does the Dog harness size calculator work out?', 'a' => 'minWeightPrint, maxWeightPrint, minGirthPrint and maxGirthPrint, from 🐕 Girth. The relationship is minWeightPrint = get_minWeight(🐕 Girth).'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            🐾 Weight (kilograms), 🐕 Girth (centimeters), Min weight print imperial (pounds), Max weight print imperial (pounds), Min girth print imperial (inches). With weight, girth and minWeightPrint_imperial in place, minWeightPrint can stay blank and the page will work it out.
+            🐾 Weight (kilograms), 🐕 Girth (centimeters), Min weight print imperial (pounds), Max weight print imperial (pounds), Min girth print imperial (inches). With 🐾 Weight, 🐕 Girth and min weight print imperial in place, minWeightPrint can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. minWeightPrint, maxWeightPrint, minGirthPrint and maxGirthPrint can each be the answer: the page works out which box is empty and rearranges the relationship for it.

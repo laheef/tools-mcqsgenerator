@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Dog size',
-    'meta' => ['title' => 'Dog size Calculator — Formula, Units & Example', 'description' => <<<'TXT'
-    Dog size works out Adult weight from Your puppy’s age and Weight. The arithmetic is the whole method: Adult weight is worked out from Your puppy’s age by one…
-    TXT, 'h1' => 'Dog size Calculator', 'updated' => '2026-10-05'],
+    'meta' => ['title' => 'Dog size Calculator — Formula, Units & Example', 'description' => 'Enter your puppy’s age and weight and Dog size returns adult weight. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Dog size Calculator', 'updated' => '2026-10-05'],
     'raw' => [
         'vars' => [
             'age' => [
@@ -187,7 +185,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog size works out Adult weight from Your puppy’s age and Weight. The arithmetic is the whole method: Adult weight is worked out from Your puppy’s age by one formula, applied once. Adult weight comes back in kilograms unless you switch the unit chip beside the box.
+        Dog size works out Adult weight from Your puppy’s age and Weight. The arithmetic is the whole method: adult weight is worked out from your puppy’s age by one formula, applied once. Adult weight comes back in kilograms unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Dog size calculator works', 'html' => <<<'TXT'
@@ -230,7 +228,9 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dog size calculator work out?', 'a' => 'Adult weight, from Weight and Your puppy’s age. The relationship is Adult weight = 52 × Weight ÷ Your puppy’s age.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Your puppy’s age (weeks), Weight (kilograms). Fill age and weight and leave Adult weight empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Your puppy’s age (weeks), Weight (kilograms). Fill your puppy’s age and weight and leave Adult weight empty if you would rather have that one solved instead.
+            TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Adult weight, Weight and Your puppy’s age blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             The arithmetic runs at full precision and only the display of Adult weight is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.

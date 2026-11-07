@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cattle per acre',
-    'meta' => ['title' => 'Cattle per acre Calculator — Formula, Units & Example', 'description' => 'Cattle per acre works out Animal unit equivalent from Cattle type, Pasture area and Do you know the forage production of your field?.', 'h1' => 'Cattle per acre Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Cattle per acre Calculator — Formula, Units & Example', 'description' => 'Cattle per acre takes cattle type and returns estimated forage yield. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Cattle per acre Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'animal_unit_equivalent' => [
@@ -747,7 +747,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Cattle per acre works out Animal unit equivalent from Cattle type, Pasture area and Do you know the forage production of your field?. The arithmetic is the whole method: Animal unit equivalent is worked out from Cattle type by one formula, applied once.
+        Cattle per acre works out Animal unit equivalent from Cattle type, Pasture area and Do you know the forage production of your field?. The arithmetic is the whole method: animal unit equivalent is worked out from cattle type by one formula, applied once.
         TXT,
         'sections' => [
             ['title' => 'How the Cattle per acre calculator works', 'html' => <<<'TXT'
@@ -785,7 +785,7 @@ return [
             Animal unit equivalent, from Pasture condition and Annual precipitation. The relationship is Estimated forage yield = getForageProductionLb(Annual precipitation, Pasture condition).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Cattle type, Pasture area (acres), Do you know the forage production of your field?, Annual precipitation, Pasture condition. Enter cattle_type, area and pasture_yes_no; Animal unit equivalent is the box to leave alone unless it is the value you came for.
+            Cattle type, Pasture area (acres), Do you know the forage production of your field?, Annual precipitation, Pasture condition. Enter cattle type, pasture area and do you know the forage production of your field?; Animal unit equivalent is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Estimated forage yield, Estimated forage yield, Monthly forage available and Monthly forage available blank and the page solves for that one instead — nothing has to be switched first.

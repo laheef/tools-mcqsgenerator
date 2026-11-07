@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Omega-3 for dogs',
-    'meta' => ['title' => 'Omega-3 for dogs — Formula, Steps & Examples', 'description' => 'Enter Dog\'s weight, Purpose/disorder and Total Omega-3 dose into Omega-3 for dogs and the answer comes back as Dose. NRC stands for the National Research…', 'h1' => 'Omega-3 for dogs Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Omega-3 for dogs — Formula, Steps & Examples', 'description' => 'Work out Total Omega-3 dose from dog\'s weight with omega-3 for dogs. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Omega-3 for dogs Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => '',
@@ -120,7 +120,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Dog's weight, Purpose/disorder and Total Omega-3 dose into Omega-3 for dogs and the answer comes back as Dose. The arithmetic is the whole method: Dose is worked out from Dog's weight by one formula, applied once. Dose comes back in mg/kg unless you switch the unit chip beside the box.
+        Enter Dog's weight, Purpose/disorder and Total Omega-3 dose into Omega-3 for dogs and the answer comes back as Dose. The arithmetic is the whole method: dose is worked out from dog's weight by one formula, applied once. Dose comes back in mg/kg unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Omega-3 for dogs calculator works', 'html' => <<<'TXT'
@@ -161,7 +161,7 @@ return [
         'faq' => [
             ['q' => 'What does the Omega-3 for dogs calculator work out?', 'a' => 'Dose, from Total Omega-3 dose and Dose. The relationship is Dog\'s weight = (Total Omega-3 dose ÷ Dose)^(4 ÷ 3).'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Dog's weight (kilograms), Purpose/disorder, Total Omega-3 dose (milligrams), Dose (mg/kg), Total Omega-3 dose (milligrams). With dog, purpose and total_dose in place, Dose can stay blank and the page will work it out.
+            Dog's weight (kilograms), Purpose/disorder, Total Omega-3 dose (milligrams), Dose (mg/kg), Total Omega-3 dose (milligrams). With dog's weight, purpose/disorder and total Omega-3 dose in place, Dose can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Dog's weight, Dose, Total Omega-3 dose and Total Omega-3 dose can each be the answer: the page works out which box is empty and rearranges the relationship for it.

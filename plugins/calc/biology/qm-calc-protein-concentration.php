@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein concentration',
-    'meta' => ['title' => 'Protein concentration: Formula, Steps & Results', 'description' => 'Enter Protein, Absorbance at λmax and Pathlength into Protein concentration and the answer comes back as Extinction coefficient and Molecular weight.', 'h1' => 'Protein concentration Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Protein concentration: Formula, Steps & Results', 'description' => 'Protein concentration works out concentration from protein and extinction coefficient. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Protein concentration Calculator', 'updated' => '2026-08-06'],
     'sections' => [
         [
             'title' => '',
@@ -142,7 +142,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Protein, Absorbance at λmax and Pathlength into Protein concentration and the answer comes back as Extinction coefficient and Molecular weight. It is a single relationship that reads Extinction coefficient out of Protein, not a table of canned results keyed by them. Units for Extinction coefficient default to M⁻¹ cm⁻¹ and can be changed on the answer itself.
+        Enter Protein, Absorbance at λmax and Pathlength into Protein concentration and the answer comes back as Extinction coefficient and Molecular weight. It is a single relationship that reads extinction coefficient out of protein, not a table of canned results keyed by them. Units for Extinction coefficient default to M⁻¹ cm⁻¹ and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Protein concentration calculator works', 'html' => <<<'TXT'
@@ -184,7 +184,7 @@ return [
             Extinction coefficient, Molecular weight and Concentration, from Concentration, Extinction coefficient, Pathlength and Absorbance at λmax. The relationship is Dilution factor = Concentration × Extinction coefficient × Pathlength ÷ (Absorbance at λmax × Molecular weight).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Protein, Absorbance at λmax (nm), Pathlength (cm), Dilution factor. With protein, absorbance and pathlength in place, Extinction coefficient can stay blank and the page will work it out.
+            Protein, Absorbance at λmax (nm), Pathlength (cm), Dilution factor. With protein, absorbance at λmax and pathlength in place, Extinction coefficient can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Dilution factor, Concentration, Extinction coefficient and Pathlength can each be the answer: the page works out which box is empty and rearranges the relationship for it.

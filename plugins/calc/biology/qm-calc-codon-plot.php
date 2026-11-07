@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Codon Plot Calculator',
-    'meta' => ['title' => 'Codon Plot Calculator: Formula, Steps & Results', 'description' => <<<'TXT'
-    Codon Plot takes Coding sequence (DNA) and Window size and returns Codons read and Rare codons (w ≤ 0.2). It is a single relationship that reads Codons read…
-    TXT, 'h1' => 'Codon Plot Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Codon Plot Calculator: Formula, Steps & Results', 'description' => 'Codon Plot Calculator reports codons read, rare codons (w ≤ 0.2) and runs of 3+ rare codons. Every box can be solved for, not only the one in the title.', 'h1' => 'Codon Plot Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'sequence' => [
@@ -242,7 +240,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Codon Plot takes Coding sequence (DNA) and Window size and returns Codons read and Rare codons (w ≤ 0.2). It is a single relationship that reads Codons read out of Coding sequence (DNA), not a table of canned results keyed by them.
+        Codon Plot takes Coding sequence (DNA) and Window size and returns Codons read and Rare codons (w ≤ 0.2). It is a single relationship that reads codons read out of coding sequence (DNA), not a table of canned results keyed by them.
         TXT,
         'sections' => [
             ['title' => 'How the Codon Plot calculator works', 'html' => <<<'TXT'
@@ -265,7 +263,7 @@ return [
             <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Codons read</strong> is a plain number. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Rare codons (w ≤ 0.2)</strong> is a plain number. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Runs of 3+ rare codons</strong> is a plain number. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
             TXT],
             ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled &lt;strong&gt;Coding sequence (DNA)&lt;/strong&gt; is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Codons read, Rare codons (w ≤ 0.2) and Runs of 3+ rare codons. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            <p>The box labelled <strong>Coding sequence (DNA)</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Codons read, Rare codons (w ≤ 0.2) and Runs of 3+ rare codons. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
             TXT],
             ['title' => 'How the page computes', 'html' => <<<'TXT'
             <p>Codon Plot is not a single equation with a single answer. It reads Coding sequence (DNA) and Window size, applies the analysis the page is built around, and reports Codons read, Rare codons (w ≤ 0.2) and Runs of 3+ rare codons.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Codons read, Rare codons (w ≤ 0.2) and Runs of 3+ rare codons. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
@@ -285,7 +283,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Codon Plot calculator work out?', 'a' => 'Codons read, Rare codons (w ≤ 0.2) and Runs of 3+ rare codons.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Coding sequence (DNA), Window size (codons). With sequence and window in place, Codons read can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Coding sequence (DNA), Window size (codons). With coding sequence (DNA) and window size in place, Codons read can stay blank and the page will work it out.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Codons read is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
             TXT],

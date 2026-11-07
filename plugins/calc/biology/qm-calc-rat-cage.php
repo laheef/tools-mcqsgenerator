@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Rat cage',
-    'meta' => ['title' => 'Rat cage Calculator: Formula, Steps & Examples', 'description' => 'Rat cage works out Space per rat (custom) from Height, Length and Width. The page reads it when it works out Cage volume, Length and Width.', 'h1' => 'Rat cage Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Rat cage Calculator: Formula, Steps & Examples', 'description' => 'Rat cage works out cage volume and can fit at most and reports both. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Rat cage Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'height' => [
@@ -224,7 +224,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Rat cage works out Space per rat (custom) from Height, Length and Width. The arithmetic is the whole method: Space per rat (custom) is worked out from Height by one formula, applied once. Space per rat (custom) comes back in liters unless you switch the unit chip beside the box.
+        Rat cage works out Space per rat (custom) from Height, Length and Width. The arithmetic is the whole method: space per rat (custom) is worked out from height by one formula, applied once. Space per rat (custom) comes back in liters unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Rat cage calculator works', 'html' => <<<'TXT'

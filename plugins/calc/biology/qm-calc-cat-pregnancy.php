@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Cat pregnancy',
-    'meta' => ['title' => 'Cat pregnancy Calculator — Formula & Results', 'description' => <<<'TXT'
-    Cat pregnancy works out Due date from Mating date. There is no hidden constant here: change Due date and Mating date moves with it. It fills in as soon as the…
-    TXT, 'h1' => 'Cat pregnancy Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Cat pregnancy Calculator — Formula & Results', 'description' => 'Cat pregnancy works out due date from mating date. Any box can be the unknown. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Cat pregnancy Calculator', 'updated' => '2026-09-28'],
     'raw' => [
         'vars' => [
             'currentDate' => ['type' => 'date', 'rnd' => null],
@@ -259,7 +257,7 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'Cat pregnancy works out Due date from Mating date. There is no hidden constant here: change Due date and Mating date moves with it.',
+        'intro' => 'Cat pregnancy works out Due date from Mating date. There is no hidden constant here: change due date and mating date moves with it.',
         'sections' => [
             ['title' => 'How the Cat pregnancy calculator works', 'html' => <<<'TXT'
             <p>Cat pregnancy answers one question from 1 number, and the answer is Due date.</p><p>The relationship it solves reads Due date = Mating date + 63.</p><p>The answers are Due date; they are reported together because a single calculation usually settles more than one question.</p>
@@ -268,16 +266,16 @@ return [
             <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Mating date</strong> — a plain number, no unit, entered as a date</li></ul><p>The result box is Due date. It fills in as soon as the inputs allow it, and it is updated rather than accumulated — change a number and the answer changes with it.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Run the numbers the page opens with — Mating date = 1.772e+12 — through the same formula and the panel reports &lt;strong&gt;Due date&lt;/strong&gt; = 1.778e+12.</p><ul><li><strong>Due date</strong> = 1.778e+12</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Due date</strong> = <code>Mating date + 63</code>.</p>
+            <p>Run the numbers the page opens with — Mating date = 1.772e+12 — through the same formula and the panel reports <strong>Due date</strong> = 1.778e+12.</p><ul><li><strong>Due date</strong> = 1.778e+12</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Due date</strong> = <code>Mating date + 63</code>.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Due date&lt;/strong&gt; = 1.778e+12. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Due date is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Due date</strong> = 1.778e+12. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Due date is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Due date</strong> = <code>Mating date + 63</code></li><li><strong>Mating date</strong> = <code>Due date − 63</code></li><li><strong>currentDate</strong> = <code>− difference + Due date</code></li><li><strong>difference</strong> = <code>− currentDate + Due date</code></li><li><strong>dateMili</strong> = <code>Due date</code></li><li><strong>dueDateDay</strong> = <code>getDueDate(dateMili)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Due date</strong> = <code>Mating date + 63</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Due date − 63</code> — the form to use when Due date are the values you have.</li><li><strong>Due date</strong> = <code>currentDate + difference</code> — the form to use when the other values are known.</li><li><strong>currentDate</strong> = <code>− difference + Due date</code> — the form to use when Due date are the values you have.</li><li><strong>difference</strong> = <code>− currentDate + Due date</code> — the form to use when Due date are the values you have.</li><li><strong>Due date</strong> = <code>dateMili</code> — the form to use when the other values are known.</li><li><strong>dateMili</strong> = <code>Due date</code> — the form to use when Due date are the values you have.</li><li><strong>dueDateDay</strong> = <code>getDueDate(dateMili)</code> — the form to use when the other values are known.</li></ul><p>Any one of Due date, Mating date and currentDate can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Take the example above and double Mating date from 1.772e+12 to 3.545e+12, leaving every other box alone. The panel moves from &lt;strong&gt;Due date&lt;/strong&gt; 1.778e+12 to &lt;strong&gt;Due date&lt;/strong&gt; 3.550e+12.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
+            <p>Take the example above and double Mating date from 1.772e+12 to 3.545e+12, leaving every other box alone. The panel moves from <strong>Due date</strong> 1.778e+12 to <strong>Due date</strong> 3.550e+12.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> Due date is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Mating date left as a guess.</strong> Anything typed into Mating date is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Mating date is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
@@ -312,7 +310,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Cat pregnancy calculator work out?', 'a' => 'Due date, from Mating date. The relationship is Due date = Mating date + 63.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Mating date. Fill matingDate and leave Due date empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Mating date. Fill mating date and leave Due date empty if you would rather have that one solved instead.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Due date, Mating date, currentDate and difference blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'What answer do the default values give?', 'a' => 'Due date = 1.778e+12. Those are the defaults written into the form — move Mating date and every result box follows.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Grain conversion',
-    'meta' => ['title' => 'Grain conversion — Formula, Steps & Examples', 'description' => 'Grain conversion: Enter Agricultural commodity and Bushels into Grain conversion and the answer comes back as Amount and Price per {{PricePerUnit.fullUnit}}.', 'h1' => 'Grain conversion Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Grain conversion — Formula, Steps & Examples', 'description' => 'Grain conversion turns agricultural commodity, amount and Price per {{PricePerUnit.fullUnit}} into bushels and price per bushel. A worked example follows.', 'h1' => 'Grain conversion Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'Amount' => [
@@ -679,7 +679,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Agricultural commodity and Bushels into Grain conversion and the answer comes back as Amount and Price per {{PricePerUnit.fullUnit}}. The arithmetic is the whole method: Amount is worked out from Agricultural commodity by one formula, applied once. Amount comes back in metric tons unless you switch the unit chip beside the box.
+        Grain conversion works in both directions, between amount and price per {{PricePerUnit.fullUnit}}. Amount comes back in metric tons unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Grain conversion calculator works', 'html' => <<<'TXT'
@@ -716,7 +716,7 @@ return [
             ['q' => 'What does the Grain conversion calculator work out?', 'a' => <<<'TXT'
             Amount, Price per {{PricePerUnit.fullUnit}}, Price per bushel and Price total, from Bushels and Agricultural commodity. The relationship is Amount = Bushels × Agricultural commodity.
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Agricultural commodity, Bushels (bu.). Enter Grain and Bushels; Amount is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Agricultural commodity, Bushels (bu.). Enter agricultural commodity and bushels; Amount is the box to leave alone unless it is the value you came for.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Amount, Bushels, Agricultural commodity and Price per bushel blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

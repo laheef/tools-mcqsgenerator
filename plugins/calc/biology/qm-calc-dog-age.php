@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog age',
-    'meta' => ['title' => 'Dog age Calculator — Formula, Units & Example', 'description' => 'Dog age works out Human age and Dog age from Size and Dog age. There is no hidden constant here: change Human age and Size moves with it.', 'h1' => 'Dog age Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog age Calculator — Formula, Units & Example', 'description' => 'Human age, Dog age and Human age are results, and each can be typed into. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Dog age Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'breed' => [
@@ -201,7 +201,7 @@ return [
         TXT,
     ],
     'article' => [
-        'intro' => 'Dog age works out Human age and Dog age from Size and Dog age. There is no hidden constant here: change Human age and Size moves with it.',
+        'intro' => 'Dog age works out Human age and Dog age from Size. There is no hidden constant here: change human age and size moves with it.',
         'sections' => [
             ['title' => 'How the Dog age calculator works', 'html' => <<<'TXT'
             <p>Dog age answers one question from 2 numbers, and the answer is Human age, Dog age and Human age.</p><p>Written with the labels from the form, Human age = get_human_years(Dog age, Size).</p><p>The result panel carries Human age, Dog age and Human age, each in a box of its own rather than buried in a sentence.</p>
@@ -248,7 +248,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dog age calculator work out?', 'a' => 'Human age, Dog age and Human age, from Dog age and Size. The relationship is Human age = get_human_years(Dog age, Size).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Size, Dog age. Fill size and dog_years and leave Human age empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Size, Dog age. Fill size and dog age and leave Human age empty if you would rather have that one solved instead.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Human age, Dog age and Human age blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             The arithmetic runs at full precision and only the display of Human age is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.

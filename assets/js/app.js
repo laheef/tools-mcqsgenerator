@@ -411,41 +411,27 @@
   (function pinCalculatorColumn() {
     var column = document.querySelector('.calc-widget-column');
     if (!column) return;
-    /* The widget card, not the whole column: the column also carries the ad
-       slots below the tool, and measuring those was what made a 480px form
-       behave like a 1,600px one. */
-    var card = column.querySelector('.calc-widget') || column;
-    /* The button the reader is scrolling towards. Everything above it — the
-       tool's name, its fields — is what the card is; this is the end of it. */
-    var action = card.querySelector('[data-calc-go]')
-      || card.querySelector('button[type="submit"]')
-      || card;
-    var GAP = 24;        // breathing room between the card and the fold
-    var MIN_TOP = 72;    // never tuck the card's head closer than this
-    var FLIP = 6;        // scroll this far against the last direction to flip
+    var GAP = 24;        // breathing room between the column and the fold
+    var MIN_TOP = 72;    // never tuck the column's head closer than this
 
     /*
-     * The card holds to whichever edge the reader is working towards.
+     * The whole column sticks, by whichever end keeps it readable.
      *
-     * Down the page the reader is reading toward the results, so the card is
-     * pinned by its FOOT: its last row and the Calculate button sit just above
-     * the fold, and the card travels up with the page until they get there.
-     * Up the page the reader is going back to change a number, so it flips and
-     * pins by its HEAD, `clear` below the sticky header, and the tool's own
-     * heading and first fields come back into view.
+     * It used to pin by its FOOT while the page scrolled down — the Calculate
+     * button and whatever sat under it were what stayed on screen — and that
+     * put the answers below the fold the moment the panel grew: a reader
+     * pressed Calculate on a pinned card and the numbers appeared off screen.
      *
-     * The two pins are the two halves of the same card: its name and first
-     * fields at the top, its last field, Calculate and the results at the foot.
-     * A card that fits the window shows both, whichever edge is holding. A card
-     * taller than the window cannot — and there the foot wins on the way down,
-     * because the reason a reader is scrolling a long form is to reach the
-     * button at the bottom of it. Scrolling back up brings the name and the
-     * first fields down again.
+     * The rule now is one measurement and no direction tracking:
      *
-     * The offset is measured from the header rather than hard-coded: the header
-     * is ~119px at rest, shrinks to 59px when it sticks, and is a different
-     * height again on a phone. A fixed 88px put the top of the card under the
-     * header at some widths, which is what "the name is hidden" was.
+     *   fits    the column is pinned by its HEAD, `clear` below the sticky
+     *           header, so the title, the form, the button and the results are
+     *           all on screen together. This is the ordinary case.
+     *   taller  the column cannot be shown whole, so it is pinned by its FOOT:
+     *           its last row — the results — rests just above the fold, and
+     *           the top of the form rides under the header. The answers are
+     *           what the reader pressed a button for; they are never the part
+     *           that gets cut.
      */
     function headerClearance() {
       var root = getComputedStyle(document.documentElement).getPropertyValue('--header-h');
@@ -457,120 +443,32 @@
       return Math.max(Math.round(measured) + 18, MIN_TOP);
     }
 
-    var mode = 'down';              // 'down' = pinned by the foot, 'up' = by the head
-    var lastY = window.pageYOffset;
-    var lastClear = -1;
-    /* Where an upward run began, and the pin it began from: the card comes back
-       down from there, a pixel per pixel scrolled, until its name reaches the
-       line. Both are re-taken every time the reader turns around. */
-    var upAnchorY = lastY;
-    var upAnchorPin = null;
-    var sliding = false;            // the card is on its way back down to the line
-
+    var frame = null;
     function paint() {
+      frame = null;
       var clear = headerClearance();
-      lastClear = clear;
+      var height = column.getBoundingClientRect().height;
       var viewport = window.innerHeight;
-      var cardBox = card.getBoundingClientRect();
-      var columnBox = column.getBoundingClientRect();
-      if (!cardBox.height) return;
-
-      /* The name sits inside the column, above the card: the pin has to allow
-         for it, or "the foot of the card" lands wherever the name puts it. */
-      var offset = Math.round(cardBox.top - columnBox.top);
-
-      /* Foot pin: the card's bottom edge rests GAP above the fold. */
-      var pinFoot = Math.round(viewport - GAP - cardBox.height - offset);
-      /* Head pin: the column's top — the tool's name — rests `clear` below the
-         header, with the card directly under it. */
-      var pinHead = Math.round(clear);
-      /*
-       * Which edge holds on the way down.
-       *
-       * If the card's Calculate button is on screen with the head pin, the head
-       * holds: the name, the fields and the button are all visible and only the
-       * card's foot (the share row) may run under the fold. Preferring the head
-       * whenever it is enough is what keeps the name where it belongs.
-       *
-       * When it is not enough — a long form, or a card with an ad slot in the
-       * middle of it — the foot takes over, so the button and the results sit
-       * just above the fold. The top of that card is then above the header,
-       * which is the price of a form taller than the window; scrolling back up
-       * lets it down again until its name reaches the line.
-       */
-      var actionOffset = Math.round(action.getBoundingClientRect().bottom - columnBox.top);
-      var buttonOnScreen = pinHead + actionOffset <= viewport - 8;
-      /* The pin going down the page: the foot, unless the head is enough to keep
-         the button on screen — then the name stays where it belongs. */
-      var pinDown = buttonOnScreen ? Math.max(pinFoot, pinHead) : pinFoot;
-
-      var pin;
-      if (mode === 'down' || pinDown >= pinHead) {
-        /* Going down, and any card whose foot pin already leaves the name at or
-           below the header line: the pin simply holds. There is nothing to fix,
-           and moving the card towards the head here is what the jump was. */
-        pin = pinDown;
-      } else {
-        /*
-         * The card is taller than the window, so its foot pin going down put its
-         * name above the line. Coming back up it is let down again: the card
-         * travels with the page, a pixel per pixel scrolled, and fixes itself at
-         * the line only once its name gets there. Lifting it to the line in one
-         * move — which is what this did — read as a jump the moment the wheel
-         * turned, on every card that did not need fixing at all.
-         */
-        if (upAnchorPin === null) {
-          upAnchorPin = pinDown;
-          upAnchorY = Math.round(window.pageYOffset);
-        }
-        var target = upAnchorPin + (upAnchorY - Math.round(window.pageYOffset));
-        pin = Math.min(pinHead, target);
-        /* Still short of the line: the next scroll tick has to move it again. */
-        sliding = target < pinHead;
-      }
-      if (mode !== 'up' || pinDown >= pinHead) {
-        sliding = false;
-      }
-
+      if (!height) return;
+      var headPin = Math.round(clear);
+      var footPin = Math.round(viewport - GAP - height);
+      var pin = Math.min(headPin, footPin);
       column.style.setProperty('--calc-pin', pin + 'px');
-      column.classList.toggle('is-foot-pinned', mode === 'down' && pin !== pinHead);
+      column.classList.toggle('is-foot-pinned', footPin < headPin);
     }
-
-    function onScroll() {
-      var y = window.pageYOffset;
-      var delta = y - lastY;
-      lastY = y;
-
-      /* The header shrinks from ~119px to 59px the moment it sticks, so the
-         clearance genuinely changes early in the scroll. Recompute rather than
-         leaving a stale gap. */
-      var clearanceChanged = headerClearance() !== lastClear;
-
-      var flipped = false;
-      if (Math.abs(delta) >= FLIP) {
-        var next = delta > 0 ? 'down' : 'up';
-        if (next !== mode) {
-          mode = next;
-          upAnchorPin = null;
-          upAnchorY = y;
-          flipped = true;
-        }
-      }
-
-      /* Repaint when the choice changes: a turn of direction, a header that has
-         just shrunk, or a card sliding back down to its name's line. Otherwise
-         the pin is already right and the scroll is left alone. */
-      if (flipped || sliding || clearanceChanged) {
-        paint();
-      }
+    function queue() {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(paint);
     }
 
     paint();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', paint);
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
     window.addEventListener('load', paint);
+    /* The column changes height when the results appear, which is exactly the
+       moment the pin has to be reconsidered. */
     if (typeof ResizeObserver === 'function') {
-      new ResizeObserver(paint).observe(card);
+      new ResizeObserver(queue).observe(column);
     }
   })();
 

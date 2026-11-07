@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Double Digest Buffer Compatibility Calculator',
-    'meta' => ['title' => 'Double Digest Buffer Compatibility Calculator', 'description' => <<<'TXT'
-    Double Digest Buffer Compatibility takes Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) and returns Buffers that suit both…
-    TXT, 'h1' => 'Double Digest Buffer Compatibility Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Double Digest Buffer Compatibility Calculator', 'description' => 'Double Digest Buffer Compatibility Calculator takes enzyme 1 and returns buffers that suit both. Every box can be solved for, not only the one in the title.', 'h1' => 'Double Digest Buffer Compatibility Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'enzyme1' => [
@@ -348,7 +346,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Double Digest Buffer Compatibility takes Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) and returns Buffers that suit both and Best combined activity. There is no hidden constant here: change Buffers that suit both and Enzyme 1 moves with it.
+        Double Digest Buffer Compatibility takes Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) and returns Buffers that suit both and Best combined activity. There is no hidden constant here: change buffers that suit both and enzyme 1 moves with it.
         TXT,
         'sections' => [
             ['title' => 'How the Double Digest Buffer Compatibility calculator works', 'html' => <<<'TXT'
@@ -391,7 +389,7 @@ return [
         'faq' => [
             ['q' => 'What does the Double Digest Buffer Compatibility calculator work out?', 'a' => 'Buffers that suit both, Best combined activity and Enzymes that need their own buffer.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Enzyme 1, Enzyme 2, I only have the classic three buffers (no universal buffer). Fill enzyme1, enzyme2 and classic_only and leave Buffers that suit both empty if you would rather have that one solved instead.
+            Enzyme 1, Enzyme 2, I only have the classic three buffers (no universal buffer). Fill enzyme 1, enzyme 2 and i only have the classic three buffers (no universal buffer) and leave Buffers that suit both empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Buffers that suit both is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.

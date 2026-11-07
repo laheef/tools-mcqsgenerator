@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Allele frequency',
-    'meta' => ['title' => 'Allele frequency — Formula, Steps & Examples', 'description' => 'Allele frequency turns Mutant allele frequency (q) into Occurrence of the disease and Occurrence of the disease. Fill in 1 box and the page has everything it…', 'h1' => 'Allele frequency Calculator', 'updated' => '2024-07-19'],
+    'meta' => ['title' => 'Allele frequency — Formula, Steps & Examples', 'description' => 'Allele frequency turns given in: and healthy allele frequency (p) into occurrence of the disease:. Results come back in perc, with any other unit a click away.', 'h1' => 'Allele frequency Calculator', 'updated' => '2024-07-19'],
     'raw' => [
         'vars' => [
             'a_percentage' => [
@@ -347,7 +347,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Allele frequency turns Mutant allele frequency (q) into Occurrence of the disease and Occurrence of the disease. Nothing is looked up on this page: Occurrence of the disease: is computed from Mutant allele frequency (q) and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Occurrence of the disease: is opened in percent; the chip beside it switches to any unit of the same quantity.
+        Allele frequency turns Mutant allele frequency (q) into Occurrence of the disease and Occurrence of the disease. Nothing is looked up on this page: occurrence of the disease: is computed from mutant allele frequency (q) and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Occurrence of the disease: is opened in percent; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Allele frequency calculator works', 'html' => <<<'TXT'
@@ -389,7 +389,7 @@ return [
             ['q' => 'What does the Allele frequency calculator work out?', 'a' => <<<'TXT'
             Occurrence of the disease, Occurrence of the disease, Healthy allele frequency (p) and Truea, from Mutant allele frequency (q). The relationship is Healthy allele frequency (p) = − Mutant allele frequency (q) − 1.
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Mutant allele frequency (q). Fill q and leave Occurrence of the disease: empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Mutant allele frequency (q). Fill mutant allele frequency (q) and leave Occurrence of the disease: empty if you would rather have that one solved instead.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Healthy allele frequency (p), Mutant allele frequency (q), Occurrence of the disease and Occurrence of the disease blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

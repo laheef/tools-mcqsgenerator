@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Puppy Adult Weight Predictor',
-    'meta' => ['title' => 'Puppy Adult Weight Predictor — Formula & Results', 'description' => 'Enter Current weight, Current age and Predicted breed size into Puppy Adult Weight Predictor and the answer comes back as Estimated adult weight and Likely…', 'h1' => 'Puppy Adult Weight Predictor', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Puppy Adult Weight Predictor — Formula & Results', 'description' => 'Puppy Adult Weight Predictor takes current weight and returns estimated adult weight. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Puppy Adult Weight Predictor', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -98,7 +98,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Current weight, Current age and Predicted breed size into Puppy Adult Weight Predictor and the answer comes back as Estimated adult weight and Likely range — low. It is a single relationship that reads Estimated adult weight out of Current weight, not a table of canned results keyed by them. Units for Estimated adult weight default to kg and can be changed on the answer itself.
+        Enter Current weight, Current age and Predicted breed size into Puppy Adult Weight Predictor and the answer comes back as Estimated adult weight and Likely range — low. It is a single relationship that reads estimated adult weight out of current weight, not a table of canned results keyed by them. Units for Estimated adult weight default to kg and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Puppy Adult Weight Predictor calculator works', 'html' => <<<'TXT'
@@ -141,7 +141,7 @@ return [
         'faq' => [
             ['q' => 'What does the Puppy Adult Weight Predictor calculator work out?', 'a' => 'Estimated adult weight, Likely range — low, Likely range — high and Growth still to come, from Predicted breed size, Current weight and Current age.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Current weight (kg), Current age (weeks), Predicted breed size. Enter weight, age and size_class; Estimated adult weight is the box to leave alone unless it is the value you came for.
+            Current weight (kg), Current age (weeks), Predicted breed size. Enter current weight, current age and predicted breed size; Estimated adult weight is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Estimated adult weight, Likely range — low, Likely range — high and Growth still to come blank and the page solves for that one instead — nothing has to be switched first.

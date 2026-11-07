@@ -12,7 +12,7 @@
 return [
     'name' => 'Guinea pig years to human years',
     'meta' => ['title' => 'Guinea pig years to human years — Formula & Results', 'description' => <<<'TXT'
-    Guinea pig years to human years takes Guinea pig age 🐹 and returns Human age 👨‍🌾. It is a single relationship that reads Human age 👨‍🌾 out of Guinea pig age…
+    Enter guinea pig age 🐹 and Guinea pig years to human years returns human age 👨‍🌾. A worked example walks through the arithmetic with this page's own numbers.
     TXT, 'h1' => 'Guinea pig years to human years Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
@@ -83,7 +83,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Guinea pig years to human years takes Guinea pig age 🐹 and returns Human age 👨‍🌾. It is a single relationship that reads Human age 👨‍🌾 out of Guinea pig age 🐹, not a table of canned results keyed by them. Units for Human age 👨‍🌾 default to years and can be changed on the answer itself.
+        Guinea pig years to human years takes Guinea pig age 🐹 and returns Human age 👨‍🌾. It is a single relationship that reads human age 👨‍🌾 out of guinea pig age 🐹, not a table of canned results keyed by them. Units for Human age 👨‍🌾 default to years and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Guinea pig years to human years calculator works', 'html' => <<<'TXT'
@@ -134,7 +134,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Guinea pig years to human years calculator work out?', 'a' => 'Human age 👨‍🌾, from Guinea pig age 🐹. The relationship is Human age 👨‍🌾 = get_age(Guinea pig age 🐹).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Guinea pig age 🐹 (years / months). Enter pig_age; Human age 👨‍🌾 is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Guinea pig age 🐹 (years / months). Enter guinea pig age 🐹; Human age 👨‍🌾 is the box to leave alone unless it is the value you came for.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Human age 👨‍🌾 is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
             TXT],

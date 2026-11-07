@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Fish Density Calculator',
-    'meta' => ['title' => 'Fish Density Calculator — Formula & Results', 'description' => 'Fish Density works out Fish per litre and Litres per fish from Number of fish, Water volume and Average fish weight. It is a single relationship that reads…', 'h1' => 'Fish Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Fish Density Calculator — Formula & Results', 'description' => 'Fish Density Calculator reports fish per litre, litres per fish and biomass density. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Fish Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -88,7 +88,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Fish Density works out Fish per litre and Litres per fish from Number of fish, Water volume and Average fish weight. It is a single relationship that reads Fish per litre out of Number of fish, not a table of canned results keyed by them. Units for Fish per litre default to fish/L and can be changed on the answer itself.
+        Fish Density works out Fish per litre and Litres per fish from Number of fish, Water volume and Average fish weight. It is a single relationship that reads fish per litre out of number of fish, not a table of canned results keyed by them. Units for Fish per litre default to fish/L and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Fish Density calculator works', 'html' => <<<'TXT'
@@ -130,7 +130,9 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Fish Density calculator work out?', 'a' => 'Fish per litre, Litres per fish and Biomass density, from Number of fish and Water volume. The relationship is Fish per litre = Number of fish ÷ Water volume.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Number of fish, Water volume (L), Average fish weight (g). With fish, volume and weight in place, Fish per litre can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Number of fish, Water volume (L), Average fish weight (g). With number of fish, water volume and average fish weight in place, Fish per litre can stay blank and the page will work it out.
+            TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Fish per litre, Litres per fish, Biomass density and Number of fish blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Bone Length to Body Height Calculator',
-    'meta' => ['title' => 'Bone Length to Body Height Calculator — Biology', 'description' => 'Bone Length to Body Height takes Bone measured, Sex of the individual and Bone length and returns Estimated stature and Estimated stature.', 'h1' => 'Bone Length to Body Height Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Bone Length to Body Height Calculator — Biology', 'description' => 'Enter bone measured, sex of the individual and bone length and Bone Length to Body Height Calculator returns estimated stature. Every figure is computed.', 'h1' => 'Bone Length to Body Height Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -76,7 +76,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Bone Length to Body Height takes Bone measured, Sex of the individual and Bone length and returns Estimated stature and Estimated stature. Nothing is looked up on this page: Estimated stature is computed from Bone measured and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Estimated stature is opened in cm; the chip beside it switches to any unit of the same quantity.
+        Bone Length to Body Height takes Bone measured, Sex of the individual and Bone length and returns Estimated stature and Estimated stature. Nothing is looked up on this page: estimated stature is computed from bone measured and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Estimated stature is opened in cm; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Bone Length to Body Height calculator works', 'html' => <<<'TXT'
@@ -120,7 +120,7 @@ return [
         'faq' => [
             ['q' => 'What does the Bone Length to Body Height calculator work out?', 'a' => 'Estimated stature and Estimated stature, from Bone measured, Sex of the individual and Bone length.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Bone measured, Sex of the individual, Bone length (cm). Fill bone, sex and length and leave Estimated stature empty if you would rather have that one solved instead.
+            Bone measured, Sex of the individual, Bone length (cm). Fill bone measured, sex of the individual and bone length and leave Estimated stature empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Estimated stature, Estimated stature and Bone length blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

@@ -517,19 +517,53 @@ final class CalcArticle
 
     private static function intro(string $seed, string $name, array $in, array $out, array $labels, array $unitOf, string $cat): string
     {
+        /*
+         * What the reader supplies is what is left after the answers are taken
+         * out — by variable and by label. A converter names both directions the
+         * same thing ("Cat years" is an input one way and the answer the other),
+         * and listing it on both sides produced "works out Human years and Cat
+         * years from Cat years".
+         */
+        $outLabels = [];
+        foreach ($out as $varName) {
+            $outLabels[mb_strtolower(trim((string) ($labels[$varName] ?? '')), 'UTF-8')] = true;
+        }
+        $given = array_values(array_filter(array_values(array_diff($in, $out)), static function (string $var) use ($labels, $outLabels): bool {
+            $label = mb_strtolower(trim((string) ($labels[$var] ?? '')), 'UTF-8');
+            return $label === '' || !isset($outLabels[$label]);
+        }));
+
         $firstOut = self::names($out, $labels, 2);
-        $firstIn = $in === [] ? '' : self::names($in, $labels, 3);
-        $oneIn = $in === [] ? '' : $labels[$in[0]];
-        $oneOut = $out === [] ? '' : $labels[$out[0]];
-        $unit = $out === [] ? '' : self::unitText($unitOf[$out[0]]['key'] ?? null, $unitOf[$out[0]]['default'] ?? null, $unitOf[$out[0]]['suffix'] ?? '');
+        $firstIn  = $given === [] ? '' : self::names($given, $labels, 3);
+        /* Labels are printed mid-sentence, so they lose a sentence-case capital
+           there; at the start of one they keep it. */
+        $oneIn  = $given === [] ? '' : self::inSentence((string) ($labels[$given[0]] ?? ''));
+        $oneOut = $out === [] ? '' : self::inSentence((string) ($labels[$out[0]] ?? ''));
+        $unit   = $out === [] ? '' : self::unitText($unitOf[$out[0]]['key'] ?? null, $unitOf[$out[0]]['default'] ?? null, $unitOf[$out[0]]['suffix'] ?? '');
 
         $parts = [];
-        if ($in === []) {
+        if ($in === [] || $out === []) {
             $parts[] = sprintf(self::pick($seed, 'intro2', [
                 '%s works out %s.',
                 '%s reports %s.',
                 '%s returns %s from the values already on the page.',
             ]), $name, $firstOut);
+        } elseif ($given === []) {
+            /* Every box the reader can fill is named like an answer: the page is
+               a converter, and saying so is truer than naming a side. */
+            $sides = [];
+            foreach ($out as $varName) {
+                $label = self::inSentence((string) ($labels[$varName] ?? ''));
+                if ($label !== '' && !in_array($label, $sides, true)) {
+                    $sides[] = $label;
+                }
+            }
+            $pair = self::plainList(array_slice($sides, 0, 2));
+            $parts[] = sprintf(self::pick($seed, 'intro5', [
+                '%s converts between %s: put a value in either box and the other one is worked out.',
+                '%s works in both directions, between %s.',
+                '%s reads one of %s from the other, so either can be the value you fill in.',
+            ]), $name, $pair !== '' ? $pair : 'the two sides');
         } else {
             $frame = self::pick($seed, 'intro', ['a', 'b', 'c', 'd']);
             $parts[] = match ($frame) {
@@ -540,12 +574,14 @@ final class CalcArticle
             };
         }
 
-        $parts[] = sprintf(self::pick($seed, 'intro3', [
-            'Nothing is looked up on this page: %s is computed from %s and the other boxes, so an unusual pair of values gives an honest answer rather than an error.',
-            'It is a single relationship that reads %s out of %s, not a table of canned results keyed by them.',
-            'The arithmetic is the whole method: %s is worked out from %s by one formula, applied once.',
-            'There is no hidden constant here: change %s and %s moves with it.',
-        ]), $oneOut, $oneIn);
+        if ($oneOut !== '' && $oneIn !== '') {
+            $parts[] = sprintf(self::pick($seed, 'intro3', [
+                'Nothing is looked up on this page: %s is computed from %s and the other boxes, so an unusual pair of values gives an honest answer rather than an error.',
+                'It is a single relationship that reads %s out of %s, not a table of canned results keyed by them.',
+                'The arithmetic is the whole method: %s is worked out from %s by one formula, applied once.',
+                'There is no hidden constant here: change %s and %s moves with it.',
+            ]), $oneOut, $oneIn);
+        }
 
         if ($unit !== '') {
             $parts[] = sprintf(self::pick($seed, 'intro4', [
@@ -553,7 +589,7 @@ final class CalcArticle
                 '%s comes back in %s unless you switch the unit chip beside the box.',
                 'Units for %s default to %s and can be changed on the answer itself.',
                 '%s is opened in %s; the chip beside it switches to any unit of the same quantity.',
-            ]), $oneOut, $unit);
+            ]), self::atStart((string) ($labels[$out[0]] ?? '')), $unit);
         }
 
         return implode(' ', $parts);
@@ -569,11 +605,11 @@ final class CalcArticle
             '%s answers one question from %s, and the answer is %s.'                   => [$name, $asked, $reports],
         ];
         $frame = self::pick($seed, 'how1', array_keys($frames));
-        $html  = '<p>' . View::escape(sprintf($frame, ...$frames[$frame])) . '</p>';
+        $html  = '<p>' . self::rich(sprintf($frame, ...$frames[$frame])) . '</p>';
 
         if ($formulas !== [] && strlen($formulas[0]['expr']) <= 240) {
             $lead = $formulas[0];
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'how2', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'how2', [
                 "In the form's own words, %s = %s.",
                 'Written with the labels from the form, %s = %s.',
                 'The relationship it solves reads %s = %s.',
@@ -581,7 +617,7 @@ final class CalcArticle
         }
 
         if ($out !== []) {
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'how3', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'how3', [
                 'What comes back is %s — each answer is a box on the form, so you read it beside the numbers that produced it.',
                 'The result panel carries %s, each in a box of its own rather than buried in a sentence.',
                 'The answers are %s; they are reported together because a single calculation usually settles more than one question.',
@@ -608,7 +644,7 @@ final class CalcArticle
             $items[] = '<li>' . $line . '</li>';
         }
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'fields1', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'fields1', [
             'The form asks for %s, and nothing else.',
             'There are %s to fill in; every one of them is used by the formula.',
             'Fill in %s and the page has everything it needs.',
@@ -656,7 +692,7 @@ final class CalcArticle
                 . $example['outText'][$var] . ($unit !== '' ? ' ' . View::escape($unit) : '');
         }
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'ex1', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'ex1', [
             'Run the numbers the page opens with — %s — through the same formula and the panel reports %s.',
             'With the defaults in place, %s gives %s.',
             'Take the values the form starts on, %s; the answers are %s.',
@@ -688,7 +724,7 @@ final class CalcArticle
             }
         }
         if ($magnitudes !== [] && $out !== []) {
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'read1', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'read1', [
                 'Treat the size of a result as part of the answer: %s is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.',
                 'A sanity check costs one glance: the page\'s defaults give %s. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.',
             ]), self::plainList($magnitudes))) . '</p>';
@@ -705,13 +741,13 @@ final class CalcArticle
         }
         if ($switchers !== []) {
             $first = array_key_first($switchers);
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'read2', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'read2', [
                 'Units are handled before the formula runs: %s offers %d units and opens on %s, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.',
                 'The unit chip on %s lists %d options and opens on %s. Moving it changes the conversion applied to that row, not the number stored behind it.',
             ]), $labels[$first] ?? $first, $switchers[$first][0], $switchers[$first][1])) . '</p>';
         } else {
             $subject = $out !== [] ? ($labels[$out[0]] ?? 'this page') : 'this page';
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'read3', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'read3', [
                 'None of the boxes on this page carries a unit chip: %s takes a plain number and the answer inherits whatever scale the inputs were measured in.',
                 'As far as %s is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.',
             ]), $subject)) . '</p>';
@@ -729,7 +765,7 @@ final class CalcArticle
         }
         $places = $rounding === [] ? null : max($rounding);
         if ($places !== null) {
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'read4', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'read4', [
                 'Results are displayed to %d decimal places; the arithmetic itself runs at full precision, so the figure shown is a view of the number rather than a second calculation from it.',
                 'The panel rounds to %d decimals and does it once, at the end, which is why two inputs that differ in the third decimal can still produce visibly different answers.',
             ]), $places)) . '</p>';
@@ -807,7 +843,7 @@ final class CalcArticle
         }
 
         if (count($targets) > 1) {
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'f2', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'f2', [
                 'Because the equation is written once per variable, the page works in either direction: any one of %s can be the unknown.',
                 'Any one of %s can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.',
             ]), self::plainNames(array_values($targets), 3))) . '</p>';
@@ -856,7 +892,7 @@ final class CalcArticle
             return '';
         }
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'check1', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'check1', [
             'Take the example above and double %s from %s to %s, leaving every other box alone. The panel moves from %s to %s.',
             'Change one box only — %s, from %s to %s — and the answers go from %s to %s.',
         ]), $labels[$var] ?? $var, $example['inText'][$var], self::num($value * 2), self::plainList($before), self::plainList($after))) . '</p>';
@@ -886,14 +922,14 @@ final class CalcArticle
             }
         }
         if ($switchable !== []) {
-            $traps[] = '<strong>Units left where they were.</strong> ' . View::escape(sprintf(self::pick($seed, 'trap1', [
+            $traps[] = '<strong>Units left where they were.</strong> ' . self::rich(sprintf(self::pick($seed, 'trap1', [
                 '%s carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.',
                 'The chip beside %s is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.',
             ]), self::plainNames($switchable, 3)));
         }
 
         if ($out !== []) {
-            $traps[] = '<strong>The answer typed back in.</strong> ' . View::escape(sprintf(self::pick($seed, 'trap2', [
+            $traps[] = '<strong>The answer typed back in.</strong> ' . self::rich(sprintf(self::pick($seed, 'trap2', [
                 '%s, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.',
                 'A result box can be typed into, and doing so changes the question rather than the arithmetic: with %s filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.',
             ]), self::names($out, $labels, 3) . (count($out) === 1 ? ' is a result' : ' are results')));
@@ -904,13 +940,13 @@ final class CalcArticle
                 break;
             }
             $label = self::clean((string) ($labels[$var] ?? $var));
-            $traps[] = '<strong>' . View::escape($label) . ' left as a guess.</strong> ' . View::escape(sprintf(self::pick($seed, 'trap4', [
+            $traps[] = '<strong>' . View::escape($label) . ' left as a guess.</strong> ' . self::rich(sprintf(self::pick($seed, 'trap4', [
                 'A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If %s is unknown, solve for it instead of estimating it — leave it blank.',
                 'Anything typed into %s is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.',
             ]), View::escape($label)));
         }
 
-        $traps[] = '<strong>Measurements mixed across scales.</strong> ' . View::escape(sprintf(self::pick($seed, 'trap3', [
+        $traps[] = '<strong>Measurements mixed across scales.</strong> ' . self::rich(sprintf(self::pick($seed, 'trap3', [
             'Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert %s to one scale before entering anything.',
             'A calculation cannot tell a measured value from an estimated one. If %s is an estimate, the answer is only as good as that number, whatever precision the panel displays.',
             'Entering a rounded value is fine; rounding twice is not. Keep full precision in %s and let the panel round the answer once.',
@@ -956,7 +992,7 @@ final class CalcArticle
      */
     private static function sectionGlossary(string $seed, string $name, array $in, array $out, array $labels, array $unitOf, Units $units, array $fields, array $calc): string
     {
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'gl0', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'gl0', [
             'The boxes on the %s form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.',
             'Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.',
         ]), $name)) . '</p>';
@@ -1085,7 +1121,7 @@ final class CalcArticle
             return '';
         }
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'sens0', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'sens0', [
             'A percentage change tells you where the answer is most fragile. Take the defaults this page opens with, raise one box by ten per cent, and re-solve:',
             'Which box should you measure most carefully? The table answers it. Each row raises one input by ten per cent from the page\'s own defaults and records what happens to every answer:',
         ]), $name)) . '</p>';
@@ -1109,7 +1145,7 @@ final class CalcArticle
         usort($rows, static fn (array $a, array $b): int => $b['peak'] <=> $a['peak']);
         $top = $rows[0];
         $flat = array_values(array_filter($rows, static fn (array $r): bool => $r['peak'] < 0.5));
-        $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'sens1', [
+        $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'sens1', [
             'The steepest column belongs to %s: ten per cent there moves an answer by about %s per cent, which is why that is the number to measure twice. %s',
             'Ranked by leverage, %s sits at the top — a ten per cent error in that box shows up as roughly %s per cent in the answer. %s',
         ]), $top['label'], self::num(round($top['peak'], 1)), $flat === []
@@ -1198,7 +1234,7 @@ final class CalcArticle
      */
     private static function sectionUnits(string $seed, string $name, array $chips, Units $units): string
     {
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'un0', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'un0', [
             'A unit chip is only useful if the conversion behind it is the right one, so here is what each chip on %s actually offers.',
             'Each chip on this page is a table of units of the same quantity. The tables, with the unit each box opens in:',
         ]), $name)) . '</p>';
@@ -1234,7 +1270,7 @@ final class CalcArticle
      */
     private static function sectionOutputs(string $seed, string $name, array $out, array $labels, array $unitOf, Units $units, array $fields, array $calc, ?array $example): string
     {
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'out0', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'out0', [
             'The panel reports %s. Here is what each one is for, and what to compare it against.',
             'Each box below is a different question about the same calculation. Read them in this order:',
         ]), self::countNoun(count($out), 'value', 'values'))) . '</p>';
@@ -1323,7 +1359,7 @@ final class CalcArticle
             $prints[] = self::clean((string) ($labels[$var] ?? $var));
         }
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'sc0', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'sc0', [
             '%s is not a single equation with a single answer. It reads %s, applies the analysis the page is built around, and reports %s.',
             'The calculation on this page is a procedure rather than one formula: it takes %s, works through it, and the panel lists %s.',
         ]), $name, $reads === [] ? 'the form' : self::plainNames($reads, 4), $prints === [] ? 'the result' : self::plainNames($prints, 4))) . '</p>';
@@ -1339,7 +1375,7 @@ final class CalcArticle
         ])) . '</p>';
 
         if ($prints !== []) {
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'sc3', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'sc3', [
                 'The results to look at are %s. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.',
                 'What comes back is %s — the same input described several ways, which is why the panel lists them side by side rather than picking one.',
             ]), self::plainNames($prints, 4))) . '</p>';
@@ -1373,7 +1409,7 @@ final class CalcArticle
         }
         if ($places !== []) {
             $p = max($places);
-            $items[] = '<strong>Precision is display precision.</strong> ' . View::escape(sprintf(
+            $items[] = '<strong>Precision is display precision.</strong> ' . self::rich(sprintf(
                 self::pick($seed, 'lim1', [
                     'The panel shows at most %d decimal places, so two inputs that differ beyond that will look as though they give the same answer. The calculation behind the display keeps the full number.',
                     'Results are drawn to %d decimals. That is enough for reading, not enough for chaining: use the underlying value, not the printed one, if the next step is another calculation.',
@@ -1413,7 +1449,7 @@ final class CalcArticle
             foreach ($chips as $chip) {
                 $names[] = $chip['name'];
             }
-            $items[] = '<strong>Only the listed units.</strong> ' . View::escape(sprintf(
+            $items[] = '<strong>Only the listed units.</strong> ' . self::rich(sprintf(
                 self::pick($seed, 'lim3', [
                     'The chips cover %s. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.',
                     'The unit tables here are %s and nothing beyond them. There is no "other" option, so an unusual unit has to be converted by hand first.',
@@ -1438,7 +1474,7 @@ final class CalcArticle
         }
 
         /* What the formula does not model. */
-        $items[] = '<strong>It is a formula, not a model of your case.</strong> ' . View::escape(sprintf(
+        $items[] = '<strong>It is a formula, not a model of your case.</strong> ' . self::rich(sprintf(
             self::pick($seed, 'lim5', [
                 'The page assumes %s are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.',
                 'Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.',
@@ -1463,7 +1499,7 @@ final class CalcArticle
             $names[] = '<strong>' . View::escape(self::clean((string) ($labels[$var] ?? $var))) . '</strong>';
         }
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'tx0', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'tx0', [
             '%s takes text, not a number, so the way it is pasted decides whether the analysis is right.',
             'The box labelled %s is the input the whole page is built around. It holds characters, and the page reads every one of them.',
         ]), self::plainNames($names, 3))) . '</p>';
@@ -1492,7 +1528,7 @@ final class CalcArticle
             $prints[] = self::clean((string) ($labels[$var] ?? $var));
         }
         if ($prints !== []) {
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'tx5', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'tx5', [
                 'Paste once, check the first and last few characters of what landed in the box, and then read %s. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.',
                 'The quick check is always the same: does the reported length match the text you pasted? If %s disagree with what you can count by eye, the box is holding something you did not intend to give it.',
             ]), self::plainNames($prints, 4))) . '</p>';
@@ -1514,18 +1550,18 @@ final class CalcArticle
             foreach ($in as $var) {
                 $all[] = self::clean((string) ($labels[$var] ?? $var));
             }
-            $steps[] = '<strong>Collect the inputs.</strong> ' . View::escape(sprintf(self::pick($seed, 'st1', [
+            $steps[] = '<strong>Collect the inputs.</strong> ' . self::rich(sprintf(self::pick($seed, 'st1', [
                 'You need %s. Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.',
                 'Have %s ready and all in one unit. The page will convert whatever a chip says it is; it cannot tell that one of the numbers was measured in something else.',
             ]), self::plainNames($all, 4)));
         }
 
-        $steps[] = '<strong>Enter them and press Calculate.</strong> ' . View::escape(sprintf(self::pick($seed, 'st2', [
+        $steps[] = '<strong>Enter them and press Calculate.</strong> ' . self::rich(sprintf(self::pick($seed, 'st2', [
             'Type %s into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.',
             'Fill the form — starting with %s — and press Calculate. The panel updates in place, and the fields you typed into keep your numbers.',
         ]), $firstIn === '' ? 'the values' : View::escape($firstIn)));
 
-        $steps[] = '<strong>Read the answer against the defaults.</strong> ' . View::escape(sprintf(self::pick($seed, 'st3', [
+        $steps[] = '<strong>Read the answer against the defaults.</strong> ' . self::rich(sprintf(self::pick($seed, 'st3', [
             'Compare %s with the figure the page\'s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.',
             'Check %s against the worked example above. If the two disagree by a round factor, the chip or the decimal separator is the place to look first.',
         ]), $firstOut === '' ? 'the result' : View::escape($firstOut . ($unit !== '' ? ' in ' . $unit : ''))));
@@ -1555,13 +1591,13 @@ final class CalcArticle
             $ins[] = self::clean((string) ($labels[$var] ?? $var));
         }
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'use1', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'use1', [
             'An answer from %s is a number to act on, so the useful question is what to do with %s once the panel shows it.',
             'Getting the figure is half the job. The other half is what %s is for, and what it is not.',
         ]), $name, $outs === [] ? 'it' : self::plainNames($outs, 3))) . '</p>';
 
         $html .= '<ul>'
-            . '<li><strong>Record the inputs with the answer.</strong> ' . View::escape(sprintf(self::pick($seed, 'use2', [
+            . '<li><strong>Record the inputs with the answer.</strong> ' . self::rich(sprintf(self::pick($seed, 'use2', [
                 'A number on its own is not reproducible. Write down %s alongside it — a week later the answer is checkable and the reasoning is not.',
                 'If the result is going into a note or a report, put %s beside it. That is what makes the figure something a colleague can verify rather than take on trust.',
             ]), $ins === [] ? 'the values you used' : self::plainNames($ins, 4))) . '</li>'
@@ -1593,7 +1629,7 @@ final class CalcArticle
         $up = (string) ($calc['updatedAt'] ?? '');
         $when = $up !== '' ? date('j F Y', strtotime($up) ?: time()) : '';
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'ab1', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'ab1', [
             '%s is a calculator, not an article with a form attached: the numbers in the panel come from the formulas on this page, applied to whatever is in the boxes, and nothing is looked up in a table.',
             'The page you are reading is built around one calculation. The form, the formula and the worked examples all describe the same relationship, and the panel is the only place the answer exists — it is computed when you press the button, not fetched.',
         ]), $name)) . '</p>';
@@ -1603,12 +1639,12 @@ final class CalcArticle
             'Every figure quoted in the article above was produced by this page\'s formulas, with the inputs listed beside it. That is deliberate — it is the only way a reader can check the page without trusting it.',
         ])) . '</p>';
 
-        $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'ab3', [
+        $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'ab3', [
             'What the page keeps is nothing. %s has no account, no history and no server-side record of what you typed; the fields hold your numbers for as long as the tab is open, and the share button builds a link from them only if you ask it to.',
             'Nothing you enter is stored. The form is local to the page, the calculation runs on it, and the only way your numbers travel anywhere is if you copy the link that carries them.',
         ]), $when !== '' ? 'Last reviewed ' . $when . '.' : 'The calculation is unchanged between visits.')) . '</p>';
 
-        $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'ab5', [
+        $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'ab5', [
             'The page is one of a catalogue that works the same way: every calculator prints the relationship it uses, runs a worked example from its own defaults, and lets you solve for any one of its variables rather than only the one in the title.',
             'It belongs to the same catalogue as the rest of the site, and follows the same rule as all of them: the formula is printed, the working is shown, and the answer can be checked by hand if you want to.',
         ]), $name)) . '</p>';
@@ -1640,7 +1676,7 @@ final class CalcArticle
             return '';
         }
 
-        $html = '<p>' . View::escape(sprintf(self::pick($seed, 'pe1', [
+        $html = '<p>' . self::rich(sprintf(self::pick($seed, 'pe1', [
             'A criterion for choosing between these pages: %s answers a different question from the one above, even where the two share a sentence of explanation.',
             'Neighbouring pages resolve the parts of the same job that %s leaves alone. Knowing which is which saves running the wrong one:',
         ]), $name)) . '</p>';
@@ -1663,7 +1699,7 @@ final class CalcArticle
         $html = '';
 
         if ($in !== [] && $out !== []) {
-            $html .= '<p>' . View::escape(sprintf(self::pick($seed, 'uses1', [
+            $html .= '<p>' . self::rich(sprintf(self::pick($seed, 'uses1', [
                 'Reach for this page when %s is what you already know and %s is what you need — the reverse of that situation is what the rearranged form is for.',
                 'The typical use is one direction of the relationship: %s measured, %s wanted.',
                 'Use it whenever the numbers you have are %s and the number you are missing is %s.',
@@ -1732,13 +1768,20 @@ final class CalcArticle
                 $bits[] = self::clean($labels[$var]) . ($unit !== '' ? ' (' . $unit . ')' : '');
             }
             $list = implode(', ', array_slice($bits, 0, 5));
+            /* The labels, not the variable names: a reader was told to "fill
+               temp_primer and annealing_temp", which are the names in the file,
+               not the names on the form. */
+            $fills = [];
+            foreach (array_slice(array_values(array_diff($in, [$out[0] ?? ''])), 0, 3) as $var) {
+                $fills[] = self::inSentence(self::clean($labels[$var] ?? $var));
+            }
             $faq[] = [
                 'q' => 'Which values do I need before I start?',
                 'a' => $list . '. ' . sprintf(self::pick($seed, 'q2', [
                     'Fill %s and leave %s empty if you would rather have that one solved instead.',
                     'With %s in place, %s can stay blank and the page will work it out.',
                     'Enter %s; %s is the box to leave alone unless it is the value you came for.',
-                ]), self::plainNames(array_slice(array_diff($in, [$out[0] ?? '']), 0, 3), 3), $oneOut),
+                ]), self::plainNames($fills, 3), $oneOut),
             ];
         }
 
@@ -1892,6 +1935,25 @@ final class CalcArticle
     }
 
     /** Pick one of N wordings, stably, from the page's slug. */
+    /**
+     * Escape a sentence that this class has already written markup into.
+     *
+     * Labels are escaped before they are wrapped in <strong> or <code>, so the
+     * only angle brackets left in the string belong to this class. Escaping the
+     * whole sentence turns them into text — the page then printed
+     * "<strong>Insert 1 mass</strong> = 24 ng" word for word, markup and all.
+     * No label in any calculator contains an angle bracket, which is what makes
+     * restoring these four sequences safe.
+     */
+    private static function rich(string $html): string
+    {
+        return str_replace(
+            ['&lt;strong&gt;', '&lt;/strong&gt;', '&lt;code&gt;', '&lt;/code&gt;'],
+            ['<strong>', '</strong>', '<code>', '</code>'],
+            View::escape($html)
+        );
+    }
+
     private static function pick(string $seed, string $key, array $variants): string
     {
         $variants = array_values($variants);
@@ -1907,6 +1969,44 @@ final class CalcArticle
             $out[] = self::clean((string) ($labels[$var] ?? $var));
         }
         return self::plainNames($out, $max);
+    }
+
+    /** A label at the start of a sentence: it keeps its capital. */
+    public static function atStart(string $label): string
+    {
+        $label = trim($label);
+        if ($label === '') {
+            return '';
+        }
+        $first = mb_substr($label, 0, 1, 'UTF-8');
+        return mb_strtoupper($first, 'UTF-8') . mb_substr($label, 1, null, 'UTF-8');
+    }
+
+    /**
+     * A field label as it reads inside a sentence.
+     *
+     * "Primer melting temperature" is a heading; mid-sentence it is "primer
+     * melting temperature". A label that is an acronym or a proper name is left
+     * exactly as the page prints it — the rule only lowercases a capital that
+     * is followed by a lowercase letter, which is what a sentence-case label
+     * looks like and what an acronym does not.
+     */
+    public static function inSentence(string $label): string
+    {
+        $label = trim($label);
+        if ($label === '' || preg_match('~^[^\p{L}]~u', $label) === 1) {
+            return $label;
+        }
+        $first = mb_substr($label, 0, 1, 'UTF-8');
+        $rest  = mb_substr($label, 1, null, 'UTF-8');
+        $second = mb_substr($rest, 0, 1, 'UTF-8');
+        if ($first === mb_strtolower($first, 'UTF-8')) {
+            return $label;                       // already lower-case
+        }
+        if ($second !== '' && $second === mb_strtoupper($second, 'UTF-8') && preg_match('~\p{L}~u', $second) === 1) {
+            return $label;                       // "DNA copy number", "°C"
+        }
+        return mb_strtolower($first, 'UTF-8') . $rest;
     }
 
     private static function plainNames(array $names, int $max = 3): string

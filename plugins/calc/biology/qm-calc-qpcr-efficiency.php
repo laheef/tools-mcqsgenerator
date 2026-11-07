@@ -11,7 +11,7 @@
 
 return [
     'name' => 'qPCR efficiency',
-    'meta' => ['title' => 'qPCR efficiency Calculator — Formula, Units & Example', 'description' => 'A value of 3.322 would equal precisely 100% PCR efficiency.Amplification factor — a plain number, no unit. This is the PCR efficiency expressed as a ratio.', 'h1' => 'qPCR efficiency Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'qPCR efficiency Calculator — Formula, Units & Example', 'description' => 'qPCR efficiency works out amplification factor and qPCR efficiency from slope. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'qPCR efficiency Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => '',
@@ -73,7 +73,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        qPCR efficiency turns Slope and Amplification factor into qPCR efficiency. The arithmetic is the whole method: qPCR efficiency is worked out from Slope by one formula, applied once. qPCR efficiency comes back in percent unless you switch the unit chip beside the box.
+        qPCR efficiency turns Slope and Amplification factor into qPCR efficiency. The arithmetic is the whole method: qPCR efficiency is worked out from slope by one formula, applied once. QPCR efficiency comes back in percent unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the qPCR efficiency calculator works', 'html' => <<<'TXT'
@@ -83,16 +83,16 @@ return [
             <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Slope</strong> — a plain number, no unit. This is the slope of the standard curve of the dilution you run. A value of 3.322 would equal precisely 100% PCR efficiency.</li><li><strong>Amplification factor</strong> — a plain number, no unit. This is the PCR efficiency expressed as a ratio. A value of two equals 100% efficiency because DNA has two strands, and at maximum, a target sequence can double each cycle.&amp;nbsp;</li></ul><p>The result box is qPCR efficiency in percent. It fills in as soon as the inputs allow it, and it is updated rather than accumulated — change a number and the answer changes with it.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Slope = 10 gives &lt;strong&gt;qPCR efficiency&lt;/strong&gt; = -0.2057 perc and &lt;strong&gt;Amplification factor&lt;/strong&gt; = 0.7943.</p><ul><li><strong>qPCR efficiency</strong> = -0.2057 perc</li><li><strong>Amplification factor</strong> = 0.7943</li></ul><p>That is <strong>Slope</strong> = <code>ln(10) ÷ ln(1 ÷ (qPCR efficiency + 1))</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>With the defaults in place, Slope = 10 gives <strong>qPCR efficiency</strong> = -0.2057 perc and <strong>Amplification factor</strong> = 0.7943.</p><ul><li><strong>qPCR efficiency</strong> = -0.2057 perc</li><li><strong>Amplification factor</strong> = 0.7943</li></ul><p>That is <strong>Slope</strong> = <code>ln(10) ÷ ln(1 ÷ (qPCR efficiency + 1))</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;qPCR efficiency&lt;/strong&gt; = -0.2057 and &lt;strong&gt;Amplification factor&lt;/strong&gt; = 0.7943 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: qPCR efficiency offers 6 units and opens on percent, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
+            <p>Treat the size of a result as part of the answer: <strong>qPCR efficiency</strong> = -0.2057 and <strong>Amplification factor</strong> = 0.7943 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: qPCR efficiency offers 6 units and opens on percent, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Slope</strong> = <code>ln(10) ÷ ln(1 ÷ (qPCR efficiency + 1))</code></li><li><strong>qPCR efficiency</strong> = <code>− 1 + (10)^(− 1 ÷ Slope)</code></li><li><strong>Amplification factor</strong> = <code>(10)^(− 1 ÷ Slope)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Slope</strong> = <code>ln(10) ÷ ln(1 ÷ (qPCR efficiency + 1))</code> — the form to use when qPCR efficiency are the values you have.</li><li><strong>qPCR efficiency</strong> = <code>− 1 + (10)^(− 1 ÷ Slope)</code> — the form to use when Slope are the values you have.</li><li><strong>Amplification factor</strong> = <code>(10)^(− 1 ÷ Slope)</code> — the form to use when Slope are the values you have.</li><li><strong>Slope</strong> = <code>ln(10) ÷ ln(1 ÷ Amplification factor)</code> — the form to use when Amplification factor are the values you have.</li></ul><p>Any one of Slope, qPCR efficiency and Amplification factor can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Slope, from 10 to 20 — and the answers go from &lt;strong&gt;qPCR efficiency&lt;/strong&gt; -0.2057 perc and &lt;strong&gt;Amplification factor&lt;/strong&gt; 0.7943 to &lt;strong&gt;qPCR efficiency&lt;/strong&gt; -0.1087 perc and &lt;strong&gt;Amplification factor&lt;/strong&gt; 0.8913.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Slope, from 10 to 20 — and the answers go from <strong>qPCR efficiency</strong> -0.2057 perc and <strong>Amplification factor</strong> 0.7943 to <strong>qPCR efficiency</strong> -0.1087 perc and <strong>Amplification factor</strong> 0.8913.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with qPCR efficiency is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Slope left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Slope is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Amplification factor left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Amplification factor is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Slope is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
@@ -124,7 +124,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the qPCR efficiency calculator work out?', 'a' => 'qPCR efficiency, from qPCR efficiency. The relationship is Slope = ln(10) ÷ ln(1 ÷ (qPCR efficiency + 1)).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Slope, Amplification factor. With slope and Amplification_factor in place, qPCR efficiency can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Slope, Amplification factor. With slope and amplification factor in place, qPCR efficiency can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Slope, qPCR efficiency and Amplification factor blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
             qPCR efficiency = -0.2057 perc and Amplification factor = 0.7943. That comes from the page's own defaults, entered in Slope; change one of them and the whole set is recomputed.

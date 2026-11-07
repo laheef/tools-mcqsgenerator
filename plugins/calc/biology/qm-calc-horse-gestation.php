@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Horse gestation',
-    'meta' => ['title' => 'Horse gestation Calculator: Free, With Steps', 'description' => 'Enter Foaling date into Horse gestation and the answer comes back as Mating date. There is no hidden constant here: change Mating date and Foaling date moves…', 'h1' => 'Horse gestation Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Horse gestation Calculator: Free, With Steps', 'description' => 'Enter Foaling date into horse gestation and the answer comes back as mating date. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Horse gestation Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'currentDate' => ['type' => 'date', 'rnd' => null],
@@ -280,7 +280,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Foaling date into Horse gestation and the answer comes back as Mating date. There is no hidden constant here: change Mating date and Foaling date moves with it.
+        Enter Foaling date into Horse gestation and the answer comes back as Mating date. There is no hidden constant here: change mating date and foaling date moves with it.
         TXT,
         'sections' => [
             ['title' => 'How the Horse gestation calculator works', 'html' => <<<'TXT'
@@ -290,16 +290,16 @@ return [
             <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Foaling date</strong> — a plain number, no unit, entered as a date. The estimated delivery date.</li></ul><p>What you get back is Mating date, shown next to the form rather than on a page of its own.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Foaling date = 1.772e+12 gives &lt;strong&gt;Mating date&lt;/strong&gt; = 1.743e+12.</p><ul><li><strong>Mating date</strong> = 1.743e+12</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Mating date</strong> = <code>Foaling date − 338</code>.</p>
+            <p>With the defaults in place, Foaling date = 1.772e+12 gives <strong>Mating date</strong> = 1.743e+12.</p><ul><li><strong>Mating date</strong> = 1.743e+12</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Mating date</strong> = <code>Foaling date − 338</code>.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Mating date&lt;/strong&gt; = 1.743e+12. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Mating date is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Mating date</strong> = 1.743e+12. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Mating date is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Mating date</strong> = <code>Foaling date − 338</code></li><li><strong>Foaling date</strong> = <code>Mating date + 338</code></li><li><strong>difference</strong> = <code>round( − currentDate + Foaling date)</code></li><li><strong>currentDate</strong> = <code>Foaling date + difference_negated</code></li><li><strong>difference_negated</strong> = <code>currentDate − Foaling date</code></li><li><strong>pregnancyDay</strong> = <code>round(currentDate − Mating date)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Mating date</strong> = <code>Foaling date − 338</code> — the form to use when Foaling date are the values you have.</li><li><strong>Foaling date</strong> = <code>Mating date + 338</code> — the form to use when Mating date are the values you have.</li><li><strong>difference</strong> = <code>round( − currentDate + Foaling date)</code> — the form to use when Foaling date are the values you have.</li><li><strong>currentDate</strong> = <code>Foaling date + difference_negated</code> — the form to use when Foaling date are the values you have.</li><li><strong>difference_negated</strong> = <code>currentDate − Foaling date</code> — the form to use when Foaling date are the values you have.</li><li><strong>Foaling date</strong> = <code>currentDate − difference_negated</code> — the form to use when the other values are known.</li><li><strong>pregnancyDay</strong> = <code>round(currentDate − Mating date)</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>earliest − 331</code> — the form to use when the other values are known.</li></ul><p>Any one of Mating date, Foaling date and difference can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Take the example above and double Foaling date from 1.772e+12 to 3.545e+12, leaving every other box alone. The panel moves from &lt;strong&gt;Mating date&lt;/strong&gt; 1.743e+12 to &lt;strong&gt;Mating date&lt;/strong&gt; 3.515e+12.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
+            <p>Take the example above and double Foaling date from 1.772e+12 to 3.545e+12, leaving every other box alone. The panel moves from <strong>Mating date</strong> 1.743e+12 to <strong>Mating date</strong> 3.515e+12.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> Mating date is a result, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Foaling date left as a guess.</strong> Anything typed into Foaling date is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Foaling date to one scale before entering anything.</li></ul>
@@ -331,7 +331,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Horse gestation calculator work out?', 'a' => 'Mating date, from Foaling date. The relationship is Mating date = Foaling date − 338.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Foaling date. Enter date; Mating date is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Foaling date. Enter foaling date; Mating date is the box to leave alone unless it is the value you came for.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Mating date, Foaling date, difference and currentDate blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'What answer do the default values give?', 'a' => 'Mating date = 1.743e+12. The figures come from Foaling date as the page opens it; they are a starting point, not a fixed answer.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

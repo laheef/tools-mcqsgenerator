@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Ligation Calculator',
-    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Results', 'description' => 'Set up a ligation by molar ratio instead of guessing: with a fixed amount of vector, the mass of insert you need depends on the ratio you want and the relativ', 'h1' => 'Ligation Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Ligation Calculator: Formula, Steps & Results', 'description' => 'Ligation Calculator works out insert mass needed and vector in the reaction from vector mass, vector length and insert length. Every figure is computed.', 'h1' => 'Ligation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -83,7 +83,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Vector mass, Vector length and Insert length into Ligation and the answer comes back as Insert mass needed and Vector in the reaction. Nothing is looked up on this page: Insert mass needed is computed from Vector mass and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Insert mass needed is opened in ng; the chip beside it switches to any unit of the same quantity.
+        Enter Vector mass, Vector length and Insert length into Ligation and the answer comes back as Insert mass needed and Vector in the reaction. Nothing is looked up on this page: insert mass needed is computed from vector mass and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Insert mass needed is opened in ng; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Ligation calculator works', 'html' => <<<'TXT'
@@ -126,7 +126,7 @@ return [
             Insert mass needed and Vector in the reaction, from Insert : vector ratio, Vector mass, Insert length and Vector length. The relationship is Insert mass needed = Insert : vector ratio × Vector mass × Insert length ÷ Vector length.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Vector mass (ng), Vector length (bp), Insert length (bp), Insert : vector ratio (×). With vector_ng, vector_bp and insert_bp in place, Insert mass needed can stay blank and the page will work it out.
+            Vector mass (ng), Vector length (bp), Insert length (bp), Insert : vector ratio (×). With vector mass, vector length and insert length in place, Insert mass needed can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Insert mass needed, Vector mass and Vector in the reaction blank and the page solves for that one instead — nothing has to be switched first.

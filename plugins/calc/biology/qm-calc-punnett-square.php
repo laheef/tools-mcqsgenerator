@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Punnett square',
-    'meta' => ['title' => 'Punnett square Calculator — Formula & Results', 'description' => 'The arithmetic is the whole method: Chance for AA is worked out from Mother\'s genotype by one formula, applied once. A result here can always be checked…', 'h1' => 'Punnett square Calculator', 'updated' => '2026-07-31'],
+    'meta' => ['title' => 'Punnett square Calculator — Formula & Results', 'description' => 'Punnett square turns mother\'s genotype and father\'s genotype into chance for AA and Chance for Aa. Every box can be solved for, not only the one in the title.', 'h1' => 'Punnett square Calculator', 'updated' => '2026-07-31'],
     'raw' => [
         'vars' => [
             'AA' => [
@@ -245,7 +245,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Punnett square turns Mother's genotype and Father's genotype into Chance for AA and Chance for Aa. The arithmetic is the whole method: Chance for AA is worked out from Mother's genotype by one formula, applied once. Chance for AA comes back in percent unless you switch the unit chip beside the box.
+        Punnett square turns Mother's genotype and Father's genotype into Chance for AA and Chance for Aa. The arithmetic is the whole method: chance for AA is worked out from mother's genotype by one formula, applied once. Chance for AA comes back in percent unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Punnett square calculator works', 'html' => <<<'TXT'
@@ -290,7 +290,7 @@ return [
             ['q' => 'What does the Punnett square calculator work out?', 'a' => <<<'TXT'
             Chance for AA, Chance for Aa and Chance for aa, from Father's genotype and Mother's genotype. The relationship is Chance for Aa = get_chance_b(Mother's genotype, Father's genotype).
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Mother\'s genotype, Father\'s genotype. With mother1 and father1 in place, Chance for AA can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Mother\'s genotype, Father\'s genotype. With mother\'s genotype and father\'s genotype in place, Chance for AA can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Chance for Aa, Chance for AA and Chance for aa blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Chance for AA is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.

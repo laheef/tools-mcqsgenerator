@@ -11,9 +11,7 @@
 
 return [
     'name' => 'CO₂ grow room',
-    'meta' => ['title' => 'CO₂ grow room Calculator — Formula & Results', 'description' => <<<'TXT'
-    Enter Width and Area into CO₂ grow room and the answer comes back as Length and Height. Fill roomWidth and roomArea and leave Length empty if you would rather…
-    TXT, 'h1' => 'CO₂ grow room Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'CO₂ grow room Calculator — Formula & Results', 'description' => 'CO₂ grow room takes width, length and height and returns area and volume. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'CO₂ grow room Calculator', 'updated' => '2026-08-12'],
     'sections' => [
         [
             'title' => 'Grow room dimensions',
@@ -181,7 +179,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Width and Area into CO₂ grow room and the answer comes back as Length and Height. There is no hidden constant here: change Length and Width moves with it. The main result, Length, is reported in meters.
+        Enter Width and Area into CO₂ grow room and the answer comes back as Length and Height. There is no hidden constant here: change length and width moves with it. The main result, Length, is reported in meters.
         TXT,
         'sections' => [
             ['title' => 'How the CO₂ grow room calculator works', 'html' => <<<'TXT'
@@ -191,16 +189,16 @@ return [
             <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Width</strong> — in meters</li><li><strong>Area</strong> — in square meters</li></ul><p>The answers come back as Length in meters, Height in meters, Volume in cubic meters, Current CO₂ in parts per million, Target CO₂ in parts per million, Required CO₂ in cubic meters, Time in minutes, CO₂ flow rate in cubic meters per hour. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Width = 10 m, Height = 100 m, Area = 1000 m2, Volume = 10 m3, Current CO₂ = 100 ppm, Target CO₂ = 1000 ppm, Required CO₂ = 10 m3, Time = 100 min and CO₂ flow rate = 1000 m-hour gives &lt;strong&gt;Length&lt;/strong&gt; = 100 m.</p><ul><li><strong>Length</strong> = 100 m</li></ul><p>That is <strong>Length</strong> = <code>Area ÷ Width</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>With the defaults in place, Width = 10 m, Height = 100 m, Area = 1000 m2, Volume = 10 m3, Current CO₂ = 100 ppm, Target CO₂ = 1000 ppm, Required CO₂ = 10 m3, Time = 100 min and CO₂ flow rate = 1000 m-hour gives <strong>Length</strong> = 100 m.</p><ul><li><strong>Length</strong> = 100 m</li></ul><p>That is <strong>Length</strong> = <code>Area ÷ Width</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Length&lt;/strong&gt; = 100. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Length lists 31 options and opens on meters. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Length</strong> = 100. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Length lists 31 options and opens on meters. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Length</strong> = <code>Area ÷ Width</code></li><li><strong>Width</strong> = <code>Area ÷ Length</code></li><li><strong>Area</strong> = <code>Length × Width</code></li><li><strong>Volume</strong> = <code>Height × Area</code></li><li><strong>Height</strong> = <code>Volume ÷ Area</code></li><li><strong>Current CO₂</strong> = <code>− 1000000 × Required CO₂ ÷ Volume + Target CO₂</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Length</strong> = <code>Area ÷ Width</code> — the form to use when Area and Width are the values you have.</li><li><strong>Width</strong> = <code>Area ÷ Length</code> — the form to use when Area and Length are the values you have.</li><li><strong>Area</strong> = <code>Length × Width</code> — the form to use when Length and Width are the values you have.</li><li><strong>Volume</strong> = <code>Height × Area</code> — the form to use when Height and Area are the values you have.</li><li><strong>Height</strong> = <code>Volume ÷ Area</code> — the form to use when Volume and Area are the values you have.</li><li><strong>Area</strong> = <code>Volume ÷ Height</code> — the form to use when Volume and Height are the values you have.</li><li><strong>Volume</strong> = <code>− 1000000 × Required CO₂ ÷ (Current CO₂ − Target CO₂)</code> — the form to use when Required CO₂, Current CO₂ and Target CO₂ are the values you have.</li><li><strong>Current CO₂</strong> = <code>− 1000000 × Required CO₂ ÷ Volume + Target CO₂</code> — the form to use when Required CO₂, Volume and Target CO₂ are the values you have.</li></ul><p>Any one of Length, Width and Area can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Take the example above and double Width from 10 to 20, leaving every other box alone. The panel moves from &lt;strong&gt;Length&lt;/strong&gt; 100 m to &lt;strong&gt;Length&lt;/strong&gt; 50 m.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
+            <p>Take the example above and double Width from 10 to 20, leaving every other box alone. The panel moves from <strong>Length</strong> 100 m to <strong>Length</strong> 50 m.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>Units left where they were.</strong> Width and Area carry a unit chip, and it is easy to type a value in one unit while the chip says another. The conversion happens silently, so the answer comes back wrong by exactly the ratio between the two.</li><li><strong>The answer typed back in.</strong> Length, Height and Volume are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Width left as a guess.</strong> Anything typed into Width is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Area left as a guess.</strong> Anything typed into Area is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Width and let the panel round the answer once.</li></ul>
@@ -223,7 +221,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the CO₂ grow room calculator work out?', 'a' => 'Length, Height, Volume and Current CO₂, from Area and Width. The relationship is Length = Area ÷ Width.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Width (meters), Area (square meters). Fill roomWidth and roomArea and leave Length empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Width (meters), Area (square meters). Fill width and area and leave Length empty if you would rather have that one solved instead.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Length, Width, Area and Volume blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'What answer do the default values give?', 'a' => 'Length = 100 m. That comes from the page\'s own defaults, entered in Width; change one of them and the whole set is recomputed.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

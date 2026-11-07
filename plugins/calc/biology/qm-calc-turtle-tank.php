@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Turtle tank',
-    'meta' => ['title' => 'Turtle tank Calculator: Formula, Steps & Examples', 'description' => 'Turtle tank works out This species can grow up to from Your turtle\'s species, My turtle\'s length and Recommended tank size. My turtle&#039;s length and…', 'h1' => 'Turtle tank Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Turtle tank Calculator: Formula, Steps & Examples', 'description' => 'Work out recommended tank size from your turtle\'s species with turtle tank. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Turtle tank Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'Species' => [
@@ -159,7 +159,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Turtle tank works out This species can grow up to from Your turtle's species, My turtle's length and Recommended tank size. Nothing is looked up on this page: This species can grow up to is computed from Your turtle's species and the other boxes, so an unusual pair of values gives an honest answer rather than an error. This species can grow up to is opened in centimeters; the chip beside it switches to any unit of the same quantity.
+        Turtle tank works out This species can grow up to from Your turtle's species, My turtle's length and Recommended tank size. Nothing is looked up on this page: this species can grow up to is computed from your turtle's species and the other boxes, so an unusual pair of values gives an honest answer rather than an error. This species can grow up to is opened in centimeters; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Turtle tank calculator works', 'html' => <<<'TXT'
@@ -203,7 +203,7 @@ return [
         'faq' => [
             ['q' => 'What does the Turtle tank calculator work out?', 'a' => 'This species can grow up to, from My turtle\'s length. The relationship is Recommended tank size = 10 × My turtle\'s length.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Your turtle's species, My turtle's length (centimeters), Recommended tank size (liters). With Species, my_turtle_size and tank_size in place, This species can grow up to can stay blank and the page will work it out.
+            Your turtle's species, My turtle's length (centimeters), Recommended tank size (liters). With your turtle's species, my turtle's length and recommended tank size in place, This species can grow up to can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Recommended tank size and My turtle\'s length can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

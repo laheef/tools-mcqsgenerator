@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA concentration',
-    'meta' => ['title' => 'DNA concentration: Formula, Steps & Results', 'description' => 'DNA concentration turns Sample type, Extinction coefficient and Molecular weight into Conversion factor. Leave one if the sample is not diluted.Concentration…', 'h1' => 'DNA concentration Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'DNA concentration: Formula, Steps & Results', 'description' => 'Enter sample type, extinction coefficient and molecular weight and DNA concentration returns conversion factor. The formula is printed in the form\'s own words.', 'h1' => 'DNA concentration Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'absorbance' => [
@@ -266,7 +266,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        DNA concentration turns Sample type, Extinction coefficient and Molecular weight into Conversion factor. It is a single relationship that reads Conversion factor out of Sample type, not a table of canned results keyed by them. Units for Conversion factor default to μg/mL and can be changed on the answer itself.
+        DNA concentration turns Sample type, Extinction coefficient and Molecular weight into Conversion factor. It is a single relationship that reads conversion factor out of sample type, not a table of canned results keyed by them. Units for Conversion factor default to μg/mL and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the DNA concentration calculator works', 'html' => <<<'TXT'
@@ -308,7 +308,7 @@ return [
             Conversion factor, from Absorbance at λmax, Dilution factor, Concentration and Conversion factor. The relationship is Pathlength = Absorbance at λmax × Conversion factor × Dilution factor ÷ Concentration.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Sample type, Extinction coefficient (M⁻¹ cm⁻¹), Molecular weight (g/mol), Absorbance at λmax, Pathlength (centimeters). Fill sample_type, extinction_coefficient and weight and leave Conversion factor empty if you would rather have that one solved instead.
+            Sample type, Extinction coefficient (M⁻¹ cm⁻¹), Molecular weight (g/mol), Absorbance at λmax, Pathlength (centimeters). Fill sample type, extinction coefficient and molecular weight and leave Conversion factor empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Pathlength, Absorbance at λmax, Dilution factor and Concentration blank and the page solves for that one instead — nothing has to be switched first.

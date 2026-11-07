@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Chicken Years to Human Years Calculator',
-    'meta' => ['title' => 'Chicken Years to Human Years Calculator — Biology', 'description' => 'Chicken Years to Human Years turns Chicken age into Human-equivalent age and Share of a 10-year lifespan. It is a single relationship that reads…', 'h1' => 'Chicken Years to Human Years Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Years to Human Years Calculator — Biology', 'description' => 'Work out human-equivalent age from chicken age with chicken Years to Human Years Calculator. Every box can be solved for, not only the one in the title.', 'h1' => 'Chicken Years to Human Years Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -58,7 +58,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Chicken Years to Human Years turns Chicken age into Human-equivalent age and Share of a 10-year lifespan. It is a single relationship that reads Human-equivalent age out of Chicken age, not a table of canned results keyed by them. Units for Human-equivalent age default to years and can be changed on the answer itself.
+        Chicken Years to Human Years turns Chicken age into Human-equivalent age and Share of a 10-year lifespan. It is a single relationship that reads human-equivalent age out of chicken age, not a table of canned results keyed by them. Units for Human-equivalent age default to years and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Chicken Years to Human Years calculator works', 'html' => <<<'TXT'
@@ -68,16 +68,16 @@ return [
             <p>There are 1 box to fill in; every one of them is used by the formula.</p><ul><li><strong>Chicken age</strong> — in years. Use 0.5 for six months</li></ul><p>The answers come back as Human-equivalent age in years, Share of a 10-year lifespan in %. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Chicken age = 2 years gives &lt;strong&gt;Human-equivalent age&lt;/strong&gt; = 10.66 years and &lt;strong&gt;Share of a 10-year lifespan&lt;/strong&gt; = 20 %.</p><ul><li><strong>Human-equivalent age</strong> = 10.66 years</li><li><strong>Share of a 10-year lifespan</strong> = 20 %</li></ul><p>The line behind those figures is <strong>Human-equivalent age</strong> = <code>Chicken age × 5.33</code> — nothing in it is a constant the page keeps to itself.</p>
+            <p>With the defaults in place, Chicken age = 2 years gives <strong>Human-equivalent age</strong> = 10.66 years and <strong>Share of a 10-year lifespan</strong> = 20 %.</p><ul><li><strong>Human-equivalent age</strong> = 10.66 years</li><li><strong>Share of a 10-year lifespan</strong> = 20 %</li></ul><p>The line behind those figures is <strong>Human-equivalent age</strong> = <code>Chicken age × 5.33</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Human-equivalent age&lt;/strong&gt; = 10.66 and &lt;strong&gt;Share of a 10-year lifespan&lt;/strong&gt; = 20 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Human-equivalent age takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            <p>Treat the size of a result as part of the answer: <strong>Human-equivalent age</strong> = 10.66 and <strong>Share of a 10-year lifespan</strong> = 20 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Human-equivalent age takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Human-equivalent age</strong> = <code>Chicken age × 5.33</code></li><li><strong>Share of a 10-year lifespan</strong> = <code>Chicken age ÷ 10 × 100</code></li><li><strong>Chicken age</strong> = <code>Human-equivalent age ÷ 5.33</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Human-equivalent age</strong> = <code>Chicken age × 5.33</code> — the form to use when Chicken age are the values you have.</li><li><strong>Share of a 10-year lifespan</strong> = <code>Chicken age ÷ 10 × 100</code> — the form to use when Chicken age are the values you have.</li><li><strong>Chicken age</strong> = <code>Human-equivalent age ÷ 5.33</code> — the form to use when Human-equivalent age are the values you have.</li></ul><p>Any one of Human-equivalent age, Share of a 10-year lifespan and Chicken age can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Take the example above and double Chicken age from 2 to 4, leaving every other box alone. The panel moves from &lt;strong&gt;Human-equivalent age&lt;/strong&gt; 10.66 years and &lt;strong&gt;Share of a 10-year lifespan&lt;/strong&gt; 20 % to &lt;strong&gt;Human-equivalent age&lt;/strong&gt; 21.32 years and &lt;strong&gt;Share of a 10-year lifespan&lt;/strong&gt; 40 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
+            <p>Take the example above and double Chicken age from 2 to 4, leaving every other box alone. The panel moves from <strong>Human-equivalent age</strong> 10.66 years and <strong>Share of a 10-year lifespan</strong> 20 % to <strong>Human-equivalent age</strong> 21.32 years and <strong>Share of a 10-year lifespan</strong> 40 %.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Human-equivalent age and Share of a 10-year lifespan are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Chicken age left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Chicken age is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Chicken age to one scale before entering anything.</li></ul>
@@ -109,7 +109,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Chicken Years to Human Years calculator work out?', 'a' => 'Human-equivalent age and Share of a 10-year lifespan, from Chicken age. The relationship is Human-equivalent age = Chicken age × 5.33.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Chicken age (years). With years in place, Human-equivalent age can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Chicken age (years). With chicken age in place, Human-equivalent age can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Human-equivalent age, Share of a 10-year lifespan and Chicken age blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Femur to Foot Ratio Calculator',
-    'meta' => ['title' => 'Femur to Foot Ratio Calculator — Formula & Results', 'description' => 'Femur to Foot Ratio takes Femur length and Foot length and returns Femur to foot ratio and Foot length as % of femur. The arithmetic is the whole method…', 'h1' => 'Femur to Foot Ratio Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Femur to Foot Ratio Calculator — Formula & Results', 'description' => 'Enter femur length and foot length and Femur to Foot Ratio Calculator returns foot length as % of femur. The formula is printed in the form\'s own words.', 'h1' => 'Femur to Foot Ratio Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -66,7 +66,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Femur to Foot Ratio takes Femur length and Foot length and returns Femur to foot ratio and Foot length as % of femur. The arithmetic is the whole method: Femur to foot ratio is worked out from Femur length by one formula, applied once.
+        Femur to Foot Ratio takes Femur length and Foot length and returns Femur to foot ratio and Foot length as % of femur. The arithmetic is the whole method: femur to foot ratio is worked out from femur length by one formula, applied once.
         TXT,
         'sections' => [
             ['title' => 'How the Femur to Foot Ratio calculator works', 'html' => <<<'TXT'
@@ -76,16 +76,16 @@ return [
             <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Femur length</strong> — in cm. Maximum length of the femur</li><li><strong>Foot length</strong> — in cm. Heel to the tip of the longest toe</li></ul><p>The result boxes are Femur to foot ratio, Foot length as % of femur in %; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Take the values the form starts on, Femur length = 45 cm and Foot length = 26 cm; the answers are &lt;strong&gt;Femur to foot ratio&lt;/strong&gt; = 1.73 and &lt;strong&gt;Foot length as % of femur&lt;/strong&gt; = 57.78 %.</p><ul><li><strong>Femur to foot ratio</strong> = 1.73</li><li><strong>Foot length as % of femur</strong> = 57.78 %</li></ul><p>The line behind those figures is <strong>Femur to foot ratio</strong> = <code>Femur length ÷ Foot length</code> — nothing in it is a constant the page keeps to itself.</p>
+            <p>Take the values the form starts on, Femur length = 45 cm and Foot length = 26 cm; the answers are <strong>Femur to foot ratio</strong> = 1.73 and <strong>Foot length as % of femur</strong> = 57.78 %.</p><ul><li><strong>Femur to foot ratio</strong> = 1.73</li><li><strong>Foot length as % of femur</strong> = 57.78 %</li></ul><p>The line behind those figures is <strong>Femur to foot ratio</strong> = <code>Femur length ÷ Foot length</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Femur to foot ratio&lt;/strong&gt; = 1.73 and &lt;strong&gt;Foot length as % of femur&lt;/strong&gt; = 57.78 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Femur to foot ratio takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            <p>Treat the size of a result as part of the answer: <strong>Femur to foot ratio</strong> = 1.73 and <strong>Foot length as % of femur</strong> = 57.78 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Femur to foot ratio takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Femur to foot ratio</strong> = <code>Femur length ÷ Foot length</code></li><li><strong>Foot length as % of femur</strong> = <code>Foot length ÷ Femur length × 100</code></li><li><strong>Femur length</strong> = <code>Femur to foot ratio × Foot length</code></li><li><strong>Foot length</strong> = <code>Femur length ÷ Femur to foot ratio</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Femur to foot ratio</strong> = <code>Femur length ÷ Foot length</code> — the form to use when Femur length and Foot length are the values you have.</li><li><strong>Foot length as % of femur</strong> = <code>Foot length ÷ Femur length × 100</code> — the form to use when Foot length and Femur length are the values you have.</li><li><strong>Femur length</strong> = <code>Femur to foot ratio × Foot length</code> — the form to use when Femur to foot ratio and Foot length are the values you have.</li><li><strong>Foot length</strong> = <code>Femur length ÷ Femur to foot ratio</code> — the form to use when Femur length and Femur to foot ratio are the values you have.</li></ul><p>Any one of Femur to foot ratio, Foot length as % of femur and Femur length can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Femur length, from 45 to 90 — and the answers go from &lt;strong&gt;Femur to foot ratio&lt;/strong&gt; 1.73 and &lt;strong&gt;Foot length as % of femur&lt;/strong&gt; 57.78 % to &lt;strong&gt;Femur to foot ratio&lt;/strong&gt; 3.46 and &lt;strong&gt;Foot length as % of femur&lt;/strong&gt; 28.89 %.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Femur length, from 45 to 90 — and the answers go from <strong>Femur to foot ratio</strong> 1.73 and <strong>Foot length as % of femur</strong> 57.78 % to <strong>Femur to foot ratio</strong> 3.46 and <strong>Foot length as % of femur</strong> 28.89 %.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Femur to foot ratio and Foot length as % of femur are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Femur length left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Femur length is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Foot length left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Foot length is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Femur length and let the panel round the answer once.</li></ul>
@@ -114,7 +114,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Femur to Foot Ratio calculator work out?', 'a' => 'Femur to foot ratio and Foot length as % of femur, from Femur length and Foot length. The relationship is Femur to foot ratio = Femur length ÷ Foot length.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Femur length (cm), Foot length (cm). Fill femur and foot and leave Femur to foot ratio empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Femur length (cm), Foot length (cm). Fill femur length and foot length and leave Femur to foot ratio empty if you would rather have that one solved instead.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Femur to foot ratio, Foot length as % of femur, Femur length and Foot length blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

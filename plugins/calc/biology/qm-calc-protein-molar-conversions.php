@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein Molar Conversions',
-    'meta' => ['title' => 'Protein Molar Conversions — Formula & Results', 'description' => 'Enter Molecular weight and Mass concentration into Protein Molar Conversions and the answer comes back as Molar concentration and Molar concentration.', 'h1' => 'Protein Molar Conversions', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Protein Molar Conversions — Formula & Results', 'description' => 'Enter Molecular weight and Mass concentration into protein Molar Conversions and the answer comes back as molar concentration and Molar concentration.', 'h1' => 'Protein Molar Conversions', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -88,7 +88,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Molecular weight and Mass concentration into Protein Molar Conversions and the answer comes back as Molar concentration and Molar concentration. It is a single relationship that reads Molar concentration out of Molecular weight, not a table of canned results keyed by them. Units for Molar concentration default to µM and can be changed on the answer itself.
+        Enter Molecular weight and Mass concentration into Protein Molar Conversions and the answer comes back as Molar concentration and Molar concentration. It is a single relationship that reads molar concentration out of molecular weight, not a table of canned results keyed by them. Units for Molar concentration default to µM and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Protein Molar Conversions calculator works', 'html' => <<<'TXT'
@@ -135,7 +135,9 @@ return [
             ['q' => 'What does the Protein Molar Conversions calculator work out?', 'a' => <<<'TXT'
             Molar concentration, Molar concentration, Amount per mL and Mass in 1 mL, from Mass concentration and Molecular weight. The relationship is Molar concentration = Mass concentration ÷ Molecular weight × 1000000.
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Molecular weight (Da), Mass concentration (mg/mL). Fill mw and mg_ml and leave Molar concentration empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Molecular weight (Da), Mass concentration (mg/mL). Fill molecular weight and mass concentration and leave Molar concentration empty if you would rather have that one solved instead.
+            TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Molar concentration, Molar concentration, Amount per mL and Mass in 1 mL blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Swine gestation',
-    'meta' => ['title' => 'Swine gestation — Formula, Steps & Examples', 'description' => 'Swine gestation takes Breeding date and returns Farrowing date. A result box can be typed into, and doing so changes the question rather than the arithmetic…', 'h1' => 'Swine gestation Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Swine gestation — Formula, Steps & Examples', 'description' => 'Swine gestation turns breeding date into farrowing date. Each figure is computed from the boxes you fill, never read from a table. Any box can be the unknown.', 'h1' => 'Swine gestation Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'SuffixCheckJ' => [
@@ -283,7 +283,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Swine gestation takes Breeding date and returns Farrowing date. Nothing is looked up on this page: Farrowing date is computed from Breeding date and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        Swine gestation takes Breeding date and returns Farrowing date. Nothing is looked up on this page: farrowing date is computed from breeding date and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
             ['title' => 'How the Swine gestation calculator works', 'html' => <<<'TXT'
@@ -293,16 +293,16 @@ return [
             <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Breeding date</strong> — a plain number, no unit, entered as a date</li></ul><p>What you get back is Farrowing date, shown next to the form rather than on a page of its own.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Take the values the form starts on, Breeding date = 1.772e+12; the answers are &lt;strong&gt;Farrowing date&lt;/strong&gt; = 1.782e+12.</p><ul><li><strong>Farrowing date</strong> = 1.782e+12</li></ul><p>The line behind those figures is <strong>Farrowing date</strong> = <code>Breeding date + 114</code> — nothing in it is a constant the page keeps to itself.</p>
+            <p>Take the values the form starts on, Breeding date = 1.772e+12; the answers are <strong>Farrowing date</strong> = 1.782e+12.</p><ul><li><strong>Farrowing date</strong> = 1.782e+12</li></ul><p>The line behind those figures is <strong>Farrowing date</strong> = <code>Breeding date + 114</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Farrowing date&lt;/strong&gt; = 1.782e+12 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Farrowing date takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            <p>Treat the size of a result as part of the answer: <strong>Farrowing date</strong> = 1.782e+12 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Farrowing date takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Farrowing date</strong> = <code>Breeding date + 114</code></li><li><strong>Breeding date</strong> = <code>Farrowing date − 114</code></li><li><strong>difference</strong> = <code>round( − currentDate + Farrowing date)</code></li><li><strong>negativeDifference</strong> = <code>round( − round( − currentDate + Farrowing date))</code></li><li><strong>pregnancyDay</strong> = <code>round(currentDate − Breeding date)</code></li><li><strong>earliestDue</strong> = <code>Breeding date + 112</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Farrowing date</strong> = <code>Breeding date + 114</code> — the form to use when Breeding date are the values you have.</li><li><strong>Breeding date</strong> = <code>Farrowing date − 114</code> — the form to use when Farrowing date are the values you have.</li><li><strong>difference</strong> = <code>round( − currentDate + Farrowing date)</code> — the form to use when Farrowing date are the values you have.</li><li><strong>negativeDifference</strong> = <code>round( − round( − currentDate + Farrowing date))</code> — the form to use when Farrowing date are the values you have.</li><li><strong>pregnancyDay</strong> = <code>round(currentDate − Breeding date)</code> — the form to use when Breeding date are the values you have.</li><li><strong>earliestDue</strong> = <code>Breeding date + 112</code> — the form to use when Breeding date are the values you have.</li><li><strong>Breeding date</strong> = <code>earliestDue − 112</code> — the form to use when the other values are known.</li><li><strong>latestDue</strong> = <code>Breeding date + 120</code> — the form to use when Breeding date are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Farrowing date, Breeding date and difference can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Breeding date, from 1.772e+12 to 3.545e+12 — and the answers go from &lt;strong&gt;Farrowing date&lt;/strong&gt; 1.782e+12 to &lt;strong&gt;Farrowing date&lt;/strong&gt; 3.554e+12.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Breeding date, from 1.772e+12 to 3.545e+12 — and the answers go from <strong>Farrowing date</strong> 1.782e+12 to <strong>Farrowing date</strong> 3.554e+12.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Farrowing date is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Breeding date left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Breeding date is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Breeding date and let the panel round the answer once.</li></ul>
@@ -337,7 +337,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Swine gestation calculator work out?', 'a' => 'Farrowing date, from Breeding date. The relationship is Farrowing date = Breeding date + 114.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Breeding date. Enter exposed; Farrowing date is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Breeding date. Enter breeding date; Farrowing date is the box to leave alone unless it is the value you came for.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Farrowing date, Breeding date, difference and negativeDifference can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],

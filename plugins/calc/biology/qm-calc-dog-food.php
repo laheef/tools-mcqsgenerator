@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog food',
-    'meta' => ['title' => 'Dog food Calculator: Formula, Steps & Examples', 'description' => 'Dog food takes Body weight and returns Type and Resting daily calories. Fill in 1 box and the page has everything it needs.Body weight — in kilogramsThe…', 'h1' => 'Dog food Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog food Calculator: Formula, Steps & Examples', 'description' => 'Dog food takes type, body weight and 1 dose and returns resting daily calories and total daily calories. The formula is printed in the form\'s own words.', 'h1' => 'Dog food Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => 'Dog\'s characteristics',
@@ -136,7 +136,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog food takes Body weight and returns Type and Resting daily calories. Nothing is looked up on this page: Type is computed from Body weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        Dog food takes Body weight and returns Type and Resting daily calories. Nothing is looked up on this page: type is computed from body weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
             ['title' => 'How the Dog food calculator works', 'html' => <<<'TXT'
@@ -146,16 +146,16 @@ return [
             <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Body weight</strong> — in kilograms</li></ul><p>The answers come back as Type, Resting daily calories in cal, Total daily calories in cal, 1 dose in calories / cup, Daily servings in cups / day. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Type = 1.8, Body weight = 10 kg, Total daily calories = 100 cal, 1 dose = 1000 calories / cup and Daily servings = 10 cups / day gives &lt;strong&gt;Resting daily calories&lt;/strong&gt; = 394 cal.</p><ul><li><strong>Resting daily calories</strong> = 394 cal</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Resting daily calories</strong> = <code>(70 × (Body weight)^(3 ÷ 4))</code>.</p>
+            <p>With the defaults in place, Type = 1.8, Body weight = 10 kg, Total daily calories = 100 cal, 1 dose = 1000 calories / cup and Daily servings = 10 cups / day gives <strong>Resting daily calories</strong> = 394 cal.</p><ul><li><strong>Resting daily calories</strong> = 394 cal</li></ul><p>Spelled out with this form's labels, the arithmetic is <strong>Resting daily calories</strong> = <code>(70 × (Body weight)^(3 ÷ 4))</code>.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Resting daily calories&lt;/strong&gt; = 394 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Body weight offers 27 units and opens on kilograms, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
+            <p>Treat the size of a result as part of the answer: <strong>Resting daily calories</strong> = 394 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Body weight offers 27 units and opens on kilograms, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Resting daily calories</strong> = <code>(70 × (Body weight)^(3 ÷ 4))</code></li><li><strong>Total daily calories</strong> = <code>(70 × Type × (Body weight)^(3 ÷ 4))</code></li><li><strong>Type</strong> = <code>(1 ÷ 70) × 1 dose × Daily servings ÷ (Body weight)^(3 ÷ 4)</code></li><li><strong>1 dose</strong> = <code>70 × Type × (Body weight)^(3 ÷ 4) ÷ Daily servings</code></li><li><strong>Daily servings</strong> = <code>70 × Type × (Body weight)^(3 ÷ 4) ÷ 1 dose</code></li><li><strong>Body weight</strong> = <code>(1 ÷ 4900) × (70)^(2 ÷ 3) × (1 dose × Daily servings ÷ Type)^(4 ÷ 3)</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Resting daily calories</strong> = <code>(70 × (Body weight)^(3 ÷ 4))</code> — the form to use when Body weight are the values you have.</li><li><strong>Total daily calories</strong> = <code>(70 × Type × (Body weight)^(3 ÷ 4))</code> — the form to use when Type and Body weight are the values you have.</li><li><strong>Type</strong> = <code>(1 ÷ 70) × 1 dose × Daily servings ÷ (Body weight)^(3 ÷ 4)</code> — the form to use when 1 dose, Daily servings and Body weight are the values you have.</li><li><strong>1 dose</strong> = <code>70 × Type × (Body weight)^(3 ÷ 4) ÷ Daily servings</code> — the form to use when Type, Body weight and Daily servings are the values you have.</li><li><strong>Daily servings</strong> = <code>70 × Type × (Body weight)^(3 ÷ 4) ÷ 1 dose</code> — the form to use when Type, Body weight and 1 dose are the values you have.</li><li><strong>Body weight</strong> = <code>(1 ÷ 4900) × (70)^(2 ÷ 3) × (1 dose × Daily servings ÷ Type)^(4 ÷ 3)</code> — the form to use when 1 dose, Daily servings and Type are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Resting daily calories, Total daily calories and Type can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Type, from 1.8 to 3.6 — and the answers go from &lt;strong&gt;Resting daily calories&lt;/strong&gt; 394 cal to &lt;strong&gt;Resting daily calories&lt;/strong&gt; 394 cal.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Type, from 1.8 to 3.6 — and the answers go from <strong>Resting daily calories</strong> 394 cal to <strong>Resting daily calories</strong> 394 cal.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>Units left where they were.</strong> The chip beside Body weight is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Type, Resting daily calories and Total daily calories are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Body weight left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Body weight is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Body weight and let the panel round the answer once.</li></ul>
@@ -184,7 +184,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dog food calculator work out?', 'a' => 'Type, Resting daily calories, Total daily calories and 1 dose, from Body weight. The relationship is Resting daily calories = (70 × (Body weight)^(3 ÷ 4)).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Body weight (kilograms). Fill bodyWeight and leave Type empty if you would rather have that one solved instead.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Body weight (kilograms). Fill body weight and leave Type empty if you would rather have that one solved instead.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Resting daily calories, Total daily calories, Type and 1 dose can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],

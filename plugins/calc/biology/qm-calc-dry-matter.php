@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dry matter',
-    'meta' => ['title' => 'Dry matter Calculator: Formula, Steps & Examples', 'description' => 'Dry matter takes Protein and Moisture and returns Fat and Fiber. Change it and Dry matter protein0, Moisture and Others changes with it.', 'h1' => 'Dry matter Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Dry matter Calculator: Formula, Steps & Examples', 'description' => 'Dry matter takes i want to..., protein and fat and returns others and final total0. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Dry matter Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'compareOption' => [
@@ -743,7 +743,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dry matter takes Protein and Moisture and returns Fat and Fiber. The arithmetic is the whole method: Fat is worked out from Protein by one formula, applied once. Fat comes back in percent unless you switch the unit chip beside the box.
+        Dry matter reads one of fat and fiber from the other, so either can be the value you fill in. Fat comes back in percent unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Dry matter calculator works', 'html' => <<<'TXT'
@@ -783,7 +783,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dry matter calculator work out?', 'a' => 'Fat, Fiber, Others and Protein, from Moisture and Protein. The relationship is Dry matter protein0 = − 100 × Protein ÷ (Moisture − 100).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Protein (percent), Moisture (percent). With wetMatterProtein0 and moisture0 in place, Fat can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Protein (percent), Moisture (percent). With protein and moisture in place, Fat can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Dry matter protein0, Moisture, Protein and Fat blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Fat is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.

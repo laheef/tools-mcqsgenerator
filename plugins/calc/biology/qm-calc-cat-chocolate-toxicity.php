@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cat chocolate toxicity',
-    'meta' => ['title' => 'Cat chocolate toxicity Calculator: Free, With Steps', 'description' => 'Cat chocolate toxicity turns Your cat\'s weight, Amount eaten and Methylxanthines dose into Chocolate type and Total methylxanthines received.', 'h1' => 'Cat chocolate toxicity Calculator', 'updated' => '2026-05-25'],
+    'meta' => ['title' => 'Cat chocolate toxicity Calculator: Free, With Steps', 'description' => 'Cat chocolate toxicity takes your cat\'s weight and returns methylxanthines dose. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Cat chocolate toxicity Calculator', 'updated' => '2026-05-25'],
     'raw' => [
         'vars' => [
             'amount' => [
@@ -297,7 +297,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Cat chocolate toxicity turns Your cat's weight, Amount eaten and Methylxanthines dose into Chocolate type and Total methylxanthines received. It is a single relationship that reads Chocolate type out of Your cat's weight, not a table of canned results keyed by them.
+        Cat chocolate toxicity turns Your cat's weight, Amount eaten and Methylxanthines dose into Chocolate type and Total methylxanthines received. It is a single relationship that reads chocolate type out of your cat's weight, not a table of canned results keyed by them.
         TXT,
         'sections' => [
             ['title' => 'How the Cat chocolate toxicity calculator works', 'html' => <<<'TXT'
@@ -342,7 +342,7 @@ return [
             Chocolate type and Total methylxanthines received, from Methylxanthines dose, Your cat's weight and Amount eaten. The relationship is Chocolate type = Methylxanthines dose × Your cat's weight ÷ Amount eaten.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Your cat's weight (kilograms), Amount eaten (grams), Methylxanthines dose (kilograms). Enter weight, amount and methyl; Chocolate type is the box to leave alone unless it is the value you came for.
+            Your cat's weight (kilograms), Amount eaten (grams), Methylxanthines dose (kilograms). Enter your cat's weight, amount eaten and methylxanthines dose; Chocolate type is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Chocolate type, Methylxanthines dose, Your cat's weight and Amount eaten blank and the page solves for that one instead — nothing has to be switched first.

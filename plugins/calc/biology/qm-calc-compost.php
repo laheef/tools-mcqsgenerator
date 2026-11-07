@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Compost',
-    'meta' => ['title' => 'Compost Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    Compost takes Length, Width and Area and returns Depth. If you&#039;re unsure about the depth of compost you need, choose an option from this menu.Volume — in…
-    TXT, 'h1' => 'Compost Calculator', 'updated' => '2026-08-21'],
+    'meta' => ['title' => 'Compost Calculator: Formula, Steps & Examples', 'description' => 'Compost works out area and volume from length, width and garden or lawn type. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Compost Calculator', 'updated' => '2026-08-21'],
     'raw' => [
         'vars' => [
             'area' => [
@@ -376,7 +374,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Compost takes Length, Width and Area and returns Depth. The arithmetic is the whole method: Depth is worked out from Length by one formula, applied once. Depth comes back in centimeters unless you switch the unit chip beside the box.
+        Compost takes Length, Width and Area and returns Depth. The arithmetic is the whole method: depth is worked out from length by one formula, applied once. Depth comes back in centimeters unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Compost calculator works', 'html' => <<<'TXT'

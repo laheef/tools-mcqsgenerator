@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog calorie',
-    'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Examples', 'description' => 'Dog calorie works out Your dog needs and Your dog needs from Weight. Units for Your dog needs default to kilocalories and can be changed on the answer itself.', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Examples', 'description' => 'Dog calorie works out your dog needs and your dog should eat from activity and weight. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'BNW' => [
@@ -1061,7 +1061,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog calorie works out Your dog needs and Your dog needs from Weight. It is a single relationship that reads Your dog needs out of Weight, not a table of canned results keyed by them. Units for Your dog needs default to kilocalories and can be changed on the answer itself.
+        Dog calorie works out Your dog needs and Your dog needs from Weight. It is a single relationship that reads your dog needs out of weight, not a table of canned results keyed by them. Units for Your dog needs default to kilocalories and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Dog calorie calculator works', 'html' => <<<'TXT'

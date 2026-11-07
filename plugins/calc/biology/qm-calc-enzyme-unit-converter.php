@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Enzyme Unit Converter (U/mg, kcat)',
-    'meta' => ['title' => 'Enzyme Unit Converter (U/mg, kcat) Calculator', 'description' => 'One unit of enzyme converts one micromole of substrate per minute; kcat is the same activity per active site per second. Free enzyme unit converter (u/mg, kca', 'h1' => 'Enzyme Unit Converter (U/mg, kcat)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Enzyme Unit Converter (U/mg, kcat) Calculator', 'description' => 'Enzyme Unit Converter (U/mg, kcat) works out molar activity from specific activity. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Enzyme Unit Converter (U/mg, kcat)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -97,7 +97,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enzyme Unit Converter (U/mg, kcat) works out kcat (turnover number) and Molar activity from Specific activity, Enzyme molecular weight and Km. The arithmetic is the whole method: kcat (turnover number) is worked out from Specific activity by one formula, applied once. kcat (turnover number) comes back in s⁻¹ unless you switch the unit chip beside the box.
+        Enzyme Unit Converter (U/mg, kcat) works out kcat (turnover number) and Molar activity from Specific activity, Enzyme molecular weight and Km. The arithmetic is the whole method: kcat (turnover number) is worked out from specific activity by one formula, applied once. Kcat (turnover number) comes back in s⁻¹ unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Enzyme Unit Converter (U/mg, kcat) calculator works', 'html' => <<<'TXT'
@@ -140,7 +140,7 @@ return [
             kcat (turnover number), Molar activity, Activity in katal per mg and Catalytic efficiency (with Km), from Specific activity and Enzyme molecular weight. The relationship is kcat (turnover number) = Specific activity × 60000 ÷ Enzyme molecular weight.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Specific activity (U/mg), Enzyme molecular weight (Da), Km (µM). With activity, mw and km in place, kcat (turnover number) can stay blank and the page will work it out.
+            Specific activity (U/mg), Enzyme molecular weight (Da), Km (µM). With specific activity, enzyme molecular weight and km in place, kcat (turnover number) can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of kcat (turnover number), Molar activity, Activity in katal per mg and Catalytic efficiency (with Km) blank and the page solves for that one instead — nothing has to be switched first.

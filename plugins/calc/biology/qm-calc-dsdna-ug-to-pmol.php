@@ -11,7 +11,9 @@
 
 return [
     'name' => 'dsDNA µg to pmol Calculator',
-    'meta' => ['title' => 'dsDNA µg to pmol Calculator — Formula & Results', 'description' => 'Units for Amount default to pmol and can be changed on the answer itself. The length of the dsDNA moleculeMass — in µg. The length of the dsDNA molecule.', 'h1' => 'dsDNA µg to pmol Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'dsDNA µg to pmol Calculator — Formula & Results', 'description' => <<<'TXT'
+    dsDNA µg to pmol Calculator works out amount and number of molecules and reports both. Each figure is computed from the boxes you fill, never read from a table.
+    TXT, 'h1' => 'dsDNA µg to pmol Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -74,7 +76,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        dsDNA µg to pmol takes Fragment length and Mass and returns Amount and Number of molecules. It is a single relationship that reads Amount out of Fragment length, not a table of canned results keyed by them. Units for Amount default to pmol and can be changed on the answer itself.
+        dsDNA µg to pmol takes Fragment length and returns Amount and Number of molecules. It is a single relationship that reads amount out of fragment length, not a table of canned results keyed by them. Units for Amount default to pmol and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the dsDNA µg to pmol calculator works', 'html' => <<<'TXT'
@@ -120,7 +122,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the dsDNA µg to pmol calculator work out?', 'a' => 'Amount, Number of molecules and Mass, from Mass and Fragment length. The relationship is Amount = Mass × 1000000 ÷ (660 × Fragment length).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Fragment length (bp), Mass (µg). With length and mass_ug in place, Amount can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Fragment length (bp), Mass (µg). With fragment length and mass in place, Amount can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Amount, Mass, Mass and Number of molecules blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Internally Amount is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.

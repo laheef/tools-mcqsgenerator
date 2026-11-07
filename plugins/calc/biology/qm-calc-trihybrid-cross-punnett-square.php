@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Trihybrid cross Punnett square',
-    'meta' => ['title' => 'Trihybrid cross Punnett square — Formula & Results', 'description' => 'Trihybrid cross Punnett square takes Trait 1, Trait 2 and Trait 3 and returns AABBCC and AABBCc. If Trait 3 is unknown, solve for it instead of estimating it…', 'h1' => 'Trihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
+    'meta' => ['title' => 'Trihybrid cross Punnett square — Formula & Results', 'description' => 'Trihybrid cross Punnett square works out AABBCC and AABBCc and reports both. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Trihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
     'raw' => [
         'vars' => [
             'AABBCC' => [
@@ -1137,7 +1137,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Trihybrid cross Punnett square takes Trait 1, Trait 2 and Trait 3 and returns AABBCC and AABBCc. There is no hidden constant here: change AABBCC and Trait 1 moves with it. The main result, AABBCC, is reported in %.
+        Trihybrid cross Punnett square takes Trait 1, Trait 2 and Trait 3 and returns AABBCC and AABBCc. There is no hidden constant here: change AABBCC and trait 1 moves with it. The main result, AABBCC, is reported in %.
         TXT,
         'sections' => [
             ['title' => 'How the Trihybrid cross Punnett square calculator works', 'html' => <<<'TXT'
@@ -1176,7 +1176,7 @@ return [
             ['q' => 'What does the Trihybrid cross Punnett square calculator work out?', 'a' => <<<'TXT'
             AABBCC, AABBCc, AABBcc and AABbCC, from Trait 1, Trait 2, Trait 3 and Trait 1. The relationship is AABBCC = get_chance_a(Trait 1, Trait 1, Trait 2, Trait 2, Trait 3, Trait 3).
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Trait 1, Trait 2, Trait 3, Trait 1, Trait 2. With mother1, mother2 and mother3 in place, AABBCC can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Trait 1, Trait 2, Trait 3, Trait 1, Trait 2. With trait 1, trait 2 and trait 3 in place, AABBCC can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of AABBCC, AABbCC, AaBbCC and AaBBCC blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             AABBCC is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.

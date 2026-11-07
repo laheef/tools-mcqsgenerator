@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Pig Weight Calculator',
-    'meta' => ['title' => 'Pig Weight Calculator: Formula, Steps & Results', 'description' => 'Pig Weight takes Heart girth, Body length and Measured in and returns Estimated live weight and Estimated live weight. It is a single relationship that reads…', 'h1' => 'Pig Weight Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Pig Weight Calculator: Formula, Steps & Results', 'description' => 'Pig Weight Calculator works out estimated live weight from heart girth, body length and measured in. Every box can be solved for, not only the one in the title.', 'h1' => 'Pig Weight Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -74,7 +74,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Pig Weight takes Heart girth, Body length and Measured in and returns Estimated live weight and Estimated live weight. It is a single relationship that reads Estimated live weight out of Heart girth, not a table of canned results keyed by them. Units for Estimated live weight default to kg and can be changed on the answer itself.
+        Pig Weight takes Heart girth, Body length and Measured in and returns Estimated live weight and Estimated live weight. It is a single relationship that reads estimated live weight out of heart girth, not a table of canned results keyed by them. Units for Estimated live weight default to kg and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Pig Weight calculator works', 'html' => <<<'TXT'
@@ -118,7 +118,9 @@ return [
             ['q' => 'What does the Pig Weight calculator work out?', 'a' => <<<'TXT'
             Estimated live weight and Estimated live weight, from Measured in, Heart girth and Body length. The relationship is Estimated live weight = if_else(Measured in==1, Heart girth × Heart girth × Body length ÷ 400, (Heart girth × Heart girth × Body length) × 0.4536 ÷ 400 × 16.387).
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Heart girth (cm), Body length (cm), Measured in. With girth, length and unit in place, Estimated live weight can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Heart girth (cm), Body length (cm), Measured in. With heart girth, body length and measured in in place, Estimated live weight can stay blank and the page will work it out.
+            TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Estimated live weight, Estimated live weight, Heart girth and Body length blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

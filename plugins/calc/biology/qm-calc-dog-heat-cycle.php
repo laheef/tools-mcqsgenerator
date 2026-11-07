@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog heat cycle',
-    'meta' => ['title' => 'Dog heat cycle Calculator — Formula & Results', 'description' => 'Dog heat cycle turns First day of the cycle, enter_heat_cycle and Heat cycle length into cycle1 and cycle2. The arithmetic is the whole method: cycle1 is…', 'h1' => 'Dog heat cycle Calculator', 'updated' => '2026-08-19'],
+    'meta' => ['title' => 'Dog heat cycle Calculator — Formula & Results', 'description' => 'Dog heat cycle works out cycle1 from first day of the cycle and heat cycle length. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Dog heat cycle Calculator', 'updated' => '2026-08-19'],
     'raw' => [
         'vars' => [
             'cycle1' => ['type' => 'date', 'rnd' => null],
@@ -366,7 +366,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dog heat cycle turns First day of the cycle, enter_heat_cycle and Heat cycle length into cycle1 and cycle2. The arithmetic is the whole method: cycle1 is worked out from First day of the cycle by one formula, applied once.
+        Dog heat cycle turns First day of the cycle, enter_heat_cycle and Heat cycle length into cycle1 and cycle2. The arithmetic is the whole method: cycle1 is worked out from first day of the cycle by one formula, applied once.
         TXT,
         'sections' => [
             ['title' => 'How the Dog heat cycle calculator works', 'html' => <<<'TXT'
@@ -376,10 +376,10 @@ return [
             <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>First day of the cycle</strong> — a plain number, no unit, entered as a date</li><li><strong>enter_heat_cycle</strong> — a plain number, no unit</li><li><strong>Heat cycle length</strong> — in months</li></ul><p>The answers come back as cycle1, cycle2, nextCycle1, nextCycle2, nextCycle3. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, enter_heat_cycle = 0, Heat cycle length = 6 months and First day of the cycle = 1.772e+12 gives &lt;strong&gt;cycle1&lt;/strong&gt; = 1.772e+12, &lt;strong&gt;cycle2&lt;/strong&gt; = 1.772e+12, &lt;strong&gt;nextCycle1&lt;/strong&gt; = 1.772e+12, &lt;strong&gt;nextCycle2&lt;/strong&gt; = 1.772e+12 and &lt;strong&gt;nextCycle3&lt;/strong&gt; = 1.772e+12.</p><ul><li><strong>cycle1</strong> = 1.772e+12</li><li><strong>cycle2</strong> = 1.772e+12</li><li><strong>nextCycle1</strong> = 1.772e+12</li><li><strong>nextCycle2</strong> = 1.772e+12</li><li><strong>nextCycle3</strong> = 1.772e+12</li></ul><p>That is <strong>cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>With the defaults in place, enter_heat_cycle = 0, Heat cycle length = 6 months and First day of the cycle = 1.772e+12 gives <strong>cycle1</strong> = 1.772e+12, <strong>cycle2</strong> = 1.772e+12, <strong>nextCycle1</strong> = 1.772e+12, <strong>nextCycle2</strong> = 1.772e+12 and <strong>nextCycle3</strong> = 1.772e+12.</p><ul><li><strong>cycle1</strong> = 1.772e+12</li><li><strong>cycle2</strong> = 1.772e+12</li><li><strong>nextCycle1</strong> = 1.772e+12</li><li><strong>nextCycle2</strong> = 1.772e+12</li><li><strong>nextCycle3</strong> = 1.772e+12</li></ul><p>That is <strong>cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;cycle1&lt;/strong&gt; = 1.772e+12, &lt;strong&gt;cycle2&lt;/strong&gt; = 1.772e+12, &lt;strong&gt;nextCycle1&lt;/strong&gt; = 1.772e+12, &lt;strong&gt;nextCycle2&lt;/strong&gt; = 1.772e+12 and &lt;strong&gt;nextCycle3&lt;/strong&gt; = 1.772e+12 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: cycle1 takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            <p>Treat the size of a result as part of the answer: <strong>cycle1</strong> = 1.772e+12, <strong>cycle2</strong> = 1.772e+12, <strong>nextCycle1</strong> = 1.772e+12, <strong>nextCycle2</strong> = 1.772e+12 and <strong>nextCycle3</strong> = 1.772e+12 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: cycle1 takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code></li><li><strong>cycle2</strong> = <code>(First day of the cycle + twentyoneDays)</code></li><li><strong>nextCycle1</strong> = <code>(First day of the cycle + fiveMonths)</code></li><li><strong>nextCycle2</strong> = <code>(eightMonths + First day of the cycle)</code></li><li><strong>nextCycle3</strong> = <code>(First day of the cycle + 86400000 × round((761 ÷ 25) × length_value))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>cycle1</strong> = <code>(eighteenDays + First day of the cycle)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>cycle2</strong> = <code>(First day of the cycle + twentyoneDays)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>nextCycle1</strong> = <code>(First day of the cycle + fiveMonths)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>nextCycle2</strong> = <code>(eightMonths + First day of the cycle)</code> — the form to use when First day of the cycle are the values you have.</li><li><strong>nextCycle3</strong> = <code>(First day of the cycle + 86400000 × round((761 ÷ 25) × length_value))</code> — the form to use when First day of the cycle are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of cycle1, cycle2 and nextCycle1 can be the unknown.</p>
@@ -410,7 +410,7 @@ return [
         'faq' => [
             ['q' => 'What does the Dog heat cycle calculator work out?', 'a' => 'cycle1, cycle2, nextCycle1 and nextCycle2, from First day of the cycle. The relationship is cycle1 = (eighteenDays + First day of the cycle).'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            First day of the cycle, enter_heat_cycle, Heat cycle length (months). Enter firstDay, enter_heat_cycle and length; cycle1 is the box to leave alone unless it is the value you came for.
+            First day of the cycle, enter_heat_cycle, Heat cycle length (months). Enter first day of the cycle, enter_heat_cycle and heat cycle length; cycle1 is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. cycle1, cycle2, nextCycle1 and nextCycle2 can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'

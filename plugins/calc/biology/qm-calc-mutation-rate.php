@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Mutation rate',
-    'meta' => ['title' => 'Mutation rate Calculator — Formula & Results', 'description' => 'Mutation rate turns Total offspring (N) and Mutation rate (μ) into Mutant offspring (x) and Number of observed mutants (x). Total number of births in the…', 'h1' => 'Mutation rate Calculator', 'updated' => '2026-09-28'],
+    'meta' => ['title' => 'Mutation rate Calculator — Formula & Results', 'description' => 'Mutation rate takes detect mutation rate by: and returns mutation rate (μ). Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Mutation rate Calculator', 'updated' => '2026-09-28'],
     'sections' => [
         [
             'title' => '',
@@ -183,7 +183,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Mutation rate turns Total offspring (N) and Mutation rate (μ) into Mutant offspring (x) and Number of observed mutants (x). There is no hidden constant here: change Mutant offspring (x) and Total offspring (N) moves with it.
+        Mutation rate turns Total offspring (N) into Mutant offspring (x) and Number of observed mutants (x). There is no hidden constant here: change mutant offspring (x) and total offspring (N) moves with it.
         TXT,
         'sections' => [
             ['title' => 'How the Mutation rate calculator works', 'html' => <<<'TXT'
@@ -222,7 +222,7 @@ return [
             Mutant offspring (x), Number of observed mutants (x), Total generations (g) and Size of sequenced DNA (b), from Mutation rate (μ) and Total offspring (N). The relationship is Mutant offspring (x) = 2 × Mutation rate (μ) × Total offspring (N).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Total offspring (N), Mutation rate (μ). Fill totalOffsprings and mutationRate1 and leave Mutant offspring (x) empty if you would rather have that one solved instead.
+            Total offspring (N), Mutation rate (μ). Fill total offspring (N) and mutation rate (μ) and leave Mutant offspring (x) empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Mutant offspring (x), Total offspring (N), Mutation rate (μ) and Mutation rate (μ) blank and the page solves for that one instead — nothing has to be switched first.

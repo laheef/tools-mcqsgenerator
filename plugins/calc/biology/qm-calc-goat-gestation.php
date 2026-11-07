@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Goat gestation',
-    'meta' => ['title' => 'Goat gestation Calculator — Formula & Results', 'description' => 'Goat gestation takes Breeding date and Kidding date and returns 🐐 The breed of your goat is…. A result box can be typed into, and doing so changes the…', 'h1' => 'Goat gestation Calculator', 'updated' => '2025-04-07'],
+    'meta' => ['title' => 'Goat gestation Calculator — Formula & Results', 'description' => 'Goat gestation takes breeding date and Kidding date and returns 🐐 The breed of your goat is…. Every box can be solved for, not only the one in the title.', 'h1' => 'Goat gestation Calculator', 'updated' => '2025-04-07'],
     'raw' => [
         'vars' => [
             'calving' => ['type' => 'date', 'rnd' => null],
@@ -269,7 +269,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Goat gestation takes Breeding date and Kidding date and returns 🐐 The breed of your goat is…. Nothing is looked up on this page: 🐐 The breed of your goat is... is computed from Breeding date and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        Goat gestation takes Breeding date and Kidding date and returns 🐐 The breed of your goat is…. Nothing is looked up on this page: 🐐 The breed of your goat is... is computed from breeding date and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
             ['title' => 'How the Goat gestation calculator works', 'html' => <<<'TXT'
@@ -279,16 +279,16 @@ return [
             <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Breeding date</strong> — a plain number, no unit, entered as a date</li><li><strong>Kidding date</strong> — a plain number, no unit, entered as a date</li></ul><p>The answer comes back as 🐐 The breed of your goat is…. The page writes that box; there is nothing to submit or save before you can read it.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Take the values the form starts on, Breeding date = 1.772e+12 and Kidding date = 1.772e+12; the answers are &lt;strong&gt;🐐 The breed of your goat is…&lt;/strong&gt; = 1.</p><ul><li><strong>🐐 The breed of your goat is…</strong> = 1</li></ul><p>The line behind those figures is <strong>🐐 The breed of your goat is...</strong> = <code>(1 ÷ 5) × Kidding date − 1 ÷ 5 × Breeding date − 29</code> — nothing in it is a constant the page keeps to itself.</p>
+            <p>Take the values the form starts on, Breeding date = 1.772e+12 and Kidding date = 1.772e+12; the answers are <strong>🐐 The breed of your goat is…</strong> = 1.</p><ul><li><strong>🐐 The breed of your goat is…</strong> = 1</li></ul><p>The line behind those figures is <strong>🐐 The breed of your goat is...</strong> = <code>(1 ÷ 5) × Kidding date − 1 ÷ 5 × Breeding date − 29</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;🐐 The breed of your goat is...&lt;/strong&gt; = 1 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: 🐐 The breed of your goat is... takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            <p>Treat the size of a result as part of the answer: <strong>🐐 The breed of your goat is...</strong> = 1 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: 🐐 The breed of your goat is... takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>🐐 The breed of your goat is...</strong> = <code>(1 ÷ 5) × Kidding date − 1 ÷ 5 × Breeding date − 29</code></li><li><strong>Breeding date</strong> = <code>Kidding date − 5 × 🐐 The breed of your goat is... − 145</code></li><li><strong>Kidding date</strong> = <code>Breeding date + 5 × 🐐 The breed of your goat is... + 145</code></li><li><strong>day</strong> = <code>getDayOfWeek(Kidding date)</code></li><li><strong>daysUntil</strong> = <code>Kidding date − Breeding date</code></li><li><strong>currentDate</strong> = <code>Kidding date − difference</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>🐐 The breed of your goat is...</strong> = <code>(1 ÷ 5) × Kidding date − 1 ÷ 5 × Breeding date − 29</code> — the form to use when Breeding date and Kidding date are the values you have.</li><li><strong>Breeding date</strong> = <code>Kidding date − 5 × 🐐 The breed of your goat is... − 145</code> — the form to use when 🐐 The breed of your goat is… and Kidding date are the values you have.</li><li><strong>Kidding date</strong> = <code>Breeding date + 5 × 🐐 The breed of your goat is... + 145</code> — the form to use when 🐐 The breed of your goat is… and Breeding date are the values you have.</li><li><strong>day</strong> = <code>getDayOfWeek(Kidding date)</code> — the form to use when Kidding date are the values you have.</li><li><strong>Breeding date</strong> = <code>Kidding date − daysUntil</code> — the form to use when Kidding date are the values you have.</li><li><strong>Kidding date</strong> = <code>daysUntil + Breeding date</code> — the form to use when Breeding date are the values you have.</li><li><strong>daysUntil</strong> = <code>Kidding date − Breeding date</code> — the form to use when Breeding date and Kidding date are the values you have.</li><li><strong>Kidding date</strong> = <code>currentDate + difference</code> — the form to use when the other values are known.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of 🐐 The breed of your goat is…, Breeding date and Kidding date can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Breeding date, from 1.772e+12 to 3.545e+12 — and the answers go from &lt;strong&gt;🐐 The breed of your goat is...&lt;/strong&gt; 1 to &lt;strong&gt;🐐 The breed of your goat is...&lt;/strong&gt; 1.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Breeding date, from 1.772e+12 to 3.545e+12 — and the answers go from <strong>🐐 The breed of your goat is...</strong> 1 to <strong>🐐 The breed of your goat is...</strong> 1.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with 🐐 The breed of your goat is… is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Breeding date left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Breeding date is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Kidding date left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Kidding date is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Breeding date and let the panel round the answer once.</li></ul>
@@ -319,7 +319,9 @@ return [
             ['q' => 'What does the Goat gestation calculator work out?', 'a' => <<<'TXT'
             🐐 The breed of your goat is…, from Breeding date and Kidding date. The relationship is 🐐 The breed of your goat is... = (1 ÷ 5) × Kidding date − 1 ÷ 5 × Breeding date − 29.
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Breeding date, Kidding date. Enter exposed and calving; 🐐 The breed of your goat is... is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Breeding date, Kidding date. Enter breeding date and kidding date; 🐐 The breed of your goat is... is the box to leave alone unless it is the value you came for.
+            TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. 🐐 The breed of your goat is…, Breeding date, Kidding date and day can each be the answer: the page works out which box is empty and rearranges the relationship for it.
             TXT],

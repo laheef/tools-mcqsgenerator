@@ -12,7 +12,7 @@
 return [
     'name' => 'Vapor pressure deficit',
     'meta' => ['title' => 'Vapor pressure deficit: Formula, Steps & Results', 'description' => <<<'TXT'
-    Enter Do you know the canopy temperature?, Calculate using… and Calculate using… into Vapor pressure deficit and the answer comes back as VP_air and VP_leaf.
+    Enter Do you know the canopy temperature?, Calculate using… and Calculate using… into vapor pressure deficit and the answer comes back as VP_air and VP_leaf.
     TXT, 'h1' => 'Vapor pressure deficit Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
@@ -839,7 +839,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Do you know the canopy temperature?, Calculate using… and Calculate using… into Vapor pressure deficit and the answer comes back as VP_air and VP_leaf. It is a single relationship that reads VP_air out of Do you know the canopy temperature?, not a table of canned results keyed by them.
+        Enter Do you know the canopy temperature?, Calculate using… and Calculate using… into Vapor pressure deficit and the answer comes back as VP_air and VP_leaf. It is a single relationship that reads VP_air out of do you know the canopy temperature?, not a table of canned results keyed by them.
         TXT,
         'sections' => [
             ['title' => 'How the Vapor pressure deficit calculator works', 'html' => <<<'TXT'
@@ -881,7 +881,7 @@ return [
             VP_air, VP_leaf, VP_dew_point and intermediate_VP_leaf, from Vapor pressure deficit (VPD) and VP_leaf. The relationship is VP_air = − Vapor pressure deficit (VPD) + VP_leaf.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Do you know the canopy temperature?, Calculate using…, Calculate using…, Relative humidity (percent), Dew point (Celsius). Enter canopyVS, calculate_without_canopy and calculate_with_canopy; VP_air is the box to leave alone unless it is the value you came for.
+            Do you know the canopy temperature?, Calculate using…, Calculate using…, Relative humidity (percent), Dew point (Celsius). Enter do you know the canopy temperature?, calculate using… and calculate using…; VP_air is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of VP_air, Vapor pressure deficit (VPD), VP_leaf and Vapor pressure deficit (VPD) blank and the page solves for that one instead — nothing has to be switched first.

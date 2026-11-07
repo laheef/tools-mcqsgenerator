@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Mulch',
-    'meta' => ['title' => 'Mulch Calculator: Formula, Steps & Examples', 'description' => <<<'TXT'
-    Enter Do you know what's the area?, Shape and Depth into Mulch and the answer comes back as Density. What shape is the area to be covered in mulch?Depth — in…
-    TXT, 'h1' => 'Mulch Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Mulch Calculator: Formula, Steps & Examples', 'description' => 'Mulch reports area, number of bags needed, total costs of mulch and estimated weight. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Mulch Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'Shape' => [
@@ -1101,7 +1099,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Do you know what's the area?, Shape and Depth into Mulch and the answer comes back as Density. There is no hidden constant here: change Density and Do you know what's the area? moves with it. The main result, Density, is reported in kilograms per cubic meter.
+        Enter Do you know what's the area?, Shape and Depth into Mulch and the answer comes back as Density. There is no hidden constant here: change density and do you know what's the area? moves with it. The main result, Density, is reported in kilograms per cubic meter.
         TXT,
         'sections' => [
             ['title' => 'How the Mulch calculator works', 'html' => <<<'TXT'
@@ -1141,7 +1139,7 @@ return [
         'faq' => [
             ['q' => 'What does the Mulch calculator work out?', 'a' => 'Density, from Length and Width. The relationship is Area = Length × Width.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Do you know what's the area?, Shape, Depth (centimeters), Length (meters), Width (meters). Enter knowArea, Shape and depth; Density is the box to leave alone unless it is the value you came for.
+            Do you know what's the area?, Shape, Depth (centimeters), Length (meters), Width (meters). Enter do you know what's the area?, shape and depth; Density is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Area, Length, Width and Area can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

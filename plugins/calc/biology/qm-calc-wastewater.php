@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Wastewater',
-    'meta' => ['title' => 'Wastewater Calculator: Formula, Steps & Examples', 'description' => 'Wastewater turns Average untreated influent COD and Average primary treated COD into Influent SS weight and Average untreated influent BOD.', 'h1' => 'Wastewater Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Wastewater Calculator: Formula, Steps & Examples', 'description' => 'Wastewater reports influent SS weight, Effluent BOD, Effluent COD and volume. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Wastewater Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'SS_lbs_influent' => [
@@ -1389,7 +1389,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Wastewater turns Average untreated influent COD and Average primary treated COD into Influent SS weight and Average untreated influent BOD. Nothing is looked up on this page: Influent SS weight is computed from Average untreated influent COD and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Influent SS weight is opened in kilograms; the chip beside it switches to any unit of the same quantity.
+        Wastewater turns Average untreated influent COD and Average primary treated COD into Influent SS weight and Average untreated influent BOD. Nothing is looked up on this page: influent SS weight is computed from average untreated influent COD and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Influent SS weight is opened in kilograms; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Wastewater calculator works', 'html' => <<<'TXT'
@@ -1426,7 +1426,7 @@ return [
             Influent SS weight, Average untreated influent BOD, Average primary treated BOD and Effluent BOD, from Average primary treated COD and Average untreated influent COD. The relationship is Effluent COD = − Average primary treated COD + Average untreated influent COD.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Average untreated influent COD (grams per liter), Average primary treated COD (grams per liter). Fill average_untreated_influent_cod and average_primary_treated_cod and leave Influent SS weight empty if you would rather have that one solved instead.
+            Average untreated influent COD (grams per liter), Average primary treated COD (grams per liter). Fill average untreated influent COD and average primary treated COD and leave Influent SS weight empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             Yes. Effluent COD, Average primary treated COD, Average untreated influent COD and Average primary treated BOD can each be the answer: the page works out which box is empty and rearranges the relationship for it.

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'CFU/mL Calculator',
-    'meta' => ['title' => 'CFU/mL Calculator: Formula, Steps & Results', 'description' => 'A CFU/mL count comes from one plate: clumps form a single colony, so the count is colony-forming units, not cells. Free cfu/ml calculator: enter your values a', 'h1' => 'CFU/mL Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'CFU/mL Calculator: Formula, Steps & Results', 'description' => 'CFU/mL Calculator turns colonies counted and volume plated into CFU per mL. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'CFU/mL Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -83,7 +83,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Colonies counted, Volume plated and Dilution factor of the plated sample into CFU/mL and the answer comes back as CFU per mL and log₁₀(CFU/mL). Nothing is looked up on this page: CFU per mL is computed from Colonies counted and the other boxes, so an unusual pair of values gives an honest answer rather than an error. CFU per mL is opened in CFU/mL; the chip beside it switches to any unit of the same quantity.
+        Enter Colonies counted, Volume plated and Dilution factor of the plated sample into CFU/mL and the answer comes back as CFU per mL and log₁₀(CFU/mL). Nothing is looked up on this page: CFU per mL is computed from colonies counted and the other boxes, so an unusual pair of values gives an honest answer rather than an error. CFU per mL is opened in CFU/mL; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the CFU/mL calculator works', 'html' => <<<'TXT'
@@ -126,7 +126,7 @@ return [
             CFU per mL, log₁₀(CFU/mL) and CFU per 100 mL, from Colonies counted, Volume plated and Dilution factor of the plated sample. The relationship is CFU per mL = Colonies counted ÷ Volume plated × Dilution factor of the plated sample.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Colonies counted (CFU), Volume plated (mL), Dilution factor of the plated sample (×). Enter colonies, volume and dilution; CFU per mL is the box to leave alone unless it is the value you came for.
+            Colonies counted (CFU), Volume plated (mL), Dilution factor of the plated sample (×). Enter colonies counted, volume plated and dilution factor of the plated sample; CFU per mL is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of CFU per mL, log₁₀(CFU/mL), CFU per 100 mL and Dilution factor of the plated sample blank and the page solves for that one instead — nothing has to be switched first.

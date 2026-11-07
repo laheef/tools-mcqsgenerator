@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Dihybrid cross Punnett square',
-    'meta' => ['title' => 'Dihybrid cross Punnett square — Formula & Results', 'description' => <<<'TXT'
-    Dihybrid cross Punnett square turns Trait 1, Trait 2 and Trait 1 into AABB and AABb. If Trait 1 is unknown, solve for it instead of estimating it — leave it…
-    TXT, 'h1' => 'Dihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
+    'meta' => ['title' => 'Dihybrid cross Punnett square — Formula & Results', 'description' => 'Dihybrid cross Punnett square turns trait 1, Trait 2 and Trait 1 into AABB and AABb. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dihybrid cross Punnett square Calculator', 'updated' => '2025-02-06'],
     'raw' => [
         'vars' => [
             'father_a' => [
@@ -428,7 +426,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Dihybrid cross Punnett square turns Trait 1, Trait 2 and Trait 1 into AABB and AABb. There is no hidden constant here: change AABB and Trait 1 moves with it. The main result, AABB, is reported in %.
+        Dihybrid cross Punnett square turns Trait 1, Trait 2 and Trait 1 into AABB and AABb. There is no hidden constant here: change AABB and trait 1 moves with it. The main result, AABB, is reported in %.
         TXT,
         'sections' => [
             ['title' => 'How the Dihybrid cross Punnett square calculator works', 'html' => <<<'TXT'
@@ -462,7 +460,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Dihybrid cross Punnett square calculator work out?', 'a' => 'AABB, AABb, AAbb and AaBB, from Trait 1, Trait 2, Trait 1 and Trait 2. The relationship is AABB = get_chance_a(Trait 1, Trait 1, Trait 2, Trait 2).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Trait 1, Trait 2, Trait 1, Trait 2. With mother_a, mother_b and father_a in place, AABB can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Trait 1, Trait 2, Trait 1, Trait 2. With trait 1, trait 2 and trait 1 in place, AABB can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. AABB, AABb, AAbb and AaBB can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             The arithmetic runs at full precision and only the display of AABB is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.

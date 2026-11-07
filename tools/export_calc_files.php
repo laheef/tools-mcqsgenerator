@@ -616,10 +616,20 @@ foreach ($rows as $row) {
         }
     }
 
+    /* The facts the description is written from: what the reader enters and
+       what comes back, read off the same record the page renders. */
+    $facts = [];
+    try {
+        $facts = CalcSeo::factsFromShape(\Onim\Shape::fromRecord($rec, null));
+    } catch (\Throwable $e) {
+        $facts = [];
+    }
+
     $pending[] = [
         'path' => $path, 'cat' => $c, 'slug' => $slug, 'abs' => $abs, 'def' => $def,
         'name' => (string) ($rec['name'] ?? ''), 'content' => $content,
         'updated' => (string) ($rec['updated'] ?? date('Y-m-d')),
+        'facts' => $facts,
     ];
 }
 
@@ -655,8 +665,11 @@ foreach ($pending as $i => $item) {
     /* The frame the old generator put on every page never survives a rewrite,
        even when it is the only line long enough to fill the window. */
     $banned = preg_match('~free [a-z &-]{0,30}calculator|formula, units and a worked~iu', $oldDesc) === 1;
-    if ($rewrite || $real || $banned || $len < CalcSeo::DESC_MIN || $len > CalcSeo::DESC_MAX || !preg_match('~[.!?]$~u', $oldDesc)) {
-        [$fresh] = CalcSeo::description($item['name'], $article);
+    /* A description that stops mid-sentence ("…and the answer") is broken
+       whatever its length; it is rewritten with the page's own facts. */
+    $clipped = str_ends_with(rtrim($oldDesc), '…');
+    if ($rewrite || $real || $banned || $clipped || $len < CalcSeo::DESC_MIN || $len > CalcSeo::DESC_MAX || !preg_match('~[.!?]$~u', $oldDesc)) {
+        [$fresh] = CalcSeo::description($item['name'], $article, $item['facts'] ?? []);
         $freshLen = mb_strlen($fresh, 'UTF-8');
         if ($banned) {
             $desc = $fresh;

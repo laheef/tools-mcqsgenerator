@@ -11,7 +11,7 @@
 
 return [
     'name' => 'DNA Molarity Calculator',
-    'meta' => ['title' => 'DNA Molarity Calculator — Formula & Results', 'description' => 'DNA Molarity turns Length, Concentration and Volume into Total mass and Amount. A result box can be typed into, and doing so changes the question rather than…', 'h1' => 'DNA Molarity Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'DNA Molarity Calculator — Formula & Results', 'description' => 'DNA Molarity Calculator works out total mass and amount from length, concentration and volume. Every box can be solved for, not only the one in the title.', 'h1' => 'DNA Molarity Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -120,7 +120,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        DNA Molarity turns Length, Concentration and Volume into Total mass and Amount. There is no hidden constant here: change Total mass and Length moves with it. The main result, Total mass, is reported in ng.
+        DNA Molarity turns Length, Concentration and Volume into Total mass and Amount. There is no hidden constant here: change total mass and length moves with it. The main result, Total mass, is reported in ng.
         TXT,
         'sections' => [
             ['title' => 'How the DNA Molarity calculator works', 'html' => <<<'TXT'
@@ -158,7 +158,7 @@ return [
         'faq' => [
             ['q' => 'What does the DNA Molarity calculator work out?', 'a' => 'Total mass, Amount, Molarity and Molecules, from Concentration and Volume. The relationship is Total mass = Concentration × Volume.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Length (bp), Concentration (ng/µL), Volume (µL), Molecule (A₂₆₀ factor), Molar mass per base (g/mol). With length, conc_ng_ul and volume_ul in place, Total mass can stay blank and the page will work it out.
+            Length (bp), Concentration (ng/µL), Volume (µL), Molecule (A₂₆₀ factor), Molar mass per base (g/mol). With length, concentration and volume in place, Total mass can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Total mass, Concentration, A₂₆₀ equivalent and Amount blank and the page solves for that one instead — nothing has to be switched first.

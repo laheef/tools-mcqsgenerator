@@ -1774,33 +1774,6 @@
     if (Results) Results.render();
   }
 
-  var urlTimer = null;
-  function syncUrl(state, focusName) {
-    if (!window.history || !window.history.replaceState) return;
-    clearTimeout(urlTimer);
-    urlTimer = setTimeout(function () {
-      var params = new URLSearchParams();
-      inputs.forEach(function (inp) {
-        var name = inp.getAttribute('data-var');
-        if (!edited[name]) return;   // outputs must not pin a shared link
-        if (inp.value.trim() === '') return;
-        params.set(name, inp.value.trim());
-        var unitKey = inp.getAttribute('data-unit-key');
-        var sel = unitSelects[name];
-        if (unitKey && sel && sel.value) params.set(name + '_unit', sel.value);
-      });
-      radios.forEach(function (r) { if (r.checked && edited[r.name]) params.set(r.name, r.value); });
-      checks.forEach(function (c) {
-        var name = c.getAttribute('data-var-check');
-        if (!edited[name]) return;
-        params.set(name, c.checked ? c.value : c.getAttribute('data-off'));
-      });
-      var qs = params.toString();
-      var url = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
-      window.history.replaceState(null, '', url);
-    }, 400);
-  }
-
   /*
    * Boxes that only exist for some answers: "how many groups?" decides whether
    * group_D is asked for at all. A wall of empty boxes the visitor is not meant
@@ -1848,7 +1821,6 @@
     lastState = state;
     applyShowIf(state);
     apply(state, editedName);
-    syncUrl(state, editedName);
     return state;
   }
 
@@ -2877,12 +2849,25 @@
       }
       revealUnshown(lastState, panel);
       paint('shown');
-      /* Pull the results into view on a phone: pressing a button at the bottom
-         of a long form and seeing nothing move feels broken. */
-      if (panel && window.matchMedia && window.matchMedia('(max-width: 1145px)').matches) {
+      /*
+       * Bring the results into view when the press produced them out of sight.
+       * This used to run on phones only, which left the desktop case the one
+       * that actually broke: a form tall enough to push the panel below the
+       * fold answered with numbers the visitor could not see. Now every width
+       * checks, and only scrolls when the panel is genuinely off screen or
+       * buried under the sticky header.
+       */
+      if (panel) {
         var r = panel.getBoundingClientRect();
-        if (r.top < 0 || r.top > window.innerHeight - 120) {
-          window.scrollTo({ top: window.scrollY + r.top - 100, behavior: 'smooth' });
+        var head = 0;
+        var siteHeader = document.querySelector('.site-header');
+        if (siteHeader) head = siteHeader.getBoundingClientRect().height || 0;
+        var clear = Math.max(72, Math.round(head) + 18);
+        if (r.top < clear - 4 || r.bottom > window.innerHeight + 4) {
+          window.scrollTo({
+            top: window.scrollY + r.top - clear - 8,
+            behavior: 'smooth'
+          });
         }
       }
     }

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Random Sequence Generator Calculator',
-    'meta' => ['title' => 'Random Sequence Generator Calculator — Biology', 'description' => 'Random Sequence Generator takes Alphabet, Length and Target GC content and returns GC content of the output. Random Sequence Generator answers one question…', 'h1' => 'Random Sequence Generator Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Random Sequence Generator Calculator — Biology', 'description' => 'Random Sequence Generator Calculator reports GC content of the output. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Random Sequence Generator Calculator', 'updated' => '2026-10-29'],
     'raw' => [
         'vars' => [
             'kind' => [
@@ -274,7 +274,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Random Sequence Generator takes Alphabet, Length and Target GC content and returns GC content of the output. It is a single relationship that reads GC content of the output out of Alphabet, not a table of canned results keyed by them. Units for GC content of the output default to % and can be changed on the answer itself.
+        Random Sequence Generator takes Alphabet, Length and Target GC content and returns GC content of the output. It is a single relationship that reads GC content of the output out of alphabet, not a table of canned results keyed by them. Units for GC content of the output default to % and can be changed on the answer itself.
         TXT,
         'sections' => [
             ['title' => 'How the Random Sequence Generator calculator works', 'html' => <<<'TXT'
@@ -320,7 +320,7 @@ return [
         'faq' => [
             ['q' => 'What does the Random Sequence Generator calculator work out?', 'a' => 'GC content of the output.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Alphabet, Length (residues), Target GC content (%), Seed, Make the sequence start with ATG. Fill kind, length and gc and leave GC content of the output empty if you would rather have that one solved instead.
+            Alphabet, Length (residues), Target GC content (%), Seed, Make the sequence start with ATG. Fill alphabet, length and target GC content and leave GC content of the output empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             The arithmetic runs at full precision and only the display of GC content of the output is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.

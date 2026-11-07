@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Rabbit color',
-    'meta' => ['title' => 'Rabbit color Calculator — Formula & Results', 'description' => 'Enter I want to input, include_steel and include_broken into Rabbit color and the answer comes back as color_sire_full_text1 and color_sire_full_textE1.', 'h1' => 'Rabbit color Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Rabbit color Calculator — Formula & Results', 'description' => 'Enter I want to input, include_steel and include_broken into rabbit color and the answer comes back as color_sire_full_text1 and color_sire_full_textE1.', 'h1' => 'Rabbit color Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'A_gene_dam' => [
@@ -3710,7 +3710,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter I want to input, include_steel and include_broken into Rabbit color and the answer comes back as color_sire_full_text1 and color_sire_full_textE1. There is no hidden constant here: change color_sire_full_text1 and I want to input moves with it.
+        Enter I want to input, include_steel and include_broken into Rabbit color and the answer comes back as color_sire_full_text1 and color_sire_full_textE1. There is no hidden constant here: change color_sire_full_text1 and i want to input moves with it.
         TXT,
         'sections' => [
             ['title' => 'How the Rabbit color calculator works', 'html' => <<<'TXT'
@@ -3744,7 +3744,7 @@ return [
         'faq' => [
             ['q' => 'What does the Rabbit color calculator work out?', 'a' => 'color_sire_full_text1, color_sire_full_textE1, color_sire_chinchilla_text1 and color_sire_chinchilla_textE1.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            I want to input, include_steel, include_broken, include_vienna, include_dutch. With color_or_genes, include_steel and include_broken in place, color_sire_full_text1 can stay blank and the page will work it out.
+            I want to input, include_steel, include_broken, include_vienna, include_dutch. With i want to input, include_steel and include_broken in place, color_sire_full_text1 can stay blank and the page will work it out.
             TXT],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             color_sire_full_text1 is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.

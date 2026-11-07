@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Protein molecular weight',
-    'meta' => ['title' => 'Protein molecular weight — Formula & Results', 'description' => 'Enter 1st Amino acid, 2nd Amino acid and 3rd Amino acid into Protein molecular weight and the answer comes back as Weight. There is no hidden constant here…', 'h1' => 'Protein molecular weight Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Protein molecular weight — Formula & Results', 'description' => 'Protein molecular weight works out weight from 1st Amino acid and 2nd Amino acid. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Protein molecular weight Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'A1' => [
@@ -1402,7 +1402,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter 1st Amino acid, 2nd Amino acid and 3rd Amino acid into Protein molecular weight and the answer comes back as Weight. There is no hidden constant here: change Weight and 1st Amino acid moves with it.
+        Enter 1st Amino acid, 2nd Amino acid and 3rd Amino acid into Protein molecular weight and the answer comes back as Weight. There is no hidden constant here: change weight and 1st Amino acid moves with it.
         TXT,
         'sections' => [
             ['title' => 'How the Protein molecular weight calculator works', 'html' => <<<'TXT'
@@ -1445,7 +1445,7 @@ return [
         'faq' => [
             ['q' => 'What does the Protein molecular weight calculator work out?', 'a' => 'Weight, from 7th Amino acid, 3rd Amino acid, 1st Amino acid and 19th Amino acid.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            1st Amino acid, 2nd Amino acid, 3rd Amino acid, 4th Amino acid, 5th Amino acid. Fill A1, A2 and A3 and leave Weight empty if you would rather have that one solved instead.
+            1st Amino acid, 2nd Amino acid, 3rd Amino acid, 4th Amino acid, 5th Amino acid. Fill 1st Amino acid, 2nd Amino acid and 3rd Amino acid and leave Weight empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of 11th Amino acid, 7th Amino acid, 3rd Amino acid and 1st Amino acid blank and the page solves for that one instead — nothing has to be switched first.

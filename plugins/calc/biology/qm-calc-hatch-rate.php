@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Hatch Rate Calculator',
-    'meta' => ['title' => 'Hatch Rate Calculator: Formula, Steps & Results', 'description' => 'Hatch Rate turns Eggs set, Fertile eggs and Chicks hatched into Hatch rate (of fertile) and Hatchability (of set). There is no hidden constant here: change…', 'h1' => 'Hatch Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Hatch Rate Calculator: Formula, Steps & Results', 'description' => 'Hatch Rate Calculator works out hatchability (of set) from eggs set. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Hatch Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -98,7 +98,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Hatch Rate turns Eggs set, Fertile eggs and Chicks hatched into Hatch rate (of fertile) and Hatchability (of set). There is no hidden constant here: change Hatch rate (of fertile) and Eggs set moves with it. The main result, Hatch rate (of fertile), is reported in %.
+        Hatch Rate turns Eggs set, Fertile eggs and Chicks hatched into Hatch rate (of fertile) and Hatchability (of set). There is no hidden constant here: change hatch rate (of fertile) and eggs set moves with it. The main result, Hatch rate (of fertile), is reported in %.
         TXT,
         'sections' => [
             ['title' => 'How the Hatch Rate calculator works', 'html' => <<<'TXT'
@@ -140,7 +140,7 @@ return [
             Hatch rate (of fertile), Hatchability (of set), Infertile eggs and Died after candling, from Chicks hatched and Fertile eggs. The relationship is Hatch rate (of fertile) = Chicks hatched ÷ Fertile eggs × 100.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Eggs set (eggs), Fertile eggs (eggs), Chicks hatched (chicks). Enter eggs_set, fertile and hatched; Hatch rate (of fertile) is the box to leave alone unless it is the value you came for.
+            Eggs set (eggs), Fertile eggs (eggs), Chicks hatched (chicks). Enter eggs set, fertile eggs and chicks hatched; Hatch rate (of fertile) is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Hatch rate (of fertile), Hatchability (of set), Infertile eggs and Died after candling blank and the page solves for that one instead — nothing has to be switched first.

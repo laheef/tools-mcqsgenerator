@@ -36,18 +36,34 @@ final class Seo
      * keeps the same budget, so longer source descriptions are trimmed on a
      * word boundary rather than emitted half-visible.
      */
-    public static function clamp(string $description, int $limit = 158): string
+    public static function clamp(string $description, int $limit = 160): string
     {
         $text = trim(preg_replace('/\s+/', ' ', strip_tags($description)) ?? '');
         if (mb_strlen($text) <= $limit) {
             return $text;
+        }
+        /*
+         * Cut at a sentence, not at a word. A description that ends "...and the
+         * answer…" is visibly incomplete, and the ellipsis is the tell that a
+         * machine wrote it. Whole sentences are kept where they fit; a word
+         * boundary with an ellipsis is the last resort, for text that is one
+         * long sentence to begin with.
+         */
+        $within = mb_substr($text, 0, $limit);
+        $stop = max(
+            (int) mb_strrpos($within, '. '),
+            (int) mb_strrpos($within, '! '),
+            (int) mb_strrpos($within, '? ')
+        );
+        if ($stop >= 60) {
+            return rtrim(mb_substr($within, 0, $stop + 1));
         }
         $cut = mb_substr($text, 0, $limit - 1);
         $space = mb_strrpos($cut, ' ');
         if ($space !== false) {
             $cut = mb_substr($cut, 0, $space);
         }
-        return rtrim($cut, " ,.;:—-") . '…';
+        return rtrim($cut, " ,;:—-") . '…';
     }
 
     public function url(string $path = '/'): string
@@ -254,11 +270,18 @@ final class Seo
     {
         $items = [];
         foreach ($this->breadcrumbs as $i => $b) {
+            /* schema.org wants a resolvable URL here. A relative path is what
+               the page prints, but an absolute one is what a crawler can
+               follow, and the two disagreeing is an error in every validator. */
+            $url = (string) $b['url'];
+            if ($url !== '' && !preg_match('~^https?://~i', $url)) {
+                $url = rtrim(SITE_URL, '/') . '/' . ltrim($url, '/');
+            }
             $items[] = [
                 '@type' => 'ListItem',
                 'position' => $i + 1,
                 'name' => $b['name'],
-                'item' => $b['url'],
+                'item' => $url,
             ];
         }
         return [

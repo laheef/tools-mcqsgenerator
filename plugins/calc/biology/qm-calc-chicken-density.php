@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Chicken Density Calculator',
-    'meta' => ['title' => 'Chicken Density Calculator — Formula & Results', 'description' => <<<'TXT'
-    Enter Number of birds and Usable floor area into Chicken Density and the answer comes back as Stocking density and Floor allowance. Stocking density is opened…
-    TXT, 'h1' => 'Chicken Density Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Chicken Density Calculator — Formula & Results', 'description' => 'Chicken Density Calculator works out stocking density from number of birds. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Chicken Density Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -68,7 +66,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Number of birds and Usable floor area into Chicken Density and the answer comes back as Stocking density and Floor allowance. Nothing is looked up on this page: Stocking density is computed from Number of birds and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Stocking density is opened in birds/m²; the chip beside it switches to any unit of the same quantity.
+        Enter Number of birds and Usable floor area into Chicken Density and the answer comes back as Stocking density and Floor allowance. Nothing is looked up on this page: stocking density is computed from number of birds and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Stocking density is opened in birds/m²; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Chicken Density calculator works', 'html' => <<<'TXT'
@@ -78,16 +76,16 @@ return [
             <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Number of birds</strong> — a plain number, no unit. The flock you are housing</li><li><strong>Usable floor area</strong> — in m². Excluding feeders, drinkers and nest boxes</li></ul><p>The answers come back as Stocking density in birds/m², Floor allowance in m²/bird. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Take the values the form starts on, Number of birds = 60 and Usable floor area = 15 m²; the answers are &lt;strong&gt;Stocking density&lt;/strong&gt; = 4 birds/m² and &lt;strong&gt;Floor allowance&lt;/strong&gt; = 0.25 m²/bird.</p><ul><li><strong>Stocking density</strong> = 4 birds/m²</li><li><strong>Floor allowance</strong> = 0.25 m²/bird</li></ul><p>The line behind those figures is <strong>Stocking density</strong> = <code>Number of birds ÷ Usable floor area</code> — nothing in it is a constant the page keeps to itself.</p>
+            <p>Take the values the form starts on, Number of birds = 60 and Usable floor area = 15 m²; the answers are <strong>Stocking density</strong> = 4 birds/m² and <strong>Floor allowance</strong> = 0.25 m²/bird.</p><ul><li><strong>Stocking density</strong> = 4 birds/m²</li><li><strong>Floor allowance</strong> = 0.25 m²/bird</li></ul><p>The line behind those figures is <strong>Stocking density</strong> = <code>Number of birds ÷ Usable floor area</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Stocking density&lt;/strong&gt; = 4 and &lt;strong&gt;Floor allowance&lt;/strong&gt; = 0.25. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Stocking density is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Stocking density</strong> = 4 and <strong>Floor allowance</strong> = 0.25. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Stocking density is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Stocking density</strong> = <code>Number of birds ÷ Usable floor area</code></li><li><strong>Floor allowance</strong> = <code>Usable floor area ÷ Number of birds</code></li><li><strong>Number of birds</strong> = <code>Stocking density × Usable floor area</code></li><li><strong>Usable floor area</strong> = <code>Number of birds ÷ Stocking density</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Stocking density</strong> = <code>Number of birds ÷ Usable floor area</code> — the form to use when Number of birds and Usable floor area are the values you have.</li><li><strong>Floor allowance</strong> = <code>Usable floor area ÷ Number of birds</code> — the form to use when Usable floor area and Number of birds are the values you have.</li><li><strong>Number of birds</strong> = <code>Stocking density × Usable floor area</code> — the form to use when Stocking density and Usable floor area are the values you have.</li><li><strong>Usable floor area</strong> = <code>Number of birds ÷ Stocking density</code> — the form to use when Number of birds and Stocking density are the values you have.</li></ul><p>Any one of Stocking density, Floor allowance and Number of birds can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Number of birds, from 60 to 120 — and the answers go from &lt;strong&gt;Stocking density&lt;/strong&gt; 4 birds/m² and &lt;strong&gt;Floor allowance&lt;/strong&gt; 0.25 m²/bird to &lt;strong&gt;Stocking density&lt;/strong&gt; 8 birds/m² and &lt;strong&gt;Floor allowance&lt;/strong&gt; 0.125 m²/bird.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Number of birds, from 60 to 120 — and the answers go from <strong>Stocking density</strong> 4 birds/m² and <strong>Floor allowance</strong> 0.25 m²/bird to <strong>Stocking density</strong> 8 birds/m² and <strong>Floor allowance</strong> 0.125 m²/bird.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> Stocking density and Floor allowance are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Number of birds left as a guess.</strong> Anything typed into Number of birds is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Usable floor area left as a guess.</strong> Anything typed into Usable floor area is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Number of birds and let the panel round the answer once.</li></ul>
@@ -116,7 +114,9 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Chicken Density calculator work out?', 'a' => 'Stocking density and Floor allowance, from Number of birds and Usable floor area. The relationship is Stocking density = Number of birds ÷ Usable floor area.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Number of birds, Usable floor area (m²). Enter birds and area; Stocking density is the box to leave alone unless it is the value you came for.'],
+            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
+            Number of birds, Usable floor area (m²). Enter number of birds and usable floor area; Stocking density is the box to leave alone unless it is the value you came for.
+            TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Stocking density, Floor allowance, Number of birds and Usable floor area blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

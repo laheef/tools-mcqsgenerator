@@ -11,7 +11,7 @@
 
 return [
     'name' => 'BCA Assay Calculator (standard curve)',
-    'meta' => ['title' => 'BCA Assay Calculator (standard curve) — Biology', 'description' => 'The BCA assay returns a colour, not a concentration: you read absorbance, put it on a standard curve and interpolate. Free bca assay (standard curve) calculat', 'h1' => 'BCA Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'BCA Assay Calculator (standard curve) — Biology', 'description' => 'BCA Assay Calculator (standard curve) takes sample absorbance and returns protein concentration. Every box can be solved for, not only the one in the title.', 'h1' => 'BCA Assay Calculator (standard curve)', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -75,7 +75,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        BCA Assay Calculator (standard curve) takes Sample absorbance, Standard curve slope and Standard curve intercept and returns Protein concentration. Nothing is looked up on this page: Protein concentration is computed from Sample absorbance and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Protein concentration is opened in mg/mL; the chip beside it switches to any unit of the same quantity.
+        BCA Assay Calculator (standard curve) takes Sample absorbance, Standard curve slope and Standard curve intercept and returns Protein concentration. Nothing is looked up on this page: protein concentration is computed from sample absorbance and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Protein concentration is opened in mg/mL; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the BCA Assay Calculator (standard curve) calculator works', 'html' => <<<'TXT'
@@ -121,7 +121,7 @@ return [
             Protein concentration, from Sample absorbance, Standard curve intercept, Standard curve slope and Sample dilution factor. The relationship is Protein concentration = (Sample absorbance − Standard curve intercept) ÷ Standard curve slope × Sample dilution factor.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Sample absorbance, Standard curve slope (per mg/mL), Standard curve intercept, Sample dilution factor (×). With a562, slope and intercept in place, Protein concentration can stay blank and the page will work it out.
+            Sample absorbance, Standard curve slope (per mg/mL), Standard curve intercept, Sample dilution factor (×). With sample absorbance, standard curve slope and standard curve intercept in place, Protein concentration can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Protein concentration and Sample absorbance can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

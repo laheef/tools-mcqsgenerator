@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Goat Years to Human Years Calculator',
-    'meta' => ['title' => 'Goat Years to Human Years Calculator — Biology', 'description' => 'Goat Years to Human Years works out Human-equivalent age and Share of an 18-year lifespan from Goat age. The arithmetic is the whole method: Human-equivalent…', 'h1' => 'Goat Years to Human Years Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Goat Years to Human Years Calculator — Biology', 'description' => 'Goat Years to Human Years Calculator turns goat age into human-equivalent age. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Goat Years to Human Years Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -58,7 +58,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Goat Years to Human Years works out Human-equivalent age and Share of an 18-year lifespan from Goat age. The arithmetic is the whole method: Human-equivalent age is worked out from Goat age by one formula, applied once. Human-equivalent age comes back in years unless you switch the unit chip beside the box.
+        Goat Years to Human Years works out Human-equivalent age and Share of an 18-year lifespan from Goat age. The arithmetic is the whole method: human-equivalent age is worked out from goat age by one formula, applied once. Human-equivalent age comes back in years unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Goat Years to Human Years calculator works', 'html' => <<<'TXT'
@@ -68,16 +68,16 @@ return [
             <p>Fill in 1 box and the page has everything it needs.</p><ul><li><strong>Goat age</strong> — in years. Use decimals for months, e.g. 0.5 for six months</li></ul><p>The answers come back as Human-equivalent age in years, Share of an 18-year lifespan in %. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Goat age = 3 years gives &lt;strong&gt;Human-equivalent age&lt;/strong&gt; = 23 years and &lt;strong&gt;Share of an 18-year lifespan&lt;/strong&gt; = 16.67 %.</p><ul><li><strong>Human-equivalent age</strong> = 23 years</li><li><strong>Share of an 18-year lifespan</strong> = 16.67 %</li></ul><p>The line behind those figures is <strong>Human-equivalent age</strong> = <code>if_else(Goat age&lt;=1, Goat age × 18, 18 + (Goat age − 1) × 2.5)</code> — nothing in it is a constant the page keeps to itself.</p>
+            <p>With the defaults in place, Goat age = 3 years gives <strong>Human-equivalent age</strong> = 23 years and <strong>Share of an 18-year lifespan</strong> = 16.67 %.</p><ul><li><strong>Human-equivalent age</strong> = 23 years</li><li><strong>Share of an 18-year lifespan</strong> = 16.67 %</li></ul><p>The line behind those figures is <strong>Human-equivalent age</strong> = <code>if_else(Goat age&lt;=1, Goat age × 18, 18 + (Goat age − 1) × 2.5)</code> — nothing in it is a constant the page keeps to itself.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Human-equivalent age&lt;/strong&gt; = 23 and &lt;strong&gt;Share of an 18-year lifespan&lt;/strong&gt; = 16.67. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Human-equivalent age is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Human-equivalent age</strong> = 23 and <strong>Share of an 18-year lifespan</strong> = 16.67. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Human-equivalent age is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Human-equivalent age</strong> = <code>if_else(Goat age&lt;=1, Goat age × 18, 18 + (Goat age − 1) × 2.5)</code></li><li><strong>Share of an 18-year lifespan</strong> = <code>Goat age ÷ 18 × 100</code></li><li><strong>Goat age</strong> = <code>if_else(Human-equivalent age&lt;=18, Human-equivalent age ÷ 18, 1 + (Human-equivalent age − 18) ÷ 2.5)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Human-equivalent age</strong> = <code>if_else(Goat age&lt;=1, Goat age × 18, 18 + (Goat age − 1) × 2.5)</code> — the form to use when Goat age are the values you have.</li><li><strong>Share of an 18-year lifespan</strong> = <code>Goat age ÷ 18 × 100</code> — the form to use when Goat age are the values you have.</li><li><strong>Goat age</strong> = <code>if_else(Human-equivalent age&lt;=18, Human-equivalent age ÷ 18, 1 + (Human-equivalent age − 18) ÷ 2.5)</code> — the form to use when Human-equivalent age are the values you have.</li></ul><p>Any one of Human-equivalent age, Share of an 18-year lifespan and Goat age can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Goat age, from 3 to 6 — and the answers go from &lt;strong&gt;Human-equivalent age&lt;/strong&gt; 23 years and &lt;strong&gt;Share of an 18-year lifespan&lt;/strong&gt; 16.67 % to &lt;strong&gt;Human-equivalent age&lt;/strong&gt; 30.5 years and &lt;strong&gt;Share of an 18-year lifespan&lt;/strong&gt; 33.33 %.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Goat age, from 3 to 6 — and the answers go from <strong>Human-equivalent age</strong> 23 years and <strong>Share of an 18-year lifespan</strong> 16.67 % to <strong>Human-equivalent age</strong> 30.5 years and <strong>Share of an 18-year lifespan</strong> 33.33 %.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> Human-equivalent age and Share of an 18-year lifespan are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Goat age left as a guess.</strong> Anything typed into Goat age is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Goat age to one scale before entering anything.</li></ul>
@@ -111,7 +111,7 @@ return [
             ['q' => 'What does the Goat Years to Human Years calculator work out?', 'a' => <<<'TXT'
             Human-equivalent age and Share of an 18-year lifespan, from Goat age. The relationship is Human-equivalent age = if_else(Goat age<=1, Goat age × 18, 18 + (Goat age − 1) × 2.5).
             TXT],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Goat age (years). With years in place, Human-equivalent age can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Goat age (years). With goat age in place, Human-equivalent age can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Human-equivalent age, Share of an 18-year lifespan and Goat age blank and the page solves for that one instead — nothing has to be switched first.
             TXT],

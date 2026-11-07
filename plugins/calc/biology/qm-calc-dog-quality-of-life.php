@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Dog quality of life',
-    'meta' => ['title' => 'Dog quality of life — Free Online Calculator', 'description' => <<<'TXT'
-    Enter Mobility, Nutrition (food intake) and Hydration (water intake) into Dog quality of life and the answer comes back as results. Your dog&#039;s ability to…
-    TXT, 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog quality of life — Free Online Calculator', 'description' => 'Enter Mobility, Nutrition (food intake) and Hydration (water intake) into dog quality of life and the answer comes back as results. A worked example follows.', 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
     'raw' => [
         'vars' => [
             'item1' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => '8sGHxdXKoGDpxOFbptD01'],
@@ -268,7 +266,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Mobility, Nutrition (food intake) and Hydration (water intake) into Dog quality of life and the answer comes back as results. Nothing is looked up on this page: results is computed from Mobility and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        Enter Mobility, Nutrition (food intake) and Hydration (water intake) into Dog quality of life and the answer comes back as results. Nothing is looked up on this page: results is computed from mobility and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
             ['title' => 'How the Dog quality of life calculator works', 'html' => <<<'TXT'
@@ -311,7 +309,7 @@ return [
             results, from Mobility, Nutrition (food intake), Hydration (water intake) and Interaction and attitude. The relationship is results = (Mobility + Nutrition (food intake) + Hydration (water intake) + Interaction and attitude + Favorite things + Urination and defecation.).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Mobility, Nutrition (food intake), Hydration (water intake), Urination and defecation, Interaction and attitude. Fill item1, item2 and item3 and leave results empty if you would rather have that one solved instead.
+            Mobility, Nutrition (food intake), Hydration (water intake), Urination and defecation, Interaction and attitude. Fill mobility, nutrition (food intake) and hydration (water intake) and leave results empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             The arithmetic runs at full precision and only the display of results is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.

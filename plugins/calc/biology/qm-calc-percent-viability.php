@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Percent Viability Calculator',
-    'meta' => ['title' => 'Percent Viability Calculator — Formula & Results', 'description' => 'Enter Live cells and Dead cells into Percent Viability and the answer comes back as Viability and Non-viable. There is no hidden constant here: change…', 'h1' => 'Percent Viability Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Percent Viability Calculator — Formula & Results', 'description' => 'Percent Viability Calculator turns live cells and dead cells into non-viable and live to dead ratio. Every box can be solved for, not only the one in the title.', 'h1' => 'Percent Viability Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -73,7 +73,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Live cells and Dead cells into Percent Viability and the answer comes back as Viability and Non-viable. There is no hidden constant here: change Viability and Live cells moves with it. The main result, Viability, is reported in %.
+        Enter Live cells and Dead cells into Percent Viability and the answer comes back as Viability and Non-viable. There is no hidden constant here: change viability and live cells moves with it. The main result, Viability, is reported in %.
         TXT,
         'sections' => [
             ['title' => 'How the Percent Viability calculator works', 'html' => <<<'TXT'
@@ -83,16 +83,16 @@ return [
             <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Live cells</strong> — in cells</li><li><strong>Dead cells</strong> — in cells</li></ul><p>The result boxes are Viability in %, Non-viable in %, Live to dead ratio in :1; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>Take the values the form starts on, Live cells = 920 cells and Dead cells = 80 cells; the answers are &lt;strong&gt;Viability&lt;/strong&gt; = 92 %, &lt;strong&gt;Non-viable&lt;/strong&gt; = 8 % and &lt;strong&gt;Live to dead ratio&lt;/strong&gt; = 11.5 :1.</p><ul><li><strong>Viability</strong> = 92 %</li><li><strong>Non-viable</strong> = 8 %</li><li><strong>Live to dead ratio</strong> = 11.5 :1</li></ul><p>That is <strong>Viability</strong> = <code>Live cells ÷ (Live cells + Dead cells) × 100</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>Take the values the form starts on, Live cells = 920 cells and Dead cells = 80 cells; the answers are <strong>Viability</strong> = 92 %, <strong>Non-viable</strong> = 8 % and <strong>Live to dead ratio</strong> = 11.5 :1.</p><ul><li><strong>Viability</strong> = 92 %</li><li><strong>Non-viable</strong> = 8 %</li><li><strong>Live to dead ratio</strong> = 11.5 :1</li></ul><p>That is <strong>Viability</strong> = <code>Live cells ÷ (Live cells + Dead cells) × 100</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>A sanity check costs one glance: the page&#039;s defaults give &lt;strong&gt;Viability&lt;/strong&gt; = 92, &lt;strong&gt;Non-viable&lt;/strong&gt; = 8 and &lt;strong&gt;Live to dead ratio&lt;/strong&gt; = 11.5. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Viability is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Viability</strong> = 92, <strong>Non-viable</strong> = 8 and <strong>Live to dead ratio</strong> = 11.5. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Viability is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Viability</strong> = <code>Live cells ÷ (Live cells + Dead cells) × 100</code></li><li><strong>Non-viable</strong> = <code>Dead cells ÷ (Live cells + Dead cells) × 100</code></li><li><strong>Live to dead ratio</strong> = <code>Live cells ÷ Dead cells</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Viability</strong> = <code>Live cells ÷ (Live cells + Dead cells) × 100</code> — the form to use when Live cells and Dead cells are the values you have.</li><li><strong>Non-viable</strong> = <code>Dead cells ÷ (Live cells + Dead cells) × 100</code> — the form to use when Dead cells and Live cells are the values you have.</li><li><strong>Live to dead ratio</strong> = <code>Live cells ÷ Dead cells</code> — the form to use when Live cells and Dead cells are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Viability, Non-viable and Live to dead ratio can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Take the example above and double Live cells from 920 to 1840, leaving every other box alone. The panel moves from &lt;strong&gt;Viability&lt;/strong&gt; 92 %, &lt;strong&gt;Non-viable&lt;/strong&gt; 8 % and &lt;strong&gt;Live to dead ratio&lt;/strong&gt; 11.5 :1 to &lt;strong&gt;Viability&lt;/strong&gt; 95.83 %, &lt;strong&gt;Non-viable&lt;/strong&gt; 4.17 % and &lt;strong&gt;Live to dead ratio&lt;/strong&gt; 23 :1.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
+            <p>Take the example above and double Live cells from 920 to 1840, leaving every other box alone. The panel moves from <strong>Viability</strong> 92 %, <strong>Non-viable</strong> 8 % and <strong>Live to dead ratio</strong> 11.5 :1 to <strong>Viability</strong> 95.83 %, <strong>Non-viable</strong> 4.17 % and <strong>Live to dead ratio</strong> 23 :1.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> Viability, Non-viable and Live to dead ratio are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Live cells left as a guess.</strong> Anything typed into Live cells is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Dead cells left as a guess.</strong> Anything typed into Dead cells is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Live cells and let the panel round the answer once.</li></ul>
@@ -121,7 +121,7 @@ return [
         ],
         'faq' => [
             ['q' => 'What does the Percent Viability calculator work out?', 'a' => 'Viability, Non-viable and Live to dead ratio, from Live cells and Dead cells. The relationship is Viability = Live cells ÷ (Live cells + Dead cells) × 100.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Live cells (cells), Dead cells (cells). With live and dead in place, Viability can stay blank and the page will work it out.'],
+            ['q' => 'Which values do I need before I start?', 'a' => 'Live cells (cells), Dead cells (cells). With live cells and dead cells in place, Viability can stay blank and the page will work it out.'],
             ['q' => 'Can it solve for a different variable?', 'a' => 'Yes. Viability, Non-viable and Live to dead ratio can each be the answer: the page works out which box is empty and rearranges the relationship for it.'],
             ['q' => 'What answer do the default values give?', 'a' => <<<'TXT'
             Viability = 92 %, Non-viable = 8 % and Live to dead ratio = 11.5 :1. Those are the defaults written into the form — move Live cells and every result box follows.

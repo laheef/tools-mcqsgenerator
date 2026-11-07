@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog Metacam dosage',
-    'meta' => ['title' => 'Dog Metacam dosage — Free Online Calculator', 'description' => 'Enter Dog\'s weight, Metacam form and Solution\'s strength into Dog Metacam dosage and the answer comes back as Tablets Maintain1 and Tablets Maintain25.', 'h1' => 'Dog Metacam dosage Calculator', 'updated' => '2026-08-19'],
+    'meta' => ['title' => 'Dog Metacam dosage — Free Online Calculator', 'description' => 'Enter Dog\'s weight, Metacam form and Solution\'s strength into dog Metacam dosage and the answer comes back as tablets Maintain1 and Tablets Maintain25.', 'h1' => 'Dog Metacam dosage Calculator', 'updated' => '2026-08-19'],
     'raw' => [
         'vars' => [
             'firstAmount' => [
@@ -303,7 +303,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Dog's weight, Metacam form and Solution's strength into Dog Metacam dosage and the answer comes back as Tablets Maintain1 and Tablets Maintain25. Nothing is looked up on this page: Tablets Maintain1 is computed from Dog's weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        Enter Dog's weight, Metacam form and Solution's strength into Dog Metacam dosage and the answer comes back as Tablets Maintain1 and Tablets Maintain25. Nothing is looked up on this page: tablets Maintain1 is computed from dog's weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
         TXT,
         'sections' => [
             ['title' => 'How the Dog Metacam dosage calculator works', 'html' => <<<'TXT'
@@ -344,7 +344,7 @@ return [
         'faq' => [
             ['q' => 'What does the Dog Metacam dosage calculator work out?', 'a' => 'Tablets Maintain1 and Tablets Maintain25, from Dog\'s weight. The relationship is Tablets Maintain1 = get_tablets_1(Dog\'s weight).'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Dog's weight (kilograms), Metacam form, Solution's strength, firstDay, otherDoses. Enter weight, form and strength; Tablets Maintain1 is the box to leave alone unless it is the value you came for.
+            Dog's weight (kilograms), Metacam form, Solution's strength, firstDay, otherDoses. Enter dog's weight, metacam form and solution's strength; Tablets Maintain1 is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => 'It can. Leave any of Tablets Maintain1 and Tablets Maintain25 blank and the page solves for that one instead — nothing has to be switched first.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'

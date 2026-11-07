@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Feed conversion ratio',
-    'meta' => ['title' => 'Feed conversion ratio — Free Online Calculator', 'description' => 'Feed conversion ratio takes Final animal(s) weight and Total weight gain by the animal(s) and returns Total feed consumed and Initial animal(s) weight.', 'h1' => 'Feed conversion ratio Calculator', 'updated' => '2026-08-06'],
+    'meta' => ['title' => 'Feed conversion ratio — Free Online Calculator', 'description' => 'Enter total feed consumed, product type and initial animal(s) weight and Feed conversion ratio returns total weight gain by the animal(s) and FCR (meat).', 'h1' => 'Feed conversion ratio Calculator', 'updated' => '2026-08-06'],
     'raw' => [
         'vars' => [
             'cost_FeedPerWeight' => [
@@ -796,7 +796,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Feed conversion ratio takes Final animal(s) weight and Total weight gain by the animal(s) and returns Total feed consumed and Initial animal(s) weight. There is no hidden constant here: change Total feed consumed and Final animal(s) weight moves with it. The main result, Total feed consumed, is reported in kilograms.
+        Feed conversion ratio takes Final animal(s) weight and Total weight gain by the animal(s) and returns Total feed consumed and Initial animal(s) weight. There is no hidden constant here: change total feed consumed and final animal(s) weight moves with it. The main result, Total feed consumed, is reported in kilograms.
         TXT,
         'sections' => [
             ['title' => 'How the Feed conversion ratio calculator works', 'html' => <<<'TXT'
@@ -835,7 +835,7 @@ return [
             Total feed consumed, Initial animal(s) weight, Weight of milk produced and Weight of eggs produced, from Final animal(s) weight and Total weight gain by the animal(s). The relationship is Initial animal(s) weight = Final animal(s) weight − Total weight gain by the animal(s).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Final animal(s) weight (kilograms), Total weight gain by the animal(s) (kilograms). With final_weight and total_product in place, Total feed consumed can stay blank and the page will work it out.
+            Final animal(s) weight (kilograms), Total weight gain by the animal(s) (kilograms). With final animal(s) weight and total weight gain by the animal(s) in place, Total feed consumed can stay blank and the page will work it out.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Initial animal(s) weight, Final animal(s) weight, Total weight gain by the animal(s) and Total weight of the live animals blank and the page solves for that one instead — nothing has to be switched first.

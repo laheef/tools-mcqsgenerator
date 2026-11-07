@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Daily light integral (DLI)',
-    'meta' => ['title' => 'Daily light integral (DLI) — Formula & Results', 'description' => <<<'TXT'
-    Daily light integral (DLI) turns Photon flux density (PPFD) and Daily light integral (DLI) into Light hours per day. The arithmetic is the whole method: Light…
-    TXT, 'h1' => 'Daily light integral (DLI) Calculator', 'updated' => '2026-08-12'],
+    'meta' => ['title' => 'Daily light integral (DLI) — Formula & Results', 'description' => 'Daily light integral (DLI) works out daily light integral (DLI) and reports both. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Daily light integral (DLI) Calculator', 'updated' => '2026-08-12'],
     'raw' => [
         'vars' => [
             'dli' => [
@@ -124,7 +122,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Daily light integral (DLI) turns Photon flux density (PPFD) and Daily light integral (DLI) into Light hours per day. The arithmetic is the whole method: Light hours per day is worked out from Photon flux density (PPFD) by one formula, applied once. Light hours per day comes back in hours unless you switch the unit chip beside the box.
+        Daily light integral (DLI) turns Photon flux density (PPFD) and Daily light integral (DLI) into Light hours per day. The arithmetic is the whole method: light hours per day is worked out from photon flux density (PPFD) by one formula, applied once. Light hours per day comes back in hours unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Daily light integral (DLI) calculator works', 'html' => <<<'TXT'
@@ -134,16 +132,16 @@ return [
             <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Photon flux density (PPFD)</strong> — in μmol/s·m². PPFD is photosynthetic photon flux density.</li><li><strong>Daily light integral (DLI)</strong> — in mol/m²/day</li></ul><p>The answer comes back as Light hours per day in hours. The page writes that box; there is nothing to submit or save before you can read it.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
-            <p>With the defaults in place, Photon flux density (PPFD) = 10 μmol/s·m² and Daily light integral (DLI) = 100 mol/m²/day gives &lt;strong&gt;Light hours per day&lt;/strong&gt; = 2778 hrs.</p><ul><li><strong>Light hours per day</strong> = 2778 hrs</li></ul><p>That is <strong>Light hours per day</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD)</code>, with each symbol replaced by one of the boxes above.</p>
+            <p>With the defaults in place, Photon flux density (PPFD) = 10 μmol/s·m² and Daily light integral (DLI) = 100 mol/m²/day gives <strong>Light hours per day</strong> = 2778 hrs.</p><ul><li><strong>Light hours per day</strong> = 2778 hrs</li></ul><p>That is <strong>Light hours per day</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD)</code>, with each symbol replaced by one of the boxes above.</p>
             TXT],
             ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>Treat the size of a result as part of the answer: &lt;strong&gt;Light hours per day&lt;/strong&gt; = 2778 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Light hours per day offers 18 units and opens on hours, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
+            <p>Treat the size of a result as part of the answer: <strong>Light hours per day</strong> = 2778 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Light hours per day offers 18 units and opens on hours, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Light hours per day</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD)</code></li><li><strong>Daily light integral (DLI)</strong> = <code>(9 ÷ 2500) × Light hours per day × Photon flux density (PPFD)</code></li><li><strong>Photon flux density (PPFD)</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Light hours per day</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Light hours per day</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD)</code> — the form to use when Daily light integral (DLI) and Photon flux density (PPFD) are the values you have.</li><li><strong>Daily light integral (DLI)</strong> = <code>(9 ÷ 2500) × Light hours per day × Photon flux density (PPFD)</code> — the form to use when Light hours per day and Photon flux density (PPFD) are the values you have.</li><li><strong>Photon flux density (PPFD)</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Light hours per day</code> — the form to use when Light hours per day and Daily light integral (DLI) are the values you have.</li></ul><p>Any one of Light hours per day, Daily light integral (DLI) and Photon flux density (PPFD) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>Change one box only — Photon flux density (PPFD), from 10 to 20 — and the answers go from &lt;strong&gt;Light hours per day&lt;/strong&gt; 2778 hrs to &lt;strong&gt;Light hours per day&lt;/strong&gt; 1389 hrs.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            <p>Change one box only — Photon flux density (PPFD), from 10 to 20 — and the answers go from <strong>Light hours per day</strong> 2778 hrs to <strong>Light hours per day</strong> 1389 hrs.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
             TXT],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Light hours per day is a result filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Photon flux density (PPFD) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Photon flux density (PPFD) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Daily light integral (DLI) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Daily light integral (DLI) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Photon flux density (PPFD) to one scale before entering anything.</li></ul>
@@ -175,7 +173,7 @@ return [
             Light hours per day, from Daily light integral (DLI) and Photon flux density (PPFD). The relationship is Light hours per day = (2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Photon flux density (PPFD) (μmol/s·m²), Daily light integral (DLI) (mol/m²/day). Fill ppfd and dli and leave Light hours per day empty if you would rather have that one solved instead.
+            Photon flux density (PPFD) (μmol/s·m²), Daily light integral (DLI) (mol/m²/day). Fill photon flux density (PPFD) and daily light integral (DLI) and leave Light hours per day empty if you would rather have that one solved instead.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Light hours per day, Daily light integral (DLI) and Photon flux density (PPFD) blank and the page solves for that one instead — nothing has to be switched first.

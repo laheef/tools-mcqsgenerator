@@ -11,9 +11,7 @@
 
 return [
     'name' => 'Pasture Stocking Rate Calculator',
-    'meta' => ['title' => 'Pasture Stocking Rate Calculator — Formula & Results', 'description' => <<<'TXT'
-    The arithmetic is the whole method: Animals carried is worked out from Pasture area by one formula, applied once. Temperate pasture: 6,000–12,000Utilisation…
-    TXT, 'h1' => 'Pasture Stocking Rate Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Pasture Stocking Rate Calculator — Formula & Results', 'description' => 'Pasture Stocking Rate Calculator works out animals carried and Livestock units (1 LU = 600 kg cow) from pasture area, pasture dry-matter yield and utilisation.', 'h1' => 'Pasture Stocking Rate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -117,7 +115,7 @@ return [
     ],
     'article' => [
         'intro' => <<<'TXT'
-        Enter Pasture area, Pasture dry-matter yield and Utilisation into Pasture Stocking Rate and the answer comes back as Animals carried and Livestock units (1 LU = 600 kg cow). The arithmetic is the whole method: Animals carried is worked out from Pasture area by one formula, applied once. Animals carried comes back in head unless you switch the unit chip beside the box.
+        Enter Pasture area, Pasture dry-matter yield and Utilisation into Pasture Stocking Rate and the answer comes back as Animals carried and Livestock units (1 LU = 600 kg cow). The arithmetic is the whole method: animals carried is worked out from pasture area by one formula, applied once. Animals carried comes back in head unless you switch the unit chip beside the box.
         TXT,
         'sections' => [
             ['title' => 'How the Pasture Stocking Rate calculator works', 'html' => <<<'TXT'
@@ -154,7 +152,7 @@ return [
             Animals carried, Livestock units (1 LU = 600 kg cow), Pasture per animal and Usable dry matter, from Pasture area, Pasture dry-matter yield and Utilisation. The relationship is Usable dry matter = Pasture area × Pasture dry-matter yield × Utilisation ÷ 100.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Pasture area (ha), Pasture dry-matter yield (kg/ha/yr), Utilisation (%), Daily dry-matter intake per animal (kg/day), Grazing days per year (days). Enter area, dm_yield and use; Animals carried is the box to leave alone unless it is the value you came for.
+            Pasture area (ha), Pasture dry-matter yield (kg/ha/yr), Utilisation (%), Daily dry-matter intake per animal (kg/day), Grazing days per year (days). Enter pasture area, pasture dry-matter yield and utilisation; Animals carried is the box to leave alone unless it is the value you came for.
             TXT],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
             It can. Leave any of Usable dry matter, Animals carried, Livestock units (1 LU = 600 kg cow) and Pasture per animal blank and the page solves for that one instead — nothing has to be switched first.
