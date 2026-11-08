@@ -593,6 +593,127 @@ LITERATURE: dict[str, list[tuple[dict, dict, float]]] = {
          {"hole_diameter": 0.6875, "edge_distance": 0.9375, "hole_area": 0.3712,
           "grip_ratio": 1.2}, 0.02),
     ],
+
+    # Batch 6: worked with plain arithmetic, step by step, not from the expressions.
+    "ac-tonnage": [
+        ({'length': 20, 'width': 15, 'btu_per_ft2': 25, 'safety': 10, 'price_per_ton': 1200},
+         {"area_ft2": 300, "btu": 8250, "tons": 0.6875, "cost": 825}, 0.02),
+    ],
+    "air-changes-per-hour": [
+        ({'length': 15, 'width': 12, 'height': 8, 'cfm': 200},
+         {"volume_ft3": 1440, "air_per_hour": 12000, "ach": 8.3333, "minutes_per_change": 7.2}, 0.02),
+    ],
+    "air-conditioner-room-size": [
+        ({'tons': 1.5, 'btu_per_ft2': 25, 'safety': 10},
+         {"btu": 18000, "area_ft2": 654.5455, "area_m2": 60.8094, "kw": 5.2753}, 0.02),
+    ],
+    "boiler-size": [
+        ({'heated_area': 2000, 'btu_per_ft2': 40, 'efficiency': 85},
+         {"load_btu": 80000, "output_btu": 94117.6471, "load_kw": 23.4452,
+          "output_kw": 27.5826}, 0.02),
+    ],
+    "cfm": [
+        ({'duct_width': 12, 'duct_height': 8, 'velocity': 800},
+         {"area_ft2": 0.6667, "cfm": 533.3333, "m3h": 906.1387, "velocity_fps": 13.3333}, 0.02),
+    ],
+    "fire-flow": [
+        ({'coefficient': 0.9, 'nozzle_diameter': 2.5, 'pressure': 50},
+         {"gpm": 1186.4906, "lpm": 4491.317, "flow_per_psi": 11.806, "nozzle_area": 4.9087}, 0.02),
+    ],
+    "furnace-size": [
+        ({'cfm': 1200, 'temp_rise': 40, 'efficiency': 80},
+         {"output_btu": 51840, "input_btu": 64800, "output_kw": 15.1934,
+          "cfm_per_ton": 277.7778}, 0.02),
+    ],
+    "gallons-per-minute": [
+        ({'gallons': 500, 'minutes': 20},
+         {"gpm": 25, "lpm": 94.6353, "lps": 1.5773, "gallons_per_hour": 1500}, 0.02),
+    ],
+    "heat-loss": [
+        ({'area': 2000, 'u_value': 0.1, 'delta_t': 50},
+         {"loss_btu": 10000, "loss_kw": 2.9307, "loss_per_ft2": 5, "r_value": 10}, 0.02),
+    ],
+    "junction-box-sizing": [
+        ({'conductors': 8, 'devices': 1, 'clamps': 1, 'grounds': 1, 'conductor_volume': 2.25},
+         {"unit_count": 12, "required_volume": 27, "min_box": 30, "units_left": 13.3333}, 0.02),
+    ],
+    "liters-per-minute": [
+        ({'liters': 200, 'seconds': 60},
+         {"lpm": 200, "lps": 3.3333, "gpm": 52.8343, "m3h": 12}, 0.02),
+    ],
+    "tonnage": [
+        ({'btu': 36000},
+         {"tons": 3, "kw": 10.5513, "hp": 14.1487, "btu_per_ton": 12000}, 0.02),
+    ],
+    "bending-stress": [
+        ({'moment': 12000, 'c': 2, 'inertia': 10},
+         {"stress": 2400, "stress_mpa": 16.5474, "section_modulus": 5, "stress_ksi": 2.4}, 0.02),
+    ],
+    "bolt-torque": [
+        ({'force': 8000, 'diameter': 0.5, 'k_factor': 0.2},
+         {"torque_ftlb": 66.6667, "torque_nm": 90.388, "stress_psi": 40743.7,
+          "torque_inlb": 800}, 0.02),
+    ],
+    "carbon-equivalent": [
+        ({'carbon': 0.2, 'manganese': 1.0, 'chromium': 0.1, 'molybdenum': 0, 'vanadium': 0,
+          'nickel': 0.1, 'copper': 0.1},
+         {"ce": 0.4, "alloy_effect": 0.2, "margin": 0, "preheat": 0}, 0.02),
+    ],
+    "countersink-depth": [
+        ({'head_diameter': 0.4, 'shaft_diameter': 0.16, 'angle': 82},
+         {"depth": 0.138, "depth_mm": 3.5063, "radius_diff": 0.12, "cone_volume": 0.0021}, 0.02),
+    ],
+    "k-factor": [
+        ({'angle': 90, 'inside_radius': 0.125, 'thickness': 0.05, 'k_factor': 0.44},
+         {"bend_allowance": 0.2309, "neutral_radius": 0.147, "setback": 0.175,
+          "bend_deduction": 0.1191}, 0.02),
+    ],
+    "material-removal-rate": [
+        ({'width_cut': 0.5, 'depth_cut': 0.1, 'feed_rate': 20},
+         {"mrr": 1, "mrr_cm3": 16.3871, "mrr_hour": 60, "time_per_in3": 1}, 0.02),
+    ],
+    "pitch-diameter": [
+        ({'major_diameter': 0.5, 'tpi': 13},
+         {"pitch": 0.076923, "pitch_diameter": 0.450037, "minor_diameter": 0.405623,
+          "thread_height": 0.047187}, 0.02),
+    ],
+    "punch-force": [
+        ({'diameter': 0.5, 'thickness': 0.125, 'shear_strength': 50000},
+         {"force_lb": 9817.477, "force_tons": 4.9087, "force_kn": 43.6705,
+          "shear_area": 0.19635}, 0.02),
+    ],
+    "rivet-size": [
+        ({'thickness': 0.125, 'rivet_factor': 1.2},
+         {"rivet_diameter": 0.424264, "edge_distance": 0.848528, "pitch": 1.272793,
+          "rivets_per_ft": 10.4281}, 0.02),
+    ],
+    "spindle-speed": [
+        ({'sfm': 300, 'diameter': 0.5},
+         {"rpm": 2291.831, "surface_m_min": 91.44, "rpm_per_sfm": 7.6394}, 0.02),
+    ],
+    "taper": [
+        ({'large_diameter': 1.0, 'small_diameter': 0.8, 'length': 4},
+         {"taper_per_inch": 0.05, "taper_per_ft": 0.6, "half_angle": 1.4321,
+          "included_angle": 2.8642}, 0.02),
+    ],
+    "thread": [
+        ({'major_diameter': 0.5, 'tpi': 13},
+         {"pitch": 0.076923, "minor_diameter": 0.405623, "tap_drill": 0.423077}, 0.02),
+    ],
+    "thread-pitch": [
+        ({'pitch_mm': 1.5},
+         {"tpi": 16.9333, "pitch_in": 0.059055, "pitch_um": 1500, "threads_per_cm": 6.6667}, 0.02),
+    ],
+    "true-position": [
+        ({'deviation_x': 0.01, 'deviation_y': 0.005},
+         {"true_position": 0.0223607, "true_position_mm": 0.56796, "radius": 0.0111803,
+          "zone_area": 0.0003927}, 0.02),
+    ],
+    "welding": [
+        ({'leg': 0.25, 'length': 100, 'efficiency': 65, 'price': 4},
+         {"throat": 0.176775, "volume": 3.125, "weight": 0.88625, "electrode": 1.36346,
+          "cost": 5.45385}, 0.02),
+    ],
 }
 
 class Engine:
