@@ -522,7 +522,7 @@ SPECS = [
         slug="concrete-stairs",
         name="Concrete stairs",
         title="Concrete Stairs Calculator: Steps and Volume",
-        desc="Work out the concrete a flight of steps takes, from the rise, the tread, the waist slab under it and the landing, in cubic feet, yards and bags.",
+        desc="Work out the concrete a flight of steps takes, from the rise, the tread, the waist slab under it and the landing, in cubic feet, yards and bags. All shown.",
         what=("<p>A cast flight is three volumes: the <strong>step wedges</strong>, the <strong>sloped "
               "waist slab</strong> under them, and the <strong>landing</strong>. The waist is usually the "
               "largest part of the pour and the part most estimates forget.</p>"),

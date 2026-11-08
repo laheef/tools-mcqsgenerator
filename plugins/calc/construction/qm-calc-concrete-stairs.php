@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Concrete stairs',
-    'meta' => ['title' => 'Concrete Stairs Calculator: Steps and Volume', 'description' => 'Work out the concrete a flight of steps takes, from the rise, the tread, the waist slab under it and the landing, in cubic feet, yards and bags. Units shown.', 'h1' => 'Concrete stairs', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Concrete Stairs Calculator: Steps and Volume', 'description' => 'Work out the concrete a flight of steps takes, from the rise, the tread, the waist slab under it and the landing, in cubic feet, yards and bags. All shown.', 'h1' => 'Concrete stairs', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,

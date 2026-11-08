@@ -138,8 +138,111 @@ LITERATURE: dict[str, list[tuple[dict, dict, float]]] = {
         ({'length': 10, 'width': 10, 'depth': 4, 'density': 1.5, 'price': 40},
          {"volume_yd3": 1.2346, "tons": 1.8519, "cost": 74.0741}, 0.02),
     ],
+    "lumber": [
+        ({'length': 10, 'width': 4, 'thickness': 2, 'quantity': 5, 'price': 3},
+         {"volume_piece": 0.5556, "total_volume": 2.7778, "board_feet": 33.3333, "total_length": 50, "cost": 100}, 0.02),
+    ],
+    "board-foot": [
+        ({'width': 8, 'thickness': 2, 'length': 6, 'pieces': 3, 'price': 5},
+         {"board_feet": 24, "volume_ft3": 2.0, "total_length": 18, "cost": 120}, 0.02),
+    ],
+    "lumber-weight": [
+        ({'width': 6, 'thickness': 2, 'length': 8, 'pieces': 4, 'density': 30},
+         {"volume_piece": 0.6667, "weight_piece": 20, "weight_total": 80, "weight_kg": 36.2874}, 0.02),
+    ],
+    "plywood": [
+        ({'length': 16, 'width': 10, 'sheet_length': 8, 'sheet_width': 4, 'waste': 0, 'price': 40},
+         {"area": 160, "sheets": 5, "waste_area": 0, "cost": 200}, 0.02),
+    ],
+    "framing": [
+        ({'wall_length': 20, 'wall_height': 9, 'spacing': 16, 'openings': 0, 'stud_width': 3.5, 'stud_thickness': 1.5, 'waste': 0},
+         {"studs": 16, "plate_length": 60, "stud_linear": 144, "board_feet": 89.25}, 0.02),
+    ],
+    "floor-joist": [
+        ({'length': 20, 'width': 12, 'spacing': 16, 'joist_depth': 9.25, 'joist_width': 1.5, 'waste': 0},
+         {"joists": 10, "linear_feet": 200, "board_feet": 231.25, "hangers": 20}, 0.02),
+    ],
+    "wood-beam-span": [
+        ({'width': 3.5, 'depth': 9.25, 'fb': 1000, 'load': 300},
+         {"section_modulus": 49.9115, "max_moment": 49911.4583, "max_span": 10.5316}, 0.02),
+    ],
+    "beam-deflection": [
+        ({'span': 12, 'load': 300, 'e': 1600000.0, 'i': 120},
+         {"deflection": 0.729, "limit": 0.4, "margin": -0.329}, 0.02),
+    ],
+    "beam-load": [
+        ({'tributary': 10, 'dead': 15, 'live': 40, 'span': 12},
+         {"total_psf": 55, "line_load": 550, "total_load": 6600, "reaction": 3300}, 0.02),
+    ],
+    "roof-truss": [
+        ({'roof_length': 30, 'span': 24, 'spacing': 24, 'pitch': 6, 'overhang': 12},
+         {"trusses": 16, "rafter_length": 14.5344, "peak_height": 6, "gable_area": 72}, 0.02),
+    ],
+    "rafter-length": [
+        ({'run': 12, 'rise': 6, 'overhang': 18},
+         {"rafter": 15.0935, "pitch": 6, "angle": 26.5651, "multiplier": 1.118}, 0.02),
+    ],
+    "birdsmouth-cut": [
+        ({'pitch': 6, 'seat_cut': 3.5, 'rafter_depth': 9.25},
+         {"roof_angle": 26.5651, "notch_depth": 1.75, "notch_limit": 2.3125, "remaining_depth": 7.5}, 0.02),
+    ],
+    "roof-pitch": [
+        ({'rise': 6, 'run': 12},
+         {"pitch": 6, "angle": 26.5651, "multiplier": 1.118, "rafter": 13.4164}, 0.02),
+    ],
+    "roof-shingle": [
+        ({'length': 30, 'width': 24, 'pitch': 6, 'waste': 10, 'price': 38},
+         {"roof_area": 804.9845, "squares": 8.0498, "bundles": 27, "cost": 1026}, 0.02),
+    ],
+    "roofing": [
+        ({'area': 1200, 'waste': 10, 'bundles_per_square': 3, 'roll_coverage': 400, 'price': 38},
+         {"area_with_waste": 1320, "squares": 13.2, "bundles": 40, "rolls": 4, "cost": 1520}, 0.02),
+    ],
+    "gambrel-roof": [
+        ({'span': 24, 'lower_pitch': 4, 'upper_pitch': 10, 'length': 30},
+         {"total_rise": 7, "lower_area": 379.4733, "upper_area": 468.615, "roof_area": 848.0883}, 0.02),
+    ],
+    "snow-load": [
+        ({'ground': 30, 'exposure': 1.0, 'thermal': 1.1, 'importance': 1.0, 'slope': 30, 'area': 1500},
+         {"flat_load": 23.1, "slope_factor": 1.0, "roof_load": 23.1, "total_load": 34650}, 0.02),
+    ],
+    "door-header-size": [
+        ({'opening': 4, 'load': 300, 'fb': 1000, 'width': 3.5},
+         {"moment": 7200, "s_required": 7.2, "depth_required": 3.5132}, 0.02),
+    ],
+    "stairs": [
+        ({'total_rise': 108, 'riser': 7.5, 'tread': 10, 'width': 3.5},
+         {"risers": 15, "riser_actual": 7.2, "total_run": 11.6667, "stringer": 14.7347, "angle": 37.6476}, 0.02),
+    ],
+    "spiral-staircase": [
+        ({'total_rise': 108, 'riser': 7.5, 'tread_angle': 30, 'outer_radius': 30, 'inner_radius': 6},
+         {"treads": 15, "turns": 1.25, "walkline": 11.781, "tread_width": 24}, 0.02),
+    ],
+    "miter-angle": [
+        ({'joint_angle': 90, 'a_width': 3, 'b_width': 5},
+         {"angle_a": 30.9638, "angle_b": 59.0362}, 0.02),
+    ],
+    "angle-cut": [
+        ({'rise': 6, 'run': 12},
+         {"angle": 26.5651, "mitre": 63.4349, "ratio": 6}, 0.02),
+    ],
+    "arch": [
+        ({'span': 10, 'rise': 2.5},
+         {"radius": 6.25, "angle": 106.2602, "arc_length": 11.5912, "area": 17.4725}, 0.02),
+    ],
+    "shiplap": [
+        ({'area': 200, 'board_width': 6, 'overlap': 1, 'board_length': 8, 'waste': 10},
+         {"exposed_width": 5, "boards": 66, "linear_feet": 528, "coverage_per_board": 3.3333}, 0.02),
+    ],
+    "board-and-batten": [
+        ({'area': 200, 'board_width': 6, 'batten_width': 2, 'batten_spacing': 16, 'board_length': 8, 'waste': 10},
+         {"boards": 55, "battens": 21, "total_linear": 608, "coverage_per_board": 4}, 0.02),
+    ],
+    "decking": [
+        ({'area': 200, 'board_width': 5.5, 'gap': 0.25, 'board_length': 12, 'waste': 10, 'price': 14},
+         {"boards": 39, "linear_feet": 468, "coverage_per_board": 5.75, "cost": 546}, 0.02),
+    ],
 }
-
 
 class Engine:
     """One PHP process, many requests."""
