@@ -194,6 +194,20 @@ final class View
     public static function toolIcon(array $row, string $fallback, int $size = 13, string $class = 'calc-glyph', ?int $hue = null): string
     {
         $own = trim((string) ($row['icon'] ?? ''));
+        /*
+         * Two glyph sets, one row.
+         *
+         * The layout's own set (self::icons()) drew the section marks, while the
+         * tools' data was written against Icons' set, which has twice as many
+         * shapes. A tool whose row said `tile`, `ruler` or `database` matched
+         * neither branch below and fell through to the empty-circle default —
+         * so the same tool could read as its section's picture here and as a
+         * plain circle on the catalogue. Ask Icons first when it is Icons that
+         * knows the name.
+         */
+        if ($own !== '' && !self::hasIcon($own) && Icons::has($own)) {
+            return Icons::svg($own, $size, $class, $hue);
+        }
         $name = self::hasIcon($own) ? $own : (self::hasIcon($fallback) ? $fallback : 'star');
         /* A tool with its own glyph keeps the accent of the page it lives on; a
            tool wearing its section's glyph takes an accent of its own, so two

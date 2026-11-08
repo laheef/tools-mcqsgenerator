@@ -3492,6 +3492,13 @@ a:focus-visible > .calc-glyph,
 
 .section-title--sm { font-size: 19px; letter-spacing: -.1px; margin-bottom: 14px; }
 .tool-subsection { margin-top: 8px; }
+/* Each subgroup is its own band: a heading, then its rows. Without a gap the
+   next heading sat on the card above it, which read as one long list with
+   labels dropped into it. */
+.tool-subsection-block + .tool-subsection-block { margin-top: 26px; }
+.tool-subsection-block .section-title { margin-bottom: 10px; }
+.tool-subsection-block .section-title a { color: inherit; text-decoration: none; }
+.tool-subsection-block .section-title a:hover { color: var(--brand-ink); text-decoration: underline; }
 
 .empty-state {
   padding: 26px 28px 28px;

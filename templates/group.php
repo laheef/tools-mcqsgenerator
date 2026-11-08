@@ -52,25 +52,42 @@ $rows = $matches($rows);
 $shown = $rows;
 $found = $isSub ? count($rows) : count($matches(Groups::toolsOfGroup((string) $section['slug'])));
 
-$card = static function (array $row) use ($icon, $section): string {
-    $desc = View::excerpt((string) ($row['description'] ?? ''), 120);
+/*
+ * The card is the catalogue's card.
+ *
+ * This page used to draw its own: an icon and an uppercased section name above
+ * a title, in a taller box that only ever held one column at a time. A reader who
+ * had come from /all-tools met a different shape for the same object, and a group
+ * of six tools turned into six full-width slabs. The row below is the same
+ * .browse-item the catalogue renders — same 20px glyph, same name/description
+ * stack, same section tag on the right — so a tool looks like itself wherever it
+ * is listed, and the group's tools sit two to a line like the catalogue's.
+ *
+ * `data-search-item` sits on the <li>, not on the link: the live filter hides the
+ * element it is put on, and hiding the anchor alone would leave the cell behind.
+ */
+$card = static function (array $row) use ($section): string {
+    $desc = View::excerpt((string) ($row['description'] ?? ''), 150);
     $href = View::url((string) $row['path']);
-    $sectionName = (string) $section['name'];
     /* A tool filed in a subgroup says which one, so a card lifted out of the
        group page still tells you what kind of tool it is. */
-    $label = '';
+    $label = (string) ($section['name'] ?? '');
     if (isset($row['cat']) && (string) $row['cat'] !== (string) $section['slug']) {
         $label = Groups::label((string) $row['cat']);
     }
+    $rowSection = (string) ($row['group'] ?? Groups::groupOf((string) ($row['cat'] ?? '')));
+    $rowHue = $rowSection !== '' ? Groups::hue($rowSection) : null;
     ob_start(); ?>
-    <a class="popular-card tool-card" href="<?= View::escape($href) ?>" data-search-item>
-        <span class="popular-head">
-            <span class="category-icon"><?= View::icon($icon, 22) ?></span>
-            <span class="popular-cat"><?= View::escape($label !== '' ? $label : $sectionName) ?></span>
-        </span>
-        <h3 class="popular-title"><?= View::escape((string) $row['name']) ?></h3>
-        <p class="popular-desc"><?= View::escape($desc) ?></p>
-    </a>
+    <li class="browse-item" data-search-item>
+        <a class="browse-link" href="<?= View::escape($href) ?>">
+            <?= View::toolIcon($row, '', 20, 'calc-glyph', $rowHue) ?>
+            <span class="browse-text">
+                <span class="browse-name"><?= View::escape((string) $row['name']) ?></span>
+                <span class="browse-desc"><?= View::escape($desc) ?></span>
+            </span>
+            <span class="browse-cat-tag"><?= View::escape($label) ?></span>
+        </a>
+    </li>
     <?php return (string) ob_get_clean();
 };
 ?>
@@ -127,9 +144,9 @@ $card = static function (array $row) use ($icon, $section): string {
     <?php endif; ?>
 
     <?php if ($shown !== []): ?>
-        <div class="popular-grid popular-grid--two">
+        <ul class="browse-list">
             <?php foreach ($shown as $row) { echo $card($row); } ?>
-        </div>
+        </ul>
     <?php endif; ?>
 
     <?php
@@ -153,9 +170,9 @@ $card = static function (array $row) use ($icon, $section): string {
                     <h2 class="section-title section-title--sm">
                         <a href="<?= View::escape(View::url('/' . $sub['slug'])) ?>"><?= View::escape((string) $sub['name']) ?></a>
                     </h2>
-                    <div class="popular-grid popular-grid--two">
+                    <ul class="browse-list">
                         <?php foreach ($subRows as $row) { echo $card($row); } ?>
-                    </div>
+                    </ul>
                 </div>
             <?php endforeach; ?>
         </section>

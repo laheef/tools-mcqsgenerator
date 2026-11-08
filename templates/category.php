@@ -103,14 +103,27 @@ foreach ($groups as $k => $v) {
             <?php $anchor = $letter === '#' ? 'num' : $letter; ?>
             <section class="index-letter" id="letter-<?= View::escape($anchor) ?>" data-search-group aria-labelledby="letter-<?= View::escape($anchor) ?>-h">
                 <h2 id="letter-<?= View::escape($anchor) ?>-h" class="index-letter-head"><?= View::escape($letter) ?></h2>
-                <ul class="index-list">
+                <?php
+                /*
+                 * The catalogue's row, not the index's own card.
+                 *
+                 * /all-calculators draws each calculator as a two-column
+                 * .browse-item; this page drew a three-column card with an
+                 * arrow instead, so the same calculator looked like two
+                 * different objects depending on which list you met it in.
+                 * One row component for both lists.
+                 */
+                ?>
+                <ul class="browse-list">
                     <?php foreach ($items as $row): ?>
-                        <li class="index-item" data-search-item>
-                            <a class="index-link" href="<?= View::escape(View::url($row['path'])) ?>">
-                                <?= Icons::forCalculator($row, 18, 'calc-glyph calc-glyph-sm') ?>
-                                <span class="index-name"><?= View::escape($row['name']) ?></span>
-                                <span class="index-desc"><?= View::escape(View::excerpt((string) $row['description'], 110)) ?></span>
-                                <span class="index-go" aria-hidden="true"><?= View::icon('arrow-right', 15) ?></span>
+                        <li class="browse-item" data-search-item>
+                            <a class="browse-link" href="<?= View::escape(View::url($row['path'])) ?>">
+                                <?= Icons::forCalculator($row, 20, 'calc-glyph') ?>
+                                <span class="browse-text">
+                                    <span class="browse-name"><?= View::escape($row['name']) ?></span>
+                                    <span class="browse-desc"><?= View::escape(View::excerpt((string) $row['description'], 150)) ?></span>
+                                </span>
+                                <span class="browse-cat-tag"><?= View::escape((string) $category['name']) ?></span>
                             </a>
                         </li>
                     <?php endforeach; ?>
