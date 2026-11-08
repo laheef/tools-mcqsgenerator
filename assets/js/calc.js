@@ -893,6 +893,14 @@
          floating point. Scientific form, same as the results rows. */
       return sciText(v, decimalsFor(precision, algo));
     }
+    /*
+     * Below a thousandth, three decimals print 0.000 — the box would show a
+     * result of 1e-7 as "0", which reads as nothing happened. The rows already
+     * use scientific form here; the boxes now agree with them.
+     */
+    if (v !== 0 && Math.abs(v) < 1e-3) {
+      return sciText(v, decimalsFor(precision, algo));
+    }
     var dec = decimalsFor(precision, algo);
     if (algo === 'standard') v = Math.round(v * Math.pow(10, dec)) / Math.pow(10, dec);
     var s = v.toFixed(dec);
