@@ -610,7 +610,7 @@ SPECS = [
         ],
         no_round_trip=["steps", "rise", "run", "width", "landing", "waist", "waste"],
         related=[("/construction/concrete-slab", "Concrete slab"),
-                 ("/construction/concrete-stair", "Concrete stair"),
+                 ("/construction/stairs", "Stairs"),
                  ("/construction/concrete-weight", "Concrete weight")],
     ),
 ]

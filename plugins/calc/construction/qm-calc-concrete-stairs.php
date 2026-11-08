@@ -186,7 +186,7 @@ return [
             <ul><li><strong>A straight flight.</strong> Winder and curved stairs need their own geometry.</li><li><strong>No footing or side walls.</strong> Both are separate pours with their own reinforcement.</li><li><strong>It computes the relationship, not your case.</strong> Nothing here corrects for measurement error, impurities or conditions outside the range the relationship was written for. Those are assumptions you bring; the arithmetic does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <ul><li><li>Ordering concrete for an entry flight.</li></li><li><li>Sizing a bag mix for a garden stair.</li></li><li><li>Checking a waist thickness against the pour.</li></li></ul><p>If the answer you need is one step further on, these pages pick up where this one stops: <a href="/construction/concrete-slab">Concrete slab</a> <a href="/construction/concrete-stair">Concrete stair</a> <a href="/construction/concrete-weight">Concrete weight</a>.</p>
+            <ul><li><li>Ordering concrete for an entry flight.</li></li><li><li>Sizing a bag mix for a garden stair.</li></li><li><li>Checking a waist thickness against the pour.</li></li></ul><p>If the answer you need is one step further on, these pages pick up where this one stops: <a href="/construction/concrete-slab">Concrete slab</a> <a href="/construction/stairs">Stairs</a> <a href="/construction/concrete-weight">Concrete weight</a>.</p>
             TXT],
         ],
         'faq' => [
@@ -211,7 +211,7 @@ return [
         ],
         'related' => [
             ['path' => '/construction/concrete-slab', 'name' => 'Concrete slab'],
-            ['path' => '/construction/concrete-stair', 'name' => 'Concrete stair'],
+            ['path' => '/construction/stairs', 'name' => 'Stairs'],
             ['path' => '/construction/concrete-weight', 'name' => 'Concrete weight'],
         ],
         'authors' => [

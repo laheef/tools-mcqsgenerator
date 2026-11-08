@@ -338,7 +338,35 @@ def build_article(spec: Spec) -> dict:
 
     env = spec.default_env()
     solved = solve(spec, env)
-    prose = spec.prose
+
+    # {result_key} inside prose is filled from the solved defaults, so a
+    # worked example can never drift from the formula it is describing.
+    # {result_key|unit} appends the result's own unit instead of the text given.
+    def fill(text: str) -> str:
+        if not isinstance(text, str) or "{" not in text:
+            return text
+        def one(m: re.Match[str]) -> str:
+            key, _, unit = m.group(1).partition("|")
+            if key not in solved:
+                return m.group(0)
+            value = fmt(solved[key])
+            if unit:
+                match = next((r for r in results if r["name"] == key), None)
+                return f"{value} {unit_of(match) if match else unit}".strip()
+            return value
+        return re.sub(r"\{([a-z_0-9]+(?:\|[^}]*)?)\}", one, text)
+
+    prose = dict(spec.prose)
+    for key in ("why", "formula_note", "example_note", "reading", "units_note",
+                "scenario_note", "method_note"):
+        if key in prose:
+            prose[key] = fill(prose[key])
+    for key in ("pitfalls", "limits", "uses"):
+        if key in prose:
+            prose[key] = [fill(x) for x in prose[key]]
+    if "scenarios" in prose:
+        prose["scenarios"] = [dict(sc, note=fill(sc.get("note", "")))
+                              for sc in prose["scenarios"]]
 
     names_in = " and ".join(soft(label_of(f)) for f in fields)
 

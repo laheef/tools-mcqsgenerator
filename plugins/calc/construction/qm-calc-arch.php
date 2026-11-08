@@ -129,7 +129,7 @@ return [
             <ul><li><strong>A circular segment.</strong> Elliptical and pointed arches are set out differently.</li><li><strong>Geometry only.</strong> Thrust and abutment are the engineer's problem.</li><li><strong>It computes the relationship, not your case.</strong> Nothing here corrects for measurement error, impurities or conditions outside the range the relationship was written for. Those are assumptions you bring; the arithmetic does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <ul><li><li>Setting out an arch template.</li></li><li><li>Measuring a soffit along the curve.</li></li><li><li>Sizing glass or infill for a segmental opening.</li></li></ul><p>If the answer you need is one step further on, these pages pick up where this one stops: <a href="/construction/arch">Arch</a> <a href="/construction/rafter-length">Rafter length</a> <a href="/construction/roof-pitch">Roof pitch</a>.</p>
+            <ul><li><li>Setting out an arch template.</li></li><li><li>Measuring a soffit along the curve.</li></li><li><li>Sizing glass or infill for a segmental opening.</li></li></ul><p>If the answer you need is one step further on, these pages pick up where this one stops: <a href="/construction/concrete-column">Concrete column</a> <a href="/construction/rafter-length">Rafter length</a> <a href="/construction/roof-pitch">Roof pitch</a>.</p>
             TXT],
         ],
         'faq' => [
@@ -149,7 +149,7 @@ return [
             ['q' => 'What is the area under an arch?', 'a' => 'A circular segment: R²/2 × (θ − sin θ) with θ in radians.'],
         ],
         'related' => [
-            ['path' => '/construction/arch', 'name' => 'Arch'],
+            ['path' => '/construction/concrete-column', 'name' => 'Concrete column'],
             ['path' => '/construction/rafter-length', 'name' => 'Rafter length'],
             ['path' => '/construction/roof-pitch', 'name' => 'Roof pitch'],
         ],

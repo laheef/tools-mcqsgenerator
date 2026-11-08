@@ -399,7 +399,7 @@ SPECS = [
              "A circular segment: R²/2 × (θ − sin θ) with θ in radians."),
         ],
         no_round_trip=["span", "rise"],
-        related=[("/construction/arch", "Arch"),
+        related=[("/construction/concrete-column", "Concrete column"),
                  ("/construction/rafter-length", "Rafter length"),
                  ("/construction/roof-pitch", "Roof pitch")],
     ),

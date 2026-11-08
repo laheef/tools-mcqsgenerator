@@ -242,6 +242,112 @@ LITERATURE: dict[str, list[tuple[dict, dict, float]]] = {
         ({'area': 200, 'board_width': 5.5, 'gap': 0.25, 'board_length': 12, 'waste': 10, 'price': 14},
          {"boards": 39, "linear_feet": 468, "coverage_per_board": 5.75, "cost": 546}, 0.02),
     ],
+
+    # Batch 3: worked out independently, from the geometry and the hand tables.
+    "cubic-yard": [
+        ({'length': 20, 'width': 15, 'depth': 6},
+         {"volume_ft3": 150, "volume_yd3": 5.5556, "volume_m3": 4.2475}, 0.02),
+    ],
+    "ft2-yd3": [
+        ({'area': 200, 'depth': 5, 'waste': 0},
+         {"volume_ft3": 83.3333, "volume_yd3": 3.0864, "bags_80lb": 139}, 0.02),
+    ],
+    "hole-volume": [
+        ({'diameter': 18, 'depth': 48},
+         {"volume_ft3": 7.0686, "volume_yd3": 0.2618, "gallons": 52.877}, 0.02),
+    ],
+    "tank-volume": [
+        ({'length': 5, 'width': 2.5, 'depth': 2},
+         {"volume_ft3": 25, "gallons": 187.013, "litres": 707.92}, 0.02),
+    ],
+    "pool": [
+        ({'length': 30, 'width': 15, 'shallow': 3, 'deep': 7},
+         {"avg_depth": 5, "volume_ft3": 2250, "gallons": 16831.17}, 0.02),
+    ],
+    "round-pool-volume": [
+        ({'diameter': 24, 'depth': 4.5},
+         {"surface_area": 452.3893, "volume_ft3": 2035.75, "gallons": 15228.48}, 0.02),
+    ],
+    "pond": [
+        ({'length': 40, 'width': 25, 'max_depth': 5, 'shape_factor': 0.6},
+         {"avg_depth": 3, "volume_ft3": 3000, "gallons": 22441.56, "acre_feet": 0.06887}, 0.02),
+    ],
+    "pipe-volume": [
+        ({'inside_diameter': 3, 'length': 50},
+         {"volume_ft3": 2.4544, "gallons": 18.36, "gallons_per_ft": 0.3672}, 0.02),
+    ],
+    "size-to-weight-rectangular-cuboid": [
+        ({'length': 10, 'width': 10, 'height': 10, 'density': 100},
+         {"volume_in3": 1000, "volume_ft3": 0.5787, "weight_lb": 57.87, "weight_kg": 26.25}, 0.02),
+    ],
+    "steel-weight": [
+        ({'size': 1.5, 'factor': 1.0, 'length': 10, 'count': 2},
+         {"area_in2": 2.25, "weight_each": 76.572, "weight_total": 153.144, "weight_kg": 69.465}, 0.02),
+    ],
+    "steel-plate-weight": [
+        ({'length': 60, 'width': 30, 'thickness': 0.375, 'count': 2},
+         {"area_ft2": 12.5, "weight_each": 191.43, "weight_total": 382.86, "psf": 15.3144}, 0.02),
+    ],
+    "plate-weight": [
+        ({'length': 24, 'width': 24, 'thickness': 0.5, 'density': 0.0975},
+         {"volume_in3": 288, "weight_lb": 28.08, "weight_kg": 12.737, "psf": 7.02}, 0.02),
+    ],
+    "metal-weight": [
+        ({'size': 1.5, 'factor': 0.866, 'length': 6, 'density': 0.2836},
+         {"area_in2": 1.9485, "volume_in3": 11.691, "weight_lb": 3.3157, "weight_kg": 1.504}, 0.02),
+    ],
+    "aluminum-weight": [
+        ({'length': 36, 'width': 12, 'thickness': 0.25, 'count': 4},
+         {"volume_in3": 108, "weight_each": 10.53, "weight_total": 42.12, "weight_kg": 19.105}, 0.02),
+    ],
+    "glass-weight": [
+        ({'width': 30, 'height': 60, 'thickness': 0.375, 'count': 2},
+         {"area_ft2": 12.5, "weight_each": 62.1, "weight_total": 124.2, "psf": 4.968}, 0.02),
+    ],
+    "log-weight": [
+        ({'diameter': 16, 'length': 12, 'form_factor': 0.65, 'density': 55},
+         {"volume_ft3": 10.8909, "weight_lb": 599.0, "weight_kg": 271.7, "tons": 0.2995}, 0.02),
+    ],
+    "pipe-weight": [
+        ({'outside_diameter': 3.5, 'wall': 0.216, 'length': 21},
+         {"inside_diameter": 3.068, "weight_per_ft": 7.584, "weight_total": 159.27}, 0.02),
+    ],
+    "road-base": [
+        ({'length': 80, 'width': 12, 'depth': 8, 'compaction': 15, 'density': 110, 'price': 30},
+         {"volume_yd3": 27.2593, "tons": 40.48, "tonnes": 36.73, "cost": 1214.4}, 0.02),
+    ],
+    "rip-rap": [
+        ({'velocity': 6, 'isbash': 0.86, 'area': 300, 'thickness': 2, 'density': 160},
+         {"rock_in": 9.075, "volume_yd3": 22.2222, "tons": 48}, 0.02),
+    ],
+    "fire-glass": [
+        ({'length': 30, 'width': 18, 'factor': 1.0, 'depth': 2, 'density': 80},
+         {"area_ft2": 3.75, "volume_ft3": 0.625, "weight_lb": 50}, 0.02),
+    ],
+    "round-pen": [
+        ({'diameter': 48, 'panel_length': 10, 'price': 200},
+         {"circumference": 150.7964, "panels": 16, "actual_area": 1809.557, "cost": 3200}, 0.02),
+    ],
+    "hoop-house": [
+        ({'length': 30, 'width': 14, 'wall_height': 5, 'rise': 5, 'delta_t': 25},
+         {"cover_area": 1026.14, "volume_ft3": 3150, "heater_btu": 30784.2}, 0.02),
+    ],
+    "chicken-coop-size": [
+        ({'regular': 12, 'bantam': 4},
+         {"birds": 14.68, "coop_area": 58.72, "run_area": 146.8, "coop_m2": 5.4553}, 0.02),
+    ],
+    "trump": [
+        ({'length': 100, 'height': 20, 'panel_length': 25, 'panel_price': 8000, 'concrete_price': 140},
+         {"panels": 21120, "wall_area": 10560000, "concrete_yd3": 78222.22, "total_cost": 179911111}, 0.02),
+    ],
+    "bowl-segment": [
+        ({'segments': 10, 'outer_radius': 5, 'ring_width': 1.25, 'thickness': 0.75},
+         {"cut_angle": 18, "outer_length": 3.2492, "inner_length": 2.4369, "volume_in3": 2.6654}, 0.02),
+    ],
+    "sealant": [
+        ({'length': 40, 'width': 0.5, 'depth': 0.375, 'tube': 600, 'waste': 10, 'price': 20},
+         {"volume_ml": 1474.84, "tubes": 3, "cost": 60}, 0.02),
+    ],
 }
 
 class Engine:
