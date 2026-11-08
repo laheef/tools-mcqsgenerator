@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Partial Pressure Calculator',
-    'meta' => ['title' => 'Partial Pressure Calculator: Dalton\'s Law Tool', 'description' => 'Work out a gas\'s partial pressure from its mole fraction and the total pressure, and the mole fraction a measured partial pressure implies. Units shown.', 'h1' => 'Partial Pressure Calculator', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Partial Pressure Calculator: Dalton\'s Law, in kPa', 'description' => 'Work out a gas\'s partial pressure from its mole fraction and the total pressure, and the mole fraction a measured partial pressure implies. Units shown.', 'h1' => 'Partial Pressure Calculator', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,

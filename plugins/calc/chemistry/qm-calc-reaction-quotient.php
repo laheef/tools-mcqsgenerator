@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Reaction Quotient Calculator',
-    'meta' => ['title' => 'Reaction Quotient Calculator: Q, K and ΔG Tool', 'description' => 'Compute the reaction quotient from the concentrations you have now, compare it with K, and read the free energy that decides which way it goes. Units shown.', 'h1' => 'Reaction Quotient Calculator', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Reaction Quotient Calculator: Q, K and ΔG Values', 'description' => 'Compute the reaction quotient from the concentrations you have now, compare it with K, and read the free energy that decides which way it goes. Units shown.', 'h1' => 'Reaction Quotient Calculator', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,

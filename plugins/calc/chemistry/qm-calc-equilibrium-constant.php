@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Equilibrium Constant Calculator',
-    'meta' => ['title' => 'Equilibrium Constant Calculator: K and ΔG° Tool', 'description' => 'Work out the equilibrium constant from product and reactant concentrations, and the standard free energy change it implies at a stated temperature. Units shown.', 'h1' => 'Equilibrium Constant Calculator', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Equilibrium Constant Calculator: K and Examples', 'description' => 'Work out the equilibrium constant from product and reactant concentrations, and the standard free energy change it implies at a stated temperature. Units shown.', 'h1' => 'Equilibrium Constant Calculator', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,

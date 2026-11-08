@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Cell EMF Calculator',
-    'meta' => ['title' => 'Cell EMF Calculator: E°cell and ΔG° — Formula', 'description' => 'Combine two standard electrode potentials into a cell EMF, and convert that voltage into the free energy the cell can deliver. The formula and units are shown.', 'h1' => 'Cell EMF Calculator', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Cell EMF Calculator: E°cell and ΔG°, Step by Step', 'description' => 'Combine two standard electrode potentials into a cell EMF, and convert that voltage into the free energy the cell can deliver. The formula and units are shown.', 'h1' => 'Cell EMF Calculator', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,

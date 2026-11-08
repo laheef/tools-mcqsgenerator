@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Osmotic Pressure Calculator',
-    'meta' => ['title' => 'Osmotic Pressure Calculator: π = iMRT Guide', 'description' => 'Work out the pressure a solution exerts across a semipermeable membrane, from the particle count, molarity and temperature. The formula and units are shown.', 'h1' => 'Osmotic Pressure Calculator', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Osmotic Pressure Calculator: π = iMRT, Step by Step', 'description' => 'Work out the pressure a solution exerts across a semipermeable membrane, from the particle count, molarity and temperature. The formula and units are shown.', 'h1' => 'Osmotic Pressure Calculator', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,

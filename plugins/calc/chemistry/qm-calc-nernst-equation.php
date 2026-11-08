@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Nernst Equation Calculator',
-    'meta' => ['title' => 'Nernst Equation Calculator: Cell Potential Tool', 'description' => 'Adjust a standard electrode potential for the concentrations actually present, and see the millivolts per decade the cell is working with. Units shown.', 'h1' => 'Nernst Equation Calculator', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Nernst Equation Calculator: E from E° and Q Value', 'description' => 'Adjust a standard electrode potential for the concentrations actually present, and see the millivolts per decade the cell is working with. Units shown.', 'h1' => 'Nernst Equation Calculator', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,

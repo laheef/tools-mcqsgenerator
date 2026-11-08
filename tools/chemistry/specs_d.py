@@ -9,7 +9,7 @@ SPECS = [
     S(
         slug="equilibrium-constant",
         name="Equilibrium Constant Calculator",
-        title="Equilibrium Constant Calculator: K and ΔG°",
+        title="Equilibrium Constant Calculator: K and Examples",
         desc="Work out the equilibrium constant from product and reactant concentrations, and the standard free energy change it implies at a stated temperature.",
         what=("<p>For a reaction at equilibrium the ratio of product concentrations to reactant "
               "concentrations, each raised to its coefficient, is a constant: "
@@ -107,7 +107,7 @@ SPECS = [
     S(
         slug="kp",
         name="Kp Calculator",
-        title="Kp Calculator: From Kc, R and Temperature",
+        title="Kp Calculator: From Kc, R and the Temperature",
         desc="Convert an equilibrium constant expressed in concentrations into one expressed in partial pressures, with the (RT)^Δn factor that does it.",
         what=("<p>Equilibria in the gas phase can be written in concentrations or in partial pressures, and "
               "the two are related by <strong>Kp = Kc × (RT)<sup>Δn</sup></strong>, where Δn is the change in "
@@ -191,7 +191,7 @@ SPECS = [
     S(
         slug="reaction-quotient",
         name="Reaction Quotient Calculator",
-        title="Reaction Quotient Calculator: Q, K and ΔG",
+        title="Reaction Quotient Calculator: Q, K and ΔG Values",
         desc="Compute the reaction quotient from the concentrations you have now, compare it with K, and read the free energy that decides which way it goes.",
         what=("<p>The reaction quotient is the equilibrium expression evaluated with whatever concentrations "
               "are present right now: <strong>Q = [products]ⁿ ÷ [reactants]ᵐ</strong>. Comparing Q with K "
@@ -275,7 +275,7 @@ SPECS = [
     S(
         slug="gibbs-energy",
         name="Gibbs Energy Calculator",
-        title="Gibbs Energy Calculator: ΔG = ΔH − TΔS",
+        title="Gibbs Energy Calculator: ΔG = ΔH − TΔS, Step by Step",
         desc="Work out the free energy change of a reaction from its enthalpy, entropy and temperature, and the temperature at which it turns.",
         what=("<p>Whether a reaction is spontaneous at a given temperature is decided by the Gibbs energy: "
               "<strong>ΔG = ΔH − TΔS</strong>. Negative ΔG means the forward reaction is spontaneous; positive "
@@ -450,7 +450,7 @@ SPECS = [
     S(
         slug="nernst-equation",
         name="Nernst Equation Calculator",
-        title="Nernst Equation Calculator: Cell Potential",
+        title="Nernst Equation Calculator: E from E° and Q Value",
         desc="Adjust a standard electrode potential for the concentrations actually present, and see the millivolts per decade the cell is working with.",
         what=("<p>A cell's potential falls as its products accumulate and its reactants are consumed. The "
               "Nernst equation states that: <strong>E = E° − (2.303RT ÷ nF) log₁₀Q</strong>, which at 25 °C "
@@ -542,7 +542,7 @@ SPECS = [
     S(
         slug="electromotive-force",
         name="Cell EMF Calculator",
-        title="Cell EMF Calculator: E°cell and ΔG°",
+        title="Cell EMF Calculator: E°cell and ΔG°, Step by Step",
         desc="Combine two standard electrode potentials into a cell EMF, and convert that voltage into the free energy the cell can deliver.",
         what=("<p>A cell's standard electromotive force is the cathode potential minus the anode potential: "
               "<strong>E°<sub>cell</sub> = E°<sub>cathode</sub> − E°<sub>anode</sub></strong>. A positive "
@@ -807,7 +807,7 @@ SPECS = [
     S(
         slug="osmotic-pressure",
         name="Osmotic Pressure Calculator",
-        title="Osmotic Pressure Calculator: π = iMRT",
+        title="Osmotic Pressure Calculator: π = iMRT, Step by Step",
         desc="Work out the pressure a solution exerts across a semipermeable membrane, from the particle count, molarity and temperature.",
         what=("<p>Osmotic pressure is the pressure needed to stop solvent crossing a semipermeable membrane: "
               "<strong>π = iMRT</strong>, with i the van't Hoff factor, M the molarity, R = 8.314 "
@@ -979,7 +979,7 @@ SPECS = [
     S(
         slug="partial-pressure",
         name="Partial Pressure Calculator",
-        title="Partial Pressure Calculator: Dalton's Law",
+        title="Partial Pressure Calculator: Dalton's Law, in kPa",
         desc="Work out a gas's partial pressure from its mole fraction and the total pressure, and the mole fraction a measured partial pressure implies.",
         what=("<p>In a gas mixture each component exerts the pressure it would exert alone: "
               "<strong>p<sub>i</sub> = x<sub>i</sub> × P<sub>total</sub></strong>. Dalton's law says those "

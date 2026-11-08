@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Kp Calculator',
-    'meta' => ['title' => 'Kp Calculator: From Kc, R and Temperature Tool', 'description' => 'Convert an equilibrium constant expressed in concentrations into one expressed in partial pressures, with the (RT)^Δn factor that does it. Units shown.', 'h1' => 'Kp Calculator', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Kp Calculator: From Kc, R and the Temperature', 'description' => 'Convert an equilibrium constant expressed in concentrations into one expressed in partial pressures, with the (RT)^Δn factor that does it. Units shown.', 'h1' => 'Kp Calculator', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,

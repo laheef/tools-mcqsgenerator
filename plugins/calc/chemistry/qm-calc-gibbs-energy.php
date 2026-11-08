@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Gibbs Energy Calculator',
-    'meta' => ['title' => 'Gibbs Energy Calculator: ΔG = ΔH − TΔS Tool', 'description' => 'Work out the free energy change of a reaction from its enthalpy, entropy and temperature, and the temperature at which it turns. The formula is shown.', 'h1' => 'Gibbs Energy Calculator', 'updated' => '2026-10-23'],
+    'meta' => ['title' => 'Gibbs Energy Calculator: ΔG = ΔH − TΔS, Step by Step', 'description' => 'Work out the free energy change of a reaction from its enthalpy, entropy and temperature, and the temperature at which it turns. The formula is shown.', 'h1' => 'Gibbs Energy Calculator', 'updated' => '2026-10-23'],
     'sections' => [
         [
             'columns' => 2,
