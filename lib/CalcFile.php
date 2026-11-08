@@ -449,9 +449,15 @@ final class CalcFile
             $matrices = [];
             foreach ($section['blocks'] as $block) {
                 $fields = [];
+                $isOut  = [];
                 foreach ($block['fields'] as $f) {
                     $field = self::field($f, $path, $vars, $datasets);
                     if ($field !== null) {
+                        /* A result box never takes a slot in the form: calc.js
+                           moves it into the results panel, so counting it here
+                           would leave the last column of a two-column block
+                           holding almost nothing. */
+                        $isOut[count($fields)] = !empty($f['readonly']);
                         $fields[] = $field;
                     }
                 }
@@ -466,14 +472,32 @@ final class CalcFile
                     }
                     continue;
                 }
-                /* N columns: the fields are dealt out top to bottom, the first
+                /* N columns: the inputs are dealt out top to bottom, the first
                    columns taking the extra one — the same split the harvested
-                   matrices have (six and five across two columns). */
-                $per   = (int) ceil(count($fields) / $cols);
-                $chunks = array_chunk($fields, max(1, $per));
-                $columns = [];
-                foreach ($chunks as $chunk) {
-                    $columns[] = $chunk;
+                   matrices have (six and five across two columns). The result
+                   boxes ride along at the end of the last column, where their
+                   empty placeholders cost no visible space. */
+                $inputs  = [];
+                $outputs = [];
+                foreach ($fields as $i => $field) {
+                    if (!empty($isOut[$i])) {
+                        $outputs[] = $field;
+                    } else {
+                        $inputs[] = $field;
+                    }
+                }
+                if ($inputs === []) {          // nothing typeable: keep the page as it was
+                    $inputs  = $outputs;
+                    $outputs = [];
+                }
+                $per   = (int) ceil(count($inputs) / $cols);
+                $columns = array_chunk($inputs, max(1, $per));
+                if ($columns === []) {
+                    $columns = [[]];
+                }
+                $last = count($columns) - 1;
+                foreach ($outputs as $field) {
+                    $columns[$last][] = $field;
                 }
                 $grid = $cols === 2 ? 'FR1_FR1' : ($cols === 3 ? 'FR1_FR1_FR1' : 'FR1');
                 $matrices[] = [$grid, $columns];
