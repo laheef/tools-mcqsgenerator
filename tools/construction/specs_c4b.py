@@ -128,16 +128,17 @@ SPECS = [
         prose={
             "why": ("<p>Pavers are sold by the piece and laid on a pattern, and the count depends on the "
                     "joint as much as the block: a 4 by 8 block with an eighth-inch joint covers a little "
-                    "over a third of a square foot, so a hundred square feet is near 280 blocks.</p>"),
+                    "under a quarter of a square foot, so a hundred square feet is well over four hundred "
+                    "blocks.</p>"),
             "formula_note": ("<p>The joint is added to both sides of every block, which is what makes the "
                              "grid close. The waste allowance then covers the edge cuts, and since pavers "
                              "are bought by the piece rather than the pallet, the count rounds up once.</p>"),
             "example_note": ("<p>A 16 by 12 ft patio is {area_ft2|unit}. In 4 by 8 blocks with an eighth-inch "
                              "joint each module is {module_ft2|unit}, so the job takes {pavers} pavers and "
                              "{cost} at $1.40 each.</p>"),
-            "reading": ("<p>Read the count against the area: 4 by 8 pavers work out near 2.8 per square "
-                        "foot, and 12 in squares near one. A count far above that means the block size has "
-                        "been entered in centimetres.</p>"),
+            "reading": ("<p>Read the count against the area: 4 by 8 pavers work out near four and a half "
+                        "per square foot, and 12 in squares near one. A count far above that means the block "
+                        "size has been entered in centimetres rather than inches.</p>"),
             "scenarios": [
                 {"inputs": {"length": 20, "width": 14, "paver_length": 12, "paver_width": 12, "joint": 0.125,
                             "waste": 8, "price": 3.2},
@@ -165,7 +166,7 @@ SPECS = [
         },
         faq=[
             ("How many pavers in a square foot?",
-             "About 2.8 for a 4 by 8 block with a sand joint, and one for a 12 in square."),
+             "About 4.5 for a 4 by 8 block with a sand joint, and one for a 12 in square."),
             ("How much waste should I allow for pavers?",
              "Ten per cent for a straight layout and fifteen for a curved one."),
         ],

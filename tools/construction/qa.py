@@ -348,6 +348,124 @@ LITERATURE: dict[str, list[tuple[dict, dict, float]]] = {
         ({'length': 40, 'width': 0.5, 'depth': 0.375, 'tube': 600, 'waste': 10, 'price': 20},
          {"volume_ml": 1474.84, "tubes": 3, "cost": 60}, 0.02),
     ],
+
+    # Batch 4: worked out by hand from the areas and the coverage rules.
+    "paint": [
+        ({'length': 12, 'width': 10, 'height': 8, 'doors': 2, 'door_area': 21, 'windows': 2,
+          'window_area': 15, 'coats': 2, 'coverage': 350, 'price': 40},
+         {"wall_area": 352, "net_area": 280, "gallons": 1.6, "cans": 2, "cost": 80}, 0.02),
+    ],
+    "wallpaper": [
+        ({'length': 10, 'width': 8, 'height': 8, 'roll_width': 20.5, 'roll_length': 33, 'repeat': 0,
+          'price': 40},
+         {"perimeter": 36, "strips": 22, "per_roll": 4, "rolls": 6, "cost": 240}, 0.02),
+    ],
+    "tile": [
+        ({'length': 10, 'width': 10, 'tile_length': 12, 'tile_width': 12, 'gap': 0.125, 'waste': 10,
+          'per_box': 10, 'price': 40},
+         {"area_ft2": 100, "tile_ft2": 1.0169, "tiles": 108, "boxes": 11, "cost": 440}, 0.02),
+    ],
+    "carpet": [
+        ({'length': 18, 'width': 12, 'waste': 10, 'price': 20},
+         {"area_ft2": 216, "area_yd2": 24, "order_yd2": 26.4, "cost": 528}, 0.02),
+    ],
+    "flooring": [
+        ({'length': 12, 'width': 10, 'waste': 10, 'coverage': 20, 'price': 50},
+         {"area_ft2": 120, "order_ft2": 132, "boxes": 7, "cost": 350}, 0.02),
+    ],
+    "stair-carpet": [
+        ({'steps': 14, 'riser': 7.5, 'tread': 10, 'nosing': 1, 'width': 3, 'waste': 10, 'price': 4},
+         {"per_step": 18.5, "run": 21.5833, "area_ft2": 64.75, "cost": 284.9}, 0.02),
+    ],
+    "deck-stain": [
+        ({'deck_length': 20, 'deck_width': 10, 'rail_length': 50, 'rail_height': 3, 'stair_steps': 4,
+          'stair_width': 4, 'rise': 7.5, 'run': 10, 'coats': 2, 'coverage': 250, 'price': 40},
+         {"floor_area": 200, "rail_area": 300, "stair_area": 23.3333, "total_area": 523.3333,
+          "gallons": 4.1867, "cost": 200}, 0.02),
+    ],
+    "fence-stain": [
+        ({'length': 80, 'height': 6, 'faces': 2, 'coats': 2, 'coverage': 200, 'price': 40},
+         {"area_ft2": 960, "gallons": 9.6, "cans": 10, "cost": 400}, 0.02),
+    ],
+    "epoxy": [
+        ({'length': 24, 'width': 20, 'coats': 2, 'coverage': 250, 'waste': 10, 'price': 110},
+         {"area_ft2": 480, "coated_ft2": 1056, "kits": 5, "cost": 550}, 0.02),
+    ],
+    "asphalt": [
+        ({'length': 50, 'width': 12, 'depth': 3, 'density': 145, 'waste': 5, 'price': 100},
+         {"volume_yd3": 5.8333, "tons": 11.4188, "tonnes": 10.3589, "cost": 1141.88}, 0.02),
+    ],
+    "paver": [
+        ({'length': 10, 'width': 10, 'paver_length': 8, 'paver_width': 4, 'joint': 0.125, 'waste': 10,
+          'price': 1.5},
+         {"area_ft2": 100, "module_ft2": 0.23275, "pavers": 473, "cost": 709.5}, 0.02),
+    ],
+    "paver-sand": [
+        ({'area': 100, 'depth': 1, 'density': 100, 'waste': 10, 'price': 6},
+         {"volume_ft3": 9.1667, "tons": 0.4583, "bags": 19, "cost": 114}, 0.02),
+    ],
+    "drywall": [
+        ({'length': 12, 'width': 10, 'height': 8, 'waste': 10, 'sheet_area': 32, 'price': 15},
+         {"area_ft2": 352, "sheets": 13, "mud_lb": 35.2, "tape_ft": 176, "screws": 388, "cost": 195}, 0.02),
+    ],
+    "siding": [
+        ({'wall_length': 40, 'height': 9, 'gable_rise': 0, 'doors': 1, 'door_area': 21, 'windows': 4,
+          'window_area': 15, 'waste': 10, 'price': 300},
+         {"wall_area": 360, "net_area": 279, "squares": 3.069, "cost": 920.7}, 0.02),
+    ],
+    "vinyl-siding": [
+        ({'wall_length': 40, 'height': 9, 'openings': 60, 'panel_length': 12, 'panel_width': 8,
+          'waste': 10, 'panel_price': 14, 'trim_price': 2.5},
+         {"area_ft2": 360, "panel_area": 8, "panels": 50, "trim_ft": 158, "cost": 1095}, 0.02),
+    ],
+    "wainscoting": [
+        ({'wall_length': 12, 'panels': 4, 'stile': 4, 'end_margin': 4, 'rail_height': 36,
+          'base_height': 5, 'rail_width': 3},
+         {"panel_width": 31, "panel_height": 25, "panel_area": 21.5278, "stile_run": 1.6667}, 0.02),
+    ],
+    "square-footage": [
+        ({'length': 14, 'width': 11, 'quantity': 3, 'price': 5},
+         {"area_ft2": 462, "area_yd2": 51.3333, "area_m2": 42.9212, "cost": 2310}, 0.02),
+    ],
+    "wall-square-footage": [
+        ({'length': 14, 'width': 12, 'height': 9, 'doors': 2, 'door_area': 21, 'windows': 3,
+          'window_area': 15},
+         {"perimeter": 52, "gross_area": 468, "openings": 87, "net_area": 381}, 0.02),
+    ],
+    "square-meter": [
+        ({'length': 6, 'width': 4, 'shape_factor': 1, 'price': 25},
+         {"area_m2": 24, "area_ft2": 258.3336, "perimeter": 20, "cost": 600}, 0.02),
+    ],
+    "square-yard": [
+        ({'length': 18, 'width': 12, 'price': 25},
+         {"area_yd2": 24, "area_ft2": 216, "perimeter": 60, "cost": 600}, 0.02),
+    ],
+    "square-yards": [
+        ({'square_feet': 300, 'price': 20, 'waste': 10},
+         {"square_yards": 33.3333, "square_meters": 27.8709, "order_yards": 36.6667, "cost": 733.33}, 0.02),
+    ],
+    "floor-area-ratio": [
+        ({'plot_area': 10000, 'footprint': 2500, 'floors': 3, 'setback_area': 5000},
+         {"total_floor": 7500, "far": 0.75, "coverage": 0.25, "open_ratio": 0.5}, 0.02),
+    ],
+    "metal-roof-cost": [
+        ({'length': 40, 'width': 24, 'pitch': 6, 'panel_width': 36, 'panel_length': 12, 'waste': 10,
+          'price': 90},
+         {"pitch_factor": 1.118, "roof_area": 1073.3126, "panels": 33, "cost": 2970}, 0.02),
+    ],
+    "diy-shed-cost": [
+        ({'width': 10, 'length': 12, 'wall_height': 7, 'roof_rise': 2, 'overhang': 1, 'slab_price': 8,
+          'wall_price': 12, 'roof_price': 6},
+         {"floor_area": 120, "wall_area": 308, "roof_area": 187.8297, "total_cost": 5782.978}, 0.02),
+    ],
+    "insulation": [
+        ({'area': 1000, 'thickness': 12, 'r_per_inch': 3.7, 'bag_coverage': 40, 'price': 18},
+         {"r_value": 44.4, "volume_ft3": 1000, "bags": 25, "cost": 450}, 0.02),
+    ],
+    "gallons-per-square-foot": [
+        ({'length': 10, 'width': 10, 'depth': 12},
+         {"area_ft2": 100, "volume_ft3": 100, "gallons": 748.052, "gallons_per_ft2": 7.48052}, 0.02),
+    ],
 }
 
 class Engine:
