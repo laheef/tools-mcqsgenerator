@@ -503,12 +503,13 @@ def build_article(spec: Spec) -> dict:
         ("What this calculator works out",
          (f"{prose['why']}" if prose.get("why") else "")
          + f"<p>The page reports <strong>{names_out}</strong> from the boxes above it. "
-           f"Every line of the formula table below is the same relationship rearranged, which is why "
-           f"leaving a different box empty changes the question rather than breaking the page.</p>"),
+           f"Every line of the formula table below is the same relationship rearranged, so the working "
+           f"can be followed from whichever quantity you already have.</p>"),
 
         ("The formula, and every way round it",
          "<p>One relationship drives the page. Each line below is the same relationship arranged for a "
-         "different unknown, which is what lets the calculator answer from either end.</p>"
+         "different unknown, which is what you need when the quantity you already know is not the one "
+         "this page reports.</p>"
          "<table class=\"calc-table\"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead>"
          f"<tbody>{''.join(rows)}</tbody></table>"
          + (f"<p>{prose['formula_note']}</p>" if prose.get("formula_note") else "")),
@@ -517,12 +518,11 @@ def build_article(spec: Spec) -> dict:
          f"<p>Fill in {len(fields)} box{'es' if len(fields) != 1 else ''} and the page has everything it "
          f"needs. It reports {names_out}.</p><ul>{''.join(inlist)}</ul>"
          f"<p>The results are the boxes you leave alone:</p><ul>{''.join(outlist)}</ul>"
-         "<p>The last box you fill in is the one the page answers from: it reads whatever is present, "
-         "works out which value is missing, and solves for that.</p>"
-         "<p>Two boxes may be left empty, and then the page answers for both if the formulas allow it — "
-         "a rearrangement that needs a value it does not have stays blank rather than guessing. That is "
-         "the difference between a calculator and a spreadsheet that has been filled down: nothing here is "
-         "carried over from a previous run, so a blank result always means a missing input.</p>"),
+         "<p>Every input needs a value before the page can answer: it reads the boxes you filled in, runs "
+         "the formula and prints each result. Nothing is carried over from a previous run, so a result that "
+         "stays blank means an input is missing rather than that the page has kept an older number.</p>"
+         "<p>The result boxes are read-only and are recomputed from the inputs, so the page always works "
+         "forwards. To go the other way, the table above gives the rearrangement for each unknown.</p>"),
 
         ("A worked example you can reproduce",
          f"<p>Enter the values the page is built around — {defaults_in} — and the results "
@@ -557,8 +557,8 @@ def build_article(spec: Spec) -> dict:
          f"<ul>{pit_html}<li><strong>A unit entered against the wrong row.</strong> Each box says what it "
          "expects; a milligram typed where grams are asked for is out by a factor of a thousand, and the "
          "answer still looks plausible.</li>"
-         "<li><strong>A past answer typed back in.</strong> The result boxes are results: putting a previous "
-         "answer into one turns the calculation round and solves for whichever box is empty instead.</li>"
+         "<li><strong>A past answer typed back in.</strong> The result boxes are read-only, so a previous "
+         "answer cannot be entered there; it has to be worked back through the inputs.</li>"
          "</ul>"),
 
         ("Units and precision",
@@ -578,8 +578,8 @@ def build_article(spec: Spec) -> dict:
          "<ol>"
          f"<li><strong>Collect the inputs.</strong> You need {names_in}. Note the unit each one is in before "
          "you type, because the page cannot tell a value entered in the wrong unit from a correct one.</li>"
-         "<li><strong>Enter them.</strong> Type into the boxes; the panel updates as soon as it has enough "
-         "to answer. Leave the box you are solving for empty.</li>"
+         "<li><strong>Enter them.</strong> Type into the boxes; the panel updates when you press Calculate "
+         "and again as you change a value. Fill every box the page asks for.</li>"
          f"<li><strong>Read the result against the worked example.</strong> {names_out.capitalize()} should be "
          "of the same order of magnitude as the figure above for inputs of the same order.</li>"
          "<li><strong>Change one box to check the direction.</strong> Move a single input and confirm the "
@@ -606,8 +606,8 @@ def build_article(spec: Spec) -> dict:
          "box in the panel means a missing input rather than an error. Zero is accepted as an input, but a "
          "formula that would divide by it reports no result instead of infinity.</p>"
          "<p>Values are carried at full precision between the formula and the display, and the three-decimal "
-         "limit is applied only at the end. If you type a value into a result box, the page treats it as "
-         "known and solves for whichever input is then empty — the same calculation, run backwards.</p>"),
+         "limit is applied only at the end. The result boxes are read-only: they are recomputed from the "
+         "inputs, never typed into, so a number in the panel always belongs to the values above it.</p>"),
 
         ("Limits worth knowing",
          f"<ul>{lim_html}<li><strong>It computes the relationship, not your case.</strong> Nothing here "
@@ -627,10 +627,11 @@ def build_article(spec: Spec) -> dict:
          f"The relationship is {plain(list(spec.formula.values())[0], labels)}."),
         ("Which values do I need before I start?",
          ", ".join(label_of(f) + (f" ({unit_of(f)})" if unit_of(f) else "") for f in fields)
-         + ". Leave the result boxes alone unless one of them is the value you are solving for."),
+         + ". The result boxes need no input of their own: they are computed."),
         ("Can I use it backwards?",
-         "Yes. Every line of the formula table is an arrangement of the same relationship, so filling in a "
-         "result and leaving an input empty makes the page solve for that input instead."),
+         "Not from the page itself: the results are read-only and the arithmetic always runs from the inputs. "
+         "The formula table lists the rearrangement for each unknown, so the same relationship can be worked "
+         "the other way by hand."),
         ("Does it matter which unit I type in?",
          "It matters that every box is in the unit printed beside it: "
          + "; ".join(f"{soft(label_of(f))} in {unit_of(f)}" for f in fields if unit_of(f))
