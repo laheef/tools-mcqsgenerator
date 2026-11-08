@@ -27,6 +27,11 @@ use Onim\View;
 $siteName = $siteName ?? SITE_NAME;
 $columns = Cms::footerColumns();
 
+/* A link to a page that no longer exists is worse than no link: "Discover Onim"
+   survived the rebuild in the database and 404s on every page of the live site.
+   Anything pointing at it is dropped wherever it turns up. */
+$deadUrls = ['/discover'];
+
 /*
  * Normalise whatever the database holds into the footer this site actually
  * wants: one Calculators column, Company, Resources.
@@ -64,7 +69,11 @@ if ($columns !== []) {
         if ($isCategoryColumn($column)) {
             continue;
         }
-        $links = array_values(array_filter((array) ($column['links'] ?? []), static fn ($l): bool => !$isPadding((array) $l)));
+        $links = array_values(array_filter(
+            (array) ($column['links'] ?? []),
+            static fn ($l): bool => !$isPadding((array) $l)
+                && !in_array(trim((string) (($l ?? [])['url'] ?? '')), $deadUrls, true)
+        ));
         if ($links === []) {
             continue;
         }
@@ -81,16 +90,20 @@ $designed = static fn (): array => [
     ['title' => 'Company', 'links' => [
         ['label' => 'About us', 'url' => '/about', 'target' => '_self'],
         ['label' => 'Contact', 'url' => '/contact', 'target' => '_self'],
-        ['label' => 'Discover Onim', 'url' => '/discover', 'target' => '_self'],
-    ]],
-    ['title' => 'Resources', 'links' => [
-        ['label' => 'All calculators', 'url' => '/all-calculators', 'target' => '_self'],
-        /* Every band on the home page and every section page ends in a
-           "Browse all …" button that lands here, and the sitemap lists all
-           sixteen addresses — the one place that did not was this column. */
-        ['label' => 'All tools', 'url' => '/all-tools', 'target' => '_self'],
-        ['label' => 'Search', 'url' => '/search', 'target' => '_self'],
         ['label' => 'Blog', 'url' => '/blog', 'target' => '_self'],
+        ['label' => 'Search', 'url' => '/search', 'target' => '_self'],
+        ['label' => 'FAQ', 'url' => '/faq', 'target' => '_self'],
+    ]],
+    /* The policies are a group, not a line of small print: a reader deciding
+       whether to trust a result needs the privacy, cookie and AI pages, and a
+       page that is not linked from the footer is a page nobody reads. */
+    ['title' => 'Policies', 'links' => [
+        ['label' => 'Privacy policy', 'url' => '/privacy', 'target' => '_self'],
+        ['label' => 'Cookie policy', 'url' => '/cookies', 'target' => '_self'],
+        ['label' => 'AI policy', 'url' => '/ai-policy', 'target' => '_self'],
+        ['label' => 'Your data and choices', 'url' => '/your-data', 'target' => '_self'],
+        ['label' => 'Terms of use', 'url' => '/terms', 'target' => '_self'],
+        ['label' => 'Disclaimer', 'url' => '/disclaimer', 'target' => '_self'],
     ]],
 ];
 /* The Calculators column: four real category indexes, biggest first, plus the
@@ -99,89 +112,159 @@ $designed = static fn (): array => [
 $bySize = ($categories ?? []);
 usort($bySize, static fn (array $a, array $b): int => (int) ($b['count'] ?? 0) <=> (int) ($a['count'] ?? 0));
 $catLinks = [];
-foreach (array_slice($bySize, 0, 4) as $cat) {
+foreach (array_slice($bySize, 0, 6) as $cat) {
     $catLinks[] = ['label' => (string) $cat['name'], 'url' => '/' . $cat['slug'], 'target' => '_self'];
 }
-$catLinks[] = ['label' => 'All calculators', 'url' => '/all-calculators', 'target' => '_self'];
+$calcTotal = 0;
+foreach ($bySize as $catRow) {
+    $calcTotal += (int) ($catRow['count'] ?? 0);
+}
+$catLinks[] = ['label' => 'All ' . Format::count($calcTotal) . ' calculators', 'url' => '/all-calculators', 'target' => '_self'];
 
-/* The tool sections. The site is bigger than its calculator column now, and a
-   footer that lists only categories says otherwise. Built from Groups, so a
-   section renamed in the panel follows here too. */
+/* The tool sections — every one of them, in the order the header shows them.
+   Fifteen names in one narrow column is a ladder, so the column is marked wide
+   and the links flow in two halves inside it. Built from Groups, so a section
+   renamed in the panel follows here too. */
 $allGroups = \Onim\Groups::all();
 $toolLinks = [];
 foreach ($allGroups as $groupRow) {
     if ((string) $groupRow['slug'] === \Onim\Groups::CALCULATORS) {
         continue;
     }
-    $toolLinks[] = ['label' => (string) $groupRow['name'], 'url' => '/' . $groupRow['slug'], 'target' => '_self'];
+    /* The header abbreviates these to fit one line; the footer has room, so the
+       label is the section's own name minus the " Tools" tail. */
+    $label = (string) $groupRow['name'];
+    if (str_ends_with($label, ' Tools')) {
+        $label = substr($label, 0, -6);
+    }
+    $toolLinks[] = [
+        'label'  => $label,
+        'url'    => '/' . $groupRow['slug'],
+        'target' => '_self',
+        'count'  => \Onim\Groups::countGroup((string) $groupRow['slug']),
+    ];
 }
-/* Fifteen sections in one column is a ladder. The column is laid out in two
-   halves — one heading, the links flowing in two columns — so the footer keeps a
-   readable shape as sections are added in the panel. */
-$toolColumns = [];
 if ($toolLinks !== []) {
-    $toolColumns = [[
+    $toolLinks[] = ['label' => 'All tools', 'url' => '/all-tools', 'target' => '_self'];
+}
+
+$haveTitles = array_map(static fn (array $c): string => mb_strtolower(trim((string) $c['title'])), $columns);
+
+/* Calculators first — the one column every version of this footer needs. */
+if (!in_array('calculators', $haveTitles, true)) {
+    $columns = array_merge([['title' => 'Calculators', 'links' => $catLinks]], $columns);
+}
+
+/* Tool sections next, right after the calculators: they are the other half of
+   the catalogue and the reason the site is not just a calculator library. */
+$hasToolColumn = false;
+foreach ($columns as $c) {
+    if (preg_match('~tools?|sections?~i', (string) $c['title']) === 1) {
+        $hasToolColumn = true;
+        break;
+    }
+}
+if (!$hasToolColumn && $toolLinks !== []) {
+    array_splice($columns, 1, 0, [[
         'title' => 'Tool sections',
         'links' => $toolLinks,
         'wide'  => count($toolLinks) > 9,
-    ]];
+    ]]);
 }
 
-$have = array_map(static fn (array $c): string => mb_strtolower(trim((string) $c['title'])), $columns);
-if (!in_array('calculators', $have, true)) {
-    $columns = array_merge([['title' => 'Calculators', 'links' => $catLinks]], $columns);
-}
+$haveTitles = array_map(static fn (array $c): string => mb_strtolower(trim((string) $c['title'])), $columns);
 foreach ($designed() as $wanted) {
-    if (!in_array(mb_strtolower($wanted['title']), $have, true)) {
+    if (!in_array(mb_strtolower((string) $wanted['title']), $haveTitles, true)) {
         $columns[] = $wanted;
     }
 }
 
-/*
- * The tools index in the footer.
- *
- * Every band on the home page and every section page ends in a "Browse all 4
- * image tools" button that lands on /all-tools, and the sitemap lists all
- * sixteen of those addresses — the footer is the one navigation surface that
- * would otherwise offer no way through to them. A footer saved before that page
- * existed has no row for it, so the link is added here, after "All calculators",
- * unless the column already links it or the owner has switched it off in
- * Settings → Footer (footer_tools_link, on by default). Migration 014 puts the
- * same row into menu_items, so the panel's footer editor shows it as an ordinary
- * link that can be renamed, moved or deleted like the rest.
- */
-if (Cms::enabled() ? Cms::settingBool('footer_tools_link', true) : true) {
-    foreach ($columns as $i => $column) {
-        if (mb_strtolower(trim((string) $column['title'])) !== 'resources') {
-            continue;
+/* Make sure the policy pages are reachable even when the owner's Policies
+   column predates them: a missing link is appended at render time, so a
+   database that has not run the migration still renders a complete footer. */
+$policyPages = [
+    '/privacy'    => 'Privacy policy',
+    '/cookies'    => 'Cookie policy',
+    '/ai-policy'  => 'AI policy',
+    '/your-data'  => 'Your data and choices',
+    '/terms'      => 'Terms of use',
+    '/disclaimer' => 'Disclaimer',
+];
+foreach ($columns as $i => $column) {
+    if (mb_strtolower(trim((string) $column['title'])) !== 'policies') {
+        continue;
+    }
+    $present = [];
+    foreach ((array) $column['links'] as $link) {
+        $present[] = trim((string) ($link['url'] ?? ''));
+    }
+    foreach ($policyPages as $url => $label) {
+        if (!in_array($url, $present, true)) {
+            $column['links'][] = ['label' => $label, 'url' => $url, 'target' => '_self'];
         }
-        $links = [];
-        $hasTools = false;
-        foreach ((array) $column['links'] as $link) {
-            if (trim((string) ($link['url'] ?? '')) === '/all-tools') {
-                $hasTools = true;
-            }
-            $links[] = $link;
-        }
-        if (!$hasTools) {
-            /* Straight after the calculator catalogue, wherever that link is
-               filed: the live database still points at /calculators, the
-               current default, while a newer install uses /all-calculators. */
-            $at = count($links);
-            foreach ($links as $j => $link) {
-                if (in_array(trim((string) ($link['url'] ?? '')), ['/calculators', '/all-calculators'], true)) {
-                    $at = $j + 1;
-                    break;
-                }
-            }
-            array_splice($links, $at, 0, [[
-                'label' => 'All tools', 'url' => '/all-tools', 'target' => '_self',
-            ]]);
-        }
-        $columns[$i]['links'] = $links;
-        break;
+    }
+    $columns[$i] = $column;
+    break;
+}
+
+/* A column with a dozen or more links is laid out in two halves inside its
+   track — otherwise fifteen section names make the footer three screens tall.
+   This runs whether the column came from the panel or was added above, because
+   the migration's row has no idea how wide the result will be. */
+foreach ($columns as $i => $column) {
+    if (count((array) ($column['links'] ?? [])) > 9) {
+        $columns[$i]['wide'] = true;
     }
 }
+
+/* The Calculators column always ends at the catalogue: a list of six category
+   indexes with no way to reach the rest is a teaser, not a map. */
+foreach ($columns as $i => $column) {
+    if (mb_strtolower(trim((string) $column['title'])) !== 'calculators') {
+        continue;
+    }
+    $hasAll = false;
+    foreach ((array) $column['links'] as $link) {
+        if (in_array(trim((string) ($link['url'] ?? '')), ['/all-calculators', '/calculators'], true)) {
+            $hasAll = true;
+            break;
+        }
+    }
+    if (!$hasAll) {
+        $column['links'][] = ['label' => 'All ' . Format::count($calcTotal) . ' calculators', 'url' => '/all-calculators', 'target' => '_self'];
+        $columns[$i] = $column;
+    }
+    break;
+}
+
+/*
+ * One link, once.
+ *
+ * An older database carries a "Resources" column whose four links are also in
+ * the Calculators, Tool sections and Company columns. Printing both makes the
+ * footer look like it was assembled twice. Any link already rendered is dropped
+ * from the columns after it, and a column left with nothing disappears.
+ */
+$seenUrls = [];
+foreach ($columns as $i => $column) {
+    $links = [];
+    foreach ((array) ($column['links'] ?? []) as $link) {
+        $url = trim((string) ($link['url'] ?? ''));
+        /* /calculators and /all-calculators are the same page under two names;
+           the older database links the first one. */
+        $key = $url === '/calculators' ? '/all-calculators' : $url;
+        if ($key !== '' && isset($seenUrls[$key])) {
+            continue;
+        }
+        if ($key !== '') {
+            $seenUrls[$key] = true;
+        }
+        $links[] = $link;
+    }
+    $column['links'] = $links;
+    $columns[$i] = $column;
+}
+$columns = array_values(array_filter($columns, static fn (array $c): bool => !empty($c['links'])));
 
 $about = (string) (Cms::setting('footer_about', '') ?? '');
 $copyright = (string) (Cms::setting('footer_copyright', '') ?? '');
@@ -214,7 +297,22 @@ $contactEmail = (string) (Cms::setting('contact_email', '') ?? '');
 $contactPhone = (string) (Cms::setting('contact_phone', '') ?? '');
 $contactAddress = (string) (Cms::setting('contact_address', '') ?? '');
 $socials = Cms::decode((string) (Cms::setting('social_links', '') ?? ''));
-$legal = Cms::menu('legal');
+$legal = [];
+foreach (Cms::menu('legal') as $item) {
+    if (in_array(trim((string) ($item['url'] ?? '')), $deadUrls, true)) {
+        continue;
+    }
+    $legal[] = $item;
+}
+if ($legal === []) {
+    $legal = [
+        ['label' => 'Privacy', 'url' => '/privacy'],
+        ['label' => 'Cookies', 'url' => '/cookies'],
+        ['label' => 'Terms', 'url' => '/terms'],
+        ['label' => 'AI policy', 'url' => '/ai-policy'],
+        ['label' => 'Disclaimer', 'url' => '/disclaimer'],
+    ];
+}
 ?>
 <footer class="site-footer">
     <div class="shell">
@@ -234,8 +332,12 @@ $legal = Cms::menu('legal');
                              claimed nineteen file tools were calculators. */ ?>
                     <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> tools
                     across <?= View::escape((string) count($categories ?? [])) ?> calculator topics and
-                    <?= View::escape((string) max(0, count(\Onim\Groups::all()) - 1)) ?> tool sections —
+                    <?= View::escape((string) max(0, count($allGroups) - 1)) ?> other sections —
                     free and without an account.
+                </p>
+                <p class="footer-count">
+                    Every calculator shows the formula it used. Every file tool runs in your
+                    browser — <a href="<?= View::escape(View::url('/privacy')) ?>">nothing you open is uploaded</a>.
                 </p>
 
                 <?php if ($contactEmail !== '' || $contactPhone !== '' || $contactAddress !== ''): ?>
@@ -277,6 +379,9 @@ $legal = Cms::menu('legal');
                                     <a href="<?= View::escape(View::url((string) $link['url'])) ?>"
                                        <?= ($link['target'] ?? '_self') === '_blank' ? 'target="_blank" rel="noopener"' : '' ?>>
                                         <?= View::escape((string) $link['label']) ?>
+                                        <?php if (isset($link['count']) && (int) $link['count'] > 0): ?>
+                                            <span class="footer-count-badge"><?= View::escape(Format::count((int) $link['count'])) ?></span>
+                                        <?php endif; ?>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
@@ -311,7 +416,7 @@ $legal = Cms::menu('legal');
                 <p class="footer-copyright"><?= View::escape($copyright !== '' ? $copyright : '© ' . date('Y') . ' ' . $siteName . '. All rights reserved.') ?></p>
                 <p class="footer-note">
                     <span data-live-count="total"><?= View::escape(Format::count(Data::total())) ?></span> tools ·
-                    <?= View::escape((string) max(0, count($allGroups) - 1)) ?> tool sections ·
+                    <?= View::escape((string) max(0, count($allGroups) - 1)) ?> sections besides the calculators ·
                     <?= View::escape((string) count($categories ?? [])) ?> calculator topics — no account needed.
                 </p>
                 <?php if ($showNotice): ?>

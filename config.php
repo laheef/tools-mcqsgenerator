@@ -11,8 +11,8 @@
 declare(strict_types=1);
 
 const SITE_NAME        = 'Onim';
-const SITE_TAGLINE     = '4 041 free calculators, each one with its formula spelled out';
-const SITE_DESCRIPTION = 'Onim is a free calculator library: 4 041 tools for maths, money, health, physics and the everyday problems in between. Every page shows the formula, the units and a worked example, and every answer is calculated in full — no rounded guesswork.';
+const SITE_TAGLINE     = 'Free calculators and file tools — the working shown, nothing uploaded';
+const SITE_DESCRIPTION = 'Onim is a free tool library: 4 041 calculators for maths, money, health, physics and the everyday problems in between, plus 19 browser tools for audio, video, images, PDFs and code. Every calculator shows the formula, the units and a worked example; every file tool runs on your device.';
 
 /** Data extracted from the reference site (see tools/extract.py). */
 define('DATA_PATH', __DIR__ . '/data');
@@ -133,7 +133,7 @@ function onim_db_configured(): bool
 }
 
 /** Bump to bust asset caches after editing css/js. */
-const ASSET_VERSION = '1.2.71';
+const ASSET_VERSION = '1.2.72';
 
 /** Unit/category reference data lives under data/calc/ (see tools/harvest_all.py). */
 const RATES_CAPTURED = '2026-10-23';

@@ -3724,3 +3724,124 @@ a:focus-visible > .calc-glyph,
   .directory-icon svg { width: 20px; height: 20px; }
   .directory-actions { width: 100%; justify-content: flex-start; }
 }
+
+/* ------------------------------------------------- about page and the team */
+/*
+ * The About page carries one wide photograph and three portrait cards. Both are
+ * content: the workspace shot sets the scene, and the three cards say who does
+ * what behind a page. They follow the same card language as the rest of the
+ * site — white, one-pixel border, the radius token — so the page does not read
+ * as a different website bolted onto this one.
+ */
+.article-body .about-figure { margin: 26px 0 30px; }
+.article-body .about-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+.article-body .about-figure figcaption { margin-top: 10px; }
+
+.team-grid {
+  display: grid;
+  gap: 20px;
+  margin: 26px 0 30px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+}
+.team-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+.team-card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  aspect-ratio: 640 / 736;
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+}
+.team-card-body { padding: 16px 18px 18px; }
+.team-card .team-name { margin: 0 0 2px; font-size: 16.5px; line-height: 1.3; }
+.team-card .team-role {
+  margin: 0 0 10px;
+  font-size: 12.4px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+.team-card .team-bio { margin: 0 0 10px; font-size: 13.6px; line-height: 1.6; color: var(--ink-3); }
+.team-card .team-detail {
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 12.8px;
+  line-height: 1.55;
+  color: var(--ink-4);
+}
+html[data-theme="dark"] .team-card { background: var(--surface-2); }
+
+/* A note under the team cards: the portraits are illustrative, and the page
+   says so in its own voice rather than in a caption nobody reads. */
+.article-body .team-note {
+  margin: -8px 0 26px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--brand-soft);
+  background: var(--surface-2);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 13.2px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+/* ------------------------------------------------------ footer: the map */
+/*
+ * The footer lists every section of the site and every policy page. Fifteen
+ * section names plus a count badge need a second track inside their column,
+ * which is why the wide column spans two of the grid's tracks on a desktop.
+ */
+.footer-count-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 10.8px;
+  font-weight: 600;
+  color: var(--ink-4);
+  vertical-align: 1px;
+}
+.footer-list a:hover .footer-count-badge { border-color: var(--brand); color: var(--brand-ink); }
+
+.footer-columns { align-items: start; }
+.footer-column--wide .footer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
+}
+/* "Social & Community" is the longest label in the map; the badge must not drop
+   onto a line of its own underneath it. */
+.footer-column--wide .footer-list a { white-space: nowrap; }
+.footer-column--wide .footer-list li { min-width: 0; }
+@media (min-width: 1146px) {
+  .footer-column--wide { grid-column: span 2; }
+}
+@media (max-width: 639px) {
+  .footer-column--wide .footer-list { grid-template-columns: 1fr; }
+}
