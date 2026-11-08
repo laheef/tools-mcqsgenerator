@@ -149,6 +149,7 @@ FUNCS = {
     "round": round,
     "floor": math.floor,
     "ceil": math.ceil,
+    "gcd": lambda a, b: math.gcd(int(round(a)), int(round(b))),
     "pi": math.pi,
     "e": math.e,
 }
