@@ -216,7 +216,7 @@ final class CalcFile
                 return $fail('formula for "' . $lhs . '", which is not a field on the form');
             }
             foreach (Expr::dependencies((string) $expr) as $dep) {
-                if (!isset($inputs[$dep]) && !Expr::knows($dep)) {
+                if (!isset($inputs[$dep]) && !\Onim\Functions::knows($dep)) {
                     return $fail('"' . $lhs . '" reads "' . $dep . '", which is not a field on the form');
                 }
             }
