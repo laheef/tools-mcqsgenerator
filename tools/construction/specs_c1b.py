@@ -29,7 +29,7 @@ SPECS = [
         formula={
             "concrete_each": "pi*pow(diameter/24,2)*depth/12",
             "concrete_total": "pi*pow(diameter/24,2)*depth/12*count*(1+waste/100)/27",
-            "bags_80lb": "ceil(pi*pow(diameter/24,2)*depth/12*count*(1+waste/100)/0.6-0.000000001)",
+            "bags_80lb": "ceil(pi*pow(diameter/24,2)*depth/12*count*(1+waste/100)/0.6)",
             "tube_length": "depth/12*count",
             "diameter": "24*sqrt(concrete_each/(pi*depth/12))",
             "depth": "concrete_each*12/(pi*pow(diameter/24,2))",
@@ -192,7 +192,7 @@ SPECS = [
             "cement_ft3": "volume*cement_parts/(cement_parts+sand_parts+aggregate_parts)*(1+waste/100)",
             "sand_ft3": "volume*sand_parts/(cement_parts+sand_parts+aggregate_parts)*(1+waste/100)",
             "aggregate_ft3": "volume*aggregate_parts/(cement_parts+sand_parts+aggregate_parts)*(1+waste/100)",
-            "cement_bags": "ceil(volume*cement_parts/(cement_parts+sand_parts+aggregate_parts)*(1+waste/100)-0.000000001)",
+            "cement_bags": "ceil(volume*cement_parts/(cement_parts+sand_parts+aggregate_parts)*(1+waste/100))",
             "volume": "cement_ft3*(cement_parts+sand_parts+aggregate_parts)/(cement_parts*(1+waste/100))",
             "waste": "(cement_ft3*(cement_parts+sand_parts+aggregate_parts)/(volume*cement_parts)-1)*100",
         },
@@ -276,7 +276,7 @@ SPECS = [
         ],
         formula={
             "mortar_ft3": "wall_area*joint/(joint+8)*unit_depth/12*(1+waste/100)",
-            "bags_80lb": "ceil(wall_area*joint/(joint+8)*unit_depth/12*(1+waste/100)/0.7-0.000000001)",
+            "bags_80lb": "ceil(wall_area*joint/(joint+8)*unit_depth/12*(1+waste/100)/0.7)",
             "joint_fraction": "joint/(joint+8)*100",
             "wall_area": "mortar_ft3/(joint/(joint+8)*unit_depth/12*(1+waste/100))",
             "joint": "8*mortar_ft3/(wall_area*unit_depth/12*(1+waste/100)-mortar_ft3)",
@@ -442,8 +442,8 @@ SPECS = [
             R("coverage_used", "Coverage used", "ft²"),
         ],
         formula={
-            "bags": "ceil(area*coats*(1+waste/100)/coverage-0.000000001)",
-            "weight": "ceil(area*coats*(1+waste/100)/coverage-0.000000001)*50",
+            "bags": "ceil(area*coats*(1+waste/100)/coverage)",
+            "weight": "ceil(area*coats*(1+waste/100)/coverage)*50",
             "coverage_used": "area*coats",
             "area": "bags*coverage/(coats*(1+waste/100))",
             "waste": "(bags*coverage/(area*coats)-1)*100",

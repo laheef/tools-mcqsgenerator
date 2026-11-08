@@ -58,6 +58,19 @@
     var t = v.toFixed(10).replace(/0+$/, '').replace(/\.$/, '');
     return t === '-0' ? '0' : t;
   }
+  /**
+   * ceil/floor, immune to binary rounding noise.
+   *
+   * 100 x 1.1 / 10 evaluates to 11.000000000000002 in floating point, and a
+   * bare Math.ceil would turn eleven bags into twelve. Snap within 1e-9 of an
+   * integer, and round normally otherwise - the same rule as lib/Expr.php.
+   */
+  function snapInt(x, up) {
+    if (!isFinite(x)) return x;
+    var n = Math.round(x);
+    if (Math.abs(x - n) <= 1e-9 * Math.max(1, Math.abs(x))) return n;
+    return up ? Math.ceil(x) : Math.floor(x);
+  }
   var FUNCS = {
     sqrt: function (a) { return Math.sqrt(Math.max(0, a[0] || 0)); },
     cbrt: function (a) { var x = a[0] || 0; return x < 0 ? -Math.cbrt(-x) : Math.cbrt(x); },
@@ -66,8 +79,8 @@
     abs: function (a) { return Math.abs(a[0] || 0); },
     exp: function (a) { return Math.exp(a[0] || 0); },
     expm1: function (a) { return Math.expm1(a[0] || 0); },
-    ceil: function (a) { return Math.ceil(a[0] || 0); },
-    floor: function (a) { return Math.floor(a[0] || 0); },
+    ceil: function (a) { return snapInt(a[0] || 0, true); },
+    floor: function (a) { return snapInt(a[0] || 0, false); },
     fix: function (a) { return Math.trunc(a[0] || 0); },
     trunc: function (a) { return Math.trunc(a[0] || 0); },
     round: function (a) {

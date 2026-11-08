@@ -29,8 +29,8 @@ SPECS = [
         ],
         formula={
             "wall_area": "wall_length*wall_height",
-            "bricks": "ceil(wall_length*wall_height*144/((brick_length+joint)*(brick_height+joint))-0.000000001)",
-            "bricks_with_waste": "ceil(wall_length*wall_height*144/((brick_length+joint)*(brick_height+joint))*(1+waste/100)-0.000000001)",
+            "bricks": "ceil(wall_length*wall_height*144/((brick_length+joint)*(brick_height+joint)))",
+            "bricks_with_waste": "ceil(wall_length*wall_height*144/((brick_length+joint)*(brick_height+joint))*(1+waste/100))",
             "wall_length": "wall_area/wall_height",
             "wall_height": "wall_area/wall_length",
         },
@@ -118,7 +118,7 @@ SPECS = [
             "area": "length*width",
             "volume_ft3": "length*width*thickness/12*(1+waste/100)",
             "volume_yd3": "length*width*thickness/12/27*(1+waste/100)",
-            "bags_80lb": "ceil(length*width*thickness/12*(1+waste/100)/0.6-0.000000001)",
+            "bags_80lb": "ceil(length*width*thickness/12*(1+waste/100)/0.6)",
             "length": "area/width",
             "width": "area/length",
             "thickness": "volume_ft3*12/(length*width*(1+waste/100))",
@@ -206,9 +206,9 @@ SPECS = [
         ],
         formula={
             "wall_area": "wall_length*wall_height",
-            "blocks": "ceil(wall_length*wall_height*144/((block_length+joint)*(block_height+joint))-0.000000001)",
-            "blocks_with_waste": "ceil(wall_length*wall_height*144/((block_length+joint)*(block_height+joint))*(1+waste/100)-0.000000001)",
-            "courses": "ceil(wall_height*12/(block_height+joint)-0.000000001)",
+            "blocks": "ceil(wall_length*wall_height*144/((block_length+joint)*(block_height+joint)))",
+            "blocks_with_waste": "ceil(wall_length*wall_height*144/((block_length+joint)*(block_height+joint))*(1+waste/100))",
+            "courses": "ceil(wall_height*12/(block_height+joint))",
             "wall_length": "wall_area/wall_height",
             "wall_height": "wall_area/wall_length",
         },
@@ -290,7 +290,7 @@ SPECS = [
         formula={
             "grout_ft3": "blocks*core_volume/1728",
             "grout_yd3": "blocks*core_volume/46656*(1+waste/100)",
-            "bags_80lb": "ceil(blocks*core_volume/1728*(1+waste/100)/0.45-0.000000001)",
+            "bags_80lb": "ceil(blocks*core_volume/1728*(1+waste/100)/0.45)",
             "blocks": "grout_ft3*1728/core_volume",
             "core_volume": "grout_ft3*1728/blocks",
             "waste": "(grout_yd3/(blocks*core_volume/46656)-1)*100",
@@ -372,7 +372,7 @@ SPECS = [
         formula={
             "volume_each": "pi*pow(diameter/24,2)*height",
             "volume_total": "pi*pow(diameter/24,2)*height*count*(1+waste/100)/27",
-            "bags_80lb": "ceil(pi*pow(diameter/24,2)*height*count*(1+waste/100)/0.6-0.000000001)",
+            "bags_80lb": "ceil(pi*pow(diameter/24,2)*height*count*(1+waste/100)/0.6)",
             "form_area": "pi*diameter/12*height*count",
             "diameter": "24*sqrt(volume_each/(pi*height))",
             "height": "volume_each/(pi*pow(diameter/24,2))",
@@ -549,7 +549,7 @@ SPECS = [
             "flight_length": "sqrt(pow(steps*run/12,2)+pow(steps*rise/12,2))",
             "volume_ft3": "(steps*(rise/24)*(run/12)*width+(sqrt(pow(steps*run/12,2)+pow(steps*rise/12,2))+landing)*width*waist/12)*(1+waste/100)",
             "volume_yd3": "volume_ft3/27",
-            "bags_80lb": "ceil(volume_ft3/0.6-0.000000001)",
+            "bags_80lb": "ceil(volume_ft3/0.6)",
         },
         prose={
             "why": ("<p>A stair pour is the one place in domestic concrete work where the geometry is "

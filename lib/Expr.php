@@ -426,6 +426,26 @@ final class Functions
         return self::NAMES;
     }
 
+    /**
+     * Nearest integer when the input is within rounding noise of one.
+     *
+     * 100 x 1.1 / 10 evaluates to 11.000000000000002 in binary floating
+     * point, and a bare ceil() would turn eleven bags of thinset into
+     * twelve. Snapping at 1e-9 of the value keeps a genuine 11.0000001
+     * rounding up while leaving exact arithmetic exact.
+     */
+    private static function snap(float $x, bool $up): float
+    {
+        if (!is_finite($x)) {
+            return $x;
+        }
+        $n = round($x);
+        if (abs($x - $n) <= 1e-9 * max(1.0, abs($x))) {
+            return $n;
+        }
+        return $up ? ceil($x) : floor($x);
+    }
+
     /** @param float[] $a */
     public static function call(string $name, array $a): float
     {
@@ -438,9 +458,9 @@ final class Functions
             case 'expm1':
                 return expm1($a[0] ?? 0.0);
             case 'ceil':
-                return ceil($a[0] ?? 0.0);
+                return self::snap($a[0] ?? 0.0, true);
             case 'floor':
-                return floor($a[0] ?? 0.0);
+                return self::snap($a[0] ?? 0.0, false);
             case 'fix':      // forward-compatible with JS Math.trunc
             case 'trunc':
                 return (float) (int) ($a[0] ?? 0.0);

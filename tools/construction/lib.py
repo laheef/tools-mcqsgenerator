@@ -136,6 +136,14 @@ def S(**kwargs: Any) -> Spec:
 
 # ------------------------------------------------------------------ maths
 
+def _snap(x: float, up: bool) -> float:
+    """ceil/floor, immune to binary rounding noise (mirrors lib/Expr.php)."""
+    n = round(x)
+    if abs(x - n) <= 1e-9 * max(1.0, abs(x)):
+        return float(n)
+    return math.ceil(x) if up else math.floor(x)
+
+
 FUNCS = {
     "pow": pow,
     "sqrt": math.sqrt,
@@ -147,8 +155,8 @@ FUNCS = {
     "min": min,
     "max": max,
     "round": round,
-    "floor": math.floor,
-    "ceil": math.ceil,
+    "floor": lambda x: _snap(x, False),
+    "ceil": lambda x: _snap(x, True),
     "gcd": lambda a, b: math.gcd(int(round(a)), int(round(b))),
     "sin": math.sin,
     "cos": math.cos,

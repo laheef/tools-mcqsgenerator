@@ -27,10 +27,10 @@ SPECS = [
             R("weight", "Rebar weight", "lb"),
         ],
         formula={
-            "bars_length": "ceil(width*12/spacing-0.000000001)+1",
-            "bars_width": "ceil(length*12/spacing-0.000000001)+1",
-            "total_length": "(ceil(width*12/spacing-0.000000001)+1)*length+(ceil(length*12/spacing-0.000000001)+1)*width",
-            "weight": "((ceil(width*12/spacing-0.000000001)+1)*length+(ceil(length*12/spacing-0.000000001)+1)*width)*0.668*pow(bar_size/4,2)",
+            "bars_length": "ceil(width*12/spacing)+1",
+            "bars_width": "ceil(length*12/spacing)+1",
+            "total_length": "(ceil(width*12/spacing)+1)*length+(ceil(length*12/spacing)+1)*width",
+            "weight": "((ceil(width*12/spacing)+1)*length+(ceil(length*12/spacing)+1)*width)*0.668*pow(bar_size/4,2)",
         },
         prose={
             "why": ("<p>Rebar is specified by bar size and spacing, and ordered by weight. Getting from "
@@ -111,7 +111,7 @@ SPECS = [
         formula={
             "volume_ft3": "pi*pow(diameter/24,2)*height",
             "volume_yd3": "pi*pow(diameter/24,2)*height*(1+waste/100)/27",
-            "bags_80lb": "ceil(pi*pow(diameter/24,2)*height*(1+waste/100)/0.6-0.000000001)",
+            "bags_80lb": "ceil(pi*pow(diameter/24,2)*height*(1+waste/100)/0.6)",
             "tube_area": "pi*diameter/12*height",
             "diameter": "24*sqrt(volume_ft3/(pi*height))",
             "height": "volume_ft3/(pi*pow(diameter/24,2))",
@@ -193,7 +193,7 @@ SPECS = [
         formula={
             "concrete_each": "(pi*pow(hole_diameter/24,2)-pow(post_size/12,2))*hole_depth",
             "concrete_total": "(pi*pow(hole_diameter/24,2)-pow(post_size/12,2))*hole_depth*posts*(1+waste/100)",
-            "bags_80lb": "ceil((pi*pow(hole_diameter/24,2)-pow(post_size/12,2))*hole_depth*posts*(1+waste/100)/0.6-0.000000001)",
+            "bags_80lb": "ceil((pi*pow(hole_diameter/24,2)-pow(post_size/12,2))*hole_depth*posts*(1+waste/100)/0.6)",
             "post_displacement": "pow(post_size/12,2)*hole_depth",
             "hole_diameter": "24*sqrt((concrete_each/hole_depth+pow(post_size/12,2))/pi)",
             "hole_depth": "concrete_each/(pi*pow(hole_diameter/24,2)-pow(post_size/12,2))",
