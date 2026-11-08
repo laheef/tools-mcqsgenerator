@@ -1162,13 +1162,64 @@ button { font: inherit; color: inherit; }
 .calc-field { display: grid; gap: 5px; min-width: 0; }
 .calc-field > * { min-width: 0; max-width: 100%; }
 .calc-label { font-size: 13.4px; font-weight: 400; color: var(--ink-3); }
+
+/*
+ * One border, one focus ring.
+ *
+ * base.css is Tailwind's preflight: it gives every select and radio a hard grey
+ * #6B7280 edge, a #2563EB focus ring and a #2563EB dot when checked. Those leaked
+ * into the calculator, where everything else is drawn in --border and --brand: a
+ * radio's circle came out darker than the pill around it, a drop-down lit up in a
+ * different blue from the number box above it, and a selected radio went Tailwind
+ * blue under the brand-blue ring. Resting is soft everywhere, focused is one brand
+ * blue with the same pale halo, and no hard grey or second blue appears inside a
+ * widget.
+ *
+ * base.css is linked *after* app.css, so a tie on specificity goes to Tailwind.
+ * Every selector below carries an element qualifier to sit one step above it.
+ */
+.calc-widget input[type="text"],
+.calc-widget input[type="number"],
+.calc-widget input[type="search"],
+.calc-widget input[type="date"],
+.calc-widget select,
+.calc-widget textarea { border-color: var(--border); }
+.calc-widget select:focus,
+.calc-widget input:focus,
+.calc-widget textarea:focus { box-shadow: none; outline: none; }
+
+.calc-widget input[type="radio"],
+.calc-widget input[type="checkbox"] {
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--surface);
+  box-shadow: none;
+}
+.calc-widget input[type="radio"]:hover:not(:checked),
+.calc-widget input[type="checkbox"]:hover:not(:checked) { border-color: var(--brand); }
+/* checked, and checked while hovered or focused: base.css has a rule for each
+   that repaints the dot in Tailwind blue, so each is answered here */
+.calc-widget input[type="radio"]:checked,
+.calc-widget input[type="checkbox"]:checked,
+.calc-widget input[type="radio"]:checked:hover,
+.calc-widget input[type="checkbox"]:checked:hover,
+.calc-widget input[type="radio"]:checked:focus,
+.calc-widget input[type="checkbox"]:checked:focus {
+  border-color: var(--brand);
+  background-color: var(--brand);
+  color: var(--brand);
+  box-shadow: none;
+}
+.calc-widget input[type="radio"]:focus-visible,
+.calc-widget input[type="checkbox"]:focus-visible { box-shadow: 0 0 0 3px var(--brand-soft); }
+
 .calc-input-wrap {
   display: flex; align-items: center; min-height: 44px; min-width: 0; max-width: 100%;
   overflow: hidden;
   border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
   transition: border-color .16s var(--ease), box-shadow .16s var(--ease), background .16s var(--ease);
 }
-.calc-input-wrap:focus-within { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(59, 104, 252, .14); }
+.calc-input-wrap:focus-within { border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
 .calc-input-wrap.is-computed { background: var(--surface-3); border-color: #CBD9FF; }
 /* A long result ("16 000 000", "0.0000001234") does not fit the rail at the
    default size, and a clipped number is worse than a smaller one. Two steps,
@@ -1204,25 +1255,31 @@ button { font: inherit; color: inherit; }
  * the calculator's own drop-downs use, small enough for a chip.
  */
 .calc-unit {
-  flex: 0 0 auto; max-width: 124px; min-width: 54px; height: 34px; margin-right: 5px;
+  flex: 0 0 auto; max-width: 124px; min-width: 52px; height: 30px; margin-right: 6px;
   border: 0; border-radius: var(--radius-sm);
   background-color: var(--surface-3);
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1.5l4 4 4-4' fill='none' stroke='%236B7A90' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1.7 2.4L5 5.6l3.3-3.2' fill='none' stroke='%233B68FC' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 7px center;
+  /* base.css sizes every select's background at 1.5em; without this the 10x8
+     caret is blown up to 19px and reads as a fat letter V */
+  background-size: 10px 8px;
+  background-position: right 6px center;
   color: var(--ink-2); font-family: var(--font); font-size: 12.5px; font-weight: 500;
-  padding: 0 22px 0 9px; cursor: pointer; text-align: left;
+  line-height: 1;
+  padding: 0 20px 0 9px; cursor: pointer; text-align: left;
   -webkit-appearance: none; appearance: none;
-  transition: background-color .15s ease, color .15s ease;
+  print-color-adjust: exact;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease;
 }
 .calc-unit:hover { background-color: var(--brand-soft); color: var(--brand-ink); }
-.calc-unit:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; }
+.calc-widget .calc-unit:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--brand-soft); background-color: var(--brand-soft); }
 /* A chip that holds a long unit name ("kg BOD/kg MLSS/day") keeps the caret
    and gives the text the ellipsis, so the arrow is never the thing lost. */
 .calc-unit option { color: var(--ink-1); background: var(--surface); }
 html[data-theme="dark"] .calc-unit,
 html[data-theme="auto"] .calc-unit {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1.5l4 4 4-4' fill='none' stroke='%2399A7BC' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1.7 2.4L5 5.6l3.3-3.2' fill='none' stroke='%2393A9FF' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 10px 8px;
 }
 .calc-help { margin: 0; font-size: 12px; color: var(--ink-4); }
 /* A date box holds 2026-06-06; the reader wants "Sat 6 June 2026". */
@@ -1231,13 +1288,16 @@ html[data-theme="auto"] .calc-unit {
 
 /* long option lists are drop-downs rather than rows of radios */
 .calc-select {
-  width: 100%; height: 40px; padding: 0 34px 0 12px;
-  border: 1px solid var(--border); border-radius: var(--radius-sm);
-  background: var(--surface) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23748091' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+  width: 100%; height: 44px; padding: 0 38px 0 12px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1.5 1.6L6 6.1l4.5-4.5' fill='none' stroke='%234B5259' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  background-size: 12px 8px;
   -webkit-appearance: none; appearance: none;
   font-family: var(--font); font-size: 14px; color: var(--ink-1); cursor: pointer;
+  transition: border-color .16s var(--ease), box-shadow .16s var(--ease);
 }
-.calc-select:focus { outline: 2px solid var(--brand-soft); border-color: var(--brand); }
+.calc-widget .calc-select:hover { border-color: var(--border-strong); }
+.calc-widget .calc-select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
 
 .calc-field--choice { border: 0; padding: 0; margin: 0; }
 .calc-radios { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -1247,6 +1307,9 @@ html[data-theme="auto"] .calc-unit {
   background: var(--surface); font-size: 13.4px; color: var(--ink-2);
 }
 .calc-radio:has(input:checked) { border-color: var(--brand); background: var(--brand-soft); color: var(--brand-ink); font-weight: 500; }
+.calc-radio:hover { border-color: var(--border-strong); }
+.calc-radio:focus-within,
+.calc-check:focus-within { border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
 .calc-radio input { accent-color: var(--brand); margin: 0; }
 
 /* a two-state valueSelect is a real checkbox, not a pair of radios */
@@ -2926,8 +2989,10 @@ a:focus-visible > .calc-glyph,
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
   background: var(--surface-2);
+  background-position: right 6px center;
+  background-size: 10px 8px;
   font-size: 12px;
-  padding: 3px 8px;
+  padding: 3px 20px 3px 9px;
   max-width: 46%;
   text-overflow: ellipsis;
 }
