@@ -352,6 +352,8 @@ def build_article(spec: Spec) -> dict:
             value = fmt(solved[key])
             if unit:
                 match = next((r for r in results if r["name"] == key), None)
+                if match is None:
+                    match = next((f for f in fields if f["name"] == key), None)
                 return f"{value} {unit_of(match) if match else unit}".strip()
             return value
         return re.sub(r"\{([a-z_0-9]+(?:\|[^}]*)?)\}", one, text)

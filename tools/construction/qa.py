@@ -466,6 +466,133 @@ LITERATURE: dict[str, list[tuple[dict, dict, float]]] = {
         ({'length': 10, 'width': 10, 'depth': 12},
          {"area_ft2": 100, "volume_ft3": 100, "gallons": 748.052, "gallons_per_ft2": 7.48052}, 0.02),
     ],
+
+    # Batch 5a: counted by hand from the run and the spacing rules.
+    "fence": [
+        ({'length': 60, 'height': 6, 'post_spacing': 8, 'rail_count': 3, 'picket_width': 5.5,
+          'picket_gap': 0.25, 'post_price': 12, 'picket_price': 2.5},
+         {"posts": 9, "sections": 8, "rail_ft": 192, "pickets": 127, "cost": 425.5}, 0.02),
+    ],
+    "fence-cost": [
+        ({'length': 150, 'price_per_ft': 24, 'labour_per_ft': 10, 'gates': 2, 'gate_price': 300},
+         {"material": 3600, "labour": 1500, "gates_cost": 600, "total": 5700}, 0.02),
+    ],
+    "fence-estimate": [
+        ({'length': 100, 'post_spacing': 8, 'hole_diameter': 12, 'hole_depth': 36,
+          'rails_per_section': 2, 'screws_per_rail': 4},
+         {"posts": 14, "sections": 13, "concrete_ft3": 32.9867, "bags": 55, "screws": 208}, 0.02),
+    ],
+    "fence-material": [
+        ({'length': 120, 'height': 6, 'post_spacing': 8, 'rail_count': 2, 'board_width': 5.5,
+          'board_gap': 0.5, 'board_thickness': 1},
+         {"boards": 241, "posts": 16, "rail_ft": 240, "board_feet": 662.75}, 0.02),
+    ],
+    "fence-picket": [
+        ({'length': 75, 'picket_width': 3.5, 'gap': 1.5, 'price': 1.75},
+         {"pickets": 181, "exposure": 5, "coverage": 70, "cost": 316.75}, 0.02),
+    ],
+    "fence-perimeter": [
+        ({'length': 80, 'width': 50, 'gate_width': 10, 'post_spacing': 8, 'price': 25},
+         {"perimeter": 260, "fence_run": 250, "posts": 33, "panels": 32, "cost": 6250}, 0.02),
+    ],
+    "fence-post-depth": [
+        ({'above_grade': 6, 'frost_depth': 24, 'embed_ratio': 0.33, 'hole_diameter': 8,
+          'gravel_base': 6},
+         {"below_grade": 24, "post_length": 96, "hole_depth": 30, "concrete_ft3": 0.8727,
+          "bags": 2}, 0.02),
+    ],
+    "privacy-fence": [
+        ({'length': 60, 'height': 6, 'board_width': 5.5, 'overlap': 1, 'price': 3.5},
+         {"boards": 161, "exposure": 4.5, "coverage": 122.2222, "board_feet": 442.75,
+          "cost": 563.5}, 0.02),
+    ],
+    "vinyl-fence": [
+        ({'length': 90, 'height': 6, 'panel_width': 6, 'panel_price': 55, 'post_price': 30},
+         {"panels": 15, "posts": 16, "rails": 30, "cost": 1305}, 0.02),
+    ],
+    "vinyl-fence-cost": [
+        ({'length': 120, 'section_price': 70, 'post_price': 28, 'gates': 1, 'gate_price': 400,
+          'labour_per_ft': 9},
+         {"sections": 15, "posts": 16, "material": 1898, "labour": 1080, "total": 2978}, 0.02),
+    ],
+    "wood-fence": [
+        ({'length': 80, 'height': 6, 'post_spacing': 8, 'rail_count': 2, 'picket_width': 5.5,
+          'picket_gap': 0.25, 'lumber_price': 0.9, 'post_price': 15, 'concrete_price': 6},
+         {"sections": 10, "pickets": 168, "posts": 11, "board_feet": 508.6667, "cost": 688.8}, 0.02),
+    ],
+    "board-on-board-fence": [
+        ({'length': 100, 'height': 6, 'board_width': 5.5, 'lap': 1.5, 'price': 3.4},
+         {"boards": 600, "exposure": 4, "board_feet": 1650, "cost": 2040}, 0.02),
+    ],
+
+    # Batch 5b/5c: worked by hand from the geometry, not from the expressions.
+    "elevation-grade": [
+        ({'start_elevation': 100, 'run': 150, 'grade': 3, 'station': 60},
+         {"rise": 4.5, "end_elevation": 104.5, "station_elevation": 101.8,
+          "slope_ratio": 33.3333}, 0.02),
+    ],
+    "ramp-slope": [
+        ({'rise': 30, 'slope_ratio': 12, 'width': 5},
+         {"run_ft": 30, "length_ft": 30.1042, "slope_pct": 8.3333, "deck_ft2": 150.521}, 0.02),
+    ],
+    "retaining-wall": [
+        ({'length': 24, 'height': 2.5, 'block_length': 12, 'block_height': 6, 'price': 3.5,
+          'cap_price': 7},
+         {"wall_area": 60, "courses": 5, "blocks": 120, "cap_ft": 24, "cost": 588}, 0.02),
+    ],
+    "gravel-driveway": [
+        ({'length': 60, 'width': 10, 'depth': 3, 'density': 115, 'waste': 10, 'price': 40},
+         {"volume_yd3": 6.1111, "tons": 9.4875, "tonnes": 8.6068, "cost": 379.5}, 0.02),
+    ],
+    "french-drain": [
+        ({'length': 80, 'trench_width': 18, 'trench_depth': 24, 'density': 105,
+          'gravel_price': 50, 'pipe_price': 2, 'fabric_price': 0.5},
+         {"trench_ft3": 240, "gravel_tons": 12.6, "pipe_ft": 80, "fabric_ft2": 440,
+          "cost": 1010}, 0.02),
+    ],
+    "ladder-angle": [
+        ({'height': 15, 'base': 3.75},
+         {"angle": 75.9638, "ladder_length": 15.4617, "ratio": 4, "safe_base": 3.75}, 0.02),
+    ],
+    "vertical-curve": [
+        ({'g1': 3, 'g2': -2, 'length': 400},
+         {"a_rate": -5, "k_value": 80, "turning_station": 240, "mid_offset": 2.5}, 0.02),
+    ],
+    "angle-of-depression": [
+        ({'height': 25, 'distance': 40},
+         {"angle": 32.0054, "slope_pct": 62.5, "line_of_sight": 47.1699,
+          "horizon_ratio": 62.5}, 0.02),
+    ],
+    "baluster": [
+        ({'run': 100, 'baluster_width': 2, 'max_gap': 4},
+         {"balusters": 16, "gap": 4, "spacing": 6, "coverage": 32}, 0.02),
+    ],
+    "spindle-spacing": [
+        ({'run': 144, 'spacing': 5, 'margin': 2.5},
+         {"spaces": 27, "marks": 26, "actual_spacing": 5.1481, "leftover": 4}, 0.02),
+    ],
+    "sag": [
+        ({'span': 40, 'weight': 0.4, 'tension': 500},
+         {"sag": 0.16, "sag_pct": 0.4, "cable_length": 40.0017}, 0.02),
+    ],
+    "rolling-offset": [
+        ({'offset': 10, 'angle': 60},
+         {"travel": 11.547, "run": 5.7735, "travel_ft": 0.96225, "fitting_ratio": 1.1547}, 0.02),
+    ],
+    "bolt-circle": [
+        ({'diameter': 10, 'holes': 6, 'start_angle': 30},
+         {"radius": 5, "chord": 5, "arc_spacing": 5.236, "x_first": 4.3301, "y_first": 2.5}, 0.02),
+    ],
+    "box-fill": [
+        ({'box_volume': 20, 'conductors': 7, 'conductor_volume': 2.25, 'devices': 1, 'clamps': 1,
+          'grounds': 1},
+         {"fill_volume": 24.75, "fill_pct": 123.75, "spare_volume": -4.75, "unit_count": 11}, 0.02),
+    ],
+    "clearance-hole": [
+        ({'bolt_diameter': 0.625, 'clearance': 0.0625, 'thickness': 0.75},
+         {"hole_diameter": 0.6875, "edge_distance": 0.9375, "hole_area": 0.3712,
+          "grip_ratio": 1.2}, 0.02),
+    ],
 }
 
 class Engine:

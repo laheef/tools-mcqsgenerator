@@ -910,6 +910,9 @@ final class Widget
         if (preg_match('~\b(change|difference|deviation|delta)\b~', $l) === 1) {
             return null;
         }
+        if (preg_match('~\b(grade|gradient|slope)\b~', $l) === 1) {
+            return null;   // a grade is signed: a fall is negative
+        }
         if ($s === '%' || str_contains($s, '%') || preg_match('~\bpercent(age)?\b~', $l) === 1
             || in_array((string) $unit, ['perc', 'percent', 'percent-us'], true)) {
             return ['min' => 0.0, 'max' => 100.0, 'unit' => '%',
