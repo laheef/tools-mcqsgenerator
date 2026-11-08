@@ -471,7 +471,7 @@ LITERATURE: dict[str, list[tuple[dict, dict, float]]] = {
     "young-laplace-equation": [({"surface_tension": 72.0, "contact_angle": 0, "radius": 0.5,
                                  "density": 1000},
                                 {"capillary_pressure": 288.0, "capillary_rise": 29.3578,
-                                 "capillary_rise_m": 0.0293578}, 1e-4),
+                                 "capillary_rise_cm": 2.93578}, 1e-4),
                                ({"surface_tension": 72.8, "contact_angle": 0, "radius": 0.1,
                                  "density": 998}, {"capillary_pressure": 1456.0,
                                                    "capillary_rise": 148.717}, 1e-2),

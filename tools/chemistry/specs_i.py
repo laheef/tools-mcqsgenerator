@@ -854,16 +854,16 @@ SPECS = [
         results=[
             R("capillary_pressure", "Capillary pressure", "Pa"),
             R("capillary_rise", "Capillary rise", "mm"),
-            R("capillary_rise_m", "Capillary rise", "m"),
+            R("capillary_rise_cm", "Capillary rise", "cm"),
         ],
         formula={
             "capillary_pressure": "2*surface_tension*cos(contact_angle*pi/180)/radius",
             "capillary_rise": "2*surface_tension*cos(contact_angle*pi/180)/radius/(density*9.81)*1000",
-            "capillary_rise_m": "2*surface_tension*cos(contact_angle*pi/180)/radius/(density*9.81)",
+            "capillary_rise_cm": "2*surface_tension*cos(contact_angle*pi/180)/radius/(density*9.81)*100",
             "surface_tension": "capillary_pressure*radius/(2*cos(contact_angle*pi/180))",
             "contact_angle": "acos(capillary_pressure*radius/(2*surface_tension))*180/pi",
             "radius": "2*surface_tension*cos(contact_angle*pi/180)/capillary_pressure",
-            "density": "2*surface_tension*cos(contact_angle*pi/180)/radius/(capillary_rise_m*9.81)",
+            "density": "2*surface_tension*cos(contact_angle*pi/180)/radius/(capillary_rise_cm/100*9.81)",
         },
         prose={
             "why": ("<p>The Young–Laplace equation explains why water climbs a narrow tube, why a wetting "
@@ -903,7 +903,7 @@ SPECS = [
             "units_note": ("<p>Surface tension in millinewtons per metre and radius in millimetres "
                            "cancel their factors of a thousand, so the pressure comes out directly in "
                            "pascals. Dividing by density times gravity then gives metres, and the page "
-                           "shows millimetres as well.</p>"),
+                           "shows centimetres and millimetres as well.</p>"),
             "limits": [
                 "<strong>A clean, cylindrical tube.</strong> Contamination and taper change the contact "
                 "angle and the result.",
