@@ -1258,7 +1258,9 @@ button { font: inherit; color: inherit; }
   flex: 0 0 auto; max-width: 124px; min-width: 52px; height: 30px; margin-right: 6px;
   border: 0; border-radius: var(--radius-sm);
   background-color: var(--surface-3);
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1.7 2.4L5 5.6l3.3-3.2' fill='none' stroke='%233B68FC' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  /* --caret-brand is written by the layout with the colour picked in Settings →
+     Appearance; the literal beside it is the default for a page without it. */
+  background-image: var(--caret-brand, url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1.7 2.4L5 5.6l3.3-3.2' fill='none' stroke='%233B68FC' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"));
   background-repeat: no-repeat;
   /* base.css sizes every select's background at 1.5em; without this the 10x8
      caret is blown up to 19px and reads as a fat letter V */
@@ -1277,10 +1279,7 @@ button { font: inherit; color: inherit; }
    and gives the text the ellipsis, so the arrow is never the thing lost. */
 .calc-unit option { color: var(--ink-1); background: var(--surface); }
 html[data-theme="dark"] .calc-unit,
-html[data-theme="auto"] .calc-unit {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1.7 2.4L5 5.6l3.3-3.2' fill='none' stroke='%2393A9FF' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-size: 10px 8px;
-}
+html[data-theme="auto"] .calc-unit { background-size: 10px 8px; }
 .calc-help { margin: 0; font-size: 12px; color: var(--ink-4); }
 /* A date box holds 2026-06-06; the reader wants "Sat 6 June 2026". */
 .calc-date-text { margin: 4px 0 0; font-size: 12.5px; font-weight: 600; color: var(--ink-3, #475569); letter-spacing: 0.1px; }

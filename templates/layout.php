@@ -105,6 +105,16 @@ $noindexSite       = Cms::enabled() && !Cms::settingBool('seo_indexing', true);
             --font: <?= $fontBody ?>;
             --font-heading: <?= $fontHeading ?>;
             --heading-weight: <?= View::escape($weight) ?>;
+            /*
+             * The unit chip's caret, drawn in the brand colour.
+             *
+             * A data-URI background cannot read a custom property, so the SVG is
+             * written here with the colour baked in — the stylesheet keeps a
+             * default for the case where this block is missing. Without it the
+             * arrow would stay #3B68FC after Settings → Appearance picks
+             * something else, which is exactly the mismatch this token prevents.
+             */
+            --caret-brand: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1.7 2.4L5 5.6l3.3-3.2' fill='none' stroke='<?= str_replace('#', '%23', View::escape($brand)) ?>' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
         }
         /* Fonts and heading weight are rules, not tokens: nothing in app.css
            reads them yet, so they are applied here. `html body …` outranks the
