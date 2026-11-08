@@ -67,7 +67,7 @@ return [
             'results' => [
                 'mw_da' => 'mass/moles',
                 'mw_kda' => 'mass/moles/1000',
-                'molecule_mass' => 'mass/moles/602214075999999987023872',
+                'molecule_mass' => 'mass/moles/602214076000000000000000',
                 'mass' => 'mw_da*moles',
                 'moles' => 'mass/mw_da',
             ],

@@ -18,7 +18,7 @@ import tempfile
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-from lib import Spec, build_def, words, solve  # noqa: E402
+from lib import Spec, build_def, words, solve, fit_title, fit_desc  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.dirname(os.path.dirname(HERE))
@@ -41,11 +41,11 @@ def load_specs(only: str = "") -> list[Spec]:
 def check(spec: Spec) -> list[str]:
     """Everything that has to be true before a file is written."""
     problems: list[str] = []
-    title_len = len(spec.title) + 7          # " | Onim"
+    title_len = len(fit_title(spec.title)) + 7      # " | Onim"
     if not 50 <= title_len <= 60:
         problems.append(f"title {title_len} chars (want 50-60 with brand)")
-    if not 150 <= len(spec.desc) <= 160:
-        problems.append(f"description {len(spec.desc)} chars (want 150-160)")
+    if not 150 <= len(fit_desc(spec.desc)) <= 160:
+        problems.append(f"description {len(fit_desc(spec.desc))} chars (want 150-160)")
     if not spec.fields:
         problems.append("no inputs")
     if not spec.results:
@@ -82,9 +82,10 @@ def main() -> int:
     bad = 0
     for spec in specs:
         problems = check(spec)
-        if spec.title.lower() in titles:
-            problems.append(f"title shared with {titles[spec.title.lower()]}")
-        titles[spec.title.lower()] = spec.slug
+        fitted = fit_title(spec.title).lower()
+        if fitted in titles:
+            problems.append(f"title shared with {titles[fitted]}")
+        titles[fitted] = spec.slug
         if problems:
             bad += 1
             print(f"  ! {spec.slug}: " + "; ".join(problems))

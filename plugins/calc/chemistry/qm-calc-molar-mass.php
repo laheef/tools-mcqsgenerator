@@ -56,7 +56,7 @@ return [
     'formula' => [
         [
             'title' => 'Molar Mass',
-            'results' => ['molar_mass' => 'mass/moles', 'molecule_mass' => 'mass/moles/602214075999999987023872', 'mass' => 'molar_mass*moles', 'moles' => 'mass/molar_mass'],
+            'results' => ['molar_mass' => 'mass/moles', 'molecule_mass' => 'mass/moles/602214076000000000000000', 'mass' => 'molar_mass*moles', 'moles' => 'mass/molar_mass'],
         ],
     ],
     'article' => [

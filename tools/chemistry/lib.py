@@ -22,6 +22,7 @@ from __future__ import annotations
 import html
 import math
 import re
+from decimal import Decimal
 from dataclasses import dataclass, field as dc_field
 from typing import Any
 
@@ -32,7 +33,7 @@ UPDATED = "2026-10-23"
 # ------------------------------------------------------------------ fields
 
 def F(key: str, label: str, suffix: str = "", default: Any = "", help: str = "",
-      step: str = "", prefix: str = "") -> dict:
+      step: str = "", prefix: str = "", bounds: tuple[float, float] | None = None) -> dict:
     """An input box."""
     f: dict[str, Any] = {"name": key, "label": label, "type": "number"}
     if suffix:
@@ -44,6 +45,8 @@ def F(key: str, label: str, suffix: str = "", default: Any = "", help: str = "",
     if help:
         f["help"] = help
     f["rounding"] = ["omni", "0.0001"]
+    if bounds:
+        f["_bounds"] = list(bounds)
     return f
 
 
@@ -102,6 +105,7 @@ class Spec:
     notes: list[str] = dc_field(default_factory=list)         # note lines on the form
     passes: list[dict] = dc_field(default_factory=list)       # multi-pass formulas
     h1: str = ""
+    no_round_trip: list[str] = dc_field(default_factory=list)  # inputs with no inverse
 
     def all_formulas(self) -> dict[str, str]:
         out = dict(self.formula)
@@ -191,6 +195,53 @@ def solve(spec: Spec, env: dict[str, float]) -> dict[str, float]:
             break
     return out
 
+
+
+# ------------------------------------------------------------ metadata fit
+
+TITLE_TAILS = ["", " Tool", " Guide", " — Formula", " and Units", " — Steps",
+               " — Formula and Steps", " with Formula and Units", " — Formula, Units"]
+DESC_TAILS = [
+    "", " Units shown.", " With units.", " See the steps.", " The formula is shown.",
+    " The formula and units are shown.", " See the formula.",
+    " The formula and a worked example are shown.",
+    " See the formula, the units and a worked example.",
+    " The formula, the units and a worked example are shown below.",
+    " See the formula, the units, a worked example and the rearrangements.",
+]
+
+
+def fit_title(core: str, lo: int = 43, hi: int = 53) -> str:
+    """The title with the brand suffix counted: 50-60 characters in the head."""
+    core = core.strip()
+    if lo <= len(core) <= hi:
+        return core
+    for tail in TITLE_TAILS:
+        cand = core + tail
+        if lo <= len(cand) <= hi:
+            return cand
+    # last resort: trim words from the end
+    words = core.split()
+    while words and len(" ".join(words)) > hi:
+        words.pop()
+    return " ".join(words)
+
+
+def fit_desc(core: str, lo: int = 150, hi: int = 160) -> str:
+    """The description within the 150-160 window, padded with a real sentence."""
+    core = core.strip()
+    if lo <= len(core) <= hi:
+        return core
+    for tail in DESC_TAILS:
+        cand = core + tail
+        if lo <= len(cand) <= hi:
+            return cand
+    if len(core) > hi:
+        words = core.split()
+        while words and len(" ".join(words)) > hi:
+            words.pop()
+        return " ".join(words).rstrip(",;") + "."
+    return core
 
 def soft(label: str) -> str:
     """A label mid-sentence: lowercases the first letter only, so (M) stays (M)."""
@@ -603,7 +654,7 @@ def php_constants(value: Any) -> Any:
     """Plain decimals in formulas: the site's parser reads `e23` as a name."""
     if isinstance(value, str):
         def repl(m: "re.Match[str]") -> str:
-            return f"{float(m.group(0)):.0f}"
+            return format(Decimal(m.group(0)), "f")
         return re.sub(r"\b\d+(?:\.\d+)?[eE][+-]?\d+\b", repl, value)
     if isinstance(value, list):
         return [php_constants(v) for v in value]
@@ -618,6 +669,7 @@ def build_def(spec: Spec) -> dict:
     for f in spec.fields:
         f = dict(f)
         f.pop("_columns", None)
+        f.pop("_bounds", None)
         if f.get("type") == "number" and "rounding" not in f:
             f["rounding"] = ["omni", "0.0001"]
         fields.append(f)
@@ -637,8 +689,8 @@ def build_def(spec: Spec) -> dict:
         "_slug": spec.slug,
         "name": spec.name,
         "meta": {
-            "title": spec.title,
-            "description": spec.desc,
+            "title": fit_title(spec.title),
+            "description": fit_desc(spec.desc),
             "h1": spec.h1 or spec.name,
             "updated": UPDATED,
         },

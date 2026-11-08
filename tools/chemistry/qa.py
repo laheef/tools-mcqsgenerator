@@ -58,6 +58,42 @@ LITERATURE: dict[str, list[tuple[dict, dict, float]]] = {
                                                                    "fraction_remaining": 0.1}, 1e-9)],
     "solution-dilution": [({"c1": 2, "v1": 50, "v2": 500}, {"c2": 0.2, "diluent_volume": 450.0}, 1e-9),
                           ({"c1": 1, "v1": 1, "v2": 1000}, {"c2": 0.001}, 1e-12)],
+    "ph": [({"h_conc": 1e-7}, {"ph": 7.0, "poh": 7.0, "oh_conc": 1e-7}, 1e-12),
+           ({"h_conc": 1e-3}, {"ph": 3.0, "poh": 11.0}, 1e-9)],
+    "hydrogen-ion-concentration": [({"ph": 7.4}, {"h_conc": 3.98e-8, "oh_conc": 2.51e-7}, 1e-8),
+                                   ({"ph": 2}, {"h_conc": 1e-2}, 1e-12)],
+    "pka": [({"ka": 1.8e-5}, {"pka": 4.7447, "pkb": 9.2553}, 1e-4),
+            ({"ka": 1.0}, {"pka": 0.0, "kb": 1e-14}, 1e-12)],
+    "buffer-ph": [({"pka": 4.76, "base_conc": 0.1, "acid_conc": 0.1}, {"ph": 4.76, "ratio": 1.0}, 1e-9),
+                  ({"pka": 4.76, "base_conc": 0.2, "acid_conc": 0.1}, {"ph": 5.061}, 1e-4)],
+    "henderson-hasselbalch": [({"ph": 4.76, "base_conc": 0.1, "acid_conc": 0.1}, {"pka": 4.76}, 1e-9)],
+    "titration": [({"c1": 0.1, "v1": 25, "n1": 1, "v2": 25, "n2": 1}, {"c2": 0.1, "moles_titrant": 2.5}, 1e-9),
+                  ({"c1": 0.1, "v1": 20, "n1": 2, "v2": 25, "n2": 1}, {"c2": 0.04, "moles_analyte": 1.0}, 1e-9)],
+    "neutralization": [({"acid_conc": 1, "acid_volume": 0.25, "acid_equivalents": 2,
+                        "base_equivalents": 1, "base_molar_mass": 40}, {"base_mass": 20.0, "equivalents": 0.5}, 1e-9)],
+    "buffer-capacity": [({"moles_added": 0.01, "ph_change": 0.05, "volume": 1}, {"capacity": 0.2}, 1e-9)],
+    "equilibrium-constant": [({"product_conc": 0.8, "product_coeff": 1, "reactant_conc": 0.2,
+                               "reactant_coeff": 1, "temperature": 298.15},
+                              {"k": 4.0, "gibbs_standard": -3.436}, 1e-3)],
+    "kp": [({"kc": 4, "temperature": 298.15, "delta_n": 0}, {"kp": 4.0, "kp_over_kc": 1.0}, 1e-9),
+           ({"kc": 1, "temperature": 500, "delta_n": 1}, {"kp": 41.03}, 1e-2)],
+    "reaction-quotient": [({"product_conc": 0.1, "reactant_conc": 0.5, "k": 4, "temperature": 298.15},
+                           {"q": 0.2, "delta_g": -7.426}, 1e-3)],
+    "gibbs-energy": [({"enthalpy": -92.2, "entropy": -198.7, "temperature": 298.15},
+                      {"delta_g": -32.96, "t_switch": 464.02}, 2e-2)],
+    "entropy": [({"heat": 40700, "temperature": 373.15, "moles": 1}, {"delta_s_molar": 109.07}, 1e-2)],
+    "nernst-equation": [({"e0": 1.1, "n": 2, "q": 1, "temperature": 298.15}, {"e": 1.1, "slope_mv": 29.58}, 1e-2),
+                        ({"e0": 1.1, "n": 2, "q": 10, "temperature": 298.15}, {"e": 1.0704}, 1e-3)],
+    "electromotive-force": [({"cathode": 0.34, "anode": -0.76, "n": 2},
+                             {"emf": 1.1, "delta_g": -212.27}, 1e-2)],
+    "freezing-point-depression": [({"kf": 1.86, "molality": 1, "van_t_hoff": 2, "pure_fp": 0},
+                                   {"delta_tf": 3.72, "solution_fp": -3.72}, 1e-9)],
+    "boiling-point-elevation": [({"kb": 0.512, "molality": 1, "van_t_hoff": 2, "pure_bp": 100},
+                                 {"delta_tb": 1.024, "solution_bp": 101.024}, 1e-9)],
+    "osmotic-pressure": [({"van_t_hoff": 2, "molarity": 0.154, "temperature": 310.15},
+                          {"pressure_kpa": 794.3, "osmolarity": 0.308}, 2e-1)],
+    "raoults-law": [({"mole_fraction": 0.3, "pure_pressure": 2.34}, {"partial_pressure": 0.702}, 1e-9)],
+    "partial-pressure": [({"mole_fraction": 0.21, "total_pressure": 101.3}, {"partial_pressure": 21.273}, 1e-2)],
 }
 
 
@@ -125,8 +161,16 @@ def check_spec(spec: Spec, engine: Engine, rng: random.Random) -> list[str]:
         values = {}
         for f in numeric:
             base = env.get(f["name"], 1.0)
-            lo, hi = max(1e-9, base / 1000), base * 1000
-            values[f["name"]] = math.exp(rng.uniform(math.log(lo), math.log(hi)))
+            if f.get("_bounds"):
+                lo_b, hi_b = f["_bounds"]
+                values[f["name"]] = rng.uniform(lo_b, hi_b)
+                continue
+            if base == 0:
+                values[f["name"]] = rng.choice([-1.0, 1.0]) * 10 ** rng.uniform(-1, 1)
+                continue
+            sign = 1.0 if base > 0 else -1.0
+            mag = abs(base)
+            values[f["name"]] = sign * math.exp(rng.uniform(math.log(mag / 1000), math.log(mag * 1000)))
         mine = solve(spec, values)
         got = engine.ask(path, values)
         if not got.get("ok"):
@@ -144,8 +188,11 @@ def check_spec(spec: Spec, engine: Engine, rng: random.Random) -> list[str]:
 
     # 3. round trip: leave one input out, give the results, expect that input back
     mine = solve(spec, env)
+    formulas = spec.all_formulas()
     for f in numeric:
         key = f["name"]
+        if key not in formulas or key in spec.no_round_trip:   # no usable inverse
+            continue
         want = env[key]
         inputs = dict(env)
         inputs.pop(key, None)

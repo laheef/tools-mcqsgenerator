@@ -20,7 +20,7 @@ return [
                     'name' => 'particles',
                     'label' => 'Number of particles (N)',
                     'type' => 'number',
-                    'default' => '1204428151999999974047744',
+                    'default' => '1204428152000000000000000',
                     'help' => 'Counted or calculated number of particles',
                     'rounding' => ['omni', '0.0001'],
                 ],
@@ -55,7 +55,7 @@ return [
     'formula' => [
         [
             'title' => 'Avogadro\'s Number',
-            'results' => ['avogadro' => 'particles/moles', 'moles_check' => 'particles/602214075999999987023872', 'particles' => 'avogadro*moles', 'moles' => 'particles/avogadro'],
+            'results' => ['avogadro' => 'particles/moles', 'moles_check' => 'particles/602214076000000000000000', 'particles' => 'avogadro*moles', 'moles' => 'particles/avogadro'],
         ],
     ],
     'article' => [
