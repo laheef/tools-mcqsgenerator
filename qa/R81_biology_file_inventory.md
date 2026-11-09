@@ -1,5 +1,9 @@
 # R81 — Biology: which pages are separate calculator files
 
+> **Superseded by R82.** The 100 harvested pages listed here were converted to their own
+> calculator files in batches 1–6 (`qa/R82_biology_conversion_report.md`); biology now has
+> 320 files and no `raw` block. This page is kept as the record of what the split was.
+
 **Question asked:** *"check which of the pages are the separate files of the biology — i.e. the ones that are not harvested, or proper calculator pages like the chemistry."*
 
 **Answer, in one line:** of the **320** biology pages, **220 are separate calculator files** written in exactly the chemistry/construction format, and **100 are still harvested catalogue records** (a `raw` block carrying the original site's form definition).

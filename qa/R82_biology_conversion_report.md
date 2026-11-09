@@ -104,11 +104,10 @@ site itself which boxes are inputs (`tools/biology/inputs.php`), so it never
 types into an answer, and it tries a converter the way its own gate asks — one
 value first, then two, then every box.
 
-Result: **100 of 100 answered, 0 failed, 0 page errors** — per-page table in
-`qa/R82_browser_sweep.md`. The first pass answered 88; the twelve that did not
-were either converters that answer when *one* side is given (they go quiet when
-every box is filled with a contradictory set) or pages whose answer was an input
-(`hamster-age`, `guinea-pig-age`). Both are dealt with above.
+Result: **88 of 100 answered on the first sweep**; the twelve that did not were
+the ones whose record only answers when a single box is filled, or where the
+answer was an input (`hamster-age`, `guinea-pig-age`). After the repairs above
+those twelve are re-tested — see `qa/R82_browser_sweep.md`.
 
 No regression: on every batch the same pages were driven against a checkout of
 the pre-conversion site (port 8081, `git worktree` at `458a091`) and the
