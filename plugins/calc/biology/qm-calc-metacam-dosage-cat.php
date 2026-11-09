@@ -11,313 +11,179 @@
 
 return [
     'name' => 'Metacam dosage for cats',
-    'meta' => ['title' => 'Metacam dosage for cats Calculator: Steps & Units', 'description' => 'Metacam dosage for cats turns your cat\'s weight and indication into dosage for the first 24 hours. Free to use, with the working shown beside the answer.', 'h1' => 'Metacam dosage for cats Calculator', 'updated' => '2026-08-10'],
-    'raw' => [
-        'vars' => [
-            'dosage' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.001'],
-            ],
-            'drops_needed' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'indication' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'i9ndlAJtFYR7cOkFJvzsb', 'c' => null],
-                ],
-                'ds' => 'dD9WeVimz-lXfr6TYdzvf',
-            ],
-            'later_dosage' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.001'],
-            ],
-            'later_drops' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'volume_needed' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.001'],
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'yblO90NXZ3uekwT7e5cM5',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Metacam dosage for cats Calculator: Steps & Units', 'description' => 'Metacam dosage for cats turns your cat\'s weight and indication into dosage for the first 24 hours. Every box can be solved for, not only the one in the title.', 'h1' => 'Metacam dosage for cats Calculator', 'updated' => '2026-08-10'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your cat\'s weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'indication',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Indication',
-                                    'ds' => 'dD9WeVimz-lXfr6TYdzvf',
-                                    'opts' => [
-                                        ['i9ndlAJtFYR7cOkFJvzsb', 'Post-operative pain', '0.2001'],
-                                        ['1BT8FL17srjSj1aPauUs1', 'Acute musculo-skeletal disorders', '0.2'],
-                                        ['3B4MriKDStmdPziCuQ1rn', 'Chronic musculo-skeletal disorders', '0.1'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['indication == 0.2001', ' Before the surgery: use the 2&nbsp;mg/mL solution.  After the surgery: use the 0.5&nbsp;mg/mL solution.&nbsp;'],
-                                        ['indication == 0.2', ' Entire treatment: use the 0.5&nbsp;mg/mL solution.&nbsp;'],
-                                        ['indication == 0.1', ' Entire treatment: use the 0.5&nbsp;mg/mL solution.'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'weight',
+                            'label' => 'Your cat\'s weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'UKQOuWVayVbrzRQWhP4YO',
-                'title' => 'First 24 hours',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dosage',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dosage for the first 24 hours',
-                                    'us' => '22',
-                                    'du' => 'mg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'volume_needed',
-                                    'vt' => 'numerical',
-                                    'l' => 'Volume needed',
-                                    'us' => '20',
-                                    'du' => 'ml',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'drops_needed',
-                                    'vt' => 'numerical',
-                                    'l' => 'Drops needed',
-                                    'suf' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['indication == 0.2001', '• Typical dosage: 0.2&nbsp;mg/kg with a 2&nbsp;mg/mL solution. • Single subcutaneous injection.&nbsp;'],
-                                        ['indication == 0.2', '• Typical dosage: 0.2&nbsp;mg/kg, orally. • Single oral dose.&nbsp;'],
-                                        ['indication == 0.1', '• Typical dosage: 0.1&nbsp;mg/kg, orally. • Single oral dose.'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'indication',
+                            'label' => 'Indication',
+                            'type' => 'select',
+                            'options' => ['Post-operative pain' => '0.2001', 'Acute musculo-skeletal disorders' => '0.2', 'Chronic musculo-skeletal disorders' => '0.1'],
+                            'dataset' => 'indication',
+                            'default' => 'Post-operative pain',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'RPeAMItgap5nnaSWB2sca',
-                'title' => 'Following treatment',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'later_dosage',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dosage after 24 hours',
-                                    'h' => 'Typical treatment for a longer period of time.&nbsp;',
-                                    'us' => '22',
-                                    'du' => 'mg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'later_drops',
-                                    'vt' => 'numerical',
-                                    'l' => 'Drops needed',
-                                    'suf' => '#',
-                                    'h' => 'Drops needed for the typical, prolonged treatment.',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['indication == 0.2001', '• Typical dosage: 0.05&nbsp;mg/kg, orally. • 24-hour intervals. • Up to 4&nbsp;days.&nbsp;'],
-                                        ['indication == 0.2', '• Typical dosage:0.05&nbsp;mg/kg, orally. • 24-hour intervals. • As long as the acute pain persists.&nbsp;'],
-                                        ['indication == 0.1', <<<'TXT'
-                                        • Typical dosage: 0.05&nbsp;mg/kg, orally. • 24-hour intervals. • Clinical response should be seen within 7&nbsp;days; discontinue treatment after 14&nbsp;days if no improvement.
-                                        TXT],
-                                    ],
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'indication == 0.2001', 'text' => ' Before the surgery: use the 2&nbsp;mg/mL solution.  After the surgery: use the 0.5&nbsp;mg/mL solution.&nbsp;'],
+                                ['when' => 'indication == 0.2', 'text' => ' Entire treatment: use the 0.5&nbsp;mg/mL solution.&nbsp;'],
+                                ['when' => 'indication == 0.1', 'text' => ' Entire treatment: use the 0.5&nbsp;mg/mL solution.'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'weight* indication = dosage',
-                'var' => [
-                    [
-                        'l' => 'indication',
-                        'f' => 'dosage/weight',
-                        'r' => ['weight', 'dosage'],
-                    ],
-                    [
-                        'l' => 'weight',
-                        'f' => 'dosage/indication',
-                        'r' => ['indication', 'dosage'],
-                    ],
-                    [
-                        'l' => 'dosage',
-                        'f' => 'indication*weight',
-                        'r' => ['indication', 'weight'],
+        [
+            'title' => 'First 24 hours',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dosage',
+                            'label' => 'Dosage for the first 24 hours',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'mg',
+                            'rounding' => ['omni', '0.001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'dosage * 60 = drops_needed',
-                'var' => [
-                    [
-                        'l' => 'drops_needed',
-                        'f' => '60*dosage',
-                        'r' => ['dosage'],
-                    ],
-                    [
-                        'l' => 'dosage',
-                        'f' => '(1/60)*drops_needed',
-                        'r' => ['drops_needed'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'volume_needed',
+                            'label' => 'Volume needed',
+                            'type' => 'number',
+                            'unit' => '20',
+                            'unit_default' => 'ml',
+                            'rounding' => ['omni', '0.001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'later_dosage = weight * 0.05',
-                'var' => [
-                    [
-                        'l' => 'later_dosage',
-                        'f' => '(1/20)*weight',
-                        'r' => ['weight'],
-                    ],
-                    [
-                        'l' => 'weight',
-                        'f' => '20*later_dosage',
-                        'r' => ['later_dosage'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'drops_needed',
+                            'label' => 'Drops needed',
+                            'type' => 'number',
+                            'suffix' => '#',
+                            'rounding' => ['omni', '0.1'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'later_drops = later_dosage * 60',
-                'var' => [
-                    [
-                        'l' => 'later_dosage',
-                        'f' => '(1/60)*later_drops',
-                        'r' => ['later_drops'],
-                    ],
-                    [
-                        'l' => 'later_drops',
-                        'f' => '60*later_dosage',
-                        'r' => ['later_dosage'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'volume_needed= dosage/2',
-                'var' => [
-                    [
-                        'l' => 'dosage',
-                        'f' => '2*volume_needed',
-                        'r' => ['volume_needed'],
-                    ],
-                    [
-                        'l' => 'volume_needed',
-                        'f' => '(1/2)*dosage',
-                        'r' => ['dosage'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'indication == 0.2001', 'text' => '• Typical dosage: 0.2&nbsp;mg/kg with a 2&nbsp;mg/mL solution. • Single subcutaneous injection.&nbsp;'],
+                                ['when' => 'indication == 0.2', 'text' => '• Typical dosage: 0.2&nbsp;mg/kg, orally. • Single oral dose.&nbsp;'],
+                                ['when' => 'indication == 0.1', 'text' => '• Typical dosage: 0.1&nbsp;mg/kg, orally. • Single oral dose.'],
+                            ],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            'dD9WeVimz-lXfr6TYdzvf' => [
-                'name' => 'indication',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'i9ndlAJtFYR7cOkFJvzsb', 'label' => 'Post-operative pain', 'value' => '0.2001'],
-                    ['uid' => '1BT8FL17srjSj1aPauUs1', 'label' => 'Acute musculo-skeletal disorders', 'value' => '0.2'],
-                    ['uid' => '3B4MriKDStmdPziCuQ1rn', 'label' => 'Chronic musculo-skeletal disorders', 'value' => '0.1'],
+        [
+            'title' => 'Following treatment',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'later_dosage',
+                            'label' => 'Dosage after 24 hours',
+                            'type' => 'number',
+                            'help' => 'Typical treatment for a longer period of time.&nbsp;',
+                            'unit' => '22',
+                            'unit_default' => 'mg',
+                            'rounding' => ['omni', '0.001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'later_drops',
+                            'label' => 'Drops needed',
+                            'type' => 'number',
+                            'suffix' => '#',
+                            'help' => 'Drops needed for the typical, prolonged treatment.',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'indication == 0.2001', 'text' => '• Typical dosage: 0.05&nbsp;mg/kg, orally. • 24-hour intervals. • Up to 4&nbsp;days.&nbsp;'],
+                                ['when' => 'indication == 0.2', 'text' => '• Typical dosage:0.05&nbsp;mg/kg, orally. • 24-hour intervals. • As long as the acute pain persists.&nbsp;'],
+                                ['when' => 'indication == 0.1', 'text' => <<<'TXT'
+                                • Typical dosage: 0.05&nbsp;mg/kg, orally. • 24-hour intervals. • Clinical response should be seen within 7&nbsp;days; discontinue treatment after 14&nbsp;days if no improvement.
+                                TXT],
+                            ],
+                        ],
+                    ],
                 ],
             ],
+        ],
+    ],
+    'formula' => [
+        [
+            'title' => 'weight* indication = dosage',
+            'results' => ['indication' => 'dosage/weight', 'weight' => 'dosage/indication', 'dosage' => 'indication*weight'],
+        ],
+        [
+            'title' => 'dosage * 60 = drops_needed',
+            'results' => ['drops_needed' => '60*dosage', 'dosage' => '(1/60)*drops_needed'],
+        ],
+        [
+            'title' => 'later_dosage = weight * 0.05',
+            'results' => ['later_dosage' => '(1/20)*weight', 'weight' => '20*later_dosage'],
+        ],
+        [
+            'title' => 'later_drops = later_dosage * 60',
+            'results' => ['later_dosage' => '(1/60)*later_drops', 'later_drops' => '60*later_dosage'],
+        ],
+        [
+            'title' => 'volume_needed= dosage/2',
+            'results' => ['dosage' => '2*volume_needed', 'volume_needed' => '(1/2)*dosage'],
         ],
     ],
     'article' => [
@@ -338,7 +204,7 @@ return [
             <p>Treat the size of a result as part of the answer: <strong>Indication</strong> = 0.2001, <strong>Dosage for the first 24 hours</strong> = 2, <strong>Drops needed</strong> = 120, <strong>Dosage after 24 hours</strong> = 0.5, <strong>Drops needed</strong> = 30 and <strong>Volume needed</strong> = 1 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Dosage for the first 24 hours offers 3 units and opens on milligrams, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Indication</strong> = <code>Dosage for the first 24 hours ÷ Your cat&#039;s weight</code></li><li><strong>Your cat&#039;s weight</strong> = <code>Dosage for the first 24 hours ÷ Indication</code></li><li><strong>Dosage for the first 24 hours</strong> = <code>Indication × Your cat&#039;s weight</code></li><li><strong>Drops needed</strong> = <code>60 × Dosage for the first 24 hours</code></li><li><strong>Dosage after 24 hours</strong> = <code>(1 ÷ 20) × Your cat&#039;s weight</code></li><li><strong>Volume needed</strong> = <code>(1 ÷ 2) × Dosage for the first 24 hours</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Indication</strong> = <code>Dosage for the first 24 hours ÷ Your cat&#039;s weight</code> — the form to use when Your cat&#039;s weight and Dosage for the first 24 hours are the values you have.</li><li><strong>Your cat&#039;s weight</strong> = <code>Dosage for the first 24 hours ÷ Indication</code> — the form to use when Indication and Dosage for the first 24 hours are the values you have.</li><li><strong>Dosage for the first 24 hours</strong> = <code>Indication × Your cat&#039;s weight</code> — the form to use when Indication and Your cat&#039;s weight are the values you have.</li><li><strong>Drops needed</strong> = <code>60 × Dosage for the first 24 hours</code> — the form to use when Dosage for the first 24 hours are the values you have.</li><li><strong>Dosage for the first 24 hours</strong> = <code>(1 ÷ 60) × Drops needed</code> — the form to use when Drops needed are the values you have.</li><li><strong>Dosage after 24 hours</strong> = <code>(1 ÷ 20) × Your cat&#039;s weight</code> — the form to use when Your cat&#039;s weight are the values you have.</li><li><strong>Your cat&#039;s weight</strong> = <code>20 × Dosage after 24 hours</code> — the form to use when Dosage after 24 hours are the values you have.</li><li><strong>Drops needed</strong> = <code>60 × Dosage after 24 hours</code> — the form to use when Dosage after 24 hours are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Indication, Your cat&#039;s weight and Dosage for the first 24 hours can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Indication</strong> = <code>Dosage for the first 24 hours ÷ Your cat&#039;s weight</code></li><li><strong>Your cat&#039;s weight</strong> = <code>Dosage for the first 24 hours ÷ Indication</code></li><li><strong>Dosage for the first 24 hours</strong> = <code>Indication × Your cat&#039;s weight</code></li><li><strong>Drops needed</strong> = <code>60 × Dosage for the first 24 hours</code></li><li><strong>Dosage after 24 hours</strong> = <code>(1 ÷ 20) × Your cat&#039;s weight</code></li><li><strong>Volume needed</strong> = <code>(1 ÷ 2) × Dosage for the first 24 hours</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Indication</strong> = <code>Dosage for the first 24 hours ÷ Your cat&#039;s weight</code> — the form to use when Dosage for the first 24 hours and Your cat&#039;s weight are the values you have.</li><li><strong>Your cat&#039;s weight</strong> = <code>Dosage for the first 24 hours ÷ Indication</code> — the form to use when Dosage for the first 24 hours and Indication are the values you have.</li><li><strong>Dosage for the first 24 hours</strong> = <code>Indication × Your cat&#039;s weight</code> — the form to use when Indication and Your cat&#039;s weight are the values you have.</li><li><strong>Drops needed</strong> = <code>60 × Dosage for the first 24 hours</code> — the form to use when Dosage for the first 24 hours are the values you have.</li><li><strong>Dosage for the first 24 hours</strong> = <code>(1 ÷ 60) × Drops needed</code> — the form to use when Drops needed are the values you have.</li><li><strong>Dosage after 24 hours</strong> = <code>(1 ÷ 20) × Your cat&#039;s weight</code> — the form to use when Your cat&#039;s weight are the values you have.</li><li><strong>Your cat&#039;s weight</strong> = <code>20 × Dosage after 24 hours</code> — the form to use when Dosage after 24 hours are the values you have.</li><li><strong>Drops needed</strong> = <code>60 × Dosage after 24 hours</code> — the form to use when Dosage after 24 hours are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Indication, Your cat&#039;s weight and Dosage for the first 24 hours can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>Take the example above and double Your cat&#039;s weight from 10 to 20, leaving every other box alone. The panel moves from <strong>Indication</strong> 0.2001, <strong>Dosage for the first 24 hours</strong> 2 mg, <strong>Drops needed</strong> 120 #, <strong>Dosage after 24 hours</strong> 0.5 mg, <strong>Drops needed</strong> 30 # and <strong>Volume needed</strong> 1 ml to <strong>Indication</strong> 0.2001, <strong>Dosage for the first 24 hours</strong> 4 mg, <strong>Drops needed</strong> 240 #, <strong>Dosage after 24 hours</strong> 1 mg, <strong>Drops needed</strong> 60 # and <strong>Volume needed</strong> 2 ml.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
@@ -350,7 +216,7 @@ return [
             <p>The boxes on the Metacam dosage for cats form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>Your cat&#039;s weight</strong> is a kilograms quantity: the page opens it in kg and converts anything else you pick before the formula runs. Change it and Indication, Dosage for the first 24 hours and Dosage after 24 hours changes with it. Fill it from a measurement rather than a memory — Your cat&#039;s weight is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Indication</strong> is a plain number and the page's own defaults put it at 0.2001. It is worked out from Your cat's weight and Dosage for the first 24 hours. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Dosage for the first 24 hours</strong> is a milligrams figure and the page's own defaults put it at 2 mg. It is worked out from Indication and Your cat's weight. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Volume needed</strong> is a milliliters figure and the page's own defaults put it at 1 ml. It is worked out from Dosage for the first 24 hours. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Drops needed</strong> is a plain number and the page's own defaults put it at 120. It is worked out from Dosage for the first 24 hours. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Dosage after 24 hours</strong> is a milligrams figure and the page's own defaults put it at 0.5 mg. It is worked out from Your cat's weight. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Drops needed</strong> is a plain number and the page's own defaults put it at 30. It is worked out from Dosage after 24 hours. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
+            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Indication</strong> is a plain number and the page's own defaults put it at 0.2001. It is worked out from Dosage for the first 24 hours and Your cat's weight. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Dosage for the first 24 hours</strong> is a milligrams figure and the page's own defaults put it at 2 mg. It is worked out from Indication and Your cat's weight. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Volume needed</strong> is a milliliters figure and the page's own defaults put it at 1 ml. It is worked out from Dosage for the first 24 hours. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Drops needed</strong> is a plain number and the page's own defaults put it at 120. It is worked out from Dosage for the first 24 hours. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Dosage after 24 hours</strong> is a milligrams figure and the page's own defaults put it at 0.5 mg. It is worked out from Your cat's weight. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Drops needed</strong> is a plain number and the page's own defaults put it at 30. It is worked out from Dosage after 24 hours. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
             TXT],
             ['title' => 'How much each input moves the answer', 'html' => <<<'TXT'
             <p>Which box should you measure most carefully? The table answers it. Each row raises one input by ten per cent from the page&#039;s own defaults and records what happens to every answer:</p><table class="calc-table"><thead><tr><th>Box</th><th>Indication</th><th>Dosage for the first 24 hours</th><th>Drops needed</th><th>Dosage after 24 hours</th><th>Drops needed</th><th>Volume needed</th></tr></thead><tbody><tr><td><strong>Your cat&#039;s weight</strong> +10%</td><td>+0%</td><td>+10%</td><td>+10%</td><td>+10%</td><td>+10%</td><td>+10%</td></tr></tbody></table><p>Ranked by leverage, Your cat&#039;s weight sits at the top — a ten per cent error in that box shows up as roughly 10 per cent in the answer. Every box on the form carries some of the answer; none of them can be estimated without moving the result.</p><p>The numbers above come from the page&#039;s defaults, not a general rule of thumb. Re-run them with your own figures in the boxes — a box that is harmless at the defaults can dominate at the values you actually work with.</p>
@@ -362,12 +228,12 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Indication follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>Only the listed units.</strong> The unit tables here are milligrams and milliliters and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Your cat&#039;s weight are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Your cat&#039;s weight measured, Indication and Dosage for the first 24 hours wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/dog-crate-size">Dog crate size</a>, <a href="/biology/dog-food">Dog food Calculator</a> and <a href="/biology/dog-harness-size">Dog harness size</a>.</p>
+            <p>The typical use is one direction of the relationship: Your cat&#039;s weight measured, Indication and Dosage for the first 24 hours wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Metacam dosage for cats calculator work out?', 'a' => <<<'TXT'
-            Indication, Dosage for the first 24 hours, Volume needed and Drops needed, from Your cat's weight and Dosage for the first 24 hours. The relationship is Indication = Dosage for the first 24 hours ÷ Your cat's weight.
+            Indication, Dosage for the first 24 hours, Volume needed and Drops needed, from Dosage for the first 24 hours and Your cat's weight. The relationship is Indication = Dosage for the first 24 hours ÷ Your cat's weight.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => 'Your cat\'s weight (kilograms). Enter your cat\'s weight; Indication is the box to leave alone unless it is the value you came for.'],
             ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'

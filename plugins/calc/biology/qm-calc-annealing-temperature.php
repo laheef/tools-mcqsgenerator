@@ -11,113 +11,71 @@
 
 return [
     'name' => 'Annealing temperature',
-    'meta' => ['title' => 'Annealing temperature Calculator: Steps & Units', 'description' => 'Enter primer melting temperature and target melting temperature and get Annealing temperature (Tₐ) back. Free to use, with the working shown beside the answer.', 'h1' => 'Annealing temperature Calculator', 'updated' => '2026-07-23'],
-    'raw' => [
-        'vars' => [
-            'annealing_temp' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'temp_primer' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'temp_product' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'wIu49XuazM5Q28a1RVIk7',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Annealing temperature Calculator: Steps & Units', 'description' => 'Enter primer melting temperature and target melting temperature and get Annealing temperature (Tₐ) back. The formula is printed in the form\'s own words.', 'h1' => 'Annealing temperature Calculator', 'updated' => '2026-07-23'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'temp_primer',
-                                    'vt' => 'numerical',
-                                    'l' => 'Primer melting temperature',
-                                    'h' => 'Consider the less stable primer.',
-                                    'us' => '40',
-                                    'du' => 'C',
-                                ],
-                            ],
+                            'name' => 'temp_primer',
+                            'label' => 'Primer melting temperature',
+                            'type' => 'number',
+                            'help' => 'Consider the less stable primer.',
+                            'unit' => '40',
+                            'unit_default' => 'C',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'temp_product',
-                                    'vt' => 'numerical',
-                                    'l' => 'Target melting temperature',
-                                    'us' => '40',
-                                    'du' => 'C',
-                                ],
-                            ],
+                            'name' => 'temp_product',
+                            'label' => 'Target melting temperature',
+                            'type' => 'number',
+                            'unit' => '40',
+                            'unit_default' => 'C',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'annealing_temp',
-                                    'vt' => 'numerical',
-                                    'l' => 'Annealing temperature (Tₐ)',
-                                    'us' => '40',
-                                    'du' => 'C',
-                                ],
-                            ],
+                            'name' => 'annealing_temp',
+                            'label' => 'Annealing temperature (Tₐ)',
+                            'type' => 'number',
+                            'unit' => '40',
+                            'unit_default' => 'C',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['annealing_temp>65  or annealing_temp < 50', 'The annealing temperature is out of the suggested range of 50 to 65 °C.'],
-                                    ],
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'annealing_temp>65  or annealing_temp < 50', 'text' => 'The annealing temperature is out of the suggested range of 50 to 65 °C.'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'annealing_temp=(0.3*temp_primer)+(0.7*temp_product)-14.9',
-                'var' => [
-                    [
-                        'l' => 'temp_product',
-                        'f' => '(10/7)*annealing_temp - 3/7*temp_primer + 149/7',
-                        'r' => ['temp_primer', 'annealing_temp'],
-                    ],
-                    [
-                        'l' => 'temp_primer',
-                        'f' => '(10/3)*annealing_temp - 7/3*temp_product + 149/3',
-                        'r' => ['temp_product', 'annealing_temp'],
-                    ],
-                    [
-                        'l' => 'annealing_temp',
-                        'f' => '(3/10)*temp_primer + (7/10)*temp_product - 149/10',
-                        'r' => ['temp_product', 'temp_primer'],
-                    ],
-                ],
-            ],
+    ],
+    'formula' => [
+        [
+            'title' => 'annealing_temp=(0.3*temp_primer)+(0.7*temp_product)-14.9',
+            'results' => ['temp_product' => '(10/7)*annealing_temp - 3/7*temp_primer + 149/7', 'temp_primer' => '(10/3)*annealing_temp - 7/3*temp_product + 149/3', 'annealing_temp' => '(3/10)*temp_primer + (7/10)*temp_product - 149/10'],
         ],
-        'datasets' => [],
     ],
     'article' => [
         'intro' => <<<'TXT'
@@ -137,7 +95,7 @@ return [
             <p>Treat the size of a result as part of the answer: <strong>Annealing temperature (Tₐ)</strong> = 58.1 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Annealing temperature (Tₐ) offers 4 units and opens on Celsius, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Annealing temperature (Tₐ)</strong> = <code>(3 ÷ 10) × Primer melting temperature + (7 ÷ 10) × Target melting temperature − 149 ÷ 10</code></li><li><strong>Target melting temperature</strong> = <code>(10 ÷ 7) × Annealing temperature (Tₐ) − 3 ÷ 7 × Primer melting temperature + 149 ÷ 7</code></li><li><strong>Primer melting temperature</strong> = <code>(10 ÷ 3) × Annealing temperature (Tₐ) − 7 ÷ 3 × Target melting temperature + 149 ÷ 3</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Annealing temperature (Tₐ)</strong> = <code>(3 ÷ 10) × Primer melting temperature + (7 ÷ 10) × Target melting temperature − 149 ÷ 10</code> — the form to use when Target melting temperature and Primer melting temperature are the values you have.</li><li><strong>Target melting temperature</strong> = <code>(10 ÷ 7) × Annealing temperature (Tₐ) − 3 ÷ 7 × Primer melting temperature + 149 ÷ 7</code> — the form to use when Primer melting temperature and Annealing temperature (Tₐ) are the values you have.</li><li><strong>Primer melting temperature</strong> = <code>(10 ÷ 3) × Annealing temperature (Tₐ) − 7 ÷ 3 × Target melting temperature + 149 ÷ 3</code> — the form to use when Target melting temperature and Annealing temperature (Tₐ) are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Annealing temperature (Tₐ), Target melting temperature and Primer melting temperature can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Annealing temperature (Tₐ)</strong> = <code>(3 ÷ 10) × Primer melting temperature + (7 ÷ 10) × Target melting temperature − 149 ÷ 10</code></li><li><strong>Target melting temperature</strong> = <code>(10 ÷ 7) × Annealing temperature (Tₐ) − 3 ÷ 7 × Primer melting temperature + 149 ÷ 7</code></li><li><strong>Primer melting temperature</strong> = <code>(10 ÷ 3) × Annealing temperature (Tₐ) − 7 ÷ 3 × Target melting temperature + 149 ÷ 3</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Annealing temperature (Tₐ)</strong> = <code>(3 ÷ 10) × Primer melting temperature + (7 ÷ 10) × Target melting temperature − 149 ÷ 10</code> — the form to use when Primer melting temperature and Target melting temperature are the values you have.</li><li><strong>Target melting temperature</strong> = <code>(10 ÷ 7) × Annealing temperature (Tₐ) − 3 ÷ 7 × Primer melting temperature + 149 ÷ 7</code> — the form to use when Annealing temperature (Tₐ) and Primer melting temperature are the values you have.</li><li><strong>Primer melting temperature</strong> = <code>(10 ÷ 3) × Annealing temperature (Tₐ) − 7 ÷ 3 × Target melting temperature + 149 ÷ 3</code> — the form to use when Annealing temperature (Tₐ) and Target melting temperature are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Annealing temperature (Tₐ), Target melting temperature and Primer melting temperature can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>Take the example above and double Primer melting temperature from 10 to 20, leaving every other box alone. The panel moves from <strong>Annealing temperature (Tₐ)</strong> 58.1 C to <strong>Annealing temperature (Tₐ)</strong> 61.1 C.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
@@ -149,7 +107,7 @@ return [
             <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Primer melting temperature</strong> is a celsius quantity: the page opens it in C and converts anything else you pick before the formula runs. Consider the less stable primer. It feeds Target melting temperature and Annealing temperature (Tₐ). Have it to hand before you start: Primer melting temperature is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Target melting temperature</strong> is a celsius quantity: the page opens it in C and converts anything else you pick before the formula runs. It feeds Primer melting temperature and Annealing temperature (Tₐ). Have it to hand before you start: Target melting temperature is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 1 value. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Annealing temperature (Tₐ)</strong> is a celsius figure and the page's own defaults put it at 58.1 C. It is worked out from Target melting temperature and Primer melting temperature. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
+            <p>The panel reports 1 value. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Annealing temperature (Tₐ)</strong> is a celsius figure and the page's own defaults put it at 58.1 C. It is worked out from Primer melting temperature and Target melting temperature. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
             TXT],
             ['title' => 'How much each input moves the answer', 'html' => <<<'TXT'
             <p>Which box should you measure most carefully? The table answers it. Each row raises one input by ten per cent from the page&#039;s own defaults and records what happens to every answer:</p><table class="calc-table"><thead><tr><th>Box</th><th>Annealing temperature (Tₐ)</th></tr></thead><tbody><tr><td><strong>Primer melting temperature</strong> +10%</td><td>+0.52%</td></tr><tr><td><strong>Target melting temperature</strong> +10%</td><td>+12.05%</td></tr></tbody></table><p>Ranked by leverage, Target melting temperature sits at the top — a ten per cent error in that box shows up as roughly 12 per cent in the answer. Every box on the form carries some of the answer; none of them can be estimated without moving the result.</p><p>The numbers above come from the page&#039;s defaults, not a general rule of thumb. Re-run them with your own figures in the boxes — a box that is harmless at the defaults can dominate at the values you actually work with.</p>
@@ -160,19 +118,19 @@ return [
             ['title' => 'The units this page accepts', 'html' => <<<'TXT'
             <p>Each chip on this page is a table of units of the same quantity. The tables, with the unit each box opens in:</p><ul><li><strong>Celsius</strong> — opens in <em>C</em>, and the chip also carries °F, K and °R. Every one of them is converted to a single base unit before the formula sees the number, so the answer is the same quantity whichever chip you leave it on.</li></ul><p>The consequence worth remembering is that a chip set to the wrong unit is silent. Nothing on the page can tell a centimetre from an inch once the chip says centimetre, so the check is yours: read the chip before you read the answer.</p>
             TXT],
+            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
+            <ol><li><strong>Collect the inputs.</strong> You need Primer melting temperature and Target melting temperature. Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.</li><li><strong>Enter them and press Calculate.</strong> Type Primer melting temperature into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.</li><li><strong>Read the answer against the defaults.</strong> Compare Annealing temperature (Tₐ) in C with the figure the page&#039;s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.</li><li><strong>Change one box to check your understanding.</strong> The last step is a check, not a calculation: move one box and see that the answer moves the way the formula says it should. When it does, the answer is yours to use.</li></ol><p>Nothing above needs an account, a download or a second visit: the page works the same way the first time and the hundredth.</p>
+            TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
             <ul><li><strong>It scales in a straight line.</strong> Annealing temperature (Tₐ) follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>Only the listed units.</strong> The chips cover Celsius. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Primer melting temperature and Target melting temperature and the number you are missing is Annealing temperature (Tₐ).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/plant-population">Plant population Calculator</a>, <a href="/biology/plants">Plant spacing Calculator</a> and <a href="/biology/plants-per-hectare">Plants Per Hectare Calculator</a>.</p>
-            TXT],
-            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
-            <p>Getting the figure is half the job. The other half is what Annealing temperature is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put Primer melting temperature and Target melting temperature beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>
+            <p>Use it whenever the numbers you have are Primer melting temperature and Target melting temperature and the number you are missing is Annealing temperature (Tₐ).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Annealing temperature calculator work out?', 'a' => <<<'TXT'
-            Annealing temperature (Tₐ), from Target melting temperature and Primer melting temperature. The relationship is Annealing temperature (Tₐ) = (3 ÷ 10) × Primer melting temperature + (7 ÷ 10) × Target melting temperature − 149 ÷ 10.
+            Annealing temperature (Tₐ), from Primer melting temperature and Target melting temperature. The relationship is Annealing temperature (Tₐ) = (3 ÷ 10) × Primer melting temperature + (7 ÷ 10) × Target melting temperature − 149 ÷ 10.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
             Primer melting temperature (Celsius), Target melting temperature (Celsius). Fill primer melting temperature and target melting temperature and leave Annealing temperature (Tₐ) empty if you would rather have that one solved instead.

@@ -11,249 +11,207 @@
 
 return [
     'name' => 'Restriction Enzyme Finder Calculator',
-    'meta' => ['title' => 'Restriction Enzyme Finder Calculator: Steps & Units', 'description' => 'Restriction Enzyme Finder Calculator reports enzymes that cut and unique cutters. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Restriction Enzyme Finder Calculator', 'updated' => '2026-10-29'],
-    'raw' => [
-        'vars' => [
-            'sequence' => [
-                'type' => 'text',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAGGAATTCGGATCCAAGCTT', 'c' => null],
-                ],
-            ],
-            'circular' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'yes', 'c' => null],
-                ],
-                'ds' => 'ds-circular',
-            ],
-            'cutters' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'unique' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'nocut' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'custom-restriction-enzyme-finder',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR2',
+    'meta' => ['title' => 'Restriction Enzyme Finder Calculator: Steps & Units', 'description' => 'Restriction Enzyme Finder Calculator reports enzymes that cut and unique cutters. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Restriction Enzyme Finder Calculator', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'grid' => 'FR2',
+                    'place' => [
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                    ],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'sequence',
-                                    'l' => 'DNA sequence',
-                                    'h' => 'Paste the plasmid or the amplicon; FASTA headers are ignored',
-                                    'vt' => 'text',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'circular',
-                                    'l' => 'Treat the molecule as circular (plasmid)',
-                                    'h' => 'Sites that span the origin are counted too',
-                                    'vt' => 'valueSelect',
-                                    'ds' => 'ds-circular',
-                                    'opts' => [
-                                        ['yes', 'Yes', '1'],
-                                        ['no', 'No', '0'],
-                                    ],
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'cutters',
-                                    'l' => 'Enzymes that cut',
-                                    'h' => 'Out of the panel',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'unique',
-                                    'l' => 'Unique cutters',
-                                    'h' => 'Exactly one site',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'nocut',
-                                    'l' => 'Enzymes that do not cut',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
+                            'name' => 'sequence',
+                            'label' => 'DNA sequence',
+                            'type' => 'text',
+                            'help' => 'Paste the plasmid or the amplicon; FASTA headers are ignored',
+                            'default' => 'ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAGGAATTCGGATCCAAGCTT',
+                        ],
+                        [
+                            'name' => 'circular',
+                            'label' => 'Treat the molecule as circular (plasmid)',
+                            'type' => 'select',
+                            'options' => ['Yes' => '1', 'No' => '0'],
+                            'help' => 'Sites that span the origin are counted too',
+                            'default' => 'Yes',
+                        ],
+                        [
+                            'name' => 'cutters',
+                            'label' => 'Enzymes that cut',
+                            'type' => 'number',
+                            'help' => 'Out of the panel',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'unique',
+                            'label' => 'Unique cutters',
+                            'type' => 'number',
+                            'help' => 'Exactly one site',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'nocut',
+                            'label' => 'Enzymes that do not cut',
+                            'type' => 'number',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [],
-        'datasets' => [
-            'ds-circular' => [
-                'name' => 'Treat the molecule as circular (plasmid)',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'yes', 'label' => 'Yes', 'value' => '1'],
-                    ['uid' => 'no', 'label' => 'No', 'value' => '0'],
-                ],
-            ],
-        ],
-        'js' => <<<'TXT'
-        function cleanSeq(raw, kind) {
-            var s = String(raw || '').replace(/^>.*$/gm, '');
-            s = s.replace(/[^A-Za-z]/g, '');
-            return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
-          }
-          function wrap(s, width) {
-            width = width || 60;
-            var out = [];
-            for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
-            return out.join('\n');
-          }
-          function esc(s) {
-            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          }
-          function block(title, body, note) {
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function table(title, head, rows, note) {
-            var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
-            var b = rows.map(function (r) {
-              return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
-            }).join('');
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
-              + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          // A select arrives here as the option *uid* the panel generated from the label,
-          // not as its value, so resolve by normalised containment and take the longest
-          // match (otherwise "hindiii" would be caught by a shorter key like "hin").
-          function resolve(raw, map, fallback) {
-            var n = String(raw || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            if (Object.prototype.hasOwnProperty.call(map, raw)) return map[raw];
-            var keys = Object.keys(map).sort(function (a, b) { return b.length - a.length; });
-            for (var i = 0; i < keys.length; i++) {
-              var k = keys[i].toLowerCase().replace(/[^a-z0-9]/g, '');
-              if (k && n.indexOf(k) >= 0) return map[keys[i]];
-            }
-            return fallback;
-          }
-          var BASES = 'TCAG';
-          var AA_ORDER = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
-          function aaOf(codon) {
-            var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
-                i3 = BASES.indexOf(codon.charAt(2));
-            if (i1 < 0 || i2 < 0 || i3 < 0) return null;
-            return AA_ORDER.charAt(i1 * 16 + i2 * 4 + i3);
-          }
-          var STOPS = { TAA: 1, TAG: 1, TGA: 1 };
-          var MASS = { A: 71.0788, R: 156.1875, N: 114.1038, D: 115.0886, C: 103.1388,
-                       E: 129.1155, Q: 128.1307, G: 57.0519, H: 137.1411, I: 113.1594,
-                       L: 113.1594, K: 128.1741, M: 131.1926, F: 147.1766, P: 97.1167,
-                       S: 87.0782, T: 101.1051, W: 186.2132, Y: 163.1760, V: 99.1326 };
-          function peptideMass(s) {
-            var m = 0, n = 0;
-            for (var i = 0; i < s.length; i++) {
-              var x = MASS[s.charAt(i)];
-              if (x) { m += x; n++; }
-            }
-            return n ? m + 18.01524 : 0;
-          }
-        
-          // name, recognition site, cut offset on the top strand, overhang
-          var PANEL = [
-            ['EcoRI', 'GAATTC', 1, '5′'], ['BamHI', 'GGATCC', 1, '5′'], ['HindIII', 'AAGCTT', 1, '5′'],
-            ['NotI', 'GCGGCCGC', 2, '5′'], ['XhoI', 'CTCGAG', 1, '5′'], ['SalI', 'GTCGAC', 1, '5′'],
-            ['PstI', 'CTGCAG', 5, '3′'], ['XbaI', 'TCTAGA', 1, '5′'], ['KpnI', 'GGTACC', 5, '3′'],
-            ['SmaI', 'CCCGGG', 3, 'blunt'], ['SacI', 'GAGCTC', 5, '3′'], ['NcoI', 'CCATGG', 1, '5′'],
-            ['NdeI', 'CATATG', 2, '5′'], ['EcoRV', 'GATATC', 3, 'blunt'], ['ScaI', 'AGTACT', 3, 'blunt'],
-            ['PvuII', 'CAGCTG', 3, 'blunt'], ['HpaI', 'GTTAAC', 3, 'blunt'], ['NruI', 'TCGCGA', 3, 'blunt'],
-            ['ApaI', 'GGGCCC', 5, '3′'], ['BglII', 'AGATCT', 1, '5′'], ['SpeI', 'ACTAGT', 1, '5′'],
-            ['NheI', 'GCTAGC', 1, '5′'], ['AgeI', 'ACCGGT', 1, '5′'], ['AscI', 'GGCGCGCC', 2, '5′'],
-            ['MluI', 'ACGCGT', 1, '5′'], ['SphI', 'GCATGC', 5, '3′']
-          ];
-          var COMP2 = { A: 'T', T: 'A', G: 'C', C: 'G', N: 'N' };
-          function comp(s) {
-            var o = '';
-            for (var i = s.length - 1; i >= 0; i--) o += COMP2[s.charAt(i)] || 'N';
-            return o;
-          }
-          function sitesOf(seq, site, cut, circular) {
-            var hits = [], i, len = site.length;
-            var hay = circular ? seq + seq.substring(0, Math.min(len, seq.length)) : seq;
-            for (i = 0; i + len <= hay.length; i++) {
-              if (hay.substr(i, len) === site) {
-                var p = i + cut;
-                if (circular) p = ((p % seq.length) + seq.length) % seq.length;
-                hits.push(p);
-              }
-            }
-            var rcSite = comp(site);
-            if (rcSite !== site) {
-              for (i = 0; i + len <= hay.length; i++) {
-                if (hay.substr(i, len) === rcSite) {
-                  var q = i + (len - cut);
-                  if (circular) q = ((q % seq.length) + seq.length) % seq.length;
-                  hits.push(q);
-                }
-              }
-            }
-            hits.sort(function (a, b) { return a - b; });
-            var out = [];
-            for (i = 0; i < hits.length; i++) if (out.indexOf(hits[i]) < 0) out.push(hits[i]);
-            return out;
-          }
-          omni.onResult(['sequence', 'circular'], function (ctx) {
-            var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
-            if (seq.length < 8) {
-              ctx.addHtml(block('Enzyme screen', '—', 'Paste at least 8 bp of DNA.'));
-              ctx.exportValue('cutters', 0); ctx.exportValue('unique', 0); ctx.exportValue('nocut', 0);
-              return;
-            }
-            var circular = /true|yes|1/i.test(String(ctx.getRawInput('circular') || ''));
-            var unique = [], multi = [], none = [];
-            for (var i = 0; i < PANEL.length; i++) {
-              var enz = PANEL[i];
-              var hits = sitesOf(seq, enz[1], enz[2], circular);
-              if (hits.length === 1) unique.push([enz[0], enz[1], String(hits[0] + 1) + ' bp', enz[3]]);
-              else if (hits.length > 1) multi.push([enz[0], enz[1], hits.length + ' sites: ' + hits.map(function (p) { return p + 1; }).join(', '), enz[3]]);
-              else none.push([enz[0], enz[1], '—', enz[3]]);
-            }
-            ctx.exportValue('cutters', unique.length + multi.length);
-            ctx.exportValue('unique', unique.length);
-            ctx.exportValue('nocut', none.length);
-            var html = block('Enzyme screen (' + seq.length + ' bp, ' + (circular ? 'circular' : 'linear') + ')',
-              'Unique cutters   ' + unique.length + '\nMulti cutters    ' + multi.length
-              + '\nNo site          ' + none.length,
-              unique.length ? 'Start from the unique cutters — one cut per enzyme.'
-                            : 'No unique cutter in this panel; widen the enzyme list.');
-            html += table('Unique cutters', ['Enzyme', 'Site', 'Cut at', 'Overhang'],
-                          unique.length ? unique : [['none', '—', '—', '—']]);
-            html += table('Enzymes that cut more than once', ['Enzyme', 'Site', 'Positions', 'Overhang'],
-                          multi.length ? multi.slice(0, 14) : [['none', '—', '—', '—']],
-                          multi.length > 14 ? 'First 14 shown.' : '');
-            html += table('No site in this sequence', ['Enzyme', 'Site', 'Cut at', 'Overhang'], none.slice(0, 14),
-                          none.length > 14 ? 'First 14 shown — useful as enzymes that will leave the sequence intact.' : '');
-            ctx.addHtml(html);
-          });
-        TXT,
     ],
+    'formula' => [],
+    'js' => <<<'TXT'
+    function cleanSeq(raw, kind) {
+        var s = String(raw || '').replace(/^>.*$/gm, '');
+        s = s.replace(/[^A-Za-z]/g, '');
+        return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
+      }
+      function wrap(s, width) {
+        width = width || 60;
+        var out = [];
+        for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
+        return out.join('\n');
+      }
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function block(title, body, note) {
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function table(title, head, rows, note) {
+        var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
+        var b = rows.map(function (r) {
+          return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+        }).join('');
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
+          + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      // A select arrives here as the option *uid* the panel generated from the label,
+      // not as its value, so resolve by normalised containment and take the longest
+      // match (otherwise "hindiii" would be caught by a shorter key like "hin").
+      function resolve(raw, map, fallback) {
+        var n = String(raw || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (Object.prototype.hasOwnProperty.call(map, raw)) return map[raw];
+        var keys = Object.keys(map).sort(function (a, b) { return b.length - a.length; });
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i].toLowerCase().replace(/[^a-z0-9]/g, '');
+          if (k && n.indexOf(k) >= 0) return map[keys[i]];
+        }
+        return fallback;
+      }
+      var BASES = 'TCAG';
+      var AA_ORDER = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
+      function aaOf(codon) {
+        var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
+            i3 = BASES.indexOf(codon.charAt(2));
+        if (i1 < 0 || i2 < 0 || i3 < 0) return null;
+        return AA_ORDER.charAt(i1 * 16 + i2 * 4 + i3);
+      }
+      var STOPS = { TAA: 1, TAG: 1, TGA: 1 };
+      var MASS = { A: 71.0788, R: 156.1875, N: 114.1038, D: 115.0886, C: 103.1388,
+                   E: 129.1155, Q: 128.1307, G: 57.0519, H: 137.1411, I: 113.1594,
+                   L: 113.1594, K: 128.1741, M: 131.1926, F: 147.1766, P: 97.1167,
+                   S: 87.0782, T: 101.1051, W: 186.2132, Y: 163.1760, V: 99.1326 };
+      function peptideMass(s) {
+        var m = 0, n = 0;
+        for (var i = 0; i < s.length; i++) {
+          var x = MASS[s.charAt(i)];
+          if (x) { m += x; n++; }
+        }
+        return n ? m + 18.01524 : 0;
+      }
+    
+      // name, recognition site, cut offset on the top strand, overhang
+      var PANEL = [
+        ['EcoRI', 'GAATTC', 1, '5′'], ['BamHI', 'GGATCC', 1, '5′'], ['HindIII', 'AAGCTT', 1, '5′'],
+        ['NotI', 'GCGGCCGC', 2, '5′'], ['XhoI', 'CTCGAG', 1, '5′'], ['SalI', 'GTCGAC', 1, '5′'],
+        ['PstI', 'CTGCAG', 5, '3′'], ['XbaI', 'TCTAGA', 1, '5′'], ['KpnI', 'GGTACC', 5, '3′'],
+        ['SmaI', 'CCCGGG', 3, 'blunt'], ['SacI', 'GAGCTC', 5, '3′'], ['NcoI', 'CCATGG', 1, '5′'],
+        ['NdeI', 'CATATG', 2, '5′'], ['EcoRV', 'GATATC', 3, 'blunt'], ['ScaI', 'AGTACT', 3, 'blunt'],
+        ['PvuII', 'CAGCTG', 3, 'blunt'], ['HpaI', 'GTTAAC', 3, 'blunt'], ['NruI', 'TCGCGA', 3, 'blunt'],
+        ['ApaI', 'GGGCCC', 5, '3′'], ['BglII', 'AGATCT', 1, '5′'], ['SpeI', 'ACTAGT', 1, '5′'],
+        ['NheI', 'GCTAGC', 1, '5′'], ['AgeI', 'ACCGGT', 1, '5′'], ['AscI', 'GGCGCGCC', 2, '5′'],
+        ['MluI', 'ACGCGT', 1, '5′'], ['SphI', 'GCATGC', 5, '3′']
+      ];
+      var COMP2 = { A: 'T', T: 'A', G: 'C', C: 'G', N: 'N' };
+      function comp(s) {
+        var o = '';
+        for (var i = s.length - 1; i >= 0; i--) o += COMP2[s.charAt(i)] || 'N';
+        return o;
+      }
+      function sitesOf(seq, site, cut, circular) {
+        var hits = [], i, len = site.length;
+        var hay = circular ? seq + seq.substring(0, Math.min(len, seq.length)) : seq;
+        for (i = 0; i + len <= hay.length; i++) {
+          if (hay.substr(i, len) === site) {
+            var p = i + cut;
+            if (circular) p = ((p % seq.length) + seq.length) % seq.length;
+            hits.push(p);
+          }
+        }
+        var rcSite = comp(site);
+        if (rcSite !== site) {
+          for (i = 0; i + len <= hay.length; i++) {
+            if (hay.substr(i, len) === rcSite) {
+              var q = i + (len - cut);
+              if (circular) q = ((q % seq.length) + seq.length) % seq.length;
+              hits.push(q);
+            }
+          }
+        }
+        hits.sort(function (a, b) { return a - b; });
+        var out = [];
+        for (i = 0; i < hits.length; i++) if (out.indexOf(hits[i]) < 0) out.push(hits[i]);
+        return out;
+      }
+      omni.onResult(['sequence', 'circular'], function (ctx) {
+        var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
+        if (seq.length < 8) {
+          ctx.addHtml(block('Enzyme screen', '—', 'Paste at least 8 bp of DNA.'));
+          ctx.exportValue('cutters', 0); ctx.exportValue('unique', 0); ctx.exportValue('nocut', 0);
+          return;
+        }
+        var circular = /true|yes|1/i.test(String(ctx.getRawInput('circular') || ''));
+        var unique = [], multi = [], none = [];
+        for (var i = 0; i < PANEL.length; i++) {
+          var enz = PANEL[i];
+          var hits = sitesOf(seq, enz[1], enz[2], circular);
+          if (hits.length === 1) unique.push([enz[0], enz[1], String(hits[0] + 1) + ' bp', enz[3]]);
+          else if (hits.length > 1) multi.push([enz[0], enz[1], hits.length + ' sites: ' + hits.map(function (p) { return p + 1; }).join(', '), enz[3]]);
+          else none.push([enz[0], enz[1], '—', enz[3]]);
+        }
+        ctx.exportValue('cutters', unique.length + multi.length);
+        ctx.exportValue('unique', unique.length);
+        ctx.exportValue('nocut', none.length);
+        var html = block('Enzyme screen (' + seq.length + ' bp, ' + (circular ? 'circular' : 'linear') + ')',
+          'Unique cutters   ' + unique.length + '\nMulti cutters    ' + multi.length
+          + '\nNo site          ' + none.length,
+          unique.length ? 'Start from the unique cutters — one cut per enzyme.'
+                        : 'No unique cutter in this panel; widen the enzyme list.');
+        html += table('Unique cutters', ['Enzyme', 'Site', 'Cut at', 'Overhang'],
+                      unique.length ? unique : [['none', '—', '—', '—']]);
+        html += table('Enzymes that cut more than once', ['Enzyme', 'Site', 'Positions', 'Overhang'],
+                      multi.length ? multi.slice(0, 14) : [['none', '—', '—', '—']],
+                      multi.length > 14 ? 'First 14 shown.' : '');
+        html += table('No site in this sequence', ['Enzyme', 'Site', 'Cut at', 'Overhang'], none.slice(0, 14),
+                      none.length > 14 ? 'First 14 shown — useful as enzymes that will leave the sequence intact.' : '');
+        ctx.addHtml(html);
+      });
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Restriction Enzyme Finder works out Enzymes that cut and Unique cutters from DNA sequence and Treat the molecule as circular (plasmid). It is a single relationship that reads enzymes that cut out of DNA sequence, not a table of canned results keyed by them.
@@ -293,7 +251,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Enzymes that cut is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: DNA sequence and Treat the molecule as circular (plasmid) measured, Enzymes that cut and Unique cutters wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/amino-acid-composition">Amino Acid Composition Calculator</a>, <a href="/biology/animal-mortality-rate">Animal mortality rate</a> and <a href="/biology/annealing-temperature">Annealing temperature Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: DNA sequence and Treat the molecule as circular (plasmid) measured, Enzymes that cut and Unique cutters wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
             <p>Getting the figure is half the job. The other half is what Restriction Enzyme Finder is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put DNA sequence and Treat the molecule as circular (plasmid) beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>

@@ -11,207 +11,160 @@
 
 return [
     'name' => 'Reverse Complement Calculator',
-    'meta' => ['title' => 'Reverse Complement Calculator: Steps & Units', 'description' => 'Reverse Complement Calculator turns sequence and alphabet into length. Leave base pairs per line empty and the page will solve for it instead. No sign-up.', 'h1' => 'Reverse Complement Calculator', 'updated' => '2026-10-29'],
-    'raw' => [
-        'vars' => [
-            'sequence' => [
-                'type' => 'text',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG', 'c' => null],
-                ],
-            ],
-            'alphabet' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'dna-a-c-g-t', 'c' => null],
-                ],
-                'ds' => 'ds-alphabet',
-            ],
-            'width' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '60', 'c' => null],
-                ],
-            ],
-            'length' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'gc' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'tm' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'custom-reverse-complement',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR2',
+    'meta' => ['title' => 'Reverse Complement Calculator: Steps & Units', 'description' => 'Reverse Complement Calculator turns sequence and alphabet into length. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Reverse Complement Calculator', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'grid' => 'FR2',
+                    'place' => [
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                    ],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'sequence',
-                                    'l' => 'Sequence',
-                                    'h' => 'Paste DNA; spaces, line breaks and FASTA headers are ignored',
-                                    'vt' => 'text',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'alphabet',
-                                    'l' => 'Alphabet',
-                                    'vt' => 'valueSelect',
-                                    'ds' => 'ds-alphabet',
-                                    'opts' => [
-                                        ['dna-a-c-g-t', 'DNA (A, C, G, T)', 'dna'],
-                                        ['rna-a-c-g-u', 'RNA (A, C, G, U)', 'rna'],
-                                    ],
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'width',
-                                    'l' => 'Base pairs per line',
-                                    'h' => '0 for one line',
-                                    'vt' => 'numerical',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'length',
-                                    'l' => 'Length',
-                                    'suf' => 'bp',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'gc',
-                                    'l' => 'GC content',
-                                    'suf' => '%',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'tm',
-                                    'l' => 'Melting temperature of the duplex',
-                                    'h' => 'Wallace under 14 nt, GC rule to 40 nt, long-duplex form above',
-                                    'suf' => '°C',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
+                            'name' => 'sequence',
+                            'label' => 'Sequence',
+                            'type' => 'text',
+                            'help' => 'Paste DNA; spaces, line breaks and FASTA headers are ignored',
+                            'default' => 'ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG',
+                        ],
+                        [
+                            'name' => 'alphabet',
+                            'label' => 'Alphabet',
+                            'type' => 'select',
+                            'options' => ['DNA (A, C, G, T)' => 'dna', 'RNA (A, C, G, U)' => 'rna'],
+                            'default' => 'DNA (A, C, G, T)',
+                        ],
+                        [
+                            'name' => 'width',
+                            'label' => 'Base pairs per line',
+                            'type' => 'number',
+                            'help' => '0 for one line',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '60',
+                        ],
+                        [
+                            'name' => 'length',
+                            'label' => 'Length',
+                            'type' => 'number',
+                            'suffix' => 'bp',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'gc',
+                            'label' => 'GC content',
+                            'type' => 'number',
+                            'suffix' => '%',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'tm',
+                            'label' => 'Melting temperature of the duplex',
+                            'type' => 'number',
+                            'suffix' => '°C',
+                            'help' => 'Wallace under 14 nt, GC rule to 40 nt, long-duplex form above',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [],
-        'datasets' => [
-            'ds-alphabet' => [
-                'name' => 'Alphabet',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'dna-a-c-g-t', 'label' => 'DNA (A, C, G, T)', 'value' => 'dna'],
-                    ['uid' => 'rna-a-c-g-u', 'label' => 'RNA (A, C, G, U)', 'value' => 'rna'],
-                ],
-            ],
-        ],
-        'js' => <<<'TXT'
-        function cleanSeq(raw, kind) {
-            // Everything that is not a residue goes: FASTA headers, digits (line
-            // numbers pasted from a viewer), gaps, spaces and newlines.
-            var s = String(raw || '').replace(/^>.*$/gm, '');
-            s = s.replace(/[^A-Za-z]/g, '');
-            return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
-          }
-          function wrap(s, width) {
-            width = width || 60;
-            var out = [];
-            for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
-            return out.join('\n');
-          }
-          function tmOf(n, pct, at, gc) {
-            // Which formula applies depends on the length, and using the wrong one is
-            // not a small error: the GC rule gives 107 °C for a 39 bp duplex, because it
-            // was fitted to oligos of 40 nt and below.
-            if (n <= 14) return 2 * at + 4 * gc;                       // Wallace
-            if (n <= 40) return 64.9 + 41 * (gc - 16.4) / n;            // GC rule, G+C as a count
-            return 81.5 + 16.6 * Math.log10(0.05) + 0.41 * pct - 675 / n;   // long duplex, 50 mM Na+
-          }
-          function esc(s) {
-            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          }
-          function block(title, body, note) {
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-        
-          var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',
-                      R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
-                      B:'V',V:'B',D:'H',H:'D',N:'N'};
-          function revcomp(s) {
-            var out = '';
-            for (var i = s.length - 1; i >= 0; i--) {
-              var c = s.charAt(i);
-              out += COMP[c] || 'N';
-            }
-            return out;
-          }
-          function gcOf(s) {
-            var gc = 0;
-            for (var i = 0; i < s.length; i++) {
-              var c = s.charAt(i);
-              if (c === 'G' || c === 'C') gc++;
-            }
-            return gc;
-          }
-        
-          omni.onResult(['sequence'], function (ctx) {
-            var raw = ctx.getRawInput('sequence');
-            // selects return the option slug ("rna-a-c-g-u"), so match on the word
-            var kind = /rna/i.test(String(ctx.getRawInput('alphabet') || '')) ? 'rna' : 'dna';
-            var width = Number(ctx.getRawInput('width'));
-            if (!isFinite(width) || width < 0) width = 60;
-        
-            var seq = cleanSeq(raw, 'dna');
-            if (kind === 'rna') seq = seq.replace(/T/g, 'U');
-            if (!seq) {
-              ctx.addHtml(block('Reverse complement', '—', 'Paste a sequence to see the other strand.'));
-              return;
-            }
-            var comp = revcomp(kind === 'rna' ? seq.replace(/U/g, 'T') : seq);
-            if (kind === 'rna') comp = comp.replace(/T/g, 'U');
-        
-            var gc = gcOf(kind === 'rna' ? seq.replace(/U/g, 'T') : seq);
-            var pct = seq.length ? (gc / seq.length) * 100 : 0;
-            var at = seq.length - gc;
-            var tm = tmOf(seq.length, pct, at, gc);
-        
-            ctx.exportValue('length', seq.length);
-            ctx.exportValue('gc', Math.round(pct * 100) / 100);
-            ctx.exportValue('tm', Math.round(tm * 10) / 10);
-        
-            var w = width === 0 ? Math.max(seq.length, 1) : width;
-            ctx.addHtml(block('Reverse complement (5′→3′)', wrap(comp, w),
-              seq.length + (kind === 'rna' ? ' nt' : ' bp') + ' · GC ' + pct.toFixed(1) + '%'));
-            if (seq.length <= 200) {
-              ctx.addHtml(block('Input, as read 5′→3′', wrap(seq, w)));
-            }
-          });
-        TXT,
     ],
+    'formula' => [],
+    'js' => <<<'TXT'
+    function cleanSeq(raw, kind) {
+        // Everything that is not a residue goes: FASTA headers, digits (line
+        // numbers pasted from a viewer), gaps, spaces and newlines.
+        var s = String(raw || '').replace(/^>.*$/gm, '');
+        s = s.replace(/[^A-Za-z]/g, '');
+        return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
+      }
+      function wrap(s, width) {
+        width = width || 60;
+        var out = [];
+        for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
+        return out.join('\n');
+      }
+      function tmOf(n, pct, at, gc) {
+        // Which formula applies depends on the length, and using the wrong one is
+        // not a small error: the GC rule gives 107 °C for a 39 bp duplex, because it
+        // was fitted to oligos of 40 nt and below.
+        if (n <= 14) return 2 * at + 4 * gc;                       // Wallace
+        if (n <= 40) return 64.9 + 41 * (gc - 16.4) / n;            // GC rule, G+C as a count
+        return 81.5 + 16.6 * Math.log10(0.05) + 0.41 * pct - 675 / n;   // long duplex, 50 mM Na+
+      }
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function block(title, body, note) {
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+    
+      var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',
+                  R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
+                  B:'V',V:'B',D:'H',H:'D',N:'N'};
+      function revcomp(s) {
+        var out = '';
+        for (var i = s.length - 1; i >= 0; i--) {
+          var c = s.charAt(i);
+          out += COMP[c] || 'N';
+        }
+        return out;
+      }
+      function gcOf(s) {
+        var gc = 0;
+        for (var i = 0; i < s.length; i++) {
+          var c = s.charAt(i);
+          if (c === 'G' || c === 'C') gc++;
+        }
+        return gc;
+      }
+    
+      omni.onResult(['sequence'], function (ctx) {
+        var raw = ctx.getRawInput('sequence');
+        // selects return the option slug ("rna-a-c-g-u"), so match on the word
+        var kind = /rna/i.test(String(ctx.getRawInput('alphabet') || '')) ? 'rna' : 'dna';
+        var width = Number(ctx.getRawInput('width'));
+        if (!isFinite(width) || width < 0) width = 60;
+    
+        var seq = cleanSeq(raw, 'dna');
+        if (kind === 'rna') seq = seq.replace(/T/g, 'U');
+        if (!seq) {
+          ctx.addHtml(block('Reverse complement', '—', 'Paste a sequence to see the other strand.'));
+          return;
+        }
+        var comp = revcomp(kind === 'rna' ? seq.replace(/U/g, 'T') : seq);
+        if (kind === 'rna') comp = comp.replace(/T/g, 'U');
+    
+        var gc = gcOf(kind === 'rna' ? seq.replace(/U/g, 'T') : seq);
+        var pct = seq.length ? (gc / seq.length) * 100 : 0;
+        var at = seq.length - gc;
+        var tm = tmOf(seq.length, pct, at, gc);
+    
+        ctx.exportValue('length', seq.length);
+        ctx.exportValue('gc', Math.round(pct * 100) / 100);
+        ctx.exportValue('tm', Math.round(tm * 10) / 10);
+    
+        var w = width === 0 ? Math.max(seq.length, 1) : width;
+        ctx.addHtml(block('Reverse complement (5′→3′)', wrap(comp, w),
+          seq.length + (kind === 'rna' ? ' nt' : ' bp') + ' · GC ' + pct.toFixed(1) + '%'));
+        if (seq.length <= 200) {
+          ctx.addHtml(block('Input, as read 5′→3′', wrap(seq, w)));
+        }
+      });
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Reverse Complement works out Length and GC content from Sequence, Alphabet and Base pairs per line. The arithmetic is the whole method: length is worked out from sequence by one formula, applied once. Length comes back in bp unless you switch the unit chip beside the box.
@@ -249,7 +202,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Length is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Sequence, Alphabet and Base pairs per line and the number you are missing is Length and GC content.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/enzyme-specific-activity-yield">Enzyme Kinetics: Specific Activity and Yield Calculator</a>, <a href="/biology/enzyme-unit-converter">Enzyme Unit Converter (U/mg, kcat) Calculator</a> and <a href="/biology/exponential-population-growth">Exponential Population Growth Calculator</a>.</p>
+            <p>Use it whenever the numbers you have are Sequence, Alphabet and Base pairs per line and the number you are missing is Length and GC content.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
             <p>Getting the figure is half the job. The other half is what Reverse Complement is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put Sequence, Alphabet and Base pairs per line beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>

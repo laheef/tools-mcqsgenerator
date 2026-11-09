@@ -11,114 +11,72 @@
 
 return [
     'name' => 'Daily light integral (DLI)',
-    'meta' => ['title' => 'Daily light integral Calculator: Steps & Units', 'description' => 'Enter light hours per day and Photon flux density (PPFD) and get Daily light integral (DLI) back. Free to use, with the working shown beside the answer.', 'h1' => 'Daily light integral (DLI) Calculator', 'updated' => '2026-08-12'],
-    'raw' => [
-        'vars' => [
-            'dli' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'lfd' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'ppfd' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'Pl2Pl12psJ7L2MbfKFzR9',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Daily light integral Calculator: Steps & Units', 'description' => 'Enter light hours per day and Photon flux density (PPFD) and get Daily light integral (DLI) back. Every box can be solved for, not only the one in the title.', 'h1' => 'Daily light integral (DLI) Calculator', 'updated' => '2026-08-12'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'lfd',
-                                    'vt' => 'numerical',
-                                    'l' => 'Light hours per day ',
-                                    'us' => '19',
-                                    'du' => 'hrs',
-                                ],
-                            ],
+                            'name' => 'lfd',
+                            'label' => 'Light hours per day ',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'hrs',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'ppfd',
-                                    'vt' => 'numerical',
-                                    'l' => 'Photon flux density (PPFD)',
-                                    'suf' => 'μmol/s·m²',
-                                    'h' => 'PPFD is photosynthetic photon flux density.',
-                                ],
-                            ],
+                            'name' => 'ppfd',
+                            'label' => 'Photon flux density (PPFD)',
+                            'type' => 'number',
+                            'suffix' => 'μmol/s·m²',
+                            'help' => 'PPFD is photosynthetic photon flux density.',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dli',
-                                    'vt' => 'numerical',
-                                    'l' => 'Daily light integral (DLI)',
-                                    'suf' => 'mol/m²/day',
-                                ],
-                            ],
+                            'name' => 'dli',
+                            'label' => 'Daily light integral (DLI)',
+                            'type' => 'number',
+                            'suffix' => 'mol/m²/day',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['dli > 0 and dli <= 6', 'This amount of light is the minimum requirement for microgreens.'],
-                                        ['dli > 6 and dli <= 12', 'This amount of light is good for microgreens.'],
-                                        ['dli > 12 and dli <= 17', 'This amount of light is good for vegetative plants like leafy greens and herbs.'],
-                                        ['dli > 17 and dli < 40', 'This amount of light is good for flowering crops, including vegetables that grow out of flowers, like peppers and tomatoes.'],
-                                    ],
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'dli > 0 and dli <= 6', 'text' => 'This amount of light is the minimum requirement for microgreens.'],
+                                ['when' => 'dli > 6 and dli <= 12', 'text' => 'This amount of light is good for microgreens.'],
+                                ['when' => 'dli > 12 and dli <= 17', 'text' => 'This amount of light is good for vegetative plants like leafy greens and herbs.'],
+                                ['when' => 'dli > 17 and dli < 40', 'text' => 'This amount of light is good for flowering crops, including vegetables that grow out of flowers, like peppers and tomatoes.'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'dli = ppfd * lfd * 3600 / 1000000',
-                'var' => [
-                    [
-                        'l' => 'lfd',
-                        'f' => '(2500/9)*dli/ppfd',
-                        'r' => ['dli', 'ppfd'],
-                    ],
-                    [
-                        'l' => 'dli',
-                        'f' => '(9/2500)*lfd*ppfd',
-                        'r' => ['lfd', 'ppfd'],
-                    ],
-                    [
-                        'l' => 'ppfd',
-                        'f' => '(2500/9)*dli/lfd',
-                        'r' => ['lfd', 'dli'],
-                    ],
-                ],
-            ],
+    ],
+    'formula' => [
+        [
+            'title' => 'dli = ppfd * lfd * 3600 / 1000000',
+            'results' => ['lfd' => '(2500/9)*dli/ppfd', 'dli' => '(9/2500)*lfd*ppfd', 'ppfd' => '(2500/9)*dli/lfd'],
         ],
-        'datasets' => [],
     ],
     'article' => [
         'intro' => <<<'TXT'
@@ -138,7 +96,7 @@ return [
             <p>Treat the size of a result as part of the answer: <strong>Daily light integral (DLI)</strong> = 3.6 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Light hours per day offers 8 units and opens on hours, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Daily light integral (DLI)</strong> = <code>(9 ÷ 2500) × Light hours per day × Photon flux density (PPFD)</code></li><li><strong>Light hours per day</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD)</code></li><li><strong>Photon flux density (PPFD)</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Light hours per day</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Daily light integral (DLI)</strong> = <code>(9 ÷ 2500) × Light hours per day × Photon flux density (PPFD)</code> — the form to use when Light hours per day and Photon flux density (PPFD) are the values you have.</li><li><strong>Light hours per day</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD)</code> — the form to use when Daily light integral (DLI) and Photon flux density (PPFD) are the values you have.</li><li><strong>Photon flux density (PPFD)</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Light hours per day</code> — the form to use when Light hours per day and Daily light integral (DLI) are the values you have.</li></ul><p>Any one of Daily light integral (DLI), Light hours per day and Photon flux density (PPFD) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Daily light integral (DLI)</strong> = <code>(9 ÷ 2500) × Light hours per day × Photon flux density (PPFD)</code></li><li><strong>Light hours per day</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD)</code></li><li><strong>Photon flux density (PPFD)</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Light hours per day</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Daily light integral (DLI)</strong> = <code>(9 ÷ 2500) × Light hours per day × Photon flux density (PPFD)</code> — the form to use when Light hours per day and Photon flux density (PPFD) are the values you have.</li><li><strong>Light hours per day</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Photon flux density (PPFD)</code> — the form to use when Daily light integral (DLI) and Photon flux density (PPFD) are the values you have.</li><li><strong>Photon flux density (PPFD)</strong> = <code>(2500 ÷ 9) × Daily light integral (DLI) ÷ Light hours per day</code> — the form to use when Daily light integral (DLI) and Light hours per day are the values you have.</li></ul><p>Any one of Daily light integral (DLI), Light hours per day and Photon flux density (PPFD) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>Change one box only — Light hours per day, from 10 to 20 — and the answers go from <strong>Daily light integral (DLI)</strong> 3.6 mol/m²/day to <strong>Daily light integral (DLI)</strong> 7.2 mol/m²/day.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
@@ -165,7 +123,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Daily light integral (DLI) follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>Only the listed units.</strong> The unit tables here are hours and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Light hours per day and Photon flux density (PPFD) are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Light hours per day and Photon flux density (PPFD) and the number you are missing is Daily light integral (DLI).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dsdna-ug-to-pmol">dsDNA µg to pmol Calculator</a>, <a href="/biology/dsdna-ug-to-pmol-converter">dsDNA µg to pmol Converter Calculator</a> and <a href="/biology/egg-incubation-hatch-date">Egg Incubation Hatch Date Calculator</a>.</p>
+            <p>Use it whenever the numbers you have are Light hours per day and Photon flux density (PPFD) and the number you are missing is Daily light integral (DLI).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

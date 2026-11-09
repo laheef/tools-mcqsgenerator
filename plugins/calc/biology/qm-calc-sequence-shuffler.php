@@ -11,293 +11,224 @@
 
 return [
     'name' => 'DNA Sequence Shuffler',
-    'meta' => ['title' => 'DNA Sequence Shuffler Calculator: Steps & Units', 'description' => 'DNA Sequence Shuffler works out length and GC content from sequence and shuffle by. Leave molecule empty and the page will solve for it instead. Free.', 'h1' => 'DNA Sequence Shuffler', 'updated' => '2026-10-29'],
-    'raw' => [
-        'vars' => [
-            'sequence' => [
-                'type' => 'text',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAGAAATTTGGGCCCAAATTT', 'c' => null],
-                ],
-            ],
-            'mode' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'single-bases', 'c' => null],
-                ],
-                'ds' => 'ds-mode',
-            ],
-            'type' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'dna', 'c' => null],
-                ],
-                'ds' => 'ds-type',
-            ],
-            'seed' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '42', 'c' => null],
-                ],
-            ],
-            'length' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'gc_pct' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'changes' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'hamming' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'custom-sequence-shuffler',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR2',
+    'meta' => ['title' => 'DNA Sequence Shuffler Calculator: Steps & Units', 'description' => 'DNA Sequence Shuffler works out length and GC content from sequence and shuffle by. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'DNA Sequence Shuffler', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'grid' => 'FR2',
+                    'place' => [
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                    ],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'sequence',
-                                    'l' => 'Sequence',
-                                    'h' => 'Paste DNA or protein; headers, spaces and digits are ignored',
-                                    'vt' => 'text',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'mode',
-                                    'l' => 'Shuffle by',
-                                    'h' => 'Dinucleotide shuffling keeps the same pairs, so dinucleotide biases survive',
-                                    'vt' => 'valueSelect',
-                                    'ds' => 'ds-mode',
-                                    'opts' => [
-                                        ['single-bases', 'Single bases', 'mono'],
-                                        ['dinucleotides', 'Dinucleotides', 'di'],
-                                    ],
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'type',
-                                    'l' => 'Molecule',
-                                    'vt' => 'valueSelect',
-                                    'ds' => 'ds-type',
-                                    'opts' => [
-                                        ['dna', 'DNA', 'dna'],
-                                        ['protein', 'Protein', 'protein'],
-                                    ],
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'seed',
-                                    'l' => 'Random seed',
-                                    'h' => 'Same seed, same result — useful for reproducible nulls',
-                                    'vt' => 'numerical',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'length',
-                                    'l' => 'Length',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'gc_pct',
-                                    'l' => 'GC content',
-                                    'h' => 'Unchanged by mononucleotide shuffling',
-                                    'suf' => '%',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'changes',
-                                    'l' => 'Positions changed',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'hamming',
-                                    'l' => 'Difference from the input',
-                                    'suf' => '%',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
+                            'name' => 'sequence',
+                            'label' => 'Sequence',
+                            'type' => 'text',
+                            'help' => 'Paste DNA or protein; headers, spaces and digits are ignored',
+                            'default' => 'ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAGAAATTTGGGCCCAAATTT',
+                        ],
+                        [
+                            'name' => 'mode',
+                            'label' => 'Shuffle by',
+                            'type' => 'select',
+                            'options' => ['Single bases' => 'mono', 'Dinucleotides' => 'di'],
+                            'help' => 'Dinucleotide shuffling keeps the same pairs, so dinucleotide biases survive',
+                            'default' => 'Single bases',
+                        ],
+                        [
+                            'name' => 'type',
+                            'label' => 'Molecule',
+                            'type' => 'select',
+                            'options' => ['DNA' => 'dna', 'Protein' => 'protein'],
+                            'default' => 'DNA',
+                        ],
+                        [
+                            'name' => 'seed',
+                            'label' => 'Random seed',
+                            'type' => 'number',
+                            'help' => 'Same seed, same result — useful for reproducible nulls',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '42',
+                        ],
+                        [
+                            'name' => 'length',
+                            'label' => 'Length',
+                            'type' => 'number',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'gc_pct',
+                            'label' => 'GC content',
+                            'type' => 'number',
+                            'suffix' => '%',
+                            'help' => 'Unchanged by mononucleotide shuffling',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'changes',
+                            'label' => 'Positions changed',
+                            'type' => 'number',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'hamming',
+                            'label' => 'Difference from the input',
+                            'type' => 'number',
+                            'suffix' => '%',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [],
-        'datasets' => [
-            'ds-mode' => [
-                'name' => 'Shuffle by',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'single-bases', 'label' => 'Single bases', 'value' => 'mono'],
-                    ['uid' => 'dinucleotides', 'label' => 'Dinucleotides', 'value' => 'di'],
-                ],
-            ],
-            'ds-type' => [
-                'name' => 'Molecule',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'dna', 'label' => 'DNA', 'value' => 'dna'],
-                    ['uid' => 'protein', 'label' => 'Protein', 'value' => 'protein'],
-                ],
-            ],
-        ],
-        'js' => <<<'TXT'
-        function cleanSeq(raw, kind) {
-            var s = String(raw || '').replace(/^>.*$/gm, '');
-            s = s.replace(/[^A-Za-z]/g, '');
-            return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
-          }
-          function wrap(s, width) {
-            width = width || 60;
-            var out = [];
-            for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
-            return out.join('\n');
-          }
-          function esc(s) {
-            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          }
-          function block(title, body, note) {
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function table(title, head, rows, note) {
-            var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
-            var b = rows.map(function (r) {
-              return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
-            }).join('');
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
-              + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function gcOf(s) {
-            var gc = 0;
-            for (var i = 0; i < s.length; i++) { var c = s.charAt(i); if (c === 'G' || c === 'C') gc++; }
-            return gc;
-          }
-          function tmOf(n, pct, at, gc) {
-            if (n <= 14) return 2 * at + 4 * gc;
-            if (n <= 40) return 64.9 + 41 * (gc - 16.4) / n;
-            return 81.5 + 16.6 * Math.log10(0.05) + 0.41 * pct - 675 / n;
-          }
-          function pct1(x) { return (Math.round(x * 10) / 10).toFixed(1); }
-          function pct2(x) { return (Math.round(x * 100) / 100).toFixed(2); }
-          var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
-                      B:'V',V:'B',D:'H',H:'D',N:'N'};
-          function revcomp(s) {
-            var out = '';
-            for (var i = s.length - 1; i >= 0; i--) out += COMP[s.charAt(i)] || 'N';
-            return out;
-          }
-          // NCBI standard genetic code: bases ordered T, C, A, G for each position
-          var CODON_TABLE = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
-          var BASES = 'TCAG';
-          function aaOf(codon) {
-            var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
-                i3 = BASES.indexOf(codon.charAt(2));
-            if (i1 < 0 || i2 < 0 || i3 < 0) return null;
-            return CODON_TABLE.charAt(16 * i1 + 4 * i2 + i3);
-          }
-          function eachCodon(seq, frame, fn) {
-            for (var i = (frame || 0); i + 3 <= seq.length; i += 3) {
-              fn(seq.substr(i, 3), i);
-            }
-          }
-        
-          function mulberry32(a) {
-            return function () {
-              a |= 0; a = a + 0x6D2B79F5 | 0;
-              var t = Math.imul(a ^ a >>> 15, 1 | a);
-              t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-              return ((t ^ t >>> 14) >>> 0) / 4294967296;
-            };
-          }
-          function shuffleMono(s, rnd) {
-            var a = s.split('');
-            for (var i = a.length - 1; i > 0; i--) {
-              var j = Math.floor(rnd() * (i + 1));
-              var t = a[i]; a[i] = a[j]; a[j] = t;
-            }
-            return a.join('');
-          }
-          function shuffleDi(s, rnd) {
-            // Altschul-Erikson style: repeatedly pick a random dinucleotide and swap its
-            // two occurrences of the second base. Keeps every dinucleotide count intact.
-            if (s.length < 4) return shuffleMono(s, rnd);
-            var a = s.split('');
-            var tries = Math.max(50, a.length * 12);
-            for (var k = 0; k < tries; k++) {
-              var i = Math.floor(rnd() * (a.length - 1));
-              var j = Math.floor(rnd() * (a.length - 1));
-              if (i === j) continue;
-              var b = a[i + 1], c = a[j + 1];
-              if (a[i] === a[j] || b === c) continue;
-              a[i + 1] = c; a[j + 1] = b;
-            }
-            return a.join('');
-          }
-          omni.onResult(['sequence', 'mode', 'type', 'seed'], function (ctx) {
-            var kind = /protein/i.test(String(ctx.getRawInput('type') || '')) ? 'protein' : 'dna';
-            var seq = cleanSeq(ctx.getRawInput('sequence'), kind);
-            if (!seq) {
-              ctx.addHtml(block('Shuffled sequence', '—', 'Paste a sequence to shuffle.'));
-              return;
-            }
-            var seed = Number(ctx.getRawInput('seed'));
-            if (!isFinite(seed)) seed = 42;
-            var rnd = mulberry32(Math.floor(seed) || 1);
-            var mode = /dinucleotide/i.test(String(ctx.getRawInput('mode') || '')) ? 'di' : 'mono';
-            var out = seq.length < 2 ? seq : (mode === 'di' ? shuffleDi(seq, rnd) : shuffleMono(seq, rnd));
-        
-            var changed = 0;
-            for (var i = 0; i < seq.length; i++) if (seq.charAt(i) !== out.charAt(i)) changed++;
-            var pctChanged = seq.length ? changed / seq.length * 100 : 0;
-            var gc = kind === 'dna' ? gcOf(out) : 0;
-            var pctGC = kind === 'dna' && out.length ? gc / out.length * 100 : 0;
-        
-            ctx.exportValue('length', out.length);
-            if (kind === 'dna') ctx.exportValue('gc_pct', Math.round(pctGC * 100) / 100);
-            ctx.exportValue('changes', changed);
-            ctx.exportValue('hamming', Math.round(pctChanged * 10) / 10);
-        
-            ctx.addHtml(block('Shuffled ' + (kind === 'dna' ? 'DNA' : 'protein') + ' ('
-              + (mode === 'di' ? 'dinucleotide' : 'mononucleotide') + ' preserving, seed ' + seed + ')',
-              wrap(out, 60),
-              out.length + ' residues · ' + changed + ' positions changed ('
-              + pct1(pctChanged) + '%)'
-              + (kind === 'dna' ? ' · GC ' + pct1(pctGC) + '%, identical to the input' : '')));
-            if (seq.length < 4) {
-              ctx.addHtml(block('Too short to shuffle',
-                'A sequence of ' + seq.length + ' residue' + (seq.length === 1 ? '' : 's')
-                + ' has only one possible arrangement.'));
-            }
-          });
-        TXT,
     ],
+    'formula' => [],
+    'js' => <<<'TXT'
+    function cleanSeq(raw, kind) {
+        var s = String(raw || '').replace(/^>.*$/gm, '');
+        s = s.replace(/[^A-Za-z]/g, '');
+        return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
+      }
+      function wrap(s, width) {
+        width = width || 60;
+        var out = [];
+        for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
+        return out.join('\n');
+      }
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function block(title, body, note) {
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function table(title, head, rows, note) {
+        var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
+        var b = rows.map(function (r) {
+          return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+        }).join('');
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
+          + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function gcOf(s) {
+        var gc = 0;
+        for (var i = 0; i < s.length; i++) { var c = s.charAt(i); if (c === 'G' || c === 'C') gc++; }
+        return gc;
+      }
+      function tmOf(n, pct, at, gc) {
+        if (n <= 14) return 2 * at + 4 * gc;
+        if (n <= 40) return 64.9 + 41 * (gc - 16.4) / n;
+        return 81.5 + 16.6 * Math.log10(0.05) + 0.41 * pct - 675 / n;
+      }
+      function pct1(x) { return (Math.round(x * 10) / 10).toFixed(1); }
+      function pct2(x) { return (Math.round(x * 100) / 100).toFixed(2); }
+      var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
+                  B:'V',V:'B',D:'H',H:'D',N:'N'};
+      function revcomp(s) {
+        var out = '';
+        for (var i = s.length - 1; i >= 0; i--) out += COMP[s.charAt(i)] || 'N';
+        return out;
+      }
+      // NCBI standard genetic code: bases ordered T, C, A, G for each position
+      var CODON_TABLE = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
+      var BASES = 'TCAG';
+      function aaOf(codon) {
+        var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
+            i3 = BASES.indexOf(codon.charAt(2));
+        if (i1 < 0 || i2 < 0 || i3 < 0) return null;
+        return CODON_TABLE.charAt(16 * i1 + 4 * i2 + i3);
+      }
+      function eachCodon(seq, frame, fn) {
+        for (var i = (frame || 0); i + 3 <= seq.length; i += 3) {
+          fn(seq.substr(i, 3), i);
+        }
+      }
+    
+      function mulberry32(a) {
+        return function () {
+          a |= 0; a = a + 0x6D2B79F5 | 0;
+          var t = Math.imul(a ^ a >>> 15, 1 | a);
+          t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+          return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        };
+      }
+      function shuffleMono(s, rnd) {
+        var a = s.split('');
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(rnd() * (i + 1));
+          var t = a[i]; a[i] = a[j]; a[j] = t;
+        }
+        return a.join('');
+      }
+      function shuffleDi(s, rnd) {
+        // Altschul-Erikson style: repeatedly pick a random dinucleotide and swap its
+        // two occurrences of the second base. Keeps every dinucleotide count intact.
+        if (s.length < 4) return shuffleMono(s, rnd);
+        var a = s.split('');
+        var tries = Math.max(50, a.length * 12);
+        for (var k = 0; k < tries; k++) {
+          var i = Math.floor(rnd() * (a.length - 1));
+          var j = Math.floor(rnd() * (a.length - 1));
+          if (i === j) continue;
+          var b = a[i + 1], c = a[j + 1];
+          if (a[i] === a[j] || b === c) continue;
+          a[i + 1] = c; a[j + 1] = b;
+        }
+        return a.join('');
+      }
+      omni.onResult(['sequence', 'mode', 'type', 'seed'], function (ctx) {
+        var kind = /protein/i.test(String(ctx.getRawInput('type') || '')) ? 'protein' : 'dna';
+        var seq = cleanSeq(ctx.getRawInput('sequence'), kind);
+        if (!seq) {
+          ctx.addHtml(block('Shuffled sequence', '—', 'Paste a sequence to shuffle.'));
+          return;
+        }
+        var seed = Number(ctx.getRawInput('seed'));
+        if (!isFinite(seed)) seed = 42;
+        var rnd = mulberry32(Math.floor(seed) || 1);
+        var mode = /dinucleotide/i.test(String(ctx.getRawInput('mode') || '')) ? 'di' : 'mono';
+        var out = seq.length < 2 ? seq : (mode === 'di' ? shuffleDi(seq, rnd) : shuffleMono(seq, rnd));
+    
+        var changed = 0;
+        for (var i = 0; i < seq.length; i++) if (seq.charAt(i) !== out.charAt(i)) changed++;
+        var pctChanged = seq.length ? changed / seq.length * 100 : 0;
+        var gc = kind === 'dna' ? gcOf(out) : 0;
+        var pctGC = kind === 'dna' && out.length ? gc / out.length * 100 : 0;
+    
+        ctx.exportValue('length', out.length);
+        if (kind === 'dna') ctx.exportValue('gc_pct', Math.round(pctGC * 100) / 100);
+        ctx.exportValue('changes', changed);
+        ctx.exportValue('hamming', Math.round(pctChanged * 10) / 10);
+    
+        ctx.addHtml(block('Shuffled ' + (kind === 'dna' ? 'DNA' : 'protein') + ' ('
+          + (mode === 'di' ? 'dinucleotide' : 'mononucleotide') + ' preserving, seed ' + seed + ')',
+          wrap(out, 60),
+          out.length + ' residues · ' + changed + ' positions changed ('
+          + pct1(pctChanged) + '%)'
+          + (kind === 'dna' ? ' · GC ' + pct1(pctGC) + '%, identical to the input' : '')));
+        if (seq.length < 4) {
+          ctx.addHtml(block('Too short to shuffle',
+            'A sequence of ' + seq.length + ' residue' + (seq.length === 1 ? '' : 's')
+            + ' has only one possible arrangement.'));
+        }
+      });
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         DNA Sequence Shuffler works out Length and GC content from Sequence, Shuffle by and Molecule. Nothing is looked up on this page: length is computed from sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
@@ -328,14 +259,14 @@ return [
             ['title' => 'How the page computes', 'html' => <<<'TXT'
             <p>DNA Sequence Shuffler is not a single equation with a single answer. It reads Sequence, Shuffle by, Molecule and Random seed, applies the analysis the page is built around, and reports Length, GC content, Positions changed and Difference from the input.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Length, GC content, Positions changed and Difference from the input. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
             TXT],
+            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
+            <ol><li><strong>Collect the inputs.</strong> You need Sequence, Shuffle by, Molecule and Random seed. Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.</li><li><strong>Enter them and press Calculate.</strong> Type Sequence into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.</li><li><strong>Read the answer against the defaults.</strong> Compare Length with the figure the page&#039;s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.</li><li><strong>Change one box to check your understanding.</strong> The last step is a check, not a calculation: move one box and see that the answer moves the way the formula says it should. When it does, the answer is yours to use.</li></ol><p>Nothing above needs an account, a download or a second visit: the page works the same way the first time and the hundredth.</p>
+            TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Length is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Sequence, Shuffle by and Molecule is what you already know and Length and GC content is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/sds-page-gel">SDS-PAGE Gel Calculator</a>, <a href="/biology/seeding-rate">Seeding Rate and Plants per Hectare Calculator</a> and <a href="/biology/serial-dilution-planner">Serial Dilution Planner Calculator</a>.</p>
-            TXT],
-            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
-            <p>Getting the figure is half the job. The other half is what DNA Sequence Shuffler is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put Sequence, Shuffle by, Molecule and Random seed beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>
+            <p>Reach for this page when Sequence, Shuffle by and Molecule is what you already know and Length and GC content is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
         ],
         'faq' => [
