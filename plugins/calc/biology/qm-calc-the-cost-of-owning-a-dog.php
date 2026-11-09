@@ -11,1167 +11,733 @@
 
 return [
     'name' => 'Cost of owning a dog',
-    'meta' => ['title' => 'Cost of owning a dog Calculator: Steps & Units', 'description' => 'Cost of owning a dog adds kibble, treats, dental care, flea and tick control, worming, check-ups and insurance into a single yearly and monthly total.', 'h1' => 'Cost of owning a dog Calculator', 'updated' => '2026-05-22'],
-    'raw' => [
-        'vars' => [
-            'bed1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '40', 'c' => 'userUsesImperialUnits()'],
+    'meta' => ['title' => 'Cost of owning a dog Calculator: Steps & Units', 'description' => 'Cost of owning a dog works out total price of medical expenses and total price of grooming from your dog\'s size and vaccination. Every figure is computed.', 'h1' => 'Cost of owning a dog Calculator', 'updated' => '2026-05-22'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'size',
+                            'label' => 'Your dog\'s size ',
+                            'type' => 'select',
+                            'options' => ['Small' => '0', 'Medium' => '1', 'Large' => '2'],
+                            'dataset' => 'Size',
+                            'default' => 'Medium',
+                        ],
+                    ],
                 ],
-                'min' => 2,
-            ],
-            'bed2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '70', 'c' => 'userUsesImperialUnits()'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => <<<'TXT'
+                        Enter and adjust the prices of the given dog-related items, then scroll down to see the total cost of owning a dog! If you need help estimating your dog's size, search for Onim's dog size calculator.
+                        TXT],
+                    ],
                 ],
-                'min' => 2,
-            ],
-            'bed3' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '120', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'bowl' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '10', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'crate1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '60', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'crate2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '100', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'crate3' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '120', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'dentalcare' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '500', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'equipment' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '30', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'equipment_price1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'equipment_price2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'equipment_price3' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'fleacontrol' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '60', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'food1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '240', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'food2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '480', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'food3' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '720', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'food_price1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'food_price2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'food_price3' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'groom1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '30', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'groom2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '50', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'groom3' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '70', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'groom_price1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'groom_price2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'groom_price3' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'heartworm' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '144', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'lead' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '50', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'medical_price' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'neutering' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '300', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'nvisits' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '1'],
-                'dfl' => [
-                    ['v' => '4', 'c' => null],
-                    ['v' => '4', 'c' => 'userUsesImperialUnits()'],
-                ],
-            ],
-            'size' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'wsdlsD_0PyekaCh0gFN6u', 'c' => null],
-                ],
-                'ds' => '1EZC1w7jVJw5HD37ZhvK-',
-            ],
-            'total_price1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'total_price2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'total_price3' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'toys' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '25', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'treats' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '100', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'vaccination' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '87.5', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
-            ],
-            'wellness' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '50', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'min' => 2,
             ],
         ],
-        'groups' => [
-            [
-                'uid' => 'TBCU5nHTkbzL8JstNwitg',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+        [
+            'title' => ' Medical expenses',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'size',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Your dog\'s size ',
-                                    'ds' => '1EZC1w7jVJw5HD37ZhvK-',
-                                    'opts' => [
-                                        ['dy2vS2xx5JYbz6oi950Ip', 'Small', '0'],
-                                        ['wsdlsD_0PyekaCh0gFN6u', 'Medium', '1'],
-                                        ['SthtpiacyIpShJ5Nkztl8', 'Large', '2'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, <<<'TXT'
-                                        Enter and adjust the prices of the given dog-related items, then scroll down to see the total cost of owning a dog! If you need help estimating your dog's size, search for Onim's dog size calculator.
-                                        TXT],
-                                    ],
-                                ],
+                            'name' => 'vaccination',
+                            'label' => 'Vaccination',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '87.5', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'SRI50Y57USmCrZt_ZapB_',
-                'title' => ' Medical expenses',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'vaccination',
-                                    'vt' => 'numerical',
-                                    'l' => 'Vaccination',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dentalcare',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dental care',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'fleacontrol',
-                                    'vt' => 'numerical',
-                                    'l' => 'Flea and tick control',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'heartworm',
-                                    'vt' => 'numerical',
-                                    'l' => 'Heartworm prevention ',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wellness',
-                                    'vt' => 'numerical',
-                                    'l' => 'Wellness check-ups',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'neutering',
-                                    'vt' => 'numerical',
-                                    'l' => 'Neutering/spaying',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Consider pet insurance to cover your veterinary costs.'],
-                                    ],
-                                ],
+                            'name' => 'dentalcare',
+                            'label' => 'Dental care',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '500', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'ROjzB9yJhve9zD-umxFme',
-                'title' => ' Food',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'treats',
-                                    'vt' => 'numerical',
-                                    'l' => 'Treats (including dental chews)',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'food1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Kibble',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'food2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Kibble',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'food3',
-                                    'vt' => 'numerical',
-                                    'l' => 'Kibble',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Keep in mind that "premium" kibble may be double in price.'],
-                                    ],
-                                ],
+                            'name' => 'fleacontrol',
+                            'label' => 'Flea and tick control',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '60', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'JS80Pi05hNyHcthCOjwRL',
-                'title' => ' Grooming',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'groom1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Grooming service',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'groom2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Grooming service',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'groom3',
-                                    'vt' => 'numerical',
-                                    'l' => 'Grooming service',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'nvisits', 'vt' => 'numerical', 'l' => 'A number of grooming appointments per year'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'The frequency with which you should take your pooch to a grooming saloon may depend on the type of coat and breed of your dog.'],
-                                    ],
-                                ],
+                            'name' => 'heartworm',
+                            'label' => 'Heartworm prevention ',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '144', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'cR__HJlhNsfUoIf9Un7dB',
-                'title' => ' Equipment',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'crate1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Crate',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'crate2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Crate',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'crate3',
-                                    'vt' => 'numerical',
-                                    'l' => 'Crate',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'bed1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Bedding',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'bed2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Bedding',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'bed3',
-                                    'vt' => 'numerical',
-                                    'l' => 'Bedding',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'equipment',
-                                    'vt' => 'numerical',
-                                    'l' => 'Grooming equipment',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'lead',
-                                    'vt' => 'numerical',
-                                    'l' => 'Leash, collar, identity tag',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'bowl',
-                                    'vt' => 'numerical',
-                                    'l' => 'Bowls',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'toys',
-                                    'vt' => 'numerical',
-                                    'l' => 'Toys',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'wellness',
+                            'label' => 'Wellness check-ups',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '50', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
                 ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'neutering',
+                            'label' => 'Neutering/spaying',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '300', 'when' => 'userUsesImperialUnits()'],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Consider pet insurance to cover your veterinary costs.'],
+                    ],
+                ],
             ],
-            [
-                'uid' => 'g_wknaFQxzIf_HVOLPRch',
-                'title' => 'Results',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+        ],
+        [
+            'title' => ' Food',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'medical_price',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of medical expenses',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'treats',
+                            'label' => 'Treats (including dental chews)',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '100', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'groom_price1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of grooming',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'food1',
+                            'label' => 'Kibble',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '240', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'groom_price2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of grooming',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'food2',
+                            'label' => 'Kibble',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '480', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'groom_price3',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of grooming',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'food3',
+                            'label' => 'Kibble',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '720', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Keep in mind that "premium" kibble may be double in price.'],
+                    ],
+                ],
+            ],
+        ],
+        [
+            'title' => ' Grooming',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'food_price1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of food',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'groom1',
+                            'label' => 'Grooming service',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '30', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'food_price2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of food',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'groom2',
+                            'label' => 'Grooming service',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '50', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'food_price3',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of food',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'groom3',
+                            'label' => 'Grooming service',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '70', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'equipment_price1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of equipment',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'nvisits',
+                            'label' => 'A number of grooming appointments per year',
+                            'type' => 'number',
+                            'rounding' => ['standard', '1'],
+                            'defaults' => [
+                                ['value' => '4', 'when' => null],
+                                ['value' => '4', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'The frequency with which you should take your pooch to a grooming saloon may depend on the type of coat and breed of your dog.'],
+                    ],
+                ],
+            ],
+        ],
+        [
+            'title' => ' Equipment',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'equipment_price2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of equipment',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'crate1',
+                            'label' => 'Crate',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '60', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'equipment_price3',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of equipment',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'crate2',
+                            'label' => 'Crate',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '100', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'total_price1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of owning a dog ',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'crate3',
+                            'label' => 'Crate',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '120', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'total_price2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of owning a dog ',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'bed1',
+                            'label' => 'Bedding',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '40', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'total_price3',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total price of owning a dog ',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
+                            'name' => 'bed2',
+                            'label' => 'Bedding',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '70', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Note that these are just estimates — the cost may vary depending on your location and on the brands you buy.'],
-                                    ],
-                                ],
+                            'name' => 'bed3',
+                            'label' => 'Bedding',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '120', 'when' => 'userUsesImperialUnits()'],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'equipment',
+                            'label' => 'Grooming equipment',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '30', 'when' => 'userUsesImperialUnits()'],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'lead',
+                            'label' => 'Leash, collar, identity tag',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '50', 'when' => 'userUsesImperialUnits()'],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'bowl',
+                            'label' => 'Bowls',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '10', 'when' => 'userUsesImperialUnits()'],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'toys',
+                            'label' => 'Toys',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                            'defaults' => [
+                                ['value' => '25', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'groom_price1 = one_way(groom1 * nvisits)',
-                'var' => [
-                    [
-                        'l' => 'groom_price1',
-                        'f' => '(groom1*nvisits)',
-                        'r' => ['groom1', 'nvisits'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'groom_price2 = one_way(groom2 * nvisits)',
-                'var' => [
-                    [
-                        'l' => 'groom_price2',
-                        'f' => '(groom2*nvisits)',
-                        'r' => ['groom2', 'nvisits'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'groom_price3 = one_way(groom3 * nvisits)',
-                'var' => [
-                    [
-                        'l' => 'groom_price3',
-                        'f' => '(groom3*nvisits)',
-                        'r' => ['groom3', 'nvisits'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'medical_price = one_way(dentalcare + fleacontrol + heartworm + vaccination + wellness)',
-                'var' => [
-                    [
-                        'l' => 'medical_price',
-                        'f' => '(dentalcare + fleacontrol + heartworm + vaccination + wellness)',
-                        'r' => [
-                            'dentalcare',
-                            'fleacontrol',
-                            'heartworm',
-                            'vaccination',
-                            'wellness',
+        [
+            'title' => 'Results',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'medical_price',
+                            'label' => 'Total price of medical expenses',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
                         ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'food_price1 = one_way(food1 + treats)',
-                'var' => [
-                    [
-                        'l' => 'food_price1',
-                        'f' => '(food1 + treats)',
-                        'r' => ['food1', 'treats'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'food_price2 = one_way(food2 + treats)',
-                'var' => [
-                    [
-                        'l' => 'food_price2',
-                        'f' => '(food2 + treats)',
-                        'r' => ['food2', 'treats'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'food_price3 = one_way(food3 + treats)',
-                'var' => [
-                    [
-                        'l' => 'food_price3',
-                        'f' => '(food3 + treats)',
-                        'r' => ['food3', 'treats'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'equipment_price1 = one_way(equipment + bed1 + bowl + crate1 + lead + toys)',
-                'var' => [
-                    [
-                        'l' => 'equipment_price1',
-                        'f' => '(bed1 + bowl + crate1 + equipment + lead + toys)',
-                        'r' => [
-                            'bed1',
-                            'bowl',
-                            'crate1',
-                            'equipment',
-                            'lead',
-                            'toys',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'groom_price1',
+                            'label' => 'Total price of grooming',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
                         ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'equipment_price2 = one_way(equipment + bed2 + bowl + crate2 + lead + toys)',
-                'var' => [
-                    [
-                        'l' => 'equipment_price2',
-                        'f' => '(bed2 + bowl + crate2 + equipment + lead + toys)',
-                        'r' => [
-                            'bed2',
-                            'bowl',
-                            'crate2',
-                            'equipment',
-                            'lead',
-                            'toys',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'groom_price2',
+                            'label' => 'Total price of grooming',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
                         ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'equipment_price3 =  one_way(equipment + bed3 + bowl + crate3 + lead + toys)',
-                'var' => [
-                    [
-                        'l' => 'equipment_price3',
-                        'f' => '(bed3 + bowl + crate3 + equipment + lead + toys)',
-                        'r' => [
-                            'bed3',
-                            'bowl',
-                            'crate3',
-                            'equipment',
-                            'lead',
-                            'toys',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'groom_price3',
+                            'label' => 'Total price of grooming',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
                         ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'total_price1 = one_way(medical_price + food_price1 + equipment_price1)',
-                'var' => [
-                    [
-                        'l' => 'total_price1',
-                        'f' => '((food1 + treats) + (dentalcare + fleacontrol + heartworm + vaccination + wellness) + (bed1 + bowl + crate1 + equipment + lead + toys))',
-                        'r' => [
-                            'bed1',
-                            'bowl',
-                            'crate1',
-                            'dentalcare',
-                            'equipment',
-                            'fleacontrol',
-                            'food1',
-                            'heartworm',
-                            'lead',
-                            'toys',
-                            'treats',
-                            'vaccination',
-                            'wellness',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'food_price1',
+                            'label' => 'Total price of food',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
                         ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'total_price2 = one_way(medical_price + food_price2 + equipment_price2)',
-                'var' => [
-                    [
-                        'l' => 'total_price2',
-                        'f' => '((food2 + treats) + (dentalcare + fleacontrol + heartworm + vaccination + wellness) + (bed2 + bowl + crate2 + equipment + lead + toys))',
-                        'r' => [
-                            'bed2',
-                            'bowl',
-                            'crate2',
-                            'dentalcare',
-                            'equipment',
-                            'fleacontrol',
-                            'food2',
-                            'heartworm',
-                            'lead',
-                            'toys',
-                            'treats',
-                            'vaccination',
-                            'wellness',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'food_price2',
+                            'label' => 'Total price of food',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
                         ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'total_price3 = one_way(medical_price + food_price3 + equipment_price3)',
-                'var' => [
-                    [
-                        'l' => 'total_price3',
-                        'f' => '((food3 + treats) + (dentalcare + fleacontrol + heartworm + vaccination + wellness) + (bed3 + bowl + crate3 + equipment + lead + toys))',
-                        'r' => [
-                            'bed3',
-                            'bowl',
-                            'crate3',
-                            'dentalcare',
-                            'equipment',
-                            'fleacontrol',
-                            'food3',
-                            'heartworm',
-                            'lead',
-                            'toys',
-                            'treats',
-                            'vaccination',
-                            'wellness',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'food_price3',
+                            'label' => 'Total price of food',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
                         ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'equipment_price1',
+                            'label' => 'Total price of equipment',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'equipment_price2',
+                            'label' => 'Total price of equipment',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'equipment_price3',
+                            'label' => 'Total price of equipment',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'total_price1',
+                            'label' => 'Total price of owning a dog ',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'total_price2',
+                            'label' => 'Total price of owning a dog ',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'total_price3',
+                            'label' => 'Total price of owning a dog ',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Note that these are just estimates — the cost may vary depending on your location and on the brands you buy.'],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            '1EZC1w7jVJw5HD37ZhvK-' => [
-                'name' => 'Size',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'dy2vS2xx5JYbz6oi950Ip', 'label' => 'Small', 'value' => '0'],
-                    ['uid' => 'wsdlsD_0PyekaCh0gFN6u', 'label' => 'Medium', 'value' => '1'],
-                    ['uid' => 'SthtpiacyIpShJ5Nkztl8', 'label' => 'Large', 'value' => '2'],
-                ],
-            ],
-        ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'groom_price1 = one_way(groom1 * nvisits)',
+            'results' => ['groom_price1' => '(groom1*nvisits)'],
+        ],
+        [
+            'title' => 'groom_price2 = one_way(groom2 * nvisits)',
+            'results' => ['groom_price2' => '(groom2*nvisits)'],
+        ],
+        [
+            'title' => 'groom_price3 = one_way(groom3 * nvisits)',
+            'results' => ['groom_price3' => '(groom3*nvisits)'],
+        ],
+        [
+            'title' => 'medical_price = one_way(dentalcare + fleacontrol + heartworm + vaccination + wellness)',
+            'results' => ['medical_price' => '(dentalcare + fleacontrol + heartworm + vaccination + wellness)'],
+        ],
+        [
+            'title' => 'food_price1 = one_way(food1 + treats)',
+            'results' => ['food_price1' => '(food1 + treats)'],
+        ],
+        [
+            'title' => 'food_price2 = one_way(food2 + treats)',
+            'results' => ['food_price2' => '(food2 + treats)'],
+        ],
+        [
+            'title' => 'food_price3 = one_way(food3 + treats)',
+            'results' => ['food_price3' => '(food3 + treats)'],
+        ],
+        [
+            'title' => 'equipment_price1 = one_way(equipment + bed1 + bowl + crate1 + lead + toys)',
+            'results' => ['equipment_price1' => '(bed1 + bowl + crate1 + equipment + lead + toys)'],
+        ],
+        [
+            'title' => 'equipment_price2 = one_way(equipment + bed2 + bowl + crate2 + lead + toys)',
+            'results' => ['equipment_price2' => '(bed2 + bowl + crate2 + equipment + lead + toys)'],
+        ],
+        [
+            'title' => 'equipment_price3 =  one_way(equipment + bed3 + bowl + crate3 + lead + toys)',
+            'results' => ['equipment_price3' => '(bed3 + bowl + crate3 + equipment + lead + toys)'],
+        ],
+        [
+            'title' => 'total_price1 = one_way(medical_price + food_price1 + equipment_price1)',
+            'results' => ['total_price1' => '((food1 + treats) + (dentalcare + fleacontrol + heartworm + vaccination + wellness) + (bed1 + bowl + crate1 + equipment + lead + toys))'],
+        ],
+        [
+            'title' => 'total_price2 = one_way(medical_price + food_price2 + equipment_price2)',
+            'results' => ['total_price2' => '((food2 + treats) + (dentalcare + fleacontrol + heartworm + vaccination + wellness) + (bed2 + bowl + crate2 + equipment + lead + toys))'],
+        ],
+        [
+            'title' => 'total_price3 = one_way(medical_price + food_price3 + equipment_price3)',
+            'results' => ['total_price3' => '((food3 + treats) + (dentalcare + fleacontrol + heartworm + vaccination + wellness) + (bed3 + bowl + crate3 + equipment + lead + toys))'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Cost of owning a dog takes Grooming service and A number of grooming appointments per year and returns Total price of medical expenses and Total price of grooming. It is a single relationship that reads total price of medical expenses out of grooming service, not a table of canned results keyed by them. Units for Total price of medical expenses default to USD and can be changed on the answer itself.
@@ -1205,7 +771,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Total price of medical expenses follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Grooming service and A number of grooming appointments per year is what you already know and Total price of medical expenses and Total price of grooming is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/chicken-hatch-date">Chicken Hatch Date Calculator</a>, <a href="/biology/chicken-years-to-human-years">Chicken Years to Human Years Calculator</a> and <a href="/biology/coding-capacity-of-dna">Coding Capacity of DNA Calculator</a>.</p>
+            <p>Reach for this page when Grooming service and A number of grooming appointments per year is what you already know and Total price of medical expenses and Total price of grooming is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

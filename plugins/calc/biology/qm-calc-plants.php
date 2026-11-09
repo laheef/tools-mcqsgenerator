@@ -11,1153 +11,669 @@
 
 return [
     'name' => 'Plant spacing',
-    'meta' => ['title' => 'Plant spacing Calculator: Formula & Example', 'description' => 'Plant spacing turns type of planting, number of rows and plant grid into area size and total plants. Free to use, with the working shown beside the answer.', 'h1' => 'Plant spacing Calculator', 'updated' => '2026-09-28'],
-    'raw' => [
-        'vars' => [
-            'area_bed' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.000001'],
-            ],
-            'boundary' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '0', 'c' => null],
-                    ['v' => '0', 'c' => 'userUsesImperialUnits()'],
+    'meta' => ['title' => 'Plant spacing Calculator: Formula & Example', 'description' => 'Plant spacing turns type of planting, number of rows and plant grid into area size and total plants. Every box can be solved for, not only the one in the title.', 'h1' => 'Plant spacing Calculator', 'updated' => '2026-09-28'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => <<<'TXT'
+                        Are you planning a landscaping project, or you want to grow an ideal garden? This plant spacing calculator will help you determine how many plants you need for an area, the planting grid and spacing, and even estimate the plants' purchase cost in seconds!
+                        TXT],
+                    ],
                 ],
-            ],
-            'cost_per_plant' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'density' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'density_triangular' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'even_row_plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'gardenHedge' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'Hdxbmkyr3DE_Bso-lBB3p', 'c' => null],
-                ],
-                'ds' => '-m10ay8dRseJ9aH318DOL',
-            ],
-            'garden_grid' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => '4RCQB-DbX8hRl0KVN-RVr', 'c' => null],
-                ],
-                'ds' => '1589',
-            ],
-            'hedge_length' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'hedgeplants_per_row' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'hedgeplants_total' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'hedgerows' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'dDtNenbbCBpXpB4OnJsro', 'c' => null],
-                ],
-                'ds' => 'ptQnsTSMJwsJ6iplEtYy5',
-            ],
-            'hedgespacing_plant' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'hedgespacing_plant1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'length_bed' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'number_of_plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'odd_row_plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'planting_cost' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'min' => 2,
-            ],
-            'plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'plants_1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'plants_per_row' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'plants_per_row_1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'plants_per_row_square' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'plants_square' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'question' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'fSxPjncl4LH55IZuXSkdZ', 'c' => null],
-                ],
-                'ds' => 'mmkXoD6WcUcnjk6fwfzxN',
-            ],
-            'rows' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'rows_1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'rows_square' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'spacing' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'spacing_plant' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'spacing_plant_1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'spacing_row' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'spacing_row_1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'total_plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'triangle_plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'triangle_row_spacing' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'triangle_rows' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'triangular_row_spacing' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '2'],
-            ],
-            'width_bed' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
             ],
         ],
-        'groups' => [
-            [
-                'uid' => 'azyiN8Uc7lIgVuKKSLy9e',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+        [
+            'title' => 'Planting bed',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, <<<'TXT'
-                                        Are you planning a landscaping project, or you want to grow an ideal garden? This plant spacing calculator will help you determine how many plants you need for an area, the planting grid and spacing, and even estimate the plants' purchase cost in seconds!
-                                        TXT],
-                                    ],
-                                ],
+                            'name' => 'gardenHedge',
+                            'label' => 'Type of planting',
+                            'type' => 'select',
+                            'options' => ['Garden grid' => '0', 'Hedgerow' => '1'],
+                            'dataset' => 'garden_hedgeDS',
+                            'default' => 'Garden grid',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hedgerows',
+                            'label' => 'Number of rows',
+                            'type' => 'select',
+                            'options' => [
+                                'Single' => '1',
+                                'Double' => '2',
+                                'Triple' => '3',
+                                'Four' => '4',
+                                'Five' => '5',
+                            ],
+                            'dataset' => 'hedgerowsDS',
+                            'control' => 'DROPDOWN',
+                            'default' => 'Single',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'garden_grid',
+                            'label' => 'Plant grid',
+                            'type' => 'select',
+                            'options' => ['Square' => '2', 'Rectangular' => '1', 'Triangular' => '0'],
+                            'dataset' => 'gridDS',
+                            'default' => 'Square',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'image', 'url' => '/plants-spacing-squares.png'],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'image', 'url' => '/hedgerow-1.png'],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'question',
+                            'label' => 'I want to know...',
+                            'type' => 'select',
+                            'options' => ['How many plants do I need?' => '0', 'How should I arrange my plants?' => '1'],
+                            'dataset' => 'questionsDS',
+                            'default' => 'How many plants do I need?',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hedge_length',
+                            'label' => 'Length of hedge',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'length_bed',
+                            'label' => 'Area length',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'width_bed',
+                            'label' => 'Area width',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'area_bed',
+                            'label' => 'Area size',
+                            'type' => 'number',
+                            'help' => 'The area size includes the border space.',
+                            'unit' => '28',
+                            'unit_default' => 'm2',
+                            'rounding' => ['omni', '0.000001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'boundary',
+                            'label' => 'Border',
+                            'type' => 'number',
+                            'help' => 'The border is the empty space you require along the plot perimeter.',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
+                            'defaults' => [
+                                ['value' => '0', 'when' => null],
+                                ['value' => '0', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'pCx2x9LKEZ3XuF8bRAbtv',
-                'title' => 'Planting bed',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'gardenHedge',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Type of planting',
-                                    'ds' => '-m10ay8dRseJ9aH318DOL',
-                                    'opts' => [
-                                        ['Hdxbmkyr3DE_Bso-lBB3p', 'Garden grid', '0'],
-                                        ['Gy5DhkjulE3qoqQvCBnIG', 'Hedgerow', '1'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hedgerows',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Number of rows',
-                                    'ds' => 'ptQnsTSMJwsJ6iplEtYy5',
-                                    'opts' => [
-                                        ['dDtNenbbCBpXpB4OnJsro', 'Single', '1'],
-                                        ['lelhKl9S4-ililW0RU_Ca', 'Double', '2'],
-                                        ['h2UFvYbgbc3o5c16KnopX', 'Triple', '3'],
-                                        ['PJI1q6SWJT8mLoPGqAE4b', 'Four', '4'],
-                                        ['qGCZxsWWo5celSLVTl7jH', 'Five', '5'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'garden_grid',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Plant grid',
-                                    'ds' => '1589',
-                                    'opts' => [
-                                        ['4RCQB-DbX8hRl0KVN-RVr', 'Square', '2'],
-                                        ['Wi2G4u83UqRzukCL8GVnf', 'Rectangular', '1'],
-                                        ['e-V0A9GU344Pk5RtcOAGK', 'Triangular', '0'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'i',
-                                    'u' => ['/plants-spacing-squares.png'],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'i',
-                                    'u' => ['/hedgerow-1.png'],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'question',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'I want to know...',
-                                    'ds' => 'mmkXoD6WcUcnjk6fwfzxN',
-                                    'opts' => [
-                                        ['fSxPjncl4LH55IZuXSkdZ', 'How many plants do I need?', '0'],
-                                        ['FzxUTFW6_YcluHN9WeeAI', 'How should I arrange my plants?', '1'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hedge_length',
-                                    'vt' => 'numerical',
-                                    'l' => 'Length of hedge',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'length_bed',
-                                    'vt' => 'numerical',
-                                    'l' => 'Area length',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'width_bed',
-                                    'vt' => 'numerical',
-                                    'l' => 'Area width',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'area_bed',
-                                    'vt' => 'numerical',
-                                    'l' => 'Area size',
-                                    'h' => 'The area size includes the border space.',
-                                    'us' => '28',
-                                    'du' => 'm2',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'boundary',
-                                    'vt' => 'numerical',
-                                    'l' => 'Border',
-                                    'h' => 'The border is the empty space you require along the plot perimeter.',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'plants_1', 'vt' => 'numerical', 'l' => 'Total plants'],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'nwERk4U5EnP7O5qTS-KlL',
-                'title' => 'Spacing',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'hedgeplants_total', 'vt' => 'numerical', 'l' => 'Total plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'hedgeplants_per_row', 'vt' => 'numerical', 'l' => 'Plants per row'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hedgespacing_plant',
-                                    'vt' => 'numerical',
-                                    'l' => 'Plant spacing (s)',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hedgespacing_plant1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Plant spacing (s)',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'number_of_plants', 'vt' => 'numerical', 'l' => 'Number of plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'spacing_row',
-                                    'vt' => 'numerical',
-                                    'l' => 'Row spacing (r)',
-                                    'h' => 'The spacing between rows.',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'spacing_plant',
-                                    'vt' => 'numerical',
-                                    'l' => 'Plant spacing (s)',
-                                    'h' => 'The spacing between plants within a row.',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'plants', 'vt' => 'numerical', 'l' => 'Total plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'spacing',
-                                    'vt' => 'numerical',
-                                    'l' => 'Plant spacing (s)',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'density', 'vt' => 'numerical', 'l' => 'Density'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'density_triangular', 'vt' => 'numerical', 'l' => 'Density'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'triangle_plants', 'vt' => 'numerical', 'l' => 'Total plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'rows_1', 'vt' => 'numerical', 'l' => 'Total rows'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'plants_per_row_1', 'vt' => 'numerical', 'l' => 'Plants per row'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'spacing_row_1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Row spacing (r)',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'spacing_plant_1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Plant spacing (s)',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'plants_square', 'vt' => 'numerical', 'l' => 'Total plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Plant {{rows.formattedValue}} rows with {{plants_per_row.formattedValue}} plants per row for a total of {{plants.formattedValue}} plants.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Be aware that it is usally easier to plan if rows and plants per row are whole numbers.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, <<<'TXT'
-                                        To achieve the triangular grid, plant {{triangle_rows.formattedValue}} rows with {{triangular_row_spacing.formattedValue}} {{spacing.unit}} between rows. On each row, space plants {{spacing.formattedValue}} {{spacing.unit}} apart. Plant {{odd_row_plants.formattedValue}} plants every odd row (rows 1, 3, 5...) and {{even_row_plants.formattedValue}} plants every even row (rows 2, 4, 6...).
-                                        TXT],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Plant a grid of {{rows_square.formattedValue}} × {{plants_per_row_square.formattedValue}} plants to achieve square spacing.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => '5HG2BRfSGRg37hqeFFRQV',
-                'title' => 'Plants cost',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'total_plants', 'vt' => 'numerical', 'l' => 'Total plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'cost_per_plant',
-                                    'vt' => 'numerical',
-                                    'l' => 'Cost per plant',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'planting_cost',
-                                    'vt' => 'numerical',
-                                    'l' => 'Total plant cost',
-                                    'us' => '663',
-                                    'du' => 'USD',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'iK8-jzesHqZFGu7w92NMs',
-                'title' => 'Hidden variables',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'rows', 'vt' => 'numerical', 'l' => 'Total rows'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'plants_per_row', 'vt' => 'numerical', 'l' => 'Plants per row'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'triangle_rows', 'vt' => 'numerical', 'l' => 'Number of rows triangle'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'triangle_row_spacing',
-                                    'vt' => 'numerical',
-                                    'l' => 'Row spacing triangle',
-                                    'h' => 'This row spacing will allow for equal distances between each plant.',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'odd_row_plants',
-                                    'vt' => 'numerical',
-                                    'l' => 'Plants per odd row',
-                                    'h' => 'On odd rows (1, 3, 5...) place this many plants, starting in the corner.',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'even_row_plants',
-                                    'vt' => 'numerical',
-                                    'l' => 'Plants per even row',
-                                    'h' => 'On even rows (2, 4, 6...) place this many plants, staggered from the adjacent rows.',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'plants_per_row_square', 'vt' => 'numerical', 'l' => 'Plants per row'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'rows_square', 'vt' => 'numerical', 'l' => 'Rows square'],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'Xm5Pe1isN1g1bu_fDM39a',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'triangular_row_spacing', 'vt' => 'presentation', 'l' => ''],
-                            ],
+                            'name' => 'plants_1',
+                            'label' => 'Total plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'area_bed = length_bed * width_bed',
-                'var' => [
-                    [
-                        'l' => 'length_bed',
-                        'f' => 'area_bed/width_bed',
-                        'r' => ['width_bed', 'area_bed'],
+        [
+            'title' => 'Spacing',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hedgeplants_total',
+                            'label' => 'Total plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
-                    [
-                        'l' => 'width_bed',
-                        'f' => 'area_bed/length_bed',
-                        'r' => ['length_bed', 'area_bed'],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hedgeplants_per_row',
+                            'label' => 'Plants per row',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
-                    [
-                        'l' => 'area_bed',
-                        'f' => 'length_bed*width_bed',
-                        'r' => ['length_bed', 'width_bed'],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hedgespacing_plant',
+                            'label' => 'Plant spacing (s)',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hedgespacing_plant1',
+                            'label' => 'Plant spacing (s)',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'number_of_plants',
+                            'label' => 'Number of plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'spacing_row',
+                            'label' => 'Row spacing (r)',
+                            'type' => 'number',
+                            'help' => 'The spacing between rows.',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'spacing_plant',
+                            'label' => 'Plant spacing (s)',
+                            'type' => 'number',
+                            'help' => 'The spacing between plants within a row.',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'plants',
+                            'label' => 'Total plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'spacing',
+                            'label' => 'Plant spacing (s)',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'density',
+                            'label' => 'Density',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'density_triangular',
+                            'label' => 'Density',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'triangle_plants',
+                            'label' => 'Total plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rows_1',
+                            'label' => 'Total rows',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'plants_per_row_1',
+                            'label' => 'Plants per row',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'spacing_row_1',
+                            'label' => 'Row spacing (r)',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'spacing_plant_1',
+                            'label' => 'Plant spacing (s)',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'plants_square',
+                            'label' => 'Total plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Plant {{rows.formattedValue}} rows with {{plants_per_row.formattedValue}} plants per row for a total of {{plants.formattedValue}} plants.'],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Be aware that it is usally easier to plan if rows and plants per row are whole numbers.'],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => <<<'TXT'
+                        To achieve the triangular grid, plant {{triangle_rows.formattedValue}} rows with {{triangular_row_spacing.formattedValue}} {{spacing.unit}} between rows. On each row, space plants {{spacing.formattedValue}} {{spacing.unit}} apart. Plant {{odd_row_plants.formattedValue}} plants every odd row (rows 1, 3, 5...) and {{even_row_plants.formattedValue}} plants every even row (rows 2, 4, 6...).
+                        TXT],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Plant a grid of {{rows_square.formattedValue}} × {{plants_per_row_square.formattedValue}} plants to achieve square spacing.'],
                     ],
                 ],
             ],
-            [
-                'formula' => 'rows = floor((width_bed - boundary*2)/spacing_row+1)',
-                'var' => [
-                    [
-                        'l' => 'rows',
-                        'f' => 'floor((-2*boundary + width_bed)/spacing_row) + 1',
-                        'r' => ['boundary', 'spacing_row', 'width_bed'],
+        ],
+        [
+            'title' => 'Plants cost',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'total_plants',
+                            'label' => 'Total plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'plants_per_row = floor((length_bed - boundary*2)/spacing_plant + 1)',
-                'var' => [
-                    [
-                        'l' => 'plants_per_row',
-                        'f' => 'floor((-2*boundary + length_bed)/spacing_plant) + 1',
-                        'r' => ['boundary', 'length_bed', 'spacing_plant'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'cost_per_plant',
+                            'label' => 'Cost per plant',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'plants = one_way(rows * plants_per_row)',
-                'var' => [
-                    [
-                        'l' => 'plants',
-                        'f' => '((floor((-2*boundary + length_bed)/spacing_plant) + 1)*(floor((-2*boundary + width_bed)/spacing_row) + 1))',
-                        'r' => [
-                            'boundary',
-                            'length_bed',
-                            'spacing_plant',
-                            'spacing_row',
-                            'width_bed',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'planting_cost',
+                            'label' => 'Total plant cost',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
                         ],
                     ],
                 ],
             ],
-            [
-                'formula' => 'triangle_rows = floor((width_bed - boundary*2)/(spacing*0.866) + 1)',
-                'var' => [
-                    [
-                        'l' => 'triangle_rows',
-                        'f' => 'floor((500/433)*(-2*boundary + width_bed)/spacing) + 1',
-                        'r' => ['boundary', 'spacing', 'width_bed'],
+        ],
+        [
+            'title' => 'Hidden variables',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rows',
+                            'label' => 'Total rows',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'triangle_row_spacing = one_way(spacing * 0.866)',
-                'var' => [
-                    [
-                        'l' => 'triangle_row_spacing',
-                        'f' => '((433/500)*spacing)',
-                        'r' => ['spacing'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'plants_per_row',
+                            'label' => 'Plants per row',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'odd_row_plants = floor((length_bed - boundary*2)/spacing + 1)',
-                'var' => [
-                    [
-                        'l' => 'odd_row_plants',
-                        'f' => 'floor((-2*boundary + length_bed)/spacing) + 1',
-                        'r' => ['boundary', 'length_bed', 'spacing'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'triangle_rows',
+                            'label' => 'Number of rows triangle',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'even_row_plants = floor((length_bed - boundary*2 - 0.5*spacing)/spacing + 1)',
-                'var' => [
-                    [
-                        'l' => 'even_row_plants',
-                        'f' => 'floor((1/2)*(-4*boundary + 2*length_bed - spacing)/spacing) + 1',
-                        'r' => ['boundary', 'length_bed', 'spacing'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'triangle_row_spacing',
+                            'label' => 'Row spacing triangle',
+                            'type' => 'number',
+                            'help' => 'This row spacing will allow for equal distances between each plant.',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'triangle_plants = one_way(floor(triangle_rows/2) * even_row_plants + ceil(triangle_rows/2) * odd_row_plants)',
-                'var' => [
-                    [
-                        'l' => 'triangle_plants',
-                        'f' => <<<'TXT'
-                        ((floor((-2*boundary + length_bed)/spacing) + 1)*ceil((1/2)*floor((500/433)*(-2*boundary + width_bed)/spacing) + 1/2) + (floor((1/2)*(-4*boundary + 2*length_bed - spacing)/spacing) + 1)*floor((1/2)*floor((500/433)*(-2*boundary + width_bed)/spacing) + 1/2))
-                        TXT,
-                        'r' => ['boundary', 'length_bed', 'spacing', 'width_bed'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'odd_row_plants',
+                            'label' => 'Plants per odd row',
+                            'type' => 'number',
+                            'help' => 'On odd rows (1, 3, 5...) place this many plants, starting in the corner.',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'plants_1 = rows_1 * plants_per_row_1',
-                'var' => [
-                    [
-                        'l' => 'rows_1',
-                        'f' => 'plants_1/plants_per_row_1',
-                        'r' => ['plants_1', 'plants_per_row_1'],
-                    ],
-                    [
-                        'l' => 'plants_1',
-                        'f' => 'plants_per_row_1*rows_1',
-                        'r' => ['rows_1', 'plants_per_row_1'],
-                    ],
-                    [
-                        'l' => 'plants_per_row_1',
-                        'f' => 'plants_1/rows_1',
-                        'r' => ['rows_1', 'plants_1'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'even_row_plants',
+                            'label' => 'Plants per even row',
+                            'type' => 'number',
+                            'help' => 'On even rows (2, 4, 6...) place this many plants, staggered from the adjacent rows.',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'spacing_plant_1 = (length_bed - boundary*2) / plants_per_row_1',
-                'var' => [
-                    [
-                        'l' => 'length_bed',
-                        'f' => '2*boundary + plants_per_row_1*spacing_plant_1',
-                        'r' => ['spacing_plant_1', 'boundary', 'plants_per_row_1'],
-                    ],
-                    [
-                        'l' => 'spacing_plant_1',
-                        'f' => '(-2*boundary + length_bed)/plants_per_row_1',
-                        'r' => ['length_bed', 'boundary', 'plants_per_row_1'],
-                    ],
-                    [
-                        'l' => 'boundary',
-                        'f' => '(1/2)*length_bed - 1/2*plants_per_row_1*spacing_plant_1',
-                        'r' => ['length_bed', 'spacing_plant_1', 'plants_per_row_1'],
-                    ],
-                    [
-                        'l' => 'plants_per_row_1',
-                        'f' => '(-2*boundary + length_bed)/spacing_plant_1',
-                        'r' => ['length_bed', 'spacing_plant_1', 'boundary'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'plants_per_row_square',
+                            'label' => 'Plants per row',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'spacing_row_1 = (length_bed - boundary*2) / rows_1',
-                'var' => [
-                    [
-                        'l' => 'rows_1',
-                        'f' => '(-2*boundary + length_bed)/spacing_row_1',
-                        'r' => ['spacing_row_1', 'length_bed', 'boundary'],
-                    ],
-                    [
-                        'l' => 'spacing_row_1',
-                        'f' => '(-2*boundary + length_bed)/rows_1',
-                        'r' => ['rows_1', 'length_bed', 'boundary'],
-                    ],
-                    [
-                        'l' => 'length_bed',
-                        'f' => '2*boundary + rows_1*spacing_row_1',
-                        'r' => ['rows_1', 'spacing_row_1', 'boundary'],
-                    ],
-                    [
-                        'l' => 'boundary',
-                        'f' => '(1/2)*length_bed - 1/2*rows_1*spacing_row_1',
-                        'r' => ['rows_1', 'spacing_row_1', 'length_bed'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'rows_square = floor((width_bed - boundary*2)/spacing+1)',
-                'var' => [
-                    [
-                        'l' => 'rows_square',
-                        'f' => 'floor((-2*boundary + width_bed)/spacing) + 1',
-                        'r' => ['boundary', 'spacing', 'width_bed'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'plants_per_row_square = floor((length_bed - boundary*2)/spacing+1)',
-                'var' => [
-                    [
-                        'l' => 'plants_per_row_square',
-                        'f' => 'floor((-2*boundary + length_bed)/spacing) + 1',
-                        'r' => ['boundary', 'length_bed', 'spacing'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'plants_square = one_way(rows_square * plants_per_row_square)',
-                'var' => [
-                    [
-                        'l' => 'plants_square',
-                        'f' => '((floor((-2*boundary + length_bed)/spacing) + 1)*(floor((-2*boundary + width_bed)/spacing) + 1))',
-                        'r' => ['boundary', 'length_bed', 'spacing', 'width_bed'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'spacing^2 = 1/density',
-                'var' => [
-                    [
-                        'l' => 'spacing',
-                        'f' => 'sqrt(1/density)',
-                        'r' => ['density'],
-                    ],
-                    [
-                        'l' => 'density',
-                        'f' => 'pow(spacing, -2)',
-                        'r' => ['spacing'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'spacing^2 = 2/(sqrt(3)*density_triangular)',
-                'var' => [
-                    [
-                        'l' => 'density_triangular',
-                        'f' => '(2/3)*sqrt(3)/pow(spacing, 2)',
-                        'r' => ['spacing'],
-                    ],
-                    [
-                        'l' => 'spacing',
-                        'f' => '(1/3)*sqrt(2)*pow(3, 3/4)*sqrt(1/density_triangular)',
-                        'r' => ['density_triangular'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'planting_cost = cost_per_plant * total_plants',
-                'var' => [
-                    [
-                        'l' => 'cost_per_plant',
-                        'f' => 'planting_cost/total_plants',
-                        'r' => ['planting_cost', 'total_plants'],
-                    ],
-                    [
-                        'l' => 'planting_cost',
-                        'f' => 'cost_per_plant*total_plants',
-                        'r' => ['cost_per_plant', 'total_plants'],
-                    ],
-                    [
-                        'l' => 'total_plants',
-                        'f' => 'planting_cost/cost_per_plant',
-                        'r' => ['cost_per_plant', 'planting_cost'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'number_of_plants = findNumberOfPlants(hedge_length, hedgerows, hedgespacing_plant)',
-                'var' => [
-                    [
-                        'l' => 'number_of_plants',
-                        'f' => 'findNumberOfPlants(hedge_length, hedgerows, hedgespacing_plant)',
-                        'r' => ['hedge_length', 'hedgerows', 'hedgespacing_plant'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'hedgeplants_total = hedgeplants_per_row * hedgerows',
-                'var' => [
-                    [
-                        'l' => 'hedgeplants_per_row',
-                        'f' => 'hedgeplants_total/hedgerows',
-                        'r' => ['hedgerows', 'hedgeplants_total'],
-                    ],
-                    [
-                        'l' => 'hedgerows',
-                        'f' => 'hedgeplants_total/hedgeplants_per_row',
-                        'r' => ['hedgeplants_per_row', 'hedgeplants_total'],
-                    ],
-                    [
-                        'l' => 'hedgeplants_total',
-                        'f' => 'hedgeplants_per_row*hedgerows',
-                        'r' => ['hedgeplants_per_row', 'hedgerows'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'hedgespacing_plant1 = hedge_length/hedgeplants_per_row',
-                'var' => [
-                    [
-                        'l' => 'hedgeplants_per_row',
-                        'f' => 'hedge_length/hedgespacing_plant1',
-                        'r' => ['hedge_length', 'hedgespacing_plant1'],
-                    ],
-                    [
-                        'l' => 'hedge_length',
-                        'f' => 'hedgeplants_per_row*hedgespacing_plant1',
-                        'r' => ['hedgeplants_per_row', 'hedgespacing_plant1'],
-                    ],
-                    [
-                        'l' => 'hedgespacing_plant1',
-                        'f' => 'hedge_length/hedgeplants_per_row',
-                        'r' => ['hedgeplants_per_row', 'hedge_length'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rows_square',
+                            'label' => 'Rows square',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            '1589' => [
-                'name' => 'gridDS',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => '4RCQB-DbX8hRl0KVN-RVr', 'label' => 'Square', 'value' => '2'],
-                    ['uid' => 'Wi2G4u83UqRzukCL8GVnf', 'label' => 'Rectangular', 'value' => '1'],
-                    ['uid' => 'e-V0A9GU344Pk5RtcOAGK', 'label' => 'Triangular', 'value' => '0'],
-                ],
-            ],
-            '-m10ay8dRseJ9aH318DOL' => [
-                'name' => 'garden_hedgeDS',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'Hdxbmkyr3DE_Bso-lBB3p', 'label' => 'Garden grid', 'value' => '0'],
-                    ['uid' => 'Gy5DhkjulE3qoqQvCBnIG', 'label' => 'Hedgerow', 'value' => '1'],
-                ],
-            ],
-            'ptQnsTSMJwsJ6iplEtYy5' => [
-                'name' => 'hedgerowsDS',
-                'uiType' => 'DROPDOWN',
-                'options' => [
-                    ['uid' => 'dDtNenbbCBpXpB4OnJsro', 'label' => 'Single', 'value' => '1'],
-                    ['uid' => 'lelhKl9S4-ililW0RU_Ca', 'label' => 'Double', 'value' => '2'],
-                    ['uid' => 'h2UFvYbgbc3o5c16KnopX', 'label' => 'Triple', 'value' => '3'],
-                    ['uid' => 'PJI1q6SWJT8mLoPGqAE4b', 'label' => 'Four', 'value' => '4'],
-                    ['uid' => 'qGCZxsWWo5celSLVTl7jH', 'label' => 'Five', 'value' => '5'],
-                ],
-            ],
-            'mmkXoD6WcUcnjk6fwfzxN' => [
-                'name' => 'questionsDS',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'fSxPjncl4LH55IZuXSkdZ', 'label' => 'How many plants do I need?', 'value' => '0'],
-                    ['uid' => 'FzxUTFW6_YcluHN9WeeAI', 'label' => 'How should I arrange my plants?', 'value' => '1'],
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'triangular_row_spacing',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
                 ],
             ],
         ],
-        'js' => <<<'TXT'
-        "use strict";omni.define("findNumberOfPlants",function(hedge_length,hedgerows,hedgespacing_plant){var recommended_spacing=hedgerows*(hedge_length/hedgespacing_plant);return Math.round(recommended_spacing)});//# sourceURL=customJs.js
-        TXT,
     ],
+    'formula' => [
+        [
+            'title' => 'area_bed = length_bed * width_bed',
+            'results' => ['length_bed' => 'area_bed/width_bed', 'width_bed' => 'area_bed/length_bed', 'area_bed' => 'length_bed*width_bed'],
+        ],
+        [
+            'title' => 'rows = floor((width_bed - boundary*2)/spacing_row+1)',
+            'results' => ['rows' => 'floor((-2*boundary + width_bed)/spacing_row) + 1'],
+        ],
+        [
+            'title' => 'plants_per_row = floor((length_bed - boundary*2)/spacing_plant + 1)',
+            'results' => ['plants_per_row' => 'floor((-2*boundary + length_bed)/spacing_plant) + 1'],
+        ],
+        [
+            'title' => 'plants = one_way(rows * plants_per_row)',
+            'results' => ['plants' => '((floor((-2*boundary + length_bed)/spacing_plant) + 1)*(floor((-2*boundary + width_bed)/spacing_row) + 1))'],
+        ],
+        [
+            'title' => 'triangle_rows = floor((width_bed - boundary*2)/(spacing*0.866) + 1)',
+            'results' => ['triangle_rows' => 'floor((500/433)*(-2*boundary + width_bed)/spacing) + 1'],
+        ],
+        [
+            'title' => 'triangle_row_spacing = one_way(spacing * 0.866)',
+            'results' => ['triangle_row_spacing' => '((433/500)*spacing)'],
+        ],
+        [
+            'title' => 'odd_row_plants = floor((length_bed - boundary*2)/spacing + 1)',
+            'results' => ['odd_row_plants' => 'floor((-2*boundary + length_bed)/spacing) + 1'],
+        ],
+        [
+            'title' => 'even_row_plants = floor((length_bed - boundary*2 - 0.5*spacing)/spacing + 1)',
+            'results' => ['even_row_plants' => 'floor((1/2)*(-4*boundary + 2*length_bed - spacing)/spacing) + 1'],
+        ],
+        [
+            'title' => 'triangle_plants = one_way(floor(triangle_rows/2) * even_row_plants + ceil(triangle_rows/2) * odd_row_plants)',
+            'results' => ['triangle_plants' => <<<'TXT'
+            ((floor((-2*boundary + length_bed)/spacing) + 1)*ceil((1/2)*floor((500/433)*(-2*boundary + width_bed)/spacing) + 1/2) + (floor((1/2)*(-4*boundary + 2*length_bed - spacing)/spacing) + 1)*floor((1/2)*floor((500/433)*(-2*boundary + width_bed)/spacing) + 1/2))
+            TXT],
+        ],
+        [
+            'title' => 'plants_1 = rows_1 * plants_per_row_1',
+            'results' => ['rows_1' => 'plants_1/plants_per_row_1', 'plants_1' => 'plants_per_row_1*rows_1', 'plants_per_row_1' => 'plants_1/rows_1'],
+        ],
+        [
+            'title' => 'spacing_plant_1 = (length_bed - boundary*2) / plants_per_row_1',
+            'results' => ['length_bed' => '2*boundary + plants_per_row_1*spacing_plant_1', 'spacing_plant_1' => '(-2*boundary + length_bed)/plants_per_row_1', 'boundary' => '(1/2)*length_bed - 1/2*plants_per_row_1*spacing_plant_1', 'plants_per_row_1' => '(-2*boundary + length_bed)/spacing_plant_1'],
+        ],
+        [
+            'title' => 'spacing_row_1 = (length_bed - boundary*2) / rows_1',
+            'results' => ['rows_1' => '(-2*boundary + length_bed)/spacing_row_1', 'spacing_row_1' => '(-2*boundary + length_bed)/rows_1', 'length_bed' => '2*boundary + rows_1*spacing_row_1', 'boundary' => '(1/2)*length_bed - 1/2*rows_1*spacing_row_1'],
+        ],
+        [
+            'title' => 'rows_square = floor((width_bed - boundary*2)/spacing+1)',
+            'results' => ['rows_square' => 'floor((-2*boundary + width_bed)/spacing) + 1'],
+        ],
+        [
+            'title' => 'plants_per_row_square = floor((length_bed - boundary*2)/spacing+1)',
+            'results' => ['plants_per_row_square' => 'floor((-2*boundary + length_bed)/spacing) + 1'],
+        ],
+        [
+            'title' => 'plants_square = one_way(rows_square * plants_per_row_square)',
+            'results' => ['plants_square' => '((floor((-2*boundary + length_bed)/spacing) + 1)*(floor((-2*boundary + width_bed)/spacing) + 1))'],
+        ],
+        [
+            'title' => 'spacing^2 = 1/density',
+            'results' => ['spacing' => 'sqrt(1/density)', 'density' => 'pow(spacing, -2)'],
+        ],
+        [
+            'title' => 'spacing^2 = 2/(sqrt(3)*density_triangular)',
+            'results' => ['density_triangular' => '(2/3)*sqrt(3)/pow(spacing, 2)', 'spacing' => '(1/3)*sqrt(2)*pow(3, 3/4)*sqrt(1/density_triangular)'],
+        ],
+        [
+            'title' => 'planting_cost = cost_per_plant * total_plants',
+            'results' => ['cost_per_plant' => 'planting_cost/total_plants', 'planting_cost' => 'cost_per_plant*total_plants', 'total_plants' => 'planting_cost/cost_per_plant'],
+        ],
+        [
+            'title' => 'number_of_plants = findNumberOfPlants(hedge_length, hedgerows, hedgespacing_plant)',
+            'results' => ['number_of_plants' => 'findNumberOfPlants(hedge_length, hedgerows, hedgespacing_plant)'],
+        ],
+        [
+            'title' => 'hedgeplants_total = hedgeplants_per_row * hedgerows',
+            'results' => ['hedgeplants_per_row' => 'hedgeplants_total/hedgerows', 'hedgerows' => 'hedgeplants_total/hedgeplants_per_row', 'hedgeplants_total' => 'hedgeplants_per_row*hedgerows'],
+        ],
+        [
+            'title' => 'hedgespacing_plant1 = hedge_length/hedgeplants_per_row',
+            'results' => ['hedgeplants_per_row' => 'hedge_length/hedgespacing_plant1', 'hedge_length' => 'hedgeplants_per_row*hedgespacing_plant1', 'hedgespacing_plant1' => 'hedge_length/hedgeplants_per_row'],
+        ],
+    ],
+    'js' => <<<'TXT'
+    "use strict";omni.define("findNumberOfPlants",function(hedge_length,hedgerows,hedgespacing_plant){var recommended_spacing=hedgerows*(hedge_length/hedgespacing_plant);return Math.round(recommended_spacing)});//# sourceURL=customJs.js
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Plant spacing turns Area length and Area width into Number of rows and Length of hedge. Nothing is looked up on this page: number of rows is computed from area length and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
@@ -1167,7 +683,7 @@ return [
             <p>There is one relationship behind Plant spacing: it takes 2 numbers and reports Number of rows, Length of hedge and Area size.</p><p>In the form&#039;s own words, Area size = Area length × Area width.</p><p>What comes back is Number of rows, Length of hedge, Area size and Border — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Area length</strong> — in meters</li><li><strong>Area width</strong> — in meters</li></ul><p>The answers come back as Number of rows, Length of hedge in meters, Area size in square meters, Border in centimeters, Total plants, Total plants, Plants per row, Plant spacing (s) in centimeters, Number of plants, Total plants, Plant spacing (s) in centimeters, Density in square meters, Density in square meters, Total plants, Total rows, Plants per row, Row spacing (r) in centimeters, Plant spacing (s) in centimeters, Total plants, Total plants, Cost per plant in USD, Total plant cost in USD, Total rows, Plants per row, Number of rows triangle, Row spacing triangle, Plants per odd row, Plants per even row, Plants per row, Rows square. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
+            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Area length</strong> — in meters</li><li><strong>Area width</strong> — in meters</li></ul><p>The answers come back as Number of rows, Length of hedge in meters, Area size in square meters, Border in centimeters, Total plants, Total plants, Plants per row, Plant spacing (s) in centimeters, Number of plants, Total plants, Plant spacing (s) in centimeters, Density, Density, Total plants, Total rows, Plants per row, Row spacing (r) in centimeters, Plant spacing (s) in centimeters, Total plants, Total plants, Cost per plant in USD, Total plant cost in USD, Total rows, Plants per row, Number of rows triangle, Row spacing triangle, Plants per odd row, Plants per even row, Plants per row, Rows square. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
             TXT],
             ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
             <p>Run the numbers the page opens with — Type of planting = 0, Plant grid = 2, I want to know… = 0, Plant spacing (s) = 3 cm, Row spacing (r) = 4 cm and Plant spacing (s) = 5 cm — through the same formula and the panel reports <strong>Number of rows</strong> = 1.</p><ul><li><strong>Number of rows</strong> = 1</li></ul><p>That is <strong>Area size</strong> = <code>Area length × Area width</code>, with each symbol replaced by one of the boxes above.</p>
@@ -1176,7 +692,7 @@ return [
             <p>Treat the size of a result as part of the answer: <strong>Number of rows</strong> = 1 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>Units are handled before the formula runs: Length of hedge offers 9 units and opens on meters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Area size</strong> = <code>Area length × Area width</code></li><li><strong>Area length</strong> = <code>Area size ÷ Area width</code></li><li><strong>Area width</strong> = <code>Area size ÷ Area length</code></li><li><strong>Total rows</strong> = <code>floor(( − 2 × Border + Area width) ÷ Row spacing (r)) + 1</code></li><li><strong>Plants per row</strong> = <code>floor(( − 2 × Border + Area length) ÷ Plant spacing (s)) + 1</code></li><li><strong>Total plants</strong> = <code>((floor(( − 2 × Border + Area length) ÷ Plant spacing (s)) + 1) × (floor(( − 2 × Border + Area width) ÷ Row spacing (r)) + 1))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Area size</strong> = <code>Area length × Area width</code> — the form to use when Area length and Area width are the values you have.</li><li><strong>Area length</strong> = <code>Area size ÷ Area width</code> — the form to use when Area width and Area size are the values you have.</li><li><strong>Area width</strong> = <code>Area size ÷ Area length</code> — the form to use when Area length and Area size are the values you have.</li><li><strong>Total rows</strong> = <code>floor(( − 2 × Border + Area width) ÷ Row spacing (r)) + 1</code> — the form to use when Border, Row spacing (r) and Area width are the values you have.</li><li><strong>Plants per row</strong> = <code>floor(( − 2 × Border + Area length) ÷ Plant spacing (s)) + 1</code> — the form to use when Border, Area length and Plant spacing (s) are the values you have.</li><li><strong>Total plants</strong> = <code>((floor(( − 2 × Border + Area length) ÷ Plant spacing (s)) + 1) × (floor(( − 2 × Border + Area width) ÷ Row spacing (r)) + 1))</code> — the form to use when Border, Area length, Plant spacing (s) and Row spacing (r) are the values you have.</li><li><strong>Number of rows triangle</strong> = <code>floor((500 ÷ 433) × ( − 2 × Border + Area width) ÷ Plant spacing (s)) + 1</code> — the form to use when Border, Plant spacing (s) and Area width are the values you have.</li><li><strong>Row spacing triangle</strong> = <code>((433 ÷ 500) × Plant spacing (s))</code> — the form to use when Plant spacing (s) are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Area size, Area length and Area width can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Area size</strong> = <code>Area length × Area width</code></li><li><strong>Area length</strong> = <code>Area size ÷ Area width</code></li><li><strong>Area width</strong> = <code>Area size ÷ Area length</code></li><li><strong>Total rows</strong> = <code>floor(( − 2 × Border + Area width) ÷ Row spacing (r)) + 1</code></li><li><strong>Plants per row</strong> = <code>floor(( − 2 × Border + Area length) ÷ Plant spacing (s)) + 1</code></li><li><strong>Total plants</strong> = <code>((floor(( − 2 × Border + Area length) ÷ Plant spacing (s)) + 1) × (floor(( − 2 × Border + Area width) ÷ Row spacing (r)) + 1))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Area size</strong> = <code>Area length × Area width</code> — the form to use when Area length and Area width are the values you have.</li><li><strong>Area length</strong> = <code>Area size ÷ Area width</code> — the form to use when Area size and Area width are the values you have.</li><li><strong>Area width</strong> = <code>Area size ÷ Area length</code> — the form to use when Area size and Area length are the values you have.</li><li><strong>Total rows</strong> = <code>floor(( − 2 × Border + Area width) ÷ Row spacing (r)) + 1</code> — the form to use when Border, Area width and Row spacing (r) are the values you have.</li><li><strong>Plants per row</strong> = <code>floor(( − 2 × Border + Area length) ÷ Plant spacing (s)) + 1</code> — the form to use when Border, Area length and Plant spacing (s) are the values you have.</li><li><strong>Total plants</strong> = <code>((floor(( − 2 × Border + Area length) ÷ Plant spacing (s)) + 1) × (floor(( − 2 × Border + Area width) ÷ Row spacing (r)) + 1))</code> — the form to use when Border, Area length, Plant spacing (s) and Area width are the values you have.</li><li><strong>Number of rows triangle</strong> = <code>floor((500 ÷ 433) × ( − 2 × Border + Area width) ÷ Plant spacing (s)) + 1</code> — the form to use when Border, Area width and Plant spacing (s) are the values you have.</li><li><strong>Row spacing triangle</strong> = <code>((433 ÷ 500) × Plant spacing (s))</code> — the form to use when Plant spacing (s) are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Area size, Area length and Area width can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => ''],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
@@ -1192,7 +708,7 @@ return [
             <ul><li><strong>It does not scale in a straight line.</strong> Number of rows is computed through a relationship that is not a simple proportion, so the size of an error depends on where in the range you are. The defaults are a starting point, not a scale factor.</li><li><strong>Only the listed units.</strong> The chips cover meters and square meters. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Area length and Area width measured, Number of rows and Length of hedge wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dna-concentration">DNA concentration</a>, <a href="/biology/dna-copy-number">DNA copy number Calculator</a> and <a href="/biology/dna-molarity-calculator">DNA Molarity Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Area length and Area width measured, Number of rows and Length of hedge wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>The page you are reading is built around one calculation. The form, the formula and the worked examples all describe the same relationship, and the panel is the only place the answer exists — it is computed when you press the button, not fetched.</p><p>Every figure quoted in the article above was produced by this page&#039;s formulas, with the inputs listed beside it. That is deliberate — it is the only way a reader can check the page without trusting it.</p><p>Nothing you enter is stored. The form is local to the page, the calculation runs on it, and the only way your numbers travel anywhere is if you copy the link that carries them.</p><p>The page is one of a catalogue that works the same way: every calculator prints the relationship it uses, runs a worked example from its own defaults, and lets you solve for any one of its variables rather than only the one in the title.</p><p>If a figure here disagrees with a source you trust, the useful thing to check first is the unit on each box, then the formula shown above, and only then the arithmetic — in that order, because that is the order mistakes happen in.</p>

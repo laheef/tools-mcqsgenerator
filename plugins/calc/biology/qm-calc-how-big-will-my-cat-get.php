@@ -11,137 +11,87 @@
 
 return [
     'name' => 'How big will my cat get',
-    'meta' => ['title' => 'How big will my cat get Calculator: Steps & Units', 'description' => 'How big will my cat get works out final size from your kitten\'s age and weight. No sign-up and no waiting: type the numbers, press Calculate, read the answer.', 'h1' => 'How big will my cat get Calculator', 'updated' => '2026-08-19'],
-    'raw' => [
-        'vars' => [
-            'age' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'final_size' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'OAeJbOwgafSMR25mpB0xQ',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'How big will my cat get Calculator: Steps & Units', 'description' => 'How big will my cat get works out final size from your kitten\'s age and weight. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'How big will my cat get Calculator', 'updated' => '2026-08-19'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'age',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your kitten\'s age',
-                                    'us' => '19',
-                                    'du' => 'wk',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Weight',
-                                    'h' => 'Your kitten\'s weight at the given age.',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'final_size',
-                                    'vt' => 'numerical',
-                                    'l' => 'Final size',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['final_size >0 and final_size <= 8', 'Your pet\'s going to be a small cat&nbsp; This type of cat typically weighs less than 8 pounds (3.6 kg)!'],
-                                        ['final_size >8 and final_size <= 13', 'Your pet\'s going to be a medium cat&nbsp; This type of cat typically weighs 8–13 pounds (3.6-5.9 kg)!'],
-                                        ['final_size > 13', 'Your pet\'s going to be a large cat&nbsp; This type of cat is usually larger than 13 pounds (5.9 kg)!&nbsp;'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'age',
+                            'label' => 'Your kitten\'s age',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'wk',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'yiB11rk7nHjZlMBjn_LA0',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, ' Build and customize your own tools instantly. Just type a simple sentence to generate a working calculator with zero coding.'],
-                                    ],
-                                ],
+                            'name' => 'weight',
+                            'label' => 'Weight',
+                            'type' => 'number',
+                            'help' => 'Your kitten\'s weight at the given age.',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'final_size',
+                            'label' => 'Final size',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'final_size >0 and final_size <= 8', 'text' => 'Your pet\'s going to be a small cat&nbsp; This type of cat typically weighs less than 8 pounds (3.6 kg)!'],
+                                ['when' => 'final_size >8 and final_size <= 13', 'text' => 'Your pet\'s going to be a medium cat&nbsp; This type of cat typically weighs 8–13 pounds (3.6-5.9 kg)!'],
+                                ['when' => 'final_size > 13', 'text' => 'Your pet\'s going to be a large cat&nbsp; This type of cat is usually larger than 13 pounds (5.9 kg)!&nbsp;'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'final_size = (weight / age) * 32',
-                'var' => [
-                    [
-                        'l' => 'final_size',
-                        'f' => '32*weight/age',
-                        'r' => ['weight', 'age'],
-                    ],
-                    [
-                        'l' => 'weight',
-                        'f' => '(1/32)*age*final_size',
-                        'r' => ['final_size', 'age'],
-                    ],
-                    [
-                        'l' => 'age',
-                        'f' => '32*weight/final_size',
-                        'r' => ['final_size', 'weight'],
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => ' Build and customize your own tools instantly. Just type a simple sentence to generate a working calculator with zero coding.'],
                     ],
                 ],
             ],
         ],
-        'datasets' => [],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'final_size = (weight / age) * 32',
+            'results' => ['final_size' => '32*weight/age', 'weight' => '(1/32)*age*final_size', 'age' => '32*weight/final_size'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         How big will my cat get works out Final size from Your kitten's age and Weight. The arithmetic is the whole method: final size is worked out from your kitten's age by one formula, applied once. Final size comes back in kilograms unless you switch the unit chip beside the box.
@@ -160,7 +110,7 @@ return [
             <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Final size</strong> = 320. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Final size lists 7 options and opens on kilograms. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Final size</strong> = <code>32 × Weight ÷ Your kitten&#039;s age</code></li><li><strong>Weight</strong> = <code>(1 ÷ 32) × Your kitten&#039;s age × Final size</code></li><li><strong>Your kitten&#039;s age</strong> = <code>32 × Weight ÷ Final size</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Final size</strong> = <code>32 × Weight ÷ Your kitten&#039;s age</code> — the form to use when Weight and Your kitten&#039;s age are the values you have.</li><li><strong>Weight</strong> = <code>(1 ÷ 32) × Your kitten&#039;s age × Final size</code> — the form to use when Final size and Your kitten&#039;s age are the values you have.</li><li><strong>Your kitten&#039;s age</strong> = <code>32 × Weight ÷ Final size</code> — the form to use when Final size and Weight are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Final size, Weight and Your kitten&#039;s age can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Final size</strong> = <code>32 × Weight ÷ Your kitten&#039;s age</code></li><li><strong>Weight</strong> = <code>(1 ÷ 32) × Your kitten&#039;s age × Final size</code></li><li><strong>Your kitten&#039;s age</strong> = <code>32 × Weight ÷ Final size</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Final size</strong> = <code>32 × Weight ÷ Your kitten&#039;s age</code> — the form to use when Weight and Your kitten&#039;s age are the values you have.</li><li><strong>Weight</strong> = <code>(1 ÷ 32) × Your kitten&#039;s age × Final size</code> — the form to use when Your kitten&#039;s age and Final size are the values you have.</li><li><strong>Your kitten&#039;s age</strong> = <code>32 × Weight ÷ Final size</code> — the form to use when Weight and Final size are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Final size, Weight and Your kitten&#039;s age can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>Change one box only — Your kitten&#039;s age, from 10 to 20 — and the answers go from <strong>Final size</strong> 320 kg to <strong>Final size</strong> 160 kg.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
@@ -190,7 +140,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Final size is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>Only the listed units.</strong> The chips cover kilograms and weeks. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Your kitten&#039;s age and Weight measured, Final size wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/fish-per-liter">Fish Per Liter Calculator</a>, <a href="/biology/fish-tank-stocking">Fish Tank Stocking Calculator</a> and <a href="/biology/fixation-index-fst">Fixation Index (Fst) Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Your kitten&#039;s age and Weight measured, Final size wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
         ],
         'faq' => [

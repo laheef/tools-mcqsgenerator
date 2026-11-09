@@ -776,9 +776,9 @@ foreach ($rows as $row) {
     }
 
     /*
-     * A page that came out of the boilerplate filter thin gets a worked example
-     * computed from its own formulas — the one paragraph nobody else can copy,
-     * because the numbers are this page's numbers.
+     * A page below the length the site holds itself to (1 500 words) gets a
+     * worked example computed from its own formulas — the one passage nobody
+     * else can copy, because the numbers are this page's numbers.
      */
     $words = ContentClean::words($def['article']);
     $hasExample = false;
@@ -788,7 +788,7 @@ foreach ($rows as $row) {
             break;
         }
     }
-    if ($words < 450 && !$hasExample) {
+    if ($words < 1500 && !$hasExample) {
         $built  = CalcFile::compile($def + ['meta' => []], $path);
         $shaped = \Onim\Shape::fromRecord($built, null);
         foreach (CalcExample::sections($shaped, $units) as $extra) {

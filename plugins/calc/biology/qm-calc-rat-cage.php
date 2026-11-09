@@ -11,217 +11,123 @@
 
 return [
     'name' => 'Rat cage',
-    'meta' => ['title' => 'Rat cage Calculator: Formula, Steps & Example', 'description' => 'Rat cage works out cage volume and can fit at most from height and length. Nothing is stored between visits: the boxes are the only place your numbers live.', 'h1' => 'Rat cage Calculator', 'updated' => '2026-08-06'],
-    'raw' => [
-        'vars' => [
-            'height' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'length' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'rats' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'ratspace' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'yPH2XpJMRKQ8kjlYusMJZ', 'c' => null],
-                ],
-                'ds' => 'vkeAWlKTSA9LNrvtWpDwB',
-            ],
-            'ratspaceunit' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'volume' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'width' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'PriAG9RgdazW5INMUieCV',
-                'title' => 'Cage Size',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Rat cage Calculator: Formula, Steps & Example', 'description' => 'Rat cage works out cage volume and can fit at most from height and length. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Rat cage Calculator', 'updated' => '2026-08-06'],
+    'sections' => [
+        [
+            'title' => 'Cage Size',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'height',
-                                    'vt' => 'numerical',
-                                    'l' => 'Height',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'length',
-                                    'vt' => 'numerical',
-                                    'l' => 'Length',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'width',
-                                    'vt' => 'numerical',
-                                    'l' => 'Width',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'volume',
-                                    'vt' => 'numerical',
-                                    'l' => 'Cage volume',
-                                    'us' => '20',
-                                    'du' => 'liters',
-                                ],
-                            ],
+                            'name' => 'height',
+                            'label' => 'Height',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'Y-D1WB17-euyC2CxrXATf',
-                'title' => 'Recommendation',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'ratspace',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Space per rat',
-                                    'ds' => 'vkeAWlKTSA9LNrvtWpDwB',
-                                    'opts' => [
-                                        ['31iQG4uboPcvBvfTwzVI2', '2 cu ft (57 liters)', '1'],
-                                        ['yPH2XpJMRKQ8kjlYusMJZ', '2.5 cu ft (71 liters)', '2'],
-                                        ['4bSuxZUT_t8p0udbaX-7C', 'Custom', '0'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'length',
+                            'label' => 'Length',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'ratspaceunit',
-                                    'vt' => 'dependent',
-                                    'l' => 'Space per rat (custom)',
-                                    'us' => '20',
-                                    'du' => 'liters',
-                                ],
-                            ],
+                            'name' => 'width',
+                            'label' => 'Width',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'rats',
-                                    'vt' => 'numerical',
-                                    'l' => 'Can fit at most',
-                                    'suf' => 'rat(s)',
-                                    'h' => 'Getting 0 means you might need a larger cage for your rat(s)!',
-                                ],
-                            ],
+                            'name' => 'volume',
+                            'label' => 'Cage volume',
+                            'type' => 'number',
+                            'unit' => '20',
+                            'unit_default' => 'liters',
+                            'rounding' => ['omni', '0.1'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'volume = length * width * height',
-                'var' => [
-                    [
-                        'l' => 'volume',
-                        'f' => 'height*length*width',
-                        'r' => ['length', 'height', 'width'],
-                    ],
-                    [
-                        'l' => 'length',
-                        'f' => 'volume/(height*width)',
-                        'r' => ['volume', 'height', 'width'],
-                    ],
-                    [
-                        'l' => 'height',
-                        'f' => 'volume/(length*width)',
-                        'r' => ['volume', 'length', 'width'],
-                    ],
-                    [
-                        'l' => 'width',
-                        'f' => 'volume/(height*length)',
-                        'r' => ['volume', 'length', 'height'],
+        [
+            'title' => 'Recommendation',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'ratspace',
+                            'label' => 'Space per rat',
+                            'type' => 'select',
+                            'options' => ['2 cu ft (57 liters)' => '1', '2.5 cu ft (71 liters)' => '2', 'Custom' => '0'],
+                            'dataset' => 'rat_spaceDS',
+                            'default' => '2.5 cu ft (71 liters)',
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'floor(volume / ratspaceunit) = rats',
-                'var' => [
-                    [
-                        'l' => 'rats',
-                        'f' => 'floor(volume/ratspaceunit)',
-                        'r' => ['ratspaceunit', 'volume'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'ratspaceunit',
+                            'label' => 'Space per rat (custom)',
+                            'type' => 'result',
+                            'unit' => '20',
+                            'unit_default' => 'liters',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-        ],
-        'datasets' => [
-            'vkeAWlKTSA9LNrvtWpDwB' => [
-                'name' => 'rat_spaceDS',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => '31iQG4uboPcvBvfTwzVI2', 'label' => '2 cu ft (57 liters)', 'value' => '1'],
-                    ['uid' => 'yPH2XpJMRKQ8kjlYusMJZ', 'label' => '2.5 cu ft (71 liters)', 'value' => '2'],
-                    ['uid' => '4bSuxZUT_t8p0udbaX-7C', 'label' => 'Custom', 'value' => '0'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rats',
+                            'label' => 'Can fit at most',
+                            'type' => 'number',
+                            'suffix' => 'rat(s)',
+                            'help' => 'Getting 0 means you might need a larger cage for your rat(s)!',
+                            'rounding' => ['standard', '0'],
+                        ],
+                    ],
                 ],
             ],
         ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'volume = length * width * height',
+            'results' => ['volume' => 'height*length*width', 'length' => 'volume/(height*width)', 'height' => 'volume/(length*width)', 'width' => 'volume/(height*length)'],
+        ],
+        [
+            'title' => 'floor(volume / ratspaceunit) = rats',
+            'results' => ['rats' => 'floor(volume/ratspaceunit)'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Rat cage works out Space per rat (custom) from Height, Length and Width. The arithmetic is the whole method: space per rat (custom) is worked out from height by one formula, applied once. Space per rat (custom) comes back in liters unless you switch the unit chip beside the box.
@@ -237,7 +143,7 @@ return [
             <p>The unit chip on Space per rat (custom) lists 16 options and opens on liters. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Cage volume</strong> = <code>Height × Length × Width</code></li><li><strong>Length</strong> = <code>Cage volume ÷ (Height × Width)</code></li><li><strong>Height</strong> = <code>Cage volume ÷ (Length × Width)</code></li><li><strong>Width</strong> = <code>Cage volume ÷ (Height × Length)</code></li><li><strong>Can fit at most</strong> = <code>floor(Cage volume ÷ Space per rat (custom))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Cage volume</strong> = <code>Height × Length × Width</code> — the form to use when Length, Height and Width are the values you have.</li><li><strong>Length</strong> = <code>Cage volume ÷ (Height × Width)</code> — the form to use when Cage volume, Height and Width are the values you have.</li><li><strong>Height</strong> = <code>Cage volume ÷ (Length × Width)</code> — the form to use when Cage volume, Length and Width are the values you have.</li><li><strong>Width</strong> = <code>Cage volume ÷ (Height × Length)</code> — the form to use when Cage volume, Length and Height are the values you have.</li><li><strong>Can fit at most</strong> = <code>floor(Cage volume ÷ Space per rat (custom))</code> — the form to use when Space per rat (custom) and Cage volume are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Cage volume, Length and Height can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Cage volume</strong> = <code>Height × Length × Width</code></li><li><strong>Length</strong> = <code>Cage volume ÷ (Height × Width)</code></li><li><strong>Height</strong> = <code>Cage volume ÷ (Length × Width)</code></li><li><strong>Width</strong> = <code>Cage volume ÷ (Height × Length)</code></li><li><strong>Can fit at most</strong> = <code>floor(Cage volume ÷ Space per rat (custom))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Cage volume</strong> = <code>Height × Length × Width</code> — the form to use when Height, Length and Width are the values you have.</li><li><strong>Length</strong> = <code>Cage volume ÷ (Height × Width)</code> — the form to use when Cage volume, Height and Width are the values you have.</li><li><strong>Height</strong> = <code>Cage volume ÷ (Length × Width)</code> — the form to use when Cage volume, Length and Width are the values you have.</li><li><strong>Width</strong> = <code>Cage volume ÷ (Height × Length)</code> — the form to use when Cage volume, Height and Length are the values you have.</li><li><strong>Can fit at most</strong> = <code>floor(Cage volume ÷ Space per rat (custom))</code> — the form to use when Cage volume and Space per rat (custom) are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Cage volume, Length and Height can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
@@ -259,11 +165,11 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Space per rat (custom) is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>Only the listed units.</strong> The unit tables here are liters and centimeters and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Height, Length and Width are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Height, Length and Width measured, Space per rat (custom) wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/vine-density">Vine Density Calculator</a>, <a href="/biology/wastewater">Wastewater Calculator</a> and <a href="/biology/water-potential">Water potential Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Height, Length and Width measured, Space per rat (custom) wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Rat cage calculator work out?', 'a' => 'Space per rat (custom), from Length, Height and Width. The relationship is Cage volume = Height × Length × Width.'],
+            ['q' => 'What does the Rat cage calculator work out?', 'a' => 'Space per rat (custom), from Height, Length and Width. The relationship is Cage volume = Height × Length × Width.'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
             Height (centimeters), Length (centimeters), Width (centimeters), Cage volume (liters), Space per rat. Enter height, length and width; Space per rat (custom) is the box to leave alone unless it is the value you came for.
             TXT],

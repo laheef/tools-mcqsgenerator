@@ -11,964 +11,495 @@
 
 return [
     'name' => 'Raw dog food',
-    'meta' => ['title' => 'Raw dog food Calculator: Units and Formulas', 'description' => 'Raw dog food reports required amount of food, muscle meat, bone and liver. Enter life stage and age (months); the answer follows without a table lookup.', 'h1' => 'Raw dog food Calculator', 'updated' => '2026-05-25'],
-    'raw' => [
-        'vars' => [
-            'age' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'averageDogActivityFoodKilograms' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.01'],
-            ],
-            'bodyWeight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.01'],
-            ],
-            'diet_type' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'Xs614aHfFl4RSdsbMgWuP', 'c' => null],
-                ],
-                'ds' => 'iyGMwqVMWjJ567m7Hvyd1',
-            ],
-            'diet_type2' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'Xs614aHfFl4RSdsbMgWuP', 'c' => null],
-                ],
-                'ds' => 'iyGMwqVMWjJ567m7Hvyd1',
-            ],
-            'kilogramsBone' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsBone2' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsFruits' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsFruits2' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsLiver' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsLiver2' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsMuscle' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsMuscle2' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsOrgan' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsOrgan2' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsSeeds' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsSeeds2' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsVeggie' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'kilogramsVeggie2' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'life_stage' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'PPuhzZvdm2fFa_GHLOS98', 'c' => null],
-                ],
-                'ds' => 'VrXNIFXKekcN3jRaMiBHV',
-            ],
-            'percentageBone' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '70', 'c' => null],
-                ],
-            ],
-            'percentageBone2' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'percentageFruits' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '70', 'c' => null],
-                ],
-            ],
-            'percentageFruits2' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'percentageLiver' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '70', 'c' => null],
-                ],
-            ],
-            'percentageLiver2' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '70', 'c' => null],
-                ],
-            ],
-            'percentageMuscle' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '70', 'c' => null],
-                ],
-            ],
-            'percentageMuscle2' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'percentageOrgan' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '70', 'c' => null],
-                ],
-            ],
-            'percentageOrgan2' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'percentageSeeds' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '70', 'c' => null],
-                ],
-            ],
-            'percentageSeeds2' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'percentageVeggie' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '70', 'c' => null],
-                ],
-            ],
-            'percentageVeggie2' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'LYMLJh0BXbNS-dsdwInGJ',
-                'title' => 'Total raw food mass',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1_FR1',
+    'meta' => ['title' => 'Raw dog food Calculator: Units and Formulas', 'description' => 'Raw dog food reports required amount of food, muscle meat, bone and liver. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Raw dog food Calculator', 'updated' => '2026-05-25'],
+    'sections' => [
+        [
+            'title' => 'Total raw food mass',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'place' => [0, 1],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'life_stage',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Life stage',
-                                    'ds' => 'VrXNIFXKekcN3jRaMiBHV',
-                                    'opts' => [
-                                        ['PPuhzZvdm2fFa_GHLOS98', 'Adult', '0'],
-                                        ['eXbQlagfEcenSZUfms0xU', 'Puppy', '1'],
-                                    ],
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'age',
-                                    'vt' => 'dependent',
-                                    'l' => 'Age (months)',
-                                    'us' => '19',
-                                    'du' => 'mos',
-                                ],
-                            ],
+                            'name' => 'life_stage',
+                            'label' => 'Life stage',
+                            'type' => 'select',
+                            'options' => ['Adult' => '0', 'Puppy' => '1'],
+                            'dataset' => 'age',
+                            'default' => 'Adult',
                         ],
-                    ],
-                    [
-                        'FR1',
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'bodyWeight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dog\'s ideal body weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'averageDogActivityFoodKilograms',
-                                    'vt' => 'numerical',
-                                    'l' => 'Required amount of food',
-                                    'h' => 'How much your dog needs to eat each day, assuming healthy balanced diet.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
+                            'name' => 'age',
+                            'label' => 'Age (months)',
+                            'type' => 'result',
+                            'unit' => '19',
+                            'unit_default' => 'mos',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'RX-_7IzKkWIEQ_LMYxswb',
-                'title' => 'Daily raw food recommendations',
-                'desc' => 'By default, we base the calculations on the Biologically Appropriate Raw Food (BARF) model diet.',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'diet_type',
-                                    'vt' => 'valueSelect',
-                                    'l' => '',
-                                    'ds' => 'iyGMwqVMWjJ567m7Hvyd1',
-                                    'opts' => [
-                                        ['H9GDxJXUOcOZUh4YdTtNc', 'Change raw food composition', '1'],
-                                        ['Xs614aHfFl4RSdsbMgWuP', '', '0'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'bodyWeight',
+                            'label' => 'Dog\'s ideal body weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.01'],
                         ],
                     ],
-                    [
-                        'FR3_FR2',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsMuscle',
-                                    'vt' => 'numerical',
-                                    'l' => 'Muscle meat',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageMuscle',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsBone',
-                                    'vt' => 'numerical',
-                                    'l' => 'Bone',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageBone',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsLiver',
-                                    'vt' => 'numerical',
-                                    'l' => 'Liver',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageLiver',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsOrgan',
-                                    'vt' => 'numerical',
-                                    'l' => 'Organ',
-                                    'h' => 'Other secreting organs: the most common is the spleen.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageOrgan',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsVeggie',
-                                    'vt' => 'numerical',
-                                    'l' => 'Vegetables',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageVeggie',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsSeeds',
-                                    'vt' => 'numerical',
-                                    'l' => 'Seeds',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageSeeds',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsFruits',
-                                    'vt' => 'numerical',
-                                    'l' => 'Fruits',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageFruits',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'diet_type2',
-                                    'vt' => 'valueSelect',
-                                    'l' => '',
-                                    'ds' => 'iyGMwqVMWjJ567m7Hvyd1',
-                                    'opts' => [
-                                        ['H9GDxJXUOcOZUh4YdTtNc', 'Change raw food composition', '1'],
-                                        ['Xs614aHfFl4RSdsbMgWuP', '', '0'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsMuscle2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Muscle meat',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageMuscle2',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsBone2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Bone',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageBone2',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsLiver2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Liver',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageLiver2',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsOrgan2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Organ',
-                                    'h' => 'Other secreting organs: the most common is the spleen.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageOrgan2',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsVeggie2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Vegetables',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageVeggie2',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsSeeds2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Seeds',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageSeeds2',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR3_FR2',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'kilogramsFruits2',
-                                    'vt' => 'numerical',
-                                    'l' => 'Fruits',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'percentageFruits2',
-                                    'vt' => 'dependent',
-                                    'l' => '%',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
+                            'name' => 'averageDogActivityFoodKilograms',
+                            'label' => 'Required amount of food',
+                            'type' => 'number',
+                            'help' => 'How much your dog needs to eat each day, assuming healthy balanced diet.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.01'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'averageDogActivityFoodKilograms = getPercentageDogMass(life_stage, age) * bodyWeight ',
-                'var' => [
-                    [
-                        'l' => 'bodyWeight',
-                        'f' => 'averageDogActivityFoodKilograms/getPercentageDogMass(life_stage, age)',
-                        'r' => ['averageDogActivityFoodKilograms', 'age', 'life_stage'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'bodyWeight*getPercentageDogMass(life_stage, age)',
-                        'r' => ['bodyWeight', 'age', 'life_stage'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'kilogramsMuscle = percentageMuscle * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageMuscle',
-                        'f' => 'kilogramsMuscle/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsMuscle', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'kilogramsMuscle',
-                        'f' => 'averageDogActivityFoodKilograms*percentageMuscle',
-                        'r' => ['percentageMuscle', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsMuscle/percentageMuscle',
-                        'r' => ['percentageMuscle', 'kilogramsMuscle'],
+        [
+            'title' => 'Daily raw food recommendations',
+            'note' => 'By default, we base the calculations on the Biologically Appropriate Raw Food (BARF) model diet.',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'diet_type',
+                            'label' => '',
+                            'type' => 'select',
+                            'options' => ['Change raw food composition' => '1', '' => '0'],
+                            'dataset' => 'diet type',
+                            'control' => 'CHECKBOX',
+                            'default' => '',
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'kilogramsBone = percentageBone * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageBone',
-                        'f' => 'kilogramsBone/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsBone', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'kilogramsBone',
-                        'f' => 'averageDogActivityFoodKilograms*percentageBone',
-                        'r' => ['percentageBone', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsBone/percentageBone',
-                        'r' => ['percentageBone', 'kilogramsBone'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'kilogramsLiver = percentageLiver * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageLiver',
-                        'f' => 'kilogramsLiver/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsLiver', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'kilogramsLiver',
-                        'f' => 'averageDogActivityFoodKilograms*percentageLiver',
-                        'r' => ['percentageLiver', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsLiver/percentageLiver',
-                        'r' => ['percentageLiver', 'kilogramsLiver'],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsMuscle',
+                            'label' => 'Muscle meat',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageMuscle',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '70',
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'kilogramsOrgan = percentageOrgan * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'kilogramsOrgan',
-                        'f' => 'averageDogActivityFoodKilograms*percentageOrgan',
-                        'r' => ['percentageOrgan', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'percentageOrgan',
-                        'f' => 'kilogramsOrgan/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsOrgan', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsOrgan/percentageOrgan',
-                        'r' => ['kilogramsOrgan', 'percentageOrgan'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'kilogramsVeggie = percentageVeggie * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageVeggie',
-                        'f' => 'kilogramsVeggie/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsVeggie', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'kilogramsVeggie',
-                        'f' => 'averageDogActivityFoodKilograms*percentageVeggie',
-                        'r' => ['percentageVeggie', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsVeggie/percentageVeggie',
-                        'r' => ['percentageVeggie', 'kilogramsVeggie'],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsBone',
+                            'label' => 'Bone',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageBone',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '70',
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'kilogramsSeeds = percentageSeeds * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'kilogramsSeeds',
-                        'f' => 'averageDogActivityFoodKilograms*percentageSeeds',
-                        'r' => ['percentageSeeds', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'percentageSeeds',
-                        'f' => 'kilogramsSeeds/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsSeeds', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsSeeds/percentageSeeds',
-                        'r' => ['kilogramsSeeds', 'percentageSeeds'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'kilogramsFruits = percentageFruits * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageFruits',
-                        'f' => 'kilogramsFruits/averageDogActivityFoodKilograms',
-                        'r' => ['averageDogActivityFoodKilograms', 'kilogramsFruits'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsFruits/percentageFruits',
-                        'r' => ['percentageFruits', 'kilogramsFruits'],
-                    ],
-                    [
-                        'l' => 'kilogramsFruits',
-                        'f' => 'averageDogActivityFoodKilograms*percentageFruits',
-                        'r' => ['percentageFruits', 'averageDogActivityFoodKilograms'],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsLiver',
+                            'label' => 'Liver',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageLiver',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '70',
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'kilogramsMuscle2 = percentageMuscle2 * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageMuscle2',
-                        'f' => 'kilogramsMuscle2/averageDogActivityFoodKilograms',
-                        'r' => ['averageDogActivityFoodKilograms', 'kilogramsMuscle2'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsMuscle2/percentageMuscle2',
-                        'r' => ['percentageMuscle2', 'kilogramsMuscle2'],
-                    ],
-                    [
-                        'l' => 'kilogramsMuscle2',
-                        'f' => 'averageDogActivityFoodKilograms*percentageMuscle2',
-                        'r' => ['percentageMuscle2', 'averageDogActivityFoodKilograms'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'kilogramsBone2 = percentageBone2 * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsBone2/percentageBone2',
-                        'r' => ['kilogramsBone2', 'percentageBone2'],
-                    ],
-                    [
-                        'l' => 'kilogramsBone2',
-                        'f' => 'averageDogActivityFoodKilograms*percentageBone2',
-                        'r' => ['averageDogActivityFoodKilograms', 'percentageBone2'],
-                    ],
-                    [
-                        'l' => 'percentageBone2',
-                        'f' => 'kilogramsBone2/averageDogActivityFoodKilograms',
-                        'r' => ['averageDogActivityFoodKilograms', 'kilogramsBone2'],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsOrgan',
+                            'label' => 'Organ',
+                            'type' => 'number',
+                            'help' => 'Other secreting organs: the most common is the spleen.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageOrgan',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '70',
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'kilogramsLiver2 = percentageLiver2 * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageLiver2',
-                        'f' => 'kilogramsLiver2/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsLiver2', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'kilogramsLiver2',
-                        'f' => 'averageDogActivityFoodKilograms*percentageLiver2',
-                        'r' => ['percentageLiver2', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsLiver2/percentageLiver2',
-                        'r' => ['percentageLiver2', 'kilogramsLiver2'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'kilogramsOrgan2 = percentageOrgan2 * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'kilogramsOrgan2',
-                        'f' => 'averageDogActivityFoodKilograms*percentageOrgan2',
-                        'r' => ['percentageOrgan2', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'percentageOrgan2',
-                        'f' => 'kilogramsOrgan2/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsOrgan2', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsOrgan2/percentageOrgan2',
-                        'r' => ['kilogramsOrgan2', 'percentageOrgan2'],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsVeggie',
+                            'label' => 'Vegetables',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageVeggie',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '70',
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'kilogramsVeggie2 = percentageVeggie2 * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageVeggie2',
-                        'f' => 'kilogramsVeggie2/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsVeggie2', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'kilogramsVeggie2',
-                        'f' => 'averageDogActivityFoodKilograms*percentageVeggie2',
-                        'r' => ['percentageVeggie2', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsVeggie2/percentageVeggie2',
-                        'r' => ['percentageVeggie2', 'kilogramsVeggie2'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'kilogramsSeeds2 = percentageSeeds2 * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'percentageSeeds2',
-                        'f' => 'kilogramsSeeds2/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsSeeds2', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'kilogramsSeeds2',
-                        'f' => 'averageDogActivityFoodKilograms*percentageSeeds2',
-                        'r' => ['percentageSeeds2', 'averageDogActivityFoodKilograms'],
-                    ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsSeeds2/percentageSeeds2',
-                        'r' => ['percentageSeeds2', 'kilogramsSeeds2'],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsSeeds',
+                            'label' => 'Seeds',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageSeeds',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '70',
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'kilogramsFruits2 = percentageFruits2 * averageDogActivityFoodKilograms',
-                'var' => [
-                    [
-                        'l' => 'kilogramsFruits2',
-                        'f' => 'averageDogActivityFoodKilograms*percentageFruits2',
-                        'r' => ['percentageFruits2', 'averageDogActivityFoodKilograms'],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsFruits',
+                            'label' => 'Fruits',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageFruits',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '70',
+                        ],
                     ],
-                    [
-                        'l' => 'percentageFruits2',
-                        'f' => 'kilogramsFruits2/averageDogActivityFoodKilograms',
-                        'r' => ['kilogramsFruits2', 'averageDogActivityFoodKilograms'],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'diet_type2',
+                            'label' => '',
+                            'type' => 'select',
+                            'options' => ['Change raw food composition' => '1', '' => '0'],
+                            'dataset' => 'diet type',
+                            'control' => 'CHECKBOX',
+                            'default' => '',
+                        ],
                     ],
-                    [
-                        'l' => 'averageDogActivityFoodKilograms',
-                        'f' => 'kilogramsFruits2/percentageFruits2',
-                        'r' => ['kilogramsFruits2', 'percentageFruits2'],
+                ],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsMuscle2',
+                            'label' => 'Muscle meat',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageMuscle2',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsBone2',
+                            'label' => 'Bone',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageBone2',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsLiver2',
+                            'label' => 'Liver',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageLiver2',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '70',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsOrgan2',
+                            'label' => 'Organ',
+                            'type' => 'number',
+                            'help' => 'Other secreting organs: the most common is the spleen.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageOrgan2',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsVeggie2',
+                            'label' => 'Vegetables',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageVeggie2',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsSeeds2',
+                            'label' => 'Seeds',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageSeeds2',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 2,
+                    'grid' => 'FR3_FR2',
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'kilogramsFruits2',
+                            'label' => 'Fruits',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.1'],
+                        ],
+                        [
+                            'name' => 'percentageFruits2',
+                            'label' => '%',
+                            'type' => 'result',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            'iyGMwqVMWjJ567m7Hvyd1' => [
-                'name' => 'diet type',
-                'uiType' => 'CHECKBOX',
-                'options' => [
-                    ['uid' => 'H9GDxJXUOcOZUh4YdTtNc', 'label' => 'Change raw food composition', 'value' => '1'],
-                    ['uid' => 'Xs614aHfFl4RSdsbMgWuP', 'label' => '', 'value' => '0'],
-                ],
-            ],
-            'VrXNIFXKekcN3jRaMiBHV' => [
-                'name' => 'age',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'PPuhzZvdm2fFa_GHLOS98', 'label' => 'Adult', 'value' => '0'],
-                    ['uid' => 'eXbQlagfEcenSZUfms0xU', 'label' => 'Puppy', 'value' => '1'],
-                ],
-            ],
-        ],
-        'js' => <<<'TXT'
-        "use strict";omni.define("getPercentageDogMass",function(life_stage,age){if(life_stage==0||age>12){return 0.025}if(age<=4){return 0.08}if(age<=6){return 0.07}if(age<=9){return 0.04}if(age<=12){return 0.03}});//# sourceURL=customJs.js
-        TXT,
     ],
+    'formula' => [
+        [
+            'title' => 'averageDogActivityFoodKilograms = getPercentageDogMass(life_stage, age) * bodyWeight ',
+            'results' => ['bodyWeight' => 'averageDogActivityFoodKilograms/getPercentageDogMass(life_stage, age)', 'averageDogActivityFoodKilograms' => 'bodyWeight*getPercentageDogMass(life_stage, age)'],
+        ],
+        [
+            'title' => 'kilogramsMuscle = percentageMuscle * averageDogActivityFoodKilograms',
+            'results' => ['percentageMuscle' => 'kilogramsMuscle/averageDogActivityFoodKilograms', 'kilogramsMuscle' => 'averageDogActivityFoodKilograms*percentageMuscle', 'averageDogActivityFoodKilograms' => 'kilogramsMuscle/percentageMuscle'],
+        ],
+        [
+            'title' => 'kilogramsBone = percentageBone * averageDogActivityFoodKilograms',
+            'results' => ['percentageBone' => 'kilogramsBone/averageDogActivityFoodKilograms', 'kilogramsBone' => 'averageDogActivityFoodKilograms*percentageBone', 'averageDogActivityFoodKilograms' => 'kilogramsBone/percentageBone'],
+        ],
+        [
+            'title' => 'kilogramsLiver = percentageLiver * averageDogActivityFoodKilograms',
+            'results' => ['percentageLiver' => 'kilogramsLiver/averageDogActivityFoodKilograms', 'kilogramsLiver' => 'averageDogActivityFoodKilograms*percentageLiver', 'averageDogActivityFoodKilograms' => 'kilogramsLiver/percentageLiver'],
+        ],
+        [
+            'title' => 'kilogramsOrgan = percentageOrgan * averageDogActivityFoodKilograms',
+            'results' => ['kilogramsOrgan' => 'averageDogActivityFoodKilograms*percentageOrgan', 'percentageOrgan' => 'kilogramsOrgan/averageDogActivityFoodKilograms', 'averageDogActivityFoodKilograms' => 'kilogramsOrgan/percentageOrgan'],
+        ],
+        [
+            'title' => 'kilogramsVeggie = percentageVeggie * averageDogActivityFoodKilograms',
+            'results' => ['percentageVeggie' => 'kilogramsVeggie/averageDogActivityFoodKilograms', 'kilogramsVeggie' => 'averageDogActivityFoodKilograms*percentageVeggie', 'averageDogActivityFoodKilograms' => 'kilogramsVeggie/percentageVeggie'],
+        ],
+        [
+            'title' => 'kilogramsSeeds = percentageSeeds * averageDogActivityFoodKilograms',
+            'results' => ['kilogramsSeeds' => 'averageDogActivityFoodKilograms*percentageSeeds', 'percentageSeeds' => 'kilogramsSeeds/averageDogActivityFoodKilograms', 'averageDogActivityFoodKilograms' => 'kilogramsSeeds/percentageSeeds'],
+        ],
+        [
+            'title' => 'kilogramsFruits = percentageFruits * averageDogActivityFoodKilograms',
+            'results' => ['percentageFruits' => 'kilogramsFruits/averageDogActivityFoodKilograms', 'averageDogActivityFoodKilograms' => 'kilogramsFruits/percentageFruits', 'kilogramsFruits' => 'averageDogActivityFoodKilograms*percentageFruits'],
+        ],
+        [
+            'title' => 'kilogramsMuscle2 = percentageMuscle2 * averageDogActivityFoodKilograms',
+            'results' => ['percentageMuscle2' => 'kilogramsMuscle2/averageDogActivityFoodKilograms', 'averageDogActivityFoodKilograms' => 'kilogramsMuscle2/percentageMuscle2', 'kilogramsMuscle2' => 'averageDogActivityFoodKilograms*percentageMuscle2'],
+        ],
+        [
+            'title' => 'kilogramsBone2 = percentageBone2 * averageDogActivityFoodKilograms',
+            'results' => ['averageDogActivityFoodKilograms' => 'kilogramsBone2/percentageBone2', 'kilogramsBone2' => 'averageDogActivityFoodKilograms*percentageBone2', 'percentageBone2' => 'kilogramsBone2/averageDogActivityFoodKilograms'],
+        ],
+        [
+            'title' => 'kilogramsLiver2 = percentageLiver2 * averageDogActivityFoodKilograms',
+            'results' => ['percentageLiver2' => 'kilogramsLiver2/averageDogActivityFoodKilograms', 'kilogramsLiver2' => 'averageDogActivityFoodKilograms*percentageLiver2', 'averageDogActivityFoodKilograms' => 'kilogramsLiver2/percentageLiver2'],
+        ],
+        [
+            'title' => 'kilogramsOrgan2 = percentageOrgan2 * averageDogActivityFoodKilograms',
+            'results' => ['kilogramsOrgan2' => 'averageDogActivityFoodKilograms*percentageOrgan2', 'percentageOrgan2' => 'kilogramsOrgan2/averageDogActivityFoodKilograms', 'averageDogActivityFoodKilograms' => 'kilogramsOrgan2/percentageOrgan2'],
+        ],
+        [
+            'title' => 'kilogramsVeggie2 = percentageVeggie2 * averageDogActivityFoodKilograms',
+            'results' => ['percentageVeggie2' => 'kilogramsVeggie2/averageDogActivityFoodKilograms', 'kilogramsVeggie2' => 'averageDogActivityFoodKilograms*percentageVeggie2', 'averageDogActivityFoodKilograms' => 'kilogramsVeggie2/percentageVeggie2'],
+        ],
+        [
+            'title' => 'kilogramsSeeds2 = percentageSeeds2 * averageDogActivityFoodKilograms',
+            'results' => ['percentageSeeds2' => 'kilogramsSeeds2/averageDogActivityFoodKilograms', 'kilogramsSeeds2' => 'averageDogActivityFoodKilograms*percentageSeeds2', 'averageDogActivityFoodKilograms' => 'kilogramsSeeds2/percentageSeeds2'],
+        ],
+        [
+            'title' => 'kilogramsFruits2 = percentageFruits2 * averageDogActivityFoodKilograms',
+            'results' => ['kilogramsFruits2' => 'averageDogActivityFoodKilograms*percentageFruits2', 'percentageFruits2' => 'kilogramsFruits2/averageDogActivityFoodKilograms', 'averageDogActivityFoodKilograms' => 'kilogramsFruits2/percentageFruits2'],
+        ],
+    ],
+    'js' => <<<'TXT'
+    "use strict";omni.define("getPercentageDogMass",function(life_stage,age){if(life_stage==0||age>12){return 0.025}if(age<=4){return 0.08}if(age<=6){return 0.07}if(age<=9){return 0.04}if(age<=12){return 0.03}});//# sourceURL=customJs.js
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Raw dog food turns Life stage, Dog's ideal body weight and Required amount of food into Age (months) and %. The arithmetic is the whole method: age (months) is worked out from life stage by one formula, applied once. Age (months) comes back in months unless you switch the unit chip beside the box.
@@ -984,7 +515,7 @@ return [
             <p>Units are handled before the formula runs: Age (months) offers 5 units and opens on months, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Required amount of food</strong> = <code>Dog&#039;s ideal body weight × getPercentageDogMass(Life stage, Age (months))</code></li><li><strong>Dog&#039;s ideal body weight</strong> = <code>Required amount of food ÷ getPercentageDogMass(Life stage, Age (months))</code></li><li><strong>Muscle meat</strong> = <code>Required amount of food × %</code></li><li><strong>%</strong> = <code>Muscle meat ÷ Required amount of food</code></li><li><strong>Bone</strong> = <code>Required amount of food × %</code></li><li><strong>Liver</strong> = <code>Required amount of food × %</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Required amount of food</strong> = <code>Dog&#039;s ideal body weight × getPercentageDogMass(Life stage, Age (months))</code> — the form to use when Dog&#039;s ideal body weight, Age (months) and Life stage are the values you have.</li><li><strong>Dog&#039;s ideal body weight</strong> = <code>Required amount of food ÷ getPercentageDogMass(Life stage, Age (months))</code> — the form to use when Required amount of food, Age (months) and Life stage are the values you have.</li><li><strong>Muscle meat</strong> = <code>Required amount of food × %</code> — the form to use when % and Required amount of food are the values you have.</li><li><strong>%</strong> = <code>Muscle meat ÷ Required amount of food</code> — the form to use when Muscle meat and Required amount of food are the values you have.</li><li><strong>Required amount of food</strong> = <code>Muscle meat ÷ %</code> — the form to use when % and Muscle meat are the values you have.</li><li><strong>Bone</strong> = <code>Required amount of food × %</code> — the form to use when % and Required amount of food are the values you have.</li><li><strong>%</strong> = <code>Bone ÷ Required amount of food</code> — the form to use when Bone and Required amount of food are the values you have.</li><li><strong>Required amount of food</strong> = <code>Bone ÷ %</code> — the form to use when % and Bone are the values you have.</li></ul><p>Any one of Required amount of food, Dog&#039;s ideal body weight and Muscle meat can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Required amount of food</strong> = <code>Dog&#039;s ideal body weight × getPercentageDogMass(Life stage, Age (months))</code></li><li><strong>Dog&#039;s ideal body weight</strong> = <code>Required amount of food ÷ getPercentageDogMass(Life stage, Age (months))</code></li><li><strong>Muscle meat</strong> = <code>Required amount of food × %</code></li><li><strong>%</strong> = <code>Muscle meat ÷ Required amount of food</code></li><li><strong>Bone</strong> = <code>Required amount of food × %</code></li><li><strong>Liver</strong> = <code>Required amount of food × %</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Required amount of food</strong> = <code>Dog&#039;s ideal body weight × getPercentageDogMass(Life stage, Age (months))</code> — the form to use when Dog&#039;s ideal body weight, Life stage and Age (months) are the values you have.</li><li><strong>Dog&#039;s ideal body weight</strong> = <code>Required amount of food ÷ getPercentageDogMass(Life stage, Age (months))</code> — the form to use when Required amount of food, Life stage and Age (months) are the values you have.</li><li><strong>Muscle meat</strong> = <code>Required amount of food × %</code> — the form to use when Required amount of food and % are the values you have.</li><li><strong>%</strong> = <code>Muscle meat ÷ Required amount of food</code> — the form to use when Muscle meat and Required amount of food are the values you have.</li><li><strong>Required amount of food</strong> = <code>Muscle meat ÷ %</code> — the form to use when Muscle meat and % are the values you have.</li><li><strong>Bone</strong> = <code>Required amount of food × %</code> — the form to use when Required amount of food and % are the values you have.</li><li><strong>%</strong> = <code>Bone ÷ Required amount of food</code> — the form to use when Bone and Required amount of food are the values you have.</li><li><strong>Required amount of food</strong> = <code>Bone ÷ %</code> — the form to use when Bone and % are the values you have.</li></ul><p>Any one of Required amount of food, Dog&#039;s ideal body weight and Muscle meat can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
@@ -997,12 +528,12 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Age (months) follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>Only the listed units.</strong> The unit tables here are months, percent and kilograms and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Life stage, Dog&#039;s ideal body weight and Required amount of food are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Life stage, Dog&#039;s ideal body weight and Required amount of food and the number you are missing is Age (months) and %.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/svi-sludge-volume-index">Sludge Volume Index (SVI) Calculator</a>, <a href="/biology/sod">Sod Calculator</a> and <a href="/biology/soil">Soil Calculator</a>.</p>
+            <p>Use it whenever the numbers you have are Life stage, Dog&#039;s ideal body weight and Required amount of food and the number you are missing is Age (months) and %.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Raw dog food calculator work out?', 'a' => <<<'TXT'
-            Age (months), %, % and %, from Dog's ideal body weight, Age (months) and Life stage. The relationship is Required amount of food = Dog's ideal body weight × getPercentageDogMass(Life stage, Age (months)).
+            Age (months), %, % and %, from Dog's ideal body weight, Life stage and Age (months). The relationship is Required amount of food = Dog's ideal body weight × getPercentageDogMass(Life stage, Age (months)).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
             Life stage, Dog's ideal body weight (kilograms), Required amount of food (grams), Muscle meat (grams), Bone (grams). With life stage, dog's ideal body weight and required amount of food in place, Age (months) can stay blank and the page will work it out.
