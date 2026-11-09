@@ -11,271 +11,233 @@
 
 return [
     'name' => 'Primer Dimer Checker',
-    'meta' => ['title' => 'Primer Dimer Checker Calculator: Units & Formula', 'description' => 'Primer Dimer Checker works out 3′ complementary run from forward primer (5′→3′). Press Calculate once and every figure on the page is refreshed together.', 'h1' => 'Primer Dimer Checker', 'updated' => '2026-10-29'],
-    'raw' => [
-        'vars' => [
-            'forward' => [
-                'type' => 'text',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'ATGGCCATTGTAATGGGCCG', 'c' => null],
-                ],
-            ],
-            'reverse' => [
-                'type' => 'text',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'CTATCGGGCACCCTTTCAG', 'c' => null],
-                ],
-            ],
-            'tail_run' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'any_run' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'self_fwd' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'self_rev' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'hairpin_fwd' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'hairpin_rev' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'risk' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'custom-primer-dimer-checker',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR2',
+    'meta' => ['title' => 'Primer Dimer Checker Calculator: Units & Formula', 'description' => <<<'TXT'
+    Primer Dimer Checker works out 3′ complementary run from forward primer (5′→3′). Each box lists the units it accepts, and the answer converts between them.
+    TXT, 'h1' => 'Primer Dimer Checker', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'grid' => 'FR2',
+                    'place' => [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                    ],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'forward',
-                                    'l' => 'Forward primer (5′→3′)',
-                                    'h' => 'Paste the primer',
-                                    'vt' => 'text',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'reverse',
-                                    'l' => 'Reverse primer (5′→3′)',
-                                    'h' => 'Paste the primer',
-                                    'vt' => 'text',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'tail_run',
-                                    'l' => '3′ complementary run',
-                                    'h' => '3 or more is a risk',
-                                    'suf' => 'bases',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'any_run',
-                                    'l' => 'Longest complementary run',
-                                    'h' => 'Anywhere in the pair',
-                                    'suf' => 'bases',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'self_fwd',
-                                    'l' => 'Forward self-dimer run',
-                                    'suf' => 'bases',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'self_rev',
-                                    'l' => 'Reverse self-dimer run',
-                                    'suf' => 'bases',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'hairpin_fwd',
-                                    'l' => 'Forward hairpin stem',
-                                    'h' => '4 or more can misprime',
-                                    'suf' => 'bases',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'hairpin_rev',
-                                    'l' => 'Reverse hairpin stem',
-                                    'suf' => 'bases',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'risk',
-                                    'l' => 'Dimer risk score',
-                                    'h' => '0 is clean, 10 is a guaranteed dimer',
-                                    'suf' => 'of 10',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
+                            'name' => 'forward',
+                            'label' => 'Forward primer (5′→3′)',
+                            'type' => 'text',
+                            'help' => 'Paste the primer',
+                            'default' => 'ATGGCCATTGTAATGGGCCG',
+                        ],
+                        [
+                            'name' => 'reverse',
+                            'label' => 'Reverse primer (5′→3′)',
+                            'type' => 'text',
+                            'help' => 'Paste the primer',
+                            'default' => 'CTATCGGGCACCCTTTCAG',
+                        ],
+                        [
+                            'name' => 'tail_run',
+                            'label' => '3′ complementary run',
+                            'type' => 'number',
+                            'suffix' => 'bases',
+                            'help' => '3 or more is a risk',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'any_run',
+                            'label' => 'Longest complementary run',
+                            'type' => 'number',
+                            'suffix' => 'bases',
+                            'help' => 'Anywhere in the pair',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'self_fwd',
+                            'label' => 'Forward self-dimer run',
+                            'type' => 'number',
+                            'suffix' => 'bases',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'self_rev',
+                            'label' => 'Reverse self-dimer run',
+                            'type' => 'number',
+                            'suffix' => 'bases',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'hairpin_fwd',
+                            'label' => 'Forward hairpin stem',
+                            'type' => 'number',
+                            'suffix' => 'bases',
+                            'help' => '4 or more can misprime',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'hairpin_rev',
+                            'label' => 'Reverse hairpin stem',
+                            'type' => 'number',
+                            'suffix' => 'bases',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'risk',
+                            'label' => 'Dimer risk score',
+                            'type' => 'number',
+                            'suffix' => 'of 10',
+                            'help' => '0 is clean, 10 is a guaranteed dimer',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [],
-        'datasets' => [],
-        'js' => <<<'TXT'
-        function cleanSeq(raw, kind) {
-            var s = String(raw || '').replace(/^>.*$/gm, '');
-            s = s.replace(/[^A-Za-z]/g, '');
-            return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
-          }
-          function wrap(s, width) {
-            width = width || 60;
-            var out = [];
-            for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
-            return out.join('\n');
-          }
-          function esc(s) {
-            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          }
-          function block(title, body, note) {
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function table(title, head, rows, note) {
-            var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
-            var b = rows.map(function (r) {
-              return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
-            }).join('');
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
-              + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function gcOf(s) {
-            var gc = 0;
-            for (var i = 0; i < s.length; i++) { var c = s.charAt(i); if (c === 'G' || c === 'C') gc++; }
-            return gc;
-          }
-          var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
-                      B:'V',V:'B',D:'H',H:'D',N:'N'};
-          function revcomp(s) {
-            var out = '';
-            for (var i = s.length - 1; i >= 0; i--) out += COMP[s.charAt(i)] || 'N';
-            return out;
-          }
-        
-          function longestRun(a, b) {
-            // longest stretch where a[i..] pairs with b[..] read backwards
-            a = a.slice(0, 60); b = b.slice(0, 60);
-            var best = 0;
-            for (var i = 0; i < a.length; i++) {
-              for (var j = 0; j < b.length; j++) {
-                var k = 0;
-                while (i + k < a.length && j - k >= 0 && COMP[a.charAt(i + k)] === b.charAt(j - k)) k++;
-                if (k > best) best = k;
-              }
-            }
-            return best;
-          }
-          function endRun(a, b) {
-            // Two primers anneal antiparallel, so their 3' ends sit opposite each other:
-            // position 1 from the 3' end of one pairs with position 1 from the 3' end of
-            // the other. The run is how far that pairing continues before a mismatch.
-            var best = 0;
-            for (var k = 1; k <= Math.min(a.length, b.length); k++) {
-              if (COMP[a.charAt(a.length - k)] === b.charAt(b.length - k)) best = k; else break;
-            }
-            return best;
-          }
-          function hairpinStem(p) {
-            // a stem needs a loop of at least three bases between the two halves
-            var best = 0;
-            for (var loop = 3; loop <= 12; loop++) {
-              for (var i = 0; i + loop < p.length; i++) {
-                var k = 0;
-                while (i - k >= 0 && i + loop + k < p.length
-                       && COMP[p.charAt(i - k)] === p.charAt(i + loop + k)) k++;
-                if (k > best) best = k;
-              }
-            }
-            return best;
-          }
-          omni.onResult(['forward', 'reverse'], function (ctx) {
-            var f = cleanSeq(ctx.getRawInput('forward'), 'dna').slice(0, 100);
-            var r = cleanSeq(ctx.getRawInput('reverse'), 'dna').slice(0, 100);
-            if (!f || !r) {
-              ctx.addHtml(block('Primer dimers', '—', 'Paste both primers to check the pair.'));
-              return;
-            }
-            var tail = Math.max(endRun(f, r), endRun(r, f));
-            var any = longestRun(f, r);
-            var selfF = longestRun(f, f), selfR = longestRun(r, r);
-            var hairF = hairpinStem(f), hairR = hairpinStem(r);
-            var score = 0;
-            if (tail >= 2) score += Math.min(6, Math.pow(3, tail - 2));
-            if (Math.max(selfF, selfR) >= 4) score += 2;
-            if (Math.max(hairF, hairR) >= 4) score += 2;
-            score = Math.min(10, score);
-        
-            ctx.exportValue('tail_run', tail);
-            ctx.exportValue('any_run', any);
-            ctx.exportValue('self_fwd', selfF);
-            ctx.exportValue('self_rev', selfR);
-            ctx.exportValue('hairpin_fwd', hairF);
-            ctx.exportValue('hairpin_rev', hairR);
-            ctx.exportValue('risk', score);
-        
-            var verdict = tail >= 5 ? 'Redesign the pair'
-              : tail >= 3 ? 'Risk of dimers — consider a redesign'
-              : 'No significant 3′ complementarity';
-            ctx.addHtml(block('Verdict',
-              verdict + '\n3′ complementary run: ' + tail + ' base' + (tail === 1 ? '' : 's')
-              + '\nLongest run anywhere: ' + any + ' bases'
-              + '\nSelf-dimers: forward ' + selfF + ', reverse ' + selfR
-              + '\nHairpin stems: forward ' + hairF + ', reverse ' + hairR
-              + '\nRisk score: ' + score + '/10',
-              tail >= 3
-                ? 'A polymerase can extend a 3′ duplex of three or more bases, so the primer pair will '
-                  + 'amplify a dimer. Move the 3′ end a base or two, or trim it.'
-                : 'Nothing at the 3′ ends can be extended, which is what matters for dimer formation.'));
-            ctx.addHtml(table('Detail', ['Check', 'Bases', 'Reads as'],
-              [['3′ cross-dimer', String(tail), tail >= 3 ? 'extendable — a real risk' : 'not extendable'],
-               ['Anywhere in the pair', String(any), any >= 6 ? 'strong but not extendable' : 'minor'],
-               ['Forward self-dimer', String(selfF), selfF >= 5 ? 'will self-pair' : 'acceptable'],
-               ['Reverse self-dimer', String(selfR), selfR >= 5 ? 'will self-pair' : 'acceptable'],
-               ['Forward hairpin', String(hairF), hairF >= 4 ? 'stable enough to misprime' : 'unlikely'],
-               ['Reverse hairpin', String(hairR), hairR >= 4 ? 'stable enough to misprime' : 'unlikely']]));
-          });
-        TXT,
     ],
+    'formula' => [],
+    'js' => <<<'TXT'
+    function cleanSeq(raw, kind) {
+        var s = String(raw || '').replace(/^>.*$/gm, '');
+        s = s.replace(/[^A-Za-z]/g, '');
+        return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
+      }
+      function wrap(s, width) {
+        width = width || 60;
+        var out = [];
+        for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
+        return out.join('\n');
+      }
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function block(title, body, note) {
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function table(title, head, rows, note) {
+        var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
+        var b = rows.map(function (r) {
+          return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+        }).join('');
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
+          + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function gcOf(s) {
+        var gc = 0;
+        for (var i = 0; i < s.length; i++) { var c = s.charAt(i); if (c === 'G' || c === 'C') gc++; }
+        return gc;
+      }
+      var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
+                  B:'V',V:'B',D:'H',H:'D',N:'N'};
+      function revcomp(s) {
+        var out = '';
+        for (var i = s.length - 1; i >= 0; i--) out += COMP[s.charAt(i)] || 'N';
+        return out;
+      }
+    
+      function longestRun(a, b) {
+        // longest stretch where a[i..] pairs with b[..] read backwards
+        a = a.slice(0, 60); b = b.slice(0, 60);
+        var best = 0;
+        for (var i = 0; i < a.length; i++) {
+          for (var j = 0; j < b.length; j++) {
+            var k = 0;
+            while (i + k < a.length && j - k >= 0 && COMP[a.charAt(i + k)] === b.charAt(j - k)) k++;
+            if (k > best) best = k;
+          }
+        }
+        return best;
+      }
+      function endRun(a, b) {
+        // Two primers anneal antiparallel, so their 3' ends sit opposite each other:
+        // position 1 from the 3' end of one pairs with position 1 from the 3' end of
+        // the other. The run is how far that pairing continues before a mismatch.
+        var best = 0;
+        for (var k = 1; k <= Math.min(a.length, b.length); k++) {
+          if (COMP[a.charAt(a.length - k)] === b.charAt(b.length - k)) best = k; else break;
+        }
+        return best;
+      }
+      function hairpinStem(p) {
+        // a stem needs a loop of at least three bases between the two halves
+        var best = 0;
+        for (var loop = 3; loop <= 12; loop++) {
+          for (var i = 0; i + loop < p.length; i++) {
+            var k = 0;
+            while (i - k >= 0 && i + loop + k < p.length
+                   && COMP[p.charAt(i - k)] === p.charAt(i + loop + k)) k++;
+            if (k > best) best = k;
+          }
+        }
+        return best;
+      }
+      omni.onResult(['forward', 'reverse'], function (ctx) {
+        var f = cleanSeq(ctx.getRawInput('forward'), 'dna').slice(0, 100);
+        var r = cleanSeq(ctx.getRawInput('reverse'), 'dna').slice(0, 100);
+        if (!f || !r) {
+          ctx.addHtml(block('Primer dimers', '—', 'Paste both primers to check the pair.'));
+          return;
+        }
+        var tail = Math.max(endRun(f, r), endRun(r, f));
+        var any = longestRun(f, r);
+        var selfF = longestRun(f, f), selfR = longestRun(r, r);
+        var hairF = hairpinStem(f), hairR = hairpinStem(r);
+        var score = 0;
+        if (tail >= 2) score += Math.min(6, Math.pow(3, tail - 2));
+        if (Math.max(selfF, selfR) >= 4) score += 2;
+        if (Math.max(hairF, hairR) >= 4) score += 2;
+        score = Math.min(10, score);
+    
+        ctx.exportValue('tail_run', tail);
+        ctx.exportValue('any_run', any);
+        ctx.exportValue('self_fwd', selfF);
+        ctx.exportValue('self_rev', selfR);
+        ctx.exportValue('hairpin_fwd', hairF);
+        ctx.exportValue('hairpin_rev', hairR);
+        ctx.exportValue('risk', score);
+    
+        var verdict = tail >= 5 ? 'Redesign the pair'
+          : tail >= 3 ? 'Risk of dimers — consider a redesign'
+          : 'No significant 3′ complementarity';
+        ctx.addHtml(block('Verdict',
+          verdict + '\n3′ complementary run: ' + tail + ' base' + (tail === 1 ? '' : 's')
+          + '\nLongest run anywhere: ' + any + ' bases'
+          + '\nSelf-dimers: forward ' + selfF + ', reverse ' + selfR
+          + '\nHairpin stems: forward ' + hairF + ', reverse ' + hairR
+          + '\nRisk score: ' + score + '/10',
+          tail >= 3
+            ? 'A polymerase can extend a 3′ duplex of three or more bases, so the primer pair will '
+              + 'amplify a dimer. Move the 3′ end a base or two, or trim it.'
+            : 'Nothing at the 3′ ends can be extended, which is what matters for dimer formation.'));
+        ctx.addHtml(table('Detail', ['Check', 'Bases', 'Reads as'],
+          [['3′ cross-dimer', String(tail), tail >= 3 ? 'extendable — a real risk' : 'not extendable'],
+           ['Anywhere in the pair', String(any), any >= 6 ? 'strong but not extendable' : 'minor'],
+           ['Forward self-dimer', String(selfF), selfF >= 5 ? 'will self-pair' : 'acceptable'],
+           ['Reverse self-dimer', String(selfR), selfR >= 5 ? 'will self-pair' : 'acceptable'],
+           ['Forward hairpin', String(hairF), hairF >= 4 ? 'stable enough to misprime' : 'unlikely'],
+           ['Reverse hairpin', String(hairR), hairR >= 4 ? 'stable enough to misprime' : 'unlikely']]));
+      });
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Primer Dimer Checker turns Forward primer (5′→3′) and Reverse primer (5′→3′) into 3′ complementary run and Longest complementary run. There is no hidden constant here: change 3′ complementary run and forward primer (5′→3′) moves with it. The main result, 3′ complementary run, is reported in bases.
@@ -312,7 +274,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> 3′ complementary run follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Forward primer (5′→3′) and Reverse primer (5′→3′) are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Forward primer (5′→3′) and Reverse primer (5′→3′) and the number you are missing is 3′ complementary run and Longest complementary run.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/specific-growth-rate-od">Specific Growth Rate from OD Calculator</a>, <a href="/biology/specific-growth-rate-from-od">Specific Growth Rate from OD Readings Calculator</a> and <a href="/biology/specific-productivity-qp">Specific Productivity (qP) Calculator</a>.</p>
+            <p>Use it whenever the numbers you have are Forward primer (5′→3′) and Reverse primer (5′→3′) and the number you are missing is 3′ complementary run and Longest complementary run.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
             ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
             <p>An answer from Primer Dimer Checker is a number to act on, so the useful question is what to do with 3′ complementary run (bases), Longest complementary run (bases) and Forward self-dimer run (bases) once the panel shows it.</p><ul><li><strong>Record the inputs with the answer.</strong> A number on its own is not reproducible. Write down Forward primer (5′→3′) and Reverse primer (5′→3′) alongside it — a week later the answer is checkable and the reasoning is not.</li><li><strong>Re-run it when a measurement changes.</strong> The page keeps nothing between visits, which is a feature: every figure is worked out from the numbers in front of it, so updating one input and pressing Calculate again gives a fresh answer rather than an average of the old and the new.</li><li><strong>Keep the formula with the figure.</strong> A number from a page like this one travels better than a number from a spreadsheet cell, because the formula that produced it is visible on the same page and does not depend on a file being kept.</li><li><strong>Compare rather than convert.</strong> Run it once for the case in front of you and once for a case you understand well. The gap between the two answers tells you more about your own situation than either number does on its own.</li></ul><p>The page is a calculator, not a system of record. Copy what you need out of it, keep it with the inputs that produced it, and come back with different numbers whenever the inputs change.</p>

@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Dog calorie',
-    'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Example', 'description' => 'Dog calorie works out your dog needs and your dog should eat and reports both. Nothing is stored between visits: the boxes are the only place your numbers live.', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
+    'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Example', 'description' => 'Dog calorie works out your dog needs and your dog should eat and reports both. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
     'sections' => [
         [
             'title' => 'How many calories does my dog need?',
@@ -560,7 +560,7 @@ return [
             <ul><li><strong>It does not scale in a straight line.</strong> Because the relationship behind Your dog needs is not linear, doubling an input does not double the answer, and the error from a rounded input grows near the ends of the range. Use the check-by-hand section above at your own numbers rather than extrapolating from the defaults.</li><li><strong>Only the listed units.</strong> The chips cover kilocalories and grams. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Weight and the number you are missing is Your dog needs and Your dog needs.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/dna-molarity-calculator">DNA Molarity Calculator</a>, <a href="/biology/dna-molarity-from-mass">DNA Molarity from Mass or A260 Calculator</a> and <a href="/biology/dna-molecular-weight-calculator">DNA Molecular Weight Calculator</a>.</p>
+            <p>Use it whenever the numbers you have are Weight and the number you are missing is Your dog needs and Your dog needs.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>The page you are reading is built around one calculation. The form, the formula and the worked examples all describe the same relationship, and the panel is the only place the answer exists — it is computed when you press the button, not fetched.</p><p>Every figure quoted in the article above was produced by this page&#039;s formulas, with the inputs listed beside it. That is deliberate — it is the only way a reader can check the page without trusting it.</p><p>Nothing you enter is stored. The form is local to the page, the calculation runs on it, and the only way your numbers travel anywhere is if you copy the link that carries them.</p><p>The page is one of a catalogue that works the same way: every calculator prints the relationship it uses, runs a worked example from its own defaults, and lets you solve for any one of its variables rather than only the one in the title.</p><p>If a figure here disagrees with a source you trust, the useful thing to check first is the unit on each box, then the formula shown above, and only then the arithmetic — in that order, because that is the order mistakes happen in.</p>
@@ -588,5 +588,6 @@ return [
             ['path' => '/biology/dna-molarity-from-mass', 'name' => 'DNA Molarity from Mass or A260 Calculator'],
             ['path' => '/biology/dna-molecular-weight-calculator', 'name' => 'DNA Molecular Weight Calculator'],
         ],
+        'authors' => [],
     ],
 ];

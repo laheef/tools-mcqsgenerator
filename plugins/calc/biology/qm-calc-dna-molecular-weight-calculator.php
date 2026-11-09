@@ -11,261 +11,208 @@
 
 return [
     'name' => 'DNA Molecular Weight Calculator',
-    'meta' => ['title' => 'DNA Molecular Weight Calculator: Units & Formula', 'description' => 'DNA Molecular Weight Calculator takes sequence and molecule and returns length and GC content. Free to use, and the working stays on the page beside the answer.', 'h1' => 'DNA Molecular Weight Calculator', 'updated' => '2026-10-29'],
-    'raw' => [
-        'vars' => [
-            'sequence' => [
-                'type' => 'text',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG', 'c' => null],
-                ],
-            ],
-            'strands' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'double-stranded-dna', 'c' => null],
-                ],
-                'ds' => 'ds-strands',
-            ],
-            'length' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'gc_pct' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mw_ss' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mw' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mw_kda' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'pmol_per_ug' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'custom-dna-molecular-weight-calculator',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR2',
+    'meta' => ['title' => 'DNA Molecular Weight Calculator: Units & Formula', 'description' => 'DNA Molecular Weight Calculator takes sequence and molecule and returns length and GC content. Every box can be solved for, not only the one in the title.', 'h1' => 'DNA Molecular Weight Calculator', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'grid' => 'FR2',
+                    'place' => [
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                    ],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'sequence',
-                                    'l' => 'Sequence',
-                                    'h' => 'Paste one strand; the other is assumed to be its exact complement',
-                                    'vt' => 'text',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'strands',
-                                    'l' => 'Molecule',
-                                    'vt' => 'valueSelect',
-                                    'ds' => 'ds-strands',
-                                    'opts' => [
-                                        ['double-stranded-dna', 'Double-stranded DNA', 'ds'],
-                                        ['single-stranded-dna', 'Single-stranded DNA', 'ss'],
-                                        ['single-stranded-rna', 'Single-stranded RNA', 'rna'],
-                                    ],
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'length',
-                                    'l' => 'Length',
-                                    'suf' => 'nt',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'gc_pct',
-                                    'l' => 'GC content',
-                                    'suf' => '%',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mw_ss',
-                                    'l' => 'Molecular weight, one strand',
-                                    'suf' => 'Da',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'mw',
-                                    'l' => 'Molecular weight of the molecule',
-                                    'suf' => 'Da',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'mw_kda',
-                                    'l' => 'Molecular weight',
-                                    'suf' => 'kDa',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'pmol_per_ug',
-                                    'l' => 'Amount in 1 µg',
-                                    'h' => 'Handy for setting up a ligation',
-                                    'suf' => 'pmol',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
+                            'name' => 'sequence',
+                            'label' => 'Sequence',
+                            'type' => 'text',
+                            'help' => 'Paste one strand; the other is assumed to be its exact complement',
+                            'default' => 'ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG',
+                        ],
+                        [
+                            'name' => 'strands',
+                            'label' => 'Molecule',
+                            'type' => 'select',
+                            'options' => ['Double-stranded DNA' => 'ds', 'Single-stranded DNA' => 'ss', 'Single-stranded RNA' => 'rna'],
+                            'default' => 'Double-stranded DNA',
+                        ],
+                        [
+                            'name' => 'length',
+                            'label' => 'Length',
+                            'type' => 'number',
+                            'suffix' => 'nt',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'gc_pct',
+                            'label' => 'GC content',
+                            'type' => 'number',
+                            'suffix' => '%',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'mw_ss',
+                            'label' => 'Molecular weight, one strand',
+                            'type' => 'number',
+                            'suffix' => 'Da',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'mw',
+                            'label' => 'Molecular weight of the molecule',
+                            'type' => 'number',
+                            'suffix' => 'Da',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'mw_kda',
+                            'label' => 'Molecular weight',
+                            'type' => 'number',
+                            'suffix' => 'kDa',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'pmol_per_ug',
+                            'label' => 'Amount in 1 µg',
+                            'type' => 'number',
+                            'suffix' => 'pmol',
+                            'help' => 'Handy for setting up a ligation',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [],
-        'datasets' => [
-            'ds-strands' => [
-                'name' => 'Molecule',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'double-stranded-dna', 'label' => 'Double-stranded DNA', 'value' => 'ds'],
-                    ['uid' => 'single-stranded-dna', 'label' => 'Single-stranded DNA', 'value' => 'ss'],
-                    ['uid' => 'single-stranded-rna', 'label' => 'Single-stranded RNA', 'value' => 'rna'],
-                ],
-            ],
-        ],
-        'js' => <<<'TXT'
-        function cleanSeq(raw, kind) {
-            var s = String(raw || '').replace(/^>.*$/gm, '');
-            s = s.replace(/[^A-Za-z]/g, '');
-            return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
-          }
-          function wrap(s, width) {
-            width = width || 60;
-            var out = [];
-            for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
-            return out.join('\n');
-          }
-          function esc(s) {
-            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          }
-          function block(title, body, note) {
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function table(title, head, rows, note) {
-            var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
-            var b = rows.map(function (r) {
-              return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
-            }).join('');
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
-              + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function gcOf(s) {
-            var gc = 0;
-            for (var i = 0; i < s.length; i++) { var c = s.charAt(i); if (c === 'G' || c === 'C') gc++; }
-            return gc;
-          }
-          function tmOf(n, pct, at, gc) {
-            if (n <= 14) return 2 * at + 4 * gc;
-            if (n <= 40) return 64.9 + 41 * (gc - 16.4) / n;
-            return 81.5 + 16.6 * Math.log10(0.05) + 0.41 * pct - 675 / n;
-          }
-          function pct1(x) { return (Math.round(x * 10) / 10).toFixed(1); }
-          function pct2(x) { return (Math.round(x * 100) / 100).toFixed(2); }
-          var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
-                      B:'V',V:'B',D:'H',H:'D',N:'N'};
-          function revcomp(s) {
-            var out = '';
-            for (var i = s.length - 1; i >= 0; i--) out += COMP[s.charAt(i)] || 'N';
-            return out;
-          }
-          // NCBI standard genetic code: bases ordered T, C, A, G for each position
-          var CODON_TABLE = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
-          var BASES = 'TCAG';
-          function aaOf(codon) {
-            var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
-                i3 = BASES.indexOf(codon.charAt(2));
-            if (i1 < 0 || i2 < 0 || i3 < 0) return null;
-            return CODON_TABLE.charAt(16 * i1 + 4 * i2 + i3);
-          }
-          function eachCodon(seq, frame, fn) {
-            for (var i = (frame || 0); i + 3 <= seq.length; i += 3) {
-              fn(seq.substr(i, 3), i);
-            }
-          }
-        
-          omni.onResult(['sequence', 'strands'], function (ctx) {
-            // A select hands back the option's slug ("single-stranded-rna"), not its
-            // value, so the kind is matched on words rather than compared to a code.
-            var pick = String(ctx.getRawInput('strands') || '');
-            var kind = /rna/i.test(pick) ? 'rna' : /single/i.test(pick) ? 'ss' : 'ds';
-            var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
-            if (kind === 'rna') seq = seq.replace(/T/g, 'U');
-            if (!seq) {
-              ctx.addHtml(block('Molecular weight', '—', 'Paste a sequence to weigh it.'));
-              return;
-            }
-            var n = seq.length, c = {A: 0, T: 0, G: 0, C: 0, U: 0};
-            for (var i = 0; i < n; i++) {
-              var ch = seq.charAt(i);
-              if (c.hasOwnProperty(ch)) c[ch]++;
-            }
-            var mass = 313.21 * c.A + 304.20 * c.T + 289.18 * c.C + 329.21 * c.G;
-            if (kind === 'rna') mass += 306.17 * c.U;
-            var ss = mass - 61.96;
-            var total = kind === 'ss' || kind === 'rna' ? ss : 2 * ss;
-            var gc = c.G + c.C;
-            var pctGC = n ? gc / n * 100 : 0;
-        
-            ctx.exportValue('length', n);
-            ctx.exportValue('gc_pct', Math.round(pctGC * 100) / 100);
-            ctx.exportValue('mw_ss', Math.round(ss));
-            ctx.exportValue('mw', Math.round(total));
-            ctx.exportValue('mw_kda', Math.round(total / 1000 * 10) / 10);
-            ctx.exportValue('pmol_per_ug', Math.round(1e6 / total * 1000) / 1000);
-        
-            ctx.addHtml(block('Mass',
-              n + (kind === 'rna' ? ' nt RNA' : kind === 'ss' ? ' nt ssDNA' : ' bp dsDNA')
-              + '\nOne strand: ' + (Math.round(ss)).toLocaleString() + ' Da'
-              + '\nMolecule: ' + (Math.round(total)).toLocaleString() + ' Da = '
-              + (total / 1000).toFixed(1) + ' kDa'
-              + '\n1 µg = ' + (1e6 / total).toFixed(3) + ' pmol · 1 pmol = '
-              + (total / 1e6).toFixed(4) + ' µg'
-              + '\nMass per ' + (kind === 'rna' ? 'base' : 'base pair') + ': '
-              + (total / n).toFixed(1) + ' Da',
-              kind === 'ds' ? 'Double-stranded mass assumes the complement has the same composition.'
-                            : ''));
-            ctx.addHtml(table('Composition', ['Base', 'Count', 'Share', 'Residue mass (Da)'],
-              [['A', String(c.A), pct1(n ? c.A / n * 100 : 0) + '%', '313.21'],
-               ['T', String(c.T), pct1(n ? c.T / n * 100 : 0) + '%', '304.20'],
-               ['C', String(c.C), pct1(n ? c.C / n * 100 : 0) + '%', '289.18'],
-               ['G', String(c.G), pct1(n ? c.G / n * 100 : 0) + '%', '329.21'],
-               ['U', String(c.U), pct1(n ? c.U / n * 100 : 0) + '%', '306.17']],
-              'GC content ' + pct2(pctGC) + '%. Residue masses are for the nucleotide monophosphate '
-              + 'in a chain, with one water subtracted per strand.'));
-          });
-        TXT,
     ],
+    'formula' => [],
+    'js' => <<<'TXT'
+    function cleanSeq(raw, kind) {
+        var s = String(raw || '').replace(/^>.*$/gm, '');
+        s = s.replace(/[^A-Za-z]/g, '');
+        return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
+      }
+      function wrap(s, width) {
+        width = width || 60;
+        var out = [];
+        for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
+        return out.join('\n');
+      }
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function block(title, body, note) {
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function table(title, head, rows, note) {
+        var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
+        var b = rows.map(function (r) {
+          return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+        }).join('');
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
+          + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function gcOf(s) {
+        var gc = 0;
+        for (var i = 0; i < s.length; i++) { var c = s.charAt(i); if (c === 'G' || c === 'C') gc++; }
+        return gc;
+      }
+      function tmOf(n, pct, at, gc) {
+        if (n <= 14) return 2 * at + 4 * gc;
+        if (n <= 40) return 64.9 + 41 * (gc - 16.4) / n;
+        return 81.5 + 16.6 * Math.log10(0.05) + 0.41 * pct - 675 / n;
+      }
+      function pct1(x) { return (Math.round(x * 10) / 10).toFixed(1); }
+      function pct2(x) { return (Math.round(x * 100) / 100).toFixed(2); }
+      var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
+                  B:'V',V:'B',D:'H',H:'D',N:'N'};
+      function revcomp(s) {
+        var out = '';
+        for (var i = s.length - 1; i >= 0; i--) out += COMP[s.charAt(i)] || 'N';
+        return out;
+      }
+      // NCBI standard genetic code: bases ordered T, C, A, G for each position
+      var CODON_TABLE = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
+      var BASES = 'TCAG';
+      function aaOf(codon) {
+        var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
+            i3 = BASES.indexOf(codon.charAt(2));
+        if (i1 < 0 || i2 < 0 || i3 < 0) return null;
+        return CODON_TABLE.charAt(16 * i1 + 4 * i2 + i3);
+      }
+      function eachCodon(seq, frame, fn) {
+        for (var i = (frame || 0); i + 3 <= seq.length; i += 3) {
+          fn(seq.substr(i, 3), i);
+        }
+      }
+    
+      omni.onResult(['sequence', 'strands'], function (ctx) {
+        // A select hands back the option's slug ("single-stranded-rna"), not its
+        // value, so the kind is matched on words rather than compared to a code.
+        var pick = String(ctx.getRawInput('strands') || '');
+        var kind = /rna/i.test(pick) ? 'rna' : /single/i.test(pick) ? 'ss' : 'ds';
+        var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
+        if (kind === 'rna') seq = seq.replace(/T/g, 'U');
+        if (!seq) {
+          ctx.addHtml(block('Molecular weight', '—', 'Paste a sequence to weigh it.'));
+          return;
+        }
+        var n = seq.length, c = {A: 0, T: 0, G: 0, C: 0, U: 0};
+        for (var i = 0; i < n; i++) {
+          var ch = seq.charAt(i);
+          if (c.hasOwnProperty(ch)) c[ch]++;
+        }
+        var mass = 313.21 * c.A + 304.20 * c.T + 289.18 * c.C + 329.21 * c.G;
+        if (kind === 'rna') mass += 306.17 * c.U;
+        var ss = mass - 61.96;
+        var total = kind === 'ss' || kind === 'rna' ? ss : 2 * ss;
+        var gc = c.G + c.C;
+        var pctGC = n ? gc / n * 100 : 0;
+    
+        ctx.exportValue('length', n);
+        ctx.exportValue('gc_pct', Math.round(pctGC * 100) / 100);
+        ctx.exportValue('mw_ss', Math.round(ss));
+        ctx.exportValue('mw', Math.round(total));
+        ctx.exportValue('mw_kda', Math.round(total / 1000 * 10) / 10);
+        ctx.exportValue('pmol_per_ug', Math.round(1e6 / total * 1000) / 1000);
+    
+        ctx.addHtml(block('Mass',
+          n + (kind === 'rna' ? ' nt RNA' : kind === 'ss' ? ' nt ssDNA' : ' bp dsDNA')
+          + '\nOne strand: ' + (Math.round(ss)).toLocaleString() + ' Da'
+          + '\nMolecule: ' + (Math.round(total)).toLocaleString() + ' Da = '
+          + (total / 1000).toFixed(1) + ' kDa'
+          + '\n1 µg = ' + (1e6 / total).toFixed(3) + ' pmol · 1 pmol = '
+          + (total / 1e6).toFixed(4) + ' µg'
+          + '\nMass per ' + (kind === 'rna' ? 'base' : 'base pair') + ': '
+          + (total / n).toFixed(1) + ' Da',
+          kind === 'ds' ? 'Double-stranded mass assumes the complement has the same composition.'
+                        : ''));
+        ctx.addHtml(table('Composition', ['Base', 'Count', 'Share', 'Residue mass (Da)'],
+          [['A', String(c.A), pct1(n ? c.A / n * 100 : 0) + '%', '313.21'],
+           ['T', String(c.T), pct1(n ? c.T / n * 100 : 0) + '%', '304.20'],
+           ['C', String(c.C), pct1(n ? c.C / n * 100 : 0) + '%', '289.18'],
+           ['G', String(c.G), pct1(n ? c.G / n * 100 : 0) + '%', '329.21'],
+           ['U', String(c.U), pct1(n ? c.U / n * 100 : 0) + '%', '306.17']],
+          'GC content ' + pct2(pctGC) + '%. Residue masses are for the nucleotide monophosphate '
+          + 'in a chain, with one water subtracted per strand.'));
+      });
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         DNA Molecular Weight turns Sequence and Molecule into Length and GC content. The arithmetic is the whole method: length is worked out from sequence by one formula, applied once. Length comes back in nt unless you switch the unit chip beside the box.
@@ -298,7 +245,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Length follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Sequence and Molecule are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Sequence and Molecule measured, Length and GC content wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/protein-gravy-calculator">Protein GRAVY (Hydropathy) Calculator</a>, <a href="/biology/protein-hydrodynamic-radius">Protein Hydrodynamic Radius Calculator</a> and <a href="/biology/protein-isoelectric-point">Protein Isoelectric Point Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Sequence and Molecule measured, Length and GC content wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

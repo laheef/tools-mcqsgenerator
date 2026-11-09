@@ -203,6 +203,21 @@ function to_shorthand(array $rec): array
                     $name = (string) ($f['n'] ?? '');
                     $out  = ['name' => $name, 'label' => (string) ($f['l'] ?? '')];
                     $dsUid = (string) ($f['ds'] ?? '');
+                    /*
+                     * What the box holds decides the control. A harvested page
+                     * can call a sequence box "numerical" in the matrix and
+                     * "text" in the variable it binds to; the variable is what
+                     * the page's script reads, so a DNA strand becomes a text
+                     * box rather than a number field that refuses letters.
+                     */
+                    $varType = (string) ($rec['vars'][$name]['type'] ?? '');
+                    if ($varType === 'text') {
+                        $vt = 'text';
+                    } elseif ($varType === 'date') {
+                        $vt = 'date';
+                    } elseif ($varType === 'presentation') {
+                        $vt = 'presentation';
+                    }
                     if ($vt === 'valueSelect') {
                         $out['type']    = 'select';
                         $out['options'] = [];
@@ -436,11 +451,18 @@ function same_record(array $a, array $b): array
                         foreach ($f['opts'] ?? [] as $o) {
                             $opts[] = (string) $o[1] . '=' . (string) $o[2];
                         }
+                        /* What the box holds decides the control: a matrix
+                           that calls a sequence box "numerical" while the
+                           variable is text is the same control either way. */
+                        $vt = (string) ($f['vt'] ?? '');
+                        if (($rec['vars'][(string) ($f['n'] ?? '')]['type'] ?? '') === 'text') {
+                            $vt = 'text';
+                        }
                         $row[] = implode('|', [
                             'v',
                             (string) ($f['n'] ?? ''),
                             (string) ($f['l'] ?? ''),
-                            (string) ($f['vt'] ?? ''),
+                            $vt,
                             (string) ($f['pre'] ?? ''),
                             (string) ($f['suf'] ?? ''),
                             (string) ($f['h'] ?? ''),

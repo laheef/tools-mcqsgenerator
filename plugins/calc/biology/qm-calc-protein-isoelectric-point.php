@@ -11,278 +11,239 @@
 
 return [
     'name' => 'Protein Isoelectric Point Calculator',
-    'meta' => ['title' => 'Protein Isoelectric Point Calculator: Steps & Units', 'description' => 'Protein Isoelectric Point Calculator reports net charge at the given pH and length. Nothing is stored between visits, and the working stays on the page.', 'h1' => 'Protein Isoelectric Point Calculator', 'updated' => '2026-10-29'],
-    'raw' => [
-        'vars' => [
-            'protein' => [
-                'type' => 'text',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'MKTAYIAKQRQISFVKSHFSRQLEERLGLIEVQAPILSRVGDGTQDNLSGAEKAVQVKVKAL', 'c' => null],
-                ],
-            ],
-            'ph' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '7.0', 'c' => null],
-                ],
-            ],
-            'pi' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'charge' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'length' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mw_kda' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'acidic' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'basic' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'gravy' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'custom-protein-isoelectric-point',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR2',
+    'meta' => ['title' => 'Protein Isoelectric Point Calculator: Steps & Units', 'description' => 'Protein Isoelectric Point Calculator reports net charge at the given pH and length. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Protein Isoelectric Point Calculator', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'grid' => 'FR2',
+                    'place' => [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                    ],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'protein',
-                                    'l' => 'Protein sequence',
-                                    'h' => 'Single-letter code; headers, spaces and digits are ignored',
-                                    'vt' => 'text',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'ph',
-                                    'l' => 'pH for the charge calculation',
-                                    'h' => 'Net charge is reported at this pH',
-                                    'suf' => 'pH',
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'pi',
-                                    'l' => 'Isoelectric point',
-                                    'suf' => 'pH',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'charge',
-                                    'l' => 'Net charge at the given pH',
-                                    'suf' => 'e',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'length',
-                                    'l' => 'Length',
-                                    'suf' => 'aa',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mw_kda',
-                                    'l' => 'Molecular weight',
-                                    'h' => 'Average residue masses, no PTMs',
-                                    'suf' => 'kDa',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'acidic',
-                                    'l' => 'Acidic residues (D + E)',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'basic',
-                                    'l' => 'Basic residues (K + R + H)',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'gravy',
-                                    'l' => 'GRAVY (hydrophobicity)',
-                                    'h' => 'Positive means hydrophobic',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
+                            'name' => 'protein',
+                            'label' => 'Protein sequence',
+                            'type' => 'text',
+                            'help' => 'Single-letter code; headers, spaces and digits are ignored',
+                            'default' => 'MKTAYIAKQRQISFVKSHFSRQLEERLGLIEVQAPILSRVGDGTQDNLSGAEKAVQVKVKAL',
+                        ],
+                        [
+                            'name' => 'ph',
+                            'label' => 'pH for the charge calculation',
+                            'type' => 'number',
+                            'suffix' => 'pH',
+                            'help' => 'Net charge is reported at this pH',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '7.0',
+                        ],
+                        [
+                            'name' => 'pi',
+                            'label' => 'Isoelectric point',
+                            'type' => 'number',
+                            'suffix' => 'pH',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'charge',
+                            'label' => 'Net charge at the given pH',
+                            'type' => 'number',
+                            'suffix' => 'e',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'length',
+                            'label' => 'Length',
+                            'type' => 'number',
+                            'suffix' => 'aa',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'mw_kda',
+                            'label' => 'Molecular weight',
+                            'type' => 'number',
+                            'suffix' => 'kDa',
+                            'help' => 'Average residue masses, no PTMs',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'acidic',
+                            'label' => 'Acidic residues (D + E)',
+                            'type' => 'number',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'basic',
+                            'label' => 'Basic residues (K + R + H)',
+                            'type' => 'number',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'gravy',
+                            'label' => 'GRAVY (hydrophobicity)',
+                            'type' => 'number',
+                            'help' => 'Positive means hydrophobic',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [],
-        'datasets' => [],
-        'js' => <<<'TXT'
-        function cleanSeq(raw, kind) {
-            var s = String(raw || '').replace(/^>.*$/gm, '');
-            s = s.replace(/[^A-Za-z]/g, '');
-            return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
-          }
-          function wrap(s, width) {
-            width = width || 60;
-            var out = [];
-            for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
-            return out.join('\n');
-          }
-          function esc(s) {
-            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          }
-          function block(title, body, note) {
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function table(title, head, rows, note) {
-            var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
-            var b = rows.map(function (r) {
-              return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
-            }).join('');
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
-              + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function gcOf(s) {
-            var gc = 0;
-            for (var i = 0; i < s.length; i++) { var c = s.charAt(i); if (c === 'G' || c === 'C') gc++; }
-            return gc;
-          }
-          function tmOf(n, pct, at, gc) {
-            if (n <= 14) return 2 * at + 4 * gc;
-            if (n <= 40) return 64.9 + 41 * (gc - 16.4) / n;
-            return 81.5 + 16.6 * Math.log10(0.05) + 0.41 * pct - 675 / n;
-          }
-          function pct1(x) { return (Math.round(x * 10) / 10).toFixed(1); }
-          function pct2(x) { return (Math.round(x * 100) / 100).toFixed(2); }
-          var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
-                      B:'V',V:'B',D:'H',H:'D',N:'N'};
-          function revcomp(s) {
-            var out = '';
-            for (var i = s.length - 1; i >= 0; i--) out += COMP[s.charAt(i)] || 'N';
-            return out;
-          }
-          // NCBI standard genetic code: bases ordered T, C, A, G for each position
-          var CODON_TABLE = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
-          var BASES = 'TCAG';
-          function aaOf(codon) {
-            var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
-                i3 = BASES.indexOf(codon.charAt(2));
-            if (i1 < 0 || i2 < 0 || i3 < 0) return null;
-            return CODON_TABLE.charAt(16 * i1 + 4 * i2 + i3);
-          }
-          function eachCodon(seq, frame, fn) {
-            for (var i = (frame || 0); i + 3 <= seq.length; i += 3) {
-              fn(seq.substr(i, 3), i);
-            }
-          }
-        
-          var PKA = {D: 3.65, E: 4.25, C: 8.18, Y: 10.07, H: 6.00, K: 10.53, R: 12.48,
-                     nterm: 8.20, cterm: 3.65};
-          var MASS = {A: 89.09, R: 174.20, N: 132.12, D: 133.10, C: 121.16, E: 147.13, Q: 146.15,
-                      G: 75.07, H: 155.16, I: 131.17, L: 131.17, K: 146.19, M: 149.21, F: 165.19,
-                      P: 115.13, S: 105.09, T: 119.12, W: 204.23, Y: 181.19, V: 117.15};
-          var HYDRO = {A: 1.8, R: -4.5, N: -3.5, D: -3.5, C: 2.5, E: -3.5, Q: -3.5, G: -0.4,
-                       H: -3.2, I: 4.5, L: 3.8, K: -3.9, M: 1.9, F: 2.8, P: -1.6, S: -0.8,
-                       T: -0.7, W: -0.9, Y: -1.3, V: 4.2};
-          function netCharge(counts, n, ph) {
-            var pos = counts.K / (1 + Math.pow(10, ph - PKA.K))
-                    + counts.R / (1 + Math.pow(10, ph - PKA.R))
-                    + counts.H / (1 + Math.pow(10, ph - PKA.H))
-                    + 1 / (1 + Math.pow(10, ph - PKA.nterm));
-            var neg = counts.D / (1 + Math.pow(10, PKA.D - ph))
-                    + counts.E / (1 + Math.pow(10, PKA.E - ph))
-                    + counts.C / (1 + Math.pow(10, PKA.C - ph))
-                    + counts.Y / (1 + Math.pow(10, PKA.Y - ph))
-                    + 1 / (1 + Math.pow(10, PKA.cterm - ph));
-            return pos - neg;
-          }
-          omni.onResult(['protein', 'ph'], function (ctx) {
-            var p = String(ctx.getRawInput('protein') || '').replace(/^>.*$/gm, '')
-              .replace(/[^A-Za-z*]/g, '').toUpperCase().replace(/\*/g, '');
-            if (!p) {
-              ctx.addHtml(block('Isoelectric point', '—', 'Paste a protein sequence.'));
-              return;
-            }
-            var counts = {D: 0, E: 0, C: 0, Y: 0, H: 0, K: 0, R: 0};
-            var mass = 0, hydro = 0, known = 0;
-            for (var i = 0; i < p.length; i++) {
-              var aa = p.charAt(i);
-              if (counts.hasOwnProperty(aa)) counts[aa]++;
-              if (MASS[aa]) { mass += MASS[aa]; hydro += HYDRO[aa]; known++; }
-            }
-            mass = mass - (known - 1) * 18.015 + 18.015;   // peptide bonds, plus terminal water
-            var ph = Number(ctx.getRawInput('ph'));
-            if (!isFinite(ph)) ph = 7;
-        
-            var lo = 0, hi = 14;
-            for (var k = 0; k < 60; k++) {
-              var mid = (lo + hi) / 2;
-              if (netCharge(counts, p.length, mid) > 0) lo = mid; else hi = mid;
-            }
-            var pi = (lo + hi) / 2;
-            var charge = netCharge(counts, p.length, ph);
-            var gravy = known ? hydro / known : 0;
-        
-            ctx.exportValue('pi', Math.round(pi * 100) / 100);
-            ctx.exportValue('charge', Math.round(charge * 100) / 100);
-            ctx.exportValue('length', p.length);
-            ctx.exportValue('mw_kda', Math.round(mass / 1000 * 100) / 100);
-            ctx.exportValue('acidic', counts.D + counts.E);
-            ctx.exportValue('basic', counts.K + counts.R + counts.H);
-            ctx.exportValue('gravy', Math.round(gravy * 1000) / 1000);
-        
-            ctx.addHtml(block('Isoelectric point',
-              'pI = ' + pi.toFixed(2) + '\nNet charge at pH ' + ph.toFixed(1) + ' = '
-              + (charge >= 0 ? '+' : '') + charge.toFixed(2) + ' e'
-              + '\nLength ' + p.length + ' aa · mass ' + (mass / 1000).toFixed(2) + ' kDa'
-              + '\nGRAVY ' + gravy.toFixed(3) + ' (' + (gravy > 0 ? 'hydrophobic' : 'hydrophilic') + ')',
-              'Calculated with solution pKa values; PTMs and bound ions are not included.'));
-            ctx.addHtml(table('Ionisable groups', ['Group', 'pKa', 'Residues', 'State at pH ' + ph.toFixed(1)],
-              [['Asp (D)', '3.65', String(counts.D), counts.D ? (ph > 3.65 ? 'deprotonated (−)' : 'protonated (0)') : '—'],
-               ['Glu (E)', '4.25', String(counts.E), counts.E ? (ph > 4.25 ? 'deprotonated (−)' : 'protonated (0)') : '—'],
-               ['Cys (C)', '8.18', String(counts.C), counts.C ? (ph > 8.18 ? 'deprotonated (−)' : 'protonated (0)') : '—'],
-               ['Tyr (Y)', '10.07', String(counts.Y), counts.Y ? (ph > 10.07 ? 'deprotonated (−)' : 'protonated (0)') : '—'],
-               ['His (H)', '6.00', String(counts.H), counts.H ? (ph < 6 ? 'protonated (+)' : 'neutral') : '—'],
-               ['Lys (K)', '10.53', String(counts.K), counts.K ? (ph < 10.53 ? 'protonated (+)' : 'neutral') : '—'],
-               ['Arg (R)', '12.48', String(counts.R), counts.R ? (ph < 12.48 ? 'protonated (+)' : 'neutral') : '—'],
-               ['N-terminus', '8.20', '1', ph < 8.2 ? 'protonated (+)' : 'neutral'],
-               ['C-terminus', '3.65', '1', ph > 3.65 ? 'deprotonated (−)' : 'neutral']]));
-          });
-        TXT,
     ],
+    'formula' => [],
+    'js' => <<<'TXT'
+    function cleanSeq(raw, kind) {
+        var s = String(raw || '').replace(/^>.*$/gm, '');
+        s = s.replace(/[^A-Za-z]/g, '');
+        return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
+      }
+      function wrap(s, width) {
+        width = width || 60;
+        var out = [];
+        for (var i = 0; i < s.length; i += width) out.push(s.slice(i, i + width));
+        return out.join('\n');
+      }
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function block(title, body, note) {
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function table(title, head, rows, note) {
+        var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
+        var b = rows.map(function (r) {
+          return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+        }).join('');
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
+          + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function gcOf(s) {
+        var gc = 0;
+        for (var i = 0; i < s.length; i++) { var c = s.charAt(i); if (c === 'G' || c === 'C') gc++; }
+        return gc;
+      }
+      function tmOf(n, pct, at, gc) {
+        if (n <= 14) return 2 * at + 4 * gc;
+        if (n <= 40) return 64.9 + 41 * (gc - 16.4) / n;
+        return 81.5 + 16.6 * Math.log10(0.05) + 0.41 * pct - 675 / n;
+      }
+      function pct1(x) { return (Math.round(x * 10) / 10).toFixed(1); }
+      function pct2(x) { return (Math.round(x * 100) / 100).toFixed(2); }
+      var COMP = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',S:'S',W:'W',K:'M',M:'K',
+                  B:'V',V:'B',D:'H',H:'D',N:'N'};
+      function revcomp(s) {
+        var out = '';
+        for (var i = s.length - 1; i >= 0; i--) out += COMP[s.charAt(i)] || 'N';
+        return out;
+      }
+      // NCBI standard genetic code: bases ordered T, C, A, G for each position
+      var CODON_TABLE = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
+      var BASES = 'TCAG';
+      function aaOf(codon) {
+        var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
+            i3 = BASES.indexOf(codon.charAt(2));
+        if (i1 < 0 || i2 < 0 || i3 < 0) return null;
+        return CODON_TABLE.charAt(16 * i1 + 4 * i2 + i3);
+      }
+      function eachCodon(seq, frame, fn) {
+        for (var i = (frame || 0); i + 3 <= seq.length; i += 3) {
+          fn(seq.substr(i, 3), i);
+        }
+      }
+    
+      var PKA = {D: 3.65, E: 4.25, C: 8.18, Y: 10.07, H: 6.00, K: 10.53, R: 12.48,
+                 nterm: 8.20, cterm: 3.65};
+      var MASS = {A: 89.09, R: 174.20, N: 132.12, D: 133.10, C: 121.16, E: 147.13, Q: 146.15,
+                  G: 75.07, H: 155.16, I: 131.17, L: 131.17, K: 146.19, M: 149.21, F: 165.19,
+                  P: 115.13, S: 105.09, T: 119.12, W: 204.23, Y: 181.19, V: 117.15};
+      var HYDRO = {A: 1.8, R: -4.5, N: -3.5, D: -3.5, C: 2.5, E: -3.5, Q: -3.5, G: -0.4,
+                   H: -3.2, I: 4.5, L: 3.8, K: -3.9, M: 1.9, F: 2.8, P: -1.6, S: -0.8,
+                   T: -0.7, W: -0.9, Y: -1.3, V: 4.2};
+      function netCharge(counts, n, ph) {
+        var pos = counts.K / (1 + Math.pow(10, ph - PKA.K))
+                + counts.R / (1 + Math.pow(10, ph - PKA.R))
+                + counts.H / (1 + Math.pow(10, ph - PKA.H))
+                + 1 / (1 + Math.pow(10, ph - PKA.nterm));
+        var neg = counts.D / (1 + Math.pow(10, PKA.D - ph))
+                + counts.E / (1 + Math.pow(10, PKA.E - ph))
+                + counts.C / (1 + Math.pow(10, PKA.C - ph))
+                + counts.Y / (1 + Math.pow(10, PKA.Y - ph))
+                + 1 / (1 + Math.pow(10, PKA.cterm - ph));
+        return pos - neg;
+      }
+      omni.onResult(['protein', 'ph'], function (ctx) {
+        var p = String(ctx.getRawInput('protein') || '').replace(/^>.*$/gm, '')
+          .replace(/[^A-Za-z*]/g, '').toUpperCase().replace(/\*/g, '');
+        if (!p) {
+          ctx.addHtml(block('Isoelectric point', '—', 'Paste a protein sequence.'));
+          return;
+        }
+        var counts = {D: 0, E: 0, C: 0, Y: 0, H: 0, K: 0, R: 0};
+        var mass = 0, hydro = 0, known = 0;
+        for (var i = 0; i < p.length; i++) {
+          var aa = p.charAt(i);
+          if (counts.hasOwnProperty(aa)) counts[aa]++;
+          if (MASS[aa]) { mass += MASS[aa]; hydro += HYDRO[aa]; known++; }
+        }
+        mass = mass - (known - 1) * 18.015 + 18.015;   // peptide bonds, plus terminal water
+        var ph = Number(ctx.getRawInput('ph'));
+        if (!isFinite(ph)) ph = 7;
+    
+        var lo = 0, hi = 14;
+        for (var k = 0; k < 60; k++) {
+          var mid = (lo + hi) / 2;
+          if (netCharge(counts, p.length, mid) > 0) lo = mid; else hi = mid;
+        }
+        var pi = (lo + hi) / 2;
+        var charge = netCharge(counts, p.length, ph);
+        var gravy = known ? hydro / known : 0;
+    
+        ctx.exportValue('pi', Math.round(pi * 100) / 100);
+        ctx.exportValue('charge', Math.round(charge * 100) / 100);
+        ctx.exportValue('length', p.length);
+        ctx.exportValue('mw_kda', Math.round(mass / 1000 * 100) / 100);
+        ctx.exportValue('acidic', counts.D + counts.E);
+        ctx.exportValue('basic', counts.K + counts.R + counts.H);
+        ctx.exportValue('gravy', Math.round(gravy * 1000) / 1000);
+    
+        ctx.addHtml(block('Isoelectric point',
+          'pI = ' + pi.toFixed(2) + '\nNet charge at pH ' + ph.toFixed(1) + ' = '
+          + (charge >= 0 ? '+' : '') + charge.toFixed(2) + ' e'
+          + '\nLength ' + p.length + ' aa · mass ' + (mass / 1000).toFixed(2) + ' kDa'
+          + '\nGRAVY ' + gravy.toFixed(3) + ' (' + (gravy > 0 ? 'hydrophobic' : 'hydrophilic') + ')',
+          'Calculated with solution pKa values; PTMs and bound ions are not included.'));
+        ctx.addHtml(table('Ionisable groups', ['Group', 'pKa', 'Residues', 'State at pH ' + ph.toFixed(1)],
+          [['Asp (D)', '3.65', String(counts.D), counts.D ? (ph > 3.65 ? 'deprotonated (−)' : 'protonated (0)') : '—'],
+           ['Glu (E)', '4.25', String(counts.E), counts.E ? (ph > 4.25 ? 'deprotonated (−)' : 'protonated (0)') : '—'],
+           ['Cys (C)', '8.18', String(counts.C), counts.C ? (ph > 8.18 ? 'deprotonated (−)' : 'protonated (0)') : '—'],
+           ['Tyr (Y)', '10.07', String(counts.Y), counts.Y ? (ph > 10.07 ? 'deprotonated (−)' : 'protonated (0)') : '—'],
+           ['His (H)', '6.00', String(counts.H), counts.H ? (ph < 6 ? 'protonated (+)' : 'neutral') : '—'],
+           ['Lys (K)', '10.53', String(counts.K), counts.K ? (ph < 10.53 ? 'protonated (+)' : 'neutral') : '—'],
+           ['Arg (R)', '12.48', String(counts.R), counts.R ? (ph < 12.48 ? 'protonated (+)' : 'neutral') : '—'],
+           ['N-terminus', '8.20', '1', ph < 8.2 ? 'protonated (+)' : 'neutral'],
+           ['C-terminus', '3.65', '1', ph > 3.65 ? 'deprotonated (−)' : 'neutral']]));
+      });
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Enter Protein sequence and pH for the charge calculation into Protein Isoelectric Point and the answer comes back as Isoelectric point and Net charge at the given pH. There is no hidden constant here: change isoelectric point and protein sequence moves with it. The main result, Isoelectric point, is reported in pH.
@@ -319,7 +280,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Isoelectric point is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Protein sequence and pH for the charge calculation and the number you are missing is Isoelectric point and Net charge at the given pH.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/compost-application-rate">Compost Application Rate Calculator</a>, <a href="/biology/compost">Compost Calculator</a> and <a href="/biology/corn-yield">Corn yield Calculator</a>.</p>
+            <p>Use it whenever the numbers you have are Protein sequence and pH for the charge calculation and the number you are missing is Isoelectric point and Net charge at the given pH.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
         ],
         'faq' => [

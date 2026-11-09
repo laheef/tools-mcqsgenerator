@@ -11,7 +11,7 @@
 
 return [
     'name' => 'Amino Acid Composition Calculator',
-    'meta' => ['title' => 'Amino Acid Composition Calculator: Steps & Units', 'description' => 'Amino Acid Composition Calculator works out length from protein sequence. Both length and molecular weight come back, with the working shown beside them.', 'h1' => 'Amino Acid Composition Calculator', 'updated' => '2026-10-29'],
+    'meta' => ['title' => 'Amino Acid Composition Calculator: Steps & Units', 'description' => 'Amino Acid Composition Calculator works out length from protein sequence. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Amino Acid Composition Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -252,10 +252,11 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Length follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Protein sequence measured, Length and Molecular weight wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/osmolarity-osmotic-pressure">Osmolarity / Osmotic Pressure Calculator</a>, <a href="/biology/pasture-stocking-rate">Pasture Stocking Rate Calculator</a> and <a href="/biology/pcr-annealing-temperature">PCR Annealing Temperature Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Protein sequence measured, Length and Molecular weight wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [
+            ['q' => 'What does the Amino Acid Composition calculator work out?', 'a' => 'Length, Molecular weight, GRAVY and Aromatic residues (F + W + Y).'],
             ['q' => 'Which values do I need before I start?', 'a' => 'Protein sequence. Fill protein sequence and leave Length empty if you would rather have that one solved instead.'],
             ['q' => 'How precise is the result?', 'a' => <<<'TXT'
             Length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
@@ -268,5 +269,6 @@ return [
             ['path' => '/biology/pasture-stocking-rate', 'name' => 'Pasture Stocking Rate Calculator'],
             ['path' => '/biology/pcr-annealing-temperature', 'name' => 'PCR Annealing Temperature Calculator'],
         ],
+        'authors' => [],
     ],
 ];

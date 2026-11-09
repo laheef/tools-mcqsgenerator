@@ -112,8 +112,12 @@ function canon(array $rec): array
                         $row[] = 'image:' . implode(',', (array) ($f['u'] ?? []));
                         continue;
                     }
+                    $vt = (string) ($f['vt'] ?? '');
+                    if ((string) ($rec['vars'][(string) ($f['n'] ?? '')]['type'] ?? '') === 'text') {
+                        $vt = 'text';           // the box holds text, whatever the matrix says
+                    }
                     $row[] = 'field:' . json_encode([
-                        'n' => $f['n'] ?? '', 'l' => $f['l'] ?? '', 'vt' => $f['vt'] ?? '',
+                        'n' => $f['n'] ?? '', 'l' => $f['l'] ?? '', 'vt' => $vt,
                         'pre' => $f['pre'] ?? '', 'suf' => $f['suf'] ?? '', 'h' => $f['h'] ?? '',
                         'us' => $f['us'] ?? '', 'du' => $f['du'] ?? '', 'oo' => $f['oo'] ?? '',
                         /* Option and dataset uids are internal addresses: the
@@ -207,7 +211,8 @@ foreach ($slugs as $slug) {
         $bad++;
         continue;
     }
-    $head = shell_exec('cd ' . escapeshellarg(dirname(__DIR__)) . ' && git show HEAD:' . escapeshellarg($rel) . ' 2>/dev/null');
+    $base = getenv('CALC_BASE_REF') ?: 'HEAD';
+    $head = shell_exec('cd ' . escapeshellarg(dirname(__DIR__)) . ' && git show ' . escapeshellarg($base . ':' . $rel) . ' 2>/dev/null');
     if (!is_string($head) || trim($head) === '') {
         echo 'NO-HEAD  ' . $slug . " (nothing to compare with)\n";
         $bad++;

@@ -11,233 +11,206 @@
 
 return [
     'name' => 'Codon Plot Calculator',
-    'meta' => ['title' => 'Codon Plot Calculator: Formula, Steps & Example', 'description' => 'Codon Plot Calculator turns coding sequence (DNA) and window size into codons read. No sign-up: type the numbers, press Calculate and read the answer.', 'h1' => 'Codon Plot Calculator', 'updated' => '2026-10-29'],
-    'raw' => [
-        'vars' => [
-            'sequence' => [
-                'type' => 'text',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => <<<'TXT'
-                    ATGGCTAGCAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCTCTTATGGTGTTCAATGCTTTTCAAGATACCCAGATCATATGAAACGGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGCGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGACCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAATAA
-                    TXT, 'c' => null],
-                ],
-            ],
-            'window' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '30', 'c' => null],
-                ],
-            ],
-            'codons' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'rare' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'clusters' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'custom-codon-plot',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR2',
+    'meta' => ['title' => 'Codon Plot Calculator: Formula, Steps & Example', 'description' => 'Codon Plot Calculator turns coding sequence (DNA) and window size into codons read. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Codon Plot Calculator', 'updated' => '2026-10-29'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'grid' => 'FR2',
+                    'place' => [
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                    ],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'sequence',
-                                    'l' => 'Coding sequence (DNA)',
-                                    'h' => 'Paste the open reading frame; long sequences are summarised window by window',
-                                    'vt' => 'text',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'window',
-                                    'l' => 'Window size',
-                                    'h' => 'How many codons each summary point covers',
-                                    'suf' => 'codons',
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'codons',
-                                    'l' => 'Codons read',
-                                    'h' => 'Whole codons only',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'rare',
-                                    'l' => 'Rare codons (w ≤ 0.2)',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                                [
-                                    't' => 'v',
-                                    'n' => 'clusters',
-                                    'l' => 'Runs of 3+ rare codons',
-                                    'h' => 'The stalling risk',
-                                    'oo' => 1,
-                                    'vt' => 'numerical',
-                                ],
-                            ],
+                            'name' => 'sequence',
+                            'label' => 'Coding sequence (DNA)',
+                            'type' => 'text',
+                            'help' => 'Paste the open reading frame; long sequences are summarised window by window',
+                            'default' => <<<'TXT'
+                            ATGGCTAGCAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCTCTTATGGTGTTCAATGCTTTTCAAGATACCCAGATCATATGAAACGGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGCGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGACCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAATAA
+                            TXT,
+                        ],
+                        [
+                            'name' => 'window',
+                            'label' => 'Window size',
+                            'type' => 'number',
+                            'suffix' => 'codons',
+                            'help' => 'How many codons each summary point covers',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '30',
+                        ],
+                        [
+                            'name' => 'codons',
+                            'label' => 'Codons read',
+                            'type' => 'number',
+                            'help' => 'Whole codons only',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'rare',
+                            'label' => 'Rare codons (w ≤ 0.2)',
+                            'type' => 'number',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'clusters',
+                            'label' => 'Runs of 3+ rare codons',
+                            'type' => 'number',
+                            'help' => 'The stalling risk',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [],
-        'datasets' => [],
-        'js' => <<<'TXT'
-        function cleanSeq(raw, kind) {
-            var s = String(raw || '').replace(/^>.*$/gm, '');
-            s = s.replace(/[^A-Za-z]/g, '');
-            return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
-          }
-          function esc(s) {
-            return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          }
-          function block(title, body, note) {
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function table(title, head, rows, note) {
-            var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
-            var b = rows.map(function (r) {
-              return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
-            }).join('');
-            return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
-              + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
-              + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
-          }
-          function resolve(raw, map, fallback) {
-            var n = String(raw || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-            if (Object.prototype.hasOwnProperty.call(map, raw)) return map[raw];
-            var keys = Object.keys(map).sort(function (a, b) { return b.length - a.length; });
-            for (var i = 0; i < keys.length; i++) {
-              var k = keys[i].toLowerCase().replace(/[^a-z0-9]/g, '');
-              if (k && n.indexOf(k) >= 0) return map[keys[i]];
-            }
-            return fallback;
-          }
-          var BASES = 'TCAG';
-          var AA_ORDER = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
-          function aaOf(codon) {
-            var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
-                i3 = BASES.indexOf(codon.charAt(2));
-            if (i1 < 0 || i2 < 0 || i3 < 0) return null;
-            return AA_ORDER.charAt(i1 * 16 + i2 * 4 + i3);
-          }
-        
-          // Relative adaptiveness in E. coli (the standard published table), two decimals.
-          var W_ECOLI = {
-            TTT: 0.57, TTC: 1.00, TTA: 0.13, TTG: 0.13, CTT: 0.10, CTC: 0.10, CTA: 0.04, CTG: 1.00,
-            ATT: 0.51, ATC: 1.00, ATA: 0.08, ATG: 1.00,
-            GTT: 0.60, GTC: 0.42, GTA: 0.27, GTG: 1.00,
-            TCT: 0.60, TCC: 0.60, TCA: 0.14, TCG: 0.14, AGT: 0.31, AGC: 1.00,
-            CCT: 0.35, CCC: 0.22, CCA: 0.35, CCG: 1.00,
-            ACT: 0.49, ACC: 1.00, ACA: 0.13, ACG: 0.27,
-            GCT: 0.53, GCC: 0.58, GCA: 0.45, GCG: 1.00,
-            TAT: 0.57, TAC: 1.00, CAT: 0.57, CAC: 1.00, CAA: 0.34, CAG: 1.00,
-            AAT: 0.49, AAC: 1.00, AAA: 1.00, AAG: 0.25, GAT: 0.63, GAC: 1.00,
-            GAA: 0.68, GAG: 1.00, TGT: 0.46, TGC: 1.00, TGG: 1.00,
-            CGT: 1.00, CGC: 0.55, CGA: 0.06, CGG: 0.03, AGA: 0.03, AGG: 0.02,
-            GGT: 1.00, GGC: 0.74, GGA: 0.19, GGG: 0.15
-          };
-          // Eight steps from empty to full, so the track reads at a glance in text.
-          var GLYPH = ['·', '▁', '▂', '▃', '▄', '▅', '▆', '█'];
-          function bar(w) {
-            var i = Math.round(Math.max(0, Math.min(1, w)) * (GLYPH.length - 1));
-            return GLYPH[i];
-          }
-          omni.onResult(['sequence', 'window'], function (ctx) {
-            var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
-            var win = Math.round(Number(ctx.getRawInput('window')) || 30);
-            if (!(win >= 1)) win = 30;
-            win = Math.min(win, 500);
-            if (seq.length < 6) {
-              ctx.addHtml(block('Codon plot', '—', 'Paste a coding sequence of at least 6 bp.'));
-              ctx.exportValue('codons', 0); ctx.exportValue('rare', 0); ctx.exportValue('clusters', 0);
-              return;
-            }
-            var n = Math.floor(seq.length / 3);
-            var scores = [], details = [], rare = 0, i;
-            for (i = 0; i < n; i++) {
-              var cod = seq.substr(i * 3, 3);
-              var w = W_ECOLI[cod];
-              if (w === undefined) { scores.push(null); details.push(null); continue; }
-              scores.push(w);
-              details.push(cod);
-              if (w <= 0.2) rare++;
-            }
-            // runs of three or more scoring rare codons
-            var runs = [], run = 0, runStart = 0;
-            for (i = 0; i <= scores.length; i++) {
-              var isRare = i < scores.length && scores[i] !== null && scores[i] <= 0.2;
-              if (isRare) { if (run === 0) runStart = i + 1; run++; }
-              else {
-                if (run >= 3) runs.push({ start: runStart, len: run, codons: details.slice(runStart - 1, runStart - 1 + run).join(' ') });
-                run = 0;
-              }
-            }
-            // window averages for the summary table
-            var rows = [], worst = null;
-            for (i = 0; i < n; i += win) {
-              var sum = 0, cnt = 0, rareInWin = 0;
-              for (var j = i; j < Math.min(i + win, n); j++) {
-                if (scores[j] === null) continue;
-                sum += scores[j]; cnt++;
-                if (scores[j] <= 0.2) rareInWin++;
-              }
-              var mean = cnt ? sum / cnt : 0;
-              rows.push([(i + 1) + '–' + Math.min(i + win, n), cnt ? mean.toFixed(2) : '—',
-                         String(rareInWin), rareInWin >= 3 ? 'check' : 'ok']);
-              if (!worst || rareInWin > worst.rare) worst = { start: i + 1, rare: rareInWin };
-            }
-            // the track itself, wrapped to 60 codons per line
-            var track = '';
-            for (i = 0; i < n; i += 60) {
-              var line = '';
-              for (var k = i; k < Math.min(i + 60, n); k++) line += scores[k] === null ? '?' : bar(scores[k]);
-              track += line + '\n';
-            }
-            var meanAll = 0, cntAll = 0;
-            for (i = 0; i < n; i++) if (scores[i] !== null) { meanAll += scores[i]; cntAll++; }
-            meanAll = cntAll ? meanAll / cntAll : 0;
-            ctx.exportValue('codons', n);
-            ctx.exportValue('rare', rare);
-            ctx.exportValue('clusters', runs.length);
-            var head = block('Codon plot — ' + n + ' codons',
-              'Mean w            ' + meanAll.toFixed(3) + '\nRare codons       ' + rare
-              + '\nRuns of 3+        ' + runs.length
-              + '\nWorst window      ' + (worst ? worst.start + ' (first codon)' : '—'),
-              'Legend: · w=0  ▁▂▃▄▅▆ rising  █ w=1.  A codon the table does not know is drawn as ?.');
-            var runRows = runs.slice(0, 12).map(function (r) {
-              return [String(r.start), String(r.len), r.codons];
-            });
-            var html = head + block('Track (one character per codon, 60 per line)', track)
-              + table('Windows', ['Codons', 'Mean w', 'Rare', 'Verdict'], rows.slice(0, 20),
-                      rows.length > 20 ? 'First 20 windows shown.' : '')
-              + table('Runs of three or more rare codons', ['First codon', 'Length', 'Codons'],
-                      runRows.length ? runRows : [['—', '0', 'none']],
-                      runs.length > 12 ? 'First 12 runs shown.' : '');
-            ctx.addHtml(html);
-          });
-        TXT,
     ],
+    'formula' => [],
+    'js' => <<<'TXT'
+    function cleanSeq(raw, kind) {
+        var s = String(raw || '').replace(/^>.*$/gm, '');
+        s = s.replace(/[^A-Za-z]/g, '');
+        return kind === 'protein' ? s.toUpperCase() : s.toUpperCase().replace(/U/g, 'T');
+      }
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function block(title, body, note) {
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3><pre>' + esc(body) + '</pre>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function table(title, head, rows, note) {
+        var h = '<tr>' + head.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
+        var b = rows.map(function (r) {
+          return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+        }).join('');
+        return '<div class="calc-script-block"><h3>' + esc(title) + '</h3>'
+          + '<div class="calc-script-scroll"><table class="calc-script-table">' + h + b + '</table></div>'
+          + (note ? '<p class="calc-script-note">' + esc(note) + '</p>' : '') + '</div>';
+      }
+      function resolve(raw, map, fallback) {
+        var n = String(raw || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (Object.prototype.hasOwnProperty.call(map, raw)) return map[raw];
+        var keys = Object.keys(map).sort(function (a, b) { return b.length - a.length; });
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i].toLowerCase().replace(/[^a-z0-9]/g, '');
+          if (k && n.indexOf(k) >= 0) return map[keys[i]];
+        }
+        return fallback;
+      }
+      var BASES = 'TCAG';
+      var AA_ORDER = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
+      function aaOf(codon) {
+        var i1 = BASES.indexOf(codon.charAt(0)), i2 = BASES.indexOf(codon.charAt(1)),
+            i3 = BASES.indexOf(codon.charAt(2));
+        if (i1 < 0 || i2 < 0 || i3 < 0) return null;
+        return AA_ORDER.charAt(i1 * 16 + i2 * 4 + i3);
+      }
+    
+      // Relative adaptiveness in E. coli (the standard published table), two decimals.
+      var W_ECOLI = {
+        TTT: 0.57, TTC: 1.00, TTA: 0.13, TTG: 0.13, CTT: 0.10, CTC: 0.10, CTA: 0.04, CTG: 1.00,
+        ATT: 0.51, ATC: 1.00, ATA: 0.08, ATG: 1.00,
+        GTT: 0.60, GTC: 0.42, GTA: 0.27, GTG: 1.00,
+        TCT: 0.60, TCC: 0.60, TCA: 0.14, TCG: 0.14, AGT: 0.31, AGC: 1.00,
+        CCT: 0.35, CCC: 0.22, CCA: 0.35, CCG: 1.00,
+        ACT: 0.49, ACC: 1.00, ACA: 0.13, ACG: 0.27,
+        GCT: 0.53, GCC: 0.58, GCA: 0.45, GCG: 1.00,
+        TAT: 0.57, TAC: 1.00, CAT: 0.57, CAC: 1.00, CAA: 0.34, CAG: 1.00,
+        AAT: 0.49, AAC: 1.00, AAA: 1.00, AAG: 0.25, GAT: 0.63, GAC: 1.00,
+        GAA: 0.68, GAG: 1.00, TGT: 0.46, TGC: 1.00, TGG: 1.00,
+        CGT: 1.00, CGC: 0.55, CGA: 0.06, CGG: 0.03, AGA: 0.03, AGG: 0.02,
+        GGT: 1.00, GGC: 0.74, GGA: 0.19, GGG: 0.15
+      };
+      // Eight steps from empty to full, so the track reads at a glance in text.
+      var GLYPH = ['·', '▁', '▂', '▃', '▄', '▅', '▆', '█'];
+      function bar(w) {
+        var i = Math.round(Math.max(0, Math.min(1, w)) * (GLYPH.length - 1));
+        return GLYPH[i];
+      }
+      omni.onResult(['sequence', 'window'], function (ctx) {
+        var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
+        var win = Math.round(Number(ctx.getRawInput('window')) || 30);
+        if (!(win >= 1)) win = 30;
+        win = Math.min(win, 500);
+        if (seq.length < 6) {
+          ctx.addHtml(block('Codon plot', '—', 'Paste a coding sequence of at least 6 bp.'));
+          ctx.exportValue('codons', 0); ctx.exportValue('rare', 0); ctx.exportValue('clusters', 0);
+          return;
+        }
+        var n = Math.floor(seq.length / 3);
+        var scores = [], details = [], rare = 0, i;
+        for (i = 0; i < n; i++) {
+          var cod = seq.substr(i * 3, 3);
+          var w = W_ECOLI[cod];
+          if (w === undefined) { scores.push(null); details.push(null); continue; }
+          scores.push(w);
+          details.push(cod);
+          if (w <= 0.2) rare++;
+        }
+        // runs of three or more scoring rare codons
+        var runs = [], run = 0, runStart = 0;
+        for (i = 0; i <= scores.length; i++) {
+          var isRare = i < scores.length && scores[i] !== null && scores[i] <= 0.2;
+          if (isRare) { if (run === 0) runStart = i + 1; run++; }
+          else {
+            if (run >= 3) runs.push({ start: runStart, len: run, codons: details.slice(runStart - 1, runStart - 1 + run).join(' ') });
+            run = 0;
+          }
+        }
+        // window averages for the summary table
+        var rows = [], worst = null;
+        for (i = 0; i < n; i += win) {
+          var sum = 0, cnt = 0, rareInWin = 0;
+          for (var j = i; j < Math.min(i + win, n); j++) {
+            if (scores[j] === null) continue;
+            sum += scores[j]; cnt++;
+            if (scores[j] <= 0.2) rareInWin++;
+          }
+          var mean = cnt ? sum / cnt : 0;
+          rows.push([(i + 1) + '–' + Math.min(i + win, n), cnt ? mean.toFixed(2) : '—',
+                     String(rareInWin), rareInWin >= 3 ? 'check' : 'ok']);
+          if (!worst || rareInWin > worst.rare) worst = { start: i + 1, rare: rareInWin };
+        }
+        // the track itself, wrapped to 60 codons per line
+        var track = '';
+        for (i = 0; i < n; i += 60) {
+          var line = '';
+          for (var k = i; k < Math.min(i + 60, n); k++) line += scores[k] === null ? '?' : bar(scores[k]);
+          track += line + '\n';
+        }
+        var meanAll = 0, cntAll = 0;
+        for (i = 0; i < n; i++) if (scores[i] !== null) { meanAll += scores[i]; cntAll++; }
+        meanAll = cntAll ? meanAll / cntAll : 0;
+        ctx.exportValue('codons', n);
+        ctx.exportValue('rare', rare);
+        ctx.exportValue('clusters', runs.length);
+        var head = block('Codon plot — ' + n + ' codons',
+          'Mean w            ' + meanAll.toFixed(3) + '\nRare codons       ' + rare
+          + '\nRuns of 3+        ' + runs.length
+          + '\nWorst window      ' + (worst ? worst.start + ' (first codon)' : '—'),
+          'Legend: · w=0  ▁▂▃▄▅▆ rising  █ w=1.  A codon the table does not know is drawn as ?.');
+        var runRows = runs.slice(0, 12).map(function (r) {
+          return [String(r.start), String(r.len), r.codons];
+        });
+        var html = head + block('Track (one character per codon, 60 per line)', track)
+          + table('Windows', ['Codons', 'Mean w', 'Rare', 'Verdict'], rows.slice(0, 20),
+                  rows.length > 20 ? 'First 20 windows shown.' : '')
+          + table('Runs of three or more rare codons', ['First codon', 'Length', 'Codons'],
+                  runRows.length ? runRows : [['—', '0', 'none']],
+                  runs.length > 12 ? 'First 12 runs shown.' : '');
+        ctx.addHtml(html);
+      });
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Codon Plot takes Coding sequence (DNA) and Window size and returns Codons read and Rare codons (w ≤ 0.2). It is a single relationship that reads codons read out of coding sequence (DNA), not a table of canned results keyed by them.
@@ -275,7 +248,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Codons read follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Coding sequence (DNA) and Window size are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Coding sequence (DNA) and Window size is what you already know and Codons read and Rare codons (w ≤ 0.2) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/vapor-pressure-deficit">Vapor pressure deficit Calculator</a>, <a href="/biology/vegetable-seed">Vegetable seed</a> and <a href="/biology/vegetable-yield">Vegetable yield</a>.</p>
+            <p>Reach for this page when Coding sequence (DNA) and Window size is what you already know and Codons read and Rare codons (w ≤ 0.2) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>The page you are reading is built around one calculation. The form, the formula and the worked examples all describe the same relationship, and the panel is the only place the answer exists — it is computed when you press the button, not fetched.</p><p>Every figure quoted in the article above was produced by this page&#039;s formulas, with the inputs listed beside it. That is deliberate — it is the only way a reader can check the page without trusting it.</p><p>Nothing you enter is stored. The form is local to the page, the calculation runs on it, and the only way your numbers travel anywhere is if you copy the link that carries them.</p><p>The page is one of a catalogue that works the same way: every calculator prints the relationship it uses, runs a worked example from its own defaults, and lets you solve for any one of its variables rather than only the one in the title.</p><p>If a figure here disagrees with a source you trust, the useful thing to check first is the unit on each box, then the formula shown above, and only then the arithmetic — in that order, because that is the order mistakes happen in.</p>
